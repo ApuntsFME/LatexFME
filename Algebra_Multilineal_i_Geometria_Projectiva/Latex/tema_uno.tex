@@ -1,0 +1,622 @@
+\section{Álgebra multilineal}
+
+\subsection{Formas Cuadráticas}
+
+\begin{defi}
+	Sea $E$ un $k$-ev. Diremos que una aplicación
+	\[
+		\begin{aligned}
+			\phi \colon E \times E &\to k \\
+			(u,v) &\mapsto \phi(u,v)
+		\end{aligned}
+	\]
+	es una forma bilineal simétrica si \begin{itemize}
+		\item $\phi(u_1 + u_2, v) = \phi(u_1, v) + \phi(u_2, v)$
+		\item $\phi(\lambda u, v) = \lambda\phi(u,v)$
+		\item $\phi(u,v) = \phi(v,u)$
+	\end{itemize}
+	$\forall u,v,u_1,u_2 \in E$ y $\forall \lambda \in k$.
+\end{defi}
+\begin{defi}
+	Sea $\phi$ una forma bilineal simétrica sobre un $k$-ev. $E$.
+	Diremos que la aplicación
+	\[
+		\begin{aligned}
+			q \colon E &\to k \\
+			u &\mapsto q(u) = \phi(u,u)
+		\end{aligned}
+	\]
+	es la forma cuadrática asociada a $\phi$.
+\end{defi}
+\begin{obs}
+	Se cumple que $q(\lambda u) = \lambda^2 q(u)$
+\end{obs}
+\begin{lema}
+	Sea $\phi$ una forma bilieal simétrica sobre un $k$-ev. $E$ con $car E \neq 2$
+	y sea $q$ la forma cuadrática asociada a $\phi$, entonces
+	\[
+		\phi(u,v) = \frac{1}{2} ( q(u+v) - q(u) - q(v))
+	\]
+\end{lema}
+\begin{proof}
+	\[
+	\begin{split}
+		q(u+v) - q(u) - q(v) = \phi(u+v,u+v) - \phi(u,u) - \phi(v,v) = \\
+		=\phi(u,u) + \phi(u,v) + \phi(v,u)  + \phi(v,v) - \phi(u,u) - \phi(v,v) =
+		2 \phi(u,v)
+	\end{split}
+	\]
+\end{proof}
+\begin{defi}
+	Sea $\phi$ una forma bilineal simétrica/cuadrática sobre un $k$-ev. $E$ y sea
+	$B = \{u_1, \cdots, u_n \}$ una base. La matriz de $\phi$ en base $B$ es
+	\[
+		M_B(\phi) = (a_{ij}) = (\phi(u_i,u_j))
+	\]
+\end{defi}
+\begin{obs}
+	La matriz $M_B(\phi)$ es simétrica
+\end{obs}
+\begin{defi}
+	Sea $E$ un $k$-ev. y sea $\phi \colon E \times E \to k$ una
+	forma bilineal simétrica.
+	\begin{itemize}
+		\item Diremos que $\phi$ es definida positiva si 
+		\[ \phi(x,x) > 0, \quad \forall x \in E
+		\quad x \neq \vec{0} \]
+		\item Diremos que $\phi$ es definida negativa si
+		\[ \phi(x,x) < 0, \quad \forall x \in E
+		\quad x \neq \vec{0} \]
+		\item Diremos que $\phi$ es no definida en cualquier otro caso.
+	\end{itemize}
+\end{defi}
+\begin{obs}
+	Si $\phi$ es una forma bilineal simétrica y definida positiva
+	entonces define un producto escalar sobre $E$.
+\end{obs}
+\begin{defi}
+	Dada una matriz cuadrada $A$ (dim $n$) definimos
+	\[
+		A_k = (a_{ij}), \quad 1 \leq i, j \leq k \quad \text{y}
+		\quad \delta_k(A) = \determinant{A_k}
+	\]
+\end{defi}
+\begin{thm}[de Sylvester]
+	Sea $E$ un $k$-ev. de dimension $n$ y sea
+	$\phi \colon E\times E \to k$ una forma bilineal simétrica,
+	entonces
+	\[
+	\phi \text{ es definida positiva }\iff \delta_k(M_B(\phi)) > 0
+	\quad\forall 1 \leq k \leq n \quad\forall B \text{ base de } E
+	\]
+\end{thm}
+\begin{proof}
+	$\implies$
+	
+	Como $\phi$ es definida positiva, define un producto escalar
+	sobre $E$. Si tomamos una base $B$ cualquiera, mediante
+	Gramm-Schmidt podemos construir una base ortogonal
+	$B_2 = \{v_1, \cdots, v_n \}$. Por tanto
+	\[
+		i \neq j \implies \phi(v_i, v_j) = 0, \quad \phi(v_i,v_i) 
+		> 0 \quad 1 \leq i, j \leq n
+	\]
+	Llamamos $\phi(v_i, v_i) = \lambda_i > 0$. Por tanto
+	\[
+		M_{B_2}(\phi) = \begin{pmatrix}
+		\lambda_1 & 0 & \cdots & 0 \\
+		0 & \lambda_2 & \ddots & \vdots \\
+		\vdots & \ddots & \ddots & 0 \\
+		0 & \cdots & 0 & \lambda_n
+		\end{pmatrix} \implies \determinant{M_{B_2}(\phi)} =
+		\prod_{i=1}^{n} \lambda_i > 0
+	\]
+	Entonces, como $M_B(\phi) = S_{B,B_2}^TM_{B_2}(\phi)S_{B_2,B}$
+	\[
+		\determinant{M_B(\phi)} = \determinant{S_{B_2,B}}^2
+		\determinant{M_{B_2}(\phi)} > 0
+	\]
+	Por lo tanto, la matriz de un producto escalar tiene
+	determinante positivo independientemente de la base tomada.
+	Observamos que $\phi$ también define un producto escalar en
+	el subespacio vectorial $<v_1,\cdots,v_k>$ cuando lo
+	restringimos a este. Por lo que hemos visto antes se tiene que
+	\[
+	\determinant{M_B(\phi)_k} = \delta_k(M_B(\phi)) > 0
+	\quad \forall 1 \leq k \leq n.
+	\]
+	
+	\noindent $\impliedby$
+	
+	\indent Tenemos que $\delta_k(M_B(\phi)) > 0 \quad \forall
+	1 \leq k \leq n$. Aplicamos la siguiente variación de
+	Gramm-Schmidt. Tomamos la base $B = \{ u_1, \cdots, u_n \}$
+	Y hacemos la siguiente construcción:
+	\[
+		\begin{cases}
+			v_1 = u_1 \\
+			v_2 = \alpha_{2,1}u_1 + u2 \\
+			v_3 = \alpha_{3,1}u_1 + \alpha_{3,2}u_2 + u_3 \\
+			\vdots \\
+			v_n = \alpha_{n,1}u_1 + \cdots + \alpha_{n,n-1}u_{n-1}
+			+ u_n
+		\end{cases}
+		\qquad \alpha_{i,j} \text{ son tales que } \phi(v_k, u_i)
+		= 0 \quad \substack{2 \leq k \leq n \\ 1 \leq i \leq k-1}
+	\]
+	Propiedades de $\{ v_1, \cdots, v_n \}$
+	\begin{itemize}
+		\item $\forall k$, $\left< v_1, \cdots, v_k \right> =
+		\left<u_1,\cdots,u_k\right>$
+		En particular, $B_2 = \{v_1,\cdots, v_n\}$ es base de $E$.
+		\item $\phi(v_k, v_i) = 0$ $\forall 1 \leq i \leq k-1$
+		porque $v_i \in \left< u_1, \cdots, u_i \right>$ y hemos tomado los 
+		$\alpha$ de manera que $\phi(v_k, u_i) = 0 \implies B_2$ 
+		es base ortogonal
+		\item La matriz $S_{B_2B}$
+		\[
+			S_{B_2B} = \begin{pmatrix}
+				1 & \alpha_{2,1} & \cdots & \alpha_{n,1} \\
+				0 & 1 & \ddots & \vdots \\
+				\vdots & \ddots & \ddots & \alpha_{n,n-1} \\
+				0 & \cdots & 0 & 1
+			\end{pmatrix} \implies \determinant{S_{B_2B}} = 1
+			\text{ y } \delta_k(S_{B_2B}) = 1
+		\]
+	\end{itemize}
+	Finalmente, tenemos
+	\[
+		\begin{aligned}
+			M_B(\phi) &= S_{B,B_2}^T M_{B_2}(\phi)S_{B,B_2} \\
+			\left(\begin{array}{c c|c}
+			k & \updownarrow &  \\
+			\leftrightarrow &  &  \\
+			\hline
+			 &  & 
+			\end{array}\right) &= \left(\begin{array}{c c|c}
+			k & \updownarrow &  \\
+			\leftrightarrow &  &  \\
+			\hline
+			&  & 
+			\end{array}\right) \left(\begin{array}{c c c| c c}
+			\phi(v_1,v_1) & & & & \\
+			& \ddots & & & \\
+			& & \phi(v_k,v_k) & & \\
+			\hline
+			& & & \ddots & \\
+			& & & & \phi(v_n,v_n)
+			\end{array}\right) \left(\begin{array}{c c|c}
+			k & \updownarrow &  \\
+			\leftrightarrow &  &  \\
+			\hline
+			&  & 
+			\end{array}\right) \implies
+		\end{aligned}
+	\]
+	\[
+		\implies \delta_k(M_B(\phi)) = \delta_k(S_{B,B_2}^t)
+		\delta_k(M_{B_2}(\phi)) \delta_k(S_{B,B_2}) =
+		\delta_k(M_{B_2}(\phi)) = 
+	\]
+	\[
+		= \prod_{i=1}^{k} \phi(v_i,v_i) > 0\text{ (por hipótesis)}
+		\implies
+		\frac{\delta_k(M_B(\phi))}{\delta_{k-1}(M_B(\phi))}
+		= \phi(v_k,v_k) > 0
+	\]
+	Finalmente, $\forall x \in E$ 
+	\[
+		\phi(x,x) =
+		\phi\left(
+			\sum_{i=1}^{k} x_iv_i,\sum_{i=1}^{k} x_iv_i
+		\right) =
+		\sum_{i=1}^{k} x_i^2 \phi(v_i,v_i) > 0 \text{ si } x \neq 
+		\vec{0}
+	\]
+	\endproof{QED}
+\end{proof}
+
+\begin{thm}[Método convergencia-pivote]
+    Dada una forma bilinial simética $\phi$, queremos encontrar una base de $E$, $B_2$, en la cual $M_{B_2}(\phi)$ sea una matriz diagonal. Partimos de una base $B$ i de $M_B(\phi)$. El procesos es: operación con filas a las dos matrices y luego la misma operacion pero en la columnas de la primera matriz únicamente (véase ejemplo).
+    
+    \begin{gather*}
+        \left(M_B(\phi) \vert Id \right) \stackrel{\text{op. filas}}{\sim} \left( S_1M_B(\phi) \vert S_1 \right) \substack{\text{misma op.} \\ \sim \\ \text{en columnas}} \left( S_1 M_b(\phi)S_1^T \vert S_1 \right) \sim \dots \sim \\ \sim \left( S_r \dots S_1 M_B(\phi)S_1^T \dots S_r^T \vert S_r \dots S_1 \right)
+    \end{gather*}
+    Donde la matriz de la izquierda es $M_{B_2}$ y es diagonal.
+    
+    
+\end{thm}
+
+\begin{example}
+    \[
+        q_\phi(x,y,z)=2x^2+2y^2-4xy-2yz; \quad A = M_B(\phi) =
+        \begin{pmatrix}
+            2 & -2 & 0 \\
+            -2 & 2 & -1 \\
+            0 & -1 & 0 \\
+        \end{pmatrix}
+    \]
+    \begin{gather*}
+        \left(
+        \begin{array}{ccc|ccc}
+            2 & -2 & 0 & 1 & 0 & 0 \\
+            -2 & 2 & -1 & 0 & 1 & 0 \\
+            0 & -1 & 0 & 0 & 0 & 1 \\
+        \end{array}
+        \right)
+        \substack{\text{fila} \\ \sim \\ (1) + (2)}
+        \left(
+        \begin{array}{ccc|ccc}
+            2 & -2 & 0 & 1 & 0 & 0 \\
+            0 & 0 & -1 & 1 & 1 & 0 \\
+            0 & -1 & 0 & 0 & 0 & 1 \\
+        \end{array}
+        \right)
+        \substack{\text{columna} \\ \sim \\ (1) + (2)}
+        \\
+        \substack{\text{columna} \\ \sim \\ (1) + (2)}
+        \left(
+        \begin{array}{ccc|ccc}
+            2 & 0 & 0 & 1 & 0 & 0 \\
+            0 & 0 & -1 & 1 & 1 & 0 \\
+            0 & -1 & 0 & 0 & 0 & 1 \\
+        \end{array}
+        \right)
+        \substack{\text{fila} \\ \sim \\ (2) + (3)}
+        \left(
+        \begin{array}{ccc|ccc}
+            2 & 0 & 0 & 1 & 0 & 0 \\
+            0 & -1 & -1 & 1 & 1 & 1 \\
+            0 & -1 & 0 & 0 & 0 & 1 \\
+        \end{array}
+        \right)
+        \substack{\text{columna} \\ \sim \\ (2) + (3)}
+        \\
+        \substack{\text{columna} \\ \sim \\ (2) + (3)}
+        \left(
+        \begin{array}{ccc|ccc}
+            2 & 0 & 0 & 1 & 0 & 0 \\
+            0 & -2 & -1 & 1 & 1 & 1 \\
+            0 & -1 & 0 & 0 & 0 & 1 \\
+        \end{array}
+        \right)
+        \substack{\text{fila} \\ \sim \\ (3) - \frac{1}{2}(2)}
+        \left(
+        \begin{array}{ccc|ccc}
+            2 & 0 & 0 & 1 & 0 & 0 \\
+            0 & -2 & -1 & 1 & 1 & 1 \\
+            0 & 0 & \frac{1}{2} & \frac{-1}{2} & \frac{-1}{2} & \frac{1}{2} \\
+        \end{array}
+        \right)
+        \substack{\text{columna} \\ \sim \\ (3) - \frac{1}{2}(2)}
+        \\
+        \substack{\text{columna} \\ \sim \\ (3) - \frac{1}{2}(2)}
+        \left(
+        \begin{array}{ccc|ccc}
+            2 & 0 & 0 & 1 & 0 & 0 \\
+            0 & -2 & 0 & 1 & 1 & 1 \\
+            0 & 0 & \frac{1}{2} & \frac{-1}{2} & \frac{-1}{2} & \frac{1}{2} \\
+        \end{array}
+        \right)
+    \end{gather*}
+    Entonces, en base $B$, los vectores de $B_2$ son:
+    \begin{itemize}
+        \item $v_1 = (1,0,0); \quad \phi (v_1, v_1) = 2$
+        \item $v_2 = (1,1,1); \quad \phi (v_2, v_2) = -2$
+        \item $v_3 = (\frac{-1}{2},\frac{-1}{2},\frac{1}{2}); \quad \phi (v_3,v_3) = \frac{1}{2}$
+    \end{itemize}
+    Y $\phi(v_i, v_j) = 0,$ $i \neq j$.
+\end{example}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ESPACIO DUAL               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Espacio dual}
+
+\begin{defi}
+	Sea $E$ un $k$-ev. Definimos el espacio Dual de $E$ como
+	$E^* = \{ \phi : E \to k \text{ lineales} \}$ (también es un
+	$k$-espacio vectorial)
+\end{defi}
+\begin{obs}
+	Para definir $E^*$ tenemos que usar bases de $E$.
+\end{obs}
+\begin{defi}
+	Si $B = \{ u_1,\cdots, u_n \}$ es una base de $E$ ($k$-ev.)
+	definimos
+	\[
+		\begin{aligned}
+			u_i^* \colon E &\to k\\
+			u_j &\mapsto u_i^*(u_j) = \delta_{ij}
+		\end{aligned}
+	\]
+	Y llamaremos base dual de $B$ a
+	$B^* = \{ u_1^*, \cdots, u_n^* \}$ (que efectivamente es una
+	base de $E^*$).
+\end{defi}
+\begin{obs}
+	En particular si $w \in E$ y
+	$\displaystyle w = \sum_{i=1}^{n} a_i u_i^*$, se cumple que:
+	\[
+		w(u_j) = \sum_{i=1}^{n} a_i u_i^*(u_j) = a_j
+		\implies
+		w = \sum_{i=1}^{n}w(u_i)u_i^*
+	\]
+\end{obs}
+
+\begin{prop}[(cambios de base)]
+	Sean $B_1$ y $B_2$ bases de $E$ ($k$-ev. de $\dim = n$) y
+	sean $B_1^*$ y $B_2^*$ las bases duales de $B_1$ y $B_2$.
+	Si $S_{B_1B_2}$ es la matriz de cambio de base de $B_1$ a
+	$B_2$, entonces:
+	\[
+		S_{B_1^*B_2^*} = (S_{B_1B_2}^{-1})^T = (S_{B_2B_1})^T
+	\]
+\end{prop}
+
+\begin{prop}[(aplicaciones lineales)]
+	Sean $E$ y $F$ $k$-ev. y sea $\phi \colon E \to F$ una
+	aplicación lineal, entonces $\phi$ induce la aplicación
+	lineal siguiente:
+	\[
+		\begin{aligned}
+		\phi^* \colon F^* &\to E^*\\
+		w &\mapsto \phi^*(w) = w \circ \phi
+		\end{aligned}
+	\]
+\end{prop}
+\begin{obs}
+	Si $E$ y $F$ son de dimensión finita, $\phi$ admite expresión
+	matricial (en coordenadas). En particular
+	$\displaystyle \begin{rcases} B_1 \text{ base de } E \\ B_2
+	\text{ base de } F \end{rcases} \implies \phi$ viene dada por
+	$M_{B_1,B_2}(\phi)$ y $\displaystyle \begin{rcases} B_1^*
+	\text{ base de } E^* \\ B_2^* \text{ base de } F^*
+	\end{rcases} \implies \phi^*$ viene dada por 
+	$M_{B_2^*,B_1^*}(\phi^*) = (M_{B_1,B_2}(\phi))^T$.
+\end{obs}
+\begin{prop}[(espacio bidual)]
+	Dado $E$ $k$-ev. podemos definir $E^*,E^{**},\cdots$. En
+	particular tenemos que $E^{**}$ es canónicamente isomorfo a
+	$E$ mediante el isomorfismo
+	\[
+		\begin{aligned}
+			\phi \colon E &\to E^{**}\\
+			u &\mapsto \phi(u)
+		\end{aligned}
+	\]
+	donde
+	\[
+		\begin{aligned}
+			\phi(u) \colon E^* &\to k \\
+			w &\mapsto (\phi(u))(w) = w(u)
+		\end{aligned}
+	\]
+\end{prop}
+\begin{obs}
+	Como este isomorfismo es canónico (no depende de las bases),
+	$E \cong E^{**}$ y no distinguimos entre $E$ y $E^{**}$
+\end{obs}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% TENSORES            %
+%                     %
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Tensores}
+
+\begin{defi}
+	Sean $E_1,\cdots , E_r$ $k$-ev. Diremos que
+	$f \colon E_1 \times \cdots \times E_r \to k$ es un tensor (o una aplicacion
+	multilineal) si $\forall i=1,\cdots , r$ y $\forall v_j \in E_j$ ($i \neq j$)
+	se cumple que
+	\[
+		 \begin{aligned}
+			 \phi_i \colon E_i &\to k \\
+			 v &\mapsto \phi(u)=f(v_1,\cdots , v_{i-1}, v, v_{i+1}, \cdots , v_r)
+		 \end{aligned}
+	\]
+	es una aplicación lineal.
+\end{defi}
+\begin{defi}
+	Sea $E$ un $k$-ev. Llamaremos tensor de tipo $(p,q)$ (o tensor p veces
+	covariante y q veces contravariante) (o tensor p-covariante y q-contravariante)
+	a un tensor
+	\[
+		\begin{aligned}
+			f \colon \overbrace{E \times \cdots \times E}^p\times
+			\overbrace{E^* \times \cdots \times E^*}^q&\to k \\
+			(v_1, \cdots, v_p, w_1, \cdots, w_q) &\mapsto
+			f(v_1,\cdots,v_p,w_1,\cdots,w_q)
+		\end{aligned}
+	\]
+\end{defi}
+\begin{obs}
+	Al conjunto de tensores  de este tipo se le denota como $T_p^q(E)$.
+\end{obs}
+\begin{obs}
+	Por convenio $T_0(E) = T^0(E) = T_0^0(E) = k$.
+\end{obs}
+\begin{example}
+	Sea $E$ un $k$-ev.
+	\begin{itemize}
+		\item $T_1(E) = T_1^0(E) = E^*$
+		\item $T^1(E) = T_0^1 = E^{**}$ ($\cong E$)
+		\item $T_2(E) = T_2^0(E) = \{\text{formas bilianes de } E \text{ en } k\}$
+	\end{itemize}
+\end{example}
+\begin{prop}
+	$T_p^q(E) = T_q^p(E^*)$ (cambiando el orden)
+\end{prop}
+\begin{prop}
+	$T_p^q(E)$ tiene estructura de $k$-espacio vectorial. Si $f, g \in T_p^q(E)$ y
+	$\alpha , \beta \in k$
+	\[
+		\begin{aligned}
+			\alpha f + \beta g \colon \overbrace{E \times \cdots E}^p \times
+			\overbrace{E^* \times \cdots \times E^*}^q &\to k \\
+			(v_1, \cdots, v_p, w_1, \cdots, w_q) &\mapsto (\alpha f + \beta g)
+			(v_1, \cdots, v_p, w_1, \cdots, w_q)
+		\end{aligned}
+	\]
+	donde $(\alpha f + \beta g) (v_1, \cdots, v_p, w_1, \cdots, w_q) =
+	\alpha f(v_1, \cdots, v_p, w_1, \cdots, w_q) + \beta
+	g(v_1, \cdots, v_p, w_1, \cdots, w_q)$.
+\end{prop}
+\begin{defi}[(producto tensorial)]
+	Dados $f \in T_p^q(E)$ y $g \in T_{p'}^{q'}(E)$, definimos el producto
+	tensorial de $f$ y $g$ como
+	\[
+		\begin{aligned}
+			f \otimes g \colon \overbrace{E \times \cdots \times E}^{p+p'}
+			\times \overbrace{E^* \times \cdots \times E^*}^{q+q'} &\to k \\
+			(v_1, \cdots, v_p, \overline{v_1}, \cdots \overline{v_{p'}},
+			w_1, \cdots, w_q, \overline{w_1}, \cdots, \overline{w_{q'}})
+			&\mapsto f(v_1, \cdots, v_p, w_1, \cdots, w_p) +
+			g(\overline{v_1}, \cdots, \overline{v_{p'}}, \overline{w_1}, \cdots
+			\overline{w_{q'}})
+		\end{aligned}
+	\]
+\end{defi}
+\begin{obs}
+	Si $f$ y $g$ son tensores, entonces $f \otimes g$ también lo es. Además
+	$f \otimes g \in T_{p+p'}^{q+q'}(E)$.
+\end{obs}
+\begin{prop}
+	Sean  $f \in T_p^q(E)$, $g \in T_{p'}^{q'}$ y $h \in T_{p''}^{q''}(E)$.
+	\begin{itemize}
+		\item $\otimes$ {\bfseries NO} es abeliano. En general $f \otimes g \neq
+		g \otimes f$.
+		\item $\otimes$ es asociativo. $(f \otimes g) \otimes h = f \otimes (g
+		\otimes h)$. Denotado por $f \otimes g \otimes h$
+		\item $\vec{0} \otimes f = f \otimes \vec{0} = \vec{0}$
+		\item $f \otimes (g + h) = f \otimes g + f\otimes h$ \quad ($(f+g) \otimes
+		h = f \otimes h + g \otimes h$)
+		\item $\alpha \in k$. $(\alpha f) \otimes g = \alpha(f \otimes g) =
+		f \otimes (\alpha g)$
+	\end{itemize}
+\end{prop}
+\begin{example}
+	Sea $E = \real^3$, $B = \{e_1, e_2, e_3\}$, $B^* = \{ e_1^*, e_2^*, e_3^*\}$.
+	Y consideramps el producto tensorial de los tensores $e_1^*$ y $e_2^*$ sobre
+	los vectores $v_1 = (x_1, y_1, z_1)$ y $v_2 = (x_2,y_2,z_2)$.
+	\[
+		\begin{rcases}
+			(e_1^* \otimes e_2^*)(v_1, v_2) = e_1^*(v_1)e_2^*(v_2) = x_1y_2 \\
+			(e_2^* \otimes e_1^*)(v_1, v_2) = e_2^*(v_1)e_1^*(v_") ? y_1x_2
+		\end{rcases}
+		\implies e_1^* \otimes e_2^* \neq e_2^* \otimes e_1^*
+	\]
+\end{example}
+\begin{example}
+	Sea $E = \real^2$, $B = \{e_1, e_2\}$, $B* = \{e_1^*, e_2^*\}$, entonces
+	\[
+		e_1 \otimes e_2 \in T^2(E) \qquad \begin{cases}
+			(e_1 \otimes e_2) = (e_1^{**} \otimes e_2^{**})(e_1^*,e_1^*) =
+			e_1(e_1)e_2(e_1) = 0 \\
+			(e_1 \otimes e_2)(e_1^*,e_2^*) = 1 \\
+			(e_1 \otimes e_2)(e_2^*,e_1^*) = 0 \\
+			(e_1 \otimes e_2)(e_2^*,e_2^*) = 0
+		\end{cases}
+	\]
+\end{example}
+\begin{obs}[a] \label{obs:tens_cero}
+	Si $E$ es un $k$-ev de dimensión $n$ y $B = \{e_1, \cdots, e_n\}$
+	\[
+		(\underbrace{e_{i_1}^* \otimes \cdots \otimes e_{i_p}^*}_
+		{I = \setb{i_1, \cdots, i_p}} \otimes
+		\underbrace{e_{j_1} \otimes \cdots \otimes e_{j_2}}_
+		{J = \setb{j_1, \cdots j_q}})(\underbrace{e_{l_1}, \cdots, e_{l_p}}_
+		{L = \setb{l_1, \cdots, l_p}}, \underbrace{e_{m_1}^*, \cdots, e_{m_q}^*}_
+		{M = \setb{m_1, \cdots, m_q}}) =
+		\begin{cases}
+			1 \quad \text{Si } I = L \text{ y } J = M \\
+			0 \quad \text{en otro caso}
+		\end{cases}
+	\]
+\end{obs}
+\begin{obs}
+	Sean $f,g \in T_p^q(E)$ entonces
+	\[
+		f=g \iff \substack{\forall e_{i_1}, \cdots, e_{i_p} \in B \\ \forall e_{j_1}^*, \cdots,
+		e_{j_q}^* \in B^*} \quad f(e_{i_1}, \cdots, e_{j_q}^*) =
+		g(e_{i_1}, \cdots, e_{j_q}^*)
+	\]
+\end{obs}
+
+\subsection{Dimensión y bases de $T_p^q(E)$}
+
+Recordemos que $T_p^q(E)$ es un $k$-ev.
+
+\begin{thm}[(base de $T_p^q(E)$)]
+	Sea $E$ un $k$-ev. de dimensión $n$ y sea $B = \setb{e_1, \cdots, e_n}$,
+	entonces
+\begin{enumerate}[i)]
+		\item $\dim_k T_p^q(E) = n^{p+q}$
+		\item \label{base_2} Una base de $T_p^q(E)$ es
+		\[
+			B_p^q = \left\{ e_{i_1}^* \otimes \cdots \otimes e_{i_p}^* \otimes
+			e_{j_1} \otimes \cdots \otimes e_{j_q} \vert
+			\substack{i_1, \cdots, i_p \in \setb{1,\cdots,n} \\
+				j_1, \cdots, j_1 \in \setb{1,\cdots,n}} \right\}
+		\]
+		\item \label{base_3} Si $f \in T_p^q(E)$, las coordenadas de $f$ en la base $B_p^q$ son
+		\[
+			f_{B_p^q} = (f(e_{i_1}, \cdots, e_{i_p}, e_{j_1}^*, \cdots, e_{j_q}^*))
+		\]
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	\begin{enumerate}[i)]
+		\item[]
+		\item Es consecuencia directa de \ref{base_2}
+		\item Primero veamos que $B_p^q$ es li. Sea
+		\[
+			w = \sum \alpha_{IJ}(e_{i_1}^* \otimes \cdots \otimes e_{i_p}^*
+			\otimes e_{j_1} \otimes \cdots \otimes e_{j_q}) = 0
+		\]
+		Sean $I_0$, $J_0$ dos conjuntos de índices cualesquiera, entonces
+		\[
+			0 = w(e_{i_1}, \cdots, e_{i_p}, e_{j_1}^*, \cdots, e_{j_q}^*)
+			= \alpha_{I_0J_0}
+		\]
+		(Por la \cref{obs:tens_cero}). Veamos ahora que $B_p^q$
+		es generadora. Sea $f \in T_p^q(E)$, definimos $g \in T_p^q(E)$ como
+		\[
+			g = \sum_{\forall I,J} (f(e_{i_1}, \cdots, e_{i_p}, e_{j_1}^*, \cdots,
+			e_{j_q}^*)(e_{i_1}^* \otimes \cdots \otimes e_{i_p}^* \otimes e_{j_1}
+			\otimes \cdots \otimes e_{j_q}))
+		\]
+		Demostrando ahora que $f=g$ quedan provados \ref{base_2} y \ref{base_3}.
+		Tenemos ahora que
+		\[
+			g(e_{i_1^0}, \cdots, e_{i_p^0}, e_{j_1^0}^*, \cdots, e_{j_q^0}^*) =
+			f(e_{i_1^0}, \cdots, e_{i_p^0}, e_{j_1^0}^*, \cdots, e_{j_q^0}^*)
+		\]
+		Por la \cref{obs:tens_cero} y queda demostrado el teorema.
+	\end{enumerate}
+\end{proof}
+\begin{example}
+	Sea $E = \real^n$, $B = \setb{e_1, \cdots, e_n}$ y
+	$B^* = \setb{e_1^* \cdots e_n^*}$
+	\begin{itemize}
+		\item Sea $u \in \real^n$
+		\[
+			u = u(e_1^*) + \cdots + u(e_n^*) \qquad (B_0^1 = B)
+		\]
+		\item Sea $w \in T_1^0(E) (= E^*)$
+		\[
+			w = w(e_1)e_1^* + \cdots + w(e_n)e_n^* \qquad (B_1^0 = B^*)
+		\]
+		\item Sea $n = 3$ y sea $f \in T_2(E)$
+		\begin{gather*}
+			B_2^0 = \setb{e_1^* \otimes e_1^*, e_1^* \otimes e_2^*,
+			\cdots e_3^* \otimes e_3^*} \\ f = f(e_1,e_1)e_1^*\otimes e_1^* +
+			f(e_1,e_2)e_1^*\otimes e_2^* +\cdots + f(e_3,e_3)e_3^* \otimes e_3^*
+		\end{gather*}
+	\end{itemize}
+\end{example}
