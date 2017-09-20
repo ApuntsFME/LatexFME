@@ -217,10 +217,18 @@
 \end{proof}
 
 \begin{thm}[Método convergencia-pivote]
-    Dada una forma bilinial simética $\phi$, queremos encontrar una base de $E$, $B_2$, en la cual $M_{B_2}(\phi)$ sea una matriz diagonal. Partimos de una base $B$ i de $M_B(\phi)$. El procesos es: operación con filas a las dos matrices y luego la misma operacion pero en la columnas de la primera matriz únicamente (véase ejemplo).
+    Dada una forma bilinial simética $\phi$, queremos encontrar una base de
+    $E$, $B_2$, en la cual $M_{B_2}(\phi)$ sea una matriz diagonal. Partimos
+    de una base $B$ i de $M_B(\phi)$. El procesos es: operación con filas a
+    las dos matrices y luego la misma operacion pero en la columnas de la
+    primera matriz únicamente (véase ejemplo).
     
     \begin{gather*}
-        \left(M_B(\phi) \vert Id \right) \stackrel{\text{op. filas}}{\sim} \left( S_1M_B(\phi) \vert S_1 \right) \substack{\text{misma op.} \\ \sim \\ \text{en columnas}} \left( S_1 M_b(\phi)S_1^T \vert S_1 \right) \sim \dots \sim \\ \sim \left( S_r \dots S_1 M_B(\phi)S_1^T \dots S_r^T \vert S_r \dots S_1 \right)
+        \left(M_B(\phi) \vert Id \right) \stackrel{\text{op. filas}}{\sim}
+	\left( S_1M_B(\phi) \vert S_1 \right) \substack{\text{misma op.} \\
+	\sim \\ \text{en columnas}} \left( S_1 M_b(\phi)S_1^T \vert S_1 \right)
+	\sim \dots \sim \\ \sim \left( S_r \dots S_1 M_B(\phi)S_1^T \dots S_r^T
+	\vert S_r \dots S_1 \right)
     \end{gather*}
     Donde la matriz de la izquierda es $M_{B_2}$ y es diagonal.
     
