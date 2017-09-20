@@ -628,3 +628,136 @@ Recordemos que $T_p^q(E)$ es un $k$-ev.
 		\end{gather*}
 	\end{itemize}
 \end{example}
+\begin{prop}[ (cambio de base) ]
+	Sea $E$ un $k$-ev. de dimensión $n$ y sean $B = \setb{e_1, \cdots, e_n}$ y
+	$\overline{B} = \setb{u_1, \cdots, u_n}$. Sea $S = (s_j^i)$ la matriz de
+	cambio de base de $\overline{B}$ a $B$ y sea $T = (t_ j^i)$ su inversa.
+	De manera que tenemos esta relación:
+	\[
+		\begin{tikzpicture}
+			\node (B) {$\overline{B}$};
+			\node[left=of B] {$B$}
+			edge[<-,bend left=45] node[auto] {$S$} (B)
+			edge[->,bend right=45] node[auto] {$T$} (B);
+		\end{tikzpicture}
+		\qquad
+		\begin{tikzpicture}
+		\node (B) {$\overline{B}^*$};
+		\node[left=of B] {$B^*$} 
+		edge[->,bend left=45] node[auto] {$S^t$} (B)
+		edge[<-,bend right=45] node[auto] {$T^t$} (B);
+		\end{tikzpicture}
+	\]
+	Sea $f \in T_p^q(E)$ y sean
+	\begin{gather*}
+		f_B = \left( \alpha_{IJ} \right)_{I,J} = \left( f(e_{i_1}, \cdots,e_{i_p},
+		e_{j_1}^*, \cdots, e_{j_q}^*) \right)_{I,J} \\
+		f_{\overline{B}} = \left( \overline{\alpha}_{IJ} \right)_{I,J} =
+		\left( f(u_{i_1}, \cdots,u_{i_p}, u_{j_1}^*, \cdots, u_{j_q}^*)
+		\right)_{I,J}
+	\end{gather*}
+	Entonces, $\forall I,J$
+	\[
+		\overline{\alpha}_{IJ} = f(u_{i_1}, \cdots,u_{i_p}, u_{j_1}^*, \cdots,
+		u_{j_q}^*) = \sum_{\forall L, M} s_{i_1}^{l_1} \cdots s_{i_p}^{l_p}
+		t_{m_1}^{j_1} \cdots t_{m_q}^{j_q} f(e_{i_1}, \cdots, e_{i_p}, e_{j_1}^*,
+		\cdots, e_{j_q}^*)
+	\]
+\end{prop}
+\hfill
+\begin{example}
+	\begin{itemize}
+		\item[]
+		\item $f \in T^1(E) = E^{**} = E$ por lo tanto $f = u$ y $\substack{
+		u_B = (x_1, \cdots, u_n) \\ u_{\overline{B}} = (\overline{x}_1, \cdots,
+		\overline{x}_n)}$, entonces
+		\[
+			\begin{pmatrix}
+				\overline{x}_1 \\
+				\vdots \\
+				\overline{x}_n
+			\end{pmatrix}
+			= T \begin{pmatrix}
+				x_1 \\
+				\vdots \\
+				x_n
+			\end{pmatrix}
+		\]
+		\item $f \in T_1(E) = E^*$ por lo tanto $f = w$ y $\substack{
+		w_B = (x_1, \cdots, u_n) \\ w_{\overline{B}} = (\overline{x}_1, \cdots,
+		\overline{x}_n)}$, entonces
+		\[
+			\begin{pmatrix}
+				\overline{x}_1 \\
+				\vdots \\
+				\overline{x}_n
+			\end{pmatrix}
+				= S^t \begin{pmatrix}
+				x_1 \\
+				\vdots \\
+				x_n
+			\end{pmatrix}
+		\]
+		\item $f \in T_2(E)$ por lo tanto $f$ es una forma bilineal y $\substack{
+		f_B = A \in M_{n,n}(k) \\ f_{\overline{B}} = \overline{A} \in M_{n,n}(k)}$,
+		entonces
+		\[
+			\overline{A} = S^tAS
+		\]
+	\end{itemize}
+\end{example}
+\subsection{Recordatorio de permutaciones}
+
+\begin{itemize}
+	\item Denotaremos como $x_n = \setb{1, \cdots, n}$
+	\item Denotaremos como $\mathcal{S}_n =\setb{\sigma\colon x_n \to
+		x_n \text{bilineales}}$
+	\item $\#\mathcal{S}_n= n!$
+	\item $\mathcal{S}_n$ es un grupo por composición. Además denotaremos
+		$s_1 s_2 = s_1 \circ s_2$
+	\item Fijada $s_0 \in \mathcal{S}_n$, la aplicación
+		\[
+			\begin{aligned}
+				\phi \colon \mathcal{S}_n &\to \mathcal{S}_n \\
+				s &\mapsto s_0s
+			\end{aligned}
+		\]
+		es biyectiva.
+	\item Sea $s \in \mathcal{S}_n$, denotaremos $s$  de las siguientes maneras
+		\begin{itemize}
+			\item $s = \begin{pmatrix}
+				1 & 2 & \cdots & n \\
+				s(1) & s(2) & \cdots & s(n)
+			\end{pmatrix}$
+			\item Si $s$ es cíclica la denotaremos como $s = (1,3,7,5)$. En este
+			caso, $s(1)=3$, $s(3)=7$, $s(7)=5$ y $s(5)=1$, para el resto de valores
+			$s(i)=i$.
+		\end{itemize}
+	\item Llamaremos trasposición a una permutación del tipo $s=(i,j)$ con
+		$i \neq j$
+	\item $\forall s \in \mathcal{S}_n$, $s$ se puede expresar como composición
+		(o producto) de trasposiciones. Además, la paridad del número de
+		trasposiciones se mantiene, es decir
+		\[
+			s = t_1 \cdots t_p = l_1 \cdots l_q \implies p \equiv q \mod 2
+		\]
+	\item Sea $s \in \mathcal{S}_n$ y sea $s=t_1 \cdots t_p$ una descomposición de
+		$s$ en trasposiciones. Entonces, definimos el signo de $s$ como $(-1)^p$.
+\end{itemize}
+
+\subsection{Tensores simétricos y antisimétricos}
+
+\begin{defi}
+	Sea $E$ un $k$-ev. de dimensión $n$, sea $f \in T_p(E)$ y $s \in\mathcal{S}_p$,
+	entonces, definimos $(\underline{s}f) \in T_p(E)$ como
+	\[
+		(\underline{s}f)(v_1, \cdots, v_p) = f(v_{s(1)}, \cdots, v_{s(p)})
+	\]
+\end{defi}
+\begin{example}
+	Sea $E = \real^4$, $B = \setb{e_1, e_2, e_3, e_4}$, $f = e_1^* \otimes e_2^*
+	\otimes e_3^* \in T_2(E)$ y $s = (1,2,3) \in \mathcal{S}_3$, entonces
+	\[
+		(\underline{s}f)(v_1,v_2,v_3) = f(v_2,v_3,v_3)
+	\]
+\end{example}
