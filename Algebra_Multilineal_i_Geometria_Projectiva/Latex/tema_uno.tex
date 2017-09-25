@@ -217,7 +217,7 @@
 \end{proof}
 
 \begin{thm}[Método convergencia-pivote]
-    Dada una forma bilinial simética $\phi$, queremos encontrar una base de
+    Dada una forma bilineal simétrica $\phi$, queremos encontrar una base de
     $E$, $B_2$, en la cual $M_{B_2}(\phi)$ sea una matriz diagonal. Partimos
     de una base $B$ i de $M_B(\phi)$. El procesos es: operación con filas a
     las dos matrices y luego la misma operacion pero en la columnas de la
@@ -665,9 +665,8 @@ Recordemos que $T_p^q(E)$ es un $k$-ev.
 	\]
 \end{prop}
 \hfill
-\begin{example}
+\begin{example}~
 	\begin{itemize}
-		\item[]
 		\item $f \in T^1(E) = E^{**} = E$ por lo tanto $f = u$ y $\substack{
 		u_B = (x_1, \cdots, u_n) \\ u_{\overline{B}} = (\overline{x}_1, \cdots,
 		\overline{x}_n)}$, entonces
@@ -742,7 +741,8 @@ Recordemos que $T_p^q(E)$ es un $k$-ev.
 			s = t_1 \cdots t_p = l_1 \cdots l_q \implies p \equiv q \mod 2
 		\]
 	\item Sea $s \in \mathcal{S}_n$ y sea $s=t_1 \cdots t_p$ una descomposición de
-		$s$ en trasposiciones. Entonces, definimos el signo de $s$ como $(-1)^p$.
+		$s$ en trasposiciones. Entonces, definimos el signo de $s$ como 
+		$\varepsilon(s) = (-1)^p$.
 \end{itemize}
 
 \subsection{Tensores simétricos y antisimétricos}
@@ -756,8 +756,211 @@ Recordemos que $T_p^q(E)$ es un $k$-ev.
 \end{defi}
 \begin{example}
 	Sea $E = \real^4$, $B = \setb{e_1, e_2, e_3, e_4}$, $f = e_1^* \otimes e_2^*
-	\otimes e_3^* \in T_2(E)$ y $s = (1,2,3) \in \mathcal{S}_3$, entonces
+	\otimes e_3^* \in T_3(E)$ y $s = (1,2,3) \in \mathcal{S}_3$, entonces
 	\[
-		(\underline{s}f)(v_1,v_2,v_3) = f(v_2,v_3,v_3)
+		(\underline{s}f)(v_1,v_2,v_3) = f(v_2,v_3,v_1)
 	\]
 \end{example}
+
+\begin{prop}
+    Sea $E$ un $k$-ev. de dimensión $n$, sean $w_1, \dots, w_p \in T_1(E) = E^\ast$, 
+    y $s \in \mathcal{S}_p \ (t = s^{-1})$. Entonces 
+    \[\underline{s}(w_1 \otimes \dots \otimes w_p) = w_{t(1)}
+    \otimes \dots \otimes w_{t(p)}\]
+\end{prop}
+\begin{proof}
+    Sean $u_1, \dots, u_n \in E$ (obsérvese que $w_1 \otimes \dots \otimes w_p \in T_p(E)$)
+    \[\underline{s}(w_1 \otimes \dots \otimes w_p)(u_1,\dots, u_p) = (w_1 \otimes 
+    \dots \otimes w_p)(u_{s(1)}, \dots, u_{s(p)}) = w_1(u_{s(1)}) \cdot w_2(u_{s(2)}) 
+    \cdots w_p(u_{s(p)})\]
+    Dado que $s(i) = j \iff i = t(j)$, $w_i(u_{s_i}) = w_i(u_j) = w_{t(j)(u_j)}$. Con lo
+    que podemos reordenar el último producto como
+    \[w_{t(1)}(u_1) \cdot w_{t(2)}(u_2) \cdots w_{t(p)}(u_p) =w_{t(1)}
+    \otimes \dots \otimes w_{t(p)}(u_1,\dots, u_p)\]
+\end{proof}
+\begin{example}
+    \label{exemple_1.6.2}
+    Sea $E=\real^3$, $B = \setb{e_1,e_2,e_3}$, $B^\ast = 
+    \setb{e_1^\ast, e_2^\ast, e_3^\ast}$ para los dos siguientes ejemplos.
+
+    En el primero fijamos $(1,2) = s \in \mathcal{S}_2$. Entonces 
+    $s = (1,2) = s^{-1}=t$ y para los siguientes elementos de $T_2(E)$ se cumple:
+    \[f_1=e_1^\ast \otimes e_2^\ast \qquad \underline{s} f_1 = e_2^\ast \otimes 
+    e_1^\ast\]
+    \[f_2=e_1^\ast \otimes e_1^\ast \qquad \underline{s} f_2 = e_1^\ast \otimes 
+    e_1^\ast\]
+    \[f_3=e_2^\ast \otimes e_3^\ast \qquad \underline{s} f_3 = e_3^\ast \otimes 
+    e_2^\ast\]
+
+    En el segundo fijamos $(1,2,3) = s \in \mathcal(S)_3$. Entonces $t = s^{-1} = 
+    (1, 3, 2)$, es decir, que $t(1) = 3, t(2) = 1, t(3) = 2$, y para el siguiente 
+    elemento de $T_3(E)$ se cumple:
+    \[f = e_1^\ast \otimes e_2^\ast \otimes e_3^\ast \qquad 
+    \underline{s} f =  e_3^\ast \otimes e_1^\ast \otimes e_2^\ast\]
+\end{example}
+\begin{obs}
+\label{obs_1.6.1}
+    Sea $f_i \in T_p(E)$. Entonces $\underline{s}(\sum \alpha_i f_i) = \sum \alpha_i 
+    (\underline{s} f_i)$.
+    Por tanto, la proposición anterior sirve para $\forall f \in T_p(E)$.
+\end{obs}
+\begin{example}
+    Con las mismas hipótesis que en el primer caso del ejemplo \ref{exemple_1.6.2} 
+    se cumple:
+    \[f = 3e_1^\ast \otimes e_2^\ast + 5e_1^\ast \otimes e_1^\ast + 5e_2^\ast \otimes
+    e_3^\ast \qquad \underline{s}f = 3e_2^\ast \otimes e_1^\ast + 5e_1^\ast \otimes e_1^\ast 
+    + 5e_3^\ast \otimes e_2^\ast\]
+\end{example}
+\begin{defi}
+    Sea $E$ un $k-ev.$ de $\dim n$. Sea $f \in T_p(E)$.
+    \begin{enumerate}
+        \item
+            $f$ es simétrica $\iff \forall s \in \mathcal{S}_p \quad \underline{s}f = f$
+        
+        \item
+            $f$ es antisimétrica $\iff \forall s \in \mathcal{S}_p \quad \underline{s}f 
+            = \varepsilon (s) f$
+        
+        \item
+            $S_p(E) = \setb{f \in T_p(E) \mid f \text{ simétrica}} \subseteq T_p(E)$\\
+            $A_p(E) = \setb{f \in T_p(E) \mid f \text{ antisimétrica}} \subseteq T_P(E)$
+        
+    \end{enumerate}
+\end{defi}
+\begin{obs}
+    $S_p(E), A_p(E) \subseteq T_p(E)$ son s.e-v. (ver observación \ref{obs_1.6.1}).
+\end{obs}
+\begin{example}
+   Para los dos ejemplos, sea $E = \real^3$, sean $B$ y $B^\ast$ bases de $E$ 
+   y de $E^\ast$ correspondientemente. 
+    \begin{enumerate}
+        \item
+            Definimos $f = e_1^\ast \otimes e_2^\ast \in T_2(E)$
+            y $s = (1,2) \in \mathcal(S)_2$. Entonces            
+            $\mathcal{S}_2 = \setb{\Id, s}$ y $\varepsilon(\Id) = 1$, 
+            $\varepsilon(s) = -1$.
+            
+            \[
+            \left.
+                \begin{array}{r}
+                    \underline{\Id}(f) = f = \varepsilon (\Id) \cdot f\\
+                    \underline{s}(f) = e_2^\ast \otimes e_1^\ast \neq f\text{, } 
+                    \underline{s}(f)\neq -f
+                \end{array} 
+            \right \} 
+            \implies
+            \begin{array}{l}
+                f \notin S _2(E)\\
+                f \notin A_2(E)
+            \end{array}
+            \]      
+        \item
+            Como anteriormente, $\mathcal{S}_2 = \setb{\Id, s = (1,2)}$.
+            \begin{itemize}
+                \item
+                    Para $f = e_1^\ast \otimes e_2^\ast + e_2^\ast \otimes e_1^\ast$, 
+                    \[
+                        \left.
+                        \begin{array}{r}
+                            \underline{\Id}(f) = f\\
+                            \underline{s}(f) = e_2^\ast \otimes e_1^\ast
+                            + e_1^\ast \otimes e_2^\ast = f
+                        \end{array} 
+                        \right \} 
+                        \implies
+                        f \in S_2(E)
+                    \]
+                \item
+                    Para $f = e_1^\ast \otimes e_2^\ast - e_2^\ast \otimes e_1^\ast$, 
+                    \[
+                        \left.
+                        \begin{array}{r}
+                            \underline{\Id}(f) = f = \varepsilon(\Id)f\\
+                            \underline{s}(f) = e_2^\ast \otimes e_1^\ast
+                            - e_1^\ast \otimes e_2^\ast = -f = \varepsilon(s)f
+                        \end{array} 
+                        \right \} 
+                        \implies
+                        f \in A_2(E)
+                    \]
+            \end{itemize}
+        
+    \end{enumerate}
+\end{example}
+\begin{obs}~
+    \begin{itemize}
+        \item $\varepsilon (s) = (-1)^n$ si $\varepsilon (s) = t_1, \dots , t_n$, donde 
+        $t_1,\dots,t_n$ son transposiciones.
+        \item $\varepsilon (s_1 s_2) = \varepsilon (s_1) \varepsilon(s_2)$.
+        \item $s \in \mathcal{S}_p$. Definimos $A \in \real ^{p\times p}$, donde
+        $A_{i,j} = 1$ si $i = s(j)$ y $A_{i,j} = 0$ en otro caso. Entonces
+        $\det A = \varepsilon(s)$.       
+    \end{itemize}
+\end{obs}
+\begin{prop}
+    Sea $E$ un $k$-e.v. de dimensión $n$, sea $f \in T_p(E)$.
+    \begin{enumerate}
+        \item Podemos caracterizar los tensores simétricos como:
+        \[
+        \begin{split}\text{f simétrica } \iff &
+        \forall u_1,\dots,u_p \in E, \  \forall i,j \quad 
+        f(u_1,\dots,u_i,\dots,u_j,\dots,u_p) = \\ 
+        &f(u_1,\dots,u_j,\dots,u_i,\dots,u_p)
+        \end{split}
+        \]
+        \item Podemos caracterizar los tensores antisimétricos como: 
+        \[
+        \begin{split}\text{f antisimétrica} \iff & 
+        \forall u_1,\dots,u_p \in E, \  \forall i < j \quad
+        f(u_1,\dots,u_i,\dots,u_j,\dots,u_p) = \\ 
+        &-f(u_1,\dots,u_j,\dots,u_i,\dots,u_p)\\
+        \iff& \forall u_1,\dots,u_p \in E, \ \forall i < j \text{ si } u_i=u_j 
+        \text{ entonces } f(u_1,\dots,u_p) = 0.
+        \end{split}\]
+    \end{enumerate}
+\end{prop}
+\begin{proof}~
+    \begin{enumerate}
+        \item La implicación directa es una consecuencia de la definición de simetría.
+        
+        En el caso de la implicación conversa se cumple:
+        \[
+        \begin{split} \forall t \text{ transposición } \underline{t}f = f \implies & \forall 
+        t_1,\dots ,t_m \text{ transposiciones } \underline{t_1,\dots,t_m} f =\\
+        &\underline{t_1}(\underline{t_2}(\dots (\underline{t_m}f)\dots)) = f
+        \end{split}
+        \]
+        Finalmente, 
+        \[\forall s \in \mathcal{S}_p \quad s = t_1 \cdots t_m \implies \forall s \in 
+        \mathcal{S}_p \quad \underline{s}f = f \implies \text{ f es simétrica.}\]
+        
+        \item Veamos primero que la tercera condición implica la segunda.
+        \[\begin{split}
+        &\forall u_1,\dots,u_p \in E, \forall i < j \quad 
+        0 = f(u_1,\dots,u_i+u_j,\dots,u_i+u_j, \dots, u_p) =\\
+        &f(u_1,\dots,u_i,\dots,u_i,\dots,u_p)+
+        f(u_1,\dots,u_i,\dots,u_j,\dots,u_p)+\\
+        &f(u_1,\dots,u_j,\dots,u_i,\dots,u_p)+
+        f(u_1,\dots,u_j,\dots,u_j,\dots,u_p)=\\
+        &f(u_1,\dots,u_i,\dots,u_j,\dots,u_p)+
+        f(u_1,\dots,u_j,\dots,u_i,\dots,u_p)\implies\\
+        &f(u_1,\dots,u_i,\dots,u_j,\dots,u_p) = 
+        -f(u_1,\dots,u_j,\dots,u_i,\dots,u_p)
+        \end{split}\]
+        Veamos ahora que la segunda condición implica la primera. Suponiendo cierta
+        la segunda condición se cumple:
+        \[\underline{t}f = -f \implies \underline{t_1\cdots t_m}f = (-1)^mf =
+        \varepsilon(t_1\cdots t_m)f\]
+        Y entonces:
+        \[\forall s \in \mathcal{S}_p \quad s = t_1\cdots t_m \text{ y } \varepsilon(s) = (-1)^m 
+        \implies \forall s\in \mathcal{S}_p \quad \underline{s}f = \varepsilon(s)f
+        \implies f \in A_p(E)\]
+        Y, finalmente, que la primera implica la tercera. Por ser $f$ antisimétrica,
+        \[
+        \forall u_1,\dots,u_p \in E, \ \forall i < j \quad
+        f(u_1,\dots, u_i, \dots, u_j, \dots, u_p) = -f(u_1,\dots, u_j, \dots, u_i, \dots, u_p)
+        \]
+        Si $u_i = u_j$, entonces $f(u_1, \dots, u_p) = 0$.
+        
+    \end{enumerate}
+\end{proof}
