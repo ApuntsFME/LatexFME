@@ -1,0 +1,42 @@
+\section{Series numéricas e integrales impropias}
+
+\subsection{Series absolutamente convergentes y condicionalmente convergentes}
+
+\begin{proof}[(1.3.10)]
+    \[
+    s_{2n+2}=s_{2n}+(-a_{2n+1}+a_{2n+2}) \leq s_{2n} \rightarrow
+    (s_{2n}) \text{ decreixent} 
+    \]
+    \[
+    s_{2n+3}=s_{2n+1}+(a_{2n+2}-a_{2n+3}) \geq s_{2n+1}
+    \rightarrow (s_{2n+1}) \text{ creixent}
+    \]
+    
+    Por tanto, tenemos que: $s_{2n+1} \leq s_{2n} \leq s_0 = a_0
+    \implies (s_{2n+1})$ es creciente i acotada $\implies
+    (s_{2n+1})$ tiene limite $s$.
+    \[
+        lim(s_{2n}-s_{2n-1})=lim(a_n)=0 \implies lim(s_{2n}) = s
+        \implies lim(s_n)=s
+    \]
+    Finalmente, como $s$ esta dentro del intervalo de extremos
+    $s_n$, $s_{n+1}$ y su longitud es $a_{n+1}$, tenemos que $\mid
+    s-s_n \mid \leq a_{n+1}$.
+\end{proof}
+
+\subsection{Series de potencias}
+
+\begin{proof}[(1.4.2)]
+    Si $0 \leq s \leq r$ y $\sum |a_n| r^n$ converge $\implies \sum
+    |a_n|s_n$ también, porqué $|a_n|s^n \leq |a_n|r^n$.
+\end{proof}
+
+\begin{proof}[(1.4.4)]
+    Caso $0 < R < + \infty$: Sea $0<|x|<R$, $\exists c$ tal que
+    $|x|<cR \iff \frac{1}{R} < \frac{c}{|x|}$, si $n$
+    suficientemente grande, $|a_n|^{1/n} \leq \frac{c}{|x|} \iff
+    \mid a_nx^n \mid \leq c^n$ (serie geométrica de razón $c<1$). \\
+    Sea $|x|>R \iff \frac{1}{R} > \frac{1}{|x|}$, hay infinitos $n$
+    tales que $|a_n|^{1/n} > \frac{1}{|x|} \implies \mid a_nx^n \mid >1
+    \rightarrow a_nx^n$ no tiende a $0 \implies \sum a_nx^n$ no converge.
+\end{proof}
