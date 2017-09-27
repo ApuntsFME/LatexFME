@@ -1,9 +1,9 @@
-\section{Álgebra multilineal}
+ection{Álgebra multilineal}
 
 \subsection{Formas Cuadráticas}
 
 \begin{defi}
-	Sea $E$ un $k$-ev. Diremos que una aplicación
+	Sea $\E$ un $\k$-ev. Diremos que una aplicación
 	\[
 		\begin{aligned}
 			\phi \colon E \times E &\to k \\
@@ -18,7 +18,7 @@
 	$\forall u,v,u_1,u_2 \in E$ y $\forall \lambda \in k$.
 \end{defi}
 \begin{defi}
-	Sea $\phi$ una forma bilineal simétrica sobre un $k$-ev. $E$.
+	Sea $\phi$ una forma bilineal simétrica sobre un $\k$-ev. $\E$.
 	Diremos que la aplicación
 	\[
 		\begin{aligned}
@@ -32,7 +32,7 @@
 	Se cumple que $q(\lambda u) = \lambda^2 q(u)$
 \end{obs}
 \begin{lema}
-	Sea $\phi$ una forma bilieal simétrica sobre un $k$-ev. $E$ con $car E \neq 2$
+	Sea $\phi$ una forma bilieal simétrica sobre un $\k$-ev. $\E$ con $car \E \neq 2$
 	y sea $q$ la forma cuadrática asociada a $\phi$, entonces
 	\[
 		\phi(u,v) = \frac{1}{2} ( q(u+v) - q(u) - q(v))
@@ -48,7 +48,7 @@
 	\]
 \end{proof}
 \begin{defi}
-	Sea $\phi$ una forma bilineal simétrica/cuadrática sobre un $k$-ev. $E$ y sea
+	Sea $\phi$ una forma bilineal simétrica/cuadrática sobre un $\k$-ev. $\E$ y sea
 	$B = \{u_1, \cdots, u_n \}$ una base. La matriz de $\phi$ en base $B$ es
 	\[
 		M_B(\phi) = (a_{ij}) = (\phi(u_i,u_j))
@@ -58,21 +58,21 @@
 	La matriz $M_B(\phi)$ es simétrica
 \end{obs}
 \begin{defi}
-	Sea $E$ un $k$-ev. y sea $\phi \colon E \times E \to k$ una
+	Sea $\E$ un $\k$-ev. y sea $\phi \colon \E \times \E \to \k$ una
 	forma bilineal simétrica.
 	\begin{itemize}
 		\item Diremos que $\phi$ es definida positiva si 
-		\[ \phi(x,x) > 0, \quad \forall x \in E
+		\[ \phi(x,x) > 0, \quad \forall x \in \E
 		\quad x \neq \vec{0} \]
 		\item Diremos que $\phi$ es definida negativa si
-		\[ \phi(x,x) < 0, \quad \forall x \in E
+		\[ \phi(x,x) < 0, \quad \forall x \in \E
 		\quad x \neq \vec{0} \]
 		\item Diremos que $\phi$ es no definida en cualquier otro caso.
 	\end{itemize}
 \end{defi}
 \begin{obs}
 	Si $\phi$ es una forma bilineal simétrica y definida positiva
-	entonces define un producto escalar sobre $E$.
+	entonces define un producto escalar sobre $\E$.
 \end{obs}
 \begin{defi}
 	Dada una matriz cuadrada $A$ (dim $n$) definimos
@@ -82,19 +82,19 @@
 	\]
 \end{defi}
 \begin{thm}[de Sylvester]
-	Sea $E$ un $k$-ev. de dimension $n$ y sea
-	$\phi \colon E\times E \to k$ una forma bilineal simétrica,
+	Sea $\E$ un $\k$-ev. de dimension $n$ y sea
+	$\phi \colon \E\times \E \to \k$ una forma bilineal simétrica,
 	entonces
 	\[
 	\phi \text{ es definida positiva }\iff \delta_k(M_B(\phi)) > 0
-	\quad\forall 1 \leq k \leq n \quad\forall B \text{ base de } E
+	\quad\forall 1 \leq k \leq n \quad\forall B \text{ base de } \E
 	\]
 \end{thm}
 \begin{proof}
 	$\implies$
 	
 	Como $\phi$ es definida positiva, define un producto escalar
-	sobre $E$. Si tomamos una base $B$ cualquiera, mediante
+	sobre $\E$. Si tomamos una base $B$ cualquiera, mediante
 	Gramm-Schmidt podemos construir una base ortogonal
 	$B_2 = \{v_1, \cdots, v_n \}$. Por tanto
 	\[
@@ -148,7 +148,7 @@
 	\begin{itemize}
 		\item $\forall k$, $\left< v_1, \cdots, v_k \right> =
 		\left<u_1,\cdots,u_k\right>$
-		En particular, $B_2 = \{v_1,\cdots, v_n\}$ es base de $E$.
+		En particular, $B_2 = \{v_1,\cdots, v_n\}$ es base de $\E$.
 		\item $\phi(v_k, v_i) = 0$ $\forall 1 \leq i \leq k-1$
 		porque $v_i \in \left< u_1, \cdots, u_i \right>$ y hemos tomado los 
 		$\alpha$ de manera que $\phi(v_k, u_i) = 0 \implies B_2$ 
@@ -204,7 +204,7 @@
 		\frac{\delta_k(M_B(\phi))}{\delta_{k-1}(M_B(\phi))}
 		= \phi(v_k,v_k) > 0
 	\]
-	Finalmente, $\forall x \in E$ 
+	Finalmente, $\forall x \in \E$ 
 	\[
 		\phi(x,x) =
 		\phi\left(
@@ -218,7 +218,7 @@
 
 \begin{thm}[Método convergencia-pivote]
     Dada una forma bilineal simétrica $\phi$, queremos encontrar una base de
-    $E$, $B_2$, en la cual $M_{B_2}(\phi)$ sea una matriz diagonal. Partimos
+    $\E$, $B_2$, en la cual $M_{B_2}(\phi)$ sea una matriz diagonal. Partimos
     de una base $B$ i de $M_B(\phi)$. El procesos es: operación con filas a
     las dos matrices y luego la misma operacion pero en la columnas de la
     primera matriz únicamente (véase ejemplo).
@@ -325,28 +325,28 @@
 \subsection{Espacio dual}
 
 \begin{defi}
-	Sea $E$ un $k$-ev. Definimos el espacio Dual de $E$ como
-	$E^* = \{ \phi : E \to k \text{ lineales} \}$ (también es un
-	$k$-espacio vectorial)
+	Sea $\E$ un $\k$-ev. Definimos el espacio Dual de $\E$ como
+	$\E^* = \{ \phi : \E \to \k \text{ lineales} \}$ (también es un
+	$\k$-espacio vectorial)
 \end{defi}
 \begin{obs}
-	Para definir $E^*$ tenemos que usar bases de $E$.
+	Para definir $\E^*$ tenemos que usar bases de $\E$.
 \end{obs}
 \begin{defi}
-	Si $B = \{ u_1,\cdots, u_n \}$ es una base de $E$ ($k$-ev.)
+	Si $B = \{ u_1,\cdots, u_n \}$ es una base de $\E$ ($\k$-ev.)
 	definimos
 	\[
 		\begin{aligned}
-			u_i^* \colon E &\to k\\
+			u_i^* \colon \E &\to \k\\
 			u_j &\mapsto u_i^*(u_j) = \delta_{ij}
 		\end{aligned}
 	\]
 	Y llamaremos base dual de $B$ a
 	$B^* = \{ u_1^*, \cdots, u_n^* \}$ (que efectivamente es una
-	base de $E^*$).
+	base de $\E^*$).
 \end{defi}
 \begin{obs}
-	En particular si $w \in E$ y
+	En particular si $w \in \E^*$ y
 	$\displaystyle w = \sum_{i=1}^{n} a_i u_i^*$, se cumple que:
 	\[
 		w(u_j) = \sum_{i=1}^{n} a_i u_i^*(u_j) = a_j
@@ -356,7 +356,7 @@
 \end{obs}
 
 \begin{prop}[(cambios de base)]
-	Sean $B_1$ y $B_2$ bases de $E$ ($k$-ev. de $\dim = n$) y
+	Sean $B_1$ y $B_2$ bases de $\E$ ($\k$-ev. de $\dim  \E = n$) y
 	sean $B_1^*$ y $B_2^*$ las bases duales de $B_1$ y $B_2$.
 	Si $S_{B_1B_2}$ es la matriz de cambio de base de $B_1$ a
 	$B_2$, entonces:
@@ -366,47 +366,47 @@
 \end{prop}
 
 \begin{prop}[(aplicaciones lineales)]
-	Sean $E$ y $F$ $k$-ev. y sea $\phi \colon E \to F$ una
+	Sean $\E$ y $\bb{F}$ $\k$-ev. y sea $\phi \colon \E \to \bb{F}$ una
 	aplicación lineal, entonces $\phi$ induce la aplicación
 	lineal siguiente:
 	\[
 		\begin{aligned}
-		\phi^* \colon F^* &\to E^*\\
+		\phi^* \colon \bb{F}^* &\to \E^*\\
 		w &\mapsto \phi^*(w) = w \circ \phi
 		\end{aligned}
 	\]
 \end{prop}
 \begin{obs}
-	Si $E$ y $F$ son de dimensión finita, $\phi$ admite expresión
+	Si $\E$ y $\bb{F}$ son de dimensión finita, $\phi$ admite expresión
 	matricial (en coordenadas). En particular
-	$\displaystyle \begin{rcases} B_1 \text{ base de } E \\ B_2
-	\text{ base de } F \end{rcases} \implies \phi$ viene dada por
+	$\displaystyle \begin{rcases} B_1 \text{ base de } \E \\ B_2
+	\text{ base de } \bb{F} \end{rcases} \implies \phi$ viene dada por
 	$M_{B_1,B_2}(\phi)$ y $\displaystyle \begin{rcases} B_1^*
-	\text{ base de } E^* \\ B_2^* \text{ base de } F^*
+	\text{ base de } \E^* \\ B_2^* \text{ base de } \bb{F}^*
 	\end{rcases} \implies \phi^*$ viene dada por 
 	$M_{B_2^*,B_1^*}(\phi^*) = (M_{B_1,B_2}(\phi))^T$.
 \end{obs}
 \begin{prop}[(espacio bidual)]
-	Dado $E$ $k$-ev. podemos definir $E^*,E^{**},\cdots$. En
-	particular tenemos que $E^{**}$ es canónicamente isomorfo a
-	$E$ mediante el isomorfismo
+	Dado $\E$ $\k$-ev. podemos definir $\E^*,\E^{**},\cdots$. En
+	particular tenemos que $\E^{**}$ es canónicamente isomorfo a
+	$\E$ mediante el isomorfismo
 	\[
 		\begin{aligned}
-			\phi \colon E &\to E^{**}\\
+			\phi \colon \E &\to \E^{**}\\
 			u &\mapsto \phi(u)
 		\end{aligned}
 	\]
 	donde
 	\[
 		\begin{aligned}
-			\phi(u) \colon E^* &\to k \\
+			\phi(u) \colon \E^* &\to \k \\
 			w &\mapsto (\phi(u))(w) = w(u)
 		\end{aligned}
 	\]
 \end{prop}
 \begin{obs}
 	Como este isomorfismo es canónico (no depende de las bases),
-	$E \cong E^{**}$ y no distinguimos entre $E$ y $E^{**}$
+	$\E \cong \E^{**}$ y no distinguimos entre $\E$ y $\E^{**}$
 \end{obs}
 
 
@@ -418,55 +418,55 @@
 \subsection{Tensores}
 
 \begin{defi}
-	Sean $E_1,\cdots , E_r$ $k$-ev. Diremos que
-	$f \colon E_1 \times \cdots \times E_r \to k$ es un tensor (o una aplicacion
-	multilineal) si $\forall i=1,\cdots , r$ y $\forall v_j \in E_j$ ($i \neq j$)
+	Sean $\E_1,\cdots , \E_r$ $\k$-ev. Diremos que
+	$f \colon \E_1 \times \cdots \times \E_r \to \k$ es un tensor (o una aplicacion
+	multilineal) si $\forall i=1,\cdots , r$ y $\forall v_j \in \E_j$ ($i \neq j$)
 	se cumple que
 	\[
 		 \begin{aligned}
-			 \phi_i \colon E_i &\to k \\
+			 \phi_i \colon \E_i &\to \k \\
 			 v &\mapsto \phi(u)=f(v_1,\cdots , v_{i-1}, v, v_{i+1}, \cdots , v_r)
 		 \end{aligned}
 	\]
 	es una aplicación lineal.
 \end{defi}
 \begin{defi}
-	Sea $E$ un $k$-ev. Llamaremos tensor de tipo $(p,q)$ (o tensor p veces
+	Sea $\E$ un $\k$-ev. Llamaremos tensor de tipo $(p,q)$ (o tensor p veces
 	covariante y q veces contravariante) (o tensor p-covariante y q-contravariante)
 	a un tensor
 	\[
 		\begin{aligned}
-			f \colon \overbrace{E \times \cdots \times E}^p\times
-			\overbrace{E^* \times \cdots \times E^*}^q&\to k \\
+			f \colon \overbrace{\E \times \cdots \times \E}^p\times
+			\overbrace{\E^* \times \cdots \times \E^*}^q&\to \k \\
 			(v_1, \cdots, v_p, w_1, \cdots, w_q) &\mapsto
 			f(v_1,\cdots,v_p,w_1,\cdots,w_q)
 		\end{aligned}
 	\]
 \end{defi}
 \begin{obs}
-	Al conjunto de tensores  de este tipo se le denota como $T_p^q(E)$.
+	Al conjunto de tensores  de este tipo se le denota como $T_p^q(\E)$.
 \end{obs}
 \begin{obs}
-	Por convenio $T_0(E) = T^0(E) = T_0^0(E) = k$.
+	Por convenio $T_0(\E) = T^0(\E) = T_0^0(\E) = \k$.
 \end{obs}
 \begin{example}
-	Sea $E$ un $k$-ev.
+	Sea $\E$ un $\k$-ev.
 	\begin{itemize}
-		\item $T_1(E) = T_1^0(E) = E^*$
-		\item $T^1(E) = T_0^1 = E^{**}$ ($\cong E$)
-		\item $T_2(E) = T_2^0(E) = \{\text{formas bilineales de } E \text{ en } k\}$
+		\item $T_1(\E) = T_1^0(\E) = \E^*$
+		\item $T^1(\E) = T_0^1 = \E^{**}$ ($\cong \E$)
+		\item $T_2(\E) = T_2^0(\E) = \{\text{formas bilineales de } \E \text{ en } \k\}$
 	\end{itemize}
 \end{example}
 \begin{prop}
-	$T_p^q(E) = T_q^p(E^*)$ (cambiando el orden)
+	$T_p^q(\E) = T_q^p(\E^*)$ (cambiando el orden)
 \end{prop}
 \begin{prop}
-	$T_p^q(E)$ tiene estructura de $k$-espacio vectorial. Si $f, g \in T_p^q(E)$ y
-	$\alpha , \beta \in k$
+	$T_p^q(\E)$ tiene estructura de $\k$-espacio vectorial. Si $f, g \in T_p^q(\E)$ y
+	$\alpha , \beta \in \k$
 	\[
 		\begin{aligned}
-			\alpha f + \beta g \colon \overbrace{E \times \cdots E}^p \times
-			\overbrace{E^* \times \cdots \times E^*}^q &\to k \\
+			\alpha f + \beta g \colon \overbrace{\E \times \cdots \E}^p \times
+			\overbrace{\E^* \times \cdots \times \E^*}^q &\to \k \\
 			(v_1, \cdots, v_p, w_1, \cdots, w_q) &\mapsto (\alpha f + \beta g)
 			(v_1, \cdots, v_p, w_1, \cdots, w_q)
 		\end{aligned}
@@ -481,12 +481,12 @@
 	\]
 \end{prop}
 \begin{defi}[(producto tensorial)]
-	Dados $f \in T_p^q(E)$ y $g \in T_{p'}^{q'}(E)$, definimos el producto
+	Dados $f \in T_p^q(\E)$ y $g \in T_{p'}^{q'}(\E)$, definimos el producto
 	tensorial de $f$ y $g$ como
 	\[
 		\begin{aligned}
-			f \otimes g \colon \overbrace{E \times \cdots \times E}^{p+p'}
-			\times \overbrace{E^* \times \cdots \times E^*}^{q+q'} &\to k \\
+			f \otimes g \colon \overbrace{\E \times \cdots \times \E}^{p+p'}
+			\times \overbrace{\E^* \times \cdots \times \E^*}^{q+q'} &\to \k \\
 			(v_1, \cdots, v_p, \overline{v_1}, \cdots \overline{v_{p'}},
 			w_1, \cdots, w_q, \overline{w_1}, \cdots, \overline{w_{q'}})
 			&\mapsto f(v_1, \cdots, v_p, w_1, \cdots, w_p) + \\
@@ -497,10 +497,10 @@
 \end{defi}
 \begin{obs}
 	Si $f$ y $g$ son tensores, entonces $f \otimes g$ también lo es. Además
-	$f \otimes g \in T_{p+p'}^{q+q'}(E)$.
+	$f \otimes g \in T_{p+p'}^{q+q'}(\E)$.
 \end{obs}
 \begin{prop}
-	Sean  $f \in T_p^q(E)$, $g \in T_{p'}^{q'}$ y $h \in T_{p''}^{q''}(E)$.
+	Sean  $f \in T_p^q(\E)$, $g \in T_{p'}^{q'}$ y $h \in T_{p''}^{q''}(\E)$.
 	\begin{itemize}
 		\item $\otimes$ {\bfseries NO} es abeliano. En general $f \otimes g \neq
 		g \otimes f$.
@@ -514,7 +514,7 @@
 	\end{itemize}
 \end{prop}
 \begin{example}
-	Sea $E = \real^3$, $B = \{e_1, e_2, e_3\}$, $B^* = \{ e_1^*, e_2^*, e_3^*\}$.
+	Sea $\E = \real^3$, $B = \{e_1, e_2, e_3\}$, $B^* = \{ e_1^*, e_2^*, e_3^*\}$.
 	Y consideramps el producto tensorial de los tensores $e_1^*$ y $e_2^*$ sobre
 	los vectores $v_1 = (x_1, y_1, z_1)$ y $v_2 = (x_2,y_2,z_2)$.
 	\[
@@ -526,9 +526,9 @@
 	\]
 \end{example}
 \begin{example}
-	Sea $E = \real^2$, $B = \{e_1, e_2\}$, $B* = \{e_1^*, e_2^*\}$, entonces
+	Sea $\E = \real^2$, $B = \{e_1, e_2\}$, $B* = \{e_1^*, e_2^*\}$, entonces
 	\[
-		e_1 \otimes e_2 \in T^2(E) \qquad \begin{cases}
+		e_1 \otimes e_2 \in T^2(\E) \qquad \begin{cases}
 			(e_1 \otimes e_2) = (e_1^{**} \otimes e_2^{**})(e_1^*,e_1^*) =
 			e_1(e_1)e_2(e_1) = 0 \\
 			(e_1 \otimes e_2)(e_1^*,e_2^*) = 1 \\
@@ -538,7 +538,7 @@
 	\]
 \end{example}
 \begin{obs}[a] \label{obs:tens_cero}
-	Si $E$ es un $k$-ev de dimensión $n$ y $B = \{e_1, \cdots, e_n\}$
+	Si $\E$ es un $\k$-ev de dimensión $n$ y $B = \{e_1, \cdots, e_n\}$
 	\[
 		(\underbrace{e_{i_1}^* \otimes \cdots \otimes e_{i_p}^*}_
 		{I = \setb{i_1, \cdots, i_p}} \otimes
@@ -553,7 +553,7 @@
 	\]
 \end{obs}
 \begin{obs}
-	Sean $f,g \in T_p^q(E)$ entonces
+	Sean $f,g \in T_p^q(\E)$ entonces
 	\[
 		f=g \iff \substack{\forall e_{i_1}, \cdots, e_{i_p} \in B \\ \forall e_{j_1}^*, \cdots,
 		e_{j_q}^* \in B^*} \quad f(e_{i_1}, \cdots, e_{j_q}^*) =
@@ -561,23 +561,23 @@
 	\]
 \end{obs}
 
-\subsection{Dimensión y bases de $T_p^q(E)$}
+\subsection{Dimensión y bases de $T_p^q(\E)$}
 
-Recordemos que $T_p^q(E)$ es un $k$-ev.
+Recordemos que $T_p^q(\E)$ es un $\k$-ev.
 
-\begin{thm}[(base de $T_p^q(E)$)]
-	Sea $E$ un $k$-ev. de dimensión $n$ y sea $B = \setb{e_1, \cdots, e_n}$,
+\begin{thm}[(base de $T_p^q(\E)$)]
+	Sea $\E$ un $\k$-ev. de dimensión $n$ y sea $B = \setb{e_1, \cdots, e_n}$,
 	entonces
 \begin{enumerate}[i)]
-		\item $\dim_k T_p^q(E) = n^{p+q}$
-		\item \label{base_2} Una base de $T_p^q(E)$ es
+		\item $\dim_k T_p^q(\E) = n^{p+q}$
+		\item \label{base_2} Una base de $T_p^q(\E)$ es
 		\[
 			B_p^q = \left\{ e_{i_1}^* \otimes \cdots \otimes e_{i_p}^* \otimes
 			e_{j_1} \otimes \cdots \otimes e_{j_q} \vert
 			\substack{i_1, \cdots, i_p \in \setb{1,\cdots,n} \\
 				j_1, \cdots, j_1 \in \setb{1,\cdots,n}} \right\}
 		\]
-		\item \label{base_3} Si $f \in T_p^q(E)$, las coordenadas de $f$ en la base $B_p^q$ son
+		\item \label{base_3} Si $f \in T_p^q(\E)$, las coordenadas de $f$ en la base $B_p^q$ son
 		\[
 			f_{B_p^q} = (f(e_{i_1}, \cdots, e_{i_p}, e_{j_1}^*, \cdots, e_{j_q}^*))
 		\]
@@ -598,7 +598,7 @@ Recordemos que $T_p^q(E)$ es un $k$-ev.
 			= \alpha_{I_0J_0}
 		\]
 		(Por la \ref{obs:tens_cero}). Veamos ahora que $B_p^q$
-		es generadora. Sea $f \in T_p^q(E)$, definimos $g \in T_p^q(E)$ como
+		es generadora. Sea $f \in T_p^q(\E)$, definimos $g \in T_p^q(\E)$ como
 		\[
 			g = \sum_{\forall I,J} (f(e_{i_1}, \cdots, e_{i_p}, e_{j_1}^*, \cdots,
 			e_{j_q}^*)(e_{i_1}^* \otimes \cdots \otimes e_{i_p}^* \otimes e_{j_1}
@@ -614,18 +614,18 @@ Recordemos que $T_p^q(E)$ es un $k$-ev.
 	\end{enumerate}
 \end{proof}
 \begin{example}
-	Sea $E = \real^n$, $B = \setb{e_1, \cdots, e_n}$ y
+	Sea $\E = \real^n$, $B = \setb{e_1, \cdots, e_n}$ y
 	$B^* = \setb{e_1^* \cdots e_n^*}$
 	\begin{itemize}
 		\item Sea $u \in \real^n$
 		\[
 			u = u(e_1^*) + \cdots + u(e_n^*) \qquad (B_0^1 = B)
 		\]
-		\item Sea $w \in T_1^0(E) (= E^*)$
+		\item Sea $w \in T_1^0(\E) (= \E^*)$
 		\[
 			w = w(e_1)e_1^* + \cdots + w(e_n)e_n^* \qquad (B_1^0 = B^*)
 		\]
-		\item Sea $n = 3$ y sea $f \in T_2(E)$
+		\item Sea $n = 3$ y sea $f \in T_2(\E)$
 		\begin{gather*}
 			B_2^0 = \setb{e_1^* \otimes e_1^*, e_1^* \otimes e_2^*,
 			\cdots e_3^* \otimes e_3^*} \\ f = f(e_1,e_1)e_1^*\otimes e_1^* +
@@ -634,7 +634,7 @@ Recordemos que $T_p^q(E)$ es un $k$-ev.
 	\end{itemize}
 \end{example}
 \begin{prop}[ (cambio de base) ]
-	Sea $E$ un $k$-ev. de dimensión $n$ y sean $B = \setb{e_1, \cdots, e_n}$ y
+	Sea $\E$ un $\k$-ev. de dimensión $n$ y sean $B = \setb{e_1, \cdots, e_n}$ y
 	$\overline{B} = \setb{u_1, \cdots, u_n}$. Sea $S = (s_j^i)$ la matriz de
 	cambio de base de $\overline{B}$ a $B$ y sea $T = (t_ j^i)$ su inversa.
 	De manera que tenemos esta relación:
@@ -642,18 +642,18 @@ Recordemos que $T_p^q(E)$ es un $k$-ev.
 		\begin{tikzpicture}
 			\node (B) {$\overline{B}$};
 			\node[left=of B] {$B$}
-			edge[<-,bend left=45] node[auto] {$S$} (B)
-			edge[->,bend right=45] node[auto] {$T$} (B);
+			edge[<-,bend left=30] node[auto] {$S$} (B)
+			edge[->,bend right=30] node[auto] {$T$} (B);
 		\end{tikzpicture}
 		\qquad
 		\begin{tikzpicture}
-		\node (B) {$\overline{B}^*$};
-		\node[left=of B] {$B^*$} 
-		edge[->,bend left=45] node[auto] {$S^t$} (B)
-		edge[<-,bend right=45] node[auto] {$T^t$} (B);
+			\node (B) {$\overline{B}^*$};
+			\node[left=of B] {$B^*$} 
+			edge[->,bend left=30] node[auto] {$S^t$} (B)
+			edge[<-,bend right=30] node[auto] {$T^t$} (B);
 		\end{tikzpicture}
 	\]
-	Sea $f \in T_p^q(E)$ y sean
+	Sea $f \in T_p^q(\E)$ y sean
 	\begin{gather*}
 		f_B = \left( \alpha_{IJ} \right)_{I,J} = \left( f(e_{i_1}, \cdots,e_{i_p},
 		e_{j_1}^*, \cdots, e_{j_q}^*) \right)_{I,J} \\
@@ -673,7 +673,7 @@ Recordemos que $T_p^q(E)$ es un $k$-ev.
 \begin{example}
 	\begin{itemize}
                 \item []
-		\item $f \in T^1(E) = E^{**} = E$ por lo tanto $f = u$ y $\substack{
+		\item $f \in T^1(\E) = \E^{**} = \E$ por lo tanto $f = u$ y $\substack{
 		u_B = (x_1, \cdots, u_n) \\ u_{\overline{B}} = (\overline{x}_1, \cdots,
 		\overline{x}_n)}$, entonces
 		\[
@@ -688,7 +688,7 @@ Recordemos que $T_p^q(E)$ es un $k$-ev.
 				x_n
 			\end{pmatrix}
 		\]
-		\item $f \in T_1(E) = E^*$ por lo tanto $f = w$ y $\substack{
+		\item $f \in T_1(\E) = \E^*$ por lo tanto $f = w$ y $\substack{
 		w_B = (x_1, \cdots, u_n) \\ w_{\overline{B}} = (\overline{x}_1, \cdots,
 		\overline{x}_n)}$, entonces
 		\[
@@ -703,7 +703,7 @@ Recordemos que $T_p^q(E)$ es un $k$-ev.
 				x_n
 			\end{pmatrix}
 		\]
-		\item $f \in T_2(E)$ por lo tanto $f$ es una forma bilineal y $\substack{
+		\item $f \in T_2(\E)$ por lo tanto $f$ es una forma bilineal y $\substack{
 		f_B = A \in M_{n,n}(k) \\ f_{\overline{B}} = \overline{A} \in M_{n,n}(k)}$,
 		entonces
 		\[
@@ -754,28 +754,28 @@ Recordemos que $T_p^q(E)$ es un $k$-ev.
 \subsection{Tensores simétricos y antisimétricos}
 
 \begin{defi}
-	Sea $E$ un $k$-ev. de dimensión $n$, sea $f \in T_p(E)$ y $s \in\mathcal{S}_p$,
-	entonces, definimos $(\underline{s}f) \in T_p(E)$ como
+	Sea $\E$ un $\k$-ev. de dimensión $n$, sea $f \in T_p(\E)$ y $s \in\mathcal{S}_p$,
+	entonces, definimos $(\underline{s}f) \in T_p(\E)$ como
 	\[
 		(\underline{s}f)(v_1, \cdots, v_p) = f(v_{s(1)}, \cdots, v_{s(p)})
 	\]
 \end{defi}
 \begin{example}
-	Sea $E = \real^4$, $B = \setb{e_1, e_2, e_3, e_4}$, $f = e_1^* \otimes e_2^*
-	\otimes e_3^* \in T_3(E)$ y $s = (1,2,3) \in \mathcal{S}_3$, entonces
+	Sea $\E = \real^4$, $B = \setb{e_1, e_2, e_3, e_4}$, $f = e_1^* \otimes e_2^*
+	\otimes e_3^* \in T_3(\E)$ y $s = (1,2,3) \in \mathcal{S}_3$, entonces
 	\[
 		(\underline{s}f)(v_1,v_2,v_3) = f(v_2,v_3,v_1)
 	\]
 \end{example}
 
 \begin{prop}
-    Sea $E$ un $k$-ev. de dimensión $n$, sean $w_1, \dots, w_p \in T_1(E) = E^\ast$, 
+    Sea $\E$ un $\k$-ev. de dimensión $n$, sean $w_1, \dots, w_p \in T_1(\E) = \E^\ast$, 
     y $s \in \mathcal{S}_p \ (t = s^{-1})$. Entonces 
     \[\underline{s}(w_1 \otimes \dots \otimes w_p) = w_{t(1)}
     \otimes \dots \otimes w_{t(p)}\]
 \end{prop}
 \begin{proof}
-    Sean $u_1, \dots, u_n \in E$ (obsérvese que $w_1 \otimes \dots \otimes w_p \in T_p(E)$)
+    Sean $u_1, \dots, u_n \in \E$ (obsérvese que $w_1 \otimes \dots \otimes w_p \in T_p(\E)$)
     \[\underline{s}(w_1 \otimes \dots \otimes w_p)(u_1,\dots, u_p) = (w_1 \otimes 
     \dots \otimes w_p)(u_{s(1)}, \dots, u_{s(p)}) = w_1(u_{s(1)}) \cdot w_2(u_{s(2)}) 
     \cdots w_p(u_{s(p)})\]
@@ -786,11 +786,11 @@ Recordemos que $T_p^q(E)$ es un $k$-ev.
 \end{proof}
 \begin{example}
     \label{exemple_1.6.2}
-    Sea $E=\real^3$, $B = \setb{e_1,e_2,e_3}$, $B^\ast = 
+    Sea $\E=\real^3$, $B = \setb{e_1,e_2,e_3}$, $B^\ast = 
     \setb{e_1^\ast, e_2^\ast, e_3^\ast}$ para los dos siguientes ejemplos.
 
     En el primero fijamos $(1,2) = s \in \mathcal{S}_2$. Entonces 
-    $s = (1,2) = s^{-1}=t$ y para los siguientes elementos de $T_2(E)$ se cumple:
+    $s = (1,2) = s^{-1}=t$ y para los siguientes elementos de $T_2(\E)$ se cumple:
     \[f_1=e_1^\ast \otimes e_2^\ast \qquad \underline{s} f_1 = e_2^\ast \otimes 
     e_1^\ast\]
     \[f_2=e_1^\ast \otimes e_1^\ast \qquad \underline{s} f_2 = e_1^\ast \otimes 
@@ -800,15 +800,15 @@ Recordemos que $T_p^q(E)$ es un $k$-ev.
 
     En el segundo fijamos $(1,2,3) = s \in \mathcal(S)_3$. Entonces $t = s^{-1} = 
     (1, 3, 2)$, es decir, que $t(1) = 3, t(2) = 1, t(3) = 2$, y para el siguiente 
-    elemento de $T_3(E)$ se cumple:
+    elemento de $T_3(\E)$ se cumple:
     \[f = e_1^\ast \otimes e_2^\ast \otimes e_3^\ast \qquad 
     \underline{s} f =  e_3^\ast \otimes e_1^\ast \otimes e_2^\ast\]
 \end{example}
 \begin{obs}
 \label{obs_1.6.1}
-    Sea $f_i \in T_p(E)$. Entonces $\underline{s}(\sum \alpha_i f_i) = \sum \alpha_i 
+    Sea $f_i \in T_p(\E)$. Entonces $\underline{s}(\sum \alpha_i f_i) = \sum \alpha_i 
     (\underline{s} f_i)$.
-    Por tanto, la proposición anterior sirve para $\forall f \in T_p(E)$.
+    Por tanto, la proposición anterior sirve para $\forall f \in T_p(\E)$.
 \end{obs}
 \begin{example}
     Con las mismas hipótesis que en el primer caso del ejemplo \ref{exemple_1.6.2} 
@@ -818,7 +818,7 @@ Recordemos que $T_p^q(E)$ es un $k$-ev.
     + 5e_3^\ast \otimes e_2^\ast\]
 \end{example}
 \begin{defi}
-    Sea $E$ un $k-ev.$ de $\dim n$. Sea $f \in T_p(E)$.
+    Sea $\E$ un $\k$-ev. de $\dim n$. Sea $f \in T_p(\E)$.
     \begin{enumerate}
         \item
             $f$ es simétrica $\iff \forall s \in \mathcal{S}_p \quad \underline{s}f = f$
@@ -828,20 +828,20 @@ Recordemos que $T_p^q(E)$ es un $k$-ev.
             = \varepsilon (s) f$
         
         \item
-            $S_p(E) = \setb{f \in T_p(E) \mid f \text{ simétrica}} \subseteq T_p(E)$\\
-            $A_p(E) = \setb{f \in T_p(E) \mid f \text{ antisimétrica}} \subseteq T_P(E)$
+            $S_p(\E) = \setb{f \in T_p(\E) \mid f \text{ simétrica}} \subseteq T_p(\E)$\\
+            $A_p(\E) = \setb{f \in T_p(\E) \mid f \text{ antisimétrica}} \subseteq T_P(\E)$
         
     \end{enumerate}
 \end{defi}
 \begin{obs}
-    $S_p(E), A_p(E) \subseteq T_p(E)$ son s.e-v. (ver observación \ref{obs_1.6.1}).
+    $S_p(\E), A_p(\E) \subseteq T_p(\E)$ son s.e-v. (ver observación \ref{obs_1.6.1}).
 \end{obs}
 \begin{example}
-   Para los dos ejemplos, sea $E = \real^3$, sean $B$ y $B^\ast$ bases de $E$ 
-   y de $E^\ast$ correspondientemente. 
+   Para los dos ejemplos, sea $\E = \real^3$, sean $B$ y $B^\ast$ bases de $\E$ 
+   y de $\E^\ast$ correspondientemente. 
     \begin{enumerate}
         \item
-            Definimos $f = e_1^\ast \otimes e_2^\ast \in T_2(E)$
+            Definimos $f = e_1^\ast \otimes e_2^\ast \in T_2(\E)$
             y $s = (1,2) \in \mathcal(S)_2$. Entonces            
             $\mathcal{S}_2 = \setb{\Id, s}$ y $\varepsilon(\Id) = 1$, 
             $\varepsilon(s) = -1$.
@@ -856,8 +856,8 @@ Recordemos que $T_p^q(E)$ es un $k$-ev.
             \right \} 
             \implies
             \begin{array}{l}
-                f \notin S _2(E)\\
-                f \notin A_2(E)
+                f \notin S _2(\E)\\
+                f \notin A_2(\E)
             \end{array}
             \]      
         \item
@@ -874,7 +874,7 @@ Recordemos que $T_p^q(E)$ es un $k$-ev.
                         \end{array} 
                         \right \} 
                         \implies
-                        f \in S_2(E)
+                        f \in S_2(\E)
                     \]
                 \item
                     Para $f = e_1^\ast \otimes e_2^\ast - e_2^\ast \otimes e_1^\ast$, 
@@ -887,7 +887,7 @@ Recordemos que $T_p^q(E)$ es un $k$-ev.
                         \end{array} 
                         \right \} 
                         \implies
-                        f \in A_2(E)
+                        f \in A_2(\E)
                     \]
             \end{itemize}
         
@@ -904,12 +904,12 @@ Recordemos que $T_p^q(E)$ es un $k$-ev.
     \end{itemize}
 \end{obs}
 \begin{prop}
-    Sea $E$ un $k$-e.v. de dimensión $n$, sea $f \in T_p(E)$.
+    Sea $\E$ un $\k$-e.v. de dimensión $n$, sea $f \in T_p(\E)$.
     \begin{enumerate}
         \item Podemos caracterizar los tensores simétricos como:
         \[
         \begin{split}\text{f simétrica } \iff &
-        \forall u_1,\dots,u_p \in E, \  \forall i,j \quad 
+        \forall u_1,\dots,u_p \in \E, \  \forall i,j \quad 
         f(u_1,\dots,u_i,\dots,u_j,\dots,u_p) = \\ 
         &f(u_1,\dots,u_j,\dots,u_i,\dots,u_p)
         \end{split}
@@ -917,10 +917,10 @@ Recordemos que $T_p^q(E)$ es un $k$-ev.
         \item Podemos caracterizar los tensores antisimétricos como: 
         \[
         \begin{split}\text{f antisimétrica} \iff & 
-        \forall u_1,\dots,u_p \in E, \  \forall i < j \quad
+        \forall u_1,\dots,u_p \in \E, \  \forall i < j \quad
         f(u_1,\dots,u_i,\dots,u_j,\dots,u_p) = \\ 
         &-f(u_1,\dots,u_j,\dots,u_i,\dots,u_p)\\
-        \iff& \forall u_1,\dots,u_p \in E, \ \forall i < j \text{ si } u_i=u_j 
+        \iff& \forall u_1,\dots,u_p \in \E, \ \forall i < j \text{ si } u_i=u_j 
         \text{ entonces } f(u_1,\dots,u_p) = 0.
         \end{split}\]
     \end{enumerate}
