@@ -1010,7 +1010,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
             (u_1,\dots,u_n) &\mapsto det_B(u_1,\dots,u_n)
         \end{aligned}
     \]
-    Como $f$ es multilineal ($\implies f \in T_n(\E)$) y $f$ es antisimétrico
+    Como $f$ es multilineal ($\implies f \in T_n(\E)$), $f$ es antisimétrico
     por la proposición \ref{prop:sim_comp}.
 \end{example}
 \begin{defi}
@@ -1079,9 +1079,12 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
         ver que $g=A(h)\in A_p(\E)$, sea $s \in \mathcal{S}_op$
         \[
             \underline{s}h = \underline{s}\left( \frac{1}{p!}\sum_{r \in \mathcal{S}_p} \varepsilon(r)\underline{r}f
-            \right) = \frac{1}{p!}\left(\sum_{r \in \mathcal{S}_p} \varepsilon(r)\underline{s}(\underline{r}f)\right) = 
-            \varepsilon{s}\frac{1}{p!} \left( \sum_{r \in \mathcal{S}_p \varepsilon(sr) \underline{sr}h} \right) \stackrel{\ref{obs:perm_biy}}{=}
-            \varepsilon{s}\frac{1}{p!} \left( \sum_{t \in \mathcal{S}_p \varepsilon(t) \underline{t}h} \right) = \varepsilon(s)g
+            \right) = \frac{1}{p!}\left(\sum_{r \in \mathcal{S}_p} \varepsilon(r)\underline{s}(\underline{r}f)\right) =
+        \]
+        \[
+            = \varepsilon(s)\frac{1}{p!} \left( \sum_{r \in \mathcal{S}_p \varepsilon(sr) \underline{sr}h} \right)
+            \stackrel{\ref{obs:perm_biy}}{=} \varepsilon(s)\frac{1}{p!} \left( \sum_{t \in \mathcal{S}_p \varepsilon(t)
+            \underline{t}h} \right) = \varepsilon(s)g
         \]
     \end{enumerate}
 \end{proof}
