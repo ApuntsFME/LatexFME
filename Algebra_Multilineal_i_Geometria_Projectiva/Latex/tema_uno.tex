@@ -378,13 +378,18 @@
 \end{prop}
 \begin{obs}
 	Si $\E$ y $\bb{F}$ son de dimensión finita, $\phi$ admite expresión
-	matricial (en coordenadas). En particular
-	$\displaystyle \begin{rcases} B_1 \text{ base de } \E \\ B_2
-	\text{ base de } \bb{F} \end{rcases} \implies \phi$ viene dada por
-	$M_{B_1,B_2}(\phi)$ y $\displaystyle \begin{rcases} B_1^*
-	\text{ base de } \E^* \\ B_2^* \text{ base de } \bb{F}^*
-	\end{rcases} \implies \phi^*$ viene dada por 
-	$M_{B_2^*,B_1^*}(\phi^*) = (M_{B_1,B_2}(\phi))^T$.
+	matricial (en coordenadas). En particular:
+	\[
+    	\displaystyle \begin{rcases} B_1 \text{ base de } \E \\ B_2
+    	\text{ base de } \bb{F} \end{rcases} \implies \phi \text{ viene dada por }
+    	M_{B_1,B_2}(\phi)
+	\]
+	\[
+	    \displaystyle \begin{rcases} B_1^*
+    	\text{ base de } \E^* \\ B_2^* \text{ base de } \bb{F}^*
+    	\end{rcases} \implies \phi^* \text{ viene dada por }
+	    M_{B_2^*,B_1^*}(\phi^*) = (M_{B_1,B_2}(\phi))^T
+	\]
 \end{obs}
 \begin{prop}[(espacio bidual)]
 	Dado $\E$ $\k$-ev. podemos definir $\E^*,\E^{**},\cdots$. En
@@ -1067,7 +1072,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
 \begin{proof}
     \begin{enumerate}[i)]
         \item Queda como ejercicio. (pista: Consideramos $S(f+g)$)
-        \item $ \in S_p(\E) \implies S(f) = f$ queda como ejercicio.
+        \item $f \in S_p(\E) \implies S(f) = f$ queda como ejercicio.
         Suponemos que $f \in A_p(\E)$, entonces
         \[
             A(f) = \frac{1}{p!} \left(\sum_{s \in \mathcal{S}_p} \varepsilon(s)\underline{s}f \right)
@@ -1085,6 +1090,131 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
             = \varepsilon(s)\frac{1}{p!} \left( \sum_{r \in \mathcal{S}_p \varepsilon(sr) \underline{sr}h} \right)
             \stackrel{\ref{obs:perm_biy}}{=} \varepsilon(s)\frac{1}{p!} \left( \sum_{t \in \mathcal{S}_p \varepsilon(t)
             \underline{t}h} \right) = \varepsilon(s)g
+        \]
+    \end{enumerate}
+\end{proof}
+\begin{obs}
+	Las mismas construcciones funcionan para tensores $(0,q)$, $T^q(\E) = T_q(\E*)$, pero no funcionan para
+	tensores $(p,q)$ donde $p,q \neq 0$ porque las construcciones implican permutaciones.
+\end{obs}
+
+\subsection{Producto exterior}
+
+\begin{obs}
+	$S_p(\E) \subseteq T_p(\E)$, $A_p(\E) \subseteq T_p(\E)$ y $S_p$, $A_p$ s.e.v..
+	\begin{itemize}
+	    \item $f \in S_p(\E)$, $g \in S_p(\E)$ en general $f \otimes g \notin S_{p+p'}(\E)$
+	    \item $f \in A_p(\E)$, $g \in A_p(\E)$ en general $f \otimes g \notin A_{p+p'}(\E)$
+	\end{itemize}
+\end{obs}
+\begin{example}
+    Sean $\omega_1$, $\omega_2 \in T_1(\E)$:
+	\begin{itemize}
+		\item $T_1(\E) = \E* = S_1(\E) = A_1(\E)$, porque $S_1 = \{Id\}$.
+		\item $\omega_1 \otimes \omega_2 \notin S_2(\E), A_2(\E)$.
+	\end{itemize}
+\end{example}
+\begin{obs}
+	El producto exterior (que definiremos) manda tensores antisimétricos a antisimétricos.
+\end{obs}
+\begin{obs}
+	Lo haremos en $T_p(\E)$, análogamente se hará en $T^q(\E)$.
+\end{obs}
+\begin{defi}[(producto exterior de orden 1)] \label{pr_ext}
+	Sea $\E$ un $\k$-e.v.; $\omega_1, \dots, \omega_p \in T_1(\E) = \E$, el producto exterior de orden 1 es:
+	\[
+		\omega_1 \wedge \dots \wedge \omega_p = p! A(\omega_1 \otimes \dots \otimes \omega_p)
+	\]
+\end{defi}
+\begin{obs} \label{obs_pr_ext}
+	\begin{gather*}
+		\omega_1 \wedge \dots \wedge \omega_p = \cancel{p!}  \left( \frac{1}{\cancel{p!}}\sum_{s \in \mathcal{S}_p} \varepsilon(s)
+		\underline{s}\left(\omega_1 \otimes \dots \otimes \omega_p \right) \right) = \\
+		= \sum_{s \in \mathcal{S}_p} \varepsilon(s) \left( \omega_{s^{-1}(1)} \otimes \dots \otimes \omega_{s^{-1}(p)} 
+		\right) \stackrel{\varepsilon(s) = \varepsilon(s^{-1})}{=} \sum_{r \in \mathcal{S}_p} 
+		\varepsilon(r) \left( \omega_{r(1)} \otimes \dots \otimes \omega_{r(p)} \right)
+	\end{gather*}
+\end{obs}
+\begin{example}
+    Sea $\E = \real^3$, $B = \{e_1, e_2, e_3\}$, $B^* = \{ e_1^*, e_2^*, e_3^*\}$.
+    \begin{itemize}
+        \item $e_1^* \wedge e_2^* = e_1^* \otimes e_2^* - e_2^* \otimes e_1^*$
+        \item $e_2^* \wedge e_1^* = \dots = -e_1^* \wedge e_2^*$
+        \item $e_1^* \wedge e_1^* = e_1^* \otimes e_1^* - e_1^* \otimes e_1^* = 0$
+    \end{itemize}
+\end{example}
+\begin{prop} \label{prop_pr_ext}
+    Sean $\omega_1, \dots \omega_p \in T_1(\E) = \E^*$
+    \begin{enumerate}[i)]
+        \item $\omega_1 \wedge \dots \omega_p \in A_p(\E)$
+        \item $\omega_1 \wedge \dots \wedge \left(\alpha_i \overline{\omega_i} + \beta_i \overline{\overline{\omega_i}} \right)
+        \wedge \dots \wedge \omega_p = \alpha_i (\omega_1 \wedge \dots \wedge \overline{\omega_i} \wedge \dots
+        \wedge \omega_p) + \beta_i (\omega_1 \wedge \dots \wedge \overline{\overline{\omega_i}} \wedge \dots
+        \wedge \omega_p)$
+        \item Sea $s \in \mathcal{S}_p$, $t = s^{-1}$, $\omega_{s(1)} \wedge \dots \wedge \omega_{s(p)} =
+        \underline{t}\left(\omega_1 \wedge \dots \wedge \omega_p \right) = \varepsilon(s)\left( \omega_1
+        \wedge \dots \wedge \omega_p \right)$
+        \item Si $u_1, \dots, u_p \in \E$, $\left( \omega_1 \wedge \dots \wedge \omega_p\right) \left(u_1, \dots,
+        u_p\right) = det\left(\omega_j(u_i)\right)$
+        \item Si $\omega_i = \omega_j , (i \neq j) \implies \omega_1 \wedge \dots \wedge \omega_p = 0$
+        \item $\omega_1 \wedge \dots \wedge \omega_p \neq 0 \iff \{\omega_1,\dots,\omega_p\}$ son l.i.
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item[]
+        \item $\omega_1 \wedge \dots \wedge \omega_p = p! A\left(\omega_1 \otimes \dots \otimes \omega_p 
+        \right) \implies \omega_1 \wedge \dots \wedge \omega_p \in Im(A) \stackrel{visto}{=} A_p(\E)$
+        \item Ejercicio (misma proposición que $\otimes$)
+        \item $\omega_{s(1)} \wedge \dots \wedge \omega_{s(p)} = \underline{t}(\omega_1 \wedge \dots \wedge 
+        \omega_p)$ (Ejercicio, misma proposición que $\otimes$)
+        \begin{gather*}
+            \omega_{s(1)} \wedge \dots \wedge \omega_{s(p)} \stackrel{\ref{pr_ext} + \ref{obs_pr_ext}}{=}
+            \sum_{r \in \mathcal{S}_p} \varepsilon(r) \left( \omega_{rs(1)} \otimes \dots \otimes 
+            \omega_{rs(p)} \right) = \\ 
+            \stackrel{\varepsilon^2(s)=1}{=} \varepsilon(s) \sum_{r \in \mathcal{S}_p} \overbrace{\varepsilon(r)
+            \varepsilon(s)}^{\varepsilon(rs)} \left( \omega_{rs(1)} \otimes \dots \otimes\omega_{rs(p)}
+            \right) \stackrel{rs = m \in \mathcal{S}_p}{=} \varepsilon(s) \sum \varepsilon(m)
+            \left( \omega_{m(1)} \otimes \dots \otimes \omega_{m(p)} \right) = \\
+            = \varepsilon(s) \left( \omega_1 \wedge \dots \wedge \omega_p \right)
+        \end{gather*}
+        \item 
+        \begin{gather*}
+        \overbrace{\left( \omega_1 \wedge \dots \wedge \omega_p \right)}^{T_p(\E)} \left(u_1,\dots,u_p
+        \right) = \sum_{r\in\mathcal{S}_p} \varepsilon(r) \left( \omega_{r(1)} \otimes \dots \otimes 
+        \omega_{r(p)} \right) \left( u_1,\dots,u_p \right) = \\
+        \sum_{r \in \mathcal{S}_p} \varepsilon(r) \left( \omega_{r(1)}(u_1) \dots \omega_{r(p)}(u_p) \right)
+        \stackrel{\text{def det}}{=} det(\omega_j(u_i))_{i,j}
+        \end{gather*}
+        \item
+        \begin{gather*}
+        \omega_1 \wedge \dots \wedge \omega_i \wedge \dots \wedge \omega_i \wedge \dots \wedge \omega_p
+        \stackrel{\ref{prop_pr_ext} (iii)}{=} (-1) \omega_1 \wedge \dots \wedge \omega_i \wedge \dots \wedge
+        \omega_i \wedge \dots \wedge \omega_p \implies \\
+        \implies 2\left( \omega_1 \wedge \dots \wedge \omega_p \right) = 0
+        \stackrel{car\k \neq 2}{\implies} \omega_1 \wedge \dots \wedge \omega_p = 0
+        \end{gather*}
+        \item $\implies$ \\
+        Suponemos que son l.d. y que $\omega_p = \sum_{j=1}^{p-1} \alpha_j \omega_j$:
+        \[
+        \omega_1 \wedge \dots \wedge \omega_p = \omega_1 \wedge \dots \wedge \omega_{p-1} \wedge \left(
+        \sum_{j=1}^{p-1} \alpha_j \omega_j \right) \stackrel{\ref{prop_pr_ext} (ii)}{=} \sum_{j=1}^{p-1}
+        \alpha_j \left( \omega_1 \wedge \dots \wedge \omega_{p-1} \wedge \omega_j \right)
+        \stackrel{\ref{prop_pr_ext} (v)}{=} 0 \text{ } !!
+        \]
+        $\impliedby$ \\
+        Sea $B=\{u_1,\dots,u_n\}$, $B^*=\{\omega_1, \dots, \omega_p,\overbrace{\omega_{p+1},\dots, \dots,
+        \omega_n}^{\text{Steinitz}}$ la base dual de $B$, tenemos que:
+        \[
+        \left( \omega_1 \wedge \dots \wedge \omega_p \right) \left( u_1,\dots,u_p \right) \stackrel{\ref{prop_pr_ext} (iv)}{=}
+        det\left( \omega_j \left(u_i \right) \right) = 
+        \begin{vmatrix}
+            1 & 0 & \dots & 0 \\
+            0 & \ddots & \ddots & \vdots \\
+            \vdots & \ddots & \ddots & 0 \\
+            0 & \dots & 0 & 1
+        \end{vmatrix}
+        = 1 \neq 0
         \]
     \end{enumerate}
 \end{proof}
