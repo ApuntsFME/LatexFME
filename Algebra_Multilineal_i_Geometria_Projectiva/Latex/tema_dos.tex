@@ -1,0 +1,90 @@
+\section{Espacio Proyectivo}
+
+\subsection{Definición y caracterizaciones del espacio proyectivo}
+    \begin{defi}
+        Sea $k$ un cuerpo, $\E$ un $k$-e.v. de $\dim n+1$. El espacio proyectivo asociado a $\E$ es 
+        \[\Po (\E) = \setb{\text{s.e.v. de } \dim 1 \text{ de } \E}\]
+        Diremos que $\Po (\E)$ tiene dimensión $n$.
+    \end{defi}
+    \begin{obs}
+        Se cumple $\Po (\E) = (\E \setminus \setb{0}) / \sim$, donde $v \sim v'  \iff \exists \lambda \neq 0, \ v' = \lambda v$ para
+        $v, v' \in \E \setminus \setb{0}$.
+    \end{obs}
+    \begin{defi}
+        Tenemos la siguiente aplicación $\pi$ dada por el paso al cociente.
+        \[
+        \begin{aligned}
+        \E \setminus \setb{0} &\to \Po (\E)\\
+        v &\mapsto \pi(v) = [v]\\
+        \setb{\text{s.e.v. de } \dim 1 \text{ de } \E} &\leftrightarrow [v]
+        \end{aligned}
+        \]
+    \end{defi}
+    \begin{defi}
+        A los elementos de $\Po (\E)$ los llamaremos puntos de $\Po (\E)$.
+        \[p = \pi(v) = [v]\]
+    \end{defi}
+    \begin{obs}
+        \begin{itemize}
+            \item[]
+            \item Si $\E$ no es relevante, $\Po^n = \Po (E)$.
+            \item Si queremos remarcar $k$, $\Po_k^n = \Po (E)$.
+            \item Normalmente $\Po+k^n = \Po(k^{n+1}) = (k^{n+1} \setminus {0})/\sim$.
+        \end{itemize}
+    \end{obs}
+    \begin{example}
+        \begin{enumerate}
+            \item []
+            \item $\Po^1_{\real}$. Faltan dibujos de cómo interpretarlo (los añadirá Ernesto).
+            \item $\Po^2_{\real}$. Ídem.
+            \item $\Po^1_{\cx} = (\cx^2 \setminus {0})/\sim \ = \cx \cup \setb{\infty} = S^2$. Las igualdades
+            por el momento son por analogía o intuición, más adelante se demostrarán. (Aquí se puede poner un
+            dibujo de la proyección estereográfica).
+            \item $\Po^2_{\z / 2}$ contiene $7$ puntos pues las rectas de $\z^3$ solo contienen el $0$ y un punto.
+        \end{enumerate}
+    \end{example}
+    \begin{obs}
+        Hemos enunciado la definición algebraica de $\Po_{\real}^{n}$. Existe una definición axiomática que no 
+        es igual en algunos casos patológicos.
+    \end{obs}
+\subsection{Variedades lineales proyectivas}
+    \begin{defi}
+        Sea $\E$ un $k$-e.v. de dimensión $n+1$, sea $\Po^n = \Po(\E)$.
+        Llamaremos variedad lineal (proyectiva) de dimensión $r$ a cualquier conjunto 
+        de la forma:
+        \[V = \pi(H \setminus \setb{0})\]
+        donde $H \subseteq \E$ es un subespacio vectorial de dimensión $r+1$.
+        
+        Por convención defnimos la siguiente notación:
+        \[V = \pi(H \setminus \setb{0}) = \pi(H)\]         
+    \end{defi}    
+    \begin{example}
+        \begin{itemize}
+            \item []
+            \item $\Po^n = \pi(\E)$ es una variedad lineal de dimensión $n$.
+            \item $p \in \Po^n \ p = \pi(v) = \pi([v])$ es una varidead lineal de dimensión $0$.
+            \item $\emptyset = \pi({\emptyset_{\E}})$ es una variedad lineal de dimensión $-1$.
+        \end{itemize}
+    \end{example}
+    \begin{defi}
+        \begin{itemize}
+            \item []
+            \item $\dim V = 1 \longrightarrow$ Recta
+            \item $\dim V = 2 \longrightarrow$ Plano
+            \item $\dim V = n-1 \longrightarrow$ Hiperplano
+        \end{itemize}
+    \end{defi}
+    \begin{lema}
+        $V = \pi(H\setminus\setb{0}) \iff H \setminus \setb{0} = \pi^{-1}(v)$
+    \end{lema}
+    \begin{ej}
+        Demostrar el lema anterior.
+    \end{ej}
+    \begin{obs}
+        Hay una biyección
+        \[\setb{\text{s.e.v. de } \E}
+         \mathrel{\mathop{\rightleftarrows}^{\mathrm{\pi}}_{\mathrm{\pi^{-1}}}}
+         \setb{\text{variedades lineales de } \Po(\E)}\]
+         %\begin{enumerate}
+         %\end{enumerate}
+    \end{obs}
