@@ -830,7 +830,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
 \begin{prop} \label{prop_pr_ext}
     Sean $\omega_1, \dots \omega_p \in T_1(\E) = \E^*$
     \begin{enumerate}[i)]
-        \item $\omega_1 \wedge \dots \omega_p \in A_p(\E)$
+        \item $\omega_1 \wedge \dots \wedge \omega_p \in A_p(\E)$
         \item $\omega_1 \wedge \dots \wedge \left(\alpha_i \overline{\omega_i} + \beta_i \overline{\overline{\omega_i}} \right)
         \wedge \dots \wedge \omega_p = \alpha_i (\omega_1 \wedge \dots \wedge \overline{\omega_i} \wedge \dots
         \wedge \omega_p) + \beta_i (\omega_1 \wedge \dots \wedge \overline{\overline{\omega_i}} \wedge \dots
@@ -902,3 +902,74 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
         \]
     \end{enumerate}
 \end{proof}
+\begin{example}
+	Sea $\E=\real^3$ y $B = \setb{e_1,e_2,e_3}$
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			Espacio & $\dim$ & base & coordenadas \\
+			\hline \hline
+			$A_1(\E)= T_1(\E) (=\E^*)$ & 3 & $\setb{e_1^*,e_2^*,e_3^*}$ &
+			$w = (a_1,b_1,c_1)$ \\ \hline $A_2(\E) \subseteq T_2(\E)$ & 3 &
+			$\setb{e_1^* \wedge e_2^*, e_1^* \wedge e_3^*, e_2^* \wedge e_3^*}$ &
+			$\begin{aligned}
+				w_1 \wedge w_2 =& (w_1 \wedge w_2)(e_1,e_2) e_1^* \wedge e_2^* + \\
+				 & (w_1 \wedge w_2)(e_1,e_3) e_1^* \wedge e_3^* + \\
+				 & (w_1 \wedge w_2)(e_2,e_3) e_2^* \wedge e_3^*
+			\end{aligned}$ \\
+			\hline $A_3(\E) \subseteq T_3(\E)$ & 1 &
+			$\setb{e_1^* \wedge e_2^* \wedge e_3^*}$ &
+			$t =(w_1 \wedge w_2 \wedge w_3) = (t(e_1,e_2,e_3))$ \\ \hline
+		\end{tabular}
+	\end{center}
+	Además, si $w_1=(a_1,b_1,c_2)_{B^*}$, $w_2=(a_2,b_2,c_2)_{B^*}$ y
+	$w_3=(a_3,b_3,c_3)_{B^*}$
+	\[
+		w_1 \wedge w_2 = \determinant{w_1(e_1) & w_1(e_2) \\ w_2(e_1) & w_2(e_2)}
+		(e_1^* \wedge e_2^*) =
+		\determinant{a_1 & b_1 \\ a_2 & b_2}(e_1^* \wedge e_2^*)
+	\]
+	\[
+		w_1 \wedge w_2 \wedge w_3 = (w_1 \wedge w_2 \wedge w_3)	(e_1,e_2,e_3)
+		(e_1^* \wedge e_2^* \wedge e_3^*) =
+		\determinant{a_1 & b_1 & c_1 \\ a_2 & b_2 & c_2 \\ a_3 & b_3 & c_3}
+		(e_1^* \wedge e_2^* \wedge e_3^*)
+	\]
+\end{example}
+\begin{defi}
+	Sea $\E$ un $\k$-ev. y sean $f \in A_p(\E)$ y $g \in A_q(\E)$. Definimos el
+	producto exterior de $f$ y $g$ como
+	\[
+		f \wedge g = \frac{(p+q)!}{p!q!}A(f \otimes g)
+	\]
+\end{defi}
+\begin{prop}
+	Sea $\E$ un $\k$-ev. y sean $f \in A_p(\E)$, $g \in A_q(\E)$ y $h \in A_r(\E)$.
+	\begin{enumerate}[i)]
+		\item $(f \wedge g) \wedge h = f \wedge (g \wedge h) = f \wedge g \wedge h$
+		\item $f \wedge g = (-1)^{p+q} g \wedge f$
+		\item $\wedge$ es lineal en cada factor.
+	\end{enumerate}
+\end{prop}
+\begin{obs}
+	$w_1 \wedge w_2 \wedge \cdots \wedge w_r = w_1 \wedge (w_2 \wedge (
+	\cdots w_{r-1} \wedge (w_r)))$
+\end{obs}
+\begin{example}
+	Sea $\E = \real ^4$, $B = \setb{e_1,e_2,e_3,e_4}$ y $f,g \in A_2(\E)$
+	\begin{itemize}
+		\item $f = e_1^* \wedge e_2^* + e_2^* \wedge e_3^* + e_3^* \wedge e_4^*$
+		\item $g = e_1^* \wedge e_2^* + e_1^* \wedge e_3^*$
+	\end{itemize}
+	\begin{gather*}
+		f \wedge g = (e_1^* \wedge e_2^* + e_2^* \wedge e_3^* + e_3^* \wedge e_4^*)
+		\wedge (e_1^* \wedge e_2^* + e_1^* \wedge e_3^*) = \\
+		 = \cancelto{0}{e_1^* \wedge e_2^* \wedge e_1^* \wedge e_2^*} + 
+		 \cancelto{0}{e_1^* \wedge e_2^* \wedge e_1^* \wedge e_3^*} +
+		 \cancelto{0}{e_2^* \wedge e_3^* \wedge e_1^* \wedge e_2^*} +
+		 \cancelto{0}{e_2^* \wedge e_3^* \wedge e_1^* \wedge e_3^*} + \\
+		 + e_3^* \wedge e_4^* \wedge e_1^* \wedge e_2^* +
+		 \cancelto{0}{e_3^* \wedge e_4^* \wedge e_1^* \wedge e_3^*} =
+		 e_3^* \wedge e_4^* \wedge e_1^* \wedge e_2^*
+	\end{gather*}
+\end{example}
