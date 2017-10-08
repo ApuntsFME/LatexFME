@@ -838,7 +838,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
         \item Sea $s \in \mathcal{S}_p$, $t = s^{-1}$, $\omega_{s(1)} \wedge \dots \wedge \omega_{s(p)} =
         \underline{t}\left(\omega_1 \wedge \dots \wedge \omega_p \right) = \varepsilon(s)\left( \omega_1
         \wedge \dots \wedge \omega_p \right)$
-        \item Si $u_1, \dots, u_p \in \E$, $\left( \omega_1 \wedge \dots \wedge \omega_p\right) \left(u_1, \dots,
+        \item \label{prop_pr_ext_iv} Si $u_1, \dots, u_p \in \E$, $\left( \omega_1 \wedge \dots \wedge \omega_p\right) \left(u_1, \dots,
         u_p\right) = det\left(\omega_j(u_i)\right)$
         \item Si $\omega_i = \omega_j , (i \neq j) \implies \omega_1 \wedge \dots \wedge \omega_p = 0$
         \item $\omega_1 \wedge \dots \wedge \omega_p \neq 0 \iff \{\omega_1,\dots,\omega_p\}$ son l.i.
@@ -904,7 +904,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
 \end{proof}
 
 
-\begin{obs}
+\begin{obs} \label{obs_2_pr_ext}
     En el caso particular de $B=\left\{ e_1, \dots e_n \right\}$
     base de $\E$,
     \[
@@ -930,13 +930,35 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
     Sea $\E$ un $\k$-e.v. de $\dim n$, sea $B=\left\{
     e_1, \dots , e_n\right\}$ y sea $p\leq n$.
     \begin{enumerate}[i)]
-        \item
+        \item \label{thm_it1}
             $ \dim A_p\left( \E \right) = \binom{n}{p}. $
-        \item
-            Una base de $A_p$ es $\left\{e_{i_1}^* \wedge \cdots \wedge e_{i_p} \right\}=\tilde{B}$, $i\leq i_1 < \cdots < i_p \leq n$.
-        \item
+        \item \label{thm_it2}
+            Una base de $A_p$ es $\left\{e_{i_1}^* \wedge \cdots \wedge e_{i_p}^* \right\}=\tilde{B}$, $i\leq i_1 < \cdots < i_p \leq n$.
+        \item 
+        	Si $w \in A_p\left( \E \right)$, las coordenadas de $w$ en la base anterior son:
+        	\[
+        		\left( w \left( e_{i_1}, \dots , e_{i_p} \right) \right)_{1\leq i_1 < \cdots < i_p \leq n}
+        	\]
     \end{enumerate}
 \end{thm}
+\begin{proof}
+	\begin{enumerate}[i)]
+		\item[]
+		\item 
+			$\ref{thm_it2} \implies \ref{thm_it1}$ trivialmente.
+		\item 
+			\underline{L.I}: Sea
+			\[
+				w=\sum_{\substack{I=\left\{ i_1, \dots , i_p \right\} \\ 1\leq i_1 < \cdots < i_p \leq n}} \alpha _I e_{i_1}^* \wedge \cdots \wedge e_{i_p}^*=0.
+			\]
+			Sea $I_0=\left\{ i_1^0, \dots , i_p^0 \right\} $ con $1\leq i_1^0 < \cdots < i_p^0 \leq n$ cualesquiera. Entonces, 
+			\[
+				0=w \left( e_{i_1^0} , \dots , e_{i_p^0} \right)= \sum_{\substack{I=\left\{ i_1, \dots , i_p \right\} \\ 1\leq i_1 < \cdots < i_p \leq n}} \alpha _I e_{i_1}^* \wedge \cdots \wedge e_{i_p}^* \left( e_{i_1^0} , \dots , e_{i_p^0} \right) \stackrel{\ref{obs_2_pr_ext}} = \alpha _ {I_0}.
+			\]
+			\underline{Generadores}:
+		
+	\end{enumerate}
+\end{proof}
 
 \begin{example}
 	Sea $\E=\real^3$ y $B = \setb{e_1,e_2,e_3}$
