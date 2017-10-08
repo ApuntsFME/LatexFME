@@ -902,6 +902,42 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
         \]
     \end{enumerate}
 \end{proof}
+
+
+\begin{obs}
+    En el caso particular de $B=\left\{ e_1, \dots e_n \right\}$
+    base de $\E$,
+    \[
+        \begin{aligned}
+            I=\left\{ i_1, \dots i_p \right\}, \hspace{0.15cm}
+            1 \leq i_1 < \dots < i_p \leq n ; \\
+            J=\left\{ j_1, \dots j_p \right\}, \hspace{0.15cm}
+            1 \leq j_1 < \dots < j_p \leq n .
+        \end{aligned}
+    \]
+    \[
+        \epsilon _{IJ} = \left( e_{i_1}^* \wedge \cdots \wedge e_{i_p}^* \right) \left( e_{j_1}, \cdots , e_{j_p} \right)= \left\{ \begin{array}{ll}
+             1 & \text{si } I=J \\
+             0 & \text{en el caso contrario}
+        \end{array}\right.
+    \]
+    En efecto, si $\hspace{0,1cm}\exists j_k \in J$, $j_k \notin I$, entonces en virtud del cálculo dado por \ref{prop_pr_ext_iv}(\ref{prop_pr_ext}) , en la posición $k$ hay una fila de ceros. \\
+    Por otro lado, si $I=J$ entonces tenemos el determinante de la matriz identidad. \\
+    Observemos también que si $I=J$ pero no están ordenadas crecientemente, $\epsilon _{IJ}=\pm1$ en función de las permutaciones que ordenan estos conjuntos.
+\end{obs}
+
+\begin{thm}
+    Sea $\E$ un $\k$-e.v. de $\dim n$, sea $B=\left\{
+    e_1, \dots , e_n\right\}$ y sea $p\leq n$.
+    \begin{enumerate}[i)]
+        \item
+            $ \dim A_p\left( \E \right) = \binom{n}{p}. $
+        \item
+            Una base de $A_p$ es $\left\{e_{i_1}^* \wedge \cdots \wedge e_{i_p} \right\}=\tilde{B}$, $i\leq i_1 < \cdots < i_p \leq n$.
+        \item
+    \end{enumerate}
+\end{thm}
+
 \begin{example}
 	Sea $\E=\real^3$ y $B = \setb{e_1,e_2,e_3}$
 	\begin{center}

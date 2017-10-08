@@ -4,10 +4,10 @@
 \subsection{Definición, matriz de una forma cuadrática y bases}
 
 \begin{defi}
-	Sea $\E$ un $\k$-ev. Diremos que una aplicación
+	Sea $\E$ un $\k$-e.v. Diremos que una aplicación
 	\[
 		\begin{aligned}
-			\phi \colon E \times E &\to k \\
+			\phi \colon \E \times \E &\to \k \\
 			(u,v) &\mapsto \phi(u,v)
 		\end{aligned}
 	\]
@@ -16,14 +16,14 @@
 		\item $\phi(\lambda u, v) = \lambda\phi(u,v)$
 		\item $\phi(u,v) = \phi(v,u)$
 	\end{itemize}
-	$\forall u,v,u_1,u_2 \in E$ y $\forall \lambda \in k$.
+	$\forall u,v,u_1,u_2 \in \E$ y $\forall \lambda \in \k$.
 \end{defi}
 \begin{defi}
-	Sea $\phi$ una forma bilineal simétrica sobre un $\k$-ev. $\E$.
+	Sea $\phi$ una forma bilineal simétrica sobre un $\k$-e.v. $\E$.
 	Diremos que la aplicación
 	\[
 		\begin{aligned}
-			q \colon E &\to k \\
+			q \colon \E &\to \k \\
 			u &\mapsto q(u) = \phi(u,u)
 		\end{aligned}
 	\]
@@ -33,7 +33,7 @@
 	Se cumple que $q(\lambda u) = \lambda^2 q(u)$
 \end{obs}
 \begin{lema}
-	Sea $\phi$ una forma bilieal simétrica sobre un $\k$-ev. $\E$ con $car \E \neq 2$
+	Sea $\phi$ una forma bilieal simétrica sobre un $\k$-e.v. $\E$ con $\car \E \neq 2$
 	y sea $q$ la forma cuadrática asociada a $\phi$, entonces
 	\[
 		\phi(u,v) = \frac{1}{2} ( q(u+v) - q(u) - q(v))
@@ -49,7 +49,7 @@
 	\]
 \end{proof}
 \begin{defi}
-	Sea $\phi$ una forma bilineal simétrica/cuadrática sobre un $\k$-ev. $\E$ y sea
+	Sea $\phi$ una forma bilineal simétrica/cuadrática sobre un $\k$-e.v. $\E$ y sea
 	$B = \{u_1, \cdots, u_n \}$ una base. La matriz de $\phi$ en base $B$ es
 	\[
 		M_B(\phi) = (a_{ij}) = (\phi(u_i,u_j))
@@ -59,7 +59,7 @@
 	La matriz $M_B(\phi)$ es simétrica
 \end{obs}
 \begin{defi}
-	Sea $\E$ un $\k$-ev. y sea $\phi \colon \E \times \E \to \k$ una
+	Sea $\E$ un $\k$-e.v. y sea $\phi \colon \E \times \E \to \k$ una
 	forma bilineal simétrica.
 	\begin{itemize}
 		\item Diremos que $\phi$ es definida positiva si 
@@ -83,7 +83,7 @@
 	\]
 \end{defi}
 \begin{thm}[de Sylvester]
-	Sea $\E$ un $\k$-ev. de dimension $n$ y sea
+	Sea $\E$ un $\k$-e.v. de dimension $n$ y sea
 	$\phi \colon \E\times \E \to \k$ una forma bilineal simétrica,
 	entonces
 	\[
@@ -319,9 +319,9 @@
 
 
 \begin{prop} 
-    Sea $E$ un $k$-ev. de dimension $n$, sea $\phi \colon E\times E \to k$
+    Sea $\E$ un $\k$-e.v. de dimension $n$, sea $\phi \colon \E \times \E \to \k$
     una forma bilineal simétrica y sea $q$ su forma cuadrática asociada.
-    Consideremos $B=\left\{ u_1, \dots u_n\right\}$ una base \ita{q-ortogonal} de $E$. 
+    Consideremos $B=\left\{ u_1, \dots u_n\right\}$ una base \ita{q-ortogonal} de $\E$. 
     Sabemos que
     \[
         D=M_B \left( \phi \right)= \left(
@@ -331,9 +331,9 @@
             0 & \cdots & \alpha _n 
         \end{array} \right).
     \]
-    Consideremos el subespacio vectorial $E ^{\perp} \subseteq E$ definido por 
-    $E ^{\perp}= \left\{u \in E \hspace{0,1cm} | \hspace{0,1cm} \phi 
-    \left( u, v \right) = 0 \forall v \in E \right\}$. Tenemos que
+    Consideremos el subespacio vectorial $\E ^{\perp} \subseteq \E$ definido por
+    $\E ^{\perp}= \left\{u \in \E \hspace{0,1cm} | \hspace{0,1cm} \phi \left( u, v \right)
+    = 0 \hspace{0,15cm} \forall v \in \E \right\}$. Tenemos que
     \begin{enumerate}[i)]
         \item
             \[
@@ -345,18 +345,18 @@
                     \vdots &  &  & 0 &  & \vdots  \\
                      &  & \ &  & \ddots &  \\
                     0 &  &  & \cdots &  & 0 
-                \end{array} \right) \implies E ^{\perp} =
+                \end{array} \right) \implies\ E ^{\perp} =
                 \left< u_{m+1} , \dots , u_n \right> .
             \]
         \item
             \[
-                \rg q + \dim E^{\perp} = n \implies i_0 \left( q \right)
-                 = \dim E^{\perp}.
+                \rg q + \dim \E^{\perp} = n \implies i_0 \left( q \right)
+                 = \dim \E^{\perp}.
             \]
-        \item Sean $k=\real$,  e $i_+ \left( q \right)$ el número de elementos estrictamente positivos de
+        \item Sean $\k=\real$,  e $i_+ \left( q \right)$ el número de elementos estrictamente positivos de
         la diagonal de $M_B \left( \phi \right)$. $i_+ \left( q \right)$ no depende de la base
         \emph{q-ortogonal} $B$ elegida.
-        \item Sea $k=\real$ y sean $\delta _0 = 1$, $\delta _1, \dots , \delta _n \neq 0$.
+        \item Sea $\k=\real$ y sean $\delta _0 = 1$, $\delta _1, \dots , \delta _n \neq 0$.
         Entonces, $i_- \left( q \right)$ es igual al número de cambios de signo en la
         secuencia $\delta _0, \dots , \delta _n$.
     \end{enumerate}
@@ -385,10 +385,10 @@
                          0 
                     \end{array} \right) = 0 \hspace{0,3cm} \forall \hspace{0,12cm} 1 \leq j \leq n
                     \implies \\
-                    &\implies \left< u_{m+1} , \dots , u_n \right> \subseteq E^{\perp}.
+                    &\implies \left< u_{m+1} , \dots , u_n \right> \subseteq \E^{\perp}.
                 \end{aligned}
             \]
-            Sea $u \in E$ tal que $u \notin \left< u_{m+1}, \dots u_n \right> $. Se tiene que $\exists \hspace{0,2cm} 1 \leq i \leq m$ t.q. $x_i \neq 0$. Entonces,
+            Sea $u \in \E$ tal que $u \notin \left< u_{m+1}, \dots u_n \right> $. Se tiene que $\exists \hspace{0,2cm} 1 \leq i \leq m$ t.q. $x_i \neq 0$. Entonces,
             \[
                 \begin{aligned}
                     e_i^t M_B\left( \phi \right) u = \left(0 \ \cdots \ 1 _i \ \cdots \ 0 \right) \left( 
@@ -404,12 +404,12 @@
                          \vdots  \\
                          x_i  \\
                          \vdots \\
-                    \end{array} \right) = \alpha _i x_i \neq 0 \implies u \notin E^{\perp}.
+                    \end{array} \right) = \alpha _i x_i \neq 0 \implies u \notin \E^{\perp}.
                 \end{aligned}
             \]
-            Así pues, $E ^{\perp} = \left< u_{m+1} , \dots , u_n \right> .$
+            Así pues, $\E ^{\perp} = \left< u_{m+1} , \dots , u_n \right> .$
         \item
-            Sea $B'=\left\{u'_1, \dots , u'_n \right\}$ una base \ita{q-ortogonal} de E.
+            Sea $B'=\left\{u'_1, \dots , u'_n \right\}$ una base \ita{q-ortogonal} de $\E$.
             \[
                 M_{B'}\left( \phi \right) = D' =  \left(
                 \begin{array}{ccc}
@@ -420,39 +420,39 @@
             \]
             Tenemos que 
             \[
-                m=i_+\left( q, B \right); \hspace{0,2cm} F^+=\left<u_1, \dots u_m \right>;
-                \hspace{0,2cm} E=F^+ \oplus \left<u_{m+1}, \dots u_n \right>=F^+ \oplus F^{ {\leq 0}}.
+                m=i_+\left( q, B \right); \hspace{0,2cm} \F^+=\left<u_1, \dots u_m \right>;
+                \hspace{0,2cm} \E=\F^+ \oplus \left<u_{m+1}, \dots u_n \right>=\F^+ \oplus \F^{ {\leq 0}}.
             \]
             Análogamente,
             \[
-                m^\prime=i_+\left( q, B^\prime \right); \hspace{0,2cm} F^{\prime +}=
-                \left<u^\prime_1, \dots u^\prime_m \right>; \hspace{0,2cm} E=F^{\prime +}
-                \oplus \left<u^{\prime}_{m+1}, \dots u^\prime_n \right>=F^{\prime+}
-                \oplus F ^{\prime\leq 0}.
+                m^\prime=i_+\left( q, B^\prime \right); \hspace{0,2cm} \F^{\prime +}=
+                \left<u^\prime_1, \dots u^\prime_m \right>; \hspace{0,2cm} \E=\F^{\prime +}
+                \oplus \left<u^{\prime}_{m+1}, \dots u^\prime_n \right>=\F^{\prime+}
+                \oplus \F ^{\prime\leq 0}.
             \]
-            Consideremos la fución que proyecta un vector de $F^+$ sobre $F^{\prime+}$.
+            Consideremos la fución que proyecta un vector de $\F^+$ sobre $\F^{\prime+}$.
             \[
                 \begin{aligned}
-                    f \colon F^+ &\to E \to F^{\prime+} \\
+                    f \colon \F^+ &\to \E \to \F^{\prime+} \\
                     v &\longmapsto f(v).
                 \end{aligned}
             \]
-            Sea $v\in F^+$ y sean $v_1$ y $v_2$ las proyecciones de $v$ 
-            sobre $F^{\prime+}$ y $F^{\prime \leq 0}$ respectivamente. 
+            Sea $v\in \F^+$ y sean $v_1$ y $v_2$ las proyecciones de $v$
+            sobre $\F^{\prime+}$ y $\F^{\prime \leq 0}$ respectivamente.
             Tenemos que $f(v)=v_1$. Entonces, 
             \[
             	f(v)=0 \implies v_1=0 \implies v=v_2.
             \]
             Además, $0\leq \phi \left( v, v \right)$ y $\phi \left( v_2 , v_2 \right)=
              \phi \left( v, v \right) \leq 0$, de modo que $v=0$ y $f$ es inyectiva.
-            Considerando la función que proyecta un vector de $F^{\prime+}$ sobre $F^{+}$.
+            Considerando la función que proyecta un vector de $\F^{\prime+}$ sobre $\F^{+}$.
             \[
                 \begin{aligned}
-                    g \colon F^{\prime +} &\to E \to F^{+} \\
+                    g \colon \F^{\prime +} &\to \E \to \F^{+} \\
                     v &\longmapsto g(v).
                 \end{aligned}
             \]
-            y siguiendo un razonamiento equivalente, obtenemos que $g$ es inyectiva, 
+            y siguiendo un razonamiento análogo, obtenemos que $g$ es inyectiva, 
             de modo que $m=m'$.
     \end{enumerate}
         
@@ -461,35 +461,35 @@
 \end{proof}
 \subsection{Clasificación afín y proyectiva}
 \begin{defi}
-	Sean $E$ y $F$ $k$-espacios vectoriales. Sean
+	Sean $\E$ y $\F$ $\k$-espacios vectoriales. Sean
 	\[
-		\phi \colon E \times E \to k,
+		\phi \colon \E \times \E \to \k,
 	\]
 	\[
-		\psi \colon F \times F \to k
+		\psi \colon \F \times \F \to \k
 	\]
 formas bilineales simétricas. Diremos que $\phi$ y
 $\psi$ son afínmente equivalentes, y escribiremos 
-$\phi \sim \psi$, si existe un isomorfismo $f \colon E \to F$ tal que
+$\phi \sim \psi$, si existe un isomorfismo $f \colon \E \to \F$ tal que
 \[
 	\phi \left(u, v \right) = \psi \left( f \left( u \right) , 
-	f \left( v \right)  \right) \hspace{0,2cm} \forall u, v \in E,
+	f \left( v \right)  \right) \hspace{0,2cm} \forall u, v \in \E,
 \]
 \[
 	\phi \left( f ^{-1} \left( u ' \right) ,  f ^{-1} \left( v ' \right) 
 	\right) = \psi \left( u' , v' \right) \hspace{0,2cm} \forall
-	u', v' \in F.
+	u', v' \in \F.
 \]
 \end{defi}
 \begin{thm}[de Sylvester]
     \begin{enumerate}[i)]
         \item[]
-        \item $k=\real$
+        \item $\k=\real$
         \[
             \phi \sim \psi \iff \rg \phi = \rg \psi \text{ y }
             i_+\left( \phi \right) = i_+\left( \psi \right).
         \]
-        \item $k=\cx$
+        \item $\k=\cx$
         \[
             \phi \sim \psi \iff \rg \phi = \rg \psi.
         \]
