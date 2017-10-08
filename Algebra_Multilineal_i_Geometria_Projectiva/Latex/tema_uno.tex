@@ -835,12 +835,12 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
         \wedge \dots \wedge \omega_p = \alpha_i (\omega_1 \wedge \dots \wedge \overline{\omega_i} \wedge \dots
         \wedge \omega_p) + \beta_i (\omega_1 \wedge \dots \wedge \overline{\overline{\omega_i}} \wedge \dots
         \wedge \omega_p)$
-        \item Sea $s \in \mathcal{S}_p$, $t = s^{-1}$, $\omega_{s(1)} \wedge \dots \wedge \omega_{s(p)} =
+        \item \label{prop_pr_ext_iii} Sea $s \in \mathcal{S}_p$, $t = s^{-1}$, $\omega_{s(1)} \wedge \dots \wedge \omega_{s(p)} =
         \underline{t}\left(\omega_1 \wedge \dots \wedge \omega_p \right) = \varepsilon(s)\left( \omega_1
         \wedge \dots \wedge \omega_p \right)$
         \item \label{prop_pr_ext_iv} Si $u_1, \dots, u_p \in \E$, $\left( \omega_1 \wedge \dots \wedge \omega_p\right) \left(u_1, \dots,
         u_p\right) = det\left(\omega_j(u_i)\right)$
-        \item Si $\omega_i = \omega_j , (i \neq j) \implies \omega_1 \wedge \dots \wedge \omega_p = 0$
+        \item \label{prop_pr_ext_v} Si $\omega_i = \omega_j , (i \neq j) \implies \omega_1 \wedge \dots \wedge \omega_p = 0$
         \item $\omega_1 \wedge \dots \wedge \omega_p \neq 0 \iff \{\omega_1,\dots,\omega_p\}$ son l.i.
     \end{enumerate}
 \end{prop}
@@ -873,7 +873,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
         \item
         \begin{gather*}
         \omega_1 \wedge \dots \wedge \omega_i \wedge \dots \wedge \omega_i \wedge \dots \wedge \omega_p
-        \stackrel{\ref{prop_pr_ext} (iii)}{=} (-1) \omega_1 \wedge \dots \wedge \omega_i \wedge \dots \wedge
+        \stackrel{\ref{prop_pr_ext_iii}}{=} (-1) \omega_1 \wedge \dots \wedge \omega_i \wedge \dots \wedge
         \omega_i \wedge \dots \wedge \omega_p \implies \\
         \implies 2\left( \omega_1 \wedge \dots \wedge \omega_p \right) = 0
         \stackrel{car\k \neq 2}{\implies} \omega_1 \wedge \dots \wedge \omega_p = 0
@@ -882,15 +882,15 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
         Suponemos que son l.d. y que $\omega_p = \sum_{j=1}^{p-1} \alpha_j \omega_j$:
         \[
         \omega_1 \wedge \dots \wedge \omega_p = \omega_1 \wedge \dots \wedge \omega_{p-1} \wedge \left(
-        \sum_{j=1}^{p-1} \alpha_j \omega_j \right) \stackrel{\ref{prop_pr_ext} (ii)}{=} \sum_{j=1}^{p-1}
+        \sum_{j=1}^{p-1} \alpha_j \omega_j \right) \stackrel{\ref{prop_pr_ext_ii}}{=} \sum_{j=1}^{p-1}
         \alpha_j \left( \omega_1 \wedge \dots \wedge \omega_{p-1} \wedge \omega_j \right)
-        \stackrel{\ref{prop_pr_ext} (v)}{=} 0 \text{ } !!
+        \stackrel{\ref{prop_pr_ext_v}}{=} 0 \text{ } !!
         \]
         $\impliedby$ \\
         Sea $B=\{u_1,\dots,u_n\}$, $B^*=\{\omega_1, \dots, \omega_p,\overbrace{\omega_{p+1},\dots, \dots,
 		    \omega_n}^{\text{Steinitz}} \}$ la base dual de $B$, tenemos que:
         \[
-        \left( \omega_1 \wedge \dots \wedge \omega_p \right) \left( u_1,\dots,u_p \right) \stackrel{\ref{prop_pr_ext} (iv)}{=}
+        \left( \omega_1 \wedge \dots \wedge \omega_p \right) \left( u_1,\dots,u_p \right) \stackrel{\ref{prop_pr_ext_iv}}{=}
         det\left( \omega_j \left(u_i \right) \right) = 
         \begin{vmatrix}
             1 & 0 & \dots & 0 \\
@@ -921,7 +921,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
              0 & \text{en el caso contrario}
         \end{array}\right.
     \]
-    En efecto, si $\hspace{0,1cm}\exists j_k \in J$, $j_k \notin I$, entonces en virtud del cálculo dado por \ref{prop_pr_ext_iv}(\ref{prop_pr_ext}) , en la posición $k$ hay una fila de ceros. \\
+    En efecto, si $\hspace{0,1cm}\exists j_k \in J$, $j_k \notin I$, entonces en virtud del cálculo dado por \ref{prop_pr_ext_iv} (\ref{prop_pr_ext}) , en la posición $k$ hay una fila de ceros. \\
     Por otro lado, si $I=J$ entonces tenemos el determinante de la matriz identidad. \\
     Observemos también que si $I=J$ pero no están ordenadas crecientemente, $\epsilon _{IJ}=\pm1$ en función de las permutaciones que ordenan estos conjuntos.
 \end{obs}
