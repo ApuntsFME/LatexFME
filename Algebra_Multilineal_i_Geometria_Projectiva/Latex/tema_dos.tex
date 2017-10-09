@@ -357,9 +357,9 @@ en añadir puntos en el $\infty$.
 		\end{center}
 		Y unir los puntos azules antipolares. Aunque, si lo tratamos de imaginar, este
 		objeto, no cabe en $\real^3$.
-		\item $\Po^1_{\cx} = (\cx^2 \setminus {0})/\sim \ = \cx \cup \setb{\infty} = S^2$. Las igualdades por el momento son por analogía o intuición, más adelante se
-		demostrarán. Aunque nos podemos hacer una idea basandonos en la proyección
-		estereográfica
+		\item $\Po^1_{\cx} = (\cx^2 \setminus {0})/\sim \ = \cx \cup \setb{\infty} = S^2$. Las igualdades por el momento son
+        por analogía o intuición, más adelante se demostrarán. Aunque nos podemos hacer una idea basandonos en la proyección
+        estereográfica
 		\begin{center}
 		\begin{tikzpicture}
 		\begin{axis}[axis equal,
@@ -411,7 +411,9 @@ en añadir puntos en el $\infty$.
 	Hemos enunciado la definición algebraica de $\Po_{\real}^{n}$. Existe una definición axiomática que no 
 	es igual en algunos casos patológicos.
 \end{obs}
+
 \subsection{Variedades lineales proyectivas}
+
 \begin{defi}
 	Sea $\E$ un $\k$-e.v. de dimensión $n+1$, sea $\Po^n = \Po(\E)$.
 	Llamaremos variedad lineal (proyectiva) de dimensión $r$ a cualquier conjunto 
@@ -456,3 +458,125 @@ en añadir puntos en el $\infty$.
 		a traves de esta biyección a variedades.
 	\end{itemize}
 \end{obs}
+\begin{prop}
+    Sean $V_1, V_2 \subseteq \Po^n$ variedades lineales $\implies V_1 \cap V_2$ variedad lineal que verifica:
+    \begin{itemize}
+        \item $V_1 \cap V_2 \subseteq V_1, V_2$
+        \item Si $W$ variedad lineal, $W \subseteq V_1, V_2$ i $W \subseteq V_1 \cap V_2$
+    \end{itemize}
+\end{prop}
+\begin{proof}
+    Veamos que: $V_1 \cap V_2 = \pi(H_1 \cap H_2)$ si $V_i = \pi(H_i)$ \\
+    $\supseteq$
+    \begin{gather*} 
+    \text{Si } v \in H_1 \cap H_2, p = [v] \in \pi(H_1), \pi(H_2) \implies p \in V_1 \cap V_2
+    \end{gather*}
+    $\subseteq$
+    \begin{gather*}
+        \text{Sea } p \in V_1 \cap V_2,
+        \begin{rcases} p = [v_1], v_1 \in H_1 \\ p = [v_2], v_2 \in H_2 \end{rcases} \implies [v_1] = [v_2] \implies
+        \exists \lambda \neq 0 \text{ t.q. } v_2 = \lambda v_1 \implies \\ \implies v_2 \in H_1 \implies v_2 \in H_1
+        \cap H_2 \implies p = [v_2] \in \pi (H_1 \cap H_2)
+    \end{gather*}
+    El resto sigue de lo que sabemos de s.e.v.s.
+\end{proof}
+\begin{defi}
+    Sean $V_1, V_2 \subseteq \Po^n$ variedades lineales, $V_i = \pi (H_i)$, definimos \textit{join} o variedad lineal generada como:
+    \[
+    V_1 \vee V_2 = \pi (H_1 + H_2)
+    \]
+\end{defi}
+\begin{prop}
+    \begin{itemize}
+    \item[]
+    \item $V_1, V_2 \subseteq V_1 \vee V_2$
+    \item Sea $W$ una variedad lineal, $V_1, V_2 \subseteq W \implies V_1 \vee V_2 \subseteq W$
+    \end{itemize}
+\end{prop}
+\begin{proof}
+    Propiedades de la suma de s.e.v.
+\end{proof}
+\begin{prop}
+    Sean $V_1, V_2 \subseteq \Po^n$ variedades lineales:
+    \begin{itemize}
+        \item $V_1 \subseteq V_2 \implies \dim \left( V_1\right) \leq \dim \left( V_2 \right)$
+        \item Si $V_1 \subseteq V_2$ y $\dim \left( V_1 \right) = \dim \left( V_2 \right) \implies V_1 = V_2$
+    \end{itemize}
+\end{prop}
+\begin{prop}[Fórmula de Grassmann]
+    \[ \dim \left( V_1 \cap V_2 \right) + \dim \left( V_1 \vee V_2 \right) = \dim \left( V_1 \right) + \dim \left( V_2 \right) \]
+\end{prop}
+\begin{proof}
+    Propiedades s.e.v.
+\end{proof}
+\begin{example}
+    \begin{enumerate}
+        \item[]
+        \item $\Po^2 \quad V_1, V_2$ rectas, tenemos que $\dim \left( V_1 \cap V_2 \right) + \dim \left( V_1 \vee V_2 \right) = 2$ (Grassmann).
+        \begin{center} \begin{tabular}{|c|c|c|}
+            \hline $\dim \left( V_1 \cap V_2 \right)$ & $1 \leq \dim \left( V_1 \vee V_2 \right) \leq 2$  & Posición relativa \\
+            \hline \hline
+            0 & 2 & Se cortan en un punto \\ \hline
+            1 & 1 & Son la misma recta\\ \hline
+        \end{tabular} \end{center}
+        Por tanto, dos rectas en un plano, o se cruzan o son la misma.
+        \item $\Po^3 \quad V_1, V_2$ rectas, tenemos que $\dim \left( V_1 \cap V_2 \right) + \dim \left( V_1 \vee V_2 \right) = 2$ (Grassmann).
+        \begin{center} \begin{tabular}{|c|c|c|}
+            \hline $\dim \left( V_1 \cap V_2 \right)$ & $1 \leq \dim \left( V_1 \vee V_2 \right) \leq 3$  & Posición relativa \\
+            \hline \hline
+            -1 & 3 & Se cruzan \\ \hline
+            0 & 2 & Se cortan en un punto $\left( V_1 \vee V_2 \cong \Po^2 \right)$ \\ \hline
+            1 & 1 & Son la misma recta\\ \hline
+        \end{tabular} \end{center}
+        \item $\Po^3 \quad V_1, V_2$ planos, tenemos que $\dim \left( V_1 \cap V_2 \right) + \dim \left( V_1 \vee V_2 \right) = 4$ (Grassmann).
+        \begin{center} \begin{tabular}{|c|c|c|}
+            \hline $\dim \left( V_1 \cap V_2 \right)$ & $2 \leq \dim \left( V_1 \vee V_2 \right) \leq 3$  & Posición relativa \\
+            \hline \hline
+            1 & 3 & Se cortan en una recta \\ \hline
+            2 & 2 & Son el mismo plano\\ \hline
+        \end{tabular} \end{center}
+        \item $\Po^3 \quad V_1$ plano, $V_2$ recta, tenemos que $\dim \left( V_1 \cap V_2 \right) + \dim \left( V_1 \vee V_2 \right) = 3$ (Grassmann).
+        \begin{center} \begin{tabular}{|c|c|c|}
+            \hline $\dim \left( V_1 \cap V_2 \right)$ & $2 \leq \dim \left( V_1 \vee V_2 \right) \leq 3$  & Posición relativa \\
+            \hline \hline
+            0 & 3 & Se cortan en un punto \\ \hline
+            1 & 2 & $V_2 \subseteq V_1$ \\ \hline
+        \end{tabular} \end{center}
+    \end{enumerate}
+\end{example}
+\begin{prop}
+    Sean $p \in \Po^n, r, V, H \subseteq \Po^n$ (recta, variedad lineal, hiperplano, respectivamente).
+    \begin{enumerate}
+        \item $\dim \left( V \vee p \right) = \text{ ó } \begin{cases} \dim V & (\iff p \in V) \\ \dim V + 1 & (\iff p \notin V) \end{cases}$
+        \item $\dim \left( r \vee H \right) = \text{ ó } \begin{cases} 1 & (\iff r \subseteq H) \\ 0 & (\iff r \nsubseteq H) \end{cases}$
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    Fórmula de Grassmann.
+\end{proof}
+\begin{defi}
+    Sean $V_1, V_2 \subseteq \Po^n, (V_i = \pi \left( H_i \right)$ variedades lineales, $V_1$ y $V_2$ son suplementarias $\iff H_1$ y $H_2$
+    son complementarios.
+\end{defi}
+\begin{obs}
+    $V_1, V_2$ suplementarias $\iff H_1 \oplus H_2 = \E \iff \left. \begin{cases} (1) & H_1 + H_2 = \E \\ (2) & H_1 \cap H_2 \end{cases} \right\}
+    \iff \begin{cases} (1) & V_1 \vee V_2 = \Po^n \\ (2) & V_1 \cap V_2 = \emptyset \end{cases}$
+\end{obs}
+\begin{prop}
+    Sean $V_1, V_2 \subseteq \Po^n$ variedades lineales:
+    \begin{enumerate}
+        \item $V_1, V_2$ son suplementarias $\implies \dim V_1 + \dim V_2 = n-1$
+        \item Si $\dim V_1 + \dim V_2 = n-1$
+        \[
+        V_1, V_2 \text{ suplementarias} \iff V_1 \vee V_2 = \Po^n \iff V_1 \cap V_2 = \emptyset
+        \]
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    \begin{enumerate}
+        \item[]
+        \item $V_1, V_2$ suplementarias $\iff H_1, H_2$ complementarios $\implies \overbrace{\dim H_1}^{\dim V_1 + 1} +
+        \overbrace{\dim H_2}^{\dim V_2 + 1} = \dim \E = n+1$
+        \item Fórmula de Grassmann.
+    \end{enumerate}
+\end{proof}
