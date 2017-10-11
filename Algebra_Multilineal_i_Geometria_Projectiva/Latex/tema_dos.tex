@@ -580,3 +580,91 @@ en añadir puntos en el $\infty$.
         \item Fórmula de Grassmann.
     \end{enumerate}
 \end{proof}
+\begin{defi}
+    Sea $\Po^n = \real(\E )$, y sean $p_0, \dots, p_m \in \Po^n$ tal que $p_i = [v_i], v_i \in \E$, decimos que $p_0, \dots,
+    p_m$ son linealmente independientes (l.i.) $\iff v_1, \dots, v_m \in \E$ son linealmente independientes.
+\end{defi}
+\begin{obs}
+    La independencia lineal no depende de los representantes elegidos.
+\end{obs}
+\begin{example}
+    $\Po^2_\real = \Po(\real^3)$. Sean $p_0 = [(1,1,0)], p_1 = [(0,1,1)], p_2 = [(2,3,1)]$. Entonces $p_0$ y $p_1$ son l.i.,
+    pero $p_0, p_1, p_2$ son l.d..
+\end{example}
+\begin{prop}
+    Sean $p_0, \dots, p_m \in \Po^n$ puntos y $V \subseteq \Po^n$ una variedad lineal:
+    \begin{enumerate}
+        \item $\dim\left( p_0 \vee \dots \vee p_m \right) \leq m$
+        \item $\dim\left( p_0 \vee \dots \vee p_m \right) = m \iff p_0, \dots, p_m$ son l.i.
+        \item $\dim V = m \iff \exists p_0, \dots, p_m \in V$ tal que $V = p_0 \vee \dots \vee p_m
+            \iff \forall p_0, \dots, p_m \in V \text{ l.i.}, V = p_0 \vee \dots \vee p_m$
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    Inmediata a partir de propiedades de s.e.v..
+\end{proof}
+\begin{defi}
+    $p_0, \dots, p_r \in \Po^n (r \geq n)$ estan en posición general $\iff n+1$ puntos cualesquiera de ellos son l.i..
+\end{defi}
+
+\subsection{Sistemas de referencia proyectivos. Coordenadas proyectivas}
+
+\begin{obs}
+    $\Po^n = \Po(\E)$. Sea $B = \{v_0, \dots, v_n\}$ base de $\E$:
+    \begin{center} \begin{tabular}{ccc}
+        $p = [v] = [\lambda v] \qquad $ &
+        $(v)_B = \begin{pmatrix} x_0 \\ \vdots \\ x_n \end{pmatrix}\qquad $&
+        $(\lambda v)_B = \begin{pmatrix} \lambda x_0 \\ \vdots \\ \lambda x_n \end{pmatrix} \qquad$
+    \end{tabular} \end{center}
+    Vemos que las coordenadas estarían definidas salvor por multiplicar por $\lambda$.
+\end{obs}
+\begin{defi}
+    $\Po^n = \Po(\E)$
+    \begin{enumerate}
+        \item Un sistema de referencia proyectivo en $\Po^n$ es:
+            \[ R= \{ p_0, \dots, p_n; \bar{p} \} \]
+            Donde $p_0, \dots, p_n, \bar{p}$ estan en posición general.
+            \begin{itemize}
+                \item $\{ p_0, \dots, p_n \}$ son los vertices de $R$
+                \item $\bar{p}$ es el punto unidad
+            \end{itemize}
+        \item Fijado un sistema de referencia $R$. Sea $B = \{ u_0, \dots, u_n \}$ base de $\E$. Diremos que $B$ esta adaptada a $R$ si y solo si:
+            \[ \begin{cases} p_i = [u_i], \forall i = 0, \dots, n \\ \bar{p} = [u_0 + \dots + u_n ] \end{cases} \]
+        \item \textit{Asignación de coordenadas proyectivas} \\
+            $\Po^n = \Po(\E)$, Sea $R = \{ p_0, \dots, p_n; \bar{p} \}$, y $B = \{u_0, \dots, u_n\}$ una base adaptada. Sea $q \in \Po^n, q = [v]$, entonces 
+            $q_R = v_B$. (Cale ver que la definición es consistente)
+    \end{enumerate}
+\end{defi}
+\begin{prop}
+    Sea $R$ un sistema de referencia en $\Po^n$. Sean $B_1 = \{ u_0, \dots, u_n\}, B_2 = \{ u'_0, \dots u'_n \}$ bases adaptadas a $R$. Sea $q = [v] \in \Po^n$, entonces $\exists \lambda \neq 0$ tal que $v_{B_2} = v_{B_1}$.
+\end{prop}
+\begin{proof}
+    $p_i = [u_i] = [u'_i], \forall i = 0, \dots, n$. Por tanto, $\exists \lambda \neq 0$ tal que $u'i= \lambda_i u_i, \forall i = 1, \dots, n$. Por otro lado,
+    \begin{gather*}
+        \bar{p} = [u_0 + \dots + u_n] = [u'_0 + \dots + u'_n] \implies \exists \lambda \neq 0 \text{ tal que } u'_0 + \dots + u'_n = \\ = \lambda_0 u_0 + \dots + \lambda_n u_n = \lambda (u_0 + \dots + u_n)
+        \stackrel{B_1 \text{ base}}{\implies} \lambda_i = \lambda \forall i = 1, \dots, n
+    \end{gather*}
+\end{proof}
+\begin{obs}
+    $R = \{ p_0, \dots, p_n; \bar{p} \}$ en $\Po^n$
+    \begin{enumerate}
+        \item $q \in \Po^n, q_R = (a_0, \dots, a_n) = \lambda (a_0, \dots, a_n) \stackrel{\text{notación}}{=} (a_0 : \dots : a_n) \forall \lambda \neq 0$
+        \item Ejemplos: \\ $\begin{aligned} (p_0&)_R = (1:0:\dots:0) \\ \vdots& \\ (p_n&)_R = (0:\dots:0:1) \end{aligned}$
+        \item $q_R = (0: \dots : 0)$ no existe.
+        \item Sea $\Po^2_\real = \Po(\real^3), R = \{ p_0, p_1, p_2; \bar{p} \} = \left\{ [(1,1,0)], [(1,0,1)], [(0,1,1)]; [(3,3,2)]\right\}$, entonces $B = \left\{ [(1,1,0)], [(1,0,1)], [(0,1,1)] \right\}$ no es una base
+            adaptada, para que lo sea, debemos multiplicar $v_0, v_1, v_2$ por $\lambda_0, \lambda_1, \lambda_2$ tales que $\bar{p} = \lambda_0 p_0 + \lambda_1 p_1 + \lambda_2 p_2$. En este caso:
+            \[
+                \begin{cases} \lambda_0 + \lambda_1 = 3 \\ \lambda_0 + \lambda_2 = 3 \\ \lambda_1 + \lambda_2 = 2 \end{cases} \iff \begin{cases} \lambda_0 = 2 \\ \lambda_1 = 1 \\ \lambda_2 = 1 \end{cases}
+            \]
+            Y el sistema de referencia con la base $B$ adaptada es: \[ R' = \left\{ [(2,2,0)], [(1,0,1)], [(0,1,1)]; [(3,3,2)]\right\} \]
+    \end{enumerate}
+\end{obs}
+
+
+
+
+
+
+
+
+
