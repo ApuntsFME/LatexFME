@@ -659,3 +659,72 @@ en añadir puntos en el $\infty$.
             Y el sistema de referencia con la base $B$ adaptada es: \[ R' = \left\{ [(2,2,0)], [(1,0,1)], [(0,1,1)]; [(3,3,2)]\right\} \]
     \end{enumerate}
 \end{obs}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FALTAN LUNES Y MIERCOLES %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{prop}
+    Sean $H_0,\dots,H_m \subseteq \Po^n$ hiperplanos, entonces
+    \[
+        H_0,\dots, H_m \text{ l.i. } \iff dim(H_0 \cap \cdots \cap H_m) = n - m - 1
+    \]
+\end{prop}
+\begin{proof}
+    $H_0,\dots,H_m$ l.i $\stackrel{def}{\iff} H_0^*,\dots,H_m^* \in \left(\Po^n\right)^* \text{ son l.i. }
+    \iff dim(H_o^* \vee \cdots \vee H_m^*) = m \iff dim(H_o^* \vee \cdots \vee H_m^*)^* = n - m-1
+    = dim(H_0 \cap \cdots \cap H_m)$
+\end{proof}
+
+\begin{defi}
+    Una recta (o haz) de hiperplanos en $\Po^n$ es la colección de hiperplanos que contienen a una variedad
+    fijada $V$ de dimensión $n-2$.
+\end{defi}
+
+\begin{example}
+    Sean $H_0, H_1 \subseteq \Po^3$ y sean $H_0^*$ y $H_1^*$ sus correspondientes 
+    duales \\
+    \begin{tikzpicture}
+    \begin{axis}[ name= plot,
+        axis equal,
+        hide axis,
+		ticks=none,
+		width=0.5\linewidth,
+		enlargelimits=0,
+		axis lines=center,
+		view={20}{20},
+		ymin=-4,ymax=4,
+		xmin=-4,xmax=4]
+    \draw (axis cs: 1,4,1) [color=green]-- (axis cs:1,-4,1);
+    \addplot3 [patch, patch type=rectangle,color=red, opacity=0.5] coordinates {
+        (-4,4,6) (4,4,-2) (4,-4,-2) (-4,-4,6)
+    } node[label=$H_0$]{};
+    \addplot3 [patch, patch type=rectangle,color=red, opacity=0.5] coordinates {
+        (4,4,7) (-4,4,-9) (-4,-4,-9) (4,-4,7)
+    } node[label=$H_1$]{};
+    \addplot3 [patch, patch type=rectangle,color=blue, opacity=0.5] coordinates {
+        (1,4,4) (1,4,-4) (1,-4,-4) (1,-4,4)
+    } node[label=$L^*$]{};
+    \end{axis}
+    \begin{axis}[ at=(plot.right of south east),
+        axis equal,
+		ticks=none,
+		width=0.5\linewidth,
+		enlargelimits=0,
+		axis lines=center,
+		view={20}{20},
+		ymin=-4,ymax=4,
+		xmin=-4,xmax=4]
+    \draw (axis cs: 0,3,4) [color=blue]-- (axis cs:4,3,0);
+    \addplot3 [color=red,mark=*] coordinates { (3,3,1) } node[label=225:$H_0^*$]{};
+    \addplot3 [color = red,mark=*] coordinates { (2,3,2) } node[label=225:$H_1^*$]{};
+    \addplot3 [color = blue,mark=*] coordinates { (2.5,3,1.5) } node[label=$L$]{};
+    \addplot3 [patch,color=yellow,opacity=0.01] coordinates {(1,0,0) (0,1,0) (0,0,1) (1,1,1)};
+    \end{axis}
+    \end{tikzpicture}
+\end{example}
+
+\begin{example}[Dualizacion de otros conceptos geométricos]
+    
+\end{example}
