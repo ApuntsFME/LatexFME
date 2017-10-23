@@ -728,3 +728,218 @@ en añadir puntos en el $\infty$.
 \begin{example}[Dualizacion de otros conceptos geométricos]
     
 \end{example}
+
+%%%%%%%%%%%%%%%%%%%%
+%   23 d'octubre   %
+%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Los teoremas de Desargues y Pappus}
+
+\begin{thm}[de Desargues]
+
+Sean $ABC$, $A'B'C'$ dos triángulos en $\Po^2$ (sin vértices ni lados en común). Entonces,
+\[
+AA' \cap BB' \cap CC' \neq \emptyset \iff
+\begin{cases}
+AB \cap A'B' = Z \\
+AC \cap A'C' = Y \\
+BC \cap B'C' = X
+\end{cases}
+\text{ están alineados.}
+\]
+
+\begin{center}
+\definecolor{wwqqzz}{rgb}{0.4,0.,0.6}
+\definecolor{dbwrru}{rgb}{0.8588235294117647,0.3803921568627451,0.0784313725490196}
+\definecolor{wrwrwr}{rgb}{0.3803921568627451,0.3803921568627451,0.3803921568627451}
+\definecolor{sexdts}{rgb}{0.1803921568627451,0.49019607843137253,0.19607843137254902}
+\definecolor{dtsfsf}{rgb}{0.8274509803921568,0.1843137254901961,0.1843137254901961}
+\definecolor{rvwvcq}{rgb}{0.08235294117647059,0.396078431372549,0.7529411764705882}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.5cm,y=1.5cm]
+\clip(-0.5,-0.5) rectangle (9.,3.5);
+\fill[line width=1.pt,color=rvwvcq,fill=rvwvcq,fill opacity=0.10000000149011612] (3.3336552362849274,1.992339795349051) -- (1.9793647349081451,0.1168150700088304) -- (-0.19217003454083312,0.6438220176250907) -- cycle;
+\fill[line width=1.pt,color=rvwvcq,fill=rvwvcq,fill opacity=0.10000000149011612] (4.403859447556563,2.040558909290155) -- (4.738313888759495,1.0095694436469795) -- (5.374944253774689,1.657128809689663) -- cycle;
+\draw [line width=1.pt,color=rvwvcq] (3.3336552362849274,1.992339795349051)-- (1.9793647349081451,0.1168150700088304);
+\draw [line width=1.pt,color=rvwvcq] (1.9793647349081451,0.1168150700088304)-- (-0.19217003454083312,0.6438220176250907);
+\draw [line width=1.pt,color=rvwvcq] (-0.19217003454083312,0.6438220176250907)-- (3.3336552362849274,1.992339795349051);
+\draw [line width=1.pt,color=rvwvcq] (4.403859447556563,2.040558909290155)-- (4.738313888759495,1.0095694436469795);
+\draw [line width=1.pt,color=rvwvcq] (4.738313888759495,1.0095694436469795)-- (5.374944253774689,1.657128809689663);
+\draw [line width=1.pt,color=rvwvcq] (5.374944253774689,1.657128809689663)-- (4.403859447556563,2.040558909290155);
+\draw [line width=1.pt,dotted,color=sexdts,domain=-0.5:9.] plot(\x,{(--3.6701280196078825-0.383430099600492*\x)/0.9710848062181263});
+\draw [line width=1.pt,dotted,color=sexdts,domain=-0.5:9.] plot(\x,{(--3.5541459610560944-1.8755247253402205*\x)/-1.3542905013767823});
+\draw [line width=1.pt,dotted,color=sexdts,domain=-0.5:9.] plot(\x,{(--5.2228066883522954-1.0309894656431755*\x)/0.334454441202932});
+\draw [line width=1.pt,dotted,color=sexdts,domain=-0.5:9.] plot(\x,{(--2.529148647580714--1.34851777772396*\x)/3.5258252708257607});
+\draw [line width=1.pt,dotted,color=sexdts,domain=-0.5:9.] plot(\x,{(-1.2968069532830016--0.5270069476162603*\x)/-2.171534769448978});
+\draw [line width=1.pt,dotted,color=sexdts,domain=-0.5:9.] plot(\x,{(-2.425616974499177--0.6475593660426835*\x)/0.6366303650151943});
+\draw [line width=1.pt,color=wrwrwr,domain=-0.5:9.] plot(\x,{(--9.50601349361014--0.23250306512482055*\x)/5.1603138069701515});
+\draw [line width=1.pt,color=wrwrwr,domain=-0.5:9.] plot(\x,{(--1.9667522247370517-1.215273416826892*\x)/-3.7556551544955843});
+\draw [line width=1.pt,color=wrwrwr,domain=-0.5:9.] plot(\x,{(--2.1171944617344565--0.5677140507842084*\x)/3.11902478948039});
+\draw [line width=1.pt,color=dbwrru,domain=-0.5:9.] plot(\x,{(--2.855613634592153-0.8059659723881762*\x)/-0.14358796715525868});
+\begin{scriptsize}
+\draw [fill=wwqqzz] (8.49396904325508,2.2248428604738715) circle (2.5pt);
+\draw[color=wwqqzz] (8.5756934700623,2.511596640794484) node {$O$};
+\draw [fill=rvwvcq] (3.3336552362849274,1.992339795349051) circle (2.5pt);
+\draw[color=rvwvcq] (3.1818813007858053,2.3100939843529726) node {$A$};
+\draw [fill=rvwvcq] (-0.19217003454083312,0.6438220176250907) circle (2.5pt);
+\draw[color=rvwvcq] (-0.1104456077336135,0.9305757979457029) node {$B$};
+\draw [fill=rvwvcq] (1.9793647349081451,0.1168150700088304) circle (2.5pt);
+\draw[color=rvwvcq] (1.8742904718702913,0.4500694633544068) node {$C$};
+\draw [fill=rvwvcq] (4.403859447556563,2.040558909290155) circle (2.5pt);
+\draw[color=rvwvcq] (4.52449688404727,2.3255941886946276) node {$A'$};
+\draw [fill=rvwvcq] (4.738313888759495,1.0095694436469795) circle (2.5pt);
+\draw[color=rvwvcq] (4.512821965931953,1.2250796804371424) node {$C'$};
+\draw [fill=rvwvcq] (5.374944253774689,1.657128809689663) circle (2.5pt);
+\draw[color=rvwvcq] (5.365090988350101,1.4265823368786539) node {$B'$};
+\draw [fill=dtsfsf] (4.082899471593713,3.029950328105273) circle (2.0pt);
+\draw[color=dtsfsf] (3.8006519608976106,3.1316048144606725) node {$Y$};
+\draw [fill=dtsfsf] (3.939311504438454,2.223984355717097) circle (2.0pt);
+\draw[color=dtsfsf] (3.8240017971282447,2.511596640794484) node {$Z$};
+\draw [fill=dtsfsf] (3.498235188833963,-0.2517976241139916) circle (2.0pt);
+\draw[color=dtsfsf] (3.3803549087461957,0.07806455915469361) node {$X$};
+\draw[color=dbwrru] (3.6,1) node {$r^*$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+\end{thm}
+\begin{proof}
+$\implies$ Analítica \\
+$R = \{A,B,C;O\}$, es un sistema de referencia porque todos los puntos son linealmente independientes.
+\begin{itemize}
+    \item $A,B,C$ linealmente independientes ($ABC$ triangulo)
+    \item $A,B,O$ linealmente independientes (si no, $AB = A'B'$)
+    \item $B,C,O$ linealmente independientes (si no, $BC = B'C'$)
+    \item $C,A,O$ linealmente independientes (si no, $AC = A'C'$)
+\end{itemize}
+Tenemos que 
+\begin{itemize}
+    \item $A' \in AO : x_1 - x_2 = 0$ i $A \neq A' \implies A' = (a:1:1)$
+    \item $B' \in BO : x_0 - x_2 = 0$ i $B \neq B' \implies B' = (1:b:1)$
+    \item $C' \in CO : x_0 - x_1 = 0$ i $C \neq C' \implies C' = (1:1:c)$
+\end{itemize}
+
+\begin{gather*}
+Z : \left. \begin{cases}
+AB : x_2 = 0 \\
+A'B' : 0 = \begin{vmatrix} a & 1 & x_0 \\ 1 & b & x_1 \\ 1 & 1 & x_2 \end{vmatrix}
+\end{cases} \right\}
+x_0(1-b)-x_1(a-1)=x_0(1-b) + x_1(1-a) = 0 \implies \\ \implies Z = (a-1:1-b:0).
+\end{gather*}
+Análogamente, $X = (0:b-1:1-c), Y = (a-1:0:1-c)$. Vemos que $Z-X = Z \implies X,Y,Z$ no son linealmente independientes $\iff X,Y,Z$
+están alineados. \\ \\
+$\implies$ Sintética \\
+$\overbrace{\Po^2 = \Po(\E)}^{\pi \text{ plano en } \Po^3} \subset \Po(\bar{\E}) = \Po^3, \bar{\E} = \E \times \k$ \\
+Sea $r$ una recta en $\Po^3$, $r \nsubseteq \pi$, tal que $r \cap \pi = O$. Sean $p,p' \in r, p\neq p', p, p' \neq O$.
+$r$ y $AA'$ son coplanarias $\implies pA \cap p'A' = A_0$ (intersección de rectas en un plano). Análogamente,
+$\begin{cases} pB \cap p'B' = B_0 \\ pC \cap p'C' = C_0 \end{cases}$. \\
+Por construcción,
+\begin{align*}
+    pA_0 \cap \pi &= A, & pB_0 \cap \pi &= B, & pC_0 \cap \pi = C \\
+    p'A_0 \cap \pi &= A', & p'B_0 \cap \pi &= B', & p'C_0 \cap \pi = C'
+\end{align*}
+$A_0, B_0, C_0$ son linealmente independientes (forman un triángulo). Si estuvieran alineados, $T = A_0 \vee B_0 \vee C_0 \implies A,B,C \in
+\pi \cap (p \vee t)$ estarían alineados.\\
+Finalmente,
+\begin{gather*}
+    Z = AB \cap A'B'= \pi \cap \left( \left( A_0 \vee B_0 \vee p \right) \cap \left( A_0 \vee B_0 \vee p' \right) \right)
+    \substack{\text{intersección de} \\ = \\ \text{planos distintos}} \pi \cap \left( A_0 \vee B_0 \right)
+\end{gather*}
+Análogamente, $Y = \pi \cap \left( A_0 \vee C_0 \right)$ y $X = \pi \cap \left( B_0 \vee C_0 \right)$. Entonces, $X,Y,Z \in \pi\cap\left(
+A_0 \vee B_0 \vee C_0 \right)$ (que es una recta porque es la intersección de dos planos distintos).
+\\ \\
+$\impliedby$ Dualidad \\
+Hipotésis: $X, Y, Z$ están alineados.
+
+Consideramos el espacio proyectivo dual y dualizamos las hipótesis:
+
+\begin{center}
+\definecolor{wwqqzz}{rgb}{0.4,0.,0.6}
+\definecolor{dtsfsf}{rgb}{0.8274509803921568,0.1843137254901961,0.1843137254901961}
+\definecolor{rvwvcq}{rgb}{0.08235294117647059,0.396078431372549,0.7529411764705882}
+\definecolor{wrwrwr}{rgb}{0.3803921568627451,0.3803921568627451,0.3803921568627451}
+\definecolor{sexdts}{rgb}{0.1803921568627451,0.49019607843137253,0.19607843137254902}
+\definecolor{dbwrru}{rgb}{0.8588235294117647,0.3803921568627451,0.0784313725490196}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.4cm,y=1.4cm]
+\clip(-0.8,0.) rectangle (10.,4.5);
+\fill[line width=1.pt,color=sexdts,fill=sexdts,fill opacity=0.10000000149011612] (3.5905034348218994,2.7363496037484754) -- (2.236212933445119,0.3958187481586135) -- (-0.36,0.52) -- cycle;
+\fill[line width=1.pt,color=sexdts,fill=sexdts,fill opacity=0.10000000149011612] (4.564320062604457,2.6690117085413894) -- (4.909911174012507,1.1462661459359629) -- (5.7636405841417275,1.6921417570208015) -- cycle;
+\draw [line width=1.pt,color=sexdts] (3.5905034348218994,2.7363496037484754)-- (2.236212933445119,0.3958187481586135);
+\draw [line width=1.pt,color=sexdts] (2.236212933445119,0.3958187481586135)-- (-0.36,0.52);
+\draw [line width=1.pt,color=sexdts] (-0.36,0.52)-- (3.5905034348218994,2.7363496037484754);
+\draw [line width=1.pt,color=sexdts] (4.564320062604457,2.6690117085413894)-- (4.909911174012507,1.1462661459359629);
+\draw [line width=1.pt,color=sexdts] (4.909911174012507,1.1462661459359629)-- (5.7636405841417275,1.6921417570208015);
+\draw [line width=1.pt,color=sexdts] (5.7636405841417275,1.6921417570208015)-- (4.564320062604457,2.6690117085413894);
+\draw [line width=1.pt,dotted,color=rvwvcq,domain=-0.8:10.] plot(\x,{(--7.659747632557802-0.9768699515205879*\x)/1.1993205215372704});
+\draw [line width=1.pt,dotted,color=rvwvcq,domain=-0.8:10.] plot(\x,{(--4.697871799499361-2.340530855589862*\x)/-1.3542905013767803});
+\draw [line width=1.pt,dotted,color=rvwvcq,domain=-0.8:10.] plot(\x,{(--7.872684844357776-1.5227455626054265*\x)/0.34559111140804966});
+\draw [line width=1.pt,dotted,color=rvwvcq,domain=-0.8:10.] plot(\x,{(--2.852147643456839--2.2163496037484753*\x)/3.9505034348218993});
+\draw [line width=1.pt,dotted,color=rvwvcq,domain=-0.8:10.] plot(\x,{(-1.305325474728563--0.12418125184138651*\x)/-2.596212933445119});
+\draw [line width=1.pt,dotted,color=rvwvcq,domain=-0.8:10.] plot(\x,{(-1.70159964186535--0.5458756110848386*\x)/0.8537294101292208});
+\draw [line width=1.pt,color=dtsfsf,domain=-0.8:10.] plot(\x,{(--16.72573405137783-0.38750510854135545*\x)/5.603960695352214});
+\draw [line width=1.pt,color=dtsfsf,domain=-0.8:10.] plot(\x,{(--0.9933148705940678-1.202578349271157*\x)/-4.2845529561616065});
+\draw [line width=1.pt,color=dtsfsf,domain=-0.8:10.] plot(\x,{(--2.0204412296839145--0.6567027381863184*\x)/3.4308235460323857});
+\draw [line width=1.pt,color=wwqqzz,domain=-0.8:10.] plot(\x,{(--3.193311356394389-0.8938251320959107*\x)/-0.1608060938655136});
+\begin{scriptsize}
+\draw [fill=dbwrru] (9.194464130174113,2.34884449520712) circle (2.5pt);
+\draw[color=dbwrru] (9.276188556981314,2.63559827552772) node {$r^*$};
+\draw [fill=sexdts] (3.5905034348218994,2.7363496037484754) circle (2.5pt);
+\draw[color=sexdts] (3.4270545812074604,3.069603997094052) node {$(AB)^*$};
+\draw [fill=sexdts] (-0.36,0.52) circle (2.5pt);
+\draw[color=sexdts] (-0.23886970700210086,0.8065741632124634) node {$(AC)^*$};
+\draw [fill=sexdts] (2.236212933445119,0.3958187481586135) circle (2.5pt);
+\draw[color=sexdts] (2.3529621145982897,0.6825725284792257) node {$(BC)^*$};
+\draw [fill=sexdts] (4.564320062604457,2.6690117085413894) circle (2.5pt);
+\draw[color=sexdts] (4.74632032823829,2.961102566702469) node {$(A'B')^*$};
+\draw [fill=sexdts] (4.909911174012507,1.1462661459359629) circle (2.5pt);
+\draw[color=sexdts] (4.594546392739168,1.3645815195120332) node {$(B'C')^*$};
+\draw [fill=sexdts] (5.7636405841417275,1.6921417570208015) circle (2.5pt);
+\draw[color=sexdts] (5.948836894115948,1.9845896931782219) node {$(A'C')^*$};
+\draw[color=sexdts] (2.7966090029803388,1.860588058444984) node {$(B)^*$};
+\draw[color=sexdts] (0.9753217769908749,0.8375745718957729) node {$(C)^*$};
+\draw[color=sexdts] (1.7225165363711676,1.535083767270235) node {$(A)^*$};
+\draw[color=sexdts] (4.617896228969802,1.969089488836567) node {$(B')^*$};
+\draw[color=sexdts] (5.5051900057339,1.3955819281953425) node {$(C')^*$};
+\draw[color=sexdts] (5.330066234004144,2.3410943930362804) node {$(A')^*$};
+\draw [fill=wrwrwr] (4.278993131711778,3.926220888888763) circle (2.0pt);
+\draw[color=wrwrwr] (4.489472129701314,3.9531156445683706) node {$(BB')^*$};
+\draw [fill=wrwrwr] (4.118187037846265,3.032395756792852) circle (2.0pt);
+\draw[color=wrwrwr] (4.302673439856241,3.3796080839271463) node {$(AA')^*$};
+\draw [fill=wrwrwr] (3.631836574987902,0.32906371097595916) circle (2.0pt);
+\draw[color=wrwrwr] (3.415379663092143,0.6360719154542616) node {$(CC')^*$};
+\draw[color=dtsfsf] (7.478251167222485,2.759599910260958) node {$Z^*$};
+\draw[color=dtsfsf] (7.209728050570193,2.2325929626446976) node {$Y^*$};
+\draw[color=dtsfsf] (7.443226412876534,1.597084584636854) node {$X^*$};
+\draw[color=wwqqzz] (4.115874750011168,2.186092349619733) node {$O^*$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+Queremos ver que, en efecto, $\left(AA'\right)^*, \left(BB'\right)^*, \left(CC'\right)^*$ están alineados. Por la primera implicación,
+$\exists s \subset (\Po^2)^*$ recta tal que:
+
+\begin{align*}
+    s &= \left[ \left[ \left(AB\right)^* \vee \left(AC\right)^* \right] \cap \left[ \left(A'B'\right)^* \vee \left(A'C'\right)^* \right] \right]
+    \vee [\dots ] \vee [\dots] \\
+    &= \left[ (AB \cap AC)^* \cap \left(A'B' \cap A'C' \right)^* \right] \vee [\dots] \vee [\dots] \\
+    &= \left(A^* \cap (A')^* \right) \vee \left(B^* \cap (B')^* \right) \vee \left(C^* \cap (C')^* \right) \\
+    &= (AA')^* \vee (BB')^* \vee (CC')^*
+\end{align*}
+
+$s = (AA' \cap BB' \cap CC')^* \implies AA' \cap BB' \cap CC' = s^*$ (un punto)
+\end{proof}
+\begin{obs}
+El teorema de Desargues es su propio dual: $(\implies) \iff (\impliedby)$.
+\end{obs}
+\begin{obs}
+Definición axiomática de $\Po^2$
+\begin{itemize}
+    \item $X \rightarrow$ puntos
+    \item $Y \rightarrow$ rectas
+\end{itemize}
+Hay una relación de pertenencia entre puntos y rectas (los puntos pertenecen a rectas). Axiomas:
+\begin{itemize}
+    \item $\forall p_1, p_2, \exists! r$ tal que $p_1, p_2 \in r$
+    \item $\forall r_1, r_2, \exists! p$ tal que $p \in r_1, r_2$
+    \item $\exists 4$ puntos no alineados
+\end{itemize}
+\end{obs}
