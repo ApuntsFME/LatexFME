@@ -204,7 +204,7 @@
 \end{prop}
 \begin{example}
 	Sea $\E = \real^3$, $B = \{e_1, e_2, e_3\}$, $B^* = \{ e_1^*, e_2^*, e_3^*\}$.
-	Y consideramps el producto tensorial de los tensores $e_1^*$ y $e_2^*$ sobre
+	Y consideramos el producto tensorial de los tensores $e_1^*$ y $e_2^*$ sobre
 	los vectores $v_1 = (x_1, y_1, z_1)$ y $v_2 = (x_2,y_2,z_2)$.
 	\[
 		\begin{rcases}
@@ -226,7 +226,7 @@
 		\end{cases}
 	\]
 \end{example}
-\begin{obs}[a] \label{obs:tens_cero}
+\begin{obs} \label{obs:tens_cero}
 	Si $\E$ es un $\k$-ev de dimensión $n$ y $B = \{e_1, \cdots, e_n\}$
 	\[
 		(\underbrace{e_{i_1}^* \otimes \cdots \otimes e_{i_p}^*}_
@@ -660,7 +660,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
     \end{enumerate}
 \end{proof}
 \begin{prop}
-    Sea $\E$ un $\k$-ev. con $car \E \neq 2$ y sea $f \in T_p(\E)$, entonces $\forall v_i, v_j \in \E$
+    Sea $\E$ un $\k$-ev. con $\car \k \neq 2$ y sea $f \in T_p(\E)$, entonces $\forall v_i, v_j \in \E$
     \[
         f(\cdots, v_i, \cdots, v_j, \cdots) = -f(\cdots,v_j,\cdots,v_i,\cdots) \iff
         f(\cdots, w, \cdots, w, \cdots) = 0
@@ -703,7 +703,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
     por la proposición \ref{prop:sim_comp}.
 \end{example}
 \begin{defi}
-    Sea $\E$ un $\k$-ev. con $car \k = 0$ y $f \in T_p(\E)$. Llamamos simetrizado de $f$ a
+    Sea $\E$ un $\k$-ev. con $\car \k = 0$ y $f \in T_p(\E)$. Llamamos simetrizado de $f$ a
     \[
         S(f) = \frac{1}{p!}\sum_{s \in \mathcal{S}_p} \underline{s}f
     \]
@@ -876,7 +876,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
         \stackrel{\ref{prop_pr_ext_iii}}{=} (-1) \omega_1 \wedge \dots \wedge \omega_i \wedge \dots \wedge
         \omega_i \wedge \dots \wedge \omega_p \implies \\
         \implies 2\left( \omega_1 \wedge \dots \wedge \omega_p \right) = 0
-        \stackrel{car\k \neq 2}{\implies} \omega_1 \wedge \dots \wedge \omega_p = 0
+        \stackrel{\car \k \neq 2}{\implies} \omega_1 \wedge \dots \wedge \omega_p = 0
         \end{gather*}
         \item $\implies$ \\
         Suponemos que son l.d. y que $\omega_p = \sum_{j=1}^{p-1} \alpha_j \omega_j$:
@@ -996,8 +996,14 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
 	$w_3=(a_3,b_3,c_3)_{B^*}$
 	\[
 		w_1 \wedge w_2 = \determinant{w_1(e_1) & w_1(e_2) \\ w_2(e_1) & w_2(e_2)}
-		(e_1^* \wedge e_2^*) =
-		\determinant{a_1 & b_1 \\ a_2 & b_2}(e_1^* \wedge e_2^*)
+		(e_1^* \wedge e_2^*) + \determinant{w_1(e_1) & w_1(e_3) \\ w_2(e_1) & w_2(e_3)}
+        (e_1^* \wedge e_3^*) + \determinant{w_1(e_2) & w_1(e_3) \\ w_2(e_2) & w_2(e_3)}
+        (e_2^* \wedge e_3^*) =
+    \]
+    \[
+		\determinant{a_1 & b_1 \\ a_2 & b_2}(e_1^* \wedge e_2^*) +
+		\determinant{a_1 & b_1 \\ a_3 & b_3}(e_1^* \wedge e_3^*)
+		+ \determinant{a_2 & b_2 \\ a_3 & b_3}(e_2^* \wedge e_3^*)
 	\]
 	\[
 		w_1 \wedge w_2 \wedge w_3 = (w_1 \wedge w_2 \wedge w_3)	(e_1,e_2,e_3)
@@ -1022,7 +1028,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
 	Sea $\E$ un $\k$-ev. y sean $f \in A_p(\E)$, $g \in A_q(\E)$ y $h \in A_r(\E)$.
 	\begin{enumerate}[i)]
 		\item $(f \wedge g) \wedge h = f \wedge (g \wedge h) = f \wedge g \wedge h$
-		\item $f \wedge g = (-1)^{p+q} g \wedge f$
+		\item $f \wedge g = (-1)^{pq} g \wedge f$
 		\item $\wedge$ es lineal en cada factor.
 	\end{enumerate}
 \end{prop}
