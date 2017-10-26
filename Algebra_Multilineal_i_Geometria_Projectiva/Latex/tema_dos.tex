@@ -682,52 +682,162 @@ en añadir puntos en el $\infty$.
     fijada $V$ de dimensión $n-2$.
 \end{defi}
 
-\begin{example}
-    Sean $H_0, H_1 \subseteq \Po^3$ y sean $H_0^*$ y $H_1^*$ sus correspondientes 
-    duales \\
-    \begin{tikzpicture}
-    \begin{axis}[ name= plot,
-        axis equal,
-        hide axis,
+
+\begin{example}[Dualizacion del triángulo]
+\[
+\begin{aligned}
+\text{Triángulo en $\Po^2$} & \quad \text{Triángulo en $\left( \Po^2 \right)^*$} \\
+\begin{tikzpicture}
+\begin{axis}[axis equal, hide axis,
 		ticks=none,
-		width=0.5\linewidth,
+		width=0.5*\linewidth,
 		enlargelimits=0,
 		axis lines=center,
-		view={20}{20},
-		ymin=-4,ymax=4,
-		xmin=-4,xmax=4]
-    \draw (axis cs: 1,4,1) [color=green]-- (axis cs:1,-4,1);
-    \addplot3 [patch, patch type=rectangle,color=red, opacity=0.5] coordinates {
-        (-4,4,6) (4,4,-2) (4,-4,-2) (-4,-4,6)
-    } node[label=$H_0$]{};
-    \addplot3 [patch, patch type=rectangle,color=red, opacity=0.5] coordinates {
-        (4,4,7) (-4,4,-9) (-4,-4,-9) (4,-4,7)
-    } node[label=$H_1$]{};
-    \addplot3 [patch, patch type=rectangle,color=blue, opacity=0.5] coordinates {
-        (1,4,4) (1,4,-4) (1,-4,-4) (1,-4,4)
-    } node[label=$L^*$]{};
-    \end{axis}
-    \begin{axis}[ at=(plot.right of south east),
-        axis equal,
+		view={10}{20},
+		ymin=-2,ymax=3,
+		xmin=-2,xmax=3]
+		
+		\addplot [mark=*,color=red] coordinates {(1,0)} node[label=0:$q_1$]{};
+		\addplot [mark=*,color=red] coordinates {(1,1)} node[label=50:$q_2$]{};
+		\addplot [mark=*,color=red] coordinates {(0,1)} node[label=$q_3$]{};
+		
+		\draw (axis cs:-2,3) [color=blue] -- (axis cs:3,-2) node[above] {$r_1$};
+		\draw (axis cs:-2,1) [color=blue] -- (axis cs:3,1) node[above] {$r_2$};
+		\draw (axis cs:1,-2) [color=blue] -- (axis cs:1,3) node[label=310:$r_3$] {};
+
+\end{axis}
+\end{tikzpicture}
+& \quad
+\begin{tikzpicture}
+\begin{axis}[axis equal, hide axis,
 		ticks=none,
-		width=0.5\linewidth,
+		width=0.5*\linewidth,
 		enlargelimits=0,
 		axis lines=center,
-		view={20}{20},
-		ymin=-4,ymax=4,
-		xmin=-4,xmax=4]
-    \draw (axis cs: 0,3,4) [color=blue]-- (axis cs:4,3,0);
-    \addplot3 [color=red,mark=*] coordinates { (3,3,1) } node[label=225:$H_0^*$]{};
-    \addplot3 [color = red,mark=*] coordinates { (2,3,2) } node[label=225:$H_1^*$]{};
-    \addplot3 [color = blue,mark=*] coordinates { (2.5,3,1.5) } node[label=$L$]{};
-    \addplot3 [patch,color=yellow,opacity=0.01] coordinates {(1,0,0) (0,1,0) (0,0,1) (1,1,1)};
-    \end{axis}
-    \end{tikzpicture}
+		view={10}{20},
+		ymin=0,ymax=4,
+		xmin=0,xmax=5]
+		
+		\addplot [mark=*,color=blue] coordinates {(1,1)} node[label=$(r_1)^*$]{};
+		\addplot [mark=*,color=blue] coordinates {(4,3)} node[label=160:$(r_2)^*$]{};
+		\addplot [mark=*,color=blue] coordinates {(3,1)} node[label=190:$(r_3)^*$]{};
+		
+		\draw (axis cs:0,1) [color=red] -- (axis cs:5,1) node[label=100:$(q_1)^*$] {};
+		\draw (axis cs:2.5,0) [color=red] -- (axis cs:4.5,4) node[label=20:$(q_2)^*$] {};
+		\draw (axis cs:0,0.333) [color=red] -- (axis cs:5,3.666) node[label=230:$(q_3)^*$] {};
+
+\end{axis}
+\end{tikzpicture}
+\end{aligned}
+\]
 \end{example}
 
-\begin{example}[Dualizacion de otros conceptos geométricos]
-    
+\begin{example}
+\[
+\begin{aligned}
+\text{Cuadrilátero en $\Po^2$} & \quad \text{Cuadrilátero en $\left( \Po^2 \right)^*$} \\
+\definecolor{qqccqq}{rgb}{0.,0.8,0.}
+\definecolor{qqqqcc}{rgb}{0.,0.,0.8}
+\definecolor{ffqqtt}{rgb}{1.,0.,0.2}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=.8cm,y=.8cm]
+\clip(2.,0.5) rectangle (8.5,7.);
+\draw [line width=1.pt,color=qqqqcc,domain=2.:8.5] plot(\x,{(--4.-2.*\x)/-1.});
+\draw [line width=1.pt,color=qqqqcc,domain=2.:8.5] plot(\x,{(--0.9088--0.7*\x)/1.24});
+\draw [line width=1.pt,color=qqqqcc,domain=2.:8.5] plot(\x,{(--5.36-0.58*\x)/0.76});
+\draw [line width=1.pt,color=qqqqcc,domain=2.:8.5] plot(\x,{(--15.4-1.88*\x)/1.});
+\draw [line width=1.pt,dash pattern=on 2pt off 2pt,color=qqccqq,domain=2.:8.5] plot(\x,{(--11.46-2.58*\x)/-0.24});
+\draw [line width=1.pt,dash pattern=on 2pt off 2pt,color=qqccqq,domain=2.:8.5] plot(\x,{(--14.942080928528313-1.2454296879136713*\x)/4.177002403922524});
+\draw [line width=1.pt,dash pattern=on 2pt off 2pt,color=qqccqq,domain=2.:8.5] plot(\x,{(--7.52--0.12*\x)/2.});
+\begin{scriptsize}
+\draw [fill=ffqqtt] (4.,4.) circle (2.5pt);
+\draw[color=ffqqtt] (3.8004958677685994,4.598347107438018) node {$q_4$};
+\draw [fill=ffqqtt] (5.,6.) circle (2.5pt);
+\draw[color=ffqqtt] (5.255041322314053,6.135537190082645) node {$q_1$};
+\draw [fill=ffqqtt] (6.,4.12) circle (2.5pt);
+\draw[color=ffqqtt] (6.1806611570247965,4.647933884297522) node {$q_2$};
+\draw [fill=ffqqtt] (4.76,3.42) circle (2.5pt);
+\draw[color=ffqqtt] (5.13933884297521,3.5404958677685974) node {$q_3$};
+\draw[color=qqqqcc] (5.957520661157028,8.606611570247933) node {$f$};
+\draw[color=qqqqcc] (-5.216033057851232,-1.8396694214875977) node {$g$};
+\draw[color=qqqqcc] (-2.1747107438016466,9.0198347107438) node {$h$};
+\draw[color=qqqqcc] (3.420330578512401,8.598347107438016) node {$r_1$};
+\draw [fill=ffqqtt] (3.2970786516853927,2.594157303370786) circle (2.5pt);
+\draw[color=ffqqtt] (3.1062809917355416,3.011570247933887) node {$q_5$};
+\draw [fill=ffqqtt] (7.4740810556079165,1.3487276154571146) circle (2.5pt);
+\draw[color=ffqqtt] (7.635206611570251,1.6892561983471108) node {$q_6$};
+\draw[color=qqccqq] (5.131074380165293,9.730578512396692) node {$j$};
+\draw[color=qqccqq] (-6.34,5.350413223140498) node {$k$};
+\draw[color=qqccqq] (-6.34,3.25123966942149) node {$l$};
+\end{scriptsize}
+\end{tikzpicture}
+& \quad
+\definecolor{qqccqq}{rgb}{0.,0.8,0.}
+\definecolor{ffqqtt}{rgb}{1.,0.,0.2}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=.8cm,y=.8cm]
+\clip(5.5,2.5) rectangle (12.,7.5);
+\draw [line width=1.pt,color=ffqqtt,domain=5.5:12.] plot(\x,{(--18.876--0.12*\x)/2.92});
+\draw [line width=1.pt,color=ffqqtt,domain=5.5:12.] plot(\x,{(--11.1072-1.32*\x)/-0.14});
+\draw [line width=1.pt,color=ffqqtt,domain=5.5:12.] plot(\x,{(-0.564--0.86*\x)/1.3});
+\draw [line width=1.pt,color=ffqqtt,domain=5.5:12.] plot(\x,{(-22.7588--2.06*\x)/-1.48});
+\draw [line width=1.pt,color=ffqqtt,domain=5.5:12.] plot(\x,{(--26.1456-1.2*\x)/2.78});
+\draw [line width=1.pt,color=ffqqtt,domain=5.5:12.] plot(\x,{(--10.0756-2.18*\x)/-1.44});
+\begin{scriptsize}
+\draw [fill=ududff] (6.22,6.72) circle (2.5pt);
+\draw[color=ududff] (6.21,7.36) node {$r_1$};
+\draw [fill=ududff] (9.14,6.84) circle (2.5pt);
+\draw[color=ududff] (9.43,6.82) node {$r_4$};
+\draw [fill=ududff] (9.,5.52) circle (2.5pt);
+\draw[color=ududff] (9.33,5.36) node {$r_3$};
+\draw [fill=ududff] (7.7,4.66) circle (2.5pt);
+\draw[color=ududff] (7.55,5.32) node {$r_2$};
+\draw[color=ffqqtt] (-2.42,6.21) node {$f$};
+\draw[color=ffqqtt] (9.3,10.83) node {$g$};
+\draw[color=ffqqtt] (-2.42,-1.67) node {$h$};
+\draw[color=ffqqtt] (3.52,10.83) node {$i$};
+\draw[color=ffqqtt] (-2.42,10.31) node {$j$};
+\draw[color=ffqqtt] (11.48,10.83) node {$k$};
+\draw [fill=qqccqq] (8.753295272078507,3.193926851025867) circle (2.0pt);
+\draw [fill=qqccqq] (11.11824048913044,6.921297554347826) circle (2.0pt);
+\draw [fill=qqccqq] (8.4304647937959,5.765842535052128) circle (2.0pt);
+\end{scriptsize}
+\end{tikzpicture}
+\end{aligned}
+\]
 \end{example}
+
+\begin{defi}
+Sea $\mathcal{R} = \setb{p_0,\dots,p_n;\bar{p}}$ una referencia de $\Po^n$, sea
+$B = \setb{u_0,\dots,u_n}$ una base adaptada y sea $B^* = \setb{u_0^*,\dots,u_n^*}$
+su base dual. Entonces, llamamos referencia dual de $\mathcal{R}$ a
+\[
+  \mathcal{R}^* = \setb{{p_0^\prime}=[u_0^*],\dots,{p_n^\prime}=[u_n^*];\bar{p}^\prime = [u_0^*+ \cdots + u_n^*]}
+\]
+\end{defi}
+
+\begin{obs}
+$\mathcal{R}^*$ no depende de la base $B$ escogida.
+\end{obs}
+\begin{example}
+  En coordenadas, sea $p \in \Po^n$ y sea $p_\mathcal{R} = (a_0,\dots,a_n)$, entonces $p^*$
+  es un hiperplano de $\left( \Po^n \right)^*$ y, en referencia $\mathcal{R}^*$ se tiene
+  \[
+    p^* \equiv a_0x_0^\prime + \cdots + a_nx_n^\prime = 0
+  \]
+  Y si $H \subseteq \Po^n$ en referencia $\mathcal{R}$
+  \[
+    \Po^n \supseteq H \equiv b_0x_0 + \cdots + b_nx_n = 0
+  \]
+  entonces $\left(H^*\right)_{\mathcal{R}^*} = (b_0,\dots,b_n)$
+\end{example}
+
+\begin{obs}
+En general, si tenemos $\mathcal{R}$ una referencia de $\Po^n$ y 
+$\mathcal{R}^* = \setb{{p_0}^\prime,\dots,{p_n}^\prime; \bar{p}^\prime}$
+una refencia de $\left( \Po^n \right)^*$. Entonces $\left( {p_i}^\prime \right)^*$
+es un hiperplano tal que $\pi \notin \left( {p_i}^\prime \right)^*$ y
+$p_j \in \left( {p_i}^\prime \right)^*$ $\forall i \neq j$
+\end{obs}
 
 %%%%%%%%%%%%%%%%%%%%
 %   23 d'octubre   %
@@ -942,4 +1052,178 @@ Hay una relación de pertenencia entre puntos y rectas (los puntos pertenecen a 
     \item $\forall r_1, r_2, \exists! p$ tal que $p \in r_1, r_2$
     \item $\exists 4$ puntos no alineados
 \end{itemize}
+\end{obs}
+
+%%%%%%%%%%%%%%%%%
+% 25 de OCTUBRE %
+%%%%%%%%%%%%%%%%%
+
+\begin{thm}[ de Pappus]
+Sean $r,s \subseteq \Po^2_\k$ rectas diferentes ($r \neq s$), sean
+$A,B,C \in r$ tal que $A \neq B$, $B \neq C$ y $C\neq A$ y sean también
+$A^\prime,B^\prime,C^\prime \in s$ tal que $A^\prime \neq B^\prime$,
+$B^\prime \neq C^\prime$ y $C^\prime \neq A^\prime$. Entonces
+$x_0 \equiv AB^\prime \cap A^\prime B$, $x_1 \equiv AC^\prime \cap A^\prime C$
+y $x_2 \equiv BC^\prime \cap B^\prime C$ estan alineados.
+\end{thm}
+
+\begin{proof}
+\begin{center}
+\definecolor{qqffqq}{rgb}{0.,1.,0.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(4.,8.) rectangle (19.,17.);
+\draw [line width=2.pt,domain=4.:19.] plot(\x,{(-128.24--2.8*\x)/-6.96});
+\draw [line width=2.pt,domain=4.:19.] plot(\x,{(-56.4-1.2*\x)/-6.96});
+\draw [line width=2.pt,dash pattern=on 3pt off 3pt,color=ffqqqq,domain=4.:19.] plot(\x,{(--7.919145496535805-4.513972286374134*\x)/-2.981039260969977});
+\draw [line width=2.pt,dash pattern=on 3pt off 3pt,color=ffqqqq,domain=4.:19.] plot(\x,{(--72.52791676142823-4.795599272231065*\x)/1.977632476688651});
+\draw [line width=2.pt,dash pattern=on 3pt off 3pt,color=qqqqff,domain=4.:19.] plot(\x,{(-28.55080831408779-5.033487297921477*\x)/-5.994226327944574});
+\draw [line width=2.pt,dash pattern=on 3pt off 3pt,color=qqqqff,domain=4.:19.] plot(\x,{(--108.66232658630884-5.803331817148056*\x)/4.482567659768023});
+\draw [line width=2.pt,dash pattern=on 3pt off 3pt,color=qqffqq,domain=4.:19.] plot(\x,{(-6.835751701375273-5.829086570152542*\x)/-4.016593851255923});
+\draw [line width=2.pt,dash pattern=on 3pt off 3pt,color=qqffqq,domain=4.:19.] plot(\x,{(--64.90175358645223-6.31730410352219*\x)/1.5015283987980457});
+\draw [line width=2.pt,domain=4.:19.] plot(\x,{(--31.871782879699552--0.11126215677628437*\x)/2.646579974541557});
+\begin{scriptsize}
+\draw [fill=ududff] (17.96,11.2) circle (2.5pt);
+\draw[color=ududff] (18.1,11.57) node {$O$};
+\draw [fill=ududff] (11.,14.) circle (2.5pt);
+\draw[color=ududff] (10.86,14.59) node {$A$};
+\draw[color=black] (0.52,18.07) node {$f$};
+\draw [fill=ududff] (11.,10.) circle (2.5pt);
+\draw[color=ududff] (11.2,10.37) node {$A'$};
+\draw[color=black] (0.52,8.53) node {$g$};
+\draw [fill=xdxdff] (9.022367523311349,14.795599272231065) circle (2.5pt);
+\draw[color=xdxdff] (9.34,15.01) node {$B$};
+\draw [fill=xdxdff] (6.517432340231977,15.803331817148056) circle (2.5pt);
+\draw[color=xdxdff] (6.66,16.17) node {$C$};
+\draw [fill=xdxdff] (8.018960739030023,9.486027713625866) circle (2.5pt);
+\draw[color=xdxdff] (8.38,9.25) node {$B'$};
+\draw [fill=xdxdff] (5.005773672055426,8.966512702078523) circle (2.5pt);
+\draw[color=xdxdff] (5.3,8.77) node {$C'$};
+\draw[color=ffqqqq] (13.96,18.95) node {$h$};
+\draw[color=ffqqqq] (7.54,18.95) node {$i$};
+\draw [fill=uuuuuu] (9.98455175154192,12.462380112935687) circle (2.0pt);
+\draw[color=uuuuuu] (10.29,12.42) node {$x_0$};
+\draw[color=qqqqff] (0.52,5.59) node {$j$};
+\draw[color=qqqqff] (4.34,18.95) node {$k$};
+\draw [fill=uuuuuu] (9.125908190188389,12.426282758819337) circle (2.0pt);
+\draw[color=uuuuuu] (9.07,13.02) node {$x_1$};
+\draw[color=qqffqq] (11.56,18.95) node {$l$};
+\draw[color=qqffqq] (5.98,18.95) node {$m$};
+\draw [fill=uuuuuu] (7.337971777000363,12.351117956159403) circle (2.0pt);
+\draw[color=uuuuuu] (6.97,12.78) node {$x_2$};
+\draw[color=black] (0.52,11.91) node {$n$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+Tomamos la referencia $\mathcal{R} = \setb{A,B,A^\prime;B^\prime}$. Entonces
+\[
+\begin{aligned}
+A = (1,0,0) &\qquad A^\prime = (0,0,1) \\
+B = (0,1,0) &\qquad B^\prime = (1,1,1) \\
+C = (1,a,0) &\qquad C^\prime = (1,1,b)
+\end{aligned}
+\]
+con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
+2$ y vemos que
+\[
+  \determinant{\line(1,0){25} & x_0 & \line(1,0){25} \\ 
+    \line(1,0){25} & x_1 & \line(1,0){25} \\ \line(1,0){25} & x_2 & \line(1,0){25}} = 0
+\]
+\end{proof}
+
+
+\subsection{Coordenadas absolutas. Razón doble}
+
+\begin{defi}
+  Sea $\R = \setb{p_0,p_1;\bar{p}}$ un sistema de referencia de $\Po^1_\k$ y
+  sea $q \in \Po^1_k$ con $q_\R = (x_0,x_1)$ las coordenadas de $q$ en la 
+  referencia $\R$. Definimos las coordenas absolutas de $q$ como
+  \[
+    \alpha = \frac{x_0}{x_1} \in k \cup \setb{\infty}
+  \]
+\end{defi}
+
+\begin{obs}
+  A diferencia de las coordenadas normales, \textbf{NO} está definido salvo constantes.
+\end{obs}
+\begin{obs}
+  Al trabajar con coordenadas absolutas, trabajaremos con aritmética normal de $0/\infty$.
+\end{obs}
+\begin{obs}
+  \[
+    \begin{aligned}
+      \left( p_0 \right)_\R = (1,0) &\qquad \alpha_0 = \infty \\
+      \left( p_1 \right)_\R = (0,1) &\qquad \alpha_1 = 0 \\
+      \left( p_2 \right)_\R = (1,1) &\qquad \alpha_2 = 1 \\
+    \end{aligned}
+  \]
+\end{obs}
+
+\begin{defi}
+  Sean $q_1, q_2, q_3, q_4 \in \Po^1_\k$ con al menos 3 de ellos diferentes. Sea
+  $\R$ un sistema de referencia y sean $\left( q_i \right)_\R = (x_i:y_i)$
+  $\forall i=1,2,3,4$. Definimos la razón doble de $q_1,q_2,q_3,q_4$ como
+  \[
+    \left( q_1,q_2,q_3,q_4 \right) = \frac{\determinant{x_3 & y_3 \\ x_1 & y_1}}
+    {\determinant{x_3 & y_3 \\ x_2 & y_2}}:\frac{\determinant{x_4 & y_4 \\ x_1 & y_1}}
+    {\determinant{x_4 & y_4 \\ x_2 & y_2}} \in k \cup \setb{\infty}
+  \]
+\end{defi}
+\begin{obs}
+  La razón doble no depende del sistema de referencia ni del representante
+  de cada punto. De hecho, sean $\R$ y $\bar{\R}$ dos sistemas de referencia
+  y $q_i = (x_i, y_i)_\R = (\bar{x_i}, \bar{y_i})_{\bar{\R}}$, por lo tanto
+  \[
+    \begin{pmatrix} \bar{x_i} \\ \bar{y_i} \end{pmatrix} = S \begin{pmatrix}
+      x_i \\ y_i \end{pmatrix}
+  \]
+  y se tiene que
+  \[
+    \frac{\determinant{\bar{x_3} & \bar{y_3} \\ \bar{x_1} & \bar{y_1}}}
+    {\determinant{\bar{x_3} & \bar{y_3} \\ \bar{x_2} & \bar{y_2}}}:
+    \frac{\determinant{\bar{x_4} & \bar{y_4} \\ \bar{x_1} & \bar{y_1}}}
+    {\determinant{\bar{x_4} & \bar{y_4} \\ \bar{x_2} & \bar{y_2}}}
+    = 
+    \frac{\cancel{\det S}\determinant{x_3 & y_3 \\ x_1 & y_1}}
+    {\cancel{\det S} \determinant{x_3 & y_3 \\ x_2 & y_2}}:
+    \frac{\cancel{\det S} \determinant{x_4 & y_4 \\ x_1 & y_1}}
+    {\cancel{\det S} \determinant{x_4 & y_4 \\ x_2 & y_2}}
+  \]
+\end{obs}
+\begin{obs}
+  La razón doble es cociente de razones simples
+\end{obs}
+\begin{obs}
+  En coordenadas absolutas, si 
+  \[
+    \begin{aligned}
+      q_1 &\qquad \alpha_1 &\qquad (\alpha_1:1) \\
+      q_2 &\qquad \alpha_2 &\qquad (\alpha_2:1) \\
+      q_3 &\qquad \alpha_3 &\qquad (\alpha_3:1) \\
+      q_4 &\qquad \alpha_4 &\qquad (\alpha_4:1) \\
+    \end{aligned}
+  \]
+  teniendo en cuenta que $(\infty,1) = (1,0)$. emtonces, 
+  \[
+    \left( q_1,q_2,q_3,q_4 \right) = \frac{\determinant{\alpha_3 & 1 \\ \alpha_1 & }}
+    {\determinant{\alpha_3 & 1 \\ \alpha_2 & 1}}:\frac{\determinant{\alpha_4 & 1 \\ \alpha_1 & 1}}
+    {\determinant{\alpha_4 & 1 \\ \alpha_2 & 1}} = 
+    \frac{\alpha_3-\alpha_1}{\alpha_3-\alpha_2}:\frac{\alpha_4-\alpha_1}{\alpha_4-\alpha_2}
+  \]
+\end{obs}
+\begin{obs}
+  Sean $q_1,q_2,q_3,q_4 \in \Po^1_\k$ tal que $\setb{q_1,q_2,q_3}$ son diferentes dos a dos.
+  Tomamos $\R = \setb{q_1,q_2;q_3}$ como nuestro sistema de referncia y sean $(x,y)_\R = q_4$ 
+  las coordenadas de $q_4$ en el sistema de referencia $\R$, entonces
+  \[
+    \left( q_1,q_2,q_3,q_4 \right) = \frac{\determinant{1 & 1 \\ 1 & 0}}
+    {\determinant{1 & 1 \\ 0 & 1}}:\frac{\determinant{x & y \\ 1 & 0}}
+    {\determinant{x & y \\ 0 & 1}} = \frac{-1}{1}:\frac{-y}{x} = \frac{x}{y}
+  \]
+  es decir, la coordenada obsoluta de $q_4$ en la referencia $\R = \setb{q_1,q_2;q_3}$.
 \end{obs}
