@@ -841,7 +841,7 @@ $p_j \in \left( {p_i}^\prime \right)^*$ $\forall i \neq j$
 
 %%%%%%%%%%%%%%%%%%%%
 %   23 d'octubre   %
-%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% 
 
 \subsection{Los teoremas de Desargues y Pappus}
 
@@ -1216,7 +1216,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
     \frac{\alpha_3-\alpha_1}{\alpha_3-\alpha_2}:\frac{\alpha_4-\alpha_1}{\alpha_4-\alpha_2}
   \]
 \end{obs}
-\begin{obs}
+\begin{obs}\label{obs:rzdo_ref}
   Sean $q_1,q_2,q_3,q_4 \in \Po^1_\k$ tal que $\setb{q_1,q_2,q_3}$ son diferentes dos a dos.
   Tomamos $\R = \setb{q_1,q_2;q_3}$ como nuestro sistema de referncia y sean $(x,y)_\R = q_4$ 
   las coordenadas de $q_4$ en el sistema de referencia $\R$, entonces
@@ -1227,3 +1227,226 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
   \]
   es decir, la coordenada obsoluta de $q_4$ en la referencia $\R = \setb{q_1,q_2;q_3}$.
 \end{obs}
+\begin{obs}
+ Sea $V \subseteq \Po^n$ una variedad de dimensión $n-2$, por lo tanto $V^*$ es una recta de
+ $\left( \Po^n \right)^*$ y si $V \subseteq H_1,H_2,H_3,H_4 \subseteq \Po^n$, la razón doble
+ de $H_1,H_2,H_3,H_4$ queda definida considerando los hiperplanos como puntos del espacio dual,
+ es decir,
+ \[
+  (H_1,H_2,H_3,H_4) = (H_1^*,H_2^*,H_3^*,H_4^*)
+ \]
+\end{obs}
+
+\begin{example}
+ Consideramos $V \subseteq \Po^4$, con
+ \[
+  V : \begin{cases}
+       x_0 = 0 \\ x_1 = 0
+      \end{cases}
+ \]
+ Podemos identificar $V^* = \setb{H^* \in \left( \Po^4 \right)^* \text{ hiperplano} \vert V \subseteq H}$.
+ Tomamos ahora
+ \[\bar{\rho}w_1(u_2) +
+      \rho w_2(u_1)
+  \begin{aligned}
+   H_1 &\rightarrow x_0 = 0 &\leftrightarrow (1,0,0,0) \\
+   H_2 &\rightarrow x_1 = 0 &\leftrightarrow (0,1,0,0) \\
+   H_3 &\rightarrow 2x_0+x_1 = 0 &\leftrightarrow (2,1,0,0) \\
+   H_4 &\rightarrow 3x_0+2x_1 = 0 &\leftrightarrow (3,2,0,0)
+  \end{aligned}
+ \]
+ Para calcular la razón doble, aplicamos la observación \ref{obs:rzdo_ref}, y tomamos el sistema
+ de referencia $\R = \setb{H_1,H_2;H_3}$ y $B = \setb{(2,0,0,0),(0,1,0,0)}$ una base adaptada.
+ Entonces se tiene que $\left( H_4 \right)_\R = \left( \frac{3}{2}, 2 \right) = (3,4)$. Por lo
+ tanto,
+ \[
+  (H_1,H_2,H_3,H_4) = \frac{3}{4}
+ \]
+\end{example}
+
+\begin{prop}
+ Sean $q_1,q_2,q_3,q_4 \in \Po^n$ y sea $\rho = (q_1,q_2,q_3,q_4)$. Si permutamos los cuatro
+ puntos, (con $4! = 24$ posiblidades), obtendremos uno de los sisguientes valores para la
+ razón doble
+ \[\bar{\rho}w_1(u_2) +
+      \rho w_2(u_1)
+   A_p = \setb{\rho, \frac{\rho}{1}, 1-\rho, \frac{1}{1-\rho}, \frac{\rho}{\rho-1}, \frac{\rho-1}{\rho}}
+ \]
+
+\end{prop}
+
+%%%%%%%%%%%%%%%%%
+% 27 de octubre %
+%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Proyección y sección]
+ Sean $V,r \subseteq \Po^n$ dos variedades suplementarias con $\dim r = 1$ ($\implies \dim V = n-2$).
+ Entonces, definimos la proyección desde $V$ como
+ \[
+  \begin{aligned}
+   \Phi \colon r &\to V^* \\ p &\mapsto V \vee p
+  \end{aligned}
+ \]
+ De nuevo identificando los hiperplanos de $\Po^n$ con puntos de $\left( \Po^n \right)^*$. Asimismo,
+ definimos la sección con $r$ como
+ \[
+  \begin{aligned}
+   \Psi \colon V^* &\to r \\ H &\mapsto H \cap r
+  \end{aligned}
+ \]
+\end{defi}
+
+\begin{obs}
+ $p \notin V \implies V \vee p$ es un hiperplano que contiene a $V$.
+\end{obs}
+\begin{obs}
+ $\Psi$ está bien definido y $r \cap H$ es un punto. En efecto, si $r \cap H$ no es un punto,
+ $r \subseteq H$, pero si nos miramos ahora $H \cong \Po^{n-1}$, entonces $V$ es un hiperplano
+ de $H$, $\implies r \cap V \neq \emptyset$, lo cual es una contradicción ya que hemos supuesto que
+ $V$ y $r$ son suplementarias.
+\end{obs}
+\begin{obs}
+ $\Phi(\Psi(H)) = H$ y $\Psi(\Phi(p)) = p$, esd decir, $\Phi$ y $\Psi$ son inversas mutuas.
+\end{obs}
+
+\begin{thm}[de la invariancia de razón doble]\label{thm:inv_rz_do}
+ Sean $V,r \subseteq \Po^n$ dos variades suplementarias con $\dim r = 1$ ($\implies \dim V = n-2$) y
+ sean $\Phi$ y $\Psi$ la proyección desde $V$ y la sección con $r$ respectivamente. Entonces,
+ \begin{enumerate}[i)]
+  \item \label{item:thm_inv_1} $\forall p_1,p_2,p_3,p_4 \in r$ con $p_1,p_2,p_3$ distintos dos a dos
+    \[
+     (p_1,p_2,p_3,p_4) = \left( \Phi(p_1), \Phi(p_2), \Phi(p_3), \Phi(p_4) \right)
+    \]
+  \item \label{item:thm_inv_2} $\forall H_1,H_2,H_3,H_4 \in V^*$ (identificando hiperplanos con elementos del dual) con
+  $H_1,H_2,H_3$ distintos dos a dos. Entonces
+    \[
+     (H_1,H_2,H_3,H_4) = \left( \Psi(H_1), \Psi(H_2), \Psi(H_3), \Psi(H_4) \right)
+    \]
+ \end{enumerate}
+\end{thm}
+
+\begin{proof}
+ Primero vemos que $\ref{item:thm_inv_1} \iff \ref{item:thm_inv_2}$ porque $\Psi^{-1}=\Phi$. Pasamos ahora
+ a demostrar $\ref{item:thm_inv_1}$. Sea $\rho = (p_1,p_2,p_3,p_4)$, entonces podemos elegir $u_1,u_2 \in \E$
+ tal que $p_1 = [u_1]$, $p_2=[u_2]$ y $p_3=[u_1+u_2]$. Por lo tanto $p_4 = [\rho u_1+u_2]$, de la misma forma,
+ $\bar{\rho} = (H_1,H_2,H_3,H_4)$ y podemos escoger $w_1,w_2 \in \E^*$ tal que $H_1 = [w_1]$, $H_2 = [w_2]$ y
+ $H_3=[2_1+w_2]$. Lo que implica que $H_4 = [\bar{\rho} w_1 + w_2]$. Ahora trabajamos con que $p_i \in H_i$.
+ Entonces
+ \[
+  \begin{cases}
+    p_1 \in H_1 \implies w_1(u_1) = 0 \\
+    p_2 \in H_2 \implies w_2(u_2) = 0 \\
+    p_3 \in H_3 \implies (w_1+w_2)(u_1+u_2) = 0 \implies \cancelto{0}{w_1(u_1)} + w_1(u2) + w_2(u_1) + \cancelto{0}{w_2(u_2)} = 0 \\
+    p_4 \in H_4 \implies (\bar{\rho}w_1+w_2)(\rho u_1+u_2) = 0 \implies \cancelto{0}{\bar{\rho}w_1(u_1)} + \bar{\rho}w_1(u_2) +
+      \rho w_2(u_1) + \cancelto{0}{w_2(u_2)} = 0
+  \end{cases}
+ \]
+ trabajando ahora con la cuarta ecuación
+ \[
+  \bar{\rho}w_1(u_2) + \rho w_2(u_1) = w_1(u_2)(\bar{\rho} - \rho) = 0 \stackrel{(1)}{\implies} \bar{\rho} = \rho
+ \]
+ La cancelación en (1) ocurre ya que $w_1(u_2) \neq 0$. Y $w_1(u_2) \neq 0$ ya que, si lo fuera,
+ \[
+  w_1(u_2) = 0 \implies p_2 \in H_1 \implies \setb{p_1,p_2} \subseteq r \cap H_1 \implies r \subseteq H_1 \implies r \cap V \neq \emptyset
+ \]
+ pero como sabemos $r \cap V = \emptyset$ ya que son variedades suplementarias.
+\end{proof}
+
+\subsection{Cuaternas armónicas}
+
+\begin{obs}
+ Sean $p_1,p_2,p_3,p_4 \in \Po^n$ diferentes dos a dos. y sea
+ \[
+  A_p = \setb{\rho, \frac{1}{\rho}, 1-\rho, \frac{1}{1-\rho}, \frac{\rho}{\rho-1},\frac{\rho-1}{\rho}}
+ \]
+ Entonces, los valores de $A_p$ son diferentes, salvo el caso en que
+ \[
+  A_p = \setb{-1,\frac{1}{2},2} \qquad \text{con $\k = \real$}
+ \]
+\end{obs}
+
+\begin{defi}
+ Sean $p_1,p_2,p_3,p_4 \in \Po^n$ diferentes dos a dos. Entonces $\setb{p_1,p_2,p_3,p_4}$ forman
+ una cuaterna armónica si y solo si
+ \[
+  (p_1,p_2,p_3,p_4) = -1
+ \]
+\end{defi}
+
+\begin{prop}\label{prop:intercambio_raz_do}
+ Sean $p_1,p_2,p_3,p_4 \in \Po^n$ diferentes dos a dos. Entonces, son eqivalentes
+ \begin{enumerate}[i)]
+  \item $\rho = (p_1,p_2,p_3,p_4) = -1$
+  \item $(p_1,p_2,p_3,p_4) = (p_2,p_1,p_3,p_4)$
+  \item $(p_1,p_2,p_3,p_4) = (p_1,p_2,p_4,p_3)$
+  \item $(p_1,p_2,p_3,p_4) = (p_3,p_4,p_1,p_2)$
+ \end{enumerate}
+\end{prop}
+
+%TODO hacer esta demo
+\begin{proof}
+ La demostración se hará en clase de problemas 
+\end{proof}
+
+\begin{thm}[Cuaterna armónica en el cuadrilátero]
+ Sean $A,B,C,D,p_1,p_2 \in \Po^2$ los vértices de un cuadrilátero, sea $p_1p_2 = r \subseteq \Po^2$,
+ $AC = s \subseteq \Po^2$, $s \cap BD = O \in \Po^2$, $s \cap r = p_3 \in \Po^2$ y $DB \cap r = p_4 \in \Po^2$.
+ Entonces, $\setb{p_1,p_2,p_3,p_4}$ son una cuaterna armónica. Dicho de otra forma, en un cuadrilátero, la intersección
+ de una diagonal con las otras dos y los vértices de la diagonal forman una cuaterna armónica.
+ \begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[hide axis,
+    ticks=none,
+    width=\linewidth,
+    enlargelimits=0,
+    axis lines=center,
+    ymin=0.5,ymax=5,
+    xmin=0,xmax=7]
+
+    \addplot [mark=*,color=blue] coordinates {(3.2,4.18)} node[label=right:$A$]{};
+    \addplot [mark=*,color=blue] coordinates {(3,2)} node[label=160:$B$]{};
+    \addplot [mark=*,color=blue] coordinates {(2.3,1.9)} node[label=190:$C$]{};
+    \addplot [mark=*,color=blue] coordinates {(1.54,2.72)} node[label=190:$D$]{};
+    \addplot [mark=*,color=blue] coordinates {(0.28,1.61)} node[label=below:$p_1$]{};
+    \addplot [mark=*,color=blue] coordinates {(2.93,1.22)} node[label=190:$p_2$]{};
+    
+    \addplot [color=red] {-1.08*x+4.38};
+    \addplot [color=red] {0.88*x+1.37};
+    \addplot [color=red] {0.14*x+1.57};
+    \addplot [color=red] {10.9*x-30.7};
+    
+    \addplot [color=orange] {2.53*x-3.93};
+    \addplot [color=orange] {-0.49*x+3.48};
+    \addplot [color=orange] {-0.15*x+1.65};
+    
+    \addplot [mark=*,color=green] coordinates {(2.08,1.35)} node[label=190:$p_3$]{};
+    \addplot [mark=*,color=green] coordinates {(5.28,0.88)} node[label=190:$p_4$]{};
+    \addplot [mark=*,color=green] coordinates {(2.45,2.27)} node[label=190:$O$]{};
+
+  \end{axis}
+  \end{tikzpicture}
+ \end{center}
+\end{thm}
+
+\begin{proof}
+ Podemos poner poner coordemadas y operar y nos saldrá el resultado. Aunque aquí detallamos una demostración
+ sintética. Para esta demostración nos valdremos de las proyecciones y secciones definidas anteriormente, por
+ ello, recordamos que si $h \subseteq \Po^2$ es una recta, una variedad complementaria de $h$ es un punto. Ahora
+ definimos $\Phi_B$ la proyección desde $B$, $\Phi_D$ la proyección desde $D$ y $\Psi_s$ y $\Psi_r$ la sección
+ con $r$ y con $s$ respectivamente. entonces
+ \[
+  \begin{array}{ccc}
+   r & \stackrel{\Psi_s \circ \Phi_B}{\to} s & \stackrel{\Psi_r \circ \Phi_D}{\to} r \\
+   p_1 &\mapsto C &\mapsto p_2 \\
+   p_2 &\mapsto A &\mapsto p_1 \\
+   p_3 &\mapsto p_3 &\mapsto p_3 \\
+   p_4 &\mapsto O &\mapsto p_4
+  \end{array}
+ \]
+ Por el teorema \ref{thm:inv_rz_do}, tenemos que, si $f = \Psi_r \circ \Phi_D \circ \Psi_s \circ \Phi_B$,
+ \[
+  (p_1,p_2,p_3,p_4) = \left( f(p_1), f(p_2), f(p_3), f(p_4) \right) = (p_2,p_1,p_3,p_4)
+ \]
+ Y por la proposición \ref{prop:intercambio_raz_do}, tenemos que $\setb{p_1,p_2,p_3,p_4}$ es una cuaterna
+ armónica.
+\end{proof}
