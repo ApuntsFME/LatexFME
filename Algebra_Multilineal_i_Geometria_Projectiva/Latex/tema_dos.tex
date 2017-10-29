@@ -628,7 +628,7 @@ en añadir puntos en el $\infty$.
                 \item $\{ p_0, \dots, p_n \}$ son los vertices de $R$
                 \item $\bar{p}$ es el punto unidad
             \end{itemize}
-        \item Fijado un sistema de referencia $R$. Sea $B = \{ u_0, \dots, u_n \}$ base de $\E$. Diremos que $B$ esta adaptada a $R$ si y solo si:
+        \item Fijado un sistema de referencia $R$. Sea $B = \{ u_0, \dots, u_n \}$ base de $\E$. Diremos que $B$ está adaptada a $R$ si y solo si:
             \[ \begin{cases} p_i = [u_i], \forall i = 0, \dots, n \\ \bar{p} = [u_0 + \dots + u_n ] \end{cases} \]
         \item \textit{Asignación de coordenadas proyectivas} \\
             $\Po^n = \Po(\E)$, Sea $R = \{ p_0, \dots, p_n; \bar{p} \}$, y $B = \{u_0, \dots, u_n\}$ una base adaptada. Sea $q \in \Po^n, q = [v]$, entonces 
@@ -660,19 +660,206 @@ en añadir puntos en el $\infty$.
     \end{enumerate}
 \end{obs}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% FALTAN LUNES Y MIERCOLES %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% YA NO FALTAN LUNES Y MIERCOLES %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ¿POR QUE LEES ESTO?            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{obs}
-    \begin{enumerate}[(i)]
-        \item []
-        \item En $\Po ^2 _{\left( \sfrac{\z}{2} \right)}$ solamente hay $7$ puntos: $\left| \left\{ \left(a, b, c \right) | a, b, c \in \left\{0, 1 \right\} \right\} \right|  = 2^3 = 8$, pero debemos excluir $\left( 0, 0, 0 \right)$ porque no es punto.
-        \item En $\Po ^2$, sean $\left( p_0 \right)_R = \begin{pmatrix} a_0 \\ b_0 \\ c_0 \end{pmatrix}$ y $\left( p_1 \right)_R = \begin{pmatrix} a_1 \\ b_1 \\ c_1 \end{pmatrix}$. Entonces, $V=p_0 \vee p_1 \colon \begin{pmatrix} x_0 \\ x_1 \\ x_2 \end{pmatrix} = \alpha \begin{pmatrix} a_0 \\ b_0 \\ c_0 \end{pmatrix} + \beta \begin{pmatrix} a_1 \\ b_1 \\ c_1 \end{pmatrix}$. Es decir, aunque no haya operación suma definida entre puntos, está bien definido el conjunto de combinaciones lineales de ellos.
+\begin{example}
+    Consideremos el espacio $\Po^2_{\R}$, un sistema de referencia $\R = \{ p_0, p_1, p_2; \overline{p}\}$, con 
+    $p_0 = [(1, 1, 0)]$, $p_1 = [(1, 0, 1)]$, $p_2 = [(0, 1, 1)]$ y $\overline{p} = [(3,3,2)]$.
+    Queremos encontrar $B = \{u_0, u_1, u_2\}$ una base adaptada, es decir, que cumpla $\overline{p} = [u_0+u_1+u_2]$
+    y que $p_i = [u_i]$. Comprobamos que para la base $B = \left \{ \begin{pmatrix} 2 \\ 2 \\ 0 \end{pmatrix},
+    \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix}, \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix} \right \}$, se cumple
+    \[(p_0)_{\R} = (1:0:0) \quad (p_1)_{\R} = (0:1:0)\]
+    \[(p_2)_{\R} = (0:0:1) \quad (\overline{p})_{\R} = (1:1:1)\]
+    El punto $q = [(3, 2, 1)]$ tiene las coordenadas $q_{\R} = w_B = (1:1:0)$, que, en un abuso de notación,
+    escribiremos como $(1, 1, 0)$.
+\end{example}
+
+\begin{prop}
+    Sean $\R_1, \R_2$ sistemas de referencia de $\Po^n$. Sea $q \in \Po^n$.
+    \begin{enumerate}[i)]
+        \item $\exists S \in M_{n+1}(k)$ invertible t.q. $q_{\R_1} = S_{q_{\R_2}}$
+        (matriz del cambio de sistema de referencia).
+        \item Sean $B_1, B_2$ bases adaptadas a $\R_1, \R_2$ respectivamente. Podemos coger $S=S_{B_2, B_1}$.
+        \item Cualquier matriz de cambio de referencia es de la forma $S=\lambda S_{B_2, B_1} \ (\lambda \neq 0)$.
     \end{enumerate}
+\end{prop}
+\begin{proof}
+    Cambio de base en $\E$.
+\end{proof}
+\begin{obs}
+    Sea $\R$ sistema de referencia en $\Po^n$, y $B$ una base adaptada a éste. Las variedades lineales se pueden describir con
+    \begin{itemize}
+        \item Ecuaciones paramétricas: Sea $V \subseteq \Po^n$ una variedad lineal de $\dim m$. Entonces
+        $\exists p_0, \dots, p_m \in V$ l.i. t.q. $V = p_0 \vee \dots \vee p_m$ y para $q \in \Po^n$
+        \[
+            q \in V \iff w \in F \iff 
+            \begin{cases} 
+                \exists \alpha_0, \dots, \alpha_m \in \k \\ 
+                w_B = \alpha_0(v_0)_B + \dots + \alpha_m(v_m)_B 
+            \end{cases} 
+            \iff
+            \]
+        \[
+            \iff 
+            \begin{cases}
+                \exists \alpha_0, \dots, \alpha_m \in \k \\ 
+                q_R = \alpha_0 (p_0)_R + \dots + \alpha (p_m)_R 
+            \end{cases}
+        \]
+        Donde $V = \pi(F)$, $p_i = \pi(v_i)$, y $q = \pi(w)$.
+        \item Ecuaciones implícitas: Las ecuaciones implícitas de $V$ en $\R$ coinciden con las ecuaciones implícitas de $F$ en
+        $B$. Es decir, existe una matriz $A$ tal que los vectores $w_B = \begin{pmatrix} x0 \\ \vdots \\ x_n \end{pmatrix}$ que cumplen $A \begin{pmatrix} x0 \\ \vdots \\ x_n \end{pmatrix} = 
+        \begin{pmatrix} 0 \\ \vdots \\ 0 \end{pmatrix}$ son todos los pertenecientes a $F$ y los puntos 
+        $q_R = \begin{pmatrix} x0 \\ \vdots \\ x_n \end{pmatrix}$ que cumplen $A \begin{pmatrix} x0 \\ \vdots \\ x_n \end{pmatrix} = 
+        \begin{pmatrix} 0 \\ \vdots \\ 0 \end{pmatrix}$ son todos los pertenecientes a $V$.
+    \end{itemize}
 \end{obs}
 \begin{obs}
-    \begin{enumerate}[(i)]
+        Sea $\E$ un $\k$-e.v. de dimensión $n+1$, $F$ un subespacio vectorial de dimensión $m+1$, $\Po^n = \Po(\E)$ y $V = \pi(F)$
+        una variedad lineal.
+        Entonces
+        \[\dim V = \dim F - 1 = \dim E - \rg A - 1 = n+1 - \rg A - 1 \implies m = \dim V = n - \rg A\]        
+\end{obs}
+\begin{obs}
+    \begin{itemize}
+        \item[]
+        \item Para convertir de ecuaciones implícitas a paramétricas se debe resolver el sistema de ecuaciones homogéneo.
+        \item Para convertir de ecuaciones paramétricas a implícitas se debe imponer
+        \[
+            \rg
+            \left(
+            \begin{array}{ccc|c}
+                (p_0)_R & \dots & (p_m)_R & \begin{array}{c}x_0 \\ \vdots \\ x_n \end{array} \\
+            \end{array}
+            \right)
+            =
+            \rg
+            \left(
+            \begin{array}{ccc}
+                (p_0)_R & \dots & (p_m)_R\\
+            \end{array}
+            \right)
+        \]
+    \end{itemize}
+\end{obs}
+\begin{example}
+    Consideremos el espacio $\Po^2_{\real}$ con un sistema de referencia $\R = \{p_0, p_1, p_2, \overline{p}\}$, y los puntos
+    $(q_0)_{\R} = (1, 1, 1)$ y $(q_1)_{\R} = (1, 2, 0)$. Encontremos las ecuaciones paramétricas e implícitas de la recta
+    $V = q_0 \vee q_1$.
+    \begin{itemize}
+        \item Dado que los puntos son dados directamente y se hace su join, las ecuaciones paramétricas son tan solo
+        las combinaciones lineales de $q_0$ y $q_1$. Más formalmente, si $(q)_{\R} = \begin{pmatrix} x_0 \\ x_1 \\ x_2 \end{pmatrix}$, 
+        se cumple
+        \[
+            q \in V \iff \exists \alpha_0, \alpha_1 \text{ t.q. } \begin{pmatrix} x_0 \\ x_1 \\ x_2 \end{pmatrix}
+            = \alpha_0 \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} + \alpha_1 \begin{pmatrix} 1 \\ 2 \\ 0 \end{pmatrix}
+        \]
+        \item Para encontrar las ecuaciones implícitas de esta variedad, imponemos que $(x_0, x_1, x_2)$ sea combinación
+        lineal de $q_0$ y $q_1$, es decir,
+        \[
+            q \in V \iff 
+            \rg
+            \left(
+            \begin{array}{cc|c}
+                1 & 1 & x_0 \\
+                1 & 2 & x_1 \\
+                1 & 0 & x_2 \\
+            \end{array}
+            \right)
+            =
+            \rg
+            \left(
+            \begin{array}{cc}
+                1 & 1 \\
+                1 & 2 \\
+                1 & 0 \\
+            \end{array}
+            \right)
+            =
+            2
+            \iff
+            \begin{vmatrix}
+                1 & 1 & x_0 \\
+                1 & 2 & x_1 \\
+                1 & 0 & x_2                
+            \end{vmatrix}
+            =
+            0
+        \]
+    \end{itemize}
+    Consideremos ahora la recta $V'$ dada por $x_0+x_1+x_2 = 0$. Para encontrar su expresión paramétrica,
+    debemos resolver este sistema de ecuaciones. En este caso, podemos encontrar dos soluciones linealmente
+    independientes y expresar todas las soluciones como combinaciones lineales de estas.
+    \[\begin{pmatrix} x_0 \\ x_1 \\ x_2 \end{pmatrix} = \beta_0 \begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix}
+    + \beta_1 \begin{pmatrix} 0 \\ 1 \\ -1 \end{pmatrix}\]
+    En este mismo ejemplo, $p_0 \vee p_1 : x_2 = 0$, $p_2 \vee \overline{p} : x_1-x_0 = 0$ y 
+    $(p_0 \vee p_1) \cap (p_2 \vee \overline{p}) = (1, 1, 0)$. Análogamente para los demás índices.
+\end{example}
+
+\begin{example}
+    Consideremos $\Po^2_{\sfrac{\z}{2}}$. Sus puntos se pueden expresar como $(a, b, c) \  a,b,c \in \sfrac{\z}{2}$. 
+    Podemos representarlo como
+    
+    \begin{center}
+\begin{tikzpicture}[scale=1]
+    \draw (0,0) coordinate (A) --
+    (3,0) coordinate (B)--
+    ($ (3*0.5,{3*sin(60)}) $) coordinate (C) -- cycle;
+    \coordinate (O) at
+    (barycentric cs:A=1,B=1,C=1);
+    \draw (O) circle [radius=3*1.717/6];
+    \draw (C) -- ($ (A)!.5!(B) $) coordinate (LC); 
+    \draw (A) -- ($ (B)!.5!(C) $) coordinate (LA); 
+    \draw (B) -- ($ (C)!.5!(A) $) coordinate (LB); 
+    \node[draw,
+    circle,
+    fill=cyan,
+    inner sep=1.5pt, label={-90:\tiny $(0, 0, 1)$}] at (A) {};
+    \node[draw,
+    circle,
+    fill=cyan,
+    inner sep=1.5pt, label={-90:\tiny $(0, 1, 0)$}] at (B) {};
+    \node[draw,
+    circle,
+    fill=cyan,
+    inner sep=1.5pt, label={90:\tiny $(1, 0, 0)$}] at (C) {};
+    \node[draw,
+    circle,
+    fill=cyan,
+    inner sep=1.5pt, label={0:\tiny $(1, 1, 0)$}] at (LA) {};
+    \node[draw,
+    circle,
+    fill=cyan,
+    inner sep=1.5pt, label={180:\tiny $(1, 0, 1)$}] at (LB) {};
+    \node[draw,
+    circle,
+    fill=cyan,
+    inner sep=1.5pt, label={-90:\tiny $(0, 1, 1)$}] at (LC) {};
+    
+    \draw[->] 
+    (0, 0.8) node[anchor=east] {\tiny $x_0 + x_1 + x_2 = 0$} --
+    (0.69, 0.6);
+\end{tikzpicture}
+    \end{center}
+    Como se puede observar, contiene siete puntos y siete rectas. Se denomina plano de Fano.
+\end{example}
+
+\begin{obs}
+    %\begin{enumerate}[i)]
+        %\item []
+        %\item En $\Po ^2 _{\left( \sfrac{\z}{2} \right)}$ solamente hay $7$ puntos: $\left| \left\{ \left(a, b, c \right) | a, b, c \in \left\{0, 1 \right\} \right\} \right|  = 2^3 = 8$, pero debemos excluir $\left( 0, 0, 0 \right)$ porque no es punto.
+        %\item 
+    En $\Po ^2$, sean $\left( p_0 \right)_R = \begin{pmatrix} a_0 \\ b_0 \\ c_0 \end{pmatrix}$ y $\left( p_1 \right)_R = \begin{pmatrix} a_1 \\ b_1 \\ c_1 \end{pmatrix}$. Entonces, $V=p_0 \vee p_1 \colon \begin{pmatrix} x_0 \\ x_1 \\ x_2 \end{pmatrix} = \alpha \begin{pmatrix} a_0 \\ b_0 \\ c_0 \end{pmatrix} + \beta \begin{pmatrix} a_1 \\ b_1 \\ c_1 \end{pmatrix}$. 
+    Es decir, aunque no haya operación suma definida entre puntos, está bien definido el conjunto de combinaciones lineales de ellos.
+    %\end{enumerate}
+\end{obs}
+\begin{obs}
+    \begin{enumerate}[i)]
         \item []
         \item 
             \[
@@ -716,7 +903,7 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometría af�
     \]
 \end{defi}
 \begin{obs}
-    \begin{enumerate}[(i)]
+    \begin{enumerate}[i)]
         \item []
         \item $\dim \left( \Po ^n \right) ^* = n$.
         \item $\left( \left( \Po ^n \right) \right) ^* = \Po^n. $
@@ -731,7 +918,7 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometría af�
 \end{defi}
 
 \begin{obs}
-    \begin{enumerate}[(i)]
+    \begin{enumerate}[i)]
         \item []
         \item $\dim V^* = n-m-1$,
         \item $\left(V^*\right)^*=V$,
@@ -760,7 +947,7 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometría af�
     Recíprocamente,
     \[
         \begin{array}{ccc}
-            H_p \equiv p^* \text{ hiperplano} & \longmapsfrom & p\in \left(\Po^n\right) ^*
+            H_p \equiv p^* \text{ hiperplano} &  & p\in \left(\Po^n\right) ^*
         \end{array}
     \]
     En ecuaciones,
@@ -786,7 +973,6 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometría af�
 \begin{proof}
     \underline{Ejercicio}
 \end{proof}
-
 
 \begin{prop}
     Sean $H_0,\dots,H_m \subseteq \Po^n$ hiperplanos, entonces

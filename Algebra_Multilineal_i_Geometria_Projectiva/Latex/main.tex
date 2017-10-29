@@ -10,9 +10,10 @@
 \newmdenv[leftline=false,topline=false]{topright}
 \let\proof\relax
 \usepackage[utf8]{inputenc}
-\usetikzlibrary{positioning,arrows}
+\usetikzlibrary{positioning,arrows, calc}
 \usetikzlibrary{external}
 \tikzexternalize[prefix=figures/]
+\pgfplotsset{compat=1.11}
 \newcommand{\n}{\mathbb{N}}
 \newcommand{\z}{\mathbb{Z}}
 \newcommand{\q}{\mathbb{Q}}
