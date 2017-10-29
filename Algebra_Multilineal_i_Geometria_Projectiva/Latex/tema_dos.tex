@@ -664,6 +664,129 @@ en añadir puntos en el $\infty$.
 % FALTAN LUNES Y MIERCOLES %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{obs}
+    \begin{enumerate}[(i)]
+        \item []
+        \item En $\Po ^2 _{\left( \sfrac{\z}{2} \right)}$ solamente hay $7$ puntos: $\left| \left\{ \left(a, b, c \right) | a, b, c \in \left\{0, 1 \right\} \right\} \right|  = 2^3 = 8$, pero debemos excluir $\left( 0, 0, 0 \right)$ porque no es punto.
+        \item En $\Po ^2$, sean $\left( p_0 \right)_R = \begin{pmatrix} a_0 \\ b_0 \\ c_0 \end{pmatrix}$ y $\left( p_1 \right)_R = \begin{pmatrix} a_1 \\ b_1 \\ c_1 \end{pmatrix}$. Entonces, $V=p_0 \vee p_1 \colon \begin{pmatrix} x_0 \\ x_1 \\ x_2 \end{pmatrix} = \alpha \begin{pmatrix} a_0 \\ b_0 \\ c_0 \end{pmatrix} + \beta \begin{pmatrix} a_1 \\ b_1 \\ c_1 \end{pmatrix}$. Es decir, aunque no haya operación suma definida entre puntos, está bien definido el conjunto de combinaciones lineales de ellos.
+    \end{enumerate}
+\end{obs}
+\begin{obs}
+    \begin{enumerate}[(i)]
+        \item []
+        \item 
+            \[
+                \left. \begin{array}{l} V=p_0 \vee \cdots \vee p_m \\ W= q_0 \vee \cdots \vee q_r \end{array} \right\} V \vee W = p_0 \vee \cdots \vee p_m \vee q_0 \vee \cdots \vee q_r.
+            \]
+            \begin{proof}
+                Directa de espacios vectoriales.
+            \end{proof}
+        \item 
+            \[
+                \left. \begin{array}{l} V \colon A \begin{pmatrix} x_0 \\ \vdots \\ x_n \end{pmatrix} = 0 \\ W \colon B \begin{pmatrix} x_0 \\ \vdots \\ x_n \end{pmatrix} = 0 \end{array} \right\} V \cap W  \colon \begin{pmatrix} A \\ \hline B \end{pmatrix} \begin{pmatrix} x_0 \\ \vdots \\ x_n \end{pmatrix} = 0.
+            \]
+            \begin{proof}
+                Directa de espacios vectoriales.
+            \end{proof}
+    \end{enumerate}
+\end{obs}
+\subsection{Dualidad}
+La \textbf{dualidad} es una diferencia fundamental respecto de la geometría afín.
+\begin{rec}[(Problema 3, Lista T1)]
+    Consideremos $\E$ un espacio vectorial y su dual $\E^*$. Sea $\F \subseteq \E$ un subespacio vectorial. Entonces, $\F^\perp=\left\{w \in \E ^* | w \left( u \right) = 0 \hspace{0,2cm} \forall u\in\F \right\} $ es un subespacio vectorial de $\E^*$ y se satisface que $\dim \F^\perp = \dim \E - \dim \F$. Además, se tiene que
+    \begin{itemize}
+        \item $\F_1 \subseteq \F_2 \iff \F_2^\perp \subseteq \F_1^\perp$,
+        \item $\left( \F_1 \cap \F_2 \right) ^\perp = \F_1^\perp + \F_2^\perp$,
+        \item $\left( \F_1 + \F_2 \right)^\perp=\F_1^\perp \cap \F_2^\perp$,
+        \item $\left( \F^\perp\right)^\perp=\F$.
+    \end{itemize}
+    Por tanto,
+    \[
+        \begin{array}{ccc}
+             \boxed{\E = \E^{**}} & & \boxed{\E^*}\\
+             \left\{\text{s.e.v. de }\dim = d \right\} & \substack{\perp \\ \longrightarrow \\  \longleftarrow \\ \perp} & \left\{\text{s.e.v. de }\dim = \dim \E - d \right\}
+        \end{array}
+    \]
+    de manera que la operación $\perp$ define una biyección entre $\E$ y $\E^*$ que invierte el orden de las inclusiones e intercambia $+$ y $\cap$.
+\end{rec}
+\begin{defi}
+    Sea $\Po^n=\Po\left(\E\right)$. Llamaremos espacio proyectivo dual de $\Po\left(\E\right)$ a
+    \[
+        \left( \Po^n \right)^* \equiv \Po\left(\E^*\right).
+    \]
+\end{defi}
+\begin{obs}
+    \begin{enumerate}[(i)]
+        \item []
+        \item $\dim \left( \Po ^n \right) ^* = n$.
+        \item $\left( \left( \Po ^n \right) \right) ^* = \Po^n. $
+    \end{enumerate}
+\end{obs}
+\begin{defi}
+    Sea $\F\subseteq \E$ y sea $V=\pi\left(\F\right)\subseteq\Po^n$ una variedad lineal de $\dim m$. Entonces, se define la variedad lineal dual de $V$ como
+    \[
+        V^* \equiv \pi \left( \F^\perp\right) \subseteq \left( \Po^n \right)^*.
+    \]
+    
+\end{defi}
+
+\begin{obs}
+    \begin{enumerate}[(i)]
+        \item []
+        \item $\dim V^* = n-m-1$,
+        \item $\left(V^*\right)^*=V$,
+        \item $V_1 \subseteq V_2 \iff V_2^* \subseteq V_1^*$,
+        \item $\left(V_1 \vee V_2 \right)^* = V_1^* \cap V_2^*$,
+        \item $\left(V_1 \cap V_2 \right) ^*=V_1^* \vee V_2^*$.
+    \end{enumerate}
+    \vspace{0,3cm}
+    \noindent En conclusión,
+    \[
+        \begin{array}{ccc}
+             \boxed{\Po^n = \left(\Po^n\right)^{**}} & & \boxed{\left( \Po^n \right)^*}\\
+             \left\{\text{vars. lins. de }\dim = m \right\} & \substack{* \\ \longrightarrow \\  \longleftarrow \\ *} & \left\{\text{vars. lins. de }\dim = n-m-1 \right\}
+        \end{array}
+    \]
+    de manera que la operación $*$ define una biyección entre $\Po^n$ y $\left( \Po^n \right)^*$ que invierte el orden de las inclusiones e intercambia $\vee$ y $\cap$.
+\end{obs}
+\begin{obs}[Caso particular de los hiperplanos]
+    \[
+        \begin{array}{ccc}
+             \boxed{\Po^n} & & \boxed{\left( \Po^n \right)^*}\\
+             H \text{ hiperplano} & \longmapsto & H^* \text{ punto}\\
+             \dim m=n-1 & & \dim n-(n-1)-1=0
+        \end{array}
+    \]
+    Recíprocamente,
+    \[
+        \begin{array}{ccc}
+            H_p \equiv p^* \text{ hiperplano} & \longmapsfrom & p\in \left(\Po^n\right) ^*
+        \end{array}
+    \]
+    En ecuaciones,
+    \[
+        H_p \colon a_0x_0+\cdots+a_nx_n=0 \longleftrightarrow p=\begin{pmatrix} a_0 \\ \vdots \\ a_n \end{pmatrix}.
+    \]
+    \underline{Conclusión}: los hiperplanos de $\Po^n$ son (\textit{están en biyección con}) un espacio proyectivo de $\dim n$.
+\end{obs}
+
+\begin{defi}
+    Sean $H_0, \dots, H_m$ hiperplanos de $\Po^n$.
+    \begin{enumerate}[(i)]
+        \item[]
+        \item $H_0, \dots, H_m$ son l.i. $\iff H_0^*, \dots, H_m^*$ son l.i.
+        \item $H_0, \dots, H_m$ están en posición general $\iff H_0^*, \dots, H_m^*$ están en posición general.
+    \end{enumerate}
+\end{defi}
+\begin{prop}
+    \[
+        H_0, \dots, H_m \subseteq \Po^n \text{ son l.i. } \iff \dim \left( H_0 \cap \cdots \cap H_m \right) = n-m-1.
+    \]
+\end{prop}
+\begin{proof}
+    \underline{Ejercicio}
+\end{proof}
+
 
 \begin{prop}
     Sean $H_0,\dots,H_m \subseteq \Po^n$ hiperplanos, entonces
