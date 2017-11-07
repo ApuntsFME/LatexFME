@@ -356,9 +356,9 @@ en añadir puntos en el $\infty$.
 		\end{tikzpicture}
 		\end{center}
 		Y unir los puntos azules antipolares. Aunque, si lo tratamos de imaginar, este
-		objeto, no cabe en $\real^3$.
+		objeto no cabe en $\real^3$.
 		\item $\Po^1_{\cx} = (\cx^2 \setminus {0})/\sim \ = \cx \cup \setb{\infty} = S^2$. Las igualdades por el momento son
-        por analogía o intuición, más adelante se demostrarán. Aunque nos podemos hacer una idea basandonos en la proyección
+        por analogía o intuición, más adelante se demostrarán. Aunque nos podemos hacer una idea basándonos en la proyección
         estereográfica
 		\begin{center}
 		\begin{tikzpicture}
@@ -462,7 +462,7 @@ en añadir puntos en el $\infty$.
     Sean $V_1, V_2 \subseteq \Po^n$ variedades lineales $\implies V_1 \cap V_2$ variedad lineal que verifica:
     \begin{itemize}
         \item $V_1 \cap V_2 \subseteq V_1, V_2$
-        \item Si $W$ variedad lineal, $W \subseteq V_1, V_2$ i $W \subseteq V_1 \cap V_2$
+        \item Si $W$ variedad lineal, $W \subseteq V_1, V_2 \implies W \subseteq V_1 \cap V_2$
     \end{itemize}
 \end{prop}
 \begin{proof}
@@ -548,7 +548,7 @@ en añadir puntos en el $\infty$.
     Sean $p \in \Po^n, r, V, H \subseteq \Po^n$ (recta, variedad lineal, hiperplano, respectivamente).
     \begin{enumerate}
         \item $\dim \left( V \vee p \right) = \text{ ó } \begin{cases} \dim V & (\iff p \in V) \\ \dim V + 1 & (\iff p \notin V) \end{cases}$
-        \item $\dim \left( r \vee H \right) = \text{ ó } \begin{cases} 1 & (\iff r \subseteq H) \\ 0 & (\iff r \nsubseteq H) \end{cases}$
+        \item $\dim \left( r \cap H \right) = \text{ ó } \begin{cases} 1 & (\iff r \subseteq H) \\ 0 & (\iff r \nsubseteq H) \end{cases}$
     \end{enumerate}
 \end{prop}
 \begin{proof}
@@ -560,7 +560,7 @@ en añadir puntos en el $\infty$.
 \end{defi}
 \begin{obs}
     \begin{gather*}
-        V_1, V_2\text{ suplementarias }\iff H_1 \oplus H_2 = \E \iff \left. \begin{cases} (1) & H_1 + H_2 = \E \\ (2) & H_1 \cap H_2 \end{cases} \right\} \iff \\
+        V_1, V_2\text{ suplementarias }\iff H_1 \oplus H_2 = \E \iff \left. \begin{cases} (1) & H_1 + H_2 = \E \\ (2) & H_1 \cap H_2 = \emptyset \end{cases} \right\} \iff \\
         \iff \begin{cases} (1) & V_1 \vee V_2 = \Po^n \\ (2) & V_1 \cap V_2 = \emptyset \end{cases} \\
     \end{gather*}
 \end{obs}
@@ -584,7 +584,7 @@ en añadir puntos en el $\infty$.
 \end{proof}
 \begin{defi}
     Sea $\Po^n = \real(\E )$, y sean $p_0, \dots, p_m \in \Po^n$ tal que $p_i = [v_i], v_i \in \E$, decimos que $p_0, \dots,
-    p_m$ son linealmente independientes (l.i.) $\iff v_1, \dots, v_m \in \E$ son linealmente independientes.
+    p_m$ son linealmente independientes (l.i.) $\iff v_0, \dots, v_m \in \E$ son linealmente independientes.
 \end{defi}
 \begin{obs}
     La independencia lineal no depende de los representantes elegidos.
@@ -634,14 +634,14 @@ en añadir puntos en el $\infty$.
             \[ \begin{cases} p_i = [u_i], \forall i = 0, \dots, n \\ \bar{p} = [u_0 + \dots + u_n ] \end{cases} \]
         \item \textit{Asignación de coordenadas proyectivas} \\
             $\Po^n = \Po(\E)$, Sea $R = \{ p_0, \dots, p_n; \bar{p} \}$, y $B = \{u_0, \dots, u_n\}$ una base adaptada. Sea $q \in \Po^n, q = [v]$, entonces 
-            $q_R = v_B$. (Cale ver que la definición es consistente)
+            $q_R = v_B$. (Hace falta ver que la definición es consistente)
     \end{enumerate}
 \end{defi}
 \begin{prop}
     Sea $R$ un sistema de referencia en $\Po^n$. Sean $B_1 = \{ u_0, \dots, u_n\}, B_2 = \{ u'_0, \dots u'_n \}$ bases adaptadas a $R$. Sea $q = [v] \in \Po^n$, entonces $\exists \lambda \neq 0$ tal que $v_{B_2} = v_{B_1}$.
 \end{prop}
 \begin{proof}
-    $p_i = [u_i] = [u'_i], \forall i = 0, \dots, n$. Por tanto, $\exists \lambda \neq 0$ tal que $u'i= \lambda_i u_i, \forall i = 1, \dots, n$. Por otro lado,
+    $p_i = [u_i] = [u'_i], \forall i = 0, \dots, n$. Por tanto, $\exists \lambda \neq 0$ tal que $u'_i= \lambda_i u_i, \forall i = 1, \dots, n$. Por otro lado,
     \begin{gather*}
         \bar{p} = [u_0 + \dots + u_n] = [u'_0 + \dots + u'_n] \implies \exists \lambda \neq 0 \text{ tal que } u'_0 + \dots + u'_n = \\ = \lambda_0 u_0 + \dots + \lambda_n u_n = \lambda (u_0 + \dots + u_n)
         \stackrel{B_1 \text{ base}}{\implies} \lambda_i = \lambda \forall i = 1, \dots, n
@@ -684,7 +684,7 @@ en añadir puntos en el $\infty$.
 \begin{prop}
     Sean $\R_1, \R_2$ sistemas de referencia de $\Po^n$. Sea $q \in \Po^n$.
     \begin{enumerate}[i)]
-        \item $\exists S \in M_{n+1}(k)$ invertible t.q. $q_{\R_1} = S_{q_{\R_2}}$
+        \item $\exists S \in M_{n+1}(k)$ invertible t.q. $q_{\R_1} = S q_{\R_2}$
         (matriz del cambio de sistema de referencia).
         \item Sean $B_1, B_2$ bases adaptadas a $\R_1, \R_2$ respectivamente. Podemos coger $S=S_{B_2, B_1}$.
         \item Cualquier matriz de cambio de referencia es de la forma $S=\lambda S_{B_2, B_1} \ (\lambda \neq 0)$.
