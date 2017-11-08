@@ -9,7 +9,7 @@
 \subsection{Espacio dual}
 
 \begin{defi}
-	Sea $\E$ un $\k$-ev. Definimos el espacio Dual de $\E$ como
+	Sea $\E$ un $\k$-ev. Definimos el espacio dual de $\E$ como
 	$\E^* = \{ \phi : \E \to \k \text{ lineales} \}$ (también es un
 	$\k$-espacio vectorial)
 \end{defi}
@@ -100,7 +100,8 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%
-% TENSORES            %
+%                     %
+%      TENSORES       %
 %                     %
 %%%%%%%%%%%%%%%%%%%%%%%
 
@@ -198,7 +199,7 @@
 		\item $\vec{0} \otimes f = f \otimes \vec{0} = \vec{0}$
 		\item $f \otimes (g + h) = f \otimes g + f\otimes h$ \quad ($(f+g) \otimes
 		h = f \otimes h + g \otimes h$)
-		\item $\alpha \in k$. $(\alpha f) \otimes g = \alpha(f \otimes g) =
+		\item $\alpha \in \k$. $(\alpha f) \otimes g = \alpha(f \otimes g) =
 		f \otimes (\alpha g)$
 	\end{itemize}
 \end{prop}
@@ -258,7 +259,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
 	Sea $\E$ un $\k$-ev. de dimensión $n$ y sea $B = \setb{e_1, \cdots, e_n}$,
 	entonces
 \begin{enumerate}[i)]
-		\item $\dim_k T_p^q(\E) = n^{p+q}$
+		\item $\dim_\k T_p^q(\E) = n^{p+q}$
 		\item \label{base_2} Una base de $T_p^q(\E)$ es
 		\[
 			B_p^q = \left\{ e_{i_1}^* \otimes \cdots \otimes e_{i_p}^* \otimes
@@ -276,7 +277,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
 	\begin{enumerate}[i)]
 		\item[]
 		\item Es consecuencia directa de \ref{base_2}
-		\item Primero veamos que $B_p^q$ es li. Sea
+		\item Primero veamos que $B_p^q$ es linealmente independiente. Sea
 		\[
 			w = \sum \alpha_{IJ}(e_{i_1}^* \otimes \cdots \otimes e_{i_p}^*
 			\otimes e_{j_1} \otimes \cdots \otimes e_{j_q}) = 0
@@ -400,12 +401,20 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
 		\]
 	\end{itemize}
 \end{example}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%                     %
+%    PERMUTACIONES    %
+%                     %
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \subsection{Recordatorio de permutaciones}
 
 \begin{itemize}
 	\item Denotaremos como $x_n = \setb{1, \cdots, n}$
 	\item Denotaremos como $\mathcal{S}_n =\setb{\sigma\colon x_n \to
-		x_n \text{bilineales}}$
+		x_n \text{ bilineales}}$
 	\item $\#\mathcal{S}_n= n!$
 	\item $\mathcal{S}_n$ es un grupo por composición. Además denotaremos
 		$s_1 s_2 = s_1 \circ s_2$
@@ -468,7 +477,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
     \[\underline{s}(w_1 \otimes \dots \otimes w_p)(u_1,\dots, u_p) = (w_1 \otimes 
     \dots \otimes w_p)(u_{s(1)}, \dots, u_{s(p)}) = w_1(u_{s(1)}) \cdot w_2(u_{s(2)}) 
     \cdots w_p(u_{s(p)})\]
-    Dado que $s(i) = j \iff i = t(j)$, $w_i(u_{s_i}) = w_i(u_j) = w_{t(j)(u_j)}$. Con lo
+    Dado que $s(i) = j \iff i = t(j)$, $w_i(u_{s(i)}) = w_i(u_j) = w_{t(j)}(u_j)$. Con lo
     que podemos reordenar el último producto como
     \[w_{t(1)}(u_1) \cdot w_{t(2)}(u_2) \cdots w_{t(p)}(u_p) =w_{t(1)}
     \otimes \dots \otimes w_{t(p)}(u_1,\dots, u_p)\]
@@ -584,11 +593,11 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
 \end{example}
 \begin{obs}~
     \begin{itemize}
-        \item $\varepsilon (s) = (-1)^n$ si $\varepsilon (s) = t_1, \dots , t_n$, donde 
+        \item $\varepsilon (s) = (-1)^n$ si $\varepsilon (s) = t_1 \cdots t_n$, donde 
         $t_1,\dots,t_n$ son transposiciones.
         \item $\varepsilon (s_1 s_2) = \varepsilon (s_1) \varepsilon(s_2)$.
-        \item $s \in \mathcal{S}_p$. Definimos $A \in \real ^{p\times p}$, donde
-        $A_{i,j} = 1$ si $i = s(j)$ y $A_{i,j} = 0$ en otro caso. Entonces
+        \item $s \in \mathcal{S}_p$. Definimos $A \in \mathcal{M}(\real)_{p\times p}$, donde
+        $a_{i,j} = 1$ si $i = s(j)$ y $a_{i,j} = 0$ en otro caso. Entonces
         $\det A = \varepsilon(s)$.       
     \end{itemize}
 \end{obs}
