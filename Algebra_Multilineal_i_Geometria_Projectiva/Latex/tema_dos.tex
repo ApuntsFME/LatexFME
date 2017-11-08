@@ -1710,14 +1710,14 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
     \addplot [mark=*,color=blue] coordinates {(0.28,1.61)} node[label=below:$p_1$]{};
     \addplot [mark=*,color=blue] coordinates {(2.93,1.22)} node[label=190:$p_2$]{};
     
-    \addplot [color=red] {-1.08*x+4.38};
-    \addplot [color=red] {0.88*x+1.37};
-    \addplot [color=red] {0.14*x+1.57};
-    \addplot [color=red] {10.9*x-30.7};
+    \addplot [color=red,domain=0:7] {-1.08*x+4.38};
+    \addplot [color=red,domain=0:7] {0.88*x+1.37};
+    \addplot [color=red,domain=0:7] {0.14*x+1.57};
+    \addplot [color=red,domain=0:7] {10.9*x-30.7};
     
-    \addplot [color=orange] {2.53*x-3.93};
-    \addplot [color=orange] {-0.49*x+3.48};
-    \addplot [color=orange] {-0.15*x+1.65};
+    \addplot [color=orange,domain=0:7] {2.53*x-3.93};
+    \addplot [color=orange,domain=0:7] {-0.49*x+3.48};
+    \addplot [color=orange,domain=0:7] {-0.15*x+1.65};
     
     \addplot [mark=*,color=green] coordinates {(2.08,1.35)} node[label=190:$p_3$]{};
     \addplot [mark=*,color=green] coordinates {(5.28,0.88)} node[label=190:$p_4$]{};
