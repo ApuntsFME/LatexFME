@@ -640,7 +640,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
         
         \item Veamos primero que la tercera condición implica la segunda.
         \[\begin{split}
-        &\forall u_1,\dots,u_p \in E, \forall i < j \quad 
+        &\forall u_1,\dots,u_p \in E, \forall i \neq j \quad 
         0 = f(u_1,\dots,u_i+u_j,\dots,u_i+u_j, \dots, u_p) =\\
         &f(u_1,\dots,u_i,\dots,u_i,\dots,u_p)+
         f(u_1,\dots,u_i,\dots,u_j,\dots,u_p)+\\
@@ -661,7 +661,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
         \implies f \in A_p(E)\]
         Y, finalmente, que la primera implica la tercera. Por ser $f$ antisimétrica,
         \[
-        \forall u_1,\dots,u_p \in E, \ \forall i < j \quad
+        \forall u_1,\dots,u_p \in E, \ \forall i \neq j \quad
         f(u_1,\dots, u_i, \dots, u_j, \dots, u_p) = -f(u_1,\dots, u_j, \dots, u_i, \dots, u_p)
         \]
         Si $u_i = u_j$, entonces $f(u_1, \dots, u_p) = 0$.
@@ -764,6 +764,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
 \end{prop}
 \begin{proof}
     \begin{enumerate}[i)]
+        \item[]
         \item Queda como ejercicio. (pista: Consideramos $S(f+g)$)
         \item $f \in S_p(\E) \implies S(f) = f$ queda como ejercicio.
         Suponemos que $f \in A_p(\E)$, entonces
@@ -774,15 +775,15 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
         \]
         \item $\im(S)=S_p(\E)$ queda como ejercicio. Demostraremos que $\im(A)=A_p(\E)$.
         Por \ref{item:s_sp} sabemos que $A_p(\E) \subseteq \im(A)$, por lo tanto, resta
-        ver que $g=A(h)\in A_p(\E)$, sea $s \in \mathcal{S}_p$
+        ver que $A(h)\in A_p(\E)$, $\forall h \in T_p(\E)$. Sea $s \in \mathcal{S}_p$
         \[
-            \underline{s}h = \underline{s}\left( \frac{1}{p!}\sum_{r \in \mathcal{S}_p} \varepsilon(r)\underline{r}f
-            \right) = \frac{1}{p!}\left(\sum_{r \in \mathcal{S}_p} \varepsilon(r)\underline{s}(\underline{r}f)\right) =
+            \underline{s}A(h) = \underline{s}\left( \frac{1}{p!}\sum_{r \in \mathcal{S}_p} \varepsilon(r)\underline{r}h
+            \right) = \frac{1}{p!}\left(\sum_{r \in \mathcal{S}_p} \varepsilon(r)\underline{s}(\underline{r}h)\right) =
         \]
         \[
-            = \varepsilon(s)\frac{1}{p!} \left( \sum_{r \in \mathcal{S}_p \varepsilon(sr) \underline{sr}h} \right)
-            \stackrel{\ref{obs:perm_biy}}{=} \varepsilon(s)\frac{1}{p!} \left( \sum_{t \in \mathcal{S}_p \varepsilon(t)
-            \underline{t}h} \right) = \varepsilon(s)g
+            = \varepsilon(s)\frac{1}{p!} \left( \sum_{r \in \mathcal{S}_p} \varepsilon(sr) \underline{sr}h \right)
+            \stackrel{\ref{obs:perm_biy}}{=} \varepsilon(s)\frac{1}{p!} \left( \sum_{t \in \mathcal{S}_p} \varepsilon(t)
+            \underline{t}h \right) = \varepsilon(s)A(h)
         \]
     \end{enumerate}
 \end{proof}
