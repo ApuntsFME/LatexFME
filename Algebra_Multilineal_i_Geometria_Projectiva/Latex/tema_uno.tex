@@ -810,7 +810,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
 \begin{example}
     Sean $\omega_1$, $\omega_2 \in T_1(\E)$:
 	\begin{itemize}
-		\item $T_1(\E) = \E^* = S_1(\E) = A_1(\E)$, porque $S_1 = \{Id\}$.
+		\item $T_1(\E) = \E^* = S_1(\E) = A_1(\E)$, porque $S_1 = \{\Id\}$.
 		\item $\omega_1 \otimes \omega_2 \notin S_2(\E), A_2(\E)$.
 	\end{itemize}
 \end{example}
@@ -847,27 +847,27 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
     Sean $\omega_1, \dots \omega_p \in T_1(\E) = \E^*$
     \begin{enumerate}[i)]
         \item $\omega_1 \wedge \dots \wedge \omega_p \in A_p(\E)$
-        \item \label{prop_pr_ext_ii} $\omega_1 \wedge \dots \wedge \left(\alpha_i \overline{\omega_i} + \beta_i \overline{\overline{\omega_i}} \right)
-        \wedge \dots \wedge \omega_p = \alpha_i (\omega_1 \wedge \dots \wedge \overline{\omega_i} \wedge \dots
+        \item \label{prop_pr_ext_ii} $\omega_1 \wedge \dots \wedge \left(\alpha_i \overline{\omega_i} + \beta_i \overline{\overline{\omega_i}} \right).
+        \wedge \dots \wedge \omega_p = \alpha_i (\omega_1 \wedge \dots \wedge \overline{\omega_i} \wedge \dots.
         \wedge \omega_p) + \beta_i (\omega_1 \wedge \dots \wedge \overline{\overline{\omega_i}} \wedge \dots
         \wedge \omega_p)$
         \item \label{prop_pr_ext_iii} Sea $s \in \mathcal{S}_p$, $t = s^{-1}$, $\omega_{s(1)} \wedge \dots \wedge \omega_{s(p)} =
         \underline{t}\left(\omega_1 \wedge \dots \wedge \omega_p \right) = \varepsilon(s)\left( \omega_1
-        \wedge \dots \wedge \omega_p \right)$
+        \wedge \dots \wedge \omega_p \right)$.
         \item \label{prop_pr_ext_iv} Si $u_1, \dots, u_p \in \E$, $\left( \omega_1 \wedge \dots \wedge \omega_p\right) \left(u_1, \dots,
-        u_p\right) = det\left(\omega_j(u_i)\right)$
-        \item \label{prop_pr_ext_v} Si $\omega_i = \omega_j , (i \neq j) \implies \omega_1 \wedge \dots \wedge \omega_p = 0$
-        \item $\omega_1 \wedge \dots \wedge \omega_p \neq 0 \iff \{\omega_1,\dots,\omega_p\}$ son l.i.
+        u_p\right) = \det\left(\omega_j(u_i)\right)$.
+        \item \label{prop_pr_ext_v} Si $\omega_i = \omega_j , (i \neq j) \implies \omega_1 \wedge \dots \wedge \omega_p = 0$.
+        \item $\omega_1 \wedge \dots \wedge \omega_p \neq 0 \iff \{\omega_1,\dots,\omega_p\}$ son linealmente independientes.
     \end{enumerate}
 \end{prop}
 \begin{proof}
     \begin{enumerate}[i)]
         \item[]
-        \item $\omega_1 \wedge \dots \wedge \omega_p = p! A\left(\omega_1 \otimes \dots \otimes \omega_p 
-        \right) \implies \omega_1 \wedge \dots \wedge \omega_p \in Im(A) \stackrel{visto}{=} A_p(\E)$
-        \item Ejercicio (misma proposición que $\otimes$)
+        \item $\omega_1 \wedge \dots \wedge \omega_p = p! A\left(\omega_1 \otimes \dots \otimes \omega_p .
+        \right) \implies \omega_1 \wedge \dots \wedge \omega_p \in \im(A) \stackrel{\text{visto}}{=} A_p(\E)$.
+        \item Ejercicio (misma proposición que $\otimes$).
         \item $\omega_{s(1)} \wedge \dots \wedge \omega_{s(p)} = \underline{t}(\omega_1 \wedge \dots \wedge 
-        \omega_p)$ (Ejercicio, misma proposición que $\otimes$)
+        \omega_p)$ (Ejercicio, misma proposición que $\otimes$).
         \begin{gather*}
             \omega_{s(1)} \wedge \dots \wedge \omega_{s(p)} \stackrel{\ref{pr_ext} + \ref{obs_pr_ext}}{=}
             \sum_{r \in \mathcal{S}_p} \varepsilon(r) \left( \omega_{rs(1)} \otimes \dots \otimes 
@@ -876,7 +876,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
             \varepsilon(s)}^{\varepsilon(rs)} \left( \omega_{rs(1)} \otimes \dots \otimes\omega_{rs(p)}
             \right) \stackrel{rs = m \in \mathcal{S}_p}{=} \varepsilon(s) \sum \varepsilon(m)
             \left( \omega_{m(1)} \otimes \dots \otimes \omega_{m(p)} \right) = \\
-            = \varepsilon(s) \left( \omega_1 \wedge \dots \wedge \omega_p \right)
+            = \varepsilon(s) \left( \omega_1 \wedge \dots \wedge \omega_p \right).
         \end{gather*}
         \item 
         \begin{gather*}
@@ -884,7 +884,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
         \right) = \sum_{r\in\mathcal{S}_p} \varepsilon(r) \left( \omega_{r(1)} \otimes \dots \otimes 
         \omega_{r(p)} \right) \left( u_1,\dots,u_p \right) = \\
         \sum_{r \in \mathcal{S}_p} \varepsilon(r) \left( \omega_{r(1)}(u_1) \dots \omega_{r(p)}(u_p) \right)
-        \stackrel{\text{def det}}{=} det(\omega_j(u_i))_{i,j}
+        \stackrel{\text{def det}}{=} det(\omega_j(u_i))_{i,j}.
         \end{gather*}
         \item
         \begin{gather*}
@@ -892,7 +892,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
         \stackrel{\ref{prop_pr_ext_iii}}{=} (-1) \omega_1 \wedge \dots \wedge \omega_i \wedge \dots \wedge
         \omega_i \wedge \dots \wedge \omega_p \implies \\
         \implies 2\left( \omega_1 \wedge \dots \wedge \omega_p \right) = 0
-        \stackrel{\car \k \neq 2}{\implies} \omega_1 \wedge \dots \wedge \omega_p = 0
+        \stackrel{\car \k \neq 2}{\implies} \omega_1 \wedge \dots \wedge \omega_p = 0.
         \end{gather*}
         \item $\implies$ \\
         Suponemos que son l.d. y que $\omega_p = \sum_{j=1}^{p-1} \alpha_j \omega_j$:
@@ -907,14 +907,14 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
 		    \omega_n}^{\text{Steinitz}} \}$ la base dual de $B$, tenemos que:
         \[
         \left( \omega_1 \wedge \dots \wedge \omega_p \right) \left( u_1,\dots,u_p \right) \stackrel{\ref{prop_pr_ext_iv}}{=}
-        det\left( \omega_j \left(u_i \right) \right) = 
+        \det\left( \omega_j \left(u_i \right) \right) = 
         \begin{vmatrix}
             1 & 0 & \dots & 0 \\
             0 & \ddots & \ddots & \vdots \\
             \vdots & \ddots & \ddots & 0 \\
             0 & \dots & 0 & 1
         \end{vmatrix}
-        = 1 \neq 0
+        = 1 \neq 0.
         \]
     \end{enumerate}
 \end{proof}
@@ -932,14 +932,14 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
         \end{aligned}
     \]
     \[
-        \epsilon _{IJ} = \left( e_{i_1}^* \wedge \cdots \wedge e_{i_p}^* \right) \left( e_{j_1}, \cdots , e_{j_p} \right)= \left\{ \begin{array}{ll}
+        \varepsilon _{IJ} = \left( e_{i_1}^* \wedge \cdots \wedge e_{i_p}^* \right) \left( e_{j_1}, \cdots , e_{j_p} \right)= \left\{ \begin{array}{ll}
              1 & \text{si } I=J \\
              0 & \text{en el caso contrario}
         \end{array}\right.
     \]
     En efecto, si $\hspace{0,1cm}\exists j_k \in J$, $j_k \notin I$, entonces en virtud del cálculo dado por \ref{prop_pr_ext_iv} (\ref{prop_pr_ext}), en la posición $k$ hay una fila de ceros. \\
     Por otro lado, si $I=J$ entonces tenemos el determinante de la matriz identidad. \\
-    Observemos también que si $I=J$ pero no están ordenadas crecientemente, $\epsilon _{IJ}=\pm1$ en función de las permutaciones que ordenan estos conjuntos.
+    Observemos también que si $I=J$ pero no están ordenadas crecientemente, $\varepsilon _{IJ}=\pm1$ en función de las permutaciones que ordenan estos conjuntos.
 \end{obs}
 
 \begin{thm}
