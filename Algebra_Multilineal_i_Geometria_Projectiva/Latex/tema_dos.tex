@@ -590,16 +590,16 @@ en añadir puntos en el $\infty$.
     La independencia lineal no depende de los representantes elegidos.
 \end{obs}
 \begin{example}
-    $\Po^2_\real = \Po(\real^3)$. Sean $p_0 = [(1,1,0)], p_1 = [(0,1,1)], p_2 = [(2,3,1)]$. Entonces $p_0$ y $p_1$ son l.i.,
-    pero $p_0, p_1, p_2$ son l.d..
+    $\Po^2_\real = \Po(\real^3)$. Sean $p_0 = [(1,1,0)], p_1 = [(0,1,1)], p_2 = [(2,3,1)]$. Entonces $p_0$ y $p_1$ son linealmente
+    independientes, pero $p_0, p_1, p_2$ son linealmente dependientes.
 \end{example}
 \begin{prop}
     Sean $p_0, \dots, p_m \in \Po^n$ puntos y $V \subseteq \Po^n$ una variedad lineal:
     \begin{enumerate}
-        \item $\dim\left( p_0 \vee \dots \vee p_m \right) \leq m$
-        \item $\dim\left( p_0 \vee \dots \vee p_m \right) = m \iff p_0, \dots, p_m$ son l.i.
-        \item $\dim V = m \iff \exists p_0, \dots, p_m \in V$ l.i. tales que $V = p_0 \vee \dots \vee p_m
-            \iff \forall p_0, \dots, p_m \in V \text{ l.i.}, V = p_0 \vee \dots \vee p_m$
+        \item $\dim\left( p_0 \vee \dots \vee p_m \right) \leq m$.
+        \item $\dim\left( p_0 \vee \dots \vee p_m \right) = m \iff p_0, \dots, p_m$ son linealmente independientes.
+        \item $\dim V = m \iff \exists p_0, \dots, p_m \in V$ linealmente independientes tales que $V = p_0 \vee \dots \vee p_m
+            \iff \forall p_0, \dots, p_m \in V \text{ linealmente independientes}, V = p_0 \vee \dots \vee p_m$.
     \end{enumerate}
 \end{prop}
 \begin{proof}
@@ -638,19 +638,20 @@ en añadir puntos en el $\infty$.
     \end{enumerate}
 \end{defi}
 \begin{prop}
-    Sea $R$ un sistema de referencia en $\Po^n$. Sean $B_1 = \{ u_0, \dots, u_n\}, B_2 = \{ u'_0, \dots u'_n \}$ bases adaptadas a $R$. Sea $q = [v] \in \Po^n$, entonces $\exists \lambda \neq 0$ tal que $v_{B_2} = v_{B_1} \lambda^t$.
+    Sea $R$ un sistema de referencia en $\Po^n$. Sean $B_1 = \{ u_0, \dots, u_n\}, B_2 = \{ u'_0, \dots u'_n \}$ bases adaptadas a $R$. Sea $q = [v] \in \Po^n$,
+    entonces $\exists \lambda \neq 0$ tal que $v_{B_2} = v_{B_1} \lambda^t$.
 \end{prop}
 \begin{proof}
     $p_i = [u_i] = [u'_i], \forall i = 0, \dots, n$. Por tanto, $\exists \lambda \neq 0$ tal que $u'_i= \lambda_i u_i, \forall i = 1, \dots, n$. Por otro lado,
     \begin{gather*}
         \bar{p} = [u_0 + \dots + u_n] = [u'_0 + \dots + u'_n] \implies \exists \lambda \neq 0 \text{ tal que } u'_0 + \dots + u'_n = \\ = \lambda_0 u_0 + \dots + \lambda_n u_n = \lambda (u_0 + \dots + u_n)
-        \stackrel{B_1 \text{ base}}{\implies} \lambda_i = \lambda \forall i = 1, \dots, n
+        \stackrel{B_1 \text{ base}}{\implies} \lambda_i = \lambda \text{ } \forall i = 1, \dots, n
     \end{gather*}
 \end{proof}
 \begin{obs}
     $R = \{ p_0, \dots, p_n; \bar{p} \}$ en $\Po^n$
     \begin{enumerate}
-        \item $q \in \Po^n, q_R = (a_0, \dots, a_n) = \lambda (a_0, \dots, a_n) \stackrel{\text{notación}}{=} (a_0 : \dots : a_n) \forall \lambda \neq 0$
+        \item $q \in \Po^n, q_R = (a_0, \dots, a_n) = \lambda (a_0, \dots, a_n) \stackrel{\text{notación}}{=} (a_0 : \dots : a_n)$ $\forall \lambda \neq 0$
         \item Ejemplos: \\ $\begin{aligned} (p_0&)_R = (1:0:\dots:0) \\ \vdots& \\ (p_n&)_R = (0:\dots:0:1) \end{aligned}$
         \item $q_R = (0: \dots : 0)$ no existe.
         \item Sea $\Po^2_\real = \Po(\real^3), R = \{ p_0, p_1, p_2; \bar{p} \} = \left\{ [(1,1,0)], [(1,0,1)], [(0,1,1)]; [(3,3,2)]\right\}$, entonces $B = \left\{ [(1,1,0)], [(1,0,1)], [(0,1,1)] \right\}$ no es una base
