@@ -33,28 +33,31 @@
 \DeclareMathOperator{\Id}{Id}
 \DeclareMathOperator{\vol}{vol}
 \DeclareMathOperator{\graph}{graph}
- 
+\DeclareMathOperator{\D}{D}
+
 \begin{document}
 \raggedright
 \begin{multicols}{3}
 
-\section{Series Numericas}
+\section{Series Numéricas}
 
 \underline{Corolario del criterio de Cauchy}
 
 $\sum a_n$ convergente $\implies \lim\limits_{n \to \infty} a_n = 0$
 
-\underline{Criterio de Condensación} $\left( \lim\limits_{n \to \infty} a_n = 0 \right)$
-$\sum a_n$ convergente $\iff \sum 2^na_{2^n}$ convergente
 
-\underline{Serie de Bertran}
-$\left( \sum \frac{1}{n^\alpha (\log{n}) \beta} \right)$
+\underline{Serie de Bertrand}
+$\left( \sum \frac{1}{n^\alpha (\log{n})^\beta} \right)$
 \begin{itemize}
 	\item $\alpha > 1$ o $\alpha = 1$, $\beta > 1 \implies$ convergente
 	\item $\alpha < 1$ o $\alpha = 1$, $\beta \leq 1 \implies$ divergente
 \end{itemize}
 
 \subsection{Series positivas}
+
+
+\underline{Criterio de Condensación} ($a_n$ decreciente, $a_n \geq 0$)
+$\sum a_n$ convergente $\iff \sum 2^na_{2^n}$ convergente
 
 \underline{Comparación directa} $\left( b_n \geq a_n \geq 0 \quad \forall n \geq n_0 \right)$
 \begin{itemize}
@@ -102,8 +105,8 @@ $\sum (-1)^{n+1} a_n$ convergente
 	+ \varepsilon_N$, $\varepsilon_N \in [0,a_N]$
 \end{itemize}
 
-\underline{Criterio de Dirchlet} $\left( b_n \geq 0, b_n \text{ dec. Sumas de } \sum a_n
-\text{ acotadas.}\right)$
+\underline{Criterio de Dirichlet} $(\lim\limits_{n\to \infty} b_n = 0$, $b_n \text{ dec. Sumas de } \sum a_n
+\text{ acotadas.})$
 $\sum a_nb_n$ convergente
 
 \subsection{Series de Potencias}
@@ -123,8 +126,8 @@ $c_1, c_2 > c_0 \implies \abs{\int_{c_1}^{c_2} f} < \varepsilon. \implies$ conve
 
 \underline{Comparación directa} $\left( g(x) \geq f(x) \geq 0 \right)$
 \begin{itemize}
-	\item $\int_{a}^{\infty} g$ converge $\implies \int_{a}^{\infty}$ converge
-	\item $\int_{a}^{\infty} f$ divergente $\implies \int_{a}^{\infty}$ divergente
+	\item $\int_{a}^{\infty} g$ converge $\implies \int_{a}^{\infty} f$ converge
+	\item $\int_{a}^{\infty} f$ divergente $\implies \int_{a}^{\infty} g$ divergente
 \end{itemize}
 
 \underline{Comp. en el límite} $\left( g, f \geq 0,
@@ -134,7 +137,7 @@ $c_1, c_2 > c_0 \implies \abs{\int_{c_1}^{c_2} f} < \varepsilon. \implies$ conve
 	\item $L > 0$, $\int_{a}^{b} f$ div. $\implies \int_{a}^{b} g$ div.
 \end{itemize}
 
-\underline{Criterio de Dirichlet} $\left(\lim\limits_{x \to b} g(x) = 0,
+\underline{Criterio de Dirichlet} $\left(\text{g dec., }\lim\limits_{x \to b} g(x) = 0,
 c < b \implies \abs{\int_{a}^{c} f} < M\right)$
 Entonces $\int_{a}^{b} f(x)g(x)dx$ converge
 
@@ -143,12 +146,12 @@ Entonces $\int_{a}^{b} f(x)g(x)dx$ converge
 \underline{Conjuntos de medida nula} $\left( Z \subseteq \real^n \text{ medida nula} \right)$
 \begin{itemize}
 	\item $\graph(f)$ con $f$ unif. cont.
-	\item $f(Z)$ con $f$ lipszhiciana $\left( d(f(x),f(y)) \leq d(x,y) \right)$
+	\item $f(Z)$ con $f$ lipschitziana $\left( d(f(x),f(y)) \leq d(x,y) \right)$
 	\item $f(Z)$ con $f$ de clase $\mathcal{C}^1$
 	\item $M$ subvariedad regular de $\dim M < n$
 \end{itemize}
 
-\underline{Teorema de Lebesque:}
+\underline{Teorema de Lebesgue:}
 $f$ integrable en $A$ sii $disc(f) \cap A$ tiene medida nula
 
 \underline{Conjuntos admisibles} $\left( A, A' \text{ admisibles} \right)$
@@ -168,7 +171,7 @@ $\vol(C) = \int_{C}1$
 	\item $f \leq g \implies \int_E f \leq \int_E g$ 
 	\item $m \leq f \leq M \implies m\vol(E) \leq \int_E f \leq M\vol(E)$
 	\item $\vol(E)=0 \implies \int_E f = 0$
-	\item $E$ conexo $\implies \int_E f = f(x_0)\vol(E)$
+	\item $E$ conexo, $f$ continua $\implies \int_E f = f(x_0)\vol(E)$
 	\item $h$ continua $\implies h \circ f$ integrable
 	\item $\abs{\int_E f} \leq \int_E \abs{f}$
 	\item $\int_{A \cup B} f = \int_A f + \int_B f - \int_{A \cap B} f$
@@ -177,8 +180,13 @@ $\vol(C) = \int_{C}1$
 \underline{Teorema de Fubini} $\left( f \text{ continua} \right)$
 $\int_{A\times B} f(x,y) dx dy = \int_A dx \left( \int_B dy f(x,y) \right)$
 
-\underline{Region elemental} $\left( \psi, \phi \text{ cont. } D \text{ elemental} \right)$
-$E = \setb{(x,y) \in \real{n-1} \times \real \vert \substack{x \in D \\
+\underline{Región elemental} $\left( \psi, \phi \text{ cont. } D \text{ elemental} \right)$
+$E = \setb{(x,y) \in \real^{n-1} \times \real \vert \substack{x \in D \\
 		\phi(x) \leq y \leq \psi(x)}}$
+		
+\underline{TCV}
+($V \in \real^n$ abierto, $\varphi \colon V \mapsto \real^n$ inyectiva, de clase $C^1$, 
+$\det \D\varphi \neq 0)$, $f \colon U=\varphi(V) \mapsto \real$ integrable). Entonces
+$\int_U = \int_V (f \circ \varphi) |\det \D \varphi|$
 \end{multicols}
 \end{document}
