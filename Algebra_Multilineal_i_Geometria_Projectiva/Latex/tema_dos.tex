@@ -1005,7 +1005,7 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometr√≠a af√
 		
 		\draw (axis cs:-2,3) [color=blue] -- (axis cs:3,-2) node[above] {$r_1$};
 		\draw (axis cs:-2,1) [color=blue] -- (axis cs:3,1) node[above] {$r_2$};
-		\draw (axis cs:1,-2) [color=blue] -- (axis cs:1,3) node[label=310:$r_3$] {};
+		\draw (axis cs:1,3) [color=blue] -- (axis cs:1,-2) node[label=310:$r_3$] {};
 
 \end{axis}
 \end{tikzpicture}
@@ -1026,7 +1026,7 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometr√≠a af√
 		
 		\draw (axis cs:0,1) [color=red] -- (axis cs:5,1) node[label=100:$(q_1)^*$] {};
 		\draw (axis cs:2.5,0) [color=red] -- (axis cs:4.5,4) node[label=240:$(q_2)^*$] {};
-		\draw (axis cs:0,0.333) [color=red] -- (axis cs:5,3.666) node[label=250:$(q_3)^*$] {};
+		\draw (axis cs:5,3.666) [color=red] -- (axis cs:0,0.333) node[label=0:$(q_3)^*$] {};
 
 \end{axis}
 \end{tikzpicture}
@@ -1037,7 +1037,7 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometr√≠a af√
 \begin{example}
 \[
 \begin{aligned}
-\text{Cuadril√°tero en $\Po^2$} & \qquad \text{Cuadril√°tero en $\left( \Po^2 \right)^*$} \\
+\text{Cuadril√°tero en $\Po^2$} \qquad &\qquad \qquad\text{Cuadril√°tero en $\left( \Po^2 \right)^*$} \\
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=.8cm,y=.8cm]
 \clip(2.,0.5) rectangle (8.5,7.);
 \draw [line width=\pgflinewidth,color=blue,domain=2.:8.5] plot(\x,{(--4.-2.*\x)/-1.});
@@ -1051,11 +1051,11 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometr√≠a af√
 \draw [fill=red] (4.,4.) circle (2.5pt);
 \draw[color=red] (3.8004958677685994,4.598347107438018) node {$q_4$};
 \draw [fill=red] (5.,6.) circle (2.5pt);
-\draw[color=red] (5.255041322314053,6.135537190082645) node {$q_1$};
+\draw[color=red] (5.35,6.135537190082645) node {$q_1$};
 \draw [fill=red] (6.,4.12) circle (2.5pt);
 \draw[color=red] (6.1806611570247965,4.647933884297522) node {$q_2$};
 \draw [fill=red] (4.76,3.42) circle (2.5pt);
-\draw[color=red] (5.13933884297521,3.5404958677685974) node {$q_3$};
+\draw[color=red] (5.23,3.44) node {$q_3$};
 \draw[color=blue] (5.957520661157028,8.606611570247933) node {$f$};
 \draw[color=blue] (-5.216033057851232,-1.8396694214875977) node {$g$};
 \draw[color=blue] (-2.1747107438016466,9.0198347107438) node {$h$};
@@ -1069,7 +1069,7 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometr√≠a af√
 \draw[color=teal] (-6.34,3.25123966942149) node {$l$};
 \end{scriptsize}
 \end{tikzpicture}
-& \quad
+& \qquad
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=.8cm,y=.8cm]
 \clip(5.5,2.5) rectangle (12.,7.5);
 \draw [line width=\pgflinewidth,color=red,domain=5.5:12.] plot(\x,{(--18.876--0.12*\x)/2.92});
@@ -1080,11 +1080,11 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometr√≠a af√
 \draw [line width=\pgflinewidth,color=red,domain=5.5:12.] plot(\x,{(--10.0756-2.18*\x)/-1.44});
 \begin{scriptsize}
 \draw [fill=blue] (6.22,6.72) circle (2.5pt);
-\draw[color=blue] (6.21,7.36) node {$r_1$};
+\draw[color=blue] (6.3,7.1) node {$r_1$};
 \draw [fill=blue] (9.14,6.84) circle (2.5pt);
-\draw[color=blue] (9.43,6.82) node {$r_4$};
+\draw[color=blue] (9.43,6.67) node {$r_4$};
 \draw [fill=blue] (9.,5.52) circle (2.5pt);
-\draw[color=blue] (9.33,5.36) node {$r_3$};
+\draw[color=blue] (9.27,5.1) node {$r_3$};
 \draw [fill=blue] (7.7,4.66) circle (2.5pt);
 \draw[color=blue] (7.55,5.32) node {$r_2$};
 \draw[color=red] (-2.42,6.21) node {$f$};
@@ -1275,35 +1275,35 @@ Consideramos el espacio proyectivo dual y dualizamos las hip√≥tesis:
 \draw [line width=\pgflinewidth,color=purple,domain=-0.8:10.] plot(\x,{(--3.193311356394389-0.8938251320959107*\x)/-0.1608060938655136});
 \begin{scriptsize}
 \draw [fill=orange] (9.194464130174113,2.34884449520712) circle (2.5pt);
-\draw[color=orange] (9.276188556981314,2.63559827552772) node {$r^*$};
+\draw[color=orange] (9.276188556981314,2.55) node {$r^*$};
 \draw [fill=blue] (3.5905034348218994,2.7363496037484754) circle (2.5pt);
-\draw[color=blue] (3.4270545812074604,3.069603997094052) node {$(AB)^*$};
+\draw[color=blue] (3.78,2.55) node {\tiny $(AB)^*$};
 \draw [fill=blue] (-0.36,0.52) circle (2.5pt);
-\draw[color=blue] (-0.23886970700210086,0.8065741632124634) node {$(AC)^*$};
+\draw[color=blue] (-0.4,0.7) node {\tiny $(AC)^*$};
 \draw [fill=blue] (2.236212933445119,0.3958187481586135) circle (2.5pt);
-\draw[color=blue] (2.3529621145982897,0.6825725284792257) node {$(BC)^*$};
+\draw[color=blue] (2.1,0.6) node {\tiny $(BC)^*$};
 \draw [fill=blue] (4.564320062604457,2.6690117085413894) circle (2.5pt);
-\draw[color=blue] (4.74632032823829,2.961102566702469) node {$(A'B')^*$};
+\draw[color=blue] (4.95,2.85) node {\tiny $(A'B')^*$};
 \draw [fill=blue] (4.909911174012507,1.1462661459359629) circle (2.5pt);
-\draw[color=blue] (4.594546392739168,1.3645815195120332) node {$(B'C')^*$};
+\draw[color=blue] (5.3,1.05) node {\tiny $(B'C')^*$};
 \draw [fill=blue] (5.7636405841417275,1.6921417570208015) circle (2.5pt);
-\draw[color=blue] (5.948836894115948,1.9845896931782219) node {$(A'C')^*$};
-\draw[color=blue] (2.7966090029803388,1.860588058444984) node {$(B)^*$};
-\draw[color=blue] (0.9753217769908749,0.8375745718957729) node {$(C)^*$};
-\draw[color=blue] (1.7225165363711676,1.535083767270235) node {$(A)^*$};
-\draw[color=blue] (4.617896228969802,1.969089488836567) node {$(B')^*$};
-\draw[color=blue] (5.5051900057339,1.3955819281953425) node {$(C')^*$};
-\draw[color=blue] (5.330066234004144,2.3410943930362804) node {$(A')^*$};
+\draw[color=blue] (5.84,1.93) node {\tiny $(A'C')^*$};
+\draw[color=blue] (2.7966090029803388,1.76) node {\tiny $(B)^*$};
+\draw[color=blue] (0.9753217769908749,0.35) node {\tiny $(C)^*$};
+\draw[color=blue] (1.7225165363711676,1.48) node {\tiny $(A)^*$};
+\draw[color=blue] (4.5,1.75) node {\tiny $(B')^*$};
+\draw[color=blue] (5.61,1.3955819281953425) node {\tiny $(C')^*$};
+\draw[color=blue] (5.330066234004144,2.3410943930362804) node {\tiny $(A')^*$};
 \draw [fill=gray] (4.278993131711778,3.926220888888763) circle (2.0pt);
-\draw[color=gray] (4.489472129701314,3.9531156445683706) node {$(BB')^*$};
+\draw[color=gray] (4.7,3.9531156445683706) node {\tiny $(BB')^*$};
 \draw [fill=gray] (4.118187037846265,3.032395756792852) circle (2.0pt);
-\draw[color=gray] (4.302673439856241,3.3796080839271463) node {$(AA')^*$};
+\draw[color=gray] (3.78,3.02) node {\tiny $(AA')^*$};
 \draw [fill=gray] (3.631836574987902,0.32906371097595916) circle (2.0pt);
-\draw[color=gray] (3.415379663092143,0.6360719154542616) node {$(CC')^*$};
-\draw[color=red] (7.478251167222485,2.759599910260958) node {$Z^*$};
-\draw[color=red] (7.209728050570193,2.2325929626446976) node {$Y^*$};
-\draw[color=red] (7.443226412876534,1.597084584636854) node {$X^*$};
-\draw[color=purple] (4.115874750011168,2.186092349619733) node {$O^*$};
+\draw[color=gray] (3.38,0.5) node {\tiny $(CC')^*$};
+\draw[color=red] (7.6,2.57) node {$Z^*$};
+\draw[color=red] (7.209728050570193,2.1) node {$Y^*$};
+\draw[color=red] (7.443226412876534,1.7) node {$X^*$};
+\draw[color=purple] (4.17,2.186092349619733) node {$O^*$};
 \end{scriptsize}
 \end{tikzpicture}
 \end{center}
@@ -1373,11 +1373,11 @@ y $x_2 \equiv BC^\prime \cap B^\prime C$ estan alineados.
 \draw [fill=purple] (1.0220234435922084,5.63230182077741) circle (2.5pt);
 \draw[color=purple] (1.16,6.01) node {$A$};
 \draw [fill=purple] (4.321575861599462,5.089580680697614) circle (2.5pt);
-\draw[color=purple] (4.46,5.45) node {$B$};
+\draw[color=purple] (4.26,5.45) node {$B$};
 \draw [fill=purple] (7.358368190651445,4.590079176792411) circle (2.5pt);
 \draw[color=purple] (7.5,4.97) node {$C$};
 \draw [fill=purple] (2.793701030155326,1.728631752477261) circle (2.5pt);
-\draw[color=purple] (3.,2.09) node {$A'$};
+\draw[color=purple] (2.8,2.09) node {$A'$};
 \draw [fill=purple] (4.9981656312778995,2.0141624055750422) circle (2.5pt);
 \draw[color=purple] (5.2,2.39) node {$B'$};
 \draw [fill=purple] (8.019291487213156,2.4054701354866563) circle (2.5pt);
@@ -1388,7 +1388,7 @@ y $x_2 \equiv BC^\prime \cap B^\prime C$ estan alineados.
 \draw [fill=orange] (5.630631420487521,3.507014901336497) circle (2.0pt);
 \draw[color=orange] (5.78,3.83) node {$x_1$};
 \draw [fill=orange] (3.5305882596272373,3.349602458416557) circle (2.0pt);
-\draw[color=orange] (3.68,3.67) node {$x_0$};
+\draw[color=orange] (3.5,3.67) node {$x_0$};
 \end{scriptsize}
 \end{tikzpicture}
 \end{center}
