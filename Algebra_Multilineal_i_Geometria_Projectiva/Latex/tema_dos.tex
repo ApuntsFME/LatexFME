@@ -1025,8 +1025,8 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometría af�
 		\addplot [mark=*,color=blue] coordinates {(3,1)} node[label=190:$(r_3)^*$]{};
 		
 		\draw (axis cs:0,1) [color=red] -- (axis cs:5,1) node[label=100:$(q_1)^*$] {};
-		\draw (axis cs:2.5,0) [color=red] -- (axis cs:4.5,4) node[label=20:$(q_2)^*$] {};
-		\draw (axis cs:0,0.333) [color=red] -- (axis cs:5,3.666) node[label=230:$(q_3)^*$] {};
+		\draw (axis cs:2.5,0) [color=red] -- (axis cs:4.5,4) node[label=240:$(q_2)^*$] {};
+		\draw (axis cs:0,0.333) [color=red] -- (axis cs:5,3.666) node[label=250:$(q_3)^*$] {};
 
 \end{axis}
 \end{tikzpicture}
@@ -1037,71 +1037,65 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometría af�
 \begin{example}
 \[
 \begin{aligned}
-\text{Cuadrilátero en $\Po^2$} & \quad \text{Cuadrilátero en $\left( \Po^2 \right)^*$} \\
-\definecolor{qqccqq}{rgb}{0.,0.8,0.}
-\definecolor{qqqqcc}{rgb}{0.,0.,0.8}
-\definecolor{ffqqtt}{rgb}{1.,0.,0.2}
+\text{Cuadrilátero en $\Po^2$} & \qquad \text{Cuadrilátero en $\left( \Po^2 \right)^*$} \\
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=.8cm,y=.8cm]
 \clip(2.,0.5) rectangle (8.5,7.);
-\draw [line width=1.pt,color=qqqqcc,domain=2.:8.5] plot(\x,{(--4.-2.*\x)/-1.});
-\draw [line width=1.pt,color=qqqqcc,domain=2.:8.5] plot(\x,{(--0.9088--0.7*\x)/1.24});
-\draw [line width=1.pt,color=qqqqcc,domain=2.:8.5] plot(\x,{(--5.36-0.58*\x)/0.76});
-\draw [line width=1.pt,color=qqqqcc,domain=2.:8.5] plot(\x,{(--15.4-1.88*\x)/1.});
-\draw [line width=1.pt,dash pattern=on 2pt off 2pt,color=qqccqq,domain=2.:8.5] plot(\x,{(--11.46-2.58*\x)/-0.24});
-\draw [line width=1.pt,dash pattern=on 2pt off 2pt,color=qqccqq,domain=2.:8.5] plot(\x,{(--14.942080928528313-1.2454296879136713*\x)/4.177002403922524});
-\draw [line width=1.pt,dash pattern=on 2pt off 2pt,color=qqccqq,domain=2.:8.5] plot(\x,{(--7.52--0.12*\x)/2.});
+\draw [line width=\pgflinewidth,color=blue,domain=2.:8.5] plot(\x,{(--4.-2.*\x)/-1.});
+\draw [line width=\pgflinewidth,color=blue,domain=2.:8.5] plot(\x,{(--0.9088--0.7*\x)/1.24});
+\draw [line width=\pgflinewidth,color=blue,domain=2.:8.5] plot(\x,{(--5.36-0.58*\x)/0.76});
+\draw [line width=\pgflinewidth,color=blue,domain=2.:8.5] plot(\x,{(--15.4-1.88*\x)/1.});
+\draw [line width=\pgflinewidth,dash pattern=on 2pt off 2pt,color=teal,domain=2.:8.5] plot(\x,{(--11.46-2.58*\x)/-0.24});
+\draw [line width=\pgflinewidth,dash pattern=on 2pt off 2pt,color=teal,domain=2.:8.5] plot(\x,{(--14.942080928528313-1.2454296879136713*\x)/4.177002403922524});
+\draw [line width=\pgflinewidth,dash pattern=on 2pt off 2pt,color=teal,domain=2.:8.5] plot(\x,{(--7.52--0.12*\x)/2.});
 \begin{scriptsize}
-\draw [fill=ffqqtt] (4.,4.) circle (2.5pt);
-\draw[color=ffqqtt] (3.8004958677685994,4.598347107438018) node {$q_4$};
-\draw [fill=ffqqtt] (5.,6.) circle (2.5pt);
-\draw[color=ffqqtt] (5.255041322314053,6.135537190082645) node {$q_1$};
-\draw [fill=ffqqtt] (6.,4.12) circle (2.5pt);
-\draw[color=ffqqtt] (6.1806611570247965,4.647933884297522) node {$q_2$};
-\draw [fill=ffqqtt] (4.76,3.42) circle (2.5pt);
-\draw[color=ffqqtt] (5.13933884297521,3.5404958677685974) node {$q_3$};
-\draw[color=qqqqcc] (5.957520661157028,8.606611570247933) node {$f$};
-\draw[color=qqqqcc] (-5.216033057851232,-1.8396694214875977) node {$g$};
-\draw[color=qqqqcc] (-2.1747107438016466,9.0198347107438) node {$h$};
-\draw[color=qqqqcc] (3.420330578512401,8.598347107438016) node {$r_1$};
-\draw [fill=ffqqtt] (3.2970786516853927,2.594157303370786) circle (2.5pt);
-\draw[color=ffqqtt] (3.1062809917355416,3.011570247933887) node {$q_5$};
-\draw [fill=ffqqtt] (7.4740810556079165,1.3487276154571146) circle (2.5pt);
-\draw[color=ffqqtt] (7.635206611570251,1.6892561983471108) node {$q_6$};
-\draw[color=qqccqq] (5.131074380165293,9.730578512396692) node {$j$};
-\draw[color=qqccqq] (-6.34,5.350413223140498) node {$k$};
-\draw[color=qqccqq] (-6.34,3.25123966942149) node {$l$};
+\draw [fill=red] (4.,4.) circle (2.5pt);
+\draw[color=red] (3.8004958677685994,4.598347107438018) node {$q_4$};
+\draw [fill=red] (5.,6.) circle (2.5pt);
+\draw[color=red] (5.255041322314053,6.135537190082645) node {$q_1$};
+\draw [fill=red] (6.,4.12) circle (2.5pt);
+\draw[color=red] (6.1806611570247965,4.647933884297522) node {$q_2$};
+\draw [fill=red] (4.76,3.42) circle (2.5pt);
+\draw[color=red] (5.13933884297521,3.5404958677685974) node {$q_3$};
+\draw[color=blue] (5.957520661157028,8.606611570247933) node {$f$};
+\draw[color=blue] (-5.216033057851232,-1.8396694214875977) node {$g$};
+\draw[color=blue] (-2.1747107438016466,9.0198347107438) node {$h$};
+\draw[color=blue] (3.420330578512401,8.598347107438016) node {$r_1$};
+\draw [fill=red] (3.2970786516853927,2.594157303370786) circle (2.5pt);
+\draw[color=red] (3.1062809917355416,3.011570247933887) node {$q_5$};
+\draw [fill=red] (7.4740810556079165,1.3487276154571146) circle (2.5pt);
+\draw[color=red] (7.635206611570251,1.6892561983471108) node {$q_6$};
+\draw[color=teal] (5.131074380165293,9.730578512396692) node {$j$};
+\draw[color=teal] (-6.34,5.350413223140498) node {$k$};
+\draw[color=teal] (-6.34,3.25123966942149) node {$l$};
 \end{scriptsize}
 \end{tikzpicture}
 & \quad
-\definecolor{qqccqq}{rgb}{0.,0.8,0.}
-\definecolor{ffqqtt}{rgb}{1.,0.,0.2}
-\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=.8cm,y=.8cm]
 \clip(5.5,2.5) rectangle (12.,7.5);
-\draw [line width=1.pt,color=ffqqtt,domain=5.5:12.] plot(\x,{(--18.876--0.12*\x)/2.92});
-\draw [line width=1.pt,color=ffqqtt,domain=5.5:12.] plot(\x,{(--11.1072-1.32*\x)/-0.14});
-\draw [line width=1.pt,color=ffqqtt,domain=5.5:12.] plot(\x,{(-0.564--0.86*\x)/1.3});
-\draw [line width=1.pt,color=ffqqtt,domain=5.5:12.] plot(\x,{(-22.7588--2.06*\x)/-1.48});
-\draw [line width=1.pt,color=ffqqtt,domain=5.5:12.] plot(\x,{(--26.1456-1.2*\x)/2.78});
-\draw [line width=1.pt,color=ffqqtt,domain=5.5:12.] plot(\x,{(--10.0756-2.18*\x)/-1.44});
+\draw [line width=\pgflinewidth,color=red,domain=5.5:12.] plot(\x,{(--18.876--0.12*\x)/2.92});
+\draw [line width=\pgflinewidth,color=red,domain=5.5:12.] plot(\x,{(--11.1072-1.32*\x)/-0.14});
+\draw [line width=\pgflinewidth,color=red,domain=5.5:12.] plot(\x,{(-0.564--0.86*\x)/1.3});
+\draw [line width=\pgflinewidth,color=red,domain=5.5:12.] plot(\x,{(-22.7588--2.06*\x)/-1.48});
+\draw [line width=\pgflinewidth,color=red,domain=5.5:12.] plot(\x,{(--26.1456-1.2*\x)/2.78});
+\draw [line width=\pgflinewidth,color=red,domain=5.5:12.] plot(\x,{(--10.0756-2.18*\x)/-1.44});
 \begin{scriptsize}
-\draw [fill=ududff] (6.22,6.72) circle (2.5pt);
-\draw[color=ududff] (6.21,7.36) node {$r_1$};
-\draw [fill=ududff] (9.14,6.84) circle (2.5pt);
-\draw[color=ududff] (9.43,6.82) node {$r_4$};
-\draw [fill=ududff] (9.,5.52) circle (2.5pt);
-\draw[color=ududff] (9.33,5.36) node {$r_3$};
-\draw [fill=ududff] (7.7,4.66) circle (2.5pt);
-\draw[color=ududff] (7.55,5.32) node {$r_2$};
-\draw[color=ffqqtt] (-2.42,6.21) node {$f$};
-\draw[color=ffqqtt] (9.3,10.83) node {$g$};
-\draw[color=ffqqtt] (-2.42,-1.67) node {$h$};
-\draw[color=ffqqtt] (3.52,10.83) node {$i$};
-\draw[color=ffqqtt] (-2.42,10.31) node {$j$};
-\draw[color=ffqqtt] (11.48,10.83) node {$k$};
-\draw [fill=qqccqq] (8.753295272078507,3.193926851025867) circle (2.0pt);
-\draw [fill=qqccqq] (11.11824048913044,6.921297554347826) circle (2.0pt);
-\draw [fill=qqccqq] (8.4304647937959,5.765842535052128) circle (2.0pt);
+\draw [fill=blue] (6.22,6.72) circle (2.5pt);
+\draw[color=blue] (6.21,7.36) node {$r_1$};
+\draw [fill=blue] (9.14,6.84) circle (2.5pt);
+\draw[color=blue] (9.43,6.82) node {$r_4$};
+\draw [fill=blue] (9.,5.52) circle (2.5pt);
+\draw[color=blue] (9.33,5.36) node {$r_3$};
+\draw [fill=blue] (7.7,4.66) circle (2.5pt);
+\draw[color=blue] (7.55,5.32) node {$r_2$};
+\draw[color=red] (-2.42,6.21) node {$f$};
+\draw[color=red] (9.3,10.83) node {$g$};
+\draw[color=red] (-2.42,-1.67) node {$h$};
+\draw[color=red] (3.52,10.83) node {$i$};
+\draw[color=red] (-2.42,10.31) node {$j$};
+\draw[color=red] (11.48,10.83) node {$k$};
+\draw [fill=teal] (8.753295272078507,3.193926851025867) circle (2.0pt);
+\draw [fill=teal] (11.11824048913044,6.921297554347826) circle (2.0pt);
+\draw [fill=teal] (8.4304647937959,5.765842535052128) circle (2.0pt);
 \end{scriptsize}
 \end{tikzpicture}
 \end{aligned}
@@ -1161,54 +1155,48 @@ BC \cap B'C' = X
 \]
 
 \begin{center}
-\definecolor{wwqqzz}{rgb}{0.4,0.,0.6}
-\definecolor{dbwrru}{rgb}{0.8588235294117647,0.3803921568627451,0.0784313725490196}
-\definecolor{wrwrwr}{rgb}{0.3803921568627451,0.3803921568627451,0.3803921568627451}
-\definecolor{sexdts}{rgb}{0.1803921568627451,0.49019607843137253,0.19607843137254902}
-\definecolor{dtsfsf}{rgb}{0.8274509803921568,0.1843137254901961,0.1843137254901961}
-\definecolor{rvwvcq}{rgb}{0.08235294117647059,0.396078431372549,0.7529411764705882}
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.5cm,y=1.5cm]
 \clip(-0.5,-0.5) rectangle (9.,3.5);
-\fill[line width=1.pt,color=rvwvcq,fill=rvwvcq,fill opacity=0.10000000149011612] (3.3336552362849274,1.992339795349051) -- (1.9793647349081451,0.1168150700088304) -- (-0.19217003454083312,0.6438220176250907) -- cycle;
-\fill[line width=1.pt,color=rvwvcq,fill=rvwvcq,fill opacity=0.10000000149011612] (4.403859447556563,2.040558909290155) -- (4.738313888759495,1.0095694436469795) -- (5.374944253774689,1.657128809689663) -- cycle;
-\draw [line width=1.pt,color=rvwvcq] (3.3336552362849274,1.992339795349051)-- (1.9793647349081451,0.1168150700088304);
-\draw [line width=1.pt,color=rvwvcq] (1.9793647349081451,0.1168150700088304)-- (-0.19217003454083312,0.6438220176250907);
-\draw [line width=1.pt,color=rvwvcq] (-0.19217003454083312,0.6438220176250907)-- (3.3336552362849274,1.992339795349051);
-\draw [line width=1.pt,color=rvwvcq] (4.403859447556563,2.040558909290155)-- (4.738313888759495,1.0095694436469795);
-\draw [line width=1.pt,color=rvwvcq] (4.738313888759495,1.0095694436469795)-- (5.374944253774689,1.657128809689663);
-\draw [line width=1.pt,color=rvwvcq] (5.374944253774689,1.657128809689663)-- (4.403859447556563,2.040558909290155);
-\draw [line width=1.pt,dotted,color=sexdts,domain=-0.5:9.] plot(\x,{(--3.6701280196078825-0.383430099600492*\x)/0.9710848062181263});
-\draw [line width=1.pt,dotted,color=sexdts,domain=-0.5:9.] plot(\x,{(--3.5541459610560944-1.8755247253402205*\x)/-1.3542905013767823});
-\draw [line width=1.pt,dotted,color=sexdts,domain=-0.5:9.] plot(\x,{(--5.2228066883522954-1.0309894656431755*\x)/0.334454441202932});
-\draw [line width=1.pt,dotted,color=sexdts,domain=-0.5:9.] plot(\x,{(--2.529148647580714--1.34851777772396*\x)/3.5258252708257607});
-\draw [line width=1.pt,dotted,color=sexdts,domain=-0.5:9.] plot(\x,{(-1.2968069532830016--0.5270069476162603*\x)/-2.171534769448978});
-\draw [line width=1.pt,dotted,color=sexdts,domain=-0.5:9.] plot(\x,{(-2.425616974499177--0.6475593660426835*\x)/0.6366303650151943});
-\draw [line width=1.pt,color=wrwrwr,domain=-0.5:9.] plot(\x,{(--9.50601349361014--0.23250306512482055*\x)/5.1603138069701515});
-\draw [line width=1.pt,color=wrwrwr,domain=-0.5:9.] plot(\x,{(--1.9667522247370517-1.215273416826892*\x)/-3.7556551544955843});
-\draw [line width=1.pt,color=wrwrwr,domain=-0.5:9.] plot(\x,{(--2.1171944617344565--0.5677140507842084*\x)/3.11902478948039});
-\draw [line width=1.pt,color=dbwrru,domain=-0.5:9.] plot(\x,{(--2.855613634592153-0.8059659723881762*\x)/-0.14358796715525868});
+\fill[line width=\pgflinewidth,color=teal,fill=teal,fill opacity=0.10000000149011612] (3.3336552362849274,1.992339795349051) -- (1.9793647349081451,0.1168150700088304) -- (-0.19217003454083312,0.6438220176250907) -- cycle;
+\fill[line width=\pgflinewidth,color=teal,fill=teal,fill opacity=0.10000000149011612] (4.403859447556563,2.040558909290155) -- (4.738313888759495,1.0095694436469795) -- (5.374944253774689,1.657128809689663) -- cycle;
+\draw [line width=\pgflinewidth,color=teal] (3.3336552362849274,1.992339795349051)-- (1.9793647349081451,0.1168150700088304);
+\draw [line width=\pgflinewidth,color=teal] (1.9793647349081451,0.1168150700088304)-- (-0.19217003454083312,0.6438220176250907);
+\draw [line width=\pgflinewidth,color=teal] (-0.19217003454083312,0.6438220176250907)-- (3.3336552362849274,1.992339795349051);
+\draw [line width=\pgflinewidth,color=teal] (4.403859447556563,2.040558909290155)-- (4.738313888759495,1.0095694436469795);
+\draw [line width=\pgflinewidth,color=teal] (4.738313888759495,1.0095694436469795)-- (5.374944253774689,1.657128809689663);
+\draw [line width=\pgflinewidth,color=teal] (5.374944253774689,1.657128809689663)-- (4.403859447556563,2.040558909290155);
+\draw [line width=\pgflinewidth,dashed=on 3.pt off 3.pt,color=blue,domain=-0.5:9.] plot(\x,{(--3.6701280196078825-0.383430099600492*\x)/0.9710848062181263});
+\draw [line width=\pgflinewidth,dashed=on 3.pt off 3.pt,color=blue,domain=-0.5:9.] plot(\x,{(--3.5541459610560944-1.8755247253402205*\x)/-1.3542905013767823});
+\draw [line width=\pgflinewidth,dashed=on 3.pt off 3.pt,color=blue,domain=-0.5:9.] plot(\x,{(--5.2228066883522954-1.0309894656431755*\x)/0.334454441202932});
+\draw [line width=\pgflinewidth,dashed=on 3.pt off 3.pt,color=blue,domain=-0.5:9.] plot(\x,{(--2.529148647580714--1.34851777772396*\x)/3.5258252708257607});
+\draw [line width=\pgflinewidth,dashed=on 3.pt off 3.pt,color=blue,domain=-0.5:9.] plot(\x,{(-1.2968069532830016--0.5270069476162603*\x)/-2.171534769448978});
+\draw [line width=\pgflinewidth,dashed=on 3.pt off 3.pt,color=blue,domain=-0.5:9.] plot(\x,{(-2.425616974499177--0.6475593660426835*\x)/0.6366303650151943});
+\draw [line width=\pgflinewidth,color=gray,domain=-0.5:9.] plot(\x,{(--9.50601349361014--0.23250306512482055*\x)/5.1603138069701515});
+\draw [line width=\pgflinewidth,color=gray,domain=-0.5:9.] plot(\x,{(--1.9667522247370517-1.215273416826892*\x)/-3.7556551544955843});
+\draw [line width=\pgflinewidth,color=gray,domain=-0.5:9.] plot(\x,{(--2.1171944617344565--0.5677140507842084*\x)/3.11902478948039});
+\draw [line width=\pgflinewidth,color=orange,domain=-0.5:9.] plot(\x,{(--2.855613634592153-0.8059659723881762*\x)/-0.14358796715525868});
 \begin{scriptsize}
-\draw [fill=wwqqzz] (8.49396904325508,2.2248428604738715) circle (2.5pt);
-\draw[color=wwqqzz] (8.5756934700623,2.511596640794484) node {$O$};
-\draw [fill=rvwvcq] (3.3336552362849274,1.992339795349051) circle (2.5pt);
-\draw[color=rvwvcq] (3.1818813007858053,2.3100939843529726) node {$A$};
-\draw [fill=rvwvcq] (-0.19217003454083312,0.6438220176250907) circle (2.5pt);
-\draw[color=rvwvcq] (-0.1104456077336135,0.9305757979457029) node {$B$};
-\draw [fill=rvwvcq] (1.9793647349081451,0.1168150700088304) circle (2.5pt);
-\draw[color=rvwvcq] (1.8742904718702913,0.4500694633544068) node {$C$};
-\draw [fill=rvwvcq] (4.403859447556563,2.040558909290155) circle (2.5pt);
-\draw[color=rvwvcq] (4.52449688404727,2.3255941886946276) node {$A'$};
-\draw [fill=rvwvcq] (4.738313888759495,1.0095694436469795) circle (2.5pt);
-\draw[color=rvwvcq] (4.512821965931953,1.2250796804371424) node {$C'$};
-\draw [fill=rvwvcq] (5.374944253774689,1.657128809689663) circle (2.5pt);
-\draw[color=rvwvcq] (5.365090988350101,1.4265823368786539) node {$B'$};
-\draw [fill=dtsfsf] (4.082899471593713,3.029950328105273) circle (2.0pt);
-\draw[color=dtsfsf] (3.8006519608976106,3.1316048144606725) node {$Y$};
-\draw [fill=dtsfsf] (3.939311504438454,2.223984355717097) circle (2.0pt);
-\draw[color=dtsfsf] (3.8240017971282447,2.511596640794484) node {$Z$};
-\draw [fill=dtsfsf] (3.498235188833963,-0.2517976241139916) circle (2.0pt);
-\draw[color=dtsfsf] (3.3803549087461957,0.07806455915469361) node {$X$};
-\draw[color=dbwrru] (3.6,1) node {$r$};
+\draw [fill=purple] (8.49396904325508,2.2248428604738715) circle (2.5pt);
+\draw[color=purple] (8.5756934700623,2.511596640794484) node {$O$};
+\draw [fill=teal] (3.3336552362849274,1.992339795349051) circle (2.5pt);
+\draw[color=teal] (3.1818813007858053,2.3100939843529726) node {$A$};
+\draw [fill=teal] (-0.19217003454083312,0.6438220176250907) circle (2.5pt);
+\draw[color=teal] (-0.1104456077336135,0.9305757979457029) node {$B$};
+\draw [fill=teal] (1.9793647349081451,0.1168150700088304) circle (2.5pt);
+\draw[color=teal] (1.8742904718702913,0.4500694633544068) node {$C$};
+\draw [fill=teal] (4.403859447556563,2.040558909290155) circle (2.5pt);
+\draw[color=teal] (4.52449688404727,2.3255941886946276) node {$A'$};
+\draw [fill=teal] (4.738313888759495,1.0095694436469795) circle (2.5pt);
+\draw[color=teal] (4.512821965931953,1.2250796804371424) node {$C'$};
+\draw [fill=teal] (5.374944253774689,1.657128809689663) circle (2.5pt);
+\draw[color=teal] (5.365090988350101,1.4265823368786539) node {$B'$};
+\draw [fill=red] (4.082899471593713,3.029950328105273) circle (2.0pt);
+\draw[color=red] (3.8006519608976106,3.1316048144606725) node {$Y$};
+\draw [fill=red] (3.939311504438454,2.223984355717097) circle (2.0pt);
+\draw[color=red] (3.8240017971282447,2.511596640794484) node {$Z$};
+\draw [fill=red] (3.498235188833963,-0.2517976241139916) circle (2.0pt);
+\draw[color=red] (3.3803549087461957,0.07806455915469361) node {$X$};
+\draw[color=orange] (3.6,1) node {$r$};
 \end{scriptsize}
 \end{tikzpicture}
 \end{center}
@@ -1265,63 +1253,57 @@ Hipotésis: $X, Y, Z$ están alineados.
 Consideramos el espacio proyectivo dual y dualizamos las hipótesis:
 
 \begin{center}
-\definecolor{wwqqzz}{rgb}{0.4,0.,0.6}
-\definecolor{dtsfsf}{rgb}{0.8274509803921568,0.1843137254901961,0.1843137254901961}
-\definecolor{rvwvcq}{rgb}{0.08235294117647059,0.396078431372549,0.7529411764705882}
-\definecolor{wrwrwr}{rgb}{0.3803921568627451,0.3803921568627451,0.3803921568627451}
-\definecolor{sexdts}{rgb}{0.1803921568627451,0.49019607843137253,0.19607843137254902}
-\definecolor{dbwrru}{rgb}{0.8588235294117647,0.3803921568627451,0.0784313725490196}
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.4cm,y=1.4cm]
 \clip(-0.8,0.) rectangle (10.,4.5);
-\fill[line width=1.pt,color=sexdts,fill=sexdts,fill opacity=0.10000000149011612] (3.5905034348218994,2.7363496037484754) -- (2.236212933445119,0.3958187481586135) -- (-0.36,0.52) -- cycle;
-\fill[line width=1.pt,color=sexdts,fill=sexdts,fill opacity=0.10000000149011612] (4.564320062604457,2.6690117085413894) -- (4.909911174012507,1.1462661459359629) -- (5.7636405841417275,1.6921417570208015) -- cycle;
-\draw [line width=1.pt,color=sexdts] (3.5905034348218994,2.7363496037484754)-- (2.236212933445119,0.3958187481586135);
-\draw [line width=1.pt,color=sexdts] (2.236212933445119,0.3958187481586135)-- (-0.36,0.52);
-\draw [line width=1.pt,color=sexdts] (-0.36,0.52)-- (3.5905034348218994,2.7363496037484754);
-\draw [line width=1.pt,color=sexdts] (4.564320062604457,2.6690117085413894)-- (4.909911174012507,1.1462661459359629);
-\draw [line width=1.pt,color=sexdts] (4.909911174012507,1.1462661459359629)-- (5.7636405841417275,1.6921417570208015);
-\draw [line width=1.pt,color=sexdts] (5.7636405841417275,1.6921417570208015)-- (4.564320062604457,2.6690117085413894);
-\draw [line width=1.pt,dotted,color=rvwvcq,domain=-0.8:10.] plot(\x,{(--7.659747632557802-0.9768699515205879*\x)/1.1993205215372704});
-\draw [line width=1.pt,dotted,color=rvwvcq,domain=-0.8:10.] plot(\x,{(--4.697871799499361-2.340530855589862*\x)/-1.3542905013767803});
-\draw [line width=1.pt,dotted,color=rvwvcq,domain=-0.8:10.] plot(\x,{(--7.872684844357776-1.5227455626054265*\x)/0.34559111140804966});
-\draw [line width=1.pt,dotted,color=rvwvcq,domain=-0.8:10.] plot(\x,{(--2.852147643456839--2.2163496037484753*\x)/3.9505034348218993});
-\draw [line width=1.pt,dotted,color=rvwvcq,domain=-0.8:10.] plot(\x,{(-1.305325474728563--0.12418125184138651*\x)/-2.596212933445119});
-\draw [line width=1.pt,dotted,color=rvwvcq,domain=-0.8:10.] plot(\x,{(-1.70159964186535--0.5458756110848386*\x)/0.8537294101292208});
-\draw [line width=1.pt,color=dtsfsf,domain=-0.8:10.] plot(\x,{(--16.72573405137783-0.38750510854135545*\x)/5.603960695352214});
-\draw [line width=1.pt,color=dtsfsf,domain=-0.8:10.] plot(\x,{(--0.9933148705940678-1.202578349271157*\x)/-4.2845529561616065});
-\draw [line width=1.pt,color=dtsfsf,domain=-0.8:10.] plot(\x,{(--2.0204412296839145--0.6567027381863184*\x)/3.4308235460323857});
-\draw [line width=1.pt,color=wwqqzz,domain=-0.8:10.] plot(\x,{(--3.193311356394389-0.8938251320959107*\x)/-0.1608060938655136});
+\fill[line width=\pgflinewidth,color=blue,fill=blue,fill opacity=0.10000000149011612] (3.5905034348218994,2.7363496037484754) -- (2.236212933445119,0.3958187481586135) -- (-0.36,0.52) -- cycle;
+\fill[line width=\pgflinewidth,color=blue,fill=blue,fill opacity=0.10000000149011612] (4.564320062604457,2.6690117085413894) -- (4.909911174012507,1.1462661459359629) -- (5.7636405841417275,1.6921417570208015) -- cycle;
+\draw [line width=\pgflinewidth,color=blue] (3.5905034348218994,2.7363496037484754)-- (2.236212933445119,0.3958187481586135);
+\draw [line width=\pgflinewidth,color=blue] (2.236212933445119,0.3958187481586135)-- (-0.36,0.52);
+\draw [line width=\pgflinewidth,color=blue] (-0.36,0.52)-- (3.5905034348218994,2.7363496037484754);
+\draw [line width=\pgflinewidth,color=blue] (4.564320062604457,2.6690117085413894)-- (4.909911174012507,1.1462661459359629);
+\draw [line width=\pgflinewidth,color=blue] (4.909911174012507,1.1462661459359629)-- (5.7636405841417275,1.6921417570208015);
+\draw [line width=\pgflinewidth,color=blue] (5.7636405841417275,1.6921417570208015)-- (4.564320062604457,2.6690117085413894);
+\draw [line width=\pgflinewidth,dashed=on 3.pt off 3.pt,color=teal,domain=-0.8:10.] plot(\x,{(--7.659747632557802-0.9768699515205879*\x)/1.1993205215372704});
+\draw [line width=\pgflinewidth,dashed=on 3.pt off 3.pt,color=teal,domain=-0.8:10.] plot(\x,{(--4.697871799499361-2.340530855589862*\x)/-1.3542905013767803});
+\draw [line width=\pgflinewidth,dashed=on 3.pt off 3.pt,color=teal,domain=-0.8:10.] plot(\x,{(--7.872684844357776-1.5227455626054265*\x)/0.34559111140804966});
+\draw [line width=\pgflinewidth,dashed=on 3.pt off 3.pt,color=teal,domain=-0.8:10.] plot(\x,{(--2.852147643456839--2.2163496037484753*\x)/3.9505034348218993});
+\draw [line width=\pgflinewidth,dashed=on 3.pt off 3.pt,color=teal,domain=-0.8:10.] plot(\x,{(-1.305325474728563--0.12418125184138651*\x)/-2.596212933445119});
+\draw [line width=\pgflinewidth,dashed=on 3.pt off 3.pt,color=teal,domain=-0.8:10.] plot(\x,{(-1.70159964186535--0.5458756110848386*\x)/0.8537294101292208});
+\draw [line width=\pgflinewidth,color=red,domain=-0.8:10.] plot(\x,{(--16.72573405137783-0.38750510854135545*\x)/5.603960695352214});
+\draw [line width=\pgflinewidth,color=red,domain=-0.8:10.] plot(\x,{(--0.9933148705940678-1.202578349271157*\x)/-4.2845529561616065});
+\draw [line width=\pgflinewidth,color=red,domain=-0.8:10.] plot(\x,{(--2.0204412296839145--0.6567027381863184*\x)/3.4308235460323857});
+\draw [line width=\pgflinewidth,color=purple,domain=-0.8:10.] plot(\x,{(--3.193311356394389-0.8938251320959107*\x)/-0.1608060938655136});
 \begin{scriptsize}
-\draw [fill=dbwrru] (9.194464130174113,2.34884449520712) circle (2.5pt);
-\draw[color=dbwrru] (9.276188556981314,2.63559827552772) node {$r^*$};
-\draw [fill=sexdts] (3.5905034348218994,2.7363496037484754) circle (2.5pt);
-\draw[color=sexdts] (3.4270545812074604,3.069603997094052) node {$(AB)^*$};
-\draw [fill=sexdts] (-0.36,0.52) circle (2.5pt);
-\draw[color=sexdts] (-0.23886970700210086,0.8065741632124634) node {$(AC)^*$};
-\draw [fill=sexdts] (2.236212933445119,0.3958187481586135) circle (2.5pt);
-\draw[color=sexdts] (2.3529621145982897,0.6825725284792257) node {$(BC)^*$};
-\draw [fill=sexdts] (4.564320062604457,2.6690117085413894) circle (2.5pt);
-\draw[color=sexdts] (4.74632032823829,2.961102566702469) node {$(A'B')^*$};
-\draw [fill=sexdts] (4.909911174012507,1.1462661459359629) circle (2.5pt);
-\draw[color=sexdts] (4.594546392739168,1.3645815195120332) node {$(B'C')^*$};
-\draw [fill=sexdts] (5.7636405841417275,1.6921417570208015) circle (2.5pt);
-\draw[color=sexdts] (5.948836894115948,1.9845896931782219) node {$(A'C')^*$};
-\draw[color=sexdts] (2.7966090029803388,1.860588058444984) node {$(B)^*$};
-\draw[color=sexdts] (0.9753217769908749,0.8375745718957729) node {$(C)^*$};
-\draw[color=sexdts] (1.7225165363711676,1.535083767270235) node {$(A)^*$};
-\draw[color=sexdts] (4.617896228969802,1.969089488836567) node {$(B')^*$};
-\draw[color=sexdts] (5.5051900057339,1.3955819281953425) node {$(C')^*$};
-\draw[color=sexdts] (5.330066234004144,2.3410943930362804) node {$(A')^*$};
-\draw [fill=wrwrwr] (4.278993131711778,3.926220888888763) circle (2.0pt);
-\draw[color=wrwrwr] (4.489472129701314,3.9531156445683706) node {$(BB')^*$};
-\draw [fill=wrwrwr] (4.118187037846265,3.032395756792852) circle (2.0pt);
-\draw[color=wrwrwr] (4.302673439856241,3.3796080839271463) node {$(AA')^*$};
-\draw [fill=wrwrwr] (3.631836574987902,0.32906371097595916) circle (2.0pt);
-\draw[color=wrwrwr] (3.415379663092143,0.6360719154542616) node {$(CC')^*$};
-\draw[color=dtsfsf] (7.478251167222485,2.759599910260958) node {$Z^*$};
-\draw[color=dtsfsf] (7.209728050570193,2.2325929626446976) node {$Y^*$};
-\draw[color=dtsfsf] (7.443226412876534,1.597084584636854) node {$X^*$};
-\draw[color=wwqqzz] (4.115874750011168,2.186092349619733) node {$O^*$};
+\draw [fill=orange] (9.194464130174113,2.34884449520712) circle (2.5pt);
+\draw[color=orange] (9.276188556981314,2.63559827552772) node {$r^*$};
+\draw [fill=blue] (3.5905034348218994,2.7363496037484754) circle (2.5pt);
+\draw[color=blue] (3.4270545812074604,3.069603997094052) node {$(AB)^*$};
+\draw [fill=blue] (-0.36,0.52) circle (2.5pt);
+\draw[color=blue] (-0.23886970700210086,0.8065741632124634) node {$(AC)^*$};
+\draw [fill=blue] (2.236212933445119,0.3958187481586135) circle (2.5pt);
+\draw[color=blue] (2.3529621145982897,0.6825725284792257) node {$(BC)^*$};
+\draw [fill=blue] (4.564320062604457,2.6690117085413894) circle (2.5pt);
+\draw[color=blue] (4.74632032823829,2.961102566702469) node {$(A'B')^*$};
+\draw [fill=blue] (4.909911174012507,1.1462661459359629) circle (2.5pt);
+\draw[color=blue] (4.594546392739168,1.3645815195120332) node {$(B'C')^*$};
+\draw [fill=blue] (5.7636405841417275,1.6921417570208015) circle (2.5pt);
+\draw[color=blue] (5.948836894115948,1.9845896931782219) node {$(A'C')^*$};
+\draw[color=blue] (2.7966090029803388,1.860588058444984) node {$(B)^*$};
+\draw[color=blue] (0.9753217769908749,0.8375745718957729) node {$(C)^*$};
+\draw[color=blue] (1.7225165363711676,1.535083767270235) node {$(A)^*$};
+\draw[color=blue] (4.617896228969802,1.969089488836567) node {$(B')^*$};
+\draw[color=blue] (5.5051900057339,1.3955819281953425) node {$(C')^*$};
+\draw[color=blue] (5.330066234004144,2.3410943930362804) node {$(A')^*$};
+\draw [fill=gray] (4.278993131711778,3.926220888888763) circle (2.0pt);
+\draw[color=gray] (4.489472129701314,3.9531156445683706) node {$(BB')^*$};
+\draw [fill=gray] (4.118187037846265,3.032395756792852) circle (2.0pt);
+\draw[color=gray] (4.302673439856241,3.3796080839271463) node {$(AA')^*$};
+\draw [fill=gray] (3.631836574987902,0.32906371097595916) circle (2.0pt);
+\draw[color=gray] (3.415379663092143,0.6360719154542616) node {$(CC')^*$};
+\draw[color=red] (7.478251167222485,2.759599910260958) node {$Z^*$};
+\draw[color=red] (7.209728050570193,2.2325929626446976) node {$Y^*$};
+\draw[color=red] (7.443226412876534,1.597084584636854) node {$X^*$};
+\draw[color=purple] (4.115874750011168,2.186092349619733) node {$O^*$};
 \end{scriptsize}
 \end{tikzpicture}
 \end{center}
@@ -1370,54 +1352,43 @@ y $x_2 \equiv BC^\prime \cap B^\prime C$ estan alineados.
 \end{thm}
 
 \begin{proof}
+\begin{itemize}
+    \item[]
+\end{itemize}
 \begin{center}
-\definecolor{qqffqq}{rgb}{0.,1.,0.}
-\definecolor{qqqqff}{rgb}{0.,0.,1.}
-\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
-\definecolor{ffqqqq}{rgb}{1.,0.,0.}
-\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
-\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\clip(4.,8.) rectangle (19.,17.);
-\draw [line width=2.pt,domain=4.:19.] plot(\x,{(-128.24--2.8*\x)/-6.96});
-\draw [line width=2.pt,domain=4.:19.] plot(\x,{(-56.4-1.2*\x)/-6.96});
-\draw [line width=2.pt,dash pattern=on 3pt off 3pt,color=ffqqqq,domain=4.:19.] plot(\x,{(--7.919145496535805-4.513972286374134*\x)/-2.981039260969977});
-\draw [line width=2.pt,dash pattern=on 3pt off 3pt,color=ffqqqq,domain=4.:19.] plot(\x,{(--72.52791676142823-4.795599272231065*\x)/1.977632476688651});
-\draw [line width=2.pt,dash pattern=on 3pt off 3pt,color=qqqqff,domain=4.:19.] plot(\x,{(-28.55080831408779-5.033487297921477*\x)/-5.994226327944574});
-\draw [line width=2.pt,dash pattern=on 3pt off 3pt,color=qqqqff,domain=4.:19.] plot(\x,{(--108.66232658630884-5.803331817148056*\x)/4.482567659768023});
-\draw [line width=2.pt,dash pattern=on 3pt off 3pt,color=qqffqq,domain=4.:19.] plot(\x,{(-6.835751701375273-5.829086570152542*\x)/-4.016593851255923});
-\draw [line width=2.pt,dash pattern=on 3pt off 3pt,color=qqffqq,domain=4.:19.] plot(\x,{(--64.90175358645223-6.31730410352219*\x)/1.5015283987980457});
-\draw [line width=2.pt,domain=4.:19.] plot(\x,{(--31.871782879699552--0.11126215677628437*\x)/2.646579974541557});
+\clip(0.,1.) rectangle (16.,6.5);
+\draw [line width=\pgflinewidth,domain=0.:16.] plot(\x,{(--79.6976-2.26*\x)/13.74});
+\draw [line width=\pgflinewidth,domain=0.:16.] plot(\x,{(-14.3512-1.36*\x)/-10.5});
+\draw [line width=\pgflinewidth,dashed=on 3.pt off 3.pt,color=red,domain=0.:16.] plot(\x,{(--26.092656187893812-3.6181394152023674*\x)/3.9761421876856913});
+\draw [line width=\pgflinewidth,dashed=on 3.pt off 3.pt,color=blue,domain=0.:16.] plot(\x,{(--42.70862317344715-3.2268316852907533*\x)/6.997268043620948});
+\draw [line width=\pgflinewidth,dashed=on 3.pt off 3.pt,color=red,domain=0.:16.] plot(\x,{(--6.74835353562346-3.3609489282203526*\x)/-1.5278748314441364});
+\draw [line width=\pgflinewidth,dashed=on 3.pt off 3.pt,color=green,domain=0.:16.] plot(\x,{(--30.41940935288539-2.6841105452109573*\x)/3.697715625613694});
+\draw [line width=\pgflinewidth,dashed=on 3.pt off 3.pt,color=green,domain=0.:16.] plot(\x,{(--8.1210274102988-2.575916771217369*\x)/-2.360202559373546});
+\draw [line width=\pgflinewidth,dashed=on 3.pt off 3.pt,color=blue,domain=0.:16.] plot(\x,{(--0.10340002392072734-2.86144742431515*\x)/-4.5646671604961195});
+\draw [line width=\pgflinewidth,color=orange,domain=0.:16.] plot(\x,{(--6.478551211506101--0.15741244291993972*\x)/2.100043160860284});
 \begin{scriptsize}
-\draw [fill=ududff] (17.96,11.2) circle (2.5pt);
-\draw[color=ududff] (18.1,11.57) node {$O$};
-\draw [fill=ududff] (11.,14.) circle (2.5pt);
-\draw[color=ududff] (10.86,14.59) node {$A$};
-\draw[color=black] (0.52,18.07) node {$f$};
-\draw [fill=ududff] (11.,10.) circle (2.5pt);
-\draw[color=ududff] (11.2,10.37) node {$A'$};
-\draw[color=black] (0.52,8.53) node {$g$};
-\draw [fill=xdxdff] (9.022367523311349,14.795599272231065) circle (2.5pt);
-\draw[color=xdxdff] (9.34,15.01) node {$B$};
-\draw [fill=xdxdff] (6.517432340231977,15.803331817148056) circle (2.5pt);
-\draw[color=xdxdff] (6.66,16.17) node {$C$};
-\draw [fill=xdxdff] (8.018960739030023,9.486027713625866) circle (2.5pt);
-\draw[color=xdxdff] (8.38,9.25) node {$B'$};
-\draw [fill=xdxdff] (5.005773672055426,8.966512702078523) circle (2.5pt);
-\draw[color=xdxdff] (5.3,8.77) node {$C'$};
-\draw[color=ffqqqq] (13.96,18.95) node {$h$};
-\draw[color=ffqqqq] (7.54,18.95) node {$i$};
-\draw [fill=uuuuuu] (9.98455175154192,12.462380112935687) circle (2.0pt);
-\draw[color=uuuuuu] (10.29,12.42) node {$x_0$};
-\draw[color=qqqqff] (0.52,5.59) node {$j$};
-\draw[color=qqqqff] (4.34,18.95) node {$k$};
-\draw [fill=uuuuuu] (9.125908190188389,12.426282758819337) circle (2.0pt);
-\draw[color=uuuuuu] (9.07,13.02) node {$x_1$};
-\draw[color=qqffqq] (11.56,18.95) node {$l$};
-\draw[color=qqffqq] (5.98,18.95) node {$m$};
-\draw [fill=uuuuuu] (7.337971777000363,12.351117956159403) circle (2.0pt);
-\draw[color=uuuuuu] (6.97,12.78) node {$x_2$};
-\draw[color=black] (0.52,11.91) node {$n$};
+\draw [fill=purple] (15.08,3.32) circle (2.5pt);
+\draw[color=purple] (15.27,3.74) node {$O$};
+\draw [fill=purple] (1.0220234435922084,5.63230182077741) circle (2.5pt);
+\draw[color=purple] (1.16,6.01) node {$A$};
+\draw [fill=purple] (4.321575861599462,5.089580680697614) circle (2.5pt);
+\draw[color=purple] (4.46,5.45) node {$B$};
+\draw [fill=purple] (7.358368190651445,4.590079176792411) circle (2.5pt);
+\draw[color=purple] (7.5,4.97) node {$C$};
+\draw [fill=purple] (2.793701030155326,1.728631752477261) circle (2.5pt);
+\draw[color=purple] (3.,2.09) node {$A'$};
+\draw [fill=purple] (4.9981656312778995,2.0141624055750422) circle (2.5pt);
+\draw[color=purple] (5.2,2.39) node {$B'$};
+\draw [fill=purple] (8.019291487213156,2.4054701354866563) circle (2.5pt);
+\draw[color=purple] (8.22,2.77) node {$C'$};
+
+\draw [fill=orange] (6.420232165913115,3.566200819314453) circle (2.0pt);
+\draw[color=orange] (6.56,3.89) node {$x_2$};
+\draw [fill=orange] (5.630631420487521,3.507014901336497) circle (2.0pt);
+\draw[color=orange] (5.78,3.83) node {$x_1$};
+\draw [fill=orange] (3.5305882596272373,3.349602458416557) circle (2.0pt);
+\draw[color=orange] (3.68,3.67) node {$x_0$};
 \end{scriptsize}
 \end{tikzpicture}
 \end{center}
