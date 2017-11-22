@@ -1,28 +1,49 @@
 \documentclass[12pt]{article}
- 
+
 \usepackage[margin=1in]{geometry}
 \usepackage[pdftex]{hyperref}
 \usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
-\usepackage{mdframed,cleveref}
+\usepackage{mdframed,cleveref,cancel,stackengine,pgfplots,pgf,mathrsfs}
+\usepackage{xfrac,stmaryrd,commath}
+\usepackage[spanish]{babel}
 
 \newmdenv[leftline=false,topline=false]{topright}
 \let\proof\relax
 \usepackage[utf8]{inputenc}
-\usetikzlibrary{positioning}
+\usetikzlibrary{positioning,arrows, calc}
+\usetikzlibrary{external}
+\tikzexternalize[prefix=figures/]
+\pgfplotsset{compat=1.11}
 \newcommand{\n}{\mathbb{N}}
 \newcommand{\z}{\mathbb{Z}}
 \newcommand{\q}{\mathbb{Q}}
 \newcommand{\cx}{\mathbb{C}}
 \newcommand{\real}{\mathbb{R}}
 \newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\R}{\mathcal{R}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\let\k\relax
+\newcommand{\k}{\mathbf{k}}
 \newcommand{\ita}[1]{\textit{#1}}
 \newcommand\inv[1]{#1^{-1}}
 \newcommand\setb[1]{\left\{#1\right\}}
 \newcommand{\vbrack}[1]{\langle #1\rangle}
 \newcommand{\determinant}[1]{\begin{vmatrix}#1\end{vmatrix}}
-\newcommand{\abs}[1]{\left\vert #1 \right\vert}
+\newcommand{\Po}{\mathbb{P}}
 \DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\rg}{rg}
+\DeclareMathOperator{\car}{car}
+\DeclareMathOperator{\im}{Im}
+\let\emptyset\varnothing
 
+\def\parse#1{
+	\def\param{#1}
+	\ifx\param\empty
+	\else
+	(#1)
+	\fi
+}
 
 \hypersetup{
 	colorlinks,
@@ -39,7 +60,7 @@
 {\bfseries}% Thm head font
 {}%        Punctuation after thm head
 {\newline}% Space after thm head: \newline = linebreak
-{#1 #2 \normalfont #3}%         Thm head spec
+{#1 #2 \normalfont \parse{#3}}%         Thm head spec
 
 \newtheoremstyle{breakthm}% name
 {}%         Space above, empty = `usual value'
@@ -49,7 +70,7 @@
 {\bfseries}% Thm head font
 {}%        Punctuation after thm head
 {\newline}% Space after thm head: \newline = linebreak
-{#1 \normalfont #3 (#2)\addcontentsline{toc}{subsubsection}{#1 #3}}%         Thm head spec
+{#1 \normalfont #3 \addcontentsline{toc}{subsubsection}{#1 #3}}%         Thm head spec
 \newtheoremstyle{normal}% name
 {}%         Space above, empty = `usual value'
 {}%         Space below
@@ -62,18 +83,25 @@
 
 \theoremstyle{normal}
 \newtheorem{lema}{Lema}[subsection]
+\newtheorem*{lema*}{Lema}
 \newtheorem{obs}[lema]{Observación}
+\newtheorem*{obs*}{Observación}
 
 \theoremstyle{break}
 \newtheorem{prop}[lema]{Proposición}
+\newtheorem*{prop*}{Proposición}
 \newtheorem*{proof}{Demostración}
 \newtheorem{defi}[lema]{Definición}
+\newtheorem*{defi*}{Definición}
 \newtheorem{col}[lema]{Corolario}
+\newtheorem*{col*}{Corolario}
 \newtheorem{ej}[lema]{Ejercicio}
+\newtheorem*{ej*}{Ejercicio}
 \newtheorem{example}[lema]{Ejemplo}
+\newtheorem*{example*}{Ejemplo}
 
 \theoremstyle{breakthm}
-\newtheorem{thm}[lema]{Teorema}
+\newtheorem{thm}{Teorema}[subsection]
 
 
 
@@ -81,13 +109,13 @@
 \begin{document}
 \date{}
 
-\title{Cálculo Integral}
- 
+\title{Cálculo integral} % TITULO 
+
 \maketitle
 
 \tableofcontents
 
-\input{tema_uno}
+\input{tema_uno} %INPUTS
 
 
 \end{document}
