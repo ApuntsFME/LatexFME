@@ -480,3 +480,81 @@
 \end{proof}
 
 \subsection{Series absolutamente convergentes y condicionalmente convergentes}
+
+\begin{defi}
+  Diremos que una serie $\sum a_n$ es absolutamente convergente, si la serie $\sum \abs{a_n}$ es convergente.
+\end{defi}
+
+\begin{prop}
+  Toda serie absolutamente convergete es convergente.
+\end{prop}
+
+\begin{proof}
+  Aplicamos criterio de Cauchy para series a $\sum \abs{a_n}$: $\forall \varepsilon > 0$ $\exists n_0 \in \n$
+  tal que
+  \[
+    m > n \geq n_0 \implies \abs{\abs{a_{n+1}} + \cdots + \abs{a_m}} < \varepsilon \implies
+    \abs{a_{n+1}} + \cdots + \abs{a_m} < \varepsilon
+  \]
+  De donde se deduce que
+  \[
+    \abs{a_{n+1} + \cdots + a_n} < \abs{a_{n+1}} + \cdots + \abs{a_m} < \varepsilon
+  \]
+  (por la desigualdad triangular). Y por lo tanto, $\sum a_n$ cumple el criterio de Cauchy.
+
+\end{proof}
+
+\begin{defi}
+  Una serie convergente, que no es absolutamente convergente, se dice que es condicionalmente convergente.
+\end{defi}
+
+\begin{example*}
+  La serie armónica alternada $\sum \frac{(-1)^n}{n}$ es condicionalmente convergente.
+\end{example*}
+
+\begin{defi}
+  Sea $a \in \real$. Definimos $a_+$ (la parte positiva de $a$) como $a_+ = \max(a, 0)$, asimismo, definimos
+  la parte negativa de $a$ como $a_- = \max(-a,0)$.
+\end{defi}
+
+\begin{obs*}
+  Dado un $a$, podemos expresar $a = a_+ - a_-$ y $\abs{a} = a_+ + a_-$
+\end{obs*}
+
+\begin{obs*}
+  Dada $f \colon X \to \real$, podemos hacer exactamente lo mismo, ($f = f_+ - f_-$, $\abs{f} = f_+ + f_-$)
+\end{obs*}
+
+\begin{example*} \hspace{0pt}
+  \begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[
+    xmin = 0,
+    xmax = 2*3.14151625,
+    ymin = -1.2,
+    ymax = 1.2,
+    samples = 100,
+    axis lines = center
+  ]
+    \addplot[domain=0:7,line width=3pt]{sin(deg(x))};
+    \addplot[domain=0:3.14151625,color=red,thick]{sin(deg(x))};
+    \addplot[domain=3.14151625:7,color=green,thick]{sin(deg(x))};
+    
+    \legend{$sin(x)$,$sin_+(x)$,$sin_-(x)$}
+  \end{axis}
+  \end{tikzpicture}
+  \end{center}
+  
+\end{example*}
+
+\begin{lema}
+  Sea $(a_n)$ una sucesión de números reales. Sean $(p_n)$ y $(q_n)$ sus partes positiva y negativa
+  (respectivamente).
+  \begin{enumerate}[i)]
+    \item $\sum a_n$ converge absolutamente $\iff$ $\sum p_n$, $\sum q_n$ son convergentes.
+    \item Si $\sum a_n$ es condicionalmente convergente, entonces $\sum p_n$ y $\sum q_n$ son divergentes
+  \end{enumerate}
+
+\end{lema}
+
+
