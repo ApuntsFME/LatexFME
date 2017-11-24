@@ -173,7 +173,7 @@
 \end{prop}
 
 \begin{proof}
-	Por el enunciado 
+	Por el enunciado
 	\[
 		\sum_{i=n_0}^{n} a_i \leq \sum_{k=n_0}^{n} b_k \implies
 		\sum_{i=n_0}^{\infty} a_i \leq \sum_{k=n_0}^{\infty} b_k
@@ -212,7 +212,7 @@
 			1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \cdots = s
 		\]
 		absurdo ya que $s>s$.
-		\item Si $p < 1$. 
+		\item Si $p < 1$.
 		\[
 			n^p \leq n \implies \frac{1}{n^p} \geq \frac{1}{n}
 		\]
@@ -272,7 +272,7 @@
 			n \geq n_0 \implies a_n^{1/n} < r
 		\]
 		entonces $\sum a_n < +\infty$
-		\item Suponemos que existe $n_0 \in \n$ tal que 
+		\item Suponemos que existe $n_0 \in \n$ tal que
 		\[
 			n \geq n_0 \implies a_n^{1/n} \geq 1
 		\]
@@ -315,7 +315,7 @@
 \begin{lema}
 	Sea $\sum a_n$ una serie de términos estrictamente positivos.
 	\begin{itemize}
-		\item Suponemos que hay $n_0 \in \n$ y $r < 1$ tal que 
+		\item Suponemos que hay $n_0 \in \n$ y $r < 1$ tal que
 		\[
 			n \geq n_0 \implies \frac{a_{n+1}}{a_n} \leq r
 		\]
@@ -331,7 +331,7 @@
 \begin{proof}
 	Separaremos los casos.
 	\begin{itemize}
-		\item 
+		\item
 		\[
 			\frac{a_n+1}{a_n} \leq r \implies a_{n+1} \leq r a_n \implies a_n \leq
 			C r^n \quad (n \geq n_0)
@@ -370,7 +370,7 @@
 \end{proof}
 
 \begin{example*}
-	Estudiar la convergencia de 
+	Estudiar la convergencia de
 	\begin{itemize}
 		\item $\sum\limits_{n \geq 0} \frac{1}{n!}$. \\
 			$n!$ crece más que	$n^2$ ($n! > n^2$) $\implies \frac{1}{n!} < \frac{1}{n^2}$
@@ -378,7 +378,7 @@
 			$\sum\limits_{n \geq 0}^\infty \frac{1}{n!}$ es convergente.
 		\item $\sum \frac{x^n}{n!}$ para $x > 0$. \\
 			\[
-				\lim_{n \to \infty} \frac{\frac{x^{n+1}}{(n+1)!}}{\frac{x^n}{n!}} = 
+				\lim_{n \to \infty} \frac{\frac{x^{n+1}}{(n+1)!}}{\frac{x^n}{n!}} =
 				\lim_{n \to \infty} \frac{x^{n+1}n!}{x^n(n+1)n!} = \lim_{n \to \infty}
 				\frac{x}{n+1} = 0 < 1
 			\]
@@ -446,7 +446,7 @@
 	\begin{itemize}
 		\item[]
 		\item $\sum \frac{1}{n^\alpha}$ tiene el mismo carácter que
-			$\int_{1}^{\infty} \frac{1}{x^\alpha} \dif x$ (convergete $\iff \alpha > 1$)
+			$\int_{1}^{\infty} \frac{1}{x^\alpha} \dif x$ (convergente $\iff \alpha > 1$)
 		\item Calcular $\sum\limits_{n\geq 1} \frac{1}{n^{1.01}}$ con error $< 10^{-3}$. \\
 			Necesitamos que
 			\[
@@ -473,7 +473,7 @@
 	\[
 		\setb{0,1, \dots, m} \leq \setb{\sigma(0), \sigma(1), \dots, \sigma(n)}
 	\]
-	ya que $\sigma$ es suprayectiva. Entonces $a_0 + a_1 + \cdots + a_m \leq a_{\sigma(0)} + 
+	ya que $\sigma$ es suprayectiva. Entonces $a_0 + a_1 + \cdots + a_m \leq a_{\sigma(0)} +
 	a_{\sigma(1)} + \cdots + a_{\sigma(n)}$ por lo tanto, $A_m \leq B_n \implies A \leq B$.
 	Haciendo el mismo razonamiento para $\inv{\sigma}$ (biyectiva), obtenemos que $B \leq A$.
 	Y por lo tanto, $A = \sum a_n = \sum a_{\sigma(n)} = B$.
@@ -486,7 +486,7 @@
 \end{defi}
 
 \begin{prop}
-  Toda serie absolutamente convergete es convergente.
+  Toda serie absolutamente convergente es convergente.
 \end{prop}
 
 \begin{proof}
@@ -512,6 +512,11 @@
   La serie armónica alternada $\sum \frac{(-1)^n}{n}$ es condicionalmente convergente.
 \end{example*}
 
+\begin{prop}
+	Si $\sum a_n$ y $\sum b_n$ son absolutamente convergentes, y $\lambda \in \real$,
+	entonces $\sum (a_n + b_n)$ y $\sum \lambda a_n$ son absolutamente convergentes.
+\end{prop}
+
 \begin{defi}
   Sea $a \in \real$. Definimos $a_+$ (la parte positiva de $a$) como $a_+ = \max(a, 0)$, asimismo, definimos
   la parte negativa de $a$ como $a_- = \max(-a,0)$.
@@ -534,27 +539,223 @@
     ymin = -1.2,
     ymax = 1.2,
     samples = 100,
-    axis lines = center
+    axis lines = center,
+    legend style={at={(0.1,0.1)},anchor=west}
   ]
     \addplot[domain=0:7,line width=3pt]{sin(deg(x))};
     \addplot[domain=0:3.14151625,color=red,thick]{sin(deg(x))};
-    \addplot[domain=3.14151625:7,color=green,thick]{sin(deg(x))};
-    
+    \addplot[domain=3.14151625:7,color=green,thick]{-sin(deg(x))};
+    \addplot[domain=3.14151625:7,color=red,thick]{0};
+    \addplot[domain=0:3.14151625,color=green,thick]{0};
+
     \legend{$sin(x)$,$sin_+(x)$,$sin_-(x)$}
   \end{axis}
   \end{tikzpicture}
   \end{center}
-  
+
 \end{example*}
 
 \begin{lema}
   Sea $(a_n)$ una sucesión de números reales. Sean $(p_n)$ y $(q_n)$ sus partes positiva y negativa
   (respectivamente).
   \begin{enumerate}[i)]
-    \item $\sum a_n$ converge absolutamente $\iff$ $\sum p_n$, $\sum q_n$ son convergentes.
+    \item \label{item:abs_conv_conv}
+			$\sum a_n$ converge absolutamente $\iff$ $\sum p_n$, $\sum q_n$ son convergentes.
     \item Si $\sum a_n$ es condicionalmente convergente, entonces $\sum p_n$ y $\sum q_n$ son divergentes
   \end{enumerate}
-
 \end{lema}
 
+\begin{proof}
+  \begin{enumerate}[i)]
+  	\item[]
+  	\item Se tiene que
+			\[
+				\sum\limits_{k=0}^ n \abs{a_k} = \sum\limits_{k=0}^ n p_k + \sum\limits_{k=0}^n q_k
+    	\]
+    	Si $\sum \abs{a_n}$ converge $\implies \sum p_n$ y $\sum q_n$ tienen el mismo carácter,
+			como ambas son series de términos positivos, $\sum a_n$ y $\sum b_n$ convergen.
 
+			El reciproco es directo por linealidad.
+		\item Se tiene que
+			\[
+				\sum_{k=0}^n a_k = \sum_{k=0}^n p_k - \sum_{k=0}^n q_k
+			\]
+			$\sum p_n$ y $\sum q_n$ no pueden ser las dos convergentes por \ref{item:abs_conv_conv}
+			y tampoco puede ser que solo una de las dos sea divergente, porque entonces
+			$\sum a_n$ divergería.
+  \end{enumerate}
+\end{proof}
+
+\begin{prop}
+	Si una serie es absolutamente convergente, entonces todas sus series reordenadas
+	son convergentes con la misma suma.
+
+	Es decir, $\forall \sigma \colon \n \to \n$ permutación, $\sum a_n = \sum a_{\sigma(n)}$
+\end{prop}
+
+\begin{proof}
+	Primero, escribimos
+	\[
+		a_n = p_n - q_n \stackrel{\text{$a_n$ abs. conv.}}{\implies}
+		\sum a_n = \sum p_n - \sum q_n
+	\]
+	Consideramos ahora $\sigma \colon \n \to \n$ permutación, entonces, $\sum a_{\sigma(n)}$
+	también es absolutamente convergente ($\sum \abs{a_{\sigma{n}}} = \sum \abs{a_n}$
+	reordenando términos positivos). Ahora tenemos que
+	\[
+		\sum a_{\sigma(n)} = \sum p_{\sigma(n)} - \sum q_{\sigma(n)}
+		\substack{\text{términos} \\ \text{positivos} \\ =} \sum p_n - \sum q_n = \sum a_n
+	\]
+	\qed
+\end{proof}
+
+\begin{thm}[de Riemman para series condicionalmente convergentes]
+	Sea $\sum a_n$ una serie condicionalmente convergente. $\forall s \in [-\infty,+\infty]$
+	existe una reorenación de la serie $\sigma \colon \n \to \n$ (permutación) tal que
+	$\sum a_{\sigma(n)} = s$.
+\end{thm}
+
+\begin{defi}
+	Una serie alternada es una serie donde los términos cambian de signo alternativamente.
+	Es decir, una serie de la forma $\sum (-1)^n a_n$ donde $a_n \geq 0$.
+\end{defi}
+
+\begin{prop}[Criterio de Leibnitz]
+	Si $(a_n)$ es una sucesión descendiente de términos positivos con $\lim a_n = 0$,
+	entonces  $\sum (-1)^n a_n$ es convergente.
+
+	Además, si $S_N$ es la $N$-ésima suma parcial de $\sum (-1)^n a_n$ y
+	$S$ es su suma, $\abs{S - S_n} \leq a_{n+1}$.
+\end{prop}
+
+\begin{proof}
+	Consideramos la serie $(S_{2N})$
+	\[
+		S_{2N+2} = S_{2N} + \overbrace{(a_{2N+1} + a_{2N+2})}^{\leq 0} \leq S_{2N}
+	\]
+	Por lo tanto, $(S_{2N})$ es descendiente, acotada inferiormente por $a_0 - a_1$.
+	Consideramos ahora $(S_{2N+1})$
+	\[
+		S_{2N+3} = S_{2N+1} + \overbrace{(a_{2N+2} + a_{2N+3})}^{\geq 0} \geq S_{2N+1}
+	\]
+	Con lo cual $(S_{2N+1})$ es creciente. Además se tiene que
+	\begin{equation}\label{eq:leibn_cotas}
+		a_0 - a_1 = S_1 \leq S_{2N+1} \leq S_{2N} \leq S_0 = a_0
+	\end{equation}
+	Con lo cual deducimos que tanto $(S_{2N})$ como $(S_{2N+1})$ son convergentes
+	(monótonas y acotadas). Por último, tenemos que
+	\[
+		\lim (S_{2N} - S_{2N-1}) = \lim a_{2N} = 0 \implies \begin{rcases}
+			\lim S_{2N} = S \\ \lim S_{2N+1} = S
+		\end{rcases} \implies \lim S_N = S
+	\]
+	Para acabar, sabemos por (\ref{eq:leibn_cotas}) que S está dentro del intervalo
+	de extremos $S_{N}$ y $S_{N+1}$ de longitud $a_{N+1}$, por lo tanto
+	$\abs{S - S_N} \leq a_{N+1}$
+\end{proof}
+
+\begin{example*}
+	La serie harmónica alternada, $\sum \frac{(-1)^n}{n}$ es convergente por el
+	criterio de Laibnitz.
+\end{example*}
+
+Hay otros criterios de convergencia para series cualesquiera, entre los cuales
+destaca el criterio de Dirichlet.
+
+\begin{prop}[Critero de Dirichlet]
+	Sean $(a_n)$ y $(b_n)$ dos sucesiones numéricas. Suponemos que
+	\begin{enumerate}[i)]
+		\item las sumas parciales $s_n$ de la serie $\sum a_n$ están acotadas.
+		\item la sucesión $(b_n)$ es positiva y decreciente con límite 0.
+	\end{enumerate}
+	Entonces la serie $\sum a_nb_n$ es convergente.
+\end{prop}
+
+\subsection{Aplicación: Series de potencias}
+
+\begin{defi}
+	Una serie de potencias (centrada en 0) es una expresión
+	\[
+		\sum_{n \geq 0} a_nx^n
+	\]
+	donde $a_n$ son los coeficientes de la serie.
+\end{defi}
+
+\begin{lema}
+	Sea $\sum a_nx^n$ una serie de potencias. El conjunto de los $r \geq 0$ tales
+	que $\sum \abs{a_n}r^n$ converge es un intervalo que contiene al 0.
+\end{lema}
+
+\begin{proof}
+	Si $0 \leq s \leq r$ y $\sum \abs{a_n}r^n$ converge, entonces $\sum \abs{a_n}s^n$
+	converge también por comparación directa ($\abs{a_n}s^n \leq \abs{a_n}r^n$) y
+	$\sum \abs{a_n}0^n$ converge a 0 trivialmente.
+\end{proof}
+
+\begin{defi}
+	Sea $\sum a_nx^n$ una serie de potencias y sea $I$ el intervalo de los $r \geq$ tales que
+	$\sum \abs{a_n}r^n$ converge. Llamamos radio de convergencia de la serie a $R$ el
+	extremo superior del intervalo $I$. Denominamos dominio de convergencia de la serie
+	al intervalo $(-R,R)$
+\end{defi}
+
+\begin{obs*}
+	La serie puede converger en los puntos frontera del dominio de convergencia.
+\end{obs*}
+
+\begin{obs*}
+	Los casos extremos corresponden a $R = 0$ (la serie solo converge para $x = 0$)
+	y $R = +\infty$ (la serie converge para todo $x$).
+\end{obs*}
+
+\begin{thm}[de Cauchy-Hadamard]
+	Sea $\sum a_nx^n$ una serie de potencias. Su radio de convergencia $R$ viene dado por
+	\[
+		\frac{1}{R} = \limsup \abs{a_n}^{\sfrac{1}{n}}
+	\]
+	La serie de potencias es absolutamente convergente si $\abs{x} < R$ y es divergenete
+	si $\abs{x} > R$.
+\end{thm}
+
+\begin{obs*}
+	A priori no se puede afirmar nada cuando $\abs{x} = R$.
+\end{obs*}
+
+\begin{proof}
+	Separaremos la demostración en varios casos
+	\begin{itemize}
+		\item Caso $0 < R < + \infty$. Sea $0 < \abs{x} < R$. Existe $C < 1$ tal que
+		 	\[
+				\abs{x} < CR \implies \frac{1}{R} < \frac{C}{\abs{x}}
+			\]
+			Por lo tanto, si $n$ es suficientemente grande
+			\[
+				\abs{a_n}^{\sfrac{1}{n}} \leq \frac{C}{\abs{x}} \implies
+				\abs{a_nx^n} \leq C^n
+			\]
+			Como $C^n$ es la serie geométrica de razón $C < 1$, la serie converge.
+
+			Sea ahora $\abs{x} > R$, tenemos que $\frac{1}{R} > \frac{1}{\abs{x}}$.
+			Hay infinitos $n$ tal que
+			\[
+				\abs{a_n}^{\sfrac{1}{n}} > \frac{1}{\abs{x}} \implies \abs{a_nx^n} > 1
+			\]
+			Por lo tanto $a_nx^n$ no tiende a 0 y por lo tanto la serie no converge.
+		\item Caso $R = +\infty$. Entonces $\limsup \abs{a_n}^{\sfrac{1}{n}} = 0$.
+			Por lo tanto, para $n$ suficientemente grande $\exists C < 1$ tal que
+			$\abs{a_n}^{\sfrac{1}{n}} < \frac{C}{\abs{x}} \implies \abs{a_nx^n} < C^n$ y por lo tanto
+			la serie converge.
+		\item Caso $R = 0$. Entonces $\forall x$ hay infinitos $n$ tales que
+		 	$\abs{a_n}^{\sfrac{1}{n}} > \frac{1}{\abs{x}} \implies \abs{a_nx^n} > 1 \neq 0$
+			y por lo tanto, la serie diverge.
+	\end{itemize}
+\end{proof}
+
+\begin{obs}
+	El radio de convergencia también se puede calcular con las expresiones
+	\[
+		\frac{1}{R} = \lim \abs{a_n}^{\sfrac{1}{n}} \qquad
+		\frac{1}{R} = \lim \frac{\abs{a_{n+1}}}{\abs{a_N}}
+	\]
+	Suponiendo que los límites existan.
+\end{obs}
