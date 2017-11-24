@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
- 
+
 \usepackage[margin=1in]{geometry}
 \usepackage[pdftex]{hyperref}
 \usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
@@ -37,6 +37,13 @@
 \DeclareMathOperator{\im}{Im}
 \let\emptyset\varnothing
 
+\def\parse#1{
+	\def\param{#1}
+	\ifx\param\empty
+	\else
+	(#1)
+	\fi
+}
 
 \hypersetup{
 	colorlinks,
@@ -53,7 +60,7 @@
 {\bfseries}% Thm head font
 {}%        Punctuation after thm head
 {\newline}% Space after thm head: \newline = linebreak
-{#1 #2 \normalfont #3}%         Thm head spec
+{#1 #2 \normalfont \parse{#3}}%         Thm head spec
 
 \newtheoremstyle{breakthm}% name
 {}%         Space above, empty = `usual value'
@@ -63,7 +70,7 @@
 {\bfseries}% Thm head font
 {}%        Punctuation after thm head
 {\newline}% Space after thm head: \newline = linebreak
-{#1 \normalfont #3 (#2)\addcontentsline{toc}{subsubsection}{#1 #3}}%         Thm head spec
+{#1 \normalfont #3 \addcontentsline{toc}{subsubsection}{#1 #3}}%         Thm head spec
 \newtheoremstyle{normal}% name
 {}%         Space above, empty = `usual value'
 {}%         Space below
@@ -76,19 +83,25 @@
 
 \theoremstyle{normal}
 \newtheorem{lema}{Lema}[subsection]
+\newtheorem*{lema*}{Lema}
 \newtheorem{obs}[lema]{Observación}
-\newtheorem{rec}[lema]{Recordatorio}
+\newtheorem*{obs*}{Observación}
 
 \theoremstyle{break}
 \newtheorem{prop}[lema]{Proposición}
+\newtheorem*{prop*}{Proposición}
 \newtheorem*{proof}{Demostración}
 \newtheorem{defi}[lema]{Definición}
+\newtheorem*{defi*}{Definición}
 \newtheorem{col}[lema]{Corolario}
+\newtheorem*{col*}{Corolario}
 \newtheorem{ej}[lema]{Ejercicio}
+\newtheorem*{ej*}{Ejercicio}
 \newtheorem{example}[lema]{Ejemplo}
+\newtheorem*{example*}{Ejemplo}
 
 \theoremstyle{breakthm}
-\newtheorem{thm}[lema]{Teorema}
+\newtheorem{thm}{Teorema}[subsection]
 
 
 
@@ -96,17 +109,13 @@
 \begin{document}
 \date{}
 
-\title{Álgebra Multilineal y Geometría Proyectiva}
- 
+\title{Cálculo integral} % TITULO 
+
 \maketitle
 
 \tableofcontents
 
-\setcounter{section}{-1}
-
-\input{tema_cero}
-\input{tema_uno}
-\input{tema_dos}
+\input{tema_uno} %INPUTS
 
 
 \end{document}
