@@ -759,3 +759,195 @@ destaca el criterio de Dirichlet.
 	\]
 	Suponiendo que los límites existan.
 \end{obs}
+
+\begin{example*}
+	\begin{itemize}
+		\item[]
+		\item $\sum n!x^n$, $\frac{1}{R} = \lim \frac{(n+1)!}{n!} = \lim (n+1)
+			= +\infty \implies R = 0$
+		\item $\sum x^n$, $\frac{1}{R} = \lim 1^{\sfrac{1}{n}} = 1^0 = 1 \implies
+			R = 1$
+		\item $\sum \frac{x^n}{n!}$, $\frac{1}{R} = \lim \frac{n!}{(n+1)!} =
+			\lim \frac{1}{n+1} = 0 \implies R = +\infty$
+		\item Las $\sum\limits_{n \geq 0} x^n$, $\sum\limits_{n \geq 1} \frac{x^n}{n}$
+			y $\sum \frac{1}{n^2}$ tienen $R = 1$, pero tienen comportamiento
+			distinto en la frontera.
+	\end{itemize}
+\end{example*}
+
+\begin{defi}
+	Si una serie de potencias $\sum a_n x^n$ tiene radio de convergencia $R > 0$,
+	define una función
+	\[\begin{aligned}
+		f \colon (-R,R) &\to \real \\ x &\mapsto f(x) = \sum a_n x^n
+	\end{aligned}\]
+\end{defi}
+
+\begin{obs*}
+	Se puede probar que $f$ es continua, integrable y derivable
+	``término a término''
+\end{obs*}
+
+\begin{obs*}
+	La serie derivada término a término tiene radio de convergencia $R$, y por
+	lo tanto, la función es de clase $\C^\infty$
+\end{obs*}
+
+\begin{proof}
+	Primero, consideramos la función derivada $f^\prime (x) = \sum\limits_{n \geq 0}
+	n a_n x^{n-1} = \sum\limits_{k \geq 0} (k+1) a_{k+1} x^k$, calculamos ahora
+	el raido de convergencia por la definición.
+	\[
+		\limsup \abs{n+1}^{\sfrac{1}{n}}\abs{a_{n+1}}^{\sfrac{1}{n}} =
+		\limsup \abs{n}^{\sfrac{1}{n-1}}\abs{a_{n}}^{\sfrac{1}{n-1}} =
+		\limsup \left( n^{\sfrac{1}{n}} \abs{a_n}^{\sfrac{1}{n}} \right)^
+		{\frac{n}{n-1}} = \frac{1}{R}
+	\]
+	Además
+	\[
+		f^{(k)}(0) = k! a_k \rightarrow f(x) = \sum_{k \geq 0} \frac{f^{(k)}(0)}
+		{k!}x^k
+	\]
+\end{proof}
+
+\begin{defi*}
+	Una función tal que alrededor de cada punto se puede expresar como una serie
+	de potencias (convergente) se llama analítica.
+\end{defi*}
+
+\begin{defi}
+	Sea $D$ un intervalo abierto tal que $0 \in D$ y sea $f \colon D \to \real$
+	de clase $\C^\infty$. Entonces, $f$ define una serie de potencias
+	\[
+		\sum_{n \geq 0} \frac{f^{(n)}(0)}{n!} x^n
+	\]
+	que es la serie de Taylor de $f$ (centrada en 0).
+\end{defi}
+
+\begin{prop*}
+	Sea $D$ un intervalo abierto tal que $0 \in D$ y sea $f \colon D \to \real$
+	de clase $\C^\infty$. Suponemos que la serie de Taylor de $f$ tiene radio
+	de convergencia $R > 0$. Recordando la formula de Taylor $f(x) = P_n(x) + R_n(x)$
+	(donde $P_n$ es el polinomio de Taylor de grado $\leq n$ de $f$ en 0, y $R_n$
+	el correspondiente residuo de Taylor), por tanto en $D \cap (-R,R)$
+	\[
+		f(x) = \sum_{n \geq 0} \frac{f^{(n)}(0)}{n!}x^n \iff
+		\lim_{n \to \infty} R_n(x) = 0
+	\]
+\end{prop*}
+
+\begin{obs}
+	Hay funciones $f \colon \real \to \real$ de clase $\C^\infty$ tales que su
+	serie de Taylor (centrada en 0) converge para todo $x$, pero no coincide con
+	$f(x)$ en ningún punto salvo el origen.
+
+	Hay funciones $f \colon \real \to \real$ de clase $\C^\infty$ tales que su
+	serie de Taylor (centrada en 0) tiene radio de convergencia 0.
+\end{obs}
+
+\begin{example*}
+	La función $f(x) = \begin{cases} 0 \quad \text{si } x \leq 0 \\
+	e^{-\sfrac{1}{x}} \quad \text{si } x > 0 \end{cases}$
+	\begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+    	xmin = -1,
+		xmax = 2,
+		ymin = -1.2,
+		ymax = 1.2,
+		samples = 100,
+		axis lines = center
+    ]
+		\addplot[domain=-1:0,color=blue,thick]{0};
+		\addplot[domain=0:2,color=blue,thick]{e^(-1/x)};
+    \end{axis}
+    \end{tikzpicture}
+    \end{center}
+	Su serie de Taylor es nula ($f^{(k)}(0) = 0$ $\forall k \in \n$). Pero $f$ no
+	se anula en ningún entorno de 0 $\implies$ $f$ no coincide con la serie de
+	Taylor en ningún entorno de 0.
+\end{example*}
+
+\begin{prop}[Algunas series de Taylor importantes]
+	\begin{itemize}
+		\item[]
+		\item $\displaystyle e^x = \sum_{n \geq 0} \frac{x^n}{n!}
+			\qquad \forall x \in \real$
+		\item $\displaystyle \cos(x) = \sum_{n \geq 0} (-1)^{n}\frac{x^{2n}}{(2n)!}
+			\qquad \forall x \in \real$
+		\item $\displaystyle \sin(x) = \sum_{n \geq 0} (-1)^{n}\frac{x^{2n+1}}{(2n+1)!}
+			\qquad \forall x \in \real$
+		\item $\displaystyle \log(1+x) = \sum_{n \geq 1} (-1)^{n+1} \frac{x^n}{n}
+			\qquad \abs{x} < 1$
+		\item $\displaystyle (1+x)^p = \sum_{n \geq 0} {p \choose n} x^n \qquad
+			\begin{cases} x \in \real \quad \text{si } p \in \n \\ \abs{x} < 1
+			\quad \text{si } p \notin \n \end{cases}$
+		\item $\displaystyle a = \sum_{n \geq 0} (-1)^n x^n \qquad \abs{x} < 1$
+	\end{itemize}
+\end{prop}
+
+\begin{example*}
+	\begin{itemize}
+		\item[]
+		\item $\displaystyle \sum_{n \geq 0} \frac{1}{n!} = e^1 = e$
+		\item $\displaystyle \frac{1}{(1-x)} = \sum_{n \geq 0} x^n \implies
+			\sum_{n \geq 1} n x^{n-1} = \left( \frac{1}{(1-x)} \right)' =
+			\frac{1}{(1-x)^2}$.
+
+			Por lo tanto
+			\[
+				\sum_{n \geq 1} nx^n = \frac{x}{(1-x)^2}
+			\]
+		\item $f = \arctan(x)$ con $\abs{x} < 1$(a partir de $f'(x) = \frac{1}{1+x^2}$)
+			\[
+				\frac{1}{1+x^2} = \sum_{n \geq 0} (-1)^n x^{2n} \implies
+				\arctan(x) = \int \frac{1}{1+x^2} \dif x = \sum_{n \geq 0} (-1)^n
+				\frac{x^{2n+1}}{2n+1}
+			\]
+	\end{itemize}
+\end{example*}
+
+\subsubsection{Series de números complejos}
+
+\begin{defi*}
+	La definición de serie, de serie convergente y de serie absolutamente convergente,
+	es la misma si, en vez de considerar números reales, consideramos números
+	complejos.
+\end{defi*}
+
+\begin{prop*}
+	Una serie $\sum c_n$ de números complejos es convergente si y solo si lo son
+	separadamente sus partes real e imaginaria.
+\end{prop*}
+
+\begin{prop*}
+	Toda serie $\sum c_n$ de números complejos absolutamente convegente, es
+	convergente.
+\end{prop*}
+
+\begin{obs*}
+	El estudio de las series de potencias es completamente análogo. En el caso
+	complejo, si la serie de potencias $\sum c_n z^n$ tiene radio de convergencia
+	$R$ ($\frac{1}{R} = \limsup \abs{c_n}^{\sfrac{1}{n}}$). Entonces, el dominio de
+	convergencia es un disco abierto $\abs{z} < R$ del plano complejo.
+\end{obs*}
+
+\begin{obs*}
+	La serie de Taylor de la función exponencial real permite definir la exponencial
+	compleja como
+	\[
+		e^z = \sum_{n \geq 0} \frac{z^n}{n!}
+	\]
+	para todo $z \in \cx$.
+\end{obs*}
+
+\begin{prop*}
+	Tomando $z \in \cx$ un imaginario puro, y separando las partes real e imaginaria
+	de las potencias, obtenemos la formula de Euler.
+	\[
+		e^{ix} = \cos(x) + i\sin(x)
+	\]
+	En particular para $x = \pi$, se tiene que $e^{i\pi} + 1 = 0$.
+\end{prop*}
+
+\subsection{Integrales impropias: definición y ejemplos}
