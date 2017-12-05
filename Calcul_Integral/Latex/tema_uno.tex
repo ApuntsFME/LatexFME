@@ -1118,6 +1118,8 @@ destaca el criterio de Dirichlet.
 	Suponiendo que los miembros del segundo t\'ermino existan.
 \end{prop}
 
+
+
 \subsection{Criterios de convergencia de integrales impropias}
 
 \begin{prop}[Criterio de Cauchy par aintegrales impropias]
@@ -1129,7 +1131,7 @@ destaca el criterio de Dirichlet.
 	\]
 \end{prop}
 \begin{proof}
-	Es consecuencia del criterio de Cauchy aplicado a la funcion
+Es consecuencia del criterio de Cauchy aplicado a la función
 	\[\begin{aligned}
 		F \colon [a,b) &\to \real \\
 		x &\mapsto F(x) = \int^x_a f
@@ -1146,3 +1148,183 @@ destaca el criterio de Dirichlet.
 	Diremos que una integral impropia $\int^b_a f$ es absolutamente convergente,
 	si la integral impropia $\int^b_a \abs{f}$ es convergente.
 \end{defi}
+
+\begin{prop}
+	Si $\int^b_a f$ es absolutamente convergente, es convergente.
+\end{prop}
+\begin{proof}
+	Aplicamos el criterio de Cauchy a $\int^b_a \abs{f}$. $\forall \varepsilon >0$,
+	$\exists  c_0 \geq a$ tal que $c_0 \leq c_1 < c_2 < b \implies
+	\abs{\int^b_a \abs{f}} = \int^b_a \abs{f} < \varepsilon$ y utilizando que 
+	$\abs{\int^b_a f} \leq \int^b_a \abs{f}$, tenemos que
+	\[
+		\abs{\int^b_a f} \leq \int^b_a \abs{f} < \varepsilon
+	\]
+	Y por lo tanto, $\int^b_a f$ tambi\'en satisface el criterio de Cauchy, y por
+	lo tanto, es convergente.
+\end{proof}
+
+\begin{defi}
+	Una integral impropia convergente pero no absolutamente convegente, diremos que
+	es condicionalmente convergente.
+\end{defi}
+
+\begin{prop}
+	Sea $f \colon [a,b) \to \real$ (con $a < b \leq +\infty$) localmente integrable
+	y positiva ($f \geq 0$), entonces, la función
+	\[
+		F(x) = \int^x_a f
+	\]
+	es creciente, y por lo tanto, siempre existe el límite
+	\[
+		\lim_{x \to b} F(x) = \sup_{x \geq a} F(x)
+	\]
+	Si $F$ es acotada, entonces la integral imporopia $\int^b_a f$ es convergente,
+	en caso contrario, es divergente.
+\end{prop}
+
+\begin{prop}[Criterio de commparación directa]
+	Sean $f,g \colon [a,b) \to \real$ funciones positivas y localmente integrables.
+	Si $f \leq g$, entonces
+	\[
+		\int^b_a f \leq \int^b_a g
+	\]
+	Por lo tanto, si la segunda converge, la primera tambi\'en y si la primera 
+	diverge, la segunda tambi\'en.
+\end{prop}
+\begin{proof}
+	\[
+		f \leq g \substack{\text{Cálculo I} \\ \implies}
+		\int^x_a f \leq \int^x_a g \implies \lim_{x \to b} \int^x_a f \leq
+		\lim_{x \to b} \int^x_a g \implies \int^b_a f \leq \int^b_a g
+	\]
+\end{proof}
+
+\begin{prop}[Criterio de comparación en el límite]
+	Sean $f,g \colon [a,b) \to \real$ estrictamente positivas y localmente
+	integrables. Suponemos que existe el límite
+	\[
+		\lim_{x \to b^-} \frac{f(x)}{g(x)} = L \in [0,+\infty]
+	\]
+	Entonces, \begin{enumerate}[i)]
+		\item\label{item:comp_lim_int_1}
+			Si $L < +\infty$, si $\int^b_a g < +\infty \implies \int^b_af <
+			+\infty$ $\left( \int^b_a f = +\infty \implies \int^b_a g =
+			+\infty\right)$
+		\item\label{item:comp_lim_int_2}
+			Si $L > 0$, si $\int^b_a f < +\infty \implies \int^b_a g <
+			+\infty$ $\left(\int^b_a g = +\infty \implies \int^b_a f =
+			+\infty\right)$
+		\item Si $0 < L < +\infty$ Ambas integrales tienen el mismo carácter.
+	\end{enumerate}
+\end{prop}
+
+\begin{proof}
+	\begin{enumerate}[i)]
+		\item[]
+		\item Fijada $\varepsilon > 0$, existe $x_0$ con $a < x_0 < b$ tal que
+			\[
+				x_0 \leq x < b \implies \frac{f(x)}{g(x)} < L +
+				\varepsilon \implies f(x) < (L+\varepsilon)g(x)
+			\]
+			Y aplicamos comparación directa.
+		\item Consideramos
+			\[
+				\lim_{x \to b^-} \frac{g(x)}{f(x)} = \lim_{x \to b^-}
+				\frac{1}{\frac{f(x)}{g(x)}} = \frac{1}{L} < +\infty
+			\]
+			Por álgebra de llímites. Ahora, aplicamos
+			\ref{item:comp_lim_int_1}.
+		\item Es consecuencia directa de \ref{item:comp_lim_int_1} y de
+			\ref{item:comp_lim_int_2}
+	\end{enumerate}
+\end{proof}
+
+\begin{prop}[Criterio de Dirichlet]
+	Sean $f,g \colon [a,b) \to \real$ funciones localmente integrables. Suponemos
+	que
+	\begin{itemize}
+		\item hay una constante $M > 0$ tal que, si $a < c < b$,
+			$\abs{\int^c_a f} < M$.
+		\item $g$ es decreciente con $\lim\limits_{x \to b} g(x) = 0$
+	\end{itemize}
+	Entonces, la integral impropia $\int^b_a f(x)g(x)\dif x$ es convergente.
+\end{prop}
+
+\begin{example*}
+	\begin{itemize}
+		\item[]
+		\item
+			\[
+				\int^{+\infty}_{-\infty} e^{-x^2} \dif x = 2
+				\int^{+\infty}_0 e^{-x^2} < +\infty
+			\]
+			Ya que 
+			\[
+				e^{-x^2} \leq e^{-x} \implies \int^{+\infty}_1 e^{-x}
+				\dif x < +\infty \implies \int^{+\infty}_1 e^{-x^2}
+				\dif x < +\infty
+			\]
+		\item
+			\[
+				\int^{+\infty}_1 \left( 1 - \cos \frac{1}{x} \right)
+				\dif x < +\infty
+			\]
+			Ya que
+			\[
+				\cos z = 1 - \frac{z^2}{2} + o(z^3) \implies
+				1-\cos z \sim \frac{z^2}{2} \implies
+				1-\cos \frac{1}{x} \sim \frac{1}{2x^2}
+			\]
+			por lo tanto, $1-\cos \frac{1}{x}$ y $\frac{1}{2x^2}$ son 
+			infinitesimos equivalentes, es decir,
+			\[
+				\lim_{x \to \infty} \frac{1-\cos \frac{1}{x}}
+				{\frac{1}{2x^2}} = 1
+			\]
+			Y, como sabemos que $\huge\int^{+\infty}_1 \frac{\dif x}{x^2} <
+			+\infty$ y aplicamos comparación en el límite.
+	\end{itemize}
+\end{example*}
+
+\begin{example*}
+	La integral impropia $\int^{+\infty}_0 \frac{\sin x}{x} \dif x$ es
+	condicionalmente convergente.
+
+	Primero, observamos qur la función es el seno cardinal
+	\[
+		\sinc x = \begin{cases} \frac{\sin x}{x} \quad \text{si } x \neq 0 \\
+			1 \quad \text{si } x = 0 \end{cases}
+	\]
+	que es de clase $\C^{\infty}$, por lo tanto, la integral es de primera especie
+	(es impropia por el intervalo). Por lo tanto, podemos estudiar la integral
+	$\int^{+\infty}_1 \frac{\sin x}{x} \dif x$ que tendrá el mismo carácter que
+	la original.
+
+	Primero vemos que es convergente
+	\[
+		\int^{+\infty}_1 \frac{\sin x}{x}\dif x =
+		\left[-\frac{\cos x}{x}\right]^{+\infty}_1 - \int^{+\infty}_1 
+		-\frac{\cos x}{x^2} \dif x
+	\]
+	Ahora observamos que el primero de los sumandos vale $\cos(1)$ y el segundo
+	sumando, es absolutamente convergente porque
+	\[
+		\frac{\abs{\cos x}}{x^2} \leq \frac{1}{x^2} \quad \text{y} \quad
+		\int^{+\infty}_0 \frac{\dif x}{x^2} < +\infty
+	\]
+
+	Ahora, veremos que $\int^{+\infty}_1 \frac{\abs{\sin x}}{x}$ es divergente.
+	Primero, tenemos que $\frac{\sin^2 x}{x} < \frac{\abs{\sin x}}{x}$ y, tambi\'en
+	\begin{gather*}
+		\int^{+\infty}_1 \frac{\sin^2 x}{x} \dif x = \int^{+\infty}_1
+		\frac{1 - \cos(2x)}{2} \frac{1}{x} \dif x = 
+		\left[ \frac{x - \frac{1}{2}\sin(2x)}{2}\frac{1}{x} \right]^{+\infty}_1
+		+ \int^{+\infty}_1 \frac{x -\frac{1}{2}\sin(2x)}{2}\frac{1}{x^2}\dif x=
+		\\ = \frac{1}{2} - \frac{1}{2} + \frac{\sin 2}{4} +
+		\frac{1}{2}\int^{+\infty}_{1} \frac{\dif x}{x} + \frac{1}{4}
+		\int^{+\infty}_1 \frac{\sin(2x)}{x^2} \dif x = +\infty
+	\end{gather*}
+	Ya que la segunda integral es absolutamente convergente (por la misma razón que
+	lo era $\int^{+\infty}_1 \frac{\cos x}{x}$).
+\end{example*}

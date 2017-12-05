@@ -1,13 +1,192 @@
 \section{Integración multiple}
 
+
 \subsection{Integral de Riemann sobre rectangulos compactos}
 
 \begin{defi}
-    Un rectangulo de $\real^n$ es un producto $A := I_1 \times \dots \times I_n$ donde $I_j \in \real$ son intervalos que suponemos no degenerados i fitados. Si los $I_j$ son compactos o abiertos, también lo es $A$.
+	Un rectángulo de $\real^n$ es un producto $A := I_1 \times \dots \times I_n$
+	donde $I_j \in \real$ son intervalos que suponemos acotados y no degenerados,
+	es decir, ni vacios, ni reducidos a un punto.
+	
+	Si los $I_j$ son compactos o abiertos, también lo es $A$.
 \end{defi}
+
 \begin{defi}
-    La medida o volum $n$-dimensional de $A$ es $\vol(A) = \text{long} (I_1) \times \dots \times \text{long} (I_n)$ ($n = 1$ longitud, $n=2$ area...).
+	La medida o volúmen $n$-dimensional (o área si $n=2$) de un rectángulo
+	acotado $A = I_1 \times \cdots \times I_n$ es el producto de las longitudes
+	de sus costados, es decir
+	\[
+		\vol(A) = \text{long} (I_1) \times \dots \times \text{long} (I_n)
+	\]
 \end{defi}
+
+\begin{obs}
+	Recoredemos que denominamos partición de un intervalo compacto $[a,b]$ a un
+	subconjunto finito de puntos $\mathcal{P}=\setb{x_0,x_1,\dots,x_n}$ tales que
+	$a = x_0 < x_1 < \cdots < x_{N-1} < x_N = b$. La partición expresa el intervalo
+	como la unión de $N$ subintervalos
+	\[
+		[a,b] = [x_0,x_1] \cup \cdots \cup [x_{N-1},x_N]
+	\]
+\end{obs}
+\begin{obs*}
+	Una partición $\mathcal{P}^\prime$ se dice que es más fina que otra
+	$\mathcal{P}$ cuando $\mathcal{P} \subset \mathcal{P}^\prime$ (es decir, cuando
+	tiene más puntos).
+\end{obs*}
+
 \begin{defi}
-    Una partición de $A$ es el resultado de hacer una partición $\Pa_j$ de cada $I_j$, $\Pa := \Pa_1 \times \dots \times \Pa_n$. Si $A', A'' \in A$ subrectangulos de una partición, $\AA' \cap \AA'' = \emptyset$.
+	Dado un rectángulo compacto $A = I_1 \times \cdots \times I_n$, denominamos
+	una partición $\Pa$ de $A$ al resultado de hacer una partición $\Pa_j$ a cada
+	intervalo $I_j$.
+	La partición de $A$ viene representada por $\Pa = \Pa_1 \times \cdots \times
+	\Pa_n$ y expresa el rectángulo $A$ como unión de $N = (\abs{\Pa_1}-1) \times
+	\cdots \times (\abs{\Pa_n}-1)$ subrectángulos más pequeños.
 \end{defi}
+
+\begin{obs*}
+	Sean $A^\prime,A^{\prime\prime}\subset A$ rectángulos de la partición, entonces
+	$\mathring{A^\prime} \cap \mathring{A^{\prime\prime}} = \emptyset$
+\end{obs*}
+
+\begin{lema}
+	Si $A$ es un rectángulo, y $\Pa$ una partición de $A$, se tiene que
+	\[
+		\vol(A) = \sum_{R \in \Pa} \vol(R)
+	\]
+\end{lema}
+
+\begin{defi}
+	Dadas dos particiones $\Pa = \prod\limits^n_{j=1} \Pa_j$ y
+	$P^\prime = \prod\limits^n_{j=1} \Pa^\prime_j$ de un rectángulo $A$. Diremos
+	que la partición $P^\prime$ es más fina que $\Pa$ si cada $\Pa^\prime_j$ es más
+	fina que $\Pa_j$ (es decir, $P_j \subset P^\prime_j$ $\forall j \iff \Pa
+	\subset \Pa$).
+
+	Entonces, cada subrectángulo de $\Pa$ es unión de subrectángulos de
+	$\Pa^\prime$
+\end{defi}
+
+\begin{defi}
+	Sea $A \subset \real^n$ un rectángulo compacto y $f \colon A \to \real$ una
+	función acotada. Sea $\Pa$ una partición de $A$. Para cada subrectángulo $R$
+	de $\Pa$ escribimos
+	\[
+		m_R = \inf_{x \in R} f(x) \qquad M_R = \sup_{x \in R} g(x)
+	\]
+	Denominamos suma inferior y suma superior de $f$ respecto a $\Pa$ a los números
+	\[
+		s(f;\Pa) = \sum_R m_R\vol(R) \qquad S(f;\Pa) = \sum_R M_R\vol(R)
+	\]
+\end{defi}
+
+\begin{obs}
+	Sea $\Pa$ una partición de $A$
+	\[
+		m_A\vol(A) \leq s(f;\Pa) \leq S(f;\Pa) \leq M_A\vol(A)
+	\]
+\end{obs}
+\begin{obs}
+	Si $\Pa$ y $\Pa^\prime$ son dos particiones y $\Pa^\prime$ es más fina que
+	$\Pa$, entonces
+	\[
+		s(f;\Pa) \leq s(f;\Pa^\prime) \leq S(f;\Pa^\prime) \leq S(f;\Pa)
+	\]
+\end{obs}
+
+\begin{lema}
+	Si $\Pa$ y $\Pa^\prime$ son dos particiones de un rectángulo $A$, existe una
+	partición $\Pa^{\prime\prime}$ de $A$ que es más fina que $\Pa$ y que
+	$\Pa^\prime$.
+\end{lema}
+
+\begin{col*}
+	Si $\Pa, \Pa^\prime$ son dos particiones de $A$, entonces,
+	$s(f;\Pa) \leq S(f;\Pa^\prime)$. Por lo tanto,
+	$\setb{s(f;\Pa) \vert \Pa \text{ partición de } A}$ está acotado superiormente
+	y $\setb{S(f;\Pa) \vert\Pa\text{ partición de } A}$ está acotado inferiormente.
+\end{col*}
+
+\begin{defi}
+	Sea $A$ un rectángulo compacto y sea $f \colon A \to \real$ una función
+	acotada. Denominamos integral inferior e integral superior de $f$ en $A$ a los
+	números
+	\[
+		\underline{\int}_A f = \sup_{\Pa} s(f;\Pa) \qquad \text{y} \qquad
+		\overline{\int}_A f = \inf_{\Pa} S(f;\Pa)
+	\]
+	donde el supremo y el ínfimo se toman sobre el conjunto de todas las posibles
+	particiones $\Pa$ de $A$. Obviamente, $\underline{\int}_A f \leq
+	\overline{\int}_A f$.
+\end{defi}
+
+\begin{defi}
+	Diremos que una función $f$ acotada, es integrable en $A$ cuando sus integrales
+	inferior y superior coinciden. En este caso, su valor común se denomina
+	integral de Riemmand de $f$ en $A$ y se denota por
+	\[
+		\int_A f, \quad \int_A f(x) \dif^nx, \quad \int_A f(x_1,\dots,x_n)
+		\dif x_1 \cdots \dif x_n \quad \text{o} \quad \int_A f \dif V
+	\]
+	En el caso de $n=2$ o $n=3$ se habla de integral doble o integral triple
+	respectivamente, ya que es habitual poner dos o tres signos de integral para
+	representarlas.
+\end{defi}
+
+\begin{prop}[Criterio de Riemman]
+	Sea $A \subset \real^n$ un rectángulo compacto y $f \colon A \to \real$ una
+	función acotada. $f$ es integrable Riemman sii $\forall \varepsilon > 0$,
+	$\exists \Pa$ partición de $A$ tal que $S(f;\Pa)-s(f;\Pa) < \varepsilon$.
+\end{prop}
+\begin{proof}
+	Cálculo I
+\end{proof}
+
+\begin{example*}
+	\begin{itemize}
+		\item[]
+		\item Si $f \colon A \to \real$ constante, entonces  $f(x) = c$ y
+			$m_R = M_R = c$ $\forall R$
+			\[
+				s(f;\Pa) = \sum_R m_R \vol(R) = c \sum_R \vol(R)
+				= c\vol(A) = S(f;\Pa)
+			\]
+			Por lo tanto, $f$ es integrable Riemman, y además
+			\[
+				\int_A f = c\vol(a) \implies \int_A 1 = \vol(A)
+			\]
+		\item Consideramos la función $f \colon [0,1] \times [0,1] \to \real$
+			definida por $f(x,y) = \begin{cases}
+				0 \quad \text{si } x,y \in \q \\
+				1 \quad \text{En otro caso}
+			\end{cases}$, entonces, $m_R = 0$ y $M_R = \vol(R)$ para todo
+			$R$, y entonces
+			\[
+				\underline{\int}_A f = 0 \qquad
+				\overline{\int}_A f = \vol(A) = 1\times1 = 1
+			\]
+			Y por lo tanto, $f$ no es integrable Riemman.
+	\end{itemize}
+\end{example*}
+
+\begin{prop}[Linealidad]
+	Sea $A$ un rectángulo compacto y $f,g \colon A \to \real$ integrables Riemman.
+	Entonces
+	\begin{enumerate}[i)]
+		\item $f+g$ es integrable Riemman y $\int_A (f+g) = \int_A f+\int_A g$.
+		\item Si $\lambda \in \real$, entonces $\lambda f$ es integrable
+			Riemman y $\int_A (\lambda f) = \lambda \int_A f$.
+	\end{enumerate}
+
+	Es decir, $\text{Rie}(A) = \setb{f \colon A \to \real \vert f \text{ integrable
+	Riemman}}$ es un $\real$-espacio vectorial y 
+	\[
+		\begin{aligned}
+			\text{Rie}(A) &\to \real \\ f &\mapsto \int_A f
+		\end{aligned}
+	\]
+	es una forma lineal.
+\end{prop}
+\begin{proof}
+	
+\end{proof}
