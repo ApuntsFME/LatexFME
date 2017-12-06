@@ -100,12 +100,12 @@
 	$\Pa^\prime$.
 \end{lema}
 
-\begin{col*}
+\begin{col}
 	Si $\Pa, \Pa^\prime$ son dos particiones de $A$, entonces,
 	$s(f;\Pa) \leq S(f;\Pa^\prime)$. Por lo tanto,
 	$\setb{s(f;\Pa) \vert \Pa \text{ partición de } A}$ está acotado superiormente
 	y $\setb{S(f;\Pa) \vert\Pa\text{ partición de } A}$ está acotado inferiormente.
-\end{col*}
+\end{col}
 
 \begin{defi}
 	Sea $A$ un rectángulo compacto y sea $f \colon A \to \real$ una función
@@ -169,7 +169,7 @@
 	\end{itemize}
 \end{example*}
 
-\begin{prop}[Linealidad]
+\begin{prop}[Linealidad]\label{prop:lin_int}
 	Sea $A$ un rectángulo compacto y $f,g \colon A \to \real$ integrables Riemman.
 	Entonces
 	\begin{enumerate}[i)]
@@ -188,5 +188,221 @@
 	es una forma lineal.
 \end{prop}
 \begin{proof}
-	
+	\begin{enumerate}[i)]
+		\item Observamos que $\inf(f) + \inf(g) \leq \inf(f+g)$ y que
+			$\sup(f)+\sup(g) \geq \sup(f+g)$, y por lo tanto,
+			\[
+				m_R(f) + m_R(g) \leq m_R(f+g) \leq M_R(f+g) \leq
+				M_R(f) + M_R(g)
+			\]
+			Por lo tanto, para toda $\Pa$ partición de $A$
+			\[
+				s(f;\Pa) + s(g;\Pa) \leq s(f+g;\Pa) \leq S(f+g;\Pa)
+				\leq S(f;\Pa) + S(g;\Pa)
+			\]
+			Y por último
+			\[
+				\underline{\int}_A f + \underline{\int}_A g \leq
+				\underline{\int}_A f+g \leq \overline{\int}_A f+g \leq
+				\overline{\int}_A f + \overline{\int}_A g
+			\]
+			Como $f,g$ son integrables Riemman, $(f+g)$ tambi\item n lo es
+			y vale $\int_A f + \int_A g$
+		\item Suponemos que $\lambda > 0$, entonces,
+			\[
+				\inf (\lambda f) = \lambda \inf (f) \implies
+				\underline{\int}_A (\lambda f) = \lambda
+				\underline{\int}_A f
+			\]
+			Análogamente,
+			\[
+				\sup(\lambda f) = \lambda \sup(f) \implies
+				\overline{\int}_A (\lambda f) = \lambda
+				\overline{\int}_A f
+			\]
+			Y por lo tanto, $\int_A (\lambda f) = \lambda \int_A f$.
+			Y para demostrar el caso de $\lambda < 0$, usaremos que
+			$\int_A (-f) = - \int_A f$.
+	\end{enumerate}
 \end{proof}
+
+\begin{prop}[Positividad]\label{prop:pos_int}
+	Sea $f \colon A \to \real$ integrable Riemman. Si $f \geq 0$, entonces
+	$\int_A f \geq 0$.
+\end{prop}
+\begin{proof}
+	\[
+		f \geq 0 \implies s(f;\Pa) \geq 0 \implies \underline{\int}_A f \geq 0
+		\implies \int_A f \geq 0
+	\]
+\end{proof}
+
+\begin{col}
+	Sean $f,g \colon A \to \real$ integrables Riemman. Si $f \leq g$, entonces
+	\[
+		\int_A f \leq \int_A g
+	\]
+	Sean $m,M \in \real$ tales que $m < f(x) < M$ $\forall x \in A$. Entonces
+	$m\vol(A) \leq \int_A f \leq M\vol(A)$.
+\end{col}
+
+\begin{proof}
+	\[
+		f \leq g \implies g - f \geq 0 \stackrel{\ref{prop:pos_int}}{\implies}
+		\int_A (g-f) \geq 0 \stackrel{\ref{prop:lin_int}}{\implies} \int_A g -
+		\int_A f \geq 0 \implies \int_A g \geq \int_A f
+	\]
+\end{proof}
+
+\begin{prop}
+	Sea $A$ un rectángulo compacto, sea $f \colon A \to \real$ una función acotada,
+	sea $\Pa$ una partición de $A$ y $\xi = \left(\xi_k\right)$ una familia de
+	puntos $\xi_k \in R_k$, donde $R_k$ son los rectángulos de la partición. Se
+	define la suma de Riemman
+	\[
+		R(f,\Pa,\xi) = \sum_k f(\xi_k)\vol(R_k) 
+	\]
+	Si $f$ es integrable Riemman entonces, en un sentido que habría que precisar,
+	$R(f,\Pa,\xi)$ se aproxima al valor de $\int_A f$ a medida que la malla de
+	$\Pa$ (el máximo de las longitudes de los costados de los rectángulos $R_k$ de
+	$\Pa$) tiende a 0.
+\end{prop}
+
+\subsection{Conjuntos de medida nula}
+
+\begin{defi}
+	Diremos que un subconjunto $T \subset \real^n$ tiene medida ($n$-dimensional)
+	cero o medida nula, si, $\forall \varepsilon > 0$ Se puede recubrir $T$ con
+	una familia numerable de rectángulos compactos tales que la suma de sus
+	medidas $n$-dimensionales sea $< \varepsilon$. En otras palabras, hay una
+	sucesión (finita o infinita) de rectángulos compactos $R_k$ tales que
+	\[
+		T \subset \bigcup_k R_k \quad \text{y} \quad \sum_k \vol(R_k) <
+		\varepsilon
+	\]
+\end{defi}
+\begin{obs*}
+	En la definición es irrelevante usar rectńgulos compactos o retángulos
+	abiertos.
+\end{obs*}
+\begin{obs}
+	Todo conjunto finito tiene medida nula.
+\end{obs}
+\begin{obs}
+	Si $T$ tiene medida nula, entonces todo $S \subset T$ tiene medida nula
+\end{obs}
+\begin{prop}
+	La reunión de una familia numerable de conjuntos de medida nula tiene
+	medida nula.
+\end{prop}
+\begin{proof}
+	Si $T = \bigcup\limits_{i \in \n} T_i$ donde $T_i$ tiene medida nula para todo
+	$i$. Recubrimos $T_i$ con rectángulos compactos $R_{ik}$ ($k \in \n$) tal que
+	$\sum\limits_k \vol(R_{ik}) < \frac{\varepsilon}{2^{i+1}}$. Entonces,
+	$T = \bigcup\limits_{i,k} R_{ik}$ y
+	\[
+		\sum_{i,k} \vol(R_{i,k}) = \sum_i \left( \sum_k \vol(R_{i,k}) \right) <
+		\sum_i \frac{\varepsilon}{2^{i+1}} = \varepsilon
+	\]
+\end{proof}
+
+\begin{col*}
+	Todo conjunto numerable tiene medida nula
+\end{col*}
+
+\begin{example*}
+	\begin{itemize}
+		\item[]
+		\item $\begin{rcases} \z \subset \real \\ \q \subset \real\end{rcases}$
+			Son conjuntos de medida nula, porque son numerables
+		\item El conjunto de Cantor $K \subset \real$ tiene medida nula, pero
+			no es numerable.
+		\item En $\real^3$, $T = [0,1]\times[0,1]\times\{0\}$, tiene medida
+			nula, ya que
+			\[
+				T \subset [0,1] \times [0,1] \times
+				\left[\frac{\varepsilon}{2},\frac{\varepsilon}{2}
+				\right] (\vol(R)=\varepsilon) \implies
+				\real^2\times\{0\}
+			\]
+			Ya que
+			\[
+				\real^2 \times \{0\} = \bigcup_{(k,l) \in \z^2}
+				[k,k+1] \times [l,l+1] \times \{0\}
+			\]
+	
+			(unión numerable de $R$ con medida nula).
+		\item Si $a < b$, entonces $[a,b] \subset \real$ no tiene medida nula.
+	\end{itemize}
+\end{example*}
+\begin{col*}
+	Dentro de $\real^n$, el subespacio, $\real^m \times \{0\} \subset \real^n$
+	tiene medida nula.
+\end{col*}
+
+\begin{defi}
+	Diremos que un subconjunto $A \subset \real^n$ tiene contenido
+	($n$-dimensional) cero o contenido nulo, si $\forall \varepsilon > 0$, hay un
+	recubrimiento finito de $A$ por rectángulos compactos $R_i$ tal que
+	\[
+		\sum \vol(R_i) < \varepsilon
+	\]
+\end{defi}
+\begin{obs*}
+	En la definición, se pueden substituir los rectángulos compactos por
+	rectángulos abiertos.
+\end{obs*}
+\begin{obs*}
+	Un conjunto de contenido cero, tiene medida cero.
+\end{obs*}
+\begin{obs*}
+	Que un conjunto tenga medida cero, no implica que tenga contenido cero.
+\end{obs*}
+
+\begin{prop}
+	Si $A \subset \real^n$ es compacto y tiene medida cero, entoces tiene contenido
+	cero.
+\end{prop}
+\begin{proof}
+	Sea $\varepsilon > 0$, existe una sucesión $(R_i)$ de rectángulos abiertos tal
+	que
+	\[
+		A \subset \bigcup_i R_i \qquad \qquad \sum_i \vol(R_i) < \varepsilon
+	\]
+	Como $A$ es compacto, un número finito de los $R_i$ recubren $A$ (condición
+	de Heine-Borel de compacto) y la suma de sus volúmenes es $< \varepsilon$.
+\end{proof}
+
+\begin{lema}
+	Si $a < b$, $[a,b] \subset \real$ no tiene contenido cero. Más precisamente,
+	sea $\{R_1,\dots,R_n\}$ un recubrimiento de $[a,b]$ por intervalos compactos.
+	Entonces, $\sum\limits^{n}_{i=1} \text{long}(R_i) \geq b-a$
+\end{lema}
+\begin{proof}
+	Hacemos inducción sobre $n$. Si $n = 1$, el resultado es trivial. Ahora,
+	suponemos cierto el resultado anterior para $n$ y consideramos
+	$\{R_1,\dots,R_{n+1}\}$ un recubrimiento de $[a,b]$ por intervalos compactos.
+	Podemos suponer, sin p\'erdida de generalidad, que $a \in R_1$, por tanto,
+	$R_1 = [\alpha,\beta]$ donde $\alpha \leq a \leq \beta$. Ahora, hay dos
+	opciones. Si $\beta \geq b$, entonces $\text{long}(R_1) \geq b - a$ y ya está.
+	Si $\beta< b$, entonces, $[\beta,b]$ está recubierto por$\{R_2,\dots,R_{n+1}\}$
+	y por hipótesis de inducción $\sum\limits^{n+1}_{i=2} \text{long}(R_i) \geq
+	b - \beta$. Por tanto, $\sum\limits^{n+1}_{i=1} \text{long}(R_i) \geq
+	(\beta - a) + (b - \beta) = b - a$.
+\end{proof}
+\begin{col*}
+	Si $a < b$, $[a,b]\subset \real$, no tiene medida nula.
+\end{col*}
+\begin{obs*}
+	De la misma manera, un rectángulo compacto no degenerado de $\real^n$ no
+	tiene medida nula.
+\end{obs*}
+\begin{col*}
+	Si un conjunto $A \subset \real^n$ tiene un punto interior, entonces, no tiene
+	medida nula.
+\end{col*}
+
+\begin{obs}
+	Un conjunto de contenido nulo es, necesariamente, acotado. Pero hay conjuntos
+	acotados de medida nula, que no son de contenido nulo.
+\end{obs}<++>
