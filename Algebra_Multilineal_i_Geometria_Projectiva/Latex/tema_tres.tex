@@ -1,0 +1,70 @@
+\section{Proyectividades}
+\subsection{Definiciones y propiedades básicas}
+\begin{defi}
+	\begin{enumerate}
+		\item[]
+		\item Sean $\Po = \Po(\E), \bar{\Po} = \Po(\bar{\E})$ espacios proyectivos de dimensión $n$. Sea $\varphi : \E \rightarrow \bar{\E}$ una aplicación lineal biyectiva. Una proyectividad, definida por $\varphi$, es una aplicación
+		\begin{align*}
+			f := [\varphi] : \Po &\rightarrow \bar{\Po} \\
+			p = [v] &\mapsto f(p) = [\varphi(v)]
+		\end{align*}
+		Diremos que $\varphi$ es un representante de $f$.
+		\item Si $\Po = \bar{\Po}$, llamaremos homografías a las proyectividades.
+	\end{enumerate}
+\end{defi}
+\begin{obs}
+	$\varphi$ no inyectiva $\implies [\varphi]$ no es una aplicación de $\Po(\E)$ en $\Po(\bar{\E})$.
+\end{obs}
+\begin{obs}
+	$[\varphi] = [\psi] \iff \exists \lambda \neq 0$ tal que $\psi = \lambda \varphi$.
+\end{obs}
+\begin{proof}
+	$\impliedby$ \\
+	$\exists \lambda \neq 0$ tal que $\psi = \lambda\varphi$, sea $p = [v]$, $[\psi](p) = [\psi(v)] = [\lambda\varphi(v)] = [\varphi(v)] = [\varphi](p), \forall p \implies [\psi] = [\varphi].$ \\ \\
+	$\implies$ \\
+	Sean $u, v \in \E$ linealmente independientes, y sean $p = [u], q = [v]$. Entonces, como $[\varphi(u)] = [\psi(u)]$ y $[\varphi(v)] = [\psi(v)]$,
+	\begin{gather*}
+		\exists \lambda_1 \neq 0 \text{ tal que } \psi(u) = \lambda_1 \varphi(u) \\
+		\exists \lambda_2 \neq 0 \text{ tal que } \psi(v) = \lambda_2 \varphi(v).
+	\end{gather*}
+	Por otro lado,
+	\begin{gather*}
+		[\psi(u+v)] = [\varphi(u+v)] \implies \exists \lambda_3 \neq 0 \text{ tal que } \psi(u) + \psi(v) = \psi(u+v) = \lambda_3 \varphi(u+v) = \\ \lambda_3 \varphi(u) + \lambda_3 \varphi(v) \implies (\lambda_1 - \lambda_3) \varphi(u) + (\lambda_2-\lambda_3) \varphi(v) = 0 \implies \lambda_1 = \lambda_2 = \lambda_3 =: \lambda \neq 0. \\
+		\psi(u) = \lambda \varphi(u), \forall u \in \E \implies \exists \lambda \neq 0 \text{ tal que } \psi = \lambda \varphi.
+	\end{gather*}
+\end{proof}
+\begin{prop}
+	\begin{enumerate}
+		\item[]
+		\item Operaciones
+		\begin{itemize}
+			\item $\Id_\Po = [\Id_\E]$ es una proyectividad.
+			\item $f, g$ proyectividades $\implies g \circ f$ proyectividad y $[\psi] \circ [\varphi] = [\psi \circ \varphi]$.
+			\item $f = [\varphi]$ proyectividad $\implies f^{-1}$ proyectividad y $f^{-1} = [\varphi^{-1}]$.
+		\end{itemize}
+		\item Relación con variedades lineales \\
+		Sea $f = [\varphi] : \Po \rightarrow \bar{\Po}$,
+		\begin{itemize}
+			\item $V = \pi(F)$ variedad lineal de $\Po$ de dimensión $d \implies f(V) = \pi(\varphi(F))$ es una variedad lineal de $\bar{\Po}$ de dimensión $d$.
+			\item $V_1 \subseteq V_2 \iff f(V_1) \subseteq f(V_2).$
+			\item $f(V_1 \vee V_2) = f(V_1) \vee f(V_2)$.
+			\item $f(V_1 \cap V_2) = f(V_1) \cap f(V_2)$.
+			\item En particular, $p_0, \dots, p_d$ linealmente independientes $\iff f(p_0), \dots, f(p_d)$ linealmente independientes.
+		\end{itemize}
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	Inmediata a partir de las propiedades de $\varphi$ (biyectiva).
+\end{proof}
+\begin{col}
+	Toda proyectividad es una colineación (mantiene la alineación de puntos).
+\end{col}
+\begin{col}
+	Toda proyectividad mantiene las razones dobles.
+\end{col}
+\begin{proof}
+	$\rho = (p_1, p_2, p_3, p_4) \implies \exists u,v \in \E$ tales que $p_1 = [u], p_2 = [v], p_3 = [u+v], p_4 = [\rho u + v] \implies f(p_1) = [\varphi(u)], f(p_2) = [\varphi(v)], f(p_3) = [\varphi(u) + \varphi(v)], f(p_4) = [\rho \varphi(u) + \varphi(v)] \implies \rho = (f(p_1), f(p_2), f(p_3), f(p_4))$.
+\end{proof}
+\begin{defi}
+	La matriz de una proyectividad $f$ es $M_{R, \bar{R}} (f) := M_{B, \bar{B}}(\varphi)$.
+\end{defi}
