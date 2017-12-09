@@ -289,7 +289,7 @@
 	Todo conjunto finito tiene medida nula.\\
 	Si $T$ tiene medida nula, entonces todo $S \subset T$ tiene medida nula
 \end{obs}
-\begin{prop}
+\begin{prop} \label{prop_2_2_3}
 	La reunión de una familia numerable de conjuntos de medida nula tiene
 	medida nula.
 \end{prop}
@@ -443,7 +443,120 @@
     conjunto de bolas de centro en coordenadas racionales y radio racional es
     el producto cartesiano de conjuntos numerables, es a su vez numerable. Así pues,
     $D$ es la unión numerable de conjuntos compactos, sean estos $K_i$. Entonces,
+    $\graf \left( f \right) \subset \bigcup_{i\in \n} \graf \left( f_{|K_i} \right)$.
+    Finalmente, por el corolario anterior y la proposición \ref{prop_2_2_3}, 
+    $\graf \left( f \right) $ tiene medida nula.
+    
+\end{proof}
+\begin{defi}
+    Diremos que un \textit{cuadrado} es un rectángulo cuyos lados tienen la misma
+    longitud.
+\end{defi}
+\begin{prop*}
+    Sea $Q$ un cuadrado en $\real ^n$. Si la longitud de su lado es $l$, su volumen
+    es $l^n$ i su diámetro (en la norma euclideana de $\real^n$) es $l\sqrt{n}$.
+\end{prop*}
+\begin{prop}
+    Sea $Z \subset \real^n$ de medida nula. Para toda $\varepsilon >0$ existe una
+    familia numerable de cuadrados compactos $Q_k$ tales que $Z\subset
+    \bigcup_{k \in \n} Q_k$ y $\sum_{k \in \n} \vol \left( Q_k \right) <
+    \varepsilon$.
+\end{prop}
+\begin{lema}
+    Sean $A\subset \real^n$ un rectángulo compacto y $f\colon A \to \real^n$ una
+    función lipschitziana. Si $Z \subset A$ tiene medida nula, $f\left(Z \right)$
+    tiene medida nula.
+\end{lema}
+\begin{proof}
+    Más adelante.
+\end{proof}
+\begin{thm}
+    Sea $f \colon U \to \real^n$ de clase $\C ^1$ en un conjunto abierto $U \subset
+    \real ^n$. Si $Z \subset U$ tiene medida nula, $f\left( Z \right) $ tiene
+    medida nula.\\
+    El resultado es falso si $f$ es solamente $\C ^0$. Un ejemplo de esto es la
+    curva de Peano.
+\end{thm}
+\begin{proof}
+    Más adelante.
+\end{proof}
+\begin{col}
+    Toda subvariedad $M \subset \real^n$ de clase $C^1$ de dimensión $m<n$ tiene
+    medida nula.
+\end{col}
+
+\subsection{El Teorema de Lebesgue}
+\begin{defi}
+    Sean $X$ un espacio métrico y $f\colon X \to \real$. Llamamos 
+    \textit{oscilación} de $f$ sobre $E \subset X$ a
     \[
-        \graf \left( f \right) \subset \bigcup_{i\in \n} \graf \left( f_{|K_i} \right)
+        \omega\left( f, E \right) := \sup_{x, y \in E} \left| f\left( x\right) - 
+        f\left( y\right)\right|.
+    \]
+    También se llama a este valor diámetro de $f\left( E\right) \in \left[ 
+    0, +\infty \right]$. $\omega\left( f, E \right)$ es zero si y solo si $f_{|E}$ es 
+    constante y $+\infty$ si y solo si $f_{|E}$ no es acotada.
+\end{defi}
+\begin{obs}
+	$E \subset E^{\prime} \implies \omega\left( f, E\right) \leq \omega\left( f, E^{
+	\prime}\right)$.
+\end{obs}
+\begin{lema}
+    Si $f\colon E \to \real$ es acotada, $\omega \left( f, E \right)= \sup_{x\in E}
+    f\left( x\right) - \inf_{x\in E} f\left( x\right)$.
+\end{lema}
+\begin{defi}
+    Sean $f\colon X \to \real$, $a\in X$. Llamamos oscilación de $f$ en $a$ a
+    \[
+        \omega\left( f, a\right) := \lim_{r\to 0} \omega\left( f, B\left( a, r 
+        \right) \right).
+    \]
+\end{defi}
+\begin{obs*}
+    \[
+        \omega\left( f, a\right) = \inf_{r>0} \omega\left( f, B\left( 
+        a, r\right) \right).
+    \]
+\end{obs*}
+\begin{lema}
+    \[
+        f\colon X \to \real \text{  es contínua en $a$} \iff \omega\left( f, a\right)
+        = 0.
+    \]
+\end{lema}
+\begin{proof}
+    Supongamos que $f$ es contínua en $a$. Entonces,
+    \[
+        \forall \varepsilon > 0, \exists \delta > 0 \; \tq \; d\left(x, a \right)
+        <\delta \implies \left| f\left(x \right) - f\left( a \right) \right| 
+        < \varepsilon.
+    \]
+    Sean $x, y \in B\left( x, \delta \right)$. Tenemos que
+    \[
+        \begin{gathered}
+            \left| f\left(x \right) - f\left( y \right) \right| \leq
+            \left| f\left(x \right) - f\left( a \right) \right| +
+            \left| f\left(a \right) - f\left( y \right) \right| \leq 2\varepsilon
+            \implies \\
+            \implies \omega\left( f, B\left( a, \delta \right) \right) \leq 
+            2\varepsilon \implies \omega \left( f, a \right) =0.
+        \end{gathered}
     \]
 \end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
