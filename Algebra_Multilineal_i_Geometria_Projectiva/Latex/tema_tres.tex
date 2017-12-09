@@ -1,11 +1,12 @@
 \section{Proyectividades}
 \subsection{Definiciones y propiedades básicas}
+
 \begin{defi}
 	\begin{enumerate}
 		\item[]
-		\item Sean $\Po = \Po(\E), \bar{\Po} = \Po(\bar{\E})$ espacios proyectivos de dimensión $n$. Sea $\varphi : \E \rightarrow \bar{\E}$ una aplicación lineal biyectiva. Una proyectividad, definida por $\varphi$, es una aplicación
+		\item Sean $\Po = \Po(\E), \bar{\Po} = \Po(\bar{\E})$ espacios proyectivos de dimensión $n$. Sea $\varphi : \E \to \bar{\E}$ una aplicación lineal biyectiva. Una proyectividad, definida por $\varphi$, es una aplicación
 		\begin{align*}
-			f := [\varphi] : \Po &\rightarrow \bar{\Po} \\
+			f := [\varphi] : \Po &\to \bar{\Po} \\
 			p = [v] &\mapsto f(p) = [\varphi(v)]
 		\end{align*}
 		Diremos que $\varphi$ es un representante de $f$.
@@ -43,7 +44,7 @@
 			\item $f = [\varphi]$ proyectividad $\implies f^{-1}$ proyectividad y $f^{-1} = [\varphi^{-1}]$.
 		\end{itemize}
 		\item Relación con variedades lineales \\
-		Sea $f = [\varphi] : \Po \rightarrow \bar{\Po}$,
+		Sea $f = [\varphi] : \Po \to \bar{\Po}$,
 		\begin{itemize}
 			\item $V = \pi(F)$ variedad lineal de $\Po$ de dimensión $d \implies f(V) = \pi(\varphi(F))$ es una variedad lineal de $\bar{\Po}$ de dimensión $d$.
 			\item $V_1 \subseteq V_2 \iff f(V_1) \subseteq f(V_2).$
@@ -68,3 +69,72 @@
 \begin{defi}
 	La matriz de una proyectividad $f$ es $M_{\R, \bar{\R}} (f) := M_{B, \bar{B}}(\varphi)$.
 \end{defi}
+\begin{obs}
+	$M_{\R, \bar{\R}} (f)$ está definida salvo multiplicar por $\lambda \neq 0$ (por la indeterminación de $B$ y $\bar{B}$).
+\end{obs}
+\begin{obs}
+	Si $p_\R = (x_0 : \dots : x_n), f(p)_{\bar{\R}} = (y_0 : \dots : y_n)$, entonces,
+	\[
+	\begin{pmatrix} y_0 \\ \vdots \\ y_n \end{pmatrix} = M_{\R, \bar{\R}} \begin{pmatrix} x_0 \\ \vdots \\ x_n \end{pmatrix}
+	\]
+\end{obs}
+\begin{prop}[Propiedades]
+	\begin{enumerate}
+		\item[]
+		\item $M_{\R, \R}(\Id) = \Id$.
+		\item Si
+			\begin{alignat*}{3}
+				&\Po \text{ } \stackrel{f}{\to} \text{  } &&\bar{\Po} \text{ } \stackrel{g}{\to} \text{  } &&\bar{\bar{\Po}} \\
+				&\R_1 &&\R_2 &&\R_3
+			\end{alignat*}
+			Entonces, $M_{\R_1, \R_3}(g \circ f) = M_{\R_2, \R_3}(g) \times M_{\R_1, \R_2}(f)$
+		\item $\Po_\R \stackrel{f}{\to} \bar{\Po}_{\bar{\R}}, M_{\bar{\R}, \R}(f^{-1}) = (M_{\R, \bar{\R}} (f))^{-1}.$
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	Trivial a partir de las propiedades de las matrices de aplicaciones lineales biyectivas.
+\end{proof}
+\begin{prop}
+	$f : \Po \to \bar{\Po}$ proyectividad.
+	\begin{itemize}
+		\item Si $\R = \{p_0, \dots, p_n; \bar{p}\}$ es un sistema de referencia en $\Po \implies f(\R) := \{f(p_0), \dots, f(p_n); f(\bar{p})\}$ es un sistema de referencia en $\bar{\Po}$ y $M_{\R, f(\R)}(f) = \Id$.
+		\item $g : \Po \to \bar{\Po}$ proyectividad, $\R$ un sistema de referencia en $\Po$,
+			\[
+				f = g \iff f(\R) = g(\R)
+			\]
+		\item $\Po, \bar{\Po}$ espacios proyectivos de dimensión $n$, $\R, \bar{\R}$ sistemas de referencia. Entonces $\exists! f : \Po \to \bar{\Po}$ proyectividad tal que $\bar{\R} = f(\R)$.
+	\end{itemize}
+\end{prop}
+\begin{proof}
+	Inmediata si $\Po \leftrightarrow \E, f \leftrightarrow \varphi, \R \leftrightarrow B$.
+\end{proof}
+
+\subsection{Caracterización geométrica de las proyectividades}
+
+\begin{defi}
+	$h : \Po \to \bar{\Po}$ (no necesariamente dim $\Po$ = dim $\bar{\Po}$)
+	\begin{enumerate}
+		\item $h$ es colineación $\iff \forall p_1, p_2, p_3 \in \Po$ diferentes dos a dos y alineados, $h(p_1), h(p_2), h(p_3) \in \bar{\Po}$ son diferentes dos a dos y están alineados.
+		\item $h$ conserva las razones dobles $\iff h$ es colineación y $\forall p_1, p_2, p_3, p_4 \in \Po$ alineados, al menos tres diferentes, $(h(p_1), h(p_2), h(p_3), h(p_4)) = (p_1, p_2, p_3, p_4)$.
+	\end{enumerate}
+\end{defi}
+\begin{obs}
+	$h$ colineación $\implies h$ inyectiva.
+\end{obs}
+\begin{prop}
+	$f$ proyectividad $\implies \begin{cases} f \text{ colineación} & (1) \label{coli} \\ f \text{ conserva razones dobles} & (2) \label{cons_raz_dob} \end{cases}$
+\end{prop}
+\begin{proof}
+	$f : \Po \to \bar{\Po}, f = [\varphi]$,
+	\begin{enumerate}[(1)]
+		\item $f$ biyectiva $\implies f(p) \neq f(q), \forall p \neq q$. \\
+		$f$ proyectividad $\implies f(V)$ es una variedad lineal de misma dimensión. \\
+		$\begin{rcases}
+		L = p_1 \vee p_2 \vee p_3 \\
+		p_1, p_2, p_3 \text{ alineados}
+		\end{rcases}
+		\implies f(L) = f(p_1) \vee f(p_2) \vee f(p_3)$ es una recta.
+		\item Supongamos $p_1, p_2, p_3, p_4$ diferentes dos a dos, $\rho = (p_1, p_2, p_3, p_4), \R = \{p_1, p_2; p_3\}$ sistema de referencia en $L = p_1 \vee P_2 \vee p_3 \vee p_4 \implies$ la coordenada absoluta de $p_4$ en $\R$ es $\rho \implies \exists u_1, u_2 \in \E$ tales que $p_1 = [u_1], p_2 = [u_2], p_3 = [u_1 + u_2], p_4 = [\rho u_1 + u_2]$. \\
+		Entonces, $f(p_1) = [\varphi(u_1)], f(p_2) = [\varphi(u_2)], f(p_3) = [\varphi(u_1 + u_2)], f(p_4) = [\varphi(\rho u_1 + u_2)] = [\rho \varphi(u_1) + \varphi(u_2)]$ están alineados, al menos 3 son diferentes y $\rho = (f(p_1), f(p_2), f(p_3), f(p_4))$.
+	\end{enumerate}
+\end{proof}
