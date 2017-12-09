@@ -12,7 +12,7 @@
 \end{defi}
 
 \begin{defi}
-	La medida o volúmen $n$-dimensional (o área si $n=2$) de un rectángulo
+	La medida o volumen $n$-dimensional (o área si $n=2$) de un rectángulo
 	acotado $A = I_1 \times \cdots \times I_n$ es el producto de las longitudes
 	de sus costados, es decir
 	\[
@@ -286,9 +286,7 @@
 	abiertos.
 \end{obs*}
 \begin{obs}
-	Todo conjunto finito tiene medida nula.
-\end{obs}
-\begin{obs}
+	Todo conjunto finito tiene medida nula.\\
 	Si $T$ tiene medida nula, entonces todo $S \subset T$ tiene medida nula
 \end{obs}
 \begin{prop}
@@ -335,10 +333,10 @@
 		\item Si $a < b$, entonces $[a,b] \subset \real$ no tiene medida nula.
 	\end{itemize}
 \end{example*}
-\begin{col*}
+\begin{col}
 	Dentro de $\real^n$, el subespacio, $\real^m \times \{0\} \subset \real^n$
 	tiene medida nula.
-\end{col*}
+\end{col}
 
 \begin{defi}
 	Diremos que un subconjunto $A \subset \real^n$ tiene contenido
@@ -406,3 +404,46 @@
 	Un conjunto de contenido nulo es, necesariamente, acotado. Pero hay conjuntos
 	acotados de medida nula, que no son de contenido nulo.
 \end{obs}
+\begin{prop}
+    Sea $D\subset \real ^{n-1}$ acotado, $f\colon D \to \real$ uniformemente contínua. 
+    El grafo de $f$, $\graf \left( f \right) = \left\{ \left( x, f \left( 
+    x \right) \right) | x \in D \right\}$, tiene medida nula.
+\end{prop}
+\begin{proof}
+    Sea $\varepsilon > 0$. Sea $R \supset D $ un rectángulo compacto de volumen
+    $\left| R \right|$.
+    \[
+        \exists \delta > 0 \; \tq \; d\left( x, y \right) < \delta \implies d\left( 
+        f\left( x \right), f\left( y \right) \right) < \frac{\varepsilon}{\left| 
+        R \right|}.
+    \]
+    Partimos ahora $R$ en subrectángulos compactos $I_k$ suficientemente pequeños 
+    como para que cada uno de ellos esté contenido en una bola de radio 
+    $\frac{\delta}{2}$. Entonces, $f\left( I_k \right) \subset J_k$, siendo
+    $J_k$ un intervalo compacto de longitud menor o igual a 
+    $\frac{\varepsilon}{\left| R \right|}$. Además, $\graf \left( f \right) 
+    \subset \bigcup_k I_k \times J_k $. Finalmente,
+    \[
+        \sum_k \vol \left( I_k \times J_k \right) = \sum_k \vol \left( I_k \right)
+        \cdot \vol \left( J_K \right) \leq \sum_k \vol \left( I_k \right) \cdot
+        \frac{\varepsilon}{\left| R \right|} = \varepsilon.
+    \]    
+\end{proof}
+\begin{col*}
+    Si $D \subset \real ^{n-1}$ es compacto y $f\colon D \to \real$ contínua,
+    $\graf \left( f \right) \subset \real^n$ tiene medida nula.
+\end{col*}
+\begin{col*}
+    Si $D \subset \real ^{n-1}$ es abierto y $f\colon D \to \real$ contínua,
+    $\graf \left( f \right) \subset \real^n$ tiene medida nula.
+\end{col*}
+\begin{proof}
+    Cualquier punto de $D$ está contenido en una bola cerrada (que es un conjunto
+    compacto) de centro en coordenadas racionales y radio racional. Además, como el
+    conjunto de bolas de centro en coordenadas racionales y radio racional es
+    el producto cartesiano de conjuntos numerables, es a su vez numerable. Así pues,
+    $D$ es la unión numerable de conjuntos compactos, sean estos $K_i$. Entonces,
+    \[
+        \graf \left( f \right) \subset \bigcup_{i\in \n} \graf \left( f_{|K_i} \right)
+    \]
+\end{proof}
