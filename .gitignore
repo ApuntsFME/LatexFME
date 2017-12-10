@@ -1,0 +1,10 @@
+*.log
+*.[oa]
+*.out
+*.toc
+*.aux
+*.auxlock
+*.backup
+*.directory
+*.pdf
+*~
