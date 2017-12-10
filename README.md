@@ -39,4 +39,4 @@ es poden afegir al fitxer anomenat suggeriments que trobareu a aquesta carpeta.
 #### UNIVERSO SIMPSON O BARBARIE (ups, ya van dos).
 Altres links d'interès: 
  * [Loose Cannon (first edition)](http://www.loose-canon.info/Loose-Canon-1st-Ed.pdf)
- * [EMOJI Cheatsheet](https://gist.github.com/roachhd/1f029bd4b50b8a524f3c)
+ * [EMOJI Cheatsheet](https://www.webpagefx.com/tools/emoji-cheat-sheet/)
