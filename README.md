@@ -38,5 +38,5 @@ es poden afegir al fitxer anomenat suggeriments que trobareu a aquesta carpeta.
 #### SOCIALISME O BARBÀRIE (ups, se m'ha colat).
 #### UNIVERSO SIMPSON O BARBARIE (ups, ya van dos).
 Altres links d'interès: 
- * [Loose Cannon (first edition)](http://www.loose-canon.info/Loose-Canon-1st-Ed.pdf)
+ * [Loose Canon (first edition)](http://www.loose-canon.info/Loose-Canon-1st-Ed.pdf)
  * [EMOJI Cheatsheet](https://www.webpagefx.com/tools/emoji-cheat-sheet/)
