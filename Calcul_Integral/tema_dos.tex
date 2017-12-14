@@ -1,7 +1,7 @@
-\section{Integración multiple}
+\chapter{Integración multiple}
 
 
-\subsection{Integral de Riemann sobre rectangulos compactos}
+\section{Integral de Riemann sobre rectángulos compactos}
 
 \begin{defi}
 	Un rectángulo de $\real^n$ es un producto $A := I_1 \times \dots \times I_n$
@@ -22,7 +22,7 @@
 
 \begin{obs}
 	Recoredemos que denominamos partición de un intervalo compacto $[a,b]$ a un
-	subconjunto finito de puntos $\mathcal{P}=\setb{x_0,x_1,\dots,x_n}$ tales que
+	subconjunto finito de puntos $\Pa=\setb{x_0,x_1,\dots,x_n}$ tales que
 	$a = x_0 < x_1 < \cdots < x_{N-1} < x_N = b$. La partición expresa el intervalo
 	como la unión de $N$ subintervalos
 	\[
@@ -30,8 +30,8 @@
 	\]
 \end{obs}
 \begin{obs*}
-	Una partición $\mathcal{P}^\prime$ se dice que es más fina que otra
-	$\mathcal{P}$ cuando $\mathcal{P} \subset \mathcal{P}^\prime$ (es decir, cuando
+	Una partición $\Pa^\prime$ se dice que es más fina que otra
+	$\Pa$ cuando $\Pa \subset \Pa^\prime$ (es decir, cuando
 	tiene más puntos).
 \end{obs*}
 
@@ -268,7 +268,7 @@
 	$\Pa$) tiende a 0.
 \end{prop}
 
-\subsection{Conjuntos de medida nula}
+\section{Conjuntos de medida nula}
 
 \begin{defi}
 	Diremos que un subconjunto $T \subset \real^n$ tiene medida ($n$-dimensional)
@@ -282,7 +282,7 @@
 	\]
 \end{defi}
 \begin{obs*}
-	En la definición es irrelevante usar rectńgulos compactos o retángulos
+	En la definición es irrelevante usar rectángulos compactos o retángulos
 	abiertos.
 \end{obs*}
 \begin{obs}
@@ -485,7 +485,7 @@
     medida nula.
 \end{col}
 
-\subsection{El Teorema de Lebesgue}
+\section{El Teorema de Lebesgue}
 \begin{defi}
     Sean $X$ un espacio métrico y $f\colon X \to \real$. Llamamos 
     \textit{oscilación} de $f$ sobre $E \subset X$ a
@@ -565,7 +565,7 @@
     Sea $a \tq \omega \left( f, a \right) < c. \exists \delta \tq \omega \left( f, \text{B}(a, \delta \right) < c.$
 \end{lema}
 \begin{proof}
-    Por contrarecíproco. $\forall \delta \omega \left( f, \text{B} \left( a, \delta \right) \right) \geq c \implies \omega \left( f, a \right) \geq c$. \underline{Contradicción}.
+    Por contrarecíproco. $\forall \delta \omega \left( f, \text{B} \left( a, \delta \right) \right) \geq c \implies \omega \left( f, a \right) \geq c$. Contradicción.
 \end{proof}
 \begin{prop}
     Sea $X$ un espacio métrico, $f : X \to \real$. El conjunto $a = \{ x \in X | \omega \left( f, x \right) < c \}$ es abierto.
@@ -592,6 +592,26 @@
     \[ \Pa_k = \{x_0 = a, x_{1^-}, x_{1^+}, \dots, x_{i^-}, x_{i^+}, \dots, x_{n^-}, x_{n^+}, b\}, \]
     donde $x_{i^-}, x_{i^+}$ son los extremos inferiores y superiores (respectivamente) de $T_i$. Por construcción, $R \subseteq T_i$.
 \end{proof}
+\begin{lema*}
+    Sea $A \subseteq \real^n$ rectángulo compacto, $f : A \to \real, f$ fitada. Suposem $\forall x  \in A, \omega \lp f, x \rp < \varepsilon$. Entonces existe una partición $\Pa$ de $A \tq S \lp f, \Pa \rp - s \lp f, \Pa \rp < \varepsilon \vol \lp A \rp$.
+\end{lema*}
+\begin{proof}
+    Sea $x \in A$, existe un rectángulo compacto $R_x \subset A \tq x \in \mathring{R}_x$ (interior relativo a $A$) i $\omega \lp f, R_x \rp = M_{R_x} - m_{R_x} < \varepsilon$. \\
+    Sean $R_{x_i}$ un conjunto finito de los $R_x$ que recubren $A$. Sea $\Pa$ una partición de $A \tq$ cada subrectángulo de $\Pa$ esté dentro de uno de los $R_{x_i}$, para cada cada subrectángulo $R$ de $\Pa$, $M_R - m_R < varepsilon$. Enonces,
+    \[ S \lp f,\Pa \rp = s \lp f,\Pa \rp = \sum_{R \in \Pa} (M_R - m_r) \vol \lp R \rp < \varepsilon \sum_{R \in \Pa} vol \lp R \rp = \varepsilon \vol \lp A \rp. \]
+\end{proof}
+\begin{col*}
+    $f$ continua $\implies f$ integrable Riemann (ya que $f$ continua $\implies \forall x \omega \lp f, x \rp = 0$).
+\end{col*}
+\begin{lema*}
+    Sean $A \subset \real^n$ rectángulo compacto, $f : A \to \real$ fitada, $c > 0$. Si $f$ es integrable Riemann, el conjunto $B_c = \{x \in A | \omega \lp f, x \rp \geq c\}$ tiene mesura nula.
+\end{lema*}
+\begin{proof}
+    Sea $\varepsilon > 0$, aplicando el criterio de Riemann, existe una partición $\Pa$ de $A \tq S \lp f, \Pa \rp - s \lp f, \Pa \rp < c\varepsilon$. \\
+    Observamos que $A = A_1 \cup A_2, A_1 = \bigcup_{R \in \Pa} \mathring{R}$
+\end{proof}
+
+
 
 
 

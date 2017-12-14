@@ -1,6 +1,6 @@
-\section{Series Numéricas e Integrales Impropias}
+\chapter{Series Numéricas e Integrales Impropias}
 
-\subsection{Series numéricas}
+\section{Series numéricas}
 
 \begin{defi}
 	Una serie de números reales es una pareja de sucesiones de números reales
@@ -149,7 +149,7 @@
 % SERIES DE NUMEROS POSITIVOS %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Series de números positivos}
+\section{Series de números positivos}
 
 \begin{prop}
 	Si una serie $\sum a_n$ es de \textit{términos positivos} ($a_n \geq 0$) entonces la
@@ -162,7 +162,7 @@
 	contrario).
 \end{prop}
 
-\begin{prop}[Criterio de comparación directa]
+\begin{prop}%[Criterio de comparación directa]
 	Sean $\sum a_n$ y $\sum b_n$ series de términos positivos. Si $\exists n_0$ tal que
 	$a_n \leq b_n$ ($\forall n \geq n_0$). Entonces
 	\[
@@ -231,7 +231,7 @@
 	\end{itemize}
 \end{proof}
 
-\begin{prop}[Criterio de comparación en el límite]
+\begin{prop}%[Criterio de comparación en el límite]
 	Sean $\sum a_n$ y $\sum b_n$ series de términos estrictamente positivos.
 	Suponemos que existe el límite
 	\[
@@ -290,7 +290,7 @@
 	\end{itemize}
 \end{proof}
 
-\begin{prop}[Criterio de la raíz de Cauchy]
+\begin{prop}%[Criterio de la raíz de Cauchy]
 	Sea $\sum a_n$ una serie de términos positivos. Suponemos que existe
 	$\lim a_n^{1/n} = \alpha$, entonces, si $\alpha > 1$ la serie diverge y si
 	$\alpha < 1$ la serie converge.
@@ -409,7 +409,7 @@
 	divergente.
 \end{prop}
 
-\begin{prop*}[Criterio de condensación]
+\begin{prop*}%[Criterio de condensación]
 	Sea $(a_n)$ una sucesión de números positivos decreciente. Entonces
 	\[
 		\sum_{n=0}^{\infty} a_n \text{ converge} \iff \sum_{n=0}^{\infty} 2^n a_{2^n}
@@ -417,7 +417,7 @@
 	\]
 \end{prop*}
 
-\begin{prop*}[Criterio logarítmico]
+\begin{prop*}%[Criterio logarítmico]
 	Sea $\sum a_n$ una serie de términos positivos tal que existe el límite
 	\[
 		L = \lim_{n \to \infty} \frac{- \ln(a_n)}{\ln(n)} = \lim_{n \to \infty}
@@ -479,7 +479,7 @@
 	Y por lo tanto, $A = \sum a_n = \sum a_{\sigma(n)} = B$.
 \end{proof}
 
-\subsection{Series absolutamente convergentes y condicionalmente convergentes}
+\section{Series absolutamente convergentes y condicionalmente convergentes}
 
 \begin{defi}
   Diremos que una serie $\sum a_n$ es absolutamente convergente, si la serie $\sum \abs{a_n}$ es convergente.
@@ -609,11 +609,11 @@
 	\qed
 \end{proof}
 
-\begin{thm}[de Riemman para series condicionalmente convergentes]
+\begin{teo}[de Riemman para series condicionalmente convergentes]
 	Sea $\sum a_n$ una serie condicionalmente convergente. $\forall s \in [-\infty,+\infty]$
 	existe una reorenación de la serie $\sigma \colon \n \to \n$ (permutación) tal que
 	$\sum a_{\sigma(n)} = s$.
-\end{thm}
+\end{teo}
 
 \begin{defi}
 	Una serie alternada es una serie donde los términos cambian de signo alternativamente.
@@ -671,7 +671,7 @@ destaca el criterio de Dirichlet.
 	Entonces la serie $\sum a_nb_n$ es convergente.
 \end{prop}
 
-\subsection{Aplicación: Series de potencias}
+\section{Aplicación: Series de potencias}
 
 \begin{defi}
 	Una serie de potencias (centrada en 0) es una expresión
@@ -708,14 +708,14 @@ destaca el criterio de Dirichlet.
 	y $R = +\infty$ (la serie converge para todo $x$).
 \end{obs*}
 
-\begin{thm}[de Cauchy-Hadamard]
+\begin{teo}[de Cauchy-Hadamard]
 	Sea $\sum a_nx^n$ una serie de potencias. Su radio de convergencia $R$ viene dado por
 	\[
 		\frac{1}{R} = \limsup \abs{a_n}^{\sfrac{1}{n}}
 	\]
 	La serie de potencias es absolutamente convergente si $\abs{x} < R$ y es divergenete
 	si $\abs{x} > R$.
-\end{thm}
+\end{teo}
 
 \begin{obs*}
 	A priori no se puede afirmar nada cuando $\abs{x} = R$.
@@ -907,7 +907,7 @@ destaca el criterio de Dirichlet.
 	\end{itemize}
 \end{example*}
 
-\subsubsection{Series de números complejos}
+\subsection{Series de números complejos}
 
 \begin{defi*}
 	La definición de serie, de serie convergente y de serie absolutamente convergente,
@@ -952,7 +952,7 @@ destaca el criterio de Dirichlet.
 
 
 
-\subsection{Integrales impropias: definición y ejemplos}
+\section{Integrales impropias: definición y ejemplos}
 
 \begin{defi}
 	Sea $D \subset \real$ un intervalo, y $f \colon D \to \real$ una función.
@@ -1109,7 +1109,7 @@ destaca el criterio de Dirichlet.
 	Suponiendo que el límite exista.
 \end{prop}
 
-\begin{prop}[Integración por partes]
+\begin{prop}%[Integración por partes]
 	Suponemos que $f,g$ son funciones de clase $\C^1$ en $[a,b)$. Entonces
 	\[
 		\int^b_a f^\prime g = \lim_{t \to b} \left[ f(x)g(x)\right]^{x=t}_{x=a}
@@ -1120,7 +1120,7 @@ destaca el criterio de Dirichlet.
 
 
 
-\subsection{Criterios de convergencia de integrales impropias}
+\section{Criterios de convergencia de integrales impropias}
 
 \begin{prop}[Criterio de Cauchy par aintegrales impropias]
 	Sea $f \colon [a,b) \to \real$ una función localmente integrable. La integral
@@ -1183,7 +1183,7 @@ Es consecuencia del criterio de Cauchy aplicado a la función
 	en caso contrario, es divergente.
 \end{prop}
 
-\begin{prop}[Criterio de commparación directa]
+\begin{prop}%[Criterio de comparación directa]
 	Sean $f,g \colon [a,b) \to \real$ funciones positivas y localmente integrables.
 	Si $f \leq g$, entonces
 	\[
@@ -1200,7 +1200,7 @@ Es consecuencia del criterio de Cauchy aplicado a la función
 	\]
 \end{proof}
 
-\begin{prop}[Criterio de comparación en el límite]
+\begin{prop}%[Criterio de comparación en el límite]
 	Sean $f,g \colon [a,b) \to \real$ estrictamente positivas y localmente
 	integrables. Suponemos que existe el límite
 	\[
