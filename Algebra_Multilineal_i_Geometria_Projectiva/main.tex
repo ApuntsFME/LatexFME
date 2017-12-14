@@ -6,7 +6,7 @@
 \usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
 \usepackage{mdframed,cleveref,cancel,stackengine,pgfplots,pgf,mathrsfs,thmtools}
 \usepackage{xfrac,stmaryrd,commath}
-%\usepackage[spanish]{babel}
+\usepackage[spanish]{babel}
 
 \newmdenv[leftline=false,topline=false]{topright}
 \let\proof\relax
@@ -47,6 +47,8 @@
 \DeclareMathOperator{\tq}{\text{t.q.}}
 \let\emptyset\varnothing
 
+%\DeclareUnicodeCharacter{00A0}{ }
+
 \hypersetup{
 	colorlinks,
 	linkcolor=blue
@@ -63,7 +65,7 @@
 {\bfseries}% Thm head font
 {}%        Punctuation after thm head
 {\newline}% Space after thm head: \newline = linebreak
-{#1 #2 \normalfont \parse{#3}}%         Thm head spec
+{#1 #2 \normalfont {\it #3}}%         Thm head spec
 
 \newtheoremstyle{breakthm}% name
 {}%         Space above, empty = `usual value'
@@ -104,13 +106,6 @@
 
 \let\thm\relax
 \declaretheorem[style=breakthm,name=Teorema,sibling=lema]{teo}
-
-\title{Cálculo Integral}
-\author{O. Benedito \and J. Castellví \and E. Lanchares \and M. Ortega}
-\date{\ifcase \month \or Enero\or Febrero\or Marzo\or %
-Abril\or Mayo \or Junio\or Julio\or
-Agosto\or Setiembre\or Octubre\or Noviembre\or %
-Diciembre\fi \:  \number \year}
 
 
 \begin{document}
