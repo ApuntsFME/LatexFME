@@ -6,4 +6,5 @@
 *.auxlock
 *.backup
 *.directory
+*.pdf
 *~
