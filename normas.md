@@ -107,9 +107,9 @@ los teoremas aparecen en el índice principal. Una observación
 importante es que no es necesario añadir la palabra
 *Teorema*, que se añadirá de forma automática.
 ```tex
-\begin{thm}[titulo]
+\begin{teo}[titulo]
   ...
-\end{thm}
+\end{teo}
 ```
 
 ## Comandos útiles
@@ -322,18 +322,18 @@ otra cosa, debemos añadir la etiqueta **\label** a aquello
 que queramos referenciar. Por ejemplo, si queremos
 referenciar el teorema *A*
 ```tex
-\begin{thm}[A]\label{thm:a}
+\begin{teo}[A]\label{teo:a}
   ...
-\end{thm}
+\end{teo}
 ```
 Como se puede apreciar, hemos colocado el comando
 **\label** que toma un argumento, que en nuestro caso es
-*thm:a*. Es importante que este argumento sea **único**, es
-por ello que colocamos el *thm:* delante, para reducir las
+*teo:a*. Es importante que este argumento sea **único**, es
+por ello que colocamos el *teo:* delante, para reducir las
 posibles colisiones. Ahora, para referenciar este teorema
 usaremos el commando **\ref**
 ```tex
-\ref{thm:a}
+\ref{teo:a}
 ```
 que toma un argumento. Este argumento es precisamente el
 mismo que hemos puesto en **\label**, por eso es importante
