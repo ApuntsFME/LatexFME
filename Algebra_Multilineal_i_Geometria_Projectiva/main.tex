@@ -1,15 +1,15 @@
-\documentclass[12pt]{article}
+\documentclass[12pt]{book}
 
+\usepackage[utf8]{inputenc}
 \usepackage[margin=1in]{geometry}
 \usepackage[pdftex]{hyperref}
 \usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
-\usepackage{mdframed,cleveref,cancel,stackengine,pgfplots,pgf,mathrsfs}
+\usepackage{mdframed,cleveref,cancel,stackengine,pgfplots,pgf,mathrsfs,thmtools}
 \usepackage{xfrac,stmaryrd,commath}
 %\usepackage[spanish]{babel}
 
 \newmdenv[leftline=false,topline=false]{topright}
 \let\proof\relax
-\usepackage[utf8]{inputenc}
 \usetikzlibrary{positioning,arrows, calc, babel}
 \usetikzlibrary{external}
 \tikzexternalize[prefix=figures/]
@@ -47,20 +47,13 @@
 \DeclareMathOperator{\tq}{\text{t.q.}}
 \let\emptyset\varnothing
 
-\def\parse#1{
-	\def\param{#1}
-	\ifx\param\empty
-	\else
-	(#1)
-	\fi
-}
-
 \hypersetup{
 	colorlinks,
 	linkcolor=blue
 }
 
 \renewcommand*\contentsname{Contenidos}
+\renewcommand*\chaptername{Tema}
 
 \newtheoremstyle{break}% name
 {}%         Space above, empty = `usual value'
@@ -80,7 +73,7 @@
 {\bfseries}% Thm head font
 {}%        Punctuation after thm head
 {\newline}% Space after thm head: \newline = linebreak
-{#1 \normalfont #3 (#2)\addcontentsline{toc}{subsubsection}{#1 #3}}%         Thm head spec
+{#1 \normalfont #3 (#2)\addcontentsline{toc}{subsection}{#1 #3}}%         Thm head spec
 \newtheoremstyle{normal}% name
 {}%         Space above, empty = `usual value'
 {}%         Space below
@@ -92,46 +85,46 @@
 {#1 #2 \normalfont #3}%         Thm head spec
 
 \theoremstyle{normal}
-\newtheorem{lema}{Lema}[subsection]
-\newtheorem*{lema*}{Lema}
-\newtheorem{obs}[lema]{Observación}
-\newtheorem*{obs*}{Observación}
+\declaretheorem[style=normal,name=Lema,numberwithin=section]{lema}
+\declaretheorem[style=normal,name=Lema,numbered=no]{lema*}
+\declaretheorem[style=normal,name=Observación,sibling=lema]{obs}
+\declaretheorem[style=normal,name=Observación,numbered=no]{obs*}
 
-\theoremstyle{break}
-\newtheorem{prop}[lema]{Proposición}
-\newtheorem*{prop*}{Proposición}
-\newtheorem*{proof}{Demostración}
-\newtheorem{defi}[lema]{Definición}
-\newtheorem*{defi*}{Definición}
-\newtheorem{col}[lema]{Corolario}
-\newtheorem*{col*}{Corolario}
-\newtheorem{ej}[lema]{Ejercicio}
-\newtheorem*{ej*}{Ejercicio}
-\newtheorem{example}[lema]{Ejemplo}
-\newtheorem*{example*}{Ejemplo}
+\declaretheorem[style=break,name=Proposición,sibling=lema]{prop}
+\declaretheorem[style=break,name=Proposición,numbered=no]{prop*}
+\declaretheorem[style=break,name=Demostración,qed=$\square$,numbered=no]{proof}
+\declaretheorem[style=break,name=Definición,sibling=lema]{defi}
+\declaretheorem[style=break,name=Definición,numbered=no]{defi*}
+\declaretheorem[style=break,name=Corolario,sibling=lema]{col}
+\declaretheorem[style=break,name=Corolario,numbered=no]{col*}
+\declaretheorem[style=break,name=Ejercicio,sibling=lema]{ej}
+\declaretheorem[style=break,name=Ejercicio,numbered=no]{ej*}
+\declaretheorem[style=break,name=Ejemplo,sibling=lema]{example}
+\declaretheorem[style=break,name=Ejemplo,numbered=no]{example*}
 
-\theoremstyle{breakthm}
-\newtheorem{thm}[lema]{Teorema}
+\let\thm\relax
+\declaretheorem[style=breakthm,name=Teorema,sibling=lema]{teo}
 
-\title{Álgebra Multilineal y Geometría Proyectiva}
+\title{Cálculo Integral}
 \author{O. Benedito \and J. Castellví \and E. Lanchares \and M. Ortega}
 \date{\ifcase \month \or Enero\or Febrero\or Marzo\or %
-Abril\or Mayo \or Junio\or Julio\or 
+Abril\or Mayo \or Junio\or Julio\or
 Agosto\or Setiembre\or Octubre\or Noviembre\or %
 Diciembre\fi \:  \number \year}
 
 
 \begin{document}
- 
-\maketitle
+
+\input{title}
 
 \tableofcontents
 
-\setcounter{section}{-1}
+\setcounter{chapter}{-1}
 
-\input{tema_cero}
+\input{tema_cero} %INPUTS
 \input{tema_uno}
 \input{tema_dos}
 \input{tema_tres}
+%\input{tema_cuatro}
 
 \end{document}

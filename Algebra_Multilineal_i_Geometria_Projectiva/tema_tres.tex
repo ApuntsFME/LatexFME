@@ -1,5 +1,5 @@
-\section{Proyectividades}
-\subsection{Definiciones y propiedades básicas}
+\chapter{Proyectividades}
+\section{Definiciones y propiedades básicas}
 
 \begin{defi}
 	\begin{enumerate}
@@ -109,7 +109,7 @@
 	Inmediata si $\Po \leftrightarrow \E, f \leftrightarrow \varphi, \R \leftrightarrow B$.
 \end{proof}
 
-\subsection{Caracterización geométrica de las proyectividades}
+\section{Caracterización geométrica de las proyectividades}
 
 \begin{defi}
 	$h : \Po \to \bar{\Po}$ (no necesariamente dim $\Po$ = dim $\bar{\Po}$)
@@ -139,7 +139,7 @@
 	\end{enumerate}
 \end{proof}
 
-\begin{thm}
+\begin{teo}
   Sea $f : \Po \to \overline{\Po}$ una aplicación entre dos espacios proyectivos
   de dimensión $1$.
   Supongamos que:
@@ -148,31 +148,31 @@
     \item $f$ mantinene las razones dobles
   \end{enumerate}
   Entonces $f$ es una proyectividad.
-\end{thm}
+\end{teo}
 
 \begin{proof}
   Sea $\R = \{p_1, p_2, \overline{p}\}$  una referencia en $\Po$. Por ser $f$ inyectiva,
   $f(p_1), f(p_2), f(p_3)$ son distintos entre si, con lo cual forman una referencia
   $\overline{\R} = f(\R)$ en $\overline{\Po}$.
-  
+
   Por las propiedades de las proyectividades existe una única $g : \Po \to \overline{\Po}$
-  proyectividad tal que $g(\R) = \overline{\R}$. Veremos que $f=g$. Sea $q \in \Po$, 
-  sea $\rho = (p_1, p_2, \overline{p}, q)$. Entonces, por mantener f razones dobles y 
+  proyectividad tal que $g(\R) = \overline{\R}$. Veremos que $f=g$. Sea $q \in \Po$,
+  sea $\rho = (p_1, p_2, \overline{p}, q)$. Entonces, por mantener f razones dobles y
   por ser g proyectividad,
   \begin{gather*}
   (f(p_1), f(p_2), f(\overline{p}), f(q)) = \rho = (g(p_1), g(p_2), g(\overline{p}), g(q))
   \implies \\
-  \implies f(q) \text{ y } g(q) \text{ tienen la misma coordenada absoluta en la 
+  \implies f(q) \text{ y } g(q) \text{ tienen la misma coordenada absoluta en la
   referencia } \overline{R} \\
   \implies f(q) = g(q) \ \forall q \in \Po \implies f = g
   \end{gather*}
 \end{proof}
 
-\begin{obs} 
+\begin{obs}
   \begin{enumerate}
     \item[]
     \item $f$ proyectividad $\implies$ f biyectiva
-    \item Fijada una referencia $\R$, mediante su coordenada absoluta existe una 
+    \item Fijada una referencia $\R$, mediante su coordenada absoluta existe una
     biyección $\Po_\k^1 \leftrightarrow \k \cup \{\infty\}$. En particular, $(p_1, p_2, p_3,
     q) = (p_1, p_2, p_3, \overline{q}) \implies q = \overline{q}$.
   \end{enumerate}
@@ -187,23 +187,22 @@
   \[
     \begin{rcases}
       \begin{aligned}
-      \Phi \colon \Po^1 \cong r &\to V^\ast \cong \overline{\Po^1} \\ 
+      \Phi \colon \Po^1 \cong r &\to V^\ast \cong \overline{\Po^1} \\
       p &\mapsto V \vee p = H_p
       \end{aligned}
       \quad
       \begin{aligned}
       \Psi \colon \overline{\Po^1} \cong V^* &\to r \cong \Po^1 \\ H &\mapsto H \cap r
       \end{aligned} \\
-      \Phi, \Psi \text{ son inyectivas (de hecho biyectivas, } \Phi^{-1} = \Psi 
+      \Phi, \Psi \text{ son inyectivas (de hecho biyectivas, } \Phi^{-1} = \Psi
       \text{)}\\
-      \Phi, \Psi \text{ mantienen razones dobles (visto en \ref{thm:inv_rz_do})}
+      \Phi, \Psi \text{ mantienen razones dobles (visto en \ref{teo:inv_rz_do})}
   \end{rcases}
-  \implies 
+  \implies
   \Phi, \Psi \text{ proyectividades.}
  \]
 \end{proof}
-  
+
 \begin{obs}
   Sus composiciones también lo serán.
 \end{obs}
-

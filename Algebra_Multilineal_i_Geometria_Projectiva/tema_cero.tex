@@ -1,7 +1,7 @@
 
-\section{Formas Cuadráticas}
+\chapter{Formas Cuadráticas}
 
-\subsection{Definición, matriz de una forma cuadrática y bases}
+\section{Definición, matriz de una forma cuadrática y bases}
 
 \begin{defi}
 	Sea $\E$ un $\k$-e.v. Diremos que una aplicación
@@ -62,7 +62,7 @@
 	Sea $\E$ un $\k$-e.v. y sea $\phi \colon \E \times \E \to \k$ una
 	forma bilineal simétrica.
 	\begin{itemize}
-		\item Diremos que $\phi$ es definida positiva si 
+		\item Diremos que $\phi$ es definida positiva si
 		\[ \phi(x,x) > 0, \quad \forall x \in \E
 		\quad x \neq \vec{0} \]
 		\item Diremos que $\phi$ es definida negativa si
@@ -82,7 +82,7 @@
 		\quad \delta_k(A) = \determinant{A_k}
 	\]
 \end{defi}
-\begin{thm}[de Sylvester]
+\begin{teo}[de Sylvester]
 	Sea $\E$ un $\k$-e.v. de dimension $n$ y sea
 	$\phi \colon \E\times \E \to \k$ una forma bilineal simétrica,
 	entonces
@@ -90,16 +90,16 @@
 	\phi \text{ es definida positiva }\iff \delta_k(M_B(\phi)) > 0
 	\quad\forall 1 \leq k \leq n \quad\forall B \text{ base de } \E
 	\]
-\end{thm}
+\end{teo}
 \begin{proof}
 	$\implies$
-	
+
 	Como $\phi$ es definida positiva, define un producto escalar
 	sobre $\E$. Si tomamos una base $B$ cualquiera, mediante
 	Gramm-Schmidt podemos construir una base ortogonal
 	$B_2 = \{v_1, \cdots, v_n \}$. Por tanto
 	\[
-		i \neq j \implies \phi(v_i, v_j) = 0, \quad \phi(v_i,v_i) 
+		i \neq j \implies \phi(v_i, v_j) = 0, \quad \phi(v_i,v_i)
 		> 0 \quad 1 \leq i, j \leq n
 	\]
 	Llamamos $\phi(v_i, v_i) = \lambda_i > 0$. Por tanto
@@ -126,9 +126,9 @@
 	\determinant{M_B(\phi)_k} = \delta_k(M_B(\phi)) > 0
 	\quad \forall 1 \leq k \leq n.
 	\]
-	
+
 	\noindent $\impliedby$
-	
+
 	\indent Tenemos que $\delta_k(M_B(\phi)) > 0 \quad \forall
 	1 \leq k \leq n$. Aplicamos la siguiente variación de
 	Gramm-Schmidt. Tomamos la base $B = \{ u_1, \cdots, u_n \}$
@@ -151,8 +151,8 @@
 		\left<u_1,\cdots,u_k\right>$
 		En particular, $B_2 = \{v_1,\cdots, v_n\}$ es base de $\E$.
 		\item $\phi(v_k, v_i) = 0$ $\forall 1 \leq i \leq k-1$
-		porque $v_i \in \left< u_1, \cdots, u_i \right>$ y hemos tomado los 
-		$\alpha$ de manera que $\phi(v_k, u_i) = 0 \implies B_2$ 
+		porque $v_i \in \left< u_1, \cdots, u_i \right>$ y hemos tomado los
+		$\alpha$ de manera que $\phi(v_k, u_i) = 0 \implies B_2$
 		es base ortogonal
 		\item La matriz $S_{B_2B}$
 		\[
@@ -173,12 +173,12 @@
 			k & \updownarrow &  \\
 			\leftrightarrow &  &  \\
 			\hline
-			 &  & 
+			 &  &
 			\end{array}\right) &= \left(\begin{array}{c c|c}
 			k & \updownarrow &  \\
 			\leftrightarrow &  &  \\
 			\hline
-			&  & 
+			&  &
 			\end{array}\right) \left(\begin{array}{c c c| c c}
 			\phi(v_1,v_1) & & & & \\
 			& \ddots & & & \\
@@ -190,14 +190,14 @@
 			k & \updownarrow &  \\
 			\leftrightarrow &  &  \\
 			\hline
-			&  & 
+			&  &
 			\end{array}\right)
 		\end{aligned}
 	\]
 	\[
 		\implies \delta_k(M_B(\phi)) = \delta_k(S_{B,B_2}^t)
 		\delta_k(M_{B_2}(\phi)) \delta_k(S_{B,B_2}) =
-		\delta_k(M_{B_2}(\phi)) = 
+		\delta_k(M_{B_2}(\phi)) =
 	\]
 	\[
 		= \prod_{i=1}^{k} \phi(v_i,v_i) > 0\text{ (por hipótesis)}
@@ -205,25 +205,25 @@
 		\frac{\delta_k(M_B(\phi))}{\delta_{k-1}(M_B(\phi))}
 		= \phi(v_k,v_k) > 0
 	\]
-	Finalmente, $\forall x \in \E$ 
+	Finalmente, $\forall x \in \E$
 	\[
 		\phi(x,x) =
 		\phi\left(
 			\sum_{i=1}^{k} x_iv_i,\sum_{i=1}^{k} x_iv_i
 		\right) =
-		\sum_{i=1}^{k} x_i^2 \phi(v_i,v_i) > 0 \text{ si } x \neq 
+		\sum_{i=1}^{k} x_i^2 \phi(v_i,v_i) > 0 \text{ si } x \neq
 		\vec{0}
 	\]
 	\endproof{QED}
 \end{proof}
 
-\begin{thm}[Método convergencia-pivote]
+\begin{teo}[Método convergencia-pivote]
     Dada una forma bilineal simétrica $\phi$, queremos encontrar una base de
     $\E$, $B_2$, en la cual $M_{B_2}(\phi)$ sea una matriz diagonal. Partimos
     de una base $B$ i de $M_B(\phi)$. El procesos es: operación con filas a
     las dos matrices y luego la misma operacion pero en las columnas de la
     primera matriz únicamente (véase ejemplo).
-    
+
     \begin{gather*}
         \left(M_B(\phi) \vert Id \right) \stackrel{\text{op. filas}}{\sim}
 	\left( S_1M_B(\phi) \vert S_1 \right) \substack{\text{misma op.} \\
@@ -232,9 +232,9 @@
 	\vert S_r \dots S_1 \right)
     \end{gather*}
     Donde la matriz de la izquierda es $M_{B_2}$ y es diagonal.
-    
-    
-\end{thm}
+
+
+\end{teo}
 
 \begin{example}
     \[
@@ -318,17 +318,17 @@
 \end{example}
 
 
-\begin{prop} 
+\begin{prop}
     Sea $\E$ un $\k$-e.v. de dimension $n$, sea $\phi \colon \E \times \E \to \k$
     una forma bilineal simétrica y sea $q$ su forma cuadrática asociada.
-    Consideremos $B=\left\{ u_1, \dots u_n\right\}$ una base \ita{q-ortogonal} de $\E$. 
+    Consideremos $B=\left\{ u_1, \dots u_n\right\}$ una base \ita{q-ortogonal} de $\E$.
     Sabemos que
     \[
         D=M_B \left( \phi \right)= \left(
         \begin{array}{ccc}
             \alpha _1 & \cdots & 0 \\
             \vdots & \ddots & \vdots \\
-            0 & \cdots & \alpha _n 
+            0 & \cdots & \alpha _n
         \end{array} \right).
     \]
     Consideremos el subespacio vectorial $\E ^{\perp} \subseteq \E$ definido por
@@ -344,7 +344,7 @@
                      &  & \alpha _m &  &  & \\
                     \vdots &  &  & 0 &  & \vdots  \\
                      &  & \ &  & \ddots &  \\
-                    0 &  &  & \cdots &  & 0 
+                    0 &  &  & \cdots &  & 0
                 \end{array} \right) \implies\ E ^{\perp} =
                 \left< u_{m+1} , \dots , u_n \right> .
             \]
@@ -368,21 +368,21 @@
             $u_i  \in \left\{u_{m+1}, \dots , u_n \right\}$,
             \[
                 \begin{aligned}
-                    &\phi \left( u_j, u_i \right) = \left( 0 \ \cdots \ 1 \cdots \ 0 \ \right) \left( 
+                    &\phi \left( u_j, u_i \right) = \left( 0 \ \cdots \ 1 \cdots \ 0 \ \right) \left(
                     \begin{array}{cccccc}
                         \alpha _1 &  &  &  &  &  \\
                          & \ddots &  &  &  &  \\
                          &  & \alpha _m &  &  & \\
                          &  &  & 0 &  &   \\
                          &  & \ &  & \ddots &  \\
-                         &  &  &  &  & 0 
+                         &  &  &  &  & 0
                     \end{array} \right) \left(
                     \begin{array}{c}
                          0  \\
                          \vdots  \\
                          1  \\
                          \vdots \\
-                         0 
+                         0
                     \end{array} \right) = 0 \hspace{0,3cm} \forall \hspace{0,12cm} 1 \leq j \leq n
                     \implies \\
                     &\implies \left< u_{m+1} , \dots , u_n \right> \subseteq \E^{\perp}.
@@ -391,14 +391,14 @@
             Sea $u \in \E$ tal que $u \notin \left< u_{m+1}, \dots u_n \right> $. Se tiene que $\exists \hspace{0,2cm} 1 \leq i \leq m$ t.q. $x_i \neq 0$. Entonces,
             \[
                 \begin{aligned}
-                    e_i^t M_B\left( \phi \right) u = \left(0 \ \cdots \ 1 _i \ \cdots \ 0 \right) \left( 
+                    e_i^t M_B\left( \phi \right) u = \left(0 \ \cdots \ 1 _i \ \cdots \ 0 \right) \left(
                     \begin{array}{cccccc}
                         \alpha _1 &  &  &  &  &  \\
                          & \ddots &  &  &  &  \\
                          &  & \alpha _m &  &  & \\
                          &  &  & 0 &  &   \\
                          &  & \ &  & \ddots &  \\
-                         &  &  &  &  & 0 
+                         &  &  &  &  & 0
                     \end{array} \right) \left(
                     \begin{array}{c}
                          \vdots  \\
@@ -415,10 +415,10 @@
                 \begin{array}{ccc}
                     \alpha ' _1 & \cdots & 0 \\
                     \vdots & \ddots & \vdots \\
-                    0 & \cdots & \alpha ' _n 
+                    0 & \cdots & \alpha ' _n
                 \end{array} \right).
             \]
-            Tenemos que 
+            Tenemos que
             \[
                 m=i_+\left( q, B \right); \hspace{0,2cm} \F^+=\left<u_1, \dots u_m \right>;
                 \hspace{0,2cm} \E=\F^+ \oplus \left<u_{m+1}, \dots u_n \right>=\F^+ \oplus \F^{ {\leq 0}}.
@@ -439,7 +439,7 @@
             \]
             Sea $v\in \F^+$ y sean $v_1$ y $v_2$ las proyecciones de $v$
             sobre $\F^{\prime+}$ y $\F^{\prime \leq 0}$ respectivamente.
-            Tenemos que $f(v)=v_1$. Entonces, 
+            Tenemos que $f(v)=v_1$. Entonces,
             \[
             	f(v)=0 \implies v_1=0 \implies v=v_2.
             \]
@@ -452,14 +452,14 @@
                     v &\longmapsto g(v).
                 \end{aligned}
             \]
-            y siguiendo un razonamiento análogo, obtenemos que $g$ es inyectiva, 
+            y siguiendo un razonamiento análogo, obtenemos que $g$ es inyectiva,
             de modo que $m=m'$.
     \end{enumerate}
-        
-    
-    
+
+
+
 \end{proof}
-\subsection{Clasificación afín y proyectiva}
+\section{Clasificación afín y proyectiva}
 \begin{defi}
 	Sean $\E$ y $\F$ $\k$-espacios vectoriales. Sean
 	\[
@@ -469,19 +469,19 @@
 		\psi \colon \F \times \F \to \k
 	\]
 formas bilineales simétricas. Diremos que $\phi$ y
-$\psi$ son afínmente equivalentes, y escribiremos 
+$\psi$ son afínmente equivalentes, y escribiremos
 $\phi \sim \psi$, si existe un isomorfismo $f \colon \E \to \F$ tal que
 \[
-	\phi \left(u, v \right) = \psi \left( f \left( u \right) , 
+	\phi \left(u, v \right) = \psi \left( f \left( u \right) ,
 	f \left( v \right)  \right) \hspace{0,2cm} \forall u, v \in \E,
 \]
 \[
-	\phi \left( f ^{-1} \left( u ' \right) ,  f ^{-1} \left( v ' \right) 
+	\phi \left( f ^{-1} \left( u ' \right) ,  f ^{-1} \left( v ' \right)
 	\right) = \psi \left( u' , v' \right) \hspace{0,2cm} \forall
 	u', v' \in \F.
 \]
 \end{defi}
-\begin{thm}[de Sylvester]
+\begin{teo}[de Sylvester]
     \begin{enumerate}[i)]
         \item[]
         \item $\k=\real$
@@ -495,4 +495,4 @@ $\phi \sim \psi$, si existe un isomorfismo $f \colon \E \to \F$ tal que
         \]
     \end{enumerate}
 
-\end{thm}
+\end{teo}

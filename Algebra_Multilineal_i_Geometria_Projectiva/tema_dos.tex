@@ -1,5 +1,5 @@
-\section{Geometría Proyectiva}
-\subsection{Contexto e idea}
+\chapter{Geometría Proyectiva}
+\section{Contexto e idea}
 Segun el programa de Erlegen, una geometría se basa en el estudio de invariantes
 al aplicar unas ciertas transformaciones. Así tenemos que las geometrías estan
 "incluidas" en las superiores.
@@ -31,7 +31,7 @@ se muestra una tabla con las distintas geometrías en la cual cada una esta
 	width= 15 cm,
 	enlargelimits=0.1
 	]
-	
+
 	\addplot3[patch, patch type=rectangle,opacity=.75,color=yellow]
 	coordinates {(0,3,0) (-3,3,0) (-3,-3,0) (0,-3,0)};
 	\addplot3[patch, patch type=rectangle,opacity=.75,color=orange]
@@ -40,26 +40,26 @@ se muestra una tabla con las distintas geometrías en la cual cada una esta
 	\addplot3[patch, patch type=rectangle,opacity=.75,color=yellow]
 	coordinates {(3,-3,0) (0,-3,0) (0,3,0) (3,3,0)}
 	node[label={[black]$\pi_1$}]{};
-	
+
 	\addplot3[color=blue,mark=*] coordinates {(1,0,1)}
 	node[label=above:{$O$}]{};
-	
+
 	\draw [color=red] (axis cs:1,-3,0) -- (axis cs:1,3,0)
 	node[label=$r_1$]{};
 	\draw [color=red] (axis cs:0,-3,1) -- (axis cs:0,3,1)
 	node[label=50:$r_2$]{};
-	
+
 	\draw [color=blue] (axis cs:0.5,1,0) -- (axis cs:1.5,-1,0)
 	node[label=below:$s_1$]{};
 	\draw [color=blue] (axis cs:0.5,-1,0) -- (axis cs:1.5,1,0)
 	node[label=right:$s_2$]{};
-	
+
 	\addplot3[color=green,mark=*] coordinates {(2,2,0)}
 	node[label=$p$]{};
 	\addplot3[color=green,mark=*] coordinates {(0,-2,2)}
 	node[label=$\phi(p)$]{};
 	\draw [color=green] (axis cs:2,2,0) -- (axis cs:0,-2,2);
-	
+
 	\addplot3[color=green,mark=*] coordinates {(2.5,-1,0)}
 	node[label=$p'$]{};
 	\addplot3[color=green,mark=*] coordinates {(0,0.67,1.67)}
@@ -90,9 +90,9 @@ p &\mapsto \overline{pO} \cap \pi_2
 Veremos que la solucion para \ref{item:prob_r1} y \ref{item:prob_r2} consistirá
 en añadir puntos en el $\infty$.
 
-\subsection{Definición y caracterizaciones del espacio proyectivo}
+\section{Definición y caracterizaciones del espacio proyectivo}
 \begin{defi}
-	Sea $\k$ un cuerpo, $\E$ un $\k$-e.v. de $\dim n+1$. El espacio proyectivo asociado a $\E$ es 
+	Sea $\k$ un cuerpo, $\E$ un $\k$-e.v. de $\dim n+1$. El espacio proyectivo asociado a $\E$ es
 	\[\Po (\E) = \setb{\text{s.e.v. de } \dim 1 \text{ de } \E}\]
 	Diremos que $\Po (\E)$ tiene dimensión $n$.
 \end{defi}
@@ -136,7 +136,7 @@ en añadir puntos en el $\infty$.
 		ymin=-4,ymax=4,
 		xmin=-4,xmax=4
 		]
-		
+
 		\addplot[color=orange] {2*x};
 		\addplot[mark=*,color=red] coordinates {(1,2)};
 		\addplot[color=orange] {0.5*x};
@@ -150,10 +150,10 @@ en añadir puntos en el $\infty$.
 		\addplot[color=orange] {-0.5*x};
 		\addplot[mark=*,color=red] coordinates {(1,-0.5)};
 		\addplot[color=orange] {12*x};
-		
+
 		\addplot[mark=*,color=white] coordinates {(0,0)};
 		\addplot[mark=o] coordinates {(0,0)};
-		
+
 		\draw [color=red] (axis cs:1,-4) -- (axis cs: 1,1)
 		node[label=right:$\bb{A}_\real^1$]{};
 		\draw [color=red] (axis cs:1,1) -- (axis cs:1,4);
@@ -170,7 +170,7 @@ en añadir puntos en el $\infty$.
 		ticks=none,
 		ymin=-4,ymax=4,
 		xmin=-4,xmax=4]
-		
+
 			\addplot[color=orange] {2*x};
 			\addplot[mark=*,color=red] coordinates {(0.447214,0.894428)};
 			\addplot[color=orange] {0.5*x};
@@ -183,16 +183,16 @@ en añadir puntos en el $\infty$.
 			\addplot[mark=*,color=red] coordinates {(0.707107,-0.707107)};
 			\addplot[color=orange] {-0.5*x};
 			\addplot[mark=*,color=red] coordinates {(0.894427,-0.4472135)};
-			
+
 			\addplot[mark=*,color=blue] coordinates {(0,-1)}
 				node[label=left:$v_1$]{};
 			\addplot[mark=*,color=blue] coordinates {(0,1)}
 				node[label=left:$v_2$]{};
-			
+
 			\addplot[mark=*,color=white] coordinates {(0,0)};
 			\addplot[mark=o] coordinates {(0,0)};
-			
-			
+
+
 			\addplot [domain=-90:90, samples=21, color=red] ({cos(x)},{sin(x)})
 				node[label=50:$C$]{};
 		\end{axis}
@@ -209,13 +209,13 @@ en añadir puntos en el $\infty$.
 			enlargelimits=0.1
 		]
 			\addplot [domain=-180:180, samples=50, color=red] ({cos(x)},{sin(x)});
-			
+
 			\addplot [mark=*,color=blue] coordinates {(-1,0)}
 				node[label=left:$\infty$]{};
 		\end{axis}
 		\end{tikzpicture}
 		\end{center}
-		De tal forma que 
+		De tal forma que
 		\[
 			\bb{A}^1_\real \cup \setb{\infty} = \Po^1_\real = C/(v_1 \sim v_2)
 		\]
@@ -232,7 +232,7 @@ en añadir puntos en el $\infty$.
 		ymin=-4,ymax=4,
 		xmin=-4,xmax=4
 		]
-		
+
 			\draw [color=orange] (axis cs:-4,-4,-4) -- (axis cs:4,4,4);
 			\addplot3 [mark=*,color=red] coordinates {(1,1,1)};
 			\draw [color=orange] (axis cs:4,-2,-4) -- (axis cs:-4,2,4);
@@ -241,10 +241,10 @@ en añadir puntos en el $\infty$.
 			\addplot3 [mark=*,color=red] coordinates {(1,0.5,0)};
 			\draw [color=orange] (axis cs:-4,8,-12) -- (axis cs:4,-8,12);
 			\addplot3 [mark=*,color=red] coordinates {(1,-2,3)};
-			
+
 			\addplot3[mark=*,color=white] coordinates {(0,0,0)};
 			\addplot3[mark=o] coordinates {(0,0,0)};
-			
+
 			\addplot3 [patch, patch type=rectangle,opacity=.5,color=red]
 			coordinates { (1,4,4) (1,-4,4) (1,-4,-4) (1,4,-4) }
 			node[pin={[black]right:$\bb{A}^2_\real$}]{};
@@ -270,10 +270,10 @@ en añadir puntos en el $\infty$.
 			\draw [color=orange] (axis cs:4,-2,-4) -- (axis cs:-4,2,4);
 			\draw [color=orange] (axis cs:-4,-2,0) -- (axis cs:4,2,0);
 			\draw [color=orange] (axis cs:-4,8,-12) -- (axis cs:4,-8,12);
-			
+
 			\addplot3[mark=*,color=white] coordinates {(0,0,0)};
 			\addplot3[mark=o] coordinates {(0,0,0)};
-			
+
 			\addplot3[
 			color=blue,
 			samples=21,
@@ -282,7 +282,7 @@ en añadir puntos en el $\infty$.
 			ultra thick
 			]
 			({0},{cos(v)},{sin(v)});
-			
+
 			\addplot3[%
 			opacity = 0.5,
 			surf,
@@ -296,7 +296,7 @@ en añadir puntos en el $\infty$.
 			y domain = 0:180,
 			]
 			({cos(u)*sin(v)}, {sin(u)*sin(v)}, {cos(v)});
-			
+
 			\addplot3 [mark=none,color=red] coordinates {(1,0,0)}
 				node[label=50:$C$]{};
 		\end{axis}
@@ -330,7 +330,7 @@ en añadir puntos en el $\infty$.
 			y domain = 90:270,
 			]
 			({cos(u)*sin(v)}, {sin(u)*sin(v)}, {cos(v)});
-			
+
 			\addplot3[
 			color=blue,
 			samples=30,
@@ -339,19 +339,19 @@ en añadir puntos en el $\infty$.
 			ultra thick
 			]
 			({cos(v)},{sin(v)},{0});
-			
+
 			\addplot3 [mark=*,color=blue] coordinates {(0,0,0)};
 			\addplot3 [mark=*,color=blue] coordinates {({cos(30)},{sin(30)},0)};
 			\addplot3 [mark=*,color=blue] coordinates {({cos(210)},{sin(210)},0)};
 			\draw (axis cs: {cos(30)}, {sin(30)}, 0) [color=blue] --
 				(axis cs: {cos(210)}, {sin(210)}, 0);
-				
+
 			\addplot3 [mark=*,color=blue] coordinates {({cos(120)},{sin(120)},0)};
 			\addplot3 [mark=*,color=blue] coordinates {({cos(300)},{sin(300)},0)};
 			\draw (axis cs: {cos(120)}, {sin(120)}, 0) [color=blue] --
 				(axis cs: {cos(300)}, {sin(300)}, 0);
-			
-			
+
+
 		\end{axis}
 		\end{tikzpicture}
 		\end{center}
@@ -370,20 +370,20 @@ en añadir puntos en el $\infty$.
 		view={10}{20},
 		ymin=-4,ymax=4,
 		xmin=-4,xmax=4]
-		
+
 			\addplot3[patch,color=orange, patch type=rectangle, opacity=0.8] coordinates
 			{(4,4,0) (4,-4,0) (-4,-4,0) (-4,4,0)};
-		
+
 			\addplot3[color=blue,mark=*] coordinates {(0,0,2)} node[pin=150:{$\infty$}]{};
-			
+
 			\addplot3[mark=*,color=blue] coordinates {(2,3,0)};
 			\addplot3[mark=*,color=blue] coordinates {(0.47,0.71,1.53)};
 			\draw (axis cs:0,0,2) [color=blue] -- (axis cs:2,3,0);
-			
+
 			\addplot3[mark=*,color=blue] coordinates {(2,-1.5,0)};
 			\addplot3[mark=*,color=blue] coordinates {(0.78,-0.59,1.22)};
 			\draw (axis cs:0,0,2) [color=blue] -- (axis cs:0.78,-0.59,1.22);
-			
+
 			\addplot3[%
 			opacity = 0.5,
 			surf,
@@ -397,33 +397,33 @@ en añadir puntos en el $\infty$.
 			y domain = 0:360,
 			]
 			({cos(u)*sin(v)}, {sin(u)*sin(v)}, {cos(v)+1});
-	
+
 			\draw (axis cs:0.78,-0.59,1.22)[color=blue] -- (axis cs:2,-1.5,0);
-			
+
 		\end{axis}
 		\end{tikzpicture}
 		\end{center}
-		
+
 		\item $\Po^2_{\z / 2}$ contiene $7$ puntos pues las rectas de $\z^3$ solo contienen el $0$ y un punto.
 	\end{enumerate}
 \end{example}
 \begin{obs}
-	Hemos enunciado la definición algebraica de $\Po_{\real}^{n}$. Existe una definición axiomática que no 
+	Hemos enunciado la definición algebraica de $\Po_{\real}^{n}$. Existe una definición axiomática que no
 	es igual en algunos casos patológicos.
 \end{obs}
 
-\subsection{Variedades lineales proyectivas}
+\section{Variedades lineales proyectivas}
 
 \begin{defi}
 	Sea $\E$ un $\k$-e.v. de dimensión $n+1$, sea $\Po^n = \Po(\E)$.
-	Llamaremos variedad lineal (proyectiva) de dimensión $r$ a cualquier conjunto 
+	Llamaremos variedad lineal (proyectiva) de dimensión $r$ a cualquier conjunto
 	de la forma:
 	\[V = \pi(H \setminus \setb{0})\]
 	donde $H \subseteq \E$ es un subespacio vectorial de dimensión $r+1$.
-	
+
 	Por convención defnimos la siguiente notación:
-	\[V = \pi(H \setminus \setb{0}) = \pi(H)\]         
-\end{defi}    
+	\[V = \pi(H \setminus \setb{0}) = \pi(H)\]
+\end{defi}
 \begin{example}
 	\begin{itemize}
 		\item []
@@ -468,7 +468,7 @@ en añadir puntos en el $\infty$.
 \begin{proof}
     Veamos que: $V_1 \cap V_2 = \pi(H_1 \cap H_2)$ si $V_i = \pi(H_i)$ \\
     $\supseteq$
-    \begin{gather*} 
+    \begin{gather*}
     \text{Si } v \in H_1 \cap H_2, p = [v] \in \pi(H_1), \pi(H_2) \implies p \in V_1 \cap V_2
     \end{gather*}
     $\subseteq$
@@ -609,7 +609,7 @@ en añadir puntos en el $\infty$.
     $p_0, \dots, p_r \in \Po^n (r \geq n)$ estan en posición general $\iff n+1$ puntos cualesquiera de ellos son l.i..
 \end{defi}
 
-\subsection{Sistemas de referencia proyectivos. Coordenadas proyectivas}
+\section{Sistemas de referencia proyectivos. Coordenadas proyectivas}
 
 \begin{obs}
     $\Po^n = \Po(\E)$. Sea $B = \{v_0, \dots, v_n\}$ base de $\E$:
@@ -633,7 +633,7 @@ en añadir puntos en el $\infty$.
         \item Fijado un sistema de referencia $R$. Sea $B = \{ u_0, \dots, u_n \}$ base de $\E$. Diremos que $B$ está adaptada a $R$ si y solo si:
             \[ \begin{cases} p_i = [u_i], \forall i = 0, \dots, n \\ \bar{p} = [u_0 + \dots + u_n ] \end{cases} \]
         \item \textit{Asignación de coordenadas proyectivas} \\
-            $\Po^n = \Po(\E)$, Sea $R = \{ p_0, \dots, p_n; \bar{p} \}$, y $B = \{u_0, \dots, u_n\}$ una base adaptada. Sea $q \in \Po^n, q = [v]$, entonces 
+            $\Po^n = \Po(\E)$, Sea $R = \{ p_0, \dots, p_n; \bar{p} \}$, y $B = \{u_0, \dots, u_n\}$ una base adaptada. Sea $q \in \Po^n, q = [v]$, entonces
             $q_R = v_B$. (Hace falta ver que la definición es consistente)
     \end{enumerate}
 \end{defi}
@@ -671,7 +671,7 @@ en añadir puntos en el $\infty$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{example}
-    Consideremos el espacio $\Po^2_{\real}$, un sistema de referencia $\R = \{ p_0, p_1, p_2; \overline{p}\}$, con 
+    Consideremos el espacio $\Po^2_{\real}$, un sistema de referencia $\R = \{ p_0, p_1, p_2; \overline{p}\}$, con
     $p_0 = [(1, 1, 0)]$, $p_1 = [(1, 0, 1)]$, $p_2 = [(0, 1, 1)]$ y $\overline{p} = [(3,3,2)]$.
     Queremos encontrar $B = \{u_0, u_1, u_2\}$ una base adaptada, es decir, que cumpla $\overline{p} = [u_0+u_1+u_2]$
     y que $p_i = [u_i]$. Comprobamos que para la base $B = \left \{ (2,2,0)^t, (1,0,1)^t, (0,1,1)^t \right \}$, se cumple
@@ -699,25 +699,25 @@ en añadir puntos en el $\infty$.
         \item Ecuaciones paramétricas: Sea $V \subseteq \Po^n$ una variedad lineal de $\dim m$. Entonces
         $\exists p_0, \dots, p_m \in V$ linealmentes independientes tales que $V = p_0 \vee \dots \vee p_m$ y para $q \in \Po^n$
         \[
-            q \in V \iff w \in F \iff 
-            \begin{cases} 
-                \exists \alpha_0, \dots, \alpha_m \in \k \\ 
-                w_B = \alpha_0(v_0)_B + \dots + \alpha_m(v_m)_B 
-            \end{cases} 
+            q \in V \iff w \in F \iff
+            \begin{cases}
+                \exists \alpha_0, \dots, \alpha_m \in \k \\
+                w_B = \alpha_0(v_0)_B + \dots + \alpha_m(v_m)_B
+            \end{cases}
             \iff
             \]
         \[
-            \iff 
+            \iff
             \begin{cases}
-                \exists \alpha_0, \dots, \alpha_m \in \k \\ 
-                q_R = \alpha_0 (p_0)_R + \dots + \alpha (p_m)_R 
+                \exists \alpha_0, \dots, \alpha_m \in \k \\
+                q_R = \alpha_0 (p_0)_R + \dots + \alpha (p_m)_R
             \end{cases}
         \]
         Donde $V = \pi(F)$, $p_i = \pi(v_i)$, y $q = \pi(w)$.
         \item Ecuaciones implícitas: Las ecuaciones implícitas de $V$ en $\R$ coinciden con las ecuaciones implícitas de $F$ en
-        $B$. Es decir, existe una matriz $A$ tal que los vectores $w_B = \begin{pmatrix} x_0 \\ \vdots \\ x_n \end{pmatrix}$ que cumplen $A \begin{pmatrix} x_0 \\ \vdots \\ x_n \end{pmatrix} = 
-        \begin{pmatrix} 0 \\ \vdots \\ 0 \end{pmatrix}$ son todos los pertenecientes a $F$ y los puntos 
-        $q_R = \begin{pmatrix} x_0 \\ \vdots \\ x_n \end{pmatrix}$ que cumplen $A \begin{pmatrix} x_0 \\ \vdots \\ x_n \end{pmatrix} = 
+        $B$. Es decir, existe una matriz $A$ tal que los vectores $w_B = \begin{pmatrix} x_0 \\ \vdots \\ x_n \end{pmatrix}$ que cumplen $A \begin{pmatrix} x_0 \\ \vdots \\ x_n \end{pmatrix} =
+        \begin{pmatrix} 0 \\ \vdots \\ 0 \end{pmatrix}$ son todos los pertenecientes a $F$ y los puntos
+        $q_R = \begin{pmatrix} x_0 \\ \vdots \\ x_n \end{pmatrix}$ que cumplen $A \begin{pmatrix} x_0 \\ \vdots \\ x_n \end{pmatrix} =
         \begin{pmatrix} 0 \\ \vdots \\ 0 \end{pmatrix}$ son todos los pertenecientes a $V$.
     \end{itemize}
 \end{obs}
@@ -725,7 +725,7 @@ en añadir puntos en el $\infty$.
         Sea $\E$ un $\k$-e.v. de dimensión $n+1$, $F$ un subespacio vectorial de dimensión $m+1$, $\Po^n = \Po(\E)$ y $V = \pi(F)$
         una variedad lineal.
         Entonces
-        \[\dim V = \dim F - 1 = \dim E - \rg A - 1 = n+1 - \rg A - 1 \implies m = \dim V = n - \rg A\]        
+        \[\dim V = \dim F - 1 = \dim E - \rg A - 1 = n+1 - \rg A - 1 \implies m = \dim V = n - \rg A\]
 \end{obs}
 \begin{obs}
     \begin{itemize}
@@ -755,7 +755,7 @@ en añadir puntos en el $\infty$.
     $V = q_0 \vee q_1$.
     \begin{itemize}
         \item Dado que los puntos son dados directamente y se hace su join, las ecuaciones paramétricas son tan solo
-        las combinaciones lineales de $q_0$ y $q_1$. Más formalmente, si $(q)_{\R} = \begin{pmatrix} x_0 \\ x_1 \\ x_2 \end{pmatrix}$, 
+        las combinaciones lineales de $q_0$ y $q_1$. Más formalmente, si $(q)_{\R} = \begin{pmatrix} x_0 \\ x_1 \\ x_2 \end{pmatrix}$,
         se cumple
         \[
             q \in V \iff \exists \alpha_0, \alpha_1 \text{ t.q. } \begin{pmatrix} x_0 \\ x_1 \\ x_2 \end{pmatrix}
@@ -764,7 +764,7 @@ en añadir puntos en el $\infty$.
         \item Para encontrar las ecuaciones implícitas de esta variedad, imponemos que $(x_0, x_1, x_2)$ sea combinación
         lineal de $q_0$ y $q_1$, es decir,
         \[
-            q \in V \iff 
+            q \in V \iff
             \rg
             \left(
             \begin{array}{cc|c}
@@ -788,7 +788,7 @@ en añadir puntos en el $\infty$.
             \begin{vmatrix}
                 1 & 1 & x_0 \\
                 1 & 2 & x_1 \\
-                1 & 0 & x_2                
+                1 & 0 & x_2
             \end{vmatrix}
             =
             0
@@ -799,14 +799,14 @@ en añadir puntos en el $\infty$.
     independientes y expresar todas las soluciones como combinaciones lineales de estas.
     \[\begin{pmatrix} x_0 \\ x_1 \\ x_2 \end{pmatrix} = \beta_0 \begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix}
     + \beta_1 \begin{pmatrix} 0 \\ 1 \\ -1 \end{pmatrix}\]
-    En este mismo ejemplo, $p_0 \vee p_1 : x_2 = 0$, $p_2 \vee \overline{p} : x_1-x_0 = 0$ y 
+    En este mismo ejemplo, $p_0 \vee p_1 : x_2 = 0$, $p_2 \vee \overline{p} : x_1-x_0 = 0$ y
     $(p_0 \vee p_1) \cap (p_2 \vee \overline{p}) = (1, 1, 0)$. Análogamente para los demás índices.
 \end{example}
 
 \begin{example}
-    Consideremos $\Po^2_{\sfrac{\z}{2}}$. Sus puntos se pueden expresar como $(a, b, c) \  a,b,c \in \sfrac{\z}{2}$. 
+    Consideremos $\Po^2_{\sfrac{\z}{2}}$. Sus puntos se pueden expresar como $(a, b, c) \  a,b,c \in \sfrac{\z}{2}$.
     Podemos representarlo como
-    
+
     \begin{center}
 \begin{tikzpicture}[scale=1]
     \draw (0,0) coordinate (A) --
@@ -815,9 +815,9 @@ en añadir puntos en el $\infty$.
     \coordinate (O) at
     (barycentric cs:A=1,B=1,C=1);
     \draw (O) circle [radius=3*1.717/6];
-    \draw (C) -- ($ (A)!.5!(B) $) coordinate (LC); 
-    \draw (A) -- ($ (B)!.5!(C) $) coordinate (LA); 
-    \draw (B) -- ($ (C)!.5!(A) $) coordinate (LB); 
+    \draw (C) -- ($ (A)!.5!(B) $) coordinate (LC);
+    \draw (A) -- ($ (B)!.5!(C) $) coordinate (LA);
+    \draw (B) -- ($ (C)!.5!(A) $) coordinate (LB);
     \node[draw,
     circle,
     fill=cyan,
@@ -842,8 +842,8 @@ en añadir puntos en el $\infty$.
     circle,
     fill=cyan,
     inner sep=1.5pt, label={-90:\tiny $(0, 1, 1)$}] at (LC) {};
-    
-    \draw[->] 
+
+    \draw[->]
     (0, 0.8) node[anchor=east] {\tiny $x_0 + x_1 + x_2 = 0$} --
     (0.69, 0.6);
 \end{tikzpicture}
@@ -855,22 +855,22 @@ en añadir puntos en el $\infty$.
     %\begin{enumerate}[i)]
         %\item []
         %\item En $\Po ^2 _{\left( \sfrac{\z}{2} \right)}$ solamente hay $7$ puntos: $\left| \left\{ \left(a, b, c \right) | a, b, c \in \left\{0, 1 \right\} \right\} \right|  = 2^3 = 8$, pero debemos excluir $\left( 0, 0, 0 \right)$ porque no es punto.
-        %\item 
-    En $\Po ^2$, sean $\left( p_0 \right)_R = \begin{pmatrix} a_0 \\ b_0 \\ c_0 \end{pmatrix}$ y $\left( p_1 \right)_R = \begin{pmatrix} a_1 \\ b_1 \\ c_1 \end{pmatrix}$. Entonces, $V=p_0 \vee p_1 \colon \begin{pmatrix} x_0 \\ x_1 \\ x_2 \end{pmatrix} = \alpha \begin{pmatrix} a_0 \\ b_0 \\ c_0 \end{pmatrix} + \beta \begin{pmatrix} a_1 \\ b_1 \\ c_1 \end{pmatrix}$. 
+        %\item
+    En $\Po ^2$, sean $\left( p_0 \right)_R = \begin{pmatrix} a_0 \\ b_0 \\ c_0 \end{pmatrix}$ y $\left( p_1 \right)_R = \begin{pmatrix} a_1 \\ b_1 \\ c_1 \end{pmatrix}$. Entonces, $V=p_0 \vee p_1 \colon \begin{pmatrix} x_0 \\ x_1 \\ x_2 \end{pmatrix} = \alpha \begin{pmatrix} a_0 \\ b_0 \\ c_0 \end{pmatrix} + \beta \begin{pmatrix} a_1 \\ b_1 \\ c_1 \end{pmatrix}$.
     Es decir, aunque no haya operación suma definida entre puntos, está bien definido el conjunto de combinaciones lineales de ellos.
     %\end{enumerate}
 \end{obs}
 \begin{obs}
     \begin{enumerate}[i)]
         \item []
-        \item 
+        \item
             \[
                 \left. \begin{array}{l} V=p_0 \vee \cdots \vee p_m \\ W= q_0 \vee \cdots \vee q_r \end{array} \right\} V \vee W = p_0 \vee \cdots \vee p_m \vee q_0 \vee \cdots \vee q_r.
             \]
             \begin{proof}
                 Directa de espacios vectoriales.
             \end{proof}
-        \item 
+        \item
             \[
                 \left. \begin{array}{l} V \colon A \begin{pmatrix} x_0 \\ \vdots \\ x_n \end{pmatrix} = 0 \\ W \colon B \begin{pmatrix} x_0 \\ \vdots \\ x_n \end{pmatrix} = 0 \end{array} \right\} V \cap W  \colon \begin{pmatrix} A \\ \hline B \end{pmatrix} \begin{pmatrix} x_0 \\ \vdots \\ x_n \end{pmatrix} = 0.
             \]
@@ -879,7 +879,7 @@ en añadir puntos en el $\infty$.
             \end{proof}
     \end{enumerate}
 \end{obs}
-\subsection{Dualidad}
+\section{Dualidad}
 La \textbf{dualidad} es una diferencia fundamental respecto de la geometría afín.
 \begin{ej}[Problema 3, Lista T1]
     Consideremos $\E$ un espacio vectorial y su dual $\E^*$. Sea $\F \subseteq \E$ un subespacio vectorial. Entonces, $\F^\perp=\left\{w \in \E ^* | w \left( u \right) = 0 \hspace{0,2cm} \forall u\in\F \right\} $ es un subespacio vectorial de $\E^*$ y se satisface que $\dim \F^\perp = \dim \E - \dim \F$. Además, se tiene que
@@ -916,7 +916,7 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometría af�
     \[
         V^* \equiv \pi \left( \F^\perp\right) \subseteq \left( \Po^n \right)^*.
     \]
-    
+
 \end{defi}
 
 \begin{obs}
@@ -998,11 +998,11 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometría af�
 		view={10}{20},
 		ymin=-2,ymax=3,
 		xmin=-2,xmax=3]
-		
+
 		\addplot [mark=*,color=red] coordinates {(1,0)} node[label=0:$q_1$]{};
 		\addplot [mark=*,color=red] coordinates {(1,1)} node[label=50:$q_2$]{};
 		\addplot [mark=*,color=red] coordinates {(0,1)} node[label=$q_3$]{};
-		
+
 		\draw (axis cs:-2,3) [color=blue] -- (axis cs:3,-2) node[above] {$r_1$};
 		\draw (axis cs:-2,1) [color=blue] -- (axis cs:3,1) node[above] {$r_2$};
 		\draw (axis cs:1,3) [color=blue] -- (axis cs:1,-2) node[label=310:$r_3$] {};
@@ -1019,11 +1019,11 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometría af�
 		view={10}{20},
 		ymin=0,ymax=4,
 		xmin=0,xmax=5]
-		
+
 		\addplot [mark=*,color=blue] coordinates {(1,1)} node[label=$(r_1)^*$]{};
 		\addplot [mark=*,color=blue] coordinates {(4,3)} node[label=160:$(r_2)^*$]{};
 		\addplot [mark=*,color=blue] coordinates {(3,1)} node[label=190:$(r_3)^*$]{};
-		
+
 		\draw (axis cs:0,1) [color=red] -- (axis cs:5,1) node[label=100:$(q_1)^*$] {};
 		\draw (axis cs:2.5,0) [color=red] -- (axis cs:4.5,4) node[label=240:$(q_2)^*$] {};
 		\draw (axis cs:5,3.666) [color=red] -- (axis cs:0,0.333) node[label=0:$(q_3)^*$] {};
@@ -1128,7 +1128,7 @@ $\mathcal{R}^*$ no depende de la base $B$ escogida.
 \end{example}
 
 \begin{obs}
-En general, si tenemos $\mathcal{R}$ una referencia de $\Po^n$ y 
+En general, si tenemos $\mathcal{R}$ una referencia de $\Po^n$ y
 $\mathcal{R}^* = \setb{{p_0}^\prime,\dots,{p_n}^\prime; \bar{p}^\prime}$
 una refencia de $\left( \Po^n \right)^*$. Entonces $\left( {p_i}^\prime \right)^*$
 es un hiperplano tal que $p_i \notin \left( {p_i}^\prime \right)^*$ y
@@ -1137,11 +1137,11 @@ $p_j \in \left( {p_i}^\prime \right)^*$ $\forall i \neq j$
 
 %%%%%%%%%%%%%%%%%%%%
 %   23 d'octubre   %
-%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Los teoremas de Desargues y Pappus}
+\section{Los teoremas de Desargues y Pappus}
 
-\begin{thm}[de Desargues]
+\begin{teo}[de Desargues]
 
 Sean $ABC$, $A'B'C'$ dos triángulos en $\Po^2$ (sin vértices ni lados en común). Entonces,
 \[
@@ -1201,7 +1201,7 @@ BC \cap B'C' = X
 \end{tikzpicture}
 \end{center}
 
-\end{thm}
+\end{teo}
 \begin{proof}
 $\implies$ Analítica \\
 $R = \{A,B,C;O\}$, es un sistema de referencia porque todos los puntos son linealmente independientes.
@@ -1211,7 +1211,7 @@ $R = \{A,B,C;O\}$, es un sistema de referencia porque todos los puntos son linea
     \item $B,C,O$ linealmente independientes (si no, $BC = B'C'$)
     \item $C,A,O$ linealmente independientes (si no, $AC = A'C'$)
 \end{itemize}
-Tenemos que 
+Tenemos que
 \begin{itemize}
     \item $A' \in AO : x_1 - x_2 = 0$ i $A \neq A' \implies A' = (a:1:1)$
     \item $B' \in BO : x_0 - x_2 = 0$ i $B \neq B' \implies B' = (1:b:1)$
@@ -1342,14 +1342,14 @@ Hay una relación de pertenencia entre puntos y rectas (los puntos pertenecen a 
 % 25 de OCTUBRE %
 %%%%%%%%%%%%%%%%%
 
-\begin{thm}[ de Pappus]
+\begin{teo}[ de Pappus]
 Sean $r,s \subseteq \Po^2_\k$ rectas diferentes ($r \neq s$), sean
 $A,B,C \in r$ tal que $A \neq B$, $B \neq C$ y $C\neq A$ y sean también
 $A^\prime,B^\prime,C^\prime \in s$ tal que $A^\prime \neq B^\prime$,
 $B^\prime \neq C^\prime$ y $C^\prime \neq A^\prime$. Entonces
 $x_0 \equiv AB^\prime \cap A^\prime B$, $x_1 \equiv AC^\prime \cap A^\prime C$
 y $x_2 \equiv BC^\prime \cap B^\prime C$ estan alineados.
-\end{thm}
+\end{teo}
 
 \begin{proof}
 \begin{itemize}
@@ -1404,17 +1404,17 @@ C = (1,a,0) &\qquad C^\prime = (1,1,b)
 con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
 2$ y vemos que
 \[
-  \determinant{\line(1,0){25} & x_0 & \line(1,0){25} \\ 
+  \determinant{\line(1,0){25} & x_0 & \line(1,0){25} \\
     \line(1,0){25} & x_1 & \line(1,0){25} \\ \line(1,0){25} & x_2 & \line(1,0){25}} = 0
 \]
 \end{proof}
 
 
-\subsection{Coordenadas absolutas. Razón doble}
+\section{Coordenadas absolutas. Razón doble}
 
 \begin{defi}
   Sea $\R = \setb{p_0,p_1;\bar{p}}$ un sistema de referencia de $\Po^1_\k$ y
-  sea $q \in \Po^1_k$ con $q_\R = (x_0,x_1)$ las coordenadas de $q$ en la 
+  sea $q \in \Po^1_k$ con $q_\R = (x_0,x_1)$ las coordenadas de $q$ en la
   referencia $\R$. Definimos las coordenas absolutas de $q$ como
   \[
     \alpha = \frac{x_0}{x_1} \in k \cup \setb{\infty}
@@ -1461,7 +1461,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
     {\determinant{\bar{x_3} & \bar{y_3} \\ \bar{x_2} & \bar{y_2}}}:
     \frac{\determinant{\bar{x_4} & \bar{y_4} \\ \bar{x_1} & \bar{y_1}}}
     {\determinant{\bar{x_4} & \bar{y_4} \\ \bar{x_2} & \bar{y_2}}}
-    = 
+    =
     \frac{\cancel{\det S}\determinant{x_3 & y_3 \\ x_1 & y_1}}
     {\cancel{\det S} \determinant{x_3 & y_3 \\ x_2 & y_2}}:
     \frac{\cancel{\det S} \determinant{x_4 & y_4 \\ x_1 & y_1}}
@@ -1472,7 +1472,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
   La razón doble es cociente de razones simples
 \end{obs}
 \begin{obs}
-  En coordenadas absolutas, si 
+  En coordenadas absolutas, si
   \[
     \begin{aligned}
       q_1 &\qquad \alpha_1 &\qquad (\alpha_1:1) \\
@@ -1481,17 +1481,17 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
       q_4 &\qquad \alpha_4 &\qquad (\alpha_4:1) \\
     \end{aligned}
   \]
-  teniendo en cuenta que $(\infty,1) = (1,0)$. emtonces, 
+  teniendo en cuenta que $(\infty,1) = (1,0)$. emtonces,
   \[
     \left( q_1,q_2,q_3,q_4 \right) = \frac{\determinant{\alpha_3 & 1 \\ \alpha_1 & 1}}
     {\determinant{\alpha_3 & 1 \\ \alpha_2 & 1}}:\frac{\determinant{\alpha_4 & 1 \\ \alpha_1 & 1}}
-    {\determinant{\alpha_4 & 1 \\ \alpha_2 & 1}} = 
+    {\determinant{\alpha_4 & 1 \\ \alpha_2 & 1}} =
     \frac{\alpha_3-\alpha_1}{\alpha_3-\alpha_2}:\frac{\alpha_4-\alpha_1}{\alpha_4-\alpha_2}
   \]
 \end{obs}
 \begin{obs}\label{obs:rzdo_ref}
   Sean $q_1,q_2,q_3,q_4 \in \Po^1_\k$ tal que $\setb{q_1,q_2,q_3}$ son diferentes dos a dos.
-  Tomamos $\R = \setb{q_1,q_2;q_3}$ como nuestro sistema de referencia y sean $(x,y)_\R = q_4$ 
+  Tomamos $\R = \setb{q_1,q_2;q_3}$ como nuestro sistema de referencia y sean $(x,y)_\R = q_4$
   las coordenadas de $q_4$ en el sistema de referencia $\R$, entonces
   \[
     \left( q_1,q_2,q_3,q_4 \right) = \frac{\determinant{1 & 1 \\ 1 & 0}}
@@ -1580,25 +1580,25 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
  $\Phi(\Psi(H)) = H$ y $\Psi(\Phi(p)) = p$, esd decir, $\Phi$ y $\Psi$ son inversas mutuas.
 \end{obs}
 
-\begin{thm}[de la invariancia de razón doble]\label{thm:inv_rz_do}
+\begin{teo}[de la invariancia de razón doble]\label{teo:inv_rz_do}
  Sean $V,r \subseteq \Po^n$ dos variades suplementarias con $\dim r = 1$ ($\implies \dim V = n-2$) y
  sean $\Phi$ y $\Psi$ la proyección desde $V$ y la sección con $r$ respectivamente. Entonces,
  \begin{enumerate}[i)]
-  \item \label{item:thm_inv_1} $\forall p_1,p_2,p_3,p_4 \in r$ con $p_1,p_2,p_3$ distintos dos a dos
+  \item \label{item:teo_inv_1} $\forall p_1,p_2,p_3,p_4 \in r$ con $p_1,p_2,p_3$ distintos dos a dos
     \[
      (p_1,p_2,p_3,p_4) = \left( \Phi(p_1), \Phi(p_2), \Phi(p_3), \Phi(p_4) \right)
     \]
-  \item \label{item:thm_inv_2} $\forall H_1,H_2,H_3,H_4 \in V^*$ (identificando hiperplanos con elementos del dual) con
+  \item \label{item:teo_inv_2} $\forall H_1,H_2,H_3,H_4 \in V^*$ (identificando hiperplanos con elementos del dual) con
   $H_1,H_2,H_3$ distintos dos a dos. Entonces
     \[
      (H_1,H_2,H_3,H_4) = \left( \Psi(H_1), \Psi(H_2), \Psi(H_3), \Psi(H_4) \right)
     \]
  \end{enumerate}
-\end{thm}
+\end{teo}
 
 \begin{proof}
- Primero vemos que $\ref{item:thm_inv_1} \iff \ref{item:thm_inv_2}$ porque $\Psi^{-1}=\Phi$. Pasamos ahora
- a demostrar $\ref{item:thm_inv_1}$. Sea $\rho = (p_1,p_2,p_3,p_4)$, entonces podemos elegir $u_1,u_2 \in \E$
+ Primero vemos que $\ref{item:teo_inv_1} \iff \ref{item:teo_inv_2}$ porque $\Psi^{-1}=\Phi$. Pasamos ahora
+ a demostrar $\ref{item:teo_inv_1}$. Sea $\rho = (p_1,p_2,p_3,p_4)$, entonces podemos elegir $u_1,u_2 \in \E$
  tal que $p_1 = [u_1]$, $p_2=[u_2]$ y $p_3=[u_1+u_2]$. Por lo tanto $p_4 = [\rho u_1+u_2]$, de la misma forma,
  $\bar{\rho} = (H_1,H_2,H_3,H_4)$ y podemos escoger $w_1,w_2 \in \E^*$ tal que $H_1 = [w_1]$, $H_2 = [w_2]$ y
  $H_3=[w_1+w_2]$. Lo que implica que $H_4 = [\bar{\rho} w_1 + w_2]$. Ahora trabajamos con que $p_i \in H_i$.
@@ -1623,7 +1623,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
  pero como sabemos $r \cap V = \emptyset$ ya que son variedades suplementarias.
 \end{proof}
 
-\subsection{Cuaternas armónicas}
+\section{Cuaternas armónicas}
 
 \begin{obs}
  Sean $p_1,p_2,p_3,p_4 \in \Po^n$ diferentes dos a dos. y sea
@@ -1656,10 +1656,10 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
 
 %TODO hacer esta demo
 \begin{proof}
- La demostración se hará en clase de problemas 
+ La demostración se hará en clase de problemas
 \end{proof}
 
-\begin{thm}[Cuaterna armónica en el cuadrilátero]
+\begin{teo}[Cuaterna armónica en el cuadrilátero]
  Sean $A,B,C,D,p_1,p_2 \in \Po^2$ los vértices de un cuadrilátero, sea $p_1p_2 = r \subseteq \Po^2$,
  $AC = s \subseteq \Po^2$, $s \cap BD = O \in \Po^2$, $s \cap r = p_3 \in \Po^2$ y $DB \cap r = p_4 \in \Po^2$.
  Entonces, $\setb{p_1,p_2,p_3,p_4}$ son una cuaterna armónica. Dicho de otra forma, en un cuadrilátero, la intersección
@@ -1696,7 +1696,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
         \end{scriptsize}
         \end{tikzpicture}
     \end{center}
-\end{thm}
+\end{teo}
 
 \begin{proof}
  Podemos poner poner coordemadas y operar y nos saldrá el resultado. Aunque aquí detallamos una demostración
@@ -1713,7 +1713,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
    p_4 &\mapsto O &\mapsto p_4
   \end{array}
  \]
- Por el teorema \ref{thm:inv_rz_do}, tenemos que, si $f = \Psi_r \circ \Phi_D \circ \Psi_s \circ \Phi_B$,
+ Por el teorema \ref{teo:inv_rz_do}, tenemos que, si $f = \Psi_r \circ \Phi_D \circ \Psi_s \circ \Phi_B$,
  \[
   (p_1,p_2,p_3,p_4) = \left( f(p_1), f(p_2), f(p_3), f(p_4) \right) = (p_2,p_1,p_3,p_4)
  \]
