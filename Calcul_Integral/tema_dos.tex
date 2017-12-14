@@ -470,13 +470,13 @@
 \begin{proof}
     Más adelante.
 \end{proof}
-\begin{thm}
+\begin{prop}
     Sea $f \colon U \to \real^n$ de clase $\C ^1$ en un conjunto abierto $U \subset
     \real ^n$. Si $Z \subset U$ tiene medida nula, $f\left( Z \right) $ tiene
     medida nula.\\
     El resultado es falso si $f$ es solamente $\C ^0$. Un ejemplo de esto es la
     curva de Peano.
-\end{thm}
+\end{prop}
 \begin{proof}
     Más adelante.
 \end{proof}
@@ -525,6 +525,7 @@
     \]
 \end{lema}
 \begin{proof}
+    $\implies$ \\
     Supongamos que $f$ es contínua en $a$. Entonces,
     \[
         \forall \varepsilon > 0, \exists \delta > 0 \; \tq \; d\left(x, a \right)
@@ -541,12 +542,56 @@
             \implies \omega\left( f, B\left( a, \delta \right) \right) \leq 
             2\varepsilon \implies \omega \left( f, a \right) =0.
         \end{gathered}
-    \]
+    \] \\
+    $\impliedby$ \\
+    Supongamos $\omega \left( f, a \right) = 0$. Sea $\varepsilon > 0, \exists \delta > 0 \tq \omega \left( f, \text{B}\left(a, \delta \right) \right) < \varepsilon$. Per tant, $|f(x) - f(a)| < \varepsilon$ si $\text{d}\left( x, a \right) < \delta \implies f$ continua en a.
 \end{proof}
-
-
-
-
+\begin{example*}
+    Sea $f: \real \to \real$
+    \begin{enumerate}
+        \item $f(x) = \begin{cases}
+            \frac{1}{x} & \text{si } x \neq 0 \\
+            0 & \text{si } x = 0
+            \end{cases}$ \\
+            $\omega \left( f, 0 \right) = \lim_{r \to 0} \omega \left( f, \text{B} \left( 0, r \right) \right) = \infty \implies f$ no es continua en $x = 0$.
+        \item $f(x) = \begin{cases}
+            \sin \frac{1}{x} & \text{si } x \neq 0 \\
+            0 & \text{si } x = 0
+            \end{cases}$ \\
+            $\omega \left( f, 0 \right) = \lim_{r \to 0} \omega \left( f, \text{B} \left( 0, r \right) \right) = 2 \implies f$ no es continua en $x = 0$.
+    \end{enumerate}
+\end{example*}
+\begin{lema} \label{lema:2.3.6}
+    Sea $a \tq \omega \left( f, a \right) < c. \exists \delta \tq \omega \left( f, \text{B}(a, \delta \right) < c.$
+\end{lema}
+\begin{proof}
+    Por contrarecíproco. $\forall \delta \omega \left( f, \text{B} \left( a, \delta \right) \right) \geq c \implies \omega \left( f, a \right) \geq c$. \underline{Contradicción}.
+\end{proof}
+\begin{prop}
+    Sea $X$ un espacio métrico, $f : X \to \real$. El conjunto $a = \{ x \in X | \omega \left( f, x \right) < c \}$ es abierto.
+\end{prop}
+\begin{proof}
+    Sea $a \in A \tq \omega \left( f, a \right) < c, c > 0$. Por el lema \ref{lema:2.3.6} $\exists \delta \tq \omega \left( f, \text{B} \left( a, \delta \right) \right) < c$. \\
+    Sea $b \in \text{B} \lp a, \delta \rp, \exists \delta' \tq \text{B} \lp b, \delta' \rp \subset \text{B} \lp a, \delta \rp$.
+    \[
+    \omega \lp f, \text{B} \lp b, \delta' \rp \rp \leq \omega \lp f, \text{B} \lp a, \delta \rp \rp < c \stackrel{\ref{lema:2.3.6}}{\implies} \omega \lp f, b \rp < c
+    \]
+    Por tanto, $b \in A$ i B$\lp a, \delta \rp \subset A \implies a$ es un punto interior de $A \implies A$ es abierto.
+\end{proof}
+\begin{col*}
+    Si $X$ es compacto, $\{x \in X | \omega \lp f, x \rp \geq c\}$ es compacte.
+\end{col*}
+\begin{proof}
+    Todo conjunto cerrado de un espacio compacto es compacto.
+\end{proof}
+\begin{lema}
+    Sea $A \subset \real^n$ rectángulo compacto. Sean $T_1, \dots, T_n \subset A$ rectángulos compactos $\tq A = \bigcup_{i=1}^n T_i$. Existe una partición $\Pa$ de $A$ t.q. para cada subrectángulo $R$ de $\Pa$, existe un $i$ t.q. $R \subset T_i$.
+\end{lema}
+\begin{proof}
+    $A = I_1 \times \dots \times I_k \times \dots \times I_n \implies \Pa = \Pa_1 \times \dots \times \Pa_n$ cada
+    \[ \Pa_k = \{x_0 = a, x_{1^-}, x_{1^+}, \dots, x_{i^-}, x_{i^+}, \dots, x_{n^-}, x_{n^+}, b\}, \]
+    donde $x_{i^-}, x_{i^+}$ son los extremos inferiores y superiores (respectivamente) de $T_i$. Por construcción, $R \subseteq T_i$.
+\end{proof}
 
 
 

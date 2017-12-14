@@ -1,11 +1,11 @@
 \documentclass[12pt]{article}
- 
+
 \usepackage[margin=1in]{geometry}
 \usepackage[pdftex]{hyperref}
 \usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
 \usepackage{mdframed,cleveref,cancel,stackengine,pgfplots,pgf,mathrsfs}
 \usepackage{xfrac,stmaryrd,commath}
-\usepackage[spanish]{babel}
+%\usepackage[spanish]{babel}
 
 \newmdenv[leftline=false,topline=false]{topright}
 \let\proof\relax
@@ -14,6 +14,7 @@
 \usetikzlibrary{external}
 \tikzexternalize[prefix=figures/]
 \pgfplotsset{compat=1.11}
+
 \newcommand{\n}{\mathbb{N}}
 \newcommand{\z}{\mathbb{Z}}
 \newcommand{\q}{\mathbb{Q}}
@@ -22,6 +23,8 @@
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\R}{\mathcal{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\Pa}{\mathcal{P}}
 \newcommand{\bb}[1]{\mathbb{#1}}
 \let\k\relax
 \newcommand{\k}{\mathbf{k}}
@@ -31,19 +34,33 @@
 \newcommand{\vbrack}[1]{\langle #1\rangle}
 \newcommand{\determinant}[1]{\begin{vmatrix}#1\end{vmatrix}}
 \newcommand{\Po}{\mathbb{P}}
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
 \DeclareMathOperator{\Id}{Id}
 \DeclareMathOperator{\rg}{rg}
 \DeclareMathOperator{\car}{car}
 \DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\graf}{graf}
+\DeclareMathOperator{\tq}{\text{t.q.}}
 \let\emptyset\varnothing
 
+\def\parse#1{
+	\def\param{#1}
+	\ifx\param\empty
+	\else
+	(#1)
+	\fi
+}
 
 \hypersetup{
 	colorlinks,
 	linkcolor=blue
 }
- 
- \renewcommand*\contentsname{Contenidos}
+
+\renewcommand*\contentsname{Contenidos}
 
 \newtheoremstyle{break}% name
 {}%         Space above, empty = `usual value'
@@ -53,7 +70,7 @@
 {\bfseries}% Thm head font
 {}%        Punctuation after thm head
 {\newline}% Space after thm head: \newline = linebreak
-{#1 #2 \normalfont #3}%         Thm head spec
+{#1 #2 \normalfont \parse{#3}}%         Thm head spec
 
 \newtheoremstyle{breakthm}% name
 {}%         Space above, empty = `usual value'
@@ -76,27 +93,35 @@
 
 \theoremstyle{normal}
 \newtheorem{lema}{Lema}[subsection]
+\newtheorem*{lema*}{Lema}
 \newtheorem{obs}[lema]{Observación}
-\newtheorem{rec}[lema]{Recordatorio}
+\newtheorem*{obs*}{Observación}
 
 \theoremstyle{break}
 \newtheorem{prop}[lema]{Proposición}
+\newtheorem*{prop*}{Proposición}
 \newtheorem*{proof}{Demostración}
 \newtheorem{defi}[lema]{Definición}
+\newtheorem*{defi*}{Definición}
 \newtheorem{col}[lema]{Corolario}
+\newtheorem*{col*}{Corolario}
 \newtheorem{ej}[lema]{Ejercicio}
+\newtheorem*{ej*}{Ejercicio}
 \newtheorem{example}[lema]{Ejemplo}
+\newtheorem*{example*}{Ejemplo}
 
 \theoremstyle{breakthm}
 \newtheorem{thm}[lema]{Teorema}
 
-
-
- 
-\begin{document}
-\date{}
-
 \title{Álgebra Multilineal y Geometría Proyectiva}
+\author{O. Benedito \and J. Castellví \and E. Lanchares \and M. Ortega}
+\date{\ifcase \month \or Enero\or Febrero\or Marzo\or %
+Abril\or Mayo \or Junio\or Julio\or 
+Agosto\or Setiembre\or Octubre\or Noviembre\or %
+Diciembre\fi \:  \number \year}
+
+
+\begin{document}
  
 \maketitle
 

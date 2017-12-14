@@ -5,7 +5,7 @@
 \usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
 \usepackage{mdframed,cleveref,cancel,stackengine,pgfplots,pgf,mathrsfs}
 \usepackage{xfrac,stmaryrd,commath}
-\usepackage[spanish]{babel}
+%\usepackage[spanish]{babel}
 
 \newmdenv[leftline=false,topline=false]{topright}
 \let\proof\relax
@@ -34,6 +34,8 @@
 \newcommand{\vbrack}[1]{\langle #1\rangle}
 \newcommand{\determinant}[1]{\begin{vmatrix}#1\end{vmatrix}}
 \newcommand{\Po}{\mathbb{P}}
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
 \DeclareMathOperator{\Id}{Id}
 \DeclareMathOperator{\rg}{rg}
 \DeclareMathOperator{\car}{car}
@@ -58,7 +60,7 @@
 	linkcolor=blue
 }
 
- \renewcommand*\contentsname{Contenidos}
+\renewcommand*\contentsname{Contenidos}
 
 \newtheoremstyle{break}% name
 {}%         Space above, empty = `usual value'
@@ -111,14 +113,16 @@
 \theoremstyle{breakthm}
 \newtheorem{thm}[lema]{Teorema}
 
-
+\title{Álgebra Multilineal y Geometría Proyectiva}
+\author{O. Benedito \and J. Castellví \and E. Lanchares \and M. Ortega}
+\date{\ifcase \month \or Enero\or Febrero\or Marzo\or %
+Abril\or Mayo \or Junio\or Julio\or 
+Agosto\or Setiembre\or Octubre\or Noviembre\or %
+Diciembre\fi \:  \number \year}
 
 
 \begin{document}
-\date{}
-
-\title{Cálculo integral} % TITULO
-
+ 
 \maketitle
 
 \tableofcontents
