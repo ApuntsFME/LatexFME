@@ -139,7 +139,7 @@
 	\end{enumerate}
 \end{proof}
 
-\begin{teo}
+\begin{teo} \label{teo:proy_dim_1}
   Sea $f : \Po \to \overline{\Po}$ una aplicación entre dos espacios proyectivos
   de dimensión $1$.
   Supongamos que:
@@ -179,7 +179,7 @@
 \end{obs}
 
 \begin{col}
-  Las funciones ``proyección'' y ``sección'' son proyectividades.
+  Las funciones \textit{proyección} y \textit{sección} son proyectividades.
 \end{col}
 \begin{proof}
   Sea $r \in \Po^n$ una recta y $V \in \Po^n$ una variedad suplementaria a ésta
@@ -202,7 +202,98 @@
   \Phi, \Psi \text{ proyectividades.}
  \]
 \end{proof}
-
 \begin{obs}
-  Sus composiciones también lo serán.
+  Las composiciones de funciones \textit{proyección} y \textit{sección} también son proyectividades.
 \end{obs}
+\begin{example}
+    AQUÍ FALTAN LOS EJEMPLOS DE LAS PÁGINAS 5-6.
+\end{example}
+\begin{prop} \label{prop:demo_teo2}
+    Sea $f : \Po^n \to \bar{\Po}^m \tq$:
+    \begin{itemize}
+        \item $f$ es colineación
+        \item $f$ mantiene las razones dobles
+    \end{itemize}
+    Entonces $V = f \lp \Po^n \rp$ es una variedad lineal de $\bar{\Po}^m$ de dim $n$ y $f : \Po^n \to V = f \lp \Po^n \rp$ es una proyectividad.
+\end{prop}
+\begin{proof}
+    $f : \Po^n \to \bar{\Po}^m$. Sigui $\R = \{ p_0, \dots, p_n; \bar{p} \}$ sistema de referencia, $W := f \lp p_0 \rp \vee \dots \vee f \lp p_n \rp$ variedad lineal de $\bar{\Po}^m$ de $\dim \leq n$. \\
+    Inducción sobre $n$ (fijamos $m$):
+    \begin{itemize}
+        \item $n = 1, f : \Po^1 \to \bar{\Po}^m$ \\
+        $\begin{rcases}
+            f \text{ colineación } \implies 
+            \begin{rcases}
+                V = f \lp \Po^1 \rp \subseteq L \text{ recta} \\
+                f \text{ inyectiva}
+            \end{rcases}
+            \implies f : \Po^1 \to L \cong \bar{\Po}^1 \\
+            f \text{ mantiene las razones dobles}
+        \end{rcases}
+        \stackrel{\ref{teo:proy_dim_1}}{\implies} f$ es una proyectividad (en particular $V = f \lp \Po^1 \rp = L$).
+        \item $n > 1$, supongamos cierto por $n-1$ (hipótesis de inducción). Probemos por $n$. \\
+        Definimos $H_i := p_0 \vee \dots \vee \hat{p} \vee \dots \vee p_n$, $i = 0, \dots, n$ (hiperplano sin $p_i$). Demostremos que $p \in H_i \implies f \lp p \rp \notin f \lp H_i \rp$: \\
+        $\begin{rcases}
+            f : \Po^n \to \bar{\Po}^m \\
+            f_{|H_i} : \Po^{n-1} \cong H_i \subseteq \Po^n \to \bar{\Po}^m
+        \end{rcases}
+        \implies g_i = f_{|H_i} : H_i \to \bar{\Po}^m$ es una proyectividad $\implies g_i : H_i \to f \lp H_i \rp = V_i$ es biyectiva. Supongamos $f \lp p \rp \in f \lp H_i \rp = V_i$,
+        \[
+            \exists q_i \in H_i \tq f \lp q_i \rp = f \lp p \rp \substack{f \text{ colineación} \\ \implies \\ f \text{ inyectiva}} p = q_i \in H_i. \text{ Contradicción.}
+        \]
+        Por tanto queda demostrado. Una consecuencia es que la imagen de $\R$ por $f$ son puntos en posición general en $\bar{\Po}^m$. Sea $T := f \lp p_0 \rp \vee \dots \vee f \lp p_n \rp \vee f \lp \bar{p} \rp$. Entonces $\bar{\R} = f \lp \R \rp$ es un sistema de referencia en $T$.
+        
+        AQUESTA DEMO ESTÁ A MITJES hehe
+    \end{itemize}
+\end{proof}
+\begin{teo}
+    Sea $f : \Po^n \to \bar{\Po}^n \tq$:
+    \begin{itemize}
+        \item $f$ es colineación
+        \item $f$ mantiene las razones dobles
+    \end{itemize}
+    Entonces $f$ es una proyectividad.
+\end{teo}
+\begin{proof}
+    Es un caso particular $\lp n = m \rp$ la proposición \ref{prop:demo_teo2}.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
