@@ -157,6 +157,8 @@ principales conjuntos.
 | \rg | 0 | Coloca rg |
 | \car | 0 | Coloca car |
 | \vol | 0 | Coloca vol |
+| \lp | 0 | Es equivalente a `\left(` |
+| \rp | 0 | Es equivalente a `\right)` |
 
 ## Fragmentos comunes
 Aquí se detalla una serie de fragmentos que suelen comunes
