@@ -83,10 +83,10 @@
 		\item[]
 		\item $M_{\R, \R}(\Id) = \Id$.
 		\item Si
-			\begin{alignat*}{3}
-				&\Po \text{ } \stackrel{f}{\to} \text{  } &&\bar{\Po} \text{ } \stackrel{g}{\to} \text{  } &&\bar{\bar{\Po}} \\
-				&\R_1 &&\R_2 &&\R_3
-			\end{alignat*}
+%			\begin{alignat*}{3}
+%				&\Po \text{ } \stackrel{f}{\to} \text{  } &&\bar{\Po} \text{ } \stackrel{g}{\to} \text{  } &&\bar{\bar{\Po}} \\
+%				&\R_1 &&\R_2 &&\R_3
+%			\end{alignat*}
 			Entonces, $M_{\R_1, \R_3}(g \circ f) = M_{\R_2, \R_3}(g) \times M_{\R_1, \R_2}(f)$
 		\item $\Po_\R \stackrel{f}{\to} \bar{\Po}_{\bar{\R}}, M_{\bar{\R}, \R}(f^{-1}) = (M_{\R, \bar{\R}} (f))^{-1}.$
 	\end{enumerate}
@@ -140,148 +140,241 @@
 \end{proof}
 
 \begin{teo} \label{teo:proy_dim_1}
-  Sea $f : \Po \to \overline{\Po}$ una aplicación entre dos espacios proyectivos
-  de dimensión $1$.
-  Supongamos que:
-  \begin{enumerate}
-    \item $f$ es inyectiva
-    \item $f$ mantinene las razones dobles
-  \end{enumerate}
-  Entonces $f$ es una proyectividad.
+	Sea $f : \Po \to \overline{\Po}$ una aplicación entre dos espacios proyectivos
+	de dimensión $1$.
+	Supongamos que:
+	\begin{enumerate}
+		\item $f$ es inyectiva
+		\item $f$ mantinene las razones dobles
+	\end{enumerate}
+	Entonces $f$ es una proyectividad.
 \end{teo}
 
 \begin{proof}
-  Sea $\R = \{p_1, p_2, \overline{p}\}$  una referencia en $\Po$. Por ser $f$ inyectiva,
-  $f(p_1), f(p_2), f(p_3)$ son distintos entre si, con lo cual forman una referencia
-  $\overline{\R} = f(\R)$ en $\overline{\Po}$.
+	Sea $\R = \{p_1, p_2, \overline{p}\}$  una referencia en $\Po$. Por ser $f$ inyectiva,
+	$f(p_1), f(p_2), f(p_3)$ son distintos entre si, con lo cual forman una referencia
+	$\overline{\R} = f(\R)$ en $\overline{\Po}$.
 
-  Por las propiedades de las proyectividades existe una única $g : \Po \to \overline{\Po}$
-  proyectividad tal que $g(\R) = \overline{\R}$. Veremos que $f=g$. Sea $q \in \Po$,
-  sea $\rho = (p_1, p_2, \overline{p}, q)$. Entonces, por mantener f razones dobles y
-  por ser g proyectividad,
-  \begin{gather*}
-  (f(p_1), f(p_2), f(\overline{p}), f(q)) = \rho = (g(p_1), g(p_2), g(\overline{p}), g(q))
-  \implies \\
-  \implies f(q) \text{ y } g(q) \text{ tienen la misma coordenada absoluta en la
-  referencia } \overline{R} \\
-  \implies f(q) = g(q) \ \forall q \in \Po \implies f = g
-  \end{gather*}
+	Por las propiedades de las proyectividades existe una única $g : \Po \to \overline{\Po}$
+	proyectividad tal que $g(\R) = \overline{\R}$. Veremos que $f=g$. Sea $q \in \Po$,
+	sea $\rho = (p_1, p_2, \overline{p}, q)$. Entonces, por mantener f razones dobles y
+	por ser g proyectividad,
+	\begin{gather*}
+	(f(p_1), f(p_2), f(\overline{p}), f(q)) = \rho = (g(p_1), g(p_2), g(\overline{p}), g(q))
+	\implies \\
+	\implies f(q) \text{ y } g(q) \text{ tienen la misma coordenada absoluta en la
+	referencia } \overline{R} \\
+	\implies f(q) = g(q) \ \forall q \in \Po \implies f = g
+	\end{gather*}
 \end{proof}
 
 \begin{obs}
-  \begin{enumerate}
-    \item[]
-    \item $f$ proyectividad $\implies$ f biyectiva
-    \item Fijada una referencia $\R$, mediante su coordenada absoluta existe una
-    biyección $\Po_\k^1 \leftrightarrow \k \cup \{\infty\}$. En particular, $(p_1, p_2, p_3,
-    q) = (p_1, p_2, p_3, \overline{q}) \implies q = \overline{q}$.
-  \end{enumerate}
+	\begin{enumerate}
+	  \item[]
+	  \item $f$ proyectividad $\implies$ f biyectiva
+	  \item Fijada una referencia $\R$, mediante su coordenada absoluta existe una
+	  biyección $\Po_\k^1 \leftrightarrow \k \cup \{\infty\}$. En particular, $(p_1, p_2, p_3,
+	  q) = (p_1, p_2, p_3, \overline{q}) \implies q = \overline{q}$.
+	\end{enumerate}
 \end{obs}
 
 \begin{col}
-  Las funciones \textit{proyección} y \textit{sección} son proyectividades.
+	Las funciones \textit{proyección} y \textit{sección} son proyectividades.
 \end{col}
 \begin{proof}
-  Sea $r \in \Po^n$ una recta y $V \in \Po^n$ una variedad suplementaria a ésta
-  (en particular, de dimensión $n-2$).
-  \[
-    \begin{rcases}
-      \begin{aligned}
-      \Phi \colon \Po^1 \cong r &\to V^\ast \cong \overline{\Po^1} \\
-      p &\mapsto V \vee p = H_p
-      \end{aligned}
-      \quad
-      \begin{aligned}
-      \Psi \colon \overline{\Po^1} \cong V^* &\to r \cong \Po^1 \\ H &\mapsto H \cap r
-      \end{aligned} \\
-      \Phi, \Psi \text{ son inyectivas (de hecho biyectivas, } \Phi^{-1} = \Psi
-      \text{)}\\
-      \Phi, \Psi \text{ mantienen razones dobles (visto en \ref{teo:inv_rz_do})}
-  \end{rcases}
-  \implies
-  \Phi, \Psi \text{ proyectividades.}
+	Sea $r \in \Po^n$ una recta y $V \in \Po^n$ una variedad suplementaria a ésta
+	(en particular, de dimensión $n-2$).
+	\[
+		\begin{rcases}
+			\begin{aligned}
+			\Phi \colon \Po^1 \cong r &\to V^\ast \cong \overline{\Po^1} \\
+			p &\mapsto V \vee p = H_p
+			\end{aligned}
+			\quad
+			\begin{aligned}
+			\Psi \colon \overline{\Po^1} \cong V^* &\to r \cong \Po^1 \\ H &\mapsto H \cap r
+			\end{aligned} \\
+			\Phi, \Psi \text{ son inyectivas (de hecho biyectivas, } \Phi^{-1} = \Psi
+			\text{)}\\
+			\Phi, \Psi \text{ mantienen razones dobles (visto en \ref{teo:inv_rz_do})}
+	\end{rcases}
+	\implies
+	\Phi, \Psi \text{ proyectividades.}
  \]
 \end{proof}
 \begin{obs}
-  Las composiciones de funciones \textit{proyección} y \textit{sección} también son proyectividades.
+	Las composiciones de funciones \textit{proyección} y \textit{sección} también son proyectividades.
 \end{obs}
 \begin{example}
-    AQUÍ FALTAN LOS EJEMPLOS DE LAS PÁGINAS 5-6.
+	AQUÍ FALTAN LOS EJEMPLOS DE LAS PÁGINAS 5-6.
 \end{example}
 \begin{prop} \label{prop:demo_teo2}
-    Sea $f : \Po^n \to \bar{\Po}^m \tq$:
-    \begin{itemize}
-        \item $f$ es colineación
-        \item $f$ mantiene las razones dobles
-    \end{itemize}
-    Entonces $V = f \lp \Po^n \rp$ es una variedad lineal de $\bar{\Po}^m$ de dim $n$ y $f : \Po^n \to V = f \lp \Po^n \rp$ es una proyectividad.
+	Sea $f : \Po^n \to \bar{\Po}^m \tq$:
+	\begin{itemize}
+		\item $f$ es colineación
+		\item $f$ mantiene las razones dobles
+	\end{itemize}
+	Entonces $V = f \lp \Po^n \rp$ es una variedad lineal de $\bar{\Po}^m$ de dim $n$ y $f : \Po^n \to V = f \lp \Po^n \rp$ es una proyectividad.
 \end{prop}
 \begin{proof}
-    $f : \Po^n \to \bar{\Po}^m$. Sigui $\R = \{ p_0, \dots, p_n; \bar{p} \}$ sistema de referencia, $W := f \lp p_0 \rp \vee \dots \vee f \lp p_n \rp$ variedad lineal de $\bar{\Po}^m$ de $\dim \leq n$. \\
-    Inducción sobre $n$ (fijamos $m$):
-    \begin{itemize}
-        \item $n = 1, f : \Po^1 \to \bar{\Po}^m$ \\
-        $\begin{rcases}
-            f \text{ colineación } \implies 
-            \begin{rcases}
-                V = f \lp \Po^1 \rp \subseteq L \text{ recta} \\
-                f \text{ inyectiva}
-            \end{rcases}
-            \implies f : \Po^1 \to L \cong \bar{\Po}^1 \\
-            f \text{ mantiene las razones dobles}
-        \end{rcases}
-        \stackrel{\ref{teo:proy_dim_1}}{\implies} f$ es una proyectividad (en particular $V = f \lp \Po^1 \rp = L$).
-        \item $n > 1$, supongamos cierto por $n-1$ (hipótesis de inducción). Probemos por $n$. \\
-        Definimos $H_i := p_0 \vee \dots \vee \hat{p} \vee \dots \vee p_n$, $i = 0, \dots, n$ (hiperplano sin $p_i$). Demostremos que $p \in H_i \implies f \lp p \rp \notin f \lp H_i \rp$: \\
-        $\begin{rcases}
-            f : \Po^n \to \bar{\Po}^m \\
-            f_{|H_i} : \Po^{n-1} \cong H_i \subseteq \Po^n \to \bar{\Po}^m
-        \end{rcases}
-        \implies g_i = f_{|H_i} : H_i \to \bar{\Po}^m$ es una proyectividad $\implies g_i : H_i \to f \lp H_i \rp = V_i$ es biyectiva. Supongamos $f \lp p \rp \in f \lp H_i \rp = V_i$,
-        \[
-            \exists q_i \in H_i \tq f \lp q_i \rp = f \lp p \rp \substack{f \text{ colineación} \\ \implies \\ f \text{ inyectiva}} p = q_i \in H_i. \text{ Contradicción.}
-        \]
-        Por tanto queda demostrado. Una consecuencia es que la imagen de $\R$ por $f$ son puntos en posición general en $\bar{\Po}^m$. Sea $T := f \lp p_0 \rp \vee \dots \vee f \lp p_n \rp \vee f \lp \bar{p} \rp$. Entonces $\bar{\R} = f \lp \R \rp$ es un sistema de referencia en $T$.
-        
-        Entonces $\exists! g : \Po^n \to T, g \lp \R \rp = \overline{\R}, g$ proyectividad. Veremos que $f = g$.
-        De momento sabemos que:
-        \begin{enumerate}[(1)]
-            \item\label{item:1_dela_prop} $\begin{cases} f \lp p_i \rp = g \lp p_i \rp \\ f \lp \bar{p} \rp = g \lp p \rp \end{cases}$
-            \item\label{item:2_dela_prop} $F_{|H_i} = g_i = g_{|H_i}$ (porque mandan un sistema de referencia al mismo sitio y son proyectividades)
-        \end{enumerate}
-        Hemos de ver que $\forall p \in \Po^n, f \lp p \rp = g \lp p \rp$:
-        \begin{itemize}
-            \item Si $p = \bar{p}$ o $p \in \bigcup_{i=0}^n H_i$ ya lo sabemos por (\ref{item:1_dela_prop}) i (\ref{item:2_dela_prop}).
-            \item Si $p \neq \bar{p}$ y $p \notin \bigcup_{i=0}^n H_i$
-        \end{itemize}
-        Sean $L := p \vee \bar{p}$ y sean $q_n := L \cap H_n, q_0 := L \cap H_0$. Como $f$ es una colineación, $f \lp L \rp$ es una recta, $f \lp L \rp = f \lp p \rp \vee f \lp \bar{p} \rp$.
-        Entonces:
-        \begin{gather*}
-            \lp f \lp q_0 \rp, f \lp q_1 \rp, f \lp \bar{p} \rp, f \lp p \rp \rp \substack{f \text{ mantiene} \\ = \\ \text{razón doble}} \lp q_0, q_1, \bar{p}, p \rp \stackrel{g \text{ proyec.}}{=} \lp g \lp q_0 \rp, g \lp q_1 \rp, g \lp \bar{p} \rp, g \lp p \rp \rp = \\
-            \stackrel{(\ref{item:1_dela_prop}) + (\ref{item:2_dela_prop})}{=} \lp f \lp p_0 \rp, f \lp p_1 \rp, f \lp \bar{p} \rp, g \lp p \rp \rp \implies f \lp p \rp = g \lp p \rp.
-        \end{gather*}
-    \end{itemize}
+	$f : \Po^n \to \bar{\Po}^m$. Sigui $\R = \{ p_0, \dots, p_n; \bar{p} \}$ sistema de referencia, $W := f \lp p_0 \rp \vee \dots \vee f \lp p_n \rp$ variedad lineal de $\bar{\Po}^m$ de $\dim \leq n$. \\
+	Inducción sobre $n$ (fijamos $m$):
+	\begin{itemize}
+		\item $n = 1, f : \Po^1 \to \bar{\Po}^m$ \\
+		$\begin{rcases}
+			f \text{ colineación } \implies 
+			\begin{rcases}
+				V = f \lp \Po^1 \rp \subseteq L \text{ recta} \\
+				f \text{ inyectiva}
+			\end{rcases}
+			\implies f : \Po^1 \to L \cong \bar{\Po}^1 \\
+			f \text{ mantiene las razones dobles}
+		\end{rcases}
+		\stackrel{\ref{teo:proy_dim_1}}{\implies} f$ es una proyectividad (en particular $V = f \lp \Po^1 \rp = L$).
+		\item $n > 1$, supongamos cierto por $n-1$ (hipótesis de inducción). Probemos por $n$. \\
+		Definimos $H_i := p_0 \vee \dots \vee \hat{p} \vee \dots \vee p_n$, $i = 0, \dots, n$ (hiperplano sin $p_i$). Demostremos que $p \in H_i \implies f \lp p \rp \notin f \lp H_i \rp$: \\
+		$\begin{rcases}
+			f : \Po^n \to \bar{\Po}^m \\
+			f_{|H_i} : \Po^{n-1} \cong H_i \subseteq \Po^n \to \bar{\Po}^m
+		\end{rcases}
+		\implies g_i = f_{|H_i} : H_i \to \bar{\Po}^m$ es una proyectividad $\implies g_i : H_i \to f \lp H_i \rp = V_i$ es biyectiva. Supongamos $f \lp p \rp \in f \lp H_i \rp = V_i$,
+		\[
+			\exists q_i \in H_i \tq f \lp q_i \rp = f \lp p \rp \substack{f \text{ colineación} \\ \implies \\ f \text{ inyectiva}} p = q_i \in H_i. \text{ Contradicción.}
+		\]
+		Por tanto queda demostrado. Una consecuencia es que la imagen de $\R$ por $f$ son puntos en posición general en $\bar{\Po}^m$. Sea $T := f \lp p_0 \rp \vee \dots \vee f \lp p_n \rp \vee f \lp \bar{p} \rp$. Entonces $\bar{\R} = f \lp \R \rp$ es un sistema de referencia en $T$.
+		
+		Entonces $\exists! g : \Po^n \to T, g \lp \R \rp = \overline{\R}, g$ proyectividad. Veremos que $f = g$.
+		De momento sabemos que:
+		\begin{enumerate}[(1)]
+			\item\label{item:1_dela_prop} $\begin{cases} f \lp p_i \rp = g \lp p_i \rp \\ f \lp \bar{p} \rp = g \lp p \rp \end{cases}$
+			\item\label{item:2_dela_prop} $F_{|H_i} = g_i = g_{|H_i}$ (porque mandan un sistema de referencia al mismo sitio y son proyectividades)
+		\end{enumerate}
+		Hemos de ver que $\forall p \in \Po^n, f \lp p \rp = g \lp p \rp$:
+		\begin{itemize}
+			\item Si $p = \bar{p}$ o $p \in \bigcup_{i=0}^n H_i$ ya lo sabemos por (\ref{item:1_dela_prop}) i (\ref{item:2_dela_prop}).
+			\item Si $p \neq \bar{p}$ y $p \notin \bigcup_{i=0}^n H_i$
+		\end{itemize}
+		Sean $L := p \vee \bar{p}$ y sean $q_n := L \cap H_n, q_0 := L \cap H_0$. Como $f$ es una colineación, $f \lp L \rp$ es una recta, $f \lp L \rp = f \lp p \rp \vee f \lp \bar{p} \rp$.
+		Entonces:
+		\begin{gather*}
+			\lp f \lp q_0 \rp, f \lp q_1 \rp, f \lp \bar{p} \rp, f \lp p \rp \rp \substack{f \text{ mantiene} \\ = \\ \text{razón doble}} \lp q_0, q_1, \bar{p}, p \rp \stackrel{g \text{ proyec.}}{=} \lp g \lp q_0 \rp, g \lp q_1 \rp, g \lp \bar{p} \rp, g \lp p \rp \rp = \\
+			\stackrel{(\ref{item:1_dela_prop}) + (\ref{item:2_dela_prop})}{=} \lp f \lp p_0 \rp, f \lp p_1 \rp, f \lp \bar{p} \rp, g \lp p \rp \rp \implies f \lp p \rp = g \lp p \rp.
+		\end{gather*}
+	\end{itemize}
 \end{proof}
-\begin{teo}
-    Sea $f : \Po^n \to \bar{\Po}^n \tq$:
-    \begin{itemize}
-        \item $f$ es colineación
-        \item $f$ mantiene las razones dobles
-    \end{itemize}
-    Entonces $f$ es una proyectividad.
+\begin{teo} \label{teo:proyectividades}
+	Sea $f : \Po^n \to \bar{\Po}^n \tq$:
+	\begin{itemize}
+		\item $f$ es colineación
+		\item $f$ mantiene las razones dobles
+	\end{itemize}
+	Entonces $f$ es una proyectividad.
 \end{teo}
 \begin{proof}
-    Es un caso particular $\lp n = m \rp$ la proposición \ref{prop:demo_teo2}.
+	Es un caso particular $\lp n = m \rp$ la proposición \ref{prop:demo_teo2}.
 \end{proof}
+\begin{defi}
+	Sean $V_1, V_2 \subseteq \Po^n$ variedades proyectivas de dimesión $d$. Sea $W$ una variedad suplementaria de $V_1$ y $V_2$. La perspectividad de centro $W$ de $V_1$ a $V_2$ es:
+	\begin{align*}
+		f : V_1 &\to V_2 \\
+		p &\mapsto f \lp p \rp = \lp W \vee p \rp \cap V_2
+	\end{align*}
+\end{defi}
+\begin{obs}
+	Esta bien definido:
+	\begin{align*}
+		\dim \lp \lp W \vee p \rp \cap V_2 \rp &= \overbrace{\dim \lp W \vee p \rp}^{ n -d -1 + 1} + \overbrace{\dim V_2}^{d} - \overbrace{\dim \lp \lp W \vee p \rp \vee V_2 \rp}^n \\
+		&= n -d -1 + 1 + d - n = 0
+	\end{align*}
+	Por lo tanto $W \vee p \cap V_2$ es un punto $\lp f \lp p \rp \rp$
+\end{obs}
+\begin{obs}
+	En $d = 1$, $f$ perspectividad $=$ proyección y sección.
+\end{obs}
+\begin{example}
+	EJEMPLO PÁGINA 8
+\end{example}
+\begin{col}[(del teorema \ref{teo:proyectividades})]
+	Toda perspectividad es una proyectividad.
+\end{col}
+\begin{proof}
+	\begin{enumerate}[(1)]
+		\item[]
+		\item \label{item:col_teo2_it1} En primer lugar, veamos que $L \subseteq V_1$ recta $\implies f \lp L \rp \subseteq V_2$ recta. $f \lp L \rp = \lp W \vee L \rp \cap V_2$,
+		\begin{align*}
+			\dim f \lp L \rp &= \dim \lp \lp W \vee L \rp \cap V_2 \rp = \overbrace{\dim \lp W \vee L \rp}^{n-d+1} + \overbrace{\dim V_2}^d - \overbrace{\dim \lp W \vee L \vee V_2 \rp}^{n \; \lp W \vee V_2 = \Po^n \rp} \\
+			&= n - d + 1 + d - n = 1.
+		\end{align*}
+		Por lo tanto, $f \lp L \rp$ es una recta.
+		\item \label{item:col_teo2_it2} Veamos ahora que $f$ es inyectiva. Sean $p_1, p_2 \in V_1, p_1 \neq p_2, \tq f \lp p_1 \rp = f \lp p_2 \rp$ y sean
+		\begin{itemize}
+			\item $L_1 := f \lp p_1 \rp \vee p_1$
+			\item $L_2 := f \lp p_2 \rp \vee p_2$
+			\item $q_1 = L_1 \cap W$
+			\item $q_2 = L_2 \cap W$
+		\end{itemize}
+		Si $p_1 \neq p_2 \implies q_1 \neq q_2$. Sean $r = p_1 \vee p_2, s = q_1 \vee q_2, \pi = L_1 \vee L_2$ (es un plano porqu $L_1 \cap L_2 = f \lp p_1 \rp = f \lp p_2 \rp$).
+		\begin{gather*}
+			\begin{rcases}
+				\{ p_1, p_2 \} \subseteq r \cap \pi \implies r \subseteq \pi \\
+				\{ q_1, q_2 \} \subseteq s \cap \pi \implies s \subseteq \pi
+			\end{rcases}
+			\implies \emptyset \neq r \cap s \stackrel{(*)}{\subseteq} V_1 \cap " \stackrel{\text{supl.}}{=} \emptyset. \text{ Contradicción.}
+		\end{gather*}
+		\item \label{item:col_teo2_it3} Ahora veamos que $f$ mantiene las razones dobles. Sea $\widetilde{W} = W \vee L $. Observamos que $f \lp L \rp \subseteq \widetilde{W}$ y que $\dim \widetilde{W} = n-d-1+1+1= n-d+1$. \\
+		En $\widetilde{W} \; \lp \widetilde{W}\cong\Po^{n-d+1} \rp$ tenemos que $f_{|L} = \lp \text{sección con }f \lp L \rp \rp \circ \lp \text{proyección desde } W \rp$. Como la razón doble se conserva por proyección y sección,
+		\[ \lp p_1, p_2, p_3, p_4 \rp = \lp f \lp p_1 \rp, f \lp p_2 \rp, f \lp p_3 \rp, f \lp p_4 \rp \rp \implies f \text{ conserva razones dobles.}
+		\]
+	\end{enumerate}
+	\noindent Los puntos (\ref{item:col_teo2_it1}) y (\ref{item:col_teo2_it2}) implican que $f$ es una colineación. Los puntos (\ref{item:col_teo2_it1}), (\ref{item:col_teo2_it2}) y (\ref{item:col_teo2_it3}) implican (por el teorema \ref{teo:proyectividades}) que $f$ es una proyectividad
+\end{proof}
+\begin{teo}[fundamenteal de la geometría poryectiva]
+	\[ f : \Po^n \to \Po^n \text{ colineación} \implies f = [\varphi], \varphi : \E \to \E, \varphi \text{ aplicación lineal}. \]
+	En particular, si $\k = \real, f$ colineación $\implies f$ proyectividad.
+\end{teo}
+\begin{example}
+	\begin{align*}
+		\varphi : \cx^2 &\to \cx^2 \\
+		v = \lp z_1, z_2 \rp &\mapsto \varphi \lp v \rp = \lp \overline{z_1}, \overline{z_2} \rp
+	\end{align*}
+	$\varphi \lp \lambda v \rp = \overline{\lambda} \varphi \lp v \rp$ no es lineal. Sea 
+	\[ f = [\varphi] : \Po^1_\cx \to \Po^1_\cx, \]
+	$f$ no es una proyectividad, pero $f$ es una colineación.
+\end{example}
+\begin{defi}
+	Sea $\k$ un cuerpo. Un automorfismo de $\k$ es:
+	\[ \sigma : \k \to \k \text{ biyectiva} \]
+	tal que:
+	\begin{itemize}
+		\item $\sigma \lp 0 \rp = 0$
+		\item $\sigma \lp 1 \rp = 1$
+		\item $\sigma \lp a_1 + a_2 \rp = \sigma \lp a_1 \rp + \sigma \lp a_2 \rp$
+		\item $\sigma \lp a_1 \times a_2 \rp = \sigma \lp a_1 \rp \times \sigma \lp a_2 \rp$
+	\end{itemize}
+\end{defi}
+\begin{example}
+	Sea
+	\begin{align*}
+		\sigma : \cx &\to \cx \\
+		z &\mapsto \sigma \lp z \rp = \overline{z},
+	\end{align*}
+	$\sigma$ es un automorfismo.
+\end{example}
+\begin{ej}
+	$\sigma : \real \to \real$ automorfismo $\implies \sigma = \Id$.
+\end{ej}
+\begin{defi}
+	Sea $\E$ un $\k$ espacio vectorial, $\varphi : \E \to \E$ es semilineal si y solo si
+	\begin{enumerate}[(1)]
+		\item $\forall u_1, u_2, \; \varphi \lp v_1 + u_2 \rp = \varphi \lp u_1 \rp + \varphi \lp u_2 \rp$
+		\item $\exists \sigma: \k \to \k$ automorfismo t.q. $\varphi \lp \lambda u \rp = \sigma \lp \lambda \rp \varphi \lp u \rp, \forall \lambda \in \k$.
+	\end{enumerate}
+\end{defi}
+\begin{obs}
+	En $\real, \varphi$ semilineal $\implies \varphi$ lineal.
+\end{obs}
 
-
-
-
-
-
-
-
-
+\section{El teorema de Poncelet}
 
 
 
