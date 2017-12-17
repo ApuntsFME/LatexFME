@@ -251,14 +251,14 @@
 		\end{enumerate}
 		Hemos de ver que $\forall p \in \Po^n, f \lp p \rp = g \lp p \rp$:
 		\begin{itemize}
-			\item Si $p = \bar{p}$ o $p \in \bigcup_{i=0}^n H_i$ ya lo sabemos por (\ref{item:1_dela_prop}) i (\ref{item:2_dela_prop}).
+			\item Si $p = \bar{p}$ o $p \in \bigcup_{i=0}^n H_i$ ya lo sabemos por \eqref{item:1_dela_prop} i \eqref{item:2_dela_prop}.
 			\item Si $p \neq \bar{p}$ y $p \notin \bigcup_{i=0}^n H_i$
 		\end{itemize}
 		Sean $L := p \vee \bar{p}$ y sean $q_n := L \cap H_n, q_0 := L \cap H_0$. Como $f$ es una colineación, $f \lp L \rp$ es una recta, $f \lp L \rp = f \lp p \rp \vee f \lp \bar{p} \rp$.
 		Entonces:
 		\begin{gather*}
 			\lp f \lp q_0 \rp, f \lp q_1 \rp, f \lp \bar{p} \rp, f \lp p \rp \rp \substack{f \text{ mantiene} \\ = \\ \text{razón doble}} \lp q_0, q_1, \bar{p}, p \rp \stackrel{g \text{ proyec.}}{=} \lp g \lp q_0 \rp, g \lp q_1 \rp, g \lp \bar{p} \rp, g \lp p \rp \rp = \\
-			\stackrel{(\ref{item:1_dela_prop}) + (\ref{item:2_dela_prop})}{=} \lp f \lp p_0 \rp, f \lp p_1 \rp, f \lp \bar{p} \rp, g \lp p \rp \rp \implies f \lp p \rp = g \lp p \rp.
+			\stackrel{\eqref{item:1_dela_prop} + \eqref{item:2_dela_prop}}{=} \lp f \lp p_0 \rp, f \lp p_1 \rp, f \lp \bar{p} \rp, g \lp p \rp \rp \implies f \lp p \rp = g \lp p \rp.
 		\end{gather*}
 	\end{itemize}
 \end{proof}
@@ -326,7 +326,7 @@
 		\[ \lp p_1, p_2, p_3, p_4 \rp = \lp f \lp p_1 \rp, f \lp p_2 \rp, f \lp p_3 \rp, f \lp p_4 \rp \rp \implies f \text{ conserva razones dobles.}
 		\]
 	\end{enumerate}
-	\noindent Los puntos (\ref{item:col_teo2_it1}) y (\ref{item:col_teo2_it2}) implican que $f$ es una colineación. Los puntos (\ref{item:col_teo2_it1}), (\ref{item:col_teo2_it2}) y (\ref{item:col_teo2_it3}) implican (por el teorema \ref{teo:proyectividades}) que $f$ es una proyectividad
+	\noindent Los puntos \eqref{item:col_teo2_it1} y \eqref{item:col_teo2_it2} implican que $f$ es una colineación. Los puntos \eqref{item:col_teo2_it1}, \eqref{item:col_teo2_it2} y \eqref{item:col_teo2_it3} implican (por el teorema \ref{teo:proyectividades}) que $f$ es una proyectividad
 \end{proof}
 \begin{teo}[fundamenteal de la geometría poryectiva]
 	\[ f : \Po^n \to \Po^n \text{ colineación} \implies f = [\varphi], \varphi : \E \to \E, \varphi \text{ aplicación lineal}. \]
@@ -475,23 +475,100 @@
 		\item $V = [F]$ es $f$-invariante $\iff F$ es $\varphi$-invariante.
 	\end{enumerate}
 \end{obs}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\begin{example}
+	Queremos encontrar las variedades $f$-invariantes (o los subespacios $\varphi$-invariantes). \\
+	Sea $f:\Po^4\to\Po^4$ y sea $\R = \{p_0, p_1,p_2,p_3,p_4;\overline{p}\}$ y sea
+	\[
+		A = M\lp f;\R\rp =
+		\begin{pmatrix}
+			2 & 0 &   &   &   \\
+			1 & 2 &   &   &   \\
+			  &   & 3 &   &   \\
+			  &   &   & 3 & 0 \\
+			  &   &   & 1 & 3 \\
+		\end{pmatrix}
+	\]
+	Tenemos que:
+	\begin{itemize}
+		\item Puntos fijos: $p_1, p_2 \vee p_4$ (recta de puntos fijos).
+		\item Rectas invariantes: $p_2 \vee p_4, p_0 \vee p_1, p_3 \vee p_4$.
+		\item Planos invariantes: $p_0 \vee p_1 \vee p_2, p_2 \vee p_3 \vee p_4, p_1 \vee p_3 \vee p_4, p_0 \vee p_1 \vee p_4$.
+	\end{itemize}
+	Veamos ahora los hiperplanos fijos: $f\lp H\rp = H \iff f^*\lp H^*\rp = H^*$
+	\begin{gather*}
+		H:a_0x_0+\dots+a_nx_n=0 \iff H^* = \lp a_0:\dots:a_n\rp^t \\
+		A^t= M_{\R^*}\lp f^*\rp = \begin{pmatrix}
+			2 & 1 &   &   &   \\
+			0 & 2 &   &   &   \\
+			  &   & 3 &   &   \\
+			  &   &   & 3 & 1 \\
+			  &   &   & 0 & 3 \\
+		\end{pmatrix}; \qquad
+		\begin{array}{c}
+			\R^* = \{p_0^*,p_1^*,p_2^*,p_3^*,p_4^*;\overline{p}\} \\
+			B^* = \{\omega_0,\dots,\omega_4\}, \; \omega_i = v_i^*
+		\end{array}
+	\end{gather*}
+	Encontramos los veps de $A^t$: \\
+	\indent $\omega_0 \lambda_1 = 2 \rightarrow \omega_0 = \lp 2:0:\dots:0\rp^t$, \\
+	\indent $\begin{rcases} \omega_2 \\ \omega_3 \end{rcases} \lambda_2 = 3 \implies [\omega_2, \omega_3]$ veps de vap $3, a\lp0:1:0:0:0\rp^t + b\lp0:0:1:0:0\rp^t = \lp 0:a:b:0:0\rp^t$. \\
+	Por lo tanto,
+	\begin{itemize}
+		\item Hiperplanos invariantes:
+		\begin{itemize}
+			\item $H_0 : x_0 = 0$
+			\item $H_{a,b} : ax_1 + bx_2 = 0, \forall a, b \in \real$
+		\end {itemize}
+	\end{itemize}
+\end{example}
+\begin{prop}
+	Sea $f : \overline{\Po} \to \overline{\Po}$ homografía,
+	\begin{enumerate}[(1)]
+		\item \label{item:1_homografias} $p = [v]$ es un punto fijo de $f \iff v$ vep de $f$, es decir, de $A$,
+		\item \label{item:2_homografias} $H$ es un hiperplano $f$-invariante $\iff H^*$ vep de $f^*$, es decir, de $A^t$,
+		\item Hay una biyección entre puntos fijos e hiperplanos $f$-invariantes,
+		\item $V_1, V_2\; f$-invariantes $\implies V_1 \cap V_2, V_1 \vee V_2$ son $f$-invariantes,
+		\item \label{item:5_homografias} $V$ es $f$-invariante $\iff V^*$ es $f^*$-invariante,
+		\item Si $Q_\varphi \lp t\rp$ descompone totalmente, $V$ $f$-invariante $\implies \exists p\in \overline{\Po}$ punto fijo, $\exists H\subseteq\overline{\Po}$ hiperplano $f$-invariante $\tq p \in V \subseteq H$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	\begin{enumerate}[(1)]
+		\item[]
+		\item Visto.
+		\item Por dualidad de \eqref{item:1_homografias} y \eqref{item:5_homografias}.
+		\item $\begin{rcases}
+			Q_A\lp t\rp = Q_A\in\lp t\rp\\
+			J_A = J_{A^t}
+		\end{rcases}
+		\implies \dim\lp\text{Nuc}\lp A-\lambda\Id\rp\rp=\dim\lp\text{Nuc}\lp A^t - \lambda\Id\rp\rp$.
+		\item $F_1, F_2$ son $\varphi$-invariantes $\implies F_1 \cap F_2, F_1 + F_2$ son $\varphi$-invariantes.
+		\item Veamos cada implicación por separado \\
+		$\bimplies$ \\
+		$V^* = \{ H\subseteq\Po | V \subseteq H\}$. Sea $H_0\in V^* \implies V \subseteq H_0 \implies f\lp V\rp\subseteq f\lp H_0\rp\implies f^*\lp H_0^*\rp = f\lp H_0\rp \in V^*\implies V^*$ es $f^*$-invariante. \\ \\
+		$\bimpliedby$ \\
+		Dual de la otra impliecación: $\lp f^*\rp^* = f, \lp V^*\rp^*= V$.
+		\item $\exists p\in\Po$ punto fijo $\tq p \in V, V = [F] \subseteq\Po = \Po\lp\E\rp, f=[\varphi]$. $V \; f$-invariante $\iff F\; \varphi$-invariante. \\
+		$F \subseteq \E\; \varphi$-invariante $\implies Q_{\varphi_{|F}}\lp t\rp$ divide a $Q_\varphi\lp t \rp$. En este caso,
+		\begin{align*}
+			Q_\varphi\lp t\rp &= \lp-1\rp^n\lp t-\lambda_1\rp^{\delta_1} \dots \lp t-\lambda_r\rp^{\delta_r} \implies \\
+			Q_{\varphi_{|F}}\lp t\rp &= \lp-1\rp^d\lp t-\lambda_1\rp^{\mu_1}\dots\lp t-\lambda_r\rp^{\mu_r}, 0\leq\mu_i\leq\delta_i.
+		\end{align*}
+		Por tanto $\exists \lambda_i$ vap de $\varphi_{|F}$ y por tanto $\exists \omega_i\in F, \varphi\lp\omega_i\rp=\lambda_i\omega_i \implies f\lp p\rp=p\;\lp p = [\omega_i]\in V\rp.$ \\
+		Veamos que $\exists H\subseteq \Po$ hiperplano $f$-invariante t.q. $V\subseteq H$,
+		\[
+			V \subseteq H \iff \overbrace{V^*}^{f\text{-inv. por }\eqref{item:5_homografias}} \supseteq \overbrace{H^*}^{f\text{-inv. por }\eqref{item:2_homografias}}
+		\]
+	\end{enumerate}
+\end{proof}
+\begin{example}
+	Sea $f : \Po^3 \to \Po^3$, $\R$ una referencia de $\Po^3$.
+	\[
+		A = M_\R\lp f\rp = \begin{pmatrix}
+			0 & -1 & & \\
+			1 & 2 & & \\
+			& & -1 & \\
+			& & & -1
+		\end{pmatrix}
+	\]
+\end{example}

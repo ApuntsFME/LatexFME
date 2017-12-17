@@ -15,6 +15,12 @@
 \tikzexternalize[prefix=figures/]
 \pgfplotsset{compat=1.11}
 
+\def\fbx#1{\vbox{\hbox{\hbox{#1}\setbox0\lastbox\copy0\kern\fboxsep\vrule width\fboxrule depth\dimexpr \fboxsep+\dp0\relax}%
+            \hrule height\fboxrule}}
+
+\newcommand{\bimplies}{\fbx{$\implies$}}
+\newcommand{\bimpliedby}{\fbx{$\impliedby$}}
+
 \newcommand{\n}{\mathbb{N}}
 \newcommand{\z}{\mathbb{Z}}
 \newcommand{\q}{\mathbb{Q}}
@@ -45,9 +51,8 @@
 \DeclareMathOperator{\sinc}{sinc}
 \DeclareMathOperator{\graf}{graf}
 \DeclareMathOperator{\tq}{\text{ t.q. }}
+\DeclareMathOperator{\disc}{disc}
 \let\emptyset\varnothing
-
-%\DeclareUnicodeCharacter{00A0}{ }
 
 \hypersetup{
 	colorlinks,
