@@ -205,7 +205,7 @@
 \begin{obs}
 	Las composiciones de funciones \textit{proyección} y \textit{sección} también son proyectividades.
 \end{obs}
-\begin{example}
+\begin{example} % COSAS_QUE_FALTAN
 	AQUÍ FALTAN LOS EJEMPLOS DE LAS PÁGINAS 5-6.
 \end{example}
 \begin{prop} \label{prop:demo_teo2}
@@ -291,8 +291,8 @@
 \begin{obs}
 	En $d = 1$, $f$ perspectividad $=$ proyección y sección.
 \end{obs}
-\begin{example}
-	EJEMPLO PÁGINA 8
+\begin{example} % COSAS_QUE_FALTAN
+	EJEMPLO DE LA PÁGINA 8
 \end{example}
 \begin{col}[(del teorema \ref{teo:proyectividades})]
 	Toda perspectividad es una proyectividad.
@@ -376,16 +376,105 @@
 
 \section{El teorema de Poncelet}
 
+\begin{teo}[de Poncelet]
+	Sean $V_1, V_2$ variedades proyectivas de dim $d$ en $\Po^n$. Toda proyectividad es composición de perspectividades.
+\end{teo}
+\begin{proof} % COSAS_QUE_FALTAN
+	TROBAREU LA DEMO A LES PÀGINES 10, 11 i 12 DEL DIVO, SORRY EM FA MASSA PAL PERO ESTIMARÉ MOLT A QUI LA PASSI $\heartsuit$. \\ \\
+	PD: Si esteu estudiant, parleu amb algú d'ApuntsFME perquè us passi el pdf del Divo.
+\end{proof}
 
+\section{Clasificación y estudio de homografías}
 
+\subsection{Clasificación de homografías}
 
+\begin{defi}
+	Sean $f, g : \Po \to \Po$ homografías $\lp f = [\varphi], g = [\psi], \varphi, \psi : \E \to \E \text{ endomorfismos}\rp.$ Decimos que $f \sim g$ si y solo si (son equivalentes):
+	\begin{enumerate}[(i)]
+		\item $\exists h$ homografía $\tq g = \inv{h}fh$
+		\item $\exists \eta : \E \to \E$ endomorfismo, $\exists \lambda \in \k, \lambda \neq 0 \tq \psi = \lambda \inv{\eta} \varphi \eta$
+		\item $\exists S \in \mathcal{M}_{m+1, n+1}\lp\k\rp, \exists \lambda\in\k, \lambda \neq 0 \tq B = \lambda \inv{S} A S$, donde
+		\begin{itemize}
+			\item $A = M\lp f; \R\rp = M\lp f; \R,\R\rp$
+			\item $B = M\lp g; \R\rp = M\lp g; \R,\R\rp$
+		\end{itemize}
+		\item $\exists \R_1,\R_2\tq M\lp f;\R_1\rp = M \lp g; \R_2\rp$
+	\end{enumerate}
+\end{defi}
+\begin{obs}
+	$B = \lambda \inv{S} A S = \inv{S} \lp \lambda A \rp S \iff B$ y $\lambda A$ son equivalentes como matrices de endomorfismos $\iff$
+	\[
+		\substack{Q_A\lp t \rp \text{ descompone} \\ \iff \\ \text{totalmente}}
+		\begin{cases}
+			\{ \text{vaps } B \} = \lambda \overbrace{\{ \text{vaps } A \}}^{\mu_i} \\
+			\forall i, \dim \lp \text{Nuc}\lp B - \lambda \mu_i I\rp^k \rp = \dim \lp\text{Nuc}\lp A - \mu_i I \rp ^k \rp, \forall k
+		\end{cases}
+	\]
+	Es la misma estructura que en las cajas de Jordan.
+\end{obs}
+\begin{example}
+	\begin{itemize}
+		\item[]
+		\item $f \to A= M_\R \lp f \rp \to Q_A\lp t \rp = \lp t-2 \rp^2\lp t-4 \rp\lp t-6 \rp^3$
+		\item $g \to B= M_\R \lp g \rp \to Q_B\lp t \rp = \lp t-1 \rp^2\lp t-2 \rp\lp t-3 \rp^3$
+	\end{itemize}
+	\[
+		J_A = 
+		\begin{pmatrix}
+			2 & 0 &   &   &   &   \\
+			1 & 2 &   &   &   &   \\
+			  &   & 4 &   &   &   \\
+			  &   &   & 6 & 0 &   \\
+			  &   &   & 1 & 6 &   \\
+			  &   &   &   &   & 6 \\
+		\end{pmatrix}; \qquad
+		J_B =
+		\begin{pmatrix}
+			1 & 0 &   &   &   &   \\
+			1 & 1 &   &   &   &   \\
+			  &   & 2 &   &   &   \\
+			  &   &   & 3 & 0 &   \\
+			  &   &   & 1 & 3 &   \\
+			  &   &   &   &   & 3 \\
+		\end{pmatrix}
+	\]
+\end{example}
 
+\subsection{Homografía dual y variedades $f$-invariantes}
 
-
-
-
-
-
+\begin{defi}
+	En $\Po = \Po \lp\E\rp$, sea $f = [\varphi] : \Po \to \Po$ una homografía, la homografía dual de $f$ es
+	\[
+		f^* := [\varphi^*] : \Po^* \to \Po^*.
+	\]
+\end{defi}
+\begin{obs}
+	$\Po, \R$ referencia $\to \lp\Po^*, \R^*\rp$
+	\begin{enumerate}
+		\item $f : \Po \to \Po, A = M \lp f; \R\rp$ mueve puntos de $\Po$. $f^* : \Po^* \to \Po^*, A^t = M \lp f^*; \R^* \rp$ mueve puntos de $\Po^*$ (hiperplanos de $\Po$).
+		\item $J_A = J_{A^t}$, ya que
+			\begin{itemize}
+			\item $Q_A \lp t \rp = \det\lp A- t\Id\rp = \det\lp\lp A-t\Id\rp^t\rp = \det\lp A^t-t\Id\rp = Q_{A^t} \lp t\rp \implies$ vaps de $A =$ vaps de $A^t$ 
+			\item $\dim\lp\text{Nuc}\lp A-\lambda_i\Id\rp^k\rp=\dim\lp\text{Nuc}\lp A^t-\lambda_i\Id\rp^k\rp$
+			\end{itemize}
+	\end{enumerate}
+\end{obs}
+\begin{defi}
+	Sea $f = [\varphi]: \Po \to \Po$ homografía,
+	\begin{enumerate}
+		\item $p \in \Po$ es un punto fijo de $f \iff f\lp p \rp = p$.
+		\item Sea $V \subseteq \Po$ una variedad lineal, $V$ es una variedad lineal de puntos fijos $\iff \forall p \in V, f\lp p\rp = p$.
+		\item Sea $V \subseteq \Po$ una variedad lineal, $V$ es una variedad fija de $f$ (o es $f$-invariante) $\iff f\lp V\rp \subseteq V \stackrel{f \text{ biyectiva}}{\iff} f \lp V \rp = V$.
+	\end{enumerate}
+\end {defi}
+\begin{obs}
+	\begin{enumerate}
+		\item[]
+		\item $p = [v]$ es un punto fijo de $f \iff f\lp p\rp = [\varphi \lp v\rp] = [v] = p \iff \exists\lambda\neq 0 \tq \varphi\lp v\rp=\lambda v \iff v$ es vep de $\varphi$.
+		\item $V=[F]$ variedad de puntos fijos $\iff \forall v \in F, v$ es vep de $\varphi \iff \exists\lambda\neq 0 \tq \forall v \in F, \varphi\lp v\rp = \lambda v \iff \exists \lambda \neq 0 \tq F \subseteq \text{Nuc}\lp f - \lambda\Id\rp$.
+		\item $V = [F]$ es $f$-invariante $\iff F$ es $\varphi$-invariante.
+	\end{enumerate}
+\end{obs}
 
 
 
