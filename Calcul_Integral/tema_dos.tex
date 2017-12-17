@@ -584,7 +584,7 @@
 \begin{proof}
     Todo conjunto cerrado de un espacio compacto es compacto.
 \end{proof}
-\begin{lema}
+\begin{lema}\label{lema:teo_lebesque}
     Sea $A \subset \real^n$ rectángulo compacto. Sean $T_1, \dots, T_n \subset A$ rectángulos compactos $\tq A = \bigcup_{i=1}^n T_i$. Existe una partición $\Pa$ de $A$ t.q. para cada subrectángulo $R$ de $\Pa$, existe un $i$ t.q. $R \subset T_i$.
 \end{lema}
 \begin{proof}
@@ -592,7 +592,7 @@
     \[ \Pa_k = \{x_0 = a, x_{1^-}, x_{1^+}, \dots, x_{i^-}, x_{i^+}, \dots, x_{n^-}, x_{n^+}, b\}, \]
     donde $x_{i^-}, x_{i^+}$ son los extremos inferiores y superiores (respectivamente) de $T_i$. Por construcción, $R \subseteq T_i$.
 \end{proof}
-\begin{lema*}
+\begin{lema*}\label{lema:uno_lebesque}
     Sea $A \subseteq \real^n$ rectángulo compacto, $f : A \to \real, f$ fitada. Suposem $\forall x  \in A, \omega \lp f, x \rp < \varepsilon$. Entonces existe una partición $\Pa$ de $A \tq S \lp f, \Pa \rp - s \lp f, \Pa \rp < \varepsilon \vol \lp A \rp$.
 \end{lema*}
 \begin{proof}
@@ -603,25 +603,116 @@
 \begin{col*}
     $f$ continua $\implies f$ integrable Riemann (ya que $f$ continua $\implies \forall x \omega \lp f, x \rp = 0$).
 \end{col*}
-\begin{lema*}
+\begin{lema*}[2]\label{lema:dos_lebesque}
     Sean $A \subset \real^n$ rectángulo compacto, $f : A \to \real$ fitada, $c > 0$. Si $f$ es integrable Riemann, el conjunto $B_c = \{x \in A | \omega \lp f, x \rp \geq c\}$ tiene mesura nula.
 \end{lema*}
 \begin{proof}
     Sea $\varepsilon > 0$, aplicando el criterio de Riemann, existe una partición $\Pa$ de $A \tq S \lp f, \Pa \rp - s \lp f, \Pa \rp < c\varepsilon$. \\
-    Observamos que $A = A_1 \cup A_2, A_1 = \bigcup_{R \in \Pa} \mathring{R}$
+    Observamos que 
+    \[
+	    A = A_1 \cup A_2 \qquad A_1 = \bigcup_{R \in \Pa} \mathring{R}
+    \]
+    $A_2$ tiene medida nula por ser unión finita de subconjuntos de subespacios de
+    $\dim < n$. Ahora, separamos los subrectángulos de $\Pa$ en dos clases
+    \begin{itemize}
+	    \item $\Pa^\prime$ subrectángulos $R$ tal que $B_c$ corta a $R \implies$ en
+		    todos ellos, $M_R - m_r \geq c$.
+	    \item $\Pa^{\prime\prime}$ el resto.
+    \end{itemize}
+    Tenemos
+    \begin{gather*}
+	    c \sum_{R \in \Pa^\prime}\vol\left( R \right) \leq 
+	    \sum_{R \in \Pa^\prime}\left( M_R - m_R \right) \vol\left( R \right) \leq
+	    \sum_{R \in \Pa} \left( M_R -m_R \right)\vol \left( R \right) =\\=
+	    S(f, \Pa) - s(f, \Pa) < c\varepsilon \implies \sum_{R \in \Pa^\prime}
+	    \vol\left( R \right) < \varepsilon
+    \end{gather*}
+    Así pues, hemos recubierto $B_c \cap A_1$ con un número finito de rectángulos de
+    volumenes $< \varepsilon$. Tambi\'en podemos hacerlo con $B_c \cap A_2$, ya que
+    tiene medida nula $\implies$ podemos recorrer $B_c$ con rectángulos de volumenes
+    $< 2\varepsilon \implies B_c$ tiene medida nula.
 \end{proof}
 
+\begin{teo}[de Lebesque]
+	Sean $A \subseteq \real^n$ un rectángulo compacto, $f \colon A \to \real$ una
+	función acotada. Sea $\disc\left( f \right) = \setb{x \in A \vert x \text{ no
+	es continua en }A}$. Entonces, $f$ es integrable Riemman en $A$ si y solo si
+	$\disc\left( f \right)$ tiene medida nula.
+\end{teo}
 
+\begin{proof}
+	Por comodidad, llamaremos $B = \disc\left( f \right)$ y $B_c = \setb{x \in A
+	\vert \omega\left( f, x \right) \geq c}$.
 
+	\bimplies
 
+	Sea $f$ integrable Riemman en $A$. Observamos que
+	\[
+		B = \bigcup_{k \geq 1} B_{\sfrac{1}{k}}
+	\]
+	por el lema \hyperref[lema:dos_lebesque]{2}, $B_{\sfrac{1}{k}}$ tienen medida
+	nula. Como es una unión numerable, $B$ tiene medida nula.
 
+	\bimpliedby
 
+	Suponemos que $B$ tiene medida nula. Sea $\varepsilon > 0$ y $B_\varepsilon
+	\subset B$, que tiene medida nula y es compacto, por el lema
+	\hyperref[lema:dos_lebesque]{2}, por lo tanto, tiene contenido nulo y, por lo
+	tanto, existen rectángulos compactos $T_1, \dots, T_N \subset A$ tales que
+	\[
+		B_\varepsilon = \bigcup_{i = 1}{N} T_i \qquad
+		\sum_{i=1}{N}\vol\left( T_i \right) < \varepsilon
+	\]
+	Sea $\Pa$ una partición de $A$. Separamos los subrectángulos $R$ en los
+	siguientes tipos
+	\begin{itemize}
+		\item $R_1$: $R$ está dentro de algún $T_i$
+		\item $R_2$: el resto.
+	\end{itemize}
 
+	Tenemos ahora que
+	\[
+		\sum_{R \in R_1}\left( M_R - m_R \right)\vol\left( R \right) \leq
+		\left( M_A -m_A \right)\sum^{N}_{i=1} \vol\left( T_i \right) <
+		\left( M_A - m_A \right) \varepsilon
+	\]
+	Ahora, si $R \in R_2$, entonces $R$ no conta a $B_\varepsilon$, por lo tanto,
+	$w(f,x) < \varepsilon$ $\forall x \in R$, por el lema
+	\hyperref[lema:uno_lebesque]{1}, existe una partición $\Pa_R$ de $R$ tal que
+	$S\left( f, \Pa_R \right) - s\left( f, \Pa_R \right) < \varepsilon
+	\vol \left( R \right)$.
+	
+	Podemos refinar $\Pa$ a una partición $\Pa^\prime$ tal que todos sus
+	subrectángulos, est\'en dentro de los subrectángulos de $\Pa_R$ (por el lema
+	\hyperref[lema:teo_lebesque]{teórico})
+	\begin{gather*}
+		S\left( f, \Pa^\prime \right) - s\left( f, \Pa^\prime \right) =
+		\sum_{R^\prime \in R_1} \left( M_{R^\prime} - m_{R^\prime} \right)
+		\vol \left( R^\prime \right) + \sum_{R^\prime \in R_2}
+		\left( M_{R^\prime} - m_{R^\prime}\right) \vol\left( R^\prime \right)
+		< \\ < \left( M_A - m_A \right)\varepsilon + \sum_{R^\prime \in R_2}
+		\varepsilon \vol\left( R^\prime \right) = \varepsilon \left( 
+		\left( M_A - m_A \right) + \vol \left( A \right)\right) 
+	\end{gather*}
+	Teniendo en cuenta que
+	\[
+		\sum_{R \in R_2} \sum_{R^\prime \in R} \left( M_{R^\prime} - 
+		m_{R^\prime}\right) \vol\left( R^\prime \right) < \sum_{R \in R_2}
+		\varepsilon \vol\left( R \right)
+	\]
+	Ahora, tan solo queda obervar que $\varepsilon \left( \left( M_A - m_A \right)
+	+ \vol \left( A \right)\right)$ lo podemos hacer tan pequeño como queramos.
+\end{proof}
 
+\begin{defi}
+	Una propiedad que se satisface para todos los puntos de un conjunto $A$,
+	excepto en un conjunto $N \subset A$ de medida nula, se dice que se satisface
+	casi para todo.
+\end{defi}
 
+\begin{prop}
+	Toda función $f \colon A \to \real$ continua sobre un rectángulo compacto es
+	integrable.
+\end{prop}
 
-
-
-
-
-
+\section{Integral de Riemman sobre conjuntos más generales}
