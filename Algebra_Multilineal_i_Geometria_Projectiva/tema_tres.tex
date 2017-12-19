@@ -744,4 +744,64 @@ demostrando el siguiente lema.
 
 % A PARTIR D'AQUI JORDI
 
+\subsubsection{Homologías}
+
+\begin{defi}
+    Sea $f \colon \Po \to \Po$ una homografía $\lp f \neq \Id \rp$
+    \begin{itemize}
+        \item $f \text{ es una homología } \iff f \text{ tiene un hiperplano de puntos fijos}.$
+        \item $f \text{ es una homología general } \iff f \text{ es una homología y tiene, además, otro punto fijo}.$
+        \item $f \text{ es una homología especial } \iff f \text{ es un a homología y no es una homología especial}.$
+    \end{itemize}
+\end{defi}
+
+\begin{prop}
+    Sea $f \colon \Po \to \Po$ una homología. Entonces, $\exists \R$ referencia tal que $A=M\lp f ; R \rp$.
+    \begin{itemize}
+        \item Si $f$ es una homología general, $A=
+            \begin{pmatrix}
+                1 & & & \\
+                & \ddots & & \\
+                & & 1 & \\
+                & & & a \\
+            \end{pmatrix}, a \neq 1.$
+        \item Si $f$ es una homología especial, $A=
+            \begin{pmatrix}
+                1 & 0 & & \\
+                1 & 1 & & \\
+                & & \ddots &  \\
+                & & & 1 \\
+            \end{pmatrix}.$
+    \end{itemize}
+\end{prop}
+
+\begin{proof}
+    $f=\left[ \varphi \right]$. $\Po = \Po \lp \E \rp$; $\dim \Po = n, \; \dim \E = n+1$.
+    \[
+        Q_{\varphi} \lp t \rp = \lp -1 \rp ^{n+1} \underbrace{\lp t-\lambda \rp ^{n}}_{\substack{\text{hay un hiperplano}\\ \text{de puntos fijos}}} \lp t-\mu \rp, \; \lambda \neq 0, \; \gr \lp Q_{\varphi} \lp t \rp \rp = n+1.
+    \]
+    \begin{itemize}
+        \item Si $\mu \neq \lambda$:
+            \begin{gather*}
+                \left\{
+                \begin{array}{ccccc}
+                    \lambda & m_a=n & \overbrace{m_g \geq n}^{\dim \nuc \lp \varphi - \lambda \Id \rp \geq n} & \implies & m_g=n \\
+                    \mu & m_a=1 & m_g = 1 & &  
+                \end{array} \right\} \substack{\text{Teorema de} \\ \implies \\ \text{diagonalización}} \\
+                \implies \varphi \; \text{diagonaliza} \implies \; \exists B \tq A=M \lp \varphi ; B \rp = \\
+                = \begin{pmatrix}
+                    \lambda & & & \\
+                    & \ddots & & \\
+                    & & \lambda & \\
+                    & & & \mu
+                \end{pmatrix} = \begin{pmatrix}
+                    1 & & & \\
+                    & \ddots & & \\
+                    & & 1 & \\
+                    & & & a
+                \end{pmatrix}.
+            \end{gather*}
+    \end{itemize}
+\end{proof}
+
 % A PARTIR D'AQUI ERIC
