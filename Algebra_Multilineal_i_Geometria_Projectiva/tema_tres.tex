@@ -649,10 +649,74 @@ demostrando el siguiente lema.
 \end{obs}
 \begin{obs}
 	Sea $\k = \real, m_\varphi\lp t\rp | \lp t^2-\lambda\rp$
-	\begin{enumerate}[Caso 1]
-		\item $\lambda<0 \rightarrow$ nada 
-		\item $\lambda = a^2>0 \rightarrow m_\varphi$
-	\end{enumerate}
+	\begin{itemize}
+		\item Caso 1: $\lambda<0 \rightarrow$ nada 
+		\item Caso 2: $\lambda = a^2>0 \rightarrow m_\varphi\lp t\rp = \text{ó}
+		\begin{cases}
+			\lp t-a\rp \rightarrow \varphi -a\Id=0\implies\varphi=a\Id \rightarrow \text{ No} \\
+			\lp t+a\rp \rightarrow \varphi +a\Id=0\implies\varphi=-a\Id \rightarrow \text{ No} \\
+			\lp t^2-a^2\rp = \lp t-a\rp\lp t+a\rp
+		\end{cases}$
+	\end{itemize}
+	Conclusión: $\varphi$ diagonaliza.
+	Por tanto, $\exists B$ t.q.:
+	\begin{gather*}
+		M_B\lp\varphi\rp =
+		\begin{pmatrix}
+			a & & & & & \\
+			& \ddots & & & & \\
+			& & a & & & \\
+			& & & -a & & \\
+			& & & & \ddots & \\
+			& & & & & -a
+		\end{pmatrix}, \quad
+		M\lp f;\R\rp \substack{\text{Matriz de } \varphi \\=\\ \text{salvo const.}} \begin{pmatrix}
+			1 & & & & & \\
+			& \ddots & & & & \\
+			& & 1 & & & \\
+			& & & -1 & & \\
+			& & & & \ddots & \\
+			& & & & & -1\\
+		\end{pmatrix}
+	\end{gather*}
+	$\R = \{q_0 = [v_0], \dots, q_r=[v_r], q_{r+1} = [v_{r+1}], \dots, q_n = [v_n]; \overline{q}\}$.\\
+	Sean $V = q_0 \vee \dots q_r, W = q_{r+1} \vee \dots \vee q_n$ de puntos fijos, $V$ y $W$ suplementarias.
+	Sea $q \in \Po$.
+	\begin{itemize}
+		\item $q \in V$ o $q \in W \implies f\lp q\rp=q$.
+		\item $q \notin V, W$. Como $V,W$ son suplementarias, $\exists! L$ recta t.q. $q\in L, L\cap V=\{q_0\}, L\cap W = \{q_1\}$. Como $q_0\in V, q_1 \in W \implies q_0, q_1$ puntos fijos $\implies l = q_o \vee q_1$ es $f$-invariante. \\
+		$q \in L \implies f\lp q\rp \in L$,
+	\end{itemize}
+	\[\lp q_0, q_1, q, f\lp q\rp\rp = \lp f\lp q_0\rp, f\lp q_1\rp, f\lp q\rp, q\rp = \lp q_0, q_1, f\lp q\rp, q\rp \implies \lp q_0, q_1, q, f\lp q\rp\rp = -1.\] % aixo es un apanyo per a que no es surti de la pagina, pero hauria de ser dins del itemize
 \end{obs}
+\begin{example}
 
+\end{example}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> :tada:
 % A PARTIR D'AQUI JORDI
