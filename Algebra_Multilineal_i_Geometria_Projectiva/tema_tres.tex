@@ -4,17 +4,17 @@
 \begin{defi}
 	\begin{enumerate}
 		\item[]
-		\item Sean $\Po = \Po(\E), \bar{\Po} = \Po(\bar{\E})$ espacios proyectivos de dimensión $n$. Sea $\varphi : \E \to \bar{\E}$ una aplicación lineal biyectiva. Una proyectividad, definida por $\varphi$, es una aplicación
+		\item Sean $\Po = \Po(\E), \overline{\Po} = \Po(\overline{\E})$ espacios proyectivos de dimensión $n$. Sea $\varphi : \E \to \overline{\E}$ una aplicación lineal biyectiva. Una proyectividad, definida por $\varphi$, es una aplicación
 		\begin{align*}
-			f := [\varphi] : \Po &\to \bar{\Po} \\
+			f := [\varphi] : \Po &\to \overline{\Po} \\
 			p = [v] &\mapsto f(p) = [\varphi(v)]
 		\end{align*}
 		Diremos que $\varphi$ es un representante de $f$.
-		\item Si $\Po = \bar{\Po}$, llamaremos homografías a las proyectividades.
+		\item Si $\Po = \overline{\Po}$, llamaremos homografías a las proyectividades.
 	\end{enumerate}
 \end{defi}
 \begin{obs}
-	$\varphi$ no inyectiva $\implies [\varphi]$ no es una aplicación de $\Po(\E)$ en $\Po(\bar{\E})$.
+	$\varphi$ no inyectiva $\implies [\varphi]$ no es una aplicación de $\Po(\E)$ en $\Po(\overline{\E})$.
 \end{obs}
 \begin{obs}
 	$[\varphi] = [\psi] \iff \exists \lambda \neq 0$ tal que $\psi = \lambda \varphi$.
@@ -44,9 +44,9 @@
 			\item $f = [\varphi]$ proyectividad $\implies f^{-1}$ proyectividad y $f^{-1} = [\varphi^{-1}]$.
 		\end{itemize}
 		\item Relación con variedades lineales \\
-		Sea $f = [\varphi] : \Po \to \bar{\Po}$,
+		Sea $f = [\varphi] : \Po \to \overline{\Po}$,
 		\begin{itemize}
-			\item $V = \pi(F)$ variedad lineal de $\Po$ de dimensión $d \implies f(V) = \pi(\varphi(F))$ es una variedad lineal de $\bar{\Po}$ de dimensión $d$.
+			\item $V = \pi(F)$ variedad lineal de $\Po$ de dimensión $d \implies f(V) = \pi(\varphi(F))$ es una variedad lineal de $\overline{\Po}$ de dimensión $d$.
 			\item $V_1 \subseteq V_2 \iff f(V_1) \subseteq f(V_2).$
 			\item $f(V_1 \vee V_2) = f(V_1) \vee f(V_2)$.
 			\item $f(V_1 \cap V_2) = f(V_1) \cap f(V_2)$.
@@ -67,15 +67,15 @@
 	$\rho = (p_1, p_2, p_3, p_4) \implies \exists u,v \in \E$ tales que $p_1 = [u], p_2 = [v], p_3 = [u+v], p_4 = [\rho u + v] \implies f(p_1) = [\varphi(u)], f(p_2) = [\varphi(v)], f(p_3) = [\varphi(u) + \varphi(v)], f(p_4) = [\rho \varphi(u) + \varphi(v)] \implies \rho = (f(p_1), f(p_2), f(p_3), f(p_4))$.
 \end{proof}
 \begin{defi}
-	La matriz de una proyectividad $f$ es $M_{\R, \bar{\R}} (f) := M_{B, \bar{B}}(\varphi)$.
+	La matriz de una proyectividad $f$ es $M_{\R, \overline{\R}} (f) := M_{B, \overline{B}}(\varphi)$.
 \end{defi}
 \begin{obs}
-	$M_{\R, \bar{\R}} (f)$ está definida salvo multiplicar por $\lambda \neq 0$ (por la indeterminación de $B$ y $\bar{B}$).
+	$M_{\R, \overline{\R}} (f)$ está definida salvo multiplicar por $\lambda \neq 0$ (por la indeterminación de $B$ y $\overline{B}$).
 \end{obs}
 \begin{obs}
-	Si $p_\R = (x_0 : \dots : x_n), f(p)_{\bar{\R}} = (y_0 : \dots : y_n)$, entonces,
+	Si $p_\R = (x_0 : \dots : x_n), f(p)_{\overline{\R}} = (y_0 : \dots : y_n)$, entonces,
 	\[
-	\begin{pmatrix} y_0 \\ \vdots \\ y_n \end{pmatrix} = M_{\R, \bar{\R}} \begin{pmatrix} x_0 \\ \vdots \\ x_n \end{pmatrix}
+	\begin{pmatrix} y_0 \\ \vdots \\ y_n \end{pmatrix} = M_{\R, \overline{\R}} \begin{pmatrix} x_0 \\ \vdots \\ x_n \end{pmatrix}
 	\]
 \end{obs}
 \begin{prop}[Propiedades]
@@ -83,26 +83,26 @@
 		\item[]
 		\item $M_{\R, \R}(\Id) = \Id$.
 		\item Si
-%			\begin{alignat*}{3}
-%				&\Po \text{ } \stackrel{f}{\to} \text{  } &&\bar{\Po} \text{ } \stackrel{g}{\to} \text{  } &&\bar{\bar{\Po}} \\
-%				&\R_1 &&\R_2 &&\R_3
-%			\end{alignat*}
+			\begin{alignat*}{3}
+				&\Po \text{ } \stackrel{f}{\to} \text{  } &&\overline{\Po} \text{ } \stackrel{g}{\to} \text{  } &&\overline{\overline{\Po}} \\
+				&\R_1 &&\R_2 &&\R_3
+			\end{alignat*}
 			Entonces, $M_{\R_1, \R_3}(g \circ f) = M_{\R_2, \R_3}(g) \times M_{\R_1, \R_2}(f)$
-		\item $\Po_\R \stackrel{f}{\to} \bar{\Po}_{\bar{\R}}, M_{\bar{\R}, \R}(f^{-1}) = (M_{\R, \bar{\R}} (f))^{-1}.$
+		\item $\Po_\R \stackrel{f}{\to} \overline{\Po}_{\overline{\R}}, M_{\overline{\R}, \R}(f^{-1}) = (M_{\R, \overline{\R}} (f))^{-1}.$
 	\end{enumerate}
 \end{prop}
 \begin{proof}
 	Trivial a partir de las propiedades de las matrices de aplicaciones lineales biyectivas.
 \end{proof}
 \begin{prop}
-	$f : \Po \to \bar{\Po}$ proyectividad.
+	$f : \Po \to \overline{\Po}$ proyectividad.
 	\begin{itemize}
-		\item Si $\R = \{p_0, \dots, p_n; \bar{p}\}$ es un sistema de referencia en $\Po \implies f(\R) := \{f(p_0), \dots, f(p_n); f(\bar{p})\}$ es un sistema de referencia en $\bar{\Po}$ y $M_{\R, f(\R)}(f) = \Id$.
-		\item $g : \Po \to \bar{\Po}$ proyectividad, $\R$ un sistema de referencia en $\Po$,
+		\item Si $\R = \{p_0, \dots, p_n; \overline{p}\}$ es un sistema de referencia en $\Po \implies f(\R) := \{f(p_0), \dots, f(p_n); f(\overline{p})\}$ es un sistema de referencia en $\overline{\Po}$ y $M_{\R, f(\R)}(f) = \Id$.
+		\item $g : \Po \to \overline{\Po}$ proyectividad, $\R$ un sistema de referencia en $\Po$,
 			\[
 				f = g \iff f(\R) = g(\R)
 			\]
-		\item $\Po, \bar{\Po}$ espacios proyectivos de dimensión $n$, $\R, \bar{\R}$ sistemas de referencia. Entonces $\exists! f : \Po \to \bar{\Po}$ proyectividad tal que $\bar{\R} = f(\R)$.
+		\item $\Po, \overline{\Po}$ espacios proyectivos de dimensión $n$, $\R, \overline{\R}$ sistemas de referencia. Entonces $\exists! f : \Po \to \overline{\Po}$ proyectividad tal que $\overline{\R} = f(\R)$.
 	\end{itemize}
 \end{prop}
 \begin{proof}
@@ -112,9 +112,9 @@
 \section{Caracterización geométrica de las proyectividades}
 
 \begin{defi}
-	$h : \Po \to \bar{\Po}$ (no necesariamente dim $\Po$ = dim $\bar{\Po}$)
+	$h : \Po \to \overline{\Po}$ (no necesariamente dim $\Po$ = dim $\overline{\Po}$)
 	\begin{enumerate}
-		\item $h$ es colineación $\iff \forall p_1, p_2, p_3 \in \Po$ diferentes dos a dos y alineados, $h(p_1), h(p_2), h(p_3) \in \bar{\Po}$ son diferentes dos a dos y están alineados.
+		\item $h$ es colineación $\iff \forall p_1, p_2, p_3 \in \Po$ diferentes dos a dos y alineados, $h(p_1), h(p_2), h(p_3) \in \overline{\Po}$ son diferentes dos a dos y están alineados.
 		\item $h$ conserva las razones dobles $\iff h$ es colineación y $\forall p_1, p_2, p_3, p_4 \in \Po$ alineados, al menos tres diferentes, $(h(p_1), h(p_2), h(p_3), h(p_4)) = (p_1, p_2, p_3, p_4)$.
 	\end{enumerate}
 \end{defi}
@@ -125,7 +125,7 @@
 	$f$ proyectividad $\implies \begin{cases} f \text{ colineación} & (1) \label{coli} \\ f \text{ conserva razones dobles} & (2) \label{cons_raz_dob} \end{cases}$
 \end{prop}
 \begin{proof}
-	$f : \Po \to \bar{\Po}, f = [\varphi]$,
+	$f : \Po \to \overline{\Po}, f = [\varphi]$,
 	\begin{enumerate}[(1)]
 		\item $f$ biyectiva $\implies f(p) \neq f(q), \forall p \neq q$. \\
 		$f$ proyectividad $\implies f(V)$ es una variedad lineal de misma dimensión. \\
@@ -209,61 +209,61 @@
 	AQUÍ FALTAN LOS EJEMPLOS DE LAS PÁGINAS 5-6.
 \end{example}
 \begin{prop} \label{prop:demo_teo2}
-	Sea $f : \Po^n \to \bar{\Po}^m \tq$:
+	Sea $f : \Po^n \to \overline{\Po}^m \tq$:
 	\begin{itemize}
 		\item $f$ es colineación
 		\item $f$ mantiene las razones dobles
 	\end{itemize}
-	Entonces $V = f \lp \Po^n \rp$ es una variedad lineal de $\bar{\Po}^m$ de dim $n$ y $f : \Po^n \to V = f \lp \Po^n \rp$ es una proyectividad.
+	Entonces $V = f \lp \Po^n \rp$ es una variedad lineal de $\overline{\Po}^m$ de dim $n$ y $f : \Po^n \to V = f \lp \Po^n \rp$ es una proyectividad.
 \end{prop}
 \begin{proof}
-	$f : \Po^n \to \bar{\Po}^m$. Sigui $\R = \{ p_0, \dots, p_n; \bar{p} \}$ sistema de referencia, $W := f \lp p_0 \rp \vee \dots \vee f \lp p_n \rp$ variedad lineal de $\bar{\Po}^m$ de $\dim \leq n$. \\
+	$f : \Po^n \to \overline{\Po}^m$. Sigui $\R = \{ p_0, \dots, p_n; \overline{p} \}$ sistema de referencia, $W := f \lp p_0 \rp \vee \dots \vee f \lp p_n \rp$ variedad lineal de $\overline{\Po}^m$ de $\dim \leq n$. \\
 	Inducción sobre $n$ (fijamos $m$):
 	\begin{itemize}
-		\item $n = 1, f : \Po^1 \to \bar{\Po}^m$ \\
+		\item $n = 1, f : \Po^1 \to \overline{\Po}^m$ \\
 		$\begin{rcases}
 			f \text{ colineación } \implies 
 			\begin{rcases}
 				V = f \lp \Po^1 \rp \subseteq L \text{ recta} \\
 				f \text{ inyectiva}
 			\end{rcases}
-			\implies f : \Po^1 \to L \cong \bar{\Po}^1 \\
+			\implies f : \Po^1 \to L \cong \overline{\Po}^1 \\
 			f \text{ mantiene las razones dobles}
 		\end{rcases}
 		\stackrel{\ref{teo:proy_dim_1}}{\implies} f$ es una proyectividad (en particular $V = f \lp \Po^1 \rp = L$).
 		\item $n > 1$, supongamos cierto por $n-1$ (hipótesis de inducción). Probemos por $n$. \\
 		Definimos $H_i := p_0 \vee \dots \vee \hat{p} \vee \dots \vee p_n$, $i = 0, \dots, n$ (hiperplano sin $p_i$). Demostremos que $p \in H_i \implies f \lp p \rp \notin f \lp H_i \rp$: \\
 		$\begin{rcases}
-			f : \Po^n \to \bar{\Po}^m \\
-			f_{|H_i} : \Po^{n-1} \cong H_i \subseteq \Po^n \to \bar{\Po}^m
+			f : \Po^n \to \overline{\Po}^m \\
+			f_{|H_i} : \Po^{n-1} \cong H_i \subseteq \Po^n \to \overline{\Po}^m
 		\end{rcases}
-		\implies g_i = f_{|H_i} : H_i \to \bar{\Po}^m$ es una proyectividad $\implies g_i : H_i \to f \lp H_i \rp = V_i$ es biyectiva. Supongamos $f \lp p \rp \in f \lp H_i \rp = V_i$,
+		\implies g_i = f_{|H_i} : H_i \to \overline{\Po}^m$ es una proyectividad $\implies g_i : H_i \to f \lp H_i \rp = V_i$ es biyectiva. Supongamos $f \lp p \rp \in f \lp H_i \rp = V_i$,
 		\[
 			\exists q_i \in H_i \tq f \lp q_i \rp = f \lp p \rp \substack{f \text{ colineación} \\ \implies \\ f \text{ inyectiva}} p = q_i \in H_i. \text{ Contradicción.}
 		\]
-		Por tanto queda demostrado. Una consecuencia es que la imagen de $\R$ por $f$ son puntos en posición general en $\bar{\Po}^m$. Sea $T := f \lp p_0 \rp \vee \dots \vee f \lp p_n \rp \vee f \lp \bar{p} \rp$. Entonces $\bar{\R} = f \lp \R \rp$ es un sistema de referencia en $T$.
+		Por tanto queda demostrado. Una consecuencia es que la imagen de $\R$ por $f$ son puntos en posición general en $\overline{\Po}^m$. Sea $T := f \lp p_0 \rp \vee \dots \vee f \lp p_n \rp \vee f \lp \overline{p} \rp$. Entonces $\overline{\R} = f \lp \R \rp$ es un sistema de referencia en $T$.
 		
 		Entonces $\exists! g : \Po^n \to T, g \lp \R \rp = \overline{\R}, g$ proyectividad. Veremos que $f = g$.
 		De momento sabemos que:
 		\begin{enumerate}[(1)]
-			\item\label{item:1_dela_prop} $\begin{cases} f \lp p_i \rp = g \lp p_i \rp \\ f \lp \bar{p} \rp = g \lp p \rp \end{cases}$
+			\item\label{item:1_dela_prop} $\begin{cases} f \lp p_i \rp = g \lp p_i \rp \\ f \lp \overline{p} \rp = g \lp p \rp \end{cases}$
 			\item\label{item:2_dela_prop} $F_{|H_i} = g_i = g_{|H_i}$ (porque mandan un sistema de referencia al mismo sitio y son proyectividades)
 		\end{enumerate}
 		Hemos de ver que $\forall p \in \Po^n, f \lp p \rp = g \lp p \rp$:
 		\begin{itemize}
-			\item Si $p = \bar{p}$ o $p \in \bigcup_{i=0}^n H_i$ ya lo sabemos por \eqref{item:1_dela_prop} i \eqref{item:2_dela_prop}.
-			\item Si $p \neq \bar{p}$ y $p \notin \bigcup_{i=0}^n H_i$
+			\item Si $p = \overline{p}$ o $p \in \bigcup_{i=0}^n H_i$ ya lo sabemos por \eqref{item:1_dela_prop} i \eqref{item:2_dela_prop}.
+			\item Si $p \neq \overline{p}$ y $p \notin \bigcup_{i=0}^n H_i$
 		\end{itemize}
-		Sean $L := p \vee \bar{p}$ y sean $q_n := L \cap H_n, q_0 := L \cap H_0$. Como $f$ es una colineación, $f \lp L \rp$ es una recta, $f \lp L \rp = f \lp p \rp \vee f \lp \bar{p} \rp$.
+		Sean $L := p \vee \overline{p}$ y sean $q_n := L \cap H_n, q_0 := L \cap H_0$. Como $f$ es una colineación, $f \lp L \rp$ es una recta, $f \lp L \rp = f \lp p \rp \vee f \lp \overline{p} \rp$.
 		Entonces:
 		\begin{gather*}
-			\lp f \lp q_0 \rp, f \lp q_1 \rp, f \lp \bar{p} \rp, f \lp p \rp \rp \substack{f \text{ mantiene} \\ = \\ \text{razón doble}} \lp q_0, q_1, \bar{p}, p \rp \stackrel{g \text{ proyec.}}{=} \lp g \lp q_0 \rp, g \lp q_1 \rp, g \lp \bar{p} \rp, g \lp p \rp \rp = \\
-			\stackrel{\eqref{item:1_dela_prop} + \eqref{item:2_dela_prop}}{=} \lp f \lp p_0 \rp, f \lp p_1 \rp, f \lp \bar{p} \rp, g \lp p \rp \rp \implies f \lp p \rp = g \lp p \rp.
+			\lp f \lp q_0 \rp, f \lp q_1 \rp, f \lp \overline{p} \rp, f \lp p \rp \rp \substack{f \text{ mantiene} \\ = \\ \text{razón doble}} \lp q_0, q_1, \overline{p}, p \rp \stackrel{g \text{ proyec.}}{=} \lp g \lp q_0 \rp, g \lp q_1 \rp, g \lp \overline{p} \rp, g \lp p \rp \rp = \\
+			\stackrel{\eqref{item:1_dela_prop} + \eqref{item:2_dela_prop}}{=} \lp f \lp p_0 \rp, f \lp p_1 \rp, f \lp \overline{p} \rp, g \lp p \rp \rp \implies f \lp p \rp = g \lp p \rp.
 		\end{gather*}
 	\end{itemize}
 \end{proof}
 \begin{teo} \label{teo:proyectividades}
-	Sea $f : \Po^n \to \bar{\Po}^n \tq$:
+	Sea $f : \Po^n \to \overline{\Po}^n \tq$:
 	\begin{itemize}
 		\item $f$ es colineación
 		\item $f$ mantiene las razones dobles
@@ -690,7 +690,31 @@ demostrando el siguiente lema.
 	\[\lp q_0, q_1, q, f\lp q\rp\rp = \lp f\lp q_0\rp, f\lp q_1\rp, f\lp q\rp, q\rp = \lp q_0, q_1, f\lp q\rp, q\rp \implies \lp q_0, q_1, q, f\lp q\rp\rp = -1.\] % aixo es un apanyo per a que no es surti de la pagina, pero hauria de ser dins del itemize
 \end{obs}
 \begin{example}
-
+	Sea $f \colon \Po^3 \to \Po^3$ \\
+	\[
+		A = M\lp f; \R\rp = \begin{pmatrix}
+		0 & -1 & & \\
+		1 & 2 & & \\
+		& & -1 & \\
+		& & & -1
+		\end{pmatrix}, \quad \begin{array}{l}
+		\R = \{p_0, p_1, p_2, p_3; \overline{p}\} \\
+		B = \{v_0, v_1, v_2, v_3\}
+		\end{array}
+	\]
+	$Q_A = \lp t+1\rp^2\lp t-1\rp^2$, $\lambda_1 = -1, \delta_1 = 2 $ (multiplicidad algebraica), $\lambda_2 = 1, \delta_2 = 2$. Veps: $\left[ \lp0:0:1:0\rp^t, \lp0:0:0:1\rp^t \right], \left[ \lp1:-1:0:0\rp^t \right]$.
+	\begin{itemize}
+		\item Puntos fijos: $p_2 \vee p_3$ (recta), $q =\lp 1:-1:0:0\rp$.
+		\item Planos fijos: $\R^\alpha = \left\{ [\omega_0], [\omega_1], [\omega_2], [\omega_3]; [\overline{\omega}]\right\}, \omega_i = v_i^\alpha$.
+	\end{itemize}
+	\[
+		A^t = \begin{pmatrix}
+			0 & 1 & & \\
+			-1 & 2 & & \\
+			& & -1 & \\
+			& & & -1
+		\end{pmatrix}, \quad
+	\]
 \end{example}
 
 
@@ -718,5 +742,6 @@ demostrando el siguiente lema.
 
 
 
->>>>>>> :tada:
 % A PARTIR D'AQUI JORDI
+
+% A PARTIR D'AQUI ERIC
