@@ -780,3 +780,66 @@ demostrando el siguiente lema.
 \end{proof}
 
 % A PARTIR D'AQUI ERIC
+
+\section{Relación entre afinidades y proyectividades}
+\begin{minipage}[c]{0,49\textwidth}
+    \begin{align*}
+            f : \mathbb{A}^n &\to \bar{\mathbb{A}}^n=\Po^n \\
+            \R &\mapsto \overline{\R} \\
+            \lp x_1, \ldots, x_n\rp &\mapsto \lp1:x_1:\ldots:x_n\rp\\
+            \lp\frac{\tilde{x}_1}{x_0},\ldots,\frac{\tilde{x}_n}{x_0}\rp &\mapsfrom \lp\tilde{x}_0:\ldots:\tilde{x}_n\rp \\
+    \end{align*}
+\end{minipage}
+\vline
+\begin{minipage}[c]{0,49\textwidth}
+    \begin{gather*}
+        f : \mathbb{A}^n \to \bar{\mathbb{A}}^n  \text{  afinidad (biyectiva) }\\
+        f\lp x_1,\ldots,x_n\rp = 
+        \begin{pmatrix}
+            a_1 \\
+            \vdots \\
+            a_n \\
+        \end{pmatrix}
+        +A
+        \begin{pmatrix}
+            x_1 \\
+            \vdots \\
+            x_n \\
+        \end{pmatrix}\\
+        f\lp x_1,\ldots,x_r\rp =
+        \lp
+        \begin{array}{c|ccc}
+            1 & 0 & \ldots & 0 \\ \hline
+            a_1 & & & \\
+            \vdots & & A & \\
+            a_n & & & 
+        \end{array} \rp
+    \end{gather*}
+\end{minipage}
+\subsection{Afinidades $\implies$ proyectividades}
+\begin{gather*}
+f\text{ biyectiva} \leftrightarrow \det A \ne 0 \leftrightarrow \det \overline{A} \ne 0 \leftrightarrow \overline{A} \text{ invertible}
+\end{gather*}
+\begin{defi}
+    Llamaremos proyectividad asociada a $f$ a una $\overline{f} \tq$:
+    \begin{gather*}
+        \overline{f} \colon \bar{\mathbb{A}}^n = \Po^n \mapsto \bar{\mathbb{A}}^n = \Po^n \\
+        M_{\overline{\R}}\lp \overline{f}\rp = \overline{A} = 
+        \lp
+        \begin{array}{c|ccc}
+            1 &  & v & \\ \hline
+            a_1 & & & \\
+            \vdots & & A & \\
+            a_n & & & 
+        \end{array} \rp \\ 
+    \end{gather*}
+    donde $v$ es un vector cualquiera
+\end{defi}
+\begin{prop}
+    \begin{enumerate}
+        \item[]
+        \item $\mathbb{A}_\infty$ es $\overline{f}$-inv
+        \item $\mathbb{A}^n = \Po^n \setminus \mathbb{A}_\infty^n$ es $\overline{f}$-inv i $\overline{f}_{|\mathbb{A}^n}=f$
+        \item $M_{\overline{\R}_\infty}\lp \overline{f}_{|\mathbb{A}_\infty} \rp = A$
+    \end{enumerate}
+\end{prop}
