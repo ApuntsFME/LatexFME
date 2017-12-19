@@ -400,6 +400,7 @@ demostrando el siguiente lema.
 	f : r_1 &\to r_2 \\
 	p &\mapsto pq \cap r_2
     \end{align*}
+    
     Entonces $f(O) = Oq \cap r_2 = O$.
     
     Veamos ahora la implicación recíproca. Sean $A_1, A_2 \in r_1
@@ -724,23 +725,23 @@ demostrando el siguiente lema.
 \begin{defi}
     Sea $f \colon \Po \to \Po$ una homografía $\lp f \neq \Id \rp$
     \begin{itemize}
-        \item $f \text{ es una homología } \iff f \text{ tiene un hiperplano de puntos fijos}.$
-        \item $f \text{ es una homología general } \iff f \text{ es una homología y tiene, además, otro punto fijo}.$
-        \item $f \text{ es una homología especial } \iff f \text{ es un a homología y no es una homología especial}.$
+        \item $f$ es una homología $\iff f$ tiene un hiperplano de puntos fijos.
+        \item $f$ es una homología general $\iff f$ es una homología y tiene, además, otro punto fijo.
+        \item $f$ es una homología especial $\iff f$ es un a homología y no es una homología especial.
     \end{itemize}
 \end{defi}
 
 \begin{prop}
-    Sea $f \colon \Po \to \Po$ una homología. Entonces, $\exists \R$ referencia tal que $A=M\lp f ; R \rp$.
+    Sea $f \colon \Po \to \Po$ una homología. Entonces, $\exists \R$ referencia tal que $A=M\lp f ; \R \rp$.
     \begin{itemize}
-        \item Si $f$ es una homología general, $A=
+        \item $f$ es una homología general $ \iff A=
             \begin{pmatrix}
                 1 & & & \\
                 & \ddots & & \\
                 & & 1 & \\
                 & & & a \\
             \end{pmatrix}, a \neq 1.$
-        \item Si $f$ es una homología especial, $A=
+        \item $f$ es una homología especial $ \iff A=
             \begin{pmatrix}
                 1 & 0 & & \\
                 1 & 1 & & \\
@@ -759,25 +760,60 @@ demostrando el siguiente lema.
         \item Si $\mu \neq \lambda$:
             \begin{gather*}
                 \left\{
-                \begin{array}{ccccc}
-                    \lambda & m_a=n & \overbrace{m_g \geq n}^{\dim \nuc \lp \varphi - \lambda \Id \rp \geq n} & \implies & m_g=n \\
-                    \mu & m_a=1 & m_g = 1 & &  
+                \begin{array}{cccccc}
+                    \lambda & \rightarrow & m_a=n & \overbrace{m_g \geq n}^{\dim \nuc \lp \varphi - \lambda \Id \rp \geq n} & \implies & m_g=n \\
+                    \mu & \rightarrow & m_a=1 & m_g = 1 & &  
                 \end{array} \right\} \substack{\text{Teorema de} \\ \implies \\ \text{diagonalización}} \\
-                \implies \varphi \; \text{diagonaliza} \implies \; \exists B \tq A=M \lp \varphi ; B \rp = \\
-                = \begin{pmatrix}
+                \implies \varphi \; \text{diagonaliza} \implies \; \exists B \tq A=M \lp \varphi ; B \rp = 
+                \begin{pmatrix}
                     \lambda & & & \\
                     & \ddots & & \\
                     & & \lambda & \\
                     & & & \mu
-                \end{pmatrix} = \begin{pmatrix}
+                \end{pmatrix} = \\
+                = \begin{pmatrix}
                     1 & & & \\
                     & \ddots & & \\
                     & & 1 & \\
                     & & & a
-                \end{pmatrix}.
+                \end{pmatrix}, \; a\neq 1 \text{ (otro punto fijo) } \implies f \text{ es una homología general}.
             \end{gather*}
+        \item Si $\mu = \lambda, \; Q_{\varphi} \lp t \rp = \lp -1 \rp ^{n+1} \lp t-\lambda \rp^{n+1}$. Entonces, 
+        $n+1\geq \dim \lp \varphi - \lambda \Id \rp \geq n $.
+        \begin{itemize}
+            \item{$\dim \lp \varphi - \lambda \Id \rp = n+1$}
+                \[
+                    \varphi \text{ diagonaliza } \implies \exists B \tq A=\lambda \Id \implies f= \Id \to \text{ contradicción}.
+                \]
+            \item{$\dim \lp \varphi - \lambda \Id \rp = n$}
+                \begin{gather*}
+                    \exists B \tq M \lp \varphi, B \rp =
+                    \begin{pmatrix}
+                        \lambda & 0 &  &  &  \\
+                        1 & \lambda &  &  &  \\
+                         &  & \lambda &  &  \\
+                         &  &  & \ddots &  \\
+                         &  &  &  & \lambda
+                    \end{pmatrix} \implies \\
+                    \implies \exists \R \tq M \lp \varphi, \R \rp =
+                    \begin{pmatrix}
+                        1 & 0 &  &  &  \\
+                        1 & 1 &  &  &  \\
+                         &  & 1 &  &  \\
+                         &  &  & \ddots &  \\
+                         &  &  &  & 1
+                    \end{pmatrix} \implies \\
+                    \text{no hay más puntos fijos } \implies f \text{ es una homología especial}
+                \end{gather*}
+        \end{itemize}
     \end{itemize}
 \end{proof}
+
+\subsection{Homografías de $\Po_{\real}^1$}
+Posibles formas de Jordan:
+\begin{enumerate}
+    \item $f=\Id$
+\end{enumerate}
 
 % A PARTIR D'AQUI ERIC
 
