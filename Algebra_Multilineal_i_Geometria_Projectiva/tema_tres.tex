@@ -325,7 +325,7 @@
 	\end{enumerate}
 	\noindent Los puntos \eqref{item:col_teo2_it1} y \eqref{item:col_teo2_it2} implican que $f$ es una colineación. Los puntos \eqref{item:col_teo2_it1}, \eqref{item:col_teo2_it2} y \eqref{item:col_teo2_it3} implican (por el teorema \ref{teo:proyectividades}) que $f$ es una proyectividad
 \end{proof}
-\begin{teo}[fundamenteal de la geometría poryectiva]
+\begin{teo}[fundamenteal de la geometría proyectiva]
 	\[ f : \Po^n \to \Po^n \text{ colineación} \implies f = [\varphi], \varphi : \E \to \E, \varphi \text{ aplicación lineal}. \]
 	En particular, si $\k = \real, f$ colineación $\implies f$ proyectividad.
 \end{teo}
@@ -373,12 +373,72 @@
 
 \section{El teorema de Poncelet}
 
+\begin{lema}
+    
+\end{lema}
 \begin{teo}[de Poncelet]
-	Sean $V_1, V_2$ variedades proyectivas de dim $d$ en $\Po^n$. Toda proyectividad es composición de perspectividades.
+	Sean $V_1, V_2$ variedades proyectivas de dim $d$ en $\Po^n$. Toda proyectividad $f \colon V_1 \to V_2$
+	es composición de perspectividades.
 \end{teo}
-\begin{proof} % COSAS_QUE_FALTAN
-	TROBAREU LA DEMO A LES PÀGINES 10, 11 i 12 DEL DIVO, SORRY EM FA MASSA PAL PERO ESTIMARÉ MOLT A QUI LA PASSI $\heartsuit$. \\ \\
-	PD: Si esteu estudiant, parleu amb algú d'ApuntsFME perquè us passi el pdf del Divo.
+
+Demostraremos el teorema tan solo para $d = 1$. Empezamos
+demostrando el siguiente lema.
+
+\begin{lema} 
+    \label{lema_poncelet}
+    Sean $r_1, r_2 \in \Po^2$, $f \colon r_1 \to r_2$ proyectividad.
+    
+    \[f \text{ perspectividad} \iff f(O) = O,\]
+    donde $O = r_1 \cap r_2$.
+\end{lema}
+
+\begin{proof}
+    Veamos primero la implicación directa. Sea $W = {q}$
+    el centro de $f$. Entonces
+
+    \begin{align*}
+	f : r_1 &\to r_2 \\
+	p &\mapsto pq \cap r_2
+    \end{align*}
+    Entonces $f(O) = Oq \cap r_2 = O$.
+    
+    Veamos ahora la implicación recíproca. Sean $A_1, A_2 \in r_1
+    \setminus \{O\}$, tales que $\lp A_1 \neq A_2\rp$. 
+    Sean $B_1 = f(A_1), B_2 = f(A_2)$. Entonces $\R = \left \{ A_1, 
+    A_2, O \right \}, \R' = \left \{ B_1, B_2, O \right \}$ son
+    referencias en $r_1$ y $r_2$ respectivamente. La segunda 
+    es una referencia ya que $B_1, B_2 \neq O$ porque $f(O) = O$ y
+    $f$ es inyectiva por ser proyectividad, y por el mismo motivo
+    $B_1 \neq B_2$.
+    
+    Sea $q = A_1B_1 \cap A_2B_2$, que no es vacío pues en el
+    plano dos rectas se cortan. Sea $g \colon r_1 \to r_2$ 
+    perspectividad de centro $W = \{ q\}$. Por construcción:
+    
+    \[
+    \begin{rcases}
+        g(O) = O = f(O) \\
+        g(A_1) = B_1 = f(A_1) \\
+        g(A_2) = B_2 = f(A_2)
+    \end{rcases}
+    \implies
+    g(R) = f(R) \implies g = f,
+    \]
+    por ser $g$ y $f$ proyectividades.
+\end{proof}
+\begin{teo}
+    Sean $r_1, r_2 \in \Po^2$ rectas diferentes. Sea $f \colon 
+    r_1 \to r_2$ proyectividad. Entonces $f$ es composición
+    de 1 o 2 perspectividades.
+\end{teo}
+\begin{proof} % COSAS_QUE_FALTAN %Pags 10, 11 i 12 DIVO
+    Sea $O = r_1 \cap r_2$. Consideraremos dos casos.
+    \begin{enumerate}
+        \item Suponemos que $f(O) = O$. Por \ref{lema_poncelet}, 
+        $f$ es perspectividad.
+        \item Suponemos $f(O) \neq O$. Sean $A_1, A_2, A_3 \in r_1$
+        (diferentes dos a dos, $A_i \neq O$).
+    \end{enumerate}
 \end{proof}
 
 \section{Clasificación y estudio de homografías}
@@ -591,41 +651,8 @@
 	Sea $\k = \real, m_\varphi\lp t\rp | \lp t^2-\lambda\rp$
 	\begin{enumerate}[Caso 1]
 		\item $\lambda<0 \rightarrow$ nada 
-		\item $\lambda = a^2>0 \rightarrow m_\varphi\lp t\rp = \text{ó}
-		\begin{cases}
-			\lp t-a\rp \rightarrow \varphi -a\Id=0\implies\varphi=a\Id \rightarrow \text{ No} \\
-			\lp t+a\rp \rightarrow \varphi +a\Id=0\implies\varphi=-a\Id \rightarrow \text{ No} \\
-			\lp t^2-a^2\rp = \lp t-a\rp\lp t+a\rp
-		\end{cases}$
+		\item $\lambda = a^2>0 \rightarrow m_\varphi$
 	\end{enumerate}
 \end{obs}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 % A PARTIR D'AQUI JORDI
-
-% A PARTIR D'AQUI ERIC
