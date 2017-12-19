@@ -706,16 +706,59 @@ demostrando el siguiente lema.
 	$Q_A = \lp t+1\rp^2\lp t-1\rp^2$, $\lambda_1 = -1, \delta_1 = 2 $ (multiplicidad algebraica), $\lambda_2 = 1, \delta_2 = 2$. Veps: $\left[ \lp0:0:1:0\rp^t, \lp0:0:0:1\rp^t \right], \left[ \lp1:-1:0:0\rp^t \right]$.
 	\begin{itemize}
 		\item Puntos fijos: $p_2 \vee p_3$ (recta), $q =\lp 1:-1:0:0\rp$.
-		\item Planos fijos: $\R^\alpha = \left\{ [\omega_0], [\omega_1], [\omega_2], [\omega_3]; [\overline{\omega}]\right\}, \omega_i = v_i^\alpha$.
+		\item Planos fijos: \\
+		$\R^\alpha = \left\{ [\omega_0], [\omega_1], [\omega_2], [\omega_3]; [\overline{\omega}]\right\}, \omega_i = v_i^\alpha$.
+		\[
+			A^t = \begin{pmatrix}
+				0 & 1 & & \\
+				-1 & 2 & & \\
+				& & -1 & \\
+				& & & -1
+			\end{pmatrix}, \quad
+			\begin{array}{ll}
+				\lambda_1 = -1 & \left[ \omega_2, \omega_3 \right] = \left\{ \omega \in E^\alpha | \omega = \lp 0:0:A:B\rp^t \right\} \\
+				\lambda_2 = 1 & \left[\lp1:1:0:0\rp^t\right]
+			\end{array}
+		\]
+		$H_1 \colon x_0 + x_1 = 0$ \\
+		$H_{A,B} \colon Ax_2 + Bx_3 = 0$\\
+		Por tanto, vemos que hay una biyección entre puntos e hiperplanos fijos.
+		\item Rectas fijas: \\
+		$L = p_2 \vee p_3$ (de puntos fijos).\\
+		Usaremos que $v_1,v_2$ fijas $\implies v_1 \vee v_2$ fijas: $L_{\alpha,\beta} = \left[\lp1:-1:0:0\rp^t\right]\vee\left[\lp0:0:\alpha:\beta\rp^t\right]$.
+		Usaremos que $v_1, v_2$ fijas $\implies v_1 \cap v_2$ fijas:
+		% COSAS_QUE_FALTAN FINAL PG 17
+		\begin{gather*}
+			H_{A=1,B=0} \cap H_{A=0,B=1} = \begin{Bmatrix}
+				x_2 = 0 \\
+				x_3 = 0
+			\end{Bmatrix} = p_0 \vee p_1 \\
+			H \cap H_{A,B} = \begin{Bmatrix}
+				x_0 + x_1 = 0 \\
+				Ax_2 + Bx_3 = 0
+			\end{Bmatrix} \implies \left[\lp1:-1:0:0\rp^t\right] \vee \left[\lp0:0:B:-A\rp^t\right] = L_{B,-A}.
+		\end{gather*}
 	\end{itemize}
-	\[
-		A^t = \begin{pmatrix}
-			0 & 1 & & \\
-			-1 & 2 & & \\
-			& & -1 & \\
-			& & & -1
-		\end{pmatrix}, \quad
-	\]
+\end{example}
+\begin{obs}[Método para encontrar todas las rectas $f$-invariantes]
+	Tambo variedades de dim $n-2$)
+	\begin{itemize}
+		\item Opción 1 (sistemática): $L$ $f$-invariante $\implies \exists p,\pi$, un punto y un hiperplano, respectivamente, $f$-invariantes $\tq p\in L\subseteq\pi$. Nos dice que todas las variedades de dim $n-2$ viven dentro de hiperplanos fijos. Por tanto, $\forall \pi$ $f-$invariante, consideramos $f_{|\pi}$ y, como $L$ son hiperplanos dentro de $\pi$, encontramos $L$ $f$-invariantes como los veps de $\lp f_{|\pi}\rp^*$.
+		\item Opción 2: En todo hiperplano $f$-invariante $\pi$, tiene que haber el mismo número de puntos fijos que de variedades de dim $n-2$ $f$-invariantes (hay una biyección entre puntos e hiperplanos fijos de $\pi$).
+	\end{itemize}
+\end{obs}
+\begin{example}
+	\begin{gather*}
+		\pi = H \colon x_0 + x_1 = 0 \equiv \left[\lp1:-1:0:0\rp^t\right] \vee \left[\lp0:0:1:0\rp^t\right] \vee \left[\lp0:0:0:1\rp^t\right] \\
+		C = M\lp f_{|H}\rp = M\lp\varphi_{|F}\rp =
+		\begin{pmatrix}
+			1 & 0 & 0 \\
+			0 & -1 & 0 \\
+			0 & 0 & -1
+		\end{pmatrix} \\
+		L \subseteq \pi\;f\text{-invariante }\iff\text{ su ecuación en }\pi\text{ es un vep de }C^t\text{ (hiperplano en }\pi\text{).}
+	\end{gather*}
+	Inductivamente podríamos encontrar variedades de dim $< n-2$ considerándolas dentro de variedades fijas de dim $1$. Además, siendo así hiperplanos que serán fijos $\iff$ son veps de la aplicación dual de la restricción.
 \end{example}
 
 % A PARTIR D'AQUI JORDI
@@ -851,8 +894,8 @@ Posibles formas de Jordan:
             a_n & & & 
         \end{array} \rp
     \end{gather*}
-\end{minipage}
-\subsection{Afinidades $\implies$ proyectividades}
+\end{minipage} \\ \\
+Veremos en primer lugar que afinidades $\implies$ proyectividades.
 \begin{gather*}
 f\text{ biyectiva} \leftrightarrow \det A \ne 0 \leftrightarrow \det \overline{A} \ne 0 \leftrightarrow \overline{A} \text{ invertible}
 \end{gather*}
@@ -869,7 +912,7 @@ f\text{ biyectiva} \leftrightarrow \det A \ne 0 \leftrightarrow \det \overline{A
             a_n & & & 
         \end{array} \rp \\ 
     \end{gather*}
-    donde $v$ es un vector cualquiera
+    donde $v$ es un vector cualquiera.
 \end{defi}
 \begin{prop}
     \begin{enumerate}
