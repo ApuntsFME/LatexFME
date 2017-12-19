@@ -373,9 +373,6 @@
 
 \section{El teorema de Poncelet}
 
-\begin{lema}
-    
-\end{lema}
 \begin{teo}[de Poncelet]
 	Sean $V_1, V_2$ variedades proyectivas de dim $d$ en $\Po^n$. Toda proyectividad $f \colon V_1 \to V_2$
 	es composición de perspectividades.
@@ -428,19 +425,99 @@ demostrando el siguiente lema.
     por ser $g$ y $f$ proyectividades.
 \end{proof}
 \begin{teo}
+    \label{primer_teo_poncelet}
     Sean $r_1, r_2 \in \Po^2$ rectas diferentes. Sea $f \colon 
     r_1 \to r_2$ proyectividad. Entonces $f$ es composición
     de 1 o 2 perspectividades.
 \end{teo}
-\begin{proof} % COSAS_QUE_FALTAN %Pags 10, 11 i 12 DIVO
+\begin{proof} % COSAS_QUE_FALTAN FALTA DIBUJO ESTA 
+              % PARTE DEMO (pag 11 DIVO)
     Sea $O = r_1 \cap r_2$. Consideraremos dos casos.
     \begin{enumerate}
-        \item Suponemos que $f(O) = O$. Por \ref{lema_poncelet}, 
+        \item Suponemos $f(O) = O$. Por \ref{lema_poncelet}, 
         $f$ es perspectividad.
         \item Suponemos $f(O) \neq O$. Sean $A_1, A_2, A_3 \in r_1$
-        (diferentes dos a dos, $A_i \neq O$).
+        (diferentes dos a dos, $A_i \neq O$). En consecuencia,
+        $\R = \{A_1, A_2; A_3\}$ forma una referencia en $r_1$.
+        Sea $B_i = f(A_i)$. Podemos asegurar que $B_i \neq 0$
+        si tomamos $A_i$ adecuadas. Sea $s \ni B_1$ ($ s 
+        \not \ni B_j, A_i$), y $q \in A_1B_1$, $q \not
+        \in r_1, r_2$. Postulamos que podemos encontrar
+        dos perspectividades $g_1, g_2$ que cumplan
+        \begin{alignat*}{3}
+            r_1 &\stackrel{g_1}\longrightarrow &&s&&
+            \stackrel{g_2}\longrightarrow r_2\\
+            A_1 &\longmapsto B_1&&=C_1 &&\longmapsto B_1\\
+            A_2 &\longmapsto &&C_2&&\longmapsto B_2\\
+            A_3 &\longmapsto &&C_3&&\longmapsto B_3.
+        \end{alignat*}
+        $g_1$ es una perspectividad desde $q$, concretamente
+        $g_1 = \psi(s) \circ \varphi(q)$. Para ver que existe
+        una perspectividad $g_2$ adecuada, consideramos la
+        proyectividad que envía la referencia de $s$
+        $\{C_1, C_2; C_3\}$ a la referencia de $r_2$ $\{B_1,
+        B_2; B_3\}$. Dado que $f(C_1) = B_1 = C_1$, y $C_1 = 
+        s \cap r_2$, podemos aplicar el primer para ver que 
+        esta proyectividad es también una perspectividad.
+        
+        Finalmente, $(g_2 \circ g_1)(A_i) = B_i = f(A_i) \implies
+        f = g_2 \circ g_1$, por ser ambas proyectividades.
+        
     \end{enumerate}
 \end{proof}
+
+Antes de proceder con el siguiente teorema, demostraremos
+el siguiente lema que resultará de utilidad.
+
+\begin{lema} %COSAS_QUE_FALTAN DEMO DAIXO
+    Sean $l_1, l_2 \subseteq \Po^3$ rectas disjuntas. Sea $p \not \in 
+    l_1, l_2$. Entonces $\exists! \: s$ recta 
+    tal que $p \in s$, $s \cap l_1 \neq \varnothing$, 
+    $s \cap l_2 \neq \varnothing$.
+\end{lema}
+\begin{proof}
+    
+\end{proof}
+\begin{teo} %COSAS_QUE_FALTAN Igual un dibujo aqui tambien
+    Sean $r_1, r_2 \subseteq \Po^n$ ($n \geq 3$) rectas disjuntas.
+    Sea $f \colon r_1 \to r_2$ proyectividad, entonces $f$
+    es una perspectividad. 
+\end{teo}
+
+\begin{proof} %COSAS_QUE_FALTAN ACABAR DEMO
+    Consideraremos dos casos.
+    \begin{enumerate}
+        \item Supongamos $n = 3$. Consideramos $A_1, A_2, A_3 \in
+        r_1$ diferentes dos a dos, de manera que forman una
+        referencia. Consideramos $B_1 = f(A_1), B_2 = f(A_2),
+        B_3 = f(A_3)$, que forman una referencia en $r_2$.
+        Sean $l_i = A_i \vee B_i$.
+        
+        Veamos que $l_1 \cap l_2 = \varnothing$, y análogamente
+        para las demás parejas de índices. Para ello, operamos
+        por reducción al absurdo:
+        \[
+        l_1 \cap l_2 \neq \varnothing \implies l_1 \vee l_2 = \pi
+        \implies
+        \begin{cases}
+        A_1, A_2 \in \pi \implies r_1 = A_1 \vee A_2 \subseteq \pi\\
+        B_1, B_2 \in \pi \implies r_2 = B_2 \vee B_3 \subseteq \pi
+        \end{cases}
+        \]
+        De lo que $r_1 \cap r_2 \neq \varnothing$,
+        una contradicción.
+        
+        Cojamos $p \in A_1, B_1$ (FALTEN COSES).
+        \item
+    \end{enumerate}
+\end{proof}
+
+\begin{obs}
+    Si $r_1 \neq r_2$ pero $r_1 \cap r_2 \neq \varnothing$, entonces
+    $r_1 \vee r_2 = V \subseteq \Po^n$, donde $V$ tiene dimensión
+    2 por Grassman y por lo tanto se puede 
+    aplicar \ref{primer_teo_poncelet}.
+\end{obs}
 
 \section{Clasificación y estudio de homografías}
 
