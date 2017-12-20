@@ -9,93 +9,93 @@
 \section{Espacio dual}
 
 \begin{defi}
-	Sea $\E$ un $\k$-ev. Definimos el espacio dual de $\E$ como
-	$\E^* = \{ \phi : \E \to \k \text{ lineales} \}$ (también es un
-	$\k$-espacio vectorial)
+    Sea $\E$ un $\k$-ev. Definimos el espacio dual de $\E$ como
+    $\E^* = \{ \phi : \E \to \k \text{ lineales} \}$ (también es un
+    $\k$-espacio vectorial)
 \end{defi}
 \begin{obs}
-	Para definir $\E^*$ tenemos que usar bases de $\E$.
+    Para definir $\E^*$ tenemos que usar bases de $\E$.
 \end{obs}
 \begin{defi}
-	Si $B = \{ u_1,\cdots, u_n \}$ es una base de $\E$ ($\k$-ev.)
-	definimos
-	\[
-		\begin{aligned}
-			u_i^* \colon \E &\to \k\\
-			u_j &\mapsto u_i^*(u_j) = \delta_{ij}
-		\end{aligned}
-	\]
-	Y llamaremos base dual de $B$ a
-	$B^* = \{ u_1^*, \cdots, u_n^* \}$ (que efectivamente es una
-	base de $\E^*$).
+    Si $B = \{ u_1,\cdots, u_n \}$ es una base de $\E$ ($\k$-ev.)
+    definimos
+    \[
+        \begin{aligned}
+            u_i^* \colon \E &\to \k\\
+            u_j &\mapsto u_i^*(u_j) = \delta_{ij}
+        \end{aligned}
+    \]
+    Y llamaremos base dual de $B$ a
+    $B^* = \{ u_1^*, \cdots, u_n^* \}$ (que efectivamente es una
+    base de $\E^*$).
 \end{defi}
 \begin{obs}
-	En particular si $w \in \E^*$ y
-	$\displaystyle w = \sum_{i=1}^{n} a_i u_i^*$, se cumple que:
-	\[
-		w(u_j) = \sum_{i=1}^{n} a_i u_i^*(u_j) = a_j
-		\implies
-		w = \sum_{i=1}^{n}w(u_i)u_i^*
-	\]
+    En particular si $w \in \E^*$ y
+    $\displaystyle w = \sum_{i=1}^{n} a_i u_i^*$, se cumple que:
+    \[
+        w(u_j) = \sum_{i=1}^{n} a_i u_i^*(u_j) = a_j
+        \implies
+        w = \sum_{i=1}^{n}w(u_i)u_i^*
+    \]
 \end{obs}
 
 \begin{prop}[(cambios de base)]
-	Sean $B_1$ y $B_2$ bases de $\E$ ($\k$-ev. de $\dim  \E = n$) y
-	sean $B_1^*$ y $B_2^*$ las bases duales de $B_1$ y $B_2$.
-	Si $S_{B_1B_2}$ es la matriz de cambio de base de $B_1$ a
-	$B_2$, entonces:
-	\[
-		S_{B_1^*B_2^*} = (S_{B_1B_2}^{-1})^T = (S_{B_2B_1})^T
-	\]
+    Sean $B_1$ y $B_2$ bases de $\E$ ($\k$-ev. de $\dim  \E = n$) y
+    sean $B_1^*$ y $B_2^*$ las bases duales de $B_1$ y $B_2$.
+    Si $S_{B_1B_2}$ es la matriz de cambio de base de $B_1$ a
+    $B_2$, entonces:
+    \[
+        S_{B_1^*B_2^*} = (S_{B_1B_2}^{-1})^T = (S_{B_2B_1})^T
+    \]
 \end{prop}
 
 \begin{prop}[(aplicaciones lineales)]
-	Sean $\E$ y $\bb{F}$ $\k$-ev. y sea $\phi \colon \E \to \bb{F}$ una
-	aplicación lineal, entonces $\phi$ induce la aplicación
-	lineal siguiente:
-	\[
-		\begin{aligned}
-		\phi^* \colon \bb{F}^* &\to \E^*\\
-		w &\mapsto \phi^*(w) = w \circ \phi
-		\end{aligned}
-	\]
+    Sean $\E$ y $\bb{F}$ $\k$-ev. y sea $\phi \colon \E \to \bb{F}$ una
+    aplicación lineal, entonces $\phi$ induce la aplicación
+    lineal siguiente:
+    \[
+        \begin{aligned}
+        \phi^* \colon \bb{F}^* &\to \E^*\\
+        w &\mapsto \phi^*(w) = w \circ \phi
+        \end{aligned}
+    \]
 \end{prop}
 \begin{obs}
-	Si $\E$ y $\bb{F}$ son de dimensión finita, $\phi$ admite expresión
-	matricial (en coordenadas). En particular:
-	\[
-    	\displaystyle \begin{rcases} B_1 \text{ base de } \E \\ B_2
-    	\text{ base de } \bb{F} \end{rcases} \implies \phi \text{ viene dada por }
-    	M_{B_1,B_2}(\phi)
-	\]
-	\[
-	    \displaystyle \begin{rcases} B_1^*
-    	\text{ base de } \E^* \\ B_2^* \text{ base de } \bb{F}^*
-    	\end{rcases} \implies \phi^* \text{ viene dada por }
-	    M_{B_2^*,B_1^*}(\phi^*) = (M_{B_1,B_2}(\phi))^T
-	\]
+    Si $\E$ y $\bb{F}$ son de dimensión finita, $\phi$ admite expresión
+    matricial (en coordenadas). En particular:
+    \[
+        \displaystyle \begin{rcases} B_1 \text{ base de } \E \\ B_2
+        \text{ base de } \bb{F} \end{rcases} \implies \phi \text{ viene dada por }
+        M_{B_1,B_2}(\phi)
+    \]
+    \[
+        \displaystyle \begin{rcases} B_1^*
+        \text{ base de } \E^* \\ B_2^* \text{ base de } \bb{F}^*
+        \end{rcases} \implies \phi^* \text{ viene dada por }
+        M_{B_2^*,B_1^*}(\phi^*) = (M_{B_1,B_2}(\phi))^T
+    \]
 \end{obs}
 \begin{prop}[(espacio bidual)]
-	Dado $\E$ $\k$-ev. podemos definir $\E^*,\E^{**},\cdots$. En
-	particular tenemos que $\E^{**}$ es canónicamente isomorfo a
-	$\E$ mediante el isomorfismo
-	\[
-		\begin{aligned}
-			\phi \colon \E &\to \E^{**}\\
-			u &\mapsto \phi(u)
-		\end{aligned}
-	\]
-	donde
-	\[
-		\begin{aligned}
-			\phi(u) \colon \E^* &\to \k \\
-			w &\mapsto (\phi(u))(w) = w(u)
-		\end{aligned}
-	\]
+    Dado $\E$ $\k$-ev. podemos definir $\E^*,\E^{**},\cdots$. En
+    particular tenemos que $\E^{**}$ es canónicamente isomorfo a
+    $\E$ mediante el isomorfismo
+    \[
+        \begin{aligned}
+            \phi \colon \E &\to \E^{**}\\
+            u &\mapsto \phi(u)
+        \end{aligned}
+    \]
+    donde
+    \[
+        \begin{aligned}
+            \phi(u) \colon \E^* &\to \k \\
+            w &\mapsto (\phi(u))(w) = w(u)
+        \end{aligned}
+    \]
 \end{prop}
 \begin{obs}
-	Como este isomorfismo es canónico (no depende de las bases),
-	$\E \cong \E^{**}$ y no distinguimos entre $\E$ y $\E^{**}$
+    Como este isomorfismo es canónico (no depende de las bases),
+    $\E \cong \E^{**}$ y no distinguimos entre $\E$ y $\E^{**}$
 \end{obs}
 
 
@@ -108,147 +108,147 @@
 \section{Tensores}
 
 \begin{defi}
-	Sean $\E_1,\cdots , \E_r$ $\k$-ev. Diremos que
-	$f \colon \E_1 \times \cdots \times \E_r \to \k$ es un tensor (o una aplicacion
-	multilineal) si $\forall i=1,\cdots , r$ y $\forall v_j \in \E_j$ ($i \neq j$)
-	se cumple que
-	\[
-		 \begin{aligned}
-			 \phi_i \colon \E_i &\to \k \\
-			 v &\mapsto \phi(u)=f(v_1,\cdots , v_{i-1}, v, v_{i+1}, \cdots , v_r)
-		 \end{aligned}
-	\]
-	es una aplicación lineal.
+    Sean $\E_1,\cdots , \E_r$ $\k$-ev. Diremos que
+    $f \colon \E_1 \times \cdots \times \E_r \to \k$ es un tensor (o una aplicacion
+    multilineal) si $\forall i=1,\cdots , r$ y $\forall v_j \in \E_j$ ($i \neq j$)
+    se cumple que
+    \[
+         \begin{aligned}
+             \phi_i \colon \E_i &\to \k \\
+             v &\mapsto \phi(u)=f(v_1,\cdots , v_{i-1}, v, v_{i+1}, \cdots , v_r)
+         \end{aligned}
+    \]
+    es una aplicación lineal.
 \end{defi}
 \begin{defi}
-	Sea $\E$ un $\k$-ev. Llamaremos tensor de tipo $(p,q)$ (o tensor p veces
-	covariante y q veces contravariante) (o tensor p-covariante y q-contravariante)
-	a un tensor
-	\[
-		\begin{aligned}
-			f \colon \overbrace{\E \times \cdots \times \E}^p\times
-			\overbrace{\E^* \times \cdots \times \E^*}^q&\to \k \\
-			(v_1, \cdots, v_p, w_1, \cdots, w_q) &\mapsto
-			f(v_1,\cdots,v_p,w_1,\cdots,w_q)
-		\end{aligned}
-	\]
+    Sea $\E$ un $\k$-ev. Llamaremos tensor de tipo $(p,q)$ (o tensor p veces
+    covariante y q veces contravariante) (o tensor p-covariante y q-contravariante)
+    a un tensor
+    \[
+        \begin{aligned}
+            f \colon \overbrace{\E \times \cdots \times \E}^p\times
+            \overbrace{\E^* \times \cdots \times \E^*}^q&\to \k \\
+            (v_1, \cdots, v_p, w_1, \cdots, w_q) &\mapsto
+            f(v_1,\cdots,v_p,w_1,\cdots,w_q)
+        \end{aligned}
+    \]
 \end{defi}
 \begin{obs}
-	Al conjunto de tensores  de este tipo se le denota como $T_p^q(\E)$.
+    Al conjunto de tensores  de este tipo se le denota como $T_p^q(\E)$.
 \end{obs}
 \begin{obs}
-	Por convenio $T_0(\E) = T^0(\E) = T_0^0(\E) = \k$.
+    Por convenio $T_0(\E) = T^0(\E) = T_0^0(\E) = \k$.
 \end{obs}
 \begin{example}
-	Sea $\E$ un $\k$-ev.
-	\begin{itemize}
-		\item $T_1(\E) = T_1^0(\E) = \E^*$
-		\item $T^1(\E) = T_0^1 = \E^{**}$ ($\cong \E$)
-		\item $T_2(\E) = T_2^0(\E) = \{\text{formas bilineales de } \E \text{ en } \k\}$
-	\end{itemize}
+    Sea $\E$ un $\k$-ev.
+    \begin{itemize}
+        \item $T_1(\E) = T_1^0(\E) = \E^*$
+        \item $T^1(\E) = T_0^1 = \E^{**}$ ($\cong \E$)
+        \item $T_2(\E) = T_2^0(\E) = \{\text{formas bilineales de } \E \text{ en } \k\}$
+    \end{itemize}
 \end{example}
 \begin{prop}
-	$T_p^q(\E) = T_q^p(\E^*)$ (cambiando el orden)
+    $T_p^q(\E) = T_q^p(\E^*)$ (cambiando el orden)
 \end{prop}
 \begin{prop}
-	$T_p^q(\E)$ tiene estructura de $\k$-espacio vectorial. Si $f, g \in T_p^q(\E)$ y
-	$\alpha , \beta \in \k$
-	\[
-		\begin{aligned}
-			\alpha f + \beta g \colon \overbrace{\E \times \cdots \E}^p \times
-			\overbrace{\E^* \times \cdots \times \E^*}^q &\to \k \\
-			(v_1, \cdots, v_p, w_1, \cdots, w_q) &\mapsto (\alpha f + \beta g)
-			(v_1, \cdots, v_p, w_1, \cdots, w_q)
-		\end{aligned}
-	\]
-	donde
-	\[
-	\begin{aligned}
-	(\alpha f + \beta g) (v_1, \cdots, v_p, w_1, \cdots, w_q) = \
-	&\alpha f(v_1, \cdots, v_p, w_1, \cdots, w_q) + \\
-	&\beta g(v_1, \cdots, v_p, w_1, \cdots, w_q).
-	\end{aligned}
-	\]
+    $T_p^q(\E)$ tiene estructura de $\k$-espacio vectorial. Si $f, g \in T_p^q(\E)$ y
+    $\alpha , \beta \in \k$
+    \[
+        \begin{aligned}
+            \alpha f + \beta g \colon \overbrace{\E \times \cdots \E}^p \times
+            \overbrace{\E^* \times \cdots \times \E^*}^q &\to \k \\
+            (v_1, \cdots, v_p, w_1, \cdots, w_q) &\mapsto (\alpha f + \beta g)
+            (v_1, \cdots, v_p, w_1, \cdots, w_q)
+        \end{aligned}
+    \]
+    donde
+    \[
+    \begin{aligned}
+    (\alpha f + \beta g) (v_1, \cdots, v_p, w_1, \cdots, w_q) = \
+    &\alpha f(v_1, \cdots, v_p, w_1, \cdots, w_q) + \\
+    &\beta g(v_1, \cdots, v_p, w_1, \cdots, w_q).
+    \end{aligned}
+    \]
 \end{prop}
 \begin{defi}[(producto tensorial)]
-	Dados $f \in T_p^q(\E)$ y $g \in T_{p'}^{q'}(\E)$, definimos el producto
-	tensorial de $f$ y $g$ como
-	\[
-		\begin{aligned}
-			f \otimes g \colon \overbrace{\E \times \cdots \times \E}^{p+p'}
-			\times \overbrace{\E^* \times \cdots \times \E^*}^{q+q'} &\to \k \\
-			(v_1, \cdots, v_p, \overline{v_1}, \cdots \overline{v_{p'}},
-			w_1, \cdots, w_q, \overline{w_1}, \cdots, \overline{w_{q'}})
-			&\mapsto f(v_1, \cdots, v_p, w_1, \cdots, w_p) * \\
-			&g(\overline{v_1}, \cdots, \overline{v_{p'}}, \overline{w_1}, \cdots
-			\overline{w_{q'}})
-		\end{aligned}
-	\]
+    Dados $f \in T_p^q(\E)$ y $g \in T_{p'}^{q'}(\E)$, definimos el producto
+    tensorial de $f$ y $g$ como
+    \[
+        \begin{aligned}
+            f \otimes g \colon \overbrace{\E \times \cdots \times \E}^{p+p'}
+            \times \overbrace{\E^* \times \cdots \times \E^*}^{q+q'} &\to \k \\
+            (v_1, \cdots, v_p, \overline{v_1}, \cdots \overline{v_{p'}},
+            w_1, \cdots, w_q, \overline{w_1}, \cdots, \overline{w_{q'}})
+            &\mapsto f(v_1, \cdots, v_p, w_1, \cdots, w_p) * \\
+            &g(\overline{v_1}, \cdots, \overline{v_{p'}}, \overline{w_1}, \cdots
+            \overline{w_{q'}})
+        \end{aligned}
+    \]
 \end{defi}
 \begin{obs}
-	Si $f$ y $g$ son tensores, entonces $f \otimes g$ también lo es. Además
-	$f \otimes g \in T_{p+p'}^{q+q'}(\E)$.
+    Si $f$ y $g$ son tensores, entonces $f \otimes g$ también lo es. Además
+    $f \otimes g \in T_{p+p'}^{q+q'}(\E)$.
 \end{obs}
 \begin{prop}
-	Sean  $f \in T_p^q(\E)$, $g \in T_{p'}^{q'}$ y $h \in T_{p''}^{q''}(\E)$.
-	\begin{itemize}
-		\item $\otimes$ {\bfseries NO} es abeliano. En general $f \otimes g \neq
-		g \otimes f$.
-		\item $\otimes$ es asociativo. $(f \otimes g) \otimes h = f \otimes (g
-		\otimes h)$. Denotado por $f \otimes g \otimes h$
-		\item $\vec{0} \otimes f = f \otimes \vec{0} = \vec{0}$
-		\item $f \otimes (g + h) = f \otimes g + f\otimes h$ \quad ($(f+g) \otimes
-		h = f \otimes h + g \otimes h$)
-		\item $\alpha \in \k$. $(\alpha f) \otimes g = \alpha(f \otimes g) =
-		f \otimes (\alpha g)$
-	\end{itemize}
+    Sean  $f \in T_p^q(\E)$, $g \in T_{p'}^{q'}$ y $h \in T_{p''}^{q''}(\E)$.
+    \begin{itemize}
+        \item $\otimes$ {\bfseries NO} es abeliano. En general $f \otimes g \neq
+        g \otimes f$.
+        \item $\otimes$ es asociativo. $(f \otimes g) \otimes h = f \otimes (g
+        \otimes h)$. Denotado por $f \otimes g \otimes h$
+        \item $\vec{0} \otimes f = f \otimes \vec{0} = \vec{0}$
+        \item $f \otimes (g + h) = f \otimes g + f\otimes h$ \quad ($(f+g) \otimes
+        h = f \otimes h + g \otimes h$)
+        \item $\alpha \in \k$. $(\alpha f) \otimes g = \alpha(f \otimes g) =
+        f \otimes (\alpha g)$
+    \end{itemize}
 \end{prop}
 \begin{example}
-	Sea $\E = \real^3$, $B = \{e_1, e_2, e_3\}$, $B^* = \{ e_1^*, e_2^*, e_3^*\}$.
-	Y consideramos el producto tensorial de los tensores $e_1^*$ y $e_2^*$ sobre
-	los vectores $v_1 = (x_1, y_1, z_1)$ y $v_2 = (x_2,y_2,z_2)$.
-	\[
-		\begin{rcases}
-			(e_1^* \otimes e_2^*)(v_1, v_2) = e_1^*(v_1)e_2^*(v_2) = x_1y_2 \\
-			(e_2^* \otimes e_1^*)(v_1, v_2) = e_2^*(v_1)e_1^*(v_2) = y_1x_2
-		\end{rcases}
-		\implies e_1^* \otimes e_2^* \neq e_2^* \otimes e_1^*
-	\]
+    Sea $\E = \real^3$, $B = \{e_1, e_2, e_3\}$, $B^* = \{ e_1^*, e_2^*, e_3^*\}$.
+    Y consideramos el producto tensorial de los tensores $e_1^*$ y $e_2^*$ sobre
+    los vectores $v_1 = (x_1, y_1, z_1)$ y $v_2 = (x_2,y_2,z_2)$.
+    \[
+        \begin{rcases}
+            (e_1^* \otimes e_2^*)(v_1, v_2) = e_1^*(v_1)e_2^*(v_2) = x_1y_2 \\
+            (e_2^* \otimes e_1^*)(v_1, v_2) = e_2^*(v_1)e_1^*(v_2) = y_1x_2
+        \end{rcases}
+        \implies e_1^* \otimes e_2^* \neq e_2^* \otimes e_1^*
+    \]
 \end{example}
 \begin{example}
-	Sea $\E = \real^2$, $B = \{e_1, e_2\}$, $B* = \{e_1^*, e_2^*\}$, entonces
-	\[
-		e_1 \otimes e_2 \in T^2(\E) \qquad \begin{cases}
-			(e_1 \otimes e_2) = (e_1^{**} \otimes e_2^{**})(e_1^*,e_1^*) =
-			e_1(e_1)e_2(e_1) = 0 \\
-			(e_1 \otimes e_2)(e_1^*,e_2^*) = 1 \\
-			(e_1 \otimes e_2)(e_2^*,e_1^*) = 0 \\
-			(e_1 \otimes e_2)(e_2^*,e_2^*) = 0
-		\end{cases}
-	\]
+    Sea $\E = \real^2$, $B = \{e_1, e_2\}$, $B* = \{e_1^*, e_2^*\}$, entonces
+    \[
+        e_1 \otimes e_2 \in T^2(\E) \qquad \begin{cases}
+            (e_1 \otimes e_2) = (e_1^{**} \otimes e_2^{**})(e_1^*,e_1^*) =
+            e_1(e_1)e_2(e_1) = 0 \\
+            (e_1 \otimes e_2)(e_1^*,e_2^*) = 1 \\
+            (e_1 \otimes e_2)(e_2^*,e_1^*) = 0 \\
+            (e_1 \otimes e_2)(e_2^*,e_2^*) = 0
+        \end{cases}
+    \]
 \end{example}
 \begin{obs} \label{obs:tens_cero}
-	Si $\E$ es un $\k$-ev de dimensión $n$ y $B = \{e_1, \cdots, e_n\}$
-	\[
-		(\underbrace{e_{i_1}^* \otimes \cdots \otimes e_{i_p}^*}_
-		{I = \setb{i_1, \cdots, i_p}} \otimes
-		\underbrace{e_{j_1} \otimes \cdots \otimes e_{j_2}}_
-		{J = \setb{j_1, \cdots j_q}})(\underbrace{e_{l_1}, \cdots, e_{l_p}}_
-		{L = \setb{l_1, \cdots, l_p}}, \underbrace{e_{m_1}^*, \cdots, e_{m_q}^*}_
-		{M = \setb{m_1, \cdots, m_q}}) =
-		\begin{cases}
-			1 \quad \text{Si } I = L \text{ y } J = M \\
-			0 \quad \text{en otro caso}
-		\end{cases}
-	\]
+    Si $\E$ es un $\k$-ev de dimensión $n$ y $B = \{e_1, \cdots, e_n\}$
+    \[
+        (\underbrace{e_{i_1}^* \otimes \cdots \otimes e_{i_p}^*}_
+        {I = \setb{i_1, \cdots, i_p}} \otimes
+        \underbrace{e_{j_1} \otimes \cdots \otimes e_{j_2}}_
+        {J = \setb{j_1, \cdots j_q}})(\underbrace{e_{l_1}, \cdots, e_{l_p}}_
+        {L = \setb{l_1, \cdots, l_p}}, \underbrace{e_{m_1}^*, \cdots, e_{m_q}^*}_
+        {M = \setb{m_1, \cdots, m_q}}) =
+        \begin{cases}
+            1 \quad \text{Si } I = L \text{ y } J = M \\
+            0 \quad \text{en otro caso}
+        \end{cases}
+    \]
 \end{obs}
 \begin{obs}
-	Sean $f,g \in T_p^q(\E)$ entonces
-	\[
-		f=g \iff \substack{\forall e_{i_1}, \cdots, e_{i_p} \in B \\ \forall e_{j_1}^*, \cdots,
-		e_{j_q}^* \in B^*} \quad f(e_{i_1}, \cdots, e_{j_q}^*) =
-		g(e_{i_1}, \cdots, e_{j_q}^*)
-	\]
+    Sean $f,g \in T_p^q(\E)$ entonces
+    \[
+        f=g \iff \substack{\forall e_{i_1}, \cdots, e_{i_p} \in B \\ \forall e_{j_1}^*, \cdots,
+        e_{j_q}^* \in B^*} \quad f(e_{i_1}, \cdots, e_{j_q}^*) =
+        g(e_{i_1}, \cdots, e_{j_q}^*)
+    \]
 \end{obs}
 
 \section{Dimensión y bases de $T_p^q(\E)$}
@@ -256,151 +256,151 @@
 Recordemos que $T_p^q(\E)$ es un $\k$-ev.
 
 \begin{teo}[(base de $T_p^q(\E)$)]
-	Sea $\E$ un $\k$-ev. de dimensión $n$ y sea $B = \setb{e_1, \cdots, e_n}$,
-	entonces
+    Sea $\E$ un $\k$-ev. de dimensión $n$ y sea $B = \setb{e_1, \cdots, e_n}$,
+    entonces
 \begin{enumerate}[i)]
-		\item $\dim_\k T_p^q(\E) = n^{p+q}$
-		\item \label{base_2} Una base de $T_p^q(\E)$ es
-		\[
-			B_p^q = \left\{ e_{i_1}^* \otimes \cdots \otimes e_{i_p}^* \otimes
-			e_{j_1} \otimes \cdots \otimes e_{j_q} \vert
-			\substack{i_1, \cdots, i_p \in \setb{1,\cdots,n} \\
-				j_1, \cdots, j_1 \in \setb{1,\cdots,n}} \right\}
-		\]
-		\item \label{base_3} Si $f \in T_p^q(\E)$, las coordenadas de $f$ en la base $B_p^q$ son
-		\[
-			f_{B_p^q} = (f(e_{i_1}, \cdots, e_{i_p}, e_{j_1}^*, \cdots, e_{j_q}^*))
-		\]
-	\end{enumerate}
+        \item $\dim_\k T_p^q(\E) = n^{p+q}$
+        \item \label{base_2} Una base de $T_p^q(\E)$ es
+        \[
+            B_p^q = \left\{ e_{i_1}^* \otimes \cdots \otimes e_{i_p}^* \otimes
+            e_{j_1} \otimes \cdots \otimes e_{j_q} \vert
+            \substack{i_1, \cdots, i_p \in \setb{1,\cdots,n} \\
+                j_1, \cdots, j_1 \in \setb{1,\cdots,n}} \right\}
+        \]
+        \item \label{base_3} Si $f \in T_p^q(\E)$, las coordenadas de $f$ en la base $B_p^q$ son
+        \[
+            f_{B_p^q} = (f(e_{i_1}, \cdots, e_{i_p}, e_{j_1}^*, \cdots, e_{j_q}^*))
+        \]
+    \end{enumerate}
 \end{teo}
 \begin{proof}
-	\begin{enumerate}[i)]
-		\item[]
-		\item Es consecuencia directa de \ref{base_2}
-		\item Primero veamos que $B_p^q$ es linealmente independiente. Sea
-		\[
-			w = \sum \alpha_{IJ}(e_{i_1}^* \otimes \cdots \otimes e_{i_p}^*
-			\otimes e_{j_1} \otimes \cdots \otimes e_{j_q}) = 0
-		\]
-		Sean $I_0$, $J_0$ dos conjuntos de índices cualesquiera, entonces
-		\[
-			0 = w(e_{i_1}, \cdots, e_{i_p}, e_{j_1}^*, \cdots, e_{j_q}^*)
-			= \alpha_{I_0J_0}
-		\]
-		(Por la \ref{obs:tens_cero}). Veamos ahora que $B_p^q$
-		es generadora. Sea $f \in T_p^q(\E)$, definimos $g \in T_p^q(\E)$ como
-		\[
-			g = \sum_{\forall I,J} (f(e_{i_1}, \cdots, e_{i_p}, e_{j_1}^*, \cdots,
-			e_{j_q}^*)(e_{i_1}^* \otimes \cdots \otimes e_{i_p}^* \otimes e_{j_1}
-			\otimes \cdots \otimes e_{j_q}))
-		\]
-		Demostrando ahora que $f=g$ quedan provados \ref{base_2} y \ref{base_3}.
-		Tenemos ahora que
-		\[
-			g(e_{i_1^0}, \cdots, e_{i_p^0}, e_{j_1^0}^*, \cdots, e_{j_q^0}^*) =
-			f(e_{i_1^0}, \cdots, e_{i_p^0}, e_{j_1^0}^*, \cdots, e_{j_q^0}^*)
-		\]
-		Por la \ref{obs:tens_cero} y queda demostrado el teorema.
-	\end{enumerate}
+    \begin{enumerate}[i)]
+        \item[]
+        \item Es consecuencia directa de \ref{base_2}
+        \item Primero veamos que $B_p^q$ es linealmente independiente. Sea
+        \[
+            w = \sum \alpha_{IJ}(e_{i_1}^* \otimes \cdots \otimes e_{i_p}^*
+            \otimes e_{j_1} \otimes \cdots \otimes e_{j_q}) = 0
+        \]
+        Sean $I_0$, $J_0$ dos conjuntos de índices cualesquiera, entonces
+        \[
+            0 = w(e_{i_1}, \cdots, e_{i_p}, e_{j_1}^*, \cdots, e_{j_q}^*)
+            = \alpha_{I_0J_0}
+        \]
+        (Por la \ref{obs:tens_cero}). Veamos ahora que $B_p^q$
+        es generadora. Sea $f \in T_p^q(\E)$, definimos $g \in T_p^q(\E)$ como
+        \[
+            g = \sum_{\forall I,J} (f(e_{i_1}, \cdots, e_{i_p}, e_{j_1}^*, \cdots,
+            e_{j_q}^*)(e_{i_1}^* \otimes \cdots \otimes e_{i_p}^* \otimes e_{j_1}
+            \otimes \cdots \otimes e_{j_q}))
+        \]
+        Demostrando ahora que $f=g$ quedan provados \ref{base_2} y \ref{base_3}.
+        Tenemos ahora que
+        \[
+            g(e_{i_1^0}, \cdots, e_{i_p^0}, e_{j_1^0}^*, \cdots, e_{j_q^0}^*) =
+            f(e_{i_1^0}, \cdots, e_{i_p^0}, e_{j_1^0}^*, \cdots, e_{j_q^0}^*)
+        \]
+        Por la \ref{obs:tens_cero} y queda demostrado el teorema.
+    \end{enumerate}
 \end{proof}
 \begin{example}
-	Sea $\E = \real^n$, $B = \setb{e_1, \cdots, e_n}$ y
-	$B^* = \setb{e_1^* \cdots e_n^*}$
-	\begin{itemize}
-		\item Sea $u \in \real^n$
-		\[
-			u = u(e_1^*) + \cdots + u(e_n^*) \qquad (B_0^1 = B)
-		\]
-		\item Sea $w \in T_1^0(\E) (= \E^*)$
-		\[
-			w = w(e_1)e_1^* + \cdots + w(e_n)e_n^* \qquad (B_1^0 = B^*)
-		\]
-		\item Sea $n = 3$ y sea $f \in T_2(\E)$
-		\begin{gather*}
-			B_2^0 = \setb{e_1^* \otimes e_1^*, e_1^* \otimes e_2^*,
-			\cdots e_3^* \otimes e_3^*} \\ f = f(e_1,e_1)e_1^*\otimes e_1^* +
-			f(e_1,e_2)e_1^*\otimes e_2^* +\cdots + f(e_3,e_3)e_3^* \otimes e_3^*
-		\end{gather*}
-	\end{itemize}
+    Sea $\E = \real^n$, $B = \setb{e_1, \cdots, e_n}$ y
+    $B^* = \setb{e_1^* \cdots e_n^*}$
+    \begin{itemize}
+        \item Sea $u \in \real^n$
+        \[
+            u = u(e_1^*) + \cdots + u(e_n^*) \qquad (B_0^1 = B)
+        \]
+        \item Sea $w \in T_1^0(\E) (= \E^*)$
+        \[
+            w = w(e_1)e_1^* + \cdots + w(e_n)e_n^* \qquad (B_1^0 = B^*)
+        \]
+        \item Sea $n = 3$ y sea $f \in T_2(\E)$
+        \begin{gather*}
+            B_2^0 = \setb{e_1^* \otimes e_1^*, e_1^* \otimes e_2^*,
+            \cdots e_3^* \otimes e_3^*} \\ f = f(e_1,e_1)e_1^*\otimes e_1^* +
+            f(e_1,e_2)e_1^*\otimes e_2^* +\cdots + f(e_3,e_3)e_3^* \otimes e_3^*
+        \end{gather*}
+    \end{itemize}
 \end{example}
 \begin{prop}[hola] 
-	%(cambio de base) ]
-	Sea $\E$ un $\k$-ev. de dimensión $n$ y sean $B = \setb{e_1, \cdots, e_n}$ y
-	$\overline{B} = \setb{u_1, \cdots, u_n}$. Sea $S = (s_j^i)$ la matriz de
-	cambio de base de $\overline{B}$ a $B$ y sea $T = (t_ j^i)$ su inversa.
-	De manera que tenemos esta relación:
-	\[
-		\begin{tikzpicture}
-			\node (B) {$\overline{B}$};
-			\node[left=of B] {$B$}
-			edge[<-,bend left=30] node[auto] {$S$} (B)
-			edge[->,bend right=30] node[auto] {$T$} (B);
-		\end{tikzpicture}
-		\qquad
-		\begin{tikzpicture}
-			\node (B) {$\overline{B}^*$};
-			\node[left=of B] {$B^*$}
-			edge[->,bend left=30] node[auto] {$S^t$} (B)
-			edge[<-,bend right=30] node[auto] {$T^t$} (B);
-		\end{tikzpicture}
-	\]
-	Sea $f \in T_p^q(\E)$ y sean
-	\begin{gather*}
-		f_B = \left( \alpha_{IJ} \right)_{I,J} = \left( f(e_{i_1}, \cdots,e_{i_p},
-		e_{j_1}^*, \cdots, e_{j_q}^*) \right)_{I,J} \\
-		f_{\overline{B}} = \left( \overline{\alpha}_{IJ} \right)_{I,J} =
-		\left( f(u_{i_1}, \cdots,u_{i_p}, u_{j_1}^*, \cdots, u_{j_q}^*)
-		\right)_{I,J}
-	\end{gather*}
-	Entonces, $\forall I,J$
-	\[
-		\overline{\alpha}_{IJ} = f(u_{i_1}, \cdots,u_{i_p}, u_{j_1}^*, \cdots,
-		u_{j_q}^*) = \sum_{\forall L, M} s_{i_1}^{l_1} \cdots s_{i_p}^{l_p}
-		t_{m_1}^{j_1} \cdots t_{m_q}^{j_q} f(e_{i_1}, \cdots, e_{i_p}, e_{j_1}^*,
-		\cdots, e_{j_q}^*)
-	\]
+    %(cambio de base) ]
+    Sea $\E$ un $\k$-ev. de dimensión $n$ y sean $B = \setb{e_1, \cdots, e_n}$ y
+    $\overline{B} = \setb{u_1, \cdots, u_n}$. Sea $S = (s_j^i)$ la matriz de
+    cambio de base de $\overline{B}$ a $B$ y sea $T = (t_ j^i)$ su inversa.
+    De manera que tenemos esta relación:
+    \[
+        \begin{tikzpicture}
+            \node (B) {$\overline{B}$};
+            \node[left=of B] {$B$}
+            edge[<-,bend left=30] node[auto] {$S$} (B)
+            edge[->,bend right=30] node[auto] {$T$} (B);
+        \end{tikzpicture}
+        \qquad
+        \begin{tikzpicture}
+            \node (B) {$\overline{B}^*$};
+            \node[left=of B] {$B^*$}
+            edge[->,bend left=30] node[auto] {$S^t$} (B)
+            edge[<-,bend right=30] node[auto] {$T^t$} (B);
+        \end{tikzpicture}
+    \]
+    Sea $f \in T_p^q(\E)$ y sean
+    \begin{gather*}
+        f_B = \left( \alpha_{IJ} \right)_{I,J} = \left( f(e_{i_1}, \cdots,e_{i_p},
+        e_{j_1}^*, \cdots, e_{j_q}^*) \right)_{I,J} \\
+        f_{\overline{B}} = \left( \overline{\alpha}_{IJ} \right)_{I,J} =
+        \left( f(u_{i_1}, \cdots,u_{i_p}, u_{j_1}^*, \cdots, u_{j_q}^*)
+        \right)_{I,J}
+    \end{gather*}
+    Entonces, $\forall I,J$
+    \[
+        \overline{\alpha}_{IJ} = f(u_{i_1}, \cdots,u_{i_p}, u_{j_1}^*, \cdots,
+        u_{j_q}^*) = \sum_{\forall L, M} s_{i_1}^{l_1} \cdots s_{i_p}^{l_p}
+        t_{m_1}^{j_1} \cdots t_{m_q}^{j_q} f(e_{i_1}, \cdots, e_{i_p}, e_{j_1}^*,
+        \cdots, e_{j_q}^*)
+    \]
 \end{prop}
 \hfill
 \begin{example}
-	\begin{itemize}
+    \begin{itemize}
                 \item []
-		\item $f \in T^1(\E) = \E^{**} = \E$ por lo tanto $f = u$ y $\substack{
-		u_B = (x_1, \cdots, u_n) \\ u_{\overline{B}} = (\overline{x}_1, \cdots,
-		\overline{x}_n)}$, entonces
-		\[
-			\begin{pmatrix}
-				\overline{x}_1 \\
-				\vdots \\
-				\overline{x}_n
-			\end{pmatrix}
-			= T \begin{pmatrix}
-				x_1 \\
-				\vdots \\
-				x_n
-			\end{pmatrix}
-		\]
-		\item $f \in T_1(\E) = \E^*$ por lo tanto $f = w$ y $\substack{
-		w_B = (x_1, \cdots, u_n) \\ w_{\overline{B}} = (\overline{x}_1, \cdots,
-		\overline{x}_n)}$, entonces
-		\[
-			\begin{pmatrix}
-				\overline{x}_1 \\
-				\vdots \\
-				\overline{x}_n
-			\end{pmatrix}
-				= S^t \begin{pmatrix}
-				x_1 \\
-				\vdots \\
-				x_n
-			\end{pmatrix}
-		\]
-		\item $f \in T_2(\E)$ por lo tanto $f$ es una forma bilineal y $\substack{
-		f_B = A \in M_{n,n}(k) \\ f_{\overline{B}} = \overline{A} \in M_{n,n}(k)}$,
-		entonces
-		\[
-			\overline{A} = S^tAS
-		\]
-	\end{itemize}
+        \item $f \in T^1(\E) = \E^{**} = \E$ por lo tanto $f = u$ y $\substack{
+        u_B = (x_1, \cdots, u_n) \\ u_{\overline{B}} = (\overline{x}_1, \cdots,
+        \overline{x}_n)}$, entonces
+        \[
+            \begin{pmatrix}
+                \overline{x}_1 \\
+                \vdots \\
+                \overline{x}_n
+            \end{pmatrix}
+            = T \begin{pmatrix}
+                x_1 \\
+                \vdots \\
+                x_n
+            \end{pmatrix}
+        \]
+        \item $f \in T_1(\E) = \E^*$ por lo tanto $f = w$ y $\substack{
+        w_B = (x_1, \cdots, u_n) \\ w_{\overline{B}} = (\overline{x}_1, \cdots,
+        \overline{x}_n)}$, entonces
+        \[
+            \begin{pmatrix}
+                \overline{x}_1 \\
+                \vdots \\
+                \overline{x}_n
+            \end{pmatrix}
+                = S^t \begin{pmatrix}
+                x_1 \\
+                \vdots \\
+                x_n
+            \end{pmatrix}
+        \]
+        \item $f \in T_2(\E)$ por lo tanto $f$ es una forma bilineal y $\substack{
+        f_B = A \in M_{n,n}(k) \\ f_{\overline{B}} = \overline{A} \in M_{n,n}(k)}$,
+        entonces
+        \[
+            \overline{A} = S^tAS
+        \]
+    \end{itemize}
 \end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -413,58 +413,58 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
 \section{Recordatorio de permutaciones}
 
 \begin{itemize}
-	\item Denotaremos como $x_n = \setb{1, \cdots, n}$
-	\item Denotaremos como $\mathcal{S}_n =\setb{\sigma\colon x_n \to
-		x_n \text{ bilineales}}$
-	\item $\#\mathcal{S}_n= n!$
-	\item $\mathcal{S}_n$ es un grupo por composición. Además denotaremos
-		$s_1 s_2 = s_1 \circ s_2$
-	\item\label{obs:perm_biy} Fijada $s_0 \in \mathcal{S}_n$, la aplicación
-		\[
-			\begin{aligned}
-				\phi \colon \mathcal{S}_n &\to \mathcal{S}_n \\
-				s &\mapsto s_0s
-			\end{aligned}
-		\]
-		es biyectiva.
-	\item Sea $s \in \mathcal{S}_n$, denotaremos $s$  de las siguientes maneras
-		\begin{itemize}
-			\item $s = \begin{pmatrix}
-				1 & 2 & \cdots & n \\
-				s(1) & s(2) & \cdots & s(n)
-			\end{pmatrix}$
-			\item Si $s$ es cíclica la denotaremos como $s = (1,3,7,5)$. En este
-			caso, $s(1)=3$, $s(3)=7$, $s(7)=5$ y $s(5)=1$, para el resto de valores
-			$s(i)=i$.
-		\end{itemize}
-	\item Llamaremos trasposición a una permutación del tipo $s=(i,j)$ con
-		$i \neq j$
-	\item $\forall s \in \mathcal{S}_n$, $s$ se puede expresar como composición
-		(o producto) de trasposiciones. Además, la paridad del número de
-		trasposiciones se mantiene, es decir
-		\[
-			s = t_1 \cdots t_p = l_1 \cdots l_q \implies p \equiv q \mod 2
-		\]
-	\item Sea $s \in \mathcal{S}_n$ y sea $s=t_1 \cdots t_p$ una descomposición de
-		$s$ en trasposiciones. Entonces, definimos el signo de $s$ como
-		$\varepsilon(s) = (-1)^p$.
+    \item Denotaremos como $x_n = \setb{1, \cdots, n}$
+    \item Denotaremos como $\mathcal{S}_n =\setb{\sigma\colon x_n \to
+        x_n \text{ bilineales}}$
+    \item $\#\mathcal{S}_n= n!$
+    \item $\mathcal{S}_n$ es un grupo por composición. Además denotaremos
+        $s_1 s_2 = s_1 \circ s_2$
+    \item\label{obs:perm_biy} Fijada $s_0 \in \mathcal{S}_n$, la aplicación
+        \[
+            \begin{aligned}
+                \phi \colon \mathcal{S}_n &\to \mathcal{S}_n \\
+                s &\mapsto s_0s
+            \end{aligned}
+        \]
+        es biyectiva.
+    \item Sea $s \in \mathcal{S}_n$, denotaremos $s$  de las siguientes maneras
+        \begin{itemize}
+            \item $s = \begin{pmatrix}
+                1 & 2 & \cdots & n \\
+                s(1) & s(2) & \cdots & s(n)
+            \end{pmatrix}$
+            \item Si $s$ es cíclica la denotaremos como $s = (1,3,7,5)$. En este
+            caso, $s(1)=3$, $s(3)=7$, $s(7)=5$ y $s(5)=1$, para el resto de valores
+            $s(i)=i$.
+        \end{itemize}
+    \item Llamaremos trasposición a una permutación del tipo $s=(i,j)$ con
+        $i \neq j$
+    \item $\forall s \in \mathcal{S}_n$, $s$ se puede expresar como composición
+        (o producto) de trasposiciones. Además, la paridad del número de
+        trasposiciones se mantiene, es decir
+        \[
+            s = t_1 \cdots t_p = l_1 \cdots l_q \implies p \equiv q \mod 2
+        \]
+    \item Sea $s \in \mathcal{S}_n$ y sea $s=t_1 \cdots t_p$ una descomposición de
+        $s$ en trasposiciones. Entonces, definimos el signo de $s$ como
+        $\varepsilon(s) = (-1)^p$.
 \end{itemize}
 
 \section{Tensores simétricos y antisimétricos}
 
 \begin{defi}
-	Sea $\E$ un $\k$-ev. de dimensión $n$, sea $f \in T_p(\E)$ y $s \in\mathcal{S}_p$,
-	entonces, definimos $(\underline{s}f) \in T_p(\E)$ como
-	\[
-		(\underline{s}f)(v_1, \cdots, v_p) = f(v_{s(1)}, \cdots, v_{s(p)})
-	\]
+    Sea $\E$ un $\k$-ev. de dimensión $n$, sea $f \in T_p(\E)$ y $s \in\mathcal{S}_p$,
+    entonces, definimos $(\underline{s}f) \in T_p(\E)$ como
+    \[
+        (\underline{s}f)(v_1, \cdots, v_p) = f(v_{s(1)}, \cdots, v_{s(p)})
+    \]
 \end{defi}
 \begin{example}
-	Sea $\E = \real^4$, $B = \setb{e_1, e_2, e_3, e_4}$, $f = e_1^* \otimes e_2^*
-	\otimes e_3^* \in T_3(\E)$ y $s = (1,2,3) \in \mathcal{S}_3$, entonces
-	\[
-		(\underline{s}f)(v_1,v_2,v_3) = f(v_2,v_3,v_1)
-	\]
+    Sea $\E = \real^4$, $B = \setb{e_1, e_2, e_3, e_4}$, $f = e_1^* \otimes e_2^*
+    \otimes e_3^* \in T_3(\E)$ y $s = (1,2,3) \in \mathcal{S}_3$, entonces
+    \[
+        (\underline{s}f)(v_1,v_2,v_3) = f(v_2,v_3,v_1)
+    \]
 \end{example}
 
 \begin{prop}
@@ -789,8 +789,8 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
     \end{enumerate}
 \end{proof}
 \begin{obs}
-	Las mismas construcciones funcionan para tensores $(0,q)$, $T^q(\E) = T_q(\E^*)$, pero no funcionan para
-	tensores $(p,q)$ donde $p,q \neq 0$ porque las construcciones implican permutaciones.
+    Las mismas construcciones funcionan para tensores $(0,q)$, $T^q(\E) = T_q(\E^*)$, pero no funcionan para
+    tensores $(p,q)$ donde $p,q \neq 0$ porque las construcciones implican permutaciones.
 \end{obs}
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -802,39 +802,39 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
 \section{Producto exterior}
 
 \begin{obs}
-	$S_p(\E) \subseteq T_p(\E)$, $A_p(\E) \subseteq T_p(\E)$ y $S_p$, $A_p$ s.e.v..
-	\begin{itemize}
-	    \item $f \in S_p(\E)$, $g \in S_{p'}(\E)$ en general $f \otimes g \notin S_{p+p'}(\E)$
-	    \item $f \in A_p(\E)$, $g \in A_{p'}(\E)$ en general $f \otimes g \notin A_{p+p'}(\E)$
-	\end{itemize}
+    $S_p(\E) \subseteq T_p(\E)$, $A_p(\E) \subseteq T_p(\E)$ y $S_p$, $A_p$ s.e.v..
+    \begin{itemize}
+        \item $f \in S_p(\E)$, $g \in S_{p'}(\E)$ en general $f \otimes g \notin S_{p+p'}(\E)$
+        \item $f \in A_p(\E)$, $g \in A_{p'}(\E)$ en general $f \otimes g \notin A_{p+p'}(\E)$
+    \end{itemize}
 \end{obs}
 \begin{example}
     Sean $\omega_1$, $\omega_2 \in T_1(\E)$:
-	\begin{itemize}
-		\item $T_1(\E) = \E^* = S_1(\E) = A_1(\E)$, porque $S_1 = \{\Id\}$.
-		\item $\omega_1 \otimes \omega_2 \notin S_2(\E), A_2(\E)$.
-	\end{itemize}
+    \begin{itemize}
+        \item $T_1(\E) = \E^* = S_1(\E) = A_1(\E)$, porque $S_1 = \{\Id\}$.
+        \item $\omega_1 \otimes \omega_2 \notin S_2(\E), A_2(\E)$.
+    \end{itemize}
 \end{example}
 \begin{obs}
-	El producto exterior (que definiremos) manda tensores antisimétricos a antisimétricos.
+    El producto exterior (que definiremos) manda tensores antisimétricos a antisimétricos.
 \end{obs}
 \begin{obs}
-	Lo haremos en $T_p(\E)$, análogamente se hará en $T^q(\E)$.
+    Lo haremos en $T_p(\E)$, análogamente se hará en $T^q(\E)$.
 \end{obs}
 \begin{defi}[(producto exterior de orden 1)] \label{pr_ext}
-	Sea $\E$ un $\k$-e.v.; $\omega_1, \dots, \omega_p \in T_1(\E) = \E$, el producto exterior de orden 1 es:
-	\[
-		\omega_1 \wedge \dots \wedge \omega_p = p! A(\omega_1 \otimes \dots \otimes \omega_p)
-	\]
+    Sea $\E$ un $\k$-e.v.; $\omega_1, \dots, \omega_p \in T_1(\E) = \E$, el producto exterior de orden 1 es:
+    \[
+        \omega_1 \wedge \dots \wedge \omega_p = p! A(\omega_1 \otimes \dots \otimes \omega_p)
+    \]
 \end{defi}
 \begin{obs} \label{obs_pr_ext}
-	\begin{gather*}
-		\omega_1 \wedge \dots \wedge \omega_p = \cancel{p!}  \left( \frac{1}{\cancel{p!}}\sum_{s \in \mathcal{S}_p} \varepsilon(s)
-		\underline{s}\left(\omega_1 \otimes \dots \otimes \omega_p \right) \right) = \\
-		= \sum_{s \in \mathcal{S}_p} \varepsilon(s) \left( \omega_{s^{-1}(1)} \otimes \dots \otimes \omega_{s^{-1}(p)}
-		\right) \stackrel{\varepsilon(s) = \varepsilon(s^{-1})}{=} \sum_{r \in \mathcal{S}_p}
-		\varepsilon(r) \left( \omega_{r(1)} \otimes \dots \otimes \omega_{r(p)} \right)
-	\end{gather*}
+    \begin{gather*}
+        \omega_1 \wedge \dots \wedge \omega_p = \cancel{p!}  \left( \frac{1}{\cancel{p!}}\sum_{s \in \mathcal{S}_p} \varepsilon(s)
+        \underline{s}\left(\omega_1 \otimes \dots \otimes \omega_p \right) \right) = \\
+        = \sum_{s \in \mathcal{S}_p} \varepsilon(s) \left( \omega_{s^{-1}(1)} \otimes \dots \otimes \omega_{s^{-1}(p)}
+        \right) \stackrel{\varepsilon(s) = \varepsilon(s^{-1})}{=} \sum_{r \in \mathcal{S}_p}
+        \varepsilon(r) \left( \omega_{r(1)} \otimes \dots \otimes \omega_{r(p)} \right)
+    \end{gather*}
 \end{obs}
 \begin{example}
     Sea $\E = \real^3$, $B = \{e_1, e_2, e_3\}$, $B^* = \{ e_1^*, e_2^*, e_3^*\}$.
@@ -905,7 +905,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
         \]
         $\impliedby$ \\
         Sea $B=\{u_1,\dots,u_n\}$, $B^*=\{\omega_1, \dots, \omega_p,\overbrace{\omega_{p+1},\dots, \dots,
-		    \omega_n}^{\text{Steinitz}} \}$ la base dual de $B$, tenemos que:
+            \omega_n}^{\text{Steinitz}} \}$ la base dual de $B$, tenemos que:
         \[
         \left( \omega_1 \wedge \dots \wedge \omega_p \right) \left( u_1,\dots,u_p \right) \stackrel{\ref{prop_pr_ext_iv}}{=}
         \det\left( \omega_j \left(u_i \right) \right) =
@@ -952,124 +952,124 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
         \item \label{teo_it2}
             Una base de $A_p$ es $\tilde{B} = \left\{e_{i_1}^* \wedge \cdots \wedge e_{i_p}^* \right\}$, $i\leq i_1 < \cdots < i_p \leq n$.
         \item
-        	Si $w \in A_p\left( \E \right)$, las coordenadas de $w$ en la base anterior son:
-        	\[
-        		\left( w \left( e_{i_1}, \dots , e_{i_p} \right) \right)_{1\leq i_1 < \cdots < i_p \leq n}
-        	\]
+            Si $w \in A_p\left( \E \right)$, las coordenadas de $w$ en la base anterior son:
+            \[
+                \left( w \left( e_{i_1}, \dots , e_{i_p} \right) \right)_{1\leq i_1 < \cdots < i_p \leq n}
+            \]
     \end{enumerate}
 \end{teo}
 \begin{proof}
-	\begin{enumerate}[i)]
-		\item[]
-		\item
-			$\ref{teo_it2} \implies \ref{teo_it1}$ trivialmente.
-		\item
-			\underline{L.I.}: Sea
-			\[
-				w=\sum_{\substack{I=\left\{ i_1, \dots , i_p \right\} \\ 1\leq i_1 < \cdots < i_p \leq n}} \alpha _I e_{i_1}^* \wedge \cdots \wedge e_{i_p}^*=0.
-			\]
-			Sea $I_0=\left\{ i_1^0, \dots , i_p^0 \right\} $ con $1\leq i_1^0 < \cdots < i_p^0 \leq n$ cualesquiera. Entonces,
-			\[
-				0=w \left( e_{i_1^0} , \dots , e_{i_p^0} \right)= \sum_{\substack{I=\left\{ i_1, \dots , i_p \right\} \\ 1\leq i_1 < \cdots < i_p \leq n}} \alpha _I e_{i_1}^* \wedge \cdots \wedge e_{i_p}^* \left( e_{i_1^0} , \dots , e_{i_p^0} \right) \stackrel{\ref{obs_2_pr_ext}} = \alpha _ {I_0}.
-			\]
-			\underline{Generadores}:
-			\[
-				A_p \left( \E \right) = A \left( T_p \left( \E \right) \right) = A_p \left( \left[ e_{i_1} \otimes \cdots \otimes e_{i_p} \right]_I \right) = \left[ \left\{ e_{i_1} \wedge \cdots \wedge e_{i_p} \right\}_I \right] \stackrel{\ref{prop_pr_ext_ii}}= \left[ \left\{ e_{i_1} \wedge \cdots \wedge e_{i_p} \right\}_{I\text{ ordenado}} \right].
-			\]
-		\item
-			Sea $w \in A_p\left(\E\right)$. Consideremos
-			\[
-				\tilde{w}=\sum_{\substack{I=\left\{ i_1, \dots , i_p \right\} \\ 1\leq i_1 < \cdots < i_p \leq n}} \left( w \left( e_{i_1} , \dots , e_{i_p} \right) \right) e_{i_1}^* \wedge \cdots \wedge e_{i_p}^*.
-			\]
-			Veremos que $\tilde{w}=w$. Como tensores, basta ver que coinciden sobre vectores $\left( e_{j_1}, \dots , e_{j_p} \right)$. Como ambos son alternados, podemos suponer $1 \leq j_1  < \cdots < j_p \leq n$. Entonces,
-			\[
-				\tilde{w} \left( e_{j_1}, \dots , e_{j_p} \right) = w \left( e_{j_1}, \dots , e_{j_p} \right).
-			\]
+    \begin{enumerate}[i)]
+        \item[]
+        \item
+            $\ref{teo_it2} \implies \ref{teo_it1}$ trivialmente.
+        \item
+            \underline{L.I.}: Sea
+            \[
+                w=\sum_{\substack{I=\left\{ i_1, \dots , i_p \right\} \\ 1\leq i_1 < \cdots < i_p \leq n}} \alpha _I e_{i_1}^* \wedge \cdots \wedge e_{i_p}^*=0.
+            \]
+            Sea $I_0=\left\{ i_1^0, \dots , i_p^0 \right\} $ con $1\leq i_1^0 < \cdots < i_p^0 \leq n$ cualesquiera. Entonces,
+            \[
+                0=w \left( e_{i_1^0} , \dots , e_{i_p^0} \right)= \sum_{\substack{I=\left\{ i_1, \dots , i_p \right\} \\ 1\leq i_1 < \cdots < i_p \leq n}} \alpha _I e_{i_1}^* \wedge \cdots \wedge e_{i_p}^* \left( e_{i_1^0} , \dots , e_{i_p^0} \right) \stackrel{\ref{obs_2_pr_ext}} = \alpha _ {I_0}.
+            \]
+            \underline{Generadores}:
+            \[
+                A_p \left( \E \right) = A \left( T_p \left( \E \right) \right) = A_p \left( \left[ e_{i_1} \otimes \cdots \otimes e_{i_p} \right]_I \right) = \left[ \left\{ e_{i_1} \wedge \cdots \wedge e_{i_p} \right\}_I \right] \stackrel{\ref{prop_pr_ext_ii}}= \left[ \left\{ e_{i_1} \wedge \cdots \wedge e_{i_p} \right\}_{I\text{ ordenado}} \right].
+            \]
+        \item
+            Sea $w \in A_p\left(\E\right)$. Consideremos
+            \[
+                \tilde{w}=\sum_{\substack{I=\left\{ i_1, \dots , i_p \right\} \\ 1\leq i_1 < \cdots < i_p \leq n}} \left( w \left( e_{i_1} , \dots , e_{i_p} \right) \right) e_{i_1}^* \wedge \cdots \wedge e_{i_p}^*.
+            \]
+            Veremos que $\tilde{w}=w$. Como tensores, basta ver que coinciden sobre vectores $\left( e_{j_1}, \dots , e_{j_p} \right)$. Como ambos son alternados, podemos suponer $1 \leq j_1  < \cdots < j_p \leq n$. Entonces,
+            \[
+                \tilde{w} \left( e_{j_1}, \dots , e_{j_p} \right) = w \left( e_{j_1}, \dots , e_{j_p} \right).
+            \]
 
-	\end{enumerate}
+    \end{enumerate}
 \end{proof}
 
 \begin{example}
-	Sea $\E=\real^3$ y $B = \setb{e_1,e_2,e_3}$
-	\begin{center}
-		\begin{tabular}{|c|c|c|c|}
-			\hline
-			Espacio & $\dim$ & base & coordenadas \\
-			\hline \hline
-			$A_1(\E)= T_1(\E) (=\E^*)$ & 3 & $\setb{e_1^*,e_2^*,e_3^*}$ &
-			$w = (a_1,b_1,c_1)$ \\ \hline $A_2(\E) \subseteq T_2(\E)$ & 3 &
-			$\setb{e_1^* \wedge e_2^*, e_1^* \wedge e_3^*, e_2^* \wedge e_3^*}$ &
-			$\begin{aligned}
-				w_1 \wedge w_2 =& (w_1 \wedge w_2)(e_1,e_2) e_1^* \wedge e_2^* + \\
-				 & (w_1 \wedge w_2)(e_1,e_3) e_1^* \wedge e_3^* + \\
-				 & (w_1 \wedge w_2)(e_2,e_3) e_2^* \wedge e_3^*
-			\end{aligned}$ \\
-			\hline $A_3(\E) \subseteq T_3(\E)$ & 1 &
-			$\setb{e_1^* \wedge e_2^* \wedge e_3^*}$ &
-			$t =(w_1 \wedge w_2 \wedge w_3) = (t(e_1,e_2,e_3))$ \\ \hline
-		\end{tabular}
-	\end{center}
-	Además, si $w_1=(a_1,b_1,c_2)_{B^*}$, $w_2=(a_2,b_2,c_2)_{B^*}$ y
-	$w_3=(a_3,b_3,c_3)_{B^*}$
-	\[
-		w_1 \wedge w_2 = \determinant{w_1(e_1) & w_1(e_2) \\ w_2(e_1) & w_2(e_2)}
-		(e_1^* \wedge e_2^*) + \determinant{w_1(e_1) & w_1(e_3) \\ w_2(e_1) & w_2(e_3)}
+    Sea $\E=\real^3$ y $B = \setb{e_1,e_2,e_3}$
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            Espacio & $\dim$ & base & coordenadas \\
+            \hline \hline
+            $A_1(\E)= T_1(\E) (=\E^*)$ & 3 & $\setb{e_1^*,e_2^*,e_3^*}$ &
+            $w = (a_1,b_1,c_1)$ \\ \hline $A_2(\E) \subseteq T_2(\E)$ & 3 &
+            $\setb{e_1^* \wedge e_2^*, e_1^* \wedge e_3^*, e_2^* \wedge e_3^*}$ &
+            $\begin{aligned}
+                w_1 \wedge w_2 =& (w_1 \wedge w_2)(e_1,e_2) e_1^* \wedge e_2^* + \\
+                 & (w_1 \wedge w_2)(e_1,e_3) e_1^* \wedge e_3^* + \\
+                 & (w_1 \wedge w_2)(e_2,e_3) e_2^* \wedge e_3^*
+            \end{aligned}$ \\
+            \hline $A_3(\E) \subseteq T_3(\E)$ & 1 &
+            $\setb{e_1^* \wedge e_2^* \wedge e_3^*}$ &
+            $t =(w_1 \wedge w_2 \wedge w_3) = (t(e_1,e_2,e_3))$ \\ \hline
+        \end{tabular}
+    \end{center}
+    Además, si $w_1=(a_1,b_1,c_2)_{B^*}$, $w_2=(a_2,b_2,c_2)_{B^*}$ y
+    $w_3=(a_3,b_3,c_3)_{B^*}$
+    \[
+        w_1 \wedge w_2 = \determinant{w_1(e_1) & w_1(e_2) \\ w_2(e_1) & w_2(e_2)}
+        (e_1^* \wedge e_2^*) + \determinant{w_1(e_1) & w_1(e_3) \\ w_2(e_1) & w_2(e_3)}
         (e_1^* \wedge e_3^*) + \determinant{w_1(e_2) & w_1(e_3) \\ w_2(e_2) & w_2(e_3)}
         (e_2^* \wedge e_3^*) =
     \]
     \[
-		\determinant{a_1 & b_1 \\ a_2 & b_2}(e_1^* \wedge e_2^*) +
-		\determinant{a_1 & b_1 \\ a_3 & b_3}(e_1^* \wedge e_3^*)
-		+ \determinant{a_2 & b_2 \\ a_3 & b_3}(e_2^* \wedge e_3^*)
-	\]
-	\[
-		w_1 \wedge w_2 \wedge w_3 = (w_1 \wedge w_2 \wedge w_3)	(e_1,e_2,e_3)
-		(e_1^* \wedge e_2^* \wedge e_3^*) =
-		\determinant{a_1 & b_1 & c_1 \\ a_2 & b_2 & c_2 \\ a_3 & b_3 & c_3}
-		(e_1^* \wedge e_2^* \wedge e_3^*)
-	\]
+        \determinant{a_1 & b_1 \\ a_2 & b_2}(e_1^* \wedge e_2^*) +
+        \determinant{a_1 & b_1 \\ a_3 & b_3}(e_1^* \wedge e_3^*)
+        + \determinant{a_2 & b_2 \\ a_3 & b_3}(e_2^* \wedge e_3^*)
+    \]
+    \[
+        w_1 \wedge w_2 \wedge w_3 = (w_1 \wedge w_2 \wedge w_3)    (e_1,e_2,e_3)
+        (e_1^* \wedge e_2^* \wedge e_3^*) =
+        \determinant{a_1 & b_1 & c_1 \\ a_2 & b_2 & c_2 \\ a_3 & b_3 & c_3}
+        (e_1^* \wedge e_2^* \wedge e_3^*)
+    \]
 \end{example}
 
 \begin{obs}
-	De forma análoga, podemos hacer el producto exterior de tensores 1-contravariantes $\left( T^1 \left( \E \right) = \E \right)$
-	y obtendremos $A^p\left( \E \right)$ con dimensión $\binom{n}{p}$ y base \break $\left\{ e_{i_1}
-	\wedge \cdots \wedge e_{i_p} \right\}_{1 \leq i_1 < \cdots < i_p \leq n}$ si $B=\left\{e_i, \dots , e_n\right\}$ es base de $\E$.
+    De forma análoga, podemos hacer el producto exterior de tensores 1-contravariantes $\left( T^1 \left( \E \right) = \E \right)$
+    y obtendremos $A^p\left( \E \right)$ con dimensión $\binom{n}{p}$ y base \break $\left\{ e_{i_1}
+    \wedge \cdots \wedge e_{i_p} \right\}_{1 \leq i_1 < \cdots < i_p \leq n}$ si $B=\left\{e_i, \dots , e_n\right\}$ es base de $\E$.
 \end{obs}
 
 \begin{defi}
-	Sea $\E$ un $\k$-ev. y sean $f \in A_p(\E)$ y $g \in A_q(\E)$. Definimos el
-	producto exterior de $f$ y $g$ como
-	\[
-		f \wedge g = \frac{(p+q)!}{p!q!}A(f \otimes g)
-	\]
+    Sea $\E$ un $\k$-ev. y sean $f \in A_p(\E)$ y $g \in A_q(\E)$. Definimos el
+    producto exterior de $f$ y $g$ como
+    \[
+        f \wedge g = \frac{(p+q)!}{p!q!}A(f \otimes g)
+    \]
 \end{defi}
 \begin{prop}
-	Sea $\E$ un $\k$-ev. y sean $f \in A_p(\E)$, $g \in A_q(\E)$ y $h \in A_r(\E)$.
-	\begin{enumerate}[i)]
-		\item $(f \wedge g) \wedge h = f \wedge (g \wedge h) = f \wedge g \wedge h$
-		\item $f \wedge g = (-1)^{pq} g \wedge f$
-		\item $\wedge$ es lineal en cada factor.
-	\end{enumerate}
+    Sea $\E$ un $\k$-ev. y sean $f \in A_p(\E)$, $g \in A_q(\E)$ y $h \in A_r(\E)$.
+    \begin{enumerate}[i)]
+        \item $(f \wedge g) \wedge h = f \wedge (g \wedge h) = f \wedge g \wedge h$
+        \item $f \wedge g = (-1)^{pq} g \wedge f$
+        \item $\wedge$ es lineal en cada factor.
+    \end{enumerate}
 \end{prop}
 \begin{obs}
-	$w_1 \wedge w_2 \wedge \cdots \wedge w_r = w_1 \wedge (w_2 \wedge (
-	\cdots w_{r-1} \wedge (w_r)))$
+    $w_1 \wedge w_2 \wedge \cdots \wedge w_r = w_1 \wedge (w_2 \wedge (
+    \cdots w_{r-1} \wedge (w_r)))$
 \end{obs}
 \begin{example}
-	Sea $\E = \real ^4$, $B = \setb{e_1,e_2,e_3,e_4}$ y $f,g \in A_2(\E)$
-	\begin{itemize}
-		\item $f = e_1^* \wedge e_2^* + e_2^* \wedge e_3^* + e_3^* \wedge e_4^*$
-		\item $g = e_1^* \wedge e_2^* + e_1^* \wedge e_3^*$
-	\end{itemize}
-	\begin{gather*}
-		f \wedge g = (e_1^* \wedge e_2^* + e_2^* \wedge e_3^* + e_3^* \wedge e_4^*)
-		\wedge (e_1^* \wedge e_2^* + e_1^* \wedge e_3^*) = \\
-		 = \cancelto{0}{e_1^* \wedge e_2^* \wedge e_1^* \wedge e_2^*} +
-		 \cancelto{0}{e_1^* \wedge e_2^* \wedge e_1^* \wedge e_3^*} +
-		 \cancelto{0}{e_2^* \wedge e_3^* \wedge e_1^* \wedge e_2^*} +
-		 \cancelto{0}{e_2^* \wedge e_3^* \wedge e_1^* \wedge e_3^*} + \\
-		 + e_3^* \wedge e_4^* \wedge e_1^* \wedge e_2^* +
-		 \cancelto{0}{e_3^* \wedge e_4^* \wedge e_1^* \wedge e_3^*} =
-		 e_3^* \wedge e_4^* \wedge e_1^* \wedge e_2^*
-	\end{gather*}
+    Sea $\E = \real ^4$, $B = \setb{e_1,e_2,e_3,e_4}$ y $f,g \in A_2(\E)$
+    \begin{itemize}
+        \item $f = e_1^* \wedge e_2^* + e_2^* \wedge e_3^* + e_3^* \wedge e_4^*$
+        \item $g = e_1^* \wedge e_2^* + e_1^* \wedge e_3^*$
+    \end{itemize}
+    \begin{gather*}
+        f \wedge g = (e_1^* \wedge e_2^* + e_2^* \wedge e_3^* + e_3^* \wedge e_4^*)
+        \wedge (e_1^* \wedge e_2^* + e_1^* \wedge e_3^*) = \\
+         = \cancelto{0}{e_1^* \wedge e_2^* \wedge e_1^* \wedge e_2^*} +
+         \cancelto{0}{e_1^* \wedge e_2^* \wedge e_1^* \wedge e_3^*} +
+         \cancelto{0}{e_2^* \wedge e_3^* \wedge e_1^* \wedge e_2^*} +
+         \cancelto{0}{e_2^* \wedge e_3^* \wedge e_1^* \wedge e_3^*} + \\
+         + e_3^* \wedge e_4^* \wedge e_1^* \wedge e_2^* +
+         \cancelto{0}{e_3^* \wedge e_4^* \wedge e_1^* \wedge e_3^*} =
+         e_3^* \wedge e_4^* \wedge e_1^* \wedge e_2^*
+    \end{gather*}
 \end{example}

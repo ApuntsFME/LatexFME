@@ -4,217 +4,217 @@
 \section{Definición, matriz de una forma cuadrática y bases}
 
 \begin{defi}
-	Sea $\E$ un $\k$-e.v. Diremos que una aplicación
-	\[
-		\begin{aligned}
-			\phi \colon \E \times \E &\to \k \\
-			(u,v) &\mapsto \phi(u,v)
-		\end{aligned}
-	\]
-	es una forma bilineal simétrica si \begin{itemize}
-		\item $\phi(u_1 + u_2, v) = \phi(u_1, v) + \phi(u_2, v)$
-		\item $\phi(\lambda u, v) = \lambda\phi(u,v)$
-		\item $\phi(u,v) = \phi(v,u)$
-	\end{itemize}
-	$\forall u,v,u_1,u_2 \in \E$ y $\forall \lambda \in \k$.
+    Sea $\E$ un $\k$-e.v. Diremos que una aplicación
+    \[
+        \begin{aligned}
+            \phi \colon \E \times \E &\to \k \\
+            (u,v) &\mapsto \phi(u,v)
+        \end{aligned}
+    \]
+    es una forma bilineal simétrica si \begin{itemize}
+        \item $\phi(u_1 + u_2, v) = \phi(u_1, v) + \phi(u_2, v)$
+        \item $\phi(\lambda u, v) = \lambda\phi(u,v)$
+        \item $\phi(u,v) = \phi(v,u)$
+    \end{itemize}
+    $\forall u,v,u_1,u_2 \in \E$ y $\forall \lambda \in \k$.
 \end{defi}
 \begin{defi}
-	Sea $\phi$ una forma bilineal simétrica sobre un $\k$-e.v. $\E$.
-	Diremos que la aplicación
-	\[
-		\begin{aligned}
-			q \colon \E &\to \k \\
-			u &\mapsto q(u) = \phi(u,u)
-		\end{aligned}
-	\]
-	es la forma cuadrática asociada a $\phi$.
+    Sea $\phi$ una forma bilineal simétrica sobre un $\k$-e.v. $\E$.
+    Diremos que la aplicación
+    \[
+        \begin{aligned}
+            q \colon \E &\to \k \\
+            u &\mapsto q(u) = \phi(u,u)
+        \end{aligned}
+    \]
+    es la forma cuadrática asociada a $\phi$.
 \end{defi}
 \begin{obs}
-	Se cumple que $q(\lambda u) = \lambda^2 q(u)$
+    Se cumple que $q(\lambda u) = \lambda^2 q(u)$
 \end{obs}
 \begin{lema}
-	Sea $\phi$ una forma bilineal simétrica sobre un $\k$-e.v. $\E$ con $\car \k \neq 2$
-	y sea $q$ la forma cuadrática asociada a $\phi$, entonces
-	\[
-		\phi(u,v) = \frac{1}{2} ( q(u+v) - q(u) - q(v))
-	\]
+    Sea $\phi$ una forma bilineal simétrica sobre un $\k$-e.v. $\E$ con $\car \k \neq 2$
+    y sea $q$ la forma cuadrática asociada a $\phi$, entonces
+    \[
+        \phi(u,v) = \frac{1}{2} ( q(u+v) - q(u) - q(v))
+    \]
 \end{lema}
 \begin{proof}
-	\[
-	\begin{split}
-		q(u+v) - q(u) - q(v) = \phi(u+v,u+v) - \phi(u,u) - \phi(v,v) = \\
-		=\phi(u,u) + \phi(u,v) + \phi(v,u)  + \phi(v,v) - \phi(u,u) - \phi(v,v) =
-		2 \phi(u,v)
-	\end{split}
-	\]
+    \[
+    \begin{split}
+        q(u+v) - q(u) - q(v) = \phi(u+v,u+v) - \phi(u,u) - \phi(v,v) = \\
+        =\phi(u,u) + \phi(u,v) + \phi(v,u)  + \phi(v,v) - \phi(u,u) - \phi(v,v) =
+        2 \phi(u,v)
+    \end{split}
+    \]
 \end{proof}
 \begin{defi}
-	Sea $\phi$ una forma bilineal simétrica/cuadrática sobre un $\k$-e.v. $\E$ y sea
-	$B = \{u_1, \cdots, u_n \}$ una base. La matriz de $\phi$ en base $B$ es
-	\[
-		M_B(\phi) = (a_{ij}) = (\phi(u_i,u_j))
-	\]
+    Sea $\phi$ una forma bilineal simétrica/cuadrática sobre un $\k$-e.v. $\E$ y sea
+    $B = \{u_1, \cdots, u_n \}$ una base. La matriz de $\phi$ en base $B$ es
+    \[
+        M_B(\phi) = (a_{ij}) = (\phi(u_i,u_j))
+    \]
 \end{defi}
 \begin{obs}
-	La matriz $M_B(\phi)$ es simétrica
+    La matriz $M_B(\phi)$ es simétrica
 \end{obs}
 \begin{defi}
-	Sea $\E$ un $\k$-e.v. y sea $\phi \colon \E \times \E \to \k$ una
-	forma bilineal simétrica.
-	\begin{itemize}
-		\item Diremos que $\phi$ es definida positiva si
-		\[ \phi(x,x) > 0, \quad \forall x \in \E
-		\quad x \neq \vec{0} \]
-		\item Diremos que $\phi$ es definida negativa si
-		\[ \phi(x,x) < 0, \quad \forall x \in \E
-		\quad x \neq \vec{0} \]
-		\item Diremos que $\phi$ es no definida en cualquier otro caso.
-	\end{itemize}
+    Sea $\E$ un $\k$-e.v. y sea $\phi \colon \E \times \E \to \k$ una
+    forma bilineal simétrica.
+    \begin{itemize}
+        \item Diremos que $\phi$ es definida positiva si
+        \[ \phi(x,x) > 0, \quad \forall x \in \E
+        \quad x \neq \vec{0} \]
+        \item Diremos que $\phi$ es definida negativa si
+        \[ \phi(x,x) < 0, \quad \forall x \in \E
+        \quad x \neq \vec{0} \]
+        \item Diremos que $\phi$ es no definida en cualquier otro caso.
+    \end{itemize}
 \end{defi}
 \begin{obs}
-	Si $\phi$ es una forma bilineal simétrica y definida positiva
-	entonces define un producto escalar sobre $\E$.
+    Si $\phi$ es una forma bilineal simétrica y definida positiva
+    entonces define un producto escalar sobre $\E$.
 \end{obs}
 \begin{defi}
-	Dada una matriz cuadrada $A$ (dim $n$) definimos
-	\[
-		A_k = (a_{ij}), \quad 1 \leq i, j \leq k \quad \text{y}
-		\quad \delta_k(A) = \determinant{A_k}
-	\]
+    Dada una matriz cuadrada $A$ (dim $n$) definimos
+    \[
+        A_k = (a_{ij}), \quad 1 \leq i, j \leq k \quad \text{y}
+        \quad \delta_k(A) = \determinant{A_k}
+    \]
 \end{defi}
 \begin{teo}[de Sylvester]
-	Sea $\E$ un $\k$-e.v. de dimension $n$ y sea
-	$\phi \colon \E\times \E \to \k$ una forma bilineal simétrica,
-	entonces
-	\[
-	\phi \text{ es definida positiva }\iff \delta_k(M_B(\phi)) > 0
-	\quad\forall 1 \leq k \leq n \quad\forall B \text{ base de } \E
-	\]
+    Sea $\E$ un $\k$-e.v. de dimension $n$ y sea
+    $\phi \colon \E\times \E \to \k$ una forma bilineal simétrica,
+    entonces
+    \[
+    \phi \text{ es definida positiva }\iff \delta_k(M_B(\phi)) > 0
+    \quad\forall 1 \leq k \leq n \quad\forall B \text{ base de } \E
+    \]
 \end{teo}
 \begin{proof}
-	$\implies$
+    $\implies$
 
-	Como $\phi$ es definida positiva, define un producto escalar
-	sobre $\E$. Si tomamos una base $B$ cualquiera, mediante
-	Gramm-Schmidt podemos construir una base ortogonal
-	$B_2 = \{v_1, \cdots, v_n \}$. Por tanto
-	\[
-		i \neq j \implies \phi(v_i, v_j) = 0, \quad \phi(v_i,v_i)
-		> 0 \quad 1 \leq i, j \leq n
-	\]
-	Llamamos $\phi(v_i, v_i) = \lambda_i > 0$. Por tanto
-	\[
-		M_{B_2}(\phi) = \begin{pmatrix}
-		\lambda_1 & 0 & \cdots & 0 \\
-		0 & \lambda_2 & \ddots & \vdots \\
-		\vdots & \ddots & \ddots & 0 \\
-		0 & \cdots & 0 & \lambda_n
-		\end{pmatrix} \implies \determinant{M_{B_2}(\phi)} =
-		\prod_{i=1}^{n} \lambda_i > 0
-	\]
-	Entonces, como $M_B(\phi) = S_{B,B_2}^TM_{B_2}(\phi)S_{B_2,B}$
-	\[
-		\determinant{M_B(\phi)} = \determinant{S_{B_2,B}}^2
-		\determinant{M_{B_2}(\phi)} > 0
-	\]
-	Por lo tanto, la matriz de un producto escalar tiene
-	determinante positivo independientemente de la base tomada.
-	Observamos que $\phi$ también define un producto escalar en
-	el subespacio vectorial $<v_1,\cdots,v_k>$ cuando lo
-	restringimos a este. Por lo que hemos visto antes se tiene que
-	\[
-	\determinant{M_B(\phi)_k} = \delta_k(M_B(\phi)) > 0
-	\quad \forall 1 \leq k \leq n.
-	\]
+    Como $\phi$ es definida positiva, define un producto escalar
+    sobre $\E$. Si tomamos una base $B$ cualquiera, mediante
+    Gramm-Schmidt podemos construir una base ortogonal
+    $B_2 = \{v_1, \cdots, v_n \}$. Por tanto
+    \[
+        i \neq j \implies \phi(v_i, v_j) = 0, \quad \phi(v_i,v_i)
+        > 0 \quad 1 \leq i, j \leq n
+    \]
+    Llamamos $\phi(v_i, v_i) = \lambda_i > 0$. Por tanto
+    \[
+        M_{B_2}(\phi) = \begin{pmatrix}
+        \lambda_1 & 0 & \cdots & 0 \\
+        0 & \lambda_2 & \ddots & \vdots \\
+        \vdots & \ddots & \ddots & 0 \\
+        0 & \cdots & 0 & \lambda_n
+        \end{pmatrix} \implies \determinant{M_{B_2}(\phi)} =
+        \prod_{i=1}^{n} \lambda_i > 0
+    \]
+    Entonces, como $M_B(\phi) = S_{B,B_2}^TM_{B_2}(\phi)S_{B_2,B}$
+    \[
+        \determinant{M_B(\phi)} = \determinant{S_{B_2,B}}^2
+        \determinant{M_{B_2}(\phi)} > 0
+    \]
+    Por lo tanto, la matriz de un producto escalar tiene
+    determinante positivo independientemente de la base tomada.
+    Observamos que $\phi$ también define un producto escalar en
+    el subespacio vectorial $<v_1,\cdots,v_k>$ cuando lo
+    restringimos a este. Por lo que hemos visto antes se tiene que
+    \[
+    \determinant{M_B(\phi)_k} = \delta_k(M_B(\phi)) > 0
+    \quad \forall 1 \leq k \leq n.
+    \]
 
-	\noindent $\impliedby$
+    \noindent $\impliedby$
 
-	\indent Tenemos que $\delta_k(M_B(\phi)) > 0 \quad \forall
-	1 \leq k \leq n$. Aplicamos la siguiente variación de
-	Gramm-Schmidt. Tomamos la base $B = \{ u_1, \cdots, u_n \}$
-	Y hacemos la siguiente construcción:
-	\[
-		\begin{cases}
-			v_1 = u_1 \\
-			v_2 = \alpha_{2,1}u_1 + u2 \\
-			v_3 = \alpha_{3,1}u_1 + \alpha_{3,2}u_2 + u_3 \\
-			\vdots \\
-			v_n = \alpha_{n,1}u_1 + \cdots + \alpha_{n,n-1}u_{n-1}
-			+ u_n
-		\end{cases}
-		\qquad \alpha_{i,j} \text{ son tales que } \phi(v_k, u_i)
-		= 0 \quad \substack{2 \leq k \leq n \\ 1 \leq i \leq k-1}
-	\]
-	Propiedades de $\{ v_1, \cdots, v_n \}$
-	\begin{itemize}
-		\item $\forall k$, $\left< v_1, \cdots, v_k \right> =
-		\left<u_1,\cdots,u_k\right>$
-		En particular, $B_2 = \{v_1,\cdots, v_n\}$ es base de $\E$.
-		\item $\phi(v_k, v_i) = 0$ $\forall 1 \leq i \leq k-1$
-		porque $v_i \in \left< u_1, \cdots, u_i \right>$ y hemos tomado los
-		$\alpha$ de manera que $\phi(v_k, u_i) = 0 \implies B_2$
-		es base ortogonal
-		\item La matriz $S_{B_2B}$
-		\[
-			S_{B_2B} = \begin{pmatrix}
-				1 & \alpha_{2,1} & \cdots & \alpha_{n,1} \\
-				0 & 1 & \ddots & \vdots \\
-				\vdots & \ddots & \ddots & \alpha_{n,n-1} \\
-				0 & \cdots & 0 & 1
-			\end{pmatrix} \implies \determinant{S_{B_2B}} = 1
-			\text{ y } \delta_k(S_{B_2B}) = 1
-		\]
-	\end{itemize}
-	Finalmente, tenemos
-	\[
-		\begin{aligned}
-			M_B(\phi) &= S_{B,B_2}^T M_{B_2}(\phi)S_{B,B_2} \\
-			\left(\begin{array}{c c|c}
-			k & \updownarrow &  \\
-			\leftrightarrow &  &  \\
-			\hline
-			 &  &
-			\end{array}\right) &= \left(\begin{array}{c c|c}
-			k & \updownarrow &  \\
-			\leftrightarrow &  &  \\
-			\hline
-			&  &
-			\end{array}\right) \left(\begin{array}{c c c| c c}
-			\phi(v_1,v_1) & & & & \\
-			& \ddots & & & \\
-			& & \phi(v_k,v_k) & & \\
-			\hline
-			& & & \ddots & \\
-			& & & & \phi(v_n,v_n)
-			\end{array}\right) \left(\begin{array}{c c|c}
-			k & \updownarrow &  \\
-			\leftrightarrow &  &  \\
-			\hline
-			&  &
-			\end{array}\right)
-		\end{aligned}
-	\]
-	\[
-		\implies \delta_k(M_B(\phi)) = \delta_k(S_{B,B_2}^t)
-		\delta_k(M_{B_2}(\phi)) \delta_k(S_{B,B_2}) =
-		\delta_k(M_{B_2}(\phi)) =
-	\]
-	\[
-		= \prod_{i=1}^{k} \phi(v_i,v_i) > 0\text{ (por hipótesis)}
-		\implies
-		\frac{\delta_k(M_B(\phi))}{\delta_{k-1}(M_B(\phi))}
-		= \phi(v_k,v_k) > 0
-	\]
-	Finalmente, $\forall x \in \E$
-	\[
-		\phi(x,x) =
-		\phi\left(
-			\sum_{i=1}^{k} x_iv_i,\sum_{i=1}^{k} x_iv_i
-		\right) =
-		\sum_{i=1}^{k} x_i^2 \phi(v_i,v_i) > 0 \text{ si } x \neq
-		\vec{0}
-	\]
-	\endproof{QED}
+    \indent Tenemos que $\delta_k(M_B(\phi)) > 0 \quad \forall
+    1 \leq k \leq n$. Aplicamos la siguiente variación de
+    Gramm-Schmidt. Tomamos la base $B = \{ u_1, \cdots, u_n \}$
+    Y hacemos la siguiente construcción:
+    \[
+        \begin{cases}
+            v_1 = u_1 \\
+            v_2 = \alpha_{2,1}u_1 + u2 \\
+            v_3 = \alpha_{3,1}u_1 + \alpha_{3,2}u_2 + u_3 \\
+            \vdots \\
+            v_n = \alpha_{n,1}u_1 + \cdots + \alpha_{n,n-1}u_{n-1}
+            + u_n
+        \end{cases}
+        \qquad \alpha_{i,j} \text{ son tales que } \phi(v_k, u_i)
+        = 0 \quad \substack{2 \leq k \leq n \\ 1 \leq i \leq k-1}
+    \]
+    Propiedades de $\{ v_1, \cdots, v_n \}$
+    \begin{itemize}
+        \item $\forall k$, $\left< v_1, \cdots, v_k \right> =
+        \left<u_1,\cdots,u_k\right>$
+        En particular, $B_2 = \{v_1,\cdots, v_n\}$ es base de $\E$.
+        \item $\phi(v_k, v_i) = 0$ $\forall 1 \leq i \leq k-1$
+        porque $v_i \in \left< u_1, \cdots, u_i \right>$ y hemos tomado los
+        $\alpha$ de manera que $\phi(v_k, u_i) = 0 \implies B_2$
+        es base ortogonal
+        \item La matriz $S_{B_2B}$
+        \[
+            S_{B_2B} = \begin{pmatrix}
+                1 & \alpha_{2,1} & \cdots & \alpha_{n,1} \\
+                0 & 1 & \ddots & \vdots \\
+                \vdots & \ddots & \ddots & \alpha_{n,n-1} \\
+                0 & \cdots & 0 & 1
+            \end{pmatrix} \implies \determinant{S_{B_2B}} = 1
+            \text{ y } \delta_k(S_{B_2B}) = 1
+        \]
+    \end{itemize}
+    Finalmente, tenemos
+    \[
+        \begin{aligned}
+            M_B(\phi) &= S_{B,B_2}^T M_{B_2}(\phi)S_{B,B_2} \\
+            \left(\begin{array}{c c|c}
+            k & \updownarrow &  \\
+            \leftrightarrow &  &  \\
+            \hline
+             &  &
+            \end{array}\right) &= \left(\begin{array}{c c|c}
+            k & \updownarrow &  \\
+            \leftrightarrow &  &  \\
+            \hline
+            &  &
+            \end{array}\right) \left(\begin{array}{c c c| c c}
+            \phi(v_1,v_1) & & & & \\
+            & \ddots & & & \\
+            & & \phi(v_k,v_k) & & \\
+            \hline
+            & & & \ddots & \\
+            & & & & \phi(v_n,v_n)
+            \end{array}\right) \left(\begin{array}{c c|c}
+            k & \updownarrow &  \\
+            \leftrightarrow &  &  \\
+            \hline
+            &  &
+            \end{array}\right)
+        \end{aligned}
+    \]
+    \[
+        \implies \delta_k(M_B(\phi)) = \delta_k(S_{B,B_2}^t)
+        \delta_k(M_{B_2}(\phi)) \delta_k(S_{B,B_2}) =
+        \delta_k(M_{B_2}(\phi)) =
+    \]
+    \[
+        = \prod_{i=1}^{k} \phi(v_i,v_i) > 0\text{ (por hipótesis)}
+        \implies
+        \frac{\delta_k(M_B(\phi))}{\delta_{k-1}(M_B(\phi))}
+        = \phi(v_k,v_k) > 0
+    \]
+    Finalmente, $\forall x \in \E$
+    \[
+        \phi(x,x) =
+        \phi\left(
+            \sum_{i=1}^{k} x_iv_i,\sum_{i=1}^{k} x_iv_i
+        \right) =
+        \sum_{i=1}^{k} x_i^2 \phi(v_i,v_i) > 0 \text{ si } x \neq
+        \vec{0}
+    \]
+    \endproof{QED}
 \end{proof}
 
 \begin{teo}[Método convergencia-pivote]
@@ -226,10 +226,10 @@
 
     \begin{gather*}
         \left(M_B(\phi) \vert Id \right) \stackrel{\text{op. filas}}{\sim}
-	\left( S_1M_B(\phi) \vert S_1 \right) \substack{\text{misma op.} \\
-	\sim \\ \text{en columnas}} \left( S_1 M_B(\phi)S_1^T \vert S_1 \right)
-	\sim \dots \sim \\ \sim \left( S_r \dots S_1 M_B(\phi)S_1^T \dots S_r^T
-	\vert S_r \dots S_1 \right)
+    \left( S_1M_B(\phi) \vert S_1 \right) \substack{\text{misma op.} \\
+    \sim \\ \text{en columnas}} \left( S_1 M_B(\phi)S_1^T \vert S_1 \right)
+    \sim \dots \sim \\ \sim \left( S_r \dots S_1 M_B(\phi)S_1^T \dots S_r^T
+    \vert S_r \dots S_1 \right)
     \end{gather*}
     Donde la matriz de la izquierda es $M_{B_2}$ y es diagonal.
 
@@ -441,7 +441,7 @@
             sobre $\F^{\prime+}$ y $\F^{\prime \leq 0}$ respectivamente.
             Tenemos que $f(v)=v_1$. Entonces,
             \[
-            	f(v)=0 \implies v_1=0 \implies v=v_2.
+                f(v)=0 \implies v_1=0 \implies v=v_2.
             \]
             Además, $0\leq \phi \left( v, v \right)$ y $\phi \left( v_2 , v_2 \right)=
              \phi \left( v, v \right) \leq 0$, de modo que $v=0$ y $f$ es inyectiva.
@@ -461,24 +461,24 @@
 \end{proof}
 \section{Clasificación afín y proyectiva}
 \begin{defi}
-	Sean $\E$ y $\F$ $\k$-espacios vectoriales. Sean
-	\[
-		\phi \colon \E \times \E \to \k,
-	\]
-	\[
-		\psi \colon \F \times \F \to \k
-	\]
+    Sean $\E$ y $\F$ $\k$-espacios vectoriales. Sean
+    \[
+        \phi \colon \E \times \E \to \k,
+    \]
+    \[
+        \psi \colon \F \times \F \to \k
+    \]
 formas bilineales simétricas. Diremos que $\phi$ y
 $\psi$ son afínmente equivalentes, y escribiremos
 $\phi \sim \psi$, si existe un isomorfismo $f \colon \E \to \F$ tal que
 \[
-	\phi \left(u, v \right) = \psi \left( f \left( u \right) ,
-	f \left( v \right)  \right) \hspace{0,2cm} \forall u, v \in \E,
+    \phi \left(u, v \right) = \psi \left( f \left( u \right) ,
+    f \left( v \right)  \right) \hspace{0,2cm} \forall u, v \in \E,
 \]
 \[
-	\phi \left( f ^{-1} \left( u ' \right) ,  f ^{-1} \left( v ' \right)
-	\right) = \psi \left( u' , v' \right) \hspace{0,2cm} \forall
-	u', v' \in \F.
+    \phi \left( f ^{-1} \left( u ' \right) ,  f ^{-1} \left( v ' \right)
+    \right) = \psi \left( u' , v' \right) \hspace{0,2cm} \forall
+    u', v' \in \F.
 \]
 \end{defi}
 \begin{teo}[de Sylvester]

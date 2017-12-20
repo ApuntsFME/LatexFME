@@ -38,250 +38,250 @@
 \begin{document}
 \raggedright
 \begin{multicols}{3}
-	
-	\section{Series Numéricas}
-	
-	\underline{Corolario del criterio de Cauchy}
-	
-	$\sum a_n$ convergente $\implies \lim\limits_{n \to \infty} a_n = 0$
-	
-	
-	\underline{Serie de Bertrand}
-	$\left( \sum \frac{1}{n^\alpha (\log{n})^\beta} \right)$
-	\begin{itemize}
-		\item $\alpha > 1$ o $\alpha = 1$, $\beta > 1 \implies$ convergente
-		\item $\alpha < 1$ o $\alpha = 1$, $\beta \leq 1 \implies$ divergente
-	\end{itemize}
-	
-	\subsection{Series positivas}
-	
-	
-	\underline{Criterio de Condensación} ($a_n$ decreciente, $a_n \geq 0$)
-	$\sum a_n$ convergente $\iff \sum 2^na_{2^n}$ convergente
-	
-	\underline{Comparación directa} $\left( b_n \geq a_n \geq 0 \quad \forall n \geq n_0 \right)$
-	\begin{itemize}
-		\item $\sum b_n$ conv. $\implies \sum a_n$ conv.
-		\item $\sum a_n$ divergente $\implies \sum b_n$ divergente
-	\end{itemize}
-	
-	\underline{Comparación en el límite} $\left(\lim\limits_{n \to \infty} \frac{a_n}{b_n} = L
-	\right)$
-	\begin{itemize}
-		\item $L < +\infty$, $\sum a_n$ conv. $\implies \sum b_n$ conv. \\
-		\item $L > 0$, $\sum b_n$ div. $\implies \sum a_n$ div.
-	\end{itemize}
-	
-	\underline{Criterio de la raíz y del cociente}
-	$\left(\lim\limits_{n \to \infty} a_n^{1/n} =
-	\lim\limits_{n \to \infty} \frac{a_{n+1}}{a_n} = L \right)$
-	\begin{itemize}
-		\item $L < 1 \implies \sum a_n$ convergente
-		\item $L > 1 \implies \sum a_n$ divergente
-	\end{itemize}
-	
-	\underline{Criterio de Raabe}
-	$\left( \lim\limits_{n \to \infty} n \left(1 - \frac{a_{n+1}}{a_n}\right)= L \right)$
-	\begin{itemize}
-		\item $L > 1 \implies \sum a_n$ convergente
-		\item $L < 1 \implies \sum a_n$ divergente
-	\end{itemize}
-	
-	\underline{Criterio logarítmico}
-	$\left( \lim\limits_{n \to \infty} \frac{-\log{a_n}}{\log{n}} = L \right)$
-	\begin{itemize}
-		\item $L > 1 \implies \sum a_n$ convergente
-		\item $L < 1 \implies \sum a_n$ divergente
-	\end{itemize}
-	
-	\underline{Criterio de Leibnitz} $\left( a_n \text{ dec. } \lim\limits_{n \to \infty}
-	a_n = 0 \right)$
-	$\sum (-1)^{n+1} a_n$ convergente
-	
-	\underline{Criterio de la integral} $\left( a_n = f(n), f \text{ integ.} \right)$
-	\begin{itemize}
-		\item $\int_{M}^{\infty} f$ converge $\iff \sum a_k$ converge
-		\item $\sum\limits_{M}^{\infty} = \sum\limits_{M}^{N-1} + \int_{N}^{\infty} f
-		+ \varepsilon_N$, $\varepsilon_N \in [0,a_N]$
-	\end{itemize}
-	
-	\underline{Criterio de Dirichlet} $(\lim\limits_{n\to \infty} b_n = 0$, $b_n \text{ dec. Sumas de } \sum a_n
-	\text{ acotadas.})$
-	$\sum a_nb_n$ convergente
-	
-	\subsection{Series de Potencias}
-	
-	\underline{Teorema de Cauchy-Hadamard}
-	$\frac{1}{R} = \limsup \abs{a_n}^{1/n}$
-	
-	\underline{Radio de convergencia}
-	$\frac{1}{R} = \lim\limits_{n \to \infty} \abs{a_n}^{1/n} = 
-	\lim\limits_{n \to \infty} \frac{\abs{a_{n+1}}}{\abs{a_n}}$
-	
-	\section{Integrales impropias}
-	
-	\underline{Criterio de Cauchy} $\left( \forall \varepsilon, \exists c_0 \right)$
-	$c_1, c_2 > c_0 \implies \abs{\int_{c_1}^{c_2} f} < \varepsilon. \implies$ convergente
-	
-	
-	\underline{Comparación directa} $\left( g(x) \geq f(x) \geq 0 \right)$
-	\begin{itemize}
-		\item $\int_{a}^{\infty} g$ converge $\implies \int_{a}^{\infty} f$ converge
-		\item $\int_{a}^{\infty} f$ divergente $\implies \int_{a}^{\infty} g$ divergente
-	\end{itemize}
-	
-	\underline{Comp. en el límite} $\left( g, f \geq 0,
-	\lim\limits_{x \to b} \frac{f(x)}{g(x)} = L \right)$
-	\begin{itemize}
-		\item $L < \infty$, $\int_{a}^{b} g$ conv. $\implies \int_{a}^{b} f$ conv.
-		\item $L > 0$, $\int_{a}^{b} f$ div. $\implies \int_{a}^{b} g$ div.
-	\end{itemize}
-	
-	\underline{Criterio de Dirichlet} $\left(\text{g dec., }\lim\limits_{x \to b} g(x) = 0,
-	c < b \implies \abs{\int_{a}^{c} f} < M\right)$
-	Entonces $\int_{a}^{b} f(x)g(x)dx$ converge
-	
-	\section{Integración múltiple}
-	
-	\underline{Conjuntos de medida nula} $\left( Z \subseteq \real^n \text{ medida nula} \right)$
-	\begin{itemize}
-		\item $\graph(f)$ con $f$ unif. cont.
-		\item $f(Z)$ con $f$ lipschitziana $\left( d(f(x),f(y)) \leq d(x,y) \right)$
-		\item $f(Z)$ con $f$ de clase $\mathcal{C}^1$
-		\item $M$ subvariedad regular de $\dim M < n$
-	\end{itemize}
-	
-	\underline{Teorema de Lebesgue:}
-	$f$ integrable en $A$ sii $disc(f) \cap A$ tiene medida nula
-	
-	\underline{Conjuntos admisibles} $\left( A, A' \text{ admisibles} \right)$
-	\begin{itemize}
-		\item $A \cap A'$, $A \cup A'$, $A \smallsetminus A'$ son admisibles
-		\item rectángulos acotados y bolas
-	\end{itemize}
-	
-	\underline{Medida de Jordan} $\left( C \subseteq \real^n \text{ admisible}\right)$
-	$\vol(C) = \int_{C}1$
-	
-	\underline{Propiedades de la integral} $\left( f,g \text{ integrables} \right)$
-	\begin{itemize}
-		\itemsep0em
-		\item $f+g$ integrable
-		\item $fg$ integrable
-		\item $f \leq g \implies \int_E f \leq \int_E g$ 
-		\item $m \leq f \leq M \implies m\vol(E) \leq \int_E f \leq M\vol(E)$
-		\item $\vol(E)=0 \implies \int_E f = 0$
-		\item $E$ conexo, $f$ continua $\implies \int_E f = f(x_0)\vol(E)$
-		\item $h$ continua $\implies h \circ f$ integrable
-		\item $\abs{\int_E f} \leq \int_E \abs{f}$
-		\item $\int_{A \cup B} f = \int_A f + \int_B f - \int_{A \cap B} f$
-	\end{itemize}
-	
-	\underline{Teorema de Fubini} $\left( f \text{ continua} \right)$
-	$\int_{A\times B} f(x,y) dx dy = \int_A dx \left( \int_B dy f(x,y) \right)$
-	
-	\underline{Región elemental} $\left( \psi, \phi \text{ cont. } D \text{ elemental} \right)$
-	$E = \setb{(x,y) \in \real^{n-1} \times \real \vert \substack{x \in D \\
-			\phi(x) \leq y \leq \psi(x)}}$
-	
-	\underline{TCV}
-	($V \in \real^n$ abierto, $\varphi \colon V \mapsto \real^n$ inyectiva, de clase $C^1$, 
-	$\det \D\varphi \neq 0)$, $f \colon U=\varphi(V) \mapsto \real$ integrable). Entonces
-	$\int_U = \int_V (f \circ \varphi) |\det \D \varphi|$
+    
+    \section{Series Numéricas}
+    
+    \underline{Corolario del criterio de Cauchy}
+    
+    $\sum a_n$ convergente $\implies \lim\limits_{n \to \infty} a_n = 0$
+    
+    
+    \underline{Serie de Bertrand}
+    $\left( \sum \frac{1}{n^\alpha (\log{n})^\beta} \right)$
+    \begin{itemize}
+        \item $\alpha > 1$ o $\alpha = 1$, $\beta > 1 \implies$ convergente
+        \item $\alpha < 1$ o $\alpha = 1$, $\beta \leq 1 \implies$ divergente
+    \end{itemize}
+    
+    \subsection{Series positivas}
+    
+    
+    \underline{Criterio de Condensación} ($a_n$ decreciente, $a_n \geq 0$)
+    $\sum a_n$ convergente $\iff \sum 2^na_{2^n}$ convergente
+    
+    \underline{Comparación directa} $\left( b_n \geq a_n \geq 0 \quad \forall n \geq n_0 \right)$
+    \begin{itemize}
+        \item $\sum b_n$ conv. $\implies \sum a_n$ conv.
+        \item $\sum a_n$ divergente $\implies \sum b_n$ divergente
+    \end{itemize}
+    
+    \underline{Comparación en el límite} $\left(\lim\limits_{n \to \infty} \frac{a_n}{b_n} = L
+    \right)$
+    \begin{itemize}
+        \item $L < +\infty$, $\sum a_n$ conv. $\implies \sum b_n$ conv. \\
+        \item $L > 0$, $\sum b_n$ div. $\implies \sum a_n$ div.
+    \end{itemize}
+    
+    \underline{Criterio de la raíz y del cociente}
+    $\left(\lim\limits_{n \to \infty} a_n^{1/n} =
+    \lim\limits_{n \to \infty} \frac{a_{n+1}}{a_n} = L \right)$
+    \begin{itemize}
+        \item $L < 1 \implies \sum a_n$ convergente
+        \item $L > 1 \implies \sum a_n$ divergente
+    \end{itemize}
+    
+    \underline{Criterio de Raabe}
+    $\left( \lim\limits_{n \to \infty} n \left(1 - \frac{a_{n+1}}{a_n}\right)= L \right)$
+    \begin{itemize}
+        \item $L > 1 \implies \sum a_n$ convergente
+        \item $L < 1 \implies \sum a_n$ divergente
+    \end{itemize}
+    
+    \underline{Criterio logarítmico}
+    $\left( \lim\limits_{n \to \infty} \frac{-\log{a_n}}{\log{n}} = L \right)$
+    \begin{itemize}
+        \item $L > 1 \implies \sum a_n$ convergente
+        \item $L < 1 \implies \sum a_n$ divergente
+    \end{itemize}
+    
+    \underline{Criterio de Leibnitz} $\left( a_n \text{ dec. } \lim\limits_{n \to \infty}
+    a_n = 0 \right)$
+    $\sum (-1)^{n+1} a_n$ convergente
+    
+    \underline{Criterio de la integral} $\left( a_n = f(n), f \text{ integ.} \right)$
+    \begin{itemize}
+        \item $\int_{M}^{\infty} f$ converge $\iff \sum a_k$ converge
+        \item $\sum\limits_{M}^{\infty} = \sum\limits_{M}^{N-1} + \int_{N}^{\infty} f
+        + \varepsilon_N$, $\varepsilon_N \in [0,a_N]$
+    \end{itemize}
+    
+    \underline{Criterio de Dirichlet} $(\lim\limits_{n\to \infty} b_n = 0$, $b_n \text{ dec. Sumas de } \sum a_n
+    \text{ acotadas.})$
+    $\sum a_nb_n$ convergente
+    
+    \subsection{Series de Potencias}
+    
+    \underline{Teorema de Cauchy-Hadamard}
+    $\frac{1}{R} = \limsup \abs{a_n}^{1/n}$
+    
+    \underline{Radio de convergencia}
+    $\frac{1}{R} = \lim\limits_{n \to \infty} \abs{a_n}^{1/n} = 
+    \lim\limits_{n \to \infty} \frac{\abs{a_{n+1}}}{\abs{a_n}}$
+    
+    \section{Integrales impropias}
+    
+    \underline{Criterio de Cauchy} $\left( \forall \varepsilon, \exists c_0 \right)$
+    $c_1, c_2 > c_0 \implies \abs{\int_{c_1}^{c_2} f} < \varepsilon. \implies$ convergente
+    
+    
+    \underline{Comparación directa} $\left( g(x) \geq f(x) \geq 0 \right)$
+    \begin{itemize}
+        \item $\int_{a}^{\infty} g$ converge $\implies \int_{a}^{\infty} f$ converge
+        \item $\int_{a}^{\infty} f$ divergente $\implies \int_{a}^{\infty} g$ divergente
+    \end{itemize}
+    
+    \underline{Comp. en el límite} $\left( g, f \geq 0,
+    \lim\limits_{x \to b} \frac{f(x)}{g(x)} = L \right)$
+    \begin{itemize}
+        \item $L < \infty$, $\int_{a}^{b} g$ conv. $\implies \int_{a}^{b} f$ conv.
+        \item $L > 0$, $\int_{a}^{b} f$ div. $\implies \int_{a}^{b} g$ div.
+    \end{itemize}
+    
+    \underline{Criterio de Dirichlet} $\left(\text{g dec., }\lim\limits_{x \to b} g(x) = 0,
+    c < b \implies \abs{\int_{a}^{c} f} < M\right)$
+    Entonces $\int_{a}^{b} f(x)g(x)dx$ converge
+    
+    \section{Integración múltiple}
+    
+    \underline{Conjuntos de medida nula} $\left( Z \subseteq \real^n \text{ medida nula} \right)$
+    \begin{itemize}
+        \item $\graph(f)$ con $f$ unif. cont.
+        \item $f(Z)$ con $f$ lipschitziana $\left( d(f(x),f(y)) \leq d(x,y) \right)$
+        \item $f(Z)$ con $f$ de clase $\mathcal{C}^1$
+        \item $M$ subvariedad regular de $\dim M < n$
+    \end{itemize}
+    
+    \underline{Teorema de Lebesgue:}
+    $f$ integrable en $A$ sii $disc(f) \cap A$ tiene medida nula
+    
+    \underline{Conjuntos admisibles} $\left( A, A' \text{ admisibles} \right)$
+    \begin{itemize}
+        \item $A \cap A'$, $A \cup A'$, $A \smallsetminus A'$ son admisibles
+        \item rectángulos acotados y bolas
+    \end{itemize}
+    
+    \underline{Medida de Jordan} $\left( C \subseteq \real^n \text{ admisible}\right)$
+    $\vol(C) = \int_{C}1$
+    
+    \underline{Propiedades de la integral} $\left( f,g \text{ integrables} \right)$
+    \begin{itemize}
+        \itemsep0em
+        \item $f+g$ integrable
+        \item $fg$ integrable
+        \item $f \leq g \implies \int_E f \leq \int_E g$ 
+        \item $m \leq f \leq M \implies m\vol(E) \leq \int_E f \leq M\vol(E)$
+        \item $\vol(E)=0 \implies \int_E f = 0$
+        \item $E$ conexo, $f$ continua $\implies \int_E f = f(x_0)\vol(E)$
+        \item $h$ continua $\implies h \circ f$ integrable
+        \item $\abs{\int_E f} \leq \int_E \abs{f}$
+        \item $\int_{A \cup B} f = \int_A f + \int_B f - \int_{A \cap B} f$
+    \end{itemize}
+    
+    \underline{Teorema de Fubini} $\left( f \text{ continua} \right)$
+    $\int_{A\times B} f(x,y) dx dy = \int_A dx \left( \int_B dy f(x,y) \right)$
+    
+    \underline{Región elemental} $\left( \psi, \phi \text{ cont. } D \text{ elemental} \right)$
+    $E = \setb{(x,y) \in \real^{n-1} \times \real \vert \substack{x \in D \\
+            \phi(x) \leq y \leq \psi(x)}}$
+    
+    \underline{TCV}
+    ($V \in \real^n$ abierto, $\varphi \colon V \mapsto \real^n$ inyectiva, de clase $C^1$, 
+    $\det \D\varphi \neq 0)$, $f \colon U=\varphi(V) \mapsto \real$ integrable). Entonces
+    $\int_U = \int_V (f \circ \varphi) |\det \D \varphi|$
 \end{multicols}
 \newpage
 \begin{multicols}{3}
 
 \begin{itemize}
-	%\item $a > 0$
-	\item $\int x^n dx = \frac{1}{n+1}x^{n+1}$
-	\item $\int \frac{1}{x} dx = \log(\abs{x})$
-	\item $\int e^x = e^x$
-	\item $\int a^x dx = \frac{a^x}{\log(a)}$
-	\item $\int \sin(x)dx = -\cos(x)$
-	\item $\int \cos(x)dx = \sin(x)$
-	\item $\int \tan(x)dx = -\log(\abs{\cos(x)})$
-	\item $\int \arcsin\left( \frac{x}{a} \right)dx = x\arcsin\left(\frac{x}{a} \right)
-		+ \sqrt{a^2 - x^2}$ $a > 0$
-	\item $\int \arccos\left( \frac{x}{a}\right)dx = x\arccos\left(\frac{x}{a} \right)
-		- \sqrt{a^2 - x^2}$ $a > 0$
-	\item $\int \arctan\left( \frac{x}{a}\right)dx = x\arctan\left(\frac{x}{a} \right)
-		- \frac{a}{2} \log\left(a^2+ x^2\right)$ $a > 0$
-	\item $\int \sin^2(mx)dx = \frac{1}{2m}(mx-\sin(mx)\cos(mx))$
-	\item $\int \cos^2(mx)dx = \frac{1}{2m}(mx+ \sin(mx)\cos(mx))$
-	\item $\int \sec^2(x)dx = \tan(x)$
-	\item $\int \csc^2(x)dx = -\cot(x)$
-	\item $\int \sin^n(x)dx = - \frac{\sin^{n-1}(x)\cos(x)}{n} +
-		\frac{n-1}{n}\int \sin^{n-2}(x)dx$
-	\item $\int \cos^n(x)dx = - \frac{\cos^{n-1}(x)\sin(x)}{n} +
-		\frac{n-1}{n}\int \cos^{n-2}(x)dx$
-	\item $\int \tan^n(x)dx = \frac{\tan^{n-1}(x)}{n-1} - \int \tan^{n-2}(x)dx$
-	\item $\int \sinh(x)dx = \cosh(x)$
-	\item $\int \cosh(x)dx = \sinh(x)$
-	\item $\int \tanh(x)dx = \log(\abs{\cosh(x)})$
-	\item $\int \sinh^2(x)dx = \frac{1}{4}\sinh(2x) - \frac{1}{2}x$
-	\item $\int \cosh^2(x)dx = \frac{1}{4}\cosh(2x) + \frac{1}{2}x$
-	\item $\int \frac{1}{\sqrt{a^2 + x^2}}dx = \log \left( x + \sqrt{a^2 + x^2} \right)$
-	\item $\int \frac{1}{a^2 + x^2}dx = \frac{1}{2}\arctan\frac{x}{a}$
-	\item $\int \sqrt{a^2 - x^2} dx = \frac{x}{2} \sqrt{a^2-x^2} +
-		\frac{a^2}{2}\arcsin\frac{x}{a}$
-	\item $\int (a^2 - x^2)^{\frac{3}{2}}dx = \frac{x}{8} (5a^2-2x^2)\sqrt{a^2-x^2}+
-		\frac{3a^4}{8}\arcsin\frac{x}{a}$
-	\item $\int \frac{1}{\sqrt{a^2 - x^2}}dx = \arcsin\frac{x}{a}$
-	\item $\int \frac{1}{a^2 - x^2}dx = \frac{1}{2a} \log \abs{\frac{x+a}{x-a}}$
-	\item $\int \frac{1}{(a^2 - x^2)^{\frac{3}{2}}}dx = \frac{x}{a^2\sqrt{a^2 - x^2}}$
-	\item $\int \sqrt{x^2 \pm a^2}dx = \frac{x}{2} \sqrt{x^2 \pm a^2} \pm \frac{a^2}{2}
-		\log \abs{x \pm \sqrt{x^2 \pm a^2}}$
-	\item $\int \frac{1}{\sqrt{x^2 - a^2}}dx = \log \abs{x + \sqrt{x^2 - a^2}}$
-	\item $\int \frac{1}{x(a+bx)}dx = \frac{1}{a}\log\abs{\frac{x}{a+bx}}$
-	\item $\int x\sqrt{a+bx} dx =  \frac{2(3bx-2a)(a+bx)^{\frac{3}{2}}}{15b^2}$
-	\item $\int \frac{\sqrt{a+bx}}{x}dx = 2\sqrt{a+bx} + a \int \frac{1}{x\sqrt{a+bx}}dx$
-	\item $\int \frac{x}{\sqrt{a+bx}}dx = \frac{2(bx-2a)\sqrt{a+bx}}{3b^2}$
-	\item $\int \frac{1}{x\sqrt{a+bx}}dx = \frac{1}{\sqrt{a}}
-		\log \abs{\frac{\sqrt{a+bx} - \sqrt{a}}{\sqrt{a+bx} + \sqrt{a}}}$
-	\item $\int \frac{\sqrt{a^2 - x^2}}{x}dx = \sqrt{a^2 - x^2} -
-		a\log\abs{\frac{a+\sqrt{a^2 - x^2}}{x}}$
-	\item $\int x\sqrt{a^2-x^2}dx = - \frac{1}{3}(a^2-x^2)^{\frac{3}{2}}$
-	\item $\int x^2\sqrt{a^2 - x^2} = \frac{a}{8}(2x^2-a^2)\sqrt{a^2-x^2}+
-		\frac{a^4}{8}\arcsin\frac{x}{a}$
-	\item $\int \frac{1}{x\sqrt{a^2-x^2}}dx = - \frac{1}{a}\log\abs{\frac{a+
-			\sqrt{a^2- x^2}}{x}}$
-	\item $\int \frac{x}{\sqrt{a^2-x^2}}dx = -\sqrt{a^2-x^2}$
-	\item $\int \frac{x^2}{\sqrt{a^2 - x^2}}dx = -\frac{x}{2}\sqrt{a^2-x^2}+\frac{a^2}{2}
-		\arcsin\frac{x}{a}$
-	\item $\int \frac{\sqrt{a^2+x^2}}{x}dx = \sqrt{a^2+x^2} - a
-		\log \abs{\frac{a + \sqrt{x^2 + a^2}}{x}}$
-	\item $\int \frac{\sqrt{x^2-a^2}}{x}dx = \sqrt{x^2-a^2}-\arcsin\frac{x}{a}$
-	\item $\int x\sqrt{x^2\pm a^2}dx = \frac{1}{3}(x^2 \pm a^2)^{\frac{3}{2}}$
-	\item $\int \frac{1}{x\sqrt{x^2+a^2}}dx=\frac{1}{a}\log\abs{\frac{x}{a +\sqrt{x^2+a^2}}}$
-	\item $\int \frac{1}{x\sqrt{x^2-a^2}}dx = \frac{1}{a} \arccos\frac{a}{\abs{x}}$
-	\item $\int \frac{1}{x^2\sqrt{x^2\pm a^2}}dx = \pm \frac{\sqrt{x^2\pm a^2}}{a^2x}$
-	\item $\int \frac{x}{\sqrt{x^2\pm a^2}}dx = \sqrt{x^2 \pm a^2}$
-	\item $\int \frac{1}{ax^2+bx+c}dx= \left\{ \begin{tabular}{@{}l@{\quad}l@{}}
-		$\frac{1}{\sqrt{b^2-4ac}}\log\abs{\frac{2ax+b-\sqrt{b^2-4ac}}{2ax+b+\sqrt{b^2-4ac}}}$
-		& ($b^2>4ac$) \\
-		$\frac{2}{\sqrt{b^2-4ac}} \arctan\frac{2ax+b}{\sqrt{4ac-b^2}}$ & ($b^2<4ac$)	
-	\end{tabular} \right.$
-	\item, $\int \frac{x}{ax^2 + bx +c}dx = \frac{1}{2a}\log\abs{ax^2+bx+c} - \frac{b}{2a}
-		\int \frac{1}{ax^2+bx+c}dx $
-	\item $\int \frac{1}{\sqrt{ax^2+bx+c}}dx = \left\{ \begin{tabular}{@{}l@{\quad}l@{}}
-	$\frac{1}{\sqrt{a}}\log\abs{2ax+b+2\sqrt{a}\sqrt{ax^2+bx+c}}$
-	& ($a > 0$) \\
-	$\frac{1}{\sqrt{-a}} \arcsin\frac{-2ax-b}{\sqrt{b^2-4ac}}$ & ($a < 0$)	
-	\end{tabular} \right.$
-	\item $\int \sqrt{ax^2 +bx+c}dx = \frac{2ax + b}{4a} \sqrt{ax^2+bx+c}- \frac{4ac-b^2}{8a}
-		\int \frac{1}{\sqrt{ax^2+bx+c}}dx$
-	\item $\int \frac{x}{\sqrt{ax^2 +bx+c}}dx = \frac{\sqrt{ax^2+bx+c}}{a} - \frac{b}{2a}
-		\int \frac{1}{\sqrt{ax^2+bx+c}}dx$
-	\item $\int x^3\sqrt{x^2+a^2}dx = \left( \frac{1}{5} x^2 - \frac{2}{15}a^2 \right) 
-		\sqrt{(a^2 + x^2)^3}$
-	\item $\int \frac{\sqrt{x^2 \pm a^2}}{x^4}dx = \frac{\pm\sqrt{(x^2 \pm a^2)^3}}{3a^2x^3}$
-	\item $\int \sin(ax)\sin(bx)dx = \frac{\sin(a-b)x}{2(a-b)} - \frac{\sin(a+b)x}{2(a+b)}$
-	\item $\int \sin(ax)\cos(bx)dx = \frac{\cos(a-b)x}{2(a-b)} - \frac{\cos(a+b)x}{2(a+b)}$
-	\item $\int \cos(ax)\cos(bx)dx = \frac{\sin(a-b)x}{2(a-b)} - \frac{\sin(a+b)x}{2(a+b)}$
-	\item $\int x^n\log(ax)dx = x^{n+1} \left(\frac{\log(ax)}{n+1}- \frac{1}{(n+1)^2}\right)$
-	\item $\int e^{ax}\sin{bx}dx = \frac{e^{ax}(b\sin(bx)-b\cos(bx))}{a^2+b^2}$
-	\item $\int e^{ax}\cos{bx}dx = \frac{e^{ax}(b\sin(bx)+b\cos(bx))}{a^2+b^2}$
+    %\item $a > 0$
+    \item $\int x^n dx = \frac{1}{n+1}x^{n+1}$
+    \item $\int \frac{1}{x} dx = \log(\abs{x})$
+    \item $\int e^x = e^x$
+    \item $\int a^x dx = \frac{a^x}{\log(a)}$
+    \item $\int \sin(x)dx = -\cos(x)$
+    \item $\int \cos(x)dx = \sin(x)$
+    \item $\int \tan(x)dx = -\log(\abs{\cos(x)})$
+    \item $\int \arcsin\left( \frac{x}{a} \right)dx = x\arcsin\left(\frac{x}{a} \right)
+        + \sqrt{a^2 - x^2}$ $a > 0$
+    \item $\int \arccos\left( \frac{x}{a}\right)dx = x\arccos\left(\frac{x}{a} \right)
+        - \sqrt{a^2 - x^2}$ $a > 0$
+    \item $\int \arctan\left( \frac{x}{a}\right)dx = x\arctan\left(\frac{x}{a} \right)
+        - \frac{a}{2} \log\left(a^2+ x^2\right)$ $a > 0$
+    \item $\int \sin^2(mx)dx = \frac{1}{2m}(mx-\sin(mx)\cos(mx))$
+    \item $\int \cos^2(mx)dx = \frac{1}{2m}(mx+ \sin(mx)\cos(mx))$
+    \item $\int \sec^2(x)dx = \tan(x)$
+    \item $\int \csc^2(x)dx = -\cot(x)$
+    \item $\int \sin^n(x)dx = - \frac{\sin^{n-1}(x)\cos(x)}{n} +
+        \frac{n-1}{n}\int \sin^{n-2}(x)dx$
+    \item $\int \cos^n(x)dx = - \frac{\cos^{n-1}(x)\sin(x)}{n} +
+        \frac{n-1}{n}\int \cos^{n-2}(x)dx$
+    \item $\int \tan^n(x)dx = \frac{\tan^{n-1}(x)}{n-1} - \int \tan^{n-2}(x)dx$
+    \item $\int \sinh(x)dx = \cosh(x)$
+    \item $\int \cosh(x)dx = \sinh(x)$
+    \item $\int \tanh(x)dx = \log(\abs{\cosh(x)})$
+    \item $\int \sinh^2(x)dx = \frac{1}{4}\sinh(2x) - \frac{1}{2}x$
+    \item $\int \cosh^2(x)dx = \frac{1}{4}\cosh(2x) + \frac{1}{2}x$
+    \item $\int \frac{1}{\sqrt{a^2 + x^2}}dx = \log \left( x + \sqrt{a^2 + x^2} \right)$
+    \item $\int \frac{1}{a^2 + x^2}dx = \frac{1}{2}\arctan\frac{x}{a}$
+    \item $\int \sqrt{a^2 - x^2} dx = \frac{x}{2} \sqrt{a^2-x^2} +
+        \frac{a^2}{2}\arcsin\frac{x}{a}$
+    \item $\int (a^2 - x^2)^{\frac{3}{2}}dx = \frac{x}{8} (5a^2-2x^2)\sqrt{a^2-x^2}+
+        \frac{3a^4}{8}\arcsin\frac{x}{a}$
+    \item $\int \frac{1}{\sqrt{a^2 - x^2}}dx = \arcsin\frac{x}{a}$
+    \item $\int \frac{1}{a^2 - x^2}dx = \frac{1}{2a} \log \abs{\frac{x+a}{x-a}}$
+    \item $\int \frac{1}{(a^2 - x^2)^{\frac{3}{2}}}dx = \frac{x}{a^2\sqrt{a^2 - x^2}}$
+    \item $\int \sqrt{x^2 \pm a^2}dx = \frac{x}{2} \sqrt{x^2 \pm a^2} \pm \frac{a^2}{2}
+        \log \abs{x \pm \sqrt{x^2 \pm a^2}}$
+    \item $\int \frac{1}{\sqrt{x^2 - a^2}}dx = \log \abs{x + \sqrt{x^2 - a^2}}$
+    \item $\int \frac{1}{x(a+bx)}dx = \frac{1}{a}\log\abs{\frac{x}{a+bx}}$
+    \item $\int x\sqrt{a+bx} dx =  \frac{2(3bx-2a)(a+bx)^{\frac{3}{2}}}{15b^2}$
+    \item $\int \frac{\sqrt{a+bx}}{x}dx = 2\sqrt{a+bx} + a \int \frac{1}{x\sqrt{a+bx}}dx$
+    \item $\int \frac{x}{\sqrt{a+bx}}dx = \frac{2(bx-2a)\sqrt{a+bx}}{3b^2}$
+    \item $\int \frac{1}{x\sqrt{a+bx}}dx = \frac{1}{\sqrt{a}}
+        \log \abs{\frac{\sqrt{a+bx} - \sqrt{a}}{\sqrt{a+bx} + \sqrt{a}}}$
+    \item $\int \frac{\sqrt{a^2 - x^2}}{x}dx = \sqrt{a^2 - x^2} -
+        a\log\abs{\frac{a+\sqrt{a^2 - x^2}}{x}}$
+    \item $\int x\sqrt{a^2-x^2}dx = - \frac{1}{3}(a^2-x^2)^{\frac{3}{2}}$
+    \item $\int x^2\sqrt{a^2 - x^2} = \frac{a}{8}(2x^2-a^2)\sqrt{a^2-x^2}+
+        \frac{a^4}{8}\arcsin\frac{x}{a}$
+    \item $\int \frac{1}{x\sqrt{a^2-x^2}}dx = - \frac{1}{a}\log\abs{\frac{a+
+            \sqrt{a^2- x^2}}{x}}$
+    \item $\int \frac{x}{\sqrt{a^2-x^2}}dx = -\sqrt{a^2-x^2}$
+    \item $\int \frac{x^2}{\sqrt{a^2 - x^2}}dx = -\frac{x}{2}\sqrt{a^2-x^2}+\frac{a^2}{2}
+        \arcsin\frac{x}{a}$
+    \item $\int \frac{\sqrt{a^2+x^2}}{x}dx = \sqrt{a^2+x^2} - a
+        \log \abs{\frac{a + \sqrt{x^2 + a^2}}{x}}$
+    \item $\int \frac{\sqrt{x^2-a^2}}{x}dx = \sqrt{x^2-a^2}-\arcsin\frac{x}{a}$
+    \item $\int x\sqrt{x^2\pm a^2}dx = \frac{1}{3}(x^2 \pm a^2)^{\frac{3}{2}}$
+    \item $\int \frac{1}{x\sqrt{x^2+a^2}}dx=\frac{1}{a}\log\abs{\frac{x}{a +\sqrt{x^2+a^2}}}$
+    \item $\int \frac{1}{x\sqrt{x^2-a^2}}dx = \frac{1}{a} \arccos\frac{a}{\abs{x}}$
+    \item $\int \frac{1}{x^2\sqrt{x^2\pm a^2}}dx = \pm \frac{\sqrt{x^2\pm a^2}}{a^2x}$
+    \item $\int \frac{x}{\sqrt{x^2\pm a^2}}dx = \sqrt{x^2 \pm a^2}$
+    \item $\int \frac{1}{ax^2+bx+c}dx= \left\{ \begin{tabular}{@{}l@{\quad}l@{}}
+        $\frac{1}{\sqrt{b^2-4ac}}\log\abs{\frac{2ax+b-\sqrt{b^2-4ac}}{2ax+b+\sqrt{b^2-4ac}}}$
+        & ($b^2>4ac$) \\
+        $\frac{2}{\sqrt{b^2-4ac}} \arctan\frac{2ax+b}{\sqrt{4ac-b^2}}$ & ($b^2<4ac$)    
+    \end{tabular} \right.$
+    \item, $\int \frac{x}{ax^2 + bx +c}dx = \frac{1}{2a}\log\abs{ax^2+bx+c} - \frac{b}{2a}
+        \int \frac{1}{ax^2+bx+c}dx $
+    \item $\int \frac{1}{\sqrt{ax^2+bx+c}}dx = \left\{ \begin{tabular}{@{}l@{\quad}l@{}}
+    $\frac{1}{\sqrt{a}}\log\abs{2ax+b+2\sqrt{a}\sqrt{ax^2+bx+c}}$
+    & ($a > 0$) \\
+    $\frac{1}{\sqrt{-a}} \arcsin\frac{-2ax-b}{\sqrt{b^2-4ac}}$ & ($a < 0$)    
+    \end{tabular} \right.$
+    \item $\int \sqrt{ax^2 +bx+c}dx = \frac{2ax + b}{4a} \sqrt{ax^2+bx+c}- \frac{4ac-b^2}{8a}
+        \int \frac{1}{\sqrt{ax^2+bx+c}}dx$
+    \item $\int \frac{x}{\sqrt{ax^2 +bx+c}}dx = \frac{\sqrt{ax^2+bx+c}}{a} - \frac{b}{2a}
+        \int \frac{1}{\sqrt{ax^2+bx+c}}dx$
+    \item $\int x^3\sqrt{x^2+a^2}dx = \left( \frac{1}{5} x^2 - \frac{2}{15}a^2 \right) 
+        \sqrt{(a^2 + x^2)^3}$
+    \item $\int \frac{\sqrt{x^2 \pm a^2}}{x^4}dx = \frac{\pm\sqrt{(x^2 \pm a^2)^3}}{3a^2x^3}$
+    \item $\int \sin(ax)\sin(bx)dx = \frac{\sin(a-b)x}{2(a-b)} - \frac{\sin(a+b)x}{2(a+b)}$
+    \item $\int \sin(ax)\cos(bx)dx = \frac{\cos(a-b)x}{2(a-b)} - \frac{\cos(a+b)x}{2(a+b)}$
+    \item $\int \cos(ax)\cos(bx)dx = \frac{\sin(a-b)x}{2(a-b)} - \frac{\sin(a+b)x}{2(a+b)}$
+    \item $\int x^n\log(ax)dx = x^{n+1} \left(\frac{\log(ax)}{n+1}- \frac{1}{(n+1)^2}\right)$
+    \item $\int e^{ax}\sin{bx}dx = \frac{e^{ax}(b\sin(bx)-b\cos(bx))}{a^2+b^2}$
+    \item $\int e^{ax}\cos{bx}dx = \frac{e^{ax}(b\sin(bx)+b\cos(bx))}{a^2+b^2}$
 \end{itemize} 
 \end{multicols}
 \end{document}

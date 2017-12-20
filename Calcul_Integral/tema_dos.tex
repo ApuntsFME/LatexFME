@@ -4,405 +4,405 @@
 \section{Integral de Riemann sobre rectángulos compactos}
 
 \begin{defi}
-	Un rectángulo de $\real^n$ es un producto $A := I_1 \times \dots \times I_n$
-	donde $I_j \in \real$ son intervalos que suponemos acotados y no degenerados,
-	es decir, ni vacios, ni reducidos a un punto.
-	
-	Si los $I_j$ son compactos o abiertos, también lo es $A$.
+    Un rectángulo de $\real^n$ es un producto $A := I_1 \times \dots \times I_n$
+    donde $I_j \in \real$ son intervalos que suponemos acotados y no degenerados,
+    es decir, ni vacios, ni reducidos a un punto.
+    
+    Si los $I_j$ son compactos o abiertos, también lo es $A$.
 \end{defi}
 
 \begin{defi}
-	La medida o volumen $n$-dimensional (o área si $n=2$) de un rectángulo
-	acotado $A = I_1 \times \cdots \times I_n$ es el producto de las longitudes
-	de sus costados, es decir
-	\[
-		\vol(A) = \text{long} (I_1) \times \dots \times \text{long} (I_n)
-	\]
+    La medida o volumen $n$-dimensional (o área si $n=2$) de un rectángulo
+    acotado $A = I_1 \times \cdots \times I_n$ es el producto de las longitudes
+    de sus costados, es decir
+    \[
+        \vol(A) = \text{long} (I_1) \times \dots \times \text{long} (I_n)
+    \]
 \end{defi}
 
 \begin{obs}
-	Recoredemos que denominamos partición de un intervalo compacto $[a,b]$ a un
-	subconjunto finito de puntos $\Pa=\setb{x_0,x_1,\dots,x_n}$ tales que
-	$a = x_0 < x_1 < \cdots < x_{N-1} < x_N = b$. La partición expresa el intervalo
-	como la unión de $N$ subintervalos
-	\[
-		[a,b] = [x_0,x_1] \cup \cdots \cup [x_{N-1},x_N]
-	\]
+    Recoredemos que denominamos partición de un intervalo compacto $[a,b]$ a un
+    subconjunto finito de puntos $\Pa=\setb{x_0,x_1,\dots,x_n}$ tales que
+    $a = x_0 < x_1 < \cdots < x_{N-1} < x_N = b$. La partición expresa el intervalo
+    como la unión de $N$ subintervalos
+    \[
+        [a,b] = [x_0,x_1] \cup \cdots \cup [x_{N-1},x_N]
+    \]
 \end{obs}
 \begin{obs*}
-	Una partición $\Pa^\prime$ se dice que es más fina que otra
-	$\Pa$ cuando $\Pa \subset \Pa^\prime$ (es decir, cuando
-	tiene más puntos).
+    Una partición $\Pa^\prime$ se dice que es más fina que otra
+    $\Pa$ cuando $\Pa \subset \Pa^\prime$ (es decir, cuando
+    tiene más puntos).
 \end{obs*}
 
 \begin{defi}
-	Dado un rectángulo compacto $A = I_1 \times \cdots \times I_n$, denominamos
-	una partición $\Pa$ de $A$ al resultado de hacer una partición $\Pa_j$ a cada
-	intervalo $I_j$.
-	La partición de $A$ viene representada por $\Pa = \Pa_1 \times \cdots \times
-	\Pa_n$ y expresa el rectángulo $A$ como unión de $N = (\abs{\Pa_1}-1) \times
-	\cdots \times (\abs{\Pa_n}-1)$ subrectángulos más pequeños.
+    Dado un rectángulo compacto $A = I_1 \times \cdots \times I_n$, denominamos
+    una partición $\Pa$ de $A$ al resultado de hacer una partición $\Pa_j$ a cada
+    intervalo $I_j$.
+    La partición de $A$ viene representada por $\Pa = \Pa_1 \times \cdots \times
+    \Pa_n$ y expresa el rectángulo $A$ como unión de $N = (\abs{\Pa_1}-1) \times
+    \cdots \times (\abs{\Pa_n}-1)$ subrectángulos más pequeños.
 \end{defi}
 
 \begin{obs*}
-	Sean $A^\prime,A^{\prime\prime}\subset A$ rectángulos de la partición, entonces
-	$\mathring{A^\prime} \cap \mathring{A^{\prime\prime}} = \emptyset$
+    Sean $A^\prime,A^{\prime\prime}\subset A$ rectángulos de la partición, entonces
+    $\mathring{A^\prime} \cap \mathring{A^{\prime\prime}} = \emptyset$
 \end{obs*}
 
 \begin{lema}
-	Si $A$ es un rectángulo, y $\Pa$ una partición de $A$, se tiene que
-	\[
-		\vol(A) = \sum_{R \in \Pa} \vol(R)
-	\]
+    Si $A$ es un rectángulo, y $\Pa$ una partición de $A$, se tiene que
+    \[
+        \vol(A) = \sum_{R \in \Pa} \vol(R)
+    \]
 \end{lema}
 
 \begin{defi}
-	Dadas dos particiones $\Pa = \prod\limits^n_{j=1} \Pa_j$ y
-	$P^\prime = \prod\limits^n_{j=1} \Pa^\prime_j$ de un rectángulo $A$. Diremos
-	que la partición $P^\prime$ es más fina que $\Pa$ si cada $\Pa^\prime_j$ es más
-	fina que $\Pa_j$ (es decir, $P_j \subset P^\prime_j$ $\forall j \iff \Pa
-	\subset \Pa$).
+    Dadas dos particiones $\Pa = \prod\limits^n_{j=1} \Pa_j$ y
+    $P^\prime = \prod\limits^n_{j=1} \Pa^\prime_j$ de un rectángulo $A$. Diremos
+    que la partición $P^\prime$ es más fina que $\Pa$ si cada $\Pa^\prime_j$ es más
+    fina que $\Pa_j$ (es decir, $P_j \subset P^\prime_j$ $\forall j \iff \Pa
+    \subset \Pa$).
 
-	Entonces, cada subrectángulo de $\Pa$ es unión de subrectángulos de
-	$\Pa^\prime$
+    Entonces, cada subrectángulo de $\Pa$ es unión de subrectángulos de
+    $\Pa^\prime$
 \end{defi}
 
 \begin{defi}
-	Sea $A \subset \real^n$ un rectángulo compacto y $f \colon A \to \real$ una
-	función acotada. Sea $\Pa$ una partición de $A$. Para cada subrectángulo $R$
-	de $\Pa$ escribimos
-	\[
-		m_R = \inf_{x \in R} f(x) \qquad M_R = \sup_{x \in R} g(x)
-	\]
-	Denominamos suma inferior y suma superior de $f$ respecto a $\Pa$ a los números
-	\[
-		s(f;\Pa) = \sum_R m_R\vol(R) \qquad S(f;\Pa) = \sum_R M_R\vol(R)
-	\]
+    Sea $A \subset \real^n$ un rectángulo compacto y $f \colon A \to \real$ una
+    función acotada. Sea $\Pa$ una partición de $A$. Para cada subrectángulo $R$
+    de $\Pa$ escribimos
+    \[
+        m_R = \inf_{x \in R} f(x) \qquad M_R = \sup_{x \in R} g(x)
+    \]
+    Denominamos suma inferior y suma superior de $f$ respecto a $\Pa$ a los números
+    \[
+        s(f;\Pa) = \sum_R m_R\vol(R) \qquad S(f;\Pa) = \sum_R M_R\vol(R)
+    \]
 \end{defi}
 
 \begin{obs}
-	Sea $\Pa$ una partición de $A$
-	\[
-		m_A\vol(A) \leq s(f;\Pa) \leq S(f;\Pa) \leq M_A\vol(A)
-	\]
+    Sea $\Pa$ una partición de $A$
+    \[
+        m_A\vol(A) \leq s(f;\Pa) \leq S(f;\Pa) \leq M_A\vol(A)
+    \]
 \end{obs}
 \begin{obs}
-	Si $\Pa$ y $\Pa^\prime$ son dos particiones y $\Pa^\prime$ es más fina que
-	$\Pa$, entonces
-	\[
-		s(f;\Pa) \leq s(f;\Pa^\prime) \leq S(f;\Pa^\prime) \leq S(f;\Pa)
-	\]
+    Si $\Pa$ y $\Pa^\prime$ son dos particiones y $\Pa^\prime$ es más fina que
+    $\Pa$, entonces
+    \[
+        s(f;\Pa) \leq s(f;\Pa^\prime) \leq S(f;\Pa^\prime) \leq S(f;\Pa)
+    \]
 \end{obs}
 
 \begin{lema}
-	Si $\Pa$ y $\Pa^\prime$ son dos particiones de un rectángulo $A$, existe una
-	partición $\Pa^{\prime\prime}$ de $A$ que es más fina que $\Pa$ y que
-	$\Pa^\prime$.
+    Si $\Pa$ y $\Pa^\prime$ son dos particiones de un rectángulo $A$, existe una
+    partición $\Pa^{\prime\prime}$ de $A$ que es más fina que $\Pa$ y que
+    $\Pa^\prime$.
 \end{lema}
 
 \begin{col}
-	Si $\Pa, \Pa^\prime$ son dos particiones de $A$, entonces,
-	$s(f;\Pa) \leq S(f;\Pa^\prime)$. Por lo tanto,
-	$\setb{s(f;\Pa) \vert \Pa \text{ partición de } A}$ está acotado superiormente
-	y $\setb{S(f;\Pa) \vert\Pa\text{ partición de } A}$ está acotado inferiormente.
+    Si $\Pa, \Pa^\prime$ son dos particiones de $A$, entonces,
+    $s(f;\Pa) \leq S(f;\Pa^\prime)$. Por lo tanto,
+    $\setb{s(f;\Pa) \vert \Pa \text{ partición de } A}$ está acotado superiormente
+    y $\setb{S(f;\Pa) \vert\Pa\text{ partición de } A}$ está acotado inferiormente.
 \end{col}
 
 \begin{defi}
-	Sea $A$ un rectángulo compacto y sea $f \colon A \to \real$ una función
-	acotada. Denominamos integral inferior e integral superior de $f$ en $A$ a los
-	números
-	\[
-		\underline{\int}_A f = \sup_{\Pa} s(f;\Pa) \qquad \text{y} \qquad
-		\overline{\int}_A f = \inf_{\Pa} S(f;\Pa)
-	\]
-	donde el supremo y el ínfimo se toman sobre el conjunto de todas las posibles
-	particiones $\Pa$ de $A$. Obviamente, $\underline{\int}_A f \leq
-	\overline{\int}_A f$.
+    Sea $A$ un rectángulo compacto y sea $f \colon A \to \real$ una función
+    acotada. Denominamos integral inferior e integral superior de $f$ en $A$ a los
+    números
+    \[
+        \underline{\int}_A f = \sup_{\Pa} s(f;\Pa) \qquad \text{y} \qquad
+        \overline{\int}_A f = \inf_{\Pa} S(f;\Pa)
+    \]
+    donde el supremo y el ínfimo se toman sobre el conjunto de todas las posibles
+    particiones $\Pa$ de $A$. Obviamente, $\underline{\int}_A f \leq
+    \overline{\int}_A f$.
 \end{defi}
 
 \begin{defi}
-	Diremos que una función $f$ acotada, es integrable en $A$ cuando sus integrales
-	inferior y superior coinciden. En este caso, su valor común se denomina
-	integral de Riemmand de $f$ en $A$ y se denota por
-	\[
-		\int_A f, \quad \int_A f(x) \dif^nx, \quad \int_A f(x_1,\dots,x_n)
-		\dif x_1 \cdots \dif x_n \quad \text{o} \quad \int_A f \dif V
-	\]
-	En el caso de $n=2$ o $n=3$ se habla de integral doble o integral triple
-	respectivamente, ya que es habitual poner dos o tres signos de integral para
-	representarlas.
+    Diremos que una función $f$ acotada, es integrable en $A$ cuando sus integrales
+    inferior y superior coinciden. En este caso, su valor común se denomina
+    integral de Riemmand de $f$ en $A$ y se denota por
+    \[
+        \int_A f, \quad \int_A f(x) \dif^nx, \quad \int_A f(x_1,\dots,x_n)
+        \dif x_1 \cdots \dif x_n \quad \text{o} \quad \int_A f \dif V
+    \]
+    En el caso de $n=2$ o $n=3$ se habla de integral doble o integral triple
+    respectivamente, ya que es habitual poner dos o tres signos de integral para
+    representarlas.
 \end{defi}
 
 \begin{prop}[Criterio de Riemman]
-	Sea $A \subset \real^n$ un rectángulo compacto y $f \colon A \to \real$ una
-	función acotada. $f$ es integrable Riemman sii $\forall \varepsilon > 0$,
-	$\exists \Pa$ partición de $A$ tal que $S(f;\Pa)-s(f;\Pa) < \varepsilon$.
+    Sea $A \subset \real^n$ un rectángulo compacto y $f \colon A \to \real$ una
+    función acotada. $f$ es integrable Riemman sii $\forall \varepsilon > 0$,
+    $\exists \Pa$ partición de $A$ tal que $S(f;\Pa)-s(f;\Pa) < \varepsilon$.
 \end{prop}
 \begin{proof}
-	Cálculo I
+    Cálculo I
 \end{proof}
 
 \begin{example*}
-	\begin{itemize}
-		\item[]
-		\item Si $f \colon A \to \real$ constante, entonces  $f(x) = c$ y
-			$m_R = M_R = c$ $\forall R$
-			\[
-				s(f;\Pa) = \sum_R m_R \vol(R) = c \sum_R \vol(R)
-				= c\vol(A) = S(f;\Pa)
-			\]
-			Por lo tanto, $f$ es integrable Riemman, y además
-			\[
-				\int_A f = c\vol(a) \implies \int_A 1 = \vol(A)
-			\]
-		\item Consideramos la función $f \colon [0,1] \times [0,1] \to \real$
-			definida por $f(x,y) = \begin{cases}
-				0 \quad \text{si } x,y \in \q \\
-				1 \quad \text{En otro caso}
-			\end{cases}$, entonces, $m_R = 0$ y $M_R = \vol(R)$ para todo
-			$R$, y entonces
-			\[
-				\underline{\int}_A f = 0 \qquad
-				\overline{\int}_A f = \vol(A) = 1\times1 = 1
-			\]
-			Y por lo tanto, $f$ no es integrable Riemman.
-	\end{itemize}
+    \begin{itemize}
+        \item[]
+        \item Si $f \colon A \to \real$ constante, entonces  $f(x) = c$ y
+            $m_R = M_R = c$ $\forall R$
+            \[
+                s(f;\Pa) = \sum_R m_R \vol(R) = c \sum_R \vol(R)
+                = c\vol(A) = S(f;\Pa)
+            \]
+            Por lo tanto, $f$ es integrable Riemman, y además
+            \[
+                \int_A f = c\vol(a) \implies \int_A 1 = \vol(A)
+            \]
+        \item Consideramos la función $f \colon [0,1] \times [0,1] \to \real$
+            definida por $f(x,y) = \begin{cases}
+                0 \quad \text{si } x,y \in \q \\
+                1 \quad \text{En otro caso}
+            \end{cases}$, entonces, $m_R = 0$ y $M_R = \vol(R)$ para todo
+            $R$, y entonces
+            \[
+                \underline{\int}_A f = 0 \qquad
+                \overline{\int}_A f = \vol(A) = 1\times1 = 1
+            \]
+            Y por lo tanto, $f$ no es integrable Riemman.
+    \end{itemize}
 \end{example*}
 
 \begin{prop}[Linealidad]\label{prop:lin_int}
-	Sea $A$ un rectángulo compacto y $f,g \colon A \to \real$ integrables Riemman.
-	Entonces
-	\begin{enumerate}[i)]
-		\item $f+g$ es integrable Riemman y $\int_A (f+g) = \int_A f+\int_A g$.
-		\item Si $\lambda \in \real$, entonces $\lambda f$ es integrable
-			Riemman y $\int_A (\lambda f) = \lambda \int_A f$.
-	\end{enumerate}
+    Sea $A$ un rectángulo compacto y $f,g \colon A \to \real$ integrables Riemman.
+    Entonces
+    \begin{enumerate}[i)]
+        \item $f+g$ es integrable Riemman y $\int_A (f+g) = \int_A f+\int_A g$.
+        \item Si $\lambda \in \real$, entonces $\lambda f$ es integrable
+            Riemman y $\int_A (\lambda f) = \lambda \int_A f$.
+    \end{enumerate}
 
-	Es decir, $\text{Rie}(A) = \setb{f \colon A \to \real \vert f \text{ integrable
-	Riemman}}$ es un $\real$-espacio vectorial y 
-	\[
-		\begin{aligned}
-			\text{Rie}(A) &\to \real \\ f &\mapsto \int_A f
-		\end{aligned}
-	\]
-	es una forma lineal.
+    Es decir, $\text{Rie}(A) = \setb{f \colon A \to \real \vert f \text{ integrable
+    Riemman}}$ es un $\real$-espacio vectorial y 
+    \[
+        \begin{aligned}
+            \text{Rie}(A) &\to \real \\ f &\mapsto \int_A f
+        \end{aligned}
+    \]
+    es una forma lineal.
 \end{prop}
 \begin{proof}
-	\begin{enumerate}[i)]
-		\item Observamos que $\inf(f) + \inf(g) \leq \inf(f+g)$ y que
-			$\sup(f)+\sup(g) \geq \sup(f+g)$, y por lo tanto,
-			\[
-				m_R(f) + m_R(g) \leq m_R(f+g) \leq M_R(f+g) \leq
-				M_R(f) + M_R(g)
-			\]
-			Por lo tanto, para toda $\Pa$ partición de $A$
-			\[
-				s(f;\Pa) + s(g;\Pa) \leq s(f+g;\Pa) \leq S(f+g;\Pa)
-				\leq S(f;\Pa) + S(g;\Pa)
-			\]
-			Y por último
-			\[
-				\underline{\int}_A f + \underline{\int}_A g \leq
-				\underline{\int}_A f+g \leq \overline{\int}_A f+g \leq
-				\overline{\int}_A f + \overline{\int}_A g
-			\]
-			Como $f,g$ son integrables Riemman, $(f+g)$ tambi\item n lo es
-			y vale $\int_A f + \int_A g$
-		\item Suponemos que $\lambda > 0$, entonces,
-			\[
-				\inf (\lambda f) = \lambda \inf (f) \implies
-				\underline{\int}_A (\lambda f) = \lambda
-				\underline{\int}_A f
-			\]
-			Análogamente,
-			\[
-				\sup(\lambda f) = \lambda \sup(f) \implies
-				\overline{\int}_A (\lambda f) = \lambda
-				\overline{\int}_A f
-			\]
-			Y por lo tanto, $\int_A (\lambda f) = \lambda \int_A f$.
-			Y para demostrar el caso de $\lambda < 0$, usaremos que
-			$\int_A (-f) = - \int_A f$.
-	\end{enumerate}
+    \begin{enumerate}[i)]
+        \item Observamos que $\inf(f) + \inf(g) \leq \inf(f+g)$ y que
+            $\sup(f)+\sup(g) \geq \sup(f+g)$, y por lo tanto,
+            \[
+                m_R(f) + m_R(g) \leq m_R(f+g) \leq M_R(f+g) \leq
+                M_R(f) + M_R(g)
+            \]
+            Por lo tanto, para toda $\Pa$ partición de $A$
+            \[
+                s(f;\Pa) + s(g;\Pa) \leq s(f+g;\Pa) \leq S(f+g;\Pa)
+                \leq S(f;\Pa) + S(g;\Pa)
+            \]
+            Y por último
+            \[
+                \underline{\int}_A f + \underline{\int}_A g \leq
+                \underline{\int}_A f+g \leq \overline{\int}_A f+g \leq
+                \overline{\int}_A f + \overline{\int}_A g
+            \]
+            Como $f,g$ son integrables Riemman, $(f+g)$ tambi\item n lo es
+            y vale $\int_A f + \int_A g$
+        \item Suponemos que $\lambda > 0$, entonces,
+            \[
+                \inf (\lambda f) = \lambda \inf (f) \implies
+                \underline{\int}_A (\lambda f) = \lambda
+                \underline{\int}_A f
+            \]
+            Análogamente,
+            \[
+                \sup(\lambda f) = \lambda \sup(f) \implies
+                \overline{\int}_A (\lambda f) = \lambda
+                \overline{\int}_A f
+            \]
+            Y por lo tanto, $\int_A (\lambda f) = \lambda \int_A f$.
+            Y para demostrar el caso de $\lambda < 0$, usaremos que
+            $\int_A (-f) = - \int_A f$.
+    \end{enumerate}
 \end{proof}
 
 \begin{prop}[Positividad]\label{prop:pos_int}
-	Sea $f \colon A \to \real$ integrable Riemman. Si $f \geq 0$, entonces
-	$\int_A f \geq 0$.
+    Sea $f \colon A \to \real$ integrable Riemman. Si $f \geq 0$, entonces
+    $\int_A f \geq 0$.
 \end{prop}
 \begin{proof}
-	\[
-		f \geq 0 \implies s(f;\Pa) \geq 0 \implies \underline{\int}_A f \geq 0
-		\implies \int_A f \geq 0
-	\]
+    \[
+        f \geq 0 \implies s(f;\Pa) \geq 0 \implies \underline{\int}_A f \geq 0
+        \implies \int_A f \geq 0
+    \]
 \end{proof}
 
 \begin{col}
-	Sean $f,g \colon A \to \real$ integrables Riemman. Si $f \leq g$, entonces
-	\[
-		\int_A f \leq \int_A g
-	\]
-	Sean $m,M \in \real$ tales que $m < f(x) < M$ $\forall x \in A$. Entonces
-	$m\vol(A) \leq \int_A f \leq M\vol(A)$.
+    Sean $f,g \colon A \to \real$ integrables Riemman. Si $f \leq g$, entonces
+    \[
+        \int_A f \leq \int_A g
+    \]
+    Sean $m,M \in \real$ tales que $m < f(x) < M$ $\forall x \in A$. Entonces
+    $m\vol(A) \leq \int_A f \leq M\vol(A)$.
 \end{col}
 
 \begin{proof}
-	\[
-		f \leq g \implies g - f \geq 0 \stackrel{\ref{prop:pos_int}}{\implies}
-		\int_A (g-f) \geq 0 \stackrel{\ref{prop:lin_int}}{\implies} \int_A g -
-		\int_A f \geq 0 \implies \int_A g \geq \int_A f
-	\]
+    \[
+        f \leq g \implies g - f \geq 0 \stackrel{\ref{prop:pos_int}}{\implies}
+        \int_A (g-f) \geq 0 \stackrel{\ref{prop:lin_int}}{\implies} \int_A g -
+        \int_A f \geq 0 \implies \int_A g \geq \int_A f
+    \]
 \end{proof}
 
 \begin{prop}
-	Sea $A$ un rectángulo compacto, sea $f \colon A \to \real$ una función acotada,
-	sea $\Pa$ una partición de $A$ y $\xi = \left(\xi_k\right)$ una familia de
-	puntos $\xi_k \in R_k$, donde $R_k$ son los rectángulos de la partición. Se
-	define la suma de Riemman
-	\[
-		R(f,\Pa,\xi) = \sum_k f(\xi_k)\vol(R_k) 
-	\]
-	Si $f$ es integrable Riemman entonces, en un sentido que habría que precisar,
-	$R(f,\Pa,\xi)$ se aproxima al valor de $\int_A f$ a medida que la malla de
-	$\Pa$ (el máximo de las longitudes de los costados de los rectángulos $R_k$ de
-	$\Pa$) tiende a 0.
+    Sea $A$ un rectángulo compacto, sea $f \colon A \to \real$ una función acotada,
+    sea $\Pa$ una partición de $A$ y $\xi = \left(\xi_k\right)$ una familia de
+    puntos $\xi_k \in R_k$, donde $R_k$ son los rectángulos de la partición. Se
+    define la suma de Riemman
+    \[
+        R(f,\Pa,\xi) = \sum_k f(\xi_k)\vol(R_k) 
+    \]
+    Si $f$ es integrable Riemman entonces, en un sentido que habría que precisar,
+    $R(f,\Pa,\xi)$ se aproxima al valor de $\int_A f$ a medida que la malla de
+    $\Pa$ (el máximo de las longitudes de los costados de los rectángulos $R_k$ de
+    $\Pa$) tiende a 0.
 \end{prop}
 
 \section{Conjuntos de medida nula}
 
 \begin{defi}
-	Diremos que un subconjunto $T \subset \real^n$ tiene medida ($n$-dimensional)
-	cero o medida nula, si, $\forall \varepsilon > 0$ Se puede recubrir $T$ con
-	una familia numerable de rectángulos compactos tales que la suma de sus
-	medidas $n$-dimensionales sea $< \varepsilon$. En otras palabras, hay una
-	sucesión (finita o infinita) de rectángulos compactos $R_k$ tales que
-	\[
-		T \subset \bigcup_k R_k \quad \text{y} \quad \sum_k \vol(R_k) <
-		\varepsilon
-	\]
+    Diremos que un subconjunto $T \subset \real^n$ tiene medida ($n$-dimensional)
+    cero o medida nula, si, $\forall \varepsilon > 0$ Se puede recubrir $T$ con
+    una familia numerable de rectángulos compactos tales que la suma de sus
+    medidas $n$-dimensionales sea $< \varepsilon$. En otras palabras, hay una
+    sucesión (finita o infinita) de rectángulos compactos $R_k$ tales que
+    \[
+        T \subset \bigcup_k R_k \quad \text{y} \quad \sum_k \vol(R_k) <
+        \varepsilon
+    \]
 \end{defi}
 \begin{obs*}
-	En la definición es irrelevante usar rectángulos compactos o retángulos
-	abiertos.
+    En la definición es irrelevante usar rectángulos compactos o retángulos
+    abiertos.
 \end{obs*}
 \begin{obs}
-	Todo conjunto finito tiene medida nula.\\
-	Si $T$ tiene medida nula, entonces todo $S \subset T$ tiene medida nula
+    Todo conjunto finito tiene medida nula.\\
+    Si $T$ tiene medida nula, entonces todo $S \subset T$ tiene medida nula
 \end{obs}
 \begin{prop} \label{prop_2_2_3}
-	La reunión de una familia numerable de conjuntos de medida nula tiene
-	medida nula.
+    La reunión de una familia numerable de conjuntos de medida nula tiene
+    medida nula.
 \end{prop}
 \begin{proof}
-	Si $T = \bigcup\limits_{i \in \n} T_i$ donde $T_i$ tiene medida nula para todo
-	$i$. Recubrimos $T_i$ con rectángulos compactos $R_{ik}$ ($k \in \n$) tal que
-	$\sum\limits_k \vol(R_{ik}) < \frac{\varepsilon}{2^{i+1}}$. Entonces,
-	$T = \bigcup\limits_{i,k} R_{ik}$ y
-	\[
-		\sum_{i,k} \vol(R_{i,k}) = \sum_i \left( \sum_k \vol(R_{i,k}) \right) <
-		\sum_i \frac{\varepsilon}{2^{i+1}} = \varepsilon
-	\]
+    Si $T = \bigcup\limits_{i \in \n} T_i$ donde $T_i$ tiene medida nula para todo
+    $i$. Recubrimos $T_i$ con rectángulos compactos $R_{ik}$ ($k \in \n$) tal que
+    $\sum\limits_k \vol(R_{ik}) < \frac{\varepsilon}{2^{i+1}}$. Entonces,
+    $T = \bigcup\limits_{i,k} R_{ik}$ y
+    \[
+        \sum_{i,k} \vol(R_{i,k}) = \sum_i \left( \sum_k \vol(R_{i,k}) \right) <
+        \sum_i \frac{\varepsilon}{2^{i+1}} = \varepsilon
+    \]
 \end{proof}
 
 \begin{col*}
-	Todo conjunto numerable tiene medida nula
+    Todo conjunto numerable tiene medida nula
 \end{col*}
 
 \begin{example*}
-	\begin{itemize}
-		\item[]
-		\item $\begin{rcases} \z \subset \real \\ \q \subset \real\end{rcases}$
-			Son conjuntos de medida nula, porque son numerables
-		\item El conjunto de Cantor $K \subset \real$ tiene medida nula, pero
-			no es numerable.
-		\item En $\real^3$, $T = [0,1]\times[0,1]\times\{0\}$, tiene medida
-			nula, ya que
-			\[
-				T \subset [0,1] \times [0,1] \times
-				\left[\frac{\varepsilon}{2},\frac{\varepsilon}{2}
-				\right] (\vol(R)=\varepsilon) \implies
-				\real^2\times\{0\}
-			\]
-			Ya que
-			\[
-				\real^2 \times \{0\} = \bigcup_{(k,l) \in \z^2}
-				[k,k+1] \times [l,l+1] \times \{0\}
-			\]
-	
-			(unión numerable de $R$ con medida nula).
-		\item Si $a < b$, entonces $[a,b] \subset \real$ no tiene medida nula.
-	\end{itemize}
+    \begin{itemize}
+        \item[]
+        \item $\begin{rcases} \z \subset \real \\ \q \subset \real\end{rcases}$
+            Son conjuntos de medida nula, porque son numerables
+        \item El conjunto de Cantor $K \subset \real$ tiene medida nula, pero
+            no es numerable.
+        \item En $\real^3$, $T = [0,1]\times[0,1]\times\{0\}$, tiene medida
+            nula, ya que
+            \[
+                T \subset [0,1] \times [0,1] \times
+                \left[\frac{\varepsilon}{2},\frac{\varepsilon}{2}
+                \right] (\vol(R)=\varepsilon) \implies
+                \real^2\times\{0\}
+            \]
+            Ya que
+            \[
+                \real^2 \times \{0\} = \bigcup_{(k,l) \in \z^2}
+                [k,k+1] \times [l,l+1] \times \{0\}
+            \]
+    
+            (unión numerable de $R$ con medida nula).
+        \item Si $a < b$, entonces $[a,b] \subset \real$ no tiene medida nula.
+    \end{itemize}
 \end{example*}
 \begin{col}
-	Dentro de $\real^n$, el subespacio, $\real^m \times \{0\} \subset \real^n$
-	tiene medida nula.
+    Dentro de $\real^n$, el subespacio, $\real^m \times \{0\} \subset \real^n$
+    tiene medida nula.
 \end{col}
 
 \begin{defi}
-	Diremos que un subconjunto $A \subset \real^n$ tiene contenido
-	($n$-dimensional) cero o contenido nulo, si $\forall \varepsilon > 0$, hay un
-	recubrimiento finito de $A$ por rectángulos compactos $R_i$ tal que
-	\[
-		\sum \vol(R_i) < \varepsilon
-	\]
+    Diremos que un subconjunto $A \subset \real^n$ tiene contenido
+    ($n$-dimensional) cero o contenido nulo, si $\forall \varepsilon > 0$, hay un
+    recubrimiento finito de $A$ por rectángulos compactos $R_i$ tal que
+    \[
+        \sum \vol(R_i) < \varepsilon
+    \]
 \end{defi}
 \begin{obs*}
-	En la definición, se pueden substituir los rectángulos compactos por
-	rectángulos abiertos.
+    En la definición, se pueden substituir los rectángulos compactos por
+    rectángulos abiertos.
 \end{obs*}
 \begin{obs*}
-	Un conjunto de contenido cero, tiene medida cero.
+    Un conjunto de contenido cero, tiene medida cero.
 \end{obs*}
 \begin{obs*}
-	Que un conjunto tenga medida cero, no implica que tenga contenido cero.
+    Que un conjunto tenga medida cero, no implica que tenga contenido cero.
 \end{obs*}
 
 \begin{prop}
-	Si $A \subset \real^n$ es compacto y tiene medida cero, entoces tiene contenido
-	cero.
+    Si $A \subset \real^n$ es compacto y tiene medida cero, entoces tiene contenido
+    cero.
 \end{prop}
 \begin{proof}
-	Sea $\varepsilon > 0$, existe una sucesión $(R_i)$ de rectángulos abiertos tal
-	que
-	\[
-		A \subset \bigcup_i R_i \qquad \qquad \sum_i \vol(R_i) < \varepsilon
-	\]
-	Como $A$ es compacto, un número finito de los $R_i$ recubren $A$ (condición
-	de Heine-Borel de compacto) y la suma de sus volúmenes es $< \varepsilon$.
+    Sea $\varepsilon > 0$, existe una sucesión $(R_i)$ de rectángulos abiertos tal
+    que
+    \[
+        A \subset \bigcup_i R_i \qquad \qquad \sum_i \vol(R_i) < \varepsilon
+    \]
+    Como $A$ es compacto, un número finito de los $R_i$ recubren $A$ (condición
+    de Heine-Borel de compacto) y la suma de sus volúmenes es $< \varepsilon$.
 \end{proof}
 
 \begin{lema}
-	Si $a < b$, $[a,b] \subset \real$ no tiene contenido cero. Más precisamente,
-	sea $\{R_1,\dots,R_n\}$ un recubrimiento de $[a,b]$ por intervalos compactos.
-	Entonces, $\sum\limits^{n}_{i=1} \text{long}(R_i) \geq b-a$
+    Si $a < b$, $[a,b] \subset \real$ no tiene contenido cero. Más precisamente,
+    sea $\{R_1,\dots,R_n\}$ un recubrimiento de $[a,b]$ por intervalos compactos.
+    Entonces, $\sum\limits^{n}_{i=1} \text{long}(R_i) \geq b-a$
 \end{lema}
 \begin{proof}
-	Hacemos inducción sobre $n$. Si $n = 1$, el resultado es trivial. Ahora,
-	suponemos cierto el resultado anterior para $n$ y consideramos
-	$\{R_1,\dots,R_{n+1}\}$ un recubrimiento de $[a,b]$ por intervalos compactos.
-	Podemos suponer, sin p\'erdida de generalidad, que $a \in R_1$, por tanto,
-	$R_1 = [\alpha,\beta]$ donde $\alpha \leq a \leq \beta$. Ahora, hay dos
-	opciones. Si $\beta \geq b$, entonces $\text{long}(R_1) \geq b - a$ y ya está.
-	Si $\beta< b$, entonces, $[\beta,b]$ está recubierto por$\{R_2,\dots,R_{n+1}\}$
-	y por hipótesis de inducción $\sum\limits^{n+1}_{i=2} \text{long}(R_i) \geq
-	b - \beta$. Por tanto, $\sum\limits^{n+1}_{i=1} \text{long}(R_i) \geq
-	(\beta - a) + (b - \beta) = b - a$.
+    Hacemos inducción sobre $n$. Si $n = 1$, el resultado es trivial. Ahora,
+    suponemos cierto el resultado anterior para $n$ y consideramos
+    $\{R_1,\dots,R_{n+1}\}$ un recubrimiento de $[a,b]$ por intervalos compactos.
+    Podemos suponer, sin p\'erdida de generalidad, que $a \in R_1$, por tanto,
+    $R_1 = [\alpha,\beta]$ donde $\alpha \leq a \leq \beta$. Ahora, hay dos
+    opciones. Si $\beta \geq b$, entonces $\text{long}(R_1) \geq b - a$ y ya está.
+    Si $\beta< b$, entonces, $[\beta,b]$ está recubierto por$\{R_2,\dots,R_{n+1}\}$
+    y por hipótesis de inducción $\sum\limits^{n+1}_{i=2} \text{long}(R_i) \geq
+    b - \beta$. Por tanto, $\sum\limits^{n+1}_{i=1} \text{long}(R_i) \geq
+    (\beta - a) + (b - \beta) = b - a$.
 \end{proof}
 \begin{col*}
-	Si $a < b$, $[a,b]\subset \real$, no tiene medida nula.
+    Si $a < b$, $[a,b]\subset \real$, no tiene medida nula.
 \end{col*}
 \begin{obs*}
-	De la misma manera, un rectángulo compacto no degenerado de $\real^n$ no
-	tiene medida nula.
+    De la misma manera, un rectángulo compacto no degenerado de $\real^n$ no
+    tiene medida nula.
 \end{obs*}
 \begin{col*}
-	Si un conjunto $A \subset \real^n$ tiene un punto interior, entonces, no tiene
-	medida nula.
+    Si un conjunto $A \subset \real^n$ tiene un punto interior, entonces, no tiene
+    medida nula.
 \end{col*}
 
 \begin{obs}
-	Un conjunto de contenido nulo es, necesariamente, acotado. Pero hay conjuntos
-	acotados de medida nula, que no son de contenido nulo.
+    Un conjunto de contenido nulo es, necesariamente, acotado. Pero hay conjuntos
+    acotados de medida nula, que no son de contenido nulo.
 \end{obs}
 \begin{prop}
     Sea $D\subset \real ^{n-1}$ acotado, $f\colon D \to \real$ uniformemente contínua. 
@@ -498,8 +498,8 @@
     constante y $+\infty$ si y solo si $f_{|E}$ no es acotada.
 \end{defi}
 \begin{obs}
-	$E \subset E^{\prime} \implies \omega\left( f, E\right) \leq \omega\left( f, E^{
-	\prime}\right)$.
+    $E \subset E^{\prime} \implies \omega\left( f, E\right) \leq \omega\left( f, E^{
+    \prime}\right)$.
 \end{obs}
 \begin{lema}
     Si $f\colon E \to \real$ es acotada, $\omega \left( f, E \right)= \sup_{x\in E}
@@ -610,22 +610,22 @@
     Sea $\varepsilon > 0$, aplicando el criterio de Riemann, existe una partición $\Pa$ de $A \tq S \lp f, \Pa \rp - s \lp f, \Pa \rp < c\varepsilon$. \\
     Observamos que 
     \[
-	    A = A_1 \cup A_2 \qquad A_1 = \bigcup_{R \in \Pa} \mathring{R}
+        A = A_1 \cup A_2 \qquad A_1 = \bigcup_{R \in \Pa} \mathring{R}
     \]
     $A_2$ tiene medida nula por ser unión finita de subconjuntos de subespacios de
     $\dim < n$. Ahora, separamos los subrectángulos de $\Pa$ en dos clases
     \begin{itemize}
-	    \item $\Pa^\prime$ subrectángulos $R$ tal que $B_c$ corta a $R \implies$ en
-		    todos ellos, $M_R - m_r \geq c$.
-	    \item $\Pa^{\prime\prime}$ el resto.
+        \item $\Pa^\prime$ subrectángulos $R$ tal que $B_c$ corta a $R \implies$ en
+            todos ellos, $M_R - m_r \geq c$.
+        \item $\Pa^{\prime\prime}$ el resto.
     \end{itemize}
     Tenemos
     \begin{gather*}
-	    c \sum_{R \in \Pa^\prime}\vol\left( R \right) \leq 
-	    \sum_{R \in \Pa^\prime}\left( M_R - m_R \right) \vol\left( R \right) \leq
-	    \sum_{R \in \Pa} \left( M_R -m_R \right)\vol \left( R \right) =\\=
-	    S(f, \Pa) - s(f, \Pa) < c\varepsilon \implies \sum_{R \in \Pa^\prime}
-	    \vol\left( R \right) < \varepsilon
+        c \sum_{R \in \Pa^\prime}\vol\left( R \right) \leq 
+        \sum_{R \in \Pa^\prime}\left( M_R - m_R \right) \vol\left( R \right) \leq
+        \sum_{R \in \Pa} \left( M_R -m_R \right)\vol \left( R \right) =\\=
+        S(f, \Pa) - s(f, \Pa) < c\varepsilon \implies \sum_{R \in \Pa^\prime}
+        \vol\left( R \right) < \varepsilon
     \end{gather*}
     Así pues, hemos recubierto $B_c \cap A_1$ con un número finito de rectángulos de
     volumenes $< \varepsilon$. Tambi\'en podemos hacerlo con $B_c \cap A_2$, ya que
@@ -634,85 +634,85 @@
 \end{proof}
 
 \begin{teo}[de Lebesque]
-	Sean $A \subseteq \real^n$ un rectángulo compacto, $f \colon A \to \real$ una
-	función acotada. Sea $\disc\left( f \right) = \setb{x \in A \vert x \text{ no
-	es continua en }A}$. Entonces, $f$ es integrable Riemman en $A$ si y solo si
-	$\disc\left( f \right)$ tiene medida nula.
+    Sean $A \subseteq \real^n$ un rectángulo compacto, $f \colon A \to \real$ una
+    función acotada. Sea $\disc\left( f \right) = \setb{x \in A \vert x \text{ no
+    es continua en }A}$. Entonces, $f$ es integrable Riemman en $A$ si y solo si
+    $\disc\left( f \right)$ tiene medida nula.
 \end{teo}
 
 \begin{proof}
-	Por comodidad, llamaremos $B = \disc\left( f \right)$ y $B_c = \setb{x \in A
-	\vert \omega\left( f, x \right) \geq c}$.
+    Por comodidad, llamaremos $B = \disc\left( f \right)$ y $B_c = \setb{x \in A
+    \vert \omega\left( f, x \right) \geq c}$.
 
-	\bimplies
+    \bimplies
 
-	Sea $f$ integrable Riemman en $A$. Observamos que
-	\[
-		B = \bigcup_{k \geq 1} B_{\sfrac{1}{k}}
-	\]
-	por el lema \hyperref[lema:dos_lebesque]{2}, $B_{\sfrac{1}{k}}$ tienen medida
-	nula. Como es una unión numerable, $B$ tiene medida nula.
+    Sea $f$ integrable Riemman en $A$. Observamos que
+    \[
+        B = \bigcup_{k \geq 1} B_{\sfrac{1}{k}}
+    \]
+    por el lema \hyperref[lema:dos_lebesque]{2}, $B_{\sfrac{1}{k}}$ tienen medida
+    nula. Como es una unión numerable, $B$ tiene medida nula.
 
-	\bimpliedby
+    \bimpliedby
 
-	Suponemos que $B$ tiene medida nula. Sea $\varepsilon > 0$ y $B_\varepsilon
-	\subset B$, que tiene medida nula y es compacto, por el lema
-	\hyperref[lema:dos_lebesque]{2}, por lo tanto, tiene contenido nulo y, por lo
-	tanto, existen rectángulos compactos $T_1, \dots, T_N \subset A$ tales que
-	\[
-		B_\varepsilon = \bigcup_{i = 1}{N} T_i \qquad
-		\sum_{i=1}{N}\vol\left( T_i \right) < \varepsilon
-	\]
-	Sea $\Pa$ una partición de $A$. Separamos los subrectángulos $R$ en los
-	siguientes tipos
-	\begin{itemize}
-		\item $R_1$: $R$ está dentro de algún $T_i$
-		\item $R_2$: el resto.
-	\end{itemize}
+    Suponemos que $B$ tiene medida nula. Sea $\varepsilon > 0$ y $B_\varepsilon
+    \subset B$, que tiene medida nula y es compacto, por el lema
+    \hyperref[lema:dos_lebesque]{2}, por lo tanto, tiene contenido nulo y, por lo
+    tanto, existen rectángulos compactos $T_1, \dots, T_N \subset A$ tales que
+    \[
+        B_\varepsilon = \bigcup_{i = 1}{N} T_i \qquad
+        \sum_{i=1}{N}\vol\left( T_i \right) < \varepsilon
+    \]
+    Sea $\Pa$ una partición de $A$. Separamos los subrectángulos $R$ en los
+    siguientes tipos
+    \begin{itemize}
+        \item $R_1$: $R$ está dentro de algún $T_i$
+        \item $R_2$: el resto.
+    \end{itemize}
 
-	Tenemos ahora que
-	\[
-		\sum_{R \in R_1}\left( M_R - m_R \right)\vol\left( R \right) \leq
-		\left( M_A -m_A \right)\sum^{N}_{i=1} \vol\left( T_i \right) <
-		\left( M_A - m_A \right) \varepsilon
-	\]
-	Ahora, si $R \in R_2$, entonces $R$ no conta a $B_\varepsilon$, por lo tanto,
-	$w(f,x) < \varepsilon$ $\forall x \in R$, por el lema
-	\hyperref[lema:uno_lebesque]{1}, existe una partición $\Pa_R$ de $R$ tal que
-	$S\left( f, \Pa_R \right) - s\left( f, \Pa_R \right) < \varepsilon
-	\vol \left( R \right)$.
-	
-	Podemos refinar $\Pa$ a una partición $\Pa^\prime$ tal que todos sus
-	subrectángulos, est\'en dentro de los subrectángulos de $\Pa_R$ (por el lema
-	\hyperref[lema:teo_lebesque]{teórico})
-	\begin{gather*}
-		S\left( f, \Pa^\prime \right) - s\left( f, \Pa^\prime \right) =
-		\sum_{R^\prime \in R_1} \left( M_{R^\prime} - m_{R^\prime} \right)
-		\vol \left( R^\prime \right) + \sum_{R^\prime \in R_2}
-		\left( M_{R^\prime} - m_{R^\prime}\right) \vol\left( R^\prime \right)
-		< \\ < \left( M_A - m_A \right)\varepsilon + \sum_{R^\prime \in R_2}
-		\varepsilon \vol\left( R^\prime \right) = \varepsilon \left( 
-		\left( M_A - m_A \right) + \vol \left( A \right)\right) 
-	\end{gather*}
-	Teniendo en cuenta que
-	\[
-		\sum_{R \in R_2} \sum_{R^\prime \in R} \left( M_{R^\prime} - 
-		m_{R^\prime}\right) \vol\left( R^\prime \right) < \sum_{R \in R_2}
-		\varepsilon \vol\left( R \right)
-	\]
-	Ahora, tan solo queda obervar que $\varepsilon \left( \left( M_A - m_A \right)
-	+ \vol \left( A \right)\right)$ lo podemos hacer tan pequeño como queramos.
+    Tenemos ahora que
+    \[
+        \sum_{R \in R_1}\left( M_R - m_R \right)\vol\left( R \right) \leq
+        \left( M_A -m_A \right)\sum^{N}_{i=1} \vol\left( T_i \right) <
+        \left( M_A - m_A \right) \varepsilon
+    \]
+    Ahora, si $R \in R_2$, entonces $R$ no conta a $B_\varepsilon$, por lo tanto,
+    $w(f,x) < \varepsilon$ $\forall x \in R$, por el lema
+    \hyperref[lema:uno_lebesque]{1}, existe una partición $\Pa_R$ de $R$ tal que
+    $S\left( f, \Pa_R \right) - s\left( f, \Pa_R \right) < \varepsilon
+    \vol \left( R \right)$.
+    
+    Podemos refinar $\Pa$ a una partición $\Pa^\prime$ tal que todos sus
+    subrectángulos, est\'en dentro de los subrectángulos de $\Pa_R$ (por el lema
+    \hyperref[lema:teo_lebesque]{teórico})
+    \begin{gather*}
+        S\left( f, \Pa^\prime \right) - s\left( f, \Pa^\prime \right) =
+        \sum_{R^\prime \in R_1} \left( M_{R^\prime} - m_{R^\prime} \right)
+        \vol \left( R^\prime \right) + \sum_{R^\prime \in R_2}
+        \left( M_{R^\prime} - m_{R^\prime}\right) \vol\left( R^\prime \right)
+        < \\ < \left( M_A - m_A \right)\varepsilon + \sum_{R^\prime \in R_2}
+        \varepsilon \vol\left( R^\prime \right) = \varepsilon \left( 
+        \left( M_A - m_A \right) + \vol \left( A \right)\right) 
+    \end{gather*}
+    Teniendo en cuenta que
+    \[
+        \sum_{R \in R_2} \sum_{R^\prime \in R} \left( M_{R^\prime} - 
+        m_{R^\prime}\right) \vol\left( R^\prime \right) < \sum_{R \in R_2}
+        \varepsilon \vol\left( R \right)
+    \]
+    Ahora, tan solo queda obervar que $\varepsilon \left( \left( M_A - m_A \right)
+    + \vol \left( A \right)\right)$ lo podemos hacer tan pequeño como queramos.
 \end{proof}
 
 \begin{defi}
-	Una propiedad que se satisface para todos los puntos de un conjunto $A$,
-	excepto en un conjunto $N \subset A$ de medida nula, se dice que se satisface
-	casi para todo.
+    Una propiedad que se satisface para todos los puntos de un conjunto $A$,
+    excepto en un conjunto $N \subset A$ de medida nula, se dice que se satisface
+    casi para todo.
 \end{defi}
 
 \begin{prop}
-	Toda función $f \colon A \to \real$ continua sobre un rectángulo compacto es
-	integrable.
+    Toda función $f \colon A \to \real$ continua sobre un rectángulo compacto es
+    integrable.
 \end{prop}
 
 \section{Integral de Riemman sobre conjuntos más generales}
