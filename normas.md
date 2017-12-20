@@ -140,6 +140,7 @@ principales conjuntos.
 | \Pa | Una partición |
 | \k | Un cuerpo cualquiera |
 | \R | Un sistema de referencia |
+| \A | Un espacio afín |
 
 ### Otras utilidades
 | Comando | Argumentos | Descripción |
@@ -159,6 +160,13 @@ principales conjuntos.
 | \vol | 0 | Coloca vol |
 | \lp | 0 | Es equivalente a `\left(` |
 | \rp | 0 | Es equivalente a `\right)` |
+| \nuc | 0 | Coloca Nuc |
+| \gr | 0 | Coloca gr |
+| \fr | 0 | Coloca Fr |
+| \ext | 0 | Coloca Ext |
+| \inte | 0 | Coloca Int |
+| \tr | 0 | Coloca tr |
+| \tq | 0 | Coloca t.q. |
 
 ## Fragmentos comunes
 Aquí se detalla una serie de fragmentos que suelen comunes
