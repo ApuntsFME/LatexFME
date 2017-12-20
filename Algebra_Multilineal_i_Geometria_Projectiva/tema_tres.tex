@@ -1002,68 +1002,175 @@ Posibles formas de Jordan:
 % A PARTIR D'AQUI ERIC
 
 \section{Relación entre afinidades y proyectividades}
-\begin{minipage}[c]{0,49\textwidth}
-    \begin{align*}
-            f : \mathbb{A}^n &\to \bar{\mathbb{A}}^n=\Po^n \\
-            \R &\mapsto \overline{\R} \\
-            \lp x_1, \ldots, x_n\rp &\mapsto \lp1:x_1:\ldots:x_n\rp\\
-            \lp\frac{\tilde{x}_1}{x_0},\ldots,\frac{\tilde{x}_n}{x_0}\rp &\mapsfrom \lp\tilde{x}_0:\ldots:\tilde{x}_n\rp \\
-    \end{align*}
-\end{minipage}
-\vline
-\begin{minipage}[c]{0,49\textwidth}
+    \begin{minipage}[c]{0,49\textwidth}
+        \begin{align*}
+                f : \A^n &\to \bar{\A}^n=\Po^n \\
+                \R &\mapsto \overline{\R} \\
+                \lp x_1, \ldots, x_n\rp &\mapsto \lp1:x_1:\ldots:x_n\rp\\
+                \lp\frac{\tilde{x}_1}{x_0},\ldots,\frac{\tilde{x}_n}{x_0}\rp &\mapsfrom \lp\tilde{x}_0:\ldots:\tilde{x}_n\rp \\
+        \end{align*}
+    \end{minipage}
+    \vline
+    \begin{minipage}[c]{0,49\textwidth}
+        \begin{gather*}
+            f : \A^n \to \bar{\A}^n  \text{  afinidad (biyectiva) }\\
+            f\lp x_1,\ldots,x_n\rp = 
+            \begin{pmatrix}
+                a_1 \\
+                \vdots \\
+                a_n \\
+            \end{pmatrix}
+            +A
+            \begin{pmatrix}
+                x_1 \\
+                \vdots \\
+                x_n \\
+            \end{pmatrix} = \\ =
+            \underbrace{\lp
+            \begin{array}{c|ccc}
+                1 & 0 & \ldots & 0 \\ \hline
+                a_1 & & & \\
+                \vdots & & A & \\
+                a_n & & & 
+            \end{array} \rp}_{\overline{A}}
+            \begin{pmatrix}
+                1\\
+                x_1\\
+                \vdots\\
+                x_n\\
+            \end{pmatrix}
+        \end{gather*}
+    \end{minipage} \\ \\
+    \subsection{Las afinidades definen proyectividades}
     \begin{gather*}
-        f : \mathbb{A}^n \to \bar{\mathbb{A}}^n  \text{  afinidad (biyectiva) }\\
-        f\lp x_1,\ldots,x_n\rp = 
-        \begin{pmatrix}
-            a_1 \\
-            \vdots \\
-            a_n \\
-        \end{pmatrix}
-        +A
-        \begin{pmatrix}
-            x_1 \\
-            \vdots \\
-            x_n \\
-        \end{pmatrix}\\
-        f\lp x_1,\ldots,x_r\rp =
-        \lp
-        \begin{array}{c|ccc}
-            1 & 0 & \ldots & 0 \\ \hline
-            a_1 & & & \\
-            \vdots & & A & \\
-            a_n & & & 
-        \end{array} \rp
+    f\text{ biyectiva} \leftrightarrow \det A \ne 0 \leftrightarrow \det \overline{A} \ne 0 \leftrightarrow \overline{A} \text{ invertible}
     \end{gather*}
-\end{minipage} \\ \\
-Veremos en primer lugar que afinidades $\implies$ proyectividades.
-\begin{gather*}
-f\text{ biyectiva} \leftrightarrow \det A \ne 0 \leftrightarrow \det \overline{A} \ne 0 \leftrightarrow \overline{A} \text{ invertible}
-\end{gather*}
-\begin{defi}
-    Llamaremos proyectividad asociada a $f$ a una $\overline{f} \tq$:
-    \begin{gather*}
-        \overline{f} \colon \bar{\mathbb{A}}^n = \Po^n \mapsto \bar{\mathbb{A}}^n = \Po^n \\
-        M_{\overline{\R}}\lp \overline{f}\rp = \overline{A} = 
-        \lp
-        \begin{array}{c|ccc}
-            1 &  & v & \\ \hline
-            a_1 & & & \\
-            \vdots & & A & \\
-            a_n & & & 
-        \end{array} \rp \\ 
-    \end{gather*}
-    donde $v$ es un vector cualquiera.
-\end{defi}
-\begin{prop}
-    \begin{enumerate}
-        \item[]
-        \item $\mathbb{A}_\infty$ es $\overline{f}$-inv
-        \item $\mathbb{A}^n = \Po^n \setminus \mathbb{A}_\infty^n$ es $\overline{f}$-inv i $\overline{f}_{|\mathbb{A}^n}=f$
-        \item $M_{\overline{\R}_\infty}\lp \overline{f}_{|\mathbb{A}_\infty} \rp = A$
-    \end{enumerate}
-\end{prop}
-
+    \begin{defi}
+        Llamaremos proyectividad asociada a $f$ a una $\overline{f} \tq$:
+        \begin{gather*}
+            \overline{f} \colon \bar{\A}^n = \Po^n \mapsto \bar{\A}^n = \Po^n \\
+            M_{\overline{\R}}\lp \overline{f}\rp = \overline{A} = 
+            \lp
+            \begin{array}{c|ccc}
+                1 &  & v & \\ \hline
+                a_1 & & & \\
+                \vdots & & A & \\
+                a_n & & & 
+            \end{array} \rp \\ 
+        \end{gather*}
+        donde $v$ es un vector cualquiera.
+    \end{defi}
+    \begin{prop}
+        \begin{enumerate}
+            \item[]
+            \item $\A_\infty$ es $\overline{f}$-invariante
+            \item $\A^n = \Po^n \setminus \A_\infty^n$ es $\overline{f}$-invariante i $\overline{f}_{|\A^n}=f$
+            \item $M_{\overline{\R}_\infty}\lp \overline{f}_{|\A_\infty} \rp = A$
+        \end{enumerate}
+    \end{prop}
+    \begin{proof}
+        \begin{enumerate}
+            \item[]
+            \item $\A_\infty^n$: $x_0=0 \rightarrow \overline{f}$-invariante porque $\lp1,0,\ldots,0\rp$ es vector propio de $\overline{A}$
+            \item Sea $p\in\A^n\subseteq\Po^n$, $p=\lp1:b_1:\ldots:b_n\rp$. Entonces:
+            \begin{gather*}
+                \overline{f}\lp p \rp = \overline{A} 
+                \begin{pmatrix}
+                    1 \\
+                    b_1\\
+                    \vdots \\
+                    b_n\\
+                \end{pmatrix}
+                = 
+                \lp
+            \begin{array}{c|ccc}
+                1 &  & v &  \\ \hline
+                a_1 & & & \\
+                \vdots & & A & \\
+                a_n & & & 
+            \end{array} \rp
+            \begin{pmatrix}
+                1\\
+                b_1\\
+                \vdots\\
+                b_n\\
+            \end{pmatrix}
+            = f\lp b_1,\ldots,b_n \rp\in \A^n
+            \end{gather*}
+            \item Como que en $\A_\infty^n$, $x_0 =0$, y mientras que $\overline{\R}=\{p_0, p_1, \dots, p_n; \overline{p}\}$, tenemos que para $\overline{\R}_\infty = \{p_1, \dots, p_n, \overline{p}_\infty\}$ hay una coordenada menos debido a que se elimina $x_0$, y por lo tanto:
+            \begin{gather*}
+                \overline{\A} = M_{\overline{\R}}\lp \overline{f}\rp = \lp
+                \begin{array}{c|ccc}
+                    1 &  & v & \\ \hline
+                    a_1 & & & \\
+                    \vdots & & A & \\
+                    a_n & & & 
+                \end{array} \rp 
+                \implies 
+                M_{\overline{\R}_\infty}\lp \overline{f}_{|\A_\infty} \rp = A
+            \end{gather*}
+        \end{enumerate}
+    \end{proof}
+\subsection{Las proyectividades definen afinidades}
+Sea $g: \Po^n \to \Po^n$ una proyectividad, sea $\overline{A}=M_{\overline{\R}}\lp g\rp$ y supongamos $H$ un hiperplano $g$-invariante. \\
+    \begin{minipage}[c]{0,44\textwidth}
+        \begin{align*}
+            \A^n = \Po^n\setminus H &\to  \Po^n = \bar{\A}^n \\
+            \R &\mapsto  \underbrace{\overline{\R}= \{\overbrace{p_0}^{\notin H}, \overbrace{p_1,\dots, p_n}^{\in H};\overline{p}\}}_{H\text{: }x_0=0}
+        \end{align*}
+    \end{minipage}
+    \vline
+    \begin{minipage}[c]{0,56\textwidth}
+        \begin{gather*}
+            \overline{\A}=\lp
+                \begin{array}{c|ccc}
+                    \lambda & 0 & \dots & 0 \\ \hline
+                    \tilde{a}_1 & & & \\
+                    \vdots & & \tilde{A} & \\
+                    \tilde{a}_n & & & 
+                \end{array} \rp 
+                \substack{\sfrac{1}{\lambda} \\ \sim \\ \lambda\neq0}
+            \lp
+                \begin{array}{c|ccc}
+                    1 & 0 & \dots & 0 \\ \hline
+                    a_1 & & & \\
+                    \vdots & & A & \\
+                    a_n & & & 
+                \end{array} \rp
+        \end{gather*}
+    \end{minipage}\\
+    \begin{defi}
+        Llamaremos $g_\text{af} : \A^n \to \A^n$ a la afinidad inducida por $g$ en $\A^n = \Po^n\setminus H$ y tenemos que:
+        \begin{gather*}
+            M_\R \lp g_\text{af} \circ f\rp =
+            \lp
+                \begin{array}{c|ccc}
+                    1 & 0 & \dots & 0 \\ \hline
+                    a_1 & & & \\
+                    \vdots & & A & \\
+                    a_n & & & 
+                \end{array} \rp
+        \end{gather*}
+    \end{defi}
+    \begin{example}
+        \begin{enumerate}
+            \item[]
+            \item Consideramos la proyectividad $g:\Po^2_\real \to \Po^2_\real$ y una referencia $\overline{\R} \tq$: \\
+            \[M_{\overline{\R}}\lp g\rp=
+            \begin{pmatrix}
+                1 & & \\
+                1 & 1 & \\
+                 & & 1 \\
+            \end{pmatrix}\]
+            que tiene como valores y vectores propios:
+            \begin{gather*}
+                \lambda_1 = 1 \implies v_1 = \lp 1,0,0 \rp \implies H_1\text{: }x_0=0\\
+                \lambda_2 = 1 \implies v_2 = \lp 0,0,1 \rp \implies H_2\text{: }x_2=0
+            \end{gather*}
+            \item
+        \end{enumerate}
+    \end{example}
+    
 % A PARTIR D'AQUI MIQUEL
 
 % A PARTIR D'AQUI ERNESTO
