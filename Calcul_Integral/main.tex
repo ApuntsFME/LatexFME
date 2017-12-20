@@ -28,12 +28,13 @@
 \newcommand{\real}{\mathbb{R}}
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\F}{\mathbb{F}}
+\newcommand{\A}{\mathbb{A}}
 \newcommand{\R}{\mathcal{R}}
 \newcommand{\C}{\mathcal{C}}
 \newcommand{\Pa}{\mathcal{P}}
 \newcommand{\bb}[1]{\mathbb{#1}}
 \let\k\relax
-\newcommand{\k}{\mathbf{k}}
+\newcommand{\k}{\Bbbk}
 \newcommand{\ita}[1]{\textit{#1}}
 \newcommand\inv[1]{#1^{-1}}
 \newcommand\setb[1]{\left\{#1\right\}}
@@ -47,15 +48,20 @@
 \DeclareMathOperator{\ext}{Ext}
 \DeclareMathOperator{\inte}{Int}
 \DeclareMathOperator{\rg}{rg}
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\nuc}{Nuc}
 \DeclareMathOperator{\car}{car}
 \DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\vol}{vol}
 \DeclareMathOperator{\grad}{grad}
 \DeclareMathOperator{\sinc}{sinc}
 \DeclareMathOperator{\graf}{graf}
-\DeclareMathOperator{\tq}{\text{ t.q. }}
+\DeclareMathOperator{\tq}{\;t.q.\;}
 \DeclareMathOperator{\disc}{disc}
 \let\emptyset\varnothing
+\renewcommand{\thesubsubsection}{\Alph{subsubsection}}
+\setcounter{secnumdepth}{4}
 
 \hypersetup{
 	colorlinks,
@@ -122,7 +128,8 @@
 
 \tableofcontents
 
-\input{tema_uno} %INPUTS
+% INPUTS
+\input{tema_uno}
 \input{tema_dos}
 %\input{tema_cuatro}
 
