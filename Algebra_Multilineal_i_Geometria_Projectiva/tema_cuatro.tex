@@ -9,7 +9,7 @@
 		\item Si $n = 2$, las llamamos cónicas.
 		\item $p = [u] \in \Po^n, p\in Q \iff q\lp u\rp=0$ ($p$ es un punto de $Q$).
 		\item También notaremos por $Q$, el conjunto de todos los puntos de $Q$:
-			\[ Q = \left\{ p=[u]\;|\;p\lp u\rp=0\right\} \]
+			\[ Q = \left\{ p=[u]\;|\;q\lp u\rp=0\right\} \]
 	\end{enumerate}
 \end{defi}
 \begin{example}
@@ -17,11 +17,21 @@
 		\item[]
 		\item A $\Po^2_\real$, sigui $Q \colon x_0^2 + x_1^2 - x_2^2$ una cònica.
 		\begin{itemize}
-			\item $p = \left[\lp1:0:1\rp^t\right] \in Q:$ verifica $x_0^2 + x_1^2 -x_2^2=0$.
-			\item $p' = \left[\lp0:1:1\rp^t\right] \in Q$.
-			\item $p'' = \left[\lp1:1:\sqrt{2}\rp^t\right] \in Q$.
+			\item $p = \left[\lp1,0,1\rp^t\right] \in Q:$ verifica $x_0^2 + x_1^2 -x_2^2=0$.
+			\item $p' = \left[\lp0,1,1\rp^t\right] \in Q$.
+			\item $p'' = \left[\lp1,1,\sqrt{2}\rp^t\right] \in Q$.
+		\end{itemize}
+		\item A $\Po^2_\real$, sigui $Q \colon x_0^2 + x_1^2 - x_2^2 \implies$ puntos = $\emptyset$.
+		\begin{itemize}
+			\item $Q_1 \colon x_0^2 + 2x_1^2 = 0 \implies p = \lp0:0:1\rp$ punto único.
+			\item $Q_1 \colon 3x_0^2 + 5x_1^2 = 0 \implies p = \lp0:0:1\rp$ punto único.
 		\end{itemize}
 	\end{enumerate}
 \end{example}
+%\begin{obs}
+%	$Q \longleftrightarrow q \colon E \to \k$ forma cuadrática $\stackrel{\car\k\neq2}{\longleftrightarrow} \varphi \colon E\times E \to \k$ forma bilineal. simétrica.
+%\end{obs}
+
+% COSAS_QUE_FALTAN LA OBS ANTERIOR ESTA A MITJES (PER AIXO ESTA COMENTADA)
 
 % A PARTIR D'AQUI JORDI
