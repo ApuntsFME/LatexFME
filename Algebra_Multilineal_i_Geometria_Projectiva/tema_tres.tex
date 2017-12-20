@@ -1167,7 +1167,113 @@ Sea $g: \Po^n \to \Po^n$ una proyectividad, sea $\overline{A}=M_{\overline{\R}}\
                 \lambda_1 = 1 \implies v_1 = \lp 1,0,0 \rp \implies H_1\text{: }x_0=0\\
                 \lambda_2 = 1 \implies v_2 = \lp 0,0,1 \rp \implies H_2\text{: }x_2=0
             \end{gather*}
-            \item
+            Por lo tanto tenemos dos posibles casos para el hiperplano:
+            \begin{enumerate}
+                \item $H_1$: $x_0=0$\\
+                    Si restringimos todo a $\Po^2 \setminus H_1$, como $M_{\R} \lp g_{\text{af}} \rp = M_{\overline{\R}} \lp g \rp$, tenemos que:
+                    \[
+                    g_\text{af}\lp x,y\rp = 
+                    \begin{pmatrix}
+                    1\\
+                    0\\
+                    \end{pmatrix} +
+                    \begin{pmatrix}
+                    1 & 0\\
+                    0 & 1\\
+                    \end{pmatrix}
+                    \begin{pmatrix}
+                    x\\
+                    y\\
+                    \end{pmatrix}
+                    \]
+                    que es una translación en $\A^2=\Po^\setminus H_1$.
+                \item $H_2$: $x_2=0$\\
+                    Si $\R = \{p_0, p_1, p_2; \overline{p} \}$, definimos $\tilde{\R}=\{p_2, p_0, p_1; \overline{p} \}$ y por lo tanto en esta referencia tenemos:
+                    \[
+                        M_{\overline{\R}} =
+                        \begin{pmatrix}
+                        1 & & \\
+                         & 1 & \\
+                         & 1 & 1 \\
+                        \end{pmatrix} \text{ y }
+                        H_3\text{: }\tilde{x}_0 = 0
+                    \]
+                    Y por lo tanto tenemos que $M_{\tilde{\R}}\lp g\rp = M_{\tilde{\R}}\lp g_\text{af} \rp$, lo que nos dice que en $\Po^2\setminus$,
+                    \[
+                    g_\text{af}\lp x,y\rp = 
+                    \begin{pmatrix}
+                    0\\
+                    0\\
+                    \end{pmatrix} +
+                    \begin{pmatrix}
+                    1 & 0\\
+                    1 & 1\\
+                    \end{pmatrix}
+                    \begin{pmatrix}
+                    x\\
+                    y\\
+                    \end{pmatrix}
+                    \]
+                    que es una Homología especial.
+            \end{enumerate}
+            \item Sea $g: \Po^3 \to \Po^3$ una proyectividad $\tq$
+            \[
+            M_\R \lp g \rp =
+            \begin{pmatrix}
+                    1 & & &\\
+                    & -1 & &\\
+                    & & -1 &\\
+                    & & & -1\\
+            \end{pmatrix}
+            \]
+            es una Homografía con un punto fijo $O=\lp 1:0:0:0\rp$ y un hiperplano de puntos fijos $H= p_1 \vee p_2 \vee p_3$ (en concreto es una Homología general). Por lo tanto tenemos dos posibles casos para el hiperplano:
+            \begin{enumerate}
+                \item $H$: $x_0=0$\\
+                Equivalentemente al ejemplo 1 tenemos que:
+                \[
+                g_\text{af}\lp x,y,z \rp =
+                \begin{pmatrix}
+                -1 & &\\
+                & -1 &\\
+                & & -1\\
+                \end{pmatrix}
+                \begin{pmatrix}
+                x\\
+                y\\
+                z\\
+                \end{pmatrix}
+                \]
+                que es una Homotecia de razón $\mu = -1$. 
+                \item $H$: $x_1=0$\\
+                 Si $\R = \{p_0, p_1, p_2, p_3; \overline{p} \}$, definimos $\tilde{\R}=\{p_1, p_0, p_2, p_3; \overline{p} \}$ y por lo tanto en esta referencia tenemos:
+                 \[
+                    M_{\overline{\R}} =
+                    \begin{pmatrix}
+                    -1 & & &\\
+                    & 1 & &\\
+                    & & -1 &\\
+                    & & & -1\\
+                    \end{pmatrix} =
+                    \begin{pmatrix}
+                    1 & & &\\
+                    & -1 & &\\
+                    & & 1 &\\
+                    & & & 1\\
+                    \end{pmatrix} = M_{\overline{\R}} \lp g_{|\A^3 = \Po^3\setminus H}\rp
+                    \text{ y }
+                    H\text{: }\tilde{x}_0 = 0
+                \]
+                y por lo tanto, en $\Po^3\setminus H$,
+                \[
+                g_\text{af} \lp \tilde{x},\tilde{y},\tilde{z} \rp =
+                \begin{pmatrix}
+                    -1 & &\\
+                    & 1 &\\
+                    & & 1\\
+                \end{pmatrix}
+                \]
+                que es una Simetría especular.
+            \end{enumerate}
         \end{enumerate}
     \end{example}
     
