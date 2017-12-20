@@ -33,8 +33,42 @@
 %\end{obs}
 % COSAS_QUE_FALTAN LA OBS ANTERIOR ESTA A MITJES (PER AIXO ESTA COMENTADA)
 \begin{defi}
-
+    $\Po^n = \Po\lp\E\rp$, sea $q \colon \E \to \k$ asociada a $\varphi \colon \E \times \E \to \k, Q = [q]$. Sean $\R$ una referencia de $\Po^n$, $B$ una base de $\E$ adaptada a $\R$.
+    \[ M_\R \lp Q\rp := M_B\lp q\rp \stackrel{\text{por def.}}{=} M_B\lp\varphi\rp \]
+    $M_\R\lp Q\rp$ está definida salvo multiplicar por una constante.
 \end{defi}
+\begin{example}
+    En $\Po^2_\real$, sean $\R$ (de $\Po^2$), $B$ (de $\real^3$). Sea $Q\colon x_0^2+ x_1^2+2x_2^2-2x_0x_1+4x_0x_2 + 6x_1x_2 = 0$.
+    \begin{gather*}
+        M_\R\lp Q\rp = M_B\lp q\rp = A =
+        \begin{pmatrix}
+            1 & -1 & 2 \\
+            -1 & 1 & 3 \\
+            2 & 3 & 2 \\
+        \end{pmatrix}, \\
+        \quad p\in Q \iff
+        \begin{pmatrix}
+            x_0 & x_1 & x_2 \\
+        \end{pmatrix}
+        \begin{pmatrix}
+            1 & -1 & 2 \\
+            -1 & 1 & 3 \\
+            2 & 3 & 2 \\
+        \end{pmatrix}
+        \begin{pmatrix}
+            x_0 \\
+            x_1 \\
+            x_2 \\
+        \end{pmatrix}
+        = 0.
+    \end{gather*}
+\end{example}
+\begin{obs}
+    Si $A = M_\R\lp Q\rp, p_\R = \lp x_0:\dots:x_n\rp = x$, entonces tenemos que $p\in Q \iff x^tAx = 0$.
+\end{obs}
+\begin{example}
+    Sean $Q = [q], \R, A = M_\R\lp Q\rp$. Sea $\R'$ otro sistema de referencia en $\Po^n$ y sea $S_{\R, \R'}$ la matriz de cambio de sistema de referencia de $\R$ a $\R'$. Entonces $A' = M_{\R'}\lp Q\rp = S^tAS$.
+\end{example}
 
 % A PARTIR D'AQUI JORDI
 
