@@ -73,7 +73,7 @@
 % A PARTIR D'AQUI JORDI
 
 \begin{defi}[(intersección de cónicas y variedades lineales)]
-    Sea $Q= \left[ q \right] \subseteq \Po ^n$ una cuádrica y sea $V = \left[ F \right] \subseteq \Po ^n$ una variedad linea. Definimos su intersección como
+    Sea $Q= \left[ q \right] \subseteq \Po ^n$ una cuádrica y sea $V = \left[ F \right] \subseteq \Po ^n$ una variedad lineal. Definimos su intersección como
     \[
         Q_{|V} := \left[q_{|F} \right].
     \]
@@ -82,4 +82,95 @@
 
 \begin{example}
     En $\Po _{\real} ^3$, sea $q=x_0^2+x_2^2+x_2^2-x_3^2+2x_0x_1-2x_1x_2=0$ y sea $V=\left[ F \right] \colon x_0+x_1=0$ (un plano). Tenemos que $F=\left[ \lp 1, -1, 0, 0 \rp ^t, \lp 0, 0, 1, 0 \rp ^t, \lp 0, 0, 0, 1 \rp ^t \right]$.
+    \begin{gather*}
+        A=M_B\lp q \rp = \begin{pmatrix}
+            1 & 1 & 0 & 0 \\
+            1 & 1 & -1 & 0 \\
+            0 & -1 & 1 & 0 \\
+            0 & 0 & 0 & -1
+        \end{pmatrix} \implies \\
+        \implies M_B \lp q_{|F} \rp = \begin{pmatrix}
+            1 & -1 & 0 & 0 \\
+            0 & 0 & 1 & 0 \\
+            0 & 0 & 0 & 1
+        \end{pmatrix} \begin{pmatrix}
+            1 & 1 & 0 & 0 \\
+            1 & 1 & -1 & 0 \\
+            0 & -1 & 1 & 0 \\
+            0 & 0 & 0 & -1
+        \end{pmatrix} \begin{pmatrix}
+            1 & 0 & 0 \\
+            -1 & 0 & 0 \\
+            0 & 1 & 0 \\
+            0 & 0 & 1
+        \end{pmatrix} = \\
+        = \begin{pmatrix}
+            0 & 1 & 0 \\
+            1 & 1 & 0 \\
+            0 & 0 & -1
+        \end{pmatrix}.
+    \end{gather*}
+    La matriz $M_B \lp q_{|F} \rp$ es, como se puede observar, la matriz de una cuádrica en $V$.
 \end{example}
+\begin{prop}
+    Sea $Q= \left[ q \right] \subseteq \Po ^n$ una cuádrica y sea $V = \left[ F \right] \subseteq \Po ^n$ una variedad lineal. Se satisface que
+    \begin{enumerate}[(1)]
+        \item $q_{|F} = 0 \iff V \subseteq Q$.
+        \item $q_{|F} \neq 0 \implies Q_{|V} = Q \cap V $.
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    \begin{enumerate}[(1)] \item[]
+        \item $q_{|F} = 0 \iff \forall v \in F, \, q \lp v \rp = 0 \iff \forall p = \left[ v \right] \in V, \, p \in Q$.
+        \item Sea $p=\left[ v \right]$. Entonces, 
+        \[
+            p \in Q_{|V} \iff \left\{ \begin{array}{c} q \lp v \rp = 0 \\ v \in F \end{array} \right\} \iff \left\{ \begin{array}{c} p \in Q \\ p \in V \end{array} \right\} \iff p \in Q\cap V.
+        \]
+    \end{enumerate}    
+\end{proof}
+
+\begin{prop}
+     Sea $Q=\left[q \right]$ y sea $f \colon \Po^n \to \Po^n$ una homografía.
+     \begin{enumerate}[(1)]
+        \item $f\lp Q \rp$ es una cuádrica.
+        \item Sea $\R$ una referencia en $\Po^n$ y sean $A=M_{\R} \lp Q \rp, \, P=M_{\R} \lp f \rp$. Entonces,
+            \[
+                M_{\R} \lp f \lp Q \rp \rp = \lp P^{-1} \rp ^t A \lp P^{-1} \rp.
+            \]
+     \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    \begin{enumerate}[(1)] \item[]
+        \item Sea $p \in f \lp Q \rp$ y sea $y=p_{\R} = \lp y_0 , \dots , y_n \rp ^t$. Por ser $f$ una homografía, es biyectiva y $\lp f ^{-1} \lp p \rp \rp _{\R} = P^{-1} y$.
+            \begin{gather*}
+                p \in f \lp Q \rp \iff f^{-1} \lp p \rp \in Q \iff \lp P^{-1} y \rp ^t A \lp P^{-1} y \rp = 0 \iff \\
+                \iff y^t \lp \lp P ^{-1} \rp ^t A P^{-1} \rp y = 0 ,
+            \end{gather*}
+            y como que $\lp \lp P ^{-1} \rp ^t A P^{-1} \rp$ es una matriz simétrica, $f \lp Q \rp$ es una cuádrica.
+        \item $y^t \lp \lp P ^{-1} \rp ^t A P^{-1} \rp y = 0 \iff p \in f \lp Q \rp \iff y^t M_{\R} \lp f \lp Q \rp \rp y = 0$, de lo que concluimos que $M_{\R} \lp f \lp Q \rp \rp = \lp P^{-1} \rp ^t A \lp P^{-1} \rp$.
+    \end{enumerate}
+\end{proof}
+
+\begin{defi}[(puntos singulares y lisos)]
+    Sea $Q=\left[ q \right] \subseteq \Po ^n$, sea $p = \left[ v \right] \in Q$ y sea $\varphi$ la forma bilineal simétrica asociada a $q$. Entonces, 
+    \begin{enumerate}[(1)] 
+        \item Decimos que $p$ es un \textit{punto singular} de $Q \iff \varphi \lp v, \cdot \rp = 0$.
+        \item Decimos que $p$ es un \textit{punto liso} de $Q$ si no es un \textit{punto singular}.
+        \item Decimos que $Q$ es \textit{no degenerada} $\iff Q$ no tiene \textit{puntos singulares}. 
+    \end{enumerate}
+\end{defi}
+
+\begin{obs}
+    Sea $A=M_{\R} \lp Q \rp$, sea $p \in Q$ y sea $p_{\R} = \lp a_0, \dots , a_n \rp ^t$.
+    \begin{enumerate}[(1)]
+        \item $p\in Q$ es un punto singular $\iff \lp x_0, \dots , x_n \rp A \lp a_0, \dots , a_n \rp ^t = 0, \; \forall \, \lp x_0, \dots , x_n \rp \iff \lp a_0, \dots , a_n \rp \in \nuc A$.
+        \item $Q$ es no degenerada $\iff \rg \lp A \rp = n+1 \iff \det A \neq 0$.
+    \end{enumerate}
+\end{obs}
+
+
+
+
+
