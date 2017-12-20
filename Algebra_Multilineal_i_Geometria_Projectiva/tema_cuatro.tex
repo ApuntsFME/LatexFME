@@ -28,10 +28,13 @@
         \end{itemize}
     \end{enumerate}
 \end{example}
-%\begin{obs}
-%    $Q \longleftrightarrow q \colon E \to \k$ forma cuadrática $\stackrel{\car\k\neq2}{\longleftrightarrow} \varphi \colon E\times E \to \k$ forma bilineal. simétrica.
-%\end{obs}
-% COSAS_QUE_FALTAN LA OBS ANTERIOR ESTA A MITJES (PER AIXO ESTA COMENTADA)
+\begin{obs}
+    Sean $Q,\, q\colon \E \to \k$ (car$\k \neq 2$) asociada a $\varphi \colon \E \times \E \to \k, Q = [q]$, entonces $q \leftrightarrow \varphi$ de la siguiente forma:
+    \begin{align*}
+        q\lp u\rp &\rightarrow \varphi\lp u,v\rp = \frac{1}{2}\left[q\lp u+v\rp - q\lp u\rp -q\lp v\rp\right] \\
+        q\lp u\rp = \varphi\lp u, u\rp &\leftarrow \varphi\lp u,v\rp
+    \end{align*}
+\end{obs}
 \begin{defi}
     $\Po^n = \Po\lp\E\rp$, sea $q \colon \E \to \k$ asociada a $\varphi \colon \E \times \E \to \k, Q = [q]$. Sean $\R$ una referencia de $\Po^n$, $B$ una base de $\E$ adaptada a $\R$.
     \[ M_\R \lp Q\rp := M_B\lp q\rp \stackrel{\text{por def.}}{=} M_B\lp\varphi\rp \]
