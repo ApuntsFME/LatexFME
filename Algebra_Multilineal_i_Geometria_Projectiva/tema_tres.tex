@@ -471,7 +471,8 @@ el siguiente lema que resultará de utilidad.
     Sean $l_1, l_2 \subseteq \Po^3$ rectas disjuntas. Sea $p \not \in 
     l_1, l_2$. Entonces $\exists! \: s$ recta 
     tal que $p \in s$, $s \cap l_1 \neq \varnothing$, 
-    $s \cap l_2 \neq \varnothing$.
+    $s \cap l_2 \neq \varnothing$. Además, $s = (l_1 \vee p) \cap 
+    (l_2 \vee p)$.
 \end{lema}
 \begin{proof}
     
@@ -508,9 +509,41 @@ el siguiente lema que resultará de utilidad.
         Cojamos $p \in A_1, B_1$, $p \not \in r_1, r_2$. Consideramos
         la recta $s$ dada por \ref{lema_rectas_poncelet} que cumple
         $p \in s, s \cap l_2 \neq \varnothing, s \cap l_3 \neq 
-        \varnothing$.
-        Sea g
-        \item
+        \varnothing$. Veamos que $s \cap r_1 = \varnothing$. Si 
+        suponemos lo contrario,
+        \[
+        s \cap r_1 \neq \varnothing \implies s \vee r_1 = \pi
+        \implies
+        \begin{cases}
+        A_1, p \in \pi \\
+        A_2, s \cap l_2 \in \pi \\
+         A_3, s \cap l_3 \in \pi 
+        \end{cases}
+        \]
+        Como $s \neq r_1$, o bien $A_2 \neq s \cap l_2$, o bien 
+         $A_3 \neq s \cap l_3$. Supongamos, sin pérdida de generalidad,
+         que $A_3 \neq s \cap l_3$. En ese caso, $B_1 \in A_1 
+         \vee p \subseteq \pi$ y $B_3 \in A_3 \vee s \cap l_3 \subseteq
+         \pi$. Si $B_1, B_3 \in \pi$, 
+         entonces $r_2 \in \pi$. Si $r_1, r_2 \subseteq
+         \pi$, $r_1 \cap r_2 \neq \varnothing$, una contradicción.
+         
+         Podemos ver análogamente que $s \cap r_2 = \varnothing$. Por 
+         lo tanto, podemos considerar la perspectividad $g: r_1 \to
+         r_2$ desde $s$. En esta, $g(A_1) = (A_1 \vee s) \cap r_2 \ni
+         B_1$. Como sabemos que la perspectividad está bien definida,
+         $g(A_1) = B_1$. Análogamente, $g(A_2) = B_2, g(A_3) = B_3$.
+         Por ser $f$ y $g$ proyectivadades y cumplir $g(A_i) = B_i =
+         f(A_i)$, formando $A_i$ y $B_i$ referencias en sus 
+         respectivas rectas, $f = g$.
+        \item Supongamos $n \geq 4$. Sea $V = r_1 \vee r_2$, con
+        $\dim V = 3$ por Grassman ($r_1 \cap r_2 = \varnothing$.
+        Aplicamos el caso 1 en la variedad $V$, con lo que obtenemos
+        $s \subseteq V$ tal que $f$ es perspectividad desde $s$ en
+        $V$. Veamos que también es una perspectividad en $\Po^n$.
+        Sea $W_0$ una variedad suplementaria a $V$. Sea $W = W_0 \vee
+        s$. Consideramos $h: r_1 \to r_2$ la perspectividad de centro
+        $W$. Esta cumple $h = f$.
     \end{enumerate}
 \end{proof}
 
