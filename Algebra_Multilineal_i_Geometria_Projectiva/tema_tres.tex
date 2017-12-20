@@ -980,9 +980,19 @@ el siguiente lema que resultará de utilidad.
 
 \subsection{Homografías de $\Po_{\real}^1$}
 Posibles formas de Jordan:
-\begin{enumerate}
-    \item $f=\Id$
+\begin{enumerate}[(1)]
+    \item $f=\Id, A= \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$ \\
+        $A$ diagonaliza y tiene un solo valor propio. Todos los puntos son fijos.
+    \item $A= \begin{pmatrix} 1 & 0 \\ 0 & a \end{pmatrix}, a \neq 1$ \\
+        $A$ diagonaliza y tiene dos valores propios distintos. Hay dos puntos fijos, $f$ es una homología general. Para $a=-1$, $f$ es una involución.
+    \item $A= \begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix}$ \\
+        $A$ no diagonaliza y tiene un solo valor propio. Hay un punto fijo, $f$ es una homología especial.
+    \item $A= \begin{pmatrix} a & b \\ c & d \end{pmatrix}$ \\
+        $Q_A \lp t \rp = t^2 - \lp \tr A \rp t + \det A \implies \Delta = \lp \tr A \rp ^2 - 4 \det A < 0$. A no tiene forma de Jordan. No hay ningún punto fijo.
 \end{enumerate}
+\begin{obs}
+    Las homografías en $\Po_{\real}^2$ pueden clasificarse en siete categorías.
+\end{obs}
 
 % A PARTIR D'AQUI ERIC
 
