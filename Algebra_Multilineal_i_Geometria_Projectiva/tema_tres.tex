@@ -205,9 +205,6 @@
 \begin{obs}
 	Las composiciones de funciones \textit{proyección} y \textit{sección} también son proyectividades.
 \end{obs}
-\begin{example} % COSAS_QUE_FALTAN
-	AQUÍ FALTAN LOS EJEMPLOS DE LAS PÁGINAS 5-6.
-\end{example}
 \begin{prop} \label{prop:demo_teo2}
 	Sea $f : \Po^n \to \overline{\Po}^m \tq$:
 	\begin{itemize}
@@ -804,7 +801,6 @@ el siguiente lema que resultará de utilidad.
 		$L = p_2 \vee p_3$ (de puntos fijos).\\
 		Usaremos que $v_1,v_2$ fijas $\implies v_1 \vee v_2$ fijas: $L_{\alpha,\beta} = \left[\lp1:-1:0:0\rp^t\right]\vee\left[\lp0:0:\alpha:\beta\rp^t\right]$.
 		Usaremos que $v_1, v_2$ fijas $\implies v_1 \cap v_2$ fijas:
-		% COSAS_QUE_FALTAN FINAL PG 17
 		\begin{gather*}
 			H_{A=1,B=0} \cap H_{A=0,B=1} = \begin{Bmatrix}
 				x_2 = 0 \\
@@ -837,6 +833,59 @@ el siguiente lema que resultará de utilidad.
 	\end{gather*}
 	Inductivamente podríamos encontrar variedades de dim $< n-2$ considerándolas dentro de variedades fijas de dim $1$. Además, siendo así hiperplanos que serán fijos $\iff$ son veps de la aplicación dual de la restricción.
 \end{example}
+\begin{example}[(Involuciones)]
+	\begin{enumerate}
+		\item[]
+		\item $\Po^1$ \\
+			\begin{gather*}
+			A = M\lp f; \R\rp =
+			\begin{pmatrix}
+				3 & 1 \\
+				7 & -3
+			\end{pmatrix}, \begin{array}{cc}
+				\lambda_1 = 4 & v_1 = (1:1) \\
+				\lambda_2 = -4 & v_2 = (1:-7)
+			\end{array} \implies \\
+			\exists\R \overline{A} = M\lp f; \R\rp =
+			\begin{pmatrix}
+				4 & 0 \\
+				0 & -4
+			\end{pmatrix} \sim
+			\begin{pmatrix}
+				1 & 0 \\
+				0 & -1
+			\end{pmatrix} \\
+			A^2 = 16\Id \implies f^2 = Id.
+		\end{gather*}
+		\item $A = M\lp f;\R\rp =
+		\begin{pmatrix}
+			0 & -1 \\
+			1 & 0
+		\end{pmatrix}$,
+		\[
+			A^2 = \begin{pmatrix}
+				-1 & 0 \\
+				0 & -1
+			\end{pmatrix}
+			= -\Id \implies f^2 = \Id \implies f\text{ involución}
+		\]
+		A no diagonaliza, $Q_A \lp t\rp = t^2+1$.
+	\end{enumerate}
+\end{example}
+\begin{obs}
+	Si $\k = \cx, f^2 = \Id \implies f$ siempre diagonaliza:
+	\[
+		\begin{pmatrix}
+			a & & & & & \\
+			& \ddots & & & & \\
+			& & a & & & \\
+			& & & -a & & \\
+			& & & & \ddots & \\
+			& & & & & -a \\
+		\end{pmatrix}.
+	\]
+	Es un caso diagonalizable de $\k = \real$.
+\end{obs}
 
 % A PARTIR D'AQUI JORDI
 
