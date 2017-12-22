@@ -738,5 +738,68 @@
 \end{col}
 
 % A PARTIR D'AQUI RAUL
+\section{Propiedades de la integral}
+
+\begin{prop}[Linealidad i positividad]
+    Sea $E \subset \real^n$ mesurable Jordan. El conjunto $\rie(E)$ de funciones integrables Riemann en $E$ es un $\real$-espacio vectorial, y la integral:
+    \begin{align*}
+        \rie(E) &\to \real & \text{es una forma lineal positiva.} \\
+        f &\mapsto \int_E f & \lp f \geq 0 \to \int_E f \geq 0 \rp
+    \end{align*}
+\end{prop}
+
+\begin{proof}
+    Consecuencia de las mismas propiedades para un rectangulo compacto $A \supset E$.
+\end{proof}
+
+\begin{col}[Monotonía]
+    \[
+    f \leq g \Longrightarrow \int_E f \leq \int_E g.
+    \]
+\end{col}
+
+\begin{defi}
+    Sea $E$ mesurable Jordan, el valor medio de $f : E \to \real $:
+    \[
+    <f> := \frac{\int_E f}{\int_E 1} = \frac{1}{\vol(E)} \int_E f, \qquad \lp \vol(E) \neq 0 \rp.
+    \]
+\end{defi}
+
+\begin{teo}[del valor medio]
+    Si $m \leq f \leq M$:
+    \[
+    m \lp \vol(E) \rp \leq \int_E f \leq M \lp \vol(E) \rp.
+    \]
+\end{teo}
+
+\begin{proof}
+    Consecuencia de las últimas proposiciones.
+\end{proof}
+
+\begin{col}
+    \[
+    \vol(E) = 0 \Longrightarrow \int_E f = 0.
+    \]
+\end{col}
+
+\begin{teo}[del valor medio (alternativo)]
+    Sea $E$ mesurable Jordan y connexo; $f : E \to \real$ fitada y continua. Existe $x_o \in E$ tal que:
+    \[
+    \int_E f = f(x_o) \vol(E), \qquad \lp <f> = f(x_o) \rp
+    \]
+\end{teo}
+
+\begin{prop}
+    Sea $E \subset \real^n$ mesurable Jordan, $f : E \to \real$ integrable Riemann, $h : f(E) \to \real$ continua. Entonces $h \circ f$ es integrable Riemann.
+\end{prop}
+
+\begin{proof} 
+    $\disc(h \circ f) \subset \disc(f)$ (medida nula) y teorema de Lebesgue.
+\end{proof}
+
+\begin{obs*}
+    $f,h$ integrables Riemann no implica $h \circ f$ integrable Riemann.
+\end{obs*}
+
 
 % A PARTIR D'AQUI OSCAR
