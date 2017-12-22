@@ -578,7 +578,7 @@
     Por tanto, $b \in A$ i B$\lp a, \delta \rp \subset A \implies a$ es un punto interior de $A \implies A$ es abierto.
 \end{proof}
 \begin{col*}
-    Si $X$ es compacto, $\{x \in X | \omega \lp f, x \rp \geq c\}$ es compacte.
+    Si $X$ es compacto, $\{x \in X | \omega \lp f, x \rp \geq c\}$ es compacto.
 \end{col*}
 \begin{proof}
     Todo conjunto cerrado de un espacio compacto es compacto.
@@ -632,10 +632,16 @@
     $< 2\varepsilon \implies B_c$ tiene medida nula.
 \end{proof}
 
+\begin{defi*}
+    Sea $f \colon A \to R$. Definimos discontinuidad de $f$ como
+    \[
+        \disc\left( f \right) = \setb{x \in A \vert x \text{ no es continua en }A}.
+    \]
+\end{defi*}
+
 \begin{teo}[de Lebesgue]
     Sean $A \subseteq \real^n$ un rectángulo compacto, $f \colon A \to \real$ una
-    función acotada. Sea $\disc\left( f \right) = \setb{x \in A \vert x \text{ no
-    es continua en }A}$. Entonces, $f$ es integrable Riemman en $A$ si y solo si
+    función acotada. $f$ es integrable Riemman en $A$ si y solo si
     $\disc\left( f \right)$ tiene medida nula.
 \end{teo}
 
@@ -736,6 +742,58 @@
         \item $A \subset \real^m, B \subset \real^n$ son admisibles $\implies A\times B \subset \real^{m+n}$ es admisible.
     \end{enumerate}
 \end{col}
+
+\begin{example}
+    \begin{enumerate}[(1)] \item[]
+        \item Los rectángulos compactos y los rectángulos abiertos acotados son admisibles.
+        \item Las bolas euclideanas son admisibles.
+        \item Existen conjuntos de medida nula que no son admisibles. Por ejemplo, $A=\q \cap \lp 0, 1 \rp$.
+        \item Existen conjuntos abiertos y acotados que no son admisibles.
+        \item Existen conjuntos compactos que no son admisibles.
+    \end{enumerate}
+\end{example}
+
+\begin{defi}
+    Sea $X$ un espaci métrico, y sea $C\subset X$. Definimos la función característica de $C$ como
+    \begin{align}
+        \chi_C \colon X &\to \real \\
+        x &\mapsto \chi_C \lp x \rp = \begin{cases} 1 \text{ si } x \in C \\ 0 \text{ si } x \notin C \end{cases}
+    \end{align}
+\end{defi}
+
+\begin{lema}
+    Sea $X$ un espacio métrico, sea $C \in X$ y sea $\chi_C$ si función característica.
+    \[
+        \disc \lp \chi_C \rp = \fr \lp C \rp
+    \]
+\end{lema}
+\begin{proof}
+    \begin{itemize} \item[]
+        \item $\ext \lp C \rp$
+            \[
+                \forall a \in \ext \lp C \rp, \, \exists r > 0 \tq \chi_C \lp x \rp = 0 \; \forall x \in B \lp a, r \rp \implies \chi_C \text{ es continua en } \ext \lp C \rp .
+            \]
+        \item $\inte \lp C \rp$
+            \[
+                \forall a \in \inte \lp C \rp, \, \exists r > 0 \tq \chi_C \lp x \rp = 1 \; \forall x \in B \lp a, r \rp \implies \chi_C \text{ es continua en } \inte \lp C \rp .
+            \]
+        \item $\fr \lp C \rp$
+            \begin{gather*}
+                \forall a \in \fr \lp C \rp , \; \forall r > 0, \; \exists x \in B \lp a, r \rp \tq \chi_C \lp x \rp = 1 \text{ y } \\ \exists y \in B \lp a, r \rp \tq \chi_C \lp y \rp = 0 \implies a \in \disc \lp \chi_C \rp.
+            \end{gather*}
+    \end{itemize}
+\end{proof}
+
+\begin{col}
+    Sea $C \subset \real^n$ acotado.
+    \[
+        C \text{ es admisible } \iff \begin{cases} C \text{ es acotado } \\ \forall \text{ rect. compacto } R \supset C \text{ existe la integral de Riemann } \int_R \chi_C \end{cases}
+    \]
+\end{col}
+
+\begin{proof}
+    
+\end{proof}
 
 % A PARTIR D'AQUI RAUL
 \section{Propiedades de la integral}
