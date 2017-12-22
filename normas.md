@@ -102,7 +102,7 @@ resolver son una buena forma de aprender.
 
 ### Teorema
 Aunque el título se pase en este entorno como parámetro
-opcional, **Es obligatorio nominar los teoremas**. Ya que
+opcional, **es obligatorio nominar los teoremas** (o declararlos como `{teo*}`). Ya que
 los teoremas aparecen en el índice principal. Una observación
 importante es que no es necesario añadir la palabra
 *Teorema*, que se añadirá de forma automática.
@@ -167,6 +167,9 @@ principales conjuntos.
 | \inte | 0 | Coloca Int |
 | \tr | 0 | Coloca tr |
 | \tq | 0 | Coloca t.q. |
+| \rie | 0 | Coloca Rie |
+| \upint | 0 | Coloca una integral superior |
+| \lowint | 0 | Coloca una integral inferior |
 
 ## Fragmentos comunes
 Aquí se detalla una serie de fragmentos que suelen comunes
