@@ -792,8 +792,64 @@
 \end{col}
 
 \begin{proof}
-    
+    \begin{gather*}
+        C \text{ es admisible } \iff \left\{ \begin{array}{c}
+            C \text{ es acotado } \\
+            \fr \lp C \rp \text{ tiene medida nula }
+        \end{array} \right\} \iff \\ 
+            \iff \left\{ \begin{array}{c}
+            C \text{ es acotado } \\
+            \disc \lp \chi_C \rp \text{ tiene medida nula }
+        \end{array} \right\} \iff \\
+        \iff \left\{ \begin{array}{c}
+            C \text{ es acotado } \\
+            \disc \lp \lp \chi_C \rp _{|R} \rp \text{ tiene medida nula, } \forall R\supset C \text{ rectángulo compacto}
+        \end{array} \right\} \iff \\
+        \iff \left\{ \begin{array}{c}
+            C \text{ es acotado } \\
+            \forall \text{ rect. compacto } R \supset C \text{ existe la integral de Riemann } \int_R \chi_C
+        \end{array} \right\}.
+    \end{gather*}
 \end{proof}
+\begin{lema} \label{lema_2_4_9}
+    Sea $X$ un espacio métrico, sea $E \subset X$ y sea $g \colon E \to \real$. Sea $\tilde{g} \colon X \to \real$ la extensión de $g$ definida por
+    \[
+        \tilde{g} \lp x \rp = \begin{cases} g \lp x \rp \text{ si } x \in E \\ 0 \text{ si } x \notin E \end{cases}
+    \]
+    Entonces, $\disc \lp g \rp \subseteq \disc \lp \tilde{g} \rp \subseteq \disc \lp g \rp \cup \fr \lp E \rp$.
+\end{lema}
+\begin{proof}
+    \begin{itemize} \item[]
+        \item $\forall x \in \ext \lp E \rp, \; \tilde{g}$ es continua en $x$.
+        \item $\forall x \in \inte \lp E \rp, \; \tilde{g}$ es continua en $x \iff g$ es continua en $x $.
+        \item $\forall x \in \fr \lp E \rp, \; \tilde{g}$ es continua en $x \implies g$ es continua en $x $.
+    \end{itemize}
+\end{proof}
+\begin{defi}
+    Sea $C \subset \real^n$ un conjunto admisible, sea $f \colon C \to \real$ una función acotada y sea $R \supset C$ un rectángulo compacto. Definimos la extensión de $f$ a todo $R$ como
+    \begin{align*}
+        f \chi_C \colon R &\to \real \\
+        x &\mapsto f \chi_C \lp x \rp = \begin{cases} f \lp x \rp \text{ si } x \in C \\ 0 \text{ si } x \notin C \end{cases}
+    \end{align*}
+\end{defi}
+
+\begin{lema}
+    Sea $C \subset \real^n$ un conjunto admisible, sea $f \colon C \to \real$ una función acotada y sea $R \supset C$ un rectángulo compacto.
+    \[
+        f \chi_C \text{ es integrable Riemann en } R \iff \disc \lp f \rp \text{ tiene medida nula}.
+    \]
+\end{lema}
+
+\begin{proof}
+    Inmediata del lema \ref{lema_2_4_9} y del teorema de Lebesgue.
+\end{proof}
+
+\begin{lema}
+    Sea $C \subset \real^n$ un conjunto admisible, sea $f \colon C \to \real$ una función acotada y sean $R, R^{\prime} \supset C$ rectángulos compactos.
+    \[
+        \int_R f \chi_C = \int_{R^{\prime}} f \chi_C.
+    \]
+\end{lema}
 
 % A PARTIR D'AQUI RAUL
 \section{Propiedades de la integral}
@@ -891,8 +947,8 @@
     \[ \sum_j \inf_{x\in R} g_j\lp x\rp \leq \inf_{x\in R} \sum_j g_j\lp x\rp. \]
 \end{proof}
 \begin{lema}
-    Sean $A \subset \real^m$, $B \subset \real^n$ rectangulos compactos. Sea $f \colon A\times B\to\real$ fitada. Sea
-    \[ \Phi \colon A\to\real \tq \lowint_B f\lp x,\cdot\rp\leq\Phi\lp x\rp\leq\upint_B f\lp x,\cdot\rp, \forall x\in A. \]
+    Sean $A \subset \real^m$, $B \subset \real^n$ rectangulos compactos. Sea $f \colon A\times B\to\real$ fitada. Sea $\Phi \colon A\to\real \tq$
+    \[ \lowint_B f\lp x,\cdot\rp\leq\Phi\lp x\rp\leq\upint_B f\lp x,\cdot\rp, \forall x\in A. \]
     Entonces,
     \[ \lowint_{A\times B} f \leq \lowint_A \Phi, \, \upint_A \Phi \leq \upint_{A\times B} f. \]
 \end{lema}
