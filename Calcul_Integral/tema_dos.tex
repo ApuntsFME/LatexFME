@@ -803,3 +803,46 @@
 
 
 % A PARTIR D'AQUI OSCAR
+
+\section{El teorema de Fubini}
+
+\begin{lema*}
+    Siguin $B_i \subset \real \lp i\in I\rp$ no vacios i fitados inferiormente, $B = \bigcup_{i\in I} B_i$. Entonces
+    \[ \inf B = \inf\left\{\inf B_i | i\in I\right\}.\]
+\end{lema*}
+\begin{proof}
+    Ejercicio 2. Indicación: $B \colon \left\{ \inf B_i | i\in I\right\}$ tienen las mismas fitas inferiores.
+\end{proof}
+\begin{lema}
+    Sean $R, S$ conjuntos no vacios, $f \colon R\times S \to \real$ fitada inferiormente. Entonces
+    \[ \inf_{\lp x,y\rp\in R\times S} f\lp x,y\rp = \inf_{x\in R}\inf_{y\in S} f\lp x,y\rp. \]
+\end{lema}
+\begin{proof}
+    \begin{gather*}
+        R\times S = \bigcup_{x\in R} \lp \left\{x\right\}\times S\rp \implies f\lp R\times S\rp = \bigcup_{x\in R} f\lp\left\{ x\right\} \times S\rp \substack{\text{Lema}\\ \implies\\ \text{anterior}} \inf f\lp R\times S \rp = \\ = \inf \bigcup_{x\in R} f\lp \left\{x\right\} \times S\rp = \inf \inf_{x\in R} f\lp \left\{x\right\} \times S\rp \implies \inf_{\lp x,y\rp \in R\times S} f\lp x,y\rp = \inf_{x\in R} \inf_{y\in S} f\lp x,y\rp.
+    \end{gather*}
+\end{proof}
+\begin{lema}
+    Sean $g_j \colon R \to \real$ una familia de funciones fitadas inferiormente. Entonces,
+    \[ \sum_j \inf_{x\in R} g_j\lp x\rp \leq \inf_{x\in R} \sum_j g_j\lp x\rp \]
+\end{lema}
+\begin{proof}
+    Fijamos $x_0 \in R:$
+    \[ \sum_j \inf_{x\in R} g_j\lp x\rp \leq \sum_j g_j \lp x_0\rp, \,\lp\text{fita inferior}\rp. \]
+    Como $x_0$ es arbitrario,
+    \[ \sum_j \inf_{x\in R} g_j\lp x\rp \leq \inf_{x\in R} \sum_j g_j\lp x\rp. \]
+\end{proof}
+\begin{lema}
+    Sean $A \subset \real^m$, $B \subset \real^n$ rectangulos compactos. Sea $f \colon A\times B\to\real$ fitada. Sea
+    \[ \Phi \colon A\to\real \tq \lowint_B f\lp x,\cdot\rp\leq\Phi\lp x\rp\leq\upint_B f\lp x,\cdot\rp, \forall x\in A. \]
+    Entonces,
+    \[ \lowint_{A\times B} f \leq \lowint_A \Phi, \, \upint_A \Phi \leq \upint_{A\times B} f. \]
+\end{lema}
+\begin{proof}
+    Sean $P, Q$ particiones de $A, B$ respectivamente, $P\times Q$ es una partición de $A\times B$ con subrectángulos $R_i \times S_j$. Sea $|T| = \vol\lp T\rp$, entonces $|R_i\times S_j| = |R_i||S_j|$.
+\end{proof}
+\begin{lema}
+    Sea $D \subset \real^{n-1}$ admisible y compacto, $\phi, \psi \colon D \to \real$ continuas, $\phi \leq \psi$. Sea
+    \[ E = \left\{\lp x,y\rp \in \real^{n-1} \times \real | x\in D, \phi\lp x\rp \leq y \leq \psi\lp x\rp \right\}. \]
+    $E$ es admisible y compacto, y $\fr\lp E\rp \subset \graf\lp\phi\rp \cup \graf\lp\psi\rp\cup\lp \fr\lp D\rp\times\real\rp$.
+\end{lema}
