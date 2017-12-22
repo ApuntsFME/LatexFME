@@ -583,7 +583,7 @@
 \begin{proof}
     Todo conjunto cerrado de un espacio compacto es compacto.
 \end{proof}
-\begin{lema}\label{lema:teo_lebesque}
+\begin{lema}\label{lema:teo_lebesgue}
     Sea $A \subset \real^n$ rectángulo compacto. Sean $T_1, \dots, T_n \subset A$ rectángulos compactos $\tq A = \bigcup_{i=1}^n T_i$. Existe una partición $\Pa$ de $A$ t.q. para cada subrectángulo $R$ de $\Pa$, existe un $i$ t.q. $R \subset T_i$.
 \end{lema}
 \begin{proof}
@@ -591,7 +591,7 @@
     \[ \Pa_k = \{x_0 = a, x_{1^-}, x_{1^+}, \dots, x_{i^-}, x_{i^+}, \dots, x_{n^-}, x_{n^+}, b\}, \]
     donde $x_{i^-}, x_{i^+}$ son los extremos inferiores y superiores (respectivamente) de $T_i$. Por construcción, $R \subseteq T_i$.
 \end{proof}
-\begin{lema*}\label{lema:uno_lebesque}
+\begin{lema*}\label{lema:uno_lebesgue}
     Sea $A \subseteq \real^n$ rectángulo compacto, $f : A \to \real, f$ fitada. Suposem $\forall x  \in A, \omega \lp f, x \rp < \varepsilon$. Entonces existe una partición $\Pa$ de $A \tq S \lp f, \Pa \rp - s \lp f, \Pa \rp < \varepsilon \vol \lp A \rp$.
 \end{lema*}
 \begin{proof}
@@ -602,7 +602,7 @@
 \begin{col*}
     $f$ continua $\implies f$ integrable Riemann (ya que $f$ continua $\implies \forall x \omega \lp f, x \rp = 0$).
 \end{col*}
-\begin{lema*}[2]\label{lema:dos_lebesque}
+\begin{lema*}[2]\label{lema:dos_lebesgue}
     Sean $A \subset \real^n$ rectángulo compacto, $f : A \to \real$ fitada, $c > 0$. Si $f$ es integrable Riemann, el conjunto $B_c = \{x \in A | \omega \lp f, x \rp \geq c\}$ tiene mesura nula.
 \end{lema*}
 \begin{proof}
@@ -632,7 +632,7 @@
     $< 2\varepsilon \implies B_c$ tiene medida nula.
 \end{proof}
 
-\begin{teo}[de Lebesque]
+\begin{teo}[de Lebesgue]
     Sean $A \subseteq \real^n$ un rectángulo compacto, $f \colon A \to \real$ una
     función acotada. Sea $\disc\left( f \right) = \setb{x \in A \vert x \text{ no
     es continua en }A}$. Entonces, $f$ es integrable Riemman en $A$ si y solo si
@@ -649,14 +649,14 @@
     \[
         B = \bigcup_{k \geq 1} B_{\sfrac{1}{k}}
     \]
-    por el lema \hyperref[lema:dos_lebesque]{2}, $B_{\sfrac{1}{k}}$ tienen medida
+    por el lema \hyperref[lema:dos_lebesgue]{2}, $B_{\sfrac{1}{k}}$ tienen medida
     nula. Como es una unión numerable, $B$ tiene medida nula.
 
     \bimpliedby
 
     Suponemos que $B$ tiene medida nula. Sea $\varepsilon > 0$ y $B_\varepsilon
     \subset B$, que tiene medida nula y es compacto, por el lema
-    \hyperref[lema:dos_lebesque]{2}, por lo tanto, tiene contenido nulo y, por lo
+    \hyperref[lema:dos_lebesgue]{2}, por lo tanto, tiene contenido nulo y, por lo
     tanto, existen rectángulos compactos $T_1, \dots, T_N \subset A$ tales que
     \[
         B_\varepsilon = \bigcup_{i = 1}{N} T_i \qquad
@@ -677,13 +677,13 @@
     \]
     Ahora, si $R \in R_2$, entonces $R$ no conta a $B_\varepsilon$, por lo tanto,
     $w(f,x) < \varepsilon$ $\forall x \in R$, por el lema
-    \hyperref[lema:uno_lebesque]{1}, existe una partición $\Pa_R$ de $R$ tal que
+    \hyperref[lema:uno_lebesgue]{1}, existe una partición $\Pa_R$ de $R$ tal que
     $S\left( f, \Pa_R \right) - s\left( f, \Pa_R \right) < \varepsilon
     \vol \left( R \right)$.
     
     Podemos refinar $\Pa$ a una partición $\Pa^\prime$ tal que todos sus
     subrectángulos, est\'en dentro de los subrectángulos de $\Pa_R$ (por el lema
-    \hyperref[lema:teo_lebesque]{teórico})
+    \hyperref[lema:teo_lebesgue]{teórico})
     \begin{gather*}
         S\left( f, \Pa^\prime \right) - s\left( f, \Pa^\prime \right) =
         \sum_{R^\prime \in R_1} \left( M_{R^\prime} - m_{R^\prime} \right)
@@ -736,3 +736,7 @@
         \item $A \subset \real^m, B \subset \real^n$ son admisibles $\implies A\times B \subset \real^{m+n}$ es admisible.
     \end{enumerate}
 \end{col}
+
+% A PARTIR D'AQUI RAUL
+
+% A PARTIR D'AQUI OSCAR
