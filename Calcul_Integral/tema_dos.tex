@@ -6,7 +6,7 @@
     Un rectángulo de $\real^n$ es un producto $A := I_1 \times \dots \times I_n$
     donde $I_j \in \real$ son intervalos que suponemos acotados y no degenerados,
     es decir, ni vacios, ni reducidos a un punto.
-    
+
     Si los $I_j$ son compactos o abiertos, también lo es $A$.
 \end{defi}
 
@@ -178,7 +178,7 @@
     \end{enumerate}
 
     Es decir, $\text{Rie}(A) = \setb{f \colon A \to \real \vert f \text{ integrable
-    Riemman}}$ es un $\real$-espacio vectorial y 
+    Riemman}}$ es un $\real$-espacio vectorial y
     \[
         \begin{aligned}
             \text{Rie}(A) &\to \real \\ f &\mapsto \int_A f
@@ -259,7 +259,7 @@
     puntos $\xi_k \in R_k$, donde $R_k$ son los rectángulos de la partición. Se
     define la suma de Riemman
     \[
-        R(f,\Pa,\xi) = \sum_k f(\xi_k)\vol(R_k) 
+        R(f,\Pa,\xi) = \sum_k f(\xi_k)\vol(R_k)
     \]
     Si $f$ es integrable Riemman entonces, en un sentido que habría que precisar,
     $R(f,\Pa,\xi)$ se aproxima al valor de $\int_A f$ a medida que la malla de
@@ -327,7 +327,7 @@
                 \real^2 \times \{0\} = \bigcup_{(k,l) \in \z^2}
                 [k,k+1] \times [l,l+1] \times \{0\}
             \]
-    
+
             (unión numerable de $R$ con medida nula).
         \item Si $a < b$, entonces $[a,b] \subset \real$ no tiene medida nula.
     \end{itemize}
@@ -404,29 +404,29 @@
     acotados de medida nula, que no son de contenido nulo.
 \end{obs}
 \begin{prop}
-    Sea $D\subset \real ^{n-1}$ acotado, $f\colon D \to \real$ uniformemente contínua. 
-    El grafo de $f$, $\graf \left( f \right) = \left\{ \left( x, f \left( 
+    Sea $D\subset \real ^{n-1}$ acotado, $f\colon D \to \real$ uniformemente contínua.
+    El grafo de $f$, $\graf \left( f \right) = \left\{ \left( x, f \left(
     x \right) \right) | x \in D \right\}$, tiene medida nula.
 \end{prop}
 \begin{proof}
     Sea $\varepsilon > 0$. Sea $R \supset D $ un rectángulo compacto de volumen
     $\left| R \right|$.
     \[
-        \exists \delta > 0 \; \tq \; d\left( x, y \right) < \delta \implies d\left( 
-        f\left( x \right), f\left( y \right) \right) < \frac{\varepsilon}{\left| 
+        \exists \delta > 0 \; \tq \; d\left( x, y \right) < \delta \implies d\left(
+        f\left( x \right), f\left( y \right) \right) < \frac{\varepsilon}{\left|
         R \right|}.
     \]
-    Partimos ahora $R$ en subrectángulos compactos $I_k$ suficientemente pequeños 
-    como para que cada uno de ellos esté contenido en una bola de radio 
+    Partimos ahora $R$ en subrectángulos compactos $I_k$ suficientemente pequeños
+    como para que cada uno de ellos esté contenido en una bola de radio
     $\frac{\delta}{2}$. Entonces, $f\left( I_k \right) \subset J_k$, siendo
-    $J_k$ un intervalo compacto de longitud menor o igual a 
-    $\frac{\varepsilon}{\left| R \right|}$. Además, $\graf \left( f \right) 
+    $J_k$ un intervalo compacto de longitud menor o igual a
+    $\frac{\varepsilon}{\left| R \right|}$. Además, $\graf \left( f \right)
     \subset \bigcup_k I_k \times J_k $. Finalmente,
     \[
         \sum_k \vol \left( I_k \times J_k \right) = \sum_k \vol \left( I_k \right)
         \cdot \vol \left( J_K \right) \leq \sum_k \vol \left( I_k \right) \cdot
         \frac{\varepsilon}{\left| R \right|} = \varepsilon.
-    \]    
+    \]
 \end{proof}
 \begin{col*}
     Si $D \subset \real ^{n-1}$ es compacto y $f\colon D \to \real$ contínua,
@@ -443,9 +443,9 @@
     el producto cartesiano de conjuntos numerables, es a su vez numerable. Así pues,
     $D$ es la unión numerable de conjuntos compactos, sean estos $K_i$. Entonces,
     $\graf \left( f \right) \subset \bigcup_{i\in \n} \graf \left( f_{|K_i} \right)$.
-    Finalmente, por el corolario anterior y la proposición \ref{prop_2_2_3}, 
+    Finalmente, por el corolario anterior y la proposición \ref{prop_2_2_3},
     $\graf \left( f \right) $ tiene medida nula.
-    
+
 \end{proof}
 \begin{defi}
     Diremos que un \textit{cuadrado} es un rectángulo cuyos lados tienen la misma
@@ -486,14 +486,14 @@
 
 \section{El Teorema de Lebesgue}
 \begin{defi}
-    Sean $X$ un espacio métrico y $f\colon X \to \real$. Llamamos 
+    Sean $X$ un espacio métrico y $f\colon X \to \real$. Llamamos
     \textit{oscilación} de $f$ sobre $E \subset X$ a
     \[
-        \omega\left( f, E \right) := \sup_{x, y \in E} \left| f\left( x\right) - 
+        \omega\left( f, E \right) := \sup_{x, y \in E} \left| f\left( x\right) -
         f\left( y\right)\right|.
     \]
-    También se llama a este valor diámetro de $f\left( E\right) \in \left[ 
-    0, +\infty \right]$. $\omega\left( f, E \right)$ es zero si y solo si $f_{|E}$ es 
+    También se llama a este valor diámetro de $f\left( E\right) \in \left[
+    0, +\infty \right]$. $\omega\left( f, E \right)$ es zero si y solo si $f_{|E}$ es
     constante y $+\infty$ si y solo si $f_{|E}$ no es acotada.
 \end{defi}
 \begin{obs}
@@ -507,13 +507,13 @@
 \begin{defi}
     Sean $f\colon X \to \real$, $a\in X$. Llamamos oscilación de $f$ en $a$ a
     \[
-        \omega\left( f, a\right) := \lim_{r\to 0} \omega\left( f, B\left( a, r 
+        \omega\left( f, a\right) := \lim_{r\to 0} \omega\left( f, B\left( a, r
         \right) \right).
     \]
 \end{defi}
 \begin{obs*}
     \[
-        \omega\left( f, a\right) = \inf_{r>0} \omega\left( f, B\left( 
+        \omega\left( f, a\right) = \inf_{r>0} \omega\left( f, B\left(
         a, r\right) \right).
     \]
 \end{obs*}
@@ -528,7 +528,7 @@
     Supongamos que $f$ es contínua en $a$. Entonces,
     \[
         \forall \varepsilon > 0, \exists \delta > 0 \; \tq \; d\left(x, a \right)
-        <\delta \implies \left| f\left(x \right) - f\left( a \right) \right| 
+        <\delta \implies \left| f\left(x \right) - f\left( a \right) \right|
         < \varepsilon.
     \]
     Sean $x, y \in B\left( x, \delta \right)$. Tenemos que
@@ -538,7 +538,7 @@
             \left| f\left(x \right) - f\left( a \right) \right| +
             \left| f\left(a \right) - f\left( y \right) \right| \leq 2\varepsilon
             \implies \\
-            \implies \omega\left( f, B\left( a, \delta \right) \right) \leq 
+            \implies \omega\left( f, B\left( a, \delta \right) \right) \leq
             2\varepsilon \implies \omega \left( f, a \right) =0.
         \end{gathered}
     \] \\
@@ -607,7 +607,7 @@
 \end{lema*}
 \begin{proof}
     Sea $\varepsilon > 0$, aplicando el criterio de Riemann, existe una partición $\Pa$ de $A \tq S \lp f, \Pa \rp - s \lp f, \Pa \rp < c\varepsilon$. \\
-    Observamos que 
+    Observamos que
     \[
         A = A_1 \cup A_2 \qquad A_1 = \bigcup_{R \in \Pa} \mathring{R}
     \]
@@ -620,7 +620,7 @@
     \end{itemize}
     Tenemos
     \begin{gather*}
-        c \sum_{R \in \Pa^\prime}\vol\left( R \right) \leq 
+        c \sum_{R \in \Pa^\prime}\vol\left( R \right) \leq
         \sum_{R \in \Pa^\prime}\left( M_R - m_R \right) \vol\left( R \right) \leq
         \sum_{R \in \Pa} \left( M_R -m_R \right)\vol \left( R \right) =\\=
         S(f, \Pa) - s(f, \Pa) < c\varepsilon \implies \sum_{R \in \Pa^\prime}
@@ -686,7 +686,7 @@
     \hyperref[lema:uno_lebesgue]{1}, existe una partición $\Pa_R$ de $R$ tal que
     $S\left( f, \Pa_R \right) - s\left( f, \Pa_R \right) < \varepsilon
     \vol \left( R \right)$.
-    
+
     Podemos refinar $\Pa$ a una partición $\Pa^\prime$ tal que todos sus
     subrectángulos, est\'en dentro de los subrectángulos de $\Pa_R$ (por el lema
     \hyperref[lema:teo_lebesgue]{teórico})
@@ -696,12 +696,12 @@
         \vol \left( R^\prime \right) + \sum_{R^\prime \in R_2}
         \left( M_{R^\prime} - m_{R^\prime}\right) \vol\left( R^\prime \right)
         < \\ < \left( M_A - m_A \right)\varepsilon + \sum_{R^\prime \in R_2}
-        \varepsilon \vol\left( R^\prime \right) = \varepsilon \left( 
-        \left( M_A - m_A \right) + \vol \left( A \right)\right) 
+        \varepsilon \vol\left( R^\prime \right) = \varepsilon \left(
+        \left( M_A - m_A \right) + \vol \left( A \right)\right)
     \end{gather*}
     Teniendo en cuenta que
     \[
-        \sum_{R \in R_2} \sum_{R^\prime \in R} \left( M_{R^\prime} - 
+        \sum_{R \in R_2} \sum_{R^\prime \in R} \left( M_{R^\prime} -
         m_{R^\prime}\right) \vol\left( R^\prime \right) < \sum_{R \in R_2}
         \varepsilon \vol\left( R \right)
     \]
@@ -728,7 +728,7 @@
  \begin{obs}
     Sea $X$ un espacio métrico, $C \subset X \colon \fr(C) = \overline{C} \setminus \mathring{C} = \overline{C} \cap \overline{\lp X \setminus C \rp} = X \setminus \lp \inte(C) \cup \ext(C) \rp$ y $X = \inte(C) \cup \fr(C) \cup \ext(C)$.
  \end{obs}
- \begin{lema} 
+ \begin{lema}
     \begin{enumerate}[(1)]
         \item[]
         \item $\fr \lp A\cup A' \rp, \fr \lp A\cap A' \rp, \fr \lp A\setminus A' \rp \subset \fr(A)\cup\fr(A')$.
@@ -796,7 +796,7 @@
         C \text{ es admisible } \iff \left\{ \begin{array}{c}
             C \text{ es acotado } \\
             \fr \lp C \rp \text{ tiene medida nula }
-        \end{array} \right\} \iff \\ 
+        \end{array} \right\} \iff \\
             \iff \left\{ \begin{array}{c}
             C \text{ es acotado } \\
             \disc \lp \chi_C \rp \text{ tiene medida nula }
@@ -907,7 +907,7 @@
     Sea $E \subset \real^n$ mesurable Jordan, $f : E \to \real$ integrable Riemann, $h : f(E) \to \real$ continua. Entonces $h \circ f$ es integrable Riemann.
 \end{prop}
 
-\begin{proof} 
+\begin{proof}
     $\disc(h \circ f) \subset \disc(f)$ (medida nula) y teorema de Lebesgue.
 \end{proof}
 
@@ -927,7 +927,7 @@
 \begin{proof}
     Ejercicio 2. Indicación: $B \colon \left\{ \inf B_i | i\in I\right\}$ tienen las mismas fitas inferiores.
 \end{proof}
-\begin{lema}
+\begin{lema}\label{lema:2_6_1}
     Sean $R, S$ conjuntos no vacios, $f \colon R\times S \to \real$ fitada inferiormente. Entonces
     \[ \inf_{\lp x,y\rp\in R\times S} f\lp x,y\rp = \inf_{x\in R}\inf_{y\in S} f\lp x,y\rp. \]
 \end{lema}
@@ -936,7 +936,7 @@
         R\times S = \bigcup_{x\in R} \lp \left\{x\right\}\times S\rp \implies f\lp R\times S\rp = \bigcup_{x\in R} f\lp\left\{ x\right\} \times S\rp \substack{\text{Lema}\\ \implies\\ \text{anterior}} \inf f\lp R\times S \rp = \\ = \inf \bigcup_{x\in R} f\lp \left\{x\right\} \times S\rp = \inf \inf_{x\in R} f\lp \left\{x\right\} \times S\rp \implies \inf_{\lp x,y\rp \in R\times S} f\lp x,y\rp = \inf_{x\in R} \inf_{y\in S} f\lp x,y\rp.
     \end{gather*}
 \end{proof}
-\begin{lema}
+\begin{lema}\label{lema:2_6_2}
     Sean $g_j \colon R \to \real$ una familia de funciones fitadas inferiormente. Entonces,
     \[ \sum_j \inf_{x\in R} g_j\lp x\rp \leq \inf_{x\in R} \sum_j g_j\lp x\rp \]
 \end{lema}
@@ -946,17 +946,228 @@
     Como $x_0$ es arbitrario,
     \[ \sum_j \inf_{x\in R} g_j\lp x\rp \leq \inf_{x\in R} \sum_j g_j\lp x\rp. \]
 \end{proof}
-\begin{lema}
+\begin{lema}\label{lema:fubin_exp}
     Sean $A \subset \real^m$, $B \subset \real^n$ rectangulos compactos. Sea $f \colon A\times B\to\real$ fitada. Sea $\Phi \colon A\to\real \tq$
     \[ \lowint_B f\lp x,\cdot\rp\leq\Phi\lp x\rp\leq\upint_B f\lp x,\cdot\rp, \forall x\in A. \]
     Entonces,
     \[ \lowint_{A\times B} f \leq \lowint_A \Phi, \, \upint_A \Phi \leq \upint_{A\times B} f. \]
 \end{lema}
 \begin{proof}
-    Sean $P, Q$ particiones de $A, B$ respectivamente, $P\times Q$ es una partición de $A\times B$ con subrectángulos $R_i \times S_j$. Sea $|T| = \vol\lp T\rp$, entonces $|R_i\times S_j| = |R_i||S_j|$.
+    Sean $P, Q$ particiones de $A, B$ respectivamente, $P\times Q$ es una partición de $A\times B$ con subrectángulos $R_i \times S_j$. Sea $|T| = \vol\lp T\rp$, entonces $|R_i\times S_j| = |R_i||S_j|$. Ahora, tenemos que
+    \begin{gather*}
+        s\left( f, P \times Q \right) = \sum_{i,j} \abs{R_i \times S_j} \inf_{(x, y)
+        \in R_i \times S_j} f(x, y) = \sum_i \sum_j \abs{R_i} \abs{S_j} \inf_{(x, y)
+        \in R_i \times S_j} f(x, y) =\\= \sum_i \abs{R_i} \sum_j \abs{S_j} \inf_{(x, y)
+        \in R_i \times S_j} f(x, y) \stackrel{\ref{lema:2_6_1}}{=} \sum_i \abs{R_i}
+        \sum_j \abs{S_j} \inf_{x \in R_i} \inf_{y \in S_j} f(x, y) = \\ =
+        \sum_i \abs{R_i} \sum_j \inf_{x \in R_i} \abs{S_j} \inf_{y \in S_j} f(x, y)
+        \stackrel{\ref{lema:2_6_2}}{\leq} \sum_i \abs{R_i} \inf_{x \in R_i} \left(
+        \sum_j \abs{S_j} \inf_{y \in S_j} f(x, y)\right) =\\= \sum_i \abs{R_i}
+        \inf_{x \in R_i} s\left( f(x, \cdot), Q \right) \leq \sum_i \abs{R_i}
+        \inf_{x \in R_i} \lowint_B f\left( x, \cdot \right) \stackrel{\text{def } \phi}
+        {\leq} \sum_i \abs{R_i} \inf_{x \in R_i} \phi(x) =\\= s(\phi, P) \leq
+        \lowint_A \phi
+    \end{gather*}
+    Por lo tanto, $\lowint_A \phi$ es una cota superior de $s\left( f, P \times Q
+    \right)$, como $\lowint_{A \times B} f$ es la cota superior más pequeña:
+    \[
+        \lowint_{A \times B} f \leq \lowint_A \phi
+    \]
 \end{proof}
-\begin{lema}
+\begin{lema*}
     Sea $D \subset \real^{n-1}$ admisible y compacto, $\phi, \psi \colon D \to \real$ continuas, $\phi \leq \psi$. Sea
     \[ E = \left\{\lp x,y\rp \in \real^{n-1} \times \real | x\in D, \phi\lp x\rp \leq y \leq \psi\lp x\rp \right\}. \]
-    $E$ es admisible y compacto, y $\fr\lp E\rp \subset \graf\lp\phi\rp \cup \graf\lp\psi\rp\cup\lp \fr\lp D\rp\times\real\rp$.
+    $E$ es admisible y compacto, y $\fr\lp E\rp \subset \left( \graf\lp\phi\rp \cup \graf\lp\psi\rp\cup\lp \fr\lp D\rp\times\real\rp \right)$.
+\end{lema*}
+
+\begin{proof}
+    $\graf (\phi)$, $\graf(\psi)$ y $\fr(D) \times \real$ tienen medida nula, como
+    $\fr(E)$ está contenida en estos conjuntos, $\fr(E)$ tiene medida nula, por lo
+    tanto, $E$ es admisible.
+\end{proof}
+
+\begin{teo}[de Fubini]
+    Sean $A \subseteq \real^m$, $B \subseteq \real^n$ rectángulos compactos, sea
+    $f \colon A \times B \to \real$ integrable Riemman. Sea $\phi \colon A \to \real$
+    tal que
+    \[
+        \lowint_B f(x, \cdot) \leq \phi(x) \leq \upint_B f(x, \cdot) \qquad
+        \forall x \in A
+    \]
+    Entonces, $\phi$ es integrable Riemman y
+    \[
+        \int_{A \times B} f = \int_A \phi
+    \]
+    Análogamente, si tenemos $\psi \colon B \to \real$ tal que $\lowint_A f(\cdot, y)
+    \leq \psi(y) \leq \upint_A f(\cdot, y)$ ($\forall y \in B$), entonces $\psi$ es
+    integrable Riemman y $\int_{A \times B} f = \int_B \psi$
+\end{teo}
+
+\begin{proof}
+    Por el lema \ref{lema:fubin_exp}
+    \begin{gather*}
+        \lowint_{A \times B} f \leq \lowint_A \phi \leq \upint_A \phi \leq
+        \upint_{A \times B} f \stackrel{f \text{ integrable Riemman}}{\implies}
+        \lowint_{A \times B} f = \lowint_A \phi = \upint_A \phi = \upint_{A \times B} f
+        \implies \\ \implies \phi \text{ es integrable Riemman y } \int_{A \times B} f
+        = \int_A \phi
+    \end{gather*}
+\end{proof}
+\begin{obs*}
+    A partir de ahora, usaremos la siguiente notación:
+    \[
+        \int_A f = \int_A f(x) \dif^n x = \int_A \dif^n x f(x)
+    \]
+\end{obs*}
+
+\begin{obs}
+    Si $f \colon A \times B \to \real$ es integrable Riemman, el conjunto
+    \[
+        \setb{x \in A \vert f(x, \cdot) \text{ \textbf{NO} es integrable Riemman}}
+    \]
+    tiene medida nula
+\end{obs}
+
+\begin{proof}
+    Definimos $\Delta(x) := \upint_B f(x, \cdot) - \lowint_B f(x, \cdot) \geq 0$. Por
+    el teorema de Fubini
+    \[
+        \int_A \Delta = \int_{A \times B} f - \int_{A \times B} f = 0
+        \stackrel{\Delta \geq 0}{\implies} \Delta \substack{\text{Casi para} \\ = \\
+        \text{todos}} 0 \implies \text{El conjunto tiene medida nula}
+    \]
+\end{proof}
+
+\begin{obs}
+    Cuando $\forall x \in A$ $f(x, \cdot)$ es integrable, tenemos que
+    \[
+        \int_{A \times B} \dif^m x \dif^n y f(x, y) = \int_A \dif^m x \int_B \dif^n y
+        f(x, y)
+    \]
+\end{obs}
+
+\begin{obs}
+	Más simplemente, si $f$ es continua, existen y son iguales los siguientes números
+	\[
+		\int_{A \times B} \dif x \dif y f(x, y) = \int_A \dif x \left(\int_B
+		\dif y f(x, y) \right) = \int_B \dif y \left( \int_A \dif x f(x, y) \right)
+	\]
+\end{obs}
+
+\begin{col}
+    Si $f$ es continua, y $A = I_1 \times \cdots \times I_n$, podemos escribir
+    \[
+        \int_A f = \int_{I_1} \dif x_1 \int_{I_2} \dif x_2 \cdots \int_{I_n} \dif x_n
+        f\left( x_1, \dots , x_n \right)
+    \]
+\end{col}
+
+\begin{example*}
+    Sea $A = [0,1] \times [0,1]$ y $D = \left( [0,1] \cap \q \right) \times \{0\}$ y
+    consideramos $f = X_D$, es decir
+    \[
+        f(x, y) =
+        \begin{cases}
+            1 \quad \text{si } x \in D \\ 0 \quad \text{en otro caso}
+        \end{cases}
+    \]
+
+    Vemos que 
+    \[
+        \int_A f = \int^1_0 \dif x \underbrace{\int^1_0 \dif y f(x, y)}_{0} = 0
+    \]
+    Sin embargo,
+    \[
+        \int^1_0 \dif y \int^1_0 \dif x f(x, y) =
+        \begin{cases}
+            0 \quad \text{si } y \neq 0 \\
+            \not\exists \quad \text{si } y = 0
+        \end{cases}
+    \]
+    Es decir, esta fórmula no sirve, en lugar de esta fórmula, hemos de usar
+    \[
+        \int_A f = \int^1_0 \dif y \lowint^1_0 \dif x f(x, y) = 0 \qquad
+        \int_A f = \int^1_0 \dif y \upint^1_0 \dif x f(x, y) = 0
+    \]
+\end{example*}
+
+\begin{obs}
+    Hay funciones $f \colon A \times B \to \real$ acotadas y no integrables Riemman,
+    tales que
+    \[
+        \int_A \dif x \int_b \dif y f(x, y) = \int_B \dif y \int_A \dif x f(x, y)
+    \]
+\end{obs}
+
+El teorema de Fubini se puede utilizar para integrar sobre regiones más generales que
+los rectángulos.
+
+\begin{lema}
+    Sea $X$ un espacio m\'etrico y $f \colon X \to \real$ continua. Los conjuntos
+    \begin{gather*}
+        W^+ = \setb{(x, y) \in X \times \real \vert y > f(x)} \subset X \times \real \\
+        W^- = \setb{(x, y) \in X \times \real \vert y < f(x)} \subset X \times \real
+    \end{gather*}
+    son abiertos, y los conjuntos
+    \begin{gather*}
+        E^+ = \setb{(x, y) \in X \times \real \vert y \geq f(x)} \\
+        E^- = \setb{(x, y) \in X \times \real \vert y \leq f(x)}
+    \end{gather*}
+    son cerrados.
 \end{lema}
+\begin{lema}
+    Sea $X$ un espacio m\'etrico, $D \subset X$ un subconjuto, y $f \colon D \to \real$
+    continua. Consideramos
+    \[
+        E = \setb{(x, y) \in X \times \real \vert x \in D, y \geq f(x)}
+    \]
+    denomidano epígraf de la función. Entonces
+    \begin{enumerate}[i)]
+        \item Si $D \subset X$ es cerrado, $E \subset X \times \real$ es cerrado.
+        \item $\fr(E) \subset \graf(f) \cup \left( \fr(D) \times \real \right)$.
+    \end{enumerate}
+\end{lema}
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item[]
+        \item por el lema anterior.
+        \item ejercicio
+    \end{enumerate}
+\end{proof}
+
+\begin{lema}
+    Sean $D \subset \real^{n-1}$ admisible y compacto y $\phi, \psi \colon D \to \real$
+    continuas con $\phi \leq \psi$. Consideramos
+    \[
+        E = \setb{(x, y) \in \real^{n-1} \times \real \vert x \in D,
+        \phi(x) \leq y \leq \psi(x)} \subset \real^n
+    \]
+    $E$ es compacto y admisible
+\end{lema}
+
+\begin{proof}
+    Veremos que $E$ es cerrado, acotado y $\fr(E)$ tiene medida nula. $E = E^+_\phi
+    \cap E^-_\psi$ por lo tanto, es cerrado (intersección de cerrados). $D$ está
+    acotado y $y$ está acotada $\forall x$, por lo tanto, $E$ es acotado. y $\fr(E)
+    \subset \graf(\phi) \cup \graf(\psi) \cup \left( \fr(D) \times \real \right)$ que
+    tienen todos medida nula.
+\end{proof}
+
+\begin{prop}
+    Bajo las hipótesis anteriores, si $f \colon E \to \real$ es continua
+    \[
+        \int_A f = \int_D \dif x \int^{\psi(x)}_{\phi(x)} \dif y f(x, y)
+    \]
+\end{prop}
+\begin{proof}
+    Tomamos rectágulos compactos $R \supset D$ en $\real^{n-1}$ y $S \supset [\inf\phi,
+    \sup\psi]$ en $\real$, de forma que $E \subset R \times S$.
+
+    Para $x \in D$ sea $S_x = [\phi(x), \psi(x)]$, entonces $X_E(x, y) =
+    X_D(x)X_{S_x}(y)$
+    \[
+        \int_E f = \int_{R \times S} f X_E \stackrel{T. Fubini}{=}
+        \int_R \dif x \int_S \dif y f(x, y) X_D(x) X_{S_x}(y)
+        %TODO faltan cosas por hacer
+    \]<++>
+\end{proof}<++>
