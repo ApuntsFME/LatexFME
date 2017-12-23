@@ -1,0 +1,149 @@
+\chapter{INTEGRALES DE LÍNEA Y DE SUPERFICIE}
+
+\section{Longitud de una curva}
+
+\begin{defi}
+    Denominamos camino o curva parametrizada a una aplicación continua $\gamma \colon I \to \real^n$, donde
+    $I \subset \real$ es un intervalo no degenerado.
+
+    La imagen $C := \gamma(I) \equiv \im(\gamma) \subset \real^n$ la llamamos (vulgarmente) curva, aunque no
+    siempre lo es.
+\end{defi}
+
+\begin{obs*}
+    De aquí e adelante, a no ser que se especifique lo contrario, supondremos que $I$ es un intervalo compato
+\end{obs*}
+
+\begin{defi}
+    Sea $\gamma \colon [a, b] \to \real$ y  sea $\Pa = \setb{t_0, \dots, t_n}$ una partición de $[a, b]$.
+    Entonces, los $\gamma(t_i)$ son los v\'ertices de una poligonal, que denominamos poligonal de longitud y cuya logitud es
+    \[
+        L(\gamma, \Pa) = \sum^N_{i=1} \norm{\gamma(t_i) - \gamma(t_{i-1})}
+    \]
+\end{defi}
+\begin{obs*}
+    Refinar la partición aumenta la logitud. (Demostración por la desigualdad triangular)
+\end{obs*}
+
+\begin{defi}
+    Sea $\gamma \colon I \to \real^n$ una curva. La longitud de $\gamma$ es
+    \[
+        L(\gamma) = \sup_{\Pa \text{ partición de } I} L(\gamma, \Pa) \in [0, \infty]
+    \]
+\end{defi}
+
+\begin{obs*}
+    Si $L(\gamma) = 0$ entonces $\gamma$ es constante.
+\end{obs*}
+
+\begin{defi}
+    Diremos que un camino es rectificable, cuando su logitud es finita, es decir, cuando
+    \[
+        L(\gamma) < +\infty
+    \]
+\end{defi}
+
+\begin{prop}
+    Sea $\gamma \colon I \to \real^n$ una curva lipschiciana, entonces $\gamma$ es rectificable.
+\end{prop}
+
+\begin{proof}
+    Como $\gamma$ es lipschiciana, entonces $\exists c \geq 0$ tal que
+    \[
+        \norm{\gamma(t) - \gamma(s)} \leq c \abs{t - s} \qquad \forall t,s \in I
+    \]
+    Tomamos ahora, una partición $\Pa$ de $I$, entonces, se cumple que
+    \begin{gather*}
+        L(\gamma, \Pa) = \sum_i \norm{\gamma(t_i) - \gamma(t_{i-1})} \leq \sum_i c \abs{t_i - t_{i-1}} = \\
+        = c \sum_i \left( t_i - t_{i-1} \right) \implies L(\gamma, \Pa) \leq c (b - a) \implies
+        L(\gamma) \leq c(b-a) < +\infty
+    \end{gather*}
+    (Suponiendo que $I = [a, b]$).
+\end{proof}
+
+\begin{obs*}
+    Hay caminos (contiuos) definidos en un intervalo compacto con longitud infinita.
+\end{obs*}
+
+\begin{prop}
+    Sea $\gamma \colon [a, b] \to \real^n$ un camino y sea $a < c < b$, entonces
+    \[
+        L(\gamma) = L\left( \gamma\vert_{[a,c]} \right) + L\left( \gamma\vert_{[c,b]} \right)
+    \]
+\end{prop}
+
+\begin{proof}
+    Consideramos $\Pa$, una partición cualquiera de $[a,b]$, ahora definimos $\Pa^\prime = \Pa \cup \{c\}$,
+    $\Pa_1 = \Pa^\prime \cap [a,c]$ partición de $[a,c]$ y $\Pa_2 = \Pa^\prime \cap [c, b]$ partición de $[c, b]$.
+    Ahora, se tiene que
+    \[
+        L(\gamma, \Pa) \leq L(\gamma, \Pa^\prime) = \L\left( \gamma\vert_{[a,c]}, \Pa_1 \right) +
+        L\left( \gamma\vert_{[c,b]}, \Pa_2 \right) \leq L\left( \gamma\vert_{[a,c]} \right) +
+        L\left( \gamma\vert_{[c,b]} \right)
+    \]
+    Por lo tanto, $L(\gamma) \leq L\left( \gamma\vert_{[a,c]} \right) + L \left( \gamma\vert_{[c,b]} \right)$.
+
+    Sea $\Pa_1$ una partició de $[a, c]$ y $\Pa_2$ una partición de $[c, b]$. Definimos $\Pa = \Pa_1 \cup \Pa_2$,
+    entonces
+    \[
+        L\left( \gamma\vert_{[a,c]}, \Pa_1 \right) + L\left( \gamma\vert_{[c,b]}, \Pa_2 \right) = L(\gamma, \Pa) \leq L(\gamma)
+    \]
+    De dode concluimmos que
+    \[
+        L(\gamma) = L\left( \gamma\vert_{[a,c]} \right) + L\left( \gamma\vert_{[c,b]} \right)
+    \]
+\end{proof}
+
+\begin{prop}[continuidad de la longitud]
+    Sea $\gamma \colon [a,b] \to \real^n$ un camino rectificable, para cada $a \leq t \leq b$ definimos
+    \[
+        l(t) = L\left( \gamma\vert_{[a,c]} \right) \qquad (l(a) := 0)
+    \]
+    Entonces, $l$ es creciente y continua. Si $\gamma$ no es constante en ningún subintervalo de $[a,b]$,
+    entonces, $l$ es estrictamente creciente
+\end{prop}
+
+\begin{defi}
+    Sean $\sigma \colon [a, b] \to \real^n$ un camino y $\varphi \colon [c, d] \to [a, b]$ un homeomorfismo. Entonces,
+    la composición $\tau = \sigma \circ \varphi \colon [c,d] \to \real^n$ es un camino, y diremos que $\sigma$ y $\tau$
+    son caminos equivalentes.
+
+    Tambi\'en diremos que $\tau$ es el camino parametrizado de $\sigma$ para la reparametrización $\varphi$.
+\end{defi}
+
+\begin{obs*}
+    $\sigma$ y $\tau$ recorren la misma curva, $\im(\sigma) = \im(\tau) = \im(\sigma \circ \varphi)$
+\end{obs*}
+
+\begin{obs}
+    Si $\varphi$ es creciente, $\sigma$ y $\tau$ tienen la misma orientación, si $\varphi$ es decreciente,
+    $\sigma$ y $\tau$ tienen orientacions opuestas.
+\end{obs}
+
+\begin{prop}
+    Si $\sigma$ y $\tau$ son dos caminos equivalentes, tienen la misma longitud
+    \[
+        L(\sigma) = L(\tau)
+    \]
+\end{prop}
+
+\begin{proof}
+    Consideramos $\varphi \colon [c, d] \to [a, b]$ homeomorfismo tal que $\tau = \sigma \circ \varphi$
+    (existe por la definición de caminos equivalentes). Tomamos ahora $Q = \setb{t_0, \dots, t_n}$, una partición de $[c, d]$,
+    entonces, $\varphi(Q)$ es una partición de $[a,b]$, ahora, se tiene que
+    \begin{gather*}
+        L(\tau, Q) \stackrel{\text{def}}{=} \sum_i \norm{(\sigma \circ \varphi) \left( t_i \right) - (\sigma \circ \varphi)\left( t_{i-1} \right)}
+        = \sum_i \norm{\sigma\left( \varphi(t_i) \right) - \sigma\left( \varphi\left( t_{i-1} \right) \right)} = \\ =
+        L(\sigma, \varphi(Q)) \leq L(\sigma) \stackrel{\text{supremo}}{\implies} L(\sigma \circ \varphi) \leq L(\sigma)
+    \end{gather*}
+    Cambiando $\varphi$ por $\inv{\varphi}$, obtenemos $L(\sigma) \leq L(\sigma \circ \varphi)$
+\end{proof}
+
+\begin{prop}
+    Si $\sigma \colon [a, b] \to \real^n$ y $\tau \colon [c,d] \to \real^n$ son caminos inyectivos con la misma imagen $C$, entonces, son equivalentes.
+\end{prop}
+
+\begin{proof}
+    Consideramos $\sigma \colon [a,b] \to C$ continua (pq $\sigma$ continua en $\real^n$). Ahora, $[a, b]$ compacto $\implies$ C compacto
+    (la imagen de un intervalo cerrado es cerrado) $\implies \sigma$ es un homeomorfismo y $\varphi(t) := \inv{\sigma}\left( \tau(t) \right)$ 
+\end{proof}<++>
