@@ -145,5 +145,450 @@
 
 \begin{proof}
     Consideramos $\sigma \colon [a,b] \to C$ continua (pq $\sigma$ continua en $\real^n$). Ahora, $[a, b]$ compacto $\implies$ C compacto
-    (la imagen de un intervalo cerrado es cerrado) $\implies \sigma$ es un homeomorfismo y $\varphi(t) := \inv{\sigma}\left( \tau(t) \right)$ 
-\end{proof}<++>
+    (la imagen de un intervalo cerrado es cerrado) $\implies \sigma$ es un homeomorfismo y $\varphi(t) := \inv{\sigma}\left( \tau(t) \right)$
+\end{proof}
+
+\begin{obs}
+    Los resultados anteriores sugieren que la longitud de una curva es una propiedad de $C$ más que una propiedad de $\sigma$, es decir,
+    es una propiedad más analítica que geom\'etrica. Si $C \subset \real^n$ es una ``curva'' parametrizable por un camino inyectivo,
+    podemos definir la longitud de $C$ como $L(C) = L(\sigma)$ donde $\sigma$ es cualquier parametrización inyectiva de $C$.
+\end{obs}
+
+\subsection*{Integración de funciones vectoriales}
+
+\begin{defi*}
+    Sea $E \subset \real^m$ un conjunto medible Jordan y $\vec{f} \colon E \to \real^n$, tenemos que
+    \[
+        \vec{f} = \left( f_1,\dots, f_n \right)
+    \]
+    Si todas las $f_i$ son integrables, definimos
+    \[
+        \int_E \vec{f} = \left( \int_E f_1 , \dots, \int_E f_n \right) \in \real^n
+    \]
+\end{defi*}
+
+\begin{prop*}[Regla de Barrow]\label{prop:regla_barrow}
+    Sea $E = [a, b]$ un intervalo y $\vec{f} \colon E \to \real^n$ una función. Si $\vec{f}$ tiene una primitiva $\vec{F}$
+    $\left( \vec{F}^\prime = \vec{f}\right)$, entonces
+    \[
+        \int^b_a \vec{f} = \vec{F}(b) - \vec{F}(a)
+    \]
+\end{prop*}
+
+\begin{prop*}
+    Sea $\vec{f} \colon E \to \real^n$ una función cualquiera, si $\vec{f}$ es integrable, $\norm{\vec{f}}$ tambi\'en y
+    \[
+        \norm{\int_E \vec{f}} \leq \int_E \norm{\vec{f}}
+    \]
+    (considerando la norma euclideana)
+\end{prop*}
+
+\begin{proof}
+    Tenemos que $\norm{\vec{f}} = \left( f^2_1 + \cdots + f^2_n \right)^{\sfrac{1}{2}}$, que es integrable por ser composición de
+    integrables con continuidad.
+
+    Sea ahora $\vec{a} = \int_E \vec{f}$, por la desigualdad de Cauchy-Bunyakovsky-Schwarz, tenemos que
+    \begin{gather*}
+        \vec{a} \cdot \vec{f}(\cdot) \leq \norm{\vec{a}} \norm{\vec{f}(\cdot)} \implies
+        \norm{\vec{a}} \int_E \norm{\vec{f}(t)} \dif t \geq \int_E \left( \vec{a} \cdot \vec{f}(t) \right) \dif t = \\ =
+        \int_E \sum^n_{i=1} \left(a_if_i(t) \right) \dif t = \sum_i a_i \overbrace{\int_E f_i(t) \dif t}^{a_i} = \norm{\vec{a}}^2
+    \end{gather*}
+    Si $\norm{\vec{a}} \neq 0$, teemos que
+    \[
+        \norm{\vec{a}} \leq \int_E \norm{\vec{f}(t)} \dif t \implies
+        \norm{\int_E \vec{f}} \leq \int_E \norm{\vec{f}}
+    \]
+\end{proof}
+
+
+\begin{prop}
+    Si $\gamma \colon I \to \real^n$ es de clase $\C^1$, entonces es rectificable y su longitud es
+    \[
+        L(\gamma) = \int_I \norm{\gamma^\prime}
+    \]
+	(Considerando la norma euclideana)
+\end{prop}
+
+\begin{proof}
+	Consideramos $\Pa$ una partición de $I$, por la regla de Barrow
+	\[
+        \gamma(t_i) - \gamma\left( t_{i-1} \right) = \int^{t_i}_{t_{i-1}} \gamma^\prime(t) \dif t \implies
+        \norm{\gamma\left( t_i \right) - \gamma\left( t_{i-1} \right)} = \norm{\int^{t_i}_{t_{i-1}}} \leq \int^{t_i}_{t_{i-1}} \norm{\gamma^\prime}
+	\]
+    Si sumamos
+    \[
+        L(\gamma, \Pa) \leq \int_I \norm{\gamma^\prime} \stackrel{\text{supremo}}{\implies} L(\gamma) \leq \int_I \norm{\gamma^\prime}
+    \]
+
+    Por otro lado, $\gamma^\prime$ continua en un compacto $\implies \gamma$ uniformemente continue. Sea $\varepsilon > 0$, $\exists \delta > 0$
+    tal que $\abs{s - t} < \delta \implies \norm{\gamma^\prime(s) - \gamma^\prime(t)} < \varepsilon$ para todo $s,t \in I$. Si $\Pa = \setb{t_0, \dots, t_n}$
+    es una partición de $I$ con subintervalos de longitud $< s$, entnoces
+    \[
+        \int^{t_i}_{t_{i-1}} \norm{\gamma^\prime} \leq \overbrace{\cdots}^{\text{dem. no en clase}} \leq \norm{\gamma\left( t_i \right) - \gamma\left( t_{i-1} \right)}
+        + 2 \varepsilon\left( t_i - t_{i-1} \right)
+    \]
+    Si $I = [a, b]$ y sumamos
+    \[
+        \int_I \norm{\gamma^\prime} \leq L(\gamma, \Pa) + 2\varepsilon(b-a) \leq L(\gamma) + \overbrace{2\varepsilon(b-a)}^{\text{tan pequeño como queramos}}
+    \]
+    Por tanto $\int_I \norm{\gamma^\prime} \leq L(\gamma)$, pero ya hemos visto qeu $\int_I \norm{\gamma^\prime} \geq L(\gamma)$ es decir, que
+    $\int_I \norm{\gamma^\prime} = L(\gamma)$.
+\end{proof}
+
+\begin{obs}
+    La fórmula anterior es igualmente válida si $\gamma$ es $\C^1$ a trozos.
+\end{obs}
+
+\begin{defi}
+    Sea $\gamma \colon I \to \real^n$ un camino definido en un intervalo no compacto. Podemos definir la longitud de $\gamma$, $L(\gamma)$,
+    como el supremo de las longitudes $L(\gamma\vert_{k})$, donde $k \subset I$ es un subintervalo compacto de $I$.
+
+    Cuando $\gamma$ es de clase $\C^1$ definida a trozos, la logitud viene dada por $\int_I \norm{\gamma^\prime}$ (tomada como integral impropia
+    si es necesario)
+\end{defi}
+
+
+\begin{defi} \label{defi:observaciones_curvas}
+    Sea $C \subset \real^n$ una curva regular de clase $\C^1$. Si $C$ es la imagen de una parametrización inyectiva $\gamma \colon II \to \real^n$,
+    definiremos la longitud de $C$ como la longitud de $\gamma$.
+
+    Si la imagen de $\gamma$ es todo $C$ salvo en un número finito de puntos, tambi\'en diremos que la longitud de $C$ es la longitud de $\gamma$.
+
+    Si $C$ es la unión disjunta de un número finito de curvas como las precedentes, definiremos la longitud de $C$ como la suma de las longitudes
+    de estas.
+\end{defi}
+
+\begin{example}
+    Consideramos $C \colon \left( x - x_0 \right)^2 + \left( y - y_0 \right)^2 = R^2$ y
+    \[
+        \begin{aligned}
+            \gamma \colon [0,2\pi] &\to C \subset \real^2 \\
+            t &\mapsto \gamma(t) = \left( x_0 + R\cos(t), y_0 + R\sin(t) \right)
+        \end{aligned}
+    \]
+    entonces, tenemos que
+    \[
+        \gamma^\prime(t) = \begin{pmatrix} -R\sin(t) \\ R \cos(t) \end{pmatrix} \qquad
+        \norm{\gamma^\prime(t)} = R
+    \]
+    Y, por último
+    \[
+        L(C) = L(\gamma) = \int^{2\pi}_0 R \dif t = 2\pi R
+    \]
+\end{example}
+
+\section{Integrales de línea de funciones escalares}
+
+\begin{defi}
+    Sea $\sigma \colon I \to \real^n$ un camino de clase $\C^1$ a trozos, $C = \sigma(I)$ y $f \colon C \to \real$. Definimos
+    la integral de linea de $f$ a lo largo de $\sigma$ como
+    \[
+        \int_\sigma f \dif l := \int_I f\left( \sigma(s) \right) \norm{\sigma^\prime(s)} \dif s
+    \]
+
+    La integral existe, por ejemplo, si $I$ es compacto y $f$ continua
+\end{defi}
+
+\begin{obs*}
+    Cuando $f$ es 1, recuperamos la lonfitud $\int_\sigma \dif l = L(\sigma)$
+\end{obs*}
+
+\begin{prop}[Invariancia bajo reparametrizaciones]
+    Si tenemos $\sigma \colon I \to C$ y $\tau \colon J \to C$ dos curvas equivalentes, y consideramos una función $f$
+    \[
+        \int_\tau f \dif l = \int_\sigma f \dif l
+    \]
+\end{prop}
+
+\begin{proof}
+    Considermaos $\varphi \colon I \to J$ un difeomorfismo de clase $\C^1$ tal que $\tau = \sigma \circ \varphi$
+    \begin{gather*}
+        \int_\tau f \dif l = \int_I f\left( \tau(t) \right) \norm{\tau^\prime(t)} \dif t \stackrel{TCV}{=}
+        \int_I f( \underbrace{\tau\left( \varphi(s) \right)}_{\sigma(s)} ) \overbrace{\norm{\tau^\prime\left( \varphi(s) \right)}
+        \abs{\varphi^\prime(s)}}^{\norm{(\tau \circ \varphi)^\prime (s)} = \norm{\sigma^\prime (s)}} = \\
+        = \int_I f\left( \sigma\left( s \right) \right) \norm{\sigma^\prime(s)} \dif s = \int_\sigma f \dif l
+    \end{gather*}
+\end{proof}
+
+\begin{defi}
+    Sea $C \subset \real^n$ una curva regular. Si $C$ es la imagen de una parametrización inyectiva $\sigma \colon I \to \real^n$,
+    llamamos integral de linea de $f$ a lo largo de $C$ a
+    \[
+        \int_C f \dif l := \int_\sigma f \dif l
+    \]
+\end{defi}
+
+\begin{obs*}
+    Está bien definido y no depende de la parametrización tomada.
+\end{obs*}
+\begin{obs*}
+    Se pueden hacer las mismas consideraciones que en \ref{defi:observaciones_curvas} 
+\end{obs*}
+
+\section{Integrales de línea de campos vectoriales}
+
+\begin{defi}
+    Sean $I \subset \real$ un intervalo, $\sigma \colon I \to \real^n$ un camino de clase $\C^1$ a trozos con $C = \sigma(I)$, por último,
+    sea $\vec{f} \colon C \to \real^n$ un campo vectorial definido en un conjunto abierto $W \supset C$. Definimos la integral de línea o de circulación
+    de $\vec{f}$ a lo largo de $\sigma$ como
+    \[
+        \int_\sigma \vec{f} \dif \vec{l} = \int_I \vec{f} \left( \sigma(s) \right) \cdot \sigma^\prime(s) \dif s
+    \]
+    (donde $\cdot$ marca el producto escalar euclideano en $\real^n$)
+\end{defi}
+
+\begin{prop}[invariancia bajo reparametrizaciones]
+    Sea $\sigma  \colon I \to \real^n$ un camino, sea $\varphi \colon I \to J$ un difeomorfismo de clase $\C^1$. Consideramos
+    el camino reparametrizado $\tau = \sigma \circ \phi^{-1}$. Entonces, si $\vec{f}$ es una función cualquiera
+    \[
+        \int_\tau \vec{f} \dif \vec{l} = \pm \int_\sigma \vec{f} \dif \vec{l}
+    \]
+    donde el signo depende del signo de $\varphi^\prime$
+\end{prop}
+
+\begin{proof}
+    Ejercicio
+\end{proof}
+
+\begin{defi}
+    Sea $C \subset \real^n$ una curva regular parametrizada por una parametrización regular inyectiva. Una orientación de $C$ es una clase
+    de equivalencia de parametrizaciones de $C$, donde se considera que dos parametrizaciones son equivalentes cuando la reparametrización
+    tiene una derivada positiva. Así mismo, diremos que una curva está orientada cuando se ha tomado una orientación.
+\end{defi}
+
+\begin{obs}
+    Suponemos $C$ orientada por una parametrización regular inyectiva $\sigma \colon I \to \real^n$ ($C = \sigma(I)$). Los vectores tangentes
+    $\sigma^\prime(s) \in T_{\sigma(s)}C$ definen orientaciones de los respectivos espacios tangentes. Esta orientación no cambia si se usa
+    un camino reparametrizado $\tau = \sigma \circ \inv{\varphi}$ con $\varphi^\prime > 0$.
+\end{obs}
+
+\begin{obs}
+    Una curva regular compleja puede requerir 2 parametrizaciones regulares para recubrirla completamente. En tal caso, para orientar $C$, se
+    requiere que, en la imagen común de las 2 parametrizaciones, las orientaciones coincidan.
+\end{obs}
+\begin{example*}
+    Una curva conexa tiene exactamente dos orientaciones.
+\end{example*}
+\begin{example*}
+    Una curva no conexa, se orienta orientando cada componente conexa.
+\end{example*}
+
+\begin{defi}
+    Sea $C \subset \real^n$ una curva orientada por una parametrización regular inyectiva $\sigma \colon I \to \real^n$. Sea $\vec{f} \colon C \to \real^n$.
+    Definimos la integral de línea o circulación de $\vec{f}$ a lo largo de $C$
+    \[
+        \int_C \vec{f} \dif \vec{l} = \int_\sigma \vec{f} \dif \vec{l}
+    \]
+\end{defi}
+\begin{obs*}
+    Si $C$ es una curva regular orientada y $\sigma$ la parametriza toda excepto un número finito de puntos, tambi\'en escribiremos
+    \[
+        \int_C \vec{f} \dif \vec{l} = \int_\sigma \vec{f} \dif \vec{l}
+    \]
+\end{obs*}
+\begin{obs*}
+    Si $C$ es unión disjunta de un número finito de curvas como la anterior, igualmente calculamos la circulación al largo de cad una y sumamos.
+\end{obs*}
+
+\begin{obs}
+    Si $C^\circ$ es la curva $C$ con orientaciñon opuesta, entonces
+    \[
+        \int_{C^\circ} \vec{f} \dif \vec{l} = - \int_C \vec{f} \dif \vec{l}
+    \]
+\end{obs}
+
+\begin{obs}
+    Es habitual usar la notación
+    \[
+        \int_C \vec{f} \dif \vec{l} =  \int_C \left( f_1 \dif x_1 + \cdots + f_N \dif X_N \right)
+    \]
+    Si $C$ es cerrada (definición más adelante), usaremos
+    \[
+        \oint \vec{f} \dif \vec{l} = \int_C \vec{f} \dif \vec{l}
+    \]
+\end{obs}
+
+\begin{prop}
+    Sea $C \subset \real^n$ una curva regular orientada, si $p \in C$. Respecto al producto escalar estándar de $\real^n$, el
+    espacio tangente $T_pC$ tiene un único vector tangente \emph{unitario} $\vec{t}(p)$ perteneciente a la orientación de $C$. Es
+    el vector tangente unitario a $C$ en $p$.
+
+    Si $\sigma \colon I \to \real^n$ es una parametrización regular inyectiva correspondiente a la orientación de $C$, entonces
+    \[
+        \vec{t}\left( \sigma(s) \right) = \frac{\sigma^\prime(s)}{\norm{\sigma^\prime(s)}} \in T_{\sigma(s)}C
+    \]
+\end{prop}
+\begin{obs*}
+    Orientar $C$ equivale a hacer una elección continua de un vector tangente unitario sobre $C$.
+\end{obs*}
+
+\begin{defi}
+    Sea $C \subset \real^n$ una curva y $\vec{f} \colon C \to \real^n$ un campo vectorial. Llamamos componente tangencial de $\vec{f}$ a
+    la función
+    \[
+        f_t = \vec{f} \cdot \vec{t}
+    \]
+    ($f_t \colon C \to \real$).
+\end{defi}
+
+\begin{obs*}
+    Si $E$ es un e.v. euclideano y $F \subseteq E$, $E = F \oplus F^\perp$. Si $F = <u_1, \dots, u_r>$, $\Pi_F(x) = <x,u_1>u_1 + \cdots + <x,u_r>u_r$, lo
+    que quiere decir que
+    \[
+        T_p\real^n = T_pC \oplus T_pC^\perp \quad \text{y} \quad \underbrace{\left< \vec{f}(p), \vec{t}(p) \right>}_{f_t(p)}\vec{t}(p)
+    \]
+\end{obs*}
+
+\begin{prop}
+    Bajo las condiciones anteriores,
+    \[
+        \int_C \vec{f} \dif \vec{l} = \int_C f_T \dif l
+    \]
+\end{prop}
+
+\begin{proof}
+    \begin{gather*}
+        \int_C \vec{f} \dif \vec{l} = \int_\sigma \vec{f} \dif \vec{l} = \int_I \vec{f}\left( \sigma(s) \right)\sigma^\prime(s) \dif s =
+        \int_I \underbrace{\vec{f}\left( \sigma(s) \right) \overbrace{\frac{\sigma^\prime(s)}{\norm{\sigma^\prime(s)}}}^{\vec{t}\left( \sigma(s) \right)}}_
+        {f_t\left( \sigma(s) \right)} \norm{\sigma^\prime(s)} \dif s = \\ = \int_I f_t\left( \sigma(s) \right) \norm{\sigma^\prime(s)} \dif s =
+        \int_\sigma f_t \dif s = \int_C f_t \dif l
+    \end{gather*}
+\end{proof}
+
+\begin{example*}
+    En $\real^2$ consideramos $C \colon y = x^3$ desde (1,1) a (2,8) y $\vec{F}(x, y) = \left( 6x^3y, 10xy^2 \right)$. Consideramos
+    la parametrización $\gamma(x) = x,x^3$ para $x \in [1,2]$, entonces
+    \[
+        \int_C \vec{F} \dif \vec{l} = \cdots = 1132
+    \]
+\end{example*}
+
+\section{Integral de superficie de funciones escalares}
+
+\begin{defi}
+    Sea $U \subset  \real^2$ abierto y $\sigma \colon U \to \real^n$ una superficie parametrizada con $M = \sigma(U)$. Denotamos por
+    $\vec{T_1} = \Dif_1\sigma$ y $\vec{T_2} = \Dif_2 \sigma$, a los vectores tangentes a la parametrización, es decir
+    \[
+        \vec{J}_\sigma =
+        \begin{pmatrix}
+            \vec{T_1} & \vec{T_2}
+        \end{pmatrix}
+    \]
+    Diremos que $\sigma$ es regular cuando $\rg(J_\sigma) = 2$ en todos los puntos. Esto, es equivalente a que $\vec{T_1}$ y $\vec{T_2}$ sean
+    l.i. que ocurre sii la matriz de Gram
+    \[
+        G = 
+        \begin{pmatrix}
+            <\vec{T_1}, \vec{T_1}> & <\vec{T_1}, \vec{T_2}> \\
+            <\vec{T_2}, \vec{T_1}> & <\vec{T_2}, \vec{T_2}>
+        \end{pmatrix}
+    \]
+    sea invertible en todo punto, representaremos por $g := \det G$.
+\end{defi}
+
+\begin{defi}
+    Sea $M$ una superficie parametrizada por $\sigma$ y sea $f \colon M \subset \real^n \to \real$, definimos la integral de superficie de $F$
+    sobre/a lo largo de $\sigma$ como
+    \[
+        \int_\sigma f \dif S := \int_U f\left( \sigma(w) \right) \sqrt{\det G(w)} \dif w_1 \dif w_2
+    \]
+\end{defi}
+
+\begin{obs*}
+    Siempre supondremos que $\sigma \in \C^1$.
+\end{obs*}
+
+\begin{obs*}
+    Si suponemos que $U$ es un abierto medible Jordan, $f$ es continua, $\sqrt{\det G(w)}$ acotado, podemos asegurar que la integral existe.
+\end{obs*}
+
+\begin{lema}
+    Sean $\varphi \colon U \to \widetilde{U}$ difeomorfismo de clase $\C^1$, $\sigma \colon U \to \real^n$ una superficie parametrizada.
+    Consideramos $\widetilde{\sigma} := \sigma \circ \inv{\varphi} \colon \widetilde{U} \to \real^n$, entonces
+    \[
+        \int_{\widetilde{\sigma}} f \dif S = \int_\sigma f \dif S
+    \]
+\end{lema}
+
+\begin{obs*}
+    Eso quiere decir que la integral de superficie no está referida a la parametrización, sino al objeto parametrizado
+\end{obs*}
+
+\begin{defi}
+    Sea $M \subseteq \real^n$ una superficie regular. Si $M$ es la imagen de una parametrización regular inyectiva $\sigma \colon U \to \real^n$,
+    denominamos integral de superficie de una función $f$ sobre $M$ a
+    \[
+        \int_M f \dif S := \int_\sigma f \dif S
+    \]
+\end{defi}
+
+\begin{obs*}
+    Ya hemos visto que no depende del $\sigma$ elegido.
+\end{obs*}
+
+\begin{obs}\label{obs:anterior_a}<++>
+    Si $M$ es, a parte de un conjunto ``negligible'' (unión finita de puntos y curvas regulares conexas), la imagen de una parametrización regular inyectiva,
+    definimos igualmente
+    \[
+        \int_M f \dif S = \int_\sigma f \dif S
+    \]
+\end{obs}
+
+\begin{obs*}
+    Si $M$ es unión finita disjunta de superficies como las de la observación \ref{obs:anterior_a}, calculamos
+    \[
+        \int_M f \dif S = \sum_i \int_{M_i} f \dif S
+    \]
+\end{obs*}
+
+\begin{defi}
+    Definimos el area de $M$ (una superficie regular) como
+    \[
+        \text{area}(M) := \int_M \dif S
+    \]
+\end{defi}
+
+\begin{lema}
+    Sea $\sigma \colon U \to \real^3$ una superficie parametrizada. Entonces
+    \[
+        \int_\sigma f \dif S = \int_U f\left( \sigma(w) \right) \norm{\vec{T_1} \times \vec{T_2}} \dif w_1 \dif w_2
+    \]
+\end{lema}
+
+\begin{proof}
+    \[
+        \determinant{\vec{T_1}\cdot \vec{T_1} & \vec{T_1} \cdot \vec{T_2} \\ \vec{T_2}\cdot\vec{T_1} & \vec{T_2}\cdot\vec{T_2}} =
+        \norm{\vec{T_1}}^2 \norm{\vec{T_2}}^2 - \norm{\vec{T_1}}^2\norm{\vec{T_2}}^2 \cos^2 \theta = \norm{\vec{T_1}}^2\norm{\vec{T_2}}^2 \sin^2 \theta
+        = \norm{\vec{T_1} \times \vec{T_2}}^2
+    \]
+\end{proof}
+
+\begin{example*}
+    Consideramos $M: x^2 + y^2 + z^2 = R^2$ una esfera en $\real^3$. Vamos a calcular su área. Consideramos la parametrización
+    \[
+        \sigma(\theta, \phi) = \left( R \cos \phi \sin \theta, R \sin\phi \sin \theta, R \cos \theta \right)
+    \]
+    definida sobre $U = (0,\pi) \times (0,2\pi)$, entoces
+    \[
+        J_\sigma\left( T_\theta, T_\phi \right) =
+        \begin{pmatrix}
+            R \cos \phi \cos \theta & - R \sin\phi\sin\theta \\
+            R \sin \phi \cos \theta & R \cos\phi\sin\theta \\
+            -R\sin\theta & 0
+        \end{pmatrix}
+    \]
+    \[
+        G =
+        \begin{pmatrix}
+            R^2 & 0 \\ 0 & R^2 \sin^2\theta
+        \end{pmatrix}
+        \qquad
+        g = \sqrt{\det G} = R^2 \abs{\sin \theta} \stackrel{\theta \in (0,\pi)}{=} R^2 \sin \theta
+    \]
+    \begin{gather*}
+        \text{Área}(M) = \int_M \dif S = \int_\sigma \dif S = \int_U R^2 \sin \theta \dif \theta \dif \phi = R^2 \int^{2\pi}_0 \dif\phi \int^\pi_0 \sin \theta \dif \theta = \\
+        = R^2 2\pi \left( \left[ -\cos\theta \right]^\pi_0 \right) = 4\pi R^2
+    \end{gather*}
+\end{example*}
+
+\section{Integrales de superfice en campos vectoriales}
