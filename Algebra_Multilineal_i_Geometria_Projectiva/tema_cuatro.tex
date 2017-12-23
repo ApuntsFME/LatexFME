@@ -175,5 +175,96 @@
 
 
 
+\section{Tangencia y polaridad}
 
+\begin{example} Cuádricas de $\Po^1$
+   \begin{enumerate}
+      \item $\Po^1_\real$\\
+      Sea $q:$ $ax^{2}_{0} + cx^{2}_{1}+2bx_0x_1=0$ una cuádrica. Tenemos:
+      \[
+	Q \longleftrightarrow q \stackrel{\R}{\longleftrightarrow}A=
+      \begin{pmatrix}
+	a & b\\
+	c & d\\
+      \end{pmatrix}
+      \]
+      Y por lo tanto podemos considerar dos casos:
+      \begin{enumerate}
+	\item $a=0$ Tenemos entonces que:
+	\[
+	  0=cx^{2}_{1}+2bx_0x_1 = x_1 \lp cx_1 +2bx_0 \rp 
+	\]
+	Lo que nos da dos casos:
+	\begin{gather*}
+	  x_1=0 \implies p_1=\lp 1,0\rp \text{ y $p_2$ cualquiera}\\
+	  \text{o bien}\\
+	  p_2=\lp -c,2b\rp \text{ y $p_1$ cualquiera}\\
+	\end{gather*}
+	Notemos que si $a=0$ y $b=0$ tenemos que $p_1=p_2$.
+	
+	\item $a\neq 0 \implies \lp 1,0\rp$ no es solución 
+	$\implies a\lp\frac{x_0}{x_1}\rp ^2 +2b\lp\frac{x_0}{x_1}\rp +c=0$,
+	y si definimos $x=\frac{x_0}{x_1}$ tenemos $ax^2 +2bx+c=0 \implies
+	x=\frac{-2b \pm \sqrt{-4\det A}}{2a}$\\
+      \end{enumerate}
+      Y por lo tanto, si $\det A = 0$, $q$ es un punto doble en $\Po^1_\real$,
+      si $\det A>$ no hay ningun punto que pertenezca a la cuádrica y si 
+      $\det A <0$ $q$ son dos puntos distintos.
+      
+      \item $\Po^1_\mathbb{C}$. Usando el mismo analisis que antes llegamos a que si
+      $\det A=0$, la cuádrica es un punto doble y si $\det A \neq 0$ la cuádrica 
+      son dos puntos distintos.
+   \end{enumerate}
+\end{example}
+\begin{obs}
+  Sea $Q\subseteq \Po^n$ una cuádrica y $L\subseteq \Po^n$ una recta y $F$ un subespacio 
+  vectorial de dimensión $2$ $\tq [F]=L$. Podemos estudiar las posiciones relativas
+  de la cuádrica y la recta:
+  \begin{enumerate}
+   \item $Q_{|L}=\left[ q_{|F} \equiv 0\right] \iff L\subseteq Q$ (ver ejemplo \ref{exampleLinQ})
+   \item $L\not\subseteq Q \implies Q_{|L}$ es una cuádrica de $L \implies L\cap 
+   Q = \emptyset$, $L\cap Q\equiv$ $1$ punto doble, $L\cap Q\equiv$ 2 puntos distintos.
+  \end{enumerate}
+\end{obs}
+\begin{example}
+ Sea $Q\subseteq \Po^3 \tq Q:x^2_0 +x^2_1 -x²_2-x^2_3=0$, sean $p_1=\lp 0:1:1:0\rp$ y $p_2=\lp 
+ 1:0:0:1\rp$ puntos del proyectivo y $L=p_1 \vee p_2$ una recta. Entonces tenemos que:
+ \[
+  Q_{|L}=
+  \begin{pmatrix}
+   0 & 1 & 1 & 0\\
+   1 & 0 & 0 & 1\\
+  \end{pmatrix}
+  \begin{pmatrix}
+   1 & & &\\
+   & 1 & &\\
+   & & -1 &\\
+   & & & -1\\
+  \end{pmatrix}
+  \begin{pmatrix}
+   1 & 0\\
+   0 & 1\\
+   0 & 1\\
+   1 & 0\\
+  \end{pmatrix}
+  =\emptyset
+ \]
+ \label{exampleLinQ}
+\end{example}
 
+\begin{defi}
+ Sean $L$ una recta y $Q$ una cuádrica:
+ \begin{enumerate}[(1)]
+  \item Si $L\subseteq Q$ diremos que $L$ es una generatriz de $Q$.
+  \item Si $L\cap Q \equiv$ $2$ puntos diremos que $L$ es secante a $Q$.
+  \item Si $L\cap Q \equiv$ $1$ punto (doble) diremos que $L$ es tangente a $Q$.
+ \end{enumerate}
+\end{defi}
+
+\begin{prop}
+ Sean $\phi$ una forma bilineal y $q$ y $Q$ una cuádrica $\tq [\phi]=[q]=Q\subseteq \Po^2$.
+ \begin{enumerate}[(1)]
+  \item 
+ \end{enumerate}
+
+\end{prop}
