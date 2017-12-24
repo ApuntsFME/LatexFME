@@ -526,7 +526,7 @@
     Ya hemos visto que no depende del $\sigma$ elegido.
 \end{obs*}
 
-\begin{obs}\label{obs:anterior_a}<++>
+\begin{obs}\label{obs:anterior_a}
     Si $M$ es, a parte de un conjunto ``negligible'' (unión finita de puntos y curvas regulares conexas), la imagen de una parametrización regular inyectiva,
     definimos igualmente
     \[
@@ -591,4 +591,175 @@
     \end{gather*}
 \end{example*}
 
-\section{Integrales de superfice en campos vectoriales}
+\section{Integrales de superfice en campos vectoriales (en $\real^3$)}
+
+\begin{defi}
+    Sea $U \subseteq \real^2$ abierto, $\sigma \colon U \to \real^3$ una superficie parametrizada regular con
+    $M = \sigma(U)$. Sea $J_\sigma = \left( \vec{T_1}, \vec{T_2} \right)$, con $\vec{T_i} = \Dif_i \sigma$.
+    Sea $\vec{f} \colon M \to \real^3$ un campo vectorial a lo largo de $M$. Denominamos integral de superficie de $\vec{f}$
+    sobre $\sigma$ (o el flujo de $\vec{f}$ a trav\'es de $\sigma$) a
+    \[
+        \int_\sigma \vec{f} \dif \vec{S} := \int_U \vec{f}\left( \sigma(u) \right) \left( \vec{T_1} \times \vec{T_2} \right) \dif u_1 \dif u_2
+    \]
+\end{defi}
+
+\begin{obs*}
+    Suponiendo $\vec{f}$ continua, $U$ abierto medible Jordan, $\sigma$ con derivadas parciales acotadas (p.e. $\sigma \in \C^1$),
+    podemos asegurar que la integral anterior existe.
+\end{obs*}
+
+\begin{lema}
+    Sea $\varphi \colon U \to \widetilde{U}$ un difeomorfismo entre abiertos conexos de $\real^2$, $\sigma \colon U \to \real^3$ una superficie
+    parametrizada regular y sea $\widetilde{\sigma} = \sigma \circ \varphi^{-1}$ su reparametrización. Entonces
+    \[
+        \int_{\widetilde{\sigma}} \vec{f} \dif \vec{S} = \pm \int_\sigma \vec{f} \dif \vec{S}
+    \]
+    Donde el signo es el mismo que el de $\det J_\varphi$.
+\end{lema}
+
+\begin{defi}
+    Sea $M \subset \real^3$ una superficie regular parametrizada por una parametrización regular inyectiva. Una orientación de $M$ es una
+    clase de equivalencia de parametrizaciones donde se dice que dos parametrizaciones son equivalentes si el difeomorfismo que nos permite
+    obtener una reparametrización de la otra tiene jacobiana positiva.
+\end{defi}
+
+\begin{defi}
+    Diremos que una superficie $M \subset \real^3$ está orientada, cuando hemos elegido una orientación. A partir de la orientación de $M$ dada
+    por $\sigma$, cada $T_pM$ está orientado por la base $\begin{pmatrix} \vec{T_1} & \vec{T_2} \end{pmatrix}$. Esta orientación no cambia si
+    usamos otra parametrización de $M$ correspondiente a la misma orientación que $\sigma$.
+\end{defi}
+
+\begin{obs}
+    En general, $M$ requiere dos parametrizaciones inyectivas regulares para recubrirla totalmente. Entonces, para orientar $M$, se requiere que
+    estas parametrizaciones definan las mismas orientacions de los espacios tangentes de los puntos que recubren comunmente.
+\end{obs}
+
+\begin{defi}
+    Una superficie se dice que es orientable cuando tiene una orientación, así mismo, una superficie orientable, diremos que está
+    orientada cuando se ha elegido una orientación.
+\end{defi}
+
+\begin{obs}
+    \begin{itemize}
+        \item[]
+        \item Una superficie conexa orientable tiene 2 orientaciones.
+        \item Una superficie \emph{NO} conexa se orienta orientando cada componente conexa.
+    \end{itemize}
+\end{obs}
+\begin{obs}
+    Hay superficies no orientables, como por ejemplo, la banda de Möbius.
+\end{obs}
+
+\begin{defi}
+    Sea $M$ una superficie orientada. Suponemos que es la imagen de una parametrización inyectiva regular $\sigma \colon U \to \real^3$
+    correspondiente a la orientación de $M$. Sea $\vec{f} \colon M \to \real^3$ un campo vectorial. La integral de superficie, o flujo de $\vec{f}$
+    a trav\'es de $M$ es
+    \[
+        \int_M \vec{f} \dif \vec{S} := \int_\sigma \vec{f} \dif \vec{S}
+    \]
+\end{defi}
+
+\begin{obs}
+    Si $M$ es, salvo un conjunto ``negligible'' de puntos, la imagen de una parametrización de estas, tambi\'en definimos el flujo como
+    \[
+        \int_M \vec{f} \dif \vec{S} := \int_\sigma \vec{f} \dif \vec{S}
+    \]
+
+    Si $M$ es unión disjunta de un número finito de superficies como la anterior, el flujo se calcula para cada una y se suma.
+\end{obs}
+
+\begin{obs}
+    Si $M^\circ$ es $M$ con la orientación opuesta,
+    \[
+        \int_{M^\circ} \vec{f} \dif \vec{S} = - \int_M \vec{f} \dif \vec{S}
+    \]
+\end{obs}
+
+\begin{obs}
+    Si $M$ es cerrada, a veces, se escribe
+    \[
+        \oint_M \vec{f} \dif \vec{S} = \int_M \vec{f} \dif \vec{S}
+    \]
+\end{obs}
+
+\begin{defi}
+    Sea $M \subset \real^3$ una superficie regular orientada, $p \in M$, el subespacio $T_pM \subset T_p\real^3$ está orientado y tiene
+    dimensión 2, y por tanto, su ortogonal $\left( T_pM \right)^\perp$ tambin está orientado y tiene dimensión 1. Respecto al producto
+    escalar estándar de $\real^3$, el espacio $\left( T_pM \right)^\perp$, tiene un único vector normal \emph{unitario} $\vec{n}(p)$, 
+    correspondiente a la orientación del espacio. Es el vector normal unitario a $M$ en $p$.
+\end{defi}
+
+\begin{obs}
+    Si $M$ está parametrizada por $\sigma \colon U \to \real^3$, entonces
+    \[
+        \vec{n} \left( \sigma(u) \right) = \frac{\vec{T_1} \times \vec{T_2}}{\norm{\vec{T_1} \times \vec{T_2}}}
+    \]
+    Orientar una superficie en $\real^3$ equivale a hacer una elección continua de un vector normal unitario sobre $M$.
+
+    Por este motivo, se dice que una superficie tiene ``dos caras''.
+\end{obs}
+
+\begin{defi}
+    Sea $\vec{f} \colon M \to \real^3$ un campo vectorial. La componente normal de $\vec{f}$ sobre $M$ es 
+    \[
+        f_n = \vec{f} \cdot \vec{n}
+    \]
+    donde $\vec{n}$ es el vector normal unitario de $M$.
+\end{defi}
+
+\begin{prop}
+    Bajo las condiciones anteriores,
+    \[
+        \int_M \vec{f} \dif \vec{S} = \int_M f_n \dif S
+    \]
+\end{prop}
+
+\begin{proof}
+    \[
+        \int_M \vec{f} \dif \vec{S} = \int_U \underbrace{\vec{f}\left( \sigma(u) \right) \overbrace{\frac{\vec{T_1} \times \vec{T_2}}{\norm{\vec{T_1} \times \vec{T_2}}}}^
+        {\vec{n}}}_{f_n\left( \sigma(u) \right)} \norm{\vec{T_1} \times \vec{T_2}} \dif u_1 \dif u_2 = \int_\sigma f_n\left( \sigma(u) \right) \dif S =
+        \int_M f_n \dif S
+    \]
+\end{proof}
+
+\begin{example*}
+    Sea $M : x^2 + y^2 + z^2 = R^2$ orientada ``hacia el exterior'', consideramos la función $\vec{f} = r^\alpha \vec{r}$, donde
+    $\vec{r} = (x,y,z)$, y $r = \norm{\vec{r}}$, es decir, $r = \sqrt{x^2 + y^2 + z^2}$.
+
+    Tomamos la parametrización de $M$ en coordenadas esfricas
+    \[
+        \begin{aligned}
+            \sigma \colon U &\to \real^3 \\
+            (\theta, \phi) &\mapsto \left( R \cos \phi \sin \theta, R\sin \phi \sin \theta, R\cos \theta \right)
+        \end{aligned}
+    \]
+    Entonces, $J_\sigma = \begin{pmatrix} \vec{T_\theta} & \vec{T_\phi} \end{pmatrix}$ y
+    \[
+        \vec{T_\theta} \times \vec{T_\phi} = R^2 \sin\theta
+        \begin{pmatrix}
+            \cos\phi\sin\theta \\ \sin\phi\sin\theta \\ \cos\theta
+        \end{pmatrix} \qquad
+        \vec{T_\theta} \times \vec{T_\phi} = R \sin\theta \sigma(\theta, \phi)
+    \]
+    Como apunta ``hacia afuera'', 
+    \begin{gather*}
+        \int_M \vec{f} \dif \vec{S} = \textbf{+} \int_\sigma \vec{f} \dif \vec{S} = 
+        \int_U \vec{f} \left( \sigma(\theta, \phi)\right) \left( \vec{T_\theta} \times \vec{T_\phi} \right) \dif \theta \dif \phi =
+        \int_U R^{\alpha+3} \sin \theta \dif \theta \dif \phi =\\= R^{\alpha+3} \underbrace{\int^{2\pi}_0 \dif \phi}_{2\pi}
+        \underbrace{ \int^\pi_0 \dif \theta \sin \theta }_{2} = 4\pi R^{\alpha+3}
+    \end{gather*}
+
+    Por otro lado, $\vec{n} = \left. \frac{\vec{r}}{r} \right\vert$
+    \[
+        f_n = \vec{f} \cdot \vec{n} = r^{\alpha} \vec{r} \cdot \left.\frac{\vec{r}}{r}\right\vert = \left. r^{alpha+1}\right\vert = R^{\alpha+1}
+    \]
+    Ahora, simplemente
+    \[
+        \int_M \vec{f} \dif \vec{S} = \int_M f_n \dif S = R^{\alpha+1} \underbrace{\int_M \dif M}_{\text{Área}(M) = 4\pi R^2} = 4\pi R^{\alpha+3}
+    \]
+\end{example*}
+
+\section{Integración de funciones en una subvariedad $m$-dimensional de $\real^n$}
+
+Este tema no se ha dado en clase, si se está interesado, consultar los puntes del profesor.
+% QUE LO HAGAN LOS NOVATOS, AHI SE JODAN
