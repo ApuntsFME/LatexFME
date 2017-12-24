@@ -466,7 +466,7 @@ demostrando el siguiente lema.
 Antes de proceder con el siguiente teorema, demostraremos
 el siguiente lema que resultará de utilidad.
 
-\begin{lema} %COSAS_QUE_FALTAN DEMO DAIXO
+\begin{lema}
     \label{lema_rectas_poncelet}
     Sean $l_1, l_2 \subseteq \Po^3$ rectas disjuntas. Sea $p \not \in 
     l_1, l_2$. Entonces $\exists! \: s$ recta 
@@ -475,6 +475,27 @@ el siguiente lema que resultará de utilidad.
     (l_2 \vee p)$.
 \end{lema}
 \begin{proof}
+    Veamos primero que $s = (l_1 \vee p) \cap (l_2 \vee p)$ es una
+    recta. Por ser $l_1, l_2$ rectas disjuntas, tenemos que $\dim
+    (l_1 \vee l_2) = \dim l_1 + \dim l_2 - \dim (l_1 \cap l_2) = 1 + 1 - (-1) = 3$.
+    Sabiendo esto, se cumple $\dim ((l_1 \vee p) \cap (l_2 \vee p)) = 
+    \dim (l_1 \vee p) + \dim(l_2 \vee p) - \dim ((l_1 \vee p) \vee (l_2 \vee p)) =
+    2 + 2 - 3 = 1$. Veamos ahora que $s$ cumple las propiedades
+    necesarias: 
+    \begin{itemize}
+      \item $p \in (p \vee l_1), \, p \in (p \vee l_2) \implies
+      p \in s$
+      \item $l_1, \, s \subseteq (p \vee l_1)$, con lo que $l_1$ y $s$ están en un
+      mismo plano y se intersecan necesariamente.
+      \item Análogamente, $s \cap l_2 \neq \varnothing$.
+    \end{itemize}
+    
+    Supongamos ahora una recta $r$ que cumple estas mismas propiedades.
+    Como $p \not \in l_1$, los puntos $p, \, (r \cap l_1)$ son distintos y
+    $p \vee (r \cap l_1) = r$. Tenemos que $p, \, (r \cap l_1) \in
+    (p \vee l_1) \implies r = p \vee (r \cap l_1) \subseteq (p \vee l_1)$. Análogamente,
+    $r \subseteq (p \vee l_2)$, con lo que $r \subseteq s$ y por ser ambas rectas
+    $r = s$.
     
 \end{proof}
 \begin{teo*} %COSAS_QUE_FALTAN Igual un dibujo aqui tambien
@@ -483,7 +504,7 @@ el siguiente lema que resultará de utilidad.
     es una perspectividad. 
 \end{teo*}
 
-\begin{proof} %COSAS_QUE_FALTAN ACABAR DEMO
+\begin{proof}
     Consideraremos dos casos.
     \begin{enumerate}
         \item Supongamos $n = 3$. Consideramos $A_1, A_2, A_3 \in
