@@ -1720,3 +1720,148 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
  Y por la proposición \ref{prop:intercambio_raz_do}, tenemos que $\setb{p_1,p_2,p_3,p_4}$ es una cuaterna
  armónica.
 \end{proof}
+
+
+\section{Relación entre el espacio proyectivo y el afín}
+
+%TODO cambio a recordatorio?
+\begin{obs}
+  Sea $\F$ un $\k$-e.v. de $\dim n$. Llamamos espacio afín de dimensión $n$ a
+  $\A^n = \lp \A,\, \F,\, \delta \rp$ donde $\delta$ es una aplicación de la forma
+  \[
+    \begin{aligned}
+      \delta \colon \A \times \A & \to \F  \\
+      p,\, q &\mapsto \delta (p, q) = q - p = \overrightarrow{pq}
+    \end{aligned}
+  \]
+  que cumple
+  \begin{enumerate}[i)]
+    \item 
+      \[
+        \begin{aligned}
+          \delta_p \colon \A & \to \F  \\
+          q &\mapsto \delta (p, q)
+        \end{aligned}
+        \text{ es biyectiva } \forall p \in \A.
+      \]
+    \item \[\delta(p, q) + \delta(q, r) = \delta(p,r) \qquad \forall p, q, r \in \A\].
+  \end{enumerate}
+\end{obs}
+
+\subsection{Completación proyectiva del espacio afín $\A^n$}
+
+\begin{defi}
+  Sea $\F$ un $k$-e.v. de $\dim n$ asociado a $\A^n$ un espacio afín. Consideramos
+  el espacio vectorial $\E = \k \times \F$, de manera que todo $v \in \E$ se puede 
+  escribir como $v = \lp \alpha, \, \vec{\omega} \rp$, con $\alpha \in \k, \, 
+  \vec{\omega} \in \F$. Entonces decimos que
+  \begin{enumerate}[i)]
+    \item $e_0 = \lp1, \vec{0}\rp.$
+    \item Si $u \in \F, \, u = \lp 0, u \rp \in \E.$
+  \end{enumerate}
+\end{defi}
+
+\begin{obs}
+  En el espacio vectorial $\E$ construido en la definición anterior,
+  podemos considerar 2 s.e.v., la recta $[e_0] \subseteq \E$ y el hiperplano
+  $\{0\} \times \F \subseteq \E$. Con la notación definida anteriormente,
+  tenemos $E = [e_0] \oplus \F$.
+\end{obs}
+
+\begin{defi}
+  Con las mismas hipótesis y con el mismo espacio $\E$ que en la última definición,
+  \begin{enumerate}[i)]
+    \item $\Po^n = \Po (\E) = \overline{\A^n}$ es la completación proyectiva
+    de $\A^n$.
+    \item $\A^n_\infty = \pi(\F)$ son los puntos del infinito de $\A^n$.
+  \end{enumerate}
+\end{defi}
+
+\begin{defi}
+  Fijado $p_0 \in \A^n$, definimos
+   \[
+     \begin{aligned}
+       \varphi \colon \A^n &\to \Po^n = \Po(\E)\\
+       p &\mapsto \varphi(p) \coloneqq [e_0 + \overrightarrow{p_0p}]
+     \end{aligned}
+   \]
+\end{defi}
+
+%TODO aqui es pot fer un dibuix per il·lustrarho
+\begin{obs}
+  La idea detrás de esta función es asociar a todo punto en el afín una dirección
+  en un espacio vectorial, situando el plano afín como un hiperplano 
+  en un espacio vectorial de una dimensión más sin contener el origen, 
+  y asignando a un punto afín la dirección que representa el vector entre el origen
+  y el punto (considerados en el espacio vectorial).
+\end{obs}
+
+\begin{prop}
+  \begin{enumerate}[i)]
+    \item[]
+    \item $\varphi$ es inyectiva.
+    \item $\im \varphi = \Po^n \setminus \A^n_\infty$
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}[i)]
+    \item[]
+    \item Supongamos $\varphi(p_1) = \varphi(p_2)$. Entonces
+    \[
+      [e_0 + \overrightarrow{p_0p_1}] = [e_0+\overrightarrow{p_0p_2}]
+      \implies \exists \lambda \neq 0 \text{ t.q. } e_0 + \overrightarrow{p_0p_1}
+      = \lambda e_0 + \lambda \overrightarrow{p_0p_2}
+    \]
+    Como $\E = [e_0] \oplus \F$
+    \[e_0 = \lambda e_0 \implies \lambda = 1 \implies \overrightarrow{p_0p_1}
+    = \lambda \overrightarrow{p_0p_2} = \overrightarrow{p_0p_2} \implies
+    p_1 = p_2.\]
+    Es decir, $\varphi$ es inyectiva.
+    \item Veamos que $\im \varphi \subseteq \Po^n \setminus \A^n_\infty$. Sea
+    $q \in \im \varphi$. Entonces
+    \[
+      q = \varphi(p) = [e_0+\overrightarrow{p_0p}], \, \E = [e_0] \oplus \F
+      \implies e_0 + \overrightarrow{p_0p} \not \in \F \implies
+      \varphi(p) \not \in \pi(\F) = \A^n_\infty
+    \]
+    Como $q \in \Po^n$ por construcción, $q \in \Po^n \setminus \A^n_\infty$.
+    
+    La inclusión restante por demostrar se deja como ejercicio para el lector.
+  \end{enumerate}
+\end{proof}
+
+Veamos ahora como se comporta la completación proyectiva de un espaci afín
+al usar coordenadas.
+
+\begin{defi}
+  Sea $\R = \left \{p;u_1, \dots, u_n \right \}$ un sistema de referencia en
+  $\A^n$. Llamaremos el proyectivizado de $\R$ a
+  \[
+    \overline{\R} = \left \{ \varphi(p), [u_1], \dots, [u_n], 
+    [e_0 + \overrightarrow{p_0p}] + [u_1] + \dots + [u_n] \right \}
+  \]
+  que es un sistema de referencia en $\Po^n$.
+\end{defi}
+
+\begin{prop}  
+  \[
+    \begin{aligned}
+      \lp \A^n, \, \R \rp &\hookrightarrow \bigl( \overline{\A^n}, \, \overline{\R} 
+      \bigr) \\
+      q_{\R} = \lp x_1, \dots, x_n \rp &\mapsto \varphi(q)_{\overline{R}} = \lp
+      1 : x_1 : x_2 : \dots : x_n \rp
+    \end{aligned}  
+  \]
+\end{prop}
+
+\begin{proof}
+  \begin{gather*}
+    q_r = \lp x_1, \dots, x_n \rp \implies q = p + x_1u_1 + \dots + x_nu_n \implies \\
+    \implies \varphi(q) = [e_0 + \overrightarrow{p_0q}] = [e_0+\overrightarrow{p_0p}
+    + x_1u_1 + \dots + x_nu_n]\implies\\
+    \implies \varphi(q)_{\overline{R}} = \lp 1 : x_1 : x_2 : \dots : x_n \rp
+  \end{gather*}
+\end{proof}
+
+%\begin{obs}
