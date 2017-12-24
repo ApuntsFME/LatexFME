@@ -1,0 +1,222 @@
+\chapter{Teoremas integrales del análisis vectorial}
+
+\section{Operadores diferenciales canónicos en $\real^3$}
+
+\begin{obs}
+    Sea $U \subset \real^3$ un abierto no vacío. Denotaremos por
+    \begin{gather*}
+        \Es^{(k)} (U) := \setb{\text{campos escalares $\C^k$ sobre $U$}}
+        \V^{(k)}(U) := \setb{\text{campos vectoriales $\C^k$ sobre $U$}}
+    \end{gather*}
+    Si no se especifica el grado de diferenciabilidad, se entederá que es el que sea necesario para la realización
+    de cálculos.
+
+    Así pues, un campo vectorial $\vec{F} \in \V^{\left( k \right)}(U)$, se identifica con una función vectorial
+    $\vec{F} \colon U \to \real^3$, aunque sería más preciso escribirlo por componentes. Si representamos
+    la base canónica de $\real^3$ por $\setb{e_1, e_2, e_3}$, entonces $\vec{F} = f_1e_1 + f_2e_2 + f_3e_3$.
+    Aunque tambi\'en es habitual representarla por $\setb{\hat{i}, \hat{j}, \hat{k}}$.
+\end{obs}
+
+\begin{defi}
+    En $\real^3$ hay tres operadores diferenciales lineales de primer orden canónicos.
+    \begin{itemize}
+ 
+        \item \emph{Gradiente} $\grad \colon \Es^{(1)}(U) \to \V^{0}(U)$, que en coordenadas cartesianas
+            se expresa como
+            \[
+                \grad f := \pdv{f}{x} \hat{i} + \pdv{f}{y} \hat{j} + \pdv{f}{z} \hat{k}
+            \]
+        \item \emph{Rotacional} $\rot \colon \V^{(1)} (U) \to \V^{(0)}(U)$, que en coordenadas cartesianas
+            se expresa como
+            \[
+                \rot \vec{F} := \left( \pdv{F_3}{y} - \pdv{F_2}{z} \right)\hat{i} +
+                \left( \pdv{F_1}{z} - \pdv{F_3}{x} \right) \hat{j} + \left( \pdv{F_2}{x} - \pdv{F_1}{y} \right) \hat{k}
+            \]
+        \item \emph{Divergencia} $\diver \colon \V^{(1)} (U) \to \Es^{(0)} (U)$, que en coordenadas cartesianas
+            se expresa como
+            \[
+                \diver \vec{F} := \pdv{F_1}{x} + \pdv{F_2}{y} + \pdv{F_3}{z}
+            \]
+    \end{itemize}
+\end{defi}
+
+\begin{obs*}
+    Si los campos son de clase $\C^k$ el resultado es de clase $\C^{k-1}$
+\end{obs*}
+
+\begin{obs*}
+    Las definiciones de gradiente y de divergnecia se pueden aplicar sin casi ningún cambio a $\real^n$
+\end{obs*}
+
+\begin{obs}
+    Recordemos que el gradiente tiene una relación directa con la difernecial a trav\'es del producto escalar
+    de $\real^n$: si $\Dif_f(p) \colon \real^n \to \real$ es la diferencial de $f$ en $p$, $\grad f(p)$ es el
+    vector tal que, $\forall \vec{u} \in \real^n$, $\left( \grad f(p) \vert u \right) = \Dif_f(p) \cdot u$
+\end{obs}
+
+\begin{defi}
+    Definimos es operador \emph{nabla} como
+    \[
+        \vec{\nabla} := \hat{i} \pdv{}{x} + \hat{j} \pdv{}{y} + \hat{k} \pdv{}{z}
+    \]
+
+    Entonces
+    \begin{gather*}
+        \grad f = \vec{\nabla} f := \left( \hat{i} \pdv{}{x} + \hat{j} \pdv{}{y} + \hat{k} \pdv{}{z} \right)f
+        \\
+        \rot \vec{F} = \vec{\nabla} \times \vec{F} := \determinant{
+            \hat{i} & \pdv{}{x} & f_1 \\
+            \hat{j} & \pdv{}{y} & f_2 \\
+            \hat{k} & \pdv{}{z} & f_3
+        }
+        \\
+        \diver \vec{F} = \vec{\nabla} \cdot \vec{F} := \left( \hat{i} \pdv{}{x} + \hat{j} \pdv{}{y} + \hat{k} \pdv{}{z} \right) \cdot \vec{F}
+    \end{gather*}
+\end{defi}
+
+\begin{prop}
+    $\grad$, $\rot$ y $\diver$ son lineales, es decir
+    \[
+        \grad(f+g) = \grad f + \grad g
+        \qquad
+        \grad(cf) = c\grad f
+    \]
+    (Análogamente con $\rot$ y $\diver$).
+\end{prop}
+
+\begin{prop}[reglas de Leibnitz]
+    Si $f,g$ son campos escalares y $\vec{F},\vec{G}$ campos vectoriales, todos de clase $\C^1$, se tiene que
+    \begin{itemize}
+        \item $\grad(fg) = f \grad g + g \grad f$
+        \item $\rot \left( f \vec{G} \right) = f \rot \vec{G} + \vec{\grad} f \times \vec{G}$
+        \item $\diver \left( f \vec{G} \right) = f \diver \vec{G} + \vec{\grad} f \cdot \vec{G}$
+        \item $\diver \left( \vec{F} \times \vec{G} \right) = \vec{G} \cdot \rot \vec{F} - \vec{F}
+            \cdot \rot \vec{G}$
+    \end{itemize}
+\end{prop}
+
+\begin{col}[T.Schwarz]\label{col:luego_lo_ref}
+    Sea $f$ un campo escalar de clase $\C^2$, $\vec{F}$ un campo vectorial de clase $\C^2$. Entonces, se tiene que
+    \[
+        \rot\left( \grad f \right) = 0 \qquad \diver \left( \rot \vec{F} \right) = 0
+    \]
+\end{col}
+
+\begin{defi}
+    Sea $\vec{F}$ un campo vectorial. Diremos que $\vec{F}$ es un campo conservador si $\exists f$ tal que
+    \[
+        \vec{F} = \grad f
+    \]
+    Tambi\'en diremos que $\vec{F}$ es un campo irrotacional si
+    \[
+        \rot \vec{F} = 0
+    \]
+\end{defi}
+\begin{defi}
+    Sea $\vec{G}$ un campo vectorial. Diremos que $\vec{G}$ es solenoidal si $\exists \vec{F}$ tal que
+    \[
+        \vec{G} = \rot \vec{F}
+    \]
+    Y diremos que $\vec{G}$ es sin divergencia si
+    \[
+        \diver \vec{G} = 0
+    \]
+\end{defi}
+
+\begin{obs}
+    Los resultados de \ref{col:luego_lo_ref}, se pueden resumir en que todo campo conservador es irrotacional y que todo
+    campo solenoidal es sin divergencia.
+
+    Posteriormente estudiaremos los recíprocos de estas afirmaciones
+\end{obs}
+
+\begin{defi}
+    Sea $f \in \Es^{(2)}(U)$. definimos el Lapaciano como
+    \[
+        \Delta f := \diver \left( \grad f \right)
+    \]
+    que es un operador diferencial de segundo orden, por tanto actua sobre campos escalares de clase $\C^2$. En
+    coordenadas cartesianas
+    \[
+        \Delta = \nabla^2 \equiv \vec{\nabla} \cdot \vec{\nabla} = \pdv[2]{}{x} + \pdv[2]{}{y} + \pdv[2]{}{z}
+    \]
+\end{defi}
+
+\begin{obs*}
+    Podemos extender la definición del laplaciano a $\real^n$, y en coordenadas cartesianas sería
+    \[
+        \Delta = \pdv[2]{}{x_1} + \cdots + \pdv[2]{}{x_n}
+    \]
+\end{obs*}
+
+\begin{obs}
+    La expresión en coordenadas cartesiandas del laplaciano, permite aplicarlo tambin a campos vectoriales en
+    $\real^3$, aplicandolo a cada componente, y, de hecho, se satisface que
+    \[
+        \rot \left( \rot \vec{F} \right) = \grad \left( \diver \vec{F} \right) - \nabla^2\vec{F}
+    \]
+\end{obs}
+
+\begin{obs}
+    La equación de Laplace, es la ecuación en derivadas parciales
+    \[
+        \nabla^2 f = 0
+    \]
+    las soluciones de esta ecuación se llaman \emph{funciones harmónicas}.
+\end{obs}
+\begin{obs}
+    El laplaciano interviene en otras ecuaciones de gran importancia, como la ecuación del calor
+    \[
+        \pdv{f}{t} = \alpha \nabla^2 f
+    \]
+    con $\alpha > 0$ o en la ecuación de las ondas
+    \[
+        \pdv[2]{f}{t} = c^2 \nabla^2 f
+    \]
+    donde $c > 0$, está ecuación tambi\'en se puede expresar como $\square f = 0$, donde $\square = \frac{1}{c^2} \pdv[2]{}{t} - \nabla^2$
+    es el operador \emph{d'alembertiano}
+\end{obs}
+
+\section{Fórmulas integrales de la teoría de campos}
+
+\begin{prop}
+    Sea $W \subseteq \real^n$ abierto, $f \colon W \to \real$ un campo escalar de clase $\C^1$ y $\gamma \colon [t_0,t_1] \to W$
+    un camino de clase $\C^1$. Con $\gamma\left( t_0 \right) = x_0$ y $\gamma\left( t_1 \right) = x_1$, entonces
+    \[
+        \int_\gamma \vec{\grad} f \dif \vec{l} = f(x_1) - f(x_0)
+    \]
+\end{prop}
+\begin{proof}
+    \begin{gather*}
+        \int_\gamma \vec{\grad} f \dif \vec{l} = \int^{t_1}_{t_0} \vec{\grad} f\left( \gamma(t) \right) \vec{\gamma}^\prime(t) \dif t
+        \stackrel{\text{def. grad.}}{=} \int^{t_1}_{t_0} \Dif f\left( \gamma(t) \right) \vec{\gamma}^\prime (t) \dif t = \\
+        \stackrel{\text{regla cadena}}{=} \int^{t_1}_{t_0} \Dif \left( f \circ \gamma \right)(t) \dif t \stackrel{\text{Regla Barrow}}{=}
+        \left( f \circ \gamma \right)\left( t_1 \right) - \left( f \circ \gamma \right)\left( t_0 \right) = f\left( x_1 \right) - 
+        f\left( x_0 \right)
+    \end{gather*}
+\end{proof}
+
+\begin{teo}[fundamental del cálculo]
+    Sea $W \subseteq \real^n$ abierto, $f \colon W \to \real$ una función de clase $\C^1$. $C$ una curva regular orientada de clase
+    $\C^1$, tal que $\bar{C} \subset W$ es compacto. Entonces
+    \[
+        \int_C \vec{\grad} f \dif \vec{l} = \int_{\partial C} f
+    \]
+    (con $\partial C = \fr(C)$) donde interpretamos
+    \[
+        \int_{\partial C} = f\left( x_1 \right) - f\left( x_0 \right)
+    \]
+    Si $\partial C = \setb{x_0, x_1}$ con $C$ ``orientada'' de $x_0$ a $x_1$. Y $\int_{\partial C} f = 0$ si $\partial C = \emptyset$.
+\end{teo}
+
+\begin{teo}[de Kelvin-Stokes, o del rotacional]
+    Sea $W \subseteq \real^3$ abierto, $\vec{F} \colon W \to \real^3$ un campo vectorial de clase $\C^1$ y $M \subset W$ una superficie
+    orientada de clase $\C^2$ tal que $\bar{M}$ es compacto y $\bar{M} \subset W$. Sea $\partial M$ la frontera de $M$ con la orientación
+    inducida (``regla del tornillo'' o ``regla de la mano derecha'').
+
+    Entonces, se satisface la fórmula de \emph{Kelvin-Stokes}
+    \[
+        \int_M \rot \vec{F} \dif \vec{S} = \int_{\partial M} \vec{F} \dif \vec{l}
+    \]
+    Si todos los puntos frontera de $M$ son regulares; o, más generalmente, si el conjunto de puntos de la frontera singulares es finito.
+\end{teo}<++>
