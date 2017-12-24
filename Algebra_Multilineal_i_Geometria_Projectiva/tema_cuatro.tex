@@ -182,7 +182,7 @@
       \item $\Po^1_\real$\\
       Sea $q:$ $ax^{2}_{0} + cx^{2}_{1}+2bx_0x_1=0$ una cuádrica. Tenemos:
       \[
-	Q \longleftrightarrow q \stackrel{\R}{\longleftrightarrow}A=
+	Q \iff q \stackrel{\R}{\iff}A=
       \begin{pmatrix}
 	a & b\\
 	c & d\\
@@ -220,11 +220,11 @@
   Sea $Q\subseteq \Po^n$ una cuádrica y $L\subseteq \Po^n$ una recta y $F$ un subespacio 
   vectorial de dimensión $2$ $\tq [F]=L$. Podemos estudiar las posiciones relativas
   de la cuádrica y la recta:
-  \begin{enumerate}
+  \begin{itemize}
    \item $Q_{|L}=\left[ q_{|F} \equiv 0\right] \iff L\subseteq Q$ (ver ejemplo \ref{exampleLinQ})
    \item $L\not\subseteq Q \implies Q_{|L}$ es una cuádrica de $L \implies L\cap 
    Q = \emptyset$, $L\cap Q\equiv$ $1$ punto doble, $L\cap Q\equiv$ 2 puntos distintos.
-  \end{enumerate}
+  \end{itemize}
 \end{obs}
 \begin{example}
  Sea $Q\subseteq \Po^3 \tq Q:x^2_0 +x^2_1 -x²_2-x^2_3=0$, sean $p_1=\lp 0:1:1:0\rp$ y $p_2=\lp 
@@ -263,8 +263,78 @@
 
 \begin{prop}
  Sean $\phi$ una forma bilineal y $q$ y $Q$ una cuádrica $\tq [\phi]=[q]=Q\subseteq \Po^2$.
+ Entonces tenemos los siguientes resultados para cuádricas:
  \begin{enumerate}[(1)]
+  \item Sea $L=p_1\vee p_2 \tq$ $p_1=[v_1]$ y $p_2=[v_2]$. Entonces:
+  \begin{itemize}
+   \item $L$ es generatriz de $Q \iff \phi \lp v_1,v_1\rp = \phi
+   \lp v_2,v_2 \rp = \phi \lp v_1,v_2 \rp =0$.
+   \item $L$ es tangente a $Q \iff \phi \lp v_1,v_1 \rp \phi \lp v_2,v_2 \rp
+   - \phi \lp v_1,v_2 \rp ^2 =0$.
+  \end{itemize}
+  \item Si $p\in Q$ y $p$ singular, entonces toda recta $L \tq p\in L$ es tangente a $Q$.
+  \item si $p\in Q$ y $p$ liso, entonces $\{ p'\subseteq \Po^n | L=p\vee p'$ es tangente a $Q \}$
+  es un hiperplano. A demás, $T_p\lp Q \rp$ (hiperplano tangente a $Q$ en $p$) tiene de ecuación
+  \[
+   \lp a_0,\dots,a_n \rp A 
+   \begin{pmatrix}
+    x_0\\
+    \vdots\\
+    x_n\\
+   \end{pmatrix} = 0
+  \]
+  Donde $p_\R = \lp a_0:\dots :a_n\rp$, $p'_\R = \lp x_0:\dots :x_n\rp$ y $A = M_\R \lp Q \rp$.
+ \end{enumerate}
+\end{prop}
+\begin{proof}
+ \begin{enumerate}[(1)]
+  \item[]
+  \item Sea $F$ un subespacio vectorial $\tq L=[F]=[v_1,v_2]$. Entonces
+  \[
+   M_\R \lp Q_{|L} \rp = M_\R \lp q_{|F}\rp =
+   \begin{pmatrix}
+    \phi\lp v_1,v_1\rp & \phi\lp v_1,v_2\rp\\
+    \phi\lp v_2,v_1\rp & \phi\lp v_2,v_2\rp\\
+   \end{pmatrix} =B
+  \]
+  Y por lo tanto:
+  \begin{itemize}
+   \item $L$ generatriz $\stackrel{\text{por definición}}{\iff} q_{|F}\equiv 0
+   \iff \phi\lp v_1,v_1\rp = \phi\lp v_1,v_2\rp = \phi\lp v_2,v_2\rp=0$.
+   \item $L$ es tangente a $Q \iff \left\{
+   \begin{array}{c}
+    L \text{ generatriz }  \iff B=0 \\
+    L\cap Q \equiv 1 \text{ punto doble }  \iff \det B=0\\
+   \end{array}\right\} \iff \phi\lp v_1,v_1\rp \phi\lp v_2,v_2\rp - \phi\lp v_1,v_2\rp ^2 =0$
+  \end{itemize}
+  \item Recordemos que $p=[v]$ singular $\iff \phi\lp v,·\rp=0$. Ahora sea $L=p\vee p'$.
+  Entonces tenemos:
+  \[
+   B=M_\R\lp Q_{|F}\rp = 
+   \begin{pmatrix}
+    \cancelto{0}{\phi\lp v_1,v_1\rp} & \cancelto{0}{\phi\lp v_1,v_2\rp}\\
+    \cancelto{0}{\phi\lp v_2,v_1\rp} & \phi\lp v_2,v_2\rp
+   \end{pmatrix} \implies \det B=0 \stackrel{(1)}{\implies} L \text{ es tangente a } Q
+  \]
   \item 
  \end{enumerate}
+\end{proof}
 
-\end{prop}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%A PARTIR D'AQUI JORDI%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%A PARTIR D'AQUI OSCAR%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
