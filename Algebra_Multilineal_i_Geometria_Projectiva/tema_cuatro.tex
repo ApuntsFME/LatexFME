@@ -274,7 +274,7 @@
   \end{itemize}
   \item Si $p\in Q$ y $p$ singular, entonces toda recta $L \tq p\in L$ es tangente a $Q$.
   \item si $p\in Q$ y $p$ liso, entonces $\{ p'\subseteq \Po^n | L=p\vee p'$ es tangente a $Q \}$
-  es un hiperplano. A demás, $T_p\lp Q \rp$ (hiperplano tangente a $Q$ en $p$) tiene de ecuación
+  es el hiperplano $T_p\lp Q \rp$ (el hiperplano tangente a $Q$ en $p$) y tiene de ecuación
   \[
    \lp a_0,\dots,a_n \rp A 
    \begin{pmatrix}
@@ -316,9 +316,122 @@
     \cancelto{0}{\phi\lp v_2,v_1\rp} & \phi\lp v_2,v_2\rp
    \end{pmatrix} \implies \det B=0 \stackrel{(1)}{\implies} L \text{ es tangente a } Q
   \]
-  \item 
+  \item Recordemos que $p=[v]$ es punto liso de $q \iff \phi\lp v,v\rp = q\lp v\rp =0$.
+  Sea $L=p\vee p' = [v]\vee [v']$ y sea :
+  \[
+   B=M_\R \lp q_{|F}\rp = 
+   \begin{pmatrix}
+    \phi\lp v,v\rp & \phi\lp v,v'\rp\\
+    \phi\lp v',v\rp & \phi\lp v',v'\rp\\
+   \end{pmatrix}
+  \]
+  Entonces tenemos que $L$ es tangente a $Q \iff \det B =0 \iff \phi\lp v,v\rp\phi\lp v',v'\rp
+  - \phi\lp v,v'\rp^2 \iff \phi \lp v,v'\rp =0$. Pero además, como
+  \[
+   \phi\lp v,v'\rp =0\implies \lp a_0, \dots ,a_n \rp A 
+   \begin{pmatrix}
+    x_0\\ \vdots\\ x_n\\
+   \end{pmatrix}=0
+  \]
+  Y por lo tanto, como $\lp a_0,\dots,a_n\rp A \neq 0$ porque $A$ es simétrica y $A\begin{pmatrix}
+  a_0\\ \vdots\\ a_n\\ \end{pmatrix} \neq 0$ (ya que p no es singular), el conjunto de puntos $p' \tq$
+  $L$ es tangente a $Q$ cumplen la ecuación anterior y son un hiperplano.
  \end{enumerate}
 \end{proof}
+
+\begin{example}
+ \begin{enumerate}
+  \item []
+  \item Sea $Q\subseteq\Po^3$ una cuádrica $\tq Q:x^2_0 +x^2_1 -x^2_2 -x^2_3=0$, $A$ la matriz asociada y $p=\lp 1:0:0:1\rp$
+  un punto de $Q$. Como $p\not\in \nuc \lp A\rp$, $p$ es un punto liso y por lo tanto, aplicando el 
+  apartado $3$ de la proposición anterior temeos que $T_p\lp Q \rp$ tiene como ecuación:
+  \[
+   \lp 1,0,0,1 \rp A \begin{pmatrix}x_0\\x_1\\x_2\\x_3\\ \end{pmatrix} = 0 \implies 
+   \lp 1,0,0,-1 \rp \begin{pmatrix}x_0\\x_1\\x_2\\x_3\\ \end{pmatrix} = 0 \implies
+   x_0-x_3=0
+  \]
+  \item Sea $Q:-x^2_0 +x^2_1 +x^2_2 +x^2_3=0$ y $p=\lp 1:0:0:1\rp \in Q$, igual que en el
+  ejemplo anterior tenemos que $p$ es liso, y siguiendo el prodecimiento del ejemplo anterior llegamos 
+  a que $T_p\lp Q \rp$ tiene como ecuación $-x_0 +x_3=0$.
+ \end{enumerate}
+\end{example}
+
+\subsection{Polaridad}
+\begin{defi}[de una cuádrica no degenerada]
+  Sea $Q=[q]=[\phi]$ una cuádrica y sea $A=M_\R\lp Q\rp$ su matriz. Entonces diremos que $Q$ es no
+  degenerada $\iff \det A \neq 0$. Es decir, las cuádricas no degeneradas son aquellas que no tienen
+  puntos singulares.
+\end{defi}
+
+\begin{defi}[de dos puntos polares respecto a una cuádrica]
+  Sea $Q$ una cuádrica no degenerada $\tq Q=[q]=[\phi]$ y $A=M_\R\lp Q\rp$. Sean $p_1=[v_1]$ y 
+  $p_2=[v_2]$ dos puntos $\in \Po^n$. Entonces diremos que $p_1$ y $p_2$ son polares respeto a $Q\iff
+  \phi\lp v_1,v_2\rp=0$ y lo notaremos con $p_1 \stackrel{Q}{\sim} p_2$. 
+\end{defi}
+
+\begin{prop}
+  Sea $Q\in\Po^n$ una cuádrica y $p_1, p_2\in\Po^n$ dos puntos. Entonces:
+  \begin{enumerate}[(1)]
+   \item $p_1 \stackrel{Q}{\sim} p_1 \iff p\in Q$.
+   \item Si $p_1,p_2\in Q$, entonces $p_1 \stackrel{Q}{\sim} p_2 \iff L=p_1\vee p_2 \subseteq Q$.
+   \item Si $p_1\in Q$, $p_2 \not\in Q$, entonces $p_1 \stackrel{Q}{\sim} p_2 \iff L=p_1\vee p_2 
+   \subseteq T_{p_1}\lp Q \rp$.
+   \item Si $p_1,p_2\not\in Q$, $ L=p_1\vee p_2$ y $ L\cap Q =\{p_3,p_4\}\neq \varnothing$, entonces
+   $p_1 \stackrel{Q}{\sim} p_2 \iff L$ es secante a $Q$ y $\lp p_1,p_2,p_3,p_4\rp =-1$. 
+   \item Fijado $p=[v]$, entonces $\left\{p'\in\Po^n | p' \stackrel{Q}{\sim} p\right\} = H_p\lp Q\rp$
+   es un hiperplano (hiperplano polar a $p$) de ecuación $vA\begin{pmatrix}x_0\\ \vdots\\ x_n\\ \end{pmatrix}=0$.
+  \end{enumerate}
+\end{prop}
+\begin{proof}
+  Sea $B$ una matriz $\tq B=M_\R \lp Q\cap L\rp = \begin{pmatrix}
+    \phi\lp v_1,v_1\rp & \phi\lp v_1,v_2\rp\\
+    \phi\lp v_2,v_1\rp & \phi\lp v_2,v_2\rp\\
+   \end{pmatrix}$. Entonces:
+  \begin{enumerate}[(1)]
+   \item Por definición, $p_1 \stackrel{Q}{\sim} p_1 \iff \phi\lp v,v\rp=0 \iff q\lp v\rp=0 \iff p\in Q$.
+   \item Por definición, $p_1 \stackrel{Q}{\sim} p_2 \iff \phi\lp v_1,v_2\rp=\phi\lp v_2,v_1\rp=0$, y como
+   $p_1,p_2\in Q \implies \phi\lp v_1,v_1\rp=\phi\lp v_2,v_2\rp=0$, entonces $\phi\lp v_1,v_2\rp=
+   \phi\lp v_2,v_1\rp=0 \iff B=\varnothing \iff L\subseteq Q$.
+   \item Por definición, $p_1 \stackrel{Q}{\sim} p_2 \iff \phi\lp v_1,v_2\rp=\phi\lp v_2,v_1\rp=0$, y como 
+   $p_1\in Q \implies \phi\lp v_1,v_1\rp=0$, entonces $\phi\lp v_1,v_2\rp=
+   \phi\lp v_2,v_1\rp=0 \iff B= 
+   \begin{pmatrix}
+   0 & 0\\
+   0 & c\\
+   \end{pmatrix}$ con $c\neq 0$ porque $p_2 \not\in Q$ y por lo tanto $\det B \neq 0$ lo que nos dice que 
+   $B= 
+   \begin{pmatrix}
+   0 & 0\\
+   0 & c\\
+   \end{pmatrix} \iff L\subseteq T_{p_1}\lp Q\rp$.
+   \item Por definición, equivalentemente a el prodecimiento de los apartados anteriores llegamos a que $B=
+   \begin{pmatrix}
+    a & 0\\
+    0 & b\\
+   \end{pmatrix}$ con $a,b\neq 0$. Cojamos una referencia $\R \tq p_1=\lp 1:0\rp$ y $p_2(0:1)$ y consideremos la ecuación dada por $L\cap Q$:
+   \[
+    \lp \alpha,\beta\rp
+    \begin{pmatrix}
+     a & 0\\
+     0 & b\\
+    \end{pmatrix}
+    \begin{pmatrix}
+     \alpha\\
+     \beta\\
+    \end{pmatrix}=0 \implies \alpha^2 a+\beta^2 b=0 
+   \]
+   que como $p_1\not\in Q \implies \beta\neq 0$ y por lo tanto si $z=\frac{\alpha}{\beta}$ tenemos:
+   \[
+    a\lp\frac{\alpha}{\beta}\rp^2 +b =0 \implies az^2 +b=0 \implies z=\pm \sqrt{\frac{-b}{a}}
+   \]
+   que tiene dos soluciones porque tenemos como hipótesis que $L\cap Q\neq\varnothing$ y por lo tanto
+   $L$ es secante a $Q$. Además tenemos que $p_3=\lp\sqrt{\frac{-b}{a}}:1\rp$ y $p_4=\lp-\sqrt{\frac{-b}{a}}:1\rp$.
+   Finalmente es fácil comprobar que $(p_1,p_2,p_3,p_4)=-1$.
+   \item Por definición, $p \stackrel{Q}{\sim} p' \iff \phi\lp v,v'\rp=0 \iff vA\begin{pmatrix}x_0\\ \vdots\\ x_n\\ \end{pmatrix}=0$
+   y como $vA\neq 0$, $H_p\lp Q\rp$ es un hiperplano.
+  \end{enumerate}
+\end{proof}
+
 
 
 
