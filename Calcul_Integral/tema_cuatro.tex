@@ -209,9 +209,9 @@
     Si $\partial C = \setb{x_0, x_1}$ con $C$ ``orientada'' de $x_0$ a $x_1$. Y $\int_{\partial C} f = 0$ si $\partial C = \emptyset$.
 \end{teo}
 
-\begin{teo}[de Kelvin-Stokes, o del rotacional]
+\begin{teo}[de Kelvin-Stokes, o del rotacional]\label{teo:kelvin-stokes}
     Sea $W \subseteq \real^3$ abierto, $\vec{F} \colon W \to \real^3$ un campo vectorial de clase $\C^1$ y $M \subset W$ una superficie
-    orientada de clase $\C^2$ tal que $\bar{M}$ es compacto y $\bar{M} \subset W$. Sea $\partial M$ la frontera de $M$ con la orientación
+    orientada de clase $\C^2$ tal que $\bar{M}$ es compacto y $\bar{M} \subset W$. Sea $\partial M$ el borde de $M$ con la orientación
     inducida (``regla del tornillo'' o ``regla de la mano derecha'').
 
     Entonces, se satisface la fórmula de \emph{Kelvin-Stokes}
@@ -219,4 +219,405 @@
         \int_M \rot \vec{F} \dif \vec{S} = \int_{\partial M} \vec{F} \dif \vec{l}
     \]
     Si todos los puntos frontera de $M$ son regulares; o, más generalmente, si el conjunto de puntos de la frontera singulares es finito.
-\end{teo}<++>
+\end{teo}
+
+\begin{obs*}
+    Los puntos frontera de $M$ se clasifican en:
+    \begin{itemize}
+        \item Puntos frontera regulares, si pertenecen a una curva regular incluída en la frontera de $M$
+        \item puntos singulares
+    \end{itemize}
+\end{obs*}
+
+\begin{example*}
+    Consideramos
+    \[
+        H =
+        \begin{cases}
+            x^2 + y^2 + z^2 = R^2 \\ z > 0
+        \end{cases}
+        \qquad
+        \partial H  =
+        \begin{cases}
+            x^2 + y^2 = R^2 \\ z = 0
+        \end{cases}
+    \]
+    orientadas ``hacia arriba'' y en ``sentido positivo'' al plano $xy$. Consideramos la función
+    \[
+        \vec{F}(x, y, z) = -y \hat{i} + x \hat{j} + z \hat{k}
+    \]
+    Comprobaremos ahora el T.K.S. (\ref{teo:kelvin-stokes}), ahora parametrizamos $M$ como
+    \begin{gather*}
+        \sigma\left( \theta, \phi \right) = \left( R\cos\phi\sin\theta, R\sin\phi\sin\theta, R\cos\theta \right)
+        \qquad
+        \vec{T_\theta} \times \vec{T_\phi} = R^2 \sin\theta
+        \begin{pmatrix}
+            \cos\phi\sin\theta \\ \sin\phi\sin\theta \\ \cos\theta
+        \end{pmatrix}
+    \end{gather*}
+    Por último, 
+    \[
+        \rot \vec{F} = \determinant{\hat{i} & \partial x & - y \\ \hat{j} & \partial y & x \\ \hat{k} & \partial z & z} = 2 \hat{k}
+    \]
+    Entonces, tenemos
+    \begin{gather*}
+        \int_M \rot \vec{F} \dif \vec{S} \stackrel{\text{orientación}}{=} \int^{2\pi}_0 \dif \phi \int^{\sfrac{\pi}{2}}_0 \dif \theta R^2 \sin \theta \underbrace{\cos\theta}_
+        {z} 2 = 4 \pi \R^2 \frac{1}{2} \int^{\sfrac{\pi}{2}}_0 2 \sin\theta\cos\theta \dif \theta =\\= 2\pi R^2 \left[ \sin^2 \theta \right]^{\sfrac{\pi}{2}}_0 = 2\pi R^2
+    \end{gather*}
+    Por otro lado, podemos parametrizar $\partial M$ como
+    \[
+        \gamma(t) = \left( R\cos t, R \sin t, 0 \right) \qquad 0 < t < 2\pi \qquad
+        \gamma^\prime (t) =
+        \begin{pmatrix}
+            -R \sin t \\ R \cos t \\ 0
+        \end{pmatrix}
+    \]
+    Ahora, podemos calcular
+    \[
+        \int_{\partial M} \vec{F} \dif \vec{l} = \int^{2\pi}_{0} \dif t R^2 = 2 \pi R^2 
+    \]
+    Y como vemos, se satisface el teorema.
+\end{example*}
+
+\begin{teo}[de Gauss-Ostrogradski, o de la divergencia]
+    Sea $W \subset \real^3$ abierto, $\vec{F} \colon W \to \real^3$ de clase $\C^1$, $B \subset W$ un abierto tal que $\bar{B}$ es compacto y $\bar{B} \subset W$.
+    Sea $\partial B$ el borde de $B$ con la orientación inducida (``normal hacia afuera''). Entonces, se satisface la fórmula de \emph{Gauss-Ostrogradskii}
+    \[
+        \int_B \diver \vec{F} \div V = \int_{\partial B} \vec{F} \dif \vec{S}
+    \]
+    Si todos los puntos frontera de $B$ son regulares; o, más generalmente, si el conjunto de puntos frontera singulares de $B$ es ``negligible'' (como que est\'e 
+    contenido en una unión finita de curvas regulares conexas).
+\end{teo}
+
+\begin{obs}
+    La definición precisa de puntos frontera regulares y singulares, de borde y su orientación, se explicarán con más detalle en la sección \ref{section:5-8}.
+\end{obs}
+
+\begin{example*}
+    Consideramos
+    \[
+        \vec{r} =
+        \begin{pmatrix}
+            x \\ y \\ z
+        \end{pmatrix}
+    \]
+    un campo vectorial radial con $\diver \vec{r} = 3$. Sea
+    \begin{gather*}
+        B : x^2  + y^2 + z^2 < R^2 \\
+        \partial B : x^2 + y^2 + z^2 = R^2
+    \end{gather*}
+    Ahora, tenemos
+    \[
+        \hat{r} = \frac{\vec{r}}{r} \qquad
+        \vec{r} \hat{r} = \frac{r^2}{r} = r = \stackrel{B}{=} R
+    \]
+    Por último,
+    \[
+        \vol(B) = \int_B \dif V = \frac{1}{3} \int_B \diver \vec{r} \dif V = \frac{1}{3} \int_{\partial B} \vec{r} \dif \vec{S}
+        = \frac{1}{3} \int_{\partial B} \left( \vec{r} \hat{r} \right) \dif S
+    \]
+    Por lo tanto,
+    \[
+        \vol(B) = \frac{1}{3} R \text{área}\left( \partial B \right)
+    \]
+\end{example*}
+
+\section{Potenciales}
+
+\begin{defi}
+    Sea $M \subseteq \real^n$ un abierto conexo, $\vec{F} \colon U \to \real^n$ un campo vectorial. Diremos que $\vec{F}$ es conservador
+    cuando existe $f \colon U \to \real$ de clase $\C^1$ tal que $\vec{F} = \grad f$, diremos que $f$ es el potencial escalar para $\vec{F}$.
+\end{defi}
+
+\begin{obs}
+    Si $c \in \real$ y $f$ es potencial escalar para $\vec{F}$, $f+c$ tambi\'en lo es $\left( \grad(f+c)=\grad f \right)$
+\end{obs}
+
+\begin{prop*}
+    Sea $U \subset \real^n$ conexo, $\vec{F} \colon U \to \real^n$ un campo vectorial, si $f,g$ son dos potenciales espalares para $\vec{F}$, entonces
+    $f - g$ es una constante.
+\end{prop*}
+\begin{proof}
+    $f,g$ son potenciales escalares para $\vec{F} \implies \grad f = \grad g \implies \grad (f-g) = 0 \stackrel{U \text{ conexo}}{\implies} f-g =$ constante.
+\end{proof}
+
+\begin{obs}
+    Sea $\gamma \colon \left[ t_0, t_1 \right] \to \real^n$ un camino de clase $\C^1$ a trozos, con $\gamma\left( t_0 \right) = x_0$, $\gamma\left( t_1 \right)=x_1$.
+    Suponemos $\vec{F}$ conservador, es decir $\vec{F} = \grad f$, entonces,
+    \[
+        \int_\gamma \vec{F} \dif \vec{l} = f\left( x_1 \right) - f\left( x_0 \right)
+    \]
+    En otras palabras, la circulación de $\vec{F}$ solo depende de los puntos inicial y final.
+    
+    En este caso, escribiremos
+    \[
+        \int^{x_1}_{x_0} \vec{F} \dif \vec{l}
+    \]
+    Tabi\'en, tenemos que $\int^{x_0}_{x_0} \vec{F} \dif \vec{l} = 0$, $\oint \vec{F} \dif \vec{l} = 0$y las fórmulas
+    \[
+        \int^{x_1}_{x_0} \vec{F} \dif \vec{l} + \int^{x_2}_{x_1} \vec{F} \dif \vec{l} = \int^{x_2}_{x_0} \vec{F} \dif \vec{l}
+        \qquad
+        \int^{x_1}_{x_0} \vec{F} \dif \vec{l} = - \int^{x_0}_{x_!} \vec{F} \dif \vec{l}
+    \]
+\end{obs}
+
+\begin{prop}
+    Sea $U \subseteq$ un abierto convexo y $\vec{F} \colon U \to \real^n$ un campo vectorial de clase $\C^0$. Suponemos que la circulación de $\vec{F}$
+    a lo largo de cualquier camino de clase $\C^1$ a trozos solo depende de los puntos iniciales y final. Entonces, $\vec{F}$ es conservador.
+\end{prop}
+
+\begin{obs*}
+    Se puede construir $f$ fijando $x_0 \in U$ un punto que llamaremos el origen del potencial. Entonces, la función
+    \[
+        \begin{aligned}
+            f \colon U &\to \real \\ x &\mapsto f(x) := \int^{x}_{x_0} \vec{F} \dif \vec{l}
+        \end{aligned}
+    \]
+    que está bien definida y $\grad f = \vec{F}$.
+\end{obs*}
+
+\begin{proof}
+    Sea $x \in U$, $\vec{u} \in \real^n$. Calculamos
+    \[
+        \Dif_{x, \vec{u}} f = \left. \dv{}{t} \right\vert_{t = 0} f\left( x + t \vec{u} \right)
+    \]
+    Sea $t > 0$ suficientemente pequeño, de manera que $\left[ x - t \vec{u}, x + t\vec{u}\right] \subset U$
+    \begin{gather*}
+        f \left( x + t \vec{u} \right) = \int^{x+ t \vec{u}}_{x_0} \vec{Fj \dif \vec{l}} = \underbrace{\int^x_{x_0} \vec{F} \dif \vec{l}}_{\text{constante}}
+        + \int^{x + t \vec{u}}_x \vec{F} \dif \vec{l}
+    \end{gather*}
+    Aplicando un cambio de variable
+    \[
+        \int^{x + t \vec{u}}_{x} \vec{F} \dif \vec{l} = \int^t_0 \vec{F} \left( x + s \vec{u} \right) \vec{u} \dif S
+    \]
+    Por lo tanto,
+    \[
+        \left. \dv{}{t} \right\vert_{t=0} \int^{x + t \vec{u}}_x \vec{F} \dif \vec{l} \stackrel{\text{T.F.C.}}{=}
+        \left. \vec{F}\left( x + t \vec{u} \right) \cdot \vec{u} \right\vert_{t=0} = \vec{F}(x) \cdot \vec{u} \implies
+        \Dif_{x, \vec{u} }f = \vec{F}(x) \cdot \vec{u}
+    \]
+    Tomando ahora $\vec{u} = e_i$, obtenemos
+    \[
+        D_{e_i} f = F_i \quad \forall i \implies \grad f = \vec{F}
+    \]
+\end{proof}
+
+\begin{teo*}
+    Sea $U \subseteq \real^3$ abierto conexo. $\vec{F} \colon U \to \real^3$ de clase $\C^1$. Consideramos las propiedades
+    \begin{enumerate}[(i)]
+        \item $\vec{F}$ es conservador
+        \item Dados $p_0, p_1 \in U$ y una curva orientada $C \subset U$ tal que $\partial U = \setb{p_0, p_!}$; la circulación
+            $\int_C \vec{F} \dif \vec{l}$ solo depende de $p_0, p_1$.
+        \item Para toda curva cerrada $C \subset U$ $\oint_C \vec{F} \dif \vec{l} = 0$
+        \item $\rot \vec{F} = 0$, es decir, $\vec{F}$ es irrotacional
+    \end{enumerate}
+
+    Las tres primeras afirmaciones son equivalentes e implican la cuarta. Sin embargo, el recíproco es falso en general,
+    depende de la topología de $U$ y es cierto en algunal circunstancias. 
+\end{teo*}
+
+\begin{defi}
+    Un subconjunto $A \subset \real^n$ se dice que es estrellado respecto a un punto $p \in A$  si $\forall q \in A$,
+    $[p, q] \subset A$. Diremos que $A$ es estrellado si lo es respecto a un punto.
+\end{defi}
+
+\begin{obs*}
+    Un conjunto es convexo $\iff$ es estrellado respecto a todos sus puntos.
+\end{obs*}
+
+\begin{example*}
+    Los siguientes conjuntos son estrellados
+    \begin{itemize}
+        \item Las semirectas en $\real^2$
+        \item Un semiplano en $\real^3$
+    \end{itemize}
+    Lo siguientes, sin embargo, no lo son
+    \begin{itemize}
+        \item Un punto en $\real^2$
+        \item Un punto en $\real^3$
+    \end{itemize}
+\end{example*}
+
+\begin{lema}[de Poincar\'e]
+    Sea $U \subset \real^3$ un abierto estrellado y $\vec{F} \colon U \to \real^3$ es un campo vectorial
+    de clase $\C^1$. Si $\vec{F}$ es irrotacional $\left( \rot \vec{F} = 0 \right)$, entonces es conservador
+    (tiene potencial escalar)
+\end{lema}
+
+\begin{defi}
+    Sea $A$ un espacio m\'etrico. Sean $\gamma_0, \gamma_1 \colon [0,1] \to A$ dos caminos con los mismos puntos
+    de origen $p$ y t\'ermino $q$. Diremos que $\gamma_0$ y $\gamma_1$ son caminos homótopos (con extremos fijos)
+    si existe una homotopía de caminos entre $\gamma_0$ y $\gamma_1$, es decir:
+    
+    una familia $\left( \Gamma_s \right)_{0 \leq s \leq 1}$ de caminos en $A$, de origen en $p$ y t\'ermino en $q$,
+    tales que
+    \begin{itemize}
+        \item $\Gamma_0 = \gamma_0$
+        \item $\Gamma_1 = \gamma_1$
+        \item La aplicación $\Gamma \colon [0,1] \times [0,1] \to A$ definida por $\Gamma(s,t) = \Gamma_s(t)$ es continua.
+    \end{itemize}
+\end{defi}
+\begin{defi*}
+    Un camino cerrado o lazo de punto base $p$, es un camino con origen y t\'ermino $p$.
+\end{defi*}
+
+\begin{defi}
+    Diremos que un conjunto $A$ es simplemente conexo si
+    \begin{enumerate}[i)]
+        \item Es arco-conexo.
+        \item\label{item:2-simp_conexo} Dados dos caminos $\gamma_0$, $\gamma_1$ con el mismmo origen y final,
+            $\gamma_0$ es homotopo a $\gamma_1$.
+    \end{enumerate}
+\end{defi}
+
+\begin{obs*}
+    \ref{item:2-simp_conexo} es equipalente a requerir que cualquier camino $\gamma_0$ cerrado es homótopo al camino
+    constante.
+\end{obs*}
+
+\begin{obs}
+    Ejemplos de conjuntos simplemente conexos son: $\real^n$, las bolas, los rectángulos, los semiespacios de $\real^n$,
+    los conjuntos estrellados, o $\real^2 \smallsetminus$ semirecta.
+
+    Ejemplos de conjuntos \emph{NO} simplemente conexos son: $\real^2 \smallsetminus$ punto, $\real^3 \smallsetminus$ recta o
+    $\real^3 \smallsetminus$ circunferencia.
+\end{obs}
+
+\begin{prop}
+    Si $U \subset \real^3$ es un conjunto abierto simplemente conexo y $\vec{F} \colon U \to \real^3$, es un campo vectorial
+    de clase $\C^1$ irrotacional $\left( \rot \vec{F} = 0 \right)$, entonces, $\vec{F}$ es conservador (tiene potencial
+    escalar).
+\end{prop}
+
+\begin{obs}
+    En caso de que $U = \real^3$ y $\vec{F}$ sea irrotacional, el cálculo del potencial escalar se puede hacer integrando
+    la ecuación en derivadas parciales $\grad f = \vec{F}$. Son tres ecuaciones que se integran sucesivamente de manera
+    elemental, en trminos del cálculo de primitivas.
+\end{obs}
+
+\begin{example*}
+    Consideramos $U = \real^3$ y 
+    \[
+        \vec{F} =
+        \begin{pmatrix}
+            y \\ z \cos (yz) + x \\ y \cos(yz)
+        \end{pmatrix}
+    \]
+    con $\rot \vec{F} = 0$. Ahora, intentaremos resolver $\grad f = \vec{F}$
+    \begin{gather*}
+        \pdv{f}{x} = F_1 = y \stackrel{\text{integrar}}{\rightarrow} f = xy + \underbrace{g(y,z)}_{\text{constante respecto a } x} \\
+        \pdv{f}{y} = F_2 = z \cos(yz) + x \rightarrow \cancel{x} + \pdv{g}{y} = \cancel{x} + z \cos(yz) \stackrel{\text{int}}{\rightarrow}
+        g = \sin(yz) + h(z) \implies \\ \implies f = xy + \sin(yz) + h(z) \\
+        \pdv{f}{z} = F_3 = y \cos (yz) \rightarrow \cancel{y \cos(yz)} + \dv{h}{z} = \cancel{y \cos(yz)} \implies h(z) = C
+    \end{gather*}
+    Por lo tanto, concluimos que
+    \[
+        f(x, y, z) = xy + \sin(yz) + C
+    \]
+\end{example*}
+
+\begin{example*}
+    Sea $U = \real^3 \smallsetminus$eje $z$. Tomamos
+    \[
+        \vec{F} = 
+        \begin{pmatrix}
+            -\frac{y}{x^2 + y^2} \\ \frac{x}{x^2+y^2} \\ 0
+        \end{pmatrix}
+        \qquad
+        \rot \vec{F} = 0
+    \]
+    Tomamos
+    \[
+        C =
+        \begin{cases}
+            x^2 + y^2 \\ z = 0
+        \end{cases}
+    \]
+    orientada ``positivamente''. Se puede comprobar que $\oint_C \vec{F} \dif \vec{l} = 2\pi \neq 0$, es decir,
+    que $\vec{F}$ no es conservativa
+\end{example*}
+
+\subsection*{Potenciales vectoriales}
+
+Esta tema tampoco se ha estudiado (debido a la falta de tiempo) en clase, así que hacemos un pequeño resumen y referenciamos, como
+siempre, a los curiosos a los apuntes del profesor.
+
+Recordemos que decíamos que un campo $\vec{G}$ es solenoidal si existe $\vec{F}$ tal que $\vec{G} = \rot \vec{F}$, esto, implica
+que $\diver \vec{G} = 0$, es decir, todo campo solenoidal es sin divergencia. Sin embargo, el recíproco es, en general falso. A pesar de
+ello, el lema de Poincar\'e, nos asegura que si $U$ es estrellado, todo campo sin divergencia es solenoidal.
+
+\section{Campos en el plano: Teorema de Green y potenciales}
+
+\begin{defi}
+    Sea $U \subseteq \real^2$ un abierto. Se puede definir el gradiente de un campo escalary la divergencia de un campo
+    vectorial en $U$, de hecho, en coordenadas cartesianas
+    \[
+        \grad f = \pdv{f}{x} \hat{e_1} + \pdv{f}{y} \hat{e_2} \qquad
+        \diver \vec{F} = \pdv{F_1}{x} + \pdv{F_2}{y}
+    \]
+    Tambi\'en, podemos considerar $\vec{F} \colon U \to \real^2$ como un campo vectorial en $\real^3$, estonces,
+    \[
+        \vec{F} = 
+        \begin{pmatrix}
+            F_1(x,y) \\ F_2(x,y) \\ 0
+        \end{pmatrix} \implies
+        \rot \vec{F} =
+        \begin{pmatrix}
+            0 \\ 0 \\ \pdv{F_2}{x} - \pdv{F_1}{y}
+        \end{pmatrix}
+    \]
+\end{defi}
+
+\begin{teo}[de Green]
+    Sean $U \subseteq \real^2$ un abierto, $\vec{F} \colon U \to \real^2$ de clase $\C^1$, $M \subset U$ abierto tal que
+    $\bar{M}$ compacto con $\bar{M} \subset U$, sea $\partial M$ es el borde de $M$ con la orientación inducida (``la parte de dentro,
+    a la izquierda''). Entonces, se satisface la fórmula de \emph{Green}
+    \[
+        \int_M \left( \pdv{F_2}{x} - \pdv{F_1}{y} \right) \dif x \dif y = \int_{\partial M} \vec{F} \dif \vec{l}
+    \]
+    suponiendo que todos los puntos frontera de $M$ son regulares, o, más generalmente, si el conjunto de puntos frontera singulares
+    de $M$ es finito.
+\end{teo}
+
+\begin{obs}
+    El teorema de Green se puede considerar como caso particular del teorema de Kelvin-Stokes (\ref{teo:kelvin-stokes}), consideranco $\vec{F}$
+    como campo vectorial en $\real^3$ y $M$ como superficie dentro de $\real^3$.
+\end{obs}
+
+\begin{example}[Aplicación del teorema de Green para el cálculo de áreas]
+    Sea $\vec{F} \colon \real^2 \to \real^2$ tal que $\pdv{F_2}{x} - \pdv{F_1}{y} = 1$, por ejemplo
+    \[
+        \vec{F} = \frac{1}{2} \left( -y \hat{i} + x \hat{j} \right)
+    \]
+    Aplicando la fórmula de Green, tenemos que
+    \[
+        \text{área}(M) = \int_M \dif x \dif y = \int_{\partial M} \vec{F} \dif \vec{l} \implies
+        \text{área}(M) = \frac{1}{2} \int_{\partial M} \left( -y \dif x + x \dif y \right)
+    \]
+\end{example}
+
+\begin{prop}
+    Sea $\vec{F} \colon U \to \real^2$ un campo vectorial de clase $\C^1$ definido en un conjunto abierto $U \subset \real^2$.
+    Recordamos que $\vec{F}$ es conservador cuando existe $f \colon U \to \real$ tal que $\vec{F} = \grad f$. En tal caso, la
+    circulación de $\vec{F}$ a lo largo de una curva cerrada es 0. Además, si $\vec{F}$ es conservador, necesariamente se cumple
+    \[
+        \pdv{F_2}{x} = \pdv{F_1}{y}
+    \]
+\end{prop}
+
+\begin{prop}
+    Igualmente, si consideramos $\vec{F} \colon U \to \real^2$ un campo vectorial tal que
+    \[
+        \pdv{F_2}{x} = \pdv{F_1}{y}
+    \]
+    $\vec{F}$ es conservador, si $U$ es simplemente conexo.
+\end{prop}
+
+
+De nuevo, por falta de tiempo, se ``prescindió'' de este tema en clase, considerandolo como un caso particular del $\real^3$, aún
+así, puede ser interesante consultar los apuntes del profesor, tanto de lo que queda de esta sección como de la siguiente.
+
+\section{Los operadores diferenciales en otros sistemas de coordenadas}
+
+Como ya hemos anunciado, se prescindió de este tema en clase debido a la falta de tiempo, refernciamos a los curiosos a los apuntes del
+profesor.
