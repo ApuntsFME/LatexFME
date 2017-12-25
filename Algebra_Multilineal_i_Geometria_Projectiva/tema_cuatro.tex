@@ -178,6 +178,8 @@
 \section{Tangencia y polaridad}
 
 \begin{example} Cuádricas de $\Po^1$
+  \begin{enumerate}
+   \item Cuádricas de $\Po^1$
    \begin{enumerate}
       \item $\Po^1_\real$\\
       Sea $q:$ $ax^{2}_{0} + cx^{2}_{1}+2bx_0x_1=0$ una cuádrica. Tenemos:
@@ -215,6 +217,23 @@
       $\det A=0$, la cuádrica es un punto doble y si $\det A \neq 0$ la cuádrica 
       son dos puntos distintos.
    \end{enumerate}
+  \item $\Po^2_\real$
+  \begin{center}
+  \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.5cm,y=0.5cm]
+  \clip(-8,-1) rectangle (3,7);
+  \draw [rotate around={30.718904264029163:(-2.37,3.64)},color=blue] (-2.37,3.64) ellipse (3.3529125013086922 and 2.3332857179162856);
+  \draw [color=red,domain=-12:14.92] plot(\x,{(-7.0616-2.04*\x)/10.8});
+  \draw [color=red,domain=-12:14.92] plot(\x,{(--46.0782--0.6*\x)/10.54});
+  \draw [color=red,domain=-12:14.92] plot(\x,{(--2512.038474626351--53.88340705491726*\x)/386.0081646973978});
+  \begin{scriptsize}
+  \draw[color=blue] (-2.42,1.84) node {$Q$};
+  \draw[color=red] (-7.1,5.92) node {$L$};
+  \draw[color=red] (-7.06,4.38) node {$L'$};
+  \draw[color=red] (-6.96,1.3) node {$L''$};
+  \end{scriptsize}
+  \end{tikzpicture}
+  \end{center}
+  \end{enumerate}
 \end{example}
 \begin{obs}
   Sea $Q\subseteq \Po^n$ una cuádrica y $L\subseteq \Po^n$ una recta y $F$ un subespacio 
@@ -432,7 +451,137 @@
   \end{enumerate}
 \end{proof}
 
+\begin{obs}
+ \begin{enumerate}[(1)]
+  \item []
+  \item Si $p\in Q$ entonces $H_p\lp Q\rp = T_p\lp Q\rp$.
+  \item Como $p_1 \stackrel{Q}{\sim} p_2 \iff p_2 \stackrel{Q}{\sim} p_1$, tenemos que $p_1\in H_{p_2}\lp Q\rp \iff
+  p_2\in H_{p_1}\lp Q\rp$.
+ \end{enumerate}
+\end{obs}
 
+\begin{example}
+  En $\Po^2$:\\
+    \begin{center}
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
+    \clip(-8,2) rectangle (2.4,6);
+    \draw [rotate around={-172.80274371739344:(-2.5948300768279142,4.470680337271209)},color=blue] (-2.5948300768279142,4.470680337271209) ellipse (3.973436165338986 and 1.330253566678655);
+    \draw [color=red,domain=-10.595414382769706:2.500720072572623] plot(\x,{(--2998.1976338746463--154.82772036198662*\x)/837.4336989206226});
+    \begin{scriptsize}
+    \draw [fill=teal] (-1.7658998659356222,3.2537350559886766) circle (2.5pt);
+    \draw[color=teal] (-1.697846349314976,3.4339125358867024) node {$p$};
+    \draw[color=red] (-7.219597340524728,2.594199251509183) node {$H_p = T_p$};
+    \end{scriptsize}
+    \end{tikzpicture}
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
+    \clip(1,-1) rectangle (12,4.2);
+    \draw [rotate around={-172.52238947185185:(5.58430056014799,2.319535352849599)},color=blue] (5.58430056014799,2.319535352849599) ellipse (4.063981256849501 and 1.4858815602390578);
+    \draw [color=teal,domain=-3.7981066867017312:19.40249436513903] plot(\x,{(--2.4696406066332823--1.0398473193995683*\x)/6.128734815311686});
+    \draw [color=green,domain=-3.7981066867017312:19.40249436513903] plot(\x,{(--2497.140860927716-353.76546246339603*\x)/1639.0668888171813});
+    \draw [color=red,domain=-3.7981066867017312:19.40249436513903] plot(\x,{(-5251.952072960202--824.3765555968888*\x)/1134.6581928847716});
+    \begin{scriptsize}
+    \draw [fill=green] (2.906744285068728,0.8961410511547316) circle (2.5pt);
+    \draw[color=green] (2.8585424492862592,1.3578812922614554) node {$p_1$};
+    \draw [fill=red] (9.035479100380414,1.9359883705543) circle (2.5pt);
+    \draw[color=red] (9.259744552967712,1.7) node {$p_2$};
+    \draw [fill=teal] (6.528374407097482,0.1144721249308355) circle (2.5pt);
+    \draw[color=teal] (6.600090157776123,-0.19) node {$p$};
+    \draw[color=red] (10,3.8) node {$H_{p_2}\left(Q\right) = T_{p_2}\left(Q\right)$};
+    \draw[color=green] (10.37,-0.1) node {$H_{p_1}\left(Q\right) = T_{p_1}\left(Q\right)$};
+    \end{scriptsize}
+    \end{tikzpicture}
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
+    \clip(-8,-1.5) rectangle (3.2,4.5);
+    \draw [rotate around={-166.64953823051044:(-3.6958343717826576,2.4001698384783072)},color=blue] (-3.6958343717826576,2.4001698384783072) ellipse (3.2278434115319956 and 1.7272612187217231);
+    \draw [color=green,domain=-11.88617290832004:5.544782051740591] plot(\x,{(--5.825787876122232--0.4045348527412902*\x)/3.2024818479860375});
+    \draw [color=green,domain=-11.88617290832004:5.544782051740591] plot(\x,{(-3111.699543848952-628.0428125467149*\x)/878.5469677946085});
+    \draw [color=green,domain=-11.88617290832004:5.544782051740591] plot(\x,{(--2900.6520266166162--874.2194962583005*\x)/1070.2996041172978});
+    \draw [color=orange,domain=-11.88617290832004:5.544782051740591] plot(\x,{(--5.744458157149122--0.7631084376391317*\x)/2.343724533660228});
+    \draw [color=orange,domain=-11.88617290832004:5.544782051740591] plot(\x,{(-779.0328966364686-301.45934984121845*\x)/1347.5422207319493});
+    \draw [color=orange,domain=-11.88617290832004:5.544782051740591] plot(\x,{(--2159.394431179412--950.1005851563904*\x)/644.6207560726057});
+    \draw [color=red,domain=-11.88617290832004:5.544782051740591] plot(\x,{(--1.1967420881381787--0.5634245726491658*\x)/1.767992977268901});
+    \begin{scriptsize}
+    \draw [fill=blue] (-3.1706954282897257,1.4186282026262316) circle (2.5pt);
+    \draw[color=blue] (-3.0803795994811205,1.6613519925493554) node {$p$};
+    \draw [fill=green] (-6.373177276275763,1.0140933498849414) circle (2.5pt);
+    \draw [fill=green] (-1.2903827454426602,1.6561477422737316) circle (2pt);
+    \draw [fill=orange] (-5.514419961949954,0.6555197649870999) circle (2.5pt);
+    \draw [fill=orange] (-0.7827893373810072,2.1961219993978656) circle (2pt);
+    \draw [fill=red] (-4.081835419330292,-0.6239076188674535) circle (2pt);
+    \draw[color=red] (-4.028695801971466,-0.9) node {$A_1$};
+    \draw [fill=red] (-2.3138424420613912,-0.06048304621828766) circle (2pt);
+    \draw[color=red] (-2.165931832794002,-0.3) node {$A_2$};
+    \draw[color=green] (1.2,1.65) node {$l = H_{A_1}\left(Q\right)$};
+    \draw[color=orange] (1.9,2.55) node {$l' = H_{A_2}\left(Q\right)$};
+    \draw[color=red] (1.2,0.6) node {$H_p\left(Q\right)$};
+    \end{scriptsize}
+    \end{tikzpicture}
+    \end{center}
+\end{example}
+
+\subsection{Cuádrica dual}
+\begin{defi}[de la cuádrica dual]
+  Sea $Q\subseteq \Po^n$ una cuádrica, $A=M_\R\lp Q\rp$ su matriz asociada y sea
+  \begin{align*}
+   F_Q (=F):\Po^n & \to \lp\Po^n \rp ^*\\
+   \begin{pmatrix}
+   a_0\\
+   \vdots\\
+   a_n\\
+   \end{pmatrix} &\mapsto A
+   \begin{pmatrix}
+   a_0\\
+   \vdots\\
+   a_n\\
+   \end{pmatrix}
+  \end{align*}
+  una proyectividad $\tq$ si $p\in\Po^n$, $F(p)=\lp H_p\lp Q\rp\rp^*$. Entonces definimos 
+  $Q^* := F\lp Q\rp$ la cuádrica dual de $Q$.
+\end{defi}
+
+\begin{prop}
+  Sea $Q\in\Po^n$ una cuádrica, $A=M_\R\lp Q\rp$ su matriz asociada y $Q^*=F(Q)$ su cuádrica dual.
+   Entonces $M_{\R^*}\lp Q^* \rp = A^{-1}$
+\end{prop}
+\begin{proof}
+  Sea $\tilde{p}_{\R^*}= \lp b_0:\dots:b_n\rp \in \lp \Po^n \rp ^* \tq \tilde{p}\in Q^*=F(Q)
+  \stackrel{F \text{ biyectiva}}{\iff} A^{-1}
+  \begin{pmatrix}
+   b_0\\
+   \vdots\\
+   b_n\\
+  \end{pmatrix}=F^{-1}\lp\tilde{p}\rp \in Q$.
+  Entonces por definición tenemos que 
+  \[
+   \lp A^{-1}
+  \begin{pmatrix}
+   b_0\\
+   \vdots\\
+   b_n\\
+  \end{pmatrix}\rp ^T A \lp A^{-1}
+  \begin{pmatrix}
+   b_0\\
+   \vdots\\
+   b_n\\
+  \end{pmatrix}\rp=0 \iff (b_0,\dots,b_n)\lp A^{-1}\rp ^T 
+  \begin{pmatrix}
+   b_0\\
+   \vdots\\
+   b_n\\
+  \end{pmatrix}=0 \iff 
+  \]
+  \[
+   \iff (b_0,\dots,b_n) A^{-1}
+  \begin{pmatrix}
+   b_0\\
+   \vdots\\
+   b_n\\
+  \end{pmatrix}=0
+  \]
+
+
+
+\end{proof}
 
 
 
