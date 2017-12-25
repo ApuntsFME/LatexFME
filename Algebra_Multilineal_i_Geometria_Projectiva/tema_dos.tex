@@ -1921,7 +1921,7 @@ Es decir, dos variedades son paralelas si los puntos del infinito de una estan
 contenidos dentro de los de la otra.
 \end{obs}
 
-\begin{obs}
+\begin{prop}
  Si tenemos $V \subseteq \A^n$ una variedad lineal afín expresada en un sistema
  de referencia $\R$ mediante el siguiente sistema de ecuaciones:
  \[
@@ -1937,7 +1937,7 @@ contenidos dentro de los de la otra.
    \end{pmatrix}
  \]
  podemos expresar la variedad completada $\overline{V}$ en
- el proyectivizado de $\R$ ($\overline{R}$) con el siguiente sistema:
+ el proyectivizado de $\R$ ($\overline{\R}$) con el siguiente sistema:
   \[
    \lp
    \begin{tabular}{c|c} $b_1$ & \multirow{3}{*}{A} \\ $\vdots$ & \\ $b_n$ & \end{tabular} 
@@ -1950,6 +1950,152 @@ contenidos dentro de los de la otra.
      0 \\ \vdots \\ 0
    \end{pmatrix}
  \]
- \end{obs}
+ \end{prop}
 
+ \begin{proof}
+   Sea $q \in \overline{V} = \varphi(V) \cup V_\infty$. 
+   Consideramos $q_{\overline{\R}} = \begin{pmatrix}
+     \overline{x_0} \\ \vdots \\ \overline{x_n} 
+   \end{pmatrix}$
+   Separamos la prueba en dos casos.
+   \begin{enumerate}[i)]
+       \item Si $\overline{x_0} = 0$, $q = \lp 0:\overline{x_1}:\dots:\overline{x_n}\rp$, con
+         lo que
+         \[u = \lp \overline{x_1},\dots,\overline{x_n} \rp \in G \text{ s.e.v director
+         de V } \iff Au = 0 \iff 
+         \lp 
+         \begin{array}{c|c} 
+           b & A 
+         \end{array}
+         \rp
+         \begin{pmatrix}
+           0 \\
+           \overline{x_1} \\
+           \vdots \\
+           \overline{x_n}
+         \end{pmatrix}
+         = 0.
+       \]
+     \item Si $\overline{x_0} \neq 0$, $q = \lp 1 : \frac{\overline{x_1}}{\overline{x_0}}
+       : \dots : \frac{\overline{x_n}}{\overline{x_0}} \rp$, con lo que $q \in \varphi(V)$,
+       es decir, $\exists q_0 =  \lp \frac{\overline{x_1}}{\overline{x_0}}
+       : \dots : \frac{\overline{x_n}}{\overline{x_0}} \rp \in V \text{ t.q. } 
+       q = \varphi(q_0)$. Entonces, 
+       \begin{gather*} 
+   \begin{pmatrix}
+     b_1 \\ \vdots \\ b_n
+   \end{pmatrix}
+   +
+   \lp
+   \begin{tabular}{c|c} 
+     \multirow{3}{*}{$A$} & $\frac{\overline{x_1}}{\overline{x_0}}$\\ 
+     & $\vdots$  \\ & $ \frac{\overline{x_n}}{\overline{x_0}}$
+    \end{tabular} 
+    \rp
+    =
+    \begin{pmatrix}
+     0 \\ \vdots \\ 0
+   \end{pmatrix}
+   \iff
+\begin{pmatrix}
+     b_1 \\ \vdots \\ b_n
+   \end{pmatrix}
+   \overline{x_0}
+   +
+   \lp
+   \begin{tabular}{c|c} 
+     \multirow{3}{*}{$A$} & $\overline{x_1}$\\ 
+     & $\vdots$  \\ & $ \overline{x_n}$
+    \end{tabular} 
+    \rp
+    =
+    \begin{pmatrix}
+     0 \\ \vdots \\ 0
+   \end{pmatrix}
+   \iff \\
+   \iff
+   \lp
+         \begin{array}{c|c} 
+           b & A 
+         \end{array}
+         \rp
+         \begin{pmatrix}
+           \overline{x_0} \\
+           \vdots \\
+           \overline{x_n}
+         \end{pmatrix}
+ = 
+ \begin{pmatrix}
+   0 \\ \vdots \\ 0
+ \end{pmatrix}
+\end{gather*} 
+        
+   \end{enumerate}
 
+ \end{proof}
+ 
+ \begin{example}
+  Consideremos la recta $V \subseteq \A^3$ definida por $V:
+  \begin{cases}
+    x_1+x_2+x_3 = 1\\
+    x_1-x_2+2x_3 = 2
+  \end{cases}
+  $
+  Queremos encontrar la recta $\overline{V} \subseteq \overline{\A^3}$. Podemos
+  expresar las condiciones anteriores como
+  \[
+    \begin{pmatrix}
+      1 & 1 & 1 \\
+      1 & -1 & 2 
+    \end{pmatrix}
+   \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} 
+   + 
+   \begin{pmatrix}
+     -1 \\ -2
+   \end{pmatrix}
+   =
+   \begin{pmatrix}
+     0 \\ 0
+   \end{pmatrix}.
+ \]
+Y, aplicando la proposición anterior, obtenemos las siguientes ecuaciones que nos
+describen $\overline{V}$:
+\[
+  \lp
+  \begin{array}{c|ccc}
+      -1 & 1 & 1 & 1 \\
+      -2 & 1 & -1 & 2 
+    \end{array}
+    \rp
+    \begin{pmatrix} \overline{x_0} \\ \overline{x_1} \\ \overline{x_2} \\ 
+      \overline{x_3} \end{pmatrix} 
+   + 
+   \begin{pmatrix}
+     -1 \\ -2
+   \end{pmatrix}
+   =
+   \begin{pmatrix}
+     0 \\ 0
+   \end{pmatrix}.
+ \]
+ \end{example}
+ \begin{example}
+   Consideremos la variedad lineal afín $V \subseteq \A^3$ definida por
+   \[-5 + x_1 + 2x_2 + 4x_3 = 0.\]
+   Esta variedad da lugar a la siguiente variedad completada
+   \[
+     \overline{V}\colon -5\overline{x_0} + \overline{x_1} + 2\overline{x_2} + 
+   4\overline{x_3}
+ \]
+ \end{example}
+
+ \subsection{Espacios afines dentro de un espacio proyectivo}
+
+ \begin{prop}
+   Sea $H \subseteq \Po^n$ un hiperplano. $\Po^n \setminus H$ tiene estructura de
+   espacio afín $\A^n$ y cumple $\Po^n = \overline{\A^n}$ y $H = \overline{\A^n_\infty}$.
+ \end{prop}
+
+ % \begin{proof}
+   
+ %\end{proof}
