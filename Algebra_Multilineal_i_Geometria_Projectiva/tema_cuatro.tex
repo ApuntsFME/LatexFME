@@ -338,3 +338,46 @@
 %%%%%%%%%%%%%%%%A PARTIR D'AQUI OSCAR%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Cuádricas proyectivas y afines}
+
+\begin{align*}
+    \A^n &\leftrightarrow \bar{\A}^n = \Po^n \\
+    \left( x_0, \dots, x_n \right) &\mapsto \left( 1:x_1:\dots:x_n \right) \\
+    \left( \frac{\overline{x}_1}{\overline{x}_0}, \dots, \frac{\overline{x}_n}{\overline{x}_0} \right) &\mapsfrom \left( \overline{x}_0:\dots:\overline{x}_n \right), \overline{x}_0 \neq 0.
+\end{align*}
+\begin{obs}
+    $Q$ proyectiva $\implies Q_0$ afín: $M_{\overline{\R}}\left( Q \right) = A$.
+    \[ Q_0 = Q\cap \A^n = \left\{ p \in \A^n \;|\; p\in Q \right\} \to \text{ Ecuaciones: } \left( 1,x_1,\dots,x_n \right)A
+       \begin{pmatrix}
+            1 \\
+            x_1 \\
+            \vdots \\
+            x_n
+        \end{pmatrix} = 0.
+    \]
+\end{obs}
+\begin{example}
+    $\A^2 \to \Po^2$ \\
+    \begin{gather*}
+        \begin{array}{c}
+            Q_0 = Q\cap \A^2 \\
+            x_0 = 1
+        \end{array}, \quad
+        \begin{cases}
+            Q \colon x_0^2 + x_1^2 + x_2^2 + 4x_0x_1 + 6x_0x_2 + 8x_1x_2 = 0 \\
+            A = 
+            \begin{pmatrix}
+                1 & 2 & 3 \\
+                2 & 1 & 4 \\
+                3 & 4 & 1
+            \end{pmatrix}
+        \end{cases} \\
+        1 + x_0^2 + x_1^2 + x_2^2 + 4x_0x_1 + 6x_0x_2 + 8x_1x_2 = 0 \implies A = 
+        \begin{pmatrix}
+            1 & 2 & 3 \\
+            2 & 1 & 4 \\
+            3 & 4 & 1
+        \end{pmatrix}
+    \end{gather*}
+\end{example}
