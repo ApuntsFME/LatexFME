@@ -742,20 +742,75 @@
 \end{defi}
 % TODO dibuixos de la pag 10, son en 2D facilets
 % TODO acabar la seguent obs que no entenc en absolut, sorry (pg 10 del divo)
-% \begin{obs}[Cálculo del centro para $Q$ no degenerada $\left( \det A \neq 0 \right)$]
-%     \begin{align*}
-%         \A^n &\to \Po^n = \bar{A}^n \\
-%         Q &\mapsto \overline{Q}
-%     \end{align*}
-%     $A = M_\R \left( Q \right) = M_{\overline{\R}} \left( \overline{Q} \right) =
-%     \left(\begin{array}{c|ccc}
-%         c & b_1 & \dots & b_n \\
-%         b_1 & & & \\
-%         \vdots & & A_\infty & \\
-%         b_n & & &
-%    \end{array}\right)$ \\
-%    $p = \left( 1, a_1, \dots, a_n \right)\in \A^n$
-% \end{obs}
+ \begin{obs}[Cálculo del centro para $Q$ no degenerada $\left( \det A \neq 0 \right)$]
+     \begin{align*}
+         \A^n &\to \Po^n = \bar{A}^n \\
+         Q &\mapsto \overline{Q}
+     \end{align*}
+     $A = M_\R \left( Q \right) = M_{\overline{\R}} \left( \overline{Q} \right) =
+     \left(\begin{array}{c|ccc}
+         c & b_1 & \dots & b_n \\
+         \hline
+         b_1 & & & \\
+         \vdots & & A_\infty & \\
+         b_n & & &
+    \end{array}\right)$ \\
+    Supongamos que queremos encontrar un centro de $Q$, $p = 
+    \left( 1, a_1, \dots, a_n \right)\in \A^n$. Sabemos que $\overline{\A^n_\infty} = 
+    H_p(\overline{Q}).$ Por lo tanto, tiene que cumplir
+\[\begin{pmatrix}
+ 1 & a_1 & \dots & a_n 
+\end{pmatrix}
+A
+\begin{pmatrix}
+ 0 \\ x_1 \\ \vdots \\ x_n 
+\end{pmatrix}
+= 0 \qquad \forall
+\begin{pmatrix} 0 \\ x_1 \\ \vdots \\ x_n \end{pmatrix} \in \overline{\A^n_\infty}.
+\]
+Esto se satisface si y solo si, para $\alpha \neq 0$,
+\begin{gather*}
+  \begin{pmatrix}
+ 1 & a_1 & \dots & a_n 
+\end{pmatrix}
+A = 
+\begin{pmatrix} 
+  \alpha & 0 & \dots & 0 
+\end{pmatrix} 
+\iff \\
+\iff
+ \begin{pmatrix}
+ 1 & a_1 & \dots & a_n 
+\end{pmatrix}
+\left(\begin{array}{c|ccc}
+         c & b_1 & \dots & b_n \\
+         \hline
+         b_1 & & & \\
+         \vdots & & A_\infty & \\
+         b_n & & &
+    \end{array}\right)
+    = 
+\begin{pmatrix} 
+  \alpha & 0 & \dots & 0 
+\end{pmatrix}
+\end{gather*}
+Que, finalmente, podemos desarrollar para obtener la siguiente condición para
+calcular los centros de una cuádrica:
+\[
+\begin{pmatrix}
+ b_1 \\ \vdots \\ b_n 
+\end{pmatrix}
++
+A_\infty
+\begin{pmatrix}
+ a_1 \\ \vdots \\ a_n 
+\end{pmatrix}
+=
+\begin{pmatrix}
+ 0 \\ \vdots \\ 0 
+\end{pmatrix}
+\]
+ \end{obs}
 \begin{obs}
     $Q$ no tiene centro $\iff \bar{\A}^n_\infty$ es tangente a $\overline{Q}$
 \end{obs}
