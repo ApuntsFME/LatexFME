@@ -69,7 +69,7 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
 \section{La diferencial exterior en $\real^n$}
 
 \begin{defi}
-   Dada una función $f \in \C^\infty \left( \real^n \right) = \Omega^0 \left( \real^n \right)$, podemos construir una 1-forma diferencial 
+   Dada una función $f \in \C^\infty \left( \real^n \right) = \Omega^0 \left( \real^n \right)$, podemos construir una 1-forma diferencial
    $\dif f \in \Omega^1 \left( \real^n \right)$, de acuerdo con la fórmula
    \[
        \dif f := \sum^n_{i=1} \frac{\partial f}{\partial x^i} \dif x^i
@@ -128,7 +128,7 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
     $\dif \circ \dif = 0$
 \end{prop}
 \begin{proof}
-    Basta demostrarlo para 
+    Basta demostrarlo para
     \[
         \dif \left( \dif f \right) = \sum_{i,j} \frac{\partial}{\partial x^j} \left( \frac{\partial f}{\partial x^i} \right) \dif x^j \wedge \dif x^i = 0
     \]
@@ -232,6 +232,368 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
     \end{gather*}
 \end{example*}
 
-\section{Pullback de formas diferenciales en $\real^n$}<++>
+\section{Pullback de formas diferenciales en $\real^n$}
+
+\begin{defi}
+    Sea $F \colon \real^m \to \real^n$ una aplicación de clase $\C^\infty$. Dada una función $g \in \C^\infty\left( \real^n \right)$, la función
+    \[
+        F^\ast(g) := g \circ F \in \C^\infty \colon \real^m \to \real
+    \]
+    se denomina \emph{pullback} de $g$ por $F$. Así, tenemos una aplicación $\real$-lineal $F^\ast \colon \C^\infty \left( \real^n \right)
+    \to \C^\infty \left( \real^n \right)$
+\end{defi}
+\begin{obs*}
+    Es similar a a aplicación transponer de álgebra lineal
+\end{obs*}
+
+\begin{defi}
+    Podemos extender el pullback a formas diferenciales, definiendo una aplicación $F^\ast \colon \Omega^\bullet \left( \real^n \right) \to
+    \Omega^\bullet\left( \real^m \right)$ denominada pullback y definida por las propiedaddes siguientes
+    \begin{itemize}
+        \item La aplicación es $\real$-lineal.
+        \item Sobre $\Omega^0\left( \real^n \right)$ es el pullback de funciones.
+        \item La aplicación conmuta con el producto exterior
+            \[
+                F^\ast(\alpha \wedge \beta) = F^\ast(\alpha) \wedge F^\ast(\beta)
+            \]
+        \item Si $g \in \Omega^0 \left( \real^n \right)$, entonces $F^\ast\left( \dif g \right) = \dif F^\ast(g)$
+    \end{itemize}
+    Por lo tanto, $F^\ast$ aplica de $k$-formas en $k$-formas y $F^\ast$ conmuta con la difencial exterior
+    \[
+        \dif \circ F^\ast = F^\ast \circ \dif
+    \]
+    $F^\ast$ se define poniendo
+    \[
+        F^\ast\left( g \dif y^{j_1} \wedge \cdots \wedge \dif y^{j_l} \right) = F^\ast(g)\dif F^\ast\left( y^{j_1} \right) \wedge
+        \cdots \wedge \dif F^\ast\left( y^{j_l} \right)
+    \]
+\end{defi}
+
+\begin{obs}
+    En particular, tenemos
+    \[
+        F^\ast \left( \dif y^j \right) = \dif F^\ast\left( y^j \right) =
+        \sum_i = \frac{\partial F^\ast\left( y^j \right)}{\partial x^i} \dif x^i
+    \]
+    Donde podemos observar la apración de la jacobiana de $F$
+    \[
+        J_F = \left( \frac{\partial F^\ast \left( y^j \right)}{\partial x^i} \right)
+    \]
+\end{obs}
+
+\begin{obs}
+    En el caso particular de que $m=n$, tenemos que
+    \[
+        F^\ast \left( \dif y^1 \wedge \cdots \wedge \dif y^n \right) = \det J_F \dif x^1 \wedge \cdots \wedge \dif x^n
+    \]
+\end{obs}
+
+\begin{prop}
+    Cuando $F \colon \real^m \to \real^n$ es un difeomorfismo (necesita $m=n$), entonces las diferenciales $\dif F^\ast \left( y^j \right)$
+    tambi\'en una base para las formas diferenciales de grado 1 en $\real^m$, y la matriz de cambio de base respecto a la base de las
+    $\dif x^i$ es la matriz jacobiana $J_F$.
+\end{prop}
+
+\begin{example*}
+    Consideramos la función
+    \[
+        \begin{aligned}
+            F \colon \real^2 &\to \real^2 \\
+            (u,v) &\mapsto F(u,v) = (u^2 - v^2, 2uv)
+        \end{aligned}
+    \]
+    Entonces,
+    \begin{gather*}
+        F^\ast(x) = u^2 - v^2 \qquad F^\ast(y) = 2uv \\
+        F^\ast \left( x^2 + y^2 \right) = \left(u^2 - v^2\right)^2 + (2uv)^2 = \left(u^2 +v^2\right)^2 \\
+        F^\ast\left( \dif x \right) = \dif F^\ast(x) = 2u\dif u - 2v\dif v
+        \qquad
+        F^\ast\left( \dif y \right) = \dif F^\ast (y) = 2v \dif u + 2u \dif v \\
+        F^\ast\left( \dif x \wedge \dif y \right) = F^\ast\left( \dif x \right) \wedge F^\ast\left( \dif y \right) = \cdots =
+        4 \left( u^2 + v^2 \right) \dif u \wedge \dif v \\
+        F^\ast\left( -y\dif x + x \dif y\right) = \cdots = 2 \left( u^2 + v^2 \right) \left( -v \dif u + u \dif v \right)
+    \end{gather*}
+\end{example*}
+
+\section{Integral de formas diferenciales}
+
+\begin{obs}
+    REcordemos que si $f \colon \real^n \to \real$ es una función continua de clase $\C^\infty$, está definida la integral
+    \[
+        \int_{\real^n} f \equiv \int_{\real^n} f(x) \dif x^1 \cdots \dif x^n
+    \]
+\end{obs}
+
+\begin{defi}
+    Sea $\omega \in \Omega^n\left( \real^n \right)$ una $n$-forma diferencial escrita como $\omega = f \dif x^1 \wedge \cdots \wedge \dif x^n$,
+    con $f$ de clase $\C^\infty$. Si $f$ tiene soporte compacto, se define su integral como
+    \[
+        \int_{\real^n} \omega := \int_{\real^n} f\dif x^1 \wedge \cdots \wedge \dif x^n = \int_{\real^n} f \dif x^1 \cdots \dif x^n
+    \]
+\end{defi}
+
+\begin{prop}
+    Sea $F \colon \real^n \to \real^n$ un difeomorfismo y $\omega \in \Omega^n\left( \real^n \right)$ con soporte compacto, entonces
+    \[
+        \int_{\real^n} F^\ast(\omega) = \pm \int_{\real^n} \omega
+    \]
+    donde el signo es el de $J_F$
+\end{prop}
+
+\begin{proof}
+    Por un lado, tenemos que
+    \[
+        \int_{\real^n} \omega = \int_{\real^n} f(x) \dif x^1 \cdots \dif x^n \stackrel{F \text{ C.V.}}{=} \int_{\real^n}
+        f\left( F(y) \right) \abs{\det J_F(y)} \dif y^1 \cdots \dif y^n
+    \]
+    Por otro lado,
+    \[
+        \int_{\real^n} F^\ast(\omega) = \int_{\real^n} F^\ast (f) \det J_F \dif y^1 \wedge \cdots \dif y^n =
+        \int_{\real^n} f\left( F(y) \right) \det J_F(y) \dif y^1 \cdots \dif y^n
+    \]
+\end{proof}
+
+\begin{obs}
+    Si interpretamos $F$ como un cambio de variables, esta fórmula, demuestra que la definición dada de integral de una forma diferencial
+    de grado máximo \textbf{NO} depende del sistema de coordenadas utilizado, aunque cambia de signo dependiendo de la orientación.
+\end{obs}
+
+\begin{defi}
+    Sea $\omega \in \Omega^k\left( \real^n \right)$ una forma diferencial de grado $k < n$. Si $\sigma \colon \real^k \to \real^n$ es
+    una aplicación, se define la integral de $\omega$ a lo largo de $\sigma$ como la integral
+    \[
+        \int_{\sigma} \omega := \int_{\real^k} \sigma^\ast(\omega)
+    \]
+    suponiendo que $\sigma^\ast(\omega)$ tenga soporte compacto.
+\end{defi}
+
+\begin{obs}
+    Todo lo que hemos hecho, se puede hacer en abiertos de $\real^n$ en lugar de en todo $\real^n$. Si $V \subseteq \real^n$ abierto,
+    $\Omega^\bullet(V)$, $\Omega^k(V)$, $\omega = \sum\limits_I g_I \dif x^I$ $\left( g_I \in \C^\infty(V) \right)$.
+    Pullback de $F \colon U \subseteq \real^m \to V \subseteq \real^n$, $F^\ast \colon \Omega^\bullet (V) \to \Omega^\bullet (U)$.
+
+    Para el lema de Poincar\'e es necesario que $V \subset \real^n$ sea estrellado respecto al origen.
+\end{obs}
+
+\begin{defi}
+    Decimos que una forma diferencial es de clase $\C^k$ cuando sus coeficientes son de clase $\C^k$, en los apartados anteriores hemos
+    considerado diferenciabilidad de clase $\C^\infty$, pero algunas operaciones con formas diferenciales no requieren tanta diferenciabilidad.
+\end{defi}
+
+\section{Subvariadades de $\real^n$}
+
+Este tema es un repaso de cálculo diferencial, así que referenciamos a los apuntees del profesor
+ante cualquier duda, este apartado se trata de un simple repaso de las propiedadaes basicas de las
+subvariedades
+
+\section{Formas diferenciales en una variedad}
+
+\begin{obs*}
+    No trataremos el tema de los campos vectoriales en subvariedades, pero sí que aparecen en el resumen de apuntes. Como siempre, los curiosos
+    a los apuntes.
+\end{obs*}
+
+\setcounter{lema}{4}
+
+\begin{defi}
+    Sea $M$ una subvariedad, llamaremos 1-forma diferencial en $M$ a una aplicación
+    \[
+        \begin{aligned}
+            \theta \colon M &\to T^\ast M \equiv \bigcup_{p \in M} T^\ast_pM \\
+            p &\mapsto \theta_p \equiv \theta(p) \in T^\ast_p M
+        \end{aligned}
+    \]
+\end{defi}
+
+\begin{obs}
+    Si $f \colon M \to \real$, $\dif f \colon M \to T^\ast M$ que envia cada punto $p \in M$ a la difencial $\dif f(p)$.
+
+    En particular, en el dominio de una carta, tenemos las diferenciales de las funciones de las funciones coordenadas, $\dif x^i$.
+\end{obs}
+
+\begin{defi}
+    En el dominio $V$ de una carta, una 1-forma diferencial $\theta$ se expresa de manera única como
+    \[
+        \theta \vert_V = \sum^m_{i=!} a_i \dif x^i
+    \]
+    donde $a_i \colon V \to \real$ son los componenetes de $\theta$ en la carta.
+
+    Diremos que $\theta$ es de clase $\C^\infty$ cunado sus componentes son de clase $\C^\infty$.
+\end{defi}
+
+\begin{prop}
+    En el dominio de una carta, la diferencial de una función se expresa como
+    \[
+        \dif f \vert_V = \sum^m_{i= 1} \frac{\partial f}{\partial x^i} \dif x^i
+    \]
+\end{prop}
+
+\begin{defi}
+    Definiremos una $k$-forma diferencial como una expresión del tipo
+    \[
+        \omega\vert_V = \sum_{i_1 < \cdots < i_k} f_{i_1 \cdots i_k} \dif x^{i_1} \wedge \cdots \wedge \dif x^{i_k}
+    \]
+\end{defi}
+
+El resto de este tema tampoco se ha realizado en clase, ante cualquier duda o curiosidad, consultar los apuntes del profesor.
+
+\section{Integración de formas diferenciales en variedades orientadas}
+
+\begin{defi}
+    Una parametrización $g \colon W \to M$ de una variedad define en cada espacio tangente $T_pM$ una base de vectores tangentes
+    coordenados, y, por tanto, una orientación de $T_pM$.
+
+    Otra parametrización $f \colon V \to M$ de $M$ define la misma orientación de los espacios tangentes sii el cambio de coordenadas
+    $\inv{f} \circ g \colon W \to V$ tiene jacobiana positiva.
+\end{defi}
+
+\begin{defi}
+    Un atlas orientado de $M$ es un conjunto de cartas que recubren $M$ y tal que sus cambios de coordenadas (en sus dominios comunes)
+    tienen jacobianas positivas. Un atlas orienta los diferentes espacios tangentes de $M$ de manera coherente. En caso de existir dicho atlas,
+    se dice que $M$ es orientable.
+\end{defi}
+
+\begin{defi}
+    Una orientación de una variedad orientable viene dada por la elleción de un atlas orientado. Una variedad orientada es una variedad
+    orientable en la cual se ha elegido una orientación.
+\end{defi}
+
+\begin{defi}
+    Si $M$ es una variedad orientada, diremos que una carta de $M$ pertenece a la orientación de $M$ o que es una carta positiva cuando su
+    cambio de coordenadas respecto a las cartas de la orientación de $M$ tiene jacobiana positiva.
+\end{defi}
+
+\begin{defi}
+    Una forma diferencial $\Omega$ en $M$ de grado máximo que no se anula en ningún punto, se denomina forma de volumen
+\end{defi}
+
+\begin{prop*}
+    Si una variedad tiene una forma de volumen, entonces es orientable.
+\end{prop*}
+
+\begin{proof}
+    En cada punto $p \in M$ la forma diferencial $\Omega_p$ define una orientación del espcaio tangente $T_pM$:
+    una base $\left\{ \vec{v_1}, \dots, \vec{v_n} \right\}$ de $T_pM$ es positiva cuando
+    $\Omega_p\left( \vec{v_1}, \dots, \vec{v_n} \right) > 0$. De manera análoga, una carta $\varphi = \left( x^1, \dots, x^n \right)$
+    es positiva cuando
+    \[
+        \Omega\left( \frac{\partial}{\partial x^1}, \dots, \frac{\partial}{\partial x^m} \right) > 0
+    \]
+    Las cartas positivas constituyen un atlas orientado en $M$, y por tanto, definen na orientación.
+\end{proof}
+
+\begin{obs*}
+    Reciprocamente, se puede demostrar que si una variedad tiene un atlas orientado, entonces tiene una forma de volumen.
+\end{obs*}
+
+\begin{obs}
+    Una variedad orientada conexa tiene exactamente 2 orientaciones.
+\end{obs}
+
+\begin{defi}
+    Sea $M \subset \real^n$ una subvariedad $m$-dimensional orientada, $\omega \in \Omega^m\left( M \right)$ una forma diferencial
+    de grado máximo con soporte compacto. Si $M$ admite una parametrización global $g \colon W \subset \real^n \to M$ correspondiente
+    a la orientación de $M$, se define la integral de $\omega$ como
+    \[
+        \int_M \omega := \int_W g^\ast(\omega)
+    \]
+\end{defi}
+
+\begin{lema*}
+    La integral anterior no depende de la parametrización escogida.
+\end{lema*}
+
+\begin{proof}
+    Sea $g^\prime \colon W^\prime \to M$ otra parametrización y sea $X \colon W^\prime \to W$ un difeomorfismo, entonces
+    \[
+        \int_{W^\prime} {g^\prime}^\ast(\omega) = \int_{W^\prime} X^\ast\left( g^\ast(\omega) \right) = \pm \int_W g^\ast(\omega)
+    \]
+    donde el signo es el signo de la jacobiana de $X$.
+\end{proof}
+
+\begin{obs}
+    Si $M$ requiere diversas parametrizaciones, se requiere un instrumento t\'ecnico para definir la integral de una forma diferencial,
+    si alguno está interesado puede consultar en los apuntes del profesor (en el mismo índice).
+\end{obs}
+
+\begin{defi}
+    Sea $\phi_\alpha \colon V_\alpha \to M$ una familia de cartas positivas que recubren todo $M$ y $\left( \chi_\alpha \right)$ es una
+    partición de la unidad subordinada, tenemos pues que $\omega = \sum\limits_\alpha \chi_\alpha \omega$, lo cual nos permite definir
+    \[
+        \int_M \omega = \sum_\alpha \int_M \chi_\alpha \omega
+    \]
+    Donde $\int_M \chi_\alpha \omega$ se debe entender como la integral sobre los abiertos $V_\alpha$ ya que $\chi_\alpha$ fuera de ellos vale
+    0.
+\end{defi}
+
+\begin{obs}
+    Como hemos supuesto que $\omega$ tiene soporte compacto, la suma es una suma finita, y, en general, $M$ se puede expresar como
+    \[
+        M = \underbrace{\left( \bigcup_\alpha V_\alpha \right)}_{\text{finito}} \cup \underbrace{Z}_{\text{medida nula}}
+    \]
+    y entonces,
+    \[
+        \int_M \omega = \sum_\alpha \int_{V_\alpha} \omega
+    \]
+\end{obs}
 
 \section{Variedades con borde y teorema de Stokes}\label{section:5-8}
+
+\begin{obs}
+    El modelo local de variedad con borde es el semiespacio cerrado $H^m$,
+    \[
+        H^m = \setb{\left( x^1, \dots, x^m \right) \in \real^m \vert x^1 \leq 0} = (-\infty, 0] \times \real^{m-1}
+    \]
+    Formado por $(-\infty, 0) \times \real^{m-1}$, el interior de $H^m$ y su frontera $\{0\} \times \real^{m-1}$.
+\end{obs}
+
+\begin{defi}
+    Una subvariedad con borde de dimensión $m$ en $\real^n$ es un subconjunto $M \subset \real^n$ que satisface
+    la propiedad:
+
+    para cada $p \in M$ existe un conjunto abierto $V \subset \real^n$, con $p \in V$, y un difeomorfismo
+    $\Phi \colon V \to U$ entre abiertos de $\real^n$, tal que
+    \[
+        \Phi\left( V \cap M \right) = U \cap \left( H^m \times \{0\}\right)
+    \]
+\end{defi}
+
+\begin{defi}
+    Para un punto $p \in M$ una subvariedad, y un difeomorfismo $\Phi$ como el de antes, hay dos posiblidades,
+    \begin{itemize}
+        \item $\Phi(p) \in \text{Int}\left( H^m \right) \times \{0\}$
+        \item $\Phi(p) \in \fr \left( H^m \right) \times \{0\}$
+    \end{itemize}
+    Que ocurra una o la otra, no depende del difeomorfismo utilizado. A los puntos del primer tipo los llamaremos
+    ``puntos interiores'' de $M$. Los puntos del segundo tipo, forman el borde de $M$, que se representa por $\partial M$.
+\end{defi}
+
+\begin{prop}
+    Si $M$ es una subvariedad con borde, $M = \left( M \smallsetminus \partial M \right) \cup \partial M$ donde,
+    $\left( M \smallsetminus \partial M \right)$ es una subvariedad de dimensión $m$ y $\partial M$ es una subvariedad
+    de dimensión $m-1$.
+\end{prop}
+
+Es tanto interesante como recomendable, consultar los apuntes del profesor de la parte que falta.
+
+\setcounter{lema}{7}
+
+\begin{prop}
+    Si una subvariedad $M$ $m$-dimensional está orientada, entonces $\partial M$ tiene una orientación canónica (``hacia el
+    exterior''), definida de la marea siguiente:
+
+    Si $\left( x^1, \dots, x^n \right)$ es una carta positiva de $M$, definida alrededor de un punto $p$ del borde según la definición
+    del principio (es decir, $x^1 \leq 0$), entonces $\left( x^2, \dots, x^m \right)$ es una carta positiva del borde.
+\end{prop}
+
+\begin{teo}[de Stokes]
+    Sean $M \subset \real^n$ una variedad con borde, orientada y de dimensión $m$, y $\omega \in \Omega^{m-1}(M)$ una forma
+    diferencial de grado $m-1$ en $M$ de soporte compacto. Entonces, se satisface la fórmula de \emph{Stokes}
+    \[
+        \int_M \dif \omega = \int_{\partial M} \omega
+    \]
+    donde el borde tiene la orientación inducida por $M$.
+\end{teo}
+
+Es interesante, aunque no se ha hecho en clase, consultar los apuntes del profesor para ver cómo se aplican las diversas fórmulas
+y teoremas vistas durante los temas anteriores a subvariedades con bordes.
