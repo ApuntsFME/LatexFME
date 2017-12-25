@@ -1864,4 +1864,92 @@ al usar coordenadas.
   \end{gather*}
 \end{proof}
 
-%\begin{obs}
+\begin{obs}
+  \begin{enumerate}[i)]
+    \item[]
+    \item Para $p \in \Po^n$, si $\overline{x_0} \neq 0$, $q = (\overline{x_0}:
+      \dots:\overline{x_n}) = (1:\frac{\overline{x_1}}{\overline{x_0}}:
+      \dots:\frac{\overline{x_n}}{x_0}) = \varphi(\frac{\overline{x_1}}{\overline{x_0}}
+      ,\dots,\frac{\overline{x_n}}{\overline{x_0}}) \in \A^n.$
+    \item Para $q \in \Po^n$, $q \in \A^n_\infty \iff \overline{x_0} = 0$.
+  \end{enumerate}
+\end{obs}
+
+\subsection{Variedades lineales afines y proyectivas}
+
+En lo que concierne a este apartado, diremos que $V \subseteq \A^n$ es una variedad 
+lineal afín $V = p+G$, $G \subseteq \F$ s.e.v de $\F$, siendo $\F$ el espacio vectorial
+asociado a $A^n$.
+
+\begin{defi}
+  \begin{enumerate}[i)]
+    \item[]
+    \item $V_\infty = \pi(G) \subseteq \Po^n = \overline{\A^n}$
+    \item Llamamos a $\overline{V} = \varphi(V) \cup V_\infty$ variedad lineal 
+      proyectiva completada de $V$.
+  \end{enumerate}
+\end{defi}
+
+\begin{prop}
+  $\overline{V} = \pi \lp [e_0 + \overrightarrow{p_0p}] \oplus G \rp = \varphi(p) \vee
+  V_\infty$. En particular, $\overline{V}$ es una variedad lineal proyectiva. 
+\end{prop}
+
+\begin{proof}
+  Veamos primero que $\overline{V} \subseteq \varphi(p) \vee V_\infty$. Por definición,
+  $\overline{V} = \varphi(V) \cup V_\infty$. Separaremos la prueba en dos casos.
+  \begin{enumerate}[i)]
+    \item Si $q \in \varphi(V)$, $q = \varphi(q_0) = [e_0 + \overrightarrow{p_0q_0}]
+        = [e_0 + \overrightarrow{p_0p}+u]$, donde $u \in G$. Por lo tanto,
+        $q \in \pi \lp[e_0 + \overrightarrow{p_0p}] \oplus G \rp$.
+      \item Si $q \in V_\infty = \pi \lp G \rp \subseteq \pi \lp [e_0 + \overrightarrow{p_0
+        p}] \oplus G \rp$.
+  \end{enumerate}
+  
+  La prueba de la segunda inclusión resta como ejercicio para el lector.
+\end{proof}
+
+%TODO Dibuix il·lustrant paral·lelisme i osties
+\begin{obs}
+Sean $V_1 = p_1 + G_1$ y $V_2 = p_2 + G_2$ dos variedades lineales en el espacio afín.
+Decimos que $V_1$ y $V_2$ son paralelas si
+\[
+  V_1 \parallel V_2 \iff G_1 \subseteq G_2 \text{ o } G_2 \subseteq G_1 \iff
+  (V_1)_\infty \subseteq (V_2)_\infty \text{ o } (V_2)_\infty \subseteq (V_1)_\infty.
+\]
+Es decir, dos variedades son paralelas si los puntos del infinito de una estan 
+contenidos dentro de los de la otra.
+\end{obs}
+
+\begin{obs}
+ Si tenemos $V \subseteq \A^n$ una variedad lineal afín expresada en un sistema
+ de referencia $\R$ mediante el siguiente sistema de ecuaciones:
+ \[
+   A 
+   \begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix} 
+   + 
+   \begin{pmatrix}
+     b_1 \\ \vdots \\ b_n
+   \end{pmatrix}
+   =
+   \begin{pmatrix}
+     0 \\ \vdots \\ 0
+   \end{pmatrix}
+ \]
+ podemos expresar la variedad completada $\overline{V}$ en
+ el proyectivizado de $\R$ ($\overline{R}$) con el siguiente sistema:
+  \[
+   \lp
+   \begin{tabular}{c|c} $b_1$ & \multirow{3}{*}{A} \\ $\vdots$ & \\ $b_n$ & \end{tabular} 
+   \rp 
+   \begin{pmatrix}
+     \overline{x_0} \\ \vdots \\ \overline{x_n} 
+   \end{pmatrix}
+   =
+   \begin{pmatrix}
+     0 \\ \vdots \\ 0
+   \end{pmatrix}
+ \]
+ \end{obs}
+
+
