@@ -690,3 +690,60 @@
             \]
     \end{itemize}
 \end{example}
+
+\section{Clasificación proyectiva de cuádricas}
+
+\begin{defi}
+    $\Po^n = \Po\left( \E \right)$. Sean $Q_1 = [q_1], Q_2 = [q_2], q_1,q_2 \colon \E \to \k$ (formas cuadráticas).
+    \[
+        Q_1 \sim Q_2 \iff \exists \lambda \neq 0 \tq q_1\sim \lambda q_2 \text{ (como formas cuadráticas)}
+    \]
+\end{defi}
+\begin{obs}
+    Son equivalentes:
+    \begin{itemize}
+        \item $Q_1 \sim Q_2$
+        \item $\exists \lambda \neq 0, \exists S \left( \det S\neq 0\right) \tq A_1 = \lambda S^tA_2S$
+        \item $\exists f\colon \Po^n \to \Po^n$ homografía t.q. $f\left( Q_1 \right) = Q_2$
+        \item $\exists \tilde{\R} \tq M_{\tilde{\R}} \left( Q_2 \right) = M_\R\left( Q_1 \right)$
+    \end{itemize}
+\end{obs}
+\begin{obs}
+    Con el método convergencia-pivote: 
+    \[
+        \left( 
+        \begin{array}{c|c}
+            A & \Id
+        \end{array} \right)
+        \sim \dots \sim
+        \left( 
+        \begin{array}{ccccccc|c}
+            \lambda_1 & & & & & & & \\
+            & \ddots & & & & & & \\
+            & & \ddots & & & & & \\
+            & & & \lambda_r & & & &\quad S^t\quad \\
+            & & & & 0 & & & \\
+            & & & & & \ddots & & \\
+            & & & & & & 0 & \\
+        \end{array}
+        \right)
+    \]
+    \begin{itemize}
+        \item Si $\k = \cx$: $\lambda_1 = \dots = \lambda_r = 1 \to \begin{vmatrix}\left\{ \lambda_i\neq 0 \right\}\end{vmatrix} = r = \rg\left( A \right)$.
+        \item Si $\k = \real$: $\lambda_i =
+            \begin{cases}
+                -1 \\
+                -1
+            \end{cases}
+            \to \begin{vmatrix}\left\{ \lambda_i\neq 0 \right\}\end{vmatrix} = i_+ + i_- = \rg\left( A \right)$
+    \end{itemize}
+\end{obs}
+\begin{prop}
+    $\Po_\cx^n, Q_1, Q_2$,
+    \[
+        Q_1 \sim Q_2 \iff \rg\left( Q_1 \right) = \rg\left( Q_2 \right),\text{ donde }\rg\left( Q \right) = \rg\left( M_\R | Q \right).
+    \]
+\end{prop}
+\begin{proof}
+    \[ q_1 \sim q_2 \iff \rg \left( q_1 \right) = \rg \left( q_2 \right) \]
+\end{proof}
