@@ -1,1 +1,53 @@
+\chapter{Integración de formas diferenciales y teorema de Stokes}
+
+En este tema, consideraremos, salvo mención contraria, que todas las funciones son de clase $\C^\infty$
+
+\section{Formas diferenciales en $\real^n$}
+
+\begin{defi}
+    Definiremos $\Omega^1$ como el espacio vectorial generado por $\dif x^1, \dots, \dif x^n$, que es un espacio vectorial real de dimensión $n$.
+    Denotaremos como $\Omega^\bullet$ el álgebra exterior de $\Omega^1$. Su poducto está regido por
+    \[
+        \dif x^i \wedge \dif x^i = 0
+        \qquad
+        \dif x^i \wedge \dif x^j = -\dif x^j \wedge x^i \quad (i \neq j)
+    \]
+    Así pues, tenemos $\Omega^\bullet = \bigoplus\limits^{n}_{r = 0} \Omega^r$, donde estos subespacios tienen dimensión y bases
+    \begin{itemize}
+        \item $\dim \Omega^0 = 1$, base 1
+        \item $\dim \Omega^1 = n$, base $\left( \dif x^i \right)_{1 \leq i \leq n}$
+        \item $\dim \Omega^2 = \binom{n}{2}$, base $\left( \dif x^i \wedge \dif x^j \right)_{i < j}$
+        \item $\vdots$
+        \item $\dim \Omega^{n-1} = n$, base $\left( \dif x^1 \wedge \cdots \wedge \dif x^{i-1} \wedge \dif x^{i+1} \wedge \cdots \wedge \dif x^n \right)_i$
+        \item $\dim \Omega^n = 1$, base $\dif x^1 \wedge \cdots \wedge \dif x^n$.
+    \end{itemize}
+
+    En general, se tiene que $\Omega^k$ tiene domensión $\binom{n}{k}$, y una base es $\left( \dif x^I \right)$ donde
+    \[
+        \dif x^I \equiv \dif x^{i_1} \wedge \cdots \wedge \dif x^{i_k}
+    \]
+    e $I = \left( i_1, \dots, i_k \right)$ es un multiíndice de longitud $k$ estrictamente creciente. Así pues, $\Omega^\bullet = 2^n$.
+\end{defi}
+
+\begin{defi}
+    Denominamos formas diferenciales en $\real^n$ a los elementos del conjunto $\Omega^\bullet\left( \real^n \right) = \C^\infty\left( \real^n \right) \otimes
+    \Omega^\bullet$, es decir, expresiones de la forma
+    \[
+        \omega = \sum_I f_I \dif x^I
+    \]
+    Donde $f_I \in \C^{\infty}\left( \real^n \right)$ e $I$ es un multiíndice. Tambi\'en tenemos la gradución de $\Omega^\bullet \left( \real^n \right)$
+    \[
+        \Omega^\bullet \left( \real^n \right) = \bigoplus^n_{k=0} \Omega^k \left( \real^n \right) \qquad \text{donde}
+        \Omega^k \left( \real^n \right) = \C^\infty \left( \real^n \right) \otimes \Omega^k
+    \]
+    son las formas diferenciales de grado $k$. Así, podemos escribir
+    \[
+        \omega = \omega_0 + \omega_1 + \cdots + \omega_n
+    \]
+
+    Los elementos de $\Omega^n\left( \real^n \right)$ se denominan por abuso del lenguaje, ``formas diferenciales de grado máximo''. Si
+    $\omega \in \Omega^k \left( \real^n \right)$, escribiremos $\abs{\omega} := k$.
+\end{defi}<++>
+
+
 \section{Variedades con borde y teorema de Stokes}\label{section:5-8}
