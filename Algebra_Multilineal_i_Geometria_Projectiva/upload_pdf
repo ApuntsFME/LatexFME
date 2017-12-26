@@ -1,0 +1,14 @@
+#!/bin/bash
+
+SRC="main.pdf"
+DEST="/pdfs/segundo/algebra_multilineal_y_geometria.pdf"
+MSG="Actualitza pdf projectiva"
+
+read -p "Nom d'usuari: " user
+read -s -p "Contrasenya: " password
+SHA=$(curl -s -u $user:$password "https://api.github.com/repos/ApuntsFME/apuntsfme.github.io/contents$DEST" > /dev/null) | \
+python3 -c "import sys, json; print(json.load(sys.stdin)['sha'])")
+{ echo "{\"path\":\"$DEST\", \"message\":\"$MSG\", \"sha\":\"$SHA\", \"content\":\""; base64 $SRC; echo "\"}"; } | curl -s -u $user:$password -X PUT -d @- \
+"https://api.github.com/repos/ApuntsFME/apuntsfme.github.io/contents$DEST" > /dev/null
+#{ echo "{\"path\":\"$DEST\", \"message\":\"$MSG\", \"sha\":\"$SHA\", \"content\":\""; base64 $SRC; echo "\"}"; } | tr "\n" " "
+echo "Si no veus res estrany en teoria s'ha actualitzat"
