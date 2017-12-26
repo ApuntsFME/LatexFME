@@ -1156,7 +1156,7 @@ los rectángulos.
 \begin{prop}
     Bajo las hipótesis anteriores, si $f \colon E \to \real$ es continua
     \[
-        \int_A f = \int_D \dif x \int^{\psi(x)}_{\phi(x)} \dif y f(x, y)
+        \int_E f = \int_D \dif x \int^{\psi(x)}_{\phi(x)} \dif y f(x, y)
     \]
 \end{prop}
 \begin{proof}
@@ -1165,9 +1165,306 @@ los rectángulos.
 
     Para $x \in D$ sea $S_x = [\phi(x), \psi(x)]$, entonces $X_E(x, y) =
     X_D(x)X_{S_x}(y)$
-    \[
+    \begin{gather*}
         \int_E f = \int_{R \times S} f X_E \stackrel{T. Fubini}{=}
-        \int_R \dif x \int_S \dif y f(x, y) X_D(x) X_{S_x}(y)
-        %TODO faltan cosas por hacer
-    \]<++>
-\end{proof}<++>
+        \int_R \dif x \int_S \dif y f(x, y) X_D(x) X_{S_x}(y) =\\= \int_R \dif x X_D(x) \int_S \dif y f(x,y) X_{S_x}(y) =
+        \int_D \dif x \int_{S_x} \dif y f(x, y) = \int_D \dif x \int^{\psi(x)}_{\phi(x)} \dif y f(x,y)
+    \end{gather*}
+\end{proof}
+
+\begin{defi}
+    Una región elemental, es un conjunto $E \subseteq \real^n$ de la forma siguiente:
+    \begin{itemize}
+        \item $n = 1$, $E$ es un intervalo compacto.
+        \item $n > 1$, $E = \setb{(x,y) \in \real^{n-1} \times \real \vert x \in D, \phi(x) \leq y \leq psi(x)}$, con $D \subset \real^{n-1}$
+            es una región elemental, $\phi \leq \psi \colon D \to \real$ son continuas.
+    \end{itemize}
+
+    En esta construcción, admitimos cambios de orden el las variables
+\end{defi}
+
+\begin{obs*}
+    Entonces, una integral $\int_E f$ se reduce al cálculo de $n$ integrales sucesivas más simples.
+\end{obs*}
+
+\begin{example*}
+    $E = \setb{(x, y, z) \in \real^3 \vert a \leq x \leq b, \phi(x) \leq y \leq \psi(x), \alpha(x, y) \leq z \leq \beta(x,y)}$,
+    entonces,
+    \[
+        \int_E f = \int^b_a \dif x \int^{\psi(x)}_{\phi(x)} \dif y \int^{\alpha(x,y)}_{\beta\left( x, y \right)} \dif z f(x, y, z)
+    \]
+\end{example*}
+
+\begin{example*}
+    Si tenemos $E: x^2 + y^2 = a^2$, podemos reescribirlo como
+    \[
+        E = \setb{(x,y) \in \real^2 \vert -a \leq x \leq a, -\sqrt{a^2 + x^2} \leq y \leq \sqrt{a^2 + x^2}}
+    \]
+    Entonces, el área de $E$ se puede calcular como
+    \begin{gather*}
+        \text{área}(E) = \int^a_{-a} \dif x \int^{\sqrt{a^2 + x^2}}_{-\sqrt{a^2 + x^2}} \dif y =
+        \int^a_{-a} \dif x 2 \sqrt{a^2 - x^2} = 4 \int^a_0 \sqrt{a^2 - x^2} \dif x = \\
+        \stackrel{x = a\sin\theta}{=} 4 a^2 \int^{\sfrac{\pi}{2}}_0 \dif \theta \cos^2 \theta = \pi a^2
+    \end{gather*}
+\end{example*}
+
+\begin{obs}
+    En algunos casos, la región de integración se puede presentar como unión finita de regiones elementales, entonces se puede
+    calcular usando aditividad respecto al dominio y el teorema de Fubini en cada región elemental.
+\end{obs}
+
+\section{Teorema del cambio de variable}
+
+\begin{teo}[del cambio de variable]\label{teo:cambio_variable}
+    Sean $V \subset \real^n$ un conjunto abiert, y $\phi \colon V \to \real^n$ una aplicación inyectiva, de clase $\C^1$, y 
+    con $\Dif_\phi(y) \neq 0$ $\forall y \in V$. Sea $U = \phi(V)$ (es decir, $\phi \colon V \to U$ es un difeomorfismo de clase
+    $\C^1$). Si $f \colon U \to \real$ es integrable, entonces
+    \[
+        \int_U f = \int_V (f \circ \phi) \abs{det \Dif_\phi}
+    \]
+
+    Aunque podemos utilizar una fórmula más gráfica
+    \[
+        \int_U f \left( x^1, \dots, x^n \right) \dif x^1 \cdots \dif x^n =
+        \int_{\inv{\phi}(U)} f\left( \phi^1(y), \dots, \phi^n(y) \right) \abs{\det\pdv{\left(x^1,\dots,x^n\right)}{\left(y^1,\dots,y^n\right)}}
+        \dif y^1 \cdots \dif y^n
+    \]
+\end{teo}
+
+\begin{obs}
+    El teorema es cierto, literalmente, para la integral de Lebesgue, pero para la integral de Riemman hay que suponer que
+    \begin{itemize}
+        \item $U,V$ abiertos medibles Jordan
+        \item $f \colon U \to \real$ de soporte compacto e integrable Riemman ($\text{supp}(f) = \overline{\setb{x \vert f(x) \neq 0}}$)
+    \end{itemize}
+\end{obs}
+
+\begin{obs}
+    En el enunciado del teorema, se puede suprimir la hopótesis de $\det \Dif_\phi(y) \neq 0$ (en ese caso $\inv{\phi} \colon U \to V$ es
+    continua, pero puede no ser de clase $\C^1$).
+\end{obs}
+
+\begin{obs}
+    Debido a la gran importancia práctica, estudiaremos la expresión de la fórmula de cambio de variables en los tres casos más usuales.
+    Denotamos por $U$ el abierto correspondiente a las coordenadas cartesianas donde se calcula la integral y por $V = \inv{c}(U)$ el
+    abierto correspondiente a las coordenadas consideradas, siendo $c$ el difeomorfismo que ejecuta el cambio a cartesianas.
+
+    \textbf{Integración en coordenadas polares en $\real^2$}
+    
+    Tenemos
+    \[
+        \begin{aligned}
+            c \colon (0, +\infty) \times (-\pi, \pi) &\to \real^2 \setminus \setb{(x, 0) \vert x \leq 0} \\
+            (r, \phi) &\mapsto (x, y) \equiv (r \cos\phi, r \sin\phi)
+        \end{aligned}
+    \]
+    con el determinante de la jacobiana $= r$.
+    \[
+        \int_U f(x,y) \dif x \dif y = \int_V f(r\cos\phi, r \sin\phi) r \dif r \dif \phi
+    \]
+
+    \textbf{Integración en coordenadas cilíndricas en $\real^3$}
+
+    Tenemos
+    \[
+        \begin{aligned}
+            c \colon (0, \infty) \times (-\pi, \pi) \times \real & \to \real^3 \smallsetminus \setb{(x, 0, z) \vert x \leq 0}\\
+            (\rho, \phi, z) &\mapsto (x, y, z) \equiv (\rho \cos \phi, \rho \sin \phi, z)
+        \end{aligned}
+    \]
+    con el deterinante de la jacobiana igual a $\rho$
+    \[
+        \int_U f(x, y, z) \dif x \dif y \dif z = \int_V f( \rho \cos \phi, \rho \sin \phi, z) \rho \dif \rho \dif \phi \dif z
+    \]
+
+    \textbf{Integración en coordenadas esfricas en $\real^3$}
+
+    Tenemos
+    \[
+        \begin{aligned}
+            c \colon (0, \infty) \times (0, \pi) \times (-\pi, \pi) &\to \real^3 \smallsetminus \setb{(x, 0, z) \vert x \leq 0}
+            (r, \theta, \phi) &\mapsto (x, y, z) = (r\cos\phi\sin\theta, r\sin\phi\sin\theta, r\cos\theta)
+        \end{aligned}
+    \]
+    con el determinante de la jacobiana igual a $r^2 \sin \theta$
+    \[
+        \int_U f(x, y, z) \dif x \dif y \dif z = \int_V f(r\cos\phi\sin\theta, r\sin\phi\sin\theta, r \cos \theta) r^2 \sin\theta
+        \dif r \dif \theta \dif \phi
+    \]
+\end{obs}
+
+\begin{example*}
+    Sea $B: x^2 + y^2 + z^2 < a^2$, en esf\'ericas, $r < a$
+    \[
+        \vol(B) = \int_B \dif x \dif y \dif z = \int^{2\pi}_0 \dif \phi \int^\pi_0 \dif \theta \int^{a}_0  \dif r r^2 \sin\theta
+        = \frac{4}{3} \pi a^3
+    \]
+\end{example*}
+
+\subsection*{Demostración del teorema del cambio de variable}
+
+\begin{lema*}[1]\label{lema:uno_cambio}
+    Sea $\varphi \colon \real^n \to \real^n$ un isomorfismo lineal y sea $A \subset \real^n$ un ractángulo compacto, entonces,
+    \[
+        \vol\left( \varphi(A) \right) = \abs{\det \varphi} \vol(A)
+    \]
+\end{lema*}
+
+\begin{proof}
+    Toda matriz invertible es producto de matrices elementales $\implies$ Basta demostrarlo con matrices de transformaciones elementales
+    \begin{enumerate}[i)]
+        \item Permutación
+            \[
+                P = 
+                \begin{pmatrix}
+                    1 \\
+                    & \ddots \\
+                    & & 0 & \cdots & 1 \\
+                    & & \vdots & & \vdots \\
+                    & & 1 & \cdots & 0 \\
+                    & & & & & \ddots \\
+                    & & & & & & 1
+                \end{pmatrix}
+                \qquad \abs{\det P} = 1
+            \]
+        \item Alargamiento ($m \neq 0$)
+            \[
+                L =
+                \begin{pmatrix}
+                    1 \\
+                    & \dots \\
+                    & & 1 \\
+                    & & & m
+                \end{pmatrix}
+                \qquad \abs{\det L } = \abs{m}
+            \]
+        \item Traslación
+            \[
+                T =
+                \begin{pmatrix}
+                    1 & 1 \\
+                    & 1 \\
+                    & & \ddots \\
+                    & & & 1
+                \end{pmatrix}
+                \qquad \abs{\det T} = 1
+            \]
+    \end{enumerate}
+
+    Sea $A = I_1 \times \cdots \times I_n$ un rectángulo compacto
+    \begin{enumerate}[i)]
+        \item $P(A) = I_1 \times \cdots \times I_j \times \cdots \times I_i \times \cdots \times I_n$
+            \[
+                \vol\left( P(A) \right) = \vol(A) \abs{\det P}
+            \]
+        \item $L(A) = I_1 \times \cdots \times I_{n-1} \times mI_n$
+            \[
+                \vol\left( L(A) \right) = \abs{m} \vol(A) = \abs{\det L} \vol(A)
+            \]
+        \item para $T(A)$ tenemos
+            \begin{gather*}
+                \vol\left( T(A) \right) = \int_{T(A)} \dif x_1 \cdots \dif x_n \stackrel{T.Fubini}{=}
+                \int_{I_n} \dif x_n \cdots \int_{I_2} \dif x_2 \int_{I_1 + x_2} \dif x_1 = \\ =
+                \int_{I_n} \dif x_n \cdots \int_{I_2} \dif x_2 \int_{I_1} \dif x_1 = \vol(A) = \vol(A) \abs{\det T}
+            \end{gather*} 
+    \end{enumerate}
+\end{proof}
+
+\begin{lema*}[2]\label{lema:dos_cambio}
+    Sea $\phi \colon \real^n \to \real^n$ un isomorfismo lineal y sea $A \subset \real^n$ medible Jordan.
+    Entonces,
+    \[
+        \vol\left( \phi(A) \right) = \abs{\det \phi} \vol(A)
+    \]
+\end{lema*}
+
+\begin{proof}
+    Sea $R \supset A$ un rectángulo compacto. $X_A$ es integrable Riemman.
+
+    Por el criterio de Riemman, $\forall \varepsilon > 0$ $\exists \Pa$ partición de $R$ tal que
+    \[
+        S\left( X_A, \Pa \right) - s\left( X_A, \Pa \right) < \varepsilon
+    \]
+    Ahora, definimos $I$ como la unión de subrectángulos de $\Pa$ contenidos en $A$ y $E$ como la unión de subrectángulos
+    que cortan a A, entonces $I \subseteq A \subseteq E$ y
+    \[
+        \vol(I) = s\left( X_A, \Pa \right) \leq \vol(A) \leq S\left( X_A, \Pa \right) = \vol(E)
+    \]
+    Ahora, como $\phi$ es biyectiva, se tiene que $\phi(I) \subseteq \phi(A) \subseteq \phi(E)$ y por lo tanto
+    \[
+        \abs{\det\phi} \vol(I) \leq \vol\left( \phi(A) \right) \leq \abs{\det\phi} \vol(E) \implies
+        \vol\left( \phi(A) \right) = \abs{\det \phi} \vol(A)
+    \]
+\end{proof}
+
+\begin{lema*}[3]\label{lema:tres_cambio}
+    Si la fórmula del cambio de variable se satisfaace para $f = 1$ (constante), entonces se satisface para todo $f$ integrable Riemman.
+\end{lema*}
+
+\begin{proof}
+    Sea $f \colon U \to \real$ integrable Riemman, y sea $R \supset U$ un rectángulo compacto. Tomamamos $\Pa$ una partición de $R$, entonces,
+    \begin{gather*}
+        s\left( f, \Pa \right) = \sum_i m_{R_i} \vol\left( R_i \right) = \sum_{i} \int_{R_i} m_{R_i} \stackrel{\text{hipótesis}}{=}
+        \sum_i \int_{\inv{\phi}\left( R_i \right)} \left( m_{R_i} \circ \phi \right)\abs{\det\phi} \leq \\ \leq
+        \sum_i \int_{\inv{\phi}\left( R_i \right)} \left( f \circ \phi \right) \abs{\det\phi} \stackrel{\text{aditividad}}{=}
+        \int_{\cup \inv{\phi}\left( R_i \right)} (f \circ \phi) \abs{\det \phi} \implies \\ \implies
+        \int_U f \leq \int_V (f \circ \phi) \abs{\det \phi}
+    \end{gather*}
+    Cambiando $s$ por $S$, obtenemos que $\int_U f \geq \int_V (f \circ \phi) \abs{\det\phi}$ y por lo tanto,
+    \[
+        \int_U f = \int_V (f \circ \phi) \abs{\det \phi} 
+    \]
+\end{proof}
+
+\begin{lema*}[4]\label{lema:cuatro_cambio}
+    La fórmula del cambio de variable se satisface si $\phi \colon \real^n \to \real^n$ es lineal
+\end{lema*}
+\begin{proof}
+    Por el lema \hyperref[lema:dos_cambio]{2}, tenemos que
+    \[
+        \int_{\phi(V)} 1 = \int_V \abs{\det \phi} = \int_V \abs{\det \Dif_\phi}
+    \]
+    y por el lema \hyperref[lema:tres_cambio]{3}, tenemos que
+    \[
+        \int_{\phi(V)} f = \int_V (f \circ \phi) \abs{\det \Dif \phi}
+    \]
+\end{proof}
+
+\begin{lema*}[5]\label{lema:cinco_cambio}
+    Si la fórmula del camibo de variable se satisface para $psi \colon W \to V$ y para $\phi \colon V \to U$, entonces, se satisface para
+    $\phi \circ \psi$
+\end{lema*}
+
+\begin{proof}
+    \begin{gather*}
+        \int_{(\phi \circ \psi)(W)} f = \int_{\phi\left( \psi(W) \right)} f \stackrel{\text{F.C.V.}}{=} \int_{\psi(W)} (f \circ \phi)
+        \abs{\det \Dif_\phi} \stackrel{\text{F.C.V}}{=} \\ = \int_W (f \circ \phi \circ \psi) \abs{\det \Dif_\psi} \abs{\det \Dif_\phi} =
+        \int_W \left( f \circ ( \phi \circ \psi) \right) \abs{\det \Dif_{\phi \circ \psi}}
+    \end{gather*}
+\end{proof}
+
+\textbf{Ahora, haremos un breve repaso antes de proseguir con la demostración.}
+
+\begin{defi*}
+    Recordemos, que definíamos la norma de una matriz $M$ como
+    \[
+        \norm{M} = \sup_{\norm{x} \leq 1} \norm{T x}
+    \]
+\end{defi*}
+
+\begin{prop*}
+    La norma cumple que
+    \begin{itemize}
+        \item $\norm{TS} \leq \norm{T}\norm{S}$
+        \item $\norm{\Id} = 1$
+        \item $\norm{Tx} \leq \norm{T} \norm{x}$
+    \end{itemize}
+\end{prop*}
+
+\begin{defi*}
+    Una aplicación $\phi \colon X \to Y$ diremos que es lipschiciana con constante de Lipschitz $L \geq 0$, si
+    \[
+        \forall x, \bar{x} \qquad
+        d\left( \phi(x), \phi\left( \bar{x} \right) \right) \leq L d\left( x, \bar{x} \right)
+    \]
+\end{defi*}<++>
