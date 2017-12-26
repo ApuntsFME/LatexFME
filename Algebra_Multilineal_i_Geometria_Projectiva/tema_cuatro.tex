@@ -3,174 +3,172 @@
 \section{Definiciones y propiedades básicas}
 
 \begin{defi}
-    \begin{enumerate}
-        \item[]
-        \item Una cuádrica $Q$ de $\Po^n_\k = \Po\lp \E\rp$ es la clase de equivalencia de una forma cuadrática  $q \colon \E \to \k, q\sim q' \iff \exists \lambda\neq0\tq q' = \lambda q$. Notación: $Q = [q]$.
-        \item Si $n = 2$, las llamamos cónicas.
-        \item $p = [u] \in \Po^n, p\in Q \iff q\lp u\rp=0$ ($p$ es un punto de $Q$).
-        \item También notaremos por $Q$, el conjunto de todos los puntos de $Q$:
-            \[ Q = \left\{ p=[u]\;|\;q\lp u\rp=0\right\} \]
-    \end{enumerate}
+  \begin{enumerate}
+    \item[]
+    \item Una cuádrica $Q$ de $\Po^n_\k = \Po\lp \E\rp$ es la clase de equivalencia de una forma cuadrática  $q \colon \E \to \k, q\sim q' \iff \exists \lambda\neq0\tq q' = \lambda q$. Notación: $Q = [q]$.
+    \item Si $n = 2$, las llamamos cónicas.
+    \item $p = [u] \in \Po^n, p\in Q \iff q\lp u\rp=0$ ($p$ es un punto de $Q$).
+    \item También notaremos por $Q$, el conjunto de todos los puntos de $Q$:
+      \[ Q = \left\{ p=[u]\;|\;q\lp u\rp=0\right\} \]
+  \end{enumerate}
 \end{defi}
 \begin{example}
-    \begin{enumerate}
-        \item[]
-        \item A $\Po^2_\real$, sigui $Q \colon x_0^2 + x_1^2 - x_2^2$ una cònica.
-        \begin{itemize}
-            \item $p = \left[\lp1,0,1\rp^t\right] \in Q:$ verifica $x_0^2 + x_1^2 -x_2^2=0$.
-            \item $p' = \left[\lp0,1,1\rp^t\right] \in Q$.
-            \item $p'' = \left[\lp1,1,\sqrt{2}\rp^t\right] \in Q$.
-        \end{itemize}
-        \item A $\Po^2_\real$, sigui $Q \colon x_0^2 + x_1^2 - x_2^2 \implies$ puntos = $\emptyset$.
-        \begin{itemize}
-            \item $Q_1 \colon x_0^2 + 2x_1^2 = 0 \implies p = \lp0:0:1\rp$ punto único.
-            \item $Q_1 \colon 3x_0^2 + 5x_1^2 = 0 \implies p = \lp0:0:1\rp$ punto único.
-        \end{itemize}
-    \end{enumerate}
+  \begin{enumerate}
+    \item[]
+    \item A $\Po^2_\real$, sigui $Q \colon x_0^2 + x_1^2 - x_2^2$ una cònica.
+      \begin{itemize}
+        \item $p = \left[\lp1,0,1\rp^t\right] \in Q:$ verifica $x_0^2 + x_1^2 -x_2^2=0$.
+        \item $p' = \left[\lp0,1,1\rp^t\right] \in Q$.
+        \item $p'' = \left[\lp1,1,\sqrt{2}\rp^t\right] \in Q$.
+      \end{itemize}
+    \item A $\Po^2_\real$, sigui $Q \colon x_0^2 + x_1^2 - x_2^2 \implies$ puntos = $\emptyset$.
+      \begin{itemize}
+        \item $Q_1 \colon x_0^2 + 2x_1^2 = 0 \implies p = \lp0:0:1\rp$ punto único.
+        \item $Q_1 \colon 3x_0^2 + 5x_1^2 = 0 \implies p = \lp0:0:1\rp$ punto único.
+      \end{itemize}
+  \end{enumerate}
 \end{example}
 \begin{obs}
-    Sean $Q,\, q\colon \E \to \k$ (car$\k \neq 2$) asociada a $\varphi \colon \E \times \E \to \k, Q = [q]$, entonces $q \leftrightarrow \varphi$ de la siguiente forma:
-    \begin{align*}
-        q\lp u\rp &\rightarrow \varphi\lp u,v\rp = \frac{1}{2}\left[q\lp u+v\rp - q\lp u\rp -q\lp v\rp\right] \\
-        q\lp u\rp = \varphi\lp u, u\rp &\leftarrow \varphi\lp u,v\rp
-    \end{align*}
+  Sean $Q,\, q\colon \E \to \k$ (car$\k \neq 2$) asociada a $\varphi \colon \E \times \E \to \k, Q = [q]$, entonces $q \leftrightarrow \varphi$ de la siguiente forma:
+  \begin{align*}
+    q\lp u\rp &\rightarrow \varphi\lp u,v\rp = \frac{1}{2}\left[q\lp u+v\rp - q\lp u\rp -q\lp v\rp\right] \\
+    q\lp u\rp = \varphi\lp u, u\rp &\leftarrow \varphi\lp u,v\rp
+  \end{align*}
 \end{obs}
 \begin{defi}
-    $\Po^n = \Po\lp\E\rp$, sea $q \colon \E \to \k$ asociada a $\varphi \colon \E \times \E \to \k, Q = [q]$. Sean $\R$ una referencia de $\Po^n$, $B$ una base de $\E$ adaptada a $\R$.
-    \[ M_\R \lp Q\rp := M_B\lp q\rp \stackrel{\text{por def.}}{=} M_B\lp\varphi\rp \]
-    $M_\R\lp Q\rp$ está definida salvo multiplicar por una constante.
+  $\Po^n = \Po\lp\E\rp$, sea $q \colon \E \to \k$ asociada a $\varphi \colon \E \times \E \to \k, Q = [q]$. Sean $\R$ una referencia de $\Po^n$, $B$ una base de $\E$ adaptada a $\R$.
+  \[ M_\R \lp Q\rp := M_B\lp q\rp \stackrel{\text{por def.}}{=} M_B\lp\varphi\rp \]
+  $M_\R\lp Q\rp$ está definida salvo multiplicar por una constante.
 \end{defi}
 \begin{example}
-    En $\Po^2_\real$, sean $\R$ (de $\Po^2$), $B$ (de $\real^3$). Sea $Q\colon x_0^2+ x_1^2+2x_2^2-2x_0x_1+4x_0x_2 + 6x_1x_2 = 0$.
-    \begin{gather*}
-        M_\R\lp Q\rp = M_B\lp q\rp = A =
-        \begin{pmatrix}
-            1 & -1 & 2 \\
-            -1 & 1 & 3 \\
-            2 & 3 & 2 \\
-        \end{pmatrix}, \\
-        \quad p\in Q \iff
-        \begin{pmatrix}
-            x_0 & x_1 & x_2 \\
-        \end{pmatrix}
-        \begin{pmatrix}
-            1 & -1 & 2 \\
-            -1 & 1 & 3 \\
-            2 & 3 & 2 \\
-        \end{pmatrix}
-        \begin{pmatrix}
-            x_0 \\
-            x_1 \\
-            x_2 \\
-        \end{pmatrix}
-        = 0.
-    \end{gather*}
+  En $\Po^2_\real$, sean $\R$ (de $\Po^2$), $B$ (de $\real^3$). Sea $Q\colon x_0^2+ x_1^2+2x_2^2-2x_0x_1+4x_0x_2 + 6x_1x_2 = 0$.
+  \begin{gather*}
+    M_\R\lp Q\rp = M_B\lp q\rp = A =
+    \begin{pmatrix}
+      1 & -1 & 2 \\
+      -1 & 1 & 3 \\
+      2 & 3 & 2 \\
+    \end{pmatrix}, \\
+    \quad p\in Q \iff
+    \begin{pmatrix}
+      x_0 & x_1 & x_2 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+      1 & -1 & 2 \\
+      -1 & 1 & 3 \\
+      2 & 3 & 2 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+      x_0 \\
+      x_1 \\
+      x_2 \\
+    \end{pmatrix}
+    = 0.
+  \end{gather*}
 \end{example}
 \begin{obs}
-    Si $A = M_\R\lp Q\rp, p_\R = \lp x_0:\dots:x_n\rp = x$, entonces tenemos que $p\in Q \iff x^tAx = 0$.
+  Si $A = M_\R\lp Q\rp, p_\R = \lp x_0:\dots:x_n\rp = x$, entonces tenemos que $p\in Q \iff x^tAx = 0$.
 \end{obs}
 \begin{example}
-    Sean $Q = [q], \R, A = M_\R\lp Q\rp$. Sea $\R'$ otro sistema de referencia en $\Po^n$ y sea $S_{\R, \R'}$ la matriz de cambio de sistema de referencia de $\R$ a $\R'$. Entonces $A' = M_{\R'}\lp Q\rp = S^tAS$.
+  Sean $Q = [q], \R, A = M_\R\lp Q\rp$. Sea $\R'$ otro sistema de referencia en $\Po^n$ y sea $S_{\R, \R'}$ la matriz de cambio de sistema de referencia de $\R$ a $\R'$. Entonces $A' = M_{\R'}\lp Q\rp = S^tAS$.
 \end{example}
 
-% A PARTIR D'AQUI JORDI
-
 \begin{defi}[(intersección de cónicas y variedades lineales)]
-    Sea $Q= \left[ q \right] \subseteq \Po ^n$ una cuádrica y sea $V = \left[ F \right] \subseteq \Po ^n$ una variedad lineal. Definimos su intersección como
-    \[
-        Q_{|V} := \left[q_{|F} \right].
-    \]
-    Si $q_{|F} \neq 0$, entonces $Q_{|V}$ es una cuádrica en $V$.
+  Sea $Q= \left[ q \right] \subseteq \Po ^n$ una cuádrica y sea $V = \left[ F \right] \subseteq \Po ^n$ una variedad lineal. Definimos su intersección como
+  \[
+    Q_{|V} := \left[q_{|F} \right].
+  \]
+  Si $q_{|F} \neq 0$, entonces $Q_{|V}$ es una cuádrica en $V$.
 \end{defi}
 
 \begin{example}
-    En $\Po _{\real} ^3$, sea $q=x_0^2+x_2^2+x_2^2-x_3^2+2x_0x_1-2x_1x_2=0$ y sea $V=\left[ F \right] \colon x_0+x_1=0$ (un plano). Tenemos que $F=\left[ \lp 1, -1, 0, 0 \rp ^t, \lp 0, 0, 1, 0 \rp ^t, \lp 0, 0, 0, 1 \rp ^t \right]$.
-    \begin{gather*}
-        A=M_B\lp q \rp = \begin{pmatrix}
-            1 & 1 & 0 & 0 \\
-            1 & 1 & -1 & 0 \\
-            0 & -1 & 1 & 0 \\
-            0 & 0 & 0 & -1
-        \end{pmatrix} \implies \\
-        \implies M_B \lp q_{|F} \rp = \begin{pmatrix}
-            1 & -1 & 0 & 0 \\
-            0 & 0 & 1 & 0 \\
-            0 & 0 & 0 & 1
-        \end{pmatrix} \begin{pmatrix}
-            1 & 1 & 0 & 0 \\
-            1 & 1 & -1 & 0 \\
-            0 & -1 & 1 & 0 \\
-            0 & 0 & 0 & -1
-        \end{pmatrix} \begin{pmatrix}
-            1 & 0 & 0 \\
-            -1 & 0 & 0 \\
-            0 & 1 & 0 \\
-            0 & 0 & 1
-        \end{pmatrix} = \\
-        = \begin{pmatrix}
-            0 & 1 & 0 \\
-            1 & 1 & 0 \\
-            0 & 0 & -1
-        \end{pmatrix}.
-    \end{gather*}
-    La matriz $M_B \lp q_{|F} \rp$ es, como se puede observar, la matriz de una cuádrica en $V$.
+  En $\Po _{\real} ^3$, sea $q=x_0^2+x_2^2+x_2^2-x_3^2+2x_0x_1-2x_1x_2=0$ y sea $V=\left[ F \right] \colon x_0+x_1=0$ (un plano). Tenemos que $F=\left[ \lp 1, -1, 0, 0 \rp ^t, \lp 0, 0, 1, 0 \rp ^t, \lp 0, 0, 0, 1 \rp ^t \right]$.
+  \begin{gather*}
+    A=M_B\lp q \rp = \begin{pmatrix}
+      1 & 1 & 0 & 0 \\
+      1 & 1 & -1 & 0 \\
+      0 & -1 & 1 & 0 \\
+      0 & 0 & 0 & -1
+    \end{pmatrix} \implies \\
+    \implies M_B \lp q_{|F} \rp = \begin{pmatrix}
+      1 & -1 & 0 & 0 \\
+      0 & 0 & 1 & 0 \\
+      0 & 0 & 0 & 1
+    \end{pmatrix} \begin{pmatrix}
+      1 & 1 & 0 & 0 \\
+      1 & 1 & -1 & 0 \\
+      0 & -1 & 1 & 0 \\
+      0 & 0 & 0 & -1
+    \end{pmatrix} \begin{pmatrix}
+      1 & 0 & 0 \\
+      -1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+    \end{pmatrix} = \\
+    = \begin{pmatrix}
+      0 & 1 & 0 \\
+      1 & 1 & 0 \\
+      0 & 0 & -1
+    \end{pmatrix}.
+  \end{gather*}
+  La matriz $M_B \lp q_{|F} \rp$ es, como se puede observar, la matriz de una cuádrica en $V$.
 \end{example}
 \begin{prop}
-    Sea $Q= \left[ q \right] \subseteq \Po ^n$ una cuádrica y sea $V = \left[ F \right] \subseteq \Po ^n$ una variedad lineal. Se satisface que
-    \begin{enumerate}[(1)]
-        \item $q_{|F} = 0 \iff V \subseteq Q$.
-        \item $q_{|F} \neq 0 \implies Q_{|V} = Q \cap V $.
-    \end{enumerate}
+  Sea $Q= \left[ q \right] \subseteq \Po ^n$ una cuádrica y sea $V = \left[ F \right] \subseteq \Po ^n$ una variedad lineal. Se satisface que
+  \begin{enumerate}[(1)]
+    \item $q_{|F} = 0 \iff V \subseteq Q$.
+    \item $q_{|F} \neq 0 \implies Q_{|V} = Q \cap V $.
+  \end{enumerate}
 \end{prop}
 
 \begin{proof}
-    \begin{enumerate}[(1)] \item[]
-        \item $q_{|F} = 0 \iff \forall v \in F, \, q \lp v \rp = 0 \iff \forall p = \left[ v \right] \in V, \, p \in Q$.
-        \item Sea $p=\left[ v \right]$. Entonces, 
-        \[
-            p \in Q_{|V} \iff \left\{ \begin{array}{c} q \lp v \rp = 0 \\ v \in F \end{array} \right\} \iff \left\{ \begin{array}{c} p \in Q \\ p \in V \end{array} \right\} \iff p \in Q\cap V.
-        \]
-    \end{enumerate}    
+\begin{enumerate}[(1)] \item[]
+    \item $q_{|F} = 0 \iff \forall v \in F, \, q \lp v \rp = 0 \iff \forall p = \left[ v \right] \in V, \, p \in Q$.
+    \item Sea $p=\left[ v \right]$. Entonces, 
+      \[
+        p \in Q_{|V} \iff \left\{ \begin{array}{c} q \lp v \rp = 0 \\ v \in F \end{array} \right\} \iff \left\{ \begin{array}{c} p \in Q \\ p \in V \end{array} \right\} \iff p \in Q\cap V.
+      \]
+  \end{enumerate}    
 \end{proof}
 
 \begin{prop}
-     Sea $Q=\left[q \right]$ y sea $f \colon \Po^n \to \Po^n$ una homografía.
-     \begin{enumerate}[(1)]
-        \item $f\lp Q \rp$ es una cuádrica.
-        \item Sea $\R$ una referencia en $\Po^n$ y sean $A=M_{\R} \lp Q \rp, \, P=M_{\R} \lp f \rp$. Entonces,
-            \[
-                M_{\R} \lp f \lp Q \rp \rp = \lp P^{-1} \rp ^t A \lp P^{-1} \rp.
-            \]
-     \end{enumerate}
+  Sea $Q=\left[q \right]$ y sea $f \colon \Po^n \to \Po^n$ una homografía.
+  \begin{enumerate}[(1)]
+    \item $f\lp Q \rp$ es una cuádrica.
+    \item Sea $\R$ una referencia en $\Po^n$ y sean $A=M_{\R} \lp Q \rp, \, P=M_{\R} \lp f \rp$. Entonces,
+      \[
+        M_{\R} \lp f \lp Q \rp \rp = \lp P^{-1} \rp ^t A \lp P^{-1} \rp.
+      \]
+  \end{enumerate}
 \end{prop}
 
 \begin{proof}
-    \begin{enumerate}[(1)] \item[]
-        \item Sea $p \in f \lp Q \rp$ y sea $y=p_{\R} = \lp y_0 , \dots , y_n \rp ^t$. Por ser $f$ una homografía, es biyectiva y $\lp f ^{-1} \lp p \rp \rp _{\R} = P^{-1} y$.
-            \begin{gather*}
-                p \in f \lp Q \rp \iff f^{-1} \lp p \rp \in Q \iff \lp P^{-1} y \rp ^t A \lp P^{-1} y \rp = 0 \iff \\
-                \iff y^t \lp \lp P ^{-1} \rp ^t A P^{-1} \rp y = 0 ,
-            \end{gather*}
-            y como que $\lp \lp P ^{-1} \rp ^t A P^{-1} \rp$ es una matriz simétrica, $f \lp Q \rp$ es una cuádrica.
-        \item $y^t \lp \lp P ^{-1} \rp ^t A P^{-1} \rp y = 0 \iff p \in f \lp Q \rp \iff y^t M_{\R} \lp f \lp Q \rp \rp y = 0$, de lo que concluimos que $M_{\R} \lp f \lp Q \rp \rp = \lp P^{-1} \rp ^t A \lp P^{-1} \rp$.
-    \end{enumerate}
+\begin{enumerate}[(1)] \item[]
+    \item Sea $p \in f \lp Q \rp$ y sea $y=p_{\R} = \lp y_0 , \dots , y_n \rp ^t$. Por ser $f$ una homografía, es biyectiva y $\lp f ^{-1} \lp p \rp \rp _{\R} = P^{-1} y$.
+      \begin{gather*}
+        p \in f \lp Q \rp \iff f^{-1} \lp p \rp \in Q \iff \lp P^{-1} y \rp ^t A \lp P^{-1} y \rp = 0 \iff \\
+        \iff y^t \lp \lp P ^{-1} \rp ^t A P^{-1} \rp y = 0 ,
+      \end{gather*}
+      y como que $\lp \lp P ^{-1} \rp ^t A P^{-1} \rp$ es una matriz simétrica, $f \lp Q \rp$ es una cuádrica.
+    \item $y^t \lp \lp P ^{-1} \rp ^t A P^{-1} \rp y = 0 \iff p \in f \lp Q \rp \iff y^t M_{\R} \lp f \lp Q \rp \rp y = 0$, de lo que concluimos que $M_{\R} \lp f \lp Q \rp \rp = \lp P^{-1} \rp ^t A \lp P^{-1} \rp$.
+  \end{enumerate}
 \end{proof}
 
 \begin{defi}[(puntos singulares y lisos)]
-    Sea $Q=\left[ q \right] \subseteq \Po ^n$, sea $p = \left[ v \right] \in Q$ y sea $\varphi$ la forma bilineal simétrica asociada a $q$. Entonces, 
-    \begin{enumerate}[(1)] 
-        \item Decimos que $p$ es un \textit{punto singular} de $Q \iff \varphi \lp v, \cdot \rp = 0$.
-        \item Decimos que $p$ es un \textit{punto liso} de $Q$ si no es un \textit{punto singular}.
-        \item Decimos que $Q$ es \textit{no degenerada} $\iff Q$ no tiene \textit{puntos singulares}. 
-    \end{enumerate}
+  Sea $Q=\left[ q \right] \subseteq \Po ^n$, sea $p = \left[ v \right] \in Q$ y sea $\varphi$ la forma bilineal simétrica asociada a $q$. Entonces, 
+  \begin{enumerate}[(1)] 
+    \item Decimos que $p$ es un \textit{punto singular} de $Q \iff \varphi \lp v, \cdot \rp = 0$.
+    \item Decimos que $p$ es un \textit{punto liso} de $Q$ si no es un \textit{punto singular}.
+    \item Decimos que $Q$ es \textit{no degenerada} $\iff Q$ no tiene \textit{puntos singulares}. 
+  \end{enumerate}
 \end{defi}
 
 \begin{obs}
-    Sea $A=M_{\R} \lp Q \rp$, sea $p \in Q$ y sea $p_{\R} = \lp a_0, \dots , a_n \rp ^t$.
-    \begin{enumerate}[(1)]
-        \item $p\in Q$ es un punto singular $\iff \lp x_0, \dots , x_n \rp A \lp a_0, \dots , a_n \rp ^t = 0, \; \forall \, \lp x_0, \dots , x_n \rp \iff \lp a_0, \dots , a_n \rp \in \nuc A$.
-        \item $Q$ es no degenerada $\iff \rg \lp A \rp = n+1 \iff \det A \neq 0$.
-    \end{enumerate}
+  Sea $A=M_{\R} \lp Q \rp$, sea $p \in Q$ y sea $p_{\R} = \lp a_0, \dots , a_n \rp ^t$.
+  \begin{enumerate}[(1)]
+    \item $p\in Q$ es un punto singular $\iff \lp x_0, \dots , x_n \rp A \lp a_0, \dots , a_n \rp ^t = 0, \; \forall \, \lp x_0, \dots , x_n \rp \iff \lp a_0, \dots , a_n \rp \in \nuc A$.
+    \item $Q$ es no degenerada $\iff \rg \lp A \rp = n+1 \iff \det A \neq 0$.
+  \end{enumerate}
 \end{obs}
 
 
@@ -179,60 +177,60 @@
 
 \begin{example} Cuádricas de $\Po^1$
   \begin{enumerate}
-   \item Cuádricas de $\Po^1$
-   \begin{enumerate}
-      \item $\Po^1_\real$\\
-      Sea $q:$ $ax^{2}_{0} + cx^{2}_{1}+2bx_0x_1=0$ una cuádrica. Tenemos:
-      \[
-	Q \iff q \stackrel{\R}{\iff}A=
-      \begin{pmatrix}
-	a & b\\
-	c & d\\
-      \end{pmatrix}
-      \]
-      Y por lo tanto podemos considerar dos casos:
+    \item Cuádricas de $\Po^1$
       \begin{enumerate}
-	\item $a=0$ Tenemos entonces que:
-	\[
-	  0=cx^{2}_{1}+2bx_0x_1 = x_1 \lp cx_1 +2bx_0 \rp 
-	\]
-	Lo que nos da dos casos:
-	\begin{gather*}
-	  x_1=0 \implies p_1=\lp 1,0\rp \text{ y $p_2$ cualquiera}\\
-	  \text{o bien}\\
-	  p_2=\lp -c,2b\rp \text{ y $p_1$ cualquiera}\\
-	\end{gather*}
-	Notemos que si $a=0$ y $b=0$ tenemos que $p_1=p_2$.
-	
-	\item $a\neq 0 \implies \lp 1,0\rp$ no es solución 
-	$\implies a\lp\frac{x_0}{x_1}\rp ^2 +2b\lp\frac{x_0}{x_1}\rp +c=0$,
-	y si definimos $x=\frac{x_0}{x_1}$ tenemos $ax^2 +2bx+c=0 \implies
-	x=\frac{-2b \pm \sqrt{-4\det A}}{2a}$\\
+        \item $\Po^1_\real$\\
+          Sea $q:$ $ax^{2}_{0} + cx^{2}_{1}+2bx_0x_1=0$ una cuádrica. Tenemos:
+          \[
+            Q \iff q \stackrel{\R}{\iff}A=
+            \begin{pmatrix}
+              a & b\\
+              c & d\\
+            \end{pmatrix}
+          \]
+          Y por lo tanto podemos considerar dos casos:
+          \begin{enumerate}
+            \item $a=0$ Tenemos entonces que:
+              \[
+                0=cx^{2}_{1}+2bx_0x_1 = x_1 \lp cx_1 +2bx_0 \rp 
+              \]
+              Lo que nos da dos casos:
+              \begin{gather*}
+                x_1=0 \implies p_1=\lp 1,0\rp \text{ y $p_2$ cualquiera}\\
+                \text{o bien}\\
+                p_2=\lp -c,2b\rp \text{ y $p_1$ cualquiera}\\
+              \end{gather*}
+              Notemos que si $a=0$ y $b=0$ tenemos que $p_1=p_2$.
+
+            \item $a\neq 0 \implies \lp 1,0\rp$ no es solución 
+              $\implies a\lp\frac{x_0}{x_1}\rp ^2 +2b\lp\frac{x_0}{x_1}\rp +c=0$,
+              y si definimos $x=\frac{x_0}{x_1}$ tenemos $ax^2 +2bx+c=0 \implies
+              x=\frac{-2b \pm \sqrt{-4\det A}}{2a}$\\
+          \end{enumerate}
+          Y por lo tanto, si $\det A = 0$, $q$ es un punto doble en $\Po^1_\real$,
+          si $\det A>$ no hay ningun punto que pertenezca a la cuádrica y si 
+          $\det A <0$ $q$ son dos puntos distintos.
+
+        \item $\Po^1_\mathbb{C}$. Usando el mismo analisis que antes llegamos a que si
+          $\det A=0$, la cuádrica es un punto doble y si $\det A \neq 0$ la cuádrica 
+          son dos puntos distintos.
       \end{enumerate}
-      Y por lo tanto, si $\det A = 0$, $q$ es un punto doble en $\Po^1_\real$,
-      si $\det A>$ no hay ningun punto que pertenezca a la cuádrica y si 
-      $\det A <0$ $q$ son dos puntos distintos.
-      
-      \item $\Po^1_\mathbb{C}$. Usando el mismo analisis que antes llegamos a que si
-      $\det A=0$, la cuádrica es un punto doble y si $\det A \neq 0$ la cuádrica 
-      son dos puntos distintos.
-   \end{enumerate}
-  \item $\Po^2_\real$
-  \begin{center}
-  \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.5cm,y=0.5cm]
-  \clip(-8,-1) rectangle (3,7);
-  \draw [rotate around={30.718904264029163:(-2.37,3.64)},color=blue] (-2.37,3.64) ellipse (3.3529125013086922 and 2.3332857179162856);
-  \draw [color=red,domain=-12:14.92] plot(\x,{(-7.0616-2.04*\x)/10.8});
-  \draw [color=red,domain=-12:14.92] plot(\x,{(--46.0782--0.6*\x)/10.54});
-  \draw [color=red,domain=-12:14.92] plot(\x,{(--2512.038474626351--53.88340705491726*\x)/386.0081646973978});
-  \begin{scriptsize}
-  \draw[color=blue] (-2.42,1.84) node {$Q$};
-  \draw[color=red] (-7.1,5.92) node {$L$};
-  \draw[color=red] (-7.06,4.38) node {$L'$};
-  \draw[color=red] (-6.96,1.3) node {$L''$};
-  \end{scriptsize}
-  \end{tikzpicture}
-  \end{center}
+    \item $\Po^2_\real$
+      \begin{center}
+        \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.5cm,y=0.5cm]
+          \clip(-8,-1) rectangle (3,7);
+          \draw [rotate around={30.718904264029163:(-2.37,3.64)},color=blue] (-2.37,3.64) ellipse (3.3529125013086922 and 2.3332857179162856);
+          \draw [color=red,domain=-12:14.92] plot(\x,{(-7.0616-2.04*\x)/10.8});
+          \draw [color=red,domain=-12:14.92] plot(\x,{(--46.0782--0.6*\x)/10.54});
+          \draw [color=red,domain=-12:14.92] plot(\x,{(--2512.038474626351--53.88340705491726*\x)/386.0081646973978});
+          \begin{scriptsize}
+            \draw[color=blue] (-2.42,1.84) node {$Q$};
+            \draw[color=red] (-7.1,5.92) node {$L$};
+            \draw[color=red] (-7.06,4.38) node {$L'$};
+            \draw[color=red] (-6.96,1.3) node {$L''$};
+          \end{scriptsize}
+        \end{tikzpicture}
+      \end{center}
   \end{enumerate}
 \end{example}
 \begin{obs}
@@ -240,139 +238,139 @@
   vectorial de dimensión $2$ $\tq [F]=L$. Podemos estudiar las posiciones relativas
   de la cuádrica y la recta:
   \begin{itemize}
-   \item $Q_{|L}=\left[ q_{|F} \equiv 0\right] \iff L\subseteq Q$ (ver ejemplo \ref{exampleLinQ})
-   \item $L\not\subseteq Q \implies Q_{|L}$ es una cuádrica de $L \implies L\cap 
-   Q = \emptyset$, $L\cap Q\equiv$ $1$ punto doble, $L\cap Q\equiv$ 2 puntos distintos.
+    \item $Q_{|L}=\left[ q_{|F} \equiv 0\right] \iff L\subseteq Q$ (ver ejemplo \ref{exampleLinQ})
+    \item $L\not\subseteq Q \implies Q_{|L}$ es una cuádrica de $L \implies L\cap 
+      Q = \emptyset$, $L\cap Q\equiv$ $1$ punto doble, $L\cap Q\equiv$ 2 puntos distintos.
   \end{itemize}
 \end{obs}
 \begin{example}
- Sea $Q\subseteq \Po^3 \tq Q:x^2_0 +x^2_1 -x²_2-x^2_3=0$, sean $p_1=\lp 0:1:1:0\rp$ y $p_2=\lp 
- 1:0:0:1\rp$ puntos del proyectivo y $L=p_1 \vee p_2$ una recta. Entonces tenemos que:
- \[
-  Q_{|L}=
-  \begin{pmatrix}
-   0 & 1 & 1 & 0\\
-   1 & 0 & 0 & 1\\
-  \end{pmatrix}
-  \begin{pmatrix}
-   1 & & &\\
-   & 1 & &\\
-   & & -1 &\\
-   & & & -1\\
-  \end{pmatrix}
-  \begin{pmatrix}
-   1 & 0\\
-   0 & 1\\
-   0 & 1\\
-   1 & 0\\
-  \end{pmatrix}
-  =\emptyset
- \]
- \label{exampleLinQ}
+  Sea $Q\subseteq \Po^3 \tq Q:x^2_0 +x^2_1 -x²_2-x^2_3=0$, sean $p_1=\lp 0:1:1:0\rp$ y $p_2=\lp 
+  1:0:0:1\rp$ puntos del proyectivo y $L=p_1 \vee p_2$ una recta. Entonces tenemos que:
+  \[
+    Q_{|L}=
+    \begin{pmatrix}
+      0 & 1 & 1 & 0\\
+      1 & 0 & 0 & 1\\
+    \end{pmatrix}
+    \begin{pmatrix}
+      1 & & &\\
+      & 1 & &\\
+      & & -1 &\\
+      & & & -1\\
+    \end{pmatrix}
+    \begin{pmatrix}
+      1 & 0\\
+      0 & 1\\
+      0 & 1\\
+      1 & 0\\
+    \end{pmatrix}
+    =\emptyset
+  \]
+  \label{exampleLinQ}
 \end{example}
 
 \begin{defi}
- Sean $L$ una recta y $Q$ una cuádrica:
- \begin{enumerate}[(1)]
-  \item Si $L\subseteq Q$ diremos que $L$ es una generatriz de $Q$.
-  \item Si $L\cap Q \equiv$ $2$ puntos diremos que $L$ es secante a $Q$.
-  \item Si $L\cap Q \equiv$ $1$ punto (doble) diremos que $L$ es tangente a $Q$.
- \end{enumerate}
+  Sean $L$ una recta y $Q$ una cuádrica:
+  \begin{enumerate}[(1)]
+    \item Si $L\subseteq Q$ diremos que $L$ es una generatriz de $Q$.
+    \item Si $L\cap Q \equiv$ $2$ puntos diremos que $L$ es secante a $Q$.
+    \item Si $L\cap Q \equiv$ $1$ punto (doble) diremos que $L$ es tangente a $Q$.
+  \end{enumerate}
 \end{defi}
 
 \begin{prop}
- Sean $\phi$ una forma bilineal y $q$ y $Q$ una cuádrica $\tq [\phi]=[q]=Q\subseteq \Po^2$.
- Entonces tenemos los siguientes resultados para cuádricas:
- \begin{enumerate}[(1)]
-  \item Sea $L=p_1\vee p_2 \tq$ $p_1=[v_1]$ y $p_2=[v_2]$. Entonces:
-  \begin{itemize}
-   \item $L$ es generatriz de $Q \iff \phi \lp v_1,v_1\rp = \phi
-   \lp v_2,v_2 \rp = \phi \lp v_1,v_2 \rp =0$.
-   \item $L$ es tangente a $Q \iff \phi \lp v_1,v_1 \rp \phi \lp v_2,v_2 \rp
-   - \phi \lp v_1,v_2 \rp ^2 =0$.
-  \end{itemize}
-  \item Si $p\in Q$ y $p$ singular, entonces toda recta $L \tq p\in L$ es tangente a $Q$.
-  \item si $p\in Q$ y $p$ liso, entonces $\{ p'\subseteq \Po^n | L=p\vee p'$ es tangente a $Q \}$
-  es el hiperplano $T_p\lp Q \rp$ (el hiperplano tangente a $Q$ en $p$) y tiene de ecuación
-  \[
-   \lp a_0,\dots,a_n \rp A 
-   \begin{pmatrix}
-    x_0\\
-    \vdots\\
-    x_n\\
-   \end{pmatrix} = 0
-  \]
-  Donde $p_\R = \lp a_0:\dots :a_n\rp$, $p'_\R = \lp x_0:\dots :x_n\rp$ y $A = M_\R \lp Q \rp$.
- \end{enumerate}
+  Sean $\phi$ una forma bilineal y $q$ y $Q$ una cuádrica $\tq [\phi]=[q]=Q\subseteq \Po^2$.
+  Entonces tenemos los siguientes resultados para cuádricas:
+  \begin{enumerate}[(1)]
+    \item Sea $L=p_1\vee p_2 \tq$ $p_1=[v_1]$ y $p_2=[v_2]$. Entonces:
+      \begin{itemize}
+        \item $L$ es generatriz de $Q \iff \phi \lp v_1,v_1\rp = \phi
+          \lp v_2,v_2 \rp = \phi \lp v_1,v_2 \rp =0$.
+        \item $L$ es tangente a $Q \iff \phi \lp v_1,v_1 \rp \phi \lp v_2,v_2 \rp
+          - \phi \lp v_1,v_2 \rp ^2 =0$.
+      \end{itemize}
+    \item Si $p\in Q$ y $p$ singular, entonces toda recta $L \tq p\in L$ es tangente a $Q$.
+    \item si $p\in Q$ y $p$ liso, entonces $\{ p'\subseteq \Po^n | L=p\vee p'$ es tangente a $Q \}$
+      es el hiperplano $T_p\lp Q \rp$ (el hiperplano tangente a $Q$ en $p$) y tiene de ecuación
+      \[
+        \lp a_0,\dots,a_n \rp A 
+        \begin{pmatrix}
+          x_0\\
+          \vdots\\
+          x_n\\
+        \end{pmatrix} = 0
+      \]
+      Donde $p_\R = \lp a_0:\dots :a_n\rp$, $p'_\R = \lp x_0:\dots :x_n\rp$ y $A = M_\R \lp Q \rp$.
+  \end{enumerate}
 \end{prop}
 \begin{proof}
- \begin{enumerate}[(1)]
-  \item[]
-  \item Sea $F$ un subespacio vectorial $\tq L=[F]=[v_1,v_2]$. Entonces
-  \[
-   M_\R \lp Q_{|L} \rp = M_\R \lp q_{|F}\rp =
-   \begin{pmatrix}
-    \phi\lp v_1,v_1\rp & \phi\lp v_1,v_2\rp\\
-    \phi\lp v_2,v_1\rp & \phi\lp v_2,v_2\rp\\
-   \end{pmatrix} =B
-  \]
-  Y por lo tanto:
-  \begin{itemize}
-   \item $L$ generatriz $\stackrel{\text{por definición}}{\iff} q_{|F}\equiv 0
-   \iff \phi\lp v_1,v_1\rp = \phi\lp v_1,v_2\rp = \phi\lp v_2,v_2\rp=0$.
-   \item $L$ es tangente a $Q \iff \left\{
-   \begin{array}{c}
-    L \text{ generatriz }  \iff B=0 \\
-    L\cap Q \equiv 1 \text{ punto doble }  \iff \det B=0\\
-   \end{array}\right\} \iff \phi\lp v_1,v_1\rp \phi\lp v_2,v_2\rp - \phi\lp v_1,v_2\rp ^2 =0$
-  \end{itemize}
-  \item Recordemos que $p=[v]$ singular $\iff \phi\lp v,·\rp=0$. Ahora sea $L=p\vee p'$.
-  Entonces tenemos:
-  \[
-   B=M_\R\lp Q_{|F}\rp = 
-   \begin{pmatrix}
-    \cancelto{0}{\phi\lp v_1,v_1\rp} & \cancelto{0}{\phi\lp v_1,v_2\rp}\\
-    \cancelto{0}{\phi\lp v_2,v_1\rp} & \phi\lp v_2,v_2\rp
-   \end{pmatrix} \implies \det B=0 \stackrel{(1)}{\implies} L \text{ es tangente a } Q
-  \]
-  \item Recordemos que $p=[v]$ es punto liso de $q \iff \phi\lp v,v\rp = q\lp v\rp =0$.
-  Sea $L=p\vee p' = [v]\vee [v']$ y sea :
-  \[
-   B=M_\R \lp q_{|F}\rp = 
-   \begin{pmatrix}
-    \phi\lp v,v\rp & \phi\lp v,v'\rp\\
-    \phi\lp v',v\rp & \phi\lp v',v'\rp\\
-   \end{pmatrix}
-  \]
-  Entonces tenemos que $L$ es tangente a $Q \iff \det B =0 \iff \phi\lp v,v\rp\phi\lp v',v'\rp
-  - \phi\lp v,v'\rp^2 \iff \phi \lp v,v'\rp =0$. Pero además, como
-  \[
-   \phi\lp v,v'\rp =0\implies \lp a_0, \dots ,a_n \rp A 
-   \begin{pmatrix}
-    x_0\\ \vdots\\ x_n\\
-   \end{pmatrix}=0
-  \]
-  Y por lo tanto, como $\lp a_0,\dots,a_n\rp A \neq 0$ porque $A$ es simétrica y $A\begin{pmatrix}
-  a_0\\ \vdots\\ a_n\\ \end{pmatrix} \neq 0$ (ya que p no es singular), el conjunto de puntos $p' \tq$
-  $L$ es tangente a $Q$ cumplen la ecuación anterior y son un hiperplano.
- \end{enumerate}
+  \begin{enumerate}[(1)]
+    \item[]
+    \item Sea $F$ un subespacio vectorial $\tq L=[F]=[v_1,v_2]$. Entonces
+      \[
+        M_\R \lp Q_{|L} \rp = M_\R \lp q_{|F}\rp =
+        \begin{pmatrix}
+          \phi\lp v_1,v_1\rp & \phi\lp v_1,v_2\rp\\
+          \phi\lp v_2,v_1\rp & \phi\lp v_2,v_2\rp\\
+        \end{pmatrix} =B
+      \]
+      Y por lo tanto:
+      \begin{itemize}
+        \item $L$ generatriz $\stackrel{\text{por definición}}{\iff} q_{|F}\equiv 0
+          \iff \phi\lp v_1,v_1\rp = \phi\lp v_1,v_2\rp = \phi\lp v_2,v_2\rp=0$.
+        \item $L$ es tangente a $Q \iff \left\{
+            \begin{array}{c}
+              L \text{ generatriz }  \iff B=0 \\
+              L\cap Q \equiv 1 \text{ punto doble }  \iff \det B=0\\
+            \end{array}\right\} \iff \phi\lp v_1,v_1\rp \phi\lp v_2,v_2\rp - \phi\lp v_1,v_2\rp ^2 =0$
+      \end{itemize}
+    \item Recordemos que $p=[v]$ singular $\iff \phi\lp v,·\rp=0$. Ahora sea $L=p\vee p'$.
+      Entonces tenemos:
+      \[
+        B=M_\R\lp Q_{|F}\rp = 
+        \begin{pmatrix}
+          \cancelto{0}{\phi\lp v_1,v_1\rp} & \cancelto{0}{\phi\lp v_1,v_2\rp}\\
+          \cancelto{0}{\phi\lp v_2,v_1\rp} & \phi\lp v_2,v_2\rp
+        \end{pmatrix} \implies \det B=0 \stackrel{(1)}{\implies} L \text{ es tangente a } Q
+      \]
+    \item Recordemos que $p=[v]$ es punto liso de $q \iff \phi\lp v,v\rp = q\lp v\rp =0$.
+      Sea $L=p\vee p' = [v]\vee [v']$ y sea :
+      \[
+        B=M_\R \lp q_{|F}\rp = 
+        \begin{pmatrix}
+          \phi\lp v,v\rp & \phi\lp v,v'\rp\\
+          \phi\lp v',v\rp & \phi\lp v',v'\rp\\
+        \end{pmatrix}
+      \]
+      Entonces tenemos que $L$ es tangente a $Q \iff \det B =0 \iff \phi\lp v,v\rp\phi\lp v',v'\rp
+      - \phi\lp v,v'\rp^2 \iff \phi \lp v,v'\rp =0$. Pero además, como
+      \[
+        \phi\lp v,v'\rp =0\implies \lp a_0, \dots ,a_n \rp A 
+        \begin{pmatrix}
+          x_0\\ \vdots\\ x_n\\
+        \end{pmatrix}=0
+      \]
+      Y por lo tanto, como $\lp a_0,\dots,a_n\rp A \neq 0$ porque $A$ es simétrica y $A\begin{pmatrix}
+        a_0\\ \vdots\\ a_n\\ \end{pmatrix} \neq 0$ (ya que p no es singular), el conjunto de puntos $p' \tq$
+      $L$ es tangente a $Q$ cumplen la ecuación anterior y son un hiperplano.
+  \end{enumerate}
 \end{proof}
 
 \begin{example}
- \begin{enumerate}
-  \item []
-  \item Sea $Q\subseteq\Po^3$ una cuádrica $\tq Q:x^2_0 +x^2_1 -x^2_2 -x^2_3=0$, $A$ la matriz asociada y $p=\lp 1:0:0:1\rp$
-  un punto de $Q$. Como $p\not\in \nuc \lp A\rp$, $p$ es un punto liso y por lo tanto, aplicando el 
-  apartado $3$ de la proposición anterior temeos que $T_p\lp Q \rp$ tiene como ecuación:
-  \[
-   \lp 1,0,0,1 \rp A \begin{pmatrix}x_0\\x_1\\x_2\\x_3\\ \end{pmatrix} = 0 \implies 
-   \lp 1,0,0,-1 \rp \begin{pmatrix}x_0\\x_1\\x_2\\x_3\\ \end{pmatrix} = 0 \implies
-   x_0-x_3=0
-  \]
-  \item Sea $Q:-x^2_0 +x^2_1 +x^2_2 +x^2_3=0$ y $p=\lp 1:0:0:1\rp \in Q$, igual que en el
-  ejemplo anterior tenemos que $p$ es liso, y siguiendo el prodecimiento del ejemplo anterior llegamos 
-  a que $T_p\lp Q \rp$ tiene como ecuación $-x_0 +x_3=0$.
- \end{enumerate}
+  \begin{enumerate}
+    \item []
+    \item Sea $Q\subseteq\Po^3$ una cuádrica $\tq Q:x^2_0 +x^2_1 -x^2_2 -x^2_3=0$, $A$ la matriz asociada y $p=\lp 1:0:0:1\rp$
+      un punto de $Q$. Como $p\not\in \nuc \lp A\rp$, $p$ es un punto liso y por lo tanto, aplicando el 
+      apartado $3$ de la proposición anterior temeos que $T_p\lp Q \rp$ tiene como ecuación:
+      \[
+        \lp 1,0,0,1 \rp A \begin{pmatrix}x_0\\x_1\\x_2\\x_3\\ \end{pmatrix} = 0 \implies 
+        \lp 1,0,0,-1 \rp \begin{pmatrix}x_0\\x_1\\x_2\\x_3\\ \end{pmatrix} = 0 \implies
+        x_0-x_3=0
+      \]
+    \item Sea $Q:-x^2_0 +x^2_1 +x^2_2 +x^2_3=0$ y $p=\lp 1:0:0:1\rp \in Q$, igual que en el
+      ejemplo anterior tenemos que $p$ es liso, y siguiendo el prodecimiento del ejemplo anterior llegamos 
+      a que $T_p\lp Q \rp$ tiene como ecuación $-x_0 +x_3=0$.
+  \end{enumerate}
 \end{example}
 
 \subsection{Polaridad}
@@ -391,149 +389,149 @@
 \begin{prop}
   Sea $Q\in\Po^n$ una cuádrica y $p_1, p_2\in\Po^n$ dos puntos. Entonces:
   \begin{enumerate}[(1)]
-   \item $p_1 \stackrel{Q}{\sim} p_1 \iff p\in Q$.
-   \item Si $p_1,p_2\in Q$, entonces $p_1 \stackrel{Q}{\sim} p_2 \iff L=p_1\vee p_2 \subseteq Q$.
-   \item Si $p_1\in Q$, $p_2 \not\in Q$, entonces $p_1 \stackrel{Q}{\sim} p_2 \iff L=p_1\vee p_2 
-   \subseteq T_{p_1}\lp Q \rp$.
-   \item Si $p_1,p_2\not\in Q$, $ L=p_1\vee p_2$ y $ L\cap Q =\{p_3,p_4\}\neq \varnothing$, entonces
-   $p_1 \stackrel{Q}{\sim} p_2 \iff L$ es secante a $Q$ y $\lp p_1,p_2,p_3,p_4\rp =-1$. 
-   \item Fijado $p=[v]$, entonces $\left\{p'\in\Po^n | p' \stackrel{Q}{\sim} p\right\} = H_p\lp Q\rp$
-   es un hiperplano (hiperplano polar a $p$) de ecuación $vA\begin{pmatrix}x_0\\ \vdots\\ x_n\\ \end{pmatrix}=0$.
+    \item $p_1 \stackrel{Q}{\sim} p_1 \iff p\in Q$.
+    \item Si $p_1,p_2\in Q$, entonces $p_1 \stackrel{Q}{\sim} p_2 \iff L=p_1\vee p_2 \subseteq Q$.
+    \item Si $p_1\in Q$, $p_2 \not\in Q$, entonces $p_1 \stackrel{Q}{\sim} p_2 \iff L=p_1\vee p_2 
+      \subseteq T_{p_1}\lp Q \rp$.
+    \item Si $p_1,p_2\not\in Q$, $ L=p_1\vee p_2$ y $ L\cap Q =\{p_3,p_4\}\neq \varnothing$, entonces
+      $p_1 \stackrel{Q}{\sim} p_2 \iff L$ es secante a $Q$ y $\lp p_1,p_2,p_3,p_4\rp =-1$. 
+    \item Fijado $p=[v]$, entonces $\left\{p'\in\Po^n | p' \stackrel{Q}{\sim} p\right\} = H_p\lp Q\rp$
+      es un hiperplano (hiperplano polar a $p$) de ecuación $vA\begin{pmatrix}x_0\\ \vdots\\ x_n\\ \end{pmatrix}=0$.
   \end{enumerate}
 \end{prop}
 \begin{proof}
   Sea $B$ una matriz $\tq B=M_\R \lp Q\cap L\rp = \begin{pmatrix}
     \phi\lp v_1,v_1\rp & \phi\lp v_1,v_2\rp\\
     \phi\lp v_2,v_1\rp & \phi\lp v_2,v_2\rp\\
-   \end{pmatrix}$. Entonces:
+  \end{pmatrix}$. Entonces:
   \begin{enumerate}[(1)]
-   \item Por definición, $p_1 \stackrel{Q}{\sim} p_1 \iff \phi\lp v,v\rp=0 \iff q\lp v\rp=0 \iff p\in Q$.
-   \item Por definición, $p_1 \stackrel{Q}{\sim} p_2 \iff \phi\lp v_1,v_2\rp=\phi\lp v_2,v_1\rp=0$, y como
-   $p_1,p_2\in Q \implies \phi\lp v_1,v_1\rp=\phi\lp v_2,v_2\rp=0$, entonces $\phi\lp v_1,v_2\rp=
-   \phi\lp v_2,v_1\rp=0 \iff B=\varnothing \iff L\subseteq Q$.
-   \item Por definición, $p_1 \stackrel{Q}{\sim} p_2 \iff \phi\lp v_1,v_2\rp=\phi\lp v_2,v_1\rp=0$, y como 
-   $p_1\in Q \implies \phi\lp v_1,v_1\rp=0$, entonces $\phi\lp v_1,v_2\rp=
-   \phi\lp v_2,v_1\rp=0 \iff B= 
-   \begin{pmatrix}
-   0 & 0\\
-   0 & c\\
-   \end{pmatrix}$ con $c\neq 0$ porque $p_2 \not\in Q$ y por lo tanto $\det B \neq 0$ lo que nos dice que 
-   $B= 
-   \begin{pmatrix}
-   0 & 0\\
-   0 & c\\
-   \end{pmatrix} \iff L\subseteq T_{p_1}\lp Q\rp$.
-   \item Por definición, equivalentemente a el prodecimiento de los apartados anteriores llegamos a que $B=
-   \begin{pmatrix}
-    a & 0\\
-    0 & b\\
-   \end{pmatrix}$ con $a,b\neq 0$. Cojamos una referencia $\R \tq p_1=\lp 1:0\rp$ y $p_2(0:1)$ y consideremos la ecuación dada por $L\cap Q$:
-   \[
-    \lp \alpha,\beta\rp
-    \begin{pmatrix}
-     a & 0\\
-     0 & b\\
-    \end{pmatrix}
-    \begin{pmatrix}
-     \alpha\\
-     \beta\\
-    \end{pmatrix}=0 \implies \alpha^2 a+\beta^2 b=0 
-   \]
-   que como $p_1\not\in Q \implies \beta\neq 0$ y por lo tanto si $z=\frac{\alpha}{\beta}$ tenemos:
-   \[
-    a\lp\frac{\alpha}{\beta}\rp^2 +b =0 \implies az^2 +b=0 \implies z=\pm \sqrt{\frac{-b}{a}}
-   \]
-   que tiene dos soluciones porque tenemos como hipótesis que $L\cap Q\neq\varnothing$ y por lo tanto
-   $L$ es secante a $Q$. Además tenemos que $p_3=\lp\sqrt{\frac{-b}{a}}:1\rp$ y $p_4=\lp-\sqrt{\frac{-b}{a}}:1\rp$.
-   Finalmente es fácil comprobar que $(p_1,p_2,p_3,p_4)=-1$.
-   \item Por definición, $p \stackrel{Q}{\sim} p' \iff \phi\lp v,v'\rp=0 \iff vA\begin{pmatrix}x_0\\ \vdots\\ x_n\\ \end{pmatrix}=0$
-   y como $vA\neq 0$, $H_p\lp Q\rp$ es un hiperplano.
+    \item Por definición, $p_1 \stackrel{Q}{\sim} p_1 \iff \phi\lp v,v\rp=0 \iff q\lp v\rp=0 \iff p\in Q$.
+    \item Por definición, $p_1 \stackrel{Q}{\sim} p_2 \iff \phi\lp v_1,v_2\rp=\phi\lp v_2,v_1\rp=0$, y como
+      $p_1,p_2\in Q \implies \phi\lp v_1,v_1\rp=\phi\lp v_2,v_2\rp=0$, entonces $\phi\lp v_1,v_2\rp=
+      \phi\lp v_2,v_1\rp=0 \iff B=\varnothing \iff L\subseteq Q$.
+    \item Por definición, $p_1 \stackrel{Q}{\sim} p_2 \iff \phi\lp v_1,v_2\rp=\phi\lp v_2,v_1\rp=0$, y como 
+      $p_1\in Q \implies \phi\lp v_1,v_1\rp=0$, entonces $\phi\lp v_1,v_2\rp=
+      \phi\lp v_2,v_1\rp=0 \iff B= 
+      \begin{pmatrix}
+        0 & 0\\
+        0 & c\\
+      \end{pmatrix}$ con $c\neq 0$ porque $p_2 \not\in Q$ y por lo tanto $\det B \neq 0$ lo que nos dice que 
+      $B= 
+      \begin{pmatrix}
+        0 & 0\\
+        0 & c\\
+      \end{pmatrix} \iff L\subseteq T_{p_1}\lp Q\rp$.
+    \item Por definición, equivalentemente a el prodecimiento de los apartados anteriores llegamos a que $B=
+      \begin{pmatrix}
+        a & 0\\
+        0 & b\\
+      \end{pmatrix}$ con $a,b\neq 0$. Cojamos una referencia $\R \tq p_1=\lp 1:0\rp$ y $p_2(0:1)$ y consideremos la ecuación dada por $L\cap Q$:
+      \[
+        \lp \alpha,\beta\rp
+        \begin{pmatrix}
+          a & 0\\
+          0 & b\\
+        \end{pmatrix}
+        \begin{pmatrix}
+          \alpha\\
+          \beta\\
+        \end{pmatrix}=0 \implies \alpha^2 a+\beta^2 b=0 
+      \]
+      que como $p_1\not\in Q \implies \beta\neq 0$ y por lo tanto si $z=\frac{\alpha}{\beta}$ tenemos:
+      \[
+        a\lp\frac{\alpha}{\beta}\rp^2 +b =0 \implies az^2 +b=0 \implies z=\pm \sqrt{\frac{-b}{a}}
+      \]
+      que tiene dos soluciones porque tenemos como hipótesis que $L\cap Q\neq\varnothing$ y por lo tanto
+      $L$ es secante a $Q$. Además tenemos que $p_3=\lp\sqrt{\frac{-b}{a}}:1\rp$ y $p_4=\lp-\sqrt{\frac{-b}{a}}:1\rp$.
+      Finalmente es fácil comprobar que $(p_1,p_2,p_3,p_4)=-1$.
+    \item Por definición, $p \stackrel{Q}{\sim} p' \iff \phi\lp v,v'\rp=0 \iff vA\begin{pmatrix}x_0\\ \vdots\\ x_n\\ \end{pmatrix}=0$
+      y como $vA\neq 0$, $H_p\lp Q\rp$ es un hiperplano.
   \end{enumerate}
 \end{proof}
 
 \begin{obs}
- \begin{enumerate}[(1)]
-  \item []
-  \item Si $p\in Q$ entonces $H_p\lp Q\rp = T_p\lp Q\rp$.
-  \item Como $p_1 \stackrel{Q}{\sim} p_2 \iff p_2 \stackrel{Q}{\sim} p_1$, tenemos que $p_1\in H_{p_2}\lp Q\rp \iff
-  p_2\in H_{p_1}\lp Q\rp$.
- \end{enumerate}
+  \begin{enumerate}[(1)]
+    \item []
+    \item Si $p\in Q$ entonces $H_p\lp Q\rp = T_p\lp Q\rp$.
+    \item Como $p_1 \stackrel{Q}{\sim} p_2 \iff p_2 \stackrel{Q}{\sim} p_1$, tenemos que $p_1\in H_{p_2}\lp Q\rp \iff
+      p_2\in H_{p_1}\lp Q\rp$.
+  \end{enumerate}
 \end{obs}
 
 \begin{example}
   En $\Po^2$:\\
-    \begin{center}
+  \begin{center}
     \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
-    \clip(-8,2) rectangle (2.4,6);
-    \draw [rotate around={-172.80274371739344:(-2.5948300768279142,4.470680337271209)},color=blue] (-2.5948300768279142,4.470680337271209) ellipse (3.973436165338986 and 1.330253566678655);
-    \draw [color=red,domain=-10.595414382769706:2.500720072572623] plot(\x,{(--2998.1976338746463--154.82772036198662*\x)/837.4336989206226});
-    \begin{scriptsize}
-    \draw [fill=teal] (-1.7658998659356222,3.2537350559886766) circle (2.5pt);
-    \draw[color=teal] (-1.697846349314976,3.4339125358867024) node {$p$};
-    \draw[color=red] (-7.219597340524728,2.594199251509183) node {$H_p = T_p$};
-    \end{scriptsize}
+      \clip(-8,2) rectangle (2.4,6);
+      \draw [rotate around={-172.80274371739344:(-2.5948300768279142,4.470680337271209)},color=blue] (-2.5948300768279142,4.470680337271209) ellipse (3.973436165338986 and 1.330253566678655);
+      \draw [color=red,domain=-10.595414382769706:2.500720072572623] plot(\x,{(--2998.1976338746463--154.82772036198662*\x)/837.4336989206226});
+      \begin{scriptsize}
+        \draw [fill=teal] (-1.7658998659356222,3.2537350559886766) circle (2.5pt);
+        \draw[color=teal] (-1.697846349314976,3.4339125358867024) node {$p$};
+        \draw[color=red] (-7.219597340524728,2.594199251509183) node {$H_p = T_p$};
+      \end{scriptsize}
     \end{tikzpicture}
     \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
-    \clip(1,-1) rectangle (12,4.2);
-    \draw [rotate around={-172.52238947185185:(5.58430056014799,2.319535352849599)},color=blue] (5.58430056014799,2.319535352849599) ellipse (4.063981256849501 and 1.4858815602390578);
-    \draw [color=teal,domain=-3.7981066867017312:19.40249436513903] plot(\x,{(--2.4696406066332823--1.0398473193995683*\x)/6.128734815311686});
-    \draw [color=green,domain=-3.7981066867017312:19.40249436513903] plot(\x,{(--2497.140860927716-353.76546246339603*\x)/1639.0668888171813});
-    \draw [color=red,domain=-3.7981066867017312:19.40249436513903] plot(\x,{(-5251.952072960202--824.3765555968888*\x)/1134.6581928847716});
-    \begin{scriptsize}
-    \draw [fill=green] (2.906744285068728,0.8961410511547316) circle (2.5pt);
-    \draw[color=green] (2.8585424492862592,1.3578812922614554) node {$p_1$};
-    \draw [fill=red] (9.035479100380414,1.9359883705543) circle (2.5pt);
-    \draw[color=red] (9.259744552967712,1.7) node {$p_2$};
-    \draw [fill=teal] (6.528374407097482,0.1144721249308355) circle (2.5pt);
-    \draw[color=teal] (6.600090157776123,-0.19) node {$p$};
-    \draw[color=red] (10,3.8) node {$H_{p_2}\left(Q\right) = T_{p_2}\left(Q\right)$};
-    \draw[color=green] (10.37,-0.1) node {$H_{p_1}\left(Q\right) = T_{p_1}\left(Q\right)$};
-    \end{scriptsize}
+      \clip(1,-1) rectangle (12,4.2);
+      \draw [rotate around={-172.52238947185185:(5.58430056014799,2.319535352849599)},color=blue] (5.58430056014799,2.319535352849599) ellipse (4.063981256849501 and 1.4858815602390578);
+      \draw [color=teal,domain=-3.7981066867017312:19.40249436513903] plot(\x,{(--2.4696406066332823--1.0398473193995683*\x)/6.128734815311686});
+      \draw [color=green,domain=-3.7981066867017312:19.40249436513903] plot(\x,{(--2497.140860927716-353.76546246339603*\x)/1639.0668888171813});
+      \draw [color=red,domain=-3.7981066867017312:19.40249436513903] plot(\x,{(-5251.952072960202--824.3765555968888*\x)/1134.6581928847716});
+      \begin{scriptsize}
+        \draw [fill=green] (2.906744285068728,0.8961410511547316) circle (2.5pt);
+        \draw[color=green] (2.8585424492862592,1.3578812922614554) node {$p_1$};
+        \draw [fill=red] (9.035479100380414,1.9359883705543) circle (2.5pt);
+        \draw[color=red] (9.259744552967712,1.7) node {$p_2$};
+        \draw [fill=teal] (6.528374407097482,0.1144721249308355) circle (2.5pt);
+        \draw[color=teal] (6.600090157776123,-0.19) node {$p$};
+        \draw[color=red] (10,3.8) node {$H_{p_2}\left(Q\right) = T_{p_2}\left(Q\right)$};
+        \draw[color=green] (10.37,-0.1) node {$H_{p_1}\left(Q\right) = T_{p_1}\left(Q\right)$};
+      \end{scriptsize}
     \end{tikzpicture}
     \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
-    \clip(-8,-1.5) rectangle (3.2,4.5);
-    \draw [rotate around={-166.64953823051044:(-3.6958343717826576,2.4001698384783072)},color=blue] (-3.6958343717826576,2.4001698384783072) ellipse (3.2278434115319956 and 1.7272612187217231);
-    \draw [color=green,domain=-11.88617290832004:5.544782051740591] plot(\x,{(--5.825787876122232--0.4045348527412902*\x)/3.2024818479860375});
-    \draw [color=green,domain=-11.88617290832004:5.544782051740591] plot(\x,{(-3111.699543848952-628.0428125467149*\x)/878.5469677946085});
-    \draw [color=green,domain=-11.88617290832004:5.544782051740591] plot(\x,{(--2900.6520266166162--874.2194962583005*\x)/1070.2996041172978});
-    \draw [color=orange,domain=-11.88617290832004:5.544782051740591] plot(\x,{(--5.744458157149122--0.7631084376391317*\x)/2.343724533660228});
-    \draw [color=orange,domain=-11.88617290832004:5.544782051740591] plot(\x,{(-779.0328966364686-301.45934984121845*\x)/1347.5422207319493});
-    \draw [color=orange,domain=-11.88617290832004:5.544782051740591] plot(\x,{(--2159.394431179412--950.1005851563904*\x)/644.6207560726057});
-    \draw [color=red,domain=-11.88617290832004:5.544782051740591] plot(\x,{(--1.1967420881381787--0.5634245726491658*\x)/1.767992977268901});
-    \begin{scriptsize}
-    \draw [fill=blue] (-3.1706954282897257,1.4186282026262316) circle (2.5pt);
-    \draw[color=blue] (-3.0803795994811205,1.6613519925493554) node {$p$};
-    \draw [fill=green] (-6.373177276275763,1.0140933498849414) circle (2.5pt);
-    \draw [fill=green] (-1.2903827454426602,1.6561477422737316) circle (2pt);
-    \draw [fill=orange] (-5.514419961949954,0.6555197649870999) circle (2.5pt);
-    \draw [fill=orange] (-0.7827893373810072,2.1961219993978656) circle (2pt);
-    \draw [fill=red] (-4.081835419330292,-0.6239076188674535) circle (2pt);
-    \draw[color=red] (-4.028695801971466,-0.9) node {$A_1$};
-    \draw [fill=red] (-2.3138424420613912,-0.06048304621828766) circle (2pt);
-    \draw[color=red] (-2.165931832794002,-0.3) node {$A_2$};
-    \draw[color=green] (1.2,1.65) node {$l = H_{A_1}\left(Q\right)$};
-    \draw[color=orange] (1.9,2.55) node {$l' = H_{A_2}\left(Q\right)$};
-    \draw[color=red] (1.2,0.6) node {$H_p\left(Q\right)$};
-    \end{scriptsize}
+      \clip(-8,-1.5) rectangle (3.2,4.5);
+      \draw [rotate around={-166.64953823051044:(-3.6958343717826576,2.4001698384783072)},color=blue] (-3.6958343717826576,2.4001698384783072) ellipse (3.2278434115319956 and 1.7272612187217231);
+      \draw [color=green,domain=-11.88617290832004:5.544782051740591] plot(\x,{(--5.825787876122232--0.4045348527412902*\x)/3.2024818479860375});
+      \draw [color=green,domain=-11.88617290832004:5.544782051740591] plot(\x,{(-3111.699543848952-628.0428125467149*\x)/878.5469677946085});
+      \draw [color=green,domain=-11.88617290832004:5.544782051740591] plot(\x,{(--2900.6520266166162--874.2194962583005*\x)/1070.2996041172978});
+      \draw [color=orange,domain=-11.88617290832004:5.544782051740591] plot(\x,{(--5.744458157149122--0.7631084376391317*\x)/2.343724533660228});
+      \draw [color=orange,domain=-11.88617290832004:5.544782051740591] plot(\x,{(-779.0328966364686-301.45934984121845*\x)/1347.5422207319493});
+      \draw [color=orange,domain=-11.88617290832004:5.544782051740591] plot(\x,{(--2159.394431179412--950.1005851563904*\x)/644.6207560726057});
+      \draw [color=red,domain=-11.88617290832004:5.544782051740591] plot(\x,{(--1.1967420881381787--0.5634245726491658*\x)/1.767992977268901});
+      \begin{scriptsize}
+        \draw [fill=blue] (-3.1706954282897257,1.4186282026262316) circle (2.5pt);
+        \draw[color=blue] (-3.0803795994811205,1.6613519925493554) node {$p$};
+        \draw [fill=green] (-6.373177276275763,1.0140933498849414) circle (2.5pt);
+        \draw [fill=green] (-1.2903827454426602,1.6561477422737316) circle (2pt);
+        \draw [fill=orange] (-5.514419961949954,0.6555197649870999) circle (2.5pt);
+        \draw [fill=orange] (-0.7827893373810072,2.1961219993978656) circle (2pt);
+        \draw [fill=red] (-4.081835419330292,-0.6239076188674535) circle (2pt);
+        \draw[color=red] (-4.028695801971466,-0.9) node {$A_1$};
+        \draw [fill=red] (-2.3138424420613912,-0.06048304621828766) circle (2pt);
+        \draw[color=red] (-2.165931832794002,-0.3) node {$A_2$};
+        \draw[color=green] (1.2,1.65) node {$l = H_{A_1}\left(Q\right)$};
+        \draw[color=orange] (1.9,2.55) node {$l' = H_{A_2}\left(Q\right)$};
+        \draw[color=red] (1.2,0.6) node {$H_p\left(Q\right)$};
+      \end{scriptsize}
     \end{tikzpicture}
-    \end{center}
+  \end{center}
 \end{example}
 
 \subsection{Cuádrica dual}
 \begin{defi}[de la cuádrica dual]
   Sea $Q\subseteq \Po^n$ una cuádrica, $A=M_\R\lp Q\rp$ su matriz asociada y sea
   \begin{align*}
-   F_Q (=F):\Po^n & \to \lp\Po^n \rp ^*\\
-   \begin{pmatrix}
-   a_0\\
-   \vdots\\
-   a_n\\
-   \end{pmatrix} &\mapsto A
-   \begin{pmatrix}
-   a_0\\
-   \vdots\\
-   a_n\\
-   \end{pmatrix}
+    F_Q (=F):\Po^n & \to \lp\Po^n \rp ^*\\
+    \begin{pmatrix}
+      a_0\\
+      \vdots\\
+      a_n\\
+    \end{pmatrix} &\mapsto A
+    \begin{pmatrix}
+      a_0\\
+      \vdots\\
+      a_n\\
+    \end{pmatrix}
   \end{align*}
   una proyectividad $\tq$ si $p\in\Po^n$, $F(p)=\lp H_p\lp Q\rp\rp^*$. Entonces definimos 
   $Q^* := F\lp Q\rp$ la cuádrica dual de $Q$.
@@ -541,413 +539,458 @@
 
 \begin{prop}
   Sea $Q\in\Po^n$ una cuádrica, $A=M_\R\lp Q\rp$ su matriz asociada y $Q^*=F(Q)$ su cuádrica dual.
-   Entonces $M_{\R^*}\lp Q^* \rp = A^{-1}$
+  Entonces $M_{\R^*}\lp Q^* \rp = A^{-1}$
 \end{prop}
 \begin{proof}
   Sea $\tilde{p}_{\R^*}= \lp b_0:\dots:b_n\rp \in \lp \Po^n \rp ^* \tq \tilde{p}\in Q^*=F(Q)
   \stackrel{F \text{ biyectiva}}{\iff} A^{-1}
   \begin{pmatrix}
-   b_0\\
-   \vdots\\
-   b_n\\
+    b_0\\
+    \vdots\\
+    b_n\\
   \end{pmatrix}=F^{-1}\lp\tilde{p}\rp \in Q$.
   Entonces por definición tenemos que 
   \[
-   \lp A^{-1}
-  \begin{pmatrix}
-   b_0\\
-   \vdots\\
-   b_n\\
-  \end{pmatrix}\rp ^T A \lp A^{-1}
-  \begin{pmatrix}
-   b_0\\
-   \vdots\\
-   b_n\\
-  \end{pmatrix}\rp=0 \iff (b_0,\dots,b_n)\lp A^{-1}\rp ^T 
-  \begin{pmatrix}
-   b_0\\
-   \vdots\\
-   b_n\\
-  \end{pmatrix}=0 \iff 
+    \lp A^{-1}
+    \begin{pmatrix}
+      b_0\\
+      \vdots\\
+      b_n\\
+    \end{pmatrix}\rp ^T A \lp A^{-1}
+    \begin{pmatrix}
+      b_0\\
+      \vdots\\
+      b_n\\
+    \end{pmatrix}\rp=0 \iff (b_0,\dots,b_n)\lp A^{-1}\rp ^T 
+    \begin{pmatrix}
+      b_0\\
+      \vdots\\
+      b_n\\
+    \end{pmatrix}=0 \iff 
   \]
   \[
-   \iff (b_0,\dots,b_n) A^{-1}
-  \begin{pmatrix}
-   b_0\\
-   \vdots\\
-   b_n\\
-  \end{pmatrix}=0
+    \iff (b_0,\dots,b_n) A^{-1}
+    \begin{pmatrix}
+      b_0\\
+      \vdots\\
+      b_n\\
+    \end{pmatrix}=0
   \]
 
 
 
 \end{proof}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%A PARTIR D'AQUI JORDI%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%A PARTIR D'AQUI OSCAR%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Cuádricas proyectivas y afines}
 
 \begin{align*}
-    \A^n &\leftrightarrow \bar{\A}^n = \Po^n \\
-    \left( x_0, \dots, x_n \right) &\mapsto \left( 1:x_1:\dots:x_n \right) \\
-    \left( \frac{\overline{x}_1}{\overline{x}_0}, \dots, \frac{\overline{x}_n}{\overline{x}_0} \right) &\mapsfrom \left( \overline{x}_0:\dots:\overline{x}_n \right), \overline{x}_0 \neq 0.
+  \A^n &\leftrightarrow \bar{\A}^n = \Po^n \\
+  \left( x_0, \dots, x_n \right) &\mapsto \left( 1:x_1:\dots:x_n \right) \\
+  \left( \frac{\overline{x}_1}{\overline{x}_0}, \dots, \frac{\overline{x}_n}{\overline{x}_0} \right) &\mapsfrom \left( \overline{x}_0:\dots:\overline{x}_n \right), \overline{x}_0 \neq 0.
 \end{align*}
 \begin{obs}
-    $Q$ proyectiva $\implies Q_0$ afín: $M_{\overline{\R}}\left( Q \right) = A$.
-    \[ Q_0 = Q\cap \A^n = \left\{ p \in \A^n \;|\; p\in Q \right\} \to \text{ Ecuaciones: } \left( 1,x_1,\dots,x_n \right)A
-       \begin{pmatrix}
-            1 \\
-            x_1 \\
-            \vdots \\
-            x_n
-        \end{pmatrix} = 0.
-    \]
+  $Q$ proyectiva $\implies Q_0$ afín: $M_{\overline{\R}}\left( Q \right) = A$.
+  \[ Q_0 = Q\cap \A^n = \left\{ p \in \A^n \;|\; p\in Q \right\} \to \text{ Ecuaciones: } \left( 1,x_1,\dots,x_n \right)A
+    \begin{pmatrix}
+      1 \\
+      x_1 \\
+      \vdots \\
+      x_n
+    \end{pmatrix} = 0.
+  \]
 \end{obs}
 \begin{example}
-    $\A^2 \to \Po^2$ \\
-    \begin{gather*}
-        \begin{array}{c}
-            Q_0 = Q\cap \A^2 \\
-            x_0 = 1
-        \end{array}, \quad
-        \begin{cases}
-            Q \colon x_0^2 + x_1^2 + x_2^2 + 4x_0x_1 + 6x_0x_2 + 8x_1x_2 = 0 \\
-            A = 
-            \begin{pmatrix}
-                1 & 2 & 3 \\
-                2 & 1 & 4 \\
-                3 & 4 & 1
-            \end{pmatrix}
-        \end{cases} \\
-        1 + x_0^2 + x_1^2 + x_2^2 + 4x_0x_1 + 6x_0x_2 + 8x_1x_2 = 0 \implies A = 
+  $\A^2 \to \Po^2$ \\
+  \begin{gather*}
+    \begin{array}{c}
+      Q_0 = Q\cap \A^2 \\
+      x_0 = 1
+    \end{array}, \quad
+    \begin{cases}
+      Q \colon x_0^2 + x_1^2 + x_2^2 + 4x_0x_1 + 6x_0x_2 + 8x_1x_2 = 0 \\
+      A = 
+      \begin{pmatrix}
+        1 & 2 & 3 \\
+        2 & 1 & 4 \\
+        3 & 4 & 1
+      \end{pmatrix}
+    \end{cases} \\
+    1 + x_0^2 + x_1^2 + x_2^2 + 4x_0x_1 + 6x_0x_2 + 8x_1x_2 = 0 \implies A = 
+    \begin{pmatrix}
+      1 & 2 & 3 \\
+      2 & 1 & 4 \\
+      3 & 4 & 1
+    \end{pmatrix}
+  \end{gather*}
+\end{example}
+\begin{obs}
+  $Q$ afín $\implies Q$ proyectiva: $\overline{Q} \cap \A^n = Q$.
+  \begin{gather*}
+    \A^n \to \bar{\A}^n = \Po^n \\
+    Q \text{ afín} \to A = M_\R\left( Q \right) =
+    \left( \begin{array}{c|ccc}
+      c & b_1 & \dots & b_n \\ \hline
+      b_1 & & & \\
+      \vdots & & A_\infty & \\
+      b_n & & & 
+    \end{array} \right)
+  \end{gather*}
+\end{obs}
+\begin{example}
+  $Q \subseteq \A^2$ \\
+  \begin{gather*}
+    Q \colon 1+2x+4y+x^2+-5y^2+4xy = 0 \\
+    \begin{array}{c|cc}
+      1 & 1 & 2 \\ \hline
+      1 & 1 & 2 \\
+      2 & 2 & -5
+    \end{array} \\
+    \overline{Q} \colon M_{\overline{\R}}\left( Q \right) = A, \, x_0^2+x_1^2-5x_2^2 + 2x_0x_1 + 4x_0x_2 + 4x_1x_2 = 0.
+  \end{gather*}
+\end{example}
+\begin{obs}
+  $Q \subseteq \A^n$,
+  \[
+    A = M_\R\left( Q \right) =
+    \left( \begin{array}{c|ccc}
+      c & b_1 & \dots & b_n \\
+      b_1 & & & \\
+      \vdots & & A_\infty & \\
+      b_n & & &
+    \end{array} \right)
+    \stackrel{\overline{x}_0 = 0}{\implies} \overline{Q} \cap \bar{\A}^n_\infty \colon A_\infty
+  \]
+\end{obs}
+\begin{example}
+  $\Po^2, Q \colon x_0^2 + x_1^2 - x_2^2 = 0$.
+  % TODO Dibuix en 2D facil pero que no compila amb geogebra
+  \begin{enumerate}
+    \item Sea $L_1 \colon x_0 = 0$, $Q\cap \left( \A^2 = \Po^2 \setminus L_1 \right) = C_1$, tenemos que
+      \begin{gather*}
+        x_0 = 1 \implies 1+x_1^2 - x_2^2 = 0 \implies C_1 \text{ hipérbola}, \\
+        Q \cap L_1 \colon x_1^2 - x_2^2 = 0 \\
+        \left( x_1 -x_2 \right)\left( x_1 + x_2 \right) = 0, p_1 = \left( 0,1,1 \right)^t, p_2 = \left( 0,-1,1 \right)^t.
+      \end{gather*}
+    \item Sea $L_2 \colon x_2 = 0$, $Q\cap \left( \A^2 = \Po^2 \setminus L_2 \right) = C_2$, tenemos que
+      \begin{gather*}
+        x_0 = 1 \implies x_0^2+x_1^2 - 1 = 0 \implies C_2 \text{ elipse}, \\
+        \emptyset = Q \cap L_1 \colon x_0^2 - x_1^2 = 0 \\
+        \left( x_1 -x_2 \right)\left( x_1 + x_2 \right) = 0, p_1 = \left( 0,1,1 \right)^t, p_2 = \left( 0,-1,1 \right)^t.
+      \end{gather*}
+    \item $p_1 = \left( 0,1,1 \right), H_{p_1}Q = T_{p_1}Q \colon
+      \begin{pmatrix}
+        0 & 1 & 1
+      \end{pmatrix}
+      \begin{pmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & -1
+      \end{pmatrix}
+      \begin{pmatrix}
+        x_0 \\ x_1 \\ x_2
+      \end{pmatrix}
+      = 0 \to x_1 - x_2 = 0$. \\
+      Sea $L_3 = T_{p_1}Q \colon x_1 - x_2 = 0$, $Q\cap \left( \A^2 = \Po^2 \setminus L_3 \right) = C_3$,
+      \begin{gather*}
+        \begin{rcases}
+          \overline{x}_0 = x_0 \\
+          \overline{x}_1 = x_1 - x_2 \\
+          \overline{x}_2 = x_1 + x_2
+        \end{rcases}
+        \implies
         \begin{pmatrix}
-            1 & 2 & 3 \\
-            2 & 1 & 4 \\
-            3 & 4 & 1
+          \overline{x}_0 \\
+          \overline{x}_1 \\
+          \overline{x}_2
+        \end{pmatrix} =
+        \overbrace{ \begin{pmatrix}
+          1 & 0 & 0 \\
+          0 & 1 & -1 \\
+          0 & 1 & 1
+        \end{pmatrix}}^{\inv{S}}
+        \begin{pmatrix}
+          x_0 \\ x_1 \\ x_2
         \end{pmatrix}
-    \end{gather*}
-\end{example}
-\begin{obs}
-    $Q$ afín $\implies Q$ proyectiva: $\overline{Q} \cap \A^n = Q$.
-    \begin{gather*}
-        \A^n \to \bar{\A}^n = \Po^n \\
-        Q \text{ afín} \to A = M_\R\left( Q \right) =
-        \left( \begin{array}{c|ccc}
-            c & b_1 & \dots & b_n \\ \hline
-            b_1 & & & \\
-            \vdots & & A_\infty & \\
-            b_n & & & 
-        \end{array} \right)
-    \end{gather*}
-\end{obs}
-\begin{example}
-    $Q \subseteq \A^2$ \\
-    \begin{gather*}
-        Q \colon 1+2x+4y+x^2+-5y^2+4xy = 0 \\
-        \begin{array}{c|cc}
-            1 & 1 & 2 \\ \hline
-            1 & 1 & 2 \\
-            2 & 2 & -5
-        \end{array} \\
-        \overline{Q} \colon M_{\overline{\R}}\left( Q \right) = A, \, x_0^2+x_1^2-5x_2^2 + 2x_0x_1 + 4x_0x_2 + 4x_1x_2 = 0.
-    \end{gather*}
-\end{example}
-\begin{obs}
-    $Q \subseteq \A^n$,
-    \[
-        A = M_\R\left( Q \right) =
-        \left( \begin{array}{c|ccc}
-            c & b_1 & \dots & b_n \\
-            b_1 & & & \\
-            \vdots & & A_\infty & \\
-            b_n & & &
-        \end{array} \right)
-        \stackrel{\overline{x}_0 = 0}{\implies} \overline{Q} \cap \bar{\A}^n_\infty \colon A_\infty
-    \]
-\end{obs}
-\begin{example}
-    $\Po^2, Q \colon x_0^2 + x_1^2 - x_2^2 = 0$.
-    % TODO Dibuix en 2D facil pero que no compila amb geogebra
-    \begin{enumerate}
-        \item Sea $L_1 \colon x_0 = 0$, $Q\cap \left( \A^2 = \Po^2 \setminus L_1 \right) = C_1$, tenemos que
-            \begin{gather*}
-                x_0 = 1 \implies 1+x_1^2 - x_2^2 = 0 \implies C_1 \text{ hipérbola}, \\
-                Q \cap L_1 \colon x_1^2 - x_2^2 = 0 \\
-                \left( x_1 -x_2 \right)\left( x_1 + x_2 \right) = 0, p_1 = \left( 0,1,1 \right)^t, p_2 = \left( 0,-1,1 \right)^t.
-            \end{gather*}
-        \item Sea $L_2 \colon x_2 = 0$, $Q\cap \left( \A^2 = \Po^2 \setminus L_2 \right) = C_2$, tenemos que
-            \begin{gather*}
-                x_0 = 1 \implies x_0^2+x_1^2 - 1 = 0 \implies C_2 \text{ elipse}, \\
-                \emptyset = Q \cap L_1 \colon x_0^2 - x_1^2 = 0 \\
-                \left( x_1 -x_2 \right)\left( x_1 + x_2 \right) = 0, p_1 = \left( 0,1,1 \right)^t, p_2 = \left( 0,-1,1 \right)^t.
-            \end{gather*}
-        \item $p_1 = \left( 0,1,1 \right), H_{p_1}Q = T_{p_1}Q \colon
-            \begin{pmatrix}
-                0 & 1 & 1
-            \end{pmatrix}
-            \begin{pmatrix}
-                1 & 0 & 0 \\
-                0 & 1 & 0 \\
-                0 & 0 & -1
-            \end{pmatrix}
-            \begin{pmatrix}
-                x_0 \\ x_1 \\ x_2
-            \end{pmatrix}
-            = 0 \to x_1 - x_2 = 0$. \\
-            Sea $L_3 = T_{p_1}Q \colon x_1 - x_2 = 0$, $Q\cap \left( \A^2 = \Po^2 \setminus L_3 \right) = C_3$,
-            \begin{gather*}
-                \begin{rcases}
-                    \overline{x}_0 = x_0 \\
-                    \overline{x}_1 = x_1 - x_2 \\
-                    \overline{x}_2 = x_1 + x_2
-                \end{rcases}
-                \implies
-                \begin{pmatrix}
-                    \overline{x}_0 \\
-                    \overline{x}_1 \\
-                    \overline{x}_2
-                \end{pmatrix} =
-                \overbrace{ \begin{pmatrix}
-                    1 & 0 & 0 \\
-                    0 & 1 & -1 \\
-                    0 & 1 & 1
-                \end{pmatrix}}^{\inv{S}}
-                \begin{pmatrix}
-                    x_0 \\ x_1 \\ x_2
-                \end{pmatrix}
-            \end{gather*}
-            $Q$ en $\overline{\R} \colon 0 = x_0^2 + x_1^2 - x_2^2 = x_0^2 + \left( x_1 - x_2 \right) \left( x_1 + x_2 \right) \implies 0 = \overline{x}_0^2 + \overline{x}_1\overline{x}_2 \stackrel{\overline{x}_1 = 1}{\implies} 0 = \overline{x}_0^2 + \overline{x}_2$ \\
-            $L_3$ en $\overline{\R} \colon \overline{x}_1 = 0$
-    \end{enumerate}
+      \end{gather*}
+      $Q$ en $\overline{\R} \colon 0 = x_0^2 + x_1^2 - x_2^2 = x_0^2 + \left( x_1 - x_2 \right) \left( x_1 + x_2 \right) \implies 0 = \overline{x}_0^2 + \overline{x}_1\overline{x}_2 \stackrel{\overline{x}_1 = 1}{\implies} 0 = \overline{x}_0^2 + \overline{x}_2$ \\
+      $L_3$ en $\overline{\R} \colon \overline{x}_1 = 0$
+  \end{enumerate}
 \end{example}
 \begin{defi}
-    Sea $Q$ una cuádrica afín y $\overline{Q}$ su completación proyectiva $\left( \bar{\A}^n = \Po^n \right)$. Sea $p=[v]\in\A^n$, $p$ es un centro de $Q$ $\iff \varphi\left( v, \omega \right) = 0, \, \forall [\omega] \in\bar{\A}^n_\infty$. Si $Q$ no es degenerada,
-    \[ p \text{ es un centro de }Q \iff H_p\left( \overline{Q} \right) = \bar{\A}^n_\infty \]
+  Sea $Q$ una cuádrica afín y $\overline{Q}$ su completación proyectiva $\left( \bar{\A}^n = \Po^n \right)$. Sea $p=[v]\in\A^n$, $p$ es un centro de $Q$ $\iff \varphi\left( v, \omega \right) = 0, \, \forall [\omega] \in\bar{\A}^n_\infty$. Si $Q$ no es degenerada,
+  \[ p \text{ es un centro de }Q \iff H_p\left( \overline{Q} \right) = \bar{\A}^n_\infty \]
 \end{defi}
 % TODO dibuixos de la pag 10, son en 2D facilets
-% TODO acabar la seguent obs que no entenc en absolut, sorry (pg 10 del divo)
- \begin{obs}[Cálculo del centro para $Q$ no degenerada $\left( \det A \neq 0 \right)$]
-     \begin{align*}
-         \A^n &\to \Po^n = \bar{A}^n \\
-         Q &\mapsto \overline{Q}
-     \end{align*}
-     $A = M_\R \left( Q \right) = M_{\overline{\R}} \left( \overline{Q} \right) =
-     \left(\begin{array}{c|ccc}
-         c & b_1 & \dots & b_n \\
-         \hline
-         b_1 & & & \\
-         \vdots & & A_\infty & \\
-         b_n & & &
-    \end{array}\right)$ \\
-    Supongamos que queremos encontrar un centro de $Q$, $p = 
-    \left( 1, a_1, \dots, a_n \right)\in \A^n$. Sabemos que $\overline{\A^n_\infty} = 
-    H_p(\overline{Q}).$ Por lo tanto, tiene que cumplir
-\[\begin{pmatrix}
- 1 & a_1 & \dots & a_n 
-\end{pmatrix}
-A
-\begin{pmatrix}
- 0 \\ x_1 \\ \vdots \\ x_n 
-\end{pmatrix}
-= 0 \qquad \forall
-\begin{pmatrix} 0 \\ x_1 \\ \vdots \\ x_n \end{pmatrix} \in \overline{\A^n_\infty}.
-\]
-Esto se satisface si y solo si, para $\alpha \neq 0$,
-\begin{gather*}
-  \begin{pmatrix}
- 1 & a_1 & \dots & a_n 
-\end{pmatrix}
-A = 
-\begin{pmatrix} 
-  \alpha & 0 & \dots & 0 
-\end{pmatrix} 
-\iff \\
-\iff
- \begin{pmatrix}
- 1 & a_1 & \dots & a_n 
-\end{pmatrix}
-\left(\begin{array}{c|ccc}
-         c & b_1 & \dots & b_n \\
-         \hline
-         b_1 & & & \\
-         \vdots & & A_\infty & \\
-         b_n & & &
+\begin{obs}[Cálculo del centro para $Q$ no degenerada $\left( \det A \neq 0 \right)$]
+  \begin{align*}
+    \A^n &\to \Po^n = \bar{A}^n \\
+    Q &\mapsto \overline{Q}
+  \end{align*}
+  $A = M_\R \left( Q \right) = M_{\overline{\R}} \left( \overline{Q} \right) =
+  \left(\begin{array}{c|ccc}
+    c & b_1 & \dots & b_n \\
+    \hline
+    b_1 & & & \\
+    \vdots & & A_\infty & \\
+    b_n & & &
+  \end{array}\right)$ \\
+  Supongamos que queremos encontrar un centro de $Q$, $p = 
+  \left( 1, a_1, \dots, a_n \right)\in \A^n$. Sabemos que $\overline{\A^n_\infty} = 
+  H_p(\overline{Q}).$ Por lo tanto, tiene que cumplir
+  \[\begin{pmatrix}
+      1 & a_1 & \dots & a_n 
+    \end{pmatrix}
+    A
+    \begin{pmatrix}
+      0 \\ x_1 \\ \vdots \\ x_n 
+    \end{pmatrix}
+    = 0 \qquad \forall
+    \begin{pmatrix} 0 \\ x_1 \\ \vdots \\ x_n \end{pmatrix} \in \overline{\A^n_\infty}.
+  \]
+  Esto se satisface si y solo si, para $\alpha \neq 0$,
+  \begin{gather*}
+    \begin{pmatrix}
+      1 & a_1 & \dots & a_n 
+    \end{pmatrix}
+    A = 
+    \begin{pmatrix} 
+      \alpha & 0 & \dots & 0 
+    \end{pmatrix} 
+    \iff \\
+    \iff
+    \begin{pmatrix}
+      1 & a_1 & \dots & a_n 
+    \end{pmatrix}
+    \left(\begin{array}{c|ccc}
+      c & b_1 & \dots & b_n \\
+      \hline
+      b_1 & & & \\
+      \vdots & & A_\infty & \\
+      b_n & & &
     \end{array}\right)
     = 
-\begin{pmatrix} 
-  \alpha & 0 & \dots & 0 
-\end{pmatrix}
-\end{gather*}
-Que, finalmente, podemos desarrollar para obtener la siguiente condición para
-calcular los centros de una cuádrica:
-\[
-\begin{pmatrix}
- b_1 \\ \vdots \\ b_n 
-\end{pmatrix}
-+
-A_\infty
-\begin{pmatrix}
- a_1 \\ \vdots \\ a_n 
-\end{pmatrix}
-=
-\begin{pmatrix}
- 0 \\ \vdots \\ 0 
-\end{pmatrix}
-\]
- \end{obs}
-\begin{obs}
-    $Q$ no tiene centro $\iff \bar{\A}^n_\infty$ es tangente a $\overline{Q}$
+    \begin{pmatrix} 
+      \alpha & 0 & \dots & 0 
+    \end{pmatrix}
+  \end{gather*}
+  Que, finalmente, podemos desarrollar para obtener la siguiente condición para
+  calcular los centros de una cuádrica:
+  \[
+    \begin{pmatrix}
+      b_1 \\ \vdots \\ b_n 
+    \end{pmatrix}
+    +
+    A_\infty
+    \begin{pmatrix}
+      a_1 \\ \vdots \\ a_n 
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      0 \\ \vdots \\ 0 
+    \end{pmatrix}
+  \]
 \end{obs}
 \begin{obs}
-    $p \in \A^n$ es un centro de $Q \iff p$ es un centro de simetría (es decir, $\forall L\ni p$ (recta), si $L\cap Q\neq \emptyset$, entonces, $L\cap Q = \left\{ p_1, p_2 \right\}$ y $p = \frac{1}{2}\left( p_1 + p_2 \right)$).
+  $Q$ no tiene centro $\iff \bar{\A}^n_\infty$ es tangente a $\overline{Q}$
+\end{obs}
+\begin{obs}
+  $p \in \A^n$ es un centro de $Q \iff p$ es un centro de simetría (es decir, $\forall L\ni p$ (recta), si $L\cap Q\neq \emptyset$, entonces, $L\cap Q = \left\{ p_1, p_2 \right\}$ y $p = \frac{1}{2}\left( p_1 + p_2 \right)$).
 \end{obs}
 \begin{proof}
-    \begin{itemize}
-        \item[]
-        \item $p \stackrel{\overline{Q}}{\sim} p'$
-        \item $p \notin \overline{Q}, \text{si } p\in\overline{Q}, \, H_p\left( \overline{Q} \right) = T_p \left( \overline{Q} \right) \left( p\text{ es del afín} \right)$
-        \item $p' \notin \overline{Q} \text{si } p\in\overline{Q}, \, H_p\left( \overline{Q} \right) = T_p \left( \overline{Q} \right) \left( p\text{ es del afín} \right)$
-    \end{itemize}
-    Por tanto,
-    \begin{gather*}
-        \begin{cases}
-            L\cap\overline{Q} = \left\{ p_1, p_2 \right\} \\
-            \left( p_1, p_2, p, p' \right) = -1 = \left( p_1, p_2, p \right)
-        \end{cases}
-        \iff p = \frac{1}{2}\left( p_1 + p_2 \right).
-    \end{gather*}
+  \begin{itemize}
+    \item[]
+    \item $p \stackrel{\overline{Q}}{\sim} p'$
+    \item $p \notin \overline{Q}, \text{si } p\in\overline{Q}, \, H_p\left( \overline{Q} \right) = T_p \left( \overline{Q} \right) \left( p\text{ es del afín} \right)$
+    \item $p' \notin \overline{Q} \text{si } p\in\overline{Q}, \, H_p\left( \overline{Q} \right) = T_p \left( \overline{Q} \right) \left( p\text{ es del afín} \right)$
+  \end{itemize}
+  Por tanto,
+  \begin{gather*}
+    \begin{cases}
+      L\cap\overline{Q} = \left\{ p_1, p_2 \right\} \\
+      \left( p_1, p_2, p, p' \right) = -1 = \left( p_1, p_2, p \right)
+    \end{cases}
+    \iff p = \frac{1}{2}\left( p_1 + p_2 \right).
+  \end{gather*}
 \end{proof}
 \begin{defi}
-    Sea $Q$ una cuádrica con centro $p\in\A^n$. Una asíntota de $Q$ es una recta $L \ni p$ t.q. $\overline{L}$ es tangente a $\overline{Q}$ en un punto de $\bar{\A}_\infty^n$.
+  Sea $Q$ una cuádrica con centro $p\in\A^n$. Una asíntota de $Q$ es una recta $L \ni p$ t.q. $\overline{L}$ es tangente a $\overline{Q}$ en un punto de $\bar{\A}_\infty^n$.
 \end{defi}
 \begin{example}
-    $\A^2 \to Q \colon 2xy + 4x +4y +2 = 0$,
-    $A = \left( \begin{array}{c|cc}
-        2 & 2 & 2 \\ \hline
-        2 & 0 & 1 \\
-        2 & 1 & 0
-    \end{array} \right), \det A \neq 0$ (no degenerada). \\
-    $\Po^2 \to Q \colon 2x_1x_2 + 4x_1x_0 + 4x_2x_0 + 2x_0^2 = 0,
-    A = \begin{pmatrix}
-        2 & 2 & 2 \\
-        2 & 0 & 1 \\
-        2 & 1 & 0
-    \end{pmatrix}$,
-    \begin{gather*}
-        \begin{rcases}
-            \overline{Q} \cap r_\infty \\
-            r_\infty \colon x_0 = 0
-        \end{rcases}
-        \implies x_1x_2 = 0 \implies
-        \begin{cases}
-            p_1 = \left( 0,0,1 \right) \\
-            p_2 = \left( 0,1,0 \right)
-        \end{cases}
-    \end{gather*}
-    Asíntotas:
-    \begin{itemize}
-        \item $\overline{r}_1 = T_{p_1}\left( \overline{Q} \right)$
-            \[
-                \begin{pmatrix}
-                    0 & 0 & 1
-                \end{pmatrix}
-                \begin{pmatrix}
-                    2 & 2 & 2 \\
-                    2 & 0 & 1 \\
-                    2 & 1 & 0
-                \end{pmatrix}
-                \begin{pmatrix}
-                    x_0 \\ x_1 \\ x_2
-                \end{pmatrix}
-                = 0 \implies 2x_0 + x_1 = 0 \;\substack{\text{afín} \\ \implies \\ x_0 = 1}\; r_1 \colon 2 + x = 0
-            \]
-        \item $\overline{r}_2 = T_{p_2}\left( \overline{Q} \right)$
-            \[
-                \begin{pmatrix}
-                    0 & 1 & 0
-                \end{pmatrix}
-                \begin{pmatrix}
-                    2 & 2 & 2 \\
-                    2 & 0 & 1 \\
-                    2 & 1 & 0
-                \end{pmatrix}
-                \begin{pmatrix}
-                    x_0 \\ x_1 \\ x_2
-                \end{pmatrix}
-                = 0 \implies 2x_0 + x_2 = 0 \; \substack{\text{afín} \\ \implies \\ x_0 = 1}\; r_2 \colon 2 + y = 0
-            \]
-    \end{itemize}
+  $\A^2 \to Q \colon 2xy + 4x +4y +2 = 0$,
+  $A = \left( \begin{array}{c|cc}
+    2 & 2 & 2 \\ \hline
+    2 & 0 & 1 \\
+    2 & 1 & 0
+  \end{array} \right), \det A \neq 0$ (no degenerada). \\
+  $\Po^2 \to Q \colon 2x_1x_2 + 4x_1x_0 + 4x_2x_0 + 2x_0^2 = 0,
+  A = \begin{pmatrix}
+    2 & 2 & 2 \\
+    2 & 0 & 1 \\
+    2 & 1 & 0
+  \end{pmatrix}$,
+  \begin{gather*}
+    \begin{rcases}
+      \overline{Q} \cap r_\infty \\
+      r_\infty \colon x_0 = 0
+    \end{rcases}
+    \implies x_1x_2 = 0 \implies
+    \begin{cases}
+      p_1 = \left( 0,0,1 \right) \\
+      p_2 = \left( 0,1,0 \right)
+    \end{cases}
+  \end{gather*}
+  Asíntotas:
+  \begin{itemize}
+    \item $\overline{r}_1 = T_{p_1}\left( \overline{Q} \right)$
+      \[
+        \begin{pmatrix}
+          0 & 0 & 1
+        \end{pmatrix}
+        \begin{pmatrix}
+          2 & 2 & 2 \\
+          2 & 0 & 1 \\
+          2 & 1 & 0
+        \end{pmatrix}
+        \begin{pmatrix}
+          x_0 \\ x_1 \\ x_2
+        \end{pmatrix}
+        = 0 \implies 2x_0 + x_1 = 0 \;\substack{\text{afín} \\ \implies \\ x_0 = 1}\; r_1 \colon 2 + x = 0
+      \]
+    \item $\overline{r}_2 = T_{p_2}\left( \overline{Q} \right)$
+      \[
+        \begin{pmatrix}
+          0 & 1 & 0
+        \end{pmatrix}
+        \begin{pmatrix}
+          2 & 2 & 2 \\
+          2 & 0 & 1 \\
+          2 & 1 & 0
+        \end{pmatrix}
+        \begin{pmatrix}
+          x_0 \\ x_1 \\ x_2
+        \end{pmatrix}
+        = 0 \implies 2x_0 + x_2 = 0 \; \substack{\text{afín} \\ \implies \\ x_0 = 1}\; r_2 \colon 2 + y = 0
+      \]
+  \end{itemize}
 \end{example}
 
 \section{Clasificación proyectiva de cuádricas}
 
 \begin{defi}
-    $\Po^n = \Po\left( \E \right)$. Sean $Q_1 = [q_1], Q_2 = [q_2], q_1,q_2 \colon \E \to \k$ (formas cuadráticas).
-    \[
-        Q_1 \sim Q_2 \iff \exists \lambda \neq 0 \tq q_1\sim \lambda q_2 \text{ (como formas cuadráticas)}
-    \]
+  $\Po^n = \Po\left( \E \right)$. Sean $Q_1 = [q_1], Q_2 = [q_2], q_1,q_2 \colon \E \to \k$ (formas cuadráticas).
+  \[
+    Q_1 \sim Q_2 \iff \exists \lambda \neq 0 \tq q_1\sim \lambda q_2 \text{ (como formas cuadráticas)}
+  \]
 \end{defi}
 \begin{obs}
-    Son equivalentes:
-    \begin{itemize}
-        \item $Q_1 \sim Q_2$
-        \item $\exists \lambda \neq 0, \exists S \left( \det S\neq 0\right) \tq A_1 = \lambda S^tA_2S$
-        \item $\exists f\colon \Po^n \to \Po^n$ homografía t.q. $f\left( Q_1 \right) = Q_2$
-        \item $\exists \tilde{\R} \tq M_{\tilde{\R}} \left( Q_2 \right) = M_\R\left( Q_1 \right)$
-    \end{itemize}
+  Son equivalentes:
+  \begin{itemize}
+    \item $Q_1 \sim Q_2$
+    \item $\exists \lambda \neq 0, \exists S \left( \det S\neq 0\right) \tq A_1 = \lambda S^tA_2S$
+    \item $\exists f\colon \Po^n \to \Po^n$ homografía t.q. $f\left( Q_1 \right) = Q_2$
+    \item $\exists \tilde{\R} \tq M_{\tilde{\R}} \left( Q_2 \right) = M_\R\left( Q_1 \right)$
+  \end{itemize}
 \end{obs}
 \begin{obs}
-    Con el método convergencia-pivote: 
-    \[
-        \left( 
-        \begin{array}{c|c}
-            A & \Id
-        \end{array} \right)
-        \sim \dots \sim
-        \left( 
-        \begin{array}{ccccccc|c}
-            \lambda_1 & & & & & & & \\
-            & \ddots & & & & & & \\
-            & & \ddots & & & & & \\
-            & & & \lambda_r & & & &\quad S^t\quad \\
-            & & & & 0 & & & \\
-            & & & & & \ddots & & \\
-            & & & & & & 0 & \\
-        \end{array}
-        \right)
-    \]
-    \begin{itemize}
-        \item Si $\k = \cx$: $\lambda_1 = \dots = \lambda_r = 1 \to \begin{vmatrix}\left\{ \lambda_i\neq 0 \right\}\end{vmatrix} = r = \rg\left( A \right)$.
-        \item Si $\k = \real$: $\lambda_i =
-            \begin{cases}
-                -1 \\
-                -1
-            \end{cases}
-            \to \begin{vmatrix}\left\{ \lambda_i\neq 0 \right\}\end{vmatrix} = i_+ + i_- = \rg\left( A \right)$
-    \end{itemize}
+  Con el método convergencia-pivote: 
+  \[
+    \left( 
+    \begin{array}{c|c}
+      A & \Id
+    \end{array} \right)
+    \sim \dots \sim
+    \left( 
+    \begin{array}{ccccccc|c}
+      \lambda_1 & & & & & & & \\
+      & \ddots & & & & & & \\
+      & & \ddots & & & & & \\
+      & & & \lambda_r & & & &\quad S^t\quad \\
+      & & & & 0 & & & \\
+      & & & & & \ddots & & \\
+      & & & & & & 0 & \\
+    \end{array}
+    \right)
+  \]
+  \begin{itemize}
+    \item Si $\k = \cx$: $\lambda_1 = \dots = \lambda_r = 1 \to \begin{vmatrix}\left\{ \lambda_i\neq 0 \right\}\end{vmatrix} = r = \rg\left( A \right)$.
+    \item Si $\k = \real$: $\lambda_i =
+      \begin{cases}
+        1 \\
+        -1
+      \end{cases}
+      \to \begin{vmatrix}\left\{ \lambda_i\neq 0 \right\}\end{vmatrix} = i_+ + i_- = \rg\left( A \right)$
+  \end{itemize}
 \end{obs}
 \begin{prop}
-    $\Po_\cx^n, Q_1, Q_2$,
-    \[
-        Q_1 \sim Q_2 \iff \rg\left( Q_1 \right) = \rg\left( Q_2 \right),\text{ donde }\rg\left( Q \right) = \rg\left( M_\R | Q \right).
-    \]
+  $\Po_\cx^n, Q_1, Q_2$,
+  \[
+    Q_1 \sim Q_2 \iff \rg\left( Q_1 \right) = \rg\left( Q_2 \right),\text{ donde }\rg\left( Q \right) = \rg\left( M_\R | Q \right).
+  \]
 \end{prop}
 \begin{proof}
-    \[ q_1 \sim q_2 \iff \rg \left( q_1 \right) = \rg \left( q_2 \right) \]
+  \[ q_1 \sim q_2 \iff \rg \left( q_1 \right) = \rg \left( q_2 \right) \]
 \end{proof}
+
+\begin{obs}
+  Cuando trabajamos sobre $\real$, podemos tener dos formas bilineales que no son 
+  equivalentes y cuyas cuádricas sí lo son. Por ejemplo, las formas
+  \[q_1 = \begin{pmatrix} 1 & & \\ & 1 & \\ & & -1 \end{pmatrix}, \, q_2 = 
+  \begin{pmatrix} -1 & & \\ & -1 & \\ & & 1 \end{pmatrix}\]
+  no cumplen $q_1 \sim q_2$ (en particular, porque ${i_{+}}_1 \neq {i_{+}}_2$) pero sin 
+  embargo $Q_1 = [q_1], Q_2 = [q_2]$ sí cumplen $Q_1 \sim Q_2$, pues $\exists \lambda = -1
+  \text{ t.q. } q_1 \sim q_2$.
+
+  Lo importante para clasificar $Q$ es la pareja $\{i_+, i_-\}$.
+\end{obs}
+\begin{defi}
+  Definimos, para una cuádrica $Q$, los valores $r = i_+ + i_-$ y $m = \min \{i_+, i_-\}$. 
+\end{defi}
+\begin{prop}
+  Sean $Q_1, Q_2 \subseteq \Po^2_\real$ cuádricas.
+  \[Q_1 \sim Q_2 \iff r_1 = r_2, \, m_1 = m_2\]
+  Hacemos notar que $r = \rg(Q)$.
+\end{prop}
+
+\begin{example}
+  \begin{enumerate}[i)]
+    \item[]
+    \item Clasificación en $\Po^2_\cx$.
+      \begin{center}
+        \begin{tabular}{ c c c }
+          \underline{$r$} & \underline{Ecuación reducida} & 
+          \underline{Aspecto o nombre} \\[1ex] 
+           $3$ & $x_0^2 + x_1^2 + x_2^2 = 0$ & Cónica no degenerada \\  
+           $2$ & $x_0^2 + x_1^2 = (x_0+x_1)(x_0-x_1) = 0$ & Par de rectas \\
+           $1$ & $x_0^2 = 0$ & Recta doble
+        \end{tabular}
+      \end{center}
+    \item Clasificación en $\Po^2_\real$.
+      \begin{center}
+        \begin{tabular}{ c c c c }
+          \underline{$r$} & \underline{$m$} & \underline{Ecuación reducida} & 
+          \underline{Aspecto o nombre} \\[1ex] 
+           $3$ & $0$ & $x_0^2 + x_1^2 + x_2^2 = 0$ & Cónica no degenerada (imaginaria)\\  
+           $3$ & $1$ & $x_0^2 + x_1^2 - x_2^2 = 0$ & Cónica no degenerada (real) \\  
+           $2$ & $0$ & $x_0^2 + x_1^2 = 0$ & Par de rectas que se cortan en un punto real\\
+           $2$ & $1$ & $x_0^2 - x_1^2 = 0$ & Par de rectas reales\\
+           $1$ & $0$ & $x_0^2 = 0$ & Recta doble
+        \end{tabular}
+      \end{center}
+    \item Clasificación en $\Po^3_\real$.
+      \begin{center}
+        \begin{tabular}{ c c c c }
+          \underline{$r$} & \underline{$m$} & \underline{Ecuación reducida} & 
+          \underline{Aspecto o nombre} \\[1ex] 
+           $4$ & $0$ & $x_0^2 + x_1^2 + x_2^2 + x_3^2 = 0$ & Cuádrica no degenerada imaginaria\\  
+           $4$ & $1$ & $x_0^2 + x_1^2 + x_2^2 - x_3^2 = 0$ & Cuádrica no degenerada real, no reglada \\   
+           $4$ & $1$ & $x_0^2 + x_1^2 - x_2^2 - x_3^2 = 0$ & Cuádrica no degenerada real, reglada \\  
+           $3$ & $0$ & $x_0^2 + x_1^2 + x_2^2 = 0$ & Cono de base cónica no degenerada imaginaria\\  
+           $3$ & $1$ & $x_0^2 + x_1^2 - x_2^2 = 0$ &  Cono de base cónica no degenerada real  
+           $2$ & $0$ & $x_0^2 + x_1^2 = 0$ & Dos planos imaginarios con intersección real\\
+           $2$ & $1$ & $x_0^2 - x_1^2 = 0$ & Dos planos reales\\
+           $1$ & $0$ & $x_0^2 = 0$ & Plano doble
+        \end{tabular}
+      \end{center}
+  \end{enumerate}
+\end{example}
+
