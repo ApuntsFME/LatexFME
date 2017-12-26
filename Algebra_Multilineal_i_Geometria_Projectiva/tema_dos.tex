@@ -1771,7 +1771,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
 \begin{defi}
   Con las mismas hipótesis y con el mismo espacio $\E$ que en la última definición,
   \begin{enumerate}[i)]
-    \item $\Po^n = \Po (\E) = \overline{\A^n}$ es la completación proyectiva
+    \item $\Po^n = \Po (\E) = \bar{\A}^n$ es la completación proyectiva
     de $\A^n$.
     \item $\A^n_\infty = \pi(\F)$ son los puntos del infinito de $\A^n$.
   \end{enumerate}
@@ -1847,7 +1847,7 @@ al usar coordenadas.
 \begin{prop}  
   \[
     \begin{aligned}
-      \lp \A^n, \, \R \rp &\hookrightarrow \bigl( \overline{\A^n}, \, \overline{\R} 
+      \lp \A^n, \, \R \rp &\hookrightarrow \bigl( \bar{\A}^n, \, \overline{\R} 
       \bigr) \\
       q_{\R} = \lp x_1, \dots, x_n \rp &\mapsto \varphi(q)_{\overline{R}} = \lp
       1 : x_1 : x_2 : \dots : x_n \rp
@@ -1857,7 +1857,7 @@ al usar coordenadas.
 
 \begin{proof}
   \begin{gather*}
-    q_r = \lp x_1, \dots, x_n \rp \implies q = p + x_1u_1 + \dots + x_nu_n \implies \\
+    q_\R = \lp x_1, \dots, x_n \rp \implies q = p + x_1u_1 + \dots + x_nu_n \implies \\
     \implies \varphi(q) = [e_0 + \overrightarrow{p_0q}] = [e_0+\overrightarrow{p_0p}
     + x_1u_1 + \dots + x_nu_n]\implies\\
     \implies \varphi(q)_{\overline{R}} = \lp 1 : x_1 : x_2 : \dots : x_n \rp
@@ -1867,11 +1867,11 @@ al usar coordenadas.
 \begin{obs}
   \begin{enumerate}[i)]
     \item[]
-    \item Para $p \in \Po^n$, si $\overline{x_0} \neq 0$, $q = (\overline{x_0}:
-      \dots:\overline{x_n}) = (1:\frac{\overline{x_1}}{\overline{x_0}}:
-      \dots:\frac{\overline{x_n}}{x_0}) = \varphi(\frac{\overline{x_1}}{\overline{x_0}}
-      ,\dots,\frac{\overline{x_n}}{\overline{x_0}}) \in \A^n.$
-    \item Para $q \in \Po^n$, $q \in \A^n_\infty \iff \overline{x_0} = 0$.
+    \item Para $p \in \Po^n$, si $\overline{x}_0 \neq 0$, $q = (\overline{x}_0:
+      \dots:\overline{x}_n) = (1:\frac{\overline{x}_1}{\overline{x}_0}:
+      \dots:\frac{\overline{x}_n}{x_0}) = \varphi(\frac{\overline{x}_1}{\overline{x}_0}
+      ,\dots,\frac{\overline{x}_n}{\overline{x}_0} \in \A^n.$
+    \item Para $q \in \Po^n$, $q \in \A^n_\infty \iff \overline{x}_0 = 0$.
   \end{enumerate}
 \end{obs}
 
@@ -1879,12 +1879,12 @@ al usar coordenadas.
 
 En lo que concierne a este apartado, diremos que $V \subseteq \A^n$ es una variedad 
 lineal afín $V = p+G$, $G \subseteq \F$ s.e.v de $\F$, siendo $\F$ el espacio vectorial
-asociado a $A^n$.
+asociado a $\A^n$.
 
 \begin{defi}
   \begin{enumerate}[i)]
     \item[]
-    \item $V_\infty = \pi(G) \subseteq \Po^n = \overline{\A^n}$
+    \item $V_\infty = \pi(G) \subseteq \Po^n = \bar{\A}^n$
     \item Llamamos a $\overline{V} = \varphi(V) \cup V_\infty$ variedad lineal 
       proyectiva completada de $V$.
   \end{enumerate}
@@ -1943,7 +1943,7 @@ contenidos dentro de los de la otra.
    \begin{tabular}{c|c} $b_1$ & \multirow{3}{*}{A} \\ $\vdots$ & \\ $b_n$ & \end{tabular} 
    \rp 
    \begin{pmatrix}
-     \overline{x_0} \\ \vdots \\ \overline{x_n} 
+     \overline{x}_0 \\ \vdots \\ \overline{x}_n 
    \end{pmatrix}
    =
    \begin{pmatrix}
@@ -1955,13 +1955,13 @@ contenidos dentro de los de la otra.
  \begin{proof}
    Sea $q \in \overline{V} = \varphi(V) \cup V_\infty$. 
    Consideramos $q_{\overline{\R}} = \begin{pmatrix}
-     \overline{x_0} \\ \vdots \\ \overline{x_n} 
+     \overline{x}_0 \\ \vdots \\ \overline{x}_n 
    \end{pmatrix}$
    Separamos la prueba en dos casos.
    \begin{enumerate}[i)]
-       \item Si $\overline{x_0} = 0$, $q = \lp 0:\overline{x_1}:\dots:\overline{x_n}\rp$, con
+       \item Si $\overline{x}_0 = 0$, $q = \lp 0:\overline{x}_1:\dots:\overline{x}_n\rp$, con
          lo que
-         \[u = \lp \overline{x_1},\dots,\overline{x_n} \rp \in G \text{ s.e.v director
+         \[u = \lp \overline{x}_1,\dots,\overline{x}_n \rp \in G \text{ s.e.v director
          de V } \iff Au = 0 \iff 
          \lp 
          \begin{array}{c|c} 
@@ -1970,16 +1970,16 @@ contenidos dentro de los de la otra.
          \rp
          \begin{pmatrix}
            0 \\
-           \overline{x_1} \\
+           \overline{x}_1 \\
            \vdots \\
-           \overline{x_n}
+           \overline{x}_n
          \end{pmatrix}
          = 0.
        \]
-     \item Si $\overline{x_0} \neq 0$, $q = \lp 1 : \frac{\overline{x_1}}{\overline{x_0}}
-       : \dots : \frac{\overline{x_n}}{\overline{x_0}} \rp$, con lo que $q \in \varphi(V)$,
-       es decir, $\exists q_0 =  \lp \frac{\overline{x_1}}{\overline{x_0}}
-       : \dots : \frac{\overline{x_n}}{\overline{x_0}} \rp \in V \text{ t.q. } 
+     \item Si $\overline{x}_0 \neq 0$, $q = \lp 1 : \frac{\overline{x}_1}{\overline{x}_0}
+       : \dots : \frac{\overline{x}_n}{\overline{x}_0} \rp$, con lo que $q \in \varphi(V)$,
+       es decir, $\exists q_0 =  \lp \frac{\overline{x}_1}{\overline{x}_0}
+       : \dots : \frac{\overline{x}_n}{\overline{x}_0} \rp \in V \text{ t.q. } 
        q = \varphi(q_0)$. Entonces, 
        \begin{gather*} 
    \begin{pmatrix}
@@ -1988,8 +1988,8 @@ contenidos dentro de los de la otra.
    +
    \lp
    \begin{tabular}{c|c} 
-     \multirow{3}{*}{$A$} & $\frac{\overline{x_1}}{\overline{x_0}}$\\ 
-     & $\vdots$  \\ & $ \frac{\overline{x_n}}{\overline{x_0}}$
+     \multirow{3}{*}{$A$} & $\frac{\overline{x}_1}{\overline{x}_0}$\\ 
+     & $\vdots$  \\ & $ \frac{\overline{x}_n}{\overline{x}_0}$
     \end{tabular} 
     \rp
     =
@@ -2000,12 +2000,12 @@ contenidos dentro de los de la otra.
 \begin{pmatrix}
      b_1 \\ \vdots \\ b_n
    \end{pmatrix}
-   \overline{x_0}
+   \overline{x}_0
    +
    \lp
    \begin{tabular}{c|c} 
-     \multirow{3}{*}{$A$} & $\overline{x_1}$\\ 
-     & $\vdots$  \\ & $ \overline{x_n}$
+     \multirow{3}{*}{$A$} & $\overline{x}_1$\\ 
+     & $\vdots$  \\ & $ \overline{x}_n$
     \end{tabular} 
     \rp
     =
@@ -2020,9 +2020,9 @@ contenidos dentro de los de la otra.
          \end{array}
          \rp
          \begin{pmatrix}
-           \overline{x_0} \\
+           \overline{x}_0 \\
            \vdots \\
-           \overline{x_n}
+           \overline{x}_n
          \end{pmatrix}
  = 
  \begin{pmatrix}
@@ -2041,7 +2041,7 @@ contenidos dentro de los de la otra.
     x_1-x_2+2x_3 = 2
   \end{cases}
   $
-  Queremos encontrar la recta $\overline{V} \subseteq \overline{\A^3}$. Podemos
+  Queremos encontrar la recta $\overline{V} \subseteq \bar{\A}^3$. Podemos
   expresar las condiciones anteriores como
   \[
     \begin{pmatrix}
@@ -2067,8 +2067,8 @@ describen $\overline{V}$:
       -2 & 1 & -1 & 2 
     \end{array}
     \rp
-    \begin{pmatrix} \overline{x_0} \\ \overline{x_1} \\ \overline{x_2} \\ 
-      \overline{x_3} \end{pmatrix} 
+    \begin{pmatrix} \overline{x}_0 \\ \overline{x}_1 \\ \overline{x}_2 \\ 
+      \overline{x}_3 \end{pmatrix} 
    + 
    \begin{pmatrix}
      -1 \\ -2
@@ -2084,8 +2084,8 @@ describen $\overline{V}$:
    \[-5 + x_1 + 2x_2 + 4x_3 = 0.\]
    Esta variedad da lugar a la siguiente variedad completada
    \[
-     \overline{V}\colon -5\overline{x_0} + \overline{x_1} + 2\overline{x_2} + 
-   4\overline{x_3}
+     \overline{V}\colon -5\overline{x}_0 + \overline{x}_1 + 2\overline{x}_2 + 
+   4\overline{x}_3
  \]
  \end{example}
 
@@ -2093,7 +2093,7 @@ describen $\overline{V}$:
 
  \begin{prop}
    Sea $H \subseteq \Po^n$ un hiperplano. $\Po^n \setminus H$ tiene estructura de
-   espacio afín $\A^n$ y cumple $\Po^n = \overline{\A^n}$ y $H = \overline{\A^n_\infty}$.
+   espacio afín $\A^n$ y cumple $\Po^n = \bar{\A}^n$ y $H = \bar{\A}^n_\infty$.
  \end{prop}
 
  \begin{proof}
@@ -2104,13 +2104,13 @@ describen $\overline{V}$:
   en este espacio, y $\delta$ es la aplicación natural inducida por la resta entre dos
   vectores. Si tomamos $e_0 = w_0$ en la completación proyectiva
   del afín que se acaba de definir se puede comprobar, y se dejará como ejercicio para
-  el lector, que $\Po^n = \overline{\A^n}$, y que $H = \A^n_\infty$, y por eso podemos
+  el lector, que $\Po^n = \bar{\A}^n$, y que $H = \A^n_\infty$, y por eso podemos
   decir que $\Po^n \setminus H = \A^n$.
  \end{proof}
 
 \begin{example}
-  Consideremos el plano proyectivo $\Po^2$, y los hiperplanos $H_1\colon \overline{x_0} = 0$,
-  $H_1 \colon \overline{x_1} = 0$ y $H_2 \colon \overline{x_2} = 0$. Entonces los puntos
+  Consideremos el plano proyectivo $\Po^2$, y los hiperplanos $H_1\colon \overline{x}_0 = 0$,
+  $H_1 \colon \overline{x}_1 = 0$ y $H_2 \colon \overline{x}_2 = 0$. Entonces los puntos
   en el afín nos determinan puntos en el proyectivo de la siguiente manera:
   \begin{enumerate}[i)]
     \item $(x_1, x_2) \in \Po^2 \setminus H_0 = \A^2 \longrightarrow (1:x_1:x_2) \in \Po^2$
