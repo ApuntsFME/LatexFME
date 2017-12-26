@@ -1468,3 +1468,84 @@ los rectángulos.
         d\left( \phi(x), \phi\left( \bar{x} \right) \right) \leq L d\left( x, \bar{x} \right)
     \]
 \end{defi*}<++>
+
+\section{Integrales impropias}
+
+\begin{defi}
+    Sea $E \subset \real^n$. Definimos por \textit{exhaustión} de $E$ una sucesión $\lp E_i \rp$ de conjuntos mesurables Jordan tal que
+    \begin{itemize}
+        \item $E_i \subset E$,
+        \item $E_i \subset E_{i+1}$,
+        \item $\cup E_i = E$.
+    \end{itemize}
+\end{defi}
+
+\begin{defi}
+    Sea $f \colon E \to \real$. Sea $\lp E_i \rp$ una exhaustión de $E$, y suponemos que $f$ es integrable Riemann en cada $E_i$. Definimos la \textit{integral de Riemann impropia} de $f$ en $E$ como el límite
+    \[
+        \int_E f := \lim_i \int_{E_i} f,
+    \]
+    suponiendo que exista y no dependa de la exhaustión elegida.
+    
+    Cuando el límite es finito, decimos que la integral es convergente, y cuando no lo es, decimos que es divergente.
+\end{defi}
+
+\begin{prop}
+    Sea $E \subset \real^n$ mesurable Jordan y sea $\lp E_i \rp$ una exhaustión de $E$. Entonces,
+    \begin{enumerate}[(i)]
+        \item $\lim_i \vol \lp E_i \rp = \vol \lp E \rp$.
+        \item Si $f \colon E \to \real $ es integrable Riemann, entonces $f$ es integrable Riemann en cada $E_i$ y $\lim_i \int_{E_i} f = \int_E f$.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    Sean $E \subset \real^n$ y $f \colon E \to \real$. Si $f\geq 0$, entonces el límite $\lim_i \int_{E_i} f$ no depende de la exhaustión $\lp E_i \rp$ considerada.
+\end{prop}
+
+\begin{lema}[(de la cebolla)]
+    Sea $U \subset \real^n$ un conjunto abierto no vacío. Existe una sucesión $\lp V_i \rp $ de conjuntos abiertos mesuarables Jordan, con $\overline{V}_i \subset U$ tales que
+    \begin{itemize}
+        \item $\overline{V}_i$ es compacto,
+        \item $\overline{V}_i \subset V_{i+1}$,
+        \item $\cup V_i = U$.
+    \end{itemize}
+\end{lema}
+
+\begin{defi}
+    Sea $U \subset \real^n$ un conjunto abierto. Decimos que una función $f \colon U \to \real$ es \textit{localmente integrable Riemann} si todo punto $x \in U$ tiene un entorno abierto $V_x$ tal que $V_x$ es mesurable Jordan y $f_{|V_x}$ es integrable Riemann.
+\end{defi}
+
+\begin{prop}
+    Sea $U\subset \real^n$ un conjunto abierto y sea $f\colon U \to \real$ localmente integrable Riemann. Entonces, $f$ es integrable Riemann sobre todo subconjunto compacto mesuarable Jordan $A \subset U$.
+\end{prop}
+
+\begin{defi}
+    Decimos que una función $f \colon X \to \real$ es \textit{localmente acotada} si todo punto $x \in X$ tiene un entorno $V_x$ tal que $f_{|V_x}$ es acotada.
+\end{defi}
+
+\begin{prop}
+    $f$ es localmente integrable Riemann si y solo si $f$ es localmente acotada y $\disc \lp f \rp$ tiene medida nula.
+    
+    En particular, toda función contínua sobre un abierto es localmente integrable Riemann.
+\end{prop}
+
+\begin{col}
+    Sea $U\subset \real^n$ un conjunto abierto y sea $f\colon U \to \real$ localmente integrable Riemann y positiva. La integral impropia $\int_U f$ existe, entendida como el límite $\lim_i \int_{V_i} f = \sup_i \int_{V_i} f$, donde $\lp V_i \rp$ es una exhaustión cualquiera como la dada por el lema de la cebolla.
+\end{col}
+
+\begin{obs}
+    Si $f$ no es positiva, se puede estudiar su integrabilidad a través de la descomoposicón $f=f_+ - f_-$. De esta forma, se puede estudiar su convergencia uniforme i deducir que si $\int_U \left| f \right| < +\infty$, entonces la integral impropia $\int_U f$ es convergente.
+\end{obs}
+
+
+\begin{obs}
+    Recíprocamente, se puede demostrar que si $\int_U f$ es convergente, entonces $\int_U \left| f \right|$ es convergente. Por tanto, para las integrales impropias de funciones sobre conjuntos abiertos de $\real^n$ ($n>1$), las nociones de convergencia y convergencia absoluta coinciden.
+\end{obs}
+
+
+
+
+
+
+
+
