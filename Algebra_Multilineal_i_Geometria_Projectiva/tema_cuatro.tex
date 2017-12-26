@@ -585,7 +585,7 @@
 \section{Cuádricas proyectivas y afines}
 
 \begin{align*}
-  \A^n &\leftrightarrow \bar{\A}^n = \Po^n \\
+  \A^n &\leftrightarrow \overline{\A^n} = \Po^n \\
   \left( x_0, \dots, x_n \right) &\mapsto \left( 1:x_1:\dots:x_n \right) \\
   \left( \frac{\overline{x}_1}{\overline{x}_0}, \dots, \frac{\overline{x}_n}{\overline{x}_0} \right) &\mapsfrom \left( \overline{x}_0:\dots:\overline{x}_n \right), \overline{x}_0 \neq 0.
 \end{align*}
@@ -627,7 +627,7 @@
 \begin{obs}
   $Q$ afín $\implies Q$ proyectiva: $\overline{Q} \cap \A^n = Q$.
   \begin{gather*}
-    \A^n \to \bar{\A}^n = \Po^n \\
+    \A^n \to \overline{\A^n} = \Po^n \\
     Q \text{ afín} \to A = M_\R\left( Q \right) =
     \left( \begin{array}{c|ccc}
       c & b_1 & \dots & b_n \\ \hline
@@ -659,7 +659,7 @@
       \vdots & & A_\infty & \\
       b_n & & &
     \end{array} \right)
-    \stackrel{\overline{x}_0 = 0}{\implies} \overline{Q} \cap \bar{\A}^n_\infty \colon A_\infty
+    \stackrel{\overline{x}_0 = 0}{\implies} \overline{Q} \cap \overline{\A}^n_\infty \colon A_\infty
   \]
 \end{obs}
 \begin{example}
@@ -718,13 +718,13 @@
   \end{enumerate}
 \end{example}
 \begin{defi}
-  Sea $Q$ una cuádrica afín y $\overline{Q}$ su completación proyectiva $\left( \bar{\A}^n = \Po^n \right)$. Sea $p=[v]\in\A^n$, $p$ es un centro de $Q$ $\iff \varphi\left( v, \omega \right) = 0, \, \forall [\omega] \in\bar{\A}^n_\infty$. Si $Q$ no es degenerada,
-  \[ p \text{ es un centro de }Q \iff H_p\left( \overline{Q} \right) = \bar{\A}^n_\infty \]
+  Sea $Q$ una cuádrica afín y $\overline{Q}$ su completación proyectiva $\left( \overline{\A^n} = \Po^n \right)$. Sea $p=[v]\in\A^n$, $p$ es un centro de $Q$ $\iff \varphi\left( v, \omega \right) = 0, \, \forall [\omega] \in\overline{\A^n}_\infty$. Si $Q$ no es degenerada,
+  \[ p \text{ es un centro de }Q \iff H_p\left( \overline{Q} \right) = \overline{\A^n}_\infty \]
 \end{defi}
 % TODO dibuixos de la pag 10, son en 2D facilets
 \begin{obs}[Cálculo del centro para $Q$ no degenerada $\left( \det A \neq 0 \right)$]
   \begin{align*}
-    \A^n &\to \Po^n = \bar{A}^n \\
+    \A^n &\to \Po^n = \overline{A}^n \\
     Q &\mapsto \overline{Q}
   \end{align*}
   $A = M_\R \left( Q \right) = M_{\overline{\R}} \left( \overline{Q} \right) =
@@ -792,7 +792,7 @@
   \]
 \end{obs}
 \begin{obs}
-  $Q$ no tiene centro $\iff \bar{\A}^n_\infty$ es tangente a $\overline{Q}$
+  $Q$ no tiene centro $\iff \overline{\A^n_\infty}$ es tangente a $\overline{Q}$
 \end{obs}
 \begin{obs}
   $p \in \A^n$ es un centro de $Q \iff p$ es un centro de simetría (es decir, $\forall L\ni p$ (recta), si $L\cap Q\neq \emptyset$, entonces, $L\cap Q = \left\{ p_1, p_2 \right\}$ y $p = \frac{1}{2}\left( p_1 + p_2 \right)$).
@@ -814,7 +814,7 @@
   \end{gather*}
 \end{proof}
 \begin{defi}
-  Sea $Q$ una cuádrica con centro $p\in\A^n$. Una asíntota de $Q$ es una recta $L \ni p$ t.q. $\overline{L}$ es tangente a $\overline{Q}$ en un punto de $\bar{\A}_\infty^n$.
+  Sea $Q$ una cuádrica con centro $p\in\A^n$. Una asíntota de $Q$ es una recta $L \ni p$ t.q. $\overline{L}$ es tangente a $\overline{Q}$ en un punto de $\overline{\A^n_\infty}$.
 \end{defi}
 \begin{example}
   $\A^2 \to Q \colon 2xy + 4x +4y +2 = 0$,

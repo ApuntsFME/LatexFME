@@ -206,7 +206,7 @@
     Las composiciones de funciones \textit{proyección} y \textit{sección} también son proyectividades.
 \end{obs}
 \begin{prop} \label{prop:demo_teo2}
-    Sea $f : \Po^n \to \overline{\Po}^m \tq$:
+    Sea $f : \Po^n \to \overline{\Po^m} \tq$:
     \begin{itemize}
         \item $f$ es colineación
         \item $f$ mantiene las razones dobles
@@ -214,31 +214,31 @@
     Entonces $V = f \lp \Po^n \rp$ es una variedad lineal de $\overline{\Po}^m$ de dim $n$ y $f : \Po^n \to V = f \lp \Po^n \rp$ es una proyectividad.
 \end{prop}
 \begin{proof}
-    $f : \Po^n \to \overline{\Po}^m$. Sigui $\R = \{ p_0, \dots, p_n; \overline{p} \}$ sistema de referencia, $W := f \lp p_0 \rp \vee \dots \vee f \lp p_n \rp$ variedad lineal de $\overline{\Po}^m$ de $\dim \leq n$. \\
+    $f : \Po^n \to \overline{\Po^m}$. Sea $\R = \{ p_0, \dots, p_n; \overline{p} \}$ sistema de referencia, $W := f \lp p_0 \rp \vee \dots \vee f \lp p_n \rp$ variedad lineal de $\overline{\Po^m}$ de $\dim \leq n$. \\
     Inducción sobre $n$ (fijamos $m$):
     \begin{itemize}
-        \item $n = 1, f : \Po^1 \to \overline{\Po}^m$ \\
+        \item $n = 1, f : \Po^1 \to \overline{\Po^m}$ \\
         $\begin{rcases}
             f \text{ colineación } \implies 
             \begin{rcases}
                 V = f \lp \Po^1 \rp \subseteq L \text{ recta} \\
                 f \text{ inyectiva}
             \end{rcases}
-            \implies f : \Po^1 \to L \cong \overline{\Po}^1 \\
+            \implies f : \Po^1 \to L \cong \overline{\Po^1} \\
             f \text{ mantiene las razones dobles}
         \end{rcases}
         \stackrel{\ref{teo:proy_dim_1}}{\implies} f$ es una proyectividad (en particular $V = f \lp \Po^1 \rp = L$).
         \item $n > 1$, supongamos cierto por $n-1$ (hipótesis de inducción). Probemos por $n$. \\
         Definimos $H_i := p_0 \vee \dots \vee \hat{p} \vee \dots \vee p_n$, $i = 0, \dots, n$ (hiperplano sin $p_i$). Demostremos que $p \in H_i \implies f \lp p \rp \notin f \lp H_i \rp$: \\
         $\begin{rcases}
-            f : \Po^n \to \overline{\Po}^m \\
-            f_{|H_i} : \Po^{n-1} \cong H_i \subseteq \Po^n \to \overline{\Po}^m
+            f : \Po^n \to \overline{\Po^m} \\
+            f_{|H_i} : \Po^{n-1} \cong H_i \subseteq \Po^n \to \overline{\Po^m}
         \end{rcases}
-        \implies g_i = f_{|H_i} : H_i \to \overline{\Po}^m$ es una proyectividad $\implies g_i : H_i \to f \lp H_i \rp = V_i$ es biyectiva. Supongamos $f \lp p \rp \in f \lp H_i \rp = V_i$,
+        \implies g_i = f_{|H_i} : H_i \to \overline{\Po^m}$ es una proyectividad $\implies g_i : H_i \to f \lp H_i \rp = V_i$ es biyectiva. Supongamos $f \lp p \rp \in f \lp H_i \rp = V_i$,
         \[
             \exists q_i \in H_i \tq f \lp q_i \rp = f \lp p \rp \substack{f \text{ colineación} \\ \implies \\ f \text{ inyectiva}} p = q_i \in H_i. \text{ Contradicción.}
         \]
-        Por tanto queda demostrado. Una consecuencia es que la imagen de $\R$ por $f$ son puntos en posición general en $\overline{\Po}^m$. Sea $T := f \lp p_0 \rp \vee \dots \vee f \lp p_n \rp \vee f \lp \overline{p} \rp$. Entonces $\overline{\R} = f \lp \R \rp$ es un sistema de referencia en $T$.
+        Por tanto queda demostrado. Una consecuencia es que la imagen de $\R$ por $f$ son puntos en posición general en $\overline{\Po^m}$. Sea $T := f \lp p_0 \rp \vee \dots \vee f \lp p_n \rp \vee f \lp \overline{p} \rp$. Entonces $\overline{\R} = f \lp \R \rp$ es un sistema de referencia en $T$.
         
         Entonces $\exists! g : \Po^n \to T, g \lp \R \rp = \overline{\R}, g$ proyectividad. Veremos que $f = g$.
         De momento sabemos que:
@@ -260,7 +260,7 @@
     \end{itemize}
 \end{proof}
 \begin{teo*} \label{teo:proyectividades}
-    Sea $f : \Po^n \to \overline{\Po}^n \tq$:
+    Sea $f : \Po^n \to \overline{\Po^n} \tq$:
     \begin{itemize}
         \item $f$ es colineación
         \item $f$ mantiene las razones dobles
@@ -1054,7 +1054,7 @@ Posibles formas de Jordan:
 \section{Relación entre afinidades y proyectividades}
     \begin{minipage}[c]{0,49\textwidth}
         \begin{align*}
-                f : \A^n &\to \bar{\A}^n=\Po^n \\
+                f : \A^n &\to \overline{\A^n}=\Po^n \\
                 \R &\mapsto \overline{\R} \\
                 \lp x_1, \ldots, x_n\rp &\mapsto \lp1:x_1:\ldots:x_n\rp\\
                 \lp\frac{\tilde{x}_1}{x_0},\ldots,\frac{\tilde{x}_n}{x_0}\rp &\mapsfrom \lp\tilde{x}_0:\ldots:\tilde{x}_n\rp \\
@@ -1063,7 +1063,7 @@ Posibles formas de Jordan:
     \vline
     \begin{minipage}[c]{0,49\textwidth}
         \begin{gather*}
-            f : \A^n \to \bar{\A}^n  \text{  afinidad (biyectiva) }\\
+            f : \A^n \to \overline{\A^n}  \text{  afinidad (biyectiva) }\\
             f\lp x_1,\ldots,x_n\rp = 
             \begin{pmatrix}
                 a_1 \\
@@ -1098,7 +1098,7 @@ Posibles formas de Jordan:
     \begin{defi}
         Llamaremos proyectividad asociada a $f$ a una $\overline{f} \tq$:
         \begin{gather*}
-            \overline{f} \colon \bar{\A}^n = \Po^n \mapsto \bar{\A}^n = \Po^n \\
+            \overline{f} \colon \overline{\A^n} = \Po^n \mapsto \overline{\A^n} = \Po^n \\
             M_{\overline{\R}}\lp \overline{f}\rp = \overline{A} = 
             \lp
             \begin{array}{c|ccc}
@@ -1165,7 +1165,7 @@ Posibles formas de Jordan:
 Sea $g: \Po^n \to \Po^n$ una proyectividad, sea $\overline{A}=M_{\overline{\R}}\lp g\rp$ y supongamos $H$ un hiperplano $g$-invariante. \\
     \begin{minipage}[c]{0,44\textwidth}
         \begin{align*}
-            \A^n = \Po^n\setminus H &\to  \Po^n = \bar{\A}^n \\
+            \A^n = \Po^n\setminus H &\to  \Po^n = \overline{\A^n} \\
             \R &\mapsto  \underbrace{\overline{\R}= \{\overbrace{p_0}^{\notin H}, \overbrace{p_1,\dots, p_n}^{\in H};\overline{p}\}}_{H\text{: }x_0=0}
         \end{align*}
     \end{minipage}

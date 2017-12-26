@@ -73,7 +73,7 @@ siguiente aplicación
 \[
 \begin{aligned}
 \phi \colon \pi_1 &\to \pi_2 \\
-p &\mapsto \overline{pO} \cap \pi_2
+p &\mapsto \overline{p}_0 \cap \pi_2
 \end{aligned}
 \]
 \begin{obs}
@@ -624,16 +624,16 @@ en añadir puntos en el $\infty$.
     $\Po^n = \Po(\E)$
     \begin{enumerate}
         \item Un sistema de referencia proyectivo en $\Po^n$ es:
-            \[ R= \{ p_0, \dots, p_n; \bar{p} \} \]
-            Donde $p_0, \dots, p_n, \bar{p}$ estan en posición general.
+            \[ R= \{ p_0, \dots, p_n; \overline{p} \} \]
+            Donde $p_0, \dots, p_n, \overline{p}$ estan en posición general.
             \begin{itemize}
                 \item $\{ p_0, \dots, p_n \}$ son los vertices de $R$
-                \item $\bar{p}$ es el punto unidad
+                \item $\overline{p}$ es el punto unidad
             \end{itemize}
         \item Fijado un sistema de referencia $R$. Sea $B = \{ u_0, \dots, u_n \}$ base de $\E$. Diremos que $B$ está adaptada a $R$ si y solo si:
-            \[ \begin{cases} p_i = [u_i], \forall i = 0, \dots, n \\ \bar{p} = [u_0 + \dots + u_n ] \end{cases} \]
+            \[ \begin{cases} p_i = [u_i], \forall i = 0, \dots, n \\ \overline{p} = [u_0 + \dots + u_n ] \end{cases} \]
         \item \textit{Asignación de coordenadas proyectivas} \\
-            $\Po^n = \Po(\E)$, Sea $R = \{ p_0, \dots, p_n; \bar{p} \}$, y $B = \{u_0, \dots, u_n\}$ una base adaptada. Sea $q \in \Po^n, q = [v]$, entonces
+            $\Po^n = \Po(\E)$, Sea $R = \{ p_0, \dots, p_n; \overline{p} \}$, y $B = \{u_0, \dots, u_n\}$ una base adaptada. Sea $q \in \Po^n, q = [v]$, entonces
             $q_R = v_B$. (Hace falta ver que la definición es consistente)
     \end{enumerate}
 \end{defi}
@@ -644,18 +644,18 @@ en añadir puntos en el $\infty$.
 \begin{proof}
     $p_i = [u_i] = [u'_i], \forall i = 0, \dots, n$. Por tanto, $\exists \lambda \neq 0$ tal que $u'_i= \lambda_i u_i, \forall i = 1, \dots, n$. Por otro lado,
     \begin{gather*}
-        \bar{p} = [u_0 + \dots + u_n] = [u'_0 + \dots + u'_n] \implies \exists \lambda \neq 0 \text{ tal que } u'_0 + \dots + u'_n = \\ = \lambda_0 u_0 + \dots + \lambda_n u_n = \lambda (u_0 + \dots + u_n)
+        \overline{p} = [u_0 + \dots + u_n] = [u'_0 + \dots + u'_n] \implies \exists \lambda \neq 0 \text{ tal que } u'_0 + \dots + u'_n = \\ = \lambda_0 u_0 + \dots + \lambda_n u_n = \lambda (u_0 + \dots + u_n)
         \stackrel{B_1 \text{ base}}{\implies} \lambda_i = \lambda \text{ } \forall i = 1, \dots, n
     \end{gather*}
 \end{proof}
 \begin{obs}
-    $R = \{ p_0, \dots, p_n; \bar{p} \}$ en $\Po^n$
+    $R = \{ p_0, \dots, p_n; \overline{p} \}$ en $\Po^n$
     \begin{enumerate}
         \item $q \in \Po^n, q_R = (a_0, \dots, a_n) = \lambda (a_0, \dots, a_n) \stackrel{\text{notación}}{=} (a_0 : \dots : a_n)$ $\forall \lambda \neq 0$
         \item Ejemplos: \\ $\begin{aligned} (p_0&)_R = (1:0:\dots:0) \\ \vdots& \\ (p_n&)_R = (0:\dots:0:1) \end{aligned}$
         \item $q_R = (0: \dots : 0)$ no existe.
-        \item Sea $\Po^2_\real = \Po(\real^3), R = \{ p_0, p_1, p_2; \bar{p} \} = \left\{ [(1,1,0)], [(1,0,1)], [(0,1,1)]; [(3,3,2)]\right\}$, entonces $B = \left\{ [(1,1,0)], [(1,0,1)], [(0,1,1)] \right\}$ no es una base
-            adaptada, para que lo sea, debemos multiplicar $v_0, v_1, v_2$ por $\lambda_0, \lambda_1, \lambda_2$ tales que $\bar{p} = \lambda_0 p_0 + \lambda_1 p_1 + \lambda_2 p_2$. En este caso:
+        \item Sea $\Po^2_\real = \Po(\real^3), R = \{ p_0, p_1, p_2; \overline{p} \} = \left\{ [(1,1,0)], [(1,0,1)], [(0,1,1)]; [(3,3,2)]\right\}$, entonces $B = \left\{ [(1,1,0)], [(1,0,1)], [(0,1,1)] \right\}$ no es una base
+            adaptada, para que lo sea, debemos multiplicar $v_0, v_1, v_2$ por $\lambda_0, \lambda_1, \lambda_2$ tales que $\overline{p} = \lambda_0 p_0 + \lambda_1 p_1 + \lambda_2 p_2$. En este caso:
             \[
                 \begin{cases} \lambda_0 + \lambda_1 = 3 \\ \lambda_0 + \lambda_2 = 3 \\ \lambda_1 + \lambda_2 = 2 \end{cases} \iff \begin{cases} \lambda_0 = 2 \\ \lambda_1 = 1 \\ \lambda_2 = 1 \end{cases}
             \]
@@ -1103,11 +1103,11 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometría af�
 \end{example}
 
 \begin{defi}
-Sea $\mathcal{R} = \setb{p_0,\dots,p_n;\bar{p}}$ una referencia de $\Po^n$, sea
+Sea $\mathcal{R} = \setb{p_0,\dots,p_n;\overline{p}}$ una referencia de $\Po^n$, sea
 $B = \setb{u_0,\dots,u_n}$ una base adaptada y sea $B^* = \setb{u_0^*,\dots,u_n^*}$
 su base dual. Entonces, llamamos referencia dual de $\mathcal{R}$ a
 \[
-  \mathcal{R}^* = \setb{{p_0^\prime}=[u_0^*],\dots,{p_n^\prime}=[u_n^*];\bar{p}^\prime = [u_0^*+ \cdots + u_n^*]}
+  \mathcal{R}^* = \setb{{p_0^\prime}=[u_0^*],\dots,{p_n^\prime}=[u_n^*];\overline{p}^\prime = [u_0^*+ \cdots + u_n^*]}
 \]
 \end{defi}
 
@@ -1129,7 +1129,7 @@ $\mathcal{R}^*$ no depende de la base $B$ escogida.
 
 \begin{obs}
 En general, si tenemos $\mathcal{R}$ una referencia de $\Po^n$ y
-$\mathcal{R}^* = \setb{{p_0}^\prime,\dots,{p_n}^\prime; \bar{p}^\prime}$
+$\mathcal{R}^* = \setb{{p_0}^\prime,\dots,{p_n}^\prime; \overline{p}^\prime}$
 una refencia de $\left( \Po^n \right)^*$. Entonces $\left( {p_i}^\prime \right)^*$
 es un hiperplano tal que $p_i \notin \left( {p_i}^\prime \right)^*$ y
 $p_j \in \left( {p_i}^\prime \right)^*$ $\forall i \neq j$
@@ -1228,7 +1228,7 @@ x_0(1-b)-x_1(a-1)=x_0(1-b) + x_1(1-a) = 0 \implies \\ \implies Z = (a-1:1-b:0).
 Análogamente, $X = (0:b-1:1-c), Y = (a-1:0:1-c)$. Vemos que $Z-X = Z \implies X,Y,Z$ no son linealmente independientes $\iff X,Y,Z$
 están alineados. \\ \\
 $\implies$ Sintética \\
-$\overbrace{\Po^2 = \Po(\E)}^{\pi \text{ plano en } \Po^3} \subset \Po(\bar{\E}) = \Po^3, \bar{\E} = \E \times \k$ \\
+$\overbrace{\Po^2 = \Po(\E)}^{\pi \text{ plano en } \Po^3} \subset \Po(\overline{\E}) = \Po^3, \overline{\E} = \E \times \k$ \\
 Sea $r$ una recta en $\Po^3$, $r \nsubseteq \pi$, tal que $r \cap \pi = O$. Sean $p,p' \in r, p\neq p', p, p' \neq O$.
 $r$ y $AA'$ son coplanarias $\implies pA \cap p'A' = A_0$ (intersección de rectas en un plano). Análogamente,
 $\begin{cases} pB \cap p'B' = B_0 \\ pC \cap p'C' = C_0 \end{cases}$. \\
@@ -1413,7 +1413,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
 \section{Coordenadas absolutas. Razón doble}
 
 \begin{defi}
-  Sea $\R = \setb{p_0,p_1;\bar{p}}$ un sistema de referencia de $\Po^1_\k$ y
+  Sea $\R = \setb{p_0,p_1;\overline{p}}$ un sistema de referencia de $\Po^1_\k$ y
   sea $q \in \Po^1_k$ con $q_\R = (x_0,x_1)$ las coordenadas de $q$ en la
   referencia $\R$. Definimos las coordenas absolutas de $q$ como
   \[
@@ -1449,18 +1449,18 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
 \end{defi}
 \begin{obs}
   La razón doble no depende del sistema de referencia ni del representante
-  de cada punto. De hecho, sean $\R$ y $\bar{\R}$ dos sistemas de referencia
-  y $q_i = (x_i, y_i)_\R = (\bar{x_i}, \bar{y_i})_{\bar{\R}}$, por lo tanto
+  de cada punto. De hecho, sean $\R$ y $\overline{\R}$ dos sistemas de referencia
+  y $q_i = (x_i, y_i)_\R = (\overline{x}_i, \overline{y}_i)_{\overline{\R}}$, por lo tanto
   \[
-    \begin{pmatrix} \bar{x_i} \\ \bar{y_i} \end{pmatrix} = S \begin{pmatrix}
+    \begin{pmatrix} \overline{x}_i \\ \overline{y}_i \end{pmatrix} = S \begin{pmatrix}
       x_i \\ y_i \end{pmatrix}
   \]
   y se tiene que
   \[
-    \frac{\determinant{\bar{x_3} & \bar{y_3} \\ \bar{x_1} & \bar{y_1}}}
-    {\determinant{\bar{x_3} & \bar{y_3} \\ \bar{x_2} & \bar{y_2}}}:
-    \frac{\determinant{\bar{x_4} & \bar{y_4} \\ \bar{x_1} & \bar{y_1}}}
-    {\determinant{\bar{x_4} & \bar{y_4} \\ \bar{x_2} & \bar{y_2}}}
+    \frac{\determinant{\overline{x}_3 & \overline{y}_3 \\ \overline{x}_1 & \overline{y_1}}}
+    {\determinant{\overline{x}_3 & \overline{y}_3 \\ \overline{x}_2 & \overline{y_2}}}:
+    \frac{\determinant{\overline{x}_4 & \overline{y}_4 \\ \overline{x}_1 & \overline{y_1}}}
+    {\determinant{\overline{x}_4 & \overline{y}_4 \\ \overline{x}_2 & \overline{y_2}}}
     =
     \frac{\cancel{\det S}\determinant{x_3 & y_3 \\ x_1 & y_1}}
     {\cancel{\det S} \determinant{x_3 & y_3 \\ x_2 & y_2}}:
@@ -1580,7 +1580,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
  $\Phi(\Psi(H)) = H$ y $\Psi(\Phi(p)) = p$, esd decir, $\Phi$ y $\Psi$ son inversas mutuas.
 \end{obs}
 
-\begin{teo}[de la invariancia de razón doble]\label{teo:inv_rz_do}
+\begin{teo}[de la invariancia de razón doble]
  Sean $V,r \subseteq \Po^n$ dos variades suplementarias con $\dim r = 1$ ($\implies \dim V = n-2$) y
  sean $\Phi$ y $\Psi$ la proyección desde $V$ y la sección con $r$ respectivamente. Entonces,
  \begin{enumerate}[i)]
@@ -1594,27 +1594,28 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
      (H_1,H_2,H_3,H_4) = \left( \Psi(H_1), \Psi(H_2), \Psi(H_3), \Psi(H_4) \right)
     \]
  \end{enumerate}
+ \label{teo:inv_rz_do}
 \end{teo}
 
 \begin{proof}
  Primero vemos que $\ref{item:teo_inv_1} \iff \ref{item:teo_inv_2}$ porque $\Psi^{-1}=\Phi$. Pasamos ahora
  a demostrar $\ref{item:teo_inv_1}$. Sea $\rho = (p_1,p_2,p_3,p_4)$, entonces podemos elegir $u_1,u_2 \in \E$
  tal que $p_1 = [u_1]$, $p_2=[u_2]$ y $p_3=[u_1+u_2]$. Por lo tanto $p_4 = [\rho u_1+u_2]$, de la misma forma,
- $\bar{\rho} = (H_1,H_2,H_3,H_4)$ y podemos escoger $w_1,w_2 \in \E^*$ tal que $H_1 = [w_1]$, $H_2 = [w_2]$ y
- $H_3=[w_1+w_2]$. Lo que implica que $H_4 = [\bar{\rho} w_1 + w_2]$. Ahora trabajamos con que $p_i \in H_i$.
+ $\overline{\rho} = (H_1,H_2,H_3,H_4)$ y podemos escoger $w_1,w_2 \in \E^*$ tal que $H_1 = [w_1]$, $H_2 = [w_2]$ y
+ $H_3=[w_1+w_2]$. Lo que implica que $H_4 = [\overline{\rho} w_1 + w_2]$. Ahora trabajamos con que $p_i \in H_i$.
  Entonces
  \[
   \begin{cases}
     p_1 \in H_1 \implies w_1(u_1) = 0 \\
     p_2 \in H_2 \implies w_2(u_2) = 0 \\
     p_3 \in H_3 \implies (w_1+w_2)(u_1+u_2) = 0 \implies \cancelto{0}{w_1(u_1)} + w_1(u2) + w_2(u_1) + \cancelto{0}{w_2(u_2)} = 0 \\
-    p_4 \in H_4 \implies (\bar{\rho}w_1+w_2)(\rho u_1+u_2) = 0 \implies \cancelto{0}{\bar{\rho}w_1(u_1)} + \bar{\rho}w_1(u_2) +
+    p_4 \in H_4 \implies (\overline{\rho}w_1+w_2)(\rho u_1+u_2) = 0 \implies \cancelto{0}{\overline{\rho}w_1(u_1)} + \overline{\rho}w_1(u_2) +
       \rho w_2(u_1) + \cancelto{0}{w_2(u_2)} = 0
   \end{cases}
  \]
  trabajando ahora con la cuarta ecuación
  \[
-  \bar{\rho}w_1(u_2) + \rho w_2(u_1) = w_1(u_2)(\bar{\rho} - \rho) = 0 \stackrel{(1)}{\implies} \bar{\rho} = \rho
+  \overline{\rho}w_1(u_2) + \rho w_2(u_1) = w_1(u_2)(\overline{\rho} - \rho) = 0 \stackrel{(1)}{\implies} \overline{\rho} = \rho
  \]
  La cancelación en (1) ocurre ya que $w_1(u_2) \neq 0$. Y $w_1(u_2) \neq 0$ ya que, si lo fuera,
  \[
@@ -1771,7 +1772,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
 \begin{defi}
   Con las mismas hipótesis y con el mismo espacio $\E$ que en la última definición,
   \begin{enumerate}[i)]
-    \item $\Po^n = \Po (\E) = \bar{\A}^n$ es la completación proyectiva
+    \item $\Po^n = \Po (\E) = \overline{\A^n}$ es la completación proyectiva
     de $\A^n$.
     \item $\A^n_\infty = \pi(\F)$ son los puntos del infinito de $\A^n$.
   \end{enumerate}
@@ -1847,7 +1848,7 @@ al usar coordenadas.
 \begin{prop}  
   \[
     \begin{aligned}
-      \lp \A^n, \, \R \rp &\hookrightarrow \bigl( \bar{\A}^n, \, \overline{\R} 
+      \lp \A^n, \, \R \rp &\hookrightarrow \bigl( \overline{\A^n}, \, \overline{\R} 
       \bigr) \\
       q_{\R} = \lp x_1, \dots, x_n \rp &\mapsto \varphi(q)_{\overline{R}} = \lp
       1 : x_1 : x_2 : \dots : x_n \rp
@@ -1884,7 +1885,7 @@ asociado a $\A^n$.
 \begin{defi}
   \begin{enumerate}[i)]
     \item[]
-    \item $V_\infty = \pi(G) \subseteq \Po^n = \bar{\A}^n$
+    \item $V_\infty = \pi(G) \subseteq \Po^n = \overline{\A^n}$
     \item Llamamos a $\overline{V} = \varphi(V) \cup V_\infty$ variedad lineal 
       proyectiva completada de $V$.
   \end{enumerate}
@@ -2041,7 +2042,7 @@ contenidos dentro de los de la otra.
     x_1-x_2+2x_3 = 2
   \end{cases}
   $
-  Queremos encontrar la recta $\overline{V} \subseteq \bar{\A}^3$. Podemos
+  Queremos encontrar la recta $\overline{V} \subseteq \overline{\A^3}$. Podemos
   expresar las condiciones anteriores como
   \[
     \begin{pmatrix}
@@ -2069,10 +2070,6 @@ describen $\overline{V}$:
     \rp
     \begin{pmatrix} \overline{x}_0 \\ \overline{x}_1 \\ \overline{x}_2 \\ 
       \overline{x}_3 \end{pmatrix} 
-   + 
-   \begin{pmatrix}
-     -1 \\ -2
-   \end{pmatrix}
    =
    \begin{pmatrix}
      0 \\ 0
@@ -2085,7 +2082,7 @@ describen $\overline{V}$:
    Esta variedad da lugar a la siguiente variedad completada
    \[
      \overline{V}\colon -5\overline{x}_0 + \overline{x}_1 + 2\overline{x}_2 + 
-   4\overline{x}_3
+   4\overline{x}_3=0
  \]
  \end{example}
 
@@ -2093,7 +2090,7 @@ describen $\overline{V}$:
 
  \begin{prop}
    Sea $H \subseteq \Po^n$ un hiperplano. $\Po^n \setminus H$ tiene estructura de
-   espacio afín $\A^n$ y cumple $\Po^n = \bar{\A}^n$ y $H = \bar{\A}^n_\infty$.
+   espacio afín $\A^n$ y cumple $\Po^n = \overline{\A^n}$ y $H = \overline{\A^n}_\infty$.
  \end{prop}
 
  \begin{proof}
@@ -2104,7 +2101,7 @@ describen $\overline{V}$:
   en este espacio, y $\delta$ es la aplicación natural inducida por la resta entre dos
   vectores. Si tomamos $e_0 = w_0$ en la completación proyectiva
   del afín que se acaba de definir se puede comprobar, y se dejará como ejercicio para
-  el lector, que $\Po^n = \bar{\A}^n$, y que $H = \A^n_\infty$, y por eso podemos
+  el lector, que $\Po^n = \overline{\A^n}$, y que $H = \A^n_\infty$, y por eso podemos
   decir que $\Po^n \setminus H = \A^n$.
  \end{proof}
 
@@ -2129,25 +2126,25 @@ simple de estos puntos a
 
 \begin{prop}
   Sean $p_1, p_2, p_3 \in \A$ tres puntos contenidos en una recta $L$. Entonces,
-  los puntos $\overline{p_1}, \, \overline{p_2}, \, \overline{p_3}$ 
+  los puntos $\overline{p}_1, \, \overline{p}_2, \, \overline{p}_3$ 
   y $p_\infty$ el punto en el infinito de $L$ cumplen
-  \[(p_1, p_2, p_3) = (\overline{p_1}, \overline{p_2}, \overline{p_3}, p_\infty)\]
+  \[(p_1, p_2, p_3) = (\overline{p}_1, \overline{p}_2, \overline{p}_3, p_\infty)\]
 \end{prop}
 
 \begin{proof}
   Cojamos la referencia $\R = \{ p_3; p_2-p_3\}$ en $L$, que induce a la referencia
-  $\overline{\R} = \{\overline{p_3}, p_\infty; \overline{p_2}$ en su variedad completada. 
+  $\overline{\R} = \{\overline{p}_3, p_\infty; \overline{p}_2\}$ en su variedad completada. 
   Tenemos entonces que 
   \[
     \begin{cases}
-      (p_1)_\R = \lambda \longrightarrow (\overline{p_1})_{\overline{\R}} = (1, \lambda) \\
-      (p_2)_\R = 1 \longrightarrow (\overline{p_2})_{\overline{\R}} = (1, 1) \\
-      (p_3)_\R = 0 \longrightarrow (\overline{p_3})_{\overline{\R}} = (1, 0) 
+      (p_1)_\R = \lambda \longrightarrow (\overline{p}_1)_{\overline{\R}} = (1, \lambda) \\
+      (p_2)_\R = 1 \longrightarrow (\overline{p}_2)_{\overline{\R}} = (1, 1) \\
+      (p_3)_\R = 0 \longrightarrow (\overline{p}_3)_{\overline{\R}} = (1, 0) 
     \end{cases}
   \]
   Podemos entonces calcular la razón doble a partir de su fórmula:
     \[
-      (\overline{p_1}, \overline{p_2}, \overline{p_3}, p_\infty) = 
+      (\overline{p}_1, \overline{p}_2, \overline{p}_3, p_\infty) = 
       \frac{
         \begin{vmatrix}
           1 & 0 \\ 1 & \lambda 
@@ -2177,19 +2174,19 @@ simple de estos puntos a
 
 \begin{prop}
   Sean $p_1, p_2, p_3, p_4 \in L \subseteq \A$ puntos alineados. Entonces
-  \[(\overline{p_1}, \overline{p_2}, \overline{p_3}, \overline{p_4}) = 
+  \[(\overline{p}_1, \overline{p}_2, \overline{p}_3, \overline{p}_4) = 
   \frac{(p_1, p_2, p_3)}{(p_1, p_2, p_4)}\]
 \end{prop}
 \begin{proof}
   Consideramos $\R = \{p_0; u\}$ referencia en $L$ y la referencia proyectivizada
   en su variedad completada $\overline{\R}$. Si $p_1, p_2, p_3, p_4$ tienen coordenadas
-  $a_1, a_2, a_3, a_4$ correspondientemente, entonces $\overline{p_i}$ tiene coordenadas
+  $a_1, a_2, a_3, a_4$ correspondientemente, entonces $\overline{p}_i$ tiene coordenadas
   $(1, a_i)$. Consecuentemente,
   \begin{gather*} 
     (p_1, p_2, p_3) =\frac{(a_1-a_3)}{(a_2-a_3)},
  (p_1, p_2, p_4) =\frac{(a_1-a_4)}{(a_2-a_4)} \implies \\
  \implies 
-     (\overline{p_1}, \overline{p_2}, \overline{p_3}, \overline{p_4}) =
+     (\overline{p}_1, \overline{p}_2, \overline{p}_3, \overline{p}_4) =
     \frac{
         \begin{vmatrix}
           1 & a_3 \\ 1 & a_1 
