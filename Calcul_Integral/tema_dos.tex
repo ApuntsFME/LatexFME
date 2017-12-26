@@ -1438,7 +1438,7 @@ los rectángulos.
 \begin{proof}
     \begin{gather*}
         \int_{(\phi \circ \psi)(W)} f = \int_{\phi\left( \psi(W) \right)} f \stackrel{\text{F.C.V.}}{=} \int_{\psi(W)} (f \circ \phi)
-        \abs{\det \Dif_\phi} \stackrel{\text{F.C.V}}{=} \\ = \int_W (f \circ \phi \circ \psi) \abs{\det \Dif_\psi} \abs{\det \Dif_\phi} =
+        \abs{\det \Dif_\phi} \stackrel{\text{F.C.V}}{=} \\ = \int_W (f \circ \phi \circ \psi) \abs{\det \Dif_{\phi \circ \psi}} \abs{\det \Dif_\psi} =
         \int_W \left( f \circ ( \phi \circ \psi) \right) \abs{\det \Dif_{\phi \circ \psi}}
     \end{gather*}
 \end{proof}
@@ -1462,13 +1462,257 @@ los rectángulos.
 \end{prop*}
 
 \begin{defi*}
-    Una aplicación $\phi \colon X \to Y$ diremos que es lipschiciana con constante de Lipschitz $L \geq 0$, si
+    Una aplicación $\phi \colon X \to Y$ diremos que es lipschitzciana con constante de Lipschitz $L \geq 0$, si
     \[
         \forall x, \bar{x} \qquad
         d\left( \phi(x), \phi\left( \bar{x} \right) \right) \leq L d\left( x, \bar{x} \right)
     \]
-\end{defi*}<++>
+\end{defi*}
 
+\begin{obs*}
+    Se tiene que
+    \begin{itemize}
+        \item $\text{diametro}\left( \phi(E) \right) \leq L \text{diametro}(E)$
+        \item $\phi\left( B(a; r) \right) \subset B\left( \phi(a); Lr \right)$
+    \end{itemize}
+\end{obs*}
+
+\begin{prop*}
+    Si $\phi \colon U \subset \real^m \to \real^n$ de clase $\C^1$, entonces, $\phi$ es localmente lipschitzciana.
+\end{prop*}
+
+\begin{proof}
+    Por el teorema del valor medio, tenemos que, si $[x, \bar{x}] \subset U$, entonces
+    \[
+        \norm{\phi\left( \bar{x} \right) - \phi(x)} \leq \sup_{z \in [x, \bar{x}]} \norm{\Dif_\phi(z)} \norm{\bar{x} - x} 
+    \]
+    Por lo tanto, si $B \subset U$ bola, tal que $\bar{B}   subset U$, $\phi\vert_{\bar{B}}$ es lipschitzciana con $L = \sup\limits_{z \in \bar{B}} \norm{\Dif_\phi(z)}$.
+\end{proof}
+
+\begin{lema*}
+    Sea $R \subset \real^n$ un ractángulo compacto, $\forall \varepsilon > 0$, existe un conjunto finito de cubos compactos $Q_k \subset R$ tal que
+    \[
+        R = \bigcup_{j} Q_k \qquad
+        \sum_{q} \vol(Q_k) < \vol(R) + \varepsilon
+    \]
+\end{lema*}
+
+\begin{lema*}
+    Sea $C \subset \real^n$ de medida nula (contenido nulo). $\forall \varepsilon > 0$ existe una sucesión (finita) de cubos compactos $Q_j$ tal que
+    \[
+        C \subset \bigcup_{j} Q_j \qquad
+        \sum_j \vol\left( Q_j \right) < \varepsilon
+    \]
+\end{lema*}
+
+\begin{proof}
+    Sea $\varepsilon > 0$, existen rectángulos $R_i$, tal que
+    \[
+        C \subset \bigcup_i R_i \qquad
+        \sum \vol\left( R_i \right) < \frac{\varepsilon}{2}
+    \]
+    Tomando ahora,
+    \[
+        R_i = \bigcup_k Q_k \quad \tq \quad
+        \sum_k \vol\left( Q_k \right) < 2 \vol(R_i)
+    \]
+    Por lo tanto, $\sum \vol\left(Q_{ij}\right) < \varepsilon$
+\end{proof}
+
+\begin{lema*}
+    Sea $Q \subset \real^n$ un cubo compacto y $\phi \colon Q \to \real^n$ con constante $L$. Entonces, existe un cubo
+    $\bar{Q}$ tal qu
+    \[
+        \phi(Q) \subseteq \bar{Q} \qquad
+        \vol\left( \bar{Q} \right) \leq L^n \vol(Q)
+    \]
+\end{lema*}
+
+\begin{proof}
+    Si consideramos la distancia manhatan (de orden 1), tenemos
+    \[
+        Q = \bar{B}(a;r) \implies \phi(Q) \subseteq \bar{B} \left( \phi(a); Lr \right) \equiv \bar{Q}
+    \]
+    Y se tiene que $\vol\left( \bar{Q} \right) = L^n (2r)^n \leq L^n \vol(Q) = L^n (2r)^n$.
+\end{proof}
+
+\begin{lema*}
+    Sea $A \subset \real^n$ un rectángulo compacto, $\phi \colon A \to \real^n$ una función lipschistzciana. Si $N \subset A$ tiene
+    medida nula, $\phi(N)$ tambi\'en 
+\end{lema*}
+
+\begin{proof}
+    Sea $\varepsilon > 0$. Existe una sucesión de cubos compactos $Q_j \subset \real^n$ tal que
+    \[
+        N \subset \bigcup_j Q_j \qquad \sum_j \vol\left( Q_j \right) < \varepsilon
+    \]
+    Observamos ahora que cada $Q_j$ tiene diametro $\vol\left( Q_j \right)^{\sfrac{1}{n}}$, por lo tanto,
+    $Q_j \cap A$ tiene diametro más pequeño, y $\phi\left( Q_j \cap A \right) \leq L \vol\left( Q_j \right)^{\sfrac{1}{n}}$. Ahora
+    $\phi\left( Q_j \cap A \right)$ está contenido en un cubo $\bar{Q_j}$ de diametro $L \vol\left( Q_j \right)^{\sfrac{1}{n}}$, por lo tanto
+    $\vol\left( \bar{Q_j} \right) = L^n \vol(Q_j)$. Ahora
+    \[
+        \phi(N) \subset \phi\left( \bigcup_{j} \left( Q_j \cap A \right) \right) = \bigcup_j \phi\left( Q_j \cap A \right) \subset \bigcup_j \bar{Q_j}
+    \]
+    Y tenemos
+    \[
+        \sum_j \vol\left( \bar{Q_j} \right) = L^n \sum_j \vol\left( Q_j \right) < L^n \varepsilon
+    \]
+\end{proof}
+
+\begin{lema*}
+    Sea $U \subset \real^n$ un abierto y $\phi \colon U \to \real^n$ una función localmente lipschitzciana, Si $N \subset U$ tiene
+    medida nula, $\phi(N)$ tambi\'en.
+\end{lema*}
+
+\begin{proof}
+    Para  cada $x \in N$, hay un vecinado $R_x \subset U$ de $x$ tal que $\phi\vert_{R_x}$ es lipschitziana. Los internos $\mathring{R_x}$ recubren
+    \[
+        U = \bigcup_{x \in U} \mathring{R_x}
+    \]
+    Ahora, aplicaremos un lema no demostrado en clase, a partir de unrecubrimiento de abiertos, se puede extraer un recubrimiento numerable y por lo tanto
+    un conjunto numerable de los $\mathring{R_x}$ recubre $U$, es decir
+    \[
+        U =\bigcup_{i \in \n} R_{x_i} \qquad N = \bigcup\left( N \cap R_{x_i} \right)
+    \]
+    Por la segunda igualdad, tenemos que
+    \[
+        \phi(N) =\bigcup_{i} \overbrace{\phi \underbrace{\left(N \cap R_{x_i}\right)}_{\text{medida nula}} }^{\text{medida nula}} \implies
+        \phi(N) \text{ tiene medida nula.}
+    \]
+\end{proof}
+
+\textbf{Acabada ya esta pequeña pausa para repasar algunas cosas importantes, continuamos con la demostración}
+
+\begin{lema*}[0]\label{lema:cero_cambio}
+    Sean $\phi \colon V \to U$ un difeomorfismo de clase $\C^1$ entre abiertos. Sea $B \subset V$ tal que
+    \begin{itemize}
+        \item $B$ es medible Jordan
+        \item $\bar{B} \subset V$ y $\bar{B}$ es compacto.
+    \end{itemize}
+    Entonces, $A = \phi(B)$ es medible Jordan.
+\end{lema*}
+
+\begin{proof}
+    Tenemos que ver que $A$ es acotado y que su frontera tiene medida nula. Sabemos que $A = \phi(B) \subset \phi\left( \bar{B} \right)$ que es compacto,
+    por lo tanto, es acotado y $A$ esta acotado. Veamos ahora que su frontera tiene medida nula
+    \[
+        \fr_U\left( \phi(B) \right) = \phi\left( \fr_V(B) \right) \implies \fr(A) = \phi\underbrace{\left( \fr(B) \right)}_{\text{medida nula}}
+        \stackrel{\phi \text{ loc. lips.}}{\implies} \fr(A) \text{ tiene medida nula}
+    \]
+\end{proof}
+
+\begin{lema*}[6]\label{lema:seis_cambio}
+    Sea $\phi \colon V \to U$ un difeomorfismo de clase $\C^1$, $\psi = \inv{\phi}$, sea $B \subset V$ un cubo compacto y sean
+    \[
+        K := \max_{z \in B} \norm{\Dif_{\psi} \left( \phi(z) \right)} \qquad
+        \Delta := \max_{x, y \in B} \norm{\Dif_\phi(x) - \Dif_\phi(y)}
+    \]
+    Entonces
+    \[
+        \vol\left( \phi(B) \right) \leq \abs{\det \Dif_\phi(x)}(1+K\Delta)^n \vol(B)
+    \]
+\end{lema*}
+
+\begin{proof}
+    Por el teorema del valor medio, tenemos que
+    \[
+        \phi_j(y) - \phi_j(x) = \Dif_{\phi_j}\left( z_j \right)(y-x)
+    \]
+    Operando, obtenemos
+    \[
+        \phi(y) - \phi(x) = \Dif_\phi(x) \left( 
+        \Id + \Dif_\psi\left( \phi(x) \right)
+        \begin{pmatrix}
+            \Dif_{\phi_1}\left( z_1 \right) - \Dif_{\phi_1} (x) \\
+            \vdots \\
+            \Dif_{\phi_n}\left( z_n \right) - \Dif_{\phi_n}(x)
+        \end{pmatrix}
+        \right)
+        (y-x)
+    \]
+    Tomando normas, tenemos
+    \[
+        \underbrace{\norm{\Id}}_{1}
+        \underbrace{\norm{\Dif_\psi\left( \phi(x) \right)}}_{\leq K}
+        \underbrace{
+            \begin{pmatrix}
+                \Dif_{\phi_1}\left( z_1 \right) - \Dif_{\phi_1} (x)
+                \\ \vdots \\
+                \Dif_{\phi_n}\left( z_n \right) - \Dif_{\phi_n} (x)
+            \end{pmatrix}
+        }_{\leq \Delta} \leq 1 + K\Delta
+    \]
+    Ahora, el conjunto de estos puntos, tiene diámetro acotado por $(1+K\Delta)\text{diametro}(B)$. Por lo tanto, su volumen,
+    está acotado por $(1+K\Delta)^n\text{diametro}^n(B) = (1+K\Delta)^n\vol(B)$ ($B$ es un cubo). Y el conjunto $\phi(B)$ de los puntos
+    obtenidos aplicando $\Dif_\phi(x)$, tiene volumen (por el lema \hyperref[lema:dos_cambio]{2})
+    \[
+        \vol\left( \phi(B) \right) \leq \abs{\det \Dif_\phi(x)} (1+K\Delta)^n \vol(B)
+    \]
+\end{proof}
+
+\begin{lema*}[7]\label{lema:siete_cambio}
+    Sea $\phi \colon V \to U$ un difeomorfismo de clase $\C^1$, $B \subset V$ un cubo compacto, entonces,
+    \[
+        \vol\left( \phi(B) \right) \leq \int_B \abs{\det \Dif_\phi}
+    \]
+\end{lema*}
+
+\begin{proof}
+    Como $\phi$ es de clase $\C^1$, $\Dif_\phi$ es continua y, como $B$ es compacto, $\Dif_\phi$ es uniformemente continua, por ello,
+    $\forall \varepsilon > 0$, $\exists \delta > 0$ tal que $\norm{x - y} < \delta \implies \norm{\Dif_\phi(x) - \Dif_\phi(y)} < \varepsilon$.
+    Consideramos ahora $Q \subset B$ un cubo compacto de diametro $< \delta$. Ahora, si $x,y \in Q$, tenemos
+    \[
+        \max_{Q} \norm{\Dif_\phi(x) - \Dif_\phi(y)} < \varepsilon
+    \]
+    Por el lema \hyperref[lema:seis_cambio]{6}
+    \[
+        \vol\left( \phi(Q) \right) \leq \abs{\det \Dif_\phi(\cdot)} (1+K\varepsilon)^n \vol(Q) \implies
+        \vol\left( \phi(Q) \right) \leq (1+K\varepsilon)^n\inf_{z \in Q} \abs{\det \Dif_\phi(z)} \vol(Q)
+    \]
+    Tomamos $\Pa$ una partición de $B$ en $Q$ lo suficientemente pequeña para que $\text{diam}(Q) < \delta$
+    \begin{gather*}
+        \vol\left( \phi(B) \right) \leq (1+K\varepsilon)^n s\left( \abs{\det \Dif_\phi}, \Pa \right) \leq \\ \leq  (1+K\varepsilon)^n \int_B \abs{\det \Dif_\phi}
+        \stackrel{\forall \varepsilon}{\implies} \vol\left( \phi(B) \right) \leq \int_B \abs{\det \Dif_\phi}
+    \end{gather*}
+\end{proof}
+
+\textbf{Aquí, acabamos los pasos previos para demostrar el teorema del cambio de variable}
+
+Procedemos a la demostración
+\begin{proof}[\ref{teo:cambio_variable}]
+    Tenemos que
+    \begin{gather*}
+        f\vert_{\phi(Q)} \leq \sup_{z \in Q} \left( \phi(z) \right) \stackrel{\text{lema \hyperref[lema:siete_cambio]{7}}}{\implies}
+        \int_{\phi(Q)} f \leq \cdots \leq \sup_{z \in Q} \left( (f \circ \phi) \abs{\det \Dif_\phi} \right)(z) \vol(Q)
+    \end{gather*}
+    Ahora, Sea $C \supset B$ un cub y $\Pa$ una partición de $C$ en subrectángulos suficientemente pequeños, y definimos $\tilde{C}$ como
+    la unión de los subrectángulos $Q$ de $\Pa$ que cortan a $V$, entonces
+    \begin{gather*}
+        \int_A f = \int_{\phi\left( \tilde{C} \right)} f \stackrel{\text{aditividad}}{=} \sum_{Q \subset \tilde{C}}Q \subset \tilde{C} \int_{\phi(Q)}\phi(Q) f \leq
+        \sum_{Q \subset \tilde{C}} \sup_{z \in Q} \left( (f \circ \phi) \abs{\det \Dif_\phi} \right)(z) \vol(Q) = \\ =
+        S\left( (f \circ \phi) \abs{\det \Dif_\phi}, \Pa \right) \implies \int_A f \leq \int_B (f \circ \phi) \abs{\det \Dif_\phi}
+    \end{gather*}
+    Tomando ahora $\inv{\phi}$ en lugar de $\phi$ y $(f \circ \phi) \abs{\det \Dif_\phi}$ en lugar de $f$, y repetimos
+    \[
+        \int_B (f \circ \phi) \abs{\det \Dif_\phi} \leq \int_A \left( f \circ \phi \circ \inv{\phi} \right)
+        \underbrace{\abs{\det \Dif_{\phi \circ \inv{\phi}}} \abs{\det \Dif_{\inv{\phi}}}}_{1}
+        = \int_A f
+    \]
+    Teniendo en cuenta que
+    \[
+        1 = \det \Dif_{\phi \circ \inv{\phi}} = \det \Dif_{\phi}\inv{\phi}(y) \det \Dif_{\inv{\phi}}(y)
+    \]
+    Entonces, hemos visto que
+    \[
+        \begin{rcases}
+            \int_A f \leq \int_B (f \circ \phi) \abs{\det \Dif_\phi} \\
+            \int_A f \geq \int_B (f \circ \phi) \abs{\det \Dif_\phi}
+        \end{rcases}
+        \implies
+        \int_A f = \int_B (f \circ \phi) \abs{\det \Dif_\phi}
+    \]
+\end{proof}
+ 
 \section{Integrales impropias}
 
 \begin{defi}
@@ -1486,7 +1730,7 @@ los rectángulos.
         \int_E f := \lim_i \int_{E_i} f,
     \]
     suponiendo que exista y no dependa de la exhaustión elegida.
-    
+
     Cuando el límite es finito, decimos que la integral es convergente, y cuando no lo es, decimos que es divergente.
 \end{defi}
 
@@ -1525,7 +1769,7 @@ los rectángulos.
 
 \begin{prop}
     $f$ es localmente integrable Riemann si y solo si $f$ es localmente acotada y $\disc \lp f \rp$ tiene medida nula.
-    
+
     En particular, toda función contínua sobre un abierto es localmente integrable Riemann.
 \end{prop}
 
@@ -1541,11 +1785,3 @@ los rectángulos.
 \begin{obs}
     Recíprocamente, se puede demostrar que si $\int_U f$ es convergente, entonces $\int_U \left| f \right|$ es convergente. Por tanto, para las integrales impropias de funciones sobre conjuntos abiertos de $\real^n$ ($n>1$), las nociones de convergencia y convergencia absoluta coinciden.
 \end{obs}
-
-
-
-
-
-
-
-
