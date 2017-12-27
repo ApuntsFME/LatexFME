@@ -11,18 +11,18 @@
 \end{defi}
 
 \begin{obs*}
-    De aquí e adelante, a no ser que se especifique lo contrario, supondremos que $I$ es un intervalo compato
+    De aquí en adelante, a no ser que se especifique lo contrario, supondremos que $I$ es un intervalo compacto
 \end{obs*}
 
 \begin{defi}
     Sea $\gamma \colon [a, b] \to \real$ y  sea $\Pa = \setb{t_0, \dots, t_n}$ una partición de $[a, b]$.
-    Entonces, los $\gamma(t_i)$ son los v\'ertices de una poligonal, que denominamos poligonal de longitud y cuya logitud es
+    Entonces, los $\gamma(t_i)$ son los v\'ertices de una poligonal, que denominamos poligonal de longitud y cuya longitud es
     \[
         L(\gamma, \Pa) = \sum^N_{i=1} \norm{\gamma(t_i) - \gamma(t_{i-1})}
     \]
 \end{defi}
 \begin{obs*}
-    Refinar la partición aumenta la logitud. (Demostración por la desigualdad triangular)
+    Refinar la partición aumenta la longitud. (Demostración por la desigualdad triangular)
 \end{obs*}
 
 \begin{defi}
@@ -37,18 +37,18 @@
 \end{obs*}
 
 \begin{defi}
-    Diremos que un camino es rectificable, cuando su logitud es finita, es decir, cuando
+    Diremos que un camino es rectificable, cuando su longitud es finita, es decir, cuando
     \[
         L(\gamma) < +\infty
     \]
 \end{defi}
 
 \begin{prop}
-    Sea $\gamma \colon I \to \real^n$ una curva lipschiciana, entonces $\gamma$ es rectificable.
+    Sea $\gamma \colon I \to \real^n$ una curva lipschitziana, entonces $\gamma$ es rectificable.
 \end{prop}
 
 \begin{proof}
-    Como $\gamma$ es lipschiciana, entonces $\exists c \geq 0$ tal que
+    Como $\gamma$ es lipschitziana, entonces $\exists c \geq 0$ tal que
     \[
         \norm{\gamma(t) - \gamma(s)} \leq c \abs{t - s} \qquad \forall t,s \in I
     \]
@@ -62,7 +62,7 @@
 \end{proof}
 
 \begin{obs*}
-    Hay caminos (contiuos) definidos en un intervalo compacto con longitud infinita.
+    Hay caminos (continuos) definidos en un intervalo compacto con longitud infinita.
 \end{obs*}
 
 \begin{prop}
@@ -88,7 +88,7 @@
     \[
         L\left( \gamma\vert_{[a,c]}, \Pa_1 \right) + L\left( \gamma\vert_{[c,b]}, \Pa_2 \right) = L(\gamma, \Pa) \leq L(\gamma)
     \]
-    De dode concluimmos que
+    De dode concluimos que
     \[
         L(\gamma) = L\left( \gamma\vert_{[a,c]} \right) + L\left( \gamma\vert_{[c,b]} \right)
     \]
@@ -97,10 +97,10 @@
 \begin{prop}[continuidad de la longitud]
     Sea $\gamma \colon [a,b] \to \real^n$ un camino rectificable, para cada $a \leq t \leq b$ definimos
     \[
-        l(t) = L\left( \gamma\vert_{[a,c]} \right) \qquad (l(a) := 0)
+        l(t) = L\left( \gamma\vert_{[a,t]} \right) \qquad (l(a) := 0)
     \]
     Entonces, $l$ es creciente y continua. Si $\gamma$ no es constante en ningún subintervalo de $[a,b]$,
-    entonces, $l$ es estrictamente creciente
+    entonces, $l$ es estrictamente creciente.
 \end{prop}
 
 \begin{defi}
@@ -180,7 +180,7 @@
     \[
         \norm{\int_E \vec{f}} \leq \int_E \norm{\vec{f}}
     \]
-    (considerando la norma euclideana)
+    (considerando la norma euclidiana)
 \end{prop*}
 
 \begin{proof}
@@ -193,7 +193,7 @@
         \norm{\vec{a}} \int_E \norm{\vec{f}(t)} \dif t \geq \int_E \left( \vec{a} \cdot \vec{f}(t) \right) \dif t = \\ =
         \int_E \sum^n_{i=1} \left(a_if_i(t) \right) \dif t = \sum_i a_i \overbrace{\int_E f_i(t) \dif t}^{a_i} = \norm{\vec{a}}^2
     \end{gather*}
-    Si $\norm{\vec{a}} \neq 0$, teemos que
+    Si $\norm{\vec{a}} \neq 0$, tenemos que
     \[
         \norm{\vec{a}} \leq \int_E \norm{\vec{f}(t)} \dif t \implies
         \norm{\int_E \vec{f}} \leq \int_E \norm{\vec{f}}
@@ -206,23 +206,24 @@
     \[
         L(\gamma) = \int_I \norm{\gamma^\prime}
     \]
-	(Considerando la norma euclideana)
+	(Considerando la norma euclidiana)
 \end{prop}
 
 \begin{proof}
 	Consideramos $\Pa$ una partición de $I$, por la regla de Barrow
 	\[
         \gamma(t_i) - \gamma\left( t_{i-1} \right) = \int^{t_i}_{t_{i-1}} \gamma^\prime(t) \dif t \implies
-        \norm{\gamma\left( t_i \right) - \gamma\left( t_{i-1} \right)} = \norm{\int^{t_i}_{t_{i-1}}} \leq \int^{t_i}_{t_{i-1}} \norm{\gamma^\prime}
+        \norm{\gamma\left( t_i \right) - \gamma\left( t_{i-1} \right)} = \norm{\int^{t_i}_{t_{i-1}} \gamma^\prime
+        } \leq \int^{t_i}_{t_{i-1}} \norm{\gamma^\prime}
 	\]
     Si sumamos
     \[
         L(\gamma, \Pa) \leq \int_I \norm{\gamma^\prime} \stackrel{\text{supremo}}{\implies} L(\gamma) \leq \int_I \norm{\gamma^\prime}
     \]
 
-    Por otro lado, $\gamma^\prime$ continua en un compacto $\implies \gamma$ uniformemente continue. Sea $\varepsilon > 0$, $\exists \delta > 0$
+    Por otro lado, $\gamma^\prime$ continua en un compacto $\implies \gamma^\prime$ uniformemente continua. Sea $\varepsilon > 0$, $\exists \delta > 0$
     tal que $\abs{s - t} < \delta \implies \norm{\gamma^\prime(s) - \gamma^\prime(t)} < \varepsilon$ para todo $s,t \in I$. Si $\Pa = \setb{t_0, \dots, t_n}$
-    es una partición de $I$ con subintervalos de longitud $< s$, entnoces
+    es una partición de $I$ con subintervalos de longitud $< s$, entonces
     \[
         \int^{t_i}_{t_{i-1}} \norm{\gamma^\prime} \leq \overbrace{\cdots}^{\text{dem. no en clase}} \leq \norm{\gamma\left( t_i \right) - \gamma\left( t_{i-1} \right)}
         + 2 \varepsilon\left( t_i - t_{i-1} \right)
@@ -231,7 +232,7 @@
     \[
         \int_I \norm{\gamma^\prime} \leq L(\gamma, \Pa) + 2\varepsilon(b-a) \leq L(\gamma) + \overbrace{2\varepsilon(b-a)}^{\text{tan pequeño como queramos}}
     \]
-    Por tanto $\int_I \norm{\gamma^\prime} \leq L(\gamma)$, pero ya hemos visto qeu $\int_I \norm{\gamma^\prime} \geq L(\gamma)$ es decir, que
+    Por tanto $\int_I \norm{\gamma^\prime} \leq L(\gamma)$, pero ya hemos visto que $\int_I \norm{\gamma^\prime} \geq L(\gamma)$ es decir, que
     $\int_I \norm{\gamma^\prime} = L(\gamma)$.
 \end{proof}
 
@@ -243,13 +244,13 @@
     Sea $\gamma \colon I \to \real^n$ un camino definido en un intervalo no compacto. Podemos definir la longitud de $\gamma$, $L(\gamma)$,
     como el supremo de las longitudes $L(\gamma\vert_{k})$, donde $k \subset I$ es un subintervalo compacto de $I$.
 
-    Cuando $\gamma$ es de clase $\C^1$ definida a trozos, la logitud viene dada por $\int_I \norm{\gamma^\prime}$ (tomada como integral impropia
+    Cuando $\gamma$ es de clase $\C^1$ definida a trozos, la longitud viene dada por $\int_I \norm{\gamma^\prime}$ (tomada como integral impropia
     si es necesario)
 \end{defi}
 
 
 \begin{defi} \label{defi:observaciones_curvas}
-    Sea $C \subset \real^n$ una curva regular de clase $\C^1$. Si $C$ es la imagen de una parametrización inyectiva $\gamma \colon II \to \real^n$,
+    Sea $C \subset \real^n$ una curva regular de clase $\C^1$. Si $C$ es la imagen de una parametrización inyectiva $\gamma \colon I \to \real^n$,
     definiremos la longitud de $C$ como la longitud de $\gamma$.
 
     Si la imagen de $\gamma$ es todo $C$ salvo en un número finito de puntos, tambi\'en diremos que la longitud de $C$ es la longitud de $\gamma$.
@@ -290,7 +291,7 @@
 \end{defi}
 
 \begin{obs*}
-    Cuando $f$ es 1, recuperamos la lonfitud $\int_\sigma \dif l = L(\sigma)$
+    Cuando $f$ es 1, recuperamos la longitud $\int_\sigma \dif l = L(\sigma)$
 \end{obs*}
 
 \begin{prop}[Invariancia bajo reparametrizaciones]
@@ -301,11 +302,11 @@
 \end{prop}
 
 \begin{proof}
-    Considermaos $\varphi \colon I \to J$ un difeomorfismo de clase $\C^1$ tal que $\tau = \sigma \circ \varphi$
+    Consideramos $\varphi \colon I \to J$ un difeomorfismo de clase $\C^1$ tal que $\sigma = \tau \circ \varphi$
     \begin{gather*}
-        \int_\tau f \dif l = \int_I f\left( \tau(t) \right) \norm{\tau^\prime(t)} \dif t \stackrel{TCV}{=}
+        \int_\tau f \dif l = \int_J f\left( \tau(t) \right) \norm{\tau^\prime(t)} \dif t \stackrel{TCV}{=}
         \int_I f( \underbrace{\tau\left( \varphi(s) \right)}_{\sigma(s)} ) \overbrace{\norm{\tau^\prime\left( \varphi(s) \right)}
-        \abs{\varphi^\prime(s)}}^{\norm{(\tau \circ \varphi)^\prime (s)} = \norm{\sigma^\prime (s)}} = \\
+        \abs{\varphi^\prime(s)}}^{\norm{(\tau \circ \varphi)^\prime (s)} = \norm{\sigma^\prime (s)}} \dif s= \\
         = \int_I f\left( \sigma\left( s \right) \right) \norm{\sigma^\prime(s)} \dif s = \int_\sigma f \dif l
     \end{gather*}
 \end{proof}
@@ -334,12 +335,12 @@
     \[
         \int_\sigma \vec{f} \dif \vec{l} = \int_I \vec{f} \left( \sigma(s) \right) \cdot \sigma^\prime(s) \dif s
     \]
-    (donde $\cdot$ marca el producto escalar euclideano en $\real^n$)
+    (donde $\cdot$ marca el producto escalar euclidiano en $\real^n$)
 \end{defi}
 
 \begin{prop}[invariancia bajo reparametrizaciones]
     Sea $\sigma  \colon I \to \real^n$ un camino, sea $\varphi \colon I \to J$ un difeomorfismo de clase $\C^1$. Consideramos
-    el camino reparametrizado $\tau = \sigma \circ \phi^{-1}$. Entonces, si $\vec{f}$ es una función cualquiera
+    el camino reparametrizado $\tau = \sigma \circ \varphi^{-1}$. Entonces, si $\vec{f}$ es una función cualquiera
     \[
         \int_\tau \vec{f} \dif \vec{l} = \pm \int_\sigma \vec{f} \dif \vec{l}
     \]
@@ -387,11 +388,11 @@
     \]
 \end{obs*}
 \begin{obs*}
-    Si $C$ es unión disjunta de un número finito de curvas como la anterior, igualmente calculamos la circulación al largo de cad una y sumamos.
+    Si $C$ es unión disjunta de un número finito de curvas como la anterior, igualmente calculamos la circulación al largo de cada una y sumamos.
 \end{obs*}
 
 \begin{obs}
-    Si $C^\circ$ es la curva $C$ con orientaciñon opuesta, entonces
+    Si $C^\circ$ es la curva $C$ con orientación opuesta, entonces
     \[
         \int_{C^\circ} \vec{f} \dif \vec{l} = - \int_C \vec{f} \dif \vec{l}
     \]
@@ -432,10 +433,10 @@
 \end{defi}
 
 \begin{obs*}
-    Si $E$ es un e.v. euclideano y $F \subseteq E$, $E = F \oplus F^\perp$. Si $F = <u_1, \dots, u_r>$, $\Pi_F(x) = <x,u_1>u_1 + \cdots + <x,u_r>u_r$, lo
+    Si $E$ es un e.v. euclidiano y $F \subseteq E$, $E = F \oplus F^\perp$. Si $F = <u_1, \dots, u_r>$, $\Pi_F(x) = <x,u_1>u_1 + \cdots + <x,u_r>u_r$, lo
     que quiere decir que
     \[
-        T_p\real^n = T_pC \oplus T_pC^\perp \quad \text{y} \quad \underbrace{\left< \vec{f}(p), \vec{t}(p) \right>}_{f_t(p)}\vec{t}(p)
+        \real^n = T_pC \oplus T_pC^\perp \quad \text{y} \quad \underbrace{\left< \vec{f}(p), \vec{t}(p) \right>}_{f_t(p)}\vec{t}(p)
     \]
 \end{obs*}
 
@@ -761,5 +762,5 @@
 
 \section{Integración de funciones en una subvariedad $m$-dimensional de $\real^n$}
 
-Este tema no se ha dado en clase, si se está interesado, consultar los puntes del profesor.
+Este tema no se ha dado en clase, si se está interesado, consultar los apuntes del profesor.
 % QUE LO HAGAN LOS NOVATOS, AHI SE JODAN
