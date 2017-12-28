@@ -1,0 +1,48 @@
+\u{C. Cauchy (sèries)}: $\sum a_n$ conv. $\iff \forall \varepsilon > 0, \exists n_0 tq m>n\geq n_0$ llavors, $\abs{s_m-s_n} = \abs{a_{n+1} + \dots + a_m} < \varepsilon$. \\
+\ci La convergència és lineal i associativa.
+
+\section{Sèries n. positius}
+
+\u{C. comp. dir.}: $\sum_{n=n_0}^\infty a_n \leq \sum_{n=n_0}^\infty b_n \implies (b_n$ conv. $\implies a_n$ conv$)$ i $(a_n$ div. $\implies b_n$ div.$)$. \\
+\u{C. comp. al límit}: $\lim\frac{a_n}{b_n}=l\in[0,+\infty]$ (cons. apunts d'ell).\\
+\u{C. arrel Cauchy}: $\sum a_n$ positiva i $\exists \lim a_n^{\nicefrac{1}{n}}=\alpha \implies (\alpha >1$ div.$)$ i $(\alpha < 1$ conv.$)$.\\
+\u{C. quo. Alambert}: $\sum a_n$ estr. pos. i $\exists\lim\frac{a_{n+1}}{a_n}=\alpha \implies (\alpha <1$ div.$)$ i $(\alpha > 1$ conv.$)$.\\
+\u{C. Raabe}: $\sum a_n$ estr. pos. i $\exists\lim n\left(1-\frac{a_{n+1}}{a_n}\right) = L \implies (L > 1$ conv.$)$ i $(L<1$ div.$)$.\\
+\ci Sèrie cond. conv. $\implies$ podem reordenar per tal que $\sum = s\in\left[-\infty, +\infty\right]$.\\
+\ci Sèrie alternada $\implies$ un pos., un neg., ... \\
+\u{C. Leibniz sèr. alt.}: $(a_n)$ decr. i $\lim a_n = 0$, llavors $\sum (-1)^na_n$ és conv.. A més, $\abs{s-s_N} < a_{n+1}$. \\
+\u{C. Dirichlet}: Si $s_N$ fitades i $\sum b_n$ decr., $\lim b_n = 0$, llavors $\sum a_nb_n$ convergeix.
+
+\section{Sèries de potències}
+
+\u{Radi de convergència}: Màxim $r \tq \sum a_nr^n$ és conv. \\
+\u{Domini de conv.}: $\lp -R, R\rp$, on $R$ és radi de conv.. És possible qe convergeixi als exterms. \\
+\u{T. Cauchy-Hadamard} Sigui $\sum a_nx^n, R$ ve donada per $\frac{1}{R} = \lim \sup \abs{a_n}^{\nicefrac{1}{n}}$. La sèrie de potències és abs. conv. si $\abs{x} < R$ i div. si $\abs{x} > R$. Si $\abs{x} = 1$ no sabem res. \\
+\u{Càlcul radi de conv.}: $\frac{1}{R} = \lim \abs{a_n}^{\nicefrac{1}{n}}$ o $\frac{1}{R} = \lim\frac{\abs{a_{n+1}}}{\abs{a_n}}$.
+
+\section{Integrals impròpies}
+
+\ci La convergència d'integrals és lineal. \\
+\u{C. Cauchy per a int. impròpies}: $f\colon \left[a, b\right) \to \real. \int_a^b f$ és conv. $\iff \forall \varepsilon > 0, \exists c_0 \in \left[a, b\right) \tq$ si $c_1, c_2 > c_0$, llavors $\abs{\int_{c_1}^{c_2} f} < \varepsilon$. \\
+\ci Podem aplicar els criteris: comp. directa, comp en el límit, Dirichlet ($\exists M>0 \tq$ si $a<c<b,\, \abs{\int_a^c f(x) \text{d}x} \leq M$.
+
+\section{Integrals a rectangles}
+
+\u{Suma inf. del rect.}: $m_R = \inf_{x\in\real} f(x), \, s(f; \Pa) = \sum_R m_R \vol(R)$. \\
+\u{Suma sup. del rect.}: $M_R = \sup_{x\in\real} f(x), \, S(f; \Pa) = \sum_R M_R \vol(R)$. \\
+\u{Si $\Pa'$ més fina que $\Pa$}: $s(f; \Pa) \leq s(f; \Pa') \leq S(f; \Pa') \leq S(f; \Pa)$. \\
+\ci $\lowint_A f = \sup_\Pa s(f; \Pa), \upint_A f = \inf_\Pa S(f; \Pa) \to$ si són iguals, $f$ és integrable Riemann.\\
+\u{C. Riemann}: $f$ int. Rie. $\iff \forall \varepsilon>0, \exists\Pa \tq S(f;\Pa) - s(f;\Pa) < \varepsilon$.\\
+\ci Integrabilitat Riemann és lineal. \\
+\u{Suma de Rie.}: Siguin $\xi_k \in R_k,$ la suma és $R\lp f;\Pa; \xi\rp = \sum_k f\lp \xi_k\rp \vol\lp R_k\rp$.
+
+\section{Mesura nul·la}
+
+\u{Mesura nul·la}: Recobert per numerables rectangles de mesura $< \varepsilon, \, \forall \varepsilon > 0$. \\
+\u{Contingut nul}: Mesura nul·la amb un nombre finit de rectangles. \\
+\ci Si un conjunt té un punt interior, no és de mesura nul·la. \\
+\u{Quadrat}: volum: $c^n$, diàmetre: $c\sqrt{n}$ (a $real^n$, on $c$ costat). \\
+\ci Sigui $z \subset \real^n$ mesura nul·la. $\forall \varepsilon, \exists$ família numerable de quadrats compactes $Q_k \tq z\in\bigcup_k Q_k, \sum\vol(Q_k) < \varepsilon$. \\
+\ci Sigui $f\colon U\to \real$ classe $\mathcal{C}^1$ o lipschitziana, $z \subset U$ mesura nul·la, llavors $f(z) \subset \real^n$ té mesura nul·la.
+
+\section{Teorema de Lebesgue}
