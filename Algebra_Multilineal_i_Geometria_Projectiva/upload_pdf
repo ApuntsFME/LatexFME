@@ -6,8 +6,8 @@ MSG="PDF multi actualitzat :blush: :kissing_heart:"
 
 read -p "Nom d'usuari: " user
 read -s -p "Contrasenya: " password
-SHA=$(curl -s -u $user:$password "https://api.github.com/repos/ApuntsFME/apuntsfme.github.io/contents$DEST" > /dev/null) | \
-python3 -c "import sys, json; print(json.load(sys.stdin)['sha'])")
+SHA=$(curl -s -u $user:$password "https://api.github.com/repos/ApuntsFME/apuntsfme.github.io/contents$DEST" | \
+python -c "import sys, json; print json.load(sys.stdin)['sha']")
 { echo "{\"path\":\"$DEST\", \"message\":\"$MSG\", \"sha\":\"$SHA\", \"content\":\""; base64 $SRC; echo "\"}"; } | curl -s -u $user:$password -X PUT -d @- \
 "https://api.github.com/repos/ApuntsFME/apuntsfme.github.io/contents$DEST" > /dev/null
 #{ echo "{\"path\":\"$DEST\", \"message\":\"$MSG\", \"sha\":\"$SHA\", \"content\":\""; base64 $SRC; echo "\"}"; } | tr "\n" " "
