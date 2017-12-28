@@ -11,4 +11,4 @@ python3 -c "import sys, json; print(json.load(sys.stdin)['sha'])")
 { echo "{\"path\":\"$DEST\", \"message\":\"$MSG\", \"sha\":\"$SHA\", \"content\":\""; base64 $SRC; echo "\"}"; } | curl -s -u $user:$password -X PUT -d @- \
 "https://api.github.com/repos/ApuntsFME/apuntsfme.github.io/contents$DEST" > /dev/null
 #{ echo "{\"path\":\"$DEST\", \"message\":\"$MSG\", \"sha\":\"$SHA\", \"content\":\""; base64 $SRC; echo "\"}"; } | tr "\n" " "
-echo "Si no veus res estrany en teoria s'ha actualitzat"
+echo "Molt bé! Ja s'ha actualitzat, a no ser que et digui algo raro o que hagi passat algo i no t'ho hagi dit, mira Telegram per assegurar-te'n."
