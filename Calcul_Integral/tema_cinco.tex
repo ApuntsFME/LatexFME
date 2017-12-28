@@ -87,7 +87,7 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
     de la manera siguiente
     \[
         \begin{aligned}
-            \dif \colon \Omega^\bullet \left( \real^n \right) &\to \Omega^\bullet \left( \real^n \right)
+            \dif \colon \Omega^\bullet \left( \real^n \right) &\to \Omega^\bullet \left( \real^n \right)\\
             f \dif x^I &\mapsto \dif\left( f \dif x^I \right) := \dif f \wedge \dif x^I
         \end{aligned}
     \]
@@ -151,7 +151,7 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
 \end{obs*}
 
 \begin{prop}
-    Sean $y^i$ $(1 \leq j \leq n$ funciones en $\real^n$. Tenemos
+    Sean $y^i$ $(1 \leq j \leq n)$ funciones en $\real^n$. Tenemos
     \[
         \dif y^j = \sum^n_{i=1} \frac{\partial y^j}{\partial x^i} \dif x^i
     \]
@@ -166,7 +166,7 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
 \end{prop}
 
 \begin{obs}
-    Sea $g \colon \real^n \to \real$. Interpretamos $g$ como una función de las $y^j$, enotnces
+    Sea $g \colon \real^n \to \real$. Interpretamos $g$ como una función de las $y^j$, entonces
     \[
         \sum_j \frac{\partial g}{\partial y^j} \dif y^j = \sum_{i, j} \frac{\partial g}{\partial y^j} \frac{\partial y^j}{\partial x^i} \dif x^i
         \substack{\text{regla} \\ = \text{cadena}} \sum_i \frac{\partial g}{\partial x^i} \dif x^i = \dif g

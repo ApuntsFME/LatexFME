@@ -275,7 +275,8 @@
   \begin{enumerate}[(1)]
     \item Si $L\subseteq Q$ diremos que $L$ es una generatriz de $Q$.
     \item Si $L\cap Q \equiv$ $2$ puntos diremos que $L$ es secante a $Q$.
-    \item Si $L\cap Q \equiv$ $1$ punto (doble) diremos que $L$ es tangente a $Q$.
+    \item Si $L\cap Q \equiv$ $1$ punto (doble) o $L \subseteq Q$
+    diremos que $L$ es tangente a $Q$.
   \end{enumerate}
 \end{defi}
 
@@ -388,14 +389,16 @@
 \end{defi}
 
 \begin{prop}
-  Sea $Q\in\Po^n$ una cuádrica y $p_1, p_2\in\Po^n$ dos puntos. Entonces:
+  \label{propietats_polaritat}
+  Sea $Q \subseteq \Po^n$ una cuádrica y $p_1, p_2\in\Po^n$ dos puntos. Entonces:
   \begin{enumerate}[(1)]
     \item $p_1 \stackrel{Q}{\sim} p_1 \iff p\in Q$.
     \item Si $p_1,p_2\in Q$, entonces $p_1 \stackrel{Q}{\sim} p_2 \iff L=p_1\vee p_2 \subseteq Q$.
     \item Si $p_1\in Q$, $p_2 \not\in Q$, entonces $p_1 \stackrel{Q}{\sim} p_2 \iff L=p_1\vee p_2 
       \subseteq T_{p_1}\lp Q \rp$.
-    \item Si $p_1,p_2\not\in Q$, $ L=p_1\vee p_2$ y $ L\cap Q =\{p_3,p_4\}\neq \varnothing$, entonces
-      $p_1 \stackrel{Q}{\sim} p_2 \iff L$ es secante a $Q$ y $\lp p_1,p_2,p_3,p_4\rp =-1$. 
+    \item Si $p_1,p_2\not\in Q$, $ L=p_1\vee p_2$ y $ L\cap Q \neq \varnothing$, entonces
+      $p_1 \stackrel{Q}{\sim} p_2 \iff L$ es secante a $Q$ y $\lp p_1,p_2,p_3,p_4\rp =-1$, donde
+      $p_3, p_4$ son los puntos de $L \cap Q$. 
     \item Fijado $p=[v]$, entonces $\left\{p'\in\Po^n | p' \stackrel{Q}{\sim} p\right\} = H_p\lp Q\rp$
       es un hiperplano (hiperplano polar a $p$) de ecuación $vA\begin{pmatrix}x_0\\ \vdots\\ x_n\\ \end{pmatrix}=0$.
   \end{enumerate}
@@ -624,11 +627,10 @@
     \end{pmatrix}
   \end{gather*}
 \end{example}
-\begin{obs}
-  $Q$ afín $\implies Q$ proyectiva: $\overline{Q} \cap \A^n = Q$.
+\begin{defi}
+  Dada una cuádrica afín $Q$ que cumple
   \begin{gather*}
-    \A^n \to \overline{\A^n} = \Po^n \\
-    Q \text{ afín} \to A = M_\R\left( Q \right) =
+    A = M_\R\left( Q \right) =
     \left( \begin{array}{c|ccc}
       c & b_1 & \dots & b_n \\ \hline
       b_1 & & & \\
@@ -636,7 +638,15 @@
       b_n & & & 
     \end{array} \right)
   \end{gather*}
+  Llamamos completación proyectiva de $Q$ a la cuádrica proyectiva $\overline{Q}$
+  que cumple $A = M_{\overline{\R}}(\overline{Q})$.
+  
+\end{defi}
+\begin{obs}
+  Dada una cuádrica afín $Q$, su completación proyectiva $\overline{Q}$
+  es tal que $\overline{Q} \cap \A^n = Q$.
 \end{obs}
+
 \begin{example}
   $Q \subseteq \A^2$ \\
   \begin{gather*}
@@ -718,8 +728,12 @@
   \end{enumerate}
 \end{example}
 \begin{defi}
-  Sea $Q$ una cuádrica afín y $\overline{Q}$ su completación proyectiva $\left( \overline{\A^n} = \Po^n \right)$. Sea $p=[v]\in\A^n$, $p$ es un centro de $Q$ $\iff \varphi\left( v, \omega \right) = 0, \, \forall [\omega] \in\overline{\A^n}_\infty$. Si $Q$ no es degenerada,
-  \[ p \text{ es un centro de }Q \iff H_p\left( \overline{Q} \right) = \overline{\A^n}_\infty \]
+  Sea $Q$ una cuádrica afín y $\overline{Q}$ su completación proyectiva 
+  $\left( \overline{\A^n} = \Po^n \right)$. Sea $p=[v]\in\A^n$, $p$ es un 
+  centro de $Q$ $\iff \varphi\left( v, \omega \right) = 0, \, 
+  \forall [\omega] \in\overline{\A^n}_\infty$. Si $Q$ no es degenerada,
+  \[ p \text{ es un centro de }Q \iff H_p\left( \overline{Q} \right) = 
+  \overline{\A^n}_\infty \]
 \end{defi}
 % TODO dibuixos de la pag 10, son en 2D facilets
 \begin{obs}[Cálculo del centro para $Q$ no degenerada $\left( \det A \neq 0 \right)$]
@@ -798,13 +812,20 @@
   $p \in \A^n$ es un centro de $Q \iff p$ es un centro de simetría (es decir, $\forall L\ni p$ (recta), si $L\cap Q\neq \emptyset$, entonces, $L\cap Q = \left\{ p_1, p_2 \right\}$ y $p = \frac{1}{2}\left( p_1 + p_2 \right)$).
 \end{obs}
 \begin{proof}
+  Sea $p'$ el punto de corte entre la recta $L$ completada y el hiperplano
+  del infinito. 
   \begin{itemize}
-    \item[]
     \item $p \stackrel{\overline{Q}}{\sim} p'$
-    \item $p \notin \overline{Q}, \text{si } p\in\overline{Q}, \, H_p\left( \overline{Q} \right) = T_p \left( \overline{Q} \right) \left( p\text{ es del afín} \right)$
-    \item $p' \notin \overline{Q} \text{si } p\in\overline{Q}, \, H_p\left( \overline{Q} \right) = T_p \left( \overline{Q} \right) \left( p\text{ es del afín} \right)$
+    \item $p \notin \overline{Q}$, de lo contrario $\overline{\A^n_\infty}
+    = H_p\left( \overline{Q} 
+    \right) = T_p \left( \overline{Q} \right)$, cosa que contradice el hecho
+    de que $p$ es del afín.
+    \item $p' \notin \overline{Q}$, de lo contrario, como $p \not \in \overline{Q}$
+    pero $p \stackrel{\overline{Q}}{\sim} p'$, \ref{propietats_polaritat} nos 
+    dice que $L$ tiene un único punto de corte con $\overline{Q}$, es decir, 
+    $L \cap Q = \varnothing$.
   \end{itemize}
-  Por tanto,
+  Por tanto, como hemos visto en \ref{propietats_polaritat}
   \begin{gather*}
     \begin{cases}
       L\cap\overline{Q} = \left\{ p_1, p_2 \right\} \\
@@ -961,7 +982,7 @@
           \underline{$r$} & \underline{Ecuación reducida} & 
           \underline{Aspecto o nombre} \\[1ex] 
            $3$ & $x_0^2 + x_1^2 + x_2^2 = 0$ & Cónica no degenerada \\  
-           $2$ & $x_0^2 + x_1^2 = (x_0+x_1)(x_0-x_1) = 0$ & Par de rectas \\
+           $2$ & $x_0^2 + x_1^2 = (x_0+ix_1)(x_0-ix_1) = 0$ & Par de rectas \\
            $1$ & $x_0^2 = 0$ & Recta doble
         \end{tabular}
       \end{center}
