@@ -246,7 +246,7 @@
     \[
         \vec{F}(x, y, z) = -y \hat{i} + x \hat{j} + z \hat{k}
     \]
-    Comprobaremos ahora el T.K.S. (\ref{teo:kelvin-stokes}), ahora parametrizamos $M$ como
+    Comprobaremos ahora el T.K.S. (\ref{teo:kelvin-stokes}), ahora parametrizamos $H$ como
     \begin{gather*}
         \sigma\left( \theta, \phi \right) = \left( R\cos\phi\sin\theta, R\sin\phi\sin\theta, R\cos\theta \right)
         \qquad
@@ -261,10 +261,10 @@
     \]
     Entonces, tenemos
     \begin{gather*}
-        \int_M \rot \vec{F} \dif \vec{S} \stackrel{\text{orientación}}{=} \int^{2\pi}_0 \dif \phi \int^{\sfrac{\pi}{2}}_0 \dif \theta R^2 \sin \theta \underbrace{\cos\theta}_
+        \int_H \rot \vec{F} \dif \vec{S} \stackrel{\text{orientación}}{=} \int^{2\pi}_0 \dif \phi \int^{\sfrac{\pi}{2}}_0 \dif \theta R^2 \sin \theta \underbrace{\cos\theta}_
         {z} 2 = 4 \pi \R^2 \frac{1}{2} \int^{\sfrac{\pi}{2}}_0 2 \sin\theta\cos\theta \dif \theta =\\= 2\pi R^2 \left[ \sin^2 \theta \right]^{\sfrac{\pi}{2}}_0 = 2\pi R^2
     \end{gather*}
-    Por otro lado, podemos parametrizar $\partial M$ como
+    Por otro lado, podemos parametrizar $\partial H$ como
     \[
         \gamma(t) = \left( R\cos t, R \sin t, 0 \right) \qquad 0 < t < 2\pi \qquad
         \gamma^\prime (t) =
@@ -274,7 +274,7 @@
     \]
     Ahora, podemos calcular
     \[
-        \int_{\partial M} \vec{F} \dif \vec{l} = \int^{2\pi}_{0} \dif t R^2 = 2 \pi R^2 
+        \int_{\partial H} \vec{F} \dif \vec{l} = \int^{2\pi}_{0} \dif t R^2 = 2 \pi R^2 
     \]
     Y como vemos, se satisface el teorema.
 \end{example*}
@@ -318,7 +318,7 @@
     \]
     Por lo tanto,
     \[
-        \vol(B) = \frac{1}{3} R \text{área}\left( \partial B \right)
+        \vol(B) = \frac{1}{3} R \vol\left( \partial B \right)
     \]
 \end{example*}
 
