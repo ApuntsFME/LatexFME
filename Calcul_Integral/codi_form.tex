@@ -46,3 +46,41 @@
 \ci Sigui $f\colon U\to \real$ classe $\mathcal{C}^1$ o lipschitziana, $z \subset U$ mesura nul·la, llavors $f(z) \subset \real^n$ té mesura nul·la.
 
 \section{Teorema de Lebesgue}
+
+\ci Sigui $X$ espai mètric, $f\colon X\to \real$, l'oscil·lació de $f$ sobre $E\subset X$ és el diàmetre de $f(E)$: $\omega(f,E) = \sup_{x,y\in E} \text{d}\left( f\left( x \right), f\left( y \right) \right) \in \left[ 0, +\infty \right]$. Finita $\iff f_{|E}$ fitada, $0\iff f_{|E}$ constant. \\
+\u{Oscil·lació en $a\in X$}: $\omega\left( f,a \right) = \lim_{r\to 0}\omega\left( f, B\left( a;r \right) \right) = \inf_{r>0} \omega\left( f, B\left( a; r \right) \right)$. \\
+\ci $f$ cont. en $a \iff \omega\left( f, a \right) = 0$. \\
+\u{T. Lebesgue}: Sigui $A\subset \real^n$ rectangle compacte, $f\colon A\to \real$ fitada. Llavors $f$ és integrable Riemann $\iff \disc\left( f \right)$ és de mesura nul·la $\iff$ contínua gairebé pertot. \\
+
+\section{Integral de Rie. sobre conjunts ms generals}
+
+\ci $C\subset\real^n$ és admissible o mesurable Jordan si és fitat i $\fr\left( C \right)$ té mesura nul·la.\\
+\ci $\fr\left( A \cup A' \right), \fr\left( A\cap A' \right), \fr\left( A\setminus A' \right) \subseteq \fr\left( A \right) \cup \fr\left( A' \right)$. \\
+\ci $\fr\left( A\times B \right) = \left( \fr\left( A \right)\times \overline{B} \right) \cup \left( \overline{A} \times \fr\left( B \right) \right)$.\\
+\ci $A,A'\subset\real^n$ admissibles $\implies A\cup A', A\cap A', A\setminus A'$ admissibles. \\
+\ci $A\subset\real^n, B\subset\real^m$ admissibles $\implies A\times B \subset \real^{n+m}$ admissible. \\
+\ci Els rectangles fitats i les boles euclidianes són admissibles. \\
+\u{Funció característica de $C\subset X$}: (o indicatriu) $\chi_C\colon X \to \real, \chi_C(x) = 1$ si $x \in C$, val $0$ altrament.\\
+\ci $\chi$ no AUXs contínua a $\fr\left( C \right) \implies$ ($C$ adm. $\iff C$ fitat i $\forall R, \exists \int_R \chi_C \tq C\subset R$). \\
+\ci $g\colon E\to\real, \tilde{g}\colon X\to\real \left( \tilde{g}(x) = 0 \forall x \notin E \right)$. Aleshores $\disc\left( g \right) \subseteq \disc\left( \tilde{g} \right)\subseteq \disc\left( g \right)\cup \fr\left( E \right)$. \\
+\ci $f\chi_C$ integrable Rie. en R $\iff \disc\left( f \right)$ de mesura nul·la. \\
+\u{Pel T. Lebesgue}: $C\subset \real^n$ admissible. $f\colon C \to \real$ AUXs integrable Rie. $\iff \disc\left( f \right)$ mesura nul·la. \\
+\ci Si $C$ adm., $\vol\left( C \right) = \int_C 1$ AUXs la mesura (o contingut) de Jordan o volum ($n$-dimensional) de $C$. \\
+\ci $C\subset\real^n$ tAUX contingut nul $\iff C$ adm. i $\vol\left( C \right) = 0$.
+
+\section{Propietats de la integral de Riemann}
+
+\ci Sigui $E\subset\real^n$ mesurable Jordan, $\rie\left( E \right) = \{f | f$ int. Rie. en $E \}$ AUXs un $\real$-e.v. i $Rie\colon E \to \real, Rie(f) = \int_E f$ AUXs una forma lineal positiva i monòtona. \\
+\u{T. valor mitjà per a integrals}: Sigui $E$ m.J., $f\colon E\to\real$ int. Rie.. $m\leq f\leq M \implies m\vol\left( E \right)\leq \int_E f\leq M\vol\left( E \right)$. \\
+\ci $E$ m.J. connex, $f\colon E\to\real$ fitada i cont., $\exists x_0 \in E \tq \int_E f = f\left( x_0 \right)\vol\left( E \right)$. \\
+\ci $E$ m.J., $f\colon E\to \real$ int. Rie., $h \colon f\left( E \right) \to \real$ cont., $h\circ f$ AUXs int. Rie.. \\
+\ci $f, h$ int. Rie. no implica $h\circ f$ int. Rie.. \\
+\ci $f$ int. Rie. $\implies \abs{f}$ int. Rie. i $\abs{\int_E f} \leq \int_E \abs{f}$. \\
+\ci $f, g$ int. Rie. $\implies f\times g$ int. Rie.. \\
+\ci Siguin $A,B\subset\real^n$ m.J. $f\colon A\cup B\to \real$ fitada. $f$ AUXs int. Rie. si ho AUXs a $A$, $B$ i $A\cap B$  i es compleix: $\int_{A\cup B} f= \int_A f + \int_B f - \int_{A\cap B} f$. \\
+\ci $E$ m.J., $f\colon E \to \real$ positiva i int. Rie., aleshores $\int_E f=0 \iff f$ nul·la gairebAUX pertot. \\
+\ci Dues funcions int. i iguals gairebAUX pertot tenen la mateixa intgral (tot i que canviar els valors en un conjunt de mesura nul·la pot destruir l'integrabilitat).
+
+\section{Teorema de Fubini}
+
+\u{T. Fubini}: $A\subset\real^n, B \subset \real^m$ rect. comp., $f\colon A\times B \to \real$ int. Rie.. Sigui $Phi\colon A\to\real \tq \lowint_B f\left( x,· \right) \leq \Phi\left( x \right) \leq \upint_B f\left( x, · \right)$. Aleshores $\Phi$ int. Rie. i $\int_{A\times B} f = \int_A \Phi \left( A \leftrightarrow B \text{ tambAUX}\right)$.
