@@ -2,7 +2,7 @@
 
 SRC="main.pdf"
 DEST="/pdfs/segundo/calculo_integral.pdf"
-MSG="Actualitza pdf calcul"
+MSG="PDF calcul actualitzat :yum: :tada:"
 
 read -p "Nom d'usuari: " user
 read -s -p "Contrasenya: " password

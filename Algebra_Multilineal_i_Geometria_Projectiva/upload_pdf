@@ -2,7 +2,7 @@
 
 SRC="main.pdf"
 DEST="/pdfs/segundo/algebra_multilineal_y_geometria.pdf"
-MSG="Actualitza pdf projectiva"
+MSG="PDF multi actualitzat :blush: :kissing_heart:"
 
 read -p "Nom d'usuari: " user
 read -s -p "Contrasenya: " password
