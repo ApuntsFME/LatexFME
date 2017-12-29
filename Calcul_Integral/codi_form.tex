@@ -1,4 +1,4 @@
-\u{C. Cauchy (sèries)}: $\sum a_n$ conv. $\iff \forall \varepsilon > 0, \exists n_0 tq m>n\geq n_0$ llavors, $\abs{s_m-s_n} = \abs{a_{n+1} + \dots + a_m} < \varepsilon$. \\
+\u{C. Cauchy (sèries)}: $\sum a_n$ conv. $\iff \forall \varepsilon > 0, \exists n_0 \tq m>n\geq n_0$ llavors, $\abs{s_m-s_n} = \abs{a_{n+1} + \dots + a_m} < \varepsilon$. \\
 \ci La convergència és lineal i associativa.
 
 \section{Sèries n. positius}
@@ -50,7 +50,7 @@
 \ci Sigui $X$ espai mètric, $f\colon X\to \real$, l'oscil·lació de $f$ sobre $E\subset X$ és el diàmetre de $f(E)$: $\omega(f,E) = \sup_{x,y\in E} \text{d}\left( f\left( x \right), f\left( y \right) \right) \in \left[ 0, +\infty \right]$. Finita $\iff f_{|E}$ fitada, $0\iff f_{|E}$ constant. \\
 \u{Oscil·lació en $a\in X$}: $\omega\left( f,a \right) = \lim_{r\to 0}\omega\left( f, B\left( a;r \right) \right) = \inf_{r>0} \omega\left( f, B\left( a; r \right) \right)$. \\
 \ci $f$ cont. en $a \iff \omega\left( f, a \right) = 0$. \\
-\u{T. Lebesgue}: Sigui $A\subset \real^n$ rectangle compacte, $f\colon A\to \real$ fitada. Llavors $f$ és integrable Riemann $\iff \disc\left( f \right)$ és de mesura nul·la $\iff$ contínua gairebé pertot. \\
+\u{T. Lebesgue}: Sigui $A\subset \real^n$ rectangle compacte, $f\colon A\to \real$ fitada. Llavors $f$ és integrable Riemann $\iff \disc\left( f \right)$ és de mesura nul·la $\iff$ contínua gairebé pertot.
 
 \section{Integral de Rie. sobre conjunts ms generals}
 
@@ -61,35 +61,60 @@
 \ci $A\subset\real^n, B\subset\real^m$ admissibles $\implies A\times B \subset \real^{n+m}$ admissible. \\
 \ci Els rectangles fitats i les boles euclidianes són admissibles. \\
 \u{Funció característica de $C\subset X$}: (o indicatriu) $\chi_C\colon X \to \real, \chi_C(x) = 1$ si $x \in C$, val $0$ altrament.\\
-\ci $\chi$ no AUXs contínua a $\fr\left( C \right) \implies$ ($C$ adm. $\iff C$ fitat i $\forall R, \exists \int_R \chi_C \tq C\subset R$). \\
+\ci $\chi$ no és contínua a $\fr\left( C \right) \implies$ ($C$ adm. $\iff C$ fitat i $\forall R, \exists \int_R \chi_C \tq C\subset R$). \\
 \ci $g\colon E\to\real, \tilde{g}\colon X\to\real \left( \tilde{g}(x) = 0 \forall x \notin E \right)$. Aleshores $\disc\left( g \right) \subseteq \disc\left( \tilde{g} \right)\subseteq \disc\left( g \right)\cup \fr\left( E \right)$. \\
 \ci $f\chi_C$ integrable Rie. en R $\iff \disc\left( f \right)$ de mesura nul·la. \\
-\u{Pel T. Lebesgue}: $C\subset \real^n$ admissible. $f\colon C \to \real$ AUXs integrable Rie. $\iff \disc\left( f \right)$ mesura nul·la. \\
-\ci Si $C$ adm., $\vol\left( C \right) = \int_C 1$ AUXs la mesura (o contingut) de Jordan o volum ($n$-dimensional) de $C$. \\
-\ci $C\subset\real^n$ tAUX contingut nul $\iff C$ adm. i $\vol\left( C \right) = 0$.
+\u{Pel T. Lebesgue}: $C\subset \real^n$ admissible. $f\colon C \to \real$ és integrable Rie. $\iff \disc\left( f \right)$ mesura nul·la. \\
+\ci Si $C$ adm., $\vol\left( C \right) = \int_C 1$ és la mesura (o contingut) de Jordan o volum ($n$-dimensional) de $C$. \\
+\ci $C\subset\real^n$ té contingut nul $\iff C$ adm. i $\vol\left( C \right) = 0$.
 
 \section{Propietats de la integral de Riemann}
 
-\ci Sigui $E\subset\real^n$ mesurable Jordan, $\rie\left( E \right) = \{f | f$ int. Rie. en $E \}$ AUXs un $\real$-e.v. i $Rie\colon E \to \real, Rie(f) = \int_E f$ AUXs una forma lineal positiva i monòtona. \\
+\ci Sigui $E\subset\real^n$ mesurable Jordan, $\rie\left( E \right) = \{f | f$ int. Rie. en $E \}$ és un $\real$-e.v. i $Rie\colon E \to \real, Rie(f) = \int_E f$ és una forma lineal positiva i monòtona. \\
 \u{T. valor mitjà per a integrals}: Sigui $E$ m.J., $f\colon E\to\real$ int. Rie.. $m\leq f\leq M \implies m\vol\left( E \right)\leq \int_E f\leq M\vol\left( E \right)$. \\
 \ci $E$ m.J. connex, $f\colon E\to\real$ fitada i cont., $\exists x_0 \in E \tq \int_E f = f\left( x_0 \right)\vol\left( E \right)$. \\
-\ci $E$ m.J., $f\colon E\to \real$ int. Rie., $h \colon f\left( E \right) \to \real$ cont., $h\circ f$ AUXs int. Rie.. \\
+\ci $E$ m.J., $f\colon E\to \real$ int. Rie., $h \colon f\left( E \right) \to \real$ cont., $h\circ f$ és int. Rie.. \\
 \ci $f, h$ int. Rie. no implica $h\circ f$ int. Rie.. \\
 \ci $f$ int. Rie. $\implies \abs{f}$ int. Rie. i $\abs{\int_E f} \leq \int_E \abs{f}$. \\
 \ci $f, g$ int. Rie. $\implies f\times g$ int. Rie.. \\
-\ci Siguin $A,B\subset\real^n$ m.J. $f\colon A\cup B\to \real$ fitada. $f$ AUXs int. Rie. si ho AUXs a $A$, $B$ i $A\cap B$  i es compleix: $\int_{A\cup B} f= \int_A f + \int_B f - \int_{A\cap B} f$. \\
-\ci $E$ m.J., $f\colon E \to \real$ positiva i int. Rie., aleshores $\int_E f=0 \iff f$ nul·la gairebAUX pertot. \\
-\ci Dues funcions int. i iguals gairebAUX pertot tenen la mateixa intgral (tot i que canviar els valors en un conjunt de mesura nul·la pot destruir l'integrabilitat).
+\ci Siguin $A,B\subset\real^n$ m.J. $f\colon A\cup B\to \real$ fitada. $f$ és int. Rie. si ho és a $A$, $B$ i $A\cap B$  i es compleix: $\int_{A\cup B} f= \int_A f + \int_B f - \int_{A\cap B} f$. \\
+\ci $E$ m.J., $f\colon E \to \real$ positiva i int. Rie., aleshores $\int_E f=0 \iff f$ nul·la gairebé pertot. \\
+\ci Dues funcions int. i iguals gairebé pertot tenen la mateixa intgral (tot i que canviar els valors en un conjunt de mesura nul·la pot destruir l'integrabilitat).
 
 \section{Teorema de Fubini}
 
-\u{T. Fubini}: $A\subset\real^n, B \subset \real^m$ rect. comp., $f\colon A\times B \to \real$ int. Rie.. Sigui $\:w
-Phi\colon A\to\real \tq \lowint_B f\left( x,· \right) \leq \Phi\left( x \right) \leq \upint_B f\left( x, · \right)$. Aleshores $\Phi$ int. Rie. i $\int_{A\times B} f = \int_A \Phi,\; \left( A \leftrightarrow B \text{ tambAUX}\right)$. \\
-\ci $x \in A \tq f\left( x, · \right)$ no int. Rie. tAUX mesura nul·la. \\
+\u{T. Fubini}: $A\subset\real^n, B \subset \real^m$ rect. comp., $f\colon A\times B \to \real$ int. Rie.. Sigui $\Phi\colon A\to\real \tq \lowint_B f\left( x,· \right) \leq \Phi\left( x \right) \leq \upint_B f\left( x, · \right)$. Aleshores $\Phi$ int. Rie. i $\int_{A\times B} f = \int_A \Phi,\; \left( A \leftrightarrow B \text{ també}\right)$. \\
+\ci $x \in A \tq f\left( x, · \right)$ no int. Rie. té mesura nul·la. \\
 \ci $D\subset X, f\colon D\to \real$ cont., $E = \left\{ \left( x, y  \right)\in X\times \real | x\in D, y \geq f\left( x \right) \right\}$, llavors ($D\subset X$ tancat $\implies E\subset X\times\real$ tancat) i ($\fr\left( E \right) \subset \graf\left( f \right) \cup \left( \fr\left( D \right)\times \real  \right)$). \\
-\ci $D\subset \real^{n-1}$ comp., m.J., $\varphi, \psi\colon D\to \real$ cont. t.q. $\varphi \leq \psi$, $E = \left\{ \left( x,y \right)\in\real^{n-1}\times \real\;|\; x\in D, \varphi\left( x \right) \leq y \leq \psi\left( x \right) \right\} \subset \real^n$ AUXs compacte i m.J.. (Si $f\colon E\to \real, \int_E f = \int_D \text{d}x\int_{\varphi\left( x \right)}^{\psi\left( x \right)}\text{d}y\, f\left( x, y \right)$). \\
-\ci $E$ AUXs una regió elemental de $\real^n$ (per $n=1$ AUXs un interval compacte).
+\ci $D\subset \real^{n-1}$ comp., m.J., $\varphi, \psi\colon D\to \real$ cont. t.q. $\varphi \leq \psi$, $E = \left\{ \left( x,y \right)\in\real^{n-1}\times \real\;|\; x\in D, \varphi\left( x \right) \leq y \leq \psi\left( x \right) \right\} \subset \real^n$ és compacte i m.J.. (Si $f\colon E\to \real, \int_E f = \int_D \text{d}x\int_{\varphi\left( x \right)}^{\psi\left( x \right)}\text{d}y\, f\left( x, y \right)$). \\
+\ci $E$ és una regió elemental de $\real^n$ (per $n=1$ és un interval compacte).
 
 \section{Canvi de variables}
 
-% \ci Sigui $V\subset\real^n$ obert, $\varphi\colon V\to\real^n$ injectiva, classe 
+\ci Sigui $V\subset\real^n$ obert, $\varphi\colon V\to\real^n$ injectiva, classe $\mathcal{C}^1$ amb $\det \text{D}\varphi\left( y \right) \neq 0, \forall y \in V$. Sigui $U = \varphi\left( V \right) (\varphi\colon V\to U$ difeo. classe $\mathcal{C}^1)$. Si $f\colon U\to \real$ int., $\int_U f = \int_V\left( f \circ \varphi \right)\abs{\det \text{D}\varphi}$.
+
+\subsection{Alguns canvis de variables}
+\u{Polars a $\real^2$}: $\int_U f\left( x,y \right) \text{d}x\text{ d}y = \int_V f\left( r\cos\varphi, r\sin\varphi \right)r \text{ d}r\text{ d}\varphi$. \\
+\u{Cilíndriques a $\real^3$}: $\int_U f\left( x,y,z \right) \text{d}x\text{ d}y\text{ d}z = \int_V f\left( \rho\cos\varphi, \rho\sin\varphi, z \right)\rho \text{ d}\rho\text{ d}\varphi\text{ d}z$. \\
+\u{Esfèriques a $\real^3$}: $\int_U f\left( x,y,z \right) \text{d}x\text{ d}y\text{ d}z = \int_V f\left( r\cos\varphi\sin\theta, r\sin\varphi\sin\theta, r\cos\theta \right) r^2\sin\theta \text{ d}r\text{ d}\varphi\text{ d}\theta$.
+
+
+
+\section{Altres}
+
+\subsection{Sèries}
+\ci $\sum r^n$ conv. $\iff \abs{r} < 1$ (\verb|else| div.). \\
+\ci $\sum \frac{1}{n^p}$ conv. $\iff p > 1$ (\verb|else| div.).
+
+\subsection{Integrals}
+\ci $\int_1^{+\infty} \frac{1}{x^\alpha}$ d$x$ conv. $\iff \alpha < 1$ i és $\frac{1}{\alpha-1}$. \\
+\ci $\int_0^1 \frac{1}{x^\alpha}$ d$x$ conv. $\iff \alpha < 1$ i és $\frac{1}{1-\alpha}$. \\
+\ci $int_0^{+\infty} e^{-\alpha t}$ d$t$ conv. $\iff \alpha > 0$ i és $\frac{1}{\alpha}$.
+
+\subsection{Taylor}
+\ci $e^x = \sum_{n\geq 0} \frac{x^n}{n!}$. \\
+\ci $\cos x = \sum_{n\geq 0} (-1)^n \frac{x^{2n}}{(2n)!}$. \\
+\ci $\sin x = \sum_{n\geq 0} (-1)^n \frac{x^{2n+1}}{(2n+1)!}$. \\
+\ci $\log (1+x) = \sum_{n\geq 1} (-1)^n+1 \frac{x^n}{n}$. \\
+\ci $(1+x)^p = \sum_{n\geq 0} \binom{p}{n} x^n$. \\
+\ci $(1+x)^{-1} = \sum_{n\geq 0} (-1)^n x^n$.

@@ -1282,7 +1282,7 @@ los rectángulos.
     Tenemos
     \[
         \begin{aligned}
-            c \colon (0, \infty) \times (0, \pi) \times (-\pi, \pi) &\to \real^3 \smallsetminus \setb{(x, 0, z) \vert x \leq 0}
+            c \colon (0, \infty) \times (0, \pi) \times (-\pi, \pi) &\to \real^3 \smallsetminus \setb{(x, 0, z) \vert x \leq 0} \\
             (r, \theta, \phi) &\mapsto (x, y, z) = (r\cos\phi\sin\theta, r\sin\phi\sin\theta, r\cos\theta)
         \end{aligned}
     \]
@@ -1294,10 +1294,10 @@ los rectángulos.
 \end{obs}
 
 \begin{example*}
-    Sea $B: x^2 + y^2 + z^2 < a^2$, en esf\'ericas, $r < a$
+    Sea $B: x^2 + y^2 + z^2 < a^2$, en esf\'ericas, $r < a$,
     \[
         \vol(B) = \int_B \dif x \dif y \dif z = \int^{2\pi}_0 \dif \phi \int^\pi_0 \dif \theta \int^{a}_0  \dif r r^2 \sin\theta
-        = \frac{4}{3} \pi a^3
+        = \frac{4}{3} \pi a^3.
     \]
 \end{example*}
 
@@ -1306,12 +1306,12 @@ los rectángulos.
 \begin{lema*}[1]\label{lema:uno_cambio}
     Sea $\varphi \colon \real^n \to \real^n$ un isomorfismo lineal y sea $A \subset \real^n$ un ractángulo compacto, entonces,
     \[
-        \vol\left( \varphi(A) \right) = \abs{\det \varphi} \vol(A)
+        \vol\left( \varphi(A) \right) = \abs{\det \varphi} \vol(A).
     \]
 \end{lema*}
 
 \begin{proof}
-    Toda matriz invertible es producto de matrices elementales $\implies$ Basta demostrarlo con matrices de transformaciones elementales
+    Toda matriz invertible es producto de matrices elementales y, por tanto, basta demostrarlo con matrices de transformaciones elementales
     \begin{enumerate}[i)]
         \item Permutación
             \[
@@ -1325,18 +1325,18 @@ los rectángulos.
                     & & & & & \ddots \\
                     & & & & & & 1
                 \end{pmatrix}
-                \qquad \abs{\det P} = 1
+                \qquad \abs{\det P} = 1.
             \]
         \item Alargamiento ($m \neq 0$)
             \[
                 L =
                 \begin{pmatrix}
                     1 \\
-                    & \dots \\
+                    & \ddots \\
                     & & 1 \\
                     & & & m
                 \end{pmatrix}
-                \qquad \abs{\det L } = \abs{m}
+                \qquad \abs{\det L } = \abs{m}.
             \]
         \item Traslación
             \[
@@ -1347,25 +1347,25 @@ los rectángulos.
                     & & \ddots \\
                     & & & 1
                 \end{pmatrix}
-                \qquad \abs{\det T} = 1
+                \qquad \abs{\det T} = 1.
             \]
     \end{enumerate}
 
-    Sea $A = I_1 \times \cdots \times I_n$ un rectángulo compacto
+    Sea $A = I_1 \times \cdots \times I_n$ un rectángulo compacto,
     \begin{enumerate}[i)]
         \item $P(A) = I_1 \times \cdots \times I_j \times \cdots \times I_i \times \cdots \times I_n$
             \[
-                \vol\left( P(A) \right) = \vol(A) \abs{\det P}
+                \vol\left( P(A) \right) = \vol(A) \abs{\det P}.
             \]
         \item $L(A) = I_1 \times \cdots \times I_{n-1} \times mI_n$
             \[
-                \vol\left( L(A) \right) = \abs{m} \vol(A) = \abs{\det L} \vol(A)
+                \vol\left( L(A) \right) = \abs{m} \vol(A) = \abs{\det L} \vol(A).
             \]
-        \item para $T(A)$ tenemos
+        \item Para $T(A)$ tenemos
             \begin{gather*}
                 \vol\left( T(A) \right) = \int_{T(A)} \dif x_1 \cdots \dif x_n \stackrel{T.Fubini}{=}
                 \int_{I_n} \dif x_n \cdots \int_{I_2} \dif x_2 \int_{I_1 + x_2} \dif x_1 = \\ =
-                \int_{I_n} \dif x_n \cdots \int_{I_2} \dif x_2 \int_{I_1} \dif x_1 = \vol(A) = \vol(A) \abs{\det T}
+                \int_{I_n} \dif x_n \cdots \int_{I_2} \dif x_2 \int_{I_1} \dif x_1 = \vol(A) = \vol(A) \abs{\det T}.
             \end{gather*} 
     \end{enumerate}
 \end{proof}
@@ -1374,7 +1374,7 @@ los rectángulos.
     Sea $\phi \colon \real^n \to \real^n$ un isomorfismo lineal y sea $A \subset \real^n$ medible Jordan.
     Entonces,
     \[
-        \vol\left( \phi(A) \right) = \abs{\det \phi} \vol(A)
+        \vol\left( \phi(A) \right) = \abs{\det \phi} \vol(A).
     \]
 \end{lema*}
 
@@ -1383,22 +1383,22 @@ los rectángulos.
 
     Por el criterio de Riemman, $\forall \varepsilon > 0$ $\exists \Pa$ partición de $R$ tal que
     \[
-        S\left( X_A, \Pa \right) - s\left( X_A, \Pa \right) < \varepsilon
+        S\left( X_A, \Pa \right) - s\left( X_A, \Pa \right) < \varepsilon.
     \]
     Ahora, definimos $I$ como la unión de subrectángulos de $\Pa$ contenidos en $A$ y $E$ como la unión de subrectángulos
     que cortan a A, entonces $I \subseteq A \subseteq E$ y
     \[
-        \vol(I) = s\left( X_A, \Pa \right) \leq \vol(A) \leq S\left( X_A, \Pa \right) = \vol(E)
+        \vol(I) = s\left( X_A, \Pa \right) \leq \vol(A) \leq S\left( X_A, \Pa \right) = \vol(E).
     \]
     Ahora, como $\phi$ es biyectiva, se tiene que $\phi(I) \subseteq \phi(A) \subseteq \phi(E)$ y por lo tanto
     \[
         \abs{\det\phi} \vol(I) \leq \vol\left( \phi(A) \right) \leq \abs{\det\phi} \vol(E) \implies
-        \vol\left( \phi(A) \right) = \abs{\det \phi} \vol(A)
+        \vol\left( \phi(A) \right) = \abs{\det \phi} \vol(A).
     \]
 \end{proof}
 
 \begin{lema*}[3]\label{lema:tres_cambio}
-    Si la fórmula del cambio de variable se satisfaace para $f = 1$ (constante), entonces se satisface para todo $f$ integrable Riemman.
+    Si la fórmula del cambio de variable se satisface para $f = 1$ (constante), entonces se satisface para todo $f$ integrable Riemman.
 \end{lema*}
 
 \begin{proof}
@@ -1408,31 +1408,31 @@ los rectángulos.
         \sum_i \int_{\inv{\phi}\left( R_i \right)} \left( m_{R_i} \circ \phi \right)\abs{\det\phi} \leq \\ \leq
         \sum_i \int_{\inv{\phi}\left( R_i \right)} \left( f \circ \phi \right) \abs{\det\phi} \stackrel{\text{aditividad}}{=}
         \int_{\cup \inv{\phi}\left( R_i \right)} (f \circ \phi) \abs{\det \phi} \implies \\ \implies
-        \int_U f \leq \int_V (f \circ \phi) \abs{\det \phi}
+        \int_U f \leq \int_V (f \circ \phi) \abs{\det \phi}.
     \end{gather*}
     Cambiando $s$ por $S$, obtenemos que $\int_U f \geq \int_V (f \circ \phi) \abs{\det\phi}$ y por lo tanto,
     \[
-        \int_U f = \int_V (f \circ \phi) \abs{\det \phi} 
+        \int_U f = \int_V (f \circ \phi) \abs{\det \phi}.
     \]
 \end{proof}
 
 \begin{lema*}[4]\label{lema:cuatro_cambio}
-    La fórmula del cambio de variable se satisface si $\phi \colon \real^n \to \real^n$ es lineal
+    La fórmula del cambio de variable se satisface si $\phi \colon \real^n \to \real^n$ es lineal.
 \end{lema*}
 \begin{proof}
     Por el lema \hyperref[lema:dos_cambio]{2}, tenemos que
     \[
-        \int_{\phi(V)} 1 = \int_V \abs{\det \phi} = \int_V \abs{\det \Dif_\phi}
+        \int_{\phi(V)} 1 = \int_V \abs{\det \phi} = \int_V \abs{\det \Dif_\phi},
     \]
     y por el lema \hyperref[lema:tres_cambio]{3}, tenemos que
     \[
-        \int_{\phi(V)} f = \int_V (f \circ \phi) \abs{\det \Dif \phi}
+        \int_{\phi(V)} f = \int_V (f \circ \phi) \abs{\det \Dif \phi}.
     \]
 \end{proof}
 
 \begin{lema*}[5]\label{lema:cinco_cambio}
-    Si la fórmula del camibo de variable se satisface para $psi \colon W \to V$ y para $\phi \colon V \to U$, entonces, se satisface para
-    $\phi \circ \psi$
+    Si la fórmula del camibo de variable se satisface para $\psi \colon W \to V$ y para $\phi \colon V \to U$, entonces, se satisface para
+    $\phi \circ \psi$.
 \end{lema*}
 
 \begin{proof}
@@ -1446,7 +1446,7 @@ los rectángulos.
 \textbf{Ahora, haremos un breve repaso antes de proseguir con la demostración.}
 
 \begin{defi*}
-    Recordemos, que definíamos la norma de una matriz $M$ como
+    Recordemos que definíamos la norma de una matriz $M$ como
     \[
         \norm{M} = \sup_{\norm{x} \leq 1} \norm{T x}
     \]
