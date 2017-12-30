@@ -1839,8 +1839,8 @@ al usar coordenadas.
   Sea $\R = \left \{p;u_1, \dots, u_n \right \}$ un sistema de referencia en
   $\A^n$. Llamaremos el proyectivizado de $\R$ a
   \[
-    \overline{\R} = \left \{ \varphi(p), [u_1], \dots, [u_n], 
-    [e_0 + \overrightarrow{p_0p}] + [u_1] + \dots + [u_n] \right \}
+    \overline{\R} = \left \{ \varphi(p), [u_1], \dots, [u_n] ; 
+    \left[ e_0 + \overrightarrow{p_0p} + u_1 + \dots + u_n \right] \right \}
   \]
   que es un sistema de referencia en $\Po^n$.
 \end{defi}
@@ -1868,10 +1868,10 @@ al usar coordenadas.
 \begin{obs}
   \begin{enumerate}[i)]
     \item[]
-    \item Para $p \in \Po^n$, si $\overline{x}_0 \neq 0$, $q = (\overline{x}_0:
+    \item Para $q \in \Po^n$, si $\overline{x}_0 \neq 0$, $q = (\overline{x}_0:
       \dots:\overline{x}_n) = (1:\frac{\overline{x}_1}{\overline{x}_0}:
-      \dots:\frac{\overline{x}_n}{x_0}) = \varphi(\frac{\overline{x}_1}{\overline{x}_0}
-      ,\dots,\frac{\overline{x}_n}{\overline{x}_0} \in \A^n.$
+      \dots:\frac{\overline{x}_n}{x_0}) = \varphi \lp \frac{\overline{x}_1}{\overline{x}_0}
+      ,\dots,\frac{\overline{x}_n}{\overline{x}_0} \rp \in \A^n.$
     \item Para $q \in \Po^n$, $q \in \A^n_\infty \iff \overline{x}_0 = 0$.
   \end{enumerate}
 \end{obs}
