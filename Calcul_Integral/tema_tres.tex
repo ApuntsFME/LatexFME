@@ -11,24 +11,24 @@
 \end{defi}
 
 \begin{obs*}
-    De aquí en adelante, a no ser que se especifique lo contrario, supondremos que $I$ es un intervalo compacto
+    De aquí en adelante, a no ser que se especifique lo contrario, supondremos que $I$ es un intervalo compacto.
 \end{obs*}
 
 \begin{defi}
     Sea $\gamma \colon [a, b] \to \real$ y  sea $\Pa = \setb{t_0, \dots, t_n}$ una partición de $[a, b]$.
     Entonces, los $\gamma(t_i)$ son los v\'ertices de una poligonal, que denominamos poligonal de longitud y cuya longitud es
     \[
-        L(\gamma, \Pa) = \sum^N_{i=1} \norm{\gamma(t_i) - \gamma(t_{i-1})}
+        L(\gamma, \Pa) = \sum^N_{i=1} \norm{\gamma(t_i) - \gamma(t_{i-1})}.
     \]
 \end{defi}
 \begin{obs*}
-    Refinar la partición aumenta la longitud. (Demostración por la desigualdad triangular)
+    Refinar la partición aumenta la longitud. (Demostración por la desigualdad triangular).
 \end{obs*}
 
 \begin{defi}
     Sea $\gamma \colon I \to \real^n$ una curva. La longitud de $\gamma$ es
     \[
-        L(\gamma) = \sup_{\Pa \text{ partición de } I} L(\gamma, \Pa) \in [0, \infty]
+        L(\gamma) = \sup_{\Pa \subset I} L(\gamma, \Pa) \in [0, \infty].
     \]
 \end{defi}
 
@@ -39,7 +39,7 @@
 \begin{defi}
     Diremos que un camino es rectificable, cuando su longitud es finita, es decir, cuando
     \[
-        L(\gamma) < +\infty
+        L(\gamma) < +\infty.
     \]
 \end{defi}
 
@@ -50,13 +50,13 @@
 \begin{proof}
     Como $\gamma$ es lipschitziana, entonces $\exists c \geq 0$ tal que
     \[
-        \norm{\gamma(t) - \gamma(s)} \leq c \abs{t - s} \qquad \forall t,s \in I
+        \norm{\gamma(t) - \gamma(s)} \leq c \abs{t - s} \qquad \forall t,s \in I.
     \]
     Tomamos ahora, una partición $\Pa$ de $I$, entonces, se cumple que
     \begin{gather*}
         L(\gamma, \Pa) = \sum_i \norm{\gamma(t_i) - \gamma(t_{i-1})} \leq \sum_i c \abs{t_i - t_{i-1}} = \\
         = c \sum_i \left( t_i - t_{i-1} \right) \implies L(\gamma, \Pa) \leq c (b - a) \implies
-        L(\gamma) \leq c(b-a) < +\infty
+        L(\gamma) \leq c(b-a) < +\infty.
     \end{gather*}
     (Suponiendo que $I = [a, b]$).
 \end{proof}
@@ -68,7 +68,7 @@
 \begin{prop}
     Sea $\gamma \colon [a, b] \to \real^n$ un camino y sea $a < c < b$, entonces
     \[
-        L(\gamma) = L\left( \gamma\vert_{[a,c]} \right) + L\left( \gamma\vert_{[c,b]} \right)
+        L(\gamma) = L\left( \gamma\vert_{[a,c]} \right) + L\left( \gamma\vert_{[c,b]} \right).
     \]
 \end{prop}
 
@@ -77,27 +77,27 @@
     $\Pa_1 = \Pa^\prime \cap [a,c]$ partición de $[a,c]$ y $\Pa_2 = \Pa^\prime \cap [c, b]$ partición de $[c, b]$.
     Ahora, se tiene que
     \[
-        L(\gamma, \Pa) \leq L(\gamma, \Pa^\prime) = \L\left( \gamma\vert_{[a,c]}, \Pa_1 \right) +
+        L(\gamma, \Pa) \leq L(\gamma, \Pa^\prime) = L\left( \gamma\vert_{[a,c]}, \Pa_1 \right) +
         L\left( \gamma\vert_{[c,b]}, \Pa_2 \right) \leq L\left( \gamma\vert_{[a,c]} \right) +
-        L\left( \gamma\vert_{[c,b]} \right)
+        L\left( \gamma\vert_{[c,b]} \right).
     \]
     Por lo tanto, $L(\gamma) \leq L\left( \gamma\vert_{[a,c]} \right) + L \left( \gamma\vert_{[c,b]} \right)$.
 
     Sea $\Pa_1$ una partició de $[a, c]$ y $\Pa_2$ una partición de $[c, b]$. Definimos $\Pa = \Pa_1 \cup \Pa_2$,
     entonces
     \[
-        L\left( \gamma\vert_{[a,c]}, \Pa_1 \right) + L\left( \gamma\vert_{[c,b]}, \Pa_2 \right) = L(\gamma, \Pa) \leq L(\gamma)
+        L\left( \gamma\vert_{[a,c]}, \Pa_1 \right) + L\left( \gamma\vert_{[c,b]}, \Pa_2 \right) = L(\gamma, \Pa) \leq L(\gamma).
     \]
-    De dode concluimos que
+    De donde concluimos que
     \[
-        L(\gamma) = L\left( \gamma\vert_{[a,c]} \right) + L\left( \gamma\vert_{[c,b]} \right)
+        L(\gamma) = L\left( \gamma\vert_{[a,c]} \right) + L\left( \gamma\vert_{[c,b]} \right).
     \]
 \end{proof}
 
-\begin{prop}[continuidad de la longitud]
+\begin{prop}[Continuidad de la longitud]
     Sea $\gamma \colon [a,b] \to \real^n$ un camino rectificable, para cada $a \leq t \leq b$ definimos
     \[
-        l(t) = L\left( \gamma\vert_{[a,t]} \right) \qquad (l(a) := 0)
+        l(t) = L\left( \gamma\vert_{[a,t]} \right), \qquad (l(a) := 0).
     \]
     Entonces, $l$ es creciente y continua. Si $\gamma$ no es constante en ningún subintervalo de $[a,b]$,
     entonces, $l$ es estrictamente creciente.
@@ -112,7 +112,7 @@
 \end{defi}
 
 \begin{obs*}
-    $\sigma$ y $\tau$ recorren la misma curva, $\im(\sigma) = \im(\tau) = \im(\sigma \circ \varphi)$
+    $\sigma$ y $\tau$ recorren la misma curva, $\im(\sigma) = \im(\tau) = \im(\sigma \circ \varphi)$.
 \end{obs*}
 
 \begin{obs}
@@ -123,7 +123,7 @@
 \begin{prop}
     Si $\sigma$ y $\tau$ son dos caminos equivalentes, tienen la misma longitud
     \[
-        L(\sigma) = L(\tau)
+        L(\sigma) = L(\tau).
     \]
 \end{prop}
 
@@ -134,9 +134,9 @@
     \begin{gather*}
         L(\tau, Q) \stackrel{\text{def}}{=} \sum_i \norm{(\sigma \circ \varphi) \left( t_i \right) - (\sigma \circ \varphi)\left( t_{i-1} \right)}
         = \sum_i \norm{\sigma\left( \varphi(t_i) \right) - \sigma\left( \varphi\left( t_{i-1} \right) \right)} = \\ =
-        L(\sigma, \varphi(Q)) \leq L(\sigma) \stackrel{\text{supremo}}{\implies} L(\sigma \circ \varphi) \leq L(\sigma)
+        L(\sigma, \varphi(Q)) \leq L(\sigma) \stackrel{\text{supremo}}{\implies} L(\sigma \circ \varphi) \leq L(\sigma).
     \end{gather*}
-    Cambiando $\varphi$ por $\inv{\varphi}$, obtenemos $L(\sigma) \leq L(\sigma \circ \varphi)$
+    Cambiando $\varphi$ por $\inv{\varphi}$, obtenemos $L(\sigma) \leq L(\sigma \circ \varphi)$.
 \end{proof}
 
 \begin{prop}
@@ -145,7 +145,7 @@
 
 \begin{proof}
     Consideramos $\sigma \colon [a,b] \to C$ continua (pq $\sigma$ continua en $\real^n$). Ahora, $[a, b]$ compacto $\implies$ C compacto
-    (la imagen de un intervalo cerrado es cerrado) $\implies \sigma$ es un homeomorfismo y $\varphi(t) := \inv{\sigma}\left( \tau(t) \right)$
+    (la imagen de un intervalo cerrado es cerrado) $\implies \sigma$ es un homeomorfismo y $\varphi(t) := \inv{\sigma}\left( \tau(t) \right)$.
 \end{proof}
 
 \begin{obs}
@@ -159,11 +159,11 @@
 \begin{defi*}
     Sea $E \subset \real^m$ un conjunto medible Jordan y $\vec{f} \colon E \to \real^n$, tenemos que
     \[
-        \vec{f} = \left( f_1,\dots, f_n \right)
+        \vec{f} = \left( f_1,\dots, f_n \right).
     \]
     Si todas las $f_i$ son integrables, definimos
     \[
-        \int_E \vec{f} = \left( \int_E f_1 , \dots, \int_E f_n \right) \in \real^n
+        \int_E \vec{f} = \left( \int_E f_1 , \dots, \int_E f_n \right) \in \real^n.
     \]
 \end{defi*}
 
@@ -171,16 +171,16 @@
     Sea $E = [a, b]$ un intervalo y $\vec{f} \colon E \to \real^n$ una función. Si $\vec{f}$ tiene una primitiva $\vec{F}$
     $\left( \vec{F}^\prime = \vec{f}\right)$, entonces
     \[
-        \int^b_a \vec{f} = \vec{F}(b) - \vec{F}(a)
+        \int^b_a \vec{f} = \vec{F}(b) - \vec{F}(a).
     \]
 \end{prop*}
 
 \begin{prop*}
     Sea $\vec{f} \colon E \to \real^n$ una función cualquiera, si $\vec{f}$ es integrable, $\norm{\vec{f}}$ tambi\'en y
     \[
-        \norm{\int_E \vec{f}} \leq \int_E \norm{\vec{f}}
+        \norm{\int_E \vec{f}} \leq \int_E \norm{\vec{f}},
     \]
-    (considerando la norma euclidiana)
+    considerando la norma euclidiana.
 \end{prop*}
 
 \begin{proof}
@@ -191,12 +191,12 @@
     \begin{gather*}
         \vec{a} \cdot \vec{f}(\cdot) \leq \norm{\vec{a}} \norm{\vec{f}(\cdot)} \implies
         \norm{\vec{a}} \int_E \norm{\vec{f}(t)} \dif t \geq \int_E \left( \vec{a} \cdot \vec{f}(t) \right) \dif t = \\ =
-        \int_E \sum^n_{i=1} \left(a_if_i(t) \right) \dif t = \sum_i a_i \overbrace{\int_E f_i(t) \dif t}^{a_i} = \norm{\vec{a}}^2
+        \int_E \sum^n_{i=1} \left(a_if_i(t) \right) \dif t = \sum_i a_i \overbrace{\int_E f_i(t) \dif t}^{a_i} = \norm{\vec{a}}^2.
     \end{gather*}
     Si $\norm{\vec{a}} \neq 0$, tenemos que
     \[
         \norm{\vec{a}} \leq \int_E \norm{\vec{f}(t)} \dif t \implies
-        \norm{\int_E \vec{f}} \leq \int_E \norm{\vec{f}}
+        \norm{\int_E \vec{f}} \leq \int_E \norm{\vec{f}}.
     \]
 \end{proof}
 
@@ -204,9 +204,9 @@
 \begin{prop}
     Si $\gamma \colon I \to \real^n$ es de clase $\C^1$, entonces es rectificable y su longitud es
     \[
-        L(\gamma) = \int_I \norm{\gamma^\prime}
+        L(\gamma) = \int_I \norm{\gamma^\prime},
     \]
-	(Considerando la norma euclidiana)
+	considerando la norma euclidiana.
 \end{prop}
 
 \begin{proof}
