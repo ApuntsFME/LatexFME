@@ -24,7 +24,7 @@
 
 \ci La convergència d'integrals és lineal. \\
 \u{C. Cauchy per a int. impròpies}: $f\colon \left[a, b\right) \to \real. \int_a^b f$ és conv. $\iff \forall \varepsilon > 0, \exists c_0 \in \left[a, b\right) \tq$ si $c_1, c_2 > c_0$, llavors $\abs{\int_{c_1}^{c_2} f} < \varepsilon$. \\
-\ci Podem aplicar els criteris: comp. directa, comp en el límit, Dirichlet ($\exists M>0 \tq$ si $a<c<b,\, \abs{\int_a^c f(x) \text{d}x} \leq M$.
+\ci Podem aplicar els criteris: comp. directa, comp en el límit, Dirichlet ($\exists M>0 \tq$ si $a<c<b,\, \abs{\int_a^c f(x) \dif x} \leq M$.
 
 \section{Integrals a rectangles}
 
@@ -47,7 +47,7 @@
 
 \section{Teorema de Lebesgue}
 
-\ci Sigui $X$ espai mètric, $f\colon X\to \real$, l'oscil·lació de $f$ sobre $E\subset X$ és el diàmetre de $f(E)$: $\omega(f,E) = \sup_{x,y\in E} \text{d}\left( f\left( x \right), f\left( y \right) \right) \in \left[ 0, +\infty \right]$. Finita $\iff f_{|E}$ fitada, $0\iff f_{|E}$ constant. \\
+\ci Sigui $X$ espai mètric, $f\colon X\to \real$, l'oscil·lació de $f$ sobre $E\subset X$ és el diàmetre de $f(E)$: $\omega(f,E) = \sup_{x,y\in E} \dif \left( f\left( x \right), f\left( y \right) \right) \in \left[ 0, +\infty \right]$. Finita $\iff f_{|E}$ fitada, $0\iff f_{|E}$ constant. \\
 \u{Oscil·lació en $a\in X$}: $\omega\left( f,a \right) = \lim_{r\to 0}\omega\left( f, B\left( a;r \right) \right) = \inf_{r>0} \omega\left( f, B\left( a; r \right) \right)$. \\
 \ci $f$ cont. en $a \iff \omega\left( f, a \right) = 0$. \\
 \u{T. Lebesgue}: Sigui $A\subset \real^n$ rectangle compacte, $f\colon A\to \real$ fitada. Llavors $f$ és integrable Riemann $\iff \disc\left( f \right)$ és de mesura nul·la $\iff$ contínua gairebé pertot.
@@ -86,17 +86,59 @@
 \u{T. Fubini}: $A\subset\real^n, B \subset \real^m$ rect. comp., $f\colon A\times B \to \real$ int. Rie.. Sigui $\Phi\colon A\to\real \tq \lowint_B f\left( x,· \right) \leq \Phi\left( x \right) \leq \upint_B f\left( x, · \right)$. Aleshores $\Phi$ int. Rie. i $\int_{A\times B} f = \int_A \Phi,\; \left( A \leftrightarrow B \text{ també}\right)$. \\
 \ci $x \in A \tq f\left( x, · \right)$ no int. Rie. té mesura nul·la. \\
 \ci $D\subset X, f\colon D\to \real$ cont., $E = \left\{ \left( x, y  \right)\in X\times \real | x\in D, y \geq f\left( x \right) \right\}$, llavors ($D\subset X$ tancat $\implies E\subset X\times\real$ tancat) i ($\fr\left( E \right) \subset \graf\left( f \right) \cup \left( \fr\left( D \right)\times \real  \right)$). \\
-\ci $D\subset \real^{n-1}$ comp., m.J., $\varphi, \psi\colon D\to \real$ cont. t.q. $\varphi \leq \psi$, $E = \left\{ \left( x,y \right)\in\real^{n-1}\times \real\;|\; x\in D, \varphi\left( x \right) \leq y \leq \psi\left( x \right) \right\} \subset \real^n$ és compacte i m.J.. (Si $f\colon E\to \real, \int_E f = \int_D \text{d}x\int_{\varphi\left( x \right)}^{\psi\left( x \right)}\text{d}y\, f\left( x, y \right)$). \\
+\ci $D\subset \real^{n-1}$ comp., m.J., $\varphi, \psi\colon D\to \real$ cont. t.q. $\varphi \leq \psi$, $E = \left\{ \left( x,y \right)\in\real^{n-1}\times \real\;|\; x\in D, \varphi\left( x \right) \leq y \leq \psi\left( x \right) \right\} \subset \real^n$ és compacte i m.J.. (Si $f\colon E\to \real, \int_E f = \int_D \dif x\int_{\varphi\left( x \right)}^{\psi\left( x \right)}\dif y\, f\left( x, y \right)$). \\
 \ci $E$ és una regió elemental de $\real^n$ (per $n=1$ és un interval compacte).
 
 \section{Canvi de variables}
 
-\ci Sigui $V\subset\real^n$ obert, $\varphi\colon V\to\real^n$ injectiva, classe $\mathcal{C}^1$ amb $\det \text{D}\varphi\left( y \right) \neq 0, \forall y \in V$. Sigui $U = \varphi\left( V \right) (\varphi\colon V\to U$ difeo. classe $\mathcal{C}^1)$. Si $f\colon U\to \real$ int., $\int_U f = \int_V\left( f \circ \varphi \right)\abs{\det \text{D}\varphi}$.
+\ci Sigui $V\subset\real^n$ obert, $\varphi\colon V\to\real^n$ injectiva, classe $\mathcal{C}^1$ amb $\det \dif \varphi\left( y \right) \neq 0, \forall y \in V$. Sigui $U = \varphi\left( V \right) (\varphi\colon V\to U$ difeo. classe $\mathcal{C}^1)$. Si $f\colon U\to \real$ int., $\int_U f = \int_V\left( f \circ \varphi \right)\abs{\det \dif \varphi}$.
 
 \subsection{Alguns canvis de variables}
-\u{Polars a $\real^2$}: $\int_U f\left( x,y \right) \text{d}x\text{ d}y = \int_V f\left( r\cos\varphi, r\sin\varphi \right)r \text{ d}r\text{ d}\varphi$. \\
-\u{Cilíndriques a $\real^3$}: $\int_U f\left( x,y,z \right) \text{d}x\text{ d}y\text{ d}z = \int_V f\left( \rho\cos\varphi, \rho\sin\varphi, z \right)\rho \text{ d}\rho\text{ d}\varphi\text{ d}z$. \\
-\u{Esfèriques a $\real^3$}: $\int_U f\left( x,y,z \right) \text{d}x\text{ d}y\text{ d}z = \int_V f\left( r\cos\varphi\sin\theta, r\sin\varphi\sin\theta, r\cos\theta \right) r^2\sin\theta \text{ d}r\text{ d}\varphi\text{ d}\theta$.
+\u{Polars a $\real^2$}: $\int_U f\left( x,y \right) \dif x\dif y = \int_V f\left( r\cos\varphi, r\sin\varphi \right)r \dif r\dif \varphi$. \\
+\u{Cilíndriques a $\real^3$}: $\int_U f\left( x,y,z \right) \dif x\dif y\dif z = \int_V f\left( \rho\cos\varphi, \rho\sin\varphi, z \right)\rho \dif \rho\dif \varphi\dif z$. \\
+\u{Esfèriques a $\real^3$}: $\int_U f\left( x,y,z \right) \dif x\dif y\dif z = \int_V f\left( r\cos\varphi\sin\theta, r\sin\varphi\sin\theta, r\cos\theta \right) r^2\sin\theta \dif r\dif \varphi\dif \theta$.
+
+\section{Integrals impròpies}
+
+\u{Integral de Riemann impròpia}: Sigui $\left( E_i \right)$ exhaustió, \'es $\int_E f := \lim_i \int_{E_i} f$ (suposant que no depengui de l'exhaustió). \\
+\ci Si $E$ m.J., $\left( E_i \right)$ exh., $\lim_i \vol\left( E_i \right) = \vol \left( E \right)$, i si $f\colon E\to\real$ int. Rie., $f$ \'es int. Rie. a cada $E_i$ i int. Rie. coincideix amb la int. impròpia. \\
+\ci Siguin $E\subset\real^n, f\colon E\to \real, f \geq 0$, llavors $\lim_i\int_{E_i} f$ no depèn de l'exh. considerada. \\
+\u{Lema ceba}: Sigui $U\subset\real^n$ obert no buit, $\exists (V_i)$ de conj. oberts ms.J., $\overline{V}_i \subset U$ t.q. $\overline{V}_i$ \'es compacte, $\overline{V}_i \subset V_{i+1}, \, \bigcup_i V_i = U$. \\
+
+\section{Camins i long. de corba}
+
+\u{Longitud d'una poligonal}: $L\left( \gamma, \Pa \right) = \sum_{i=0}^N ||\gamma\left( t_i \right) - \gamma\left( t_{i-1} \right)||$. \\
+\u{Longitud d'una corba}: $L\left( \gamma \right) = \sup_\Pa L\left( \gamma, \Pa \right) \in [0, +\infty]$. \\
+\u{Camí rectificable}: Si longitud \'es finita. \\
+\u{Additivitat camí}: $a<c<b \implies L\left( \gamma \right) = L( \gamma_{|\left[ a,c \right]} ) + L( \gamma_{|\left[ c, b \right]} )$. \\
+\ci Sigui $\gamma\colon \left[ a,b \right]\to\real, l(a) = 0$ i $l(t) = L( \gamma_{|\left[ a,t \right]} ), a < t \leq b$. \\
+\ci $l :\left[ a,b \right]\to\real$ \'es creixent i continua. \\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -338,17 +338,17 @@
     (donde $\cdot$ marca el producto escalar euclidiano en $\real^n$)
 \end{defi}
 
-\begin{prop}[invariancia bajo reparametrizaciones]
+\begin{prop}[Invariancia bajo reparametrizaciones]
     Sea $\sigma  \colon I \to \real^n$ un camino, sea $\varphi \colon I \to J$ un difeomorfismo de clase $\C^1$. Consideramos
     el camino reparametrizado $\tau = \sigma \circ \varphi^{-1}$. Entonces, si $\vec{f}$ es una función cualquiera
     \[
-        \int_\tau \vec{f} \dif \vec{l} = \pm \int_\sigma \vec{f} \dif \vec{l}
+        \int_\tau \vec{f} \dif \vec{l} = \pm \int_\sigma \vec{f} \dif \vec{l},
     \]
-    donde el signo depende del signo de $\varphi^\prime$
+    donde el signo depende del signo de $\varphi^\prime$.
 \end{prop}
 
 \begin{proof}
-    Ejercicio
+    Ejercicio.
 \end{proof}
 
 \begin{defi}
@@ -378,45 +378,43 @@
     Sea $C \subset \real^n$ una curva orientada por una parametrización regular inyectiva $\sigma \colon I \to \real^n$. Sea $\vec{f} \colon C \to \real^n$.
     Definimos la integral de línea o circulación de $\vec{f}$ a lo largo de $C$
     \[
-        \int_C \vec{f} \dif \vec{l} = \int_\sigma \vec{f} \dif \vec{l}
+        \int_C \vec{f} \dif \vec{l} = \int_\sigma \vec{f} \dif \vec{l}.
     \]
 \end{defi}
-\begin{obs*}
+\begin{obs}
     Si $C$ es una curva regular orientada y $\sigma$ la parametriza toda excepto un número finito de puntos, tambi\'en escribiremos
     \[
-        \int_C \vec{f} \dif \vec{l} = \int_\sigma \vec{f} \dif \vec{l}
+        \int_C \vec{f} \dif \vec{l} = \int_\sigma \vec{f} \dif \vec{l}.
     \]
-\end{obs*}
-\begin{obs*}
     Si $C$ es unión disjunta de un número finito de curvas como la anterior, igualmente calculamos la circulación al largo de cada una y sumamos.
-\end{obs*}
+\end{obs}
 
 \begin{obs}
     Si $C^\circ$ es la curva $C$ con orientación opuesta, entonces
     \[
-        \int_{C^\circ} \vec{f} \dif \vec{l} = - \int_C \vec{f} \dif \vec{l}
+        \int_{C^\circ} \vec{f} \dif \vec{l} = - \int_C \vec{f} \dif \vec{l}.
     \]
 \end{obs}
 
 \begin{obs}
     Es habitual usar la notación
     \[
-        \int_C \vec{f} \dif \vec{l} =  \int_C \left( f_1 \dif x_1 + \cdots + f_N \dif X_N \right)
+        \int_C \vec{f} \dif \vec{l} =  \int_C \left( f_1 \dif x_1 + \cdots + f_N \dif x_N \right).
     \]
     Si $C$ es cerrada (definición más adelante), usaremos
     \[
-        \oint \vec{f} \dif \vec{l} = \int_C \vec{f} \dif \vec{l}
+        \oint \vec{f} \dif \vec{l} = \int_C \vec{f} \dif \vec{l}.
     \]
 \end{obs}
 
 \begin{prop}
-    Sea $C \subset \real^n$ una curva regular orientada, si $p \in C$. Respecto al producto escalar estándar de $\real^n$, el
+    Sea $C \subset \real^n$ una curva regular orientada, $p \in C$. Respecto al producto escalar estándar de $\real^n$, el
     espacio tangente $T_pC$ tiene un único vector tangente \emph{unitario} $\vec{t}(p)$ perteneciente a la orientación de $C$. Es
     el vector tangente unitario a $C$ en $p$.
 
     Si $\sigma \colon I \to \real^n$ es una parametrización regular inyectiva correspondiente a la orientación de $C$, entonces
     \[
-        \vec{t}\left( \sigma(s) \right) = \frac{\sigma^\prime(s)}{\norm{\sigma^\prime(s)}} \in T_{\sigma(s)}C
+        \vec{t}\left( \sigma(s) \right) = \frac{\sigma^\prime(s)}{\norm{\sigma^\prime(s)}} \in T_{\sigma(s)}C.
     \]
 \end{prop}
 \begin{obs*}
@@ -427,7 +425,7 @@
     Sea $C \subset \real^n$ una curva y $\vec{f} \colon C \to \real^n$ un campo vectorial. Llamamos componente tangencial de $\vec{f}$ a
     la función
     \[
-        f_t = \vec{f} \cdot \vec{t}
+        f_t = \vec{f} \cdot \vec{t},
     \]
     ($f_t \colon C \to \real$).
 \end{defi}
@@ -436,14 +434,14 @@
     Si $E$ es un e.v. euclidiano y $F \subseteq E$, $E = F \oplus F^\perp$. Si $F = <u_1, \dots, u_r>$, $\Pi_F(x) = <x,u_1>u_1 + \cdots + <x,u_r>u_r$, lo
     que quiere decir que
     \[
-        \real^n = T_pC \oplus T_pC^\perp \quad \text{y} \quad \underbrace{\left< \vec{f}(p), \vec{t}(p) \right>}_{f_t(p)}\vec{t}(p)
+        \real^n = T_pC \oplus T_pC^\perp \quad \text{y} \quad \underbrace{\left< \vec{f}(p), \vec{t}(p) \right>}_{f_t(p)}\vec{t}(p).
     \]
 \end{obs*}
 
 \begin{prop}
     Bajo las condiciones anteriores,
     \[
-        \int_C \vec{f} \dif \vec{l} = \int_C f_T \dif l
+        \int_C \vec{f} \dif \vec{l} = \int_C f_t \dif l.
     \]
 \end{prop}
 
@@ -452,7 +450,7 @@
         \int_C \vec{f} \dif \vec{l} = \int_\sigma \vec{f} \dif \vec{l} = \int_I \vec{f}\left( \sigma(s) \right)\sigma^\prime(s) \dif s =
         \int_I \underbrace{\vec{f}\left( \sigma(s) \right) \overbrace{\frac{\sigma^\prime(s)}{\norm{\sigma^\prime(s)}}}^{\vec{t}\left( \sigma(s) \right)}}_
         {f_t\left( \sigma(s) \right)} \norm{\sigma^\prime(s)} \dif s = \\ = \int_I f_t\left( \sigma(s) \right) \norm{\sigma^\prime(s)} \dif s =
-        \int_\sigma f_t \dif s = \int_C f_t \dif l
+        \int_\sigma f_t \dif s = \int_C f_t \dif l.
     \end{gather*}
 \end{proof}
 
@@ -460,7 +458,7 @@
     En $\real^2$ consideramos $C \colon y = x^3$ desde (1,1) a (2,8) y $\vec{F}(x, y) = \left( 6x^3y, 10xy^2 \right)$. Consideramos
     la parametrización $\gamma(x) = x,x^3$ para $x \in [1,2]$, entonces
     \[
-        \int_C \vec{F} \dif \vec{l} = \cdots = 1132
+        \int_C \vec{F} \dif \vec{l} = \cdots = 1132.
     \]
 \end{example*}
 
@@ -476,7 +474,7 @@
         \end{pmatrix}
     \]
     Diremos que $\sigma$ es regular cuando $\rg(J_\sigma) = 2$ en todos los puntos. Esto, es equivalente a que $\vec{T_1}$ y $\vec{T_2}$ sean
-    l.i. que ocurre sii la matriz de Gram
+    linealmente independientes que ocurre si y solo si la matriz de Gram
     \[
         G = 
         \begin{pmatrix}
@@ -484,14 +482,14 @@
             <\vec{T_2}, \vec{T_1}> & <\vec{T_2}, \vec{T_2}>
         \end{pmatrix}
     \]
-    sea invertible en todo punto, representaremos por $g := \det G$.
+    es invertible en todo punto. Representaremos por $g := \det G$.
 \end{defi}
 
 \begin{defi}
     Sea $M$ una superficie parametrizada por $\sigma$ y sea $f \colon M \subset \real^n \to \real$, definimos la integral de superficie de $f$
     sobre/a lo largo de $\sigma$ como
     \[
-        \int_\sigma f \dif S := \int_U f\left( \sigma(w) \right) \sqrt{\det G(w)} \dif w_1 \dif w_2
+        \int_\sigma f \dif S := \int_U f\left( \sigma(w) \right) \sqrt{\det G(w)} \dif w_1 \dif w_2.
     \]
 \end{defi}
 
@@ -507,19 +505,19 @@
     Sean $\varphi \colon U \to \widetilde{U}$ difeomorfismo de clase $\C^1$, $\sigma \colon U \to \real^n$ una superficie parametrizada.
     Consideramos $\widetilde{\sigma} := \sigma \circ \inv{\varphi} \colon \widetilde{U} \to \real^n$, entonces
     \[
-        \int_{\widetilde{\sigma}} f \dif S = \int_\sigma f \dif S
+        \int_{\widetilde{\sigma}} f \dif S = \int_\sigma f \dif S.
     \]
 \end{lema}
 
 \begin{obs*}
-    Eso quiere decir que la integral de superficie no está referida a la parametrización, sino al objeto parametrizado
+    Eso quiere decir que la integral de superficie no está referida a la parametrización, sino al objeto parametrizado.
 \end{obs*}
 
 \begin{defi}
     Sea $M \subseteq \real^n$ una superficie regular. Si $M$ es la imagen de una parametrización regular inyectiva $\sigma \colon U \to \real^n$,
     denominamos integral de superficie de una función $f$ sobre $M$ a
     \[
-        \int_M f \dif S := \int_\sigma f \dif S
+        \int_M f \dif S := \int_\sigma f \dif S.
     \]
 \end{defi}
 
@@ -531,28 +529,28 @@
     Si $M$ es, a parte de un conjunto ``negligible'' (unión finita de puntos y curvas regulares conexas), la imagen de una parametrización regular inyectiva,
     definimos igualmente
     \[
-        \int_M f \dif S = \int_\sigma f \dif S
+        \int_M f \dif S = \int_\sigma f \dif S.
     \]
 \end{obs}
 
 \begin{obs*}
     Si $M$ es unión finita disjunta de superficies como las de la observación \ref{obs:anterior_a}, calculamos
     \[
-        \int_M f \dif S = \sum_i \int_{M_i} f \dif S
+        \int_M f \dif S = \sum_i \int_{M_i} f \dif S.
     \]
 \end{obs*}
 
 \begin{defi}
     Definimos el area de $M$ (una superficie regular) como
     \[
-        \text{area}(M) := \int_M \dif S
+        \text{area}(M) := \int_M \dif S.
     \]
 \end{defi}
 
 \begin{lema}
     Sea $\sigma \colon U \to \real^3$ una superficie parametrizada. Entonces
     \[
-        \int_\sigma f \dif S = \int_U f\left( \sigma(w) \right) \norm{\vec{T_1} \times \vec{T_2}} \dif w_1 \dif w_2
+        \int_\sigma f \dif S = \int_U f\left( \sigma(w) \right) \norm{\vec{T_1} \times \vec{T_2}} \dif w_1 \dif w_2.
     \]
 \end{lema}
 
@@ -560,14 +558,14 @@
     \[
         \determinant{\vec{T_1}\cdot \vec{T_1} & \vec{T_1} \cdot \vec{T_2} \\ \vec{T_2}\cdot\vec{T_1} & \vec{T_2}\cdot\vec{T_2}} =
         \norm{\vec{T_1}}^2 \norm{\vec{T_2}}^2 - \norm{\vec{T_1}}^2\norm{\vec{T_2}}^2 \cos^2 \theta = \norm{\vec{T_1}}^2\norm{\vec{T_2}}^2 \sin^2 \theta
-        = \norm{\vec{T_1} \times \vec{T_2}}^2
+        = \norm{\vec{T_1} \times \vec{T_2}}^2.
     \]
 \end{proof}
 
 \begin{example*}
     Consideramos $M: x^2 + y^2 + z^2 = R^2$ una esfera en $\real^3$. Vamos a calcular su área. Consideramos la parametrización
     \[
-        \sigma(\theta, \phi) = \left( R \cos \phi \sin \theta, R \sin\phi \sin \theta, R \cos \theta \right)
+        \sigma(\theta, \phi) = \left( R \cos \phi \sin \theta, R \sin\phi \sin \theta, R \cos \theta \right),
     \]
     definida sobre $U = (0,\pi) \times (0,2\pi)$, entoces
     \[
@@ -576,7 +574,7 @@
             R \cos \phi \cos \theta & - R \sin\phi\sin\theta \\
             R \sin \phi \cos \theta & R \cos\phi\sin\theta \\
             -R\sin\theta & 0
-        \end{pmatrix}
+        \end{pmatrix},
     \]
     \[
         G =
@@ -584,11 +582,11 @@
             R^2 & 0 \\ 0 & R^2 \sin^2\theta
         \end{pmatrix}
         \qquad
-        g = \sqrt{\det G} = R^2 \abs{\sin \theta} \stackrel{\theta \in (0,\pi)}{=} R^2 \sin \theta
+        g = \sqrt{\det G} = R^2 \abs{\sin \theta} \stackrel{\theta \in (0,\pi)}{=} R^2 \sin \theta,
     \]
     \begin{gather*}
         \text{Área}(M) = \int_M \dif S = \int_\sigma \dif S = \int_U R^2 \sin \theta \dif \theta \dif \phi = R^2 \int^{2\pi}_0 \dif\phi \int^\pi_0 \sin \theta \dif \theta = \\
-        = R^2 2\pi \left( \left[ -\cos\theta \right]^\pi_0 \right) = 4\pi R^2
+        = R^2 2\pi \left( \left[ -\cos\theta \right]^\pi_0 \right) = 4\pi R^2.
     \end{gather*}
 \end{example*}
 
@@ -600,7 +598,7 @@
     Sea $\vec{f} \colon M \to \real^3$ un campo vectorial a lo largo de $M$. Denominamos integral de superficie de $\vec{f}$
     sobre $\sigma$ (o el flujo de $\vec{f}$ a trav\'es de $\sigma$) a
     \[
-        \int_\sigma \vec{f} \dif \vec{S} := \int_U \vec{f}\left( \sigma(u) \right) \left( \vec{T_1} \times \vec{T_2} \right) \dif u_1 \dif u_2
+        \int_\sigma \vec{f} \dif \vec{S} := \int_U \vec{f}\left( \sigma(u) \right) \left( \vec{T_1} \times \vec{T_2} \right) \dif u_1 \dif u_2.
     \]
 \end{defi}
 
@@ -613,7 +611,7 @@
     Sea $\varphi \colon U \to \widetilde{U}$ un difeomorfismo entre abiertos conexos de $\real^2$, $\sigma \colon U \to \real^3$ una superficie
     parametrizada regular y sea $\widetilde{\sigma} = \sigma \circ \varphi^{-1}$ su reparametrización. Entonces
     \[
-        \int_{\widetilde{\sigma}} \vec{f} \dif \vec{S} = \pm \int_\sigma \vec{f} \dif \vec{S}
+        \int_{\widetilde{\sigma}} \vec{f} \dif \vec{S} = \pm \int_\sigma \vec{f} \dif \vec{S}.
     \]
     Donde el signo es el mismo que el de $\det J_\varphi$.
 \end{lema}
@@ -656,30 +654,29 @@
     correspondiente a la orientación de $M$. Sea $\vec{f} \colon M \to \real^3$ un campo vectorial. La integral de superficie, o flujo de $\vec{f}$
     a trav\'es de $M$ es
     \[
-        \int_M \vec{f} \dif \vec{S} := \int_\sigma \vec{f} \dif \vec{S}
+        \int_M \vec{f} \dif \vec{S} := \int_\sigma \vec{f} \dif \vec{S}.
     \]
 \end{defi}
 
 \begin{obs}
     Si $M$ es, salvo un conjunto ``negligible'' de puntos, la imagen de una parametrización de estas, tambi\'en definimos el flujo como
     \[
-        \int_M \vec{f} \dif \vec{S} := \int_\sigma \vec{f} \dif \vec{S}
+        \int_M \vec{f} \dif \vec{S} := \int_\sigma \vec{f} \dif \vec{S}.
     \]
-
     Si $M$ es unión disjunta de un número finito de superficies como la anterior, el flujo se calcula para cada una y se suma.
 \end{obs}
 
 \begin{obs}
     Si $M^\circ$ es $M$ con la orientación opuesta,
     \[
-        \int_{M^\circ} \vec{f} \dif \vec{S} = - \int_M \vec{f} \dif \vec{S}
+        \int_{M^\circ} \vec{f} \dif \vec{S} = - \int_M \vec{f} \dif \vec{S}.
     \]
 \end{obs}
 
 \begin{obs}
     Si $M$ es cerrada, a veces, se escribe
     \[
-        \oint_M \vec{f} \dif \vec{S} = \int_M \vec{f} \dif \vec{S}
+        \oint_M \vec{f} \dif \vec{S} = \int_M \vec{f} \dif \vec{S}.
     \]
 \end{obs}
 
@@ -693,7 +690,7 @@
 \begin{obs}
     Si $M$ está parametrizada por $\sigma \colon U \to \real^3$, entonces
     \[
-        \vec{n} \left( \sigma(u) \right) = \frac{\vec{T_1} \times \vec{T_2}}{\norm{\vec{T_1} \times \vec{T_2}}}
+        \vec{n} \left( \sigma(u) \right) = \frac{\vec{T_1} \times \vec{T_2}}{\norm{\vec{T_1} \times \vec{T_2}}}.
     \]
     Orientar una superficie en $\real^3$ equivale a hacer una elección continua de un vector normal unitario sobre $M$.
 
@@ -703,7 +700,7 @@
 \begin{defi}
     Sea $\vec{f} \colon M \to \real^3$ un campo vectorial. La componente normal de $\vec{f}$ sobre $M$ es 
     \[
-        f_n = \vec{f} \cdot \vec{n}
+        f_n = \vec{f} \cdot \vec{n},
     \]
     donde $\vec{n}$ es el vector normal unitario de $M$.
 \end{defi}
@@ -711,7 +708,7 @@
 \begin{prop}
     Bajo las condiciones anteriores,
     \[
-        \int_M \vec{f} \dif \vec{S} = \int_M f_n \dif S
+        \int_M \vec{f} \dif \vec{S} = \int_M f_n \dif S.
     \]
 \end{prop}
 
@@ -719,7 +716,7 @@
     \[
         \int_M \vec{f} \dif \vec{S} = \int_U \underbrace{\vec{f}\left( \sigma(u) \right) \overbrace{\frac{\vec{T_1} \times \vec{T_2}}{\norm{\vec{T_1} \times \vec{T_2}}}}^
         {\vec{n}}}_{f_n\left( \sigma(u) \right)} \norm{\vec{T_1} \times \vec{T_2}} \dif u_1 \dif u_2 = \int_\sigma f_n\left( \sigma(u) \right) \dif S =
-        \int_M f_n \dif S
+        \int_M f_n \dif S.
     \]
 \end{proof}
 
@@ -731,7 +728,7 @@
     \[
         \begin{aligned}
             \sigma \colon U &\to \real^3 \\
-            (\theta, \phi) &\mapsto \left( R \cos \phi \sin \theta, R\sin \phi \sin \theta, R\cos \theta \right)
+            (\theta, \phi) &\mapsto \left( R \cos \phi \sin \theta, R\sin \phi \sin \theta, R\cos \theta \right).
         \end{aligned}
     \]
     Entonces, $J_\sigma = \begin{pmatrix} \vec{T_\theta} & \vec{T_\phi} \end{pmatrix}$ y
@@ -740,23 +737,23 @@
         \begin{pmatrix}
             \cos\phi\sin\theta \\ \sin\phi\sin\theta \\ \cos\theta
         \end{pmatrix} \qquad
-        \vec{T_\theta} \times \vec{T_\phi} = R \sin\theta \sigma(\theta, \phi)
+        \vec{T_\theta} \times \vec{T_\phi} = R \sin\theta \sigma(\theta, \phi).
     \]
     Como apunta ``hacia afuera'', 
     \begin{gather*}
         \int_M \vec{f} \dif \vec{S} = \textbf{+} \int_\sigma \vec{f} \dif \vec{S} = 
         \int_U \vec{f} \left( \sigma(\theta, \phi)\right) \left( \vec{T_\theta} \times \vec{T_\phi} \right) \dif \theta \dif \phi =
         \int_U R^{\alpha+3} \sin \theta \dif \theta \dif \phi =\\= R^{\alpha+3} \underbrace{\int^{2\pi}_0 \dif \phi}_{2\pi}
-        \underbrace{ \int^\pi_0 \dif \theta \sin \theta }_{2} = 4\pi R^{\alpha+3}
+        \underbrace{ \int^\pi_0 \dif \theta \sin \theta }_{2} = 4\pi R^{\alpha+3}.
     \end{gather*}
 
     Por otro lado, $\vec{n} = \left. \frac{\vec{r}}{r} \right\vert$
     \[
-        f_n = \vec{f} \cdot \vec{n} = r^{\alpha} \vec{r} \cdot \left.\frac{\vec{r}}{r}\right\vert = \left. r^{alpha+1}\right\vert = R^{\alpha+1}
+        f_n = \vec{f} \cdot \vec{n} = r^{\alpha} \vec{r} \cdot \left.\frac{\vec{r}}{r}\right\vert = \left. r^{alpha+1}\right\vert = R^{\alpha+1}.
     \]
     Ahora, simplemente
     \[
-        \int_M \vec{f} \dif \vec{S} = \int_M f_n \dif S = R^{\alpha+1} \underbrace{\int_M \dif M}_{\text{Área}(M) = 4\pi R^2} = 4\pi R^{\alpha+3}
+        \int_M \vec{f} \dif \vec{S} = \int_M f_n \dif S = R^{\alpha+1} \underbrace{\int_M \dif M}_{\text{Área}(M) = 4\pi R^2} = 4\pi R^{\alpha+3}.
     \]
 \end{example*}
 
