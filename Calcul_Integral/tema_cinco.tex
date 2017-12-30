@@ -271,7 +271,7 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
     En particular, tenemos
     \[
         F^\ast \left( \dif y^j \right) = \dif F^\ast\left( y^j \right) =
-        \sum_i = \frac{\partial F^\ast\left( y^j \right)}{\partial x^i} \dif x^i
+        \sum_i \frac{\partial F^\ast\left( y^j \right)}{\partial x^i} \dif x^i
     \]
     Donde podemos observar la aparición de la jacobiana de $F$
     \[
@@ -412,9 +412,9 @@ subvariedades
 \begin{defi}
     En el dominio $V$ de una carta, una 1-forma diferencial $\theta$ se expresa de manera única como
     \[
-        \theta \vert_V = \sum^m_{i=!} a_i \dif x^i
+        \theta \vert_V = \sum^m_{i=1} a_i \dif x^i
     \]
-    donde $a_i \colon V \to \real$ son los componenetes de $\theta$ en la carta.
+    donde $a_i \colon V \to \real$ son los componentes de $\theta$ en la carta.
 
     Diremos que $\theta$ es de clase $\C^\infty$ cunado sus componentes son de clase $\C^\infty$.
 \end{defi}
@@ -452,7 +452,7 @@ El resto de este tema tampoco se ha realizado en clase, ante cualquier duda o cu
 \end{defi}
 
 \begin{defi}
-    Una orientación de una variedad orientable viene dada por la elleción de un atlas orientado. Una variedad orientada es una variedad
+    Una orientación de una variedad orientable viene dada por la eleción de un atlas orientado. Una variedad orientada es una variedad
     orientable en la cual se ha elegido una orientación.
 \end{defi}
 
