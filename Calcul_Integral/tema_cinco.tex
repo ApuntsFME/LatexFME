@@ -10,13 +10,13 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
     \[
         \dif x^i \wedge \dif x^i = 0
         \qquad
-        \dif x^i \wedge \dif x^j = -\dif x^j \wedge x^i \quad (i \neq j)
+        \dif x^i \wedge \dif x^j = -\dif x^j \wedge \dif x^i \quad (i \neq j)
     \]
     Así pues, tenemos $\Omega^\bullet = \bigoplus\limits^{n}_{r = 0} \Omega^r$, donde estos subespacios tienen dimensión y bases
     \begin{itemize}
         \item $\dim \Omega^0 = 1$, base 1
         \item $\dim \Omega^1 = n$, base $\left( \dif x^i \right)_{1 \leq i \leq n}$
-        \item $\dim \Omega^2 = \binom{n}{2}$, base $\left( \dif x^i \wedge \dif x^j \right)_{i < j}$
+        \item $\dim \Omega^2 = \binom{n}{2}$, base $\left( \dif x^i \wedge \dif x^j \right)_{\forall i < j}$
         \item $\vdots$
         \item $\dim \Omega^{n-1} = n$, base $\left( \dif x^1 \wedge \cdots \wedge \dif x^{i-1} \wedge \dif x^{i+1} \wedge \cdots \wedge \dif x^n \right)_i$
         \item $\dim \Omega^n = 1$, base $\dif x^1 \wedge \cdots \wedge \dif x^n$.
@@ -37,7 +37,7 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
     \]
     Donde $f_I \in \C^{\infty}\left( \real^n \right)$ e $I$ es un multiíndice. Tambi\'en tenemos la gradución de $\Omega^\bullet \left( \real^n \right)$
     \[
-        \Omega^\bullet \left( \real^n \right) = \bigoplus^n_{k=0} \Omega^k \left( \real^n \right) \qquad \text{donde}
+        \Omega^\bullet \left( \real^n \right) = \bigoplus^n_{k=0} \Omega^k \left( \real^n \right) \qquad \text{donde }
         \Omega^k \left( \real^n \right) = \C^\infty \left( \real^n \right) \otimes \Omega^k
     \]
     son las formas diferenciales de grado $k$ ($k$-forma diferencial). Así, podemos escribir
@@ -45,7 +45,7 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
         \omega = \omega_0 + \omega_1 + \cdots + \omega_n
     \]
 
-    Los elementos de $\Omega^n\left( \real^n \right)$ se denominan por abuso del lenguaje, ``formas diferenciales de grado máximo''. Si
+    Los elementos de $\Omega^n\left( \real^n \right)$ se denominan por abuso del lenguaje ``formas diferenciales de grado máximo''. Si
     $\omega \in \Omega^k \left( \real^n \right)$, escribiremos $\abs{\omega} := k$.
 \end{defi}
 
@@ -54,12 +54,12 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
     el producto exterior de dos formas diferenciales se calcula según la distributividad respecto de la suma, y con la regla
     \[
         \left( f \dif x^{i_1} \wedge \cdots \wedge \dif x^{i_k} \right) \wedge \left( g \dif x^{j_1} \wedge \cdots \wedge \dif x^{j_l} \right) =
-        fg \dif x^{i_1} \wedge \cdots \wedge \dif x^{i_k} \wedge \dif x^{j_1} \wedge \cdots \wedge x^{j_l}
+        fg \dif x^{i_1} \wedge \cdots \wedge \dif x^{i_k} \wedge \dif x^{j_1} \wedge \cdots \wedge \dif x^{j_l}
     \]
 \end{defi}
 
 \begin{prop}
-    El producto exterior en $\Omega^\bullet \left( \real^n \right)$ tiene elemento neutro (la función constante igual a 1), es asociativo
+    El producto exterior en $\Omega^\bullet \left( \real^n \right)$ tiene elemento neutro (la función constante igual a 1) y es asociativo
     y anticonmutativo: si $\alpha$ y $\beta$ son formas diferenciales de grados $\abs{\alpha}$ y $\abs{\beta}$, entonces
     \[
         \beta \wedge \alpha = (-1)^{\abs{\alpha}\abs{\beta}} \alpha \wedge \beta
@@ -74,7 +74,7 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
    \[
        \dif f := \sum^n_{i=1} \frac{\partial f}{\partial x^i} \dif x^i
    \]
-   donde $\frac{\partial f}{\partial x^i}$ representa la derivada parcial $\Dif_i f$ de $f$ respecto a la variable $i$-\'esima.
+   donde $\frac{\partial f}{\partial x^i}$ representa la derivada parcial de $f$ respecto a la variable $i$-\'esima.
 \end{defi}
 
 \begin{obs}
@@ -85,12 +85,10 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
 \begin{defi}
     La diferencial actuando sobre funciones se puede extender a una aplicación $\real$-lineal, denominada \emph{diferencial exterior} y definida
     de la manera siguiente
-    \[
-        \begin{aligned}
-            \dif \colon \Omega^\bullet \left( \real^n \right) &\to \Omega^\bullet \left( \real^n \right)\\
+        \begin{align*}
+            \dif \colon \Omega^\bullet \left( \real^n \right) &\to \Omega^\bullet \left( \real^n \right) \\
             f \dif x^I &\mapsto \dif\left( f \dif x^I \right) := \dif f \wedge \dif x^I
-        \end{aligned}
-    \]
+        \end{align*}
 \end{defi}
 
 \begin{obs*}
@@ -112,7 +110,7 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
         \dif \left( f_1 \dif x + f_2 \dif y + f_3 \dif z \right) = \cdots = \\ = \left( \pdv{f_3}{y} - \pdv{f_2}{x} \right)\dif y \wedge \dif z +
         \left( \pdv{f_1}{z} - \pdv{f_3}{x} \right) \dif z \wedge \dif x + \left( \pdv{f_2}{x} - \pdv{f_1}{y} \right)\dif x \wedge \dif y \\
         \dif \left( g_1 \dif y \wedge \dif z +  g_2 \dif z \wedge \dif x + g_3 \dif x \wedge \dif y \right) = \cdots =
-        \left( \pdv{g1}{x} + \pdv{g_2}{y} + \pdv{g_3}{z} \right) \dif x \wedge \dif y \wedge \dif z
+        \left( \pdv{g_1}{x} + \pdv{g_2}{y} + \pdv{g_3}{z} \right) \dif x \wedge \dif y \wedge \dif z
     \end{gather*}
 \end{example*}
 
@@ -125,7 +123,7 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
 \end{obs}
 
 \begin{prop}\label{prop:d-cuadrado}
-    $\dif \circ \dif = 0$
+    Sea $\dif \colon \Omega^\bullet \left( \real^n \right) \to \Omega^\bullet \left( \real^n \right)$ la diferencial exterior. Entonces tenemos que $\dif \circ \dif = 0$
 \end{prop}
 \begin{proof}
     Basta demostrarlo para
