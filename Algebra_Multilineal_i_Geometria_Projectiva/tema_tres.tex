@@ -21,11 +21,11 @@
     $[\varphi] = [\psi] \iff \exists \lambda \neq 0$ tal que $\psi = \lambda \varphi$.
 \end{obs}
 \begin{proof}
-    $\impliedby$ \\
+    $\bimpliedby$ \\
     $\exists \lambda \neq 0$ tal que $\psi = \lambda\varphi$, sea $p = [v]$, 
     $[\psi](p) = [\psi(v)] = [\lambda\varphi(v)] = [\varphi(v)] = [\varphi](p), 
     \forall p \implies [\psi] = [\varphi].$ \\ \\
-    $\implies$ \\
+    $\bimplies$ \\
     Sean $u, v \in \E$ linealmente independientes, y sean $p = [u], q = [v]$. 
     Entonces, como $[\varphi(u)] = [\psi(u)]$ y $[\varphi(v)] = [\psi(v)]$,
     \begin{gather*}
@@ -42,7 +42,7 @@
     Ahora bien, $\varphi(u)$ y $\varphi(v)$ son linealmente independientes puesto que
     $u$ y $v$ lo son y $\varphi$ preserva la independencia lineal por ser biyectiva.
     Con lo cual podemos afirmar que $ \lambda_1 = \lambda_2 = 
-    \lambda_3 =: \lambda \neq 0.$ Entonces
+    \lambda_3 =: \lambda \neq 0.$ Entonces,
     \[
         \psi(u) = \lambda \varphi(u), \forall u \in \E \implies \exists 
         \lambda \neq 0 \text{ tal que } \psi = \lambda \varphi.
@@ -55,7 +55,7 @@
         \begin{itemize}
             \item $\Id_\Po = [\Id_\E]$ es una proyectividad.
             \item $f, g$ proyectividades $\implies g \circ f$ proyectividad y $[\psi] \circ [\varphi] = [\psi \circ \varphi]$.
-            \item $f = [\varphi]$ proyectividad $\implies f^{-1}$ proyectividad y $f^{-1} = [\varphi^{-1}]$.
+            \item $f = [\varphi]$ proyectividad $\implies f^{-1}$ proyectividad y $[\varphi]^{-1} = [\varphi^{-1}]$.
         \end{itemize}
         \item Relación con variedades lineales \\
         Sea $f = [\varphi] : \Po \to \overline{\Po}$,
