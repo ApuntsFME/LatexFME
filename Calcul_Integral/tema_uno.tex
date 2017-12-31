@@ -575,7 +575,7 @@
         Si $\sum \abs{a_n}$ converge $\implies \sum p_n$ y $\sum q_n$ tienen el mismo carácter,
             como ambas son series de términos positivos, $\sum a_n$ y $\sum b_n$ convergen.
 
-            El reciproco es directo por linealidad.
+            El recíproco es directo por linealidad.
         \item Se tiene que
             \[
                 \sum_{k=0}^n a_k = \sum_{k=0}^n p_k - \sum_{k=0}^n q_k.
@@ -823,7 +823,7 @@ destaca el criterio de Dirichlet.
 \begin{prop*}
     Sea $D$ un intervalo abierto tal que $0 \in D$ y sea $f \colon D \to \real$
     de clase $\C^\infty$. Suponemos que la serie de Taylor de $f$ tiene radio
-    de convergencia $R > 0$. Recordando la formula de Taylor $f(x) = P_n(x) + R_n(x)$
+    de convergencia $R > 0$. Recordando la fórmula de Taylor $f(x) = P_n(x) + R_n(x)$
     (donde $P_n$ es el polinomio de Taylor de grado $\leq n$ de $f$ en 0, y $R_n$
     el correspondiente residuo de Taylor), por tanto en $D \cap (-R,R)$,
     \[
@@ -990,13 +990,13 @@ destaca el criterio de Dirichlet.
         \int^b_a f := \int^c_a f + \int^b_c f = \lim_{M \to a^+} \int^c_M +
         \lim_{N \to b^-} \int^N_c f
     \]
-    y estudiar las dos integrales imporopias. Si las dos convergentes, una
-    convergente y la otra divergente o las dos son divergentes con el mismo
-    signo, entonces se define la integral imporpia del primer miembro como la
+    y estudiar las dos integrales impropias. Si las dos son convergentes, una
+    es convergente y la otra divergente o las dos son divergentes con el mismo
+    signo, entonces se define la integral impropia del primer miembro como la
     suma de las dos del segundo miembro.
 \end{defi}
 \begin{obs*}
-    Mas generalmente, podemos considerar una función localmente integrable definida
+    Más generalmente, podemos considerar una función localmente integrable definida
     en un dominio $D$ que sea unión finita y disjunta de intervalos. Entonces,
     definimos $\int_D f$ como la suma de las integrales sobre estos intervalos,
     suponiendo que sean convergentes.
@@ -1011,12 +1011,12 @@ destaca el criterio de Dirichlet.
 \end{prop}
 
 \begin{obs*}
-    Así, la notación introducida para las integrales impropias, no produce ningún
+    Así, la notación introducida para las integrales impropias no produce ningún
     conflicto con la notación habitual definida para integrales ``propias’’.
 \end{obs*}
 
 \begin{example}
-    Algunos ejemplos de integrales inportantes son
+    Algunos ejemplos de integrales importantes son
     \begin{itemize}
         \item $\displaystyle \int^{+\infty}_1 \frac{\dif x}{x^\alpha}$. Es
             convergente si y solo si $\alpha > 1$ $\left(\text{y vale }
@@ -1038,7 +1038,7 @@ destaca el criterio de Dirichlet.
             \]
         \item $\displaystyle \int^1_0 \frac{\dif x}{x^\alpha}$. Es convergente
             si y solo si $\alpha < 1$ $\left(\text{y vale } \frac{1}{1-\alpha
-            }\right)$. Y es dievergente si $\alpha \geq 1$.
+            }\right)$. Y es divergente si $\alpha \geq 1$.
 
             Podemos observar que
             \[
@@ -1086,7 +1086,7 @@ destaca el criterio de Dirichlet.
 
 \begin{obs}
     Las reglas de cálculo de integrales se aplican a las integrales impropias
-    teniendo en cuenta quee hay que aplicar un límite. Explicitamos algunas.
+    teniendo en cuenta que hay que aplicar un límite. Explicitamos algunas.
 \end{obs}
 
 \begin{prop}[Linealidad]
@@ -1311,5 +1311,5 @@ Es consecuencia del criterio de Cauchy aplicado a la función
         \int^{+\infty}_1 \frac{\sin(2x)}{x^2} \dif x = +\infty.
     \end{gather*}
     Ya que la segunda integral es absolutamente convergente (por la misma razón que
-    lo era $\int^{+\infty}_1 \frac{\cos x}{x}$).
+    lo era $\int^{+\infty}_1 \frac{\cos x}{x^2}$).
 \end{example*}
