@@ -579,6 +579,7 @@
     Por tanto, $b \in A$ i B$\lp a, \delta \rp \subset A \implies a$ es un punto interior de $A \implies A$ es abierto.
 \end{proof}
 \begin{col*}
+    \label{col:lebesgue}
     Si $X$ es compacto, $\{x \in X | \omega \lp f, x \rp \geq c\}$ es compacto.
 \end{col*}
 \begin{proof}
@@ -593,15 +594,15 @@
     donde $x_{i^-}, x_{i^+}$ son los extremos inferiores y superiores (respectivamente) de $T_i$. Por construcción, $R \subseteq T_i$.
 \end{proof}
 \begin{lema*}\label{lema:uno_lebesgue}
-    Sea $A \subseteq \real^n$ rectángulo compacto, $f : A \to \real, f$ fitada. Suposem $\forall x  \in A, \omega \lp f, x \rp < \varepsilon$. Entonces existe una partición $\Pa$ de $A \tq S \lp f, \Pa \rp - s \lp f, \Pa \rp < \varepsilon \vol \lp A \rp$.
+    Sea $A \subseteq \real^n$ rectángulo compacto, $f : A \to \real, f$ fitada. Suponemos $\forall x  \in A, \omega \lp f, x \rp < \varepsilon$. Entonces existe una partición $\Pa$ de $A \tq S \lp f, \Pa \rp - s \lp f, \Pa \rp < \varepsilon \vol \lp A \rp$.
 \end{lema*}
 \begin{proof}
     Sea $x \in A$, existe un rectángulo compacto $R_x \subset A \tq x \in \mathring{R}_x$ (interior relativo a $A$) i $\omega \lp f, R_x \rp = M_{R_x} - m_{R_x} < \varepsilon$. \\
-    Sean $R_{x_i}$ un conjunto finito de los $R_x$ que recubren $A$. Sea $\Pa$ una partición de $A \tq$ cada subrectángulo de $\Pa$ esté dentro de uno de los $R_{x_i}$, para cada cada subrectángulo $R$ de $\Pa$, $M_R - m_R < varepsilon$. Enonces,
+    Sean $R_{x_i}$ un conjunto finito de los $R_x$ que recubren $A$. Sea $\Pa$ una partición de $A \tq$ cada subrectángulo de $\Pa$ esté dentro de uno de los $R_{x_i}$, para cada cada subrectángulo $R$ de $\Pa$, $M_R - m_R < \varepsilon$. Entonces,
     \[ S \lp f,\Pa \rp = s \lp f,\Pa \rp = \sum_{R \in \Pa} (M_R - m_r) \vol \lp R \rp < \varepsilon \sum_{R \in \Pa} vol \lp R \rp = \varepsilon \vol \lp A \rp. \]
 \end{proof}
 \begin{col*}
-    $f$ continua $\implies f$ integrable Riemann (ya que $f$ continua $\implies \forall x \omega \lp f, x \rp = 0$).
+    $f$ continua $\implies f$ integrable Riemann (ya que $f$ continua $\implies \forall x \: \omega \lp f, x \rp = 0$).
 \end{col*}
 \begin{lema*}[2]\label{lema:dos_lebesgue}
     Sean $A \subset \real^n$ rectángulo compacto, $f : A \to \real$ fitada, $c > 0$. Si $f$ es integrable Riemann, el conjunto $B_c = \{x \in A | \omega \lp f, x \rp \geq c\}$ tiene mesura nula.
@@ -662,8 +663,8 @@
     \bimpliedby
 
     Suponemos que $B$ tiene medida nula. Sea $\varepsilon > 0$ y $B_\varepsilon
-    \subset B$, que tiene medida nula y es compacto, por el lema
-    \hyperref[lema:dos_lebesgue]{2}, por lo tanto, tiene contenido nulo y, por lo
+    \subset B$, que tiene medida nula por estar contenido en $B$ y es compacto 
+    como se ha visto \hyperref[col:lebesgue]{anteriormente}, por lo tanto, tiene contenido nulo y, por lo
     tanto, existen rectángulos compactos $T_1, \dots, T_N \subset A$ tales que
     \[
         B_\varepsilon = \bigcup_{i = 1}{N} T_i \qquad
@@ -689,8 +690,7 @@
     \vol \left( R \right)$.
 
     Podemos refinar $\Pa$ a una partición $\Pa^\prime$ tal que todos sus
-    subrectángulos, est\'en dentro de los subrectángulos de $\Pa_R$ (por el lema
-    \hyperref[lema:teo_lebesgue]{teórico})
+    subrectángulos, est\'en dentro de los subrectángulos de $\Pa_R$ (por \ref{lema:teo_lebesgue})
     \begin{gather*}
         S\left( f, \Pa^\prime \right) - s\left( f, \Pa^\prime \right) =
         \sum_{R^\prime \in R_1} \left( M_{R^\prime} - m_{R^\prime} \right)
@@ -739,7 +739,7 @@
 \begin{col}
     \begin{enumerate}[(1)]
         \item[]
-        \item $A$, $A' \subset \real^n$ admisibles $\Longrightarrow A\cup A'$, $A\cap A'$ i $A\setminus A'$ son admisibles.
+        \item $A$, $A' \subset \real^n$ admisibles $\Longrightarrow A\cup A'$, $A\cap A'$ y $A\setminus A'$ son admisibles.
         \item $A \subset \real^m, B \subset \real^n$ son admisibles $\implies A\times B \subset \real^{m+n}$ es admisible.
     \end{enumerate}
 \end{col}
@@ -1177,7 +1177,7 @@ los rectángulos.
     Una región elemental, es un conjunto $E \subseteq \real^n$ de la forma siguiente:
     \begin{itemize}
         \item $n = 1$, $E$ es un intervalo compacto.
-        \item $n > 1$, $E = \setb{(x,y) \in \real^{n-1} \times \real \vert x \in D, \phi(x) \leq y \leq psi(x)}$, con $D \subset \real^{n-1}$
+        \item $n > 1$, $E = \setb{(x,y) \in \real^{n-1} \times \real \vert x \in D, \phi(x) \leq y \leq \psi(x)}$, con $D \subset \real^{n-1}$
             es una región elemental, $\phi \leq \psi \colon D \to \real$ son continuas.
     \end{itemize}
 
@@ -1278,7 +1278,7 @@ los rectángulos.
         \int_U f(x, y, z) \dif x \dif y \dif z = \int_V f( \rho \cos \phi, \rho \sin \phi, z) \rho \dif \rho \dif \phi \dif z
     \]
 
-    \textbf{Integración en coordenadas esfricas en $\real^3$}
+    \textbf{Integración en coordenadas esféricas en $\real^3$}
 
     Tenemos
     \[
@@ -1305,7 +1305,7 @@ los rectángulos.
 \subsection*{Demostración del teorema del cambio de variable}
 
 \begin{lema*}[1]\label{lema:uno_cambio}
-    Sea $\varphi \colon \real^n \to \real^n$ un isomorfismo lineal y sea $A \subset \real^n$ un ractángulo compacto, entonces,
+    Sea $\varphi \colon \real^n \to \real^n$ un isomorfismo lineal y sea $A \subset \real^n$ un rectángulo compacto, entonces,
     \[
         \vol\left( \varphi(A) \right) = \abs{\det \varphi} \vol(A).
     \]
