@@ -13,4 +13,4 @@ que trobareu a aquesta carpeta.
 #### UNIVERSO SIMPSON O BARBARIE (ups, ya van dos).
 Altres links d'interès: 
  * [Loose Canon (first edition)](http://www.loose-canon.info/Loose-Canon-1st-Ed.pdf)
- * [EMOJI Cheatsheet](https://www.webpagefx.com/tools/emoji-cheat-sheet/)
+ * [EMOJI Cheatsheet](https://www.webpagefx.com/tools/emoji-cheat-sheet/) 
