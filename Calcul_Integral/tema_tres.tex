@@ -223,7 +223,7 @@
 
     Por otro lado, $\gamma^\prime$ continua en un compacto $\implies \gamma^\prime$ uniformemente continua. Sea $\varepsilon > 0$, $\exists \delta > 0$
     tal que $\abs{s - t} < \delta \implies \norm{\gamma^\prime(s) - \gamma^\prime(t)} < \varepsilon$ para todo $s,t \in I$. Si $\Pa = \setb{t_0, \dots, t_n}$
-    es una partición de $I$ con subintervalos de longitud $< s$, entonces
+    es una partición de $I$ con subintervalos de longitud $< \delta$, entonces
     \[
         \int^{t_i}_{t_{i-1}} \norm{\gamma^\prime} \leq \overbrace{\cdots}^{\text{dem. no en clase}} \leq \norm{\gamma\left( t_i \right) - \gamma\left( t_{i-1} \right)}
         + 2 \varepsilon\left( t_i - t_{i-1} \right)
@@ -263,7 +263,7 @@
     Consideramos $C \colon \left( x - x_0 \right)^2 + \left( y - y_0 \right)^2 = R^2$ y
     \[
         \begin{aligned}
-            \gamma \colon [0,2\pi] &\to C \subset \real^2 \\
+            \gamma \colon [0,2\pi) &\to C \subset \real^2 \\
             t &\mapsto \gamma(t) = \left( x_0 + R\cos(t), y_0 + R\sin(t) \right)
         \end{aligned}
     \]
