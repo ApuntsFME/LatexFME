@@ -121,7 +121,7 @@
 \end{obs}
 
 \begin{prop}
-    Si $\sigma$ y $\tau$ son dos caminos equivalentes, tienen la misma longitud
+    Si $\sigma$ y $\tau$ son dos caminos equivalentes, tienen la misma longitud:
     \[
         L(\sigma) = L(\tau).
     \]
@@ -150,7 +150,7 @@
 
 \begin{obs}
     Los resultados anteriores sugieren que la longitud de una curva es una propiedad de $C$ más que una propiedad de $\sigma$, es decir,
-    es una propiedad más analítica que geom\'etrica. Si $C \subset \real^n$ es una ``curva'' parametrizable por un camino inyectivo,
+    es una propiedad más analítica que geométrica. Si $C \subset \real^n$ es una ``curva'' parametrizable por un camino inyectivo,
     podemos definir la longitud de $C$ como $L(C) = L(\sigma)$ donde $\sigma$ es cualquier parametrización inyectiva de $C$.
 \end{obs}
 
@@ -210,15 +210,15 @@
 \end{prop}
 
 \begin{proof}
-	Consideramos $\Pa$ una partición de $I$, por la regla de Barrow
+	Consideremos $\Pa$ una partición de $I$. Por la regla de Barrow,
 	\[
         \gamma(t_i) - \gamma\left( t_{i-1} \right) = \int^{t_i}_{t_{i-1}} \gamma^\prime(t) \dif t \implies
         \norm{\gamma\left( t_i \right) - \gamma\left( t_{i-1} \right)} = \norm{\int^{t_i}_{t_{i-1}} \gamma^\prime
-        } \leq \int^{t_i}_{t_{i-1}} \norm{\gamma^\prime}
+        } \leq \int^{t_i}_{t_{i-1}} \norm{\gamma^\prime}.
 	\]
-    Si sumamos
+    Si sumamos,
     \[
-        L(\gamma, \Pa) \leq \int_I \norm{\gamma^\prime} \stackrel{\text{supremo}}{\implies} L(\gamma) \leq \int_I \norm{\gamma^\prime}
+        L(\gamma, \Pa) \leq \int_I \norm{\gamma^\prime} \stackrel{\text{supremo}}{\implies} L(\gamma) \leq \int_I \norm{\gamma^\prime}.
     \]
 
     Por otro lado, $\gamma^\prime$ continua en un compacto $\implies \gamma^\prime$ uniformemente continua. Sea $\varepsilon > 0$, $\exists \delta > 0$
@@ -226,11 +226,11 @@
     es una partición de $I$ con subintervalos de longitud $< \delta$, entonces
     \[
         \int^{t_i}_{t_{i-1}} \norm{\gamma^\prime} \leq \overbrace{\cdots}^{\text{dem. no en clase}} \leq \norm{\gamma\left( t_i \right) - \gamma\left( t_{i-1} \right)}
-        + 2 \varepsilon\left( t_i - t_{i-1} \right)
+        + 2 \varepsilon\left( t_i - t_{i-1} \right).
     \]
-    Si $I = [a, b]$ y sumamos
+    Si $I = [a, b]$ y sumamos,
     \[
-        \int_I \norm{\gamma^\prime} \leq L(\gamma, \Pa) + 2\varepsilon(b-a) \leq L(\gamma) + \overbrace{2\varepsilon(b-a)}^{\text{tan pequeño como queramos}}
+        \int_I \norm{\gamma^\prime} \leq L(\gamma, \Pa) + 2\varepsilon(b-a) \leq L(\gamma) + \overbrace{2\varepsilon(b-a)}^{\text{tan pequeño como queramos}}.
     \]
     Por tanto $\int_I \norm{\gamma^\prime} \leq L(\gamma)$, pero ya hemos visto que $\int_I \norm{\gamma^\prime} \geq L(\gamma)$ es decir, que
     $\int_I \norm{\gamma^\prime} = L(\gamma)$.
@@ -245,7 +245,7 @@
     como el supremo de las longitudes $L(\gamma\vert_{k})$, donde $k \subset I$ es un subintervalo compacto de $I$.
 
     Cuando $\gamma$ es de clase $\C^1$ definida a trozos, la longitud viene dada por $\int_I \norm{\gamma^\prime}$ (tomada como integral impropia
-    si es necesario)
+    si es necesario).
 \end{defi}
 
 
@@ -260,21 +260,21 @@
 \end{defi}
 
 \begin{example}
-    Consideramos $C \colon \left( x - x_0 \right)^2 + \left( y - y_0 \right)^2 = R^2$ y
+    Consideremos $C \colon \left( x - x_0 \right)^2 + \left( y - y_0 \right)^2 = R^2$ y
     \[
         \begin{aligned}
             \gamma \colon [0,2\pi) &\to C \subset \real^2 \\
             t &\mapsto \gamma(t) = \left( x_0 + R\cos(t), y_0 + R\sin(t) \right)
-        \end{aligned}
+        \end{aligned}.
     \]
-    entonces, tenemos que
+    Entonces, tenemos que
     \[
         \gamma^\prime(t) = \begin{pmatrix} -R\sin(t) \\ R \cos(t) \end{pmatrix} \qquad
-        \norm{\gamma^\prime(t)} = R
+        \norm{\gamma^\prime(t)} = R.
     \]
-    Y, por último
+    Y, por último,
     \[
-        L(C) = L(\gamma) = \int^{2\pi}_0 R \dif t = 2\pi R
+        L(C) = L(\gamma) = \int^{2\pi}_0 R \dif t = 2\pi R.
     \]
 \end{example}
 
@@ -284,30 +284,30 @@
     Sea $\sigma \colon I \to \real^n$ un camino de clase $\C^1$ a trozos, $C = \sigma(I)$ y $f \colon C \to \real$. Definimos
     la integral de línea de $f$ a lo largo de $\sigma$ como
     \[
-        \int_\sigma f \dif l := \int_I f\left( \sigma(s) \right) \norm{\sigma^\prime(s)} \dif s
+        \int_\sigma f \dif l := \int_I f\left( \sigma(s) \right) \norm{\sigma^\prime(s)} \dif s.
     \]
 
-    La integral existe, por ejemplo, si $I$ es compacto y $f$ continua
+    La integral existe, por ejemplo, si $I$ es compacto y $f$ continua.
 \end{defi}
 
 \begin{obs*}
-    Cuando $f$ es 1, recuperamos la longitud $\int_\sigma \dif l = L(\sigma)$
+    Cuando $f$ es 1, recuperamos la longitud $\int_\sigma \dif l = L(\sigma)$.
 \end{obs*}
 
 \begin{prop}[Invariancia bajo reparametrizaciones]
-    Si tenemos $\sigma \colon I \to C$ y $\tau \colon J \to C$ dos curvas equivalentes, y consideramos una función $f$
+    Si tenemos $\sigma \colon I \to C$ y $\tau \colon J \to C$ dos curvas equivalentes, y consideramos una función $f \colon C \to \real$,
     \[
-        \int_\tau f \dif l = \int_\sigma f \dif l
+        \int_\tau f \dif l = \int_\sigma f \dif l.
     \]
 \end{prop}
 
 \begin{proof}
-    Consideramos $\varphi \colon I \to J$ un difeomorfismo de clase $\C^1$ tal que $\sigma = \tau \circ \varphi$
+    Consideramos $\varphi \colon I \to J$ un difeomorfismo de clase $\C^1$ tal que $\sigma = \tau \circ \varphi$.
     \begin{gather*}
         \int_\tau f \dif l = \int_J f\left( \tau(t) \right) \norm{\tau^\prime(t)} \dif t \stackrel{TCV}{=}
         \int_I f( \underbrace{\tau\left( \varphi(s) \right)}_{\sigma(s)} ) \overbrace{\norm{\tau^\prime\left( \varphi(s) \right)}
         \abs{\varphi^\prime(s)}}^{\norm{(\tau \circ \varphi)^\prime (s)} = \norm{\sigma^\prime (s)}} \dif s= \\
-        = \int_I f\left( \sigma\left( s \right) \right) \norm{\sigma^\prime(s)} \dif s = \int_\sigma f \dif l
+        = \int_I f\left( \sigma\left( s \right) \right) \norm{\sigma^\prime(s)} \dif s = \int_\sigma f \dif l.
     \end{gather*}
 \end{proof}
 
@@ -315,7 +315,7 @@
     Sea $C \subset \real^n$ una curva regular. Si $C$ es la imagen de una parametrización inyectiva $\sigma \colon I \to \real^n$,
     llamamos integral de línea de $f$ a lo largo de $C$ a
     \[
-        \int_C f \dif l := \int_\sigma f \dif l
+        \int_C f \dif l := \int_\sigma f \dif l.
     \]
 \end{defi}
 
@@ -323,7 +323,7 @@
     Está bien definido y no depende de la parametrización tomada.
 \end{obs*}
 \begin{obs*}
-    Se pueden hacer las mismas consideraciones que en \ref{defi:observaciones_curvas} 
+    Se pueden hacer las mismas consideraciones que en \ref{defi:observaciones_curvas}.
 \end{obs*}
 
 \section{Integrales de línea de campos vectoriales}
