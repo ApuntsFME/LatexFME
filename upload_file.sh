@@ -6,6 +6,7 @@ upload(){
   MSG=$3
   read -p "Nom d'usuari: " user
   read -s -p "Contrasenya: " password
+  echo ""
   SHA=$(curl -s -u $user:$password "https://api.github.com/repos/ApuntsFME/apuntsfme.github.io/contents$DEST" | \
   python -c "import sys, json; print json.load(sys.stdin)['sha']")
   { echo -n "{\"path\":\"$DEST\", \"message\":\"$MSG\", \"sha\":\"$SHA\", \"content\":\""; base64 -w 0 $SRC; echo -n "\"}"; } | curl -s -H "Content-Type: application/json" -u $user:$password -X PUT -d @- \
