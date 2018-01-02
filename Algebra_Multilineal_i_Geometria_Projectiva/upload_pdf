@@ -6,4 +6,8 @@ MSG="PDF multi actualitzat :blush: :kissing_heart:"
 
 source ../upload_file.sh
 
+make
+make
+make
+make
 upload "$SRC" "$DEST" "$MSG"
