@@ -406,14 +406,14 @@
     Sea $U \subseteq \real^3$ abierto conexo. $\vec{F} \colon U \to \real^3$ de clase $\C^1$. Consideramos las propiedades
     \begin{enumerate}[(i)]
         \item $\vec{F}$ es conservativo
-        \item Dados $p_0, p_1 \in U$ y una curva orientada $C \subset U$ tal que $\partial U = \setb{p_0, p_!}$; la circulación
+        \item Dados $p_0, p_1 \in U$ y una curva orientada $C \subset U$ tal que $\partial U = \setb{p_0, p_1}$; la circulación
             $\int_C \vec{F} \dif \vec{l}$ solo depende de $p_0, p_1$.
         \item Para toda curva cerrada $C \subset U$ $\oint_C \vec{F} \dif \vec{l} = 0$
         \item $\rot \vec{F} = 0$, es decir, $\vec{F}$ es irrotacional
     \end{enumerate}
 
     Las tres primeras afirmaciones son equivalentes e implican la cuarta. Sin embargo, el recíproco es falso en general,
-    depende de la topología de $U$ y es cierto en algunal circunstancias. 
+    depende de la topología de $U$ y es cierto en algunas circunstancias. 
 \end{teo*}
 
 \begin{defi}
@@ -433,8 +433,8 @@
     \end{itemize}
     Lo siguientes, sin embargo, no lo son
     \begin{itemize}
-        \item Un punto en $\real^2$
-        \item Un punto en $\real^3$
+        \item $\real^2 \setminus \text{ un punto}$
+        \item $\real^3 \setminus \text{ un punto}$
     \end{itemize}
 \end{example*}
 
@@ -465,13 +465,13 @@
     Diremos que un conjunto $A$ es simplemente conexo si
     \begin{enumerate}[i)]
         \item Es arco-conexo.
-        \item\label{item:2-simp_conexo} Dados dos caminos $\gamma_0$, $\gamma_1$ con el mismmo origen y final,
+        \item\label{item:2-simp_conexo} Dados dos caminos $\gamma_0$, $\gamma_1$ con el mismo origen y final,
             $\gamma_0$ es homotopo a $\gamma_1$.
     \end{enumerate}
 \end{defi}
 
 \begin{obs*}
-    \ref{item:2-simp_conexo} es equipalente a requerir que cualquier camino $\gamma_0$ cerrado es homótopo al camino
+    \ref{item:2-simp_conexo} es equivalente a requerir que cualquier camino $\gamma_0$ cerrado es homótopo al camino
     constante.
 \end{obs*}
 
@@ -484,8 +484,8 @@
 \end{obs}
 
 \begin{prop}
-    Si $U \subset \real^3$ es un conjunto abierto simplemente conexo y $\vec{F} \colon U \to \real^3$, es un campo vectorial
-    de clase $\C^1$ irrotacional $\left( \rot \vec{F} = 0 \right)$, entonces, $\vec{F}$ es conservativo (tiene potencial
+    Si $U \subset \real^3$ es un conjunto abierto simplemente conexo y $\vec{F} \colon U \to \real^3$ es un campo vectorial
+    de clase $\C^1$ irrotacional $\left( \rot \vec{F} = 0 \right)$, entonces $\vec{F}$ es conservativo (tiene potencial
     escalar).
 \end{prop}
 
@@ -580,7 +580,7 @@ ello, el lema de Poincar\'e, nos asegura que si $U$ es estrellado, todo campo si
 \end{teo}
 
 \begin{obs}
-    El teorema de Green se puede considerar como caso particular del teorema de Kelvin-Stokes (\ref{teo:kelvin-stokes}), consideranco $\vec{F}$
+    El teorema de Green se puede considerar como caso particular del teorema de Kelvin-Stokes (\ref{teo:kelvin-stokes}), considerando $\vec{F}$
     como campo vectorial en $\real^3$ y $M$ como superficie dentro de $\real^3$.
 \end{obs}
 
@@ -614,7 +614,7 @@ ello, el lema de Poincar\'e, nos asegura que si $U$ es estrellado, todo campo si
 \end{prop}
 
 
-De nuevo, por falta de tiempo, se ``prescindió'' de este tema en clase, considerandolo como un caso particular del $\real^3$, aún
+De nuevo, por falta de tiempo, se ``prescindió'' de este tema en clase, considerándolo como un caso particular del $\real^3$, aún
 así, puede ser interesante consultar los apuntes del profesor, tanto de lo que queda de esta sección como de la siguiente.
 
 \section{Los operadores diferenciales en otros sistemas de coordenadas}
