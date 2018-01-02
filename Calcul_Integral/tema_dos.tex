@@ -1432,7 +1432,7 @@ los rectángulos.
 \end{proof}
 
 \begin{lema*}[5]\label{lema:cinco_cambio}
-    Si la fórmula del camibo de variable se satisface para $\psi \colon W \to V$ y para $\phi \colon V \to U$, entonces, se satisface para
+    Si la fórmula del cambio de variable se satisface para $\psi \colon W \to V$ y para $\phi \colon V \to U$, entonces, se satisface para
     $\phi \circ \psi$.
 \end{lema*}
 
@@ -1463,7 +1463,7 @@ los rectángulos.
 \end{prop*}
 
 \begin{defi*}
-    Una aplicación $\phi \colon X \to Y$ diremos que es lipschitzciana con constante de Lipschitz $L \geq 0$, si
+    Una aplicación $\phi \colon X \to Y$ diremos que es lipschitziana con constante de Lipschitz $L \geq 0$, si
     \[
         \forall x, \bar{x} \qquad
         d\left( \phi(x), \phi\left( \bar{x} \right) \right) \leq L d\left( x, \bar{x} \right)
@@ -1473,13 +1473,13 @@ los rectángulos.
 \begin{obs*}
     Se tiene que
     \begin{itemize}
-        \item $\text{diametro}\left( \phi(E) \right) \leq L \text{diametro}(E)$
+        \item $\text{diámetro}\left( \phi(E) \right) \leq L \text{diámetro}(E)$
         \item $\phi\left( B(a; r) \right) \subset B\left( \phi(a); Lr \right)$
     \end{itemize}
 \end{obs*}
 
 \begin{prop*}
-    Si $\phi \colon U \subset \real^m \to \real^n$ de clase $\C^1$, entonces, $\phi$ es localmente lipschitzciana.
+    Si $\phi \colon U \subset \real^m \to \real^n$ de clase $\C^1$, entonces, $\phi$ es localmente lipschitziana.
 \end{prop*}
 
 \begin{proof}
@@ -1487,11 +1487,11 @@ los rectángulos.
     \[
         \norm{\phi\left( \bar{x} \right) - \phi(x)} \leq \sup_{z \in [x, \bar{x}]} \norm{\Dif_\phi(z)} \norm{\bar{x} - x} 
     \]
-    Por lo tanto, si $B \subset U$ bola, tal que $\bar{B}   subset U$, $\phi\vert_{\bar{B}}$ es lipschitzciana con $L = \sup\limits_{z \in \bar{B}} \norm{\Dif_\phi(z)}$.
+    Por lo tanto, si $B \subset U$ bola, tal que $\bar{B} \subset U$, $\phi\vert_{\bar{B}}$ es lipschitziana con $L = \sup\limits_{z \in \bar{B}} \norm{\Dif_\phi(z)}$.
 \end{proof}
 
 \begin{lema*}
-    Sea $R \subset \real^n$ un ractángulo compacto, $\forall \varepsilon > 0$, existe un conjunto finito de cubos compactos $Q_k \subset R$ tal que
+    Sea $R \subset \real^n$ un rectángulo compacto, $\forall \varepsilon > 0$, existe un conjunto finito de cubos compactos $Q_k \subset R$ tal que
     \[
         R = \bigcup_{j} Q_k \qquad
         \sum_{q} \vol(Q_k) < \vol(R) + \varepsilon
@@ -1530,7 +1530,7 @@ los rectángulos.
 \end{lema*}
 
 \begin{proof}
-    Si consideramos la distancia manhatan (de orden 1), tenemos
+    Si consideramos la distancia manhattan (de orden 1), tenemos
     \[
         Q = \bar{B}(a;r) \implies \phi(Q) \subseteq \bar{B} \left( \phi(a); Lr \right) \equiv \bar{Q}
     \]
@@ -1547,9 +1547,9 @@ los rectángulos.
     \[
         N \subset \bigcup_j Q_j \qquad \sum_j \vol\left( Q_j \right) < \varepsilon
     \]
-    Observamos ahora que cada $Q_j$ tiene diametro $\vol\left( Q_j \right)^{\sfrac{1}{n}}$, por lo tanto,
-    $Q_j \cap A$ tiene diametro más pequeño, y $\phi\left( Q_j \cap A \right) \leq L \vol\left( Q_j \right)^{\sfrac{1}{n}}$. Ahora
-    $\phi\left( Q_j \cap A \right)$ está contenido en un cubo $\bar{Q_j}$ de diametro $L \vol\left( Q_j \right)^{\sfrac{1}{n}}$, por lo tanto
+    Observamos ahora que cada $Q_j$ tiene diámetro $\vol\left( Q_j \right)^{\sfrac{1}{n}}$, por lo tanto,
+    $Q_j \cap A$ tiene diámetro más pequeño, y $\phi\left( Q_j \cap A \right) \leq L \vol\left( Q_j \right)^{\sfrac{1}{n}}$. Ahora
+    $\phi\left( Q_j \cap A \right)$ está contenido en un cubo $\bar{Q_j}$ de diámetro $L \vol\left( Q_j \right)^{\sfrac{1}{n}}$, por lo tanto
     $\vol\left( \bar{Q_j} \right) = L^n \vol(Q_j)$. Ahora
     \[
         \phi(N) \subset \phi\left( \bigcup_{j} \left( Q_j \cap A \right) \right) = \bigcup_j \phi\left( Q_j \cap A \right) \subset \bigcup_j \bar{Q_j}
@@ -1561,12 +1561,12 @@ los rectángulos.
 \end{proof}
 
 \begin{lema*}
-    Sea $U \subset \real^n$ un abierto y $\phi \colon U \to \real^n$ una función localmente lipschitzciana, Si $N \subset U$ tiene
+    Sea $U \subset \real^n$ un abierto y $\phi \colon U \to \real^n$ una función localmente lipschitziana, Si $N \subset U$ tiene
     medida nula, $\phi(N)$ tambi\'en.
 \end{lema*}
 
 \begin{proof}
-    Para  cada $x \in N$, hay un vecinado $R_x \subset U$ de $x$ tal que $\phi\vert_{R_x}$ es lipschitziana. Los internos $\mathring{R_x}$ recubren
+    Para  cada $x \in N$, hay una vecindad $R_x \subset U$ de $x$ tal que $\phi\vert_{R_x}$ es lipschitziana. Los internos $\mathring{R_x}$ recubren
     \[
         U = \bigcup_{x \in U} \mathring{R_x}
     \]
@@ -1585,7 +1585,7 @@ los rectángulos.
 \textbf{Acabada ya esta pequeña pausa para repasar algunas cosas importantes, continuamos con la demostración}
 
 \begin{lema*}[0]\label{lema:cero_cambio}
-    Sean $\phi \colon V \to U$ un difeomorfismo de clase $\C^1$ entre abiertos. Sea $B \subset V$ tal que
+    Sea $\phi \colon V \to U$ un difeomorfismo de clase $\C^1$ entre abiertos. Sea $B \subset V$ tal que
     \begin{itemize}
         \item $B$ es medible Jordan
         \item $\bar{B} \subset V$ y $\bar{B}$ es compacto.
@@ -1643,8 +1643,8 @@ los rectángulos.
             \end{pmatrix}
         }_{\leq \Delta} \leq 1 + K\Delta
     \]
-    Ahora, el conjunto de estos puntos, tiene diámetro acotado por $(1+K\Delta)\text{diametro}(B)$. Por lo tanto, su volumen,
-    está acotado por $(1+K\Delta)^n\text{diametro}^n(B) = (1+K\Delta)^n\vol(B)$ ($B$ es un cubo). Y el conjunto $\phi(B)$ de los puntos
+    Ahora, el conjunto de estos puntos, tiene diámetro acotado por $(1+K\Delta)\text{diámetro}(B)$. Por lo tanto, su volumen,
+    está acotado por $(1+K\Delta)^n\text{diámetro}^n(B) = (1+K\Delta)^n\vol(B)$ ($B$ es un cubo). Y el conjunto $\phi(B)$ de los puntos
     obtenidos aplicando $\Dif_\phi(x)$, tiene volumen (por el lema \hyperref[lema:dos_cambio]{2})
     \[
         \vol\left( \phi(B) \right) \leq \abs{\det \Dif_\phi(x)} (1+K\Delta)^n \vol(B)
@@ -1661,7 +1661,7 @@ los rectángulos.
 \begin{proof}
     Como $\phi$ es de clase $\C^1$, $\Dif_\phi$ es continua y, como $B$ es compacto, $\Dif_\phi$ es uniformemente continua, por ello,
     $\forall \varepsilon > 0$, $\exists \delta > 0$ tal que $\norm{x - y} < \delta \implies \norm{\Dif_\phi(x) - \Dif_\phi(y)} < \varepsilon$.
-    Consideramos ahora $Q \subset B$ un cubo compacto de diametro $< \delta$. Ahora, si $x,y \in Q$, tenemos
+    Consideramos ahora $Q \subset B$ un cubo compacto de diámetro $< \delta$. Ahora, si $x,y \in Q$, tenemos
     \[
         \max_{Q} \norm{\Dif_\phi(x) - \Dif_\phi(y)} < \varepsilon
     \]
@@ -1686,10 +1686,10 @@ Procedemos a la demostración
         f\vert_{\phi(Q)} \leq \sup_{z \in Q} \left( \phi(z) \right) \stackrel{\text{lema \hyperref[lema:siete_cambio]{7}}}{\implies}
         \int_{\phi(Q)} f \leq \cdots \leq \sup_{z \in Q} \left( (f \circ \phi) \abs{\det \Dif_\phi} \right)(z) \vol(Q)
     \end{gather*}
-    Ahora, Sea $C \supset B$ un cub y $\Pa$ una partición de $C$ en subrectángulos suficientemente pequeños, y definimos $\tilde{C}$ como
+    Ahora, Sea $C \supset B$ un cubo y $\Pa$ una partición de $C$ en subrectángulos suficientemente pequeños, y definimos $\tilde{C}$ como
     la unión de los subrectángulos $Q$ de $\Pa$ que cortan a $V$, entonces
     \begin{gather*}
-        \int_A f = \int_{\phi\left( \tilde{C} \right)} f \stackrel{\text{aditividad}}{=} \sum_{Q \subset \tilde{C}}Q \subset \tilde{C} \int_{\phi(Q)}\phi(Q) f \leq
+        \int_A f = \int_{\phi\left( \tilde{C} \right)} f \stackrel{\text{aditividad}}{=} \sum_{Q \subset \tilde{C}} \int_{\phi(Q)}\phi(Q) f \leq
         \sum_{Q \subset \tilde{C}} \sup_{z \in Q} \left( (f \circ \phi) \abs{\det \Dif_\phi} \right)(z) \vol(Q) = \\ =
         S\left( (f \circ \phi) \abs{\det \Dif_\phi}, \Pa \right) \implies \int_A f \leq \int_B (f \circ \phi) \abs{\det \Dif_\phi}
     \end{gather*}
@@ -1748,7 +1748,7 @@ Procedemos a la demostración
 \end{prop}
 
 \begin{lema}[(de la cebolla)]
-    Sea $U \subset \real^n$ un conjunto abierto no vacío. Existe una sucesión $\lp V_i \rp $ de conjuntos abiertos mesuarables Jordan, con $\overline{V}_i \subset U$ tales que
+    Sea $U \subset \real^n$ un conjunto abierto no vacío. Existe una sucesión $\lp V_i \rp $ de conjuntos abiertos mesurables Jordan, con $\overline{V}_i \subset U$ tales que
     \begin{itemize}
         \item $\overline{V}_i$ es compacto,
         \item $\overline{V}_i \subset V_{i+1}$,
@@ -1761,7 +1761,7 @@ Procedemos a la demostración
 \end{defi}
 
 \begin{prop}
-    Sea $U\subset \real^n$ un conjunto abierto y sea $f\colon U \to \real$ localmente integrable Riemann. Entonces, $f$ es integrable Riemann sobre todo subconjunto compacto mesuarable Jordan $A \subset U$.
+    Sea $U\subset \real^n$ un conjunto abierto y sea $f\colon U \to \real$ localmente integrable Riemann. Entonces, $f$ es integrable Riemann sobre todo subconjunto compacto mesurable Jordan $A \subset U$.
 \end{prop}
 
 \begin{defi}
