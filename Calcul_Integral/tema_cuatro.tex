@@ -103,7 +103,7 @@
 \end{col}
 
 \begin{defi}
-    Sea $\vec{F}$ un campo vectorial. Diremos que $\vec{F}$ es un campo conservador si $\exists f$ tal que
+    Sea $\vec{F}$ un campo vectorial. Diremos que $\vec{F}$ es un campo conservativo si $\exists f$ tal que
     \[
         \vec{F} = \grad f.
     \]
@@ -124,7 +124,7 @@
 \end{defi}
 
 \begin{obs}
-    Los resultados de \ref{col:luego_lo_ref}, se pueden resumir en que todo campo conservador es irrotacional y que todo
+    Los resultados de \ref{col:luego_lo_ref}, se pueden resumir en que todo campo conservativo es irrotacional y que todo
     campo solenoidal es sin divergencia.
 
     Posteriormente estudiaremos los recíprocos de estas afirmaciones.
@@ -150,7 +150,7 @@
 \end{obs*}
 
 \begin{obs}
-    La expresión en coordenadas cartesiandas del laplaciano, permite aplicarlo tambin a campos vectoriales en
+    La expresión en coordenadas cartesianas del laplaciano, permite aplicarlo también a campos vectoriales en
     $\real^3$, aplicandolo a cada componente, y, de hecho, se satisface que
     \[
         \rot \left( \rot \vec{F} \right) = \grad \left( \diver \vec{F} \right) - \nabla^2\vec{F}.
@@ -224,7 +224,7 @@
 \begin{obs*}
     Los puntos frontera de $M$ se clasifican en:
     \begin{itemize}
-        \item Puntos frontera regulares, si pertenecen a una curva regular incluída en la frontera de $M$,
+        \item Puntos frontera regulares, si pertenecen a una curva regular incluida en la frontera de $M$,
         \item Puntos singulares.
     \end{itemize}
 \end{obs*}
@@ -281,7 +281,7 @@
 
 \begin{teo}[de Gauss-Ostrogradski, o de la divergencia]
     Sea $W \subset \real^3$ abierto, $\vec{F} \colon W \to \real^3$ de clase $\C^1$, $B \subset W$ un abierto tal que $\bar{B}$ es compacto y $\bar{B} \subset W$.
-    Sea $\partial B$ el borde de $B$ con la orientación inducida (``normal hacia afuera''). Entonces, se satisface la fórmula de \emph{Gauss-Ostrogradskii}
+    Sea $\partial B$ el borde de $B$ con la orientación inducida (``normal hacia afuera''). Entonces, se satisface la fórmula de \emph{Gauss-Ostrogradski}
     \[
         \int_B \diver \vec{F} \dif V = \int_{\partial B} \vec{F} \dif \vec{S}.
     \]
@@ -325,7 +325,7 @@
 \section{Potenciales}
 
 \begin{defi}
-    Sea $M \subseteq \real^n$ un abierto conexo, $\vec{F} \colon U \to \real^n$ un campo vectorial. Diremos que $\vec{F}$ es conservador
+    Sea $M \subseteq \real^n$ un abierto conexo, $\vec{F} \colon U \to \real^n$ un campo vectorial. Diremos que $\vec{F}$ es conservativo
     cuando existe $f \colon U \to \real$ de clase $\C^1$ tal que $\vec{F} = \grad f$, diremos que $f$ es el potencial escalar para $\vec{F}$.
 \end{defi}
 
@@ -334,7 +334,7 @@
 \end{obs}
 
 \begin{prop*}
-    Sea $U \subset \real^n$ conexo, $\vec{F} \colon U \to \real^n$ un campo vectorial, si $f,g$ son dos potenciales espalares para $\vec{F}$, entonces
+    Sea $U \subset \real^n$ conexo, $\vec{F} \colon U \to \real^n$ un campo vectorial, si $f,g$ son dos potenciales escalares para $\vec{F}$, entonces
     $f - g$ es una constante.
 \end{prop*}
 \begin{proof}
@@ -343,7 +343,7 @@
 
 \begin{obs}
     Sea $\gamma \colon \left[ t_0, t_1 \right] \to \real^n$ un camino de clase $\C^1$ a trozos, con $\gamma\left( t_0 \right) = x_0$, $\gamma\left( t_1 \right)=x_1$.
-    Suponemos $\vec{F}$ conservador, es decir $\vec{F} = \grad f$, entonces,
+    Suponemos $\vec{F}$ conservativo, es decir $\vec{F} = \grad f$, entonces,
     \[
         \int_\gamma \vec{F} \dif \vec{l} = f\left( x_1 \right) - f\left( x_0 \right)
     \]
@@ -363,7 +363,7 @@
 
 \begin{prop}
     Sea $U \subseteq$ un abierto convexo y $\vec{F} \colon U \to \real^n$ un campo vectorial de clase $\C^0$. Suponemos que la circulación de $\vec{F}$
-    a lo largo de cualquier camino de clase $\C^1$ a trozos solo depende de los puntos iniciales y final. Entonces, $\vec{F}$ es conservador.
+    a lo largo de cualquier camino de clase $\C^1$ a trozos solo depende de los puntos iniciales y final. Entonces, $\vec{F}$ es conservativo.
 \end{prop}
 
 \begin{obs*}
@@ -405,7 +405,7 @@
 \begin{teo*}
     Sea $U \subseteq \real^3$ abierto conexo. $\vec{F} \colon U \to \real^3$ de clase $\C^1$. Consideramos las propiedades
     \begin{enumerate}[(i)]
-        \item $\vec{F}$ es conservador
+        \item $\vec{F}$ es conservativo
         \item Dados $p_0, p_1 \in U$ y una curva orientada $C \subset U$ tal que $\partial U = \setb{p_0, p_!}$; la circulación
             $\int_C \vec{F} \dif \vec{l}$ solo depende de $p_0, p_1$.
         \item Para toda curva cerrada $C \subset U$ $\oint_C \vec{F} \dif \vec{l} = 0$
@@ -440,7 +440,7 @@
 
 \begin{lema}[de Poincar\'e]
     Sea $U \subset \real^3$ un abierto estrellado y $\vec{F} \colon U \to \real^3$ es un campo vectorial
-    de clase $\C^1$. Si $\vec{F}$ es irrotacional $\left( \rot \vec{F} = 0 \right)$, entonces es conservador
+    de clase $\C^1$. Si $\vec{F}$ es irrotacional $\left( \rot \vec{F} = 0 \right)$, entonces es conservativo
     (tiene potencial escalar)
 \end{lema}
 
@@ -485,7 +485,7 @@
 
 \begin{prop}
     Si $U \subset \real^3$ es un conjunto abierto simplemente conexo y $\vec{F} \colon U \to \real^3$, es un campo vectorial
-    de clase $\C^1$ irrotacional $\left( \rot \vec{F} = 0 \right)$, entonces, $\vec{F}$ es conservador (tiene potencial
+    de clase $\C^1$ irrotacional $\left( \rot \vec{F} = 0 \right)$, entonces, $\vec{F}$ es conservativo (tiene potencial
     escalar).
 \end{prop}
 
@@ -598,8 +598,8 @@ ello, el lema de Poincar\'e, nos asegura que si $U$ es estrellado, todo campo si
 
 \begin{prop}
     Sea $\vec{F} \colon U \to \real^2$ un campo vectorial de clase $\C^1$ definido en un conjunto abierto $U \subset \real^2$.
-    Recordamos que $\vec{F}$ es conservador cuando existe $f \colon U \to \real$ tal que $\vec{F} = \grad f$. En tal caso, la
-    circulación de $\vec{F}$ a lo largo de una curva cerrada es 0. Además, si $\vec{F}$ es conservador, necesariamente se cumple
+    Recordamos que $\vec{F}$ es conservativo cuando existe $f \colon U \to \real$ tal que $\vec{F} = \grad f$. En tal caso, la
+    circulación de $\vec{F}$ a lo largo de una curva cerrada es 0. Además, si $\vec{F}$ es conservativo, necesariamente se cumple
     \[
         \pdv{F_2}{x} = \pdv{F_1}{y}
     \]
@@ -610,7 +610,7 @@ ello, el lema de Poincar\'e, nos asegura que si $U$ es estrellado, todo campo si
     \[
         \pdv{F_2}{x} = \pdv{F_1}{y}
     \]
-    $\vec{F}$ es conservador, si $U$ es simplemente conexo.
+    $\vec{F}$ es conservativo, si $U$ es simplemente conexo.
 \end{prop}
 
 
