@@ -78,12 +78,12 @@
     $\grad$, $\rot$ y $\diver$ son lineales, es decir
     \begin{gather*}
         \grad(f+g) = \grad f + \grad g, \\
-        \grad(cf) = c\grad f.
+        \grad(cf) = c\grad f, \, c \in \real.
     \end{gather*}
     (Análogamente con $\rot$ y $\diver$).
 \end{prop}
 
-\begin{prop}[reglas de Leibnitz]
+\begin{prop}[Reglas de Leibnitz]
     Si $f,g$ son campos escalares y $\vec{F},\vec{G}$ campos vectoriales, todos de clase $\C^1$, se tiene que
     \begin{itemize}
         \item $\grad(fg) = f \grad g + g \grad f$,
@@ -94,7 +94,7 @@
     \end{itemize}
 \end{prop}
 
-\begin{col}[T.Schwarz]\label{col:luego_lo_ref}
+\begin{col}[T. Schwarz]\label{col:luego_lo_ref}
     Sea $f$ un campo escalar de clase $\C^2$, $\vec{F}$ un campo vectorial de clase $\C^2$. Entonces, se tiene que
     \begin{gather*}
         \rot\left( \grad f \right) = 0, \\
@@ -131,7 +131,7 @@
 \end{obs}
 
 \begin{defi}
-    Sea $f \in \Es^{(2)}(U)$. definimos el Lapaciano como
+    Sea $f \in \Es^{(2)}(U)$. Definimos el laplaciano como
     \[
         \Delta f := \diver \left( \grad f \right),
     \]
@@ -173,7 +173,7 @@
     \[
         \pdv[2]{f}{t} = c^2 \nabla^2 f,
     \]
-    donde $c > 0$, está ecuación tambi\'en se puede expresar como $\square f = 0$, donde $\square = \frac{1}{c^2} \pdv[2]{}{t} - \nabla^2$
+    donde $c > 0$. Esta ecuación tambi\'en se puede expresar como $\square f = 0$, donde $\square = \frac{1}{c^2} \pdv[2]{}{t} - \nabla^2$
     es el operador \emph{d'alembertiano}.
 \end{obs}
 
@@ -248,7 +248,7 @@
     \]
     Comprobaremos ahora el T.K.S. (\ref{teo:kelvin-stokes}), ahora parametrizamos $H$ como
     \begin{gather*}
-        \sigma\left( \theta, \phi \right) = \left( R\cos\phi\sin\theta, R\sin\phi\sin\theta, R\cos\theta \right)
+        \sigma\left( \theta, \phi \right) = \left( R\cos\phi\sin\theta, R\sin\phi\sin\theta, R\cos\theta \right),
         \qquad
         \vec{T_\theta} \times \vec{T_\phi} = R^2 \sin\theta
         \begin{pmatrix}
@@ -308,7 +308,7 @@
     \end{gather*}
     Ahora, tenemos
     \[
-        \hat{r} = \frac{\vec{r}}{r} \qquad
+        \hat{r} = \frac{\vec{r}}{r}, \qquad
         \vec{r} \hat{r} = \frac{r^2}{r} = r \stackrel{B}{=} R.
     \]
     Por último,
