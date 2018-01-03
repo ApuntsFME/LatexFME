@@ -525,7 +525,7 @@
     \]
 \end{lema}
 \begin{proof}
-    $\implies$ \\
+    $\bimplies$ \\
     Supongamos que $f$ es contínua en $a$. Entonces,
     \[
         \forall \varepsilon > 0, \exists \delta > 0 \; \tq \; d\left(x, a \right)
@@ -543,7 +543,7 @@
             2\varepsilon \implies \omega \left( f, a \right) =0.
         \end{gathered}
     \] \\
-    $\impliedby$ \\
+    $\bimpliedby$ \\
     Supongamos $\omega \left( f, a \right) = 0$. Sea $\varepsilon > 0, \exists \delta > 0 \tq \omega \left( f, \text{B}\left(a, \delta \right) \right) < \varepsilon$. Per tant, $|f(x) - f(a)| < \varepsilon$ si $\text{d}\left( x, a \right) < \delta \implies f$ continua en a.
 \end{proof}
 \begin{example*}
@@ -562,10 +562,10 @@
     \end{enumerate}
 \end{example*}
 \begin{lema} \label{lema:2.3.6}
-    Sea $a \tq \omega \left( f, a \right) < c. \exists \delta \tq \omega \left( f, \text{B}(a, \delta \right) < c.$
+    Sea $a \tq \omega \left( f, a \right) < c$. $\exists \delta \tq \omega \left( f, \text{B}(a, \delta) \right) < c.$
 \end{lema}
 \begin{proof}
-    Por contrarecíproco. $\forall \delta \omega \left( f, \text{B} \left( a, \delta \right) \right) \geq c \implies \omega \left( f, a \right) \geq c$. Contradicción.
+    Por contrarecíproco. $\forall \delta$, $\omega \left( f, \text{B} \left( a, \delta \right) \right) \geq c \implies \omega \left( f, a \right) \geq c$. Contradicción.
 \end{proof}
 \begin{prop}
     Sea $X$ un espacio métrico, $f : X \to \real$. El conjunto $a = \{ x \in X | \omega \left( f, x \right) < c \}$ es abierto.
@@ -594,18 +594,18 @@
     donde $x_{i^-}, x_{i^+}$ son los extremos inferiores y superiores (respectivamente) de $T_i$. Por construcción, $R \subseteq T_i$.
 \end{proof}
 \begin{lema*}\label{lema:uno_lebesgue}
-    Sea $A \subseteq \real^n$ rectángulo compacto, $f : A \to \real, f$ fitada. Suponemos $\forall x  \in A, \omega \lp f, x \rp < \varepsilon$. Entonces existe una partición $\Pa$ de $A \tq S \lp f, \Pa \rp - s \lp f, \Pa \rp < \varepsilon \vol \lp A \rp$.
+    Sea $A \subseteq \real^n$ rectángulo compacto, $f : A \to \real$, $f$ acotada. Suponemos $\forall x  \in A$, $\omega \lp f, x \rp < \varepsilon$. Entonces existe una partición $\Pa$ de $A \tq S \lp f, \Pa \rp - s \lp f, \Pa \rp < \varepsilon \vol \lp A \rp$.
 \end{lema*}
 \begin{proof}
     Sea $x \in A$, existe un rectángulo compacto $R_x \subset A \tq x \in \mathring{R}_x$ (interior relativo a $A$) i $\omega \lp f, R_x \rp = M_{R_x} - m_{R_x} < \varepsilon$. \\
-    Sean $R_{x_i}$ un conjunto finito de los $R_x$ que recubren $A$. Sea $\Pa$ una partición de $A \tq$ cada subrectángulo de $\Pa$ esté dentro de uno de los $R_{x_i}$, para cada cada subrectángulo $R$ de $\Pa$, $M_R - m_R < \varepsilon$. Entonces,
-    \[ S \lp f,\Pa \rp = s \lp f,\Pa \rp = \sum_{R \in \Pa} (M_R - m_r) \vol \lp R \rp < \varepsilon \sum_{R \in \Pa} vol \lp R \rp = \varepsilon \vol \lp A \rp. \]
+    Sean $R_{x_i}$ un conjunto finito de los $R_x$ que recubren $A$. Sea $\Pa$ una partición de $A \tq$ cada subrectángulo de $\Pa$ esté dentro de uno de los $R_{x_i}$, para cada subrectángulo $R$ de $\Pa$, $M_R - m_R < \varepsilon$. Entonces,
+    \[ S \lp f,\Pa \rp - s \lp f,\Pa \rp = \sum_{R \in \Pa} (M_R - m_r) \vol \lp R \rp < \varepsilon \sum_{R \in \Pa} vol \lp R \rp = \varepsilon \vol \lp A \rp. \]
 \end{proof}
 \begin{col*}
     $f$ continua $\implies f$ integrable Riemann (ya que $f$ continua $\implies \forall x \: \omega \lp f, x \rp = 0$).
 \end{col*}
 \begin{lema*}[2]\label{lema:dos_lebesgue}
-    Sean $A \subset \real^n$ rectángulo compacto, $f : A \to \real$ fitada, $c > 0$. Si $f$ es integrable Riemann, el conjunto $B_c = \{x \in A | \omega \lp f, x \rp \geq c\}$ tiene mesura nula.
+    Sean $A \subset \real^n$ rectángulo compacto, $f : A \to \real$ acotada, $c > 0$. Si $f$ es integrable Riemann, el conjunto $B_c = \{x \in A | \omega \lp f, x \rp \geq c\}$ tiene medida nula.
 \end{lema*}
 \begin{proof}
     Sea $\varepsilon > 0$, aplicando el criterio de Riemann, existe una partición $\Pa$ de $A \tq S \lp f, \Pa \rp - s \lp f, \Pa \rp < c\varepsilon$. \\
