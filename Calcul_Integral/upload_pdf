@@ -1,13 +1,9 @@
 #!/bin/bash
 
-SRC="main.pdf"
+SRC="main"
 DEST="/pdfs/segundo/calculo_integral.pdf"
 MSG="PDF calcul actualitzat :yum: :tada:"
 
 source ../upload_file.sh
 
-make
-make
-make
-make
 upload "$SRC" "$DEST" "$MSG"

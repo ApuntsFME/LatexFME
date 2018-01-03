@@ -1,13 +1,9 @@
 #!/bin/bash
 
-SRC="main.pdf"
+NAME="main"
 DEST="/pdfs/segundo/algebra_multilineal_y_geometria.pdf"
 MSG="PDF multi actualitzat :blush: :kissing_heart:"
 
 source ../upload_file.sh
 
-make
-make
-make
-make
-upload "$SRC" "$DEST" "$MSG"
+upload "$NAME" "$DEST" "$MSG"

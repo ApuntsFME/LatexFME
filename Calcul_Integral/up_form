@@ -1,13 +1,9 @@
 #!/bin/bash
 
-SRC="formulari.pdf"
+NAME="formulari"
 DEST="/pdfs/segundo/formulari_calcul_integral.pdf"
-MSG="formulari calcul actualitzat :smiley: :smirk:"
+MSG="Formulari calcul actualitzat :smiley: :smirk:"
 
 source ../upload_file.sh
 
-pdflatex formulari.tex
-pdflatex formulari.tex
-pdflatex formulari.tex
-pdflatex formulari.tex
-upload "$SRC" "$DEST" "$MSG"
+upload "$NAME" "$DEST" "$MSG"
