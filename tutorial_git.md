@@ -76,3 +76,32 @@ Que deixarà una llista de commits més neta, evitant un merge innecessari.
 Per més informació, llegir https://git-scm.com/docs/gittutorial o https://git-scm.com/book/en/v2/ sobretot
 2.1, 2.2 i 2.5 d'aquest últim.
 
+## Esborrar l'historial de commits des de git
+
+Esborrar la carpeta `.git` pot portar problemes. Per esborrar l'historial i mantenir el codi:
+
+```
+# Check out to a temporary branch:
+git checkout --orphan TEMP_BRANCH
+
+# Add all the files:
+git add -A
+
+# Commit the changes:
+git commit -am "Initial commit"
+
+# Delete the old branch:
+git branch -D master
+
+# Rename the temporary branch to master:
+git branch -m master
+
+# Finally, force update to our repository:
+git push -f origin master
+```
+
+Sí, és un copy paste.
+
+
+### Més informació
+Per més informació, llegir https://gist.github.com/heiswayi/350e2afda8cece810c0f6116dadbe651l o [Google](https://www.google.es/).
