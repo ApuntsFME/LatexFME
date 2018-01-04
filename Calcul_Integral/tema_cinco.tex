@@ -1,24 +1,24 @@
 \chapter{Integración de formas diferenciales y teorema de Stokes}
 
-En este tema, consideraremos, salvo mención contraria, que todas las funciones son de clase $\C^\infty$
+En este tema, consideraremos, salvo mención contraria, que todas las funciones son de clase $\C^\infty$.
 
 \section{Formas diferenciales en $\real^n$}
 
 \begin{defi}
     Definiremos $\Omega^1$ como el espacio vectorial generado por $\dif x^1, \dots, \dif x^n$, que es un espacio vectorial real de dimensión $n$.
-    Denotaremos como $\Omega^\bullet$ el álgebra exterior de $\Omega^1$. Su poducto está regido por
+    Denotaremos como $\Omega^\bullet$ el álgebra exterior de $\Omega^1$. Su producto está regido por
     \[
-        \dif x^i \wedge \dif x^i = 0
+        \dif x^i \wedge \dif x^i = 0,
         \qquad
-        \dif x^i \wedge \dif x^j = -\dif x^j \wedge \dif x^i \quad (i \neq j)
+        \dif x^i \wedge \dif x^j = -\dif x^j \wedge \dif x^i, \quad (i \neq j).
     \]
     Así pues, tenemos $\Omega^\bullet = \bigoplus\limits^{n}_{r = 0} \Omega^r$, donde estos subespacios tienen dimensión y bases
     \begin{itemize}
-        \item $\dim \Omega^0 = 1$, base 1
-        \item $\dim \Omega^1 = n$, base $\left( \dif x^i \right)_{1 \leq i \leq n}$
-        \item $\dim \Omega^2 = \binom{n}{2}$, base $\left( \dif x^i \wedge \dif x^j \right)_{\forall i < j}$
+        \item $\dim \Omega^0 = 1$, base 1.
+        \item $\dim \Omega^1 = n$, base $\left( \dif x^i \right)_{1 \leq i \leq n}$.
+        \item $\dim \Omega^2 = \binom{n}{2}$, base $\left( \dif x^i \wedge \dif x^j \right)_{\forall i < j}$.
         \item $\vdots$
-        \item $\dim \Omega^{n-1} = n$, base $\left( \dif x^1 \wedge \cdots \wedge \dif x^{i-1} \wedge \dif x^{i+1} \wedge \cdots \wedge \dif x^n \right)_i$
+        \item $\dim \Omega^{n-1} = n$, base $\left( \dif x^1 \wedge \cdots \wedge \dif x^{i-1} \wedge \dif x^{i+1} \wedge \cdots \wedge \dif x^n \right)_i$.
         \item $\dim \Omega^n = 1$, base $\dif x^1 \wedge \cdots \wedge \dif x^n$.
     \end{itemize}
 
@@ -26,7 +26,7 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
     \[
         \dif x^I \equiv \dif x^{i_1} \wedge \cdots \wedge \dif x^{i_k}
     \]
-    e $I = \left( i_1, \dots, i_k \right)$ es un multiíndice de longitud $k$ estrictamente creciente. Así pues, $\Omega^\bullet = 2^n$.
+    e $I = \left( i_1, \dots, i_k \right)$ es un multiíndice de longitud $k$ estrictamente creciente. Así pues, $\dim\Omega^\bullet = 2^n$.
 \end{defi}
 
 \begin{defi}
@@ -54,7 +54,7 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
     el producto exterior de dos formas diferenciales se calcula según la distributividad respecto de la suma, y con la regla
     \[
         \left( f \dif x^{i_1} \wedge \cdots \wedge \dif x^{i_k} \right) \wedge \left( g \dif x^{j_1} \wedge \cdots \wedge \dif x^{j_l} \right) =
-        fg \dif x^{i_1} \wedge \cdots \wedge \dif x^{i_k} \wedge \dif x^{j_1} \wedge \cdots \wedge \dif x^{j_l}
+        fg \dif x^{i_1} \wedge \cdots \wedge \dif x^{i_k} \wedge \dif x^{j_1} \wedge \cdots \wedge \dif x^{j_l}.
     \]
 \end{defi}
 
@@ -62,7 +62,7 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
     El producto exterior en $\Omega^\bullet \left( \real^n \right)$ tiene elemento neutro (la función constante igual a 1) y es asociativo
     y anticonmutativo: si $\alpha$ y $\beta$ son formas diferenciales de grados $\abs{\alpha}$ y $\abs{\beta}$, entonces
     \[
-        \beta \wedge \alpha = (-1)^{\abs{\alpha}\abs{\beta}} \alpha \wedge \beta
+        \beta \wedge \alpha = (-1)^{\abs{\alpha}\abs{\beta}} \alpha \wedge \beta.
     \]
 \end{prop}
 
@@ -72,14 +72,14 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
    Dada una función $f \in \C^\infty \left( \real^n \right) = \Omega^0 \left( \real^n \right)$, podemos construir una 1-forma diferencial
    $\dif f \in \Omega^1 \left( \real^n \right)$, de acuerdo con la fórmula
    \[
-       \dif f := \sum^n_{i=1} \frac{\partial f}{\partial x^i} \dif x^i
+       \dif f := \sum^n_{i=1} \frac{\partial f}{\partial x^i} \dif x^i,
    \]
    donde $\frac{\partial f}{\partial x^i}$ representa la derivada parcial de $f$ respecto a la variable $i$-\'esima.
 \end{defi}
 
 \begin{obs}
     Observamos que si $f \left( a^1, \dots, a^n \right) = a^i$, entonces $\dif f = \dif x^i$. Está función se conoce como la coordenada
-    cartesiana $i$-\'esima y es habitual denotarla por $x^i$
+    cartesiana $i$-\'esima y es habitual denotarla por $x^i$.
 \end{obs}
 
 \begin{defi}
@@ -87,30 +87,30 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
     de la manera siguiente
         \begin{align*}
             \dif \colon \Omega^\bullet \left( \real^n \right) &\to \Omega^\bullet \left( \real^n \right) \\
-            f \dif x^I &\mapsto \dif\left( f \dif x^I \right) := \dif f \wedge \dif x^I
+            f \dif x^I &\mapsto \dif\left( f \dif x^I \right) := \dif f \wedge \dif x^I.
         \end{align*}
 \end{defi}
 
 \begin{obs*}
-    Si $\omega \in \Omega^k \left( \real^n \right)$, entonces, $\dif \omega \in \Omega^{k+1} \left( \real^n \right)$
+    Si $\omega \in \Omega^k \left( \real^n \right)$, entonces, $\dif \omega \in \Omega^{k+1} \left( \real^n \right)$.
 \end{obs*}
 
 \begin{example*}
     En $\real^2$, se tiene que
     \begin{gather*}
-        \dif f = \pdv{f}{x} \dif x + \pdv{f}{y} \dif y \\
-        \dif \left( f \dif x \wedge \dif y \right) = 0 \\
+        \dif f = \pdv{f}{x} \dif x + \pdv{f}{y} \dif y, \\
+        \dif \left( f \dif x \wedge \dif y \right) = 0, \\
         \dif\left( f \dif x + g \dif y \right) = \dif f \wedge \dif x + \dif g \wedge \dif y =\\=
         \left( \cancel{\pdv{f}{x} \dif x} + \pdv{f}{y} \dif y \right) \wedge \dif x + \left( \pdv{g}{x} \dif x + \cancel{\pdv{g}{y} \dif y} \right)\wedge \dif y =
-        \left( -\pdv{f}{y} + \pdv{g}{x} \right) \dif x \wedge \dif y
+        \left( -\pdv{f}{y} + \pdv{g}{x} \right) \dif x \wedge \dif y.
     \end{gather*}
     En $\real^3$, se tiene que
     \begin{gather*}
-        \dif f = \pdv{f}{x} \dif x + \pdv{f}{y} \dif y + \pdv{f}{z} \dif z \\
+        \dif f = \pdv{f}{x} \dif x + \pdv{f}{y} \dif y + \pdv{f}{z} \dif z, \\
         \dif \left( f_1 \dif x + f_2 \dif y + f_3 \dif z \right) = \cdots = \\ = \left( \pdv{f_3}{y} - \pdv{f_2}{x} \right)\dif y \wedge \dif z +
-        \left( \pdv{f_1}{z} - \pdv{f_3}{x} \right) \dif z \wedge \dif x + \left( \pdv{f_2}{x} - \pdv{f_1}{y} \right)\dif x \wedge \dif y \\
+        \left( \pdv{f_1}{z} - \pdv{f_3}{x} \right) \dif z \wedge \dif x + \left( \pdv{f_2}{x} - \pdv{f_1}{y} \right)\dif x \wedge \dif y, \\
         \dif \left( g_1 \dif y \wedge \dif z +  g_2 \dif z \wedge \dif x + g_3 \dif x \wedge \dif y \right) = \cdots =
-        \left( \pdv{g_1}{x} + \pdv{g_2}{y} + \pdv{g_3}{z} \right) \dif x \wedge \dif y \wedge \dif z
+        \left( \pdv{g_1}{x} + \pdv{g_2}{y} + \pdv{g_3}{z} \right) \dif x \wedge \dif y \wedge \dif z.
     \end{gather*}
 \end{example*}
 
@@ -118,30 +118,30 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
     La diferencial exterior $\dif \colon \Omega^\bullet \left( \real^n \right) \to \Omega^\bullet \left( \real^n \right)$ es una antiderivación de
     grado $+1$: es $\real$-lineal, aumenta el grado en 1 y sigue la regla de Leibniz ``graduada'':
     \[
-        \dif \left( \alpha \wedge \beta \right) = \left( \dif \alpha \right) \wedge \beta + (-1)^{\abs{\alpha}} \alpha \wedge \dif \beta
+        \dif \left( \alpha \wedge \beta \right) = \left( \dif \alpha \right) \wedge \beta + (-1)^{\abs{\alpha}} \alpha \wedge \dif \beta.
     \]
 \end{obs}
 
 \begin{prop}\label{prop:d-cuadrado}
-    Sea $\dif \colon \Omega^\bullet \left( \real^n \right) \to \Omega^\bullet \left( \real^n \right)$ la diferencial exterior. Entonces tenemos que $\dif \circ \dif = 0$
+    Sea $\dif \colon \Omega^\bullet \left( \real^n \right) \to \Omega^\bullet \left( \real^n \right)$ la diferencial exterior. Entonces tenemos que $\dif \circ \dif = 0$.
 \end{prop}
 \begin{proof}
     Basta demostrarlo para
     \[
-        \dif \left( \dif f \right) = \sum_{i,j} \frac{\partial}{\partial x^j} \left( \frac{\partial f}{\partial x^i} \right) \dif x^j \wedge \dif x^i = 0
+        \dif \left( \dif f \right) = \sum_{i,j} \frac{\partial}{\partial x^j} \left( \frac{\partial f}{\partial x^i} \right) \dif x^j \wedge \dif x^i = 0.
     \]
     Aplicando el lema
     \[
         \begin{cases}
             \delta_{ij} = \delta_{ji} \\ A_{ij} = - A_{ji}
         \end{cases} \implies
-        \sum_{i,j} \delta_{ij} A_{ij} = 0
+        \sum_{i,j} \delta_{ij} A_{ij} = 0.
     \]
 \end{proof}
 
 \begin{defi}
     Diremos que una forma diferencial $\alpha$ es cerrada si $\dif \alpha =0$. Diremos que una forma diferencial $\beta$ es exacta, si existe otra
-    forma diferencial $\alpha$ tal que $\beta = \dif \alpha$
+    forma diferencial $\alpha$ tal que $\beta = \dif \alpha$.
 \end{defi}
 
 \begin{obs*}
@@ -151,15 +151,15 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
 \begin{prop}
     Sean $y^i$ $(1 \leq j \leq n)$ funciones en $\real^n$. Tenemos
     \[
-        \dif y^j = \sum^n_{i=1} \frac{\partial y^j}{\partial x^i} \dif x^i
+        \dif y^j = \sum^n_{i=1} \frac{\partial y^j}{\partial x^i} \dif x^i.
     \]
     La aplicación $\psi = \left( y^1, \dots, y^n \right) \colon \real^n \to \real^n$ es un difeomorfismo alrededor de cada punto
-    $\stackrel{\text{T.Función Inversa}}{\iff} J_\psi = \left( \frac{\partial y^j}{\partial x^i} \right)$ es invertible en cada punto.
+    $\substack{\text{T. Función} \\ \iff \\ \text{Inversa}} J_\psi = \left( \frac{\partial y^j}{\partial x^i} \right)$ es invertible en cada punto.
     Y $\psi$ es un difeomorfismo, si es biyectiva y $J_\psi$ es invertible en todos los puntos.
 
     En estas condiciones, las diferenciales $\dif y^j$ tambi\'en son base para las 1-formas diferenciales. Observamos además que
     \[
-        \dif y^1 \wedge \cdots \wedge \dif y^n = \det \left( \frac{\partial y^j}{\partial x^i} \right) \dif x^1 \wedge \cdots \wedge \dif x^n
+        \dif y^1 \wedge \cdots \wedge \dif y^n = \det \left( \frac{\partial y^j}{\partial x^i} \right) \dif x^1 \wedge \cdots \wedge \dif x^n.
     \]
 \end{prop}
 
@@ -167,7 +167,7 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
     Sea $g \colon \real^n \to \real$. Interpretamos $g$ como una función de las $y^j$, entonces
     \[
         \sum_j \frac{\partial g}{\partial y^j} \dif y^j = \sum_{i, j} \frac{\partial g}{\partial y^j} \frac{\partial y^j}{\partial x^i} \dif x^i
-        \substack{\text{regla} \\ = \text{cadena}} \sum_i \frac{\partial g}{\partial x^i} \dif x^i = \dif g
+        \substack{\text{regla} \\ = \\ \text{cadena}} \sum_i \frac{\partial g}{\partial x^i} \dif x^i = \dif g.
     \]
 
     Esta relación, demuestra que la diferencial exterior no depende del sistema de coordenadas utilizado.
@@ -188,45 +188,45 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
 \begin{lema}
     Para toda forma diferencial $\omega$ de grado $\geq 1$ en $\real^n$
     \[
-        \omega = K \dif \omega + \dif K \omega
+        \omega = K \dif \omega + \dif K \omega.
     \]
 \end{lema}
 
-\begin{teo}[lema de Poincar\'e]
+\begin{teolema}[de Poincar\'e]
     Toda forma diferencial en $\real^n$ cerrada de grado $\geq 1$ es exacta.
-\end{teo}
+\end{teolema}
 \begin{proof}
     \[
-        \omega = \cancel{K\dif \omega} + \dif K \omega
+        \omega = \cancel{K\dif \omega} + \dif K \omega.
     \]
 \end{proof}
 
 \begin{example*}
     En $\real^2$, podemos considerar el cambio de coordenadas de ($x, y$) a ($r, \phi$), entonces
     \begin{gather*}
-        x = r \cos \phi \qquad y = r \sin \phi \\
-        \dif x = \cos \phi \dif r - r \sin \phi \dif \phi \\
-        \dif y = \sin \phi \dif r + r \cos \phi \dif \phi \\
+        x = r \cos \phi, \qquad y = r \sin \phi, \\
+        \dif x = \cos \phi \dif r - r \sin \phi \dif \phi, \\
+        \dif y = \sin \phi \dif r + r \cos \phi \dif \phi, \\
         \pdv{(r, \phi)}{(x,y)} =
         \begin{pmatrix}
             \cos \phi & - r \sin \phi \\ \sin \phi & r \cos \phi
-        \end{pmatrix}
+        \end{pmatrix}.
     \end{gather*}
     Consideramos ahora la función
     \[
         \begin{aligned}
             f \colon \real^2 &\to \real \\
-            (x,y) &\mapsto f(x,y) = x^2 + y^2 = r^2
+            (x,y) &\mapsto f(x,y) = x^2 + y^2 = r^2.
         \end{aligned}
     \]
-    Y se tiene que
+    Se tiene que
     \begin{gather*}
-        \dif f = 2x \dif x + 2y \dif y \qquad \dif f = 2 r \dif r \\
+        \dif f = 2x \dif x + 2y \dif y, \qquad \dif f = 2 r \dif r, \\
         \dif x \wedge \dif y = \det
         \begin{pmatrix}
             \cos \phi & - r \sin \phi \\
             \sin \phi &   r \cos \phi
-        \end{pmatrix} \dif r \wedge \dif \phi = r \dif r \wedge \dif \phi
+        \end{pmatrix} \dif r \wedge \dif \phi = r \dif r \wedge \dif \phi.
     \end{gather*}
 \end{example*}
 
@@ -238,10 +238,10 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
         F^\ast(g) := g \circ F \in \C^\infty \colon \real^m \to \real
     \]
     se denomina \emph{pullback} de $g$ por $F$. Así, tenemos una aplicación $\real$-lineal $F^\ast \colon \C^\infty \left( \real^n \right)
-    \to \C^\infty \left( \real^n \right)$
+    \to \C^\infty \left( \real^n \right)$.
 \end{defi}
 \begin{obs*}
-    Es similar a a aplicación transponer de álgebra lineal
+    Es similar a a aplicación transponer de álgebra lineal.
 \end{obs*}
 
 \begin{defi}
@@ -252,18 +252,18 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
         \item Sobre $\Omega^0\left( \real^n \right)$ es el pullback de funciones.
         \item La aplicación conmuta con el producto exterior
             \[
-                F^\ast(\alpha \wedge \beta) = F^\ast(\alpha) \wedge F^\ast(\beta)
+                F^\ast(\alpha \wedge \beta) = F^\ast(\alpha) \wedge F^\ast(\beta).
             \]
-        \item Si $g \in \Omega^0 \left( \real^n \right)$, entonces $F^\ast\left( \dif g \right) = \dif F^\ast(g)$
+        \item Si $g \in \Omega^0 \left( \real^n \right)$, entonces $F^\ast\left( \dif g \right) = \dif F^\ast(g)$.
     \end{itemize}
     Por lo tanto, $F^\ast$ aplica de $k$-formas en $k$-formas y $F^\ast$ conmuta con la difencial exterior
     \[
-        \dif \circ F^\ast = F^\ast \circ \dif
+        \dif\, \circ\, F^\ast = F^\ast \circ \dif.
     \]
     $F^\ast$ se define poniendo
     \[
         F^\ast\left( g \dif y^{j_1} \wedge \cdots \wedge \dif y^{j_l} \right) = F^\ast(g)\dif F^\ast\left( y^{j_1} \right) \wedge
-        \cdots \wedge \dif F^\ast\left( y^{j_l} \right)
+        \cdots \wedge \dif F^\ast\left( y^{j_l} \right).
     \]
 \end{defi}
 
@@ -271,18 +271,18 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
     En particular, tenemos
     \[
         F^\ast \left( \dif y^j \right) = \dif F^\ast\left( y^j \right) =
-        \sum_i \frac{\partial F^\ast\left( y^j \right)}{\partial x^i} \dif x^i
+        \sum_i \frac{\partial F^\ast\left( y^j \right)}{\partial x^i} \dif x^i.
     \]
     Donde podemos observar la aparición de la jacobiana de $F$
     \[
-        J_F = \left( \frac{\partial F^\ast \left( y^j \right)}{\partial x^i} \right)
+        J_F = \left( \frac{\partial F^\ast \left( y^j \right)}{\partial x^i} \right).
     \]
 \end{obs}
 
 \begin{obs}
     En el caso particular de que $m=n$, tenemos que
     \[
-        F^\ast \left( \dif y^1 \wedge \cdots \wedge \dif y^n \right) = \det J_F \dif x^1 \wedge \cdots \wedge \dif x^n
+        F^\ast \left( \dif y^1 \wedge \cdots \wedge \dif y^n \right) = \det J_F \dif x^1 \wedge \cdots \wedge \dif x^n.
     \]
 \end{obs}
 
@@ -297,19 +297,19 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
     \[
         \begin{aligned}
             F \colon \real^2 &\to \real^2 \\
-            (u,v) &\mapsto F(u,v) = (u^2 - v^2, 2uv)
+            (u,v) &\mapsto F(u,v) = (u^2 - v^2, 2uv).
         \end{aligned}
     \]
     Entonces,
     \begin{gather*}
-        F^\ast(x) = u^2 - v^2 \qquad F^\ast(y) = 2uv \\
-        F^\ast \left( x^2 + y^2 \right) = \left(u^2 - v^2\right)^2 + (2uv)^2 = \left(u^2 +v^2\right)^2 \\
-        F^\ast\left( \dif x \right) = \dif F^\ast(x) = 2u\dif u - 2v\dif v
+        F^\ast(x) = u^2 - v^2, \qquad F^\ast(y) = 2uv, \\
+        F^\ast \left( x^2 + y^2 \right) = \left(u^2 - v^2\right)^2 + (2uv)^2 = \left(u^2 +v^2\right)^2, \\
+        F^\ast\left( \dif x \right) = \dif F^\ast(x) = 2u\dif u - 2v\dif v,
         \qquad
-        F^\ast\left( \dif y \right) = \dif F^\ast (y) = 2v \dif u + 2u \dif v \\
+        F^\ast\left( \dif y \right) = \dif F^\ast (y) = 2v \dif u + 2u \dif v, \\
         F^\ast\left( \dif x \wedge \dif y \right) = F^\ast\left( \dif x \right) \wedge F^\ast\left( \dif y \right) = \cdots =
-        4 \left( u^2 + v^2 \right) \dif u \wedge \dif v \\
-        F^\ast\left( -y\dif x + x \dif y\right) = \cdots = 2 \left( u^2 + v^2 \right) \left( -v \dif u + u \dif v \right)
+        4 \left( u^2 + v^2 \right) \dif u \wedge \dif v, \\
+        F^\ast\left( -y\dif x + x \dif y\right) = \cdots = 2 \left( u^2 + v^2 \right) \left( -v \dif u + u \dif v \right).
     \end{gather*}
 \end{example*}
 
@@ -318,7 +318,7 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
 \begin{obs}
     Recordemos que si $f \colon \real^n \to \real$ es una función continua de clase $\C^\infty$, está definida la integral
     \[
-        \int_{\real^n} f \equiv \int_{\real^n} f(x) \dif x^1 \cdots \dif x^n
+        \int_{\real^n} f \equiv \int_{\real^n} f(x) \dif x^1 \cdots \dif x^n.
     \]
 \end{obs}
 
@@ -326,28 +326,28 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
     Sea $\omega \in \Omega^n\left( \real^n \right)$ una $n$-forma diferencial escrita como $\omega = f \dif x^1 \wedge \cdots \wedge \dif x^n$,
     con $f$ de clase $\C^\infty$. Si $f$ tiene soporte compacto, se define su integral como
     \[
-        \int_{\real^n} \omega := \int_{\real^n} f\dif x^1 \wedge \cdots \wedge \dif x^n = \int_{\real^n} f \dif x^1 \cdots \dif x^n
+        \int_{\real^n} \omega := \int_{\real^n} f\dif x^1 \wedge \cdots \wedge \dif x^n = \int_{\real^n} f \dif x^1 \cdots \dif x^n.
     \]
 \end{defi}
 
 \begin{prop}
     Sea $F \colon \real^n \to \real^n$ un difeomorfismo y $\omega \in \Omega^n\left( \real^n \right)$ con soporte compacto, entonces
     \[
-        \int_{\real^n} F^\ast(\omega) = \pm \int_{\real^n} \omega
+        \int_{\real^n} F^\ast(\omega) = \pm \int_{\real^n} \omega,
     \]
-    donde el signo es el de $J_F$
+    donde el signo es el de $J_F$.
 \end{prop}
 
 \begin{proof}
     Por un lado, tenemos que
     \[
         \int_{\real^n} \omega = \int_{\real^n} f(x) \dif x^1 \cdots \dif x^n \stackrel{F \text{ C.V.}}{=} \int_{\real^n}
-        f\left( F(y) \right) \abs{\det J_F(y)} \dif y^1 \cdots \dif y^n
+        f\left( F(y) \right) \abs{\det J_F(y)} \dif y^1 \cdots \dif y^n.
     \]
     Por otro lado,
     \[
         \int_{\real^n} F^\ast(\omega) = \int_{\real^n} F^\ast (f) \det J_F \dif y^1 \wedge \cdots \dif y^n =
-        \int_{\real^n} f\left( F(y) \right) \det J_F(y) \dif y^1 \cdots \dif y^n
+        \int_{\real^n} f\left( F(y) \right) \det J_F(y) \dif y^1 \cdots \dif y^n.
     \]
 \end{proof}
 
@@ -360,7 +360,7 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
     Sea $\omega \in \Omega^k\left( \real^n \right)$ una forma diferencial de grado $k < n$. Si $\sigma \colon \real^k \to \real^n$ es
     una aplicación, se define la integral de $\omega$ a lo largo de $\sigma$ como la integral
     \[
-        \int_{\sigma} \omega := \int_{\real^k} \sigma^\ast(\omega)
+        \int_{\sigma} \omega := \int_{\real^k} \sigma^\ast(\omega),
     \]
     suponiendo que $\sigma^\ast(\omega)$ tenga soporte compacto.
 \end{defi}
@@ -381,8 +381,8 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
 \section{Subvariedades de $\real^n$}
 
 Este tema es un repaso de cálculo diferencial, así que referenciamos a los apuntes del profesor
-ante cualquier duda, este apartado se trata de un simple repaso de las propiedadaes basicas de las
-subvariedades
+ante cualquier duda, este apartado se trata de un simple repaso de las propiedadaes b\'asicas de las
+subvariedades.
 
 \section{Formas diferenciales en una variedad}
 
@@ -398,7 +398,7 @@ subvariedades
     \[
         \begin{aligned}
             \theta \colon M &\to T^\ast M \equiv \bigcup_{p \in M} T^\ast_pM \\
-            p &\mapsto \theta_p \equiv \theta(p) \in T^\ast_p M
+            p &\mapsto \theta_p \equiv \theta(p) \in T^\ast_p M.
         \end{aligned}
     \]
 \end{defi}
@@ -412,7 +412,7 @@ subvariedades
 \begin{defi}
     En el dominio $V$ de una carta, una 1-forma diferencial $\theta$ se expresa de manera única como
     \[
-        \theta \vert_V = \sum^m_{i=1} a_i \dif x^i
+        \theta \vert_V = \sum^m_{i=1} a_i \dif x^i,
     \]
     donde $a_i \colon V \to \real$ son los componentes de $\theta$ en la carta.
 
@@ -422,14 +422,14 @@ subvariedades
 \begin{prop}
     En el dominio de una carta, la diferencial de una función se expresa como
     \[
-        \dif f \vert_V = \sum^m_{i= 1} \frac{\partial f}{\partial x^i} \dif x^i
+        \dif f \vert_V = \sum^m_{i= 1} \frac{\partial f}{\partial x^i} \dif x^i.
     \]
 \end{prop}
 
 \begin{defi}
     Definiremos una $k$-forma diferencial como una expresión del tipo
     \[
-        \omega\vert_V = \sum_{i_1 < \cdots < i_k} f_{i_1 \cdots i_k} \dif x^{i_1} \wedge \cdots \wedge \dif x^{i_k}
+        \omega\vert_V = \sum_{i_1 < \cdots < i_k} f_{i_1 \cdots i_k} \dif x^{i_1} \wedge \cdots \wedge \dif x^{i_k}.
     \]
 \end{defi}
 
@@ -462,7 +462,7 @@ El resto de este tema tampoco se ha realizado en clase, ante cualquier duda o cu
 \end{defi}
 
 \begin{defi}
-    Una forma diferencial $\Omega$ en $M$ de grado máximo que no se anula en ningún punto, se denomina forma de volumen
+    Una forma diferencial $\Omega$ en $M$ de grado máximo que no se anula en ningún punto, se denomina forma de volumen.
 \end{defi}
 
 \begin{prop*}
@@ -475,7 +475,7 @@ El resto de este tema tampoco se ha realizado en clase, ante cualquier duda o cu
     $\Omega_p\left( \vec{v_1}, \dots, \vec{v_n} \right) > 0$. De manera análoga, una carta $\varphi = \left( x^1, \dots, x^n \right)$
     es positiva cuando
     \[
-        \Omega\left( \frac{\partial}{\partial x^1}, \dots, \frac{\partial}{\partial x^m} \right) > 0
+        \Omega\left( \frac{\partial}{\partial x^1}, \dots, \frac{\partial}{\partial x^m} \right) > 0.
     \]
     Las cartas positivas constituyen un atlas orientado en $M$, y por tanto, definen na orientación.
 \end{proof}
@@ -493,7 +493,7 @@ El resto de este tema tampoco se ha realizado en clase, ante cualquier duda o cu
     de grado máximo con soporte compacto. Si $M$ admite una parametrización global $g \colon W \subset \real^n \to M$ correspondiente
     a la orientación de $M$, se define la integral de $\omega$ como
     \[
-        \int_M \omega := \int_W g^\ast(\omega)
+        \int_M \omega := \int_W g^\ast(\omega).
     \]
 \end{defi}
 
@@ -504,7 +504,7 @@ El resto de este tema tampoco se ha realizado en clase, ante cualquier duda o cu
 \begin{proof}
     Sea $g^\prime \colon W^\prime \to M$ otra parametrización y sea $X \colon W^\prime \to W$ un difeomorfismo, entonces
     \[
-        \int_{W^\prime} {g^\prime}^\ast(\omega) = \int_{W^\prime} X^\ast\left( g^\ast(\omega) \right) = \pm \int_W g^\ast(\omega)
+        \int_{W^\prime} {g^\prime}^\ast(\omega) = \int_{W^\prime} X^\ast\left( g^\ast(\omega) \right) = \pm \int_W g^\ast(\omega),
     \]
     donde el signo es el signo de la jacobiana de $X$.
 \end{proof}
@@ -518,7 +518,7 @@ El resto de este tema tampoco se ha realizado en clase, ante cualquier duda o cu
     Sea $\phi_\alpha \colon V_\alpha \to M$ una familia de cartas positivas que recubren todo $M$ y $\left( \chi_\alpha \right)$ es una
     partición de la unidad subordinada, tenemos pues que $\omega = \sum\limits_\alpha \chi_\alpha \omega$, lo cual nos permite definir
     \[
-        \int_M \omega = \sum_\alpha \int_M \chi_\alpha \omega
+        \int_M \omega = \sum_\alpha \int_M \chi_\alpha \omega.
     \]
     Donde $\int_M \chi_\alpha \omega$ se debe entender como la integral sobre los abiertos $V_\alpha$ ya que $\chi_\alpha$ fuera de ellos vale
     0.
@@ -527,11 +527,11 @@ El resto de este tema tampoco se ha realizado en clase, ante cualquier duda o cu
 \begin{obs}
     Como hemos supuesto que $\omega$ tiene soporte compacto, la suma es una suma finita, y, en general, $M$ se puede expresar como
     \[
-        M = \underbrace{\left( \bigcup_\alpha V_\alpha \right)}_{\text{finito}} \cup \underbrace{Z}_{\text{medida nula}}
+        M = \underbrace{\left( \bigcup_\alpha V_\alpha \right)}_{\text{finito}} \cup \underbrace{Z}_{\text{medida nula}},
     \]
     y entonces,
     \[
-        \int_M \omega = \sum_\alpha \int_{V_\alpha} \omega
+        \int_M \omega = \sum_\alpha \int_{V_\alpha} \omega.
     \]
 \end{obs}
 
@@ -540,7 +540,7 @@ El resto de este tema tampoco se ha realizado en clase, ante cualquier duda o cu
 \begin{obs}
     El modelo local de variedad con borde es el semiespacio cerrado $H^m$,
     \[
-        H^m = \setb{\left( x^1, \dots, x^m \right) \in \real^m \vert x^1 \leq 0} = (-\infty, 0] \times \real^{m-1}
+        H^m = \setb{\left( x^1, \dots, x^m \right) \in \real^m \vert x^1 \leq 0} = (-\infty, 0] \times \real^{m-1}.
     \]
     Formado por $(-\infty, 0) \times \real^{m-1}$, el interior de $H^m$ y su frontera $\{0\} \times \real^{m-1}$.
 \end{obs}
@@ -552,15 +552,15 @@ El resto de este tema tampoco se ha realizado en clase, ante cualquier duda o cu
     para cada $p \in M$ existe un conjunto abierto $V \subset \real^n$, con $p \in V$, y un difeomorfismo
     $\Phi \colon V \to U$ entre abiertos de $\real^n$, tal que
     \[
-        \Phi\left( V \cap M \right) = U \cap \left( H^m \times \{0\}\right)
+        \Phi\left( V \cap M \right) = U \cap \left( H^m \times \{0\}\right).
     \]
 \end{defi}
 
 \begin{defi}
     Para un punto $p \in M$ una subvariedad, y un difeomorfismo $\Phi$ como el de antes, hay dos posiblidades,
     \begin{itemize}
-        \item $\Phi(p) \in \text{Int}\left( H^m \right) \times \{0\}$
-        \item $\Phi(p) \in \fr \left( H^m \right) \times \{0\}$
+        \item $\Phi(p) \in \text{Int}\left( H^m \right) \times \{0\}$.
+        \item $\Phi(p) \in \fr \left( H^m \right) \times \{0\}$.
     \end{itemize}
     Que ocurra una o la otra, no depende del difeomorfismo utilizado. A los puntos del primer tipo los llamaremos
     ``puntos interiores'' de $M$. Los puntos del segundo tipo, forman el borde de $M$, que se representa por $\partial M$.
@@ -588,7 +588,7 @@ Es tanto interesante como recomendable, consultar los apuntes del profesor de la
     Sean $M \subset \real^n$ una variedad con borde, orientada y de dimensión $m$, y $\omega \in \Omega^{m-1}(M)$ una forma
     diferencial de grado $m-1$ en $M$ de soporte compacto. Entonces, se satisface la fórmula de \emph{Stokes}
     \[
-        \int_M \dif \omega = \int_{\partial M} \omega
+        \int_M \dif \omega = \int_{\partial M} \omega,
     \]
     donde el borde tiene la orientación inducida por $M$.
 \end{teo}
