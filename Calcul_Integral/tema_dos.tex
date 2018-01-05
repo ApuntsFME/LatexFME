@@ -755,15 +755,21 @@
 \end{example}
 
 \begin{defi}
-    Sea $X$ un espaci métrico, y sea $C\subset X$. Definimos la función característica de $C$ como
-    \begin{align}
-        \chi_C \colon X &\to \real \\
-        x &\mapsto \chi_C \lp x \rp = \begin{cases} 1 \text{ si } x \in C \\ 0 \text{ si } x \notin C \end{cases}
-    \end{align}
+    Sea $X$ un espacio métrico, y sea $C\subset X$. Definimos la función característica de $C$ como
+    \[
+        \begin{aligned}
+            \chi_C \colon X &\to \real \\
+            x &\mapsto \chi_C \lp x \rp =
+            \begin{cases}
+                1 \text{ si } x \in C \\
+                0 \text{ si } x \notin C
+            \end{cases}
+        \end{aligned}
+    \]
 \end{defi}
 
 \begin{lema}
-    Sea $X$ un espacio métrico, sea $C \in X$ y sea $\chi_C$ si función característica.
+    Sea $X$ un espacio métrico, sea $C \in X$ y sea $\chi_C$ su función característica.
     \[
         \disc \lp \chi_C \rp = \fr \lp C \rp
     \]
@@ -856,7 +862,7 @@
 \section{Propiedades de la integral}
 
 \begin{prop}[Linealidad i positividad]
-    Sea $E \subset \real^n$ mesurable Jordan. El conjunto $\rie(E)$ de funciones integrables Riemann en $E$ es un $\real$-espacio vectorial, y la integral:
+    Sea $E \subset \real^n$ medible Jordan. El conjunto $\rie(E)$ de funciones integrables Riemann en $E$ es un $\real$-espacio vectorial, y la integral:
     \begin{align*}
         \rie(E) &\to \real & \text{es una forma lineal positiva.} \\
         f &\mapsto \int_E f & \lp f \geq 0 \to \int_E f \geq 0 \rp
@@ -874,7 +880,7 @@
 \end{col}
 
 \begin{defi}
-    Sea $E$ mesurable Jordan, el valor medio de $f : E \to \real $:
+    Sea $E$ medible Jordan, el valor medio de $f : E \to \real $:
     \[
     <f> := \frac{\int_E f}{\int_E 1} = \frac{1}{\vol(E)} \int_E f, \qquad \lp \vol(E) \neq 0 \rp.
     \]
@@ -898,14 +904,14 @@
 \end{col}
 
 \begin{teo}[del valor medio (alternativo)]
-    Sea $E$ mesurable Jordan y connexo; $f : E \to \real$ fitada y continua. Existe $x_o \in E$ tal que:
+    Sea $E$ medible Jordan y connexo; $f : E \to \real$ acotada y continua. Existe $x_o \in E$ tal que:
     \[
     \int_E f = f(x_o) \vol(E), \qquad \lp <f> = f(x_o) \rp
     \]
 \end{teo}
 
 \begin{prop}
-    Sea $E \subset \real^n$ mesurable Jordan, $f : E \to \real$ integrable Riemann, $h : f(E) \to \real$ continua. Entonces $h \circ f$ es integrable Riemann.
+    Sea $E \subset \real^n$ medible Jordan, $f : E \to \real$ integrable Riemann, $h : f(E) \to \real$ continua. Entonces $h \circ f$ es integrable Riemann.
 \end{prop}
 
 \begin{proof}
@@ -922,14 +928,14 @@
 \section{El teorema de Fubini}
 
 \begin{lema*}
-    Siguin $B_i \subset \real \lp i\in I\rp$ no vacios i fitados inferiormente, $B = \bigcup_{i\in I} B_i$. Entonces
+    Siguin $B_i \subset \real \lp i\in I\rp$ no vacios i acotados inferiormente, $B = \bigcup\limits_{i\in I} B_i$. Entonces
     \[ \inf B = \inf\left\{\inf B_i | i\in I\right\}.\]
 \end{lema*}
 \begin{proof}
-    Ejercicio 2. Indicación: $B \colon \left\{ \inf B_i | i\in I\right\}$ tienen las mismas fitas inferiores.
+    Ejercicio 2. Indicación: $B \colon \left\{ \inf B_i | i\in I\right\}$ tienen las mismas cotas inferiores.
 \end{proof}
 \begin{lema}\label{lema:2_6_1}
-    Sean $R, S$ conjuntos no vacios, $f \colon R\times S \to \real$ fitada inferiormente. Entonces
+    Sean $R, S$ conjuntos no vacios, $f \colon R\times S \to \real$ acotada inferiormente. Entonces
     \[ \inf_{\lp x,y\rp\in R\times S} f\lp x,y\rp = \inf_{x\in R}\inf_{y\in S} f\lp x,y\rp. \]
 \end{lema}
 \begin{proof}
@@ -938,20 +944,23 @@
     \end{gather*}
 \end{proof}
 \begin{lema}\label{lema:2_6_2}
-    Sean $g_j \colon R \to \real$ una familia de funciones fitadas inferiormente. Entonces,
+    Sean $g_j \colon R \to \real$ una familia de funciones acotadas inferiormente. Entonces,
     \[ \sum_j \inf_{x\in R} g_j\lp x\rp \leq \inf_{x\in R} \sum_j g_j\lp x\rp \]
 \end{lema}
 \begin{proof}
     Fijamos $x_0 \in R:$
-    \[ \sum_j \inf_{x\in R} g_j\lp x\rp \leq \sum_j g_j \lp x_0\rp, \,\lp\text{fita inferior}\rp. \]
+    \[ \sum_j \inf_{x\in R} g_j\lp x\rp \leq \sum_j g_j \lp x_0\rp, \,\lp\text{cota inferior}\rp. \]
     Como $x_0$ es arbitrario,
     \[ \sum_j \inf_{x\in R} g_j\lp x\rp \leq \inf_{x\in R} \sum_j g_j\lp x\rp. \]
 \end{proof}
 \begin{lema}\label{lema:fubin_exp}
-    Sean $A \subset \real^m$, $B \subset \real^n$ rectangulos compactos. Sea $f \colon A\times B\to\real$ fitada. Sea $\Phi \colon A\to\real \tq$
+    Sean $A \subset \real^m$, $B \subset \real^n$ rectangulos compactos. Sea $f \colon A\times B\to\real$ acotada. Sea $\Phi \colon A\to\real \tq$
     \[ \lowint_B f\lp x,\cdot\rp\leq\Phi\lp x\rp\leq\upint_B f\lp x,\cdot\rp, \forall x\in A. \]
     Entonces,
-    \[ \lowint_{A\times B} f \leq \lowint_A \Phi, \, \upint_A \Phi \leq \upint_{A\times B} f. \]
+    \[
+        \lowint_{A\times B} f \leq \lowint_A \Phi, \quad
+        \upint_A \Phi \leq \upint_{A\times B} f.
+    \]
 \end{lema}
 \begin{proof}
     Sean $P, Q$ particiones de $A, B$ respectivamente, $P\times Q$ es una partición de $A\times B$ con subrectángulos $R_i \times S_j$. Sea $|T| = \vol\lp T\rp$, entonces $|R_i\times S_j| = |R_i||S_j|$. Ahora, tenemos que
@@ -1122,7 +1131,7 @@ los rectángulos.
     \[
         E = \setb{(x, y) \in X \times \real \vert x \in D, y \geq f(x)}
     \]
-    denomidano epígraf de la función. Entonces
+    denomidano epígrafo de la función. Entonces
     \begin{enumerate}[i)]
         \item Si $D \subset X$ es cerrado, $E \subset X \times \real$ es cerrado.
         \item $\fr(E) \subset \graf(f) \cup \left( \fr(D) \times \real \right)$.
@@ -1137,7 +1146,7 @@ los rectángulos.
 \end{proof}
 
 \begin{lema}
-    Sean $D \subset \real^{n-1}$ admisible y compacto y $\phi, \psi \colon D \to \real$
+    Sea $D \subset \real^{n-1}$ admisible y compacto y $\phi, \psi \colon D \to \real$
     continuas con $\phi \leq \psi$. Consideramos
     \[
         E = \setb{(x, y) \in \real^{n-1} \times \real \vert x \in D,
@@ -1717,18 +1726,18 @@ Procedemos a la demostración
 \section{Integrales impropias}
 
 \begin{defi}
-    Sea $E \subset \real^n$. Definimos por \textit{exhaustión} de $E$ una sucesión $\lp E_i \rp$ de conjuntos mesurables Jordan tales que
+    Sea $E \subset \real^n$. Definimos por \textit{exhaustión} de $E$ una sucesión $\lp E_i \rp$ de conjuntos medibles Jordan tales que
     \begin{itemize}
-        \item $E_i \subset E$,
-        \item $E_i \subset E_{i+1}$,
-        \item $\cup E_i = E$.
+        \item $E_i \subset E$
+        \item $E_i \subset E_{i+1}$
+        \item $\bigcup\limits_i E_i = E$
     \end{itemize}
 \end{defi}
 
 \begin{defi}
     Sea $f \colon E \to \real$. Sea $\lp E_i \rp$ una exhaustión de $E$, y suponemos que $f$ es integrable Riemann en cada $E_i$. Definimos la \textit{integral de Riemann impropia} de $f$ en $E$ como el límite
     \[
-        \int_E f := \lim_i \int_{E_i} f,
+        \int_E f := \lim\limits_i \int_{E_i} f,
     \]
     suponiendo que exista y no dependa de la exhaustión elegida.
 
@@ -1736,10 +1745,10 @@ Procedemos a la demostración
 \end{defi}
 
 \begin{prop}
-    Sea $E \subset \real^n$ mesurable Jordan y sea $\lp E_i \rp$ una exhaustión de $E$. Entonces,
+    Sea $E \subset \real^n$ medible Jordan y sea $\lp E_i \rp$ una exhaustión de $E$. Entonces,
     \begin{enumerate}[(i)]
-        \item $\lim_i \vol \lp E_i \rp = \vol \lp E \rp$.
-        \item Si $f \colon E \to \real $ es integrable Riemann, entonces $f$ es integrable Riemann en cada $E_i$ y $\lim_i \int_{E_i} f = \int_E f$.
+        \item $\lim\limits_i \vol \lp E_i \rp = \vol \lp E \rp$.
+        \item Si $f \colon E \to \real $ es integrable Riemann, entonces $f$ es integrable Riemann en cada $E_i$ y $\lim\limits_i \int_{E_i} f = \int_E f$.
     \end{enumerate}
 \end{prop}
 
@@ -1748,20 +1757,20 @@ Procedemos a la demostración
 \end{prop}
 
 \begin{lema}[(de la cebolla)]
-    Sea $U \subset \real^n$ un conjunto abierto no vacío. Existe una sucesión $\lp V_i \rp $ de conjuntos abiertos mesurables Jordan, con $\overline{V}_i \subset U$ tales que
+    Sea $U \subset \real^n$ un conjunto abierto no vacío. Existe una sucesión $\lp V_i \rp $ de conjuntos abiertos medibles Jordan, con $\overline{V}_i \subset U$ tales que
     \begin{itemize}
         \item $\overline{V}_i$ es compacto,
         \item $\overline{V}_i \subset V_{i+1}$,
-        \item $\cup V_i = U$.
+        \item $\bigcup\limits_i V_i = U$.
     \end{itemize}
 \end{lema}
 
 \begin{defi}
-    Sea $U \subset \real^n$ un conjunto abierto. Decimos que una función $f \colon U \to \real$ es \textit{localmente integrable Riemann} si todo punto $x \in U$ tiene un entorno abierto $V_x$ tal que $V_x$ es mesurable Jordan y $f_{|V_x}$ es integrable Riemann.
+    Sea $U \subset \real^n$ un conjunto abierto. Decimos que una función $f \colon U \to \real$ es \textit{localmente integrable Riemann} si todo punto $x \in U$ tiene un entorno abierto $V_x$ tal que $V_x$ es medible Jordan y $f_{|V_x}$ es integrable Riemann.
 \end{defi}
 
 \begin{prop}
-    Sea $U\subset \real^n$ un conjunto abierto y sea $f\colon U \to \real$ localmente integrable Riemann. Entonces, $f$ es integrable Riemann sobre todo subconjunto compacto mesurable Jordan $A \subset U$.
+    Sea $U\subset \real^n$ un conjunto abierto y sea $f\colon U \to \real$ localmente integrable Riemann. Entonces, $f$ es integrable Riemann sobre todo subconjunto compacto medible Jordan $A \subset U$.
 \end{prop}
 
 \begin{defi}
