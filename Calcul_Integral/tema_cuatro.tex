@@ -196,13 +196,13 @@
     \end{gather*}
 \end{proof}
 
-\begin{teo}[fundamental del cálculo]
+\begin{teo}[fundamental del cálculo, o del gradiente]
     Sea $W \subseteq \real^n$ abierto, $f \colon W \to \real$ una función de clase $\C^1$. $C$ una curva regular orientada de clase
     $\C^1$, tal que $\bar{C} \subset W$ es compacto. Entonces
     \[
         \int_C \vec{\grad} f \dif \vec{l} = \int_{\partial C} f,
     \]
-    (con $\partial C = \fr(C)$) donde interpretamos
+    (donde $\partial C$ es el borde de $C$) donde interpretamos
     \[
         \int_{\partial C} f = f\left( x_1 \right) - f\left( x_0 \right).
     \]
@@ -362,7 +362,7 @@
 \end{obs}
 
 \begin{prop}
-    Sea $U \subseteq$ un abierto convexo y $\vec{F} \colon U \to \real^n$ un campo vectorial de clase $\C^0$. Suponemos que la circulación de $\vec{F}$
+    Sea $U \subseteq \real^n$ un abierto convexo y $\vec{F} \colon U \to \real^n$ un campo vectorial de clase $\C^0$. Suponemos que la circulación de $\vec{F}$
     a lo largo de cualquier camino de clase $\C^1$ a trozos solo depende de los puntos iniciales y final. Entonces, $\vec{F}$ es conservativo.
 \end{prop}
 

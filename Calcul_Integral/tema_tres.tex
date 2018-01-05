@@ -117,7 +117,7 @@
 
 \begin{obs}
     Si $\varphi$ es creciente, $\sigma$ y $\tau$ tienen la misma orientación, si $\varphi$ es decreciente,
-    $\sigma$ y $\tau$ tienen orientacions opuestas.
+    $\sigma$ y $\tau$ tienen orientaciones opuestas.
 \end{obs}
 
 \begin{prop}
@@ -144,7 +144,7 @@
 \end{prop}
 
 \begin{proof}
-    Consideramos $\sigma \colon [a,b] \to C$ continua (pq $\sigma$ continua en $\real^n$). Ahora, $[a, b]$ compacto $\implies$ C compacto
+    Consideramos $\sigma \colon [a,b] \to C$ continua (porque $\sigma$ continua en $\real^n$). Ahora, $[a, b]$ compacto $\implies$ C compacto
     (la imagen de un intervalo cerrado es cerrado) $\implies \sigma$ es un homeomorfismo y $\varphi(t) := \inv{\sigma}\left( \tau(t) \right)$.
 \end{proof}
 
@@ -434,7 +434,7 @@
     Si $E$ es un e.v. euclidiano y $F \subseteq E$, $E = F \oplus F^\perp$. Si $F = <u_1, \dots, u_r>$, $\Pi_F(x) = <x,u_1>u_1 + \cdots + <x,u_r>u_r$, lo
     que quiere decir que
     \[
-        \real^n = T_pC \oplus T_pC^\perp \quad \text{y} \quad \underbrace{\left< \vec{f}(p), \vec{t}(p) \right>}_{f_t(p)}\vec{t}(p).
+        \real^n = T_pC \oplus T_pC^\perp \quad \text{y} \quad \Pi_{T_pC} \left( \vec{f}(p) \right) =\underbrace{\left< \vec{f}(p), \vec{t}(p) \right>}_{f_t(p)}\vec{t}(p).
     \]
 \end{obs*}
 
@@ -456,9 +456,9 @@
 
 \begin{example*}
     En $\real^2$ consideramos $C \colon y = x^3$ desde (1,1) a (2,8) y $\vec{F}(x, y) = \left( 6x^3y, 10xy^2 \right)$. Consideramos
-    la parametrización $\gamma(x) = x,x^3$ para $x \in [1,2]$, entonces
+    la parametrización $\gamma(x) = \left( x,x^3 \right)$ para $x \in [1,2]$, entonces
     \[
-        \int_C \vec{F} \dif \vec{l} = \cdots = 1132.
+        \int_C \vec{F} \dif \vec{l} = \cdots = \frac{22245}{7} \approx 3177.9.
     \]
 \end{example*}
 
@@ -630,7 +630,7 @@
 
 \begin{obs}
     En general, $M$ requiere dos parametrizaciones inyectivas regulares para recubrirla totalmente. Entonces, para orientar $M$, se requiere que
-    estas parametrizaciones definan las mismas orientacions de los espacios tangentes de los puntos que recubren comúnmente.
+    estas parametrizaciones definan las mismas orientaciones de los espacios tangentes de los puntos que recubren comúnmente.
 \end{obs}
 
 \begin{defi}
