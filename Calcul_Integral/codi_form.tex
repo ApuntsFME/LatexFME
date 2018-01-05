@@ -54,7 +54,7 @@
 \ci $f$ cont. en $a \iff \omega\left( f, a \right) = 0$. \\
 \u{T. Lebesgue}: Sigui $A\subset \real^n$ rectangle compacte, $f\colon A\to \real$ fitada. Llavors $f$ és integrable Riemann $\iff \disc\left( f \right)$ és de mesura nul·la $\iff$ contínua gairebé pertot.
 
-\section{Integral de Rie. sobre conjunts ms generals}
+\section{Integral de Rie.}
 
 \ci $C\subset\real^n$ és admissible o mesurable Jordan si és fitat i $\fr\left( C \right)$ té mesura nul·la.\\
 \ci $\fr\left( A \cup A' \right), \fr\left( A\cap A' \right), \fr\left( A\setminus A' \right) \subseteq \fr\left( A \right) \cup \fr\left( A' \right)$. \\
@@ -70,7 +70,7 @@
 \ci Si $C$ adm., $\vol\left( C \right) = \int_C 1$ és la mesura (o contingut) de Jordan o volum ($n$-dimensional) de $C$. \\
 \ci $C\subset\real^n$ té contingut nul $\iff C$ adm. i $\vol\left( C \right) = 0$.
 
-\section{Propietats de la integral de Riemann}
+\section{Propietats de la int. de Rie.}
 
 \ci Sigui $E\subset\real^n$ mesurable Jordan, $\rie\left( E \right) = \{f | f$ int. Rie. en $E \}$ és un $\real$-e.v. i $Rie\colon E \to \real, Rie(f) = \int_E f$ és una forma lineal positiva i monòtona. \\
 \u{T. valor mitjà per a integrals}: Sigui $E$ m.J., $f\colon E\to\real$ int. Rie.. $m\leq f\leq M \implies m\vol\left( E \right)\leq \int_E f\leq M\vol\left( E \right)$. \\
@@ -88,7 +88,7 @@
 \u{T. Fubini}: $A\subset\real^n, B \subset \real^m$ rect. comp., $f\colon A\times B \to \real$ int. Rie.. Sigui $\Phi\colon A\to\real \tq \lowint_B f\left( x,· \right) \leq \Phi\left( x \right) \leq \upint_B f\left( x, · \right)$. Aleshores $\Phi$ int. Rie. i $\int_{A\times B} f = \int_A \Phi,\; \left( A \leftrightarrow B \text{ també}\right)$. \\
 \ci $x \in A \tq f\left( x, · \right)$ no int. Rie. té mesura nul·la. \\
 \ci $D\subset X, f\colon D\to \real$ cont., $E = \left\{ \left( x, y  \right)\in X\times \real | x\in D, y \geq f\left( x \right) \right\}$, llavors ($D\subset X$ tancat $\implies E\subset X\times\real$ tancat) i ($\fr\left( E \right) \subset \graf\left( f \right) \cup \left( \fr\left( D \right)\times \real  \right)$). \\
-\ci $D\subset \real^{n-1}$ comp., m.J., $\varphi, \psi\colon D\to \real$ cont. t.q. $\varphi \leq \psi$, $E = \left\{ \left( x,y \right)\in\real^{n-1}\times \real\;|\; x\in D, \varphi\left( x \right) \leq y \leq \psi\left( x \right) \right\} \subset \real^n$ és compacte i m.J.. (Si $f\colon E\to \real, \int_E f = \int_D \dif x\int_{\varphi\left( x \right)}^{\psi\left( x \right)}\dif y\, f\left( x, y \right)$). \\
+\ci $D\subset \real^{n-1}$ comp., m.J., $\varphi, \psi\colon D\to \real$ cont. t.q. $\varphi \leq \psi$, $E = \{ \left( x,y \right)\in\real^{n-1}\times \real\;|\; x\in D, \varphi\left( x \right) \leq y \leq \psi\left( x \right) \} \subset \real^n$ és compacte i m.J.. (Si $f\colon E\to \real, \int_E f = \int_D \dif x\int_{\varphi\left( x \right)}^{\psi\left( x \right)}\dif y\, f\left( x, y \right)$). \\
 \ci $E$ és una regió elemental de $\real^n$ (per $n=1$ és un interval compacte).
 
 \section{Canvi de variables}
@@ -98,14 +98,14 @@
 \subsection{Alguns canvis de variables}
 \u{Polars a $\real^2$}: $\int_U f\left( x,y \right) \dif x\dif y = \int_V f\left( r\cos\varphi, r\sin\varphi \right)r \dif r\dif \varphi$. \\
 \u{Cilíndriques a $\real^3$}: $\int_U f\left( x,y,z \right) \dif x\dif y\dif z = \int_V f\left( \rho\cos\varphi, \rho\sin\varphi, z \right)\rho \dif \rho\dif \varphi\dif z$. \\
-\u{Esfèriques a $\real^3$}: $\int_U f\left( x,y,z \right) \dif x\dif y\dif z = \int_V f\left( r\cos\varphi\sin\theta, r\sin\varphi\sin\theta, r\cos\theta \right) r^2\sin\theta \dif r\dif \varphi\dif \theta$.
+\u{Esfèriques a $\real^3$}: $\int_U f\left( x,y,z \right) \dif x\dif y\dif z = \int_V f ( r\cos\varphi\sin\theta, r\sin\varphi\sin\theta, r\cos\theta ) r^2\sin\theta \dif r\dif \varphi\dif \theta$.
 
 \section{Integrals impròpies}
 
 \u{Integral de Riemann impròpia}: Sigui $\left( E_i \right)$ exhaustió, \'es $\int_E f := \lim_i \int_{E_i} f$ (suposant que no depengui de l'exhaustió). \\
 \ci Si $E$ m.J., $\left( E_i \right)$ exh., $\lim_i \vol\left( E_i \right) = \vol \left( E \right)$, i si $f\colon E\to\real$ int. Rie., $f$ \'es int. Rie. a cada $E_i$ i int. Rie. coincideix amb la int. impròpia. \\
 \ci Siguin $E\subset\real^n, f\colon E\to \real, f \geq 0$, llavors $\lim_i\int_{E_i} f$ no depèn de l'exh. considerada. \\
-\u{Lema ceba}: Sigui $U\subset\real^n$ obert no buit, $\exists (V_i)$ de conj. oberts ms.J., $\overline{V}_i \subset U$ t.q. $\overline{V}_i$ \'es compacte, $\overline{V}_i \subset V_{i+1}, \, \bigcup_i V_i = U$. \\
+\u{Lema ceba}: Sigui $U\subset\real^n$ obert no buit, $\exists (V_i)$ de conj. oberts m.J., $\overline{V}_i \subset U$ t.q. $\overline{V}_i$ \'es compacte, $\overline{V}_i \subset V_{i+1}, \, \bigcup_i V_i = U$.
 
 \section{Camins i long. de corba}
 
@@ -113,19 +113,28 @@
 \u{Longitud d'una corba}: $L\left( \gamma \right) = \sup_\Pa L\left( \gamma, \Pa \right) \in [0, +\infty]$. \\
 \u{Camí rectificable}: Si longitud \'es finita. \\
 \u{Additivitat camí}: $a<c<b \implies L\left( \gamma \right) = L( \gamma_{|\left[ a,c \right]} ) + L( \gamma_{|\left[ c, b \right]} )$. \\
-\ci Sigui $\gamma\colon \left[ a,b \right]\to\real, l(a) = 0$ i $l(t) = L( \gamma_{|\left[ a,t \right]} ), a < t \leq b$. \\
-\ci $l :\left[ a,b \right]\to\real$ \'es creixent i continua. \\
+\ci Sigui $\gamma\colon \left[ a,b \right]\to\real, l(a) = 0$ i $l(t) = L( \gamma_{|\left[ a,t \right]} ), a < t \leq b,\, l :\left[ a,b \right]\to\real$ \'es creixent i continua. \\
+\ci Si $\vec{f}\colon E\to\real^n$ int., $\|\vec{f}\|$ també (norma euclidiana). \\
+\ci $\gamma \colon I\to \real^n$ classe $\mathcal{C}^1 \implies$ rectificable i $L(\gamma) = \int_I \|\gamma'\|$.
 
+\section{Integrals de l\'inia}
 
+\u{Int. de l\'inia f. escalars}: $\int_C f \dif l = \int_\sigma f \dif l := \int_I f(\sigma(s)) \|\sigma'(s)\| \dif s$. \\
+\u{Int. de l\'inia c. vectorials}: (o circulaci\'o)$\int_\sigma \vec{f} \dif\vec{l} = \int_I \vec{f} (\sigma(s)) \cdot \sigma'(s) \dif s$. \\
+\u{$\tau$ i $\sigma$ equivalents}: $\int_\tau \vec{f} \dif \vec{l} = \pm \int_\sigma \vec{f} \dif \vec{l}$, signe \'es el de $\varphi'$. \\
+\u{Vector tangent a parametritzaci\'o}: $\vec{t}(\sigma(s)) = \frac{\sigma'(s)}{\|\sigma'(s)\|}$. \\
+\u{Componente tangencial}: $f_t = \vec{f}\cdot\vec{t}$. \\
+\ci $\int_C \vec{f} \dif \vec{l} = \int_C f_t \dif l$. \\
 
+\section{Integrals de superf\'icie}
 
-
-
-
-
-
-
-
+\u{Vectors tangents}: $\sigma\colon U\subset\real^2 \to \real^n,\, \vec{J}_\sigma = (\vec{T}_1 \,\,\, \vec{T}_2)$. \\
+\u{Int. de superf\'icie f. escalars}: $\sigma\colon U\subset\real^2\to\real^3,\, \int_\sigma f \dif S= \int_U f(\sigma(\omega)) \|\vec{T}_1 \times \vec{T}_2\| \dif\omega_1 \dif\omega_2$. \\
+\u{Int. de superf\'icie c. vectorials}: (o flux a trav\'es de $\sigma$) $\sigma\colon U\subset\real^2\to\real^3$, $\int_\sigma \vec{f}\dif \vec{S} := \int_U \vec{f} (\sigma(u))\cdot(\vec{T}_1 \times \vec{T}_2) \dif u_1 \dif u_2$. \\
+\u{$\sigma$ difeo.}: $\int_{\tilde{\sigma}} \vec{f} \dif \vec{S} = \pm \int_\sigma \vec{f} \dif \vec{S}$, signe de $\det J_\sigma$. \\
+\u{Vector normal a sup.}: $\vec{n}(\sigma(u)) = \frac{\vec{T}_1\times\vec{T}_2}{\|\vec{T}_1\times \vec{T}_2\|}$. \\
+\u{Component normal}: $f_n = \vec{f}\cdot\vec{n}$. \\
+\ci $\int_M \vec{f} \dif\vec{S} = \int_M f_n \dif S$. \\
 
 
 
@@ -153,7 +162,7 @@
 \subsection{Integrals}
 \ci $\int_1^{+\infty} \frac{1}{x^\alpha}$ d$x$ conv. $\iff \alpha < 1$ i és $\frac{1}{\alpha-1}$. \\
 \ci $\int_0^1 \frac{1}{x^\alpha}$ d$x$ conv. $\iff \alpha < 1$ i és $\frac{1}{1-\alpha}$. \\
-\ci $int_0^{+\infty} e^{-\alpha t}$ d$t$ conv. $\iff \alpha > 0$ i és $\frac{1}{\alpha}$.
+\ci $\int_0^{+\infty} e^{-\alpha t}$ d$t$ conv. $\iff \alpha > 0$ i és $\frac{1}{\alpha}$.
 
 \subsection{Taylor}
 \ci $e^x = \sum_{n\geq 0} \frac{x^n}{n!}$. \\
@@ -162,3 +171,7 @@
 \ci $\log (1+x) = \sum_{n\geq 1} (-1)^n+1 \frac{x^n}{n}$. \\
 \ci $(1+x)^p = \sum_{n\geq 0} \binom{p}{n} x^n$. \\
 \ci $(1+x)^{-1} = \sum_{n\geq 0} (-1)^n x^n$.
+
+\subsection{Varis}
+\u{$\times$}: Producte vectorial. \\
+\u{$\cdot$}: Producte escalar.
