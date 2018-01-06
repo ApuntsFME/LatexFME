@@ -412,7 +412,7 @@ demostrando el siguiente lema.
     Entonces $f(O) = Oq \cap r_2 = O$.
     
     Veamos ahora la implicación recíproca. Sean $A_1, A_2 \in r_1
-    \setminus \{O\}$, tales que $\lp A_1 \neq A_2\rp$. 
+    \setminus \{O\}$, tales que $A_1 \neq A_2$. 
     Sean $B_1 = f(A_1), B_2 = f(A_2)$. Entonces $\R = \left \{ A_1, 
     A_2, O \right \}, \R' = \left \{ B_1, B_2, O \right \}$ son
     referencias en $r_1$ y $r_2$ respectivamente. La segunda 
@@ -450,7 +450,7 @@ demostrando el siguiente lema.
         \item Suponemos $f(O) \neq O$. Sean $A_1, A_2, A_3 \in r_1$
         (diferentes dos a dos, $A_i \neq O$). En consecuencia,
         $\R = \{A_1, A_2; A_3\}$ forma una referencia en $r_1$.
-        Sea $B_i = f(A_i)$. Podemos asegurar que $B_i \neq 0$
+        Sea $B_i = f(A_i)$. Podemos asegurar que $B_i \neq O$
         si tomamos $A_i$ adecuadas. Sea $s \ni B_1$ ($ s 
         \not \ni B_j, A_i$), y $q \in A_1B_1$, $q \not
         \in r_1, r_2$. Postulamos que podemos encontrar
@@ -1126,13 +1126,12 @@ Posibles formas de Jordan:
             M_{\overline{\R}}\lp \overline{f}\rp = \overline{A} = 
             \lp
             \begin{array}{c|ccc}
-                1 &  & v & \\ \hline
+                1 &  & 0 & \\ \hline
                 a_1 & & & \\
                 \vdots & & A & \\
                 a_n & & & 
             \end{array} \rp \\ 
         \end{gather*}
-        donde $v$ es un vector cualquiera.
     \end{defi}
     \begin{prop}
         \begin{enumerate}
@@ -1145,7 +1144,7 @@ Posibles formas de Jordan:
     \begin{proof}
         \begin{enumerate}
             \item[]
-            \item $\A_\infty^n$: $x_0=0 \rightarrow \overline{f}$-invariante porque $\lp1,0,\ldots,0\rp$ es vector propio de $\overline{A}$
+            \item $\A_\infty^n$: $x_0=0 \rightarrow \overline{f}$-invariante porque $\lp1,0,\ldots,0\rp$ es vector propio de $\overline{A}^t$
             \item Sea $p\in\A^n\subseteq\Po^n$, $p=\lp1:b_1:\ldots:b_n\rp$. Entonces:
             \begin{gather*}
                 \overline{f}\lp p \rp = \overline{A} 
@@ -1158,7 +1157,7 @@ Posibles formas de Jordan:
                 = 
                 \lp
             \begin{array}{c|ccc}
-                1 &  & v &  \\ \hline
+                1 &  & 0 &  \\ \hline
                 a_1 & & & \\
                 \vdots & & A & \\
                 a_n & & & 
@@ -1175,7 +1174,7 @@ Posibles formas de Jordan:
             \begin{gather*}
                 \overline{\A} = M_{\overline{\R}}\lp \overline{f}\rp = \lp
                 \begin{array}{c|ccc}
-                    1 &  & v & \\ \hline
+                    1 &  & 0 & \\ \hline
                     a_1 & & & \\
                     \vdots & & A & \\
                     a_n & & & 
@@ -1216,7 +1215,7 @@ Sea $g: \Po^n \to \Po^n$ una proyectividad, sea $\overline{A}=M_{\overline{\R}}\
     \begin{defi}
         Llamaremos $g_\text{af} : \A^n \to \A^n$ a la afinidad inducida por $g$ en $\A^n = \Po^n\setminus H$ y tenemos que:
         \begin{gather*}
-            M_\R \lp g_\text{af} \circ f\rp =
+            M_\R \lp g_\text{af}\rp =
             \lp
                 \begin{array}{c|ccc}
                     1 & 0 & \dots & 0 \\ \hline
@@ -1346,7 +1345,7 @@ Sea $g: \Po^n \to \Po^n$ una proyectividad, sea $\overline{A}=M_{\overline{\R}}\
                     & & 1\\
                 \end{pmatrix}
                 \]
-                que es una Simetría especular.
+                que es una simetría especular.
             \end{enumerate}
         \end{enumerate}
     \end{example}
