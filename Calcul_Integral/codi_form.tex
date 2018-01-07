@@ -10,10 +10,10 @@ Dins aquest apartat les successions són totes de termes positius.\\
 \sum b_n$ conv.\\
 \u{C. arrel Cauchy}: $(a_n)$ positiva i $\exists \lim a_n^{\nicefrac{1}{n}}=\alpha \implies (\alpha >1$ div.$)$ i $(\alpha < 1$ conv.$)$.\\
 \u{C. quo. Alambert}: $(a_n)$ estr. pos. i $\exists\lim\frac{a_{n+1}}{a_n}=\alpha \implies (\alpha <1$ div.$)$ i $(\alpha > 1$ conv.$)$.\\
-\u{C. Raabe}: $(a_n)$ estr. pos. i $\exists\lim n\left(1-\frac{a_{n+1}}{a_n}\right) = L \implies (L > 1$ conv.$)$ i $(L<1$ div.$)$.\\
+\u{C. Raabe}: $(a_n)$ estr. pos. i $\exists\lim n(1-\frac{a_{n+1}}{a_n}) = L \implies (L > 1$ conv.$)$ i $(L<1$ div.$)$.\\
 \u{S\`erie Rie.}: $\sum_{n \geq 1} \frac{1}{n^p}$ \'es conv. sii $p > 1$, div. altrament.
 \section{Altres sèries}
-\ci Sèrie cond. conv. $\implies$ podem reordenar per tal que $\sum = s\in\left[-\infty, +\infty\right]$.\\
+\ci Sèrie cond. conv. $\implies$ podem reordenar per tal que $\sum = s\in[-\infty, +\infty]$.\\
 \ci Sèrie alternada $\implies$ un pos., un neg., ... \\
 \u{C. Leibniz sèr. alt.}: $(a_n)$ decr. i $\lim a_n = 0$, llavors $\sum (-1)^na_n$ és conv.. A més, $\abs{s-s_N} < a_{n+1}$. \\
 \u{C. Dirichlet}: Si $s_n$ d'$(a_n)$ fitades i $(b_n)$ decr., $\lim b_n = 0$, llavors $\sum a_nb_n$ convergeix. \\
@@ -28,7 +28,7 @@ Dins aquest apartat les successions són totes de termes positius.\\
 \section{Integrals impròpies}
 
 \ci La convergència d'integrals és lineal. \\
-\u{C. Cauchy per a int. impròpies}: $f\colon \left[a, b\right) \to \real. \int_a^b f$ és conv. $\iff \forall \varepsilon > 0, \exists c_0 \in \left[a, b\right) \tq$ si $c_1, c_2 > c_0$, llavors $\abs{\int_{c_1}^{c_2} f} < \varepsilon$. \\
+\u{C. Cauchy per a int. impròpies}: $f\colon [a, b) \to \real. \int_a^b f$ és conv. $\iff \forall \varepsilon > 0, \exists c_0 \in [a, b) \tq$ si $c_1, c_2 > c_0$, llavors $\abs{\int_{c_1}^{c_2} f} < \varepsilon$. \\
 \u{C. comp. dir} $f, g:[a,b) \to \real$, $f, g > 0$, $f \leq g$ localment integrables.
 Aleshores $\int_a^b f \leq \int_a^b g$. Si la segona conv., la primera també. Si
 la primera div., la segona també.\\
@@ -60,33 +60,33 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..\\
 
 \section{Teorema de Lebesgue}
 
-\ci Sigui $X$ espai mètric, $f\colon X\to \real$, l'oscil·lació de $f$ sobre $E\subset X$ és el diàmetre de $f(E)$: $\omega(f,E) = \sup_{x,y\in E} \dif \left( f\left( x \right), f\left( y \right) \right) \in \left[ 0, +\infty \right]$. Finita $\iff f_{|E}$ fitada, $0\iff f_{|E}$ constant. \\
-\u{Oscil·lació en $a\in X$}: $\omega\left( f,a \right) = \lim\limits_{r\to 0}\omega\left( f, B\left( a;r \right) \right) = \inf_{r>0} \omega\left( f, B\left( a; r \right) \right)$. \\
-\ci $f$ cont. en $a \iff \omega\left( f, a \right) = 0$. \\
-\u{T. Lebesgue}: Sigui $A\subset \real^n$ rectangle compacte, $f\colon A\to \real$ fitada. Llavors $f$ és integrable Riemann $\iff \disc\left( f \right)$ és de mesura nul·la $\iff$ contínua gairebé pertot.
+\ci Sigui $X$ espai mètric, $f\colon X\to \real$, l'oscil·lació de $f$ sobre $E\subset X$ és el diàmetre de $f(E)$: $\omega(f,E) = \sup_{x,y\in E} \dif ( f( x ), f( y ) ) \in [ 0, +\infty ]$. Finita $\iff f_{|E}$ fitada, $0\iff f_{|E}$ constant. \\
+\u{Oscil·lació en $a\in X$}: $\omega( f,a ) = \lim\limits_{r\to 0}\omega( f, B( a;r ) ) = \inf_{r>0} \omega( f, B( a; r ) )$. \\
+\ci $f$ cont. en $a \iff \omega( f, a ) = 0$. \\
+\u{T. Lebesgue}: Sigui $A\subset \real^n$ rectangle compacte, $f\colon A\to \real$ fitada. Llavors $f$ és integrable Riemann $\iff \disc( f )$ és de mesura nul·la $\iff$ contínua gairebé pertot.
 
 \section{Integral de Rie.}
 
-\ci $C\subset\real^n$ és admissible o mesurable Jordan si és fitat i $\fr\left( C \right)$ té mesura nul·la.\\
-\ci $\fr\left( A \cup A' \right), \fr\left( A\cap A' \right), \fr\left( A\setminus A' \right) \subseteq \fr\left( A \right) \cup \fr\left( A' \right)$. \\
-\ci $\fr\left( A\times B \right) = \left( \fr\left( A \right)\times \overline{B} \right) \cup \left( \overline{A} \times \fr\left( B \right) \right)$.\\
+\ci $C\subset\real^n$ és admissible o mesurable Jordan si és fitat i $\fr( C )$ té mesura nul·la.\\
+\ci $\fr( A \cup A' ), \fr( A\cap A' ), \fr( A\setminus A' ) \subseteq \fr( A ) \cup \fr( A' )$. \\
+\ci $\fr( A\times B ) = ( \fr( A )\times \overline{B} ) \cup ( \overline{A} \times \fr( B ) )$.\\
 \ci $A,A'\subset\real^n$ admissibles $\implies A\cup A', A\cap A', A\setminus A'$ admissibles. \\
 \ci $A\subset\real^n, B\subset\real^m$ admissibles $\implies A\times B \subset \real^{n+m}$ admissible. \\
 \ci Els rectangles fitats i les boles euclidianes són admissibles. \\
 \u{Funció característica de $C\subset X$}: (o indicatriu) $\chi_C\colon X \to \real, \chi_C(x) = 1$ si $x \in C$, val $0$ altrament.\\
-\ci $\chi$ no és contínua a $\fr\left( C \right) \implies$ ($C$ adm. $\iff C$ fitat i $\forall R, \exists \int_R \chi_C \tq C\subset R$). \\
-\ci $g\colon E\to\real, \tilde{g}\colon X\to\real \left( \tilde{g}(x) = 0 \forall x \notin E \right)$. Aleshores $\disc\left( g \right) \subseteq \disc\left( \tilde{g} \right)\subseteq \disc\left( g \right)\cup \fr\left( E \right)$. \\
-\ci $f\chi_C$ integrable Rie. en R $\iff \disc\left( f \right)$ de mesura nul·la. \\
-\u{Pel T. Lebesgue}: $C\subset \real^n$ admissible. $f\colon C \to \real$ és integrable Rie. $\iff \disc\left( f \right)$ mesura nul·la. \\
-\ci Si $C$ adm., $\vol\left( C \right) = \int_C 1$ és la mesura (o contingut) de Jordan o volum ($n$-dimensional) de $C$. \\
-\ci $C\subset\real^n$ té contingut nul $\iff C$ adm. i $\vol\left( C \right) = 0$.
+\ci $\chi$ no és contínua a $\fr( C ) \implies$ ($C$ adm. $\iff C$ fitat i $\forall R, \exists \int_R \chi_C \tq C\subset R$). \\
+\ci $g\colon E\to\real, \tilde{g}\colon X\to\real ( \tilde{g}(x) = 0 \forall x \notin E )$. Aleshores $\disc( g ) \subseteq \disc( \tilde{g} )\subseteq \disc( g )\cup \fr( E )$. \\
+\ci $f\chi_C$ integrable Rie. en R $\iff \disc( f )$ de mesura nul·la. \\
+\u{Pel T. Lebesgue}: $C\subset \real^n$ admissible. $f\colon C \to \real$ és integrable Rie. $\iff \disc( f )$ mesura nul·la. \\
+\ci Si $C$ adm., $\vol( C ) = \int_C 1$ és la mesura (o contingut) de Jordan o volum ($n$-dimensional) de $C$. \\
+\ci $C\subset\real^n$ té contingut nul $\iff C$ adm. i $\vol( C ) = 0$.
 
 \section{Propietats de la int. de Rie.}
 
-\ci Sigui $E\subset\real^n$ mesurable Jordan, $\rie\left( E \right) = \{f | f$ int. Rie. en $E \}$ és un $\real$-e.v. i $Rie\colon E \to \real, Rie(f) = \int_E f$ és una forma lineal positiva i monòtona. \\
-\u{T. valor mitjà per a integrals}: Sigui $E$ m.J., $f\colon E\to\real$ int. Rie.. $m\leq f\leq M \implies m\vol\left( E \right)\leq \int_E f\leq M\vol\left( E \right)$. \\
-\ci $E$ m.J. connex, $f\colon E\to\real$ fitada i cont., $\exists x_0 \in E \tq \int_E f = f\left( x_0 \right)\vol\left( E \right)$. \\
-\ci $E$ m.J., $f\colon E\to \real$ int. Rie., $h \colon f\left( E \right) \to \real$ cont., $h\circ f$ és int. Rie.. \\
+\ci Sigui $E\subset\real^n$ mesurable Jordan, $\rie( E ) = \{f | f$ int. Rie. en $E \}$ és un $\real$-e.v. i $Rie\colon E \to \real, Rie(f) = \int_E f$ és una forma lineal positiva i monòtona. \\
+\u{T. valor mitjà per a integrals}: Sigui $E$ m.J., $f\colon E\to\real$ int. Rie.. $m\leq f\leq M \implies m\vol( E )\leq \int_E f\leq M\vol( E )$. \\
+\ci $E$ m.J. connex, $f\colon E\to\real$ fitada i cont., $\exists x_0 \in E \tq \int_E f = f( x_0 )\vol( E )$. \\
+\ci $E$ m.J., $f\colon E\to \real$ int. Rie., $h \colon f( E ) \to \real$ cont., $h\circ f$ és int. Rie.. \\
 \ci $f, h$ int. Rie. no implica $h\circ f$ int. Rie.. \\
 \ci $f$ int. Rie. $\implies \abs{f}$ int. Rie. i $\abs{\int_E f} \leq \int_E \abs{f}$. \\
 \ci $f, g$ int. Rie. $\implies f\times g$ int. Rie.. \\
@@ -96,36 +96,36 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..\\
 
 \section{Teorema de Fubini}
 
-\u{T. Fubini}: $A\subset\real^n, B \subset \real^m$ rect. comp., $f\colon A\times B \to \real$ int. Rie.. Sigui $\Phi\colon A\to\real \tq \lowint_B f\left( x,· \right) \leq \Phi\left( x \right) \leq \upint_B f\left( x, · \right)$. Aleshores $\Phi$ int. Rie. i $\int_{A\times B} f = \int_A \Phi,\; \left( A \leftrightarrow B \text{ també}\right)$. \\
-\ci $x \in A \tq f\left( x, · \right)$ no int. Rie. té mesura nul·la. \\
-\ci $D\subset X, f\colon D\to \real$ cont., $E = \left\{ \left( x, y  \right)\in X\times \real | x\in D, y \geq f\left( x \right) \right\}$, llavors ($D\subset X$ tancat $\implies E\subset X\times\real$ tancat) i ($\fr\left( E \right) \subset \graf\left( f \right) \cup \left( \fr\left( D \right)\times \real  \right)$). \\
-\ci $D\subset \real^{n-1}$ comp., m.J., $\varphi, \psi\colon D\to \real$ cont. t.q. $\varphi \leq \psi$, $E = \{ \left( x,y \right)\in\real^{n-1}\times \real\;|\; x\in D, \varphi\left( x \right) \leq y \leq \psi\left( x \right) \} \subset \real^n$ és compacte i m.J.. (Si $f\colon E\to \real, \int_E f = \int_D \dif x\int_{\varphi\left( x \right)}^{\psi\left( x \right)}\dif y\, f\left( x, y \right)$). \\
+\u{T. Fubini}: $A\subset\real^n, B \subset \real^m$ rect. comp., $f\colon A\times B \to \real$ int. Rie.. Sigui $\Phi\colon A\to\real \tq \lowint_B f( x,· ) \leq \Phi( x ) \leq \upint_B f( x, · )$. Aleshores $\Phi$ int. Rie. i $\int_{A\times B} f = \int_A \Phi,\; ( A \leftrightarrow B \text{ també})$. \\
+\ci $x \in A \tq f( x, · )$ no int. Rie. té mesura nul·la. \\
+\ci $D\subset X, f\colon D\to \real$ cont., $E = \left\{ ( x, y  )\in X\times \real | x\in D, y \geq f( x ) \right\}$, llavors ($D\subset X$ tancat $\implies E\subset X\times\real$ tancat) i ($\fr( E ) \subset \graf( f ) \cup ( \fr( D )\times \real  )$). \\
+\ci $D\subset \real^{n-1}$ comp., m.J., $\varphi, \psi\colon D\to \real$ cont. t.q. $\varphi \leq \psi$, $E = \{ ( x,y )\in\real^{n-1}\times \real\;|\; x\in D, \varphi( x ) \leq y \leq \psi( x ) \} \subset \real^n$ és compacte i m.J.. (Si $f\colon E\to \real, \int_E f = \int_D \dif x\int_{\varphi( x )}^{\psi( x )}\dif y\, f( x, y )$). \\
 \ci $E$ és una regió elemental de $\real^n$ (per $n=1$ és un interval compacte).
 
 \section{Canvi de variables}
 
-\ci Sigui $V\subset\real^n$ obert, $\varphi\colon V\to\real^n$ injectiva, classe $\mathcal{C}^1$ amb $\det \dif \varphi\left( y \right) \neq 0, \forall y \in V$. Sigui $U = \varphi\left( V \right) (\varphi\colon V\to U$ difeo. classe $\mathcal{C}^1)$. Si $f\colon U\to \real$ int., $\int_U f = \int_V\left( f \circ \varphi \right)\abs{\det \dif \varphi}$.
+\ci Sigui $V\subset\real^n$ obert, $\varphi\colon V\to\real^n$ injectiva, classe $\mathcal{C}^1$ amb $\det \dif \varphi( y ) \neq 0, \forall y \in V$. Sigui $U = \varphi( V ) (\varphi\colon V\to U$ difeo. classe $\mathcal{C}^1)$. Si $f\colon U\to \real$ int., $\int_U f = \int_V( f \circ \varphi )\abs{\det \dif \varphi}$.
 
 \subsection{Alguns canvis de variables}
-\u{Polars a $\real^2$}: $\int_U f\left( x,y \right) \dif x\dif y = \int_V f\left( r\cos\varphi, r\sin\varphi \right)r \dif r\dif \varphi$. \\
-\u{Cilíndriques a $\real^3$}: $\int_U f\left( x,y,z \right) \dif x\dif y\dif z = \int_V f\left( \rho\cos\varphi, \rho\sin\varphi, z \right)\rho \dif \rho\dif \varphi\dif z$. \\
+\u{Polars a $\real^2$}: $\int_U f( x,y ) \dif x\dif y = \int_V f( r\cos\varphi, r\sin\varphi )r \dif r\dif \varphi$. \\
+\u{Cilíndriques a $\real^3$}: $\int_U f( x,y,z ) \dif x\dif y\dif z = \int_V f( \rho\cos\varphi, \rho\sin\varphi, z )\rho \dif \rho\dif \varphi\dif z$. \\
 % TODO aqui a baix sobra un $ $
-\u{Esfèriques a $\real^3$}: $\int_U f\left( x,y,z \right) \dif x\dif y\dif z = \int_V f ( r\cos\varphi\sin\theta, r\sin\varphi\sin\theta, r\cos\theta )$ $r^2\sin\theta \dif r\dif \varphi\dif \theta$.
+\u{Esfèriques a $\real^3$}: $\int_U f( x,y,z ) \dif x\dif y\dif z = \int_V f ( r\cos\varphi\sin\theta, r\sin\varphi\sin\theta, r\cos\theta )$ $r^2\sin\theta \dif r\dif \varphi\dif \theta$.
 
 \section{Integrals impròpies}
 
-\u{Integral de Riemann impròpia}: Sigui $\left( E_i \right)$ exhaustió, \'es $\int_E f := \lim_i \int_{E_i} f$ (suposant que no depengui de l'exhaustió). \\
-\ci Si $E$ m.J., $\left( E_i \right)$ exh., $\lim_i \vol\left( E_i \right) = \vol \left( E \right)$, i si $f\colon E\to\real$ int. Rie., $f$ \'es int. Rie. a cada $E_i$ i int. Rie. coincideix amb la int. impròpia. \\
+\u{Integral de Riemann impròpia}: Sigui $( E_i )$ exhaustió, \'es $\int_E f := \lim_i \int_{E_i} f$ (suposant que no depengui de l'exhaustió). \\
+\ci Si $E$ m.J., $( E_i )$ exh., $\lim_i \vol( E_i ) = \vol ( E )$, i si $f\colon E\to\real$ int. Rie., $f$ \'es int. Rie. a cada $E_i$ i int. Rie. coincideix amb la int. impròpia. \\
 \ci Siguin $E\subset\real^n, f\colon E\to \real, f \geq 0$, llavors $\lim_i\int_{E_i} f$ no depèn de l'exh. considerada. \\
 \u{Lema ceba}: Sigui $U\subset\real^n$ obert no buit, $\exists (V_i)$ de conj. oberts m.J., $\overline{V}_i \subset U$ t.q. $\overline{V}_i$ \'es compacte, $\overline{V}_i \subset V_{i+1}, \, \bigcup_i V_i = U$.
 
 \section{Camins i long. de corba}
 
-\u{Longitud d'una poligonal}: $L\left( \gamma, \Pa \right) = \sum_{i=0}^N ||\gamma\left( t_i \right) - \gamma\left( t_{i-1} \right)||$. \\
-\u{Longitud d'una corba}: $L\left( \gamma \right) = \sup_\Pa L\left( \gamma, \Pa \right) \in [0, +\infty]$. \\
+\u{Longitud d'una poligonal}: $L( \gamma, \Pa ) = \sum_{i=0}^N ||\gamma( t_i ) - \gamma( t_{i-1} )||$. \\
+\u{Longitud d'una corba}: $L( \gamma ) = \sup_\Pa L( \gamma, \Pa ) \in [0, +\infty]$. \\
 \u{Camí rectificable}: Si longitud \'es finita. \\
-\u{Additivitat camí}: $a<c<b \implies L\left( \gamma \right) = L( \gamma_{|\left[ a,c \right]} ) + L( \gamma_{|\left[ c, b \right]} )$. \\
-\ci Sigui $\gamma\colon \left[ a,b \right]\to\real, l(a) = 0$ i $l(t) = L( \gamma_{|\left[ a,t \right]} ), a < t \leq b,\, l :\left[ a,b \right]\to\real$ \'es creixent i continua. \\
+\u{Additivitat camí}: $a<c<b \implies L( \gamma ) = L( \gamma_{|[ a,c ]} ) + L( \gamma_{|[ c, b ]} )$. \\
+\ci Sigui $\gamma\colon [ a,b ]\to\real, l(a) = 0$ i $l(t) = L( \gamma_{|[ a,t ]} ), a < t \leq b,\, l :[ a,b ]\to\real$ \'es creixent i continua. \\
 \ci Si $\vec{f}\colon E\to\real^n$ int., $\|\vec{f}\|$ també (norma euclidiana). \\
 \ci $\gamma \colon I\to \real^n$ classe $\mathcal{C}^1 \implies$ rectificable i $L(\gamma) = \int_I \|\gamma'\|$.
 
@@ -151,25 +151,27 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..\\
 \section{Operadors dif. a $\real^3$}
 
 \u{Gradient}: $\grad f := \pdv{f}{x} \hat{i} + \pdv{f}{y} \hat{j} + \pdv{f}{z} \hat{k}$. \\
-\u{Rotacional}: $\rot \vec{F} := \left( \pdv{F_3}{y} - \pdv{F_2}{z} \right)\hat{i} + \left( \pdv{F_1}{z} - \pdv{F_3}{x} \right) \hat{j} + \left( \pdv{F_2}{x} - \pdv{F_1}{y} \right) \hat{k}$. \\
+\u{Rotacional}: $\rot \vec{F} := ( \pdv{F_3}{y} - \pdv{F_2}{z} )\hat{i} + ( \pdv{F_1}{z} - \pdv{F_3}{x} ) \hat{j} + ( \pdv{F_2}{x} - \pdv{F_1}{y} ) \hat{k}$. \\
 \u{Diverg\`encia}: $\diver \vec{F} := \pdv{F_1}{x} + \pdv{F_2}{y} + \pdv{F_3}{z}$. \\
 \u{Regles de Leibniz}: \\
 \quad \ci $\grad(fg) = f \grad g + g \grad f$, \\
 \quad \ci $\rot ( f \vec{G} ) = f \rot \vec{G} + \vec{\grad} f \times \vec{G}$, \\
 \quad \ci $\diver ( f \vec{G} ) = f \diver \vec{G} + \vec{\grad} f \cdot \vec{G}$, \\
 \quad \ci $\diver ( \vec{F} \times \vec{G} ) = \vec{G} \cdot \rot \vec{F} - \vec{F} \cdot \rot \vec{G}$. \\
-\u{T. Schwarz}: $f, \vec{F} \in \mathcal{C}^2 \implies \rot\left( \grad f \right) = 0, \diver ( \rot \vec{F} ) = 0$. \\
+\u{T. Schwarz}: $f, \vec{F} \in \mathcal{C}^2 \implies \rot( \grad f ) = 0, \diver ( \rot \vec{F} ) = 0$. \\
 \u{Camp conservatiu}: $\vec{F} = \grad f$. \\
 \u{Camp irrotacional}: $\rot \vec{F} = 0$. \\
+% TODO vigilar aqui amb aquesta cutrada
+\columnbreak
 \u{Camp solenoidal}: $\vec{G} = \rot \vec{F}$. \\
 \u{Camp sense div.}: $\diver \vec{G} = 0$. \\
-\u{Laplaci\`a}: $\Delta f := \diver \left( \grad f \right), \Delta = \nabla^2 = \pdv[2]{}{x} + \pdv[2]{}{y} + \pdv[2]{}{z}$.
+\u{Laplaci\`a}: $\Delta f := \diver ( \grad f ), \Delta = \nabla^2 = \pdv[2]{}{x} + \pdv[2]{}{y} + \pdv[2]{}{z}$.
 
-\section{F\'ormules int. teoria de camps}
+\section{F\'ormules int. camps}
 
-\u{T. fon. c\`alcul}: (o gradient) $W \subseteq \real^n$ obert, $f \colon W \to \real$ classe $\C^1$. $C$ corba regular orientada clase $\C^1, \tq \bar{C} \subset W$ compacte $\implies \int_C \vec{\grad} f \dif \vec{l} = \int_{\partial C} f = f\left( x_1 \right) - f\left( x_0 \right), \partial C = \setb{x_0, x_1}$ (orientada $x_0\to x_1$). $\partial C = \emptyset\implies \int_{\partial C} f = 0$. \\
-\u{T. Kelvin-Stokes}: (o rotacional) $W \subseteq \real^3$ obert, $\vec{F} \colon W \to \real^3$ classe $\C^1$, $M \subset W$ superficie orientada classe $\C^2 \tq \bar{M}$ compacto, $\bar{M} \subset W$, $\partial M$ amb orientació induïda (m\`a dreta) i punts frontera de $M$ regulars o conjunt de punts frontera singulars \'es finit $\implies \int_M \rot \vec{F} \dif \vec{S} = \int_{\partial M} \vec{F} \dif \vec{l}$. \\
-\u{T. Gauss-Ostrogradski}: (o diverg\`encia) $W \subset \real^3$ obert, $\vec{F} \colon W \to \real^3$ classe $\C^1$, $B \subset W$ obert t.q. $\bar{B}$ compacte, $\bar{B} \subset W$, $\partial B$ amb orientació induïda (m\`a dreta) i punts frontera de $M$ regulars o conjunt de punts frontera singulars \'es finit $\implies \int_B \diver \vec{F} \dif V = \int_{\partial B} \vec{F} \dif \vec{S}$.
+\u{T. fon. c\`alcul}: (o gradient) $W \subseteq \real^n$ obert, $f \colon W \to \real$ classe $\C^1$. $C$ corba regular orientada clase $\C^1, \tq \bar{C} \subset W$ compacte $\implies \int_C \vec{\grad} f \dif \vec{l} = \int_{\partial C} f = f( x_1 ) - f( x_0 ), \partial C = \setb{x_0, x_1}$ (orientada $x_0\to x_1$). $\partial C = \emptyset\implies \int_{\partial C} f = 0$. \\
+\u{T. Kelvin-Stokes}: (o rotacional) $W \subseteq \real^3$ obert, $\vec{F} \colon W \to \real^3$ classe $\C^1$, $M \subset W$ superficie orientada classe $\C^2 \tq \bar{M}$ compacto, $\bar{M} \subset W$, $\partial M$ amb orientació induïda (m\`a dreta)$^\ast$ $\implies \int_M \rot \vec{F} \dif \vec{S} = \int_{\partial M} \vec{F} \dif \vec{l}$. \\
+\u{T. Gauss-Ostrogradski}: (o diverg\`encia) $W \subset \real^3$ obert, $\vec{F} \colon W \to \real^3$ classe $\C^1$, $B \subset W$ obert t.q. $\bar{B}$ compacte, $\bar{B} \subset W$, $\partial B$ amb orientació induïda (m\`a dreta)$^\ast$ $\implies \int_B \diver \vec{F} \dif V = \int_{\partial B} \vec{F} \dif \vec{S}$.
 
 \section{Potencials}
 
@@ -180,7 +182,7 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..\\
 \quad \ci $\forall C \subset U$ corba tancada, $\oint_C \vec{F} \dif \vec{l} = 0$. \\
 \ci $U \subset \real^3$ obert simplement connex (def. apunts profe) i $\vec{F} \colon U \to \real^3$ classe $\C^1$ irrotacional $\implies \vec{F}$ conservatiu. \\
 
-\u{T. Green}: $U \subseteq \real^2$ obert, $\vec{F} \colon U \to \real^2$ classe $\C^1$, $M \subset U$ obert t.q. $\bar{M}\subset U$ compacte, $\partial M$ amb orientació induïda (m\`a dreta) i punts frontera de $M$ regulars o conjunt de punts frontera singulars \'es finit $\implies \int_M \left( \pdv{F_2}{x} - \pdv{F_1}{y} \right) \dif x \dif y = \int_{\partial M} \vec{F} \dif \vec{l}$.
+\u{T. Green}: $U \subseteq \real^2$ obert, $\vec{F} \colon U \to \real^2$ classe $\C^1$, $M \subset U$ obert t.q. $\bar{M}\subset U$ compacte, $\partial M$ amb orientació induïda (m\`a dreta)$^\ast$ $\implies \int_M ( \pdv{F_2}{x} - \pdv{F_1}{y} ) \dif x \dif y = \int_{\partial M} \vec{F} \dif \vec{l}$.
 
 %%%%%%%%%%%%%%
 %   TEMA 5   %
@@ -190,7 +192,7 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..\\
 
 \ci $(f \dif x^I) \wedge (g \dif x^J) = fg \dif x^I \wedge \dif x^j$. \\
 \ci $\alpha \wedge \beta = (-1)^{\abs{\beta}\abs{\alpha}} \alpha \wedge \beta$. \\
-\ci $f \in \C^\infty \left( \real^n \right) = \Omega^0 \left( \real^n \right)$, podem construir $\dif f := \sum^n_{i=1} \frac{\partial f}{\partial x^i} \dif x^i \in \Omega^1 \left( \real^n \right)$. \\
+\ci $f \in \C^\infty ( \real^n ) = \Omega^0 ( \real^n )$, podem construir $\dif f := \sum^n_{i=1} \frac{\partial f}{\partial x^i} \dif x^i \in \Omega^1 ( \real^n )$. \\
 \u{Diferencial exterior}: Aplicaci\'o lineal, $\dif\,(f \dif x^I) = \dif f \wedge \dif x^I$. \\
 \ci $\dif\,\circ \dif = 0$. \\
 \u{Tancada}: $\alpha$ tancada $\iff \dif \alpha = 0$. \\
@@ -198,31 +200,41 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..\\
 \ci Exacta $\implies$ tancada. \\
 \u{Lema Poincar\'e}: En $\real^n$, $\alpha$ tancada i $|\alpha| \geq 1 \implies \alpha$ exacta. \\
 
-\u{Pullback}: $F \colon \real^m \to \real^n$ classe $\C^\infty$, $g \in \C^\infty\left( \real^n \right)$, el pullback \'es $F^\ast(g) := g \circ F \in \C^\infty \colon \real^m \to \real$, $F^\ast$ \'es $\real$-lineal, $F^\ast(g\dif y^{i_1}\wedge\dots\wedge\dif y^{i_k}) := F^\ast (g) \dif F^\ast (y^{i_1}) \wedge \dots \wedge \dif F^\ast (y^{i_k})$. \\
+\u{Pullback}: $F \colon \real^m \to \real^n$ classe $\C^\infty$, $g \in \C^\infty( \real^n )$, el pullback \'es $F^\ast(g) := g \circ F \in \C^\infty \colon \real^m \to \real$, $F^\ast$ \'es $\real$-lineal, $F^\ast(g\dif y^{i_1}\wedge\dots\wedge\dif y^{i_k}) := F^\ast (g) \dif F^\ast (y^{i_1}) \wedge \dots \wedge \dif F^\ast (y^{i_k})$. \\
 \ci $F^\ast (\alpha \wedge \beta) = F^\ast (\alpha) \wedge F^\ast (\beta)$. \\
 \ci $F^\ast (\dif x) = \dif F^\ast(x)$. \\
 \u{Integral de $\omega$ al llarg de $\sigma$}: $\omega \in \Omega^k (\real^n), \sigma \colon \real^k \to \real^n, \implies \int_\sigma \omega := \int_{\real^k} \sigma^\ast (\omega)$. \\
 \u{T. Stokes}: $M$ varietat amb vora, orientada i $\dim M = m$, $\omega \in \Omega^{m-1} (M)$ de suport compacte i $\partial M$ t\'e orientació induïda $\implies \int_M \dif \omega = \int_{\partial M} \omega$.
 
-\section{Altres}
 
-\subsection{Sèries}
+% TODO vigilar amb aquesta cutrada
+\setcounter{section}{20}
+
+\subsection{Altres. Sèries}
 \ci $\sum r^n$ conv. $\iff \abs{r} < 1$ (\verb|else| div.). \\
 \ci $\sum \frac{1}{n^p}$ conv. $\iff p > 1$ (\verb|else| div.).
 
-\subsection{Integrals}
+\subsection{Altres. Integrals}
 \ci $\int_1^{+\infty} \frac{1}{x^\alpha}$ d$x$ conv. $\iff \alpha < 1$ i és $\frac{1}{\alpha-1}$. \\
 \ci $\int_0^1 \frac{1}{x^\alpha}$ d$x$ conv. $\iff \alpha < 1$ i és $\frac{1}{1-\alpha}$. \\
 \ci $\int_0^{+\infty} e^{-\alpha t}$ d$t$ conv. $\iff \alpha > 0$ i és $\frac{1}{\alpha}$.
 
-\subsection{Taylor}
+\subsection{Altres. Taylor}
 \ci $e^x = \sum_{n\geq 0} \frac{x^n}{n!}$. \\
 \ci $\cos x = \sum_{n\geq 0} (-1)^n \frac{x^{2n}}{(2n)!}$. \\
 \ci $\sin x = \sum_{n\geq 0} (-1)^n \frac{x^{2n+1}}{(2n+1)!}$. \\
 \ci $\log (1+x) = \sum_{n\geq 1} (-1)^n+1 \frac{x^n}{n}$. \\
 \ci $(1+x)^p = \sum_{n\geq 0} \binom{p}{n} x^n$. \\
-\ci $(1+x)^{-1} = \sum_{n\geq 0} (-1)^n x^n$.
+\ci $(1+x)^{-1} = \sum_{n\geq 0} (-1)^n x^n$. \\
 
-\subsection{Varis}
-\u{$\times$}: Producte vectorial. \\
-\u{$\cdot$}: Producte escalar.
+\subsection{Altres. Trigonometria}
+\ci $\sin(a \pm b) = \sin(a)\cos(b) \pm \cos(a)\sin(b)$. \\
+\ci $\cos(a \pm b) = \cos(a)\cos(b) \mp \sin(a)\sin(b)$. \\
+\ci $\sin(a) + \sin(b) = 2\sin(\frac{a+b}{2})\cos(\frac{a-b}{2})$. \\
+\ci $\cos(a) + \cos(b) = 2\cos(\frac{a+b}{2})\cos(\frac{a-b}{2})$.
+
+\noindent\makebox[\linewidth]{\rule{\linewidth}{1pt}}
+$^\ast$ i punts frontera de $M$ regulars o conjunt de punts frontera singulars \'es finit. \\
+\vspace{3pt}
+\raggedleft
+{\large Nom: \underline{\hspace{4.5cm}}}
