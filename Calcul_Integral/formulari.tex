@@ -4,8 +4,8 @@
 \usepackage[T1]{fontenc}
 
 \newif\ifland
-\landtrue
-%\landfalse
+%\landtrue
+\landfalse
 \ifland
 \usepackage[landscape,margin=0.2in,top=0.2in,bottom=0.2in]{geometry}
 \else
@@ -102,15 +102,16 @@
 \begin{multicols}{4}
 \input{codi_form}
 \end{multicols}
-\else
-\input{codi_form}
-\fi
 \vspace*{\fill}
 \begin{center}
 \textbf{\huge Aquest formulari nom\'es inclou f\'ormules dels temes 1, 2 i 3.} \\
 \textbf{\huge Estem treballant en els temes 4 i 5.}
 \end{center}
 \vspace*{\fill}
+
+\else
+\input{codi_form}
+\fi
 
 \end{document}
 
