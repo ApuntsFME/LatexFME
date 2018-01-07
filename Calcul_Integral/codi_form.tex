@@ -136,7 +136,7 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..\\
 \u{$\tau$ i $\sigma$ equivalents}: $\int_\tau \vec{f} \dif \vec{l} = \pm \int_\sigma \vec{f} \dif \vec{l}$, signe \'es el de $\varphi'$. \\
 \u{Vector tangent a parametritzaci\'o}: $\vec{t}(\sigma(s)) = \frac{\sigma'(s)}{\|\sigma'(s)\|}$. \\
 \u{Componente tangencial}: $f_t = \vec{f}\cdot\vec{t}$. \\
-\ci $\int_C \vec{f} \dif \vec{l} = \int_C f_t \dif l$. \\
+\ci $\int_C \vec{f} \dif \vec{l} = \int_C f_t \dif l$.
 
 \section{Integrals de superf\'icie}
 
@@ -146,24 +146,63 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..\\
 \u{$\sigma$ difeo.}: $\int_{\tilde{\sigma}} \vec{f} \dif \vec{S} = \pm \int_\sigma \vec{f} \dif \vec{S}$, signe de $\det J_\sigma$. \\
 \u{Vector normal a sup.}: $\vec{n}(\sigma(u)) = \frac{\vec{T}_1\times\vec{T}_2}{\|\vec{T}_1\times \vec{T}_2\|}$. \\
 \u{Component normal}: $f_n = \vec{f}\cdot\vec{n}$. \\
-\ci $\int_M \vec{f} \dif\vec{S} = \int_M f_n \dif S$. \\
+\ci $\int_M \vec{f} \dif\vec{S} = \int_M f_n \dif S$.
 
+\section{Operadors dif. a $\real^3$}
 
+\u{Gradient}: $\grad f := \pdv{f}{x} \hat{i} + \pdv{f}{y} \hat{j} + \pdv{f}{z} \hat{k}$. \\
+\u{Rotacional}: $\rot \vec{F} := \left( \pdv{F_3}{y} - \pdv{F_2}{z} \right)\hat{i} + \left( \pdv{F_1}{z} - \pdv{F_3}{x} \right) \hat{j} + \left( \pdv{F_2}{x} - \pdv{F_1}{y} \right) \hat{k}$. \\
+\u{Diverg\`encia}: $\diver \vec{F} := \pdv{F_1}{x} + \pdv{F_2}{y} + \pdv{F_3}{z}$. \\
+\u{Regles de Leibniz}: \\
+\quad \ci $\grad(fg) = f \grad g + g \grad f$, \\
+\quad \ci $\rot ( f \vec{G} ) = f \rot \vec{G} + \vec{\grad} f \times \vec{G}$, \\
+\quad \ci $\diver ( f \vec{G} ) = f \diver \vec{G} + \vec{\grad} f \cdot \vec{G}$, \\
+\quad \ci $\diver ( \vec{F} \times \vec{G} ) = \vec{G} \cdot \rot \vec{F} - \vec{F} \cdot \rot \vec{G}$. \\
+\u{T. Schwarz}: $f, \vec{F} \in \mathcal{C}^2 \implies \rot\left( \grad f \right) = 0, \diver ( \rot \vec{F} ) = 0$. \\
+\u{Camp conservatiu}: $\vec{F} = \grad f$. \\
+\u{Camp irrotacional}: $\rot \vec{F} = 0$. \\
+\u{Camp solenoidal}: $\vec{G} = \rot \vec{F}$. \\
+\u{Camp sense div.}: $\diver \vec{G} = 0$. \\
+\u{Laplaci\`a}: $\Delta f := \diver \left( \grad f \right), \Delta = \nabla^2 = \pdv[2]{}{x} + \pdv[2]{}{y} + \pdv[2]{}{z}$.
 
+\section{F\'ormules int. teoria de camps}
 
+\u{T. fon. c\`alcul}: (o gradient) $W \subseteq \real^n$ obert, $f \colon W \to \real$ classe $\C^1$. $C$ corba regular orientada clase $\C^1, \tq \bar{C} \subset W$ compacte $\implies \int_C \vec{\grad} f \dif \vec{l} = \int_{\partial C} f = f\left( x_1 \right) - f\left( x_0 \right), \partial C = \setb{x_0, x_1}$ (orientada $x_0\to x_1$). $\partial C = \emptyset\implies \int_{\partial C} f = 0$. \\
+\u{T. Kelvin-Stokes}: (o rotacional) $W \subseteq \real^3$ obert, $\vec{F} \colon W \to \real^3$ classe $\C^1$, $M \subset W$ superficie orientada classe $\C^2 \tq \bar{M}$ compacto, $\bar{M} \subset W$, $\partial M$ amb orientació induïda (m\`a dreta) i punts frontera de $M$ regulars o conjunt de punts frontera singulars \'es finit $\implies \int_M \rot \vec{F} \dif \vec{S} = \int_{\partial M} \vec{F} \dif \vec{l}$. \\
+\u{T. Gauss-Ostrogradski}: (o diverg\`encia) $W \subset \real^3$ obert, $\vec{F} \colon W \to \real^3$ classe $\C^1$, $B \subset W$ obert t.q. $\bar{B}$ compacte, $\bar{B} \subset W$, $\partial B$ amb orientació induïda (m\`a dreta) i punts frontera de $M$ regulars o conjunt de punts frontera singulars \'es finit $\implies \int_B \diver \vec{F} \dif V = \int_{\partial B} \vec{F} \dif \vec{S}$.
 
+\section{Potencials}
 
+\u{Potencial escalar}: $f$ \'es el pot. esc. de $\vec{F} \iff \grad f = \vec{f}$. \\
+\u{Propietats}: $U \subseteq \real^3$ obert connex, $\vec{F} \colon U \to \real^3$ classe $\C^1$, s\'on equivalents: \\
+\quad \ci $\vec{F}$ conservatiu, \\
+\quad \ci $p_0, p_1 \in U$, $C \subset U$ corba orientada t.q. $\partial U = \setb{p_0, p_1}$, circulación $\int_C \vec{F} \dif \vec{l} = f(p_0, p_1)$, \\
+\quad \ci $\forall C \subset U$ corba tancada, $\oint_C \vec{F} \dif \vec{l} = 0$. \\
+\ci $U \subset \real^3$ obert simplement connex (def. apunts profe) i $\vec{F} \colon U \to \real^3$ classe $\C^1$ irrotacional $\implies \vec{F}$ conservatiu. \\
 
+\u{T. Green}: $U \subseteq \real^2$ obert, $\vec{F} \colon U \to \real^2$ classe $\C^1$, $M \subset U$ obert t.q. $\bar{M}\subset U$ compacte, $\partial M$ amb orientació induïda (m\`a dreta) i punts frontera de $M$ regulars o conjunt de punts frontera singulars \'es finit $\implies \int_M \left( \pdv{F_2}{x} - \pdv{F_1}{y} \right) \dif x \dif y = \int_{\partial M} \vec{F} \dif \vec{l}$.
 
+%%%%%%%%%%%%%%
+%   TEMA 5   %
+%%%%%%%%%%%%%%
 
+\section{Tema 5}
 
+\ci $(f \dif x^I) \wedge (g \dif x^J) = fg \dif x^I \wedge \dif x^j$. \\
+\ci $\alpha \wedge \beta = (-1)^{\abs{\beta}\abs{\alpha}} \alpha \wedge \beta$. \\
+\ci $f \in \C^\infty \left( \real^n \right) = \Omega^0 \left( \real^n \right)$, podem construir $\dif f := \sum^n_{i=1} \frac{\partial f}{\partial x^i} \dif x^i \in \Omega^1 \left( \real^n \right)$. \\
+\u{Diferencial exterior}: Aplicaci\'o lineal, $\dif\,(f \dif x^I) = \dif f \wedge \dif x^I$. \\
+\ci $\dif\,\circ \dif = 0$. \\
+\u{Tancada}: $\alpha$ tancada $\iff \dif \alpha = 0$. \\
+\u{Exacta}: $\beta$ exacta $\iff \exists \alpha \tq \beta = \dif \alpha$. \\
+\ci Exacta $\implies$ tancada. \\
+\u{Lema Poincar\'e}: En $\real^n$, $\alpha$ tancada i $|\alpha| \geq 1 \implies \alpha$ exacta. \\
 
-
-
-
-
-
-
+\u{Pullback}: $F \colon \real^m \to \real^n$ classe $\C^\infty$, $g \in \C^\infty\left( \real^n \right)$, el pullback \'es $F^\ast(g) := g \circ F \in \C^\infty \colon \real^m \to \real$, $F^\ast$ \'es $\real$-lineal, $F^\ast(g\dif y^{i_1}\wedge\dots\wedge\dif y^{i_k}) := F^\ast (g) \dif F^\ast (y^{i_1}) \wedge \dots \wedge \dif F^\ast (y^{i_k})$. \\
+\ci $F^\ast (\alpha \wedge \beta) = F^\ast (\alpha) \wedge F^\ast (\beta)$. \\
+\ci $F^\ast (\dif x) = \dif F^\ast(x)$. \\
+\u{Integral de $\omega$ al llarg de $\sigma$}: $\omega \in \Omega^k (\real^n), \sigma \colon \real^k \to \real^n, \implies \int_\sigma \omega := \int_{\real^k} \sigma^\ast (\omega)$. \\
+\u{T. Stokes}: $M$ varietat amb vora, orientada i $\dim M = m$, $\omega \in \Omega^{m-1} (M)$ de suport compacte i $\partial M$ t\'e orientació induïda $\implies \int_M \dif \omega = \int_{\partial M} \omega$.
 
 \section{Altres}
 
