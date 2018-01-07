@@ -3,9 +3,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-%\usepackage[landscape,margin=0.2in,top=0.2in,bottom=0.2in]{geometry}
+\newif\ifland
+%\landtrue
+\landfalse
+\ifland
+\usepackage[landscape,margin=0.2in,top=0.2in,bottom=0.2in]{geometry}
+\else
 \usepackage[margin=1in]{geometry}
-
+\fi
 
 \usepackage[pdftex]{hyperref}
 \usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
@@ -93,10 +98,13 @@
 
 \begin{document}
 \raggedright
-%\begin{multicols}{4}
+\ifland
+\begin{multicols}{4}
 \input{codi_form}
-%\end{multicols}
-
+\end{multicols}
+\else
+\input{codi_form}
+\fi
 \vspace*{\fill}
 \begin{center}
 \textbf{\huge Aquest formulari nom\'es inclou f\'ormules dels temes 1, 2 i 3.} \\
