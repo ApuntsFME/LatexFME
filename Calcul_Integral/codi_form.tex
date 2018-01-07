@@ -3,17 +3,20 @@
 \u{S\`eries geom\`etriques}: $\sum_{n \geq 1} \alpha^n$ conv. sii $\alpha \in (-1, 1)$, div. sii $\alpha > 1$, oscil·lant altrament.
 
 \section{Sèries n. positius}
-
-\u{C. comp. dir.}: $\sum_{n=n_0}^\infty a_n \leq \sum_{n=n_0}^\infty b_n \implies (b_n$ conv. $\implies a_n$ conv$)$ i $(a_n$ div. $\implies b_n$ div.$)$. \\
-\u{C. comp. al límit}: $\lim\frac{a_n}{b_n}=l\in[0,+\infty]$ (cons. apunts d'ell).\\
-\u{C. arrel Cauchy}: $\sum a_n$ positiva i $\exists \lim a_n^{\nicefrac{1}{n}}=\alpha \implies (\alpha >1$ div.$)$ i $(\alpha < 1$ conv.$)$.\\
-\u{C. quo. Alambert}: $\sum a_n$ estr. pos. i $\exists\lim\frac{a_{n+1}}{a_n}=\alpha \implies (\alpha <1$ div.$)$ i $(\alpha > 1$ conv.$)$.\\
-\u{C. Raabe}: $\sum a_n$ estr. pos. i $\exists\lim n\left(1-\frac{a_{n+1}}{a_n}\right) = L \implies (L > 1$ conv.$)$ i $(L<1$ div.$)$.\\
+Dins aquest apartat les successions són totes de termes positius.\\
+\u{C. comp. dir.}: $a_n \leq b_n \forall n \geq n_0 \implies \sum_{n=n_0}^\infty a_n \leq \sum_{n=n_0}^\infty b_n 
+\implies (\sum b_n$ conv. $\implies \sum a_n$ conv.$)$ i $(\sum a_n$ div. $\implies \sum b_n$ div.$)$. \\
+\u{C. comp. al límit}: $\lim\frac{a_n}{b_n}=l\in[0,+\infty]$. Si $l < \infty, \, \sum b_n$ conv. $\implies \sum a_n$ conv.. Si $l > 0, \, \sum a_n$ conv. $\implies
+\sum b_n$ conv.\\
+\u{C. arrel Cauchy}: $(a_n)$ positiva i $\exists \lim a_n^{\nicefrac{1}{n}}=\alpha \implies (\alpha >1$ div.$)$ i $(\alpha < 1$ conv.$)$.\\
+\u{C. quo. Alambert}: $(a_n)$ estr. pos. i $\exists\lim\frac{a_{n+1}}{a_n}=\alpha \implies (\alpha <1$ div.$)$ i $(\alpha > 1$ conv.$)$.\\
+\u{C. Raabe}: $(a_n)$ estr. pos. i $\exists\lim n\left(1-\frac{a_{n+1}}{a_n}\right) = L \implies (L > 1$ conv.$)$ i $(L<1$ div.$)$.\\
+\u{S\`erie Rie.}: $\sum_{n \geq 1} \frac{1}{n^p}$ \'es conv. sii $p > 1$, div. altrament.
+\section{Altres sèries}
 \ci Sèrie cond. conv. $\implies$ podem reordenar per tal que $\sum = s\in\left[-\infty, +\infty\right]$.\\
 \ci Sèrie alternada $\implies$ un pos., un neg., ... \\
 \u{C. Leibniz sèr. alt.}: $(a_n)$ decr. i $\lim a_n = 0$, llavors $\sum (-1)^na_n$ és conv.. A més, $\abs{s-s_N} < a_{n+1}$. \\
-\u{C. Dirichlet}: Si $s_n$ d'$(a_n)$ fitades i $\sum b_n$ decr., $\lim b_n = 0$, llavors $\sum a_nb_n$ convergeix. \\
-\u{S\`erie Rie.}: $\sum_{n \geq 1} \frac{1}{n^p}$ \'es conv. sii $p > 1$, div. altrament.
+\u{C. Dirichlet}: Si $s_n$ d'$(a_n)$ fitades i $(b_n)$ decr., $\lim b_n = 0$, llavors $\sum a_nb_n$ convergeix. \\
 
 \section{Sèries de potències}
 
@@ -26,7 +29,16 @@
 
 \ci La convergència d'integrals és lineal. \\
 \u{C. Cauchy per a int. impròpies}: $f\colon \left[a, b\right) \to \real. \int_a^b f$ és conv. $\iff \forall \varepsilon > 0, \exists c_0 \in \left[a, b\right) \tq$ si $c_1, c_2 > c_0$, llavors $\abs{\int_{c_1}^{c_2} f} < \varepsilon$. \\
-\ci Podem aplicar els criteris: comp. directa, comp. en el límit, Dirichlet ($\exists M>0 \tq$ si $a<c<b,\, \abs{\int_a^c f(x) \dif x} \leq M$.
+\ci Podem aplicar els criteris: comp. directa, comp. en el límit, Dirichlet ($\exists M>0 \tq$ si $a<c<b,\, \abs{\int_a^c f(x) \dif x} \leq M$.\\
+\u{C. comp. dir} $f, g:[a,b) \to \real$, $f, g > 0$, $f \leq g$ localment integrables.
+Aleshores $\int_a^b f \leq \int_a^b g$. Si la segona conv., la primera també. Si
+la primera div., la segona també.\\
+\u{C. comp. al límit} $f, g:[a,b) \to \real$, $f, g > 0$ localment integrables.
+Suposem $\exists \lim\limits_{x \to b} \frac{f(x)}{g(x)} = l$. Si $l < \infty, \, \int_a^b g$ conv.
+$\implies$ $\int_a^b f$ conv.. Si $l > 0, \, \int_a^b f$ conv. $\implies \int_a^b g$ conv..\\
+\u{C. Dirichlet} $f, g:[a,b) \to \real$ localment integrables. Suposem 
+$\exists M>0 \tq$ si $a<c<b,\, \abs{\int_a^c f(x) \dif x} \leq M$ i $g$ decreixent
+amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..\\
 
 \section{Integrals a rectangles}
 
@@ -50,7 +62,7 @@
 \section{Teorema de Lebesgue}
 
 \ci Sigui $X$ espai mètric, $f\colon X\to \real$, l'oscil·lació de $f$ sobre $E\subset X$ és el diàmetre de $f(E)$: $\omega(f,E) = \sup_{x,y\in E} \dif \left( f\left( x \right), f\left( y \right) \right) \in \left[ 0, +\infty \right]$. Finita $\iff f_{|E}$ fitada, $0\iff f_{|E}$ constant. \\
-\u{Oscil·lació en $a\in X$}: $\omega\left( f,a \right) = \lim_{r\to 0}\omega\left( f, B\left( a;r \right) \right) = \inf_{r>0} \omega\left( f, B\left( a; r \right) \right)$. \\
+\u{Oscil·lació en $a\in X$}: $\omega\left( f,a \right) = \lim\limits_{r\to 0}\omega\left( f, B\left( a;r \right) \right) = \inf_{r>0} \omega\left( f, B\left( a; r \right) \right)$. \\
 \ci $f$ cont. en $a \iff \omega\left( f, a \right) = 0$. \\
 \u{T. Lebesgue}: Sigui $A\subset \real^n$ rectangle compacte, $f\colon A\to \real$ fitada. Llavors $f$ és integrable Riemann $\iff \disc\left( f \right)$ és de mesura nul·la $\iff$ contínua gairebé pertot.
 
