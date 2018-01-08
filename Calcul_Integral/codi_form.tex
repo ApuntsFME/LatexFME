@@ -3,7 +3,15 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-\usepackage[landscape,paperheight=301.46mm,paperwidth=213.15mm,margin=0.2in,top=0.2in,bottom=0.2in]{geometry}
+\usepackage{fp}
+\def\rate{1.2}
+
+\FPeval{\wi}{297 * \rate}
+\FPeval{\he}{210 * \rate}
+
+\usepackage[landscape,margin=0.2in,top=0.2in,bottom=0.2in]{geometry}
+\setlength{\paperheight}{\he mm}
+\setlength{\paperwidth}{\wi mm}
 
 \usepackage[pdftex]{hyperref}
 \usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
@@ -99,7 +107,7 @@
 
 \section{Sèries n. positius}
 Dins aquest apartat les successions són totes de termes positius.\\
-\u{C. comp. dir.}: $a_n \leq b_n \forall n \geq n_0 \implies \sum_{n=n_0}^\infty a_n \leq \sum_{n=n_0}^\infty b_n 
+\u{C. comp. dir.}: $a_n \leq b_n \forall n \geq n_0 \implies \sum_{n=n_0}^\infty a_n \leq \sum_{n=n_0}^\infty b_n
 \implies (\sum b_n$ conv. $\implies \sum a_n$ conv.$)$ i $(\sum a_n$ div. $\implies \sum b_n$ div.$)$. \\
 \u{C. comp. al límit}: $\lim\frac{a_n}{b_n}=l\in[0,+\infty]$. Si $l < \infty, \, \sum b_n$ conv. $\implies \sum a_n$ conv.. Si $l > 0, \, \sum a_n$ conv. $\implies
 \sum b_n$ conv.\\
@@ -111,6 +119,8 @@ Dins aquest apartat les successions són totes de termes positius.\\
 \ci Sèrie cond. conv. $\implies$ podem reordenar per tal que $\sum = s\in[-\infty, +\infty]$.\\
 \ci Sèrie alternada $\implies$ un pos., un neg., ... \\
 \u{C. Leibniz sèr. alt.}: $(a_n)$ decr. i $\lim a_n = 0$, llavors $\sum (-1)^na_n$ és conv.. A més, $\abs{s-s_N} < a_{n+1}$. \\
+\underline{C. de la integral} $\left( a_n = f(n), f \text{ integ.} \right)$ $\int_{M}^{\infty} f$ converge $\iff \sum a_k$ converge y $\sum_{M}^{\infty} = \sum_{M}^{N-1} + \int_{N}^{\infty} f + \varepsilon_N$, $\varepsilon_N \in [0,a_N]$ \\
+\underline{C. logarítmico} $\left( \lim\limits_{n \to \infty} \frac{-\log{a_n}}{\log{n}} = L \right) \implies$ ($L > 1$ conv.) i  ($L < 1$ div.) \\
 \u{C. Dirichlet}: Si $s_n$ d'$(a_n)$ fitades i $(b_n)$ decr., $\lim b_n = 0$, llavors $\sum a_nb_n$ convergeix. \\
 
 \section{Sèries de potències}
@@ -130,7 +140,7 @@ la primera div., la segona també.\\
 \u{C. comp. al límit} $f, g:[a,b) \to \real$, $f, g > 0$ localment integrables.
 Suposem $\exists \lim\limits_{x \to b} \frac{f(x)}{g(x)} = l$. Si $l < \infty, \, \int_a^b g$ conv.
 $\implies$ $\int_a^b f$ conv.. Si $l > 0, \, \int_a^b f$ conv. $\implies \int_a^b g$ conv..\\
-\u{C. Dirichlet} $f, g:[a,b) \to \real$ localment integrables. Suposem 
+\u{C. Dirichlet} $f, g:[a,b) \to \real$ localment integrables. Suposem
 $\exists M>0 \tq$ si $a<c<b,\, \abs{\int_a^c f(x) \dif x} \leq M$ i $g$ decreixent
 amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..\\
 
