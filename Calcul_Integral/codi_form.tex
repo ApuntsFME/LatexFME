@@ -3,14 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-\newif\ifland
-\landtrue
-%\landfalse
-\ifland
 \usepackage[landscape,paperheight=301.46mm,paperwidth=213.15mm,margin=0.2in,top=0.2in,bottom=0.2in]{geometry}
-\else
-\usepackage[margin=1in]{geometry}
-\fi
 
 \usepackage[pdftex]{hyperref}
 \usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
@@ -98,7 +91,6 @@
 
 \begin{document}
 \raggedright
-\ifland
 \begin{multicols}{4}
 
 \u{C. Cauchy (sèries)}: $\sum a_n$ conv. $\iff \forall \varepsilon > 0, \exists n_0 \tq m>n\geq n_0$ llavors, $\abs{s_m-s_n} = \abs{a_{n+1} + \dots + a_m} < \varepsilon$. \\
@@ -287,10 +279,6 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..\\
 
 \u{T. Green}: $U \subseteq \real^2$ obert, $\vec{F} \colon U \to \real^2$ classe $\C^1$, $M \subset U$ obert t.q. $\bar{M}\subset U$ compacte, $\partial M$ $^\ast$ $\implies \int_M ( \pdv{F_2}{x} - \pdv{F_1}{y} ) \dif x \dif y = \int_{\partial M} \vec{F} \dif \vec{l}$.
 
-%%%%%%%%%%%%%%
-%   TEMA 5   %
-%%%%%%%%%%%%%%
-
 \section{Tema 5}
 
 \ci $(f \dif x^I) \wedge (g \dif x^J) = fg \dif x^I \wedge \dif x^J$. \\
@@ -318,7 +306,7 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..\\
 \ci $\sum \frac{1}{n^p}$ conv. $\iff p > 1$ (\verb|else| div.).
 
 \subsection{Altres. Integrals}
-\ci $\int_1^{+\infty} \frac{1}{x^\alpha}$ d$x$ conv. $\iff \alpha < 1$ i és $\frac{1}{\alpha-1}$. \\
+\ci $\int_1^{+\infty} \frac{1}{x^\alpha}$ d$x$ conv. $\iff \alpha > 1$ i és $\frac{1}{\alpha-1}$. \\
 \ci $\int_0^1 \frac{1}{x^\alpha}$ d$x$ conv. $\iff \alpha < 1$ i és $\frac{1}{1-\alpha}$. \\
 \ci $\int_0^{+\infty} e^{-\alpha t}$ d$t$ conv. $\iff \alpha > 0$ i és $\frac{1}{\alpha}$.
 
@@ -344,9 +332,5 @@ $^\ast$ amb orientació induïda (m\`a dreta) i punts frontera de $M$ regulars o
 
 
 \end{multicols}
-
-\else
-\input{codi_form}
-\fi
 
 \end{document}
