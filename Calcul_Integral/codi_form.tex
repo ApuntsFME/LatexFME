@@ -261,8 +261,8 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..
 \u{Diverg\`encia}: $\diver \vec{F} := \pdv{F_1}{x} + \pdv{F_2}{y} + \pdv{F_3}{z}$. \\
 \u{Regles de Leibniz}: \\
 \quad \ci $\grad(fg) = f \grad g + g \grad f$, \\
-\quad \ci $\rot ( f \vec{G} ) = f \rot \vec{G} + \vec{\grad} f \times \vec{G}$, \\
-\quad \ci $\diver ( f \vec{G} ) = f \diver \vec{G} + \vec{\grad} f \cdot \vec{G}$, \\
+\quad \ci $\rot ( f \vec{G} ) = f \rot \vec{G} + \grad f \times \vec{G}$, \\
+\quad \ci $\diver ( f \vec{G} ) = f \diver \vec{G} + \grad f \cdot \vec{G}$, \\
 \quad \ci $\diver ( \vec{F} \times \vec{G} ) = \vec{G} \cdot \rot \vec{F} - \vec{F} \cdot \rot \vec{G}$. \\
 \u{T. Schwarz}: $f, \vec{F} \in \mathcal{C}^2 \implies \rot( \grad f ) = 0, \diver ( \rot \vec{F} ) = 0$. \\
 \u{Camp conservatiu}: $\vec{F} = \grad f$. \\
@@ -273,13 +273,13 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..
 
 \section{F\'ormules int. camps}
 
-\u{T. fon. c\`alcul}: (o gradient) $W \subseteq \real^n$ obert, $f \colon W \to \real$ classe $\C^1$. $C$ corba regular orientada clase $\C^1, \tq \bar{C} \subset W$ compacte $\implies \int_C \vec{\grad} f \dif \vec{l} = \int_{\partial C} f = f( x_1 ) - f( x_0 ), \partial C = \setb{x_0, x_1}$ (orientada $x_0\to x_1$). $\partial C = \emptyset\implies \int_{\partial C} f = 0$. \\
+\u{T. fon. c\`alcul}: (o gradient) $W \subseteq \real^n$ obert, $f \colon W \to \real$ classe $\C^1$. $C$ corba regular orientada clase $\C^1, \tq \bar{C} \subset W$ compacte $\implies \int_C \grad f \dif \vec{l} = \int_{\partial C} f = f( x_1 ) - f( x_0 ), \partial C = \setb{x_0, x_1}$ (orientada $x_0\to x_1$). $\partial C = \emptyset\implies \int_{\partial C} f = 0$. \\
 \u{T. Kelvin-Stokes}: (o rotacional) $W \subseteq \real^3$ obert, $\vec{F} \colon W \to \real^3$ classe $\C^1$, $M \subset W$ superficie orientada classe $\C^2 \tq \bar{M}$ compacto, $\bar{M} \subset W$, $\partial M$ $^\ast$ $\implies \int_M \rot \vec{F} \dif \vec{S} = \int_{\partial M} \vec{F} \dif \vec{l}$. \\
 \u{T. Gauss-Ostrogradski}: (o diverg\`encia) $W \subset \real^3$ obert, $\vec{F} \colon W \to \real^3$ classe $\C^1$, $B \subset W$ obert t.q. $\bar{B}$ compacte, $\bar{B} \subset W$, $\partial B$ $^\ast$ $\implies \int_B \diver \vec{F} \dif V = \int_{\partial B} \vec{F} \dif \vec{S}$.
 
 \section{Potencials}
 
-\u{Potencial escalar}: $f$ \'es el pot. esc. de $\vec{F} \iff \grad f = \vec{f}$. \\
+\u{Potencial escalar}: $f$ \'es el pot. esc. de $\vec{F} \iff \grad f = \vec{F}$. \\
 \u{Propietats}: $U \subseteq \real^3$ obert connex, $\vec{F} \colon U \to \real^3$ classe $\C^1$, s\'on equivalents: \\
 \quad \ci $\vec{F}$ conservatiu, \\
 \quad \ci $p_0, p_1 \in U$, $C \subset U$ corba orientada t.q. $\partial U = \setb{p_0, p_1}$, circulación $\int_C \vec{F} \dif \vec{l} = f(p_0, p_1)$, \\
