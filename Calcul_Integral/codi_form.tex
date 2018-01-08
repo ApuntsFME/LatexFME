@@ -1,3 +1,106 @@
+\documentclass[10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\newif\ifland
+\landtrue
+%\landfalse
+\ifland
+\usepackage[landscape,paperheight=297mm,paperwidth=210mm,margin=0.2in,top=0.2in,bottom=0.2in]{geometry}
+\else
+\usepackage[margin=1in]{geometry}
+\fi
+
+\usepackage[pdftex]{hyperref}
+\usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
+\usepackage{mdframed,cleveref,cancel,stackengine,mathrsfs,thmtools}
+\usepackage{xfrac,stmaryrd,commath,units,titlesec,multicol}
+\usepackage[catalan]{babel}
+
+\titlespacing{\section}{0pt}{5pt}{0pt}
+\titlespacing{\subsection}{0pt}{5pt}{0pt}
+\titlespacing{\subsubsection}{0pt}{5pt}{0pt}
+\setlength{\parindent}{0pt}
+\pagenumbering{gobble}
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\bfseries}
+\setlength{\columnseprule}{1pt}
+
+\newcommand{\bimplies}{\fbx{$\implies$}}
+\newcommand{\bimpliedby}{\fbx{$\impliedby$}}
+
+\newcommand{\n}{\mathbb{N}}
+\newcommand{\z}{\mathbb{Z}}
+\newcommand{\q}{\mathbb{Q}}
+\newcommand{\cx}{\mathbb{C}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\R}{\mathcal{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\Pa}{\mathcal{P}}
+\newcommand{\Es}{\mathcal{E}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\let\u\relax
+\newcommand{\u}[1]{\underline{#1}}
+\newcommand{\pdv}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}
+\newcommand{\dv}[3][]{\frac{\dif^{#1} #2}{\dif #3^{#1}}}
+\let\k\relax
+\newcommand{\k}{\Bbbk}
+\newcommand{\ita}[1]{\textit{#1}}
+\newcommand\inv[1]{#1^{-1}}
+\newcommand\setb[1]{\left\{#1\right\}}
+\newcommand{\vbrack}[1]{\langle #1\rangle}
+\newcommand{\determinant}[1]{\begin{vmatrix}#1\end{vmatrix}}
+\newcommand{\Po}{\mathbb{P}}
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+\newcommand{\ci}{\textbullet\;}
+\DeclareMathOperator{\fr}{Fr}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\ext}{Ext}
+\DeclareMathOperator{\inte}{Int}
+\DeclareMathOperator{\rie}{Rie}
+\DeclareMathOperator{\rg}{rg}
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\nuc}{Nuc}
+\DeclareMathOperator{\car}{car}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\graf}{graf}
+\DeclareMathOperator{\tq}{\;t.q.\;}
+\DeclareMathOperator{\disc}{disc}
+\let\emptyset\varnothing
+\renewcommand{\thesubsubsection}{\Alph{subsubsection}}
+\setcounter{secnumdepth}{4}
+
+\hypersetup{
+    colorlinks,
+    linkcolor=blue
+}
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+\raggedright
+\ifland
+\begin{multicols}{4}
+
 \u{C. Cauchy (sèries)}: $\sum a_n$ conv. $\iff \forall \varepsilon > 0, \exists n_0 \tq m>n\geq n_0$ llavors, $\abs{s_m-s_n} = \abs{a_{n+1} + \dots + a_m} < \varepsilon$. \\
 \ci La convergència és lineal i associativa. \\
 \u{S\`eries geom\`etriques}: $\sum_{n \geq 1} \alpha^n$ conv. sii $\alpha \in (-1, 1)$, div. sii $\alpha > 1$, oscil·lant altrament.
@@ -205,7 +308,6 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..\\
 \u{Integral de $\omega$ al llarg de $\sigma$}: $\omega \in \Omega^k (\real^n), \sigma \colon \real^k \to \real^n, \implies \int_\sigma \omega := \int_{\real^k} \sigma^\ast (\omega)$. \\
 \u{T. Stokes}: $M$ varietat amb vora, orientada i $\dim M = m$, $\omega \in \Omega^{m-1} (M)$ de suport compacte i $\partial M$ t\'e orientació induïda $\implies \int_M \dif \omega = \int_{\partial M} \omega$.
 
-
 % TODO vigilar amb aquesta cutrada
 \setcounter{section}{20}
 
@@ -237,3 +339,12 @@ $^\ast$ amb orientació induïda (m\`a dreta) i punts frontera de $M$ regulars o
 \vspace{3pt}
 \raggedleft
 {\large Nom: \underline{\hspace{4.5cm}}}
+
+
+\end{multicols}
+
+\else
+\input{codi_form}
+\fi
+
+\end{document}

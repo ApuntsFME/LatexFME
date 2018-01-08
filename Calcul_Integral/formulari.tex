@@ -7,7 +7,7 @@
 \landtrue
 %\landfalse
 \ifland
-\usepackage[landscape,margin=0.2in,top=0.2in,bottom=0.2in]{geometry}
+\usepackage[landscape,paperheight=297mm,paperwidth=210mm,margin=0in,top=0in,bottom=0in]{geometry}
 \else
 \usepackage[margin=1in]{geometry}
 \fi
@@ -97,14 +97,19 @@
 \setlength\parindent{0pt}
 
 \begin{document}
-\raggedright
-\ifland
-\begin{multicols}{4}
-\input{codi_form}
-\end{multicols}
 
-\else
-\input{codi_form}
-\fi
+\includegraphics[
+    page=1,
+    width=\textwidth,
+    height=\textheight,
+    keepaspectratio
+]{codi_form.pdf}
+
+\includegraphics[
+    page=2,
+    width=\textwidth,
+    height=\textheight,
+    keepaspectratio
+]{codi_form.pdf}
 
 \end{document}
