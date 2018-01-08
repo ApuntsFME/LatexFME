@@ -4,14 +4,12 @@
 \usepackage[T1]{fontenc}
 
 \usepackage{fp}
-\def\rate{1.2}
+\def\rate{1.023}
 
-\FPeval{\wi}{297 * \rate}
-\FPeval{\he}{210 * \rate}
+\FPeval{\he}{297 * \rate}
+\FPeval{\wi}{210 * \rate}
 
-\usepackage[landscape,margin=0.2in,top=0.2in,bottom=0.2in]{geometry}
-\setlength{\paperheight}{\he mm}
-\setlength{\paperwidth}{\wi mm}
+\usepackage[landscape,paperheight=\he mm,paperwidth=\wi mm,margin=0.2in,top=0.2in,bottom=0.2in]{geometry}
 
 \usepackage[pdftex]{hyperref}
 \usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
@@ -180,7 +178,7 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..\\
 \ci Els rectangles fitats i les boles euclidianes són admissibles. \\
 \u{Funció característica de $C\subset X$}: (o indicatriu) $\chi_C\colon X \to \real, \chi_C(x) = 1$ si $x \in C$, val $0$ altrament.\\
 \ci $\chi$ no és contínua a $\fr( C ) \implies$ ($C$ adm. $\iff C$ fitat i $\forall R, \exists \int_R \chi_C \tq C\subset R$). \\
-\ci $g\colon E\to\real, \tilde{g}\colon X\to\real ( \tilde{g}(x) = 0 \forall x \notin E )$. Aleshores $\disc( g ) \subseteq \disc( \tilde{g} )\subseteq \disc( g )\cup \fr( E )$. \\
+\ci $g\colon E\to\real, \tilde{g}\colon X\to\real ( \tilde{g}(x) = 0,\, \forall x \notin E )$. Aleshores $\disc( g ) \subseteq \disc( \tilde{g} )\subseteq \disc( g )\cup \fr( E )$. \\
 \ci $f\chi_C$ integrable Rie. en R $\iff \disc( f )$ de mesura nul·la. \\
 \u{Pel T. Lebesgue}: $C\subset \real^n$ admissible. $f\colon C \to \real$ és integrable Rie. $\iff \disc( f )$ mesura nul·la. \\
 \ci Si $C$ adm., $\vol( C ) = \int_C 1$ és la mesura (o contingut) de Jordan o volum ($n$-dimensional) de $C$. \\
