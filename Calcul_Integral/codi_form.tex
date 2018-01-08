@@ -7,7 +7,7 @@
 \landtrue
 %\landfalse
 \ifland
-\usepackage[landscape,paperheight=299.97mm,paperwidth=212.1mm,margin=0.2in,top=0.2in,bottom=0.2in]{geometry}
+\usepackage[landscape,paperheight=301.46mm,paperwidth=213.15mm,margin=0.2in,top=0.2in,bottom=0.2in]{geometry}
 \else
 \usepackage[margin=1in]{geometry}
 \fi
@@ -203,8 +203,9 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..\\
 \ci $x \in A \tq f( x, · )$ no int. Rie. té mesura nul·la. \\
 \ci $D\subset X, f\colon D\to \real$ cont., $E = \left\{ ( x, y  )\in X\times \real | x\in D, y \geq f( x ) \right\}$, llavors ($D\subset X$ tancat $\implies E\subset X\times\real$ tancat) i ($\fr( E ) \subset \graf( f ) \cup ( \fr( D )\times \real  )$). \\
 \ci $D\subset \real^{n-1}$ comp., m.J., $\varphi, \psi\colon D\to \real$ cont. t.q. $\varphi \leq \psi$, $E = \{ ( x,y )\in\real^{n-1}\times \real\;|\; x\in D, \varphi( x ) \leq y \leq \psi( x ) \} \subset \real^n$ és compacte i m.J.. (Si $f\colon E\to \real, \int_E f = \int_D \dif x\int_{\varphi( x )}^{\psi( x )}\dif y\, f( x, y )$). \\
-\ci $E$ és una regió elemental de $\real^n$ (per $n=1$ és un interval compacte).
-
+%\ci $E$ és una regió elemental de $\real^n$ (per $n=1$ és un interval compacte).
+\u{Regió elemental}: A $\real$ és un interval compacte. Si no és de la forma $\setb{(x,y) \in \real^{n-1} \times \real \vert x \in D, \phi(x) \leq y \leq \psi(x)}$, on $D \subset \real^{n-1}$
+            és regió elemental i $\phi \leq \psi \colon D \to \real$ contínues.
 \section{Canvi de variables}
 
 \ci Sigui $V\subset\real^n$ obert, $\varphi\colon V\to\real^n$ injectiva, classe $\mathcal{C}^1$ amb $\det \dif \varphi( y ) \neq 0, \forall y \in V$. Sigui $U = \varphi( V ) (\varphi\colon V\to U$ difeo. classe $\mathcal{C}^1)$. Si $f\colon U\to \real$ int., $\int_U f = \int_V( f \circ \varphi )\abs{\det \dif \varphi}$.
@@ -216,7 +217,8 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..\\
 \u{Esfèriques a $\real^3$}: $\int_U f( x,y,z ) \dif x\dif y\dif z = \int_V f ( r\cos\varphi\sin\theta, r\sin\varphi\sin\theta, r\cos\theta )$ $r^2\sin\theta \dif r\dif \varphi\dif \theta$.
 
 \section{Integrals impròpies}
-
+\u{Exhaustió}: $E \subset \real^n$. $\lp E_i \rp$ m.J tals que $E_i \subset E$,
+ $E_i \subset E_{i+1}$, $\bigcup\limits_i E_i = E$ \\
 \u{Integral de Riemann impròpia}: Sigui $( E_i )$ exhaustió, \'es $\int_E f := \lim_i \int_{E_i} f$ (suposant que no depengui de l'exhaustió). \\
 \ci Si $E$ m.J., $( E_i )$ exh., $\lim_i \vol( E_i ) = \vol ( E )$, i si $f\colon E\to\real$ int. Rie., $f$ \'es int. Rie. a cada $E_i$ i int. Rie. coincideix amb la int. impròpia. \\
 \ci Siguin $E\subset\real^n, f\colon E\to \real, f \geq 0$, llavors $\lim_i\int_{E_i} f$ no depèn de l'exh. considerada. \\
