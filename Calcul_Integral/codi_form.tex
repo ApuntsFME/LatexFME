@@ -161,8 +161,6 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..\\
 \u{T. Schwarz}: $f, \vec{F} \in \mathcal{C}^2 \implies \rot( \grad f ) = 0, \diver ( \rot \vec{F} ) = 0$. \\
 \u{Camp conservatiu}: $\vec{F} = \grad f$. \\
 \u{Camp irrotacional}: $\rot \vec{F} = 0$. \\
-% TODO vigilar aqui amb aquesta cutrada
-\columnbreak
 \u{Camp solenoidal}: $\vec{G} = \rot \vec{F}$. \\
 \u{Camp sense div.}: $\diver \vec{G} = 0$. \\
 \u{Laplaci\`a}: $\Delta f := \diver ( \grad f ), \Delta = \nabla^2 = \pdv[2]{}{x} + \pdv[2]{}{y} + \pdv[2]{}{z}$.
@@ -170,8 +168,8 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..\\
 \section{F\'ormules int. camps}
 
 \u{T. fon. c\`alcul}: (o gradient) $W \subseteq \real^n$ obert, $f \colon W \to \real$ classe $\C^1$. $C$ corba regular orientada clase $\C^1, \tq \bar{C} \subset W$ compacte $\implies \int_C \vec{\grad} f \dif \vec{l} = \int_{\partial C} f = f( x_1 ) - f( x_0 ), \partial C = \setb{x_0, x_1}$ (orientada $x_0\to x_1$). $\partial C = \emptyset\implies \int_{\partial C} f = 0$. \\
-\u{T. Kelvin-Stokes}: (o rotacional) $W \subseteq \real^3$ obert, $\vec{F} \colon W \to \real^3$ classe $\C^1$, $M \subset W$ superficie orientada classe $\C^2 \tq \bar{M}$ compacto, $\bar{M} \subset W$, $\partial M$ amb orientació induïda (m\`a dreta)$^\ast$ $\implies \int_M \rot \vec{F} \dif \vec{S} = \int_{\partial M} \vec{F} \dif \vec{l}$. \\
-\u{T. Gauss-Ostrogradski}: (o diverg\`encia) $W \subset \real^3$ obert, $\vec{F} \colon W \to \real^3$ classe $\C^1$, $B \subset W$ obert t.q. $\bar{B}$ compacte, $\bar{B} \subset W$, $\partial B$ amb orientació induïda (m\`a dreta)$^\ast$ $\implies \int_B \diver \vec{F} \dif V = \int_{\partial B} \vec{F} \dif \vec{S}$.
+\u{T. Kelvin-Stokes}: (o rotacional) $W \subseteq \real^3$ obert, $\vec{F} \colon W \to \real^3$ classe $\C^1$, $M \subset W$ superficie orientada classe $\C^2 \tq \bar{M}$ compacto, $\bar{M} \subset W$, $\partial M$ $^\ast$ $\implies \int_M \rot \vec{F} \dif \vec{S} = \int_{\partial M} \vec{F} \dif \vec{l}$. \\
+\u{T. Gauss-Ostrogradski}: (o diverg\`encia) $W \subset \real^3$ obert, $\vec{F} \colon W \to \real^3$ classe $\C^1$, $B \subset W$ obert t.q. $\bar{B}$ compacte, $\bar{B} \subset W$, $\partial B$ $^\ast$ $\implies \int_B \diver \vec{F} \dif V = \int_{\partial B} \vec{F} \dif \vec{S}$.
 
 \section{Potencials}
 
@@ -182,7 +180,7 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..\\
 \quad \ci $\forall C \subset U$ corba tancada, $\oint_C \vec{F} \dif \vec{l} = 0$. \\
 \ci $U \subset \real^3$ obert simplement connex (def. apunts profe) i $\vec{F} \colon U \to \real^3$ classe $\C^1$ irrotacional $\implies \vec{F}$ conservatiu. \\
 
-\u{T. Green}: $U \subseteq \real^2$ obert, $\vec{F} \colon U \to \real^2$ classe $\C^1$, $M \subset U$ obert t.q. $\bar{M}\subset U$ compacte, $\partial M$ amb orientació induïda (m\`a dreta)$^\ast$ $\implies \int_M ( \pdv{F_2}{x} - \pdv{F_1}{y} ) \dif x \dif y = \int_{\partial M} \vec{F} \dif \vec{l}$.
+\u{T. Green}: $U \subseteq \real^2$ obert, $\vec{F} \colon U \to \real^2$ classe $\C^1$, $M \subset U$ obert t.q. $\bar{M}\subset U$ compacte, $\partial M$ $^\ast$ $\implies \int_M ( \pdv{F_2}{x} - \pdv{F_1}{y} ) \dif x \dif y = \int_{\partial M} \vec{F} \dif \vec{l}$.
 
 %%%%%%%%%%%%%%
 %   TEMA 5   %
@@ -194,6 +192,7 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..\\
 \ci $\alpha \wedge \beta = (-1)^{\abs{\alpha}\abs{\beta}} \beta \wedge \alpha$. \\
 \ci $f \in \C^\infty ( \real^n ) = \Omega^0 ( \real^n )$, podem construir $\dif f := \sum^n_{i=1} \frac{\partial f}{\partial x^i} \dif x^i \in \Omega^1 ( \real^n )$. \\
 \u{Diferencial exterior}: Aplicaci\'o lineal, $\dif\,(f \dif x^I) = \dif f \wedge \dif x^I$. \\
+\ci $\dif \left( \alpha \wedge \beta \right) = \left( \dif \alpha \right) \wedge \beta + (-1)^{\abs{\alpha}} \alpha \wedge \dif \beta$. \\
 \ci $\dif\,\circ \dif = 0$. \\
 \u{Tancada}: $\alpha$ tancada $\iff \dif \alpha = 0$. \\
 \u{Exacta}: $\beta$ exacta $\iff \exists \alpha \tq \beta = \dif \alpha$. \\
@@ -234,7 +233,7 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..\\
 \ci $\cos(a) + \cos(b) = 2\cos(\frac{a+b}{2})\cos(\frac{a-b}{2})$.
 
 \noindent\makebox[\linewidth]{\rule{\linewidth}{1pt}}
-$^\ast$ i punts frontera de $M$ regulars o conjunt de punts frontera singulars \'es finit. \\
+$^\ast$ amb orientació induïda (m\`a dreta) i punts frontera de $M$ regulars o conjunt de punts frontera singulars \'es finit. \\
 \vspace{3pt}
 \raggedleft
 {\large Nom: \underline{\hspace{4.5cm}}}
