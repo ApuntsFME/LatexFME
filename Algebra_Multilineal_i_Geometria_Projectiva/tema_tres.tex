@@ -540,7 +540,7 @@ el siguiente lema que resultará de utilidad.
         De lo que $r_1 \cap r_2 \neq \varnothing$,
         una contradicción.
         
-        Cojamos $p \in A_1, B_1$, $p \not \in r_1, r_2$. Consideramos
+        Cojamos $p \in A_1 B_1$, $p \not \in r_1, r_2$. Consideramos
         la recta $s$ dada por \ref{lema_rectas_poncelet} que cumple
         $p \in s, s \cap l_2 \neq \varnothing, s \cap l_3 \neq 
         \varnothing$. Veamos que $s \cap r_1 = \varnothing$. Si 
@@ -566,7 +566,7 @@ el siguiente lema que resultará de utilidad.
          lo tanto, podemos considerar la perspectividad $g: r_1 \to
          r_2$ desde $s$. En esta, $g(A_1) = (A_1 \vee s) \cap r_2 \ni
          B_1$. Como sabemos que la perspectividad está bien definida,
-         $g(A_1) = B_1$. Análogamente, $g(A_2) = B_2, g(A_3) = B_3$.
+         $g(A_1) = B_1$. Análogamente, $g(A_2) = B_2$, $g(A_3) = B_3$.
          Por ser $f$ y $g$ proyectivadades y cumplir $g(A_i) = B_i =
          f(A_i)$, formando $A_i$ y $B_i$ referencias en sus 
          respectivas rectas, $f = g$.
@@ -599,10 +599,10 @@ el siguiente lema que resultará de utilidad.
         \item $\exists \eta : \E \to \E$ endomorfismo, $\exists \lambda \in \k, \lambda \neq 0 \tq \psi = \lambda \inv{\eta} \varphi \eta$
         \item $\exists S \in \mathcal{M}_{m+1, n+1}\lp\k\rp, \exists \lambda\in\k, \lambda \neq 0 \tq B = \lambda \inv{S} A S$, donde
         \begin{itemize}
-            \item $A = M\lp f; \R\rp = M\lp f; \R,\R\rp$
-            \item $B = M\lp g; \R\rp = M\lp g; \R,\R\rp$
+            \item $A = M_\R\lp f\rp = M_{\R, \R}\lp f\rp$
+            \item $B = M_{\R}\lp g\rp = M_{\R,\R}\lp g\rp$
         \end{itemize}
-        \item $\exists \R_1,\R_2\tq M\lp f;\R_1\rp = M \lp g; \R_2\rp$
+        \item $\exists \R_1,\R_2\tq M_{\R_1}\lp f\rp = M_{\R_2} \lp g\rp$
     \end{enumerate}
 \end{defi}
 \begin{obs}
@@ -655,7 +655,7 @@ el siguiente lema que resultará de utilidad.
 \begin{obs}
     $\Po, \R$ referencia $\to \lp\Po^*, \R^*\rp$
     \begin{enumerate}
-        \item $f : \Po \to \Po, A = M \lp f; \R\rp$ mueve puntos de $\Po$. $f^* : \Po^* \to \Po^*, A^t = M \lp f^*; \R^* \rp$ mueve puntos de $\Po^*$ (hiperplanos de $\Po$).
+        \item $f : \Po \to \Po, A = M_\R \lp f\rp$ mueve puntos de $\Po$. $f^* : \Po^* \to \Po^*, A^t = M_{\R^\ast} \lp f^*\rp$ mueve puntos de $\Po^*$ (hiperplanos de $\Po$).
         \item $J_A = J_{A^t}$, ya que
             \begin{itemize}
             \item $Q_A \lp t \rp = \det\lp A- t\Id\rp = \det\lp\lp A-t\Id\rp^t\rp = \det\lp A^t-t\Id\rp = Q_{A^t} \lp t\rp \implies$ vaps de $A =$ vaps de $A^t$ 
@@ -797,7 +797,7 @@ el siguiente lema que resultará de utilidad.
 \begin{obs}
     Sea $\k = \real, m_\varphi\lp t\rp | \lp t^2-\lambda\rp$
     \begin{itemize}
-        \item Caso 1: $\lambda<0 \rightarrow$ nada 
+        \item Caso 1: $\lambda<0 \rightarrow$ nopodemos deducir nada más 
         \item Caso 2: $\lambda = a^2>0 \rightarrow m_\varphi\lp t\rp = \text{ó}
         \begin{cases}
             \lp t-a\rp \rightarrow \varphi -a\Id=0\implies\varphi=a\Id \rightarrow \text{ No} \\
@@ -817,7 +817,7 @@ el siguiente lema que resultará de utilidad.
             & & & & \ddots & \\
             & & & & & -a
         \end{pmatrix}, \quad
-        M\lp f;\R\rp \substack{\text{Matriz de } \varphi \\=\\ \text{salvo const.}} \begin{pmatrix}
+        M_\R\lp f\rp \substack{\text{Matriz de } \varphi \\=\\ \text{salvo const.}} \begin{pmatrix}
             1 & & & & & \\
             & \ddots & & & & \\
             & & 1 & & & \\
@@ -827,7 +827,7 @@ el siguiente lema que resultará de utilidad.
         \end{pmatrix}
     \end{gather*}
     $\R = \{q_0 = [v_0], \dots, q_r=[v_r], q_{r+1} = [v_{r+1}], \dots, q_n = [v_n]; \overline{q}\}$.\\
-    Sean $V = q_0 \vee \dots q_r, W = q_{r+1} \vee \dots \vee q_n$ de puntos fijos, $V$ y $W$ suplementarias.
+    Sean $V = q_0 \vee \dots q_r$, $W = q_{r+1} \vee \dots \vee q_n$ variedades de puntos fijos, $V$ y $W$ suplementarias.
     Sea $q \in \Po$.
     \begin{itemize}
         \item $q \in V$ o $q \in W \implies f\lp q\rp=q$.
