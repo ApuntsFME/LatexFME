@@ -4,7 +4,7 @@
 \begin{defi}
     \begin{enumerate}
         \item[]
-        \item Sean $\Po = \Po(\E), \overline{\Po} = \Po(\overline{\E})$ espacios proyectivos de dimensión $n$. Sea $\varphi : \E \to \overline{\E}$ una aplicación lineal biyectiva. Una proyectividad, definida por $\varphi$, es una aplicación
+        \item Sean $\Po = \Po(\E), \overline{\Po} = \Po\left(\overline{\E}\right)$ espacios proyectivos de dimensión $n$. Sea $\varphi : \E \to \overline{\E}$ una aplicación lineal biyectiva. Una proyectividad, definida por $\varphi$, es una aplicación
         \begin{align*}
             f := [\varphi] : \Po &\to \overline{\Po} \\
             p = [v] &\mapsto f(p) = [\varphi(v)]
@@ -81,10 +81,10 @@
     $\rho = (p_1, p_2, p_3, p_4) \implies \exists u,v \in \E$ tales que $p_1 = [u], p_2 = [v], p_3 = [u+v], p_4 = [\rho u + v] \implies f(p_1) = [\varphi(u)], f(p_2) = [\varphi(v)], f(p_3) = [\varphi(u) + \varphi(v)], f(p_4) = [\rho \varphi(u) + \varphi(v)] \implies \rho = (f(p_1), f(p_2), f(p_3), f(p_4))$.
 \end{proof}
 \begin{defi}
-    La matriz de una proyectividad $f$ es $M_{\R, \overline{\R}} (f) := M_{B, \overline{B}}(\varphi)$.
+    Sean $\Po(\E)$ y $\Po\left( \overline{\E} \right)$ espacios proyectivos, sea $f \colon \Po \to \overline{\Po}$ una proyectividad y sean $B$ y $\overline{B}$ bases de $\E$ y $\overline{\E}$ asociadas a $\R$ y a $\overline{\R}$ respectivamente. Definimos la matriz de una $f$ como $M_{\R, \overline{\R}} (f) := M_{B, \overline{B}}(\varphi)$.
 \end{defi}
 \begin{obs}
-    $M_{\R, \overline{\R}} (f)$ está definida salvo multiplicar por $\lambda \neq 0$ (por la indeterminación de $B$ y $\overline{B}$).
+$M_{\R, \overline{\R}} (f)$ está definida salvo multiplicar por $\lambda \neq 0$ (por la indeterminación de $B$ y $\overline{B}$).
 \end{obs}
 \begin{obs}
     Si $p_\R = (x_0 : \dots : x_n), f(p)_{\overline{\R}} = (y_0 : \dots : y_n)$, entonces,
@@ -148,7 +148,7 @@
         p_1, p_2, p_3 \text{ alineados}
         \end{rcases}
         \implies f(L) = f(p_1) \vee f(p_2) \vee f(p_3)$ es una recta.
-        \item Supongamos $p_1, p_2, p_3, p_4$, al menos 3 diferentes y alineados, $\rho = (p_1, p_2, p_3, p_4), \R = \{p_1, p_2; p_3\}$ sistema de referencia en $L = p_1 \vee p_2 \vee p_3 \vee p_4 \implies$ la coordenada absoluta de $p_4$ en $\R$ es $\rho \implies \exists u_1, u_2 \in \E$ tales que $p_1 = [u_1], p_2 = [u_2], p_3 = [u_1 + u_2], p_4 = [\rho u_1 + u_2]$. \\
+        \item Supongamos $p_1, p_2, p_3, p_4$, al menos 3 diferentes y alineados, $\rho = (p_1, p_2, p_3, p_4)$, $\R = \{p_1, p_2; p_3\}$ sistema de referencia en $L = p_1 \vee p_2 \vee p_3 \vee p_4 \implies$ la coordenada absoluta de $p_4$ en $\R$ es $\rho \implies \exists u_1, u_2 \in \E$ tales que $p_1 = [u_1], p_2 = [u_2], p_3 = [u_1 + u_2], p_4 = [\rho u_1 + u_2]$. \\
         Entonces, $f(p_1) = [\varphi(u_1)], f(p_2) = [\varphi(u_2)], f(p_3) = [\varphi(u_1 + u_2)], f(p_4) = [\varphi(\rho u_1 + u_2)] = [\rho \varphi(u_1) + \varphi(u_2)]$ están alineados, al menos 3 son diferentes y $\rho = (f(p_1), f(p_2), f(p_3), f(p_4))$.
     \end{enumerate}
 \end{proof}
@@ -197,7 +197,7 @@
 \end{col}
 \begin{proof}
     Sea $r \in \Po^n$ una recta y $V \in \Po^n$ una variedad suplementaria a ésta
-    (en particular, de dimensión $n-2$).
+    (de dimensión $n-2$). %SHAME MIQUEL SHAME
     \[
         \begin{rcases}
             \begin{aligned}
@@ -225,10 +225,10 @@
         \item $f$ es colineación
         \item $f$ mantiene las razones dobles
     \end{itemize}
-    Entonces $V = f \lp \Po^n \rp$ es una variedad lineal de $\overline{\Po}^m$ de dim $n$ y $f : \Po^n \to V = f \lp \Po^n \rp$ es una proyectividad.
+    Entonces $V = f \lp \Po^n \rp$ es una variedad lineal de $\overline{\Po^m}$ de dim $n$ y $f : \Po^n \to V = f \lp \Po^n \rp$ es una proyectividad.
 \end{prop}
 \begin{proof}
-    $f : \Po^n \to \overline{\Po^m}$. Sea $\R = \{ p_0, \dots, p_n; \overline{p} \}$ sistema de referencia, $W := f \lp p_0 \rp \vee \dots \vee f \lp p_n \rp$ variedad lineal de $\overline{\Po^m}$ de $\dim \leq n$. \\
+    $f : \Po^n \to \overline{\Po^m}$. Sea $\R = \{ p_0, \dots, p_n; \overline{p} \}$ un sistema de referencia de $\Po^n$, $W := f \lp p_0 \rp \vee \dots \vee f \lp p_n \rp$ variedad lineal de $\overline{\Po^m}$ de $\dim \leq n$. \\
     Inducción sobre $n$ (fijamos $m$):
     \begin{itemize}
         \item $n = 1, f : \Po^1 \to \overline{\Po^m}$ \\
@@ -242,8 +242,8 @@
             f \text{ mantiene las razones dobles}
         \end{rcases}
         \stackrel{\ref{teo:proy_dim_1}}{\implies} f$ es una proyectividad (en particular $V = f \lp \Po^1 \rp = L$).
-        \item $n > 1$, supongamos cierto por $n-1$ (hipótesis de inducción). Probemos por $n$. \\
-        Definimos $H_i := p_0 \vee \dots \vee \hat{p_i} \vee \dots \vee p_n$, $i = 0, \dots, n$ (hiperplano sin $p_i$). Demostremos que $p \not \in H_i \implies f \lp p \rp \notin f \lp H_i \rp$: \\
+        \item $n > 1$, supongamos el resultado cierto para $n-1$ (hipótesis de inducción). Probemoslo para $n$. \\
+        Definimos $H_i := p_0 \vee \dots \vee \widehat{p_i} \vee \dots \vee p_n$, $i = 0, \dots, n$ (hiperplano sin $p_i$). Demostremos que $p \not \in H_i \implies f \lp p \rp \notin f \lp H_i \rp$: \\
         $\begin{rcases}
             f : \Po^n \to \overline{\Po^m} \\
             f_{|H_i} : \Po^{n-1} \cong H_i \subseteq \Po^n \to \overline{\Po^m}
@@ -254,11 +254,11 @@
         \]
         Por tanto queda demostrado. Una consecuencia es que la imagen de $\R$ por $f$ son puntos en posición general en $\overline{\Po^m}$. Sea $T := f \lp p_0 \rp \vee \dots \vee f \lp p_n \rp \vee f \lp \overline{p} \rp$. Entonces $\overline{\R} = f \lp \R \rp$ es un sistema de referencia en $T$.
         
-        Entonces $\exists! g : \Po^n \to T, g \lp \R \rp = \overline{\R}, g$ proyectividad. Veremos que $f = g$.
+        Entonces $\exists! g : \Po^n \to T$, $g \lp \R \rp = \overline{\R}$, $g$ proyectividad. Veremos que $f = g$.
         De momento sabemos que:
         \begin{enumerate}[(1)]
             \item\label{item:1_dela_prop} $\begin{cases} f \lp p_i \rp = g \lp p_i \rp \\ f \lp \overline{p} \rp = g \lp p \rp \end{cases}$
-            \item\label{item:2_dela_prop} $F_{|H_i} = g_i = g_{|H_i}$ (porque mandan un sistema de referencia al mismo sitio y son proyectividades)
+            \item\label{item:2_dela_prop} $f_{|H_i} = g_i = g_{|H_i}$ (porque mandan un sistema de referencia al mismo sitio y son proyectividades)
         \end{enumerate}
         Hemos de ver que $\forall p \in \Po^n, f \lp p \rp = g \lp p \rp$:
         \begin{itemize}
@@ -327,7 +327,7 @@
                 \{ p_1, p_2 \} \subseteq r \cap \pi \implies r \subseteq \pi \\
                 \{ q_1, q_2 \} \subseteq s \cap \pi \implies s \subseteq \pi
             \end{rcases}
-            \implies \emptyset \neq r \cap s \stackrel{(*)}{\subseteq} V_1 \cap W \stackrel{\text{supl.}}{=} \emptyset. \text{ Contradicción.}
+            \implies \emptyset \neq r \cap s \substack{r \subset V_1 \\ \subseteq \\ s \subset W} V_1 \cap W \stackrel{\text{supl.}}{=} \emptyset. \text{ Contradicción.}
         \end{gather*}
         \item \label{item:col_teo2_it3} Ahora veamos que $f$ mantiene las razones dobles. Sea $\widetilde{W} = W \vee L $. Observamos que $f \lp L \rp \subseteq \widetilde{W}$ y que $\dim \widetilde{W} = n-d-1+1+1= n-d+1$. \\
         En $\widetilde{W} \; \lp \widetilde{W}\cong\Po^{n-d+1} \rp$ tenemos que $f_{|L} = \lp \text{sección con }f \lp L \rp \rp \circ \lp \text{proyección desde } W \rp$. Como la razón doble se conserva por proyección y sección,
@@ -431,7 +431,7 @@ demostrando el siguiente lema.
         g(A_2) = B_2 = f(A_2)
     \end{rcases}
     \implies
-    g(R) = f(R) \implies g = f,
+    g\left( \R\right) = f\left( \R \right) \implies g = f,
     \]
     por ser $g$ y $f$ proyectividades.
 \end{proof}
@@ -443,7 +443,7 @@ demostrando el siguiente lema.
 \end{teo*}
 \begin{proof} %TODO COSAS_QUE_FALTAN FALTA DIBUJO ESTA 
               % PARTE DEMO (pag 11 DIVO)
-    Sea $O = r_1 \cap r_2$. Consideraremos dos casos.
+    Sea $O = r_1 \cap r_2$. Consideraremos dos casos. 
     \begin{enumerate}
         \item Suponemos $f(O) = O$. Por \ref{lema_poncelet}, 
         $f$ es perspectividad.
@@ -473,7 +473,6 @@ demostrando el siguiente lema.
         
         Finalmente, $(g_2 \circ g_1)(A_i) = B_i = f(A_i) \implies
         f = g_2 \circ g_1$, por ser ambas proyectividades.
-        
     \end{enumerate}
 \end{proof}
 
