@@ -113,7 +113,7 @@ Dins aquest apartat les successions són totes de termes positius. \\
 \u{C. Leibniz sèr. alt.}: $(a_n)$ decr. i $\lim a_n = 0$, llavors $\sum (-1)^na_n$ és conv.. A més, $\abs{s-s_N} < a_{n+1}$. \\
 \underline{C. de la integral}: $a_n = f(n), f \geq 0$ int. i decreixent, $\int_{M}^{\infty} f$ convergeix $\iff \sum a_k$ convergeix i $\sum_{M}^{\infty} = \sum_{M}^{N-1} + \int_{N}^{\infty} f + \varepsilon_N$, $\varepsilon_N \in [0,a_N]$. \\
 \underline{C. logarítmic}: $\lim\limits_{n \to \infty} \frac{-\log{a_n}}{\log{n}} = L \implies$ ($L > 1$ conv.) i  ($L < 1$ div.). \\
-\underline{C. condensació}: ($a_n$ decreixent, $a_n \geq 0$) $\sum a_n$ convergent $\iff \sum 2^na_{2^n}$ convergent.
+\underline{C. condensació}: $a_n$ decreixent, $a_n \geq 0$, $\sum a_n$ convergent $\iff \sum 2^na_{2^n}$ convergent.
 
 \u{S\`erie Rie.}: $\sum_{n \geq 1} \frac{1}{n^p}$ \'es conv. sii $p > 1$, div. altrament.
 \section{Altres sèries}
@@ -125,20 +125,20 @@ Dins aquest apartat les successions són totes de termes positius. \\
 
 \u{Radi de convergència}: Màxim $r \tq \sum a_nr^n$ és conv. \\
 \u{Domini de conv.}: $\lp -R, R\rp$, on $R$ és radi de conv.. És possible qe convergeixi als exterms. \\
-\u{T. Cauchy-Hadamard} Sigui $\sum a_nx^n, R$ ve donada per $\frac{1}{R} = \lim \sup \abs{a_n}^{\nicefrac{1}{n}}$. La sèrie de potències és abs. conv. si $\abs{x} < R$ i div. si $\abs{x} > R$. Si $\abs{x} = 1$ no sabem res. \\
+\u{T. Cauchy-Hadamard}: Sigui $\sum a_nx^n, R$ ve donada per $\frac{1}{R} = \lim \sup \abs{a_n}^{\nicefrac{1}{n}}$. La sèrie de potències és abs. conv. si $\abs{x} < R$ i div. si $\abs{x} > R$. Si $\abs{x} = R$ no sabem res. \\
 \u{Càlcul radi de conv.}: $\frac{1}{R} = \lim \abs{a_n}^{\nicefrac{1}{n}}$ o $\frac{1}{R} = \lim\frac{\abs{a_{n+1}}}{\abs{a_n}}$.
 
 \section{Integrals impròpies}
 
 \ci La convergència d'integrals és lineal. \\
 \u{C. Cauchy per a int. impròpies}: $f\colon [a, b) \to \real. \int_a^b f$ és conv. $\iff \forall \varepsilon > 0, \exists c_0 \in [a, b) \tq$ si $c_1, c_2 > c_0$, llavors $\abs{\int_{c_1}^{c_2} f} < \varepsilon$. \\
-\u{C. comp. dir} $f, g:[a,b) \to \real$, $f, g > 0$, $f \leq g$ localment integrables.
+\u{C. comp. dir}: $f, g:[a,b) \to \real$, $f, g > 0$, $f \leq g$ localment integrables.
 Aleshores $\int_a^b f \leq \int_a^b g$. Si la segona conv., la primera també. Si
 la primera div., la segona també.\\
-\u{C. comp. al límit} $f, g:[a,b) \to \real$, $f, g > 0$ localment integrables.
+\u{C. comp. al límit}: $f, g:[a,b) \to \real$, $f, g > 0$ localment integrables.
 Suposem $\exists \lim\limits_{x \to b} \frac{f(x)}{g(x)} = l$. Si $l < \infty, \, \int_a^b g$ conv.
 $\implies$ $\int_a^b f$ conv.. Si $l > 0, \, \int_a^b f$ conv. $\implies \int_a^b g$ conv..\\
-\u{C. Dirichlet} $f, g:[a,b) \to \real$ localment integrables. Suposem
+\u{C. Dirichlet}: $f, g:[a,b) \to \real$ localment integrables. Suposem
 $\exists M>0 \tq$ si $a<c<b,\, \abs{\int_a^c f(x) \dif x} \leq M$ i $g$ decreixent
 amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..
 
@@ -155,7 +155,7 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..
 \section{Mesura nul·la}
 
 % TODO vigilar amb aquesta cutrada
-\u{Mesura nul·la}: Recobert per numerables \\  rectangles de mesura $< \varepsilon, \, \forall \varepsilon > 0$. \\
+\u{Mesura nul·la}: Recobert per numerables rectangles de mesura $< \varepsilon, \, \forall \varepsilon > 0$. \\
 \u{Contingut nul}: Mesura nul·la amb un nombre finit de rectangles. \\
 \ci Si un conjunt té un punt interior, no és de mesura nul·la. \\
 \u{Quadrat}: volum: $c^n$, diàmetre: $c\sqrt{n}$ (a $\real^n$, on $c$ costat). \\
@@ -164,7 +164,7 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..
 
 \section{Teorema de Lebesgue}
 
-\ci Sigui $X$ espai mètric, $f\colon X\to \real$, l'oscil·lació de $f$ sobre $E\subset X$ és el diàmetre de $f(E)$: $\omega(f,E) = \sup_{x,y\in E} \dif ( f( x ), f( y ) ) \in [ 0, +\infty ]$. Finita $\iff f_{|E}$ fitada, $0\iff f_{|E}$ constant. \\
+\ci Sigui $X$ espai mètric, $f\colon X\to \real$, l'oscil·lació de $f$ sobre $E\subset X$ és el diàmetre de $f(E)$: $\omega(f,E) = \sup_{x,y\in E} \dif \, ( f( x ), f( y ) ) \in [ 0, +\infty ]$. Finita $\iff f_{|E}$ fitada, $0\iff f_{|E}$ constant. \\
 \u{Oscil·lació en $a\in X$}: $\omega( f,a ) = \lim\limits_{r\to 0}\omega( f, B( a;r ) ) = \inf_{r>0} \omega( f, B( a; r ) )$. \\
 \ci $f$ cont. en $a \iff \omega( f, a ) = 0$. \\
 \u{T. Lebesgue}: Sigui $A\subset \real^n$ rectangle compacte, $f\colon A\to \real$ fitada. Llavors $f$ és integrable Riemann $\iff \disc( f )$ és de mesura nul·la $\iff$ contínua gairebé pertot.
@@ -187,7 +187,7 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..
 
 \section{Propietats de la int. de Rie.}
 
-\ci Sigui $E\subset\real^n$ mesurable Jordan, $\rie( E ) = \{f | f$ int. Rie. en $E \}$ és un $\real$-e.v. i $Rie\colon E \to \real, Rie(f) = \int_E f$ és una forma lineal positiva i monòtona. \\
+\ci Sigui $E\subset\real^n$ mesurable Jordan, $\rie( E ) = \{f | f$ int. Rie. en $E \}$ és un $\real$-e.v. i $\rie\colon E \to \real, \rie(f) = \int_E f$ és una forma lineal positiva i monòtona. \\
 \u{T. valor mitjà per a integrals}: Sigui $E$ m.J., $f\colon E\to\real$ int. Rie.. $m\leq f\leq M \implies m\vol( E )\leq \int_E f\leq M\vol( E )$. \\
 \ci $E$ m.J. connex, $f\colon E\to\real$ fitada i cont., $\exists x_0 \in E \tq \int_E f = f( x_0 )\vol( E )$. \\
 \ci $E$ m.J., $f\colon E\to \real$ int. Rie., $h \colon f( E ) \to \real$ cont., $h\circ f$ és int. Rie.. \\
