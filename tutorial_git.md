@@ -98,6 +98,9 @@ git branch -m master
 
 # Finally, force update to our repository:
 git push -f origin master
+
+# Track information for the current branch:
+git branch --set-upstream-to=origin/master master
 ```
 
 Sí, és un copy paste.
