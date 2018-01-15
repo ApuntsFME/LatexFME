@@ -1,0 +1,9 @@
+#!/bin/bash
+
+NAME="main"
+DEST="/pdfs/primero/teoremes_algebra_lineal.pdf"
+MSG="PDF algebra de primer actualitzat :blush: :smirk:"
+
+source ../upload_file.sh
+
+upload "$NAME" "$DEST" "$MSG"
