@@ -1,0 +1,134 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage[pdftex]{hyperref}
+\usepackage{parskip}
+\usepackage{blkarray}
+\usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
+\usepackage{mdframed,cleveref,cancel,stackengine,pgfplots,pgf,mathrsfs,thmtools}
+\usepackage{xfrac,stmaryrd,commath,multirow}
+%\usepackage[spanish]{babel}
+
+\newmdenv[leftline=false,topline=false]{topright}
+\let\proof\relax
+\usetikzlibrary{positioning,arrows, calc, babel}
+\usetikzlibrary{external}
+\tikzexternalize[prefix=figures/]
+\pgfplotsset{compat=1.11}
+
+\def\fbx#1{\vbox{\hbox{\hbox{#1}\setbox0\lastbox\copy0\kern\fboxsep\vrule width\fboxrule depth\dimexpr \fboxsep+\dp0\relax}%
+            \hrule height\fboxrule}}
+
+\newcommand{\bimplies}{\fbx{$\implies$}}
+\newcommand{\bimpliedby}{\fbx{$\impliedby$}}
+
+\newcommand{\n}{\mathbb{N}}
+\newcommand{\z}{\mathbb{Z}}
+\newcommand{\q}{\mathbb{Q}}
+\newcommand{\cx}{\mathbb{C}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\R}{\mathcal{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\Pa}{\mathcal{P}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\let\k\relax
+\newcommand{\k}{\Bbbk}
+\newcommand{\ita}[1]{\textit{#1}}
+\newcommand\inv[1]{#1^{-1}}
+\newcommand\setb[1]{\left\{#1\right\}}
+\newcommand{\vbrack}[1]{\langle #1\rangle}
+\newcommand{\determinant}[1]{\begin{vmatrix}#1\end{vmatrix}}
+\newcommand{\Po}{\mathbb{P}}
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+\DeclareMathOperator{\fr}{Fr}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\ext}{Ext}
+\DeclareMathOperator{\inte}{Int}
+\DeclareMathOperator{\rg}{rg}
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\nuc}{Nuc}
+\DeclareMathOperator{\car}{car}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\graf}{graf}
+\DeclareMathOperator{\tq}{\;t.q.\;}
+\DeclareMathOperator{\disc}{disc}
+\let\emptyset\varnothing
+\renewcommand{\thesubsubsection}{\Alph{subsubsection}}
+\setcounter{secnumdepth}{4}
+
+\hypersetup{
+    colorlinks,
+    linkcolor=blue
+}
+
+\renewcommand*\contentsname{Contenidos}
+
+\newtheoremstyle{break}% name
+{}%         Space above, empty = `usual value'
+{}%         Space below
+{}% Body font
+{}%         Indent amount (empty = no indent, \parindent = para indent)
+{\bfseries}% Thm head font
+{}%        Punctuation after thm head
+{\newline}% Space after thm head: \newline = linebreak
+{#1 #2 \normalfont {\it #3}}%         Thm head spec
+
+\newtheoremstyle{breakthm}% name
+{}%         Space above, empty = `usual value'
+{}%         Space below
+{}% Body font
+{}%         Indent amount (empty = no indent, \parindent = para indent)
+{\bfseries}% Thm head font
+{}%        Punctuation after thm head
+{\newline}% Space after thm head: \newline = linebreak
+{#1 \normalfont #3 (#2)\addcontentsline{toc}{subsection}{#1 #3}}%         Thm head spec
+\newtheoremstyle{normal}% name
+{}%         Space above, empty = `usual value'
+{}%         Space below
+{}% Body font
+{}%         Indent amount (empty = no indent, \parindent = para indent)
+{\bfseries}% Thm head font
+{}%        Punctuation after thm head
+{5pt plus 1pt minus 1pt}% Space after thm head: \newline = linebreak
+{#1 #2 \normalfont #3}%         Thm head spec
+
+\theoremstyle{normal}
+\declaretheorem[style=normal,name=Lema,numberwithin=section]{lema}
+\declaretheorem[style=normal,name=Lema,numbered=no]{lema*}
+\declaretheorem[style=normal,name=Observació,sibling=lema]{obs}
+\declaretheorem[style=normal,name=Observació,numbered=no]{obs*}
+
+\declaretheorem[style=break,name=Proposició,sibling=lema]{prop}
+\declaretheorem[style=break,name=Proposició,numbered=no]{prop*}
+\declaretheorem[style=break,name=Demostració,qed=$\square$,numbered=no]{proof}
+\declaretheorem[style=break,name=Definició,sibling=lema]{defi}
+\declaretheorem[style=break,name=Definició,numbered=no]{defi*}
+\declaretheorem[style=break,name=Corol·lari,sibling=lema]{col}
+\declaretheorem[style=break,name=Corol·lari,numbered=no]{col*}
+\declaretheorem[style=break,name=Exercici,sibling=lema]{ej}
+\declaretheorem[style=break,name=Exercici,numbered=no]{ej*}
+\declaretheorem[style=break,name=Exemple,sibling=lema]{example}
+\declaretheorem[style=break,name=Exemple,numbered=no]{example*}
+
+\let\thm\relax
+\declaretheorem[style=breakthm,name=Teorema,sibling=lema]{teo}
+\declaretheorem[style=break,name=Teorema,sibling=lema]{teo*}
+
+
+\begin{document}
+
+\input{title}
+% INPUTS
+\input{demos_teoremes}
+
+\end{document}
