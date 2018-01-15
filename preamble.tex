@@ -4,7 +4,7 @@
 \usepackage[pdftex]{hyperref}
 \usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
 \usepackage{mdframed,cleveref,cancel,stackengine,pgfplots,pgf,mathrsfs,thmtools}
-\usepackage{xfrac,stmaryrd,commath,multirow}
+\usepackage{xfrac,stmaryrd,commath,needspace,multirow}
 \usepackage[spanish]{babel}
 
 \newmdenv[leftline=false,topline=false]{topright}
@@ -31,7 +31,11 @@
 \newcommand{\R}{\mathcal{R}}
 \newcommand{\C}{\mathcal{C}}
 \newcommand{\Pa}{\mathcal{P}}
+\newcommand{\Es}{\mathcal{E}}
+\newcommand{\V}{\mathcal{V}}
 \newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\pdv}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}
+\newcommand{\dv}[3][]{\frac{\dif^{#1} #2}{\dif #3^{#1}}}
 \let\k\relax
 \newcommand{\k}{\Bbbk}
 \newcommand{\ita}[1]{\textit{#1}}
@@ -46,6 +50,7 @@
 \DeclareMathOperator{\Id}{Id}
 \DeclareMathOperator{\ext}{Ext}
 \DeclareMathOperator{\inte}{Int}
+\DeclareMathOperator{\rie}{Rie}
 \DeclareMathOperator{\rg}{rg}
 \DeclareMathOperator{\gr}{gr}
 \DeclareMathOperator{\nuc}{Nuc}
@@ -54,6 +59,8 @@
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\vol}{vol}
 \DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\diver}{div}
 \DeclareMathOperator{\sinc}{sinc}
 \DeclareMathOperator{\graf}{graf}
 \DeclareMathOperator{\tq}{\;t.q.\;}
@@ -66,6 +73,13 @@
     colorlinks,
     linkcolor=blue
 }
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
 
 \renewcommand*\contentsname{Contenidos}
 \renewcommand*\chaptername{Tema}
@@ -101,6 +115,7 @@
 
 \theoremstyle{normal}
 \declaretheorem[style=normal,name=Lema,numberwithin=section]{lema}
+\declaretheorem[style=breakthm,name=Lema,numberwithin=section]{teolema}
 \declaretheorem[style=normal,name=Lema,numbered=no]{lema*}
 \declaretheorem[style=normal,name=Observación,sibling=lema]{obs}
 \declaretheorem[style=normal,name=Observación,numbered=no]{obs*}
