@@ -13,7 +13,7 @@ Volem saber si el conjunt substituït és generador de $\E$. Per tant, començar
 \item $m \geq 1$. 
 En aquest cas, assumirem que el cas $m-1$ del Teorema és cert i volem veure si el cas $m$ també ho és.
 
-Suposarem que el conjunt $\{w_1,..., w_{m-1}\}$ és linealment independent. Per tant, $m-1 \leq n = dim(\E)$ ja que no hi pot haver més vectors linealment independents que el cardinal de la dimensió de $\E$. També podem suposar que $\E = <w_1,...,w_{m-1},u_m,...,u_n>$, ja que el cas $m-1$ era cert.
+Suposarem que el conjunt $\{w_1,..., w_{m-1}\}$ és linealment independent. Per tant, $m-1 \leq n = \dim(\E)$ ja que no hi pot haver més vectors linealment independents que el cardinal de la dimensió de $\E$. També podem suposar que $\E = <w_1,...,w_{m-1},u_m,...,u_n>$, ja que el cas $m-1$ era cert.
 
 Per hipòtesi, $w_m$ és un vector d'$\E$: $\:w_m \in \E = <w_1,...,w_{m-1},u_m,...,u_n> \;\Leftrightarrow  w_m = \lambda_1 w_1 + ... + \lambda_{m-1}w_{m-1} + \mu_mu_m + ... + \mu_nu_n$. És a dir, que com que el conjunt $\{w_1,..., w_m\}$ és linealment independent per hipòtesi, hi ha almenys un $\mu_k$ que acompanya un $u_k$, que no és nul: $\:\exists\mu_k \neq 0$ i podem suposar que aquest $\mu_k = \mu_m \neq 0$.
 
@@ -54,13 +54,13 @@ Pel Teorema d'Steinitz $m \leq n$ i $n \leq m$, per tant, $n=m$.
 
 \section{Fórmula de Grassmann}
 Si $\F , \mathbb{G}$ són dos subespais vectorials d'un $\k$-espai vectorial $\E$, aleshores:
-$$ dim(F + G) + dim(F \cap G) = dim(F) + dim(G) $$
+$$ \dim(F + G) + \dim(F \cap G) = \dim(F) + \dim(G) $$
 
 \begin{proof}
-Primer de tot, si $\F$ i $\mathbb{G}$ no són finitament generats i les seves dimensions són infinites: $dim\;\F = dim\;\mathbb{G} = \infty \: \Rightarrow \: dim(\F+\mathbb{G}) = \infty$ i per definició $dim(\F\cap\mathbb{G}) \geq 0$, la fórmula queda $\infty = \infty$. Per tant, ens concentrarem en subespais finitament generats.
+Primer de tot, si $\F$ i $\mathbb{G}$ no són finitament generats i les seves dimensions són infinites: $\dim\;\F = \dim\;\mathbb{G} = \infty \: \Rightarrow \: \dim(\F+\mathbb{G}) = \infty$ i per definició $\dim(\F\cap\mathbb{G}) \geq 0$, la fórmula queda $\infty = \infty$. Per tant, ens concentrarem en subespais finitament generats.
 
 
-Si les dimensions de $\F$ i $\mathbb{G}$ són finites, anomenarem $n = dim\;\F$ i $m = dim\;\mathbb{G}$. Com que observem que $\F\cap\mathbb{G}$ és un subespai de $\F$ i de $\mathbb{G}$ a la vegada, anomenem $r = \:dim\:\F\cap\mathbb{G}$ i obtenim les següents inequacions $r \leq m$, $r \leq n$.
+Si les dimensions de $\F$ i $\mathbb{G}$ són finites, anomenarem $n = \dim\;\F$ i $m = \dim\;\mathbb{G}$. Com que observem que $\F\cap\mathbb{G}$ és un subespai de $\F$ i de $\mathbb{G}$ a la vegada, anomenem $r = \:\dim\:\F\cap\mathbb{G}$ i obtenim les següents inequacions $r \leq m$, $r \leq n$.
 
 
 Sigui $\{u_1,...,u_r\}$ una base de $\F\cap\mathbb{G}$ (i per tant, linealment independents), la podem substituïr per r vectors de les bases de $\F$ i $\mathbb{G}$ en virtut del Teorema d'Steinitz, aconseguint dos nous conjunts linealment independents i generadors $\F$ i $\mathbb{G}$ de respectivament:
@@ -68,7 +68,7 @@ Sigui $\{u_1,...,u_r\}$ una base de $\F\cap\mathbb{G}$ (i per tant, linealment i
     \item $\{u_1,...,u_r, w_{r+1}, ..., w_m\}$ base de $\F$
     \item $\{u_1,...,u_r,w'_{r+1},...,w'_n\}$ base de $\mathbb{G}$
 \end{itemize}    
-Veurem que, $B = \{u_1,...,u_r, w_{r+1}, ..., w_m, w'_{r+1},...,w'_n\}$ és base de $\F+\mathbb{G}$ i això acabarà la demostració per què tindrem que $dim(F + G) = n +m- r = dim(F) + dim(G) - dim(F \cap G) = |\{u_1,...,u_r, w_{r+1}, ..., w_m, w'_{r+1},...,w'_n\}|$.
+Veurem que, $B = \{u_1,...,u_r, w_{r+1}, ..., w_m, w'_{r+1},...,w'_n\}$ és base de $\F+\mathbb{G}$ i això acabarà la demostració per què tindrem que $\dim(F + G) = n +m- r = \dim(F) + \dim(G) - \dim(F \cap G) = |\{u_1,...,u_r, w_{r+1}, ..., w_m, w'_{r+1},...,w'_n\}|$.
 
 
 Per veure que $B$ és una base de $\F+\mathbb{G}$, s'ha de mirar si $B$ és un conjunt de generadors de $\F+\mathbb{G}$ i si $B$ és linealment independent.
@@ -162,7 +162,7 @@ Això es tradueix a que el polinomi característic de $f$ aplicat en $f$ és 0, 
 
 Sigui $u \in \E, u \neq 0$. Volem veure $Q_f(f)(u) = 0$. Aleshores, sigui $m\geq 1$ el nombre mínim tal que el conjunt $\{u,f(u),...,f^m(u)\}$ és linealment dependent. Així doncs, $\{u,f(u),...,f^{m-1}(u)\}$ és linealment independent i el podem ampliar per Steinitz a una base $B$ de $\E$. I també es té que $f^m$ és combinació lineal de $\{u,f(u),...,f^{m-1}(u)\}$:
 $$ f^m(u) = a_0u + a_1f(u) + ... + a_{m-1}f^{m-1}(u) $$
-Per tant, si apliquem la funció $f$ al conjunt de generadors de$\E$ampliat per Steinitz (amb $n = \text{dim}\:\E$): $\{u,f(u),...,f^{m-1}(u), w_{m},...,w_n\}$, ens queda una matriu de canvi de base $M_B(f)$ de quatre blocs:
+Per tant, si apliquem la funció $f$ al conjunt de generadors de$\E$ampliat per Steinitz (amb $n = \dim\:\E$): $\{u,f(u),...,f^{m-1}(u), w_{m},...,w_n\}$, ens queda una matriu de canvi de base $M_B(f)$ de quatre blocs:
 
 \[ M_B(f) = 
 \begin{pmatrix}
