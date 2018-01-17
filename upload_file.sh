@@ -7,7 +7,7 @@ upload(){
   read -p "Nom d'usuari: " user
   read -s -p "Contrasenya: " password
   echo ""
-  make "silent$NAME"
+  if make "silent$NAME" ; then
   make "silent$NAME"
   make "silent$NAME"
   make "silent$NAME"
@@ -19,4 +19,7 @@ upload(){
   "https://api.github.com/repos/ApuntsFME/apuntsfme.github.io/contents$DEST" > /dev/null
   #{echo "{\"path\":\"$DEST\", \"message\":\"$MSG\", \"sha\":\"$SHA\", \"content\":\""; base64 $NAME.pdf; echo "\"}"; } | tr "\n" " "
   echo "Molt bé! Ja s'ha actualitzat, a no ser que et digui algo raro o que hagi passat algo i no t'ho hagi dit, mira Telegram per assegurar-te'n."
+  else 
+    echo "Eps! No compila"
+  fi
 }
