@@ -7,10 +7,10 @@ upload(){
   read -p "Nom d'usuari: " user
   read -s -p "Contrasenya: " password
   echo ""
-  make $NAME
-  make $NAME
-  make $NAME
-  make $NAME
+  make "silent$NAME"
+  make "silent$NAME"
+  make "silent$NAME"
+  make "silent$NAME"
   echo ""
   echo "Això trigarà una mica... Keep calm and carry on!"
   SHA=$(curl -s -u $user:$password "https://api.github.com/repos/ApuntsFME/apuntsfme.github.io/contents$DEST" | \
