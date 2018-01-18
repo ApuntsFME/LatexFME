@@ -14,20 +14,22 @@
     Si $f$ \'es convexa i diferenciable, llavors $\nabla f\left( x^* \right) = 0 \iff x^*$ \'es m\'inim global de $f$.
 \end{teo*}
 \begin{met}[del Gradient]
-    $x^{k+1} = x^k + \alpha^kd^k$, \quad $d^k = -\nabla f\left( x^k \right), \quad \alpha$ ha de complir les condicions d'Armijo-Wolfe.
+    $x^{k+1} = x^k + \alpha^kd^k$, \quad $d^k = -\nabla f\left( x^k \right)$. \\
+    $\alpha^k$ ha de complir les condicions d'Armijo-Wolfe.
 \end{met}
 \begin{met}[de Newton]
-    $x^{k+1} = x^k + \alpha^kd^k$, \quad $d^k = -\left( \nabla^2 f\left( x \right) \right)^{-1} \nabla f\left( x^* \right)$, \quad$\alpha^k = 1$.
+    $x^{k+1} = x^k + \alpha^kd^k$, \quad $d^k = -\left( \nabla^2 f\left( x^k \right) \right)^{-1} \nabla f\left( x^k \right)$. \\
+    $\alpha^k$ ha de complir les condicions d'Armijo-Wolfe, normalment $\alpha^k = 1$.
 \end{met}
 \begin{prop}[Condicions d'Armijo-Wolfe]
     \begin{enumerate}[i)]
         \item[]
         \item Condici\'o de descens suficient (AW-1): \\
-            \indent $g\left( \alpha \right) \leq g\left( 0 \right) + \alpha c_1g'\left( 0 \right), c_1 \in (0,1).$ \\
-            \indent $f\left( x^k + \alpha d^k \right) \leq f\left( x^k \right) + \alpha c_1 \nabla f\left( x^k \right)^t d^k, c_1 \in (0,1).$
+            $g\left( \alpha \right) \leq g\left( 0 \right) + \alpha c_1g'\left( 0 \right),\, c_1 \in (0,1).$ \\
+            $f\left( x^k + \alpha d^k \right) \leq f\left( x^k \right) + \alpha c_1 \nabla f\left( x^k \right)^t d^k,\, c_1 \in (0,1).$
         \item Condici\'o de corbatura (AW-2): \\
-            \indent $g'\left( \alpha \right) \geq c_2 g'\left( 0 \right), 0 < c_1 < c_2 < 1.$ \\
-        \indent $\nabla f\left( x^k + \alpha d^k \right)^td^k \geq c_2 \nabla f\left( x^k \right)d^k, 0 < c_1 < c_2 < 1$.
+            $g'\left( \alpha \right) \geq c_2 g'\left( 0 \right),\, 0 < c_1 < c_2 < 1.$ \\
+            $\nabla f\left( x^k + \alpha d^k \right)^td^k \geq c_2 \nabla f\left( x^k \right)d^k,\, 0 < c_1 < c_2 < 1$.
     \end{enumerate}
 \end{prop}
 
@@ -59,7 +61,7 @@ amb $\mathcal{L} \left( x, \lambda, \mu \right) = f\left( x \right) + \lambda^t 
     Els punts \ref{nec:1}, \ref{nec:2} i \ref{nec:3} s\'on les condicions de 1r ordre del KKT i el punt \ref{nec:4} \'es la condici\'o de 2n ordre.
 \end{prop}
 \begin{prop}[Condicions suficients]
-    Sgui $x^*$, \'es \`optim local si satisf\`a:
+    Sigui $x^*$, \'es \`optim local si satisf\`a:
     \begin{enumerate}[i)]
         \item \label{suf:1} $h\left( x^* \right) = 0,\, g\left( x^* \right) \leq 0$.
         \item \label{suf:2} $\nabla_x \mathcal{L} \left( x^*, \lambda^*, \mu^* \right) = \nabla f\left( x^* \right) + \nabla h\left( x^* \right)\lambda^* + \nabla g\left( x^* \right)\mu^* = 0$.
