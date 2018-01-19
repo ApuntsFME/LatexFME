@@ -1,8 +1,8 @@
 #!/bin/bash
 
 NAME="main"
-DEST="/pdfs/segundo/resum_programacio_no_lineal.pdf"
-MSG="PDF resum programacio no lineal actualitzat :blush: :smirk:"
+DEST="/pdfs/segundo/resum_programacio_matematica.pdf"
+MSG="PDF resum IO actualitzat :blush: :smirk:"
 
 source ../upload_file.sh
 

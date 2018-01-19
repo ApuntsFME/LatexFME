@@ -1,3 +1,224 @@
+\section{Introducció a la programació lineal no entera i símplex primal}
+
+\begin{defi}[Direcci\'o b\`asica factible]
+    Una DBF sobre la SBF $x \in (P)_e$ associada a $q \in \N$ és $d =
+    \begin{bmatrix}
+        d_B \\
+        d_N
+    \end{bmatrix}
+    \in \real^n$ tal que:
+    \begin{itemize}
+        \item $d_{\N_{(i)}} \stackrel{\text{def}}{=}
+            \begin{cases}
+                1 & \N_{(i)} = q \\
+                0 & \N_{(i)} \neq q
+            \end{cases}
+            ,\, \forall i \in \{1, \dots, n-m \}$,
+        \item $A (x + \theta d) = b$ per algun $\theta \in \real^+ \implies d_B \stackrel{\text{def}}{=} -B^{-1} A_q$.
+    \end{itemize}
+\end{defi}
+\begin{prop}[Càlcul de $\theta^*$]
+    Calculem $\theta^* \stackrel{\text{def}}{=} \max \{ \theta > 0 \, |\, y = x + \theta d \in (P)_e\}$:
+    \begin{enumerate}
+        \item $A(x + \theta d) = b,\, \forall \theta$ és cert-
+        \item $y = x + \theta d \geq 0$:
+            \begin{gather*}
+                x_{\B(i)} + \theta d_{\B(i)} \geq 0 \iff \theta \geq -\frac{x_{\B(i)}}{d_{\B(i)}}, \\
+                \theta^* = \min_{i \in \{1, \dots, m \} \, |\, d_{\B(i)} < 0} \{ - \frac{x_{\B(i)}}{d_{\B(i)}} \}.
+            \end{gather*}
+    \end{enumerate}
+\end{prop}
+\begin{prop}
+    Sigui $d$ una DBF sobre $x$, una SBF de $(P)_e$,
+    \begin{enumerate}
+        \item Si $(P)_e$ és no degenerat, $d$ és factible:
+            \begin{enumerate}[a)]
+                \item $d_B \ngeq 0 \implies \theta^* > 0$.
+                \item $d_B \geq 0 \implies \theta^*$ no definida, $\forall \theta > 0, x + \theta d \in (P)_e,\, d$ és un raig extrem.
+            \end{enumerate}
+        \item Si $(P)_e$ degenerat ($\exists i \in \B$ tal que $x_{\B(i)} = 0$) $d$ pot no ser factible:
+            \begin{gather*}
+                \min \{ -\frac{x_{\B(i)}}{d_{\B(i)}} \} = 0 \implies \nexists \theta > 0 \tq y = x+\theta d \implies d \text{ infactible}
+            \end{gather*}
+    \end{enumerate}
+\end{prop}
+\begin{prop}
+    Siguin $q$ i $\B(p)$ les variables que entren i surten de la base, respectivament,
+    \begin{gather*}
+        \overline{\B} := \{ \overline{\B}(1), \dots, \overline{\B}(m) \}, \text{ on } \overline{\B}(i) =
+        \begin{cases}
+            \B(i) & i \neq p \\
+            q & i = p
+        \end{cases}.
+    \end{gather*}
+    I la nova base és
+    \[ \overline{B} = [A_{\B(1)}, \dots, A_{\B(p-1)}, A_q, A_{\B(p+1)}, \dots, A_{\B(m)} ]. \]
+\end{prop}
+\begin{defi}[DBF de descens]
+    \begin{itemize}
+        \item[]
+        \item $d$ és una DBF de descens si $\forall \theta > 0, c'(x + \theta d) < c'x \iff c'd < 0$.
+        \item Si $d$ és DBF sobre $x$ (SBF), $c'x + \theta^*c'd = c'x + \theta^*r_q$ i
+            \begin{itemize}
+                \item $r_q = c'd$
+                \item Si $(P)_e$ no degenerat, llavors la DBF $d$ associada a $q \in \N$ és de descens $\iff r_q < 0$.
+            \end{itemize}
+    \end{itemize}
+\end{defi}
+\begin{teo*}[Condicions d'optimalitat de SBF]
+    \begin{enumerate}[a)]
+        \item[]
+        \item $r \geq [0] \implies x$ és SBF òptima.
+        \item $x$ SBF i no degenerada $\implies r \geq [0]$.
+    \end{enumerate}
+\end{teo*}
+\begin{alg}[del símplex primal]
+    \begin{enumerate}
+        \item[]
+        \item {\bf Inicialització}: trobem una SBF ($\B, \N, x_\B, z$).
+        \item \label{simplex_pas2} {\bf Identificació de la SBF òptima i selecció VNB entrant}:
+            \begin{itemize}
+                \item Calculem els costos reduïts: $r' = c_N' - c_B'B^{-1}A_n$.
+                \item Si $r' \geq [0]$, llavors és la SBF òptima. \textcolor{red}{\bf STOP!}
+            \end{itemize}
+            Altrament seleccionem una $q$ tal que $r_q < 0$ (VNB entrant).
+        \item {\bf Càlcul de DBF de descens}:
+            \begin{itemize}
+                \item $d_B = -B^{-1}A_q$
+                \item Si $d_B \geq [0]$, DBF de descens il·limitat $\implies$ $(PL)$ il·limitat. \textcolor{red}{\bf STOP!}
+            \end{itemize}
+        \item {\bf Càlcul de $\theta^*$ i $\B(p)$}:
+            \begin{itemize}
+                \item Càlcul de $\theta^*$: 
+                    \[\theta^* = \min_{i \in \{ 1, \dots, m \} \,|\, d_{\B(i)} < 0} \{-\frac{x_{\B(i)}}{d_{\B(i)}} \}.\]
+                \item Variable bàsica de sortida: $\B(p)$ tal que $\theta^* = -\frac{x_{\B(p)}}{d_{\B(p)}}$.
+            \end{itemize}
+        \item {\bf Actualitzacions i canvi de base}:
+            \begin{itemize}
+                \item $x_B := x_B + \theta^*d_B$, \\
+                    $x_q := \theta^*$, \\
+                    $z := z + \theta^* r_q$.
+                \item $\B := \B \setminus \{\B(p)\} \cup \{q\}$, \\
+                    $\N := \N \setminus \{q\} \cup \{\B(p)\}$.
+            \end{itemize}
+        \item {\bf Anar} a \ref{simplex_pas2}.
+    \end{enumerate}
+\end{alg}
+\begin{obs}[Fase 1 del símplex]
+    A la fase 1 del símplex resolem el problema:
+    \begin{equation*}
+        \lp P_I \rp \begin{dcases*}
+            \min \sum_{i = 1}^m y_i \\
+            \text{s.a.: } \\
+            \quad \left( 1 \right) \quad Ax + Iy = b \\
+            \quad \left( 2 \right) \quad x, y \geq 0 \\
+        \end{dcases*}
+    \end{equation*}
+    El resultat pot ésser:
+    \begin{itemize}
+        \item $z_I^* > 0 \implies$ $(P)$ infactible.
+        \item $z_I^* = 0 \implies$ $(P)$ factible. Dos casos:
+            \begin{itemize}
+                \item $\B_I^*$ no conté variables $y \implies \B_I^*$ és SBF de $(P)$.
+                \item $\B_I^*$ conté alguna variable $y$. Tenim que $y_B^* = [0] \implies \B_I^*$ és SBF degenerada de $(P_I)$ i per tant podem obtenir una SBF de $(P)$ a partir de $\B_I^*$.
+            \end{itemize}
+    \end{itemize}
+\end{obs}
+\begin{regl}[de Bland]
+    Usem la regla de bland per a no entrar en bucle al utilitzar el símplex per a resoldre un problema degenerat.
+    \begin{enumerate}
+        \item Seleccionem com VNB d'entrada la VNB d'índex menor que compleix $r_q < 0$.
+        \item Si al seleccionar la variable de sortida hi ha empat, seleccionem la VB amb índex menor.
+    \end{enumerate}
+\end{regl}
+
+\section{Teoria de dualitat}
+
+\begin{teo}[feble de dualitat]
+    Sigui $x$ SBF de $(P)$ i $\lambda$ SBF del $(D)$ associat, llavors
+    \[ \lambda' b\leq c'x. \]
+\end{teo}
+\begin{col}
+    \begin{itemize}
+        \item[]
+        \item $(P)$ il·limitat $\implies (D)$ infactible.
+        \item $(D)$ il·limitat $\implies (P)$ infactible.
+    \end{itemize}
+\end{col}
+\begin{teo}[fort de dualitat]
+    Siguin $x^*, \lambda^*$ solucions òptimes de $(P)$ i $(D)$ (associat), respectivament, llavors
+    \[ (\lambda^*)^\prime = c^\prime x.\]
+\end{teo}
+\begin{col}
+    Si $(P)_e$ de rang complet amb solució, llavors $(D)$ té solució i òptim a $\lambda' = c_B'B^{-1}$.
+\end{col}
+\begin{teo}[de folga complementària]
+    Siguin $x, \lambda$ solucions factibles de $(P)$ i $(D)$, respectivament. $x, \lambda$ són solucions òptimes si i només si
+    \begin{center}
+        \begin{tabular}{cl}
+            $\lambda_j (a_j'x - b_j) = 0$, & $\forall j \in \{1, \dots, m\}$, \\
+            $(c_i - \lambda'A_i) x_i = 0$, & $\forall i \in \{1, \dots, n\}$.
+        \end{tabular}
+    \end{center}
+\end{teo}
+\begin{defi}[Solució bàsica factible dual]
+    Sigui $(P)_e$, una SBFD és tota SB de $(P)_e$ tal que $r \geq [0]$.
+\end{defi}
+\begin{alg}[del símplex dual]
+    \begin{enumerate}
+        \item[]
+        \item {\bf Inicialització}: trobem una SBFD ($\B, \N, x_\B, z$).
+        \item \label{simplex_pas2} {\bf Identificació de la SBF òptima i selecció VB sortint}:
+            \begin{itemize}
+                \item Si $x_B \geq [0]$, llavors és la SBF òptima. \textcolor{red}{\bf STOP!}
+            \end{itemize}
+            Altrament seleccionem VB $p$ amb $x_{\B(p)} < 0$ (VB sortint).
+        \item {\bf Càlcul de DBF de $(D)_e$}:
+            \begin{itemize}
+                \item $d_{r_N} = (\beta_p A_N)^\prime$ ($\beta_p$ és la fila $p$-èssima de $B^{-1}$).
+                \item Si $d_{r_N} \geq [0]$, $(D)_e$ il·limitat. \textcolor{red}{\bf STOP!}
+            \end{itemize}
+        \item {\bf Càlcul de $\theta^*$ i selecció de la VNB entrant}:
+            \begin{itemize}
+                \item Càlcul de $\theta_D^*$: 
+                    \[\theta_D^* = \min_{j \in \N \,|\, d_{r_{N_j}} < 0} \{-\frac{r_j}{d_{r_{N_j}}} \}.\]
+                \item Variable no bàsica entrant: $q$ tal que $\theta^* = -\frac{x_q}{d_{r_{N_q}}}$.
+            \end{itemize}
+        \item {\bf Actualitzacions i canvi de base}:
+            \begin{itemize}
+                \item $r_N := r_N + \theta_D^* d_{r_N}$, \\
+                    $\lambda := \lambda - \theta_D^* \beta_p^\prime$, \\
+                    $r_{\B(p)} := \theta_D^*$, \\
+                    $z := z - \theta^* x_{\B(p)}$.
+                \item $\B := \B \setminus \{\B(p)\} \cup \{q\}$, \\
+                    $\N := \N \setminus \{q\} \cup \{\B(p)\}$.
+            \end{itemize}
+        \item {\bf Anar} a \ref{simplex_pas2}.
+    \end{enumerate}
+\end{alg}
+\begin{prop}
+    Una SBFD òptima és degenerada ($\exists j \in \N$ tal que $r_j = 0$) si i només si $(P)_e$ té òptims alternatius.
+\end{prop}
+\begin{prop}
+    Si $(P)_e$ no té cap SBFD degenerada, el símplex dual convergeix amb un nombre finit d'iteracions. Altrament, podem usar la regal de Bland per a que convergeixi amb un nombre finit d'iteracions.
+\end{prop}
+
+\section{Programació lineal entera}
+
+\begin{obs}
+    La següent taula explica les relacions possibles entre un $(PLE)$ i la seva relaxació lineal $(RL)$.
+    \begin{center}
+        \begin{tabular}{|l|c|c|c|} \hline
+            $(PLE) \setminus (RL)$ & Solució òptima & Infactible & Il·limitat \\ \hline
+            Solució òptima & Sí & No & \thead{Sí ($\k = \q$) \\ No ($\k = \real$)} \\ \hline
+            Infactible & Sí & Sí & Sí \\ \hline
+            Il·limitat & No & No & Sí \\ \hline
+        \end{tabular}
+    \end{center}
+\end{obs}
+
+En aquest resum falta una part important de programació lineal entera, per a més informació, consulteu els apunts de classe!
+
 \section{Programaci\'o no lineal sense restriccions}
 
 \begin{teo*}[Condicions necess\`aries d'optimalitat]

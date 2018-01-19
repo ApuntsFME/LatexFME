@@ -6,14 +6,12 @@
 \usepackage[pdftex]{hyperref}
 \usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
 \usepackage{mdframed,cleveref,cancel,stackengine,pgfplots,pgf,mathrsfs,thmtools}
-\usepackage{xfrac,stmaryrd,commath,needspace,multirow,changepage}
+\usepackage{xfrac,stmaryrd,commath,needspace,multirow,changepage,makecell}
 \usepackage[catalan]{babel}
 
 \newmdenv[leftline=false,topline=false]{topright}
 \let\proof\relax
 \usetikzlibrary{positioning,arrows, calc, babel}
-\usetikzlibrary{external}
-\tikzexternalize[prefix=figures/]
 \pgfplotsset{compat=1.11}
 
 \def\fbx#1{\vbox{\hbox{\hbox{#1}\setbox0\lastbox\copy0\kern\fboxsep\vrule width\fboxrule depth\dimexpr \fboxsep+\dp0\relax}%
@@ -35,6 +33,8 @@
 \newcommand{\Pa}{\mathcal{P}}
 \newcommand{\Es}{\mathcal{E}}
 \newcommand{\V}{\mathcal{V}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\B}{\mathcal{B}}
 \newcommand{\bb}[1]{\mathbb{#1}}
 \newcommand{\pdv}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}
 \newcommand{\dv}[3][]{\frac{\dif^{#1} #2}{\dif #3^{#1}}}
@@ -65,7 +65,7 @@
 \DeclareMathOperator{\diver}{div}
 \DeclareMathOperator{\sinc}{sinc}
 \DeclareMathOperator{\graf}{graf}
-\DeclareMathOperator{\tq}{\;t.q.\;}
+\DeclareMathOperator{\tq}{\;tal que\;}
 \DeclareMathOperator{\disc}{disc}
 \let\emptyset\varnothing
 \renewcommand{\thesubsubsection}{\Alph{subsubsection}}
@@ -82,8 +82,6 @@
     {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
   \int}
 \def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
-
-\renewcommand*\contentsname{Contenidos}
 
 \newtheoremstyle{break}% name
 {}%         Space above, empty = `usual value'
@@ -136,10 +134,15 @@
 \declaretheorem[style=breakthm,name=Teorema,sibling=lema]{teo}
 \declaretheorem[style=break,name=Teorema,sibling=lema]{teo*}
 \declaretheorem[style=breakthm,name=M\`etode,sibling=lema]{met}
+\declaretheorem[style=breakthm,name=Algorisme,sibling=lema]{alg}
+\declaretheorem[style=breakthm,name=Regla,sibling=lema]{regl}
 
 \begin{document}
 
 \input{title}
+
+\tableofcontents
+
 \input{resum_nl}
 
 \end{document}
