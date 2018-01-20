@@ -1,9 +1,9 @@
 #!/bin/bash
 
-SRC="main"
+NAME="main"
 DEST="/pdfs/segundo/calculo_integral.pdf"
-MSG="PDF calcul actualitzat :yum: :tada:"
+MSG="calcul integral"
 
 source ../upload_file.sh
 
-upload "$SRC" "$DEST" "$MSG"
+upload "$NAME" "$DEST" "WEB: $MSG actualitzat"

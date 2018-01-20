@@ -2,8 +2,8 @@
 
 NAME="formulari"
 DEST="/pdfs/segundo/formulari_calcul_integral.pdf"
-MSG="Formulari calcul actualitzat :smiley: :smirk:"
+MSG="formulari calcul integral"
 
 source ../upload_file.sh
 
-upload "$NAME" "$DEST" "$MSG"
+upload "$NAME" "$DEST" "WEB: $MSG actualitzat"

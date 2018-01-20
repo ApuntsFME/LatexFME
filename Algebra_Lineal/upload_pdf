@@ -2,8 +2,8 @@
 
 NAME="main"
 DEST="/pdfs/primero/teoremes_algebra_lineal.pdf"
-MSG="PDF algebra de primer actualitzat :blush: :smirk:"
+MSG="algebra lineal"
 
 source ../upload_file.sh
 
-upload "$NAME" "$DEST" "$MSG"
+upload "$NAME" "$DEST" "WEB: $MSG actualitzat"

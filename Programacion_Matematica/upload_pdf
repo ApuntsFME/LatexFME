@@ -2,8 +2,8 @@
 
 NAME="main"
 DEST="/pdfs/segundo/resum_programacio_matematica.pdf"
-MSG="PDF resum IO actualitzat :blush: :smirk:"
+MSG="IO"
 
 source ../upload_file.sh
 
-upload "$NAME" "$DEST" "$MSG"
+upload "$NAME" "$DEST" "WEB: $MSG actualitzat"

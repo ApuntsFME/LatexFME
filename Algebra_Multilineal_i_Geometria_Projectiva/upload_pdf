@@ -2,8 +2,8 @@
 
 NAME="main"
 DEST="/pdfs/segundo/algebra_multilineal_y_geometria.pdf"
-MSG="PDF multi actualitzat :blush: :kissing_heart:"
+MSG="multi"
 
 source ../upload_file.sh
 
-upload "$NAME" "$DEST" "$MSG"
+upload "$NAME" "$DEST" "WEB: $MSG actualitzat"
