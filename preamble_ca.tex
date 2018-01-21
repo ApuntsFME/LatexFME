@@ -1,11 +1,11 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[margin=1in]{geometry}
+\usepackage[a4paper,margin=1in]{geometry}
 \usepackage[pdftex]{hyperref}
 \usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
 \usepackage{mdframed,cleveref,cancel,stackengine,pgfplots,pgf,mathrsfs,thmtools}
 \usepackage{xfrac,stmaryrd,commath,needspace,multirow}
-\usepackage[spanish]{babel}
+\usepackage[catalan]{babel}
 
 \newmdenv[leftline=false,topline=false]{topright}
 \let\proof\relax
@@ -81,8 +81,7 @@
   \int}
 \def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
 
-\renewcommand*\contentsname{Contenidos}
-\renewcommand*\chaptername{Tema}
+\AtBeginDocument{\renewcommand{\chaptername}{Tema}}
 
 \newtheoremstyle{break}% name
 {}%         Space above, empty = `usual value'
@@ -117,20 +116,20 @@
 \declaretheorem[style=normal,name=Lema,numberwithin=section]{lema}
 \declaretheorem[style=breakthm,name=Lema,numberwithin=section]{teolema}
 \declaretheorem[style=normal,name=Lema,numbered=no]{lema*}
-\declaretheorem[style=normal,name=Observación,sibling=lema]{obs}
-\declaretheorem[style=normal,name=Observación,numbered=no]{obs*}
+\declaretheorem[style=normal,name=Observació,sibling=lema]{obs}
+\declaretheorem[style=normal,name=Observació,numbered=no]{obs*}
 
-\declaretheorem[style=break,name=Proposición,sibling=lema]{prop}
-\declaretheorem[style=break,name=Proposición,numbered=no]{prop*}
-\declaretheorem[style=break,name=Demostración,qed=$\square$,numbered=no]{proof}
-\declaretheorem[style=break,name=Definición,sibling=lema]{defi}
-\declaretheorem[style=break,name=Definición,numbered=no]{defi*}
-\declaretheorem[style=break,name=Corolario,sibling=lema]{col}
-\declaretheorem[style=break,name=Corolario,numbered=no]{col*}
-\declaretheorem[style=break,name=Ejercicio,sibling=lema]{ej}
-\declaretheorem[style=break,name=Ejercicio,numbered=no]{ej*}
-\declaretheorem[style=break,name=Ejemplo,sibling=lema]{example}
-\declaretheorem[style=break,name=Ejemplo,numbered=no]{example*}
+\declaretheorem[style=break,name=Proposició,sibling=lema]{prop}
+\declaretheorem[style=break,name=Proposició,numbered=no]{prop*}
+\declaretheorem[style=break,name=Demostració,qed=$\square$,numbered=no]{proof}
+\declaretheorem[style=break,name=Definició,sibling=lema]{defi}
+\declaretheorem[style=break,name=Definició,numbered=no]{defi*}
+\declaretheorem[style=break,name=Corol·lari,sibling=lema]{col}
+\declaretheorem[style=break,name=Corol·lari,numbered=no]{col*}
+\declaretheorem[style=break,name=Exercici,sibling=lema]{ej}
+\declaretheorem[style=break,name=Exercici,numbered=no]{ej*}
+\declaretheorem[style=break,name=Exemple,sibling=lema]{example}
+\declaretheorem[style=break,name=Exemple,numbered=no]{example*}
 
 \let\thm\relax
 \declaretheorem[style=breakthm,name=Teorema,sibling=lema]{teo}

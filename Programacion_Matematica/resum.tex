@@ -17,6 +17,7 @@
         \item $A \left(x + \theta d\right) = b$ per algun $\theta \in \real^+ \implies d_B \stackrel{\text{def.}}{=} -B^{-1} A_q$.
     \end{itemize}
 \end{defi}
+\pagebreak                  %TODO VIGILAR AQUESTA CUTRADA
 \begin{prop}[Càlcul de $\theta^*$]
     Calculem $\theta^* \stackrel{\text{def.}}{=} \max \left\{ \theta > 0 \, |\, y = x + \theta d \in P_e\right\}$:
     \begin{enumerate}
@@ -65,7 +66,6 @@
             \end{itemize}
     \end{itemize}
 \end{defi}
-\pagebreak %TODO vigilar aquesta cutrada
 \begin{teo*}[Condicions d'optimalitat de SBF]
     \begin{enumerate}[a)]
         \item[]
@@ -105,7 +105,7 @@
         \item {\bf Anar} a \ref{simp_pri_pas2}.
     \end{enumerate}
 \end{alg}
-\begin{obs}[Fase 1 del símplex]
+\begin{propobs}[Fase 1 del símplex]
     A la fase 1 del símplex resolem el problema:
     \begin{equation*}
         \lp P_I \rp \begin{dcases*}
@@ -125,14 +125,14 @@
                 \item $\B_I^*$ conté alguna variable $y$. Tenim que $y_B^* = \left[0\right] \implies \B_I^*$ és SBF degenerada de $\left(P_I\right)$ i per tant podem obtenir una SBF de $\left(P\right)$ a partir de $\B_I^*$.
             \end{itemize}
     \end{itemize}
-\end{obs}
-\begin{regl}[de Bland]
+\end{propobs}
+\begin{rgl}[de Bland] \label{rgl:bland}
     Usem la regla de Bland per a no entrar en bucle al utilitzar el símplex per a resoldre un problema degenerat.
     \begin{enumerate}
         \item Seleccionem com VNB d'entrada la VNB d'índex menor que compleix $r_q < 0$.
         \item Si al seleccionar la variable de sortida hi ha empat, seleccionem la VB amb índex menor.
     \end{enumerate}
-\end{regl}
+\end{rgl}
 
 \section{Teoria de dualitat}
 
@@ -202,12 +202,12 @@
     Una SBFD òptima és degenerada ($\exists j \in \N$ tal que $r_j = 0$) si i només si $\left(P\right)_e$ té òptims alternatius.
 \end{prop}
 \begin{prop}
-    Si $\left(P\right)_e$ no té cap SBFD degenerada, el símplex dual convergeix amb un nombre finit d'iteracions. Altrament, podem usar la regal de Bland per a que convergeixi amb un nombre finit d'iteracions.
+    Si $\left(P\right)_e$ no té cap SBFD degenerada, el símplex dual convergeix amb un nombre finit d'iteracions. Altrament, podem usar la regla de Bland (\ref{rgl:bland}) per a que convergeixi amb un nombre finit d'iteracions.
 \end{prop}
 
 \section{Programació lineal entera}
 
-\begin{obs}
+\begin{propobs}
     La següent taula explica les relacions possibles entre un $\left(PLE\right)$ i la seva relaxació lineal $\left(RL\right)$.
     \begin{center}
         \begin{tabular}{|l|c|c|c|} \hline
@@ -217,7 +217,7 @@
             Il·limitat & No & No & Sí \\ \hline
         \end{tabular}
     \end{center}
-\end{obs}
+\end{propobs}
 
 En aquest resum falta una part important de programació lineal entera, per a més informació, consulteu els apunts de classe!
 
