@@ -24,7 +24,7 @@ se debe asumir que sean "buenas prácticas".**
 
 ## Proposiciones, teoremas y demás
 
-En nuestra [plantilla](https://github.com/MiquelOrtega/Mates/blob/master/plantilla.tex),
+En nuestro [preámbulo](https://github.com/ApuntsFME/LatexFME/blob/master/preamble_es.tex),
 hemos creado unos entornos para
 recoger los casos de entradas más comunes, aquí se hace un
 listado de todas ellas.
@@ -115,14 +115,14 @@ importante es que no es necesario añadir la palabra
 
 ## Comandos útiles
 Aquí detallamos una lista de los commandos que hemos añadido
-a la [plantilla](https://github.com/MiquelOrtega/Mates/blob/master/plantilla.tex)
+al [preámbulo](https://github.com/ApuntsFME/LatexFME/blob/master/preamble_es.tex)
 con el objeto de simplificar la esritura.
 Es importante saber que **esta lista no está cerrada**,
 sientete libre de añadir los commandos que creas convenientes
 (siempre y cuando sean utiles de verdad y no se utilicen tan
 solo en un caso concreto). Además **recuerda hacer el commit
 de la forma correcta** (si no sabes como, mira
-[aquí](https://github.com/MiquelOrtega/Mates/blob/master/commits.md))
+[aquí](https://github.com/ApuntsFME/LatexFME/blob/master/commits.md))
 y **añadir a esta sección el comando**.
 
 ### Conjuntos
@@ -325,7 +325,9 @@ Si un título es demasiado largo para el header de la pagina haremos lo siguient
 Si el título de de una ```section```:
 
 ```tex
-\section[Título obligatorio para el índice]{Título obligatorio largo \sectionmark{Título corto para el header}}
+\section[Título obligatorio para el índice]
+    {Título obligatorio largo
+    \sectionmark{Título corto para el header}}
     \sectionmark{Título corto para el header}
 ```
 En la primera linea cambiamos el título para la página actual y en la segunda el de todas la siguientes. El título especificado para el índice es obligatorio.
@@ -388,7 +390,7 @@ generación de gráficos. Aquí solo damos unas leves
 pinceladas de cómo usar este paquete, para hacer un grafo
 muy simple.
 
-![grafo](https://github.com/MiquelOrtega/Mates/blob/master/grafo.png)
+![grafo](https://github.com/ApuntsFME/LatexFME/blob/master/grafo.png)
 
 Para hacer este grafo, usamos el entorno *tikzpicture*
 ```tex

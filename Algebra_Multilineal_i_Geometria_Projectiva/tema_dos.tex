@@ -22,6 +22,7 @@ se muestra una tabla con las distintas geometrías en la cual cada una esta
         Topología & transformaciones por funciones de clase $\mathcal{C}^0$\\ \hline
     \end{tabular}
 \end{center}
+\vfill                                      % TODO vigilar amb aquesta cutrada
 
 \subsubsection{Problema matemático}
 \begin{center}
@@ -609,7 +610,10 @@ en añadir puntos en el $\infty$.
     $p_0, \dots, p_r \in \Po^n (r \geq n)$ están en posición general $\iff n+1$ puntos cualesquiera de ellos son l.i..
 \end{defi}
 
-\section{Sistemas de referencia proyectivos. Coordenadas proyectivas}
+\section[Sistemas de referencia proyectivos. Coordenadas proyectivas]
+    {Sistemas de referencia proyectivos. Coordenadas proyectivas
+    \sectionmark{Sistemas de referencia y coordenadas proyectivos}}
+    \sectionmark{Sistemas de referencia y coordenadas proyectivos}
 
 \begin{obs}
     $\Po^n = \Po(\E)$. Sea $B = \{v_0, \dots, v_n\}$ base de $\E$:
@@ -662,14 +666,6 @@ en añadir puntos en el $\infty$.
             Y el sistema de referencia con la base $B$ adaptada es: \[ R' = \left\{ [(2,2,0)], [(1,0,1)], [(0,1,1)]; [(3,3,2)]\right\} \]
     \end{enumerate}
 \end{obs}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% YA NO FALTAN LUNES Y MIERCOLES %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      ¿POR QUÉ LEES ESTO?       %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{example}
     Consideremos el espacio $\Po^2_{\real}$, un sistema de referencia $\R = \{ p_0, p_1, p_2; \overline{p}\}$, con
     $p_0 = [(1, 1, 0)]$, $p_1 = [(1, 0, 1)]$, $p_2 = [(0, 1, 1)]$ y $\overline{p} = [(3,3,2)]$.
@@ -680,7 +676,6 @@ en añadir puntos en el $\infty$.
     El punto $q = [(3, 2, 1)]$ tiene las coordenadas $q_{\R} = w_B = (1:1:0)$, que, en un abuso de notación,
     escribiremos como $(1, 1, 0)$.
 \end{example}
-
 \begin{prop}
     Sean $\R_1, \R_2$ sistemas de referencia de $\Po^n$. Sea $q \in \Po^n$.
     \begin{enumerate}[i)]
@@ -1135,10 +1130,6 @@ es un hiperplano tal que $p_i \notin \left( {p_i}^\prime \right)^*$ y
 $p_j \in \left( {p_i}^\prime \right)^*$ $\forall i \neq j$
 \end{obs}
 
-%%%%%%%%%%%%%%%%%%%%
-%   23 d'octubre   %
-%%%%%%%%%%%%%%%%%%%%
-
 \section{Los teoremas de Desargues y Pappus}
 
 \begin{teo}[de Desargues]
@@ -1338,10 +1329,6 @@ Hay una relación de pertenencia entre puntos y rectas (los puntos pertenecen a 
 \end{itemize}
 \end{obs}
 
-%%%%%%%%%%%%%%%%%
-% 25 de OCTUBRE %
-%%%%%%%%%%%%%%%%%
-
 \begin{teo}[ de Pappus]
 Sean $r,s \subseteq \Po^2_\k$ rectas diferentes ($r \neq s$), sean
 $A,B,C \in r$ tal que $A \neq B$, $B \neq C$ y $C\neq A$ y sean también
@@ -1537,18 +1524,14 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
 \end{example}
 
 \begin{prop}
- Sean $q_1,q_2,q_3,q_4 \in \Po^n$ y sea $\rho = (q_1,q_2,q_3,q_4)$. Si permutamos los cuatro
- puntos, (con $4! = 24$ posiblidades), obtendremos uno de los sisguientes valores para la
- razón doble
- \[
-   A_p = \setb{\rho, \frac{\rho}{1}, 1-\rho, \frac{1}{1-\rho}, \frac{\rho}{\rho-1}, \frac{\rho-1}{\rho}}
- \]
+    Sean $q_1,q_2,q_3,q_4 \in \Po^n$ y sea $\rho = (q_1,q_2,q_3,q_4)$. Si permutamos los cuatro
+    puntos, (con $4! = 24$ posiblidades), obtendremos uno de los sisguientes valores para la
+    razón doble
+    \[
+        A_p = \setb{\rho, \frac{\rho}{1}, 1-\rho, \frac{1}{1-\rho}, \frac{\rho}{\rho-1}, \frac{\rho-1}{\rho}}
+    \]
 
 \end{prop}
-
-%%%%%%%%%%%%%%%%%
-% 27 de octubre %
-%%%%%%%%%%%%%%%%%
 
 \begin{defi}[Proyección y sección]
  Sean $V,r \subseteq \Po^n$ dos variedades suplementarias con $\dim r = 1$ ($\implies \dim V = n-2$).
@@ -1745,7 +1728,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
         \end{aligned}
         \text{ es biyectiva } \forall p \in \A.
       \]
-    \item \[\delta(p, q) + \delta(q, r) = \delta(p,r) \qquad \forall p, q, r \in \A\].
+    \item \[\delta(p, q) + \delta(q, r) = \delta(p,r) \qquad \forall p, q, r \in \A.\]
   \end{enumerate}
 \end{obs}
 
