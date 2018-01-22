@@ -11,7 +11,7 @@ Volem saber si el conjunt substituït és generador de $\E$. Per tant, començar
 És fàcil veure que si no traiem cap vector de $\{u_1,..., u_n\}$, aquest conjunt és generador de $\E$ per hipòtesi.
 
 \item $m \geq 1$. 
-En aquest cas, assumirem que el cas $m-1$ del Teorema és cert i volem veure si el cas $m$ també ho és.
+En aquest cas, assumirem que el cas $m-1$ del teorema és cert i volem veure si el cas $m$ també ho és.
 
 Suposarem que el conjunt $\{w_1,..., w_{m-1}\}$ és linealment independent. Per tant, $m-1 \leq n = \dim(\E)$ ja que no hi pot haver més vectors linealment independents que el cardinal de la dimensió de $\E$. També podem suposar que $\E = <w_1,...,w_{m-1},u_m,...,u_n>$, ja que el cas $m-1$ era cert.
 
@@ -19,20 +19,20 @@ Per hipòtesi, $w_m$ és un vector d'$\E$: $\:w_m \in \E = <w_1,...,w_{m-1},u_m,
 
 En conclusió, ens queda que $m \leq n$ i aïllant $u_m$ de l'equació:
 \[
-w_m = \lambda_1w_1 + ... + \lambda_{m-1}w_{m-1} + \mu_mu_m + ... + \mu_nu_n
+w_m = \lambda_1w_1 + ... + \lambda_{m-1}w_{m-1} + \mu_mu_m + ... + \mu_nu_n.
 \]
 Passant-ho tot restant i aïllant el terme $\mu_mu_m$,
 \[
-w_m - \lambda_1w_1 - ... - \lambda_{m-1}w_{m-1} - \mu_{m+1}u_{m+1} - ... - \mu_nu_n = \mu_mu_m
+w_m - \lambda_1w_1 - ... - \lambda_{m-1}w_{m-1} - \mu_{m+1}u_{m+1} - ... - \mu_nu_n = \mu_mu_m.
 \]
 I finalment divint les dues equacions per $\mu_m \neq 0$,
 \[
-\frac{1}{\mu_m}w_m - \frac{\lambda_1}{\mu_m}w_1 - ... - \frac{\lambda_{m-1}}{\mu_m}w_{m-1} - \frac{\mu_{m+1}}{\mu_m}u_{m+1} - ... - \frac{\mu_n}{\mu_m}u_n = u_m
+\frac{1}{\mu_m}w_m - \frac{\lambda_1}{\mu_m}w_1 - ... - \frac{\lambda_{m-1}}{\mu_m}w_{m-1} - \frac{\mu_{m+1}}{\mu_m}u_{m+1} - ... - \frac{\mu_n}{\mu_m}u_n = u_m.
 \]
 
 Així doncs, $u_m \in <w_1,...,w_m,u_{m+1},...,u_n>$. És a dir, el conjunt $\{w_1,...,w_m,u_{m},...,u_n\}$, generador de $\E$ per la hipòtesi d'inducció, pot ser expressat amb combinacions lineals del nou conjunt $<w_1,...,w_m,u_{m+1},...,u_n>$. Consegüentment, 
 \[
-\E = \;<w_1,...,w_m,u_{m+1},...,u_n>
+\E = \;<w_1,...,w_m,u_{m+1},...,u_n>.
 \]
 \end{enumerate}
 \end{proof}
@@ -44,8 +44,8 @@ En un $\k$-espai vectorial finitament generat $\E$, totes les bases són finites
 \begin{proof}
 \begin{itemize}
     \item[]
-    \item Sigui $B_1$ base de $\E$  de cardinal$n$($|B_1| = n$)
-    \item Sigui $B_2$ base de $\E$ de cardinal$m$($|B_2| = m$)
+    \item Sigui $B_1$ base de $\E$  de cardinal $n$ ($|B_1| = n$).
+    \item Sigui $B_2$ base de $\E$ de cardinal $m$ ($|B_2| = m$).
 \end{itemize}
 \noindent
 Pel Teorema d'Steinitz $m \leq n$ i $n \leq m$, per tant, $n=m$.
@@ -54,7 +54,7 @@ Pel Teorema d'Steinitz $m \leq n$ i $n \leq m$, per tant, $n=m$.
 
 \section{Fórmula de Grassmann}
 Si $\F , \mathbb{G}$ són dos subespais vectorials d'un $\k$-espai vectorial $\E$, aleshores:
-$$ \dim(F + G) + \dim(F \cap G) = \dim(F) + \dim(G) $$
+\[ \dim(F + G) + \dim(F \cap G) = \dim(F) + \dim(G). \]
 
 \begin{proof}
 Primer de tot, si $\F$ i $\mathbb{G}$ no són finitament generats i les seves dimensions són infinites: $\dim\;\F = \dim\;\mathbb{G} = \infty \: \Rightarrow \: \dim(\F+\mathbb{G}) = \infty$ i per definició $\dim(\F\cap\mathbb{G}) \geq 0$, la fórmula queda $\infty = \infty$. Per tant, ens concentrarem en subespais finitament generats.
@@ -65,8 +65,8 @@ Si les dimensions de $\F$ i $\mathbb{G}$ són finites, anomenarem $n = \dim\;\F$
 
 Sigui $\{u_1,...,u_r\}$ una base de $\F\cap\mathbb{G}$ (i per tant, linealment independents), la podem substituïr per r vectors de les bases de $\F$ i $\mathbb{G}$ en virtut del Teorema d'Steinitz, aconseguint dos nous conjunts linealment independents i generadors $\F$ i $\mathbb{G}$ de respectivament:
 \begin{itemize}
-    \item $\{u_1,...,u_r, w_{r+1}, ..., w_m\}$ base de $\F$
-    \item $\{u_1,...,u_r,w'_{r+1},...,w'_n\}$ base de $\mathbb{G}$
+    \item $\{u_1,...,u_r, w_{r+1}, ..., w_m\}$ base de $\F$,
+    \item $\{u_1,...,u_r,w'_{r+1},...,w'_n\}$ base de $\mathbb{G}$.
 \end{itemize}    
 Veurem que, $B = \{u_1,...,u_r, w_{r+1}, ..., w_m, w'_{r+1},...,w'_n\}$ és base de $\F+\mathbb{G}$ i això acabarà la demostració per què tindrem que $\dim(F + G) = n +m- r = \dim(F) + \dim(G) - \dim(F \cap G) = |\{u_1,...,u_r, w_{r+1}, ..., w_m, w'_{r+1},...,w'_n\}|$.
 
@@ -76,27 +76,33 @@ Per veure que $B$ és una base de $\F+\mathbb{G}$, s'ha de mirar si $B$ és un c
 \begin{enumerate}[(1)]
 \item $B$ és un conjunt de generadors de $\F+\mathbb{G}$, perquè $B$ és la unió d'una base de $\F$ i una base de $\mathbb{G}$. Visualment, el conjunt repetit $\{u_1,...,u_r\}$, no es repeteix \textbf{quan} es fa la unió: $B = \{u_1,...,u_r, w_{r+1}, ..., w_m, w'_{r+1},...,w'_n\} = \{u_1,...,u_r, w_{r+1}, ..., w_m\}\cup\{u_1,...,u_r,w'_{r+1},...,w'_n\}$.
 
-\item $B$ és linealment independent de $\F+\mathbb{G}$ si suposem que per contradicció, $B$ és linealment dependent i es pot representar el $0$ com a combinació lineal del conjunt. Usarem les següents combinacions lineals: $\mathbf{u} = \lambda_1 u_1 + ... + \lambda_r u_r \in \F\cap\mathbb{G}$, $\mathbf{w} = \mu_{r+1} w_{r+1} + ... + \mu_m w_m \in \F$, $\mathbf{w'} = \mu'_{r+1} w'_{r+1} + ... + \mu'_n w'_n \in \mathbb{G}$.
+\item $B$ és linealment independent de $\F+\mathbb{G}$ si suposem que per contradicció, $B$ és linealment dependent i es pot representar el $\mathbf{0}$ com a combinació lineal del conjunt. Usarem les següents combinacions lineals: 
+\begin{align*}
+    \mathbf{u} &= \lambda_1 u_1 + ... + \lambda_r u_r \in \F\cap\mathbb{G}, \\
+    \mathbf{w} &= \mu_{r+1} w_{r+1} + ... + \mu_m w_m \in \F, \\
+    \mathbf{w'} &= \mu'_{r+1} w'_{r+1} + ... + \mu'_n w'_n \in \mathbb{G}.
+\end{align*}
+Per tant tenim
 \[
-0 = \mathbf{u} + \mathbf{w} + \mathbf{w'} = \lambda_1 u_1 + ... + \lambda_r u_r + \mu_{r+1} w_{r+1} + ... + \mu_m w_m + \mu'_{r+1} w'_{r+1} + ... + \mu'_n w'_n
+    \mathbf{0} = \overbrace{\lambda_1 u_1 + ... + \lambda_r u_r}^{\mathbf{u}} + \overbrace{\mu_{r+1} w_{r+1} + ... + \mu_m w_m}^{\mathbf{w}} + \overbrace{\mu'_{r+1} w'_{r+1} + ... + \mu'_n w'_n}^{\mathbf{w'}}.
 \]
 Amb aquesta igualtat es té que $\mathbf{w'} = -\mathbf{u} -\mathbf{w}$. Això ens dona dues proposicions: $-\mathbf{u} -\mathbf{w}$ és una combinació lineal d'elements d'$\F$, per tant, $\mathbf{w'} \in \F$ i $\mathbf{w'} \in \mathbb{G}$. És a dir, que $\mathbf{w'}$ pertany a $\F$ i $\mathbb{G}\Rightarrow \mathbf{w'}$ pertany a $\F\cap\mathbb{G}$. Aleshores,
-\[ \mathbf{w'} = \alpha_1 u_1 + ... + \alpha_r u_r = \mu'_1 u_1 + ... + \mu'_r u_r \]
+\[ \mathbf{w'} = \alpha_1 u_1 + ... + \alpha_r u_r = \mu'_1 u_1 + ... + \mu'_r u_r. \]
 Podem passar restant tots els termes $\mu_k$ restant i ens queda el $\mathbf{0}$ com a una combinació lineal de vectors de $\F\cap\mathbb{G}$ i de vectors de $\mathbb{G}$.
-\[ \mathbf{0} = \alpha_1 u_1 + ... + \alpha_r u_r - \mu'_1 u_1 - ... - \mu'_r u_r \]
+\[ \mathbf{0} = \alpha_1 u_1 + ... + \alpha_r u_r - \mu'_1 u_1 - ... - \mu'_r u_r. \]
 Però com que els vectors $\mathbf{u}$ i $\mathbf{w'}$ són linealment independents per definició (la seva unió és la base de $\mathbb{G}$), aleshores els escalars que els acompanyen són tots nuls.
-\[ \alpha_1 = ... = \alpha_r = \mu'_{r+1} = ... = \mu'_{n} = 0 \Rightarrow \mathbf{w'} = \mathbf{0}\]
+\[ \alpha_1 = ... = \alpha_r = \mu'_{r+1} = ... = \mu'_{n} = 0 \Rightarrow \mathbf{w'} = \mathbf{0}.\]
 Ens queda, per la hipòtesi, que si $B$ és linealment dependent, $\mathbf{w'}$ és el vector $\mathbf{0}$.
 \[
-\mathbf{w'} = -\mathbf{u} - \mathbf{w} = \mu'_{r+1} w'_{r+1} + ... + \mu_n w'_n = \mathbf{0}
+\mathbf{w'} = -\mathbf{u} - \mathbf{w} = \mu'_{r+1} w'_{r+1} + ... + \mu_n w'_n = \mathbf{0}.
 \]
 Consegüentment, ens queda que $\mathbf{u} = \mathbf{w}$ i com que els vectors $\mathbf{u}$ i $\mathbf{w}$ formen la base de $\F$, són linealment independents. Per tant, no poden representar el vector $\mathbf{0}$ com a combinació lineal dels dos excepte si els escalars que els acompanyen són tots nuls.
-\[\mathbf{0} = \mathbf{u} + \mathbf{w} = \lambda_1 u_1 + ... + \lambda_r u_r + \mu_{r+1} w_{r+1} + ... + \mu_n w_n\]
-\[ \lambda_1 = ... = \lambda_r = \lambda_{r+1} = ... = \mu_n = 0 \]
+\[\mathbf{0} = \mathbf{u} + \mathbf{w} = \lambda_1 u_1 + ... + \lambda_r u_r + \mu_{r+1} w_{r+1} + ... + \mu_n w_n,\]
+\[ \lambda_1 = ... = \lambda_r = \lambda_{r+1} = ... = \mu_n = 0. \]
 En conclusió, el vector $\mathbf{0}$ només podrà ser representat com a combinació lineal dels vectors de $B = \{u_1,...,u_r, w_{r+1}, ..., w_m, w'_{r+1},...,w'_n\}$ si els coeficients reals que els acompanyen són $0$, wue és la definició de conjunt linealment independent.
 \end{enumerate}
 
-Finalment tenim que $B$ és un conjunt de generadors de $\F+\mathbb{G}$ i és linealment independent, és a dir que $B$ és base de $\F+\mathbb{G}$ i la Fórmula de Grassmann queda demostrada. 
+Finalment tenim que $B$ és un conjunt de generadors de $\F+\mathbb{G}$ i és linealment independent, és a dir que $B$ és base de $\F+\mathbb{G}$ i la fórmula de Grassmann queda demostrada. 
 \end{proof}
 
 \section{Teorema d'Isomorfisme}
@@ -108,69 +114,62 @@ g: \E/\nuc(f) & \longrightarrow \im(f)\\
 u + \nuc(f) & \longmapsto f(u)\\
 \end{aligned}
 \]
-és un isomorfisme, és a dir, que és una aplicació lineal bijectiva.
+és un isomorfisme, és a dir, és una aplicació lineal bijectiva.
 \\
 
 \begin{proof}
 
 Abans de començar, cal comprovar que la funció $g$ està ben definida. En efecte, siguin $u$, $v$ $\in \E$ tals que $u + \nuc(f) = v + \nuc(f)$, és a dir, que estiguin a la mateixa classe de l'espai quocient, aleshores:
-
 \begin{gather*}
-(u-v) \in \nuc(f) \implies f(u-v) = 0 \implies f(u) - f(v) = 0 \implies \\
-\implies g(u + \nuc(f)) - g(v + \nuc(f)) = 0
+    (u-v) \in \nuc(f) \implies f(u-v) = 0 \implies f(u) - f(v) = 0 \implies \\
+    \implies g(u + \nuc(f)) - g(v + \nuc(f)) = 0.
 \end{gather*}
-
 Com que $g(u + \nuc(f)) = g(v + \nuc(f))$, $u$ i $v$ tenen la mateixa imatge sota $g$, per tant el representant és independent i la funció està ben definida. Cada representant particular (o cada classe) és enviat a una sola imatge.
 
 
 Ara que ja hem comprovat que la funció $g$ està ben definida, podem començar a demostrar que $g$ és una aplicació lineal bijectiva (definició d'isomorfisme). \\\\Primer, vegem que  $g$ és \textbf{lineal}, és a dir, que, per tot $\lambda$, $\mu \in \k$ i tot $u$, $v \in \E$, 
 \begin{gather*}
 g(\lambda u + \mu v + \nuc(f))  = f(\lambda u + \mu v) = \lambda f(u) + \mu f(v) =\\
-= \lambda g(u + \nuc(f)) + \mu g(v + \nuc(f))
+= \lambda g(u + \nuc(f)) + \mu g(v + \nuc(f)).
 \end{gather*}
 Ara que ja hem vist que $g$ és lineal, cal veure que $g$ és bijectiva. És a dir, \textbf{injectiva} i \textbf{exhaustiva} a la vegada. Ho comprovarem per separat:
 \\\\
 Per a demostrar la \textbf{injectivitat} de $g$ aplicarem: $g$ injectiva $\Leftrightarrow \nuc(g) = \{0\}$
 \[
-u \in \nuc(g) \implies g(u + \nuc(f)) = 0 \implies f(u) = 0 \implies u \in \nuc(f)
+u \in \nuc(g) \implies g(u + \nuc(f)) = 0 \implies f(u) = 0 \implies u \in \nuc(f).
 \]
 Per tant $u = 0 \Leftrightarrow u + \nuc(f) = \nuc(f)$, que és el neutre en l'espai quocient $E/\nuc(f)$. Així doncs, com que els vectors del $\nuc(g)$ també ho són del $\nuc(f)$, és a dir $\nuc(g) = {\textbf{0}_{E/\nuc(f)}}$, i consegüentment $g$ és injectiva.
 
-
 Per a demostrar la \textbf{exhaustivitat}, utilitzarem que per a tot element de la imatge de $f$ (espai d'arribada de $g$), existeix una classe de vectors de l'espai quocient $E/\nuc(f)$ (espai de sortida de $g$) tal que la seva imatge és l'element de $f$: $\forall \; y \in \text{Im}(f) \; \exists \bar{x} \in \E/\nuc(f)$ tal que $g(\bar{x}) = y$.
-
 
 Com que $y \in \text{Im}(f)$, sabem que $\exists x \in \E$ tal que $f(x) = y$. A més, com que la funció $g$ està ben definida, tota la classe de $x$ en l'espai quocient, notem-la $\bar{x} = x + \nuc(f)$, tindrà la mateixa imatge sota $g$ que qualsevol dels seus representants sota $f$, és a dir, $g(\bar{x}) = f(x) = y$.
 
-Per tant, existeix $\bar{x} \in \E/\nuc(f)$ tal que $g(\bar{x}) = y$, i g és exhaustiva. 
-\\
+Per tant, existeix $\bar{x} \in \E/\nuc(f)$ tal que $g(\bar{x}) = y$, i g és exhaustiva.
 
 Alternativament, podem comprovar que els elements $y$ estan continguts a la imatge de $g$: $y = f(x) = g(x + \nuc(f)) \in \text{Im}(g)$, per tant tots els elements $y \in \text{Im}(f)$ estaran dins la $\text{Im}(g)$: $\text{Im}(f) \subseteq \text{Im}(g)$. I trivialment, $\text{Im}(g) \subseteq \text{Im}(f)$ ja que $\text{Im}(f)$ és el codomini de $g$. Per tant, $\text{Im}(g) = \text{Im}(f)$ i $g$ és exhaustiva.
-\\\\
+
 En conclusió, $g$ és una aplicació lineal i bijectiva, i per tant, un \textbf{isomorfisme}.
 \end{proof}
 
 \section{Teorema de Cayley-Hamilton}
 Si $f \in \text{End}(\E)$ amb $\E$ un $\k$ espai vectorial de dimensió finita. Aleshores, 
 \[
-Q_f(f) = 0 
+Q_f(f) = 0.
 \]
-Això es tradueix a que el polinomi característic de $f$ aplicat en $f$ és 0, que és equivalent a que $Q_A(A) = 0, \forall A \in M_n(K)$. Per notació: $Q_f(T) = Q_A(T) = \text{det}(A - T\;\text{Id}_n) = a_nT^n +...+a_1T + a_0$ on $A = M_B(f)$ per alguna base de $\E$.
+Això es tradueix a que el polinomi característic de $f$ aplicat en $f$ és 0, que és equivalent a que $Q_A(A) = 0,\, \forall A \in \mathcal{M}_n(\k)$. Per notació: $Q_f(T) = Q_A(T) = \text{det}(A - T\;\text{Id}_n) = a_nT^n +...+a_1T + a_0$ on $A = M_B(f)$ per alguna base de $\E$.
 \\
 
 \begin{proof}
 
 Sigui $u \in \E, u \neq 0$. Volem veure $Q_f(f)(u) = 0$. Aleshores, sigui $m\geq 1$ el nombre mínim tal que el conjunt $\{u,f(u),...,f^m(u)\}$ és linealment dependent. Així doncs, $\{u,f(u),...,f^{m-1}(u)\}$ és linealment independent i el podem ampliar per Steinitz a una base $B$ de $\E$. I també es té que $f^m$ és combinació lineal de $\{u,f(u),...,f^{m-1}(u)\}$:
-$$ f^m(u) = a_0u + a_1f(u) + ... + a_{m-1}f^{m-1}(u) $$
+\[ f^m(u) = a_0u + a_1f(u) + ... + a_{m-1}f^{m-1}(u). \]
 Per tant, si apliquem la funció $f$ al conjunt de generadors de$\E$ampliat per Steinitz (amb $n = \dim\:\E$): $\{u,f(u),...,f^{m-1}(u), w_{m},...,w_n\}$, ens queda una matriu de canvi de base $M_B(f)$ de quatre blocs:
-
 \[ M_B(f) = 
-\begin{pmatrix}
-    &A &*  &\\
-    &0  &C &\\
-\end{pmatrix}
+    \begin{pmatrix}
+        A & * \\
+        0  & C \\
+    \end{pmatrix}.
 \]
-
 \begin{itemize}
     \item \textbf{A}: Uns a la segona diagonal ja que i tots els altres elements nuls $f^k(u) = 0\cdot f(u) + ... + 1\cdot f^k(u) + ... + 0\cdot f^{m-1}(u), \; \forall k \in [1,m-1] $. La última columna, però, són els coeficients $a_0,a_1,...,a_{m-2},a_{m-1}$ de $f^m(u)$.
     
@@ -178,7 +177,7 @@ Per tant, si apliquem la funció $f$ al conjunt de generadors de$\E$ampliat per 
     
     \item \textbf{C}: semblant a $\mathbf{*}$, són els coeficients de $\{f(w_{m}), f(w_{m+1}), ..., f(w_{n})\}$ que acompanyen a $\{w_{m}, w_{m+1}, ..., w_{n}\}$. També són valors qualssevol.
     
-    \item $0$: coeficients de $\{f(u),...,f^{m}(u)\}$ que acompanyen a $\{w_{m}, w_{m+1}, ..., w_{n}\}$. Com que $\{w_{m}, w_{m+1}, ..., w_{n}\}$ són linealment independents amb $\{u,f(u), ...,\\ f^{m-1}(u)\}$ ja que la seva unió és base de $\E$, són valors nuls.
+    \item $0$: coeficients de $\{f(u),...,f^{m}(u)\}$ que acompanyen a $\{w_{m}, w_{m+1}, ..., w_{n}\}$. Com que $\{w_{m}, w_{m+1}, ..., w_{n}\}$ són linealment independents amb $\{u,f(u), ..., f^{m-1}(u)\}$ ja que la seva unió és base de $\E$, són valors nuls.
 \end{itemize}
 
 Visualment, la matriu és representada així: 
@@ -187,18 +186,18 @@ Visualment, la matriu és representada així:
  & \textcolor{teal}{f(u)} & \textcolor{teal}{f^2(u)}& \textcolor{teal}{\dots}  & \textcolor{teal}{f^{m-1}} & \textcolor{teal}{f^m(u)} & \textcolor{teal}{f(w_m)} & \textcolor{teal}{\dots} & \textcolor{teal}{f(w_n)} \\
 \begin{block}{c(ccccc|ccc)}
   \textcolor{teal}{u} &0&0&\dots &0& a_0 & & & \\
-  \textcolor{teal}{f(u)} & 1 & 0&\dots &0 & a_1 & & & \\
-  \textcolor{teal}{f^2(u)} &0& 1 & \ddots& \vdots& a_2 & & * & \\
+  \textcolor{teal}{f(u)} & 1 & \ddots& &\vdots & a_1 & & & \\
+  \textcolor{teal}{f^2(u)} &0& \ddots & \ddots& \vdots& a_2 & & * & \\
   \textcolor{teal}{\vdots} & \vdots& \ddots & \ddots & 0& \vdots & & & \\
   \textcolor{teal}{f^{m-1}(u)} & 0& \dots& 0 & 1 & a_{m-1} & & & \\ \cline{2-9}
   \textcolor{teal}{w_m} & & & & & & & & \\
   \textcolor{teal}{\vdots} & & & 0 & & & & C & \\
   \textcolor{teal}{w_n} & & & & & & & & \\
 \end{block}
-\end{blockarray}
+\end{blockarray}\,.
  \]
 Per definició, el polinomi característic de $f$ serà el determinant de la matriu de canvi de base $M_B(f)$ menys $T\cdot\text{Id}_n$ i l'obtindrem fent el determinant per blocs:
-\[ Q_f(T) = \text{det} (M_B(f) - T \cdot \text{Id}_n) = Q_A(T)\cdot Q_C(T) - Q_*(T)\cdot Q_0(T)\]
+\[ Q_f(T) = \text{det} (M_B(f) - T \cdot \text{Id}_n) = Q_A(T)\cdot Q_C(T) - Q_*(T)\cdot Q_0(T). \]
 
 Com que $Q_0(T) = 0$ perquè no toca la diagonal principal (i per tant no té Ts), sabem que $Q_f(T) = Q_A(T)\cdot Q_C(T) = Q_C(T)\cdot Q_A(T)$. Per tant, ens podem concentrar en determinar $Q_A(T)$ que és el polinomi el qual sabem els seus valors. L'obtindrem desenvolupant per la última columna de la submatriu A, és a dir, $\sum\limits_{i=1}^{m-1}(-1)^{(m-1) + i}a_{im+1}M_{im+1}$:
 
@@ -219,7 +218,7 @@ Com que $Q_0(T) = 0$ perquè no toca la diagonal principal (i per tant no té Ts
 \vdots &\ddots &\ddots &\ddots & 0\\
 \vdots & & \ddots &1 &-T \\ 
 0 & \cdots & \cdots & 0 & 1 \\  
-\end{vmatrix}
+\end{vmatrix} -
 \\
 -a_2 
 \begin{vmatrix} 
@@ -235,48 +234,50 @@ Com que $Q_0(T) = 0$ perquè no toca la diagonal principal (i per tant no té Ts
 -T & & \\ 
  &\ddots & \\
 & &-T \\  
-\end{vmatrix}
+\end{vmatrix}.
 \end{gather*}
-
- 
-
 Calcular els determinants que acompanyen els coeficients $a_0, a_1, ..., a_{m+1}$ no és difícil, ja que al ser majoritàriament nuls, només pren rellevància la diagonal principal (fent-ho per Sarrus per exemple). Així doncs, ens queda:
-$$ Q_A(T) = (-1)^{m-1} \left ( a_0\cdot1 - a_1(-T) + ... + (-1)^{m-1} (a_{m-1}-T) (-T)^{m-1} \right ) = $$
-$$ = (-1)^{m} \left ( -a_0\cdot1 + a_1 T + ... + (-1)^{k+1}a_{k}T^k + ... - a_{m-1} T^{m-1} + T^m \right ) $$
+\begin{gather*}
+    Q_A(T) = (-1)^{m-1} \left ( a_0\cdot1 - a_1(-T) + ... + (-1)^{m-1} (a_{m-1}-T) (-T)^{m-1} \right ) = \\
+    = (-1)^{m} \left ( -a_0\cdot1 + a_1 T + ... + (-1)^{k+1}a_{k}T^k + ... - a_{m-1} T^{m-1} + T^m \right ).
+\end{gather*}
 Per tant, si apliquem f a aquest polinomi característic $Q_A(f)(u)$ ens que la següent expressió:
-$$ Q_A(f)(u) = (-1)^m (f^m(u) - (\;a_0 u + a_1f(u) + ... + a_{m-1}f^{m-1}(u))\;)$$
+\[ Q_A\left(f\right)\left(u\right) = \left(-1\right)^m \left(f^m\left(u\right) - \left(a_0 u + a_1f\left(u\right) + ... + a_{m-1}f^{m-1}\left(u\right)\right)\right). \]
 I com hem definit abans, $f^m(u)$ és una combinació lineal tal que $f^m(u) = a_0 u + a_1f(u) + ... + a_{m-1}f^{m-1}(u)$, i consegüentment $Q_A(f)(u) = (-1)^m(f^m(u) - f^m(u)) = 0$. Aleshores, $Q_f(f) = (Q_C(f) Q_A(f))(u) = 0$; és a dir, el polinomi característic de $f$ aplicat en $f$ és 0 i es demostra el Teorema de Cayley-Hamilton.
 \end{proof}
 
 \section{Primer Teorema de Descomposició}
 
-Sigui $\E$ un $\k$-espai vectorial de dimensió finita, $f \in \text{End}(\E)$. Suposem que un polinomi $P(T) \in \mathbf{K}[T]$ factoritza en $\mathbf{K}[T]$ com a producte de polinomis coprimers:
-$$P(T) = P_1(T) \cdot\cdot\cdot P_n(T), \:\: mcd(P_i, P_j) = 1, \forall i \neq j$$\\
-Aleshores, $\nuc(P(f)) = \nuc(P_1(f))\; \oplus \nuc(P_2(f))\; \oplus \cdots \oplus \nuc(P_n(f))$. És a dir, que el nucli del polinomi podrà ser expressat de forma única com a suma directa dels nuclis dels seus polinomis coprimers.
-\\
+Sigui $\E$ un $\k$-espai vectorial de dimensió finita, $f \in \text{End}(\E)$. Suposem que un polinomi $P(T) \in \k[T]$ factoritza en $\k[T]$ com a producte de polinomis coprimers:
+\[P(T) = P_1(T) \cdot\cdot\cdot P_n(T), \quad \text{mcd}(P_i, P_j) = 1,\quad \forall i \neq j. \]
+Aleshores, $\nuc(P(f)) = \nuc(P_1(f)) \oplus \nuc(P_2(f)) \oplus \cdots \oplus \nuc(P_n(f))$. És a dir, que el nucli del polinomi podrà ser expressat de forma única com a suma directa dels nuclis dels seus polinomis coprimers.
 
 \begin{proof}
 
 Per a demostrar el Teorema, utilitzarem un cas d'inducció sobre $n$ on només caldrà demostrar el cas $n = 2$, i aplicar-lo successivament:
-
-$$\nuc(p(f)) = \nuc(p_1(f)) \oplus \nuc((p_2 ... p_n)(f)) =$$
-$$= \nuc(p_1(f)) \oplus \nuc(p_2(f)) \oplus \nuc((p_3 ... p_n)(f)) = ...$$\\
+\begin{align*}
+    \nuc(p(f)) &= \nuc(p_1(f)) \oplus \nuc((p_2 ... p_n)(f)) \\
+    &= \nuc(p_1(f)) \oplus \nuc(p_2(f)) \oplus \nuc((p_3 ... p_n)(f)) \\
+    &= ...
+\end{align*}
 Si agafem $n=2$ tenim
-$$p(t) = p_1(T) p_2(T)\text{ amb }mcd(p_1(T), p_2(T)) = 1$$
-Com que la hipòtesi és una suma directa, volem veure dues coses: (1) la suma dels dos nuclis és igual al nucli original, i que (2) la intersecció entre els dos nuclis és el zero. 
+\[ p(t) = p_1(T) p_2(T)\text{ amb mcd}(p_1(T), p_2(T)) = 1. \]
+Com que la hipòtesi és una suma directa, volem veure dues coses: \eqref{item:dir_1} la suma dels dos nuclis és igual al nucli original, i que \eqref{item:dir_2} la intersecció entre els dos nuclis és el zero. 
 
 \begin{enumerate}
-    \item $\nuc(p(f)) = \nuc(p_1(f)) + \nuc(p_2(f))$
-    \item $\nuc(p_1(f)) \; \cap \nuc(p_2(f)) = \{0\}$
+    \item \label{item:dir_1}$\nuc(p(f)) = \nuc(p_1(f)) + \nuc(p_2(f))$,
+    \item \label{item:dir_2}$\nuc(p_1(f)) \cap \nuc(p_2(f)) = \{\mathbf{0}\}$.
 \end{enumerate}
 
-Vegem (1), separant la igualtat en dues inclusions:
-Volem veure que $\nuc(p_1(f))+ \nuc(p_2(f) \subseteq \nuc(p(f))$. Per tant, agafarem un vector $x$ del $\nuc(p_1(f))$ i veurem que és del nucli de $p(f)$, aprofitant que $p_2(f)(0) = 0$.
+Vegem \eqref{item:dir_1}, separant la igualtat en dues inclusions:
+
+Volem veure que $\nuc(p_1(f))+ \nuc(p_2(f) \subseteq \nuc(p(f))$. Per tant, agafarem un vector $x$ del $\nuc(p_1(f))$ i veurem que és del nucli de $p(f)$, aprofitant que $p_2(f)(0) = 0$,
  \[
- x \in \nuc(p_1(f)) \Rightarrow p_1(f)(x) = 0 \Rightarrow p_2(f)(p_1(f)(x)) = 0 \Rightarrow x \in \nuc(p(f))
+ x \in \nuc(p_1(f)) \implies p_1(f)(x) = 0 \implies p_2(f)(p_1(f)(x)) = 0 \implies x \in \nuc(p(f)).
  \]
 Ja que $p_2(f)(p_1(f)(x)) = (p_2(f) \circ p_1(f))(x) = (p_1(f)) \circ (p_2(f)) = p(f)$. Anàlogament, $x \in \nuc(p_2(f)) \implies x \in \nuc(p(f))$. Per tant, com que $\nuc(p_1(f)) \subseteq \nuc(p(f))$ i també $\nuc(p_2(f)) \subseteq \nuc(p(f))$ es té que: $\nuc(p_1(f)) + \nuc(p_2(f)) \subset \nuc(p(f))$.
-Ara, volem veure la inclusió contrària: $\nuc(p(f)) \subseteq  \nuc(p_1(f)) + \nuc(p_2(f))$. Per la Identitat de Bézout, es té que mcd$(p, q) = a \cdot p + b \cdot q$, amb $a$, $b \in \mathbf{Z}$.
+
+Ara, volem veure la inclusió contrària: $\nuc(p(f)) \subseteq  \nuc(p_1(f)) + \nuc(p_2(f))$. Per la identitat de Bézout, es té que mcd$(p, q) = a \cdot p + b \cdot q$, amb $a$, $b \in \z$.
 
 Com que $p$ i $q$ són coprimers:
 $$1 = a(T)p_1(T) + b(T)p_2(T) \implies Id = a(f) \circ p_1(f) + b(f) \circ p_2(f)$$
@@ -284,7 +285,7 @@ Per tant, qualsevol $x \in \nuc(p(f))$ s'expressa com a $x = (Id)(x) = (a(f)\cir
 
 Ja que $p_2(f)(x_1) = (p_2(f)\circ a(f)\circ p_1(f)\circ)(x) = (a(f)\circ p(f))(x) = a(f)\circ (p(f)(x)) = 0$. Perquè $x \in \nuc(p(f))$, i per tant, $x_1 \in \nuc(p_2(f))$. Anàlogament, $x_2 \in \nuc(p_1(f))$.
 
-Amb això conclou la demostració de l'apartat (1), i ara queda per demostrar l'apartat (2), que diu que la intersecció entre els nuclis de $p_1(f)$ i $p_2(f)$ és el zero.
+Amb això conclou la demostració de l'apartat \eqref{item:dir_1}, i ara queda per demostrar l'apartat \eqref{item:dir_2}, que diu que la intersecció entre els nuclis de $p_1(f)$ i $p_2(f)$ és el zero.
 
 Sigui $x \in \nuc(p_1(f)) \cap \nuc(p_2(f))$, és a dir, $x \in \nuc(p_1)(f)$ i $x \in \nuc(p_2)(f)$. Aleshores, sigui $u$ un vector del nucli de $(p_2(f))$ i $v$ un vector del nucli de $(p_1(f))$. És a dir, ${u} = a(f)(p_1(f)(x)) = \mathbf{0}$ i ${v} = b(f)(p_2(f)(x)) = \mathbf{0}$. I, per tant, ${x} = {u} + {v} = \mathbf{0} + \mathbf{0} = \mathbf{0}$ és l'únic vector del nucli de la intersecció.
 Queda demostrada, doncs, la suma directa.

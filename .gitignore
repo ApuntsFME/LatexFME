@@ -9,3 +9,4 @@
 *.directory
 *.pdf
 *~
+.Rhistory

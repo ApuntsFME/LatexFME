@@ -355,13 +355,13 @@ otra cosa, debemos añadir la etiqueta ```\label``` a aquello
 que queramos referenciar. Por ejemplo, si queremos
 referenciar el teorema *de Tales*
 ```tex
-\begin{teo}[de Tales]\label{teo:a}
+\begin{teo}[de Tales]\label{teo:tales}
   ...
 \end{teo}
 ```
 Como se puede apreciar, hemos colocado el comando
 ```\label``` que toma un argumento, que en nuestro caso es
-*teo:a*. Es importante que este argumento sea **único**, es
+*teo:tales*. Es importante que este argumento sea **único**, es
 por ello que colocamos el *teo:* delante, para reducir las
 posibles colisiones. Ahora, para referenciar este teorema
 usaremos el commando ```\ref```
