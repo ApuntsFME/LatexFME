@@ -249,8 +249,8 @@ Para declarar una matriz usamos
   a21 & a22
 \end{pmatrix}
 ```
-Como se puede ver, separamos las columnas por **&** y las
-filas por **\\\\**.
+Como se puede ver, separamos las columnas por ```&``` y las
+filas por ```\\```.
 
 Para matrices con corchetes, podemos usar el entorno
 *bmatrix*, que se comporta exactamente igual que
@@ -261,9 +261,9 @@ De nuevo, recordemos que podemos usar el entorno
 *bmatrix* de la misma manera.
 
 Para colocar líneas verticales, crearemos una columna
-más, que rellenaremos con el comando **\vline** y para
+más, que rellenaremos con el comando ```\vline``` y para
 crear líneas horizontales usaremos el comando
-**\hline**. Aquí tenemos un ejemplo de una matriz
+```\hline```. Aquí tenemos un ejemplo de una matriz
 dividida en 4 partes
 ```tex
 \begin{pmatrix}
@@ -273,28 +273,28 @@ dividida en 4 partes
 \end{pmatrix}
 ```
 Es importante notar que no colocamos una nueva fila
-después de **\hline**.
+después de ```\hline```.
 
 
 ### Casos
 Es común encontrarnos con una función definida a trozos o
 una situación en la cual necesitamos agrupar casos, para
-ello, usaremos el entorno **cases**
+ello, usaremos el entorno ```cases```
 ```tex
 \begin{cases}
   caso 1 \\
   caso 2
 \end{cases}
 ```
-Como se puede observar, separamos los casos con **\\\\**.
+Como se puede observar, separamos los casos con ```\\```.
 Existe también un entorno que se comporta igual que este,
-pero con la llave a la derecha, *rcases*.
+pero con la llave a la derecha, ```rcases```.
 
 ### Número de elementos
 Amenudo nos encontramos con situaciones en las que tenemos
 que especificar el número de elementos en una suma, o en
-un producto. Para esto usamos **\overbrace** y
-**\underbrace**, dependiendo si queremos que el número de
+un producto. Para esto usamos ```\overbrace``` y
+```\underbrace```, dependiendo si queremos que el número de
 elementos se muestre arriba o abajo respectivamente. Por
 ejemplo el producto de *f* realizado *p* veces
 ```tex
@@ -305,13 +305,13 @@ ejemplo el producto de *f* realizado *p* veces
 No es raro encontrarse en situaciones en las cuales tenemos
 dos o más variables recorriendo cosas distintas, de modo
 que necesitamos varias condiciones, para ello usamos el
-comando **\substack**. Aquí damos un ejemplo en el cual las
+comando ```\substack```. Aquí damos un ejemplo en el cual las
 condiciones son que *n* es natural y *r* es real
 ```tex
 prod(n,r) = nr \quad
 \substack{\forall n in \n \\ \forall r \in \real}
 ```
-Dentro de **\substack** separamos las líneas por **\\\**.
+Dentro de ```\substack``` separamos las líneas por ```\\```.
 
 ## Títulos demasiado largos
 
@@ -333,7 +333,7 @@ Si el título de de una ```section```:
 En la primera linea cambiamos el título para la página actual y en la segunda el de todas la siguientes. El título especificado para el índice es obligatorio.
 
 ## \input
-**\input** es un comando que sirve para incluir los
+```\input``` es un comando que sirve para incluir los
 contenidos de otro documento en el actual. Por ejemplo
 ```tex
 \input{tema_uno}
@@ -351,25 +351,25 @@ tanto a dentro del documento como a fuera del mismo.
 
 ### Referecias a dentro del mismo documento
 Para referenciar un teorema, una proposición o cualquier
-otra cosa, debemos añadir la etiqueta **\label** a aquello
+otra cosa, debemos añadir la etiqueta ```\label``` a aquello
 que queramos referenciar. Por ejemplo, si queremos
-referenciar el teorema *A*
+referenciar el teorema *de Tales*
 ```tex
-\begin{teo}[A]\label{teo:a}
+\begin{teo}[de Tales]\label{teo:a}
   ...
 \end{teo}
 ```
 Como se puede apreciar, hemos colocado el comando
-**\label** que toma un argumento, que en nuestro caso es
+```\label``` que toma un argumento, que en nuestro caso es
 *teo:a*. Es importante que este argumento sea **único**, es
 por ello que colocamos el *teo:* delante, para reducir las
 posibles colisiones. Ahora, para referenciar este teorema
-usaremos el commando **\ref**
+usaremos el commando ```\ref```
 ```tex
 \ref{teo:a}
 ```
 que toma un argumento. Este argumento es precisamente el
-mismo que hemos puesto en **\label**, por eso es importante
+mismo que hemos puesto en ```\label```, por eso es importante
 que sea único.
 
 ### Referencias a fuera del documento
@@ -377,7 +377,7 @@ Aquí solo cubrimos la referencia a URLs, el resto de casos
 no los cubrimos ya que no son muy comunes.
 
 Para colocar un enlace a una URL, usamos el comando
-**\href**
+```\href```
 ```tex
 \href{https://www.url.com}{texto}
 ```
@@ -398,7 +398,7 @@ Para hacer este grafo, usamos el entorno *tikzpicture*
 \end{tikzpicture}
 ```
 Ahora, declaramos los nodos de nuestro grafo con el comando
-**\node**
+```\node```
 ```tex
 \begin{tikzpicture}
   \node (B) {$B$};
@@ -412,7 +412,7 @@ colocamos, entre llaves aquello que se verá. Es importante
 acabar cada instrucción con punto y coma, ya que tikz tiene
 su propio lenguaje ajeno a LaTeX.
 
-Por último añadimos las flechas, con el comando **edge**
+Por último añadimos las flechas, con el comando ```edge```
 ```tex
 \begin{tikzpicture}
 	\node (B) {$\overline{B}$};
