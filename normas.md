@@ -6,7 +6,7 @@ LaTeX.
 ### Recuerda identar el código y hacer saltos de línea regularmente
 
 ## Atención
-**Estas normas están sujetas al uso de la [plantilla](https://github.com/MiquelOrtega/Mates/blob/master/plantilla.tex) que
+**Estas normas están sujetas al uso del [preámbulo](https://github.com/ApuntsFME/LatexFME/blob/master/preamble_es.tex) que
 hemos creado y bajo ningún concepto se deben tomar como
 unas directrices a seguir fuera de este contexto ni
 se debe asumir que sean "buenas prácticas".**
@@ -17,6 +17,7 @@ se debe asumir que sean "buenas prácticas".**
 * **Proposiciones, teoremas y demás**
 * **Comandos útiles**
 * **Fragmentos comunes**
+* **Títulos demasiado largos**
 * **\input**
 * **Referencias**
 * **tikz**
@@ -311,6 +312,23 @@ prod(n,r) = nr \quad
 \substack{\forall n in \n \\ \forall r \in \real}
 ```
 Dentro de **\substack** separamos las líneas por **\\\**.
+
+## Títulos demasiado largos
+
+Si un título es demasiado largo para el header de la pagina haremos lo siguiente si es un título de una ```chapter```:
+
+```tex
+\chapter[Título medio opcional para el índice]{Título largo}
+\chaptermark{Título corto para el header}
+```
+
+Si el título de de una ```section```:
+
+```tex
+\section[Título obligatorio para el índice]{Título obligatorio largo \sectionmark{Título corto para el header}}
+    \sectionmark{Título corto para el header}
+```
+En la primera linea cambiamos el título para la página actual y en la segunda el de todas la siguientes. El título especificado para el índice es obligatorio.
 
 ## \input
 **\input** es un comando que sirve para incluir los
