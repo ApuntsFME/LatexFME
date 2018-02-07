@@ -3,33 +3,57 @@
 Se asume una noción básica de (como mínimo) la sintaxis de
 LaTeX.
 
-### Recuerda identar el código y hacer saltos de línea regularmente
-
 ## Atención
-**Estas normas están sujetas al uso del [preámbulo](https://github.com/ApuntsFME/LatexFME/blob/master/preamble_es.tex) que
+Estas normas están sujetas al uso del [preámbulo](https://github.com/ApuntsFME/LatexFME/blob/master/preamble_es.tex) que
 hemos creado y bajo ningún concepto se deben tomar como
 unas directrices a seguir fuera de este contexto ni
-se debe asumir que sean "buenas prácticas".**
-
-## Para evitar tiempos de compilación infinitos, utiliza el comando `make`
+se debe asumir que sean "buenas prácticas".
 
 ## Índice
-* **Proposiciones, teoremas y demás**
-* **Comandos útiles**
-* **Fragmentos comunes**
-* **Títulos demasiado largos**
-* **\input**
-* **Referencias**
-* **tikz**
+* **[Normas de estilo](https://github.com/ApuntsFME/LatexFME/blob/master/normas_latex.md#normas-de-estilo)**
+* **[Proposiciones, teoremas y demás](https://github.com/ApuntsFME/LatexFME/blob/master/normas_latex.md#proposiciones-teoremas-y-dem%C3%A1s)**
+* **[Comandos útiles](https://github.com/ApuntsFME/LatexFME/blob/master/normas_latex.md#comandos-%C3%BAtiles)**
+* **[Títulos demasiado largos](https://github.com/ApuntsFME/LatexFME/blob/master/normas_latex.md#t%C3%ADtulos-demasiado-largos)**
+* **[\input](https://github.com/ApuntsFME/LatexFME/blob/master/normas_latex.md#input)**
+* **[Referencias](https://github.com/ApuntsFME/LatexFME/blob/master/normas_latex.md#referencias)**
+* **[Fragmentos comunes](https://github.com/ApuntsFME/LatexFME/blob/master/normas_latex.md#fragmentos-comunes)**
+* **[Paquete tikz](https://github.com/ApuntsFME/LatexFME/blob/master/normas_latex.md#paquete-tikz)**
+
+## Normas de estilo
+
+Se asume que la normas más básicas de estilo son aplicadas,
+aquí nombraremos algunas normas más especificas.
+
+* El codigo deberá ser indentado y se deberán hacer saltos de
+linia regularmente.
+* Se colocarán los nombres de los vértices de un polígono en
+sentido antihorario, a excepción de aquellos casos con una
+razón argumentada.
+* Siempre que sea posible se evitará el comando `\\`, poniendo
+un su lugar dos saltos de linia.
+* Es obligatorio puntuar las ecuaciones.
+* Se prohibe el uso de las mayúsculas excepto cuando las normas
+gramaticales así lo indican.
+* Los espacios vectoriales (como E o F) se escribirán con lo
+comando `\E` (o `\F`, respectivamente), aunque el comando no
+cambie nada.
+* Es obligatorio el uso de `\colon` en lugar de `:`.
+* En las definiciones, la palabra definida deberá estar con
+el comando `\comando_def{palabra_definida}` para que aparezca
+en el glosario.
+* El parámetro de los `enumerates` deberá ser:
+  * `1.` si estamos enumerando varios ejemplos (dentro del entorno).
+  * `(i)` si estamos enumerando enunciados equivalentes.
+  * `i)` en cualquier otro caso.
+* No se subrallará el texto.
 
 ## Proposiciones, teoremas y demás
 
 En nuestro [preámbulo](https://github.com/ApuntsFME/LatexFME/blob/master/preamble_es.tex),
-hemos creado unos entornos para
-recoger los casos de entradas más comunes, aquí se hace un
-listado de todas ellas.
+hemos creado unos entornos para recoger los casos de entradas más comunes, aquí se hace un
+listado de todas ellas. Estos comandos deberán ser usados siempre que sea posible.
 
-Aunque la mayoría de entornos tienen un titulo opcional, se
+Aunque la mayoría de entornos tienen un título opcional, se
 recomienda no abusar de ellos y reservarlos para casos
 especiales.
 
@@ -90,11 +114,10 @@ identificarla.
 ### Ejercicio
 Es importante distinguir entre ejemplos y ejercicios. Los
 ejemplos son casos particulares resueltos, sin embargo, los
-ejercicios están sin resolver. Atención **NO resolver los
-ejercicios y "colarlos" como ejemplos**. La finalidad de
-estos apuntes no es ser una fuente de conocimiento
-universal, es ayudar. Y creemos que los ejercicios sin
-resolver son una buena forma de aprender.
+ejercicios están sin resolver. La finalidad de estos apuntes
+no es ser una fuente de conocimiento universal, es ayudar. Y
+creemos que los ejercicios sin resolver son una buena forma
+de aprender.
 ```tex
 \begin{ej}[tituloOpcional]
   ...
@@ -103,10 +126,11 @@ resolver son una buena forma de aprender.
 
 ### Teorema
 Aunque el título se pase en este entorno como parámetro
-opcional, **es obligatorio nominar los teoremas** (o declararlos como `{teo*}`). Ya que
-los teoremas aparecen en el índice principal. Una observación
-importante es que no es necesario añadir la palabra
-*Teorema*, que se añadirá de forma automática.
+opcional, **es obligatorio nominar los teoremas** (o
+declararlos como `{teo*}`). Ya que los teoremas aparecen
+en el índice principal. Una observación importante es que
+no es necesario añadir la palabra *Teorema*, que se
+añadirá de forma automática.
 ```tex
 \begin{teo}[titulo]
   ...
@@ -116,14 +140,14 @@ importante es que no es necesario añadir la palabra
 ## Comandos útiles
 Aquí detallamos una lista de los commandos que hemos añadido
 al [preámbulo](https://github.com/ApuntsFME/LatexFME/blob/master/preamble_es.tex)
-con el objeto de simplificar la esritura.
-Es importante saber que **esta lista no está cerrada**,
-sientete libre de añadir los commandos que creas convenientes
-(siempre y cuando sean utiles de verdad y no se utilicen tan
-solo en un caso concreto). Además **recuerda hacer el commit
-de la forma correcta** (si no sabes como, mira
-[aquí](https://github.com/ApuntsFME/LatexFME/blob/master/commits.md))
-y **añadir a esta sección el comando**.
+con el objeto de simplificar la esritura. Es importante saber
+que **esta lista no está cerrada**, sientete libre de añadir
+los commandos que creas convenientes, simpre que sean útiles
+(y no casos particulares) y que los demás miembros estén de
+acuerdo. Además **recuerda añadir a esta sección el comando**.
+
+Para compilar usaremos el comando `make`, para evitar tiempos
+de compilación demasiado largos.
 
 ### Conjuntos
 Estos comandos nos permiten tener un acceso más rápido a los
@@ -172,9 +196,89 @@ principales conjuntos.
 | \upint | 0 | Coloca una integral superior |
 | \lowint | 0 | Coloca una integral inferior |
 
+## Títulos demasiado largos
+
+Si un título es demasiado largo para el header de la pagina
+haremos lo siguiente si es un título de una `chapter`:
+
+```tex
+\chapter[Título medio opcional para el índice]{Título largo}
+\chaptermark{Título corto para el header}
+```
+
+Si el título de de una `section`:
+
+```tex
+\section[Título obligatorio para el índice]
+    {Título obligatorio largo
+    \sectionmark{Título corto para el header}}
+    \sectionmark{Título corto para el header}
+```
+En la primera linea cambiamos el título para la página actual
+y en la segunda el de todas la siguientes. El título especificado
+para el índice es obligatorio.
+
+## \input
+Cada tema estará en un fichero `.tex` diferente, para incluir
+todos los ficheros en el mismo PDF, en el `main.tex` usaremos
+el comando `\input`, por ejemplo
+
+```tex
+\input{tema_uno}
+```
+Incluye los contenidos del documento *tema_uno.tex*
+(que se encuentra en la misma carpeta) en el documento
+actual. Este comando es usado para reducir el tamaño de los
+documentos y facilitar así su edición.
+
+## Referencias
+
+En esta sección daremos las guías para hacer referencias
+tanto a dentro del documento como a fuera del mismo.
+
+### Referecias a dentro del mismo documento
+Para referenciar un teorema, una proposición o cualquier
+otra cosa, debemos añadir la etiqueta `\label` a aquello
+que queramos referenciar. Por ejemplo, si queremos
+referenciar el teorema *de Tales*
+
+```tex
+\begin{teo}[de Tales]\label{teo:tales}
+  ...
+\end{teo}
+```
+
+En este caso, el comando `\label` toma como argumento
+*teo:tales*. Es importante que este argumento sea **único**, es
+por ello que colocamos el *teo:* delante, para reducir las
+posibles colisiones. Ahora, para referenciar este teorema
+usaremos el commando `\ref`
+
+```tex
+\ref{teo:tales}
+```
+
+que toma como argumento el mismo que hemos puesto en `\label`,
+por eso es importante que sea único. Podemos usar `\eqref`
+si queremos que el numero referenciado aparezca entre paréntesis.
+
+### Referencias a fuera del documento
+Aquí solo cubrimos la referencia a URLs, el resto de casos
+no los cubrimos ya que no son muy comunes.
+
+Para colocar un enlace a una URL, usamos el comando `\href`
+
+```tex
+\href{https://www.url.com}{texto}
+```
+
+En este caso, la palabra *texto* se podrá clickar y nos
+llevaría a la URL *https://www.url.com*.
+
 ## Fragmentos comunes
 Aquí se detalla una serie de fragmentos que suelen comunes
-en la escritura de los apuntes.
+en la escritura de los apuntes y su uso es recomendado (en
+lugar de comandos alternativos).
 
 ### Declaración de funciones
 Aquí detallamos una función que va de los enteros a los
@@ -198,7 +302,7 @@ Para declarar listas no ordenadas, usamos el entorno
 Si trataís de comenzar un teorema, una proposición o una
 demostración de esta manera, notaréis que desaparece el
 salto de línea, para evitar esto, sencillamente usaremos
-la siguiente instrucción
+la instrucción `\item[]` de la siguiente manera:
 ```tex
 \begin{itemize}
   \item[]
@@ -219,8 +323,9 @@ Para hacer listas ordenadas, usamos el entorno *enumerate*
 ```
 En este ejemplo, estamos enumerando en números romanos, que
 es el recomendado para proposiciones de varias
-declaraciones, aunque se puede usar también *a)* para
-letras o *1)* para números.
+declaraciones, aunque usaremos `(i)` si estamos listando
+elementos que son equivalentes o `1.` si estamos listando
+ejemplos (dentro del entorno correspondiente).
 
 ### Ecuaciones en varias líneas
 A menudo, nos encontramos en una situación en la cual
@@ -282,13 +387,14 @@ una situación en la cual necesitamos agrupar casos, para
 ello, usaremos el entorno ```cases```
 ```tex
 \begin{cases}
-  caso 1 \\
-  caso 2
+  0 & x \in \q \\
+  1 & x \notin \q
 \end{cases}
 ```
-Como se puede observar, separamos los casos con ```\\```.
+Como se puede observar, separamos los casos con `\\` y podemos
+añadir `&` para especificar cuando se aplica ese caso.
 Existe también un entorno que se comporta igual que este,
-pero con la llave a la derecha, ```rcases```.
+pero con la llave a la derecha, `rcases`.
 
 ### Número de elementos
 Amenudo nos encontramos con situaciones en las que tenemos
@@ -311,80 +417,9 @@ condiciones son que *n* es natural y *r* es real
 prod(n,r) = nr \quad
 \substack{\forall n in \n \\ \forall r \in \real}
 ```
-Dentro de ```\substack``` separamos las líneas por ```\\```.
+Dentro de `\substack` separamos las líneas por `\\`.
 
-## Títulos demasiado largos
-
-Si un título es demasiado largo para el header de la pagina haremos lo siguiente si es un título de una ```chapter```:
-
-```tex
-\chapter[Título medio opcional para el índice]{Título largo}
-\chaptermark{Título corto para el header}
-```
-
-Si el título de de una ```section```:
-
-```tex
-\section[Título obligatorio para el índice]
-    {Título obligatorio largo
-    \sectionmark{Título corto para el header}}
-    \sectionmark{Título corto para el header}
-```
-En la primera linea cambiamos el título para la página actual y en la segunda el de todas la siguientes. El título especificado para el índice es obligatorio.
-
-## \input
-```\input``` es un comando que sirve para incluir los
-contenidos de otro documento en el actual. Por ejemplo
-```tex
-\input{tema_uno}
-```
-Incluye los contenidos del documento *tema_uno.tex*
-(que se encuentra en la misma carpeta) en el documento
-actual. Este comando es usado para reducir el tamaño de los
-documentos y facilitar así su edición. Para estos apuntes,
-hemos decidido hacer un documento por tema.
-
-## Referencias
-
-En esta sección daremos las guías para hacer referencias
-tanto a dentro del documento como a fuera del mismo.
-
-### Referecias a dentro del mismo documento
-Para referenciar un teorema, una proposición o cualquier
-otra cosa, debemos añadir la etiqueta ```\label``` a aquello
-que queramos referenciar. Por ejemplo, si queremos
-referenciar el teorema *de Tales*
-```tex
-\begin{teo}[de Tales]\label{teo:tales}
-  ...
-\end{teo}
-```
-Como se puede apreciar, hemos colocado el comando
-```\label``` que toma un argumento, que en nuestro caso es
-*teo:tales*. Es importante que este argumento sea **único**, es
-por ello que colocamos el *teo:* delante, para reducir las
-posibles colisiones. Ahora, para referenciar este teorema
-usaremos el commando ```\ref```
-```tex
-\ref{teo:a}
-```
-que toma un argumento. Este argumento es precisamente el
-mismo que hemos puesto en ```\label```, por eso es importante
-que sea único.
-
-### Referencias a fuera del documento
-Aquí solo cubrimos la referencia a URLs, el resto de casos
-no los cubrimos ya que no son muy comunes.
-
-Para colocar un enlace a una URL, usamos el comando
-```\href```
-```tex
-\href{https://www.url.com}{texto}
-```
-En este caso, la palabra texto se podrá clickar y nos
-llevará a la URL *https://www.url.com*
-
-## tikz
+## Paquete tikz
 El paquete *tikz* es un paquete muy potente usado para la
 generación de gráficos. Aquí solo damos unas leves
 pinceladas de cómo usar este paquete, para hacer un grafo
