@@ -46,6 +46,15 @@ en el glosario.
   * `(i)` si estamos enumerando enunciados equivalentes.
   * `i)` en cualquier otro caso.
 * No se subrallará el texto.
+* Se usará, preferiblemente, `\[ ... \]` en lugar de `\begin{equation*}
+... \end{equation*}`.
+* Para referenciar fórmulas o ecuaciones usaremos el comando `\eqref`.
+Para cualquier otro item lo haremos tal y como aparece originalmente en
+el documento.
+* Los `label` deben comenzar con la abreviatura del entorno usado
+seguida de dos puntos, por ejemplo: `\label{teo:tales}`,
+`\label{prop:pr_prod_ext}`.
+* Citaremos texto con los comandos ` `` ... '' `, en lugar de `" ... "`.
 
 ## Proposiciones, teoremas y demás
 
