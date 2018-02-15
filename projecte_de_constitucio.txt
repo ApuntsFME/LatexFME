@@ -1,0 +1,105 @@
+[Aquest fitxer és només un projecte de Constitució per ApuntsFME. No tindrà cap valor legal fins que sigui passat a Latex i aprovat en Assemblea General]
+
+CONSTITUCIÓ D'APUNTSFME
+
+TÍTOL I: L'ORGANITZACIÓ
+
+Article {}: L'organització
+
+1. ApuntsFME és una organització ...
+
+
+Article {}: Els objectius de l'Organització
+
+1. Els objectius de l'Organització són els esmentats a continuació:
+
+
+TÍTOL II: ELS INTEGRANTS DE L'ORGANITACIÓ
+
+Article {}: Membres de l'Organització
+
+1. Gaudiran de la condició de Membres de l'Organització les persones que hagin realitzat una quantitat raonable de treball en algun projecte i així sigui considerat per l'Assemblea General
+2. Per acord de majoria absoluta de l'Assemblea General es podrà concedir excepcionalment la condició de Membre.
+3. Els Membres de l'Organització han de ser en tot cas estudiants matriculats a la Facultat de Matemàtiques i Estadística de la Universitat Politècnica de Catalunya. Els Membres que deixin de ser-ho perdran automàticament la condició de membres.
+
+
+Article {}: Drets dels Membres
+
+1. Tots els Membres de l'Organització gaudeixen exactament dels mateixos drets que s'esmentin en aquesta Constitució excepte si s'especifica el contrari.
+2. Es considerarà inadmissible qualsevol discriminació contra Membres de l'Organització per qualsevol motiu diferent del treball realitzat.
+3. La pertinença a l'organització és voluntària. Qualsevol Membre pot abandonar l'Organització per decisió pròpia, renunciant amb això a tots els seus drets.
+4. Cap Membre podrà ser expulsat ni els seus drets reduïts per cap mitjà.
+5. Els Membres tenen dret a ser escoltats durant la presa de decisions.
+6. Els Membres tenen dret a vot i vet en l'Assemblea General
+
+
+Article {}: Deures dels Membres
+
+1. 
+
+
+Article {}: Associats de l'Organització
+
+1. Per acord de majoria absoluta de l'Assemblea General es podrà concedir excepcionalment la condició d'Associat a qualsevol persona, àdhuc si no son estudiants de la Facultat de Matemàtiques i Estadística.
+2. Els drets de l'Associat en particular seran determinats abans de la seva admissió com a tal i es votaran conjuntament a l'acord d'admissió. Qualsevol modificació d'aquests drets s'haurà de decidir de la mateixa manera.
+3. Els Associats en cap cas tindran dret de dret de vot ni de veto a l'Assamblea General, però se'ls en podrà concedir per projectes o votacions concretes en el moment de la seua admissió o en modificacions posteriors.
+4. Els Associats podran ser desvinculats de l'Organització amb acord per majoria absoluta de l'Assemblea General.
+
+
+TÍTOL III: L'ASSEMBLEA GENERAL
+
+Article {}: L'Assemblea General
+
+1. L'Assemblea General és l'òrgan suprem de presa de decisions de l'Organització.
+2. Formen part de l'Assemblea General tots els Membres de l'Organització i ningú més.
+3. Els Associats tindran dret d'assistència i de veu a l'Assemblea, però mai de vot ni veto.
+4. Les normes aprovades a l'Assemblea General són jeràrquicament superiors a qualsevol altra excepte a aquesta Constitució. Qualsevol norma de rang inferior s'ha de conformar a les seves normes jeràrquicament superiors. Nogensmenys, l'Assemblea General podrà autoritzar excepcions a les normes aprovades. En cas de dubte sobre aquesta conformitat, la interpretació de les normes correspon a l'Assemblea General.
+
+
+Article {}: Convocatòria de l'Assemblea General
+
+1. Una tercera part dels Membres de l'Organitació podrà convocar una sessió de l'Assemblea General.
+2. La convocatòria ha de ser comunicada per mitjans adeqüats a tots els Membres.
+3. La sessió només es considerarà constituïda si hi assisteix un quòrum de la meitat dels Membres i cap dels Membres que no estiguin presents ha manifestat la seva voluntat d'assistir-hi en un temps raonable.
+4. Si en algun moment durant el transcurs de la sessió deixa d'haver-hi quòrum o ho decideix se suspendrà la sessió.
+
+
+Article {}: Mecanismes de votació
+
+1. Totes les decisions s'hauran d'intentar prendre per consens. Es considerarà que hi ha un consens si ningú s'oposa activament a la decisió, sense comptar les possibles abstencions.
+2. En cas que, després d'escoltar totes les opinions i arguments, es consideri impossible arribar a un consens, la meitat dels membres presents podrà demanar una votació.
+3. Si no s'ha especificat el contrari, les votacions es faran per majoria simple, a saber, si hi ha estrictament més vots afirmatius que negatius entre els membres presents es donarà la decisió per aprovada.
+4. Si s'especifica que una decisió s'ha de prendre per majoria absoluta, caldrà el vot afirmatiu de la majoria dels Membres, inclosos els qui no estiguin presents a la sessió.
+5. Si hi ha més de dues opcions es permetran votacions múltiples eliminatòries. En cada ronda l'opció o opcions amb menys vots seran descartades. En qualsevol cas l'opció majoritària haurà de ser aprovada després per majora simple o, si s'escau, absoluta.
+6. En cas de veto o d'empat en la votació no s'aprovarà cap norma i se seguirà amb la norma o costum anteriors.
+
+
+Article {}: Dret a veto
+1. Qualsevol membre de l'Assemblea General té dret a vetar-ne raonadament qualsevol decisió.
+2. El dret a veto s'ha d'utilitzar de manera raonable i responsable. Per vetllar pel compliment d'aquest article, un altre membre, no necessàriament d'acord amb el veto, l'ha de considerar raonable.
+3. Sempre es consideraran raonables els vetos:
+	a) A una modificació de la Constitució.
+	b) Si no s'han respectat els drets especificats als articles {Drets dels Membres} i {Associats de l'Organització}.3
+	c) Si els fa un Membre que no ha assistit a l'Assemblea i no ha renunciat explícitament a assistir-hi.
+4. Els vetos seran considerats nuls i sense cap valor en els següents casos:
+	a) Si no s'han justificat.
+	b) Si es fan a una decisió que encara no s'ha pres.
+
+
+TÍTOL IV: ELS PROJECTES
+
+
+TÍTOL ??: LA REFORMA CONSTITUCIONAL
+
+
+DISPOSICIONS ADDICIONALS
+
+
+
+DISPOSICIONS FINALS
+
+Disposició final primera:
+Les persones presents a la sessió de l'Assemblea General on s'aprovi aquesta Constitució adquiriran automàticament la condició de Membres de l'Organització
+
+Disposició final segona:
+Aquesta Constitució ha de ser aprovada per unanimitat a l'Assemblea General i entrarà en vigor inmediatament després de la seva aprovació.
