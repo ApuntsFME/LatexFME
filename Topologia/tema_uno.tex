@@ -36,5 +36,99 @@
 	\begin{enumerate}[i)]
 		\item $d(a,b) \geq 0 \; \forall a,b \in A^n$ y que $d(a,b) = 0 \iff a = b$, lo cual es trivial por la definición de $d$.
 		\item $d(a,b) = d(b,a) \; \forall a,b \in A^n$. Trivial por la definición.
+		\item $d(a, b) \leq d(a,c) + d(c, b)$. Sea $i \in R = \setb{j \vert a_j \neq b_j}$, entonces, se cumple al menos una de las dos siguientes afirmaciones
+			\[
+				\begin{cases}
+					i \in P = \setb{j \vert a_j \neq c_j} \\
+					i \in Q = \setb{j \vert c_j \neq b_j}
+				\end{cases}
+			\]
+			Por lo tanto, $R \subseteq P \cup Q \implies d(a,b) = \abs{R} \leq \abs{P \cup Q} \leq \abs{P} + \abs{Q} = d(a,c) + d(a,b)$.
+	\end{enumerate}
+\end{ej}
+
+\begin{ej}
+	Tenemos que comprobar que
+	\begin{enumerate}[i)]
+		\item $d(a,b) \geq 0 \;  \forall a,b \in \mathcal{S}(A)$, y que $d(a,b) = 0 \iff a = b$, lo cual es trivial por la definición.
+		\item $d(a,b) = d(b,a) \; \forall a,b \in \mathcal{S}(A)$, tambi\'en trivial por la definición.
+		\item $d(a,b) \leq d(a,c) + d(c,b)$. Podemos suponer sin p\'erdida de generalidad que $d(a,c) \geq d(b,c)$. Sea $s$ tal que $e^{-s} = d(a,c)$ y sea
+			$S$ tal que $e^{-S} = d(b,c)$, entonces, si $S = s$, entonces, $d(b, c) = d(a,c) \implies d(a, b) \leq d(a,c)$. Si $S > s$, entonces, 
+			$d(a, b) \leq d(a,c)$.
+	\end{enumerate}
+\end{ej}
+
+\begin{ej}
+	\begin{enumerate}[(a)]
+		\item Sí que define una m\'etrica, ya que
+			\begin{enumerate}[i)]
+				\item $d(x,y) \geq 0$ y $d(x,y) = 0 \iff x = y$ son triviales.
+				\item $d(x,y) = d(y,x)$ es obvio.
+				\item $d(x,y) = \abs{e^x - e^y} = \abs{e^x - e^z + e^z - e^y} \leq \abs{e^x - e^z} + \abs{e^z - e^y} = d(x,z) + d(y,z)$
+			\end{enumerate}
+		\item No es una m\'etrica. Los puntos $x = \frac{\pi}{2}$ y $y = \frac{3\pi}{2}$ son distintos, pero $d(x, y) = 0$.
+		\item Sí que es una m\'etrica:
+			\begin{enumerate}[i)]
+				\item $d(x, y) \geq 0$ es trivial y $d(x,y) = 0 \iff \cos(x) = \cos(y) \iff x = y$.
+				\item $d(x, y) = d(y,x)$ es obvio.
+				\item $d(x, y) = \abs{\cos(x) - \cos(y)} = \abs{\cos(x) - \cos(z) + \cos(z) - \cos(y)} \leq \abs{\cos(x) - \cos(z)}
+					+ \abs{\cos(z) - \cos(y)} = d(x,z) + d(z,y)$
+			\end{enumerate}
+		\item Sí define una m\'etrica:
+			\begin{enumerate}[i)]
+				\item $d(x, y) \geq 0$ es trivial y $d(x, y) = 0 \iff \arctan(x) = \arctan(y) \iff x = y$.
+				\item $d(x, y) = d(y, x)$ es obvio.
+				\item $d(x, y) = \abs{\arctan(x) - \arctan(y)} = \abs{\arctan(x) - \arctan(z) + \arctan(z) - \arctan(y)} \leq
+					\abs{\arctan(x) - \arctan(z)} + \abs{\arctan(z) - \arctan(y)} = d(x, z) + d(y,z)$
+			\end{enumerate}
+	\end{enumerate}
+
+	En general, basta con que $f$ sea inyectiva para que $d_f(x,y) = \abs{f(x) - f(y)}$ sea una distancia. Vemos que si $f$ es inyectiva
+	\begin{enumerate}[i)]
+		\item $d(x,y) \geq 0$ por el valor absoluto. $d(x, y) = 0 \iff f(x) - f(y) = 0 \iff f(x) = f(y) \substack{f \text{ inyectiva}}{\iff} x = y$.
+		\item $d(x,y) = \abs{f(x) - f(y)} = \abs{f(y) - f(x)} = d(y,x)$.
+		\item $d(x,y) = \abs{f(x) - f(y)} = \abs{f(x) - f(z) + f(z) - f(y)} \leq \abs{f(x) - f(z)} + \abs{f(z) - f(y)} = d(x, z) + d(z, y)$.
+	\end{enumerate}
+\end{ej}
+
+\begin{ej}
+	\begin{enumerate}[(a)]
+		\item Sí que es una m\'etrica, de hecho es la m\'etrica habitual en $\real^n$.
+			\begin{center}
+				\input{fig_code/bolas_6a.pgf}
+			\end{center}
+		\item Sí que es una distancia
+			\begin{center}
+				\input{fig_code/bolas_6b.pgf}
+			\end{center}
+		\item Sí que es una m\'etrica
+			\begin{center}
+				\input{fig_code/bolas_6c.pgf}
+			\end{center}
+		\item No es una m\'etrica, por ejemplo, $d\left( (1,0), (1,1) \right) = 0$, pero $(1,0) \neq (1,1)$.
+		\item Sí que es una m\'etrica
+			\begin{center}
+				\input{fig_code/bolas_6e.pgf}
+			\end{center}
+		\item No es una m\'etrica, por ejemplo, $d\left( (1,0), (1,1) \right) = 0$, pero $(1,0) \neq (1,1)$.
+		\item En general no  es una m\'etrica, si tomamos la distancia euclidiana, $d_{\text{eq}} \left( (1, 0) , (0.5, 0) \right) = 0.5 \implies
+			d\left( (1,0), (0.5, 0) \right) = \lfloor0.5 \rfloor = 0$.
+		\item En general no es una m\'etrica, por ejemplo si $A$ tiene un vep $v$ de vap $\lambda < 0$, entonces $d(v, 0) = \sqrt{(v - 0) A (v-0)^t}$ no existe,
+			ya que el contenido de dentro de la raiz es negativo.
+		\item Vemos que cumple que
+			\begin{enumerate}[i)]
+				\item $d(x, y) \geq 0$, sí, ya que $A$ es definida positiva y por lo tanto, $(x-y)A(x-y)^t \geq 0 \implies \sqrt{(x-y)A(x-y)^t} \geq 0$.
+				\item $d(x, y) = 0 \iff \sqrt{(x-y)A(x-y)^t} = 0 \iff (x-y)A(x-y)^t = 0 \substack{A \text{ def. pos.}} x = y$.
+				\item $d(x, y) = \sqrt{(x-y)A(x-y)^t} = \sqrt{(-1)(y-x)A(-1)(y-x)^t} = \sqrt{(y-x)A(y-x)^t} = d(y, x)$
+				\item Es fácil comprobar la desigualdad triangular.
+			\end{enumerate}
+			Ponemos un ejemplo, tomando
+			\[
+				A =
+				\begin{pmatrix}
+					1 & 2 \\
+					2 & 3
+				\end{pmatrix}<++>
+			\]<++>
 	\end{enumerate}<++>
 \end{ej}
