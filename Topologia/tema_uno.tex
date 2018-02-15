@@ -1,0 +1,40 @@
+\chapter{Espacios m\'etricos y applicaciones continuas}
+\section{Distancias}
+
+\begin{ej}
+	Hay que comprobar que
+	\begin{enumerate}[i)]
+		\item $ d(x,y) \geq 0 \; \forall x,y \in X $ y que $ d(x,y) = 0 \iff x = y $, lo cual es trivial por la definición de $ d $.
+		\item $ d(x,y) = d(y,x) \; \forall x, y \in X $, que de nuevo, esinmediato por la definición.
+		\item $ d(x,y) \leq d(x,z) + d(z,y) \; \forall x, y, z \in X $, suponemos que $ x, y, z $ son distintos dos a dos. Entonces,
+			$ d(x,y) = 1 \leq d(x, z) + d(z, y) = 1 + 1 = 2 $.
+	\end{enumerate}
+\end{ej}
+
+\begin{ej}
+	De nuevo, hemos de comprobar que
+	\begin{enumerate}[i)]
+		\item $d_{\text{cent}}(x, y) \geq 0 \; \forall x, y \in X$. Esto es fácil de ver, ya que $d(c, x), d(c,y) \geq 0$, por lo tanto
+			$d_{\text{cent}}(x,y) = d(c,x) + d(c,y) \geq 0$.
+		\item $d_{\text{cent}}(x, y) = 0 \iff x = y$. Si $x = y \implies d_{\text{cent}}(x,y) = 0$ por definición. Y si $d_{\text{cent}}(x,y) = 0$,
+			hay dos posiblidades, o $x = y$ (y ya hemos acabado) o $d(c, x) = d(c,y) = 0$. Pero si ocurre lo segundo, entonces $x = c = y$.
+		\item $d_{\text{cent}}(x, y) = d_{\text{cent}}(y, x) \; \forall x, y \in X$. Esto es obvio ya que la suma es conmutativa y $d$ tambi\'en.
+		\item $d_{\text{cent}}(x,y) \leq d_{\text{cent}}(x, z) + d_{\text{cent}}(z, y)$. Vamos a ver que se cumple:
+			\[
+				d_{\text{cent}}(x, y) = d(c,x) + d(c,y) \leq d(c,x) + d(c,z) + d(c,z) + d(c,y) =
+				d_{\text{cent}}(x, z) + d_{\text{cent}}(z,y)
+			\]
+	\end{enumerate}
+	Ahora, dibujaremos las bolas.
+	\begin{center}
+		\input{fig_code/bolas_2.pgf}
+	\end{center}
+\end{ej}
+
+\begin{ej}
+	Tenemos que comprobar que
+	\begin{enumerate}[i)]
+		\item $d(a,b) \geq 0 \; \forall a,b \in A^n$ y que $d(a,b) = 0 \iff a = b$, lo cual es trivial por la definición de $d$.
+		\item $d(a,b) = d(b,a) \; \forall a,b \in A^n$. Trivial por la definición.
+	\end{enumerate}<++>
+\end{ej}
