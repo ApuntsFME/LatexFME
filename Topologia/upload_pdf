@@ -2,7 +2,7 @@
 
 NAME="main"
 DEST="/pdfs/segundo/topología_problemas.pdf"
-MSG="multi"
+MSG="problemas topo"
 
 source ../upload_file.sh
 
