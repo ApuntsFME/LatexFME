@@ -25,7 +25,7 @@
 				d_{\text{cent}}(x, z) + d_{\text{cent}}(z,y)
 			\]
 	\end{enumerate}
-	Ahora, dibujaremos las bolas.
+	Ahora, dibujaremos las bolas. En azul, está $B\left( (0,0), 1 \right)$ y en rojo $B\left( (1,1), 2 \right)$:
 	\begin{center}
 		\input{fig_code/bolas_2.pgf}
 	\end{center}
@@ -85,7 +85,7 @@
 
 	En general, basta con que $f$ sea inyectiva para que $d_f(x,y) = \abs{f(x) - f(y)}$ sea una distancia. Vemos que si $f$ es inyectiva
 	\begin{enumerate}[i)]
-		\item $d(x,y) \geq 0$ por el valor absoluto. $d(x, y) = 0 \iff f(x) - f(y) = 0 \iff f(x) = f(y) \substack{f \text{ inyectiva}}{\iff} x = y$.
+		\item $d(x,y) \geq 0$ por el valor absoluto. $d(x, y) = 0 \iff f(x) - f(y) = 0 \iff f(x) = f(y) \stackrel{f \text{ inyectiva}}{\iff} x = y$.
 		\item $d(x,y) = \abs{f(x) - f(y)} = \abs{f(y) - f(x)} = d(y,x)$.
 		\item $d(x,y) = \abs{f(x) - f(y)} = \abs{f(x) - f(z) + f(z) - f(y)} \leq \abs{f(x) - f(z)} + \abs{f(z) - f(y)} = d(x, z) + d(z, y)$.
 	\end{enumerate}
@@ -118,17 +118,102 @@
 		\item Vemos que cumple que
 			\begin{enumerate}[i)]
 				\item $d(x, y) \geq 0$, sí, ya que $A$ es definida positiva y por lo tanto, $(x-y)A(x-y)^t \geq 0 \implies \sqrt{(x-y)A(x-y)^t} \geq 0$.
-				\item $d(x, y) = 0 \iff \sqrt{(x-y)A(x-y)^t} = 0 \iff (x-y)A(x-y)^t = 0 \substack{A \text{ def. pos.}} x = y$.
+				\item $d(x, y) = 0 \iff \sqrt{(x-y)A(x-y)^t} = 0 \iff (x-y)A(x-y)^t = 0 \stackrel{A \text{ def. pos.}}{\iff} x = y$.
 				\item $d(x, y) = \sqrt{(x-y)A(x-y)^t} = \sqrt{(-1)(y-x)A(-1)(y-x)^t} = \sqrt{(y-x)A(y-x)^t} = d(y, x)$
-				\item Es fácil comprobar la desigualdad triangular.
+				\item Se tiene que
+					\begin{gather*}
+						d^2(x,y) = (x-y)A(x-y)^t = (x-z+z-y)A(x-z+z-y)^t = \\
+						= (x-z)A(x-z)^t + (x-z)A(z-y)^t + (z-y)A(x-z)^t + (z-y)A(z-y)^t \leq \\
+						\leq (x-z)A(x-z)^t + 2 \abs{(x-z)A(z-y)^t} + (z-y)A(z-y)^t \leq \\ \leq (x-z)A(x-z)^t + 2 \sqrt{(x-z)A(x-z)^t(z-y)A(z-y)^t} + 
+						(z-y)A(z-y)^t = \\ = \left( (x-z)A(x-z)^t + (z-y)A(z-y)^t \right)^2 = \left( d(x,z) + d(z,y) \right)^2
+					\end{gather*}
+					Por lo tanto, $d(x,y) \leq d(x,z) + d(z,y)$.
 			\end{enumerate}
 			Ponemos un ejemplo, tomando
 			\[
 				A =
 				\begin{pmatrix}
 					1 & 2 \\
-					2 & 3
-				\end{pmatrix}<++>
-			\]<++>
-	\end{enumerate}<++>
+					2 & 5
+				\end{pmatrix}
+			\]
+			\begin{center}
+				\input{fig_code/bolas_6i.pgf}
+			\end{center}
+	\end{enumerate}
+\end{ej}
+
+\begin{ej}
+	\begin{enumerate}[(a)]
+		\item comprobaremos las propiedades para $\bar{d}$:
+			\begin{enumerate}[i)]
+				\item $\bar{d}(x,y) \geq 0$ trivial por la definición.
+				\item $\bar{d}(x,y) = 0 \iff \bar{d}(x,y) = d(x,y) = 0 \iff x = y$.
+				\item $\bar{d}(x,y) = \bar{d}(y,x)$ trivial por la definición.
+				\item Si $d(x,y) < 1$ entonces $\bar{d}(x,y) = d(x,y) \leq d(x,z) + d(z,y) \leq \bar{d}(x,z) + \bar{d}(z,y)$. Si $d(x,y) \geq 1$,
+					entonces $\bar{d}(x,y) = 1$, y $\bar{d}(x,z) + \bar{d}(z,y)$ es mayor o igual que 1, ya que, si $d(x,z) \geq 1$ o
+					$d(z,y) \geq 1$ ya se cumple la desigualdad. En otro caso, se tiene que $\bar{d}(x,y) = 1 \leq d(x,y) \leq d(x,z) + d(z,y) =
+					\bar{d}(x,z) + \bar{d}(z,y)$.
+			\end{enumerate}
+		\item Comprobamos las propiedades
+			\begin{enumerate}[i)]
+				\item $\bar{d}(x,y) \geq 0$ división de dos números positivos.
+				\item $\bar{d}(x,y) = 0 \iff d(x,y) = 0 \iff x = y$.
+				\item $\bar{d}(x,y) = \bar{d}(y,x)$ trivial por la definición.
+				\item 
+					\begin{gather*}
+						\bar{d}(x,y) = \frac{d(x,y)}{1 + d(x,y)} \leq \frac{d(x,z)}{1 + d(x,z)} + \frac{d(z,y)}{1 + d(z,y)} =
+						\bar{d}(x,z) + \bar{d}(z,y) \iff \\ \iff
+						\frac{d(x,y)}{1+d(x,y)} \leq \frac{d(x,z) + d(z,y) + 2d(x,z)d(z,y)}{1 + d(x,z) + d(z,y) + d(x,z)d(z,y)} \iff \\ \iff
+						d(x,y) + \cancel{d(x,y)d(x,z)} + \cancel{d(x,y)d(z,y)} + \cancel{d(x,y)d(x,z)d(z,y)} \leq \\ \leq
+						d(x,z) + d(z,y) + 2d(x,z)d(z,y) + \cancel{d(x,y)d(x,z)} + \\ +\cancel{d(x,y)d(z,y)} + \cancel{2}d(x,y)d(x,z)d(z,y) \iff \\
+						\iff d(x,y) \leq d(x,z) + d(z,y) + 2d(x,z)d(z,y) + d(x,y)d(x,z)d(z,y)
+					\end{gather*}
+					Lo cual es cierto ya que $d$ es una distancia.
+			\end{enumerate}
+		\item De nuevo, comprobamos
+			\begin{enumerate}[i)]
+				\item $\bar{d}(x,y) \geq 0 \iff d(x,y) \geq \frac{0}{\alpha}$ OK.
+				\item $\bar{d}(x,y) = 0 \iff d(x,y) = 0 \iff x = y$.
+				\item $\bar{d}(x,y) = \bar{d}(y,x)$ trivial.
+				\item $\bar{d}(x,y) = \alpha d(x,y) \leq \alpha \left( d(x,z) + d(z,y) \right) = \alpha d(x,z) + \alpha d(z,y) = \bar{d}(x,z) + \bar{d}(z,y)$.
+			\end{enumerate}
+		\item Comprobamos
+			\begin{enumerate}[i)]
+				\item $\bar{d}(x,y) \geq 0$ inmediato.
+				\item $\bar{d}(x,y) = 0 \iff d(x,y) = 0 \iff x = y$.
+				\item $\bar{d}(x,y) = \bar{d}(y,x)$ trivial.
+				\item $\bar{d}(x,y) = \left( d(x,y) \right)^c \leq \left( d(x,z) + d(z,y) \right)^c \leq d(x,z)^c + d(z,y)^c$, ya que la función $f(x) = x^c$ es
+					cóncava.
+			\end{enumerate}
+	\end{enumerate}
+\end{ej}
+
+\begin{ej}
+	\begin{enumerate}[(a)]
+		\item \label{item:conc_a} Como $f$ es cóncava, cumple la desigualdad $\alpha f(z) + (1-\alpha)f(t) \leq f\left( \alpha z + (1-\alpha)t \right)$, tomamos ahora
+			$z = 0$ y $t=x+y$, entonces, substituyendo para unos valores concretos de $\alpha$:
+			\begin{gather*}
+				\begin{rcases}
+					\alpha = \frac{x}{x+y} \implies \frac{x}{x+y}f(0) + \frac{y}{x+y}f(x+y) \leq f\left( \frac{x}{x+y} 0 + \frac{y}{x+y}(x+y)\right) =f(y)\\
+					\alpha = \frac{y}{x+y} \implies \frac{y}{x+y}f(0) + \frac{x}{x+y}f(x+y) \leq f\left( \frac{y}{x+y} 0 + \frac{x}{x+y}(x+y)\right) =f(x)
+				\end{rcases}
+				\implies\\ \implies
+				f(0) + f(x+y) \leq f(x) + f(y) \stackrel{f(0) \geq 0}{\implies} f(x+y) \leq f(x) + f(y)
+			\end{gather*}
+		\item Comporbamos las propiedades
+			\begin{enumerate}[i)]
+				\item $f$ creciente $\implies f(x) \geq f(0) = 0 \implies (f \circ d)(x,y) \geq 0$.
+				\item $(f \circ d)(x,y) = 0 \iff d(x,y) = 0 \iff x = y$.
+				\item $(f \circ d)(x,y) = f\left( d(x,y) \right) = f\left( d(y,x) \right) = (f \circ d)(y,x)$.
+				\item $(f \circ d)(x,y) = f\left( d(x,y) \right) \leq f\left( d(x,z) + d(z,y) \right) \stackrel{\ref{item:conc_a}}{\leq}f\left( d(x,z) \right) +
+					f\left( d(z,y) \right) = (f \circ d)(x,z) + (f \circ d)(z,y)$.
+			\end{enumerate}
+	\end{enumerate}
+\end{ej}
+
+\begin{ej}
+	Veremos que $(a) \implies (b)$. Sea $U \subset X$ un abierto de $(X, d_2)$, entonces $\Id^{-1}(U) = U$, que es un abierto en $(X,d_1)$ y análogamente con $\Id^{-1}$.
+	
+	Veremos ahora que $(b) \implies (c)$
 \end{ej}
