@@ -5,7 +5,7 @@
 \usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
 \usepackage{mdframed,cleveref,cancel,stackengine,pgf,pgfplots,mathrsfs,thmtools}
 \usepackage{xfrac,stmaryrd,commath,needspace,multirow}
-\usepackage[spanish]{babel}
+%\usepackage[spanish]{babel}
 
 \newmdenv[leftline=false,topline=false]{topright}
 \let\proof\relax
@@ -29,7 +29,7 @@
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\A}{\mathbb{A}}
 \newcommand{\R}{\mathcal{R}}
-\newcommand{\C}{\mathcal{C}}
+\newcommand{\C}{\mathscr{C}}
 \newcommand{\Pa}{\mathcal{P}}
 \newcommand{\Es}{\mathcal{E}}
 \newcommand{\V}{\mathcal{V}}
@@ -91,6 +91,16 @@
 {\newline}% Space after thm head: \newline = linebreak
 {#1 #2 \normalfont {\it #3}}%         Thm head spec
 
+\newtheoremstyle{demo}% name
+{}%         Space above, empty = `usual value'
+{}%         Space below
+{}% Body font
+{}%         Indent amount (empty = no indent, \parindent = para indent)
+{\it}% Thm head font
+{}%        Punctuation after thm head
+{\newline}% Space after thm head: \newline = linebreak
+{#1. #2 \normalfont {\it #3}}%         Thm head spec
+
 \newtheoremstyle{breakthm}% name
 {}%         Space above, empty = `usual value'
 {}%         Space below
@@ -100,6 +110,7 @@
 {}%        Punctuation after thm head
 {\newline}% Space after thm head: \newline = linebreak
 {#1 \normalfont #3 (#2)\addcontentsline{toc}{subsection}{#1 #3}}%         Thm head spec
+
 \newtheoremstyle{normal}% name
 {}%         Space above, empty = `usual value'
 {}%         Space below
@@ -119,7 +130,6 @@
 
 \declaretheorem[style=break,name=Proposición,sibling=lema]{prop}
 \declaretheorem[style=break,name=Proposición,numbered=no]{prop*}
-\declaretheorem[style=break,name=Demostración,qed=$\square$,numbered=no]{proof}
 \declaretheorem[style=break,name=Definición,sibling=lema]{defi}
 \declaretheorem[style=break,name=Definición,numbered=no]{defi*}
 \declaretheorem[style=break,name=Corolario,sibling=lema]{col}
@@ -128,6 +138,8 @@
 \declaretheorem[style=break,name=Ejercicio,numbered=no]{ej*}
 \declaretheorem[style=break,name=Ejemplo,sibling=lema]{example}
 \declaretheorem[style=break,name=Ejemplo,numbered=no]{example*}
+
+\declaretheorem[style=demo,name=Demostración,qed=$\square$,numbered=no]{proof}
 
 \let\thm\relax
 \declaretheorem[style=breakthm,name=Teorema,sibling=lema]{teo}

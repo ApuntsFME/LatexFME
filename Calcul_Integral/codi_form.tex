@@ -38,7 +38,7 @@
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\A}{\mathbb{A}}
 \newcommand{\R}{\mathcal{R}}
-\newcommand{\C}{\mathcal{C}}
+\newcommand{\C}{\mathscr{C}}
 \newcommand{\Pa}{\mathcal{P}}
 \newcommand{\Es}{\mathcal{E}}
 \newcommand{\V}{\mathcal{V}}
@@ -160,7 +160,7 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..
 \ci Si un conjunt té un punt interior, no és de mesura nul·la. \\
 \u{Quadrat}: volum: $c^n$, diàmetre: $c\sqrt{n}$ (a $\real^n$, on $c$ costat). \\
 \ci Sigui $z \subset \real^n$ mesura nul·la. $\forall \varepsilon, \exists$ família numerable de quadrats compactes $Q_k \tq z\in\bigcup_k Q_k, \sum\vol(Q_k) < \varepsilon$. \\
-\ci Sigui $f\colon U\to \real$ classe $\mathcal{C}^1$ o lipschitziana, $z \subset U$ mesura nul·la, llavors $f(z) \subset \real^n$ té mesura nul·la.
+\ci Sigui $f\colon U\to \real$ classe $\C^1$ o lipschitziana, $z \subset U$ mesura nul·la, llavors $f(z) \subset \real^n$ té mesura nul·la.
 
 \section{Teorema de Lebesgue}
 
@@ -209,7 +209,7 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..
             és regió elemental i $\phi \leq \psi \colon D \to \real$ contínues.
 \section{Canvi de variables}
 
-\ci Sigui $V\subset\real^n$ obert, $\varphi\colon V\to\real^n$ injectiva, classe $\mathcal{C}^1$ amb $\det \dif \varphi( y ) \neq 0, \forall y \in V$. Sigui $U = \varphi( V ) (\varphi\colon V\to U$ difeo. classe $\mathcal{C}^1)$. Si $f\colon U\to \real$ int., $\int_U f = \int_V( f \circ \varphi )\abs{\det \dif \varphi}$.
+\ci Sigui $V\subset\real^n$ obert, $\varphi\colon V\to\real^n$ injectiva, classe $\C^1$ amb $\det \dif \varphi( y ) \neq 0, \forall y \in V$. Sigui $U = \varphi( V ) (\varphi\colon V\to U$ difeo. classe $\C^1)$. Si $f\colon U\to \real$ int., $\int_U f = \int_V( f \circ \varphi )\abs{\det \dif \varphi}$.
 
 \subsection{Alguns canvis de variables}
 \u{Polars a $\real^2$}: $\int_U f( x,y ) \dif x\dif y = \int_V f( r\cos\varphi, r\sin\varphi )r \dif r\dif \varphi$. \\
@@ -233,7 +233,7 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..
 \u{Additivitat camí}: $a<c<b \implies L( \gamma ) = L( \gamma_{|[ a,c ]} ) + L( \gamma_{|[ c, b ]} )$. \\
 \ci Sigui $\gamma\colon [ a,b ]\to\real, l(a) = 0$ i $l(t) = L( \gamma_{|[ a,t ]} ), a < t \leq b,\, l :[ a,b ]\to\real$ \'es creixent i continua. \\
 \ci Si $\vec{f}\colon E\to\real^n$ int., $\|\vec{f}\|$ també (norma euclidiana). \\
-\ci $\gamma \colon I\to \real^n$ classe $\mathcal{C}^1 \implies$ rectificable i $L(\gamma) = \int_I \|\gamma'\|$.
+\ci $\gamma \colon I\to \real^n$ classe $\C^1 \implies$ rectificable i $L(\gamma) = \int_I \|\gamma'\|$.
 
 \section{Integrals de l\'inia}
 
@@ -264,7 +264,7 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..
 \quad \ci $\rot ( f \vec{G} ) = f \rot \vec{G} + \grad f \times \vec{G}$, \\
 \quad \ci $\diver ( f \vec{G} ) = f \diver \vec{G} + \grad f \cdot \vec{G}$, \\
 \quad \ci $\diver ( \vec{F} \times \vec{G} ) = \vec{G} \cdot \rot \vec{F} - \vec{F} \cdot \rot \vec{G}$. \\
-\u{T. Schwarz}: $f, \vec{F} \in \mathcal{C}^2 \implies \rot( \grad f ) = 0, \diver ( \rot \vec{F} ) = 0$. \\
+\u{T. Schwarz}: $f, \vec{F} \in \C^2 \implies \rot( \grad f ) = 0, \diver ( \rot \vec{F} ) = 0$. \\
 \u{Camp conservatiu}: $\vec{F} = \grad f$. \\
 \u{Camp irrotacional}: $\rot \vec{F} = 0$. \\
 \u{Camp solenoidal}: $\vec{G} = \rot \vec{F}$. \\
