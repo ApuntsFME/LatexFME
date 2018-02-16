@@ -215,5 +215,18 @@
 \begin{ej}
 	Veremos que $(a) \implies (b)$. Sea $U \subset X$ un abierto de $(X, d_2)$, entonces $\Id^{-1}(U) = U$, que es un abierto en $(X,d_1)$ y análogamente con $\Id^{-1}$.
 	
-	Veremos ahora que $(b) \implies (c)$
+	Veremos ahora que $(b) \implies (c)$. Sea $B_1(x, r)$ una bola abierta según la m\'etrica $d_1$ de centro $x$, entonces, por $(b)$, $\Id^{-1}\left( B_1(x,r) \right)$
+	es un abierto, y $x \in \Id^{-1}\left( B_1(x,r) \right)$. Por lo tanto, $\exists s \tq B_2(x,s) \subset \Id^{-1}\left( B_1(x,r) \right) = B_1(x,r)$. (la otra
+	implicación es análoga).
+
+	Por último, comprobaremos que $(c) \implies (a)$. Sea $U$ un abierto en $(X,d_1)$, entonces $\forall x \in U \; \exists r \tq B_1(x,r) \subset U$, pero por $(c)$,
+	$\exists s \tq x \in B_2(x,s) \subset B_1(x,r) \subset U \implies x$ es un punto interior en $(X, d_2)$, por lo tanto, $U$ es abierto en $(X, d_2)$ y la otra
+	implicación se demuestra de forma análoga.
+\end{ej}
+
+\begin{ej}
+	Sean $d_1, d_2$ dos m\'etricas fuertemente equivalentes. Sean $r \in \real$ y $x \in X$, entonces, $\exists s = \frac{r}{M} \in \real \tq B_2(x, s) \subset B_1(x, r)$.
+	De nuevo, la otra implicación es análoga.
+
+	Las m\'etricas $d_1(x,y) = \abs{x-y}$ y $d_2(x,y) = \abs{\frac{1}{x} - \frac{1}{y}}$ son equivalentes, pero no son fuertemente equivalentes.
 \end{ej}
