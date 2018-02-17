@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NAME="main"
-DEST="/pdfs/segundo/topología_problemas.pdf"
+DEST="/pdfs/segundo/problemas_topologia.pdf"
 MSG="problemas topo"
 
 source ../upload_file.sh
