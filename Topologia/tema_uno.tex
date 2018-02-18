@@ -64,22 +64,31 @@
 			\begin{enumerate}[i)]
 				\item $d(x,y) \geq 0$ y $d(x,y) = 0 \iff x = y$ son triviales.
 				\item $d(x,y) = d(y,x)$ es obvio.
-				\item $d(x,y) = \abs{e^x - e^y} = \abs{e^x - e^z + e^z - e^y} \leq \abs{e^x - e^z} + \abs{e^z - e^y} = d(x,z) + d(y,z)$
+				\item $d(x,y) = \abs{e^x - e^y} = \abs{e^x - e^z + e^z - e^y} \leq \abs{e^x - e^z} + \abs{e^z - e^y} = d(x,z) + d(y,z).$
 			\end{enumerate}
 		\item No es una m\'etrica. Los puntos $x = \frac{\pi}{2}$ y $y = \frac{3\pi}{2}$ son distintos, pero $d(x, y) = 0$.
 		\item Sí que es una m\'etrica:
 			\begin{enumerate}[i)]
 				\item $d(x, y) \geq 0$ es trivial y $d(x,y) = 0 \iff \cos(x) = \cos(y) \iff x = y$.
 				\item $d(x, y) = d(y,x)$ es obvio.
-				\item $d(x, y) = \abs{\cos(x) - \cos(y)} = \abs{\cos(x) - \cos(z) + \cos(z) - \cos(y)} \leq \abs{\cos(x) - \cos(z)}
-					+ \abs{\cos(z) - \cos(y)} = d(x,z) + d(z,y)$
+				\item Finalmente,
+					\begin{align*}
+						d(x, y) &= \abs{\cos(x) - \cos(y)} \\
+						&= \abs{\cos(x) - \cos(z) + \cos(z) - \cos(y)} \\
+						&\leq \abs{\cos(x) - \cos(z)} + \abs{\cos(z) - \cos(y)} = d(x,z) + d(z,y).
+					\end{align*}
 			\end{enumerate}
 		\item Sí define una m\'etrica:
 			\begin{enumerate}[i)]
 				\item $d(x, y) \geq 0$ es trivial y $d(x, y) = 0 \iff \arctan(x) = \arctan(y) \iff x = y$.
 				\item $d(x, y) = d(y, x)$ es obvio.
-				\item $d(x, y) = \abs{\arctan(x) - \arctan(y)} = \abs{\arctan(x) - \arctan(z) + \arctan(z) - \arctan(y)} \leq
-					\abs{\arctan(x) - \arctan(z)} + \abs{\arctan(z) - \arctan(y)} = d(x, z) + d(y,z)$
+				\item Finalmente,
+					\begin{align*}
+						d(x, y) &= \abs{\arctan(x) - \arctan(y)} \\
+						&= \abs{\arctan(x) - \arctan(z) + \arctan(z) - \arctan(y)} \\
+						&\leq \abs{\arctan(x) - \arctan(z)} + \abs{\arctan(z) - \arctan(y)} \\
+						&= d(x, z) + d(y,z).
+					\end{align*}
 			\end{enumerate}
 	\end{enumerate}
 
@@ -87,7 +96,7 @@
 	\begin{enumerate}[i)]
 		\item $d(x,y) \geq 0$ por el valor absoluto. $d(x, y) = 0 \iff f(x) - f(y) = 0 \iff f(x) = f(y) \stackrel{f \text{ inyectiva}}{\iff} x = y$.
 		\item $d(x,y) = \abs{f(x) - f(y)} = \abs{f(y) - f(x)} = d(y,x)$.
-		\item $d(x,y) = \abs{f(x) - f(y)} = \abs{f(x) - f(z) + f(z) - f(y)} \leq \abs{f(x) - f(z)} + \abs{f(z) - f(y)} = d(x, z) + d(z, y)$.
+		\item $d(x,y) = \abs{f(x) - f(y)} = \abs{f(x) - f(z) + f(z) - f(y)} \leq \abs{f(x) - f(z)} + \abs{f(z) - f(y)}$ $ = d(x, z) + d(z, y)$.
 	\end{enumerate}
 \end{ej}
 
@@ -128,7 +137,7 @@
 						&\leq (x-z)A(x-z)^t + 2 \abs{(x-z)A(z-y)^t} + (z-y)A(z-y)^t \\
 						&\leq (x-z)A(x-z)^t + 2 \sqrt{(x-z)A(x-z)^t(z-y)A(z-y)^t} \,\,+ \\
 						&\qquad\qquad + (z-y)A(z-y)^t \\
-						&= \left( (x-z)A(x-z)^t + (z-y)A(z-y)^t \right)^2 = \left( d(x,z) + d(z,y) \right)^2
+						&= \left( (x-z)A(x-z)^t + (z-y)A(z-y)^t \right)^2 = \left( d(x,z) + d(z,y) \right)^2.
 					\end{align*}
 					Por lo tanto, $d(x,y) \leq d(x,z) + d(z,y)$.
 			\end{enumerate}
@@ -164,14 +173,15 @@
 				\item $\bar{d}(x,y) = 0 \iff d(x,y) = 0 \iff x = y$.
 				\item $\bar{d}(x,y) = \bar{d}(y,x)$ trivial por la definición.
 				\item 
-					\begin{gather*}
-						\bar{d}(x,y) = \frac{d(x,y)}{1 + d(x,y)} \leq \frac{d(x,z)}{1 + d(x,z)} + \frac{d(z,y)}{1 + d(z,y)} =
-						\bar{d}(x,z) + \bar{d}(z,y) \iff \\ \iff
-						\frac{d(x,y)}{1+d(x,y)} \leq \frac{d(x,z) + d(z,y) + 2d(x,z)d(z,y)}{1 + d(x,z) + d(z,y) + d(x,z)d(z,y)} \iff \\ \iff
-						d(x,y) + \cancel{d(x,y)d(x,z)} + \cancel{d(x,y)d(z,y)} + \cancel{d(x,y)d(x,z)d(z,y)} \leq \\ \leq
-						d(x,z) + d(z,y) + 2d(x,z)d(z,y) + \cancel{d(x,y)d(x,z)} + \\ +\cancel{d(x,y)d(z,y)} + \cancel{2}d(x,y)d(x,z)d(z,y) \iff \\
-						\iff d(x,y) \leq d(x,z) + d(z,y) + 2d(x,z)d(z,y) + d(x,y)d(x,z)d(z,y)
-					\end{gather*}
+					\begin{align*}
+						\bar{d}(x,y) &= \frac{d(x,y)}{1 + d(x,y)} \leq \frac{d(x,z)}{1 + d(x,z)} + \frac{d(z,y)}{1 + d(z,y)} =
+						\bar{d}(x,z) + \bar{d}(z,y) \iff \\
+						&\iff \frac{d(x,y)}{1+d(x,y)} \leq \frac{d(x,z) + d(z,y) + 2d(x,z)d(z,y)}{1 + d(x,z) + d(z,y) + d(x,z)d(z,y)} \\
+						&\iff d(x,y) + \cancel{d(x,y)d(x,z)} + \cancel{d(x,y)d(z,y)} + \cancel{d(x,y)d(x,z)d(z,y)} \leq \\
+						&\qquad\qquad\leq d(x,z) + d(z,y) + 2d(x,z)d(z,y) + \cancel{d(x,y)d(x,z)} \,\,+ \\
+							&\qquad\qquad\qquad\qquad +\cancel{d(x,y)d(z,y)} + \cancel{2}d(x,y)d(x,z)d(z,y) \\
+						&\iff d(x,y) \leq d(x,z) + d(z,y) + 2d(x,z)d(z,y) + d(x,y)d(x,z)d(z,y).
+					\end{align*}
 					Lo cual es cierto ya que $d$ es una distancia.
 			\end{enumerate}
 		\item De nuevo, comprobamos
