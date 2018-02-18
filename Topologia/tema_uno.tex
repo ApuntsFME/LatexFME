@@ -390,3 +390,13 @@
     \end{align*}
     Así pues, la aplicación $d \colon X \times X \to \real$ es continua tomando en $X \times X$ la métrica $D_1$. Por ser $D_1$, $D_2$ y $D_{\infty}$ métricas fuertemente equivalentes, $d$ también es continua si tomamos en $X \times X$ las métricas $D_2$ o $D_{\infty}$.
 \end{ej}
+
+\begin{ej}
+    Comprobemos que $\sqrt{\left< u, u \right>}$ satisface las propiedades de norma.
+    \begin{enumerate}[i)]
+        \item $\left< u, u \right> \geq 0 \implies  \sqrt{\left< u, u \right> } \geq 0$.
+        \item $\lp \left< u, u \right> = 0 \iff u=0 \rp \implies \lp \sqrt{\left< u, u \right> } = 0 \iff u=0 \rp$.
+        \item $\sqrt { \left< \lambda u, \lambda u \right> } = \sqrt {\lambda^2 \left< u, u \right> } = \lambda \sqrt { \left<  u,  u \right> }$.
+        \item $\sqrt { \left< u + v , u+v \right>}=\sqrt { \left< u , u+v \right> + \left< v , u+v \right>}=\sqrt { \left< u , u\right> +\left< u , v \right> + \left< v , u \right> + \left< v , v \right>} \leq \sqrt { \left< u , u\right> + \left< v , v \right>} \leq \sqrt { \left< u , u\right>} + \sqrt{ \left< v , v \right>}$.
+    \end{enumerate}
+\end{ej}
