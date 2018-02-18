@@ -1,4 +1,4 @@
-\chapter{Espacios m\'etricos y applicaciones continuas}
+\chapter{Espacios m\'etricos y aplicaciones continuas}
 \section{Distancias}
 
 \begin{ej}
@@ -119,14 +119,17 @@
 			\begin{enumerate}[i)]
 				\item $d(x, y) \geq 0$, sí, ya que $A$ es definida positiva y por lo tanto, $(x-y)A(x-y)^t \geq 0 \implies \sqrt{(x-y)A(x-y)^t} \geq 0$.
 				\item $d(x, y) = 0 \iff \sqrt{(x-y)A(x-y)^t} = 0 \iff (x-y)A(x-y)^t = 0 \stackrel{A \text{ def. pos.}}{\iff} x = y$.
-				\item $d(x, y) = \sqrt{(x-y)A(x-y)^t} = \sqrt{(-1)(y-x)A(-1)(y-x)^t} = \sqrt{(y-x)A(y-x)^t} = d(y, x)$
+				\item $d(x, y) = \sqrt{(x-y)A(x-y)^t} = \sqrt{(-1)(y-x)A(-1)(y-x)^t} =$ \\ $\sqrt{(y-x)A(y-x)^t} = d(y, x)$
 				\item Se tiene que
-					\begin{gather*}
-						d^2(x,y) = (x-y)A(x-y)^t = (x-z+z-y)A(x-z+z-y)^t = \\
-						= (x-z)A(x-z)^t + (x-z)A(z-y)^t + (z-y)A(x-z)^t + (z-y)A(z-y)^t \leq \\
-						\leq (x-z)A(x-z)^t + 2 \abs{(x-z)A(z-y)^t} + (z-y)A(z-y)^t \leq \\ \leq (x-z)A(x-z)^t + 2 \sqrt{(x-z)A(x-z)^t(z-y)A(z-y)^t} + 
-						(z-y)A(z-y)^t = \\ = \left( (x-z)A(x-z)^t + (z-y)A(z-y)^t \right)^2 = \left( d(x,z) + d(z,y) \right)^2
-					\end{gather*}
+					\begin{align*}
+						d^2(x,y) &= (x-y)A(x-y)^t = (x-z+z-y)A(x-z+z-y)^t \\
+						&= (x-z)A(x-z)^t + (x-z)A(z-y)^t + (z-y)A(x-z)^t\, + \\
+						&\qquad\qquad + (z-y)A(z-y)^t \\
+						&\leq (x-z)A(x-z)^t + 2 \abs{(x-z)A(z-y)^t} + (z-y)A(z-y)^t \\
+						&\leq (x-z)A(x-z)^t + 2 \sqrt{(x-z)A(x-z)^t(z-y)A(z-y)^t} \,\,+ \\
+						&\qquad\qquad + (z-y)A(z-y)^t \\
+						&= \left( (x-z)A(x-z)^t + (z-y)A(z-y)^t \right)^2 = \left( d(x,z) + d(z,y) \right)^2
+					\end{align*}
 					Por lo tanto, $d(x,y) \leq d(x,z) + d(z,y)$.
 			\end{enumerate}
 			Ponemos un ejemplo, tomando
@@ -231,7 +234,6 @@
 	Las m\'etricas $d_1(x,y) = \abs{x-y}$ y $d_2(x,y) = \abs{\frac{1}{x} - \frac{1}{y}}$ son equivalentes, pero no son fuertemente equivalentes.
 \end{ej}
 
-
 \begin{ej}
 	\begin{enumerate}[(a)]
 		\item Comprobemos que $D_1$ satisface las propiedades de las métricas. Por ser $d_1$ y $d_2$ métricas,
@@ -285,23 +287,23 @@
                 = \sqrt{ d_1 \lp y_1, x_1\rp ^2 + d_2 \lp y_2 , x_2 \rp^2 } = D_2 \lp \lp y_1, y_2 \rp , \lp x_1 , x_2 \rp \rp .
             \end{gather*}
             \item Primero, demostraremos un resultado auxiliar. Para cualesquiera reales positivos $a, b, c, d$ se tiene que
-            \begin{gather}\label{ej.11.a.lema}  \nonumber
-                0 \leq \lp ad -cb \rp ^2 \implies \\ \nonumber
-                \implies 2abcd \leq a^2d^2+c^2b^2 \implies \\  \nonumber
-                \implies \lp ab+cd \rp ^2 = a^2b^2 + 2abcd + c^2d^2 \leq a^2b^2+a^2d^2+c^2b^2+c^2d^2 = \\ \nonumber
-                = \lp a^2+c^2 \rp \lp b^2+d^2 \rp \implies \\ \nonumber
-                \implies \lp a+b \rp ^2 + \lp c+d\rp ^2 = a^2+b^2+c^2+d^2 +2ab +2cd \leq \\ \nonumber
-                \leq a^2+b^2+c^2+d^2+2\sqrt{\lp a^2+c^2\rp \lp b^2+d^2\rp} \implies \\ \nonumber
-                \lp \sqrt{\lp a+b \rp ^2 + \lp c+d \rp ^2} \rp ^2 \leq \lp \sqrt{a^2+c^2} + \sqrt{b^2+d^2} \rp ^2 \implies \\ 
-                \implies \sqrt{\lp a+b \rp ^2 + \lp c+d \rp ^2} \leq \sqrt{a^2+c^2} + \sqrt{b^2+d^2}.
-            \end{gather}
+            \begin{align} \nonumber
+                0 \leq \lp ad -cb \rp ^2 &\implies 2abcd \leq a^2d^2+c^2b^2 \\  \nonumber
+                &\implies \lp ab+cd \rp ^2 = a^2b^2 + 2abcd + c^2d^2 \\ \nonumber
+                    &\qquad\qquad\qquad\quad \leq a^2b^2+a^2d^2+c^2b^2+c^2d^2 \\ \nonumber
+                    &\qquad\qquad\qquad\quad = \lp a^2+c^2 \rp \lp b^2+d^2 \rp \\ \nonumber
+                &\implies \lp a+b \rp ^2 + \lp c+d\rp ^2 = a^2+b^2+c^2+d^2 +2ab +2cd \\ \nonumber
+                &\qquad \qquad \leq a^2+b^2+c^2+d^2+2\sqrt{\lp a^2+c^2\rp \lp b^2+d^2\rp} \\ \nonumber
+                &\implies\lp \sqrt{\lp a+b \rp ^2 + \lp c+d \rp ^2} \rp ^2 \leq \lp \sqrt{a^2+c^2} + \sqrt{b^2+d^2} \rp ^2 \\
+                \label{item:11.a.lema} &\implies \sqrt{\lp a+b \rp ^2 + \lp c+d \rp ^2} \leq \sqrt{a^2+c^2} + \sqrt{b^2+d^2}.
+            \end{align}
             Entonces,
-            \begin{gather*}
-                D_2 \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp = \sqrt{ d_1 \lp x_1, y_1\rp ^2 + d_2 \lp x_2 , y_2 \rp^2 } \leq \\
-                \leq \sqrt{ \lp d_1 \lp x_1, z_1\rp + d_1\lp z_1, y_1 \rp \rp ^2 + \lp d_2 \lp x_2, z_2 \rp + d_2\lp z_2, y_2 \rp \rp ^2 } \stackrel{\ref{ej.11.a.lema}}{\leq} \\
-                \leq \sqrt{d_1\lp x_1, z_1 \rp ^2+d_2 \lp x_2, z_2 \rp ^2} + \sqrt{d_1\lp z_1, y_1 \rp ^2+d_2 \lp z_2, y_2 \rp ^2} = \\
-                = D_2 \lp \lp x_1, x_2 \rp , \lp z_1 , z_2 \rp \rp + D_2 \lp \lp z_1, z_2 \rp , \lp y_1 , y_2 \rp \rp.
-            \end{gather*}            
+            \begin{align*}
+                D_2 \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp &= \sqrt{ d_1 \lp x_1, y_1\rp ^2 + d_2 \lp x_2 , y_2 \rp^2 } \\
+                &\leq \sqrt{ \lp d_1 \lp x_1, z_1\rp + d_1\lp z_1, y_1 \rp \rp ^2 + \lp d_2 \lp x_2, z_2 \rp + d_2\lp z_2, y_2 \rp \rp ^2 }\\
+                & \stackrel{\eqref{item:11.a.lema}}{\leq} \sqrt{d_1\lp x_1, z_1 \rp ^2+d_2 \lp x_2, z_2 \rp ^2} + \sqrt{d_1\lp z_1, y_1 \rp ^2+d_2 \lp z_2, y_2 \rp ^2}\\
+                &= D_2 \lp \lp x_1, x_2 \rp , \lp z_1 , z_2 \rp \rp + D_2 \lp \lp z_1, z_2 \rp , \lp y_1 , y_2 \rp \rp.
+            \end{align*}            
 		\end{enumerate}
 		\item Comprobemos que $D_{\infty}$ satisface las propiedades de las métricas. Por ser $d_1$ y $d_2$ métricas,
 		\begin{enumerate}[i)]
@@ -326,12 +328,13 @@
                 = \max \left\{ d_1 \lp y_1, x_1\rp , d_2 \lp y_2 , x_2 \rp \right\} =D_2 \lp \lp y_1, y_2 \rp , \lp x_1 , x_2 \rp \rp .
             \end{gather*}
             \item 
-            \begin{gather*}
-                D_{\infty} \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp = \max \left\{ d_1 \lp x_1, y_1\rp , d_2 \lp x_2 , y_2 \rp \right\} \leq \\
-                \leq \max \left\{ d_1 \lp x_1, z_1 \rp +d_1 \lp z_1, y_1 \rp , d_1 \lp x_2, z_2 \rp +d_2 \lp z_2, y_2 \rp  \right\} \leq \\
-                \leq \max \left\{ d_1 \lp x_1, z_1\rp , d_2 \lp x_2 , z_2 \rp \right\} + \max \left\{ d_1 \lp z_1, y_1\rp , d_2 \lp z_2 , y_2 \rp \right\} = \\
-                = D_{\infty} \lp \lp x_1, x_2 \rp , \lp z_1 , z_2 \rp \rp + D_{\infty} \lp \lp z_1, z_2 \rp , \lp y_1 , y_2 \rp \rp.
-            \end{gather*}
+            \begin{align*}
+                D_{\infty} \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp &= \max \left\{ d_1 \lp x_1, y_1\rp , d_2 \lp x_2 , y_2 \rp \right\} \\
+                &\leq \max \left\{ d_1 \lp x_1, z_1 \rp +d_1 \lp z_1, y_1 \rp , d_1 \lp x_2, z_2 \rp +d_2 \lp z_2, y_2 \rp  \right\} \\
+                &\leq \max \left\{ d_1 \lp x_1, z_1\rp , d_2 \lp x_2 , z_2 \rp \right\} + \\
+                &\qquad\qquad + \max \left\{ d_1 \lp z_1, y_1\rp , d_2 \lp z_2 , y_2 \rp \right\} \\
+                &= D_{\infty} \lp \lp x_1, x_2 \rp , \lp z_1 , z_2 \rp \rp + D_{\infty} \lp \lp z_1, z_2 \rp , \lp y_1 , y_2 \rp \rp.
+            \end{align*}
 		\end{enumerate}
 	\end{enumerate}
     Veamos ahora que $D_1$ y $D_2$ son métricas fuertemente equivalentes. Observamos que
