@@ -2,379 +2,380 @@
 \section{Distancias}
 
 \begin{ej}
-	Hay que comprobar que
-	\begin{enumerate}[i)]
-		\item $ d(x,y) \geq 0 \; \forall x,y \in X $ y que $ d(x,y) = 0 \iff x = y $, lo cual es trivial por la definición de $ d $.
-		\item $ d(x,y) = d(y,x) \; \forall x, y \in X $, que de nuevo, esinmediato por la definición.
-		\item $ d(x,y) \leq d(x,z) + d(z,y) \; \forall x, y, z \in X $, suponemos que $ x, y, z $ son distintos dos a dos. Entonces,
-			$ d(x,y) = 1 \leq d(x, z) + d(z, y) = 1 + 1 = 2 $.
-	\end{enumerate}
+    Hay que comprobar que
+    \begin{enumerate}[i)]
+        \item $ d(x,y) \geq 0 \; \forall x,y \in X $ y que $ d(x,y) = 0 \iff x = y $, lo cual es trivial por la definición de $ d $.
+        \item $ d(x,y) = d(y,x) \; \forall x, y \in X $, que de nuevo, esinmediato por la definición.
+        \item $ d(x,y) \leq d(x,z) + d(z,y) \; \forall x, y, z \in X $, suponemos que $ x, y, z $ son distintos dos a dos. Entonces,
+            $ d(x,y) = 1 \leq d(x, z) + d(z, y) = 1 + 1 = 2 $.
+    \end{enumerate}
 \end{ej}
 
 \begin{ej}
-	De nuevo, hemos de comprobar que
-	\begin{enumerate}[i)]
-		\item $d_{\text{cent}}(x, y) \geq 0 \; \forall x, y \in X$. Esto es fácil de ver, ya que $d(c, x), d(c,y) \geq 0$, por lo tanto
-			$d_{\text{cent}}(x,y) = d(c,x) + d(c,y) \geq 0$.
-		\item $d_{\text{cent}}(x, y) = 0 \iff x = y$. Si $x = y \implies d_{\text{cent}}(x,y) = 0$ por definición. Y si $d_{\text{cent}}(x,y) = 0$,
-			hay dos posiblidades, o $x = y$ (y ya hemos acabado) o $d(c, x) = d(c,y) = 0$. Pero si ocurre lo segundo, entonces $x = c = y$.
-		\item $d_{\text{cent}}(x, y) = d_{\text{cent}}(y, x) \; \forall x, y \in X$. Esto es obvio ya que la suma es conmutativa y $d$ tambi\'en.
-		\item $d_{\text{cent}}(x,y) \leq d_{\text{cent}}(x, z) + d_{\text{cent}}(z, y)$. Vamos a ver que se cumple:
-			\[
-				d_{\text{cent}}(x, y) = d(c,x) + d(c,y) \leq d(c,x) + d(c,z) + d(c,z) + d(c,y) =
-				d_{\text{cent}}(x, z) + d_{\text{cent}}(z,y)
-			\]
-	\end{enumerate}
-	Ahora, dibujaremos las bolas. En azul, está $B\left( (0,0), 1 \right)$ y en rojo $B\left( (1,1), 2 \right)$:
-	\begin{center}
-		\input{fig_code/bolas_2.pgf}
-	\end{center}
+    De nuevo, hemos de comprobar que
+    \begin{enumerate}[i)]
+        \item $d_{\text{cent}}(x, y) \geq 0 \; \forall x, y \in X$. Esto es fácil de ver, ya que $d(c, x), d(c,y) \geq 0$, por lo tanto
+            $d_{\text{cent}}(x,y) = d(c,x) + d(c,y) \geq 0$.
+        \item $d_{\text{cent}}(x, y) = 0 \iff x = y$. Si $x = y \implies d_{\text{cent}}(x,y) = 0$ por definición. Y si $d_{\text{cent}}(x,y) = 0$,
+            hay dos posiblidades, o $x = y$ (y ya hemos acabado) o $d(c, x) = d(c,y) = 0$. Pero si ocurre lo segundo, entonces $x = c = y$.
+        \item $d_{\text{cent}}(x, y) = d_{\text{cent}}(y, x) \; \forall x, y \in X$. Esto es obvio ya que la suma es conmutativa y $d$ tambi\'en.
+        \item $d_{\text{cent}}(x,y) \leq d_{\text{cent}}(x, z) + d_{\text{cent}}(z, y)$. Vamos a ver que se cumple:
+            \[
+                d_{\text{cent}}(x, y) = d(c,x) + d(c,y) \leq d(c,x) + d(c,z) + d(c,z) + d(c,y) =
+                d_{\text{cent}}(x, z) + d_{\text{cent}}(z,y)
+            \]
+    \end{enumerate}
+    Ahora, dibujaremos las bolas. En azul, está $B\left( (0,0), 1 \right)$ y en rojo $B\left( (1,1), 2 \right)$:
+    \begin{center}
+        \input{fig_code/bolas_2.pgf}
+    \end{center}
 \end{ej}
 
 \begin{ej}
-	Tenemos que comprobar que
-	\begin{enumerate}[i)]
-		\item $d(a,b) \geq 0 \; \forall a,b \in A^n$ y que $d(a,b) = 0 \iff a = b$, lo cual es trivial por la definición de $d$.
-		\item $d(a,b) = d(b,a) \; \forall a,b \in A^n$. Trivial por la definición.
-		\item $d(a, b) \leq d(a,c) + d(c, b)$. Sea $i \in R = \setb{j \vert a_j \neq b_j}$, entonces, se cumple al menos una de las dos siguientes afirmaciones
-			\[
-				\begin{cases}
-					i \in P = \setb{j \vert a_j \neq c_j} \\
-					i \in Q = \setb{j \vert c_j \neq b_j}
-				\end{cases}
-			\]
-			Por lo tanto, $R \subseteq P \cup Q \implies d(a,b) = \abs{R} \leq \abs{P \cup Q} \leq \abs{P} + \abs{Q} = d(a,c) + d(a,b)$.
-	\end{enumerate}
+    Tenemos que comprobar que
+    \begin{enumerate}[i)]
+        \item $d(a,b) \geq 0 \; \forall a,b \in A^n$ y que $d(a,b) = 0 \iff a = b$, lo cual es trivial por la definición de $d$.
+        \item $d(a,b) = d(b,a) \; \forall a,b \in A^n$. Trivial por la definición.
+        \item $d(a, b) \leq d(a,c) + d(c, b)$. Sea $i \in R = \setb{j \vert a_j \neq b_j}$, entonces, se cumple al menos una de las dos siguientes afirmaciones
+            \[
+                \begin{cases}
+                    i \in P = \setb{j \vert a_j \neq c_j} \\
+                    i \in Q = \setb{j \vert c_j \neq b_j}
+                \end{cases}
+            \]
+            Por lo tanto, $R \subseteq P \cup Q \implies d(a,b) = \abs{R} \leq \abs{P \cup Q} \leq \abs{P} + \abs{Q} = d(a,c) + d(a,b)$.
+    \end{enumerate}
 \end{ej}
 
 \begin{ej}
-	Tenemos que comprobar que
-	\begin{enumerate}[i)]
-		\item $d(a,b) \geq 0 \;  \forall a,b \in \mathcal{S}(A)$, y que $d(a,b) = 0 \iff a = b$, lo cual es trivial por la definición.
-		\item $d(a,b) = d(b,a) \; \forall a,b \in \mathcal{S}(A)$, tambi\'en trivial por la definición.
-		\item $d(a,b) \leq d(a,c) + d(c,b)$. Podemos suponer sin p\'erdida de generalidad que $d(a,c) \geq d(b,c)$. Sea $s$ tal que $e^{-s} = d(a,c)$ y sea
-			$S$ tal que $e^{-S} = d(b,c)$, entonces, si $S = s$, entonces, $d(b, c) = d(a,c) \implies d(a, b) \leq d(a,c)$. Si $S > s$, entonces, 
-			$d(a, b) \leq d(a,c)$.
-	\end{enumerate}
+    Tenemos que comprobar que
+    \begin{enumerate}[i)]
+        \item $d(a,b) \geq 0 \;  \forall a,b \in \mathcal{S}(A)$, y que $d(a,b) = 0 \iff a = b$, lo cual es trivial por la definición.
+        \item $d(a,b) = d(b,a) \; \forall a,b \in \mathcal{S}(A)$, tambi\'en trivial por la definición.
+        \item $d(a,b) \leq d(a,c) + d(c,b)$. Podemos suponer sin p\'erdida de generalidad que $d(a,c) \geq d(b,c)$. Sea $s$ tal que $e^{-s} = d(a,c)$ y sea
+            $S$ tal que $e^{-S} = d(b,c)$, entonces, si $S = s$, entonces, $d(b, c) = d(a,c) \implies d(a, b) \leq d(a,c)$. Si $S > s$, entonces, 
+            $d(a, b) \leq d(a,c)$.
+    \end{enumerate}
 \end{ej}
 
 \begin{ej}
-	\begin{enumerate}[(a)]
-		\item Sí que define una m\'etrica, ya que
-			\begin{enumerate}[i)]
-				\item $d(x,y) \geq 0$ y $d(x,y) = 0 \iff x = y$ son triviales.
-				\item $d(x,y) = d(y,x)$ es obvio.
-				\item $d(x,y) = \abs{e^x - e^y} = \abs{e^x - e^z + e^z - e^y} \leq \abs{e^x - e^z} + \abs{e^z - e^y} = d(x,z) + d(y,z).$
-			\end{enumerate}
-		\item No es una m\'etrica. Los puntos $x = \frac{\pi}{2}$ y $y = \frac{3\pi}{2}$ son distintos, pero $d(x, y) = 0$.
-		\item Sí que es una m\'etrica:
-			\begin{enumerate}[i)]
-				\item $d(x, y) \geq 0$ es trivial y $d(x,y) = 0 \iff \cos(x) = \cos(y) \iff x = y$.
-				\item $d(x, y) = d(y,x)$ es obvio.
-				\item Finalmente,
-					\begin{align*}
-						d(x, y) &= \abs{\cos(x) - \cos(y)} \\
-						&= \abs{\cos(x) - \cos(z) + \cos(z) - \cos(y)} \\
-						&\leq \abs{\cos(x) - \cos(z)} + \abs{\cos(z) - \cos(y)} = d(x,z) + d(z,y).
-					\end{align*}
-			\end{enumerate}
-		\item Sí define una m\'etrica:
-			\begin{enumerate}[i)]
-				\item $d(x, y) \geq 0$ es trivial y $d(x, y) = 0 \iff \arctan(x) = \arctan(y) \iff x = y$.
-				\item $d(x, y) = d(y, x)$ es obvio.
-				\item Finalmente,
-					\begin{align*}
-						d(x, y) &= \abs{\arctan(x) - \arctan(y)} \\
-						&= \abs{\arctan(x) - \arctan(z) + \arctan(z) - \arctan(y)} \\
-						&\leq \abs{\arctan(x) - \arctan(z)} + \abs{\arctan(z) - \arctan(y)} \\
-						&= d(x, z) + d(y,z).
-					\end{align*}
-			\end{enumerate}
-	\end{enumerate}
+    \begin{enumerate}[(a)]
+        \item Sí que define una m\'etrica, ya que
+            \begin{enumerate}[i)]
+                \item $d(x,y) \geq 0$ y $d(x,y) = 0 \iff x = y$ son triviales.
+                \item $d(x,y) = d(y,x)$ es obvio.
+                \item $d(x,y) = \abs{e^x - e^y} = \abs{e^x - e^z + e^z - e^y} \leq \abs{e^x - e^z} + \abs{e^z - e^y} = d(x,z) + d(y,z).$
+            \end{enumerate}
+        \item No es una m\'etrica. Los puntos $x = \frac{\pi}{2}$ y $y = \frac{3\pi}{2}$ son distintos, pero $d(x, y) = 0$.
+        \item Sí que es una m\'etrica:
+            \begin{enumerate}[i)]
+                \item $d(x, y) \geq 0$ es trivial y $d(x,y) = 0 \iff \cos(x) = \cos(y) \iff x = y$.
+                \item $d(x, y) = d(y,x)$ es obvio.
+                \item Finalmente,
+                    \begin{align*}
+                        d(x, y) &= \abs{\cos(x) - \cos(y)} \\
+                        &= \abs{\cos(x) - \cos(z) + \cos(z) - \cos(y)} \\
+                        &\leq \abs{\cos(x) - \cos(z)} + \abs{\cos(z) - \cos(y)} = d(x,z) + d(z,y).
+                    \end{align*}
+            \end{enumerate}
+        \item Sí define una m\'etrica:
+            \begin{enumerate}[i)]
+                \item $d(x, y) \geq 0$ es trivial y $d(x, y) = 0 \iff \arctan(x) = \arctan(y) \iff x = y$.
+                \item $d(x, y) = d(y, x)$ es obvio.
+                \item Finalmente,
+                    \begin{align*}
+                        d(x, y) &= \abs{\arctan(x) - \arctan(y)} \\
+                        &= \abs{\arctan(x) - \arctan(z) + \arctan(z) - \arctan(y)} \\
+                        &\leq \abs{\arctan(x) - \arctan(z)} + \abs{\arctan(z) - \arctan(y)} \\
+                        &= d(x, z) + d(y,z).
+                    \end{align*}
+            \end{enumerate}
+    \end{enumerate}
 
-	En general, basta con que $f$ sea inyectiva para que $d_f(x,y) = \abs{f(x) - f(y)}$ sea una distancia. Vemos que si $f$ es inyectiva
-	\begin{enumerate}[i)]
-		\item $d(x,y) \geq 0$ por el valor absoluto. $d(x, y) = 0 \iff f(x) - f(y) = 0 \iff f(x) = f(y) \stackrel{f \text{ inyectiva}}{\iff} x = y$.
-		\item $d(x,y) = \abs{f(x) - f(y)} = \abs{f(y) - f(x)} = d(y,x)$.
-		\item $d(x,y) = \abs{f(x) - f(y)} = \abs{f(x) - f(z) + f(z) - f(y)} \leq \abs{f(x) - f(z)} + \abs{f(z) - f(y)}$ $ = d(x, z) + d(z, y)$.
-	\end{enumerate}
+    En general, basta con que $f$ sea inyectiva para que $d_f(x,y) = \abs{f(x) - f(y)}$ sea una distancia. Vemos que si $f$ es inyectiva
+    \begin{enumerate}[i)]
+        \item $d(x,y) \geq 0$ por el valor absoluto. $d(x, y) = 0 \iff f(x) - f(y) = 0 \iff f(x) = f(y) \stackrel{f \text{ inyectiva}}{\iff} x = y$.
+        \item $d(x,y) = \abs{f(x) - f(y)} = \abs{f(y) - f(x)} = d(y,x)$.
+        \item $d(x,y) = \abs{f(x) - f(y)} = \abs{f(x) - f(z) + f(z) - f(y)} \leq \abs{f(x) - f(z)} + \abs{f(z) - f(y)}$ $ = d(x, z) + d(z, y)$.
+    \end{enumerate}
 \end{ej}
 
 \begin{ej}
-	\begin{enumerate}[(a)]
-		\item Sí que es una m\'etrica, de hecho es la m\'etrica habitual en $\real^n$.
-			\begin{center}
-				\input{fig_code/bolas_6a.pgf}
-			\end{center}
-		\item Sí que es una distancia
-			\begin{center}
-				\input{fig_code/bolas_6b.pgf}
-			\end{center}
-		\item Sí que es una m\'etrica
-			\begin{center}
-				\input{fig_code/bolas_6c.pgf}
-			\end{center}
-		\item No es una m\'etrica, por ejemplo, $d\left( (1,0), (1,1) \right) = 0$, pero $(1,0) \neq (1,1)$.
-		\item Sí que es una m\'etrica
-			\begin{center}
-				\input{fig_code/bolas_6e.pgf}
-			\end{center}
-		\item No es una m\'etrica, por ejemplo, $d\left( (1,0), (1,1) \right) = 0$, pero $(1,0) \neq (1,1)$.
-		\item En general no  es una m\'etrica, si tomamos la distancia euclidiana, $d_{\text{eq}} \left( (1, 0) , (0.5, 0) \right) = 0.5 \implies
-			d\left( (1,0), (0.5, 0) \right) = \lfloor0.5 \rfloor = 0$.
-		\item En general no es una m\'etrica, por ejemplo si $A$ tiene un vep $v$ de vap $\lambda < 0$, entonces $d(v, 0) = \sqrt{(v - 0) A (v-0)^t}$ no existe,
-			ya que el contenido de dentro de la raiz es negativo.
-		\item Vemos que cumple que
-			\begin{enumerate}[i)]
-				\item $d(x, y) \geq 0$, sí, ya que $A$ es definida positiva y por lo tanto, $(x-y)A(x-y)^t \geq 0 \implies \sqrt{(x-y)A(x-y)^t} \geq 0$.
-				\item $d(x, y) = 0 \iff \sqrt{(x-y)A(x-y)^t} = 0 \iff (x-y)A(x-y)^t = 0 \stackrel{A \text{ def. pos.}}{\iff} x = y$.
-				\item $d(x, y) = \sqrt{(x-y)A(x-y)^t} = \sqrt{(-1)(y-x)A(-1)(y-x)^t} =$ \\ $\sqrt{(y-x)A(y-x)^t} = d(y, x)$
-				\item Se tiene que
-					\begin{align*}
-						d^2(x,y) &= (x-y)A(x-y)^t = (x-z+z-y)A(x-z+z-y)^t \\
-						&= (x-z)A(x-z)^t + (x-z)A(z-y)^t + (z-y)A(x-z)^t\, + \\
-						&\qquad\qquad + (z-y)A(z-y)^t \\
-						&\leq (x-z)A(x-z)^t + 2 \abs{(x-z)A(z-y)^t} + (z-y)A(z-y)^t \\
-						&\leq (x-z)A(x-z)^t + 2 \sqrt{(x-z)A(x-z)^t(z-y)A(z-y)^t} \,\,+ \\
-						&\qquad\qquad + (z-y)A(z-y)^t \\
-						&= \left( (x-z)A(x-z)^t + (z-y)A(z-y)^t \right)^2 = \left( d(x,z) + d(z,y) \right)^2.
-					\end{align*}
-					Por lo tanto, $d(x,y) \leq d(x,z) + d(z,y)$.
-			\end{enumerate}
-			Ponemos un ejemplo, tomando
-			\[
-				A =
-				\begin{pmatrix}
-					1 & 2 \\
-					2 & 5
-				\end{pmatrix}
-			\]
-			\begin{center}
-				\input{fig_code/bolas_6i.pgf}
-			\end{center}
-	\end{enumerate}
+    \begin{enumerate}[(a)]
+        \item Sí que es una m\'etrica, de hecho es la m\'etrica habitual en $\real^n$.
+            \begin{center}
+                \input{fig_code/bolas_6a.pgf}
+            \end{center}
+        \item Sí que es una distancia
+            \begin{center}
+                \input{fig_code/bolas_6b.pgf}
+            \end{center}
+        \item Sí que es una m\'etrica
+            \begin{center}
+                \input{fig_code/bolas_6c.pgf}
+            \end{center}
+        \item No es una m\'etrica, por ejemplo, $d\left( (1,0), (1,1) \right) = 0$, pero $(1,0) \neq (1,1)$.
+        \item Sí que es una m\'etrica
+            \begin{center}
+                \input{fig_code/bolas_6e.pgf}
+            \end{center}
+        \item No es una m\'etrica, por ejemplo, $d\left( (1,0), (1,1) \right) = 0$, pero $(1,0) \neq (1,1)$.
+        \item En general no  es una m\'etrica, si tomamos la distancia euclidiana, $d_{\text{eq}} \left( (1, 0) , (0.5, 0) \right) = 0.5 \implies
+            d\left( (1,0), (0.5, 0) \right) = \lfloor0.5 \rfloor = 0$.
+        \item En general no es una m\'etrica, por ejemplo si $A$ tiene un vep $v$ de vap $\lambda < 0$, entonces $d(v, 0) = \sqrt{(v - 0) A (v-0)^t}$ no existe,
+            ya que el contenido de dentro de la raiz es negativo.
+        \item Vemos que cumple que
+            \begin{enumerate}[i)]
+                \item $d(x, y) \geq 0$, sí, ya que $A$ es definida positiva y por lo tanto, $(x-y)A(x-y)^t \geq 0 \implies \sqrt{(x-y)A(x-y)^t} \geq 0$.
+                \item $d(x, y) = 0 \iff \sqrt{(x-y)A(x-y)^t} = 0 \iff (x-y)A(x-y)^t = 0 \stackrel{A \text{ def. pos.}}{\iff} x = y$.
+                \item $d(x, y) = \sqrt{(x-y)A(x-y)^t} = \sqrt{(-1)(y-x)A(-1)(y-x)^t} =$ \\ $\sqrt{(y-x)A(y-x)^t} = d(y, x)$
+                \item Se tiene que
+                    \begin{align*}
+                        d^2(x,y) &= (x-y)A(x-y)^t = (x-z+z-y)A(x-z+z-y)^t \\
+                        &= (x-z)A(x-z)^t + (x-z)A(z-y)^t + (z-y)A(x-z)^t\, + \\
+                        &\qquad\qquad + (z-y)A(z-y)^t \\
+                        &\leq (x-z)A(x-z)^t + 2 \abs{(x-z)A(z-y)^t} + (z-y)A(z-y)^t \\
+                        &\leq (x-z)A(x-z)^t + 2 \sqrt{(x-z)A(x-z)^t(z-y)A(z-y)^t} \,\,+ \\
+                        &\qquad\qquad + (z-y)A(z-y)^t \\
+                        &= \left( (x-z)A(x-z)^t + (z-y)A(z-y)^t \right)^2 \\
+                        &= \left( d(x,z) + d(z,y) \right)^2.
+                    \end{align*}
+                    Por lo tanto, $d(x,y) \leq d(x,z) + d(z,y)$.
+            \end{enumerate}
+            Ponemos un ejemplo, tomando
+            \[
+                A =
+                \begin{pmatrix}
+                    1 & 2 \\
+                    2 & 5
+                \end{pmatrix}
+            \]
+            \begin{center}
+                \input{fig_code/bolas_6i.pgf}
+            \end{center}
+    \end{enumerate}
 \end{ej}
 
 \begin{ej}
-	\begin{enumerate}[(a)]
-		\item comprobaremos las propiedades para $\bar{d}$:
-			\begin{enumerate}[i)]
-				\item $\bar{d}(x,y) \geq 0$ trivial por la definición.
-				\item $\bar{d}(x,y) = 0 \iff \bar{d}(x,y) = d(x,y) = 0 \iff x = y$.
-				\item $\bar{d}(x,y) = \bar{d}(y,x)$ trivial por la definición.
-				\item Si $d(x,y) < 1$ entonces $\bar{d}(x,y) = d(x,y) \leq d(x,z) + d(z,y) \leq \bar{d}(x,z) + \bar{d}(z,y)$. Si $d(x,y) \geq 1$,
-					entonces $\bar{d}(x,y) = 1$, y $\bar{d}(x,z) + \bar{d}(z,y)$ es mayor o igual que 1, ya que, si $d(x,z) \geq 1$ o
-					$d(z,y) \geq 1$ ya se cumple la desigualdad. En otro caso, se tiene que $\bar{d}(x,y) = 1 \leq d(x,y) \leq d(x,z) + d(z,y) =
-					\bar{d}(x,z) + \bar{d}(z,y)$.
-			\end{enumerate}
-		\item Comprobamos las propiedades
-			\begin{enumerate}[i)]
-				\item $\bar{d}(x,y) \geq 0$ división de dos números positivos.
-				\item $\bar{d}(x,y) = 0 \iff d(x,y) = 0 \iff x = y$.
-				\item $\bar{d}(x,y) = \bar{d}(y,x)$ trivial por la definición.
-				\item 
-					\begin{align*}
-						\bar{d}(x,y) &= \frac{d(x,y)}{1 + d(x,y)} \leq \frac{d(x,z)}{1 + d(x,z)} + \frac{d(z,y)}{1 + d(z,y)} =
-						\bar{d}(x,z) + \bar{d}(z,y) \iff \\
-						&\iff \frac{d(x,y)}{1+d(x,y)} \leq \frac{d(x,z) + d(z,y) + 2d(x,z)d(z,y)}{1 + d(x,z) + d(z,y) + d(x,z)d(z,y)} \\
-						&\iff d(x,y) + \cancel{d(x,y)d(x,z)} + \cancel{d(x,y)d(z,y)} + \cancel{d(x,y)d(x,z)d(z,y)} \leq \\
-						&\qquad\qquad\leq d(x,z) + d(z,y) + 2d(x,z)d(z,y) + \cancel{d(x,y)d(x,z)} \,\,+ \\
-							&\qquad\qquad\qquad\qquad +\cancel{d(x,y)d(z,y)} + \cancel{2}d(x,y)d(x,z)d(z,y) \\
-						&\iff d(x,y) \leq d(x,z) + d(z,y) + 2d(x,z)d(z,y) + d(x,y)d(x,z)d(z,y).
-					\end{align*}
-					Lo cual es cierto ya que $d$ es una distancia.
-			\end{enumerate}
-		\item De nuevo, comprobamos
-			\begin{enumerate}[i)]
-				\item $\bar{d}(x,y) \geq 0 \iff d(x,y) \geq \frac{0}{\alpha}$ OK.
-				\item $\bar{d}(x,y) = 0 \iff d(x,y) = 0 \iff x = y$.
-				\item $\bar{d}(x,y) = \bar{d}(y,x)$ trivial.
-				\item $\bar{d}(x,y) = \alpha d(x,y) \leq \alpha \left( d(x,z) + d(z,y) \right) = \alpha d(x,z) + \alpha d(z,y) = \bar{d}(x,z) + \bar{d}(z,y)$.
-			\end{enumerate}
-		\item Comprobamos
-			\begin{enumerate}[i)]
-				\item $\bar{d}(x,y) \geq 0$ inmediato.
-				\item $\bar{d}(x,y) = 0 \iff d(x,y) = 0 \iff x = y$.
-				\item $\bar{d}(x,y) = \bar{d}(y,x)$ trivial.
-				\item $\bar{d}(x,y) = \left( d(x,y) \right)^c \leq \left( d(x,z) + d(z,y) \right)^c \leq d(x,z)^c + d(z,y)^c$, ya que la función $f(x) = x^c$ es
-					cóncava.
-			\end{enumerate}
-	\end{enumerate}
+    \begin{enumerate}[(a)]
+        \item Comprobaremos las propiedades para $\bar{d}$:
+            \begin{enumerate}[i)]
+                \item $\bar{d}(x,y) \geq 0$ trivial por la definición.
+                \item $\bar{d}(x,y) = 0 \iff \bar{d}(x,y) = d(x,y) = 0 \iff x = y$.
+                \item $\bar{d}(x,y) = \bar{d}(y,x)$ trivial por la definición.
+                \item Si $d(x,y) < 1$ entonces $\bar{d}(x,y) = d(x,y) \leq d(x,z) + d(z,y) \leq \bar{d}(x,z) + \bar{d}(z,y)$. Si $d(x,y) \geq 1$,
+                    entonces $\bar{d}(x,y) = 1$, y $\bar{d}(x,z) + \bar{d}(z,y)$ es mayor o igual que 1, ya que, si $d(x,z) \geq 1$ o
+                    $d(z,y) \geq 1$ ya se cumple la desigualdad. En otro caso, se tiene que $\bar{d}(x,y) = 1 \leq d(x,y) \leq d(x,z) + d(z,y) =
+                    \bar{d}(x,z) + \bar{d}(z,y)$.
+            \end{enumerate}
+        \item Comprobamos las propiedades
+            \begin{enumerate}[i)]
+                \item $\bar{d}(x,y) \geq 0$ división de dos números positivos.
+                \item $\bar{d}(x,y) = 0 \iff d(x,y) = 0 \iff x = y$.
+                \item $\bar{d}(x,y) = \bar{d}(y,x)$ trivial por la definición.
+                \item 
+                    \begin{align*}
+                        \bar{d}(x,y) &= \frac{d(x,y)}{1 + d(x,y)} \leq \frac{d(x,z)}{1 + d(x,z)} + \frac{d(z,y)}{1 + d(z,y)} =
+                        \bar{d}(x,z) + \bar{d}(z,y) \iff \\
+                        &\iff \frac{d(x,y)}{1+d(x,y)} \leq \frac{d(x,z) + d(z,y) + 2d(x,z)d(z,y)}{1 + d(x,z) + d(z,y) + d(x,z)d(z,y)} \\
+                        &\iff d(x,y) + \cancel{d(x,y)d(x,z)} + \cancel{d(x,y)d(z,y)} + \cancel{d(x,y)d(x,z)d(z,y)} \leq \\
+                        &\qquad\qquad\leq d(x,z) + d(z,y) + 2d(x,z)d(z,y) + \cancel{d(x,y)d(x,z)} \,\,+ \\
+                            &\qquad\qquad\qquad\qquad +\cancel{d(x,y)d(z,y)} + \cancel{2}d(x,y)d(x,z)d(z,y) \\
+                        &\iff d(x,y) \leq d(x,z) + d(z,y) + 2d(x,z)d(z,y) + d(x,y)d(x,z)d(z,y).
+                    \end{align*}
+                    Lo cual es cierto ya que $d$ es una distancia.
+            \end{enumerate}
+        \item De nuevo, comprobamos
+            \begin{enumerate}[i)]
+                \item $\bar{d}(x,y) \geq 0 \iff d(x,y) \geq \frac{0}{\alpha}$ OK.
+                \item $\bar{d}(x,y) = 0 \iff d(x,y) = 0 \iff x = y$.
+                \item $\bar{d}(x,y) = \bar{d}(y,x)$ trivial.
+                \item $\bar{d}(x,y) = \alpha d(x,y) \leq \alpha \left( d(x,z) + d(z,y) \right) = \alpha d(x,z) + \alpha d(z,y) = \bar{d}(x,z) + \bar{d}(z,y)$.
+            \end{enumerate}
+        \item Comprobamos
+            \begin{enumerate}[i)]
+                \item $\bar{d}(x,y) \geq 0$ inmediato.
+                \item $\bar{d}(x,y) = 0 \iff d(x,y) = 0 \iff x = y$.
+                \item $\bar{d}(x,y) = \bar{d}(y,x)$ trivial.
+                \item $\bar{d}(x,y) = \left( d(x,y) \right)^c \leq \left( d(x,z) + d(z,y) \right)^c \leq d(x,z)^c + d(z,y)^c$, ya que la función $f(x) = x^c$ es
+                    cóncava.
+            \end{enumerate}
+    \end{enumerate}
 \end{ej}
 
 \begin{ej}
-	\begin{enumerate}[(a)]
-		\item \label{item:conc_a} Como $f$ es cóncava, cumple la desigualdad $\alpha f(z) + (1-\alpha)f(t) \leq f\left( \alpha z + (1-\alpha)t \right)$, tomamos ahora
-			$z = 0$ y $t=x+y$, entonces, substituyendo para unos valores concretos de $\alpha$:
-			\begin{gather*}
-				\begin{rcases}
-					\alpha = \frac{x}{x+y} \implies \frac{x}{x+y}f(0) + \frac{y}{x+y}f(x+y) \leq f\left( \frac{x}{x+y} 0 + \frac{y}{x+y}(x+y)\right) =f(y)\\
-					\alpha = \frac{y}{x+y} \implies \frac{y}{x+y}f(0) + \frac{x}{x+y}f(x+y) \leq f\left( \frac{y}{x+y} 0 + \frac{x}{x+y}(x+y)\right) =f(x)
-				\end{rcases}
-				\implies\\ \implies
-				f(0) + f(x+y) \leq f(x) + f(y) \stackrel{f(0) \geq 0}{\implies} f(x+y) \leq f(x) + f(y)
-			\end{gather*}
-		\item Comporbamos las propiedades
-			\begin{enumerate}[i)]
-				\item $f$ creciente $\implies f(x) \geq f(0) = 0 \implies (f \circ d)(x,y) \geq 0$.
-				\item $(f \circ d)(x,y) = 0 \iff d(x,y) = 0 \iff x = y$.
-				\item $(f \circ d)(x,y) = f\left( d(x,y) \right) = f\left( d(y,x) \right) = (f \circ d)(y,x)$.
-				\item $(f \circ d)(x,y) = f\left( d(x,y) \right) \leq f\left( d(x,z) + d(z,y) \right) \stackrel{\ref{item:conc_a}}{\leq}f\left( d(x,z) \right) +
-					f\left( d(z,y) \right) = (f \circ d)(x,z) + (f \circ d)(z,y)$.
-			\end{enumerate}
-	\end{enumerate}
+    \begin{enumerate}[(a)]
+        \item \label{item:conc_a} Como $f$ es cóncava, cumple la desigualdad $\alpha f(z) + (1-\alpha)f(t) \leq f\left( \alpha z + (1-\alpha)t \right)$, tomamos ahora
+            $z = 0$ y $t=x+y$, entonces, substituyendo para unos valores concretos de $\alpha$:
+            \begin{gather*}
+                \begin{rcases}
+                    \alpha = \frac{x}{x+y} \implies \frac{x}{x+y}f(0) + \frac{y}{x+y}f(x+y) \leq f\left( \frac{x}{x+y} 0 + \frac{y}{x+y}(x+y)\right) =f(y)\\
+                    \alpha = \frac{y}{x+y} \implies \frac{y}{x+y}f(0) + \frac{x}{x+y}f(x+y) \leq f\left( \frac{y}{x+y} 0 + \frac{x}{x+y}(x+y)\right) =f(x)
+                \end{rcases}
+                \implies\\ \implies
+                f(0) + f(x+y) \leq f(x) + f(y) \stackrel{f(0) \geq 0}{\implies} f(x+y) \leq f(x) + f(y)
+            \end{gather*}
+        \item Comporbamos las propiedades
+            \begin{enumerate}[i)]
+                \item $f$ creciente $\implies f(x) \geq f(0) = 0 \implies (f \circ d)(x,y) \geq 0$.
+                \item $(f \circ d)(x,y) = 0 \iff d(x,y) = 0 \iff x = y$.
+                \item $(f \circ d)(x,y) = f\left( d(x,y) \right) = f\left( d(y,x) \right) = (f \circ d)(y,x)$.
+                \item $(f \circ d)(x,y) = f\left( d(x,y) \right) \leq f\left( d(x,z) + d(z,y) \right) \stackrel{\ref{item:conc_a}}{\leq}f\left( d(x,z) \right) +
+                    f\left( d(z,y) \right) = (f \circ d)(x,z) + (f \circ d)(z,y)$.
+            \end{enumerate}
+    \end{enumerate}
 \end{ej}
 
 \begin{ej}
-	Veremos que $(a) \implies (b)$. Sea $U \subset X$ un abierto de $(X, d_2)$, entonces $\Id^{-1}(U) = U$, que es un abierto en $(X,d_1)$ y análogamente con $\Id^{-1}$.
-	
-	Veremos ahora que $(b) \implies (c)$. Sea $B_1(x, r)$ una bola abierta según la m\'etrica $d_1$ de centro $x$, entonces, por $(b)$, $\Id^{-1}\left( B_1(x,r) \right)$
-	es un abierto, y $x \in \Id^{-1}\left( B_1(x,r) \right)$. Por lo tanto, $\exists s \tq B_2(x,s) \subset \Id^{-1}\left( B_1(x,r) \right) = B_1(x,r)$. (la otra
-	implicación es análoga).
+    Veremos que $(a) \implies (b)$. Sea $U \subset X$ un abierto de $(X, d_2)$, entonces $\Id^{-1}(U) = U$, que es un abierto en $(X,d_1)$ y análogamente con $\Id^{-1}$.
+    
+    Veremos ahora que $(b) \implies (c)$. Sea $B_1(x, r)$ una bola abierta según la m\'etrica $d_1$ de centro $x$, entonces, por $(b)$, $\Id^{-1}\left( B_1(x,r) \right)$
+    es un abierto, y $x \in \Id^{-1}\left( B_1(x,r) \right)$. Por lo tanto, $\exists s \tq B_2(x,s) \subset \Id^{-1}\left( B_1(x,r) \right) = B_1(x,r)$. (la otra
+    implicación es análoga).
 
-	Por último, comprobaremos que $(c) \implies (a)$. Sea $U$ un abierto en $(X,d_1)$, entonces $\forall x \in U \; \exists r \tq B_1(x,r) \subset U$, pero por $(c)$,
-	$\exists s \tq x \in B_2(x,s) \subset B_1(x,r) \subset U \implies x$ es un punto interior en $(X, d_2)$, por lo tanto, $U$ es abierto en $(X, d_2)$ y la otra
-	implicación se demuestra de forma análoga.
+    Por último, comprobaremos que $(c) \implies (a)$. Sea $U$ un abierto en $(X,d_1)$, entonces $\forall x \in U \; \exists r \tq B_1(x,r) \subset U$, pero por $(c)$,
+    $\exists s \tq x \in B_2(x,s) \subset B_1(x,r) \subset U \implies x$ es un punto interior en $(X, d_2)$, por lo tanto, $U$ es abierto en $(X, d_2)$ y la otra
+    implicación se demuestra de forma análoga.
 \end{ej}
 
 \begin{ej}
-	Sean $d_1, d_2$ dos m\'etricas fuertemente equivalentes. Sean $r \in \real$ y $x \in X$, entonces, $\exists s = \frac{r}{M} \in \real \tq B_2(x, s) \subset B_1(x, r)$.
-	De nuevo, la otra implicación es análoga.
+    Sean $d_1, d_2$ dos m\'etricas fuertemente equivalentes. Sean $r \in \real$ y $x \in X$, entonces, $\exists s = \frac{r}{M} \in \real \tq B_2(x, s) \subset B_1(x, r)$.
+    De nuevo, la otra implicación es análoga.
 
-	Las m\'etricas $d_1(x,y) = \abs{x-y}$ y $d_2(x,y) = \abs{\frac{1}{x} - \frac{1}{y}}$ son equivalentes, pero no son fuertemente equivalentes.
+    Las m\'etricas $d_1(x,y) = \abs{x-y}$ y $d_2(x,y) = \abs{\frac{1}{x} - \frac{1}{y}}$ son equivalentes, pero no son fuertemente equivalentes.
 \end{ej}
 
 \begin{ej}
-	\begin{enumerate}[(a)]
-		\item Comprobemos que $D_1$ satisface las propiedades de las métricas. Por ser $d_1$ y $d_2$ métricas,
-		\begin{enumerate}[i)]
+    \begin{enumerate}[(a)]
+        \item Comprobemos que $D_1$ satisface las propiedades de las métricas. Por ser $d_1$ y $d_2$ métricas,
+        \begin{enumerate}[i)]
             \item 
             \[
-                D_1 \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp = d_1 \lp x_1, y_1\rp + d_2 \lp x_2 , y_2 \rp \geq 0.
+                D_1 \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right) = d_1 \left( x_1, y_1\right) + d_2 \left( x_2 , y_2 \right) \geq 0.
             \]
             \item 
             \begin{gather*}
-                D_1 \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp = d_1 \lp x_1, y_1\rp + d_2 \lp x_2 , y_2 \rp = 0 \iff \\
+                D_1 \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right) = d_1 \left( x_1, y_1\right) + d_2 \left( x_2 , y_2 \right) = 0 \iff \\
                 \iff \left\{ \begin{array}{c}
-                    d_1 \lp x_1, y_1 \rp = 0 \\
-                    d_2 \lp x_2, y_2 \rp = 0
+                    d_1 \left( x_1, y_1 \right) = 0 \\
+                    d_2 \left( x_2, y_2 \right) = 0
                 \end{array} \right\} \iff \left\{ \begin{array}{c}
                     x_1=y_1 \\
                     x_2=y_2
-                \end{array} \right\} \iff \lp x_1, y_1 \rp = \lp x_2, y_2 \rp.
+                \end{array} \right\} \iff \left( x_1, y_1 \right) = \left( x_2, y_2 \right).
             \end{gather*}
             \item 
             \begin{gather*}
-                D_1 \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp = d_1 \lp x_1, y_1 \rp + d_2 \lp x_2 , y_2 \rp = d_1 \lp y_1, x_1 \rp + d_2 \lp y_2 , x_2 \rp= \\
-                =D_1 \lp \lp y_1, y_2 \rp , \lp x_1 , x_2 \rp \rp .
+                D_1 \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right) = d_1 \left( x_1, y_1 \right) + d_2 \left( x_2 , y_2 \right) = d_1 \left( y_1, x_1 \right) + d_2 \left( y_2 , x_2 \right)= \\
+                =D_1 \left( \left( y_1, y_2 \right) , \left( x_1 , x_2 \right) \right) .
             \end{gather*}
             \item 
             \begin{gather*}
-                D_1 \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp = d_1 \lp x_1, y_1 \rp + d_2 \lp x_2 , y_2 \rp \leq d_1 \lp x_1, z_1 \rp + d_1 \lp z_1, y_1 \rp + \\
-                + d_2 \lp x_2, z_2 \rp + d_2 \lp z_2, y_2 \rp = D_1 \lp \lp x_1, x_2 \rp , \lp z_1 , z_2 \rp \rp + D_1 \lp \lp z_1, z_2 \rp , \lp y_1 , y_2 \rp \rp.
+                D_1 \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right) = d_1 \left( x_1, y_1 \right) + d_2 \left( x_2 , y_2 \right) \leq d_1 \left( x_1, z_1 \right) + d_1 \left( z_1, y_1 \right) + \\
+                + d_2 \left( x_2, z_2 \right) + d_2 \left( z_2, y_2 \right) = D_1 \left( \left( x_1, x_2 \right) , \left( z_1 , z_2 \right) \right) + D_1 \left( \left( z_1, z_2 \right) , \left( y_1 , y_2 \right) \right).
             \end{gather*}
-		\end{enumerate}
-		\item Comprobemos que $D_2$ satisface las propiedades de las métricas. Por ser $d_1$ y $d_2$ métricas,
-		\begin{enumerate}[i)]
+        \end{enumerate}
+        \item Comprobemos que $D_2$ satisface las propiedades de las métricas. Por ser $d_1$ y $d_2$ métricas,
+        \begin{enumerate}[i)]
             \item
             \[
-                D_2 \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp = \sqrt{ d_1 \lp x_1, y_1\rp ^2 + d_2 \lp x_2 , y_2 \rp^2 } \geq 0.
+                D_2 \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right) = \sqrt{ d_1 \left( x_1, y_1\right) ^2 + d_2 \left( x_2 , y_2 \right)^2 } \geq 0.
             \]
             \item 
             \begin{gather*}
-                D_2 \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp = \sqrt{ d_1 \lp x_1, y_1\rp ^2 + d_2 \lp x_2 , y_2 \rp^2 } = 0 \iff \\
+                D_2 \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right) = \sqrt{ d_1 \left( x_1, y_1\right) ^2 + d_2 \left( x_2 , y_2 \right)^2 } = 0 \iff \\
                 \iff \left\{ \begin{array}{c}
-                    d_1 \lp x_1, y_1 \rp = 0 \\
-                    d_2 \lp x_2, y_2 \rp = 0
+                    d_1 \left( x_1, y_1 \right) = 0 \\
+                    d_2 \left( x_2, y_2 \right) = 0
                 \end{array} \right\} \iff  \left\{ \begin{array}{c}
                     x_1=y_1 \\
                     x_2=y_2
-                \end{array} \right\} \iff \lp x_1, y_1 \rp = \lp x_2, y_2 \rp.
+                \end{array} \right\} \iff \left( x_1, y_1 \right) = \left( x_2, y_2 \right).
             \end{gather*}
             \item 
             \begin{gather*}
-                D_2 \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp = \sqrt{ d_1 \lp x_1, y_1\rp ^2 + d_2 \lp x_2 , y_2 \rp^2 } = \\ 
-                = \sqrt{ d_1 \lp y_1, x_1\rp ^2 + d_2 \lp y_2 , x_2 \rp^2 } = D_2 \lp \lp y_1, y_2 \rp , \lp x_1 , x_2 \rp \rp .
+                D_2 \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right) = \sqrt{ d_1 \left( x_1, y_1\right) ^2 + d_2 \left( x_2 , y_2 \right)^2 } = \\ 
+                = \sqrt{ d_1 \left( y_1, x_1\right) ^2 + d_2 \left( y_2 , x_2 \right)^2 } = D_2 \left( \left( y_1, y_2 \right) , \left( x_1 , x_2 \right) \right) .
             \end{gather*}
             \item Primero, demostraremos un resultado auxiliar. Para cualesquiera reales positivos $a, b, c, d$ se tiene que
             \begin{align} \nonumber
-                0 \leq \lp ad -cb \rp ^2 &\implies 2abcd \leq a^2d^2+c^2b^2 \\  \nonumber
-                &\implies \lp ab+cd \rp ^2 = a^2b^2 + 2abcd + c^2d^2 \\ \nonumber
+                0 \leq \left( ad -cb \right) ^2 &\implies 2abcd \leq a^2d^2+c^2b^2 \\  \nonumber
+                &\implies \left( ab+cd \right) ^2 = a^2b^2 + 2abcd + c^2d^2 \\ \nonumber
                     &\qquad\qquad\qquad\quad \leq a^2b^2+a^2d^2+c^2b^2+c^2d^2 \\ \nonumber
-                    &\qquad\qquad\qquad\quad = \lp a^2+c^2 \rp \lp b^2+d^2 \rp \\ \nonumber
-                &\implies \lp a+b \rp ^2 + \lp c+d\rp ^2 = a^2+b^2+c^2+d^2 +2ab +2cd \\ \nonumber
-                &\qquad \qquad \leq a^2+b^2+c^2+d^2+2\sqrt{\lp a^2+c^2\rp \lp b^2+d^2\rp} \\ \nonumber
-                &\implies\lp \sqrt{\lp a+b \rp ^2 + \lp c+d \rp ^2} \rp ^2 \leq \lp \sqrt{a^2+c^2} + \sqrt{b^2+d^2} \rp ^2 \\
-                \label{item:11.a.lema} &\implies \sqrt{\lp a+b \rp ^2 + \lp c+d \rp ^2} \leq \sqrt{a^2+c^2} + \sqrt{b^2+d^2}.
+                    &\qquad\qquad\qquad\quad = \left( a^2+c^2 \right) \left( b^2+d^2 \right) \\ \nonumber
+                &\implies \left( a+b \right) ^2 + \left( c+d\right) ^2 = a^2+b^2+c^2+d^2 +2ab +2cd \\ \nonumber
+                &\qquad \qquad \leq a^2+b^2+c^2+d^2+2\sqrt{\left( a^2+c^2\right) \left( b^2+d^2\right)} \\ \nonumber
+                &\implies\left( \sqrt{\left( a+b \right) ^2 + \left( c+d \right) ^2} \right) ^2 \leq \left( \sqrt{a^2+c^2} + \sqrt{b^2+d^2} \right) ^2 \\
+                \label{item:11.a.lema} &\implies \sqrt{\left( a+b \right) ^2 + \left( c+d \right) ^2} \leq \sqrt{a^2+c^2} + \sqrt{b^2+d^2}.
             \end{align}
             Entonces,
             \begin{align*}
-                D_2 \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp &= \sqrt{ d_1 \lp x_1, y_1\rp ^2 + d_2 \lp x_2 , y_2 \rp^2 } \\
-                &\leq \sqrt{ \lp d_1 \lp x_1, z_1\rp + d_1\lp z_1, y_1 \rp \rp ^2 + \lp d_2 \lp x_2, z_2 \rp + d_2\lp z_2, y_2 \rp \rp ^2 }\\
-                & \stackrel{\eqref{item:11.a.lema}}{\leq} \sqrt{d_1\lp x_1, z_1 \rp ^2+d_2 \lp x_2, z_2 \rp ^2} + \sqrt{d_1\lp z_1, y_1 \rp ^2+d_2 \lp z_2, y_2 \rp ^2}\\
-                &= D_2 \lp \lp x_1, x_2 \rp , \lp z_1 , z_2 \rp \rp + D_2 \lp \lp z_1, z_2 \rp , \lp y_1 , y_2 \rp \rp.
+                D_2 \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right) &= \sqrt{ d_1 \left( x_1, y_1\right) ^2 + d_2 \left( x_2 , y_2 \right)^2 } \\
+                &\leq \sqrt{ \left( d_1 \left( x_1, z_1\right) + d_1\left( z_1, y_1 \right) \right) ^2 + \left( d_2 \left( x_2, z_2 \right) + d_2\left( z_2, y_2 \right) \right) ^2 }\\
+                & \stackrel{\eqref{item:11.a.lema}}{\leq} \sqrt{d_1\left( x_1, z_1 \right) ^2+d_2 \left( x_2, z_2 \right) ^2} + \sqrt{d_1\left( z_1, y_1 \right) ^2+d_2 \left( z_2, y_2 \right) ^2}\\
+                &= D_2 \left( \left( x_1, x_2 \right) , \left( z_1 , z_2 \right) \right) + D_2 \left( \left( z_1, z_2 \right) , \left( y_1 , y_2 \right) \right).
             \end{align*}            
-		\end{enumerate}
-		\item Comprobemos que $D_{\infty}$ satisface las propiedades de las métricas. Por ser $d_1$ y $d_2$ métricas,
-		\begin{enumerate}[i)]
+        \end{enumerate}
+        \item Comprobemos que $D_{\infty}$ satisface las propiedades de las métricas. Por ser $d_1$ y $d_2$ métricas,
+        \begin{enumerate}[i)]
             \item
             \[
-                D_{\infty} \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp = \max \left\{ d_1 \lp x_1, y_1\rp , d_2 \lp x_2 , y_2 \rp \right\} \geq 0.
+                D_{\infty} \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right) = \max \left\{ d_1 \left( x_1, y_1\right) , d_2 \left( x_2 , y_2 \right) \right\} \geq 0.
             \]
             \item 
             \begin{gather*}
-                D_{\infty} \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp = \max \left\{ d_1 \lp x_1, y_1\rp , d_2 \lp x_2 , y_2 \rp \right\} = 0  \iff \\
+                D_{\infty} \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right) = \max \left\{ d_1 \left( x_1, y_1\right) , d_2 \left( x_2 , y_2 \right) \right\} = 0  \iff \\
                 \iff \left\{ \begin{array}{c}
-                    d_1 \lp x_1, y_1 \rp = 0 \\
-                    d_2 \lp x_2, y_2 \rp = 0
+                    d_1 \left( x_1, y_1 \right) = 0 \\
+                    d_2 \left( x_2, y_2 \right) = 0
                 \end{array} \right\} \iff  \left\{ \begin{array}{c}
                     x_1=y_1 \\
                     x_2=y_2
-                \end{array} \right\} \iff \lp x_1, y_1 \rp = \lp x_2, y_2 \rp.
+                \end{array} \right\} \iff \left( x_1, y_1 \right) = \left( x_2, y_2 \right).
             \end{gather*}
             \item 
             \begin{gather*}
-                D_{\infty} \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp = \max \left\{ d_1 \lp x_1, y_1\rp  , d_2 \lp x_2 , y_2 \rp \right\} = \\
-                = \max \left\{ d_1 \lp y_1, x_1\rp , d_2 \lp y_2 , x_2 \rp \right\} =D_2 \lp \lp y_1, y_2 \rp , \lp x_1 , x_2 \rp \rp .
+                D_{\infty} \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right) = \max \left\{ d_1 \left( x_1, y_1\right)  , d_2 \left( x_2 , y_2 \right) \right\} = \\
+                = \max \left\{ d_1 \left( y_1, x_1\right) , d_2 \left( y_2 , x_2 \right) \right\} =D_2 \left( \left( y_1, y_2 \right) , \left( x_1 , x_2 \right) \right) .
             \end{gather*}
             \item 
             \begin{align*}
-                D_{\infty} \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp &= \max \left\{ d_1 \lp x_1, y_1\rp , d_2 \lp x_2 , y_2 \rp \right\} \\
-                &\leq \max \left\{ d_1 \lp x_1, z_1 \rp +d_1 \lp z_1, y_1 \rp , d_1 \lp x_2, z_2 \rp +d_2 \lp z_2, y_2 \rp  \right\} \\
-                &\leq \max \left\{ d_1 \lp x_1, z_1\rp , d_2 \lp x_2 , z_2 \rp \right\} + \\
-                &\qquad\qquad + \max \left\{ d_1 \lp z_1, y_1\rp , d_2 \lp z_2 , y_2 \rp \right\} \\
-                &= D_{\infty} \lp \lp x_1, x_2 \rp , \lp z_1 , z_2 \rp \rp + D_{\infty} \lp \lp z_1, z_2 \rp , \lp y_1 , y_2 \rp \rp.
+                D_{\infty} \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right) &= \max \left\{ d_1 \left( x_1, y_1\right) , d_2 \left( x_2 , y_2 \right) \right\} \\
+                &\leq \max \left\{ d_1 \left( x_1, z_1 \right) +d_1 \left( z_1, y_1 \right) , d_1 \left( x_2, z_2 \right) +d_2 \left( z_2, y_2 \right)  \right\} \\
+                &\leq \max \left\{ d_1 \left( x_1, z_1\right) , d_2 \left( x_2 , z_2 \right) \right\} + \\
+                &\qquad\qquad + \max \left\{ d_1 \left( z_1, y_1\right) , d_2 \left( z_2 , y_2 \right) \right\} \\
+                &= D_{\infty} \left( \left( x_1, x_2 \right) , \left( z_1 , z_2 \right) \right) + D_{\infty} \left( \left( z_1, z_2 \right) , \left( y_1 , y_2 \right) \right).
             \end{align*}
-		\end{enumerate}
-	\end{enumerate}
+        \end{enumerate}
+    \end{enumerate}
     Veamos ahora que $D_1$ y $D_2$ son métricas fuertemente equivalentes. Observamos que
     \[
-        D_1 \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp^2-D_2 \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp^2=2d_1\lp x_1, y_1 \rp d_2 \lp x_2, y_2 \rp.
+        D_1 \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right)^2-D_2 \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right)^2=2d_1\left( x_1, y_1 \right) d_2 \left( x_2, y_2 \right).
     \]
     Entonces,
     \[
-        2d_1\lp x_1, y_1 \rp d_2 \lp x_2, y_2 \rp \geq 0 \implies D_2 \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp \leq D_1 \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp.
+        2d_1\left( x_1, y_1 \right) d_2 \left( x_2, y_2 \right) \geq 0 \implies D_2 \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right) \leq D_1 \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right).
     \]
     Y también
     \begin{gather*}
-        2d_1\lp x_1, y_1 \rp d_2 \lp x_2, y_2 \rp \leq d_1\lp x_1, y_1 \rp ^2 + d_2 \lp x_2, y_2 \rp ^2 = D_2 \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp^2 \implies \\
-        \implies D_1 \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp \leq \sqrt{2} D_2 \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp.
+        2d_1\left( x_1, y_1 \right) d_2 \left( x_2, y_2 \right) \leq d_1\left( x_1, y_1 \right) ^2 + d_2 \left( x_2, y_2 \right) ^2 = D_2 \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right)^2 \implies \\
+        \implies D_1 \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right) \leq \sqrt{2} D_2 \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right).
     \end{gather*}
     Por lo tanto,
     \[
-        D_2 \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp \leq D_1 \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp \leq \sqrt{2} D_2 \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp,
+        D_2 \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right) \leq D_1 \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right) \leq \sqrt{2} D_2 \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right),
     \]
-    con lo que $D_1$ y $D_2$ son métricas fuertemente equivalentes. Veamos ahora que $D_1$ y $D_{\infty}$ también lo son. Es trivial comprovar que
+    con lo que $D_1$ y $D_2$ son métricas fuertemente equivalentes. Veamos ahora que $D_1$ y $D_{\infty}$ también lo son. Es trivial comprobar que
     \[
-        D_{\infty} \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp \leq D_1 \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp \leq 2 D_{\infty} \lp \lp x_1, x_2 \rp , \lp y_1 , y_2 \rp \rp.
+        D_{\infty} \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right) \leq D_1 \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right) \leq 2 D_{\infty} \left( \left( x_1, x_2 \right) , \left( y_1 , y_2 \right) \right).
     \]
     Finalmente, como que la equivalencia fuerte es una propiedad transitiva, $D_2$ y $D_{\infty}$ son métricas fuertemente equivalentes.
     
-    Para acabar, mostraremos la generalización de estos resultados. Sean $\lp X_i, d_i \rp$ espacios métricos para todo $i \in \left\{1, \dots , n \right\}$, y sea $X=X_1 \times \cdots \times X_n$. Definimos en $X$ las aplicaciones
+    Para acabar, mostraremos la generalización de estos resultados. Sean $\left( X_i, d_i \right)$ espacios métricos para todo $i \in \left\{1, \dots , n \right\}$, y sea $X=X_1 \times \cdots \times X_n$. Definimos en $X$ las aplicaciones
     \begin{enumerate}[(a)]
-        \item $D_1\lp \lp x_1, y_1 \rp, \dots , \lp x_n, y_n \rp \rp = d_1\lp x_1, y_1 \rp + \cdots + d_n \lp x_n, y_n \rp.$
-        \item $D_2\lp \lp x_1, y_1 \rp, \dots , \lp x_n, y_n \rp \rp = \sqrt{d_1\lp x_1, y_1 \rp^2 + \cdots + d_n \lp x_n, y_n \rp^2}.$
-        \item $D_{\infty}\lp \lp x_1, y_1 \rp, \dots , \lp x_n, y_n \rp \rp = \max \left\{d_1\lp x_1, y_1 \rp, \dots, d_n \lp x_n, y_n \rp \right\}.$
+        \item $D_1\left( \left( x_1, y_1 \right), \dots , \left( x_n, y_n \right) \right) = d_1\left( x_1, y_1 \right) + \cdots + d_n \left( x_n, y_n \right).$
+        \item $D_2\left( \left( x_1, y_1 \right), \dots , \left( x_n, y_n \right) \right) = \sqrt{d_1\left( x_1, y_1 \right)^2 + \cdots + d_n \left( x_n, y_n \right)^2}.$
+        \item $D_{\infty}\left( \left( x_1, y_1 \right), \dots , \left( x_n, y_n \right) \right) = \max \left\{d_1\left( x_1, y_1 \right), \dots, d_n \left( x_n, y_n \right) \right\}.$
     \end{enumerate}
     A través de un razonamiento inductivo inmediato a partir de lo anteriormente visto, obtenemos que $D_1$, $D_2$ y $D_{\infty}$ son métricas en $X$ y fuertemente equivalentes entre ellas.
 \end{ej}
