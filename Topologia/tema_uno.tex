@@ -379,3 +379,14 @@
     \end{enumerate}
     A través de un razonamiento inductivo inmediato a partir de lo anteriormente visto, obtenemos que $D_1$, $D_2$ y $D_{\infty}$ son métricas en $X$ y fuertemente equivalentes entre ellas.
 \end{ej}
+
+\begin{ej}
+    Sea $x= \lp x_1, x_2 \rp \in X \times X$ y sean $\varepsilon > 0, \, \delta=\varepsilon$. Entonces, $\forall y = \lp y_1, y_2 \rp \in X \times X$ con $D_1 \lp x, y \rp < \delta$,
+    \begin{align*}
+        \left| d\lp x_1, x_2 \rp - d\lp y_1, y_2 \rp \right| &\leq \left| d\lp x_1, x_2 \rp -d\lp x_2, y_2 \rp + d \lp x_2, y_1 \rp - d\lp y_1, y_2 \rp \right| \\
+        &\leq \left| d\lp x_1, x_2 \rp -d\lp x_2, y_2 \rp \right| + \left| d \lp x_2, y_1 \rp - d\lp y_1, y_2 \rp \right| \\
+        &\leq d\lp x_1, y_1 \rp + d\lp x_2, y_2 \rp = D_1 \lp x, y \rp \\
+        &< \delta = \varepsilon.
+    \end{align*}
+    Así pues, la aplicación $d \colon X \times X \to \real$ es continua tomando en $X \times X$ la métrica $D_1$. Por ser $D_1$, $D_2$ y $D_{\infty}$ métricas fuertemente equivalentes, $d$ también es continua si tomamos en $X \times X$ las métricas $D_2$ o $D_{\infty}$.
+\end{ej}
