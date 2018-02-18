@@ -392,11 +392,30 @@
 \end{ej}
 
 \begin{ej}
-    Comprobemos que $\sqrt{\left< u, u \right>}$ satisface las propiedades de norma.
-    \begin{enumerate}[i)]
-        \item $\left< u, u \right> \geq 0 \implies  \sqrt{\left< u, u \right> } \geq 0$.
-        \item $\lp \left< u, u \right> = 0 \iff u=0 \rp \implies \lp \sqrt{\left< u, u \right> } = 0 \iff u=0 \rp$.
-        \item $\sqrt { \left< \lambda u, \lambda u \right> } = \sqrt {\lambda^2 \left< u, u \right> } = \lambda \sqrt { \left<  u,  u \right> }$.
-        \item $\sqrt { \left< u + v , u+v \right>}=\sqrt { \left< u , u+v \right> + \left< v , u+v \right>}=\sqrt { \left< u , u\right> +\left< u , v \right> + \left< v , u \right> + \left< v , v \right>} \leq \sqrt { \left< u , u\right> + \left< v , v \right>} \leq \sqrt { \left< u , u\right>} + \sqrt{ \left< v , v \right>}$.
+    \begin{enumerate}[(a)]
+        \item Comprobemos que $\| u \| := \sqrt{\left< u, u \right>}$ satisface las propiedades de norma.
+            \begin{enumerate}[i)]
+                \item $\left< u, u \right> \geq 0 \implies \| u \| =  \sqrt{\left< u, u \right> } \geq 0$.
+                \item $\lp \left< u, u \right> = 0 \iff u=0 \rp \implies \lp \| u \| = \sqrt{\left< u, u \right> } = 0 \iff u=0 \rp$.
+                \item $\| \lambda u \| = \sqrt { \left< \lambda u, \lambda u \right> } = \sqrt {\lambda^2 \left< u, u \right> } = | \lambda | \sqrt { \left<  u,  u \right> } = | \lambda | \| u \|$.
+                \item
+                \begin{gather*}
+                    \| u+v \| =\sqrt { \left< u + v , u+v \right>}=\sqrt { \left< u , u+v \right> + \left< v , u+v \right>}= \\
+                    = \sqrt { \left< u , u\right> +\left< u , v \right> + \left< v , u \right> + \left< v , v \right>} \leq \sqrt { \left< u , u\right> + \left< v , v \right>} \leq \\
+                    \leq \sqrt { \left< u , u\right>} + \sqrt{ \left< v , v \right>}= \| u \| + \| v \|.
+                \end{gather*}
+            \end{enumerate}
+        \item Comprobemos que $d \lp u, v \rp := \| u - v \|$ satisface las propiedades de métrica.
+            \begin{enumerate}[i)]
+                \item $d \lp u, v \rp = \|u-v \| \geq 0$.
+                \item $d\lp u, v \rp = \| u-v \| = 0 \iff u - v = 0 \iff u = v$.
+                \item
+                \begin{gather*}
+                    d\lp u, v \rp = \| u-v \| = \sqrt { \left< u - v , u-v \right>} = \sqrt { \left< u , u-v \right> - \left< v , u-v \right>} = \\
+                    = \sqrt { \left< u , u \right> - \left< u , v \right> - \left< v , u \right> + \left< v , v \right>}  = \sqrt { \left< v - u , v-u \right>} = \| v-u \| = d \lp v, u \rp.
+                \end{gather*}
+                \item $d\lp u, v \rp = \| u -v \| = \| u -w +w -v \| \leq \|u-w \| + \| w-v \|= d \lp u, w \rp + d \lp w, v \rp$.
+            \end{enumerate}
+        \item La métrica discreta no proviene de norma alguna y la norma $\| x \| = \sum | x_i |$ no proviene de ningún producto escalar.
     \end{enumerate}
 \end{ej}
