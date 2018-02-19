@@ -2,7 +2,7 @@
 
 Repositori d'apunts a Latex. Cada assignatura té una carpeta pròpia.
 
-#### Obligatori llegir [normas.md](https://github.com/ApuntsFME/Normes/blob/master/normas.md), [commits.md](https://github.com/ApuntsFME/LatexFME/blob/master/commits.md) y [tutorial_git.md](https://github.com/ApuntsFME/Normes/blob/master/tutorial_git.md) abans d'editar el repositori.
+#### Obligatori llegir [normas_latex.md](https://github.com/ApuntsFME/Normes/blob/master/normas_latex.md), [commits.md](https://github.com/ApuntsFME/LatexFME/blob/master/commits.md) y [tutorial_git.md](https://github.com/ApuntsFME/Normes/blob/master/tutorial_git.md) abans d'editar el repositori.
 
 ## Atenció
 Qualsevol canvi al procediment del repositori ha de ser sotmès a votació als editors d'aquest. 
