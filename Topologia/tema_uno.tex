@@ -465,18 +465,18 @@ aquest que el faci el miquel, que ho fara molt be
         \item
             Vamos a comprobar que es continua por definición. 
             
-            Sean $x',\,y' \in X \tq d\lp x',\,y'\rp < \epsilon$. Entonces tenemos que
+            Sean $x',\,y' \in X \tq d\lp x',\,y'\rp < \varepsilon$. Entonces tenemos que
             \begin{gather*}
-             f(x')= \inf_{y\in A} d\lp x',\,y\rp \leq \inf_{y\in A} \lp d\lp x',\,y'\rp + d\lp y',\,y\rp \rp = d\lp x',\,y'\rp + \inf_{y\in A} d\lp y',\,y\rp < \epsilon + f(y') \\
-             f(y')= \inf_{y\in A} d\lp y',\,y\rp \leq \inf_{y\in A} \lp d\lp y',\,x'\rp + d\lp x',\,y\rp \rp = d\lp y',\,x'\rp + \inf_{y\in A} d\lp x',\,y\rp < \epsilon + f(x').
+             f(x')= \inf_{y\in A} d\lp x',\,y\rp \leq \inf_{y\in A} \lp d\lp x',\,y'\rp + d\lp y',\,y\rp \rp = d\lp x',\,y'\rp + \inf_{y\in A} d\lp y',\,y\rp < \varepsilon + f(y') \\
+             f(y')= \inf_{y\in A} d\lp y',\,y\rp \leq \inf_{y\in A} \lp d\lp y',\,x'\rp + d\lp x',\,y\rp \rp = d\lp y',\,x'\rp + \inf_{y\in A} d\lp x',\,y\rp < \varepsilon + f(x').
             \end{gather*}
             Lo que nos dice que 
             \[
-             f(x')-\epsilon \leq f(y') \leq f(x') + \epsilon \iff \abs{f(x')-f(y')}< \epsilon .
+             f(x')-\varepsilon \leq f(y') \leq f(x') + \varepsilon \iff \abs{f(x')-f(y')}< \varepsilon .
             \]
             Y por lo tanto, cogiendo $\delta = \epsilon$ tenemos que 
             \[
-             \forall \epsilon > 0, \exists \delta > 0 \tq  \text{ si }d\lp x',\,y'\rp < \delta,\, \abs{f(x')-f(y')} < \epsilon 
+             \forall \varepsilon > 0, \exists \delta > 0 \tq  \text{ si }d\lp x',\,y'\rp < \delta,\, \abs{f(x')-f(y')} < \varepsilon 
             \]
 	    lo que demuestra la continuidad de $f$.
 	\item
@@ -497,6 +497,11 @@ aquest que el faci el miquel, que ho fara molt be
   \begin{enumerate}[(a)]
    \item []
    \item Si cogemos $f(x)=x$ y $g(x)=2x$ tenemos un contraejemplo a la continuidad de la función, ya que $d\lp f'(x), g'(x) \rp = \sup \lp f'(x)-g'(x)\rp = 1$, lo que nos dice que no podemos hacer la distancia tan pequeña como queramos.
-   \item Es trivial demostrar que $\bar{d}$ es una distáncia a partir de las propiedades del valor absoluto. 
+   \item Es trivial demostrar que $\bar{d}$ es una distancia a partir de las propiedades del valor absoluto.  Para ver que la función derivada es continua, usaremos la definicion.
+   Si consideramos dos funciones $f$ y $g$ $\tq \bar{d}\lp f,g\rp < \varepsilon$, por definicion de $\bar{d}$ tenemos que $\sup\limits_{x \in [a,b]} \abs{f'(x)-g'(x)}<\bar{d}\lp f,g\rp<\varepsilon$, y por lo tanto, si cogemos $\delta = \varepsilon$, tenemos que
+   \[
+    \forall \varepsilon,\, \exists \delta \tq \text{ si } \bar{d}\lp f,g \rp < \delta,\, \sup_{x \in [a,b]} \abs{f'(x)-g'(x)}<\bar{d}<\varepsilon
+   \]
+    lo que nos dice que la aplicación derivada con esta métrica es continua.
   \end{enumerate}
 \end{eje}
