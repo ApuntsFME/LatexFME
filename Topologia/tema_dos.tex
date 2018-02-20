@@ -6,15 +6,26 @@
         \item[]
         \item Comprobamos que
             \begin{enumerate}[i)]
-                \item El intervalo $\lp a, a \rp = \emptyset \in \mathcal{T}$ y $\lp -\infty, +\infty \rp = X \in \mathcal{T}$.
-                \item Sea $U = \bigcup_{i \in I} U_i$ la unión de un numero arbitrario de abiertos, entonces, $\forall x \in U, \exists i \in I \tq x \in U_i \subseteq U$ y por tanto $x$ es un punto interior y $U$ es un abierto.
-                \item Sea $U = \bigcap_{i = 1}^n U_i$ la intersección de un numero finito de abiertos, entonces, $\forall x \in U, \forall i \in \left\{ 1, \dots, n \right\}, \exists a_i, b_i \tq x \in \left(a_i, b_i\right) \subseteq U_i$. Sean
+                \item El intervalo $\lp a, a \rp = \emptyset \in \T$ y $\lp -\infty, +\infty \rp = X \in \T$.
+                \item Sea $U = \bigcup\limits_{i \in I} U_i$ la unión de un numero arbitrario de abiertos, entonces, $\forall x \in U, \exists i \in I \tq x \in U_i \subseteq U$ y por tanto $x$ es un punto interior y $U$ es un abierto.
+                \item Sea $U = \bigcap\limits_{i = 1}^n U_i$ la intersección de un numero finito de abiertos, entonces, $\forall x \in U, \forall i \in \left\{ 1, \dots, n \right\}, \exists a_i, b_i \tq x \in \left(a_i, b_i\right) \subseteq U_i$. Sean
                     \begin{gather*}
                         a = \max_{i \in \left\{ 1, \dots, n \right\}} \left\{a_i\right\}, \\
                         b = \min_{i \in \left\{ 1, \dots, n \right\}} \left\{b_i\right\},
                     \end{gather*}
-                entonces $x \in \lp a, b \rp \subseteq \bigcap_{i = 1}^n U_i$ y por tanto $x$ es un punto interior y $U$ es un abierto.
+                entonces $x \in \lp a, b \rp \subseteq \bigcap\limits_{i = 1}^n U_i$ y por tanto $x$ es un punto interior y $U$ es un abierto.
             \end{enumerate}
-        \item Hay que ver que $\forall U \in \T, \forall x \in U, \exists B \in \mathcal{B} \tq x \in B \subseteq U$.
+        \item Sea $\B = \left\{ \lp a, b \rp \colon a, b \in X \cup \left\{ \pm \infty \right\} \right\}$, comprobamos que
+            \begin{enumerate}[i)]
+                \item $\forall x \in X, x \in \lp -\infty, +\infty \rp \in \B$.
+                \item $\forall a, b, c, d \in X \cup \left\{ \pm \infty \right\}$, si $\lp a, b \rp \cap \lp c, d \rp \neq \emptyset$, entonces,
+                    \begin{gather*}
+                        \alpha = \max \left\{ a, c \right\}, \\
+                        \beta = \min \left\{ b, d \right\}, \\
+                        \lp a, b \rp \cap \lp c, d \rp = \lp \alpha, \beta \rp.
+                    \end{gather*}
+                    y por tanto $\forall x \in \lp a, b \rp \cap \lp c, d \rp, x \in \lp \alpha, \beta \rp \subseteq \lp a, b \rp \cap \lp c, d \rp$, y $\lp \alpha, \beta \rp \in \B$.
+            \end{enumerate}
+        \item Si vemos que $\forall x \in X, \left\{ x \right\}$ es un abierto, ya abremos acabado, ya que $\forall A \in \Pa \lp x \rp$
     \end{enumerate}
 \end{eje}

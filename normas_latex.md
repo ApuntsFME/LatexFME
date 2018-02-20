@@ -171,7 +171,7 @@ principales conjuntos.
 | \real | Conjunto de los números reales |
 | \E | Un espacio vectorial |
 | \Po | Un espacio proyectivo |
-| \Pa | Una partición |
+| \Pa | Una partición o el *powerset* |
 | \k | Un cuerpo cualquiera |
 | \R | Un sistema de referencia |
 | \A | Un espacio afín |
