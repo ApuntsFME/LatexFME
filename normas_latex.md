@@ -175,6 +175,8 @@ principales conjuntos.
 | \k | Un cuerpo cualquiera |
 | \R | Un sistema de referencia |
 | \A | Un espacio afín |
+| \T | Una topología |
+| \B | Una base de una topología |
 
 ### Otras utilidades
 | Comando | Argumentos | Descripción |
