@@ -433,17 +433,28 @@ aquest que el faci el miquel, que ho fara molt be
 \begin{eje}
     \begin{enumerate}[(a)]
         \item[]
-        \item
-            \begin{itemize}
-                \item $\| f \|_1$
-                    \begin{enumerate}[i)]
-                        \item $\| f \|_1 =  \int_a^b \left| f \lp x \rp \right| \dif x \geq 0$.
-                        \item $\| f \|_1 =  \int_a^b \left| f \lp x \rp \right| \dif x = 0 \stackrel{f \text{ continua}}{\iff} f\neq 0$.
-                        \item $\| kf \|_1 =  \int_a^b \left| f \lp x \rp \right| \dif x = | k | \int_a^b \left| f \lp x \rp \right| \dif x = | k | \|f \|_1$.
-                        \item $\| f+g \|_1 =  \int_a^b \left| f \lp x \rp +g \lp x \rp \right| \dif x \leq \int_a^b \left| f\lp x \rp \right| + \left| g \lp x \rp \right| \dif x = \| f \| _1 + \| g \|_ 1 $.
-                    \end{enumerate}
-                \item 
-            \end{itemize}
+        \item Comprobemos que $\| f \|_1$ es una norma.
+            \begin{enumerate}[i)]
+                \item $\| f \|_1 =  \int_a^b \left| f \lp x \rp \right| \dif x \geq 0$.
+                \item $\| f \|_1 =  \int_a^b \left| f \lp x \rp \right| \dif x = 0 \stackrel{f \text{ continua}}{\iff} f = 0$.
+                \item $\| kf \|_1 =  \int_a^b \left| f \lp x \rp \right| \dif x = | k | \int_a^b \left| f \lp x \rp \right| \dif x = | k | \|f \|_1$.
+                \item $\| f+g \|_1 =  \int_a^b \left| f \lp x \rp +g \lp x \rp \right| \dif x \leq \int_a^b \left| f\lp x \rp \right| + \left| g \lp x \rp \right| \dif x = \| f \| _1 + \| g \|_ 1 $.
+            \end{enumerate}
+            Comprobemos que $\| f \|_2$ es una norma.
+            \begin{enumerate}[i)]
+                \item $\| f \|_2 =  \sqrt{\int_a^b \left| f \lp x \rp \right|^2 \dif x } \geq 0$.
+                \item $\| f \|_2 =  \sqrt{\int_a^b \left| f \lp x \rp \right|^2 \dif x} = 0 \stackrel{f \text{ continua}}{\iff} f = 0$.
+                \item $\| kf \|_2 =  \sqrt{\int_a^b \left| kf \lp x \rp \right|^2 \dif x} = | k | \sqrt{\int_a^b \left| f \lp x \rp \right|^2 \dif x } = | k | \|f \|_2 $.
+                \item $\| f+g \|_2 =  \sqrt{\int_a^b \left| f \lp x \rp +g \lp x \rp \right|^2 \dif x} = \sqrt{\int_a^b \left| f \lp x \rp \right|^2+2f \lp x \rp g \lp x \rp + \left| g \lp x \rp \right|^2 \dif x} \leq \sqrt{\int_a^b \left| f \lp x \rp \right|^2 + \left| g \lp x \rp \right|^2 \dif x} \leq \sqrt{\int_a^b \left| f \lp x \rp \right|^2 \dif x} + \sqrt{\int_a^b \left| g \lp x \rp \right|^2 \dif x} = \| f \| _2 + \| g \|_2 $.
+            \end{enumerate}
+            Comprobemos que $\| f \|_3$ es una norma.
+            \begin{enumerate}[i)]
+                \item $\| f \|_3 = \sup_{x\in \left[ a, b \right]} \left\{ \left| f \lp x \rp \right| \right\} \geq 0$.
+                \item $\| f \|_3 = \sup_{x\in \left[ a, b \right]} \left\{ \left| f \lp x \rp \right| \right\} = 0 \iff f=0$.
+                \item $\| kf \|_3 = \sup_{x\in \left[ a, b \right]} \left\{ \left| kf \lp x \rp \right| \right\} = \left| k \right|\sup_{x\in \left[ a, b \right]} \left\{ \left| f \lp x \rp \right| \right\} = \left| k \right| \| f \|_3$.
+                \item $\| f+g \|_3 =$
+            \end{enumerate}
+
         \end{enumerate}
 \end{eje}
 
