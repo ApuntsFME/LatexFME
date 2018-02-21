@@ -26,6 +26,18 @@
                     \end{gather*}
                     y por tanto $\forall x \in \lp a, b \rp \cap \lp c, d \rp, x \in \lp \alpha, \beta \rp \subseteq \lp a, b \rp \cap \lp c, d \rp$, y $\lp \alpha, \beta \rp \in \B$.
             \end{enumerate}
-        \item Si vemos que $\forall x \in X, \left\{ x \right\}$ es un abierto, ya abremos acabado, ya que $\forall A \in \Pa \lp x \rp$
+        \item Si vemos que $\forall x \in X, \left\{ x \right\}$ es un abierto, ya abremos acabado, ya que todo conjunto de $\Pa \lp X \rp$ contiene únicamente puntos de $X$ y por lo tanto sera la unión de abiertos. En $\z$, $\forall x \in \z$, tenemos que $\lc x \rc = \lp n-1, n+1 \rp$ y por tanto ya estamos. En $\n$, $\forall x \in \n \setminus \lc 1 \rc$, tenemos que $\lc x \rc = \lp n-1, n+1 \rp$ y $\lc 1 \rc = \lp -\infty, 2 \rp$ y por tanto ya estamos, suponiendo que $0 \notin \n$.
+        \item Sea $X$ un espacio topológico con la topología del orden, entonces $\forall x, y \in X, x < y$,
+            \begin{itemize}
+                \item Si $\exists z$ tal que $x < z < y$, entonces $x \in \lp -\infty, z \rp, y \in \lp z, +\infty \rp, \lp -\infty, z \rp \cap \lp z, +\infty \rp = \emptyset$.
+                \item Si $\nexists z$ tal que $x < z < y$, entonces $x \in \lp -\infty, y \rp, y \in \lp x, +\infty \rp, \lp -\infty, y \rp \cap \lp x, +\infty \rp = \emptyset$.
+            \end{itemize}
+        \item Aquest dibuix està en contrucció. % TODO dibuix!!
+        \item Tenemos que ver que $\T_{\text{ord}} \subset \T_\leq$, es decir, $\T_{\text{ord}} \subseteq \T_\leq$ y $\T_\leq \neq \T_{\text{ord}}$.
+            \begin{itemize}
+                \item Veamos que $\T_{\text{ord}} \subseteq \T_\leq$. Sea $U \subseteq \T_{\text{ord}},\, \forall x \equiv \lp x_1, x_2 \rp \in U, \, \exists r \in \real^+ \tq B_r \lp x \rp \subseteq U$, y por tanto, $A = \lp \lp x_1 - r, x_2 \rp, \lp x_1 + r, x_2 \rp \rp \subseteq B_r \lp x \rp, A \in \T_\leq$. Así pues, todos los puntos de $U$ son interiores en la topología del orden y por tanto $U \in \T_\leq$.
+                \item Veamos que $\T_\leq \neq \T_{\text{ord}}$. Sean $x = \lp 0,0 \rp, y = \lp 0, 1 \rp$, entonces $\lp x, y \rp \in \T_\leq, \lp x, y \rp \notin \T_{\text{ord}}$. Por tanto $\T_\leq \neq \T_{\text{ord}}$.
+            \end{itemize}
+        \item Son las topologías discretas.
     \end{enumerate}
 \end{eje}
