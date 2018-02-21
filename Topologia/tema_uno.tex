@@ -545,3 +545,17 @@ aquest que el faci el miquel, que ho fara molt be
         \item Las bolas cerradas de radio $n^{-r}$, $\lc b \in \z | d\lp a, b \rp \leq n^{-r} \rc$, son los conjuntos de puntos que satisfacen $n^r | \lp a-b \rp$, es decir, los conjuntos $a+n^r \z$. Comprobamos pues, que una bola abierta de radio $R$ satisfaciendo $n^{-r} < R \leq n^{-r+1}$ coincide con el conjunto $a+n^r \z$ y  que una bola cerrada de radio $R$ satisfaciendo $n^{-r} \leq R < n^{-r+1}$ coincide con el conjunto $a+n^r \z$.
     \end{enumerate}
 \end{eje}
+
+\begin{eje}
+    Trataremos primero el caso $d_{\min}$. Sea $S=\lc A, B, C \rc$ y sean
+    \begin{gather*}
+        d_1 \colon S \times S \to \real \\
+        d_1\lp A, B \rp= d_1 \lp B, A \rp=2, \quad d_1\lp B, C \rp= d_1 \lp C, B \rp=3, \quad d_1\lp C, A \rp= d_1 \lp A, C \rp=1, \\
+        d_1\lp A, A \rp=0, \qquad d_1\lp B, B \rp=0, \qquad d_1\lp C, C \rp=0. \\
+        \text{y}\\
+        d_2 \colon S \times S \to \real \\
+        d_2\lp A, B \rp= d_2 \lp B, A \rp=1, \quad d_2\lp B, C \rp= d_2 \lp C, B \rp=3, \quad d_2\lp C, A \rp= d_2 \lp A, C \rp=2, \\
+        d_2\lp A, A \rp=0, \qquad d_2\lp B, B \rp=0, \qquad d_2\lp C, C \rp=0. \\
+    \end{gather*}
+    Es trivial comprobar que tanto $d_1$ como $d_2$ son métricas. Consideremos ahora $d_{\min}\lp x, y \rp = \min \lc d_1\lp x, y \rp, d_2 \lp x, y \rp \rc$. Tenemos que $d_{\min}\lp B, C\rp = 3 > 1+1= d_2\lp B, A \rp + d_1 \lp A, C \rp = d_{\min}\lp B, A\rp+d_{\min}\lp A, C\rp$. Esto es incompatible con la desigualdad triangular de las métricas, de modo que $d_{\min}$ no és una métrica.
+\end{eje}
