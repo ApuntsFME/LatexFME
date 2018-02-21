@@ -449,21 +449,40 @@ aquest que el faci el miquel, que ho fara molt be
             \end{enumerate}
             Comprobemos que $\| f \|_3$ es una norma.
             \begin{enumerate}[i)]
-                \item $\| f \|_3 = \sup_{x\in \left[ a, b \right]} \left\{ \left| f \lp x \rp \right| \right\} \geq 0$.
-                \item $\| f \|_3 = \sup_{x\in \left[ a, b \right]} \left\{ \left| f \lp x \rp \right| \right\} = 0 \iff f=0$.
-                \item $\| kf \|_3 = \sup_{x\in \left[ a, b \right]} \left\{ \left| kf \lp x \rp \right| \right\} = \left| k \right|\sup_{x\in \left[ a, b \right]} \left\{ \left| f \lp x \rp \right| \right\} = \left| k \right| \| f \|_3$.
-                \item $\| f+g \|_3 = \sup_{x\in \left[ a, b \right]} \left\{ \left| f \lp x \rp + g \lp x \rp \right| \right\} \leq \sup_{x\in \left[ a, b \right]} \left\{ \left| f \lp x \rp \right| \right\} + \sup_{x\in \left[ a, b \right]} \left\{ \left| g \lp x \rp \right| \right\} = \left\| f \right\|_3 + \| g \|_3$.
+                \item $\| f \|_{\infty} = \sup_{x\in \left[ a, b \right]} \left\{ \left| f \lp x \rp \right| \right\} \geq 0$.
+                \item $\| f \|_{\infty} = \sup_{x\in \left[ a, b \right]} \left\{ \left| f \lp x \rp \right| \right\} = 0 \iff f=0$.
+                \item $\| kf \|_{\infty} = \sup_{x\in \left[ a, b \right]} \left\{ \left| kf \lp x \rp \right| \right\} = \left| k \right|\sup_{x\in \left[ a, b \right]} \left\{ \left| f \lp x \rp \right| \right\} = \left| k \right| \| f \|_{\infty}$.
+                \item $\| f+g \|_{\infty} = \sup_{x\in \left[ a, b \right]} \left\{ \left| f \lp x \rp + g \lp x \rp \right| \right\} \leq \sup_{x\in \left[ a, b \right]} \left\{ \left| f \lp x \rp \right| \right\} + \sup_{x\in \left[ a, b \right]} \left\{ \left| g \lp x \rp \right| \right\} = \left\| f \right\|_{\infty} + \| g \|_{\infty}$.
             \end{enumerate}
-
+        \item Consideremos la familia de funciones, para $k \geq 1$,
+            \begin{align*}
+                f_k \colon \left[0, 1  \right] &\to \real \\
+                x &\mapsto f_k \lp x \rp := \left\{ \begin{array}{cc}
+                    0 & \text{si } x > \frac{1}{k} \\
+                    2k\lp 1 - kx \rp & \text{si } x \leq \frac{1}{k}
+                \end{array} \right.
+            \end{align*}
+            Se tiene que para todo $k \geq 1$, $\left\| f_k \right\|_1 = 1$ y $\left\| f_k \right\|_{\infty} = k$, de modo que las normas $\| \cdot \|_1 $ y $\| \cdot \|_{\infty} $ no son equivalentes.
+        \item Con la distancia $d_1 \lp f, g \rp = \| f-g \|_1$, la bola no se puede dibujar. Con la distancia $d_{\infty} \lp f, g \rp = \| f-g \|_{\infty}$, ERNESTO PON TU DIBUJO.
         \end{enumerate}
 \end{eje}
 
 \begin{eje}
-aquest que el faci el miquel, que ho fara molt be
+    \begin{enumerate}[(a)]
+        \item[]
+        \item El punto $\lp 1, 0 \rp$ del conjunto no es interior, de modo que el conjunto no es abierto.
+        \item Para cada punto $ \lp x, y \rp $ del conjunto, la bola abierta centrada en él y de radio $1-\abs{x}$ está contenida en el conjunto, de modo que el conjunto es abierto.
+        \item El punto $\lp 0, 0 \rp$ del conjunto no es interior, de modo que el conjunto no es abierto.
+        \item El punto $\lp 0, 0 \rp$ del conjunto no es interior, de modo que el conjunto no es abierto.
+        \item El punto $\lp 1, 0 \rp$ del conjunto no es interior, de modo que el conjunto no es abierto.
+        \item El punto $\lp 0, 0 \rp$ del conjunto no es interior, de modo que el conjunto no es abierto.
+        \item El punto $\lp \sqrt{2}, 0 \rp$ del conjunto no es interior, de modo que el conjunto no es abierto.
+        \item El punto $\lp 0, 0 \rp$ del conjunto no es interior, de modo que el conjunto no es abierto.
+    \end{enumerate}
 \end{eje}
 
 \begin{eje}
-aquest que el faci el miquel, que ho fara molt be
+    Sea $x \in E $. Entonces, $\forall \varepsilon>0, \, d \lp x, y \rp < \delta = \varepsilon \implies \abs{d\lp x, p \rp - d \lp p, y \rp} \leq d\lp x, y \rp < \varepsilon$. Por tanto, $d\lp \cdot, p \rp \colon E \to \real$ es continua.
 \end{eje}
 
 \begin{eje}
