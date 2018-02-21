@@ -486,7 +486,7 @@ aquest que el faci el miquel, que ho fara molt be
 \end{eje}
 
 \begin{eje}
-aquest que el faci el miquel, que ho fara molt be
+    En el espacio métrico $\lp \real, d_0 \rp$, todos los puntos son interiores a cualquier conjunto que los contenga, ya que $B_{\frac{1}{2}}\lp x \rp = \left\{ x \right\}$. Entonces, para cualquier aplicación $f\colon \lp \real, d_0 \rp \to \lp \real, d \rp$, la antiimagen de un abierto es siempre un abierto y por consiguiente es una aplicación continua.
 \end{eje}
 
 \begin{eje}
@@ -506,7 +506,7 @@ aquest que el faci el miquel, que ho fara molt be
             \]
             Y por lo tanto, cogiendo $\delta = \epsilon$ tenemos que 
             \[
-             \forall \varepsilon > 0, \exists \delta > 0 \tq  \text{ si }d\lp x',\,y'\rp < \delta,\, \abs{f(x')-f(y')} < \varepsilon 
+             \forall \varepsilon > 0, \exists \delta > 0 \tq  \text{ si }d\lp x',\,y'\rp < \delta,\, \abs{f(x')-f(y')} < \varepsilon,
             \]
 	    lo que demuestra la continuidad de $f$.
 	\item
@@ -527,11 +527,21 @@ aquest que el faci el miquel, que ho fara molt be
   \begin{enumerate}[(a)]
    \item []
    \item Si cogemos $f(x)=x$ y $g(x)=2x$ tenemos un contraejemplo a la continuidad de la función, ya que $d\lp f'(x), g'(x) \rp = \sup \lp f'(x)-g'(x)\rp = 1$, lo que nos dice que no podemos hacer la distancia tan pequeña como queramos.
-   \item Es trivial demostrar que $\bar{d}$ es una distancia a partir de las propiedades del valor absoluto.  Para ver que la función derivada es continua, usaremos la definicion.
-   Si consideramos dos funciones $f$ y $g$ $\tq \bar{d}\lp f,g\rp < \varepsilon$, por definicion de $\bar{d}$ tenemos que $\sup\limits_{x \in [a,b]} \abs{f'(x)-g'(x)}<\bar{d}\lp f,g\rp<\varepsilon$, y por lo tanto, si cogemos $\delta = \varepsilon$, tenemos que
+   \item Es trivial demostrar que $\bar{d}$ es una distancia a partir de las propiedades del valor absoluto.  Para ver que la función derivada es continua, usaremos la definición.
+   Si consideramos dos funciones $f$ y $g$ $\tq \bar{d}\lp f,g\rp < \varepsilon$, por definición de $\bar{d}$ tenemos que $\sup\limits_{x \in [a,b]} \abs{f'(x)-g'(x)}<\bar{d}\lp f,g\rp<\varepsilon$, y por lo tanto, si cogemos $\delta = \varepsilon$, tenemos que
    \[
-    \forall \varepsilon,\, \exists \delta \tq \text{ si } \bar{d}\lp f,g \rp < \delta,\, \sup_{x \in [a,b]} \abs{f'(x)-g'(x)}<\bar{d}<\varepsilon
+    \forall \varepsilon,\, \exists \delta \tq \text{ si } \bar{d}\lp f,g \rp < \delta,\, \sup_{x \in [a,b]} \abs{f'(x)-g'(x)}<\bar{d}<\varepsilon,
    \]
     lo que nos dice que la aplicación derivada con esta métrica es continua.
   \end{enumerate}
+\end{eje}
+
+\begin{eje}
+    \begin{enumerate}[(a)] \item[]
+        \item \label{item:boles_iguals_} Tomemos una bola abierta cualquiera $B_r \lp x \rp$ y un punto cualquiera perteneciente a dicha bola $y\in B_r\lp x \rp$. Entonces, para todo punto $z \in B_r \lp y \rp$ (bola abierta) se tiene que $d\lp x, z \rp \leq \max \lc d \lp x, y \rp, d \lp y, z \rp \rc < r $. Así pues, $B_r \lp y \rp \subseteq B_r \lp x \rp$. Mediante un razonamiento análogo, obtenemos que $B_r \lp x \rp \subseteq B_r \lp y \rp$, concluyendo que $B_r \lp y \rp = B_r \lp x \rp$. Para las bolas cerradas el procedimiento es el mismo.
+        \item Sea $y \in B_{r_1}\lp x_1 \rp \cap B_{r_2}\lp x_2 \rp$ y pongamos, sin pérdida de generalidad, $r_1\leq r_2$. Entonces, $B_{r_1}\lp x_1 \rp \stackrel{\ref{item:boles_iguals_}}{=} B_{r_1}\lp y \rp \subseteq B_{r_2}\lp y \rp \stackrel{\ref{item:boles_iguals_}}{=} B_{r_2}\lp x_2 \rp$.
+        \item Veamos primero que toda bola es un cerrado. Sea $B_r\lp x \rp$ una bola cualquiera (abierta o cerrada) y sea $y\notin B_r \lp x \rp$ un punto no perteneciente a dicha bola. Supongamos que $\exists z \in B_r\lp x \rp \cap B_r\lp y \rp$. Se tiene que $B_r\lp x \rp \stackrel{\ref{item:boles_iguals_}}{=} B_r\lp z \rp \stackrel{\ref{item:boles_iguals_}}{=} B_r\lp y \rp$, lo cual es una contradicción porque $y\notin B_r\lp x \rp$. Entonces, $B_r\lp x \rp \cap B_r\lp y \rp = \varnothing$ y todos los puntos del complementario de la bola son interiores, de modo que $B_r\lp x \rp$ es cerrada. Veamos ahora que toda bola es un abierto. Sea $B_r\lp x \rp$ una bola cualquiera (abierta o cerrada) y sea $y\in B_r \lp x \rp$ un punto perteneciente a dicha bola. Se tiene que $B_r\lp y \rp \stackrel{\ref{item:boles_iguals_}}{=} B_r\lp x \rp $ y, por consiguiente, que $y$ es un punto interior. Concluimos, pues, que la bola es un abierto.
+        \item Queremos ver que $d \lp a, b \rp \leq \max \lc d \lp a, c \rp, d\lp c, b \rp \rc$. Supongamos que no se satisface, es decir, que $\exists a, b, c \in \z$ tales que $n^{-r_1} = d \lp a, b \rp > \max \lc d \lp a, c \rp, d\lp c, b \rp \rc = \max \lc n^{-r_2}, n^{-r_3} \rc = n^{-r_2}$, sin pérdida de generalidad. Esto implica que $r_1<r_2$ y que $r_2 | \lp a-c \rp $ y $r_2 | \lp c-b \rp$, lo que a su vez significa que $r_2 | \lp a-c \rp + \lp c-b \rp = \lp a-b \rp$. Pero esto supone una contradicción porque entonces $d\lp a, b \rp \geq r_2 > r_1$. Por consiguiente, $d \lp a, b \rp \leq \max \lc d \lp a, c \rp, d\lp c, b \rp \rc$.
+        \item 
+    \end{enumerate}
 \end{eje}
