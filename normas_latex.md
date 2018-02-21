@@ -196,6 +196,8 @@ principales conjuntos.
 | \vol | 0 | Coloca vol |
 | \lp | 0 | Es equivalente a `\left(` |
 | \rp | 0 | Es equivalente a `\right)` |
+| \lc | 0 | Es equivalente a `\left\{` |
+| \rc | 0 | Es equivalente a `\right\}` |
 | \nuc | 0 | Coloca Nuc |
 | \gr | 0 | Coloca gr |
 | \fr | 0 | Coloca Fr |
