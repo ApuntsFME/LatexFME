@@ -427,7 +427,40 @@
 \end{eje}
 
 \begin{eje}
-aquest que el faci el miquel, que ho fara molt be
+    Dado un isomorfismo $\phi \colon \F \to \E$, dos normas en $\E$ serán equivalentes
+    si y solo si las normas asociadas de $\F$ por $\phi$ (es decir, de la forma 
+    $\norm{u}'=\norm{\phi(u)})$ lo son.
+    Como cualquier $\R$-espacio vectorial de dimensión finita es isomorfo a $\R^n$
+    basta comprobar que todas las normas de este último son equivalentes. 
+
+    Para ello, veremos primero que es suficiente probar que todas las normas son 
+    equivalentes a la norma ordinaria (que denotaremos por $\norm{\cdot}_{\text{ord}}$). 
+    Si toda norma es equivalente a la ordinaria, entonces tenemos que, para toda pareja
+    de normas $\norm{\cdot}_1,\,\norm{\cdot}_2$ y vector $v \in \E$ 
+    \begin{gather*}
+        m_1 \norm{v}_1 \leq \norm{v}_{\text{ord}} \leq M_1 \norm{v}_1 \\
+        m_2 \norm{v}_{\text{ord}} \leq \norm{v}_2 \leq M_2 \norm{v}_{\text{ord}}.\\
+    \end{gather*}
+    Por lo tanto,
+    \[
+        m_1 m_2 \norm{v}_1 \leq m_2 \norm{v}_{\text{ord}} \leq \norm{v}_2 \leq 
+        M_2 \norm{v}_{\text{ord}} \leq M_2  M_1 \norm{v}_1.
+    \]
+    Es decir, que la equivalencia es una propiedad transitiva y, como ya se ha dicho,
+    solo hace falta ver que todas las normas son equivalentes a la ordinaria.
+
+    Para ver esto ultimo, comenzamos demostrando que
+    \[
+        \norm{v} = \norm{x_1e_1 + \dots + x_ne_n} \leq |x_1|\norm{e_1} + \dots + |x_n|
+        \norm{e_n} \leq nXE \leq nE \norm{v}_{\text{ord}}=M\norm{v}_{\text{ord}}
+    \]
+    Donde $E$ es el máximo de las $\norm{e_i}$ y $X$ el máximo de las $|x_i|$.
+    La cota $M$ obtenido es independiente de $v$.
+    Por lo tanto, esto nos dice que si consideramos una norma $\norm{\cdot}$
+    como una función en el espacio m\'etrico ordinario de $\R^n$
+    
+
+    Una vez sabemos que $\norm{\cdot}$ es continua
 \end{eje}
 
 \begin{eje}
