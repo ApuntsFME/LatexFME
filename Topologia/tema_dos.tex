@@ -8,7 +8,7 @@
             \begin{enumerate}[i)]
                 \item El intervalo $\lp a, a \rp = \emptyset \in \T$ y $\lp -\infty, +\infty \rp = X \in \T$.
                 \item Sea $U = \bigcup\limits_{i \in I} U_i$ la unión de un numero arbitrario de abiertos, entonces, $\forall x \in U, \exists i \in I \tq x \in U_i \subseteq U$ y por tanto $x$ es un punto interior y $U$ es un abierto.
-                \item Sea $U = \bigcap\limits_{i = 1}^n U_i$ la intersección de un numero finito de abiertos, entonces, $\forall x \in U, \forall i \in \left\{ 1, \dots, n \right\}, \exists a_i, b_i \tq x \in \left(a_i, b_i\right) \subseteq U_i$. Sean
+                \item Sea $U = \bigcap\limits_{i = 1}^n U_i$ la intersección de un numero finito de abiertos, entonces, $\forall x \in U, \forall i \in \left\{ 1, \dots, n \right\}, \exists a_i, b_i \tq x \in \left(a_i, b_i\right) \subseteq U_i$, porque $x \in U_i$ y $U_i$ abierto. Sean
                     \begin{gather*}
                         a = \max_{i \in \left\{ 1, \dots, n \right\}} \left\{a_i\right\}, \\
                         b = \min_{i \in \left\{ 1, \dots, n \right\}} \left\{b_i\right\},
@@ -26,7 +26,7 @@
                     \end{gather*}
                     y por tanto $\forall x \in \lp a, b \rp \cap \lp c, d \rp, x \in \lp \alpha, \beta \rp \subseteq \lp a, b \rp \cap \lp c, d \rp$, y $\lp \alpha, \beta \rp \in \B$.
             \end{enumerate}
-        \item Si vemos que $\forall x \in X, \left\{ x \right\}$ es un abierto, ya habremos acabado, ya que todo conjunto de $\Pa \lp X \rp$ contiene únicamente puntos de $X$ y por lo tanto sera la unión de abiertos. En $\z$, $\forall x \in \z$, tenemos que $\lc x \rc = \lp n-1, n+1 \rp$ y por tanto ya estamos. En $\n$, $\forall x \in \n \setminus \lc 1 \rc$, tenemos que $\lc x \rc = \lp n-1, n+1 \rp$ y $\lc 1 \rc = \lp -\infty, 2 \rp$ y por tanto ya estamos, suponiendo que $0 \notin \n$.
+        \item Si vemos que $\forall x \in X, \left\{ x \right\}$ es un abierto, ya abremos acabado, ya que todo conjunto de $\Pa \lp X \rp$ contiene únicamente puntos de $X$ y por lo tanto sera la unión de abiertos. En $\z$, $\forall x \in \z$, tenemos que $\lc x \rc = \lp n-1, n+1 \rp$ y por tanto ya estamos. En $\n$, $\forall x \in \n \setminus \lc 1 \rc$, tenemos que $\lc x \rc = \lp n-1, n+1 \rp$ y $\lc 1 \rc = \lp -\infty, 2 \rp$ y por tanto ya estamos, suponiendo que $0 \notin \n$.
         \item Sea $X$ un espacio topológico con la topología del orden, entonces $\forall x, y \in X, x < y$,
             \begin{itemize}
                 \item Si $\exists z$ tal que $x < z < y$, entonces $x \in \lp -\infty, z \rp, y \in \lp z, +\infty \rp, \lp -\infty, z \rp \cap \lp z, +\infty \rp = \emptyset$.
@@ -46,14 +46,36 @@
         \item[]
         \item Comprobamos que
             \begin{enumerate}[i)]
-                \item $\emptyset = \left[ x, x \rp \in \T_\ell$
+                \item $\emptyset = \left[ x, x \rp \in \T_\ell$ y $X = \bigcup\limits_{x \in X} \left[ x, \infty \rp \in \T_\ell$.
                 \item Sea $U = \bigcup\limits_{i \in I} U_i$ la unión de un numero arbitrario de abiertos, entonces, $\forall x \in U, \exists i \in I \tq x \in U_i \subseteq U$ y por tanto $x$ es un punto interior y $U$ es un abierto.
-                \item Sea $U = \bigcap\limits_{i = 1}^n U_i$ la intersección de un numero finito de abiertos, entonces, $\forall x \in U, \forall i \in \left\{ 1, \dots, n \right\}, \exists a_i, b_i \tq x \in \left(a_i, b_i\right) \subseteq U_i$. Sean
+                \item Sea $U = \bigcap\limits_{i = 1}^n U_i$ la intersección de un numero finito de abiertos, entonces, $\forall x \in U, \forall i \in \left\{ 1, \dots, n \right\}, \exists a_i, b_i \tq x \in \left[a_i, b_i\right) \subseteq U_i$, porque $x \in U_i$ y $U_i$ abierto. Sean
                     \begin{gather*}
                         a = \max_{i \in \left\{ 1, \dots, n \right\}} \left\{a_i\right\}, \\
                         b = \min_{i \in \left\{ 1, \dots, n \right\}} \left\{b_i\right\},
                     \end{gather*}
-                entonces $x \in \lp a, b \rp \subseteq \bigcap\limits_{i = 1}^n U_i$ y por tanto $x$ es un punto interior y $U$ es un abierto.
+                entonces $x \in \left[ a, b \rp \subseteq \bigcap\limits_{i = 1}^n U_i$ y por tanto $x$ es un punto interior y $U$ es un abierto.
             \end{enumerate}
+        \item Sea $\B = \left\{ \left[ a, b \rp \colon a \in X, b \in X \cup \left\{ \infty \right\} \right\}$, comprobamos que
+            \begin{enumerate}[i)]
+                \item $\forall x \in X, x \in \left[ x, \infty \rp \in \B$.
+                \item $\forall a, b, c, d \in X \cup \left\{ \infty \right\}$, si $\left[ a, b \rp \cap \left[ c, d \rp \neq \emptyset$, entonces,
+                    \begin{gather*}
+                        \alpha = \max \left\{ a, c \right\}, \\
+                        \beta = \min \left\{ b, d \right\}, \\
+                        \left[ a, b \rp \cap \left[ c, d \rp = \left[ \alpha, \beta \rp.
+                    \end{gather*}
+                    y por tanto $\forall x \in \left[ a, b \rp \cap \left[ c, d \rp, x \in \left[ \alpha, \beta \rp \subseteq \left[ a, b \rp \cap \left[ c, d \rp$, y $\left[ \alpha, \beta \rp \in \B$.
+            \end{enumerate}
+        \item \item[] % OJO amb aqueta cutrada
+            \begin{center}
+                \begin{tabular}{|l||c|c|c|c|c|c|} \hline
+                    & $\lp a, b \rp$ & $\left[ a, b \rp$ & $\lp a, b \right]$ & $\left[ a,b \right]$ & $\lc 0 \rc \cup \lc \sfrac{1}{n} \rc_{n\geq 1}$ & $\lc 0 \rc \cup \lc \sfrac{-1}{n} \rc_{n\geq 1}$ \\ \hline \hline
+                    Adherencia & $\left[a,b\rp$ & $\left[ a, b \rp$ & $\left[ a, b \right]$ & $\left[ a, b \right]$ & $\lc 0 \rc \cup \lc \sfrac{1}{n} \rc_{n\geq 1}$ & $\lc 0 \rc \cup \lc \sfrac{-1}{n} \rc_{n\geq 1}$ \\ \hline
+                    Interior & $\lp a, b \rp$ & $\lp a, b \rp$ & $\lp a, b \rp$ & $\left[ a, b \rp$ & $\emptyset$ & $\emptyset$ \\ \hline
+                    Frontera & $\lc a \rc$ & $\emptyset$ & $\lc a, b \rc$ & $\lc b \rc$ & $\lc 0 \rc \cup \lc \sfrac{1}{n} \rc_{n\geq 1}$ & $\lc 0 \rc \cup \lc \sfrac{-1}{n} \rc_{n\geq 1}$ \\ \hline
+                    Acumulación & $\left[a,b\rp$ & $\left[ a, b \rp$ & $\left[ a, b \rp$ & $\left[ a, b \right)$ & $\lc 0 \rc$ & $\emptyset$ \\ \hline
+                    Puntos aislados & $\emptyset$ & $\emptyset$ & $\lc b \rc$ & $\lc b \rc$ & $\lc \sfrac{1}{n} \rc_{n\geq 1}$ & $\lc 0 \rc \cup \lc \sfrac{-1}{n} \rc_{n\geq 1}$ \\ \hline
+                \end{tabular}
+            \end{center}
     \end{enumerate}
 \end{eje}
