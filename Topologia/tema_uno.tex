@@ -592,3 +592,29 @@
     \end{gather*}
     Es trivial comprobar que tanto $d_1$ como $d_2$ son métricas. Consideremos ahora $d_{\min}\lp x, y \rp = \min \lc d_1\lp x, y \rp, d_2 \lp x, y \rp \rc$. Tenemos que $d_{\min}\lp B, C\rp = 3 > 1+1= d_2\lp B, A \rp + d_1 \lp A, C \rp = d_{\min}\lp B, A\rp+d_{\min}\lp A, C\rp$. Esto es incompatible con la desigualdad triangular de las métricas, de modo que $d_{\min}$ no és una métrica.
 \end{eje}
+
+\begin{eje}
+  \begin{enumerate}[(a)]
+   \item []
+   \item Vamos a comprobar que $D_1$ cumple las propiedades de las métricas.
+   \begin{enumerate}[i)]
+   \item $\abs{x_n - y_n} \geq 0 \implies D_1\lp x,y\rp \geq 0$.
+   \item $x_n = y_n \iff \abs{x_n-y_n}=0 \iff D_1\lp x,y\rp=0$.
+   \item $D_1\lp x,y\rp = \sup\min\lc\abs{x_n-y_n},1\rc = \sup\min\lc\abs{y_n-x_n},1\rc = D_1\lp y,x\rp$.
+   \item \begin{align*}
+          D_1\lp x,y\rp & = \sup\min\lc\abs{x_n-y_n},1\rc \\
+           & = \sup\min\lc\abs{x_n-y_n+z_n-z_n},1\rc\\
+           & \leq \sup\min\lc\abs{x_n -z_n}+\abs{y_n-z_n},1\rc \\
+           & \leq \sup\min\lc\abs{x_n -z_n},1\rc + \sup\min\lc\abs{y_n-z_n},1\rc \\
+           & = D_1\lp x,z\rp + D_1\lp y,z\rp.
+         \end{align*}
+
+   \end{enumerate}
+   La comprobación de que $D_2$ es equivalente a la de $D_1$.
+   \item Tenemos que para toda sucesión de la bola $y\in B_\varepsilon \lp 0\rp \iff D_1\lp y,0\rp <\varepsilon \iff \abs{y_n} < \varepsilon$, por lo tanto, la bola es el conjunto de sucesiones que tienden a $0$. 
+   
+   Equivalentemente para $D_2$ tenemos que $\frac{\abs{y_n}}{n} <\varepsilon$ y por lo tanto tendremos que $y\in B_\varepsilon \lp 0\rp \iff \lp y_n\rp = o\lp n\rp$.
+  \end{enumerate}
+
+ 
+\end{eje}
