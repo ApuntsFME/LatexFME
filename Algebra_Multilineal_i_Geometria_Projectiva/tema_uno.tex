@@ -11,7 +11,7 @@
 \begin{defi}
     Sea $\E$ un $\k$-ev. Definimos el espacio dual de $\E$ como
     $\E^* = \{ \phi : \E \to \k \text{ lineales} \}$ (también es un
-    $\k$-espacio vectorial)
+    $\k$-espacio vectorial).
 \end{defi}
 \begin{obs}
     Para definir $\E^*$ tenemos que usar bases de $\E$.
@@ -22,7 +22,7 @@
     \[
         \begin{aligned}
             u_i^* \colon \E &\to \k\\
-            u_j &\mapsto u_i^*(u_j) = \delta_{ij}
+            u_j &\mapsto u_i^*(u_j) = \delta_{ij}.
         \end{aligned}
     \]
     Y llamaremos base dual de $B$ a
@@ -35,28 +35,28 @@
     \[
         w(u_j) = \sum_{i=1}^{n} a_i u_i^*(u_j) = a_j
         \implies
-        w = \sum_{i=1}^{n}w(u_i)u_i^*
+        w = \sum_{i=1}^{n}w(u_i)u_i^*.
     \]
 \end{obs}
 
-\begin{prop}[(cambios de base)]
+\begin{prop}[Cambios de base]
     Sean $B_1$ y $B_2$ bases de $\E$ ($\k$-ev. de $\dim  \E = n$) y
     sean $B_1^*$ y $B_2^*$ las bases duales de $B_1$ y $B_2$.
     Si $S_{B_1B_2}$ es la matriz de cambio de base de $B_1$ a
-    $B_2$, entonces:
+    $B_2$, entonces
     \[
-        S_{B_1^*B_2^*} = (S_{B_1B_2}^{-1})^T = (S_{B_2B_1})^T
+        S_{B_1^*B_2^*} = (S_{B_1B_2}^{-1})^T = (S_{B_2B_1})^T.
     \]
 \end{prop}
 
-\begin{prop}[(aplicaciones lineales)]
+\begin{prop}[Aplicaciones lineales]
     Sean $\E$ y $\bb{F}$ $\k$-ev. y sea $\phi \colon \E \to \bb{F}$ una
     aplicación lineal, entonces $\phi$ induce la aplicación
     lineal siguiente:
     \[
         \begin{aligned}
         \phi^* \colon \bb{F}^* &\to \E^*\\
-        w &\mapsto \phi^*(w) = w \circ \phi
+        w &\mapsto \phi^*(w) = w \circ \phi.
         \end{aligned}
     \]
 \end{prop}
@@ -66,36 +66,36 @@
     \[
         \displaystyle \begin{rcases} B_1 \text{ base de } \E \\ B_2
         \text{ base de } \bb{F} \end{rcases} \implies \phi \text{ viene dada por }
-        M_{B_1,B_2}(\phi)
+        M_{B_1,B_2}(\phi),
     \]
     \[
         \displaystyle \begin{rcases} B_1^*
         \text{ base de } \E^* \\ B_2^* \text{ base de } \bb{F}^*
         \end{rcases} \implies \phi^* \text{ viene dada por }
-        M_{B_2^*,B_1^*}(\phi^*) = (M_{B_1,B_2}(\phi))^T
+        M_{B_2^*,B_1^*}(\phi^*) = (M_{B_1,B_2}(\phi))^T.
     \]
 \end{obs}
-\begin{prop}[(espacio bidual)]
+\begin{prop}[Espacio bidual]
     Dado $\E$ $\k$-ev. podemos definir $\E^*,\E^{**},\cdots$. En
     particular tenemos que $\E^{**}$ es canónicamente isomorfo a
     $\E$ mediante el isomorfismo
     \[
         \begin{aligned}
             \phi \colon \E &\to \E^{**}\\
-            u &\mapsto \phi(u)
+            u &\mapsto \phi(u),
         \end{aligned}
     \]
     donde
     \[
         \begin{aligned}
             \phi(u) \colon \E^* &\to \k \\
-            w &\mapsto (\phi(u))(w) = w(u)
+            w &\mapsto (\phi(u))(w) = w(u).
         \end{aligned}
     \]
 \end{prop}
 \begin{obs}
     Como este isomorfismo es canónico (no depende de las bases),
-    $\E \cong \E^{**}$ y no distinguimos entre $\E$ y $\E^{**}$
+    $\E \cong \E^{**}$ y no distinguimos entre $\E$ y $\E^{**}$.
 \end{obs}
 
 
@@ -129,7 +129,7 @@
             f \colon \overbrace{\E \times \cdots \times \E}^p\times
             \overbrace{\E^* \times \cdots \times \E^*}^q&\to \k \\
             (v_1, \cdots, v_p, w_1, \cdots, w_q) &\mapsto
-            f(v_1,\cdots,v_p,w_1,\cdots,w_q)
+            f(v_1,\cdots,v_p,w_1,\cdots,w_q).
         \end{aligned}
     \]
 \end{defi}
@@ -142,23 +142,23 @@
 \begin{example}
     Sea $\E$ un $\k$-ev.
     \begin{itemize}
-        \item $T_1(\E) = T_1^0(\E) = \E^*$
-        \item $T^1(\E) = T_0^1 = \E^{**}$ ($\cong \E$)
-        \item $T_2(\E) = T_2^0(\E) = \{\text{formas bilineales de } \E \text{ en } \k\}$
+        \item $T_1(\E) = T_1^0(\E) = \E^*$.
+        \item $T^1(\E) = T_0^1 = \E^{**}$ ($\cong \E$).
+        \item $T_2(\E) = T_2^0(\E) = \{\text{formas bilineales de } \E \text{ en } \k\}$.
     \end{itemize}
 \end{example}
 \begin{prop}
-    $T_p^q(\E) = T_q^p(\E^*)$ (cambiando el orden)
+    $T_p^q(\E) = T_q^p(\E^*)$ (cambiando el orden).
 \end{prop}
 \begin{prop}
     $T_p^q(\E)$ tiene estructura de $\k$-espacio vectorial. Si $f, g \in T_p^q(\E)$ y
-    $\alpha , \beta \in \k$
+    $\alpha , \beta \in \k$,
     \[
         \begin{aligned}
             \alpha f + \beta g \colon \overbrace{\E \times \cdots \E}^p \times
             \overbrace{\E^* \times \cdots \times \E^*}^q &\to \k \\
             (v_1, \cdots, v_p, w_1, \cdots, w_q) &\mapsto (\alpha f + \beta g)
-            (v_1, \cdots, v_p, w_1, \cdots, w_q)
+            (v_1, \cdots, v_p, w_1, \cdots, w_q).
         \end{aligned}
     \]
     donde
@@ -170,7 +170,7 @@
     \end{aligned}
     \]
 \end{prop}
-\begin{defi}[(producto tensorial)]
+\begin{defi}[Producto tensorial]
     Dados $f \in T_p^q(\E)$ y $g \in T_{p'}^{q'}(\E)$, definimos el producto
     tensorial de $f$ y $g$ como
     \[
@@ -181,7 +181,7 @@
             w_1, \cdots, w_q, \overline{w_1}, \cdots, \overline{w_{q'}})
             &\mapsto f(v_1, \cdots, v_p, w_1, \cdots, w_p) * \\
             &g(\overline{v_1}, \cdots, \overline{v_{p'}}, \overline{w_1}, \cdots
-            \overline{w_{q'}})
+            \overline{w_{q'}}).
         \end{aligned}
     \]
 \end{defi}
@@ -195,12 +195,12 @@
         \item $\otimes$ {\bfseries NO} es abeliano. En general $f \otimes g \neq
         g \otimes f$.
         \item $\otimes$ es asociativo. $(f \otimes g) \otimes h = f \otimes (g
-        \otimes h)$. Denotado por $f \otimes g \otimes h$
-        \item $\vec{0} \otimes f = f \otimes \vec{0} = \vec{0}$
-        \item $f \otimes (g + h) = f \otimes g + f\otimes h$ \quad ($(f+g) \otimes
-        h = f \otimes h + g \otimes h$)
+        \otimes h)$. Denotado por $f \otimes g \otimes h$.
+        \item $\vec{0} \otimes f = f \otimes \vec{0} = \vec{0}$.
+        \item $f \otimes (g + h) = f \otimes g + f\otimes h$, \quad ($(f+g) \otimes
+        h = f \otimes h + g \otimes h$).
         \item $\alpha \in \k$. $(\alpha f) \otimes g = \alpha(f \otimes g) =
-        f \otimes (\alpha g)$
+        f \otimes (\alpha g)$.
     \end{itemize}
 \end{prop}
 \begin{example}
@@ -212,7 +212,7 @@
             (e_1^* \otimes e_2^*)(v_1, v_2) = e_1^*(v_1)e_2^*(v_2) = x_1y_2 \\
             (e_2^* \otimes e_1^*)(v_1, v_2) = e_2^*(v_1)e_1^*(v_2) = y_1x_2
         \end{rcases}
-        \implies e_1^* \otimes e_2^* \neq e_2^* \otimes e_1^*
+        \implies e_1^* \otimes e_2^* \neq e_2^* \otimes e_1^*.
     \]
 \end{example}
 \begin{example}
@@ -220,10 +220,10 @@
     \[
         e_1 \otimes e_2 \in T^2(\E) \qquad \begin{cases}
             (e_1 \otimes e_2) = (e_1^{**} \otimes e_2^{**})(e_1^*,e_1^*) =
-            e_1(e_1)e_2(e_1) = 0 \\
-            (e_1 \otimes e_2)(e_1^*,e_2^*) = 1 \\
-            (e_1 \otimes e_2)(e_2^*,e_1^*) = 0 \\
-            (e_1 \otimes e_2)(e_2^*,e_2^*) = 0
+            e_1(e_1)e_2(e_1) = 0, \\
+            (e_1 \otimes e_2)(e_1^*,e_2^*) = 1, \\
+            (e_1 \otimes e_2)(e_2^*,e_1^*) = 0, \\
+            (e_1 \otimes e_2)(e_2^*,e_2^*) = 0.
         \end{cases}
     \]
 \end{example}
@@ -237,18 +237,18 @@
         {L = \setb{l_1, \cdots, l_p}}, \underbrace{e_{m_1}^*, \cdots, e_{m_q}^*}_
         {M = \setb{m_1, \cdots, m_q}}) =
         \begin{cases}
-            1 \quad \text{Si } I = L \text{ y } J = M \\
-            0 \quad \text{en otro caso}
+            1 & \text{si } I = L \text{ y } J = M, \\
+            0 & \text{en otro caso}.
         \end{cases}
     \]
 \end{obs}
 \begin{obs}
-    Sean $f,g \in T_p^q(\E)$ entonces
+    Sean $f,g \in T_p^q(\E)$, entonces
     \[
-        f=g \iff f(e_{i_1}, \cdots, e_{j_q}^*) = g(e_{i_1}, \cdots, e_{j_q}^*), 
+        f=g \iff f(e_{i_1}, \cdots, e_{j_q}^*) = g(e_{i_1}, \cdots, e_{j_q}^*), \quad
         \begin{array}{l}
-            \forall e_{i_1}, \cdots, e_{i_p} \in B \\
-            \forall e_{j_1}^*, \cdots,e_{j_q}^* \in B^*
+            \forall e_{i_1}, \cdots, e_{i_p} \in B, \\
+            \forall e_{j_1}^*, \cdots,e_{j_q}^* \in B^*.
         \end{array}
     \]
 \end{obs}
@@ -822,7 +822,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
 \begin{obs}
     Lo haremos en $T_p(\E)$, análogamente se hará en $T^q(\E)$.
 \end{obs}
-\begin{defi}[(producto exterior de orden 1)] \label{pr_ext}
+\begin{defi} \label{pr_ext}
     Sea $\E$ un $\k$-e.v.; $\omega_1, \dots, \omega_p \in T_1(\E) = \E$, el producto exterior de orden 1 es:
     \[
         \omega_1 \wedge \dots \wedge \omega_p = p! A(\omega_1 \otimes \dots \otimes \omega_p)

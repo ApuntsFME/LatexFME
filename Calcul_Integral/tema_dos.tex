@@ -584,7 +584,7 @@
 \begin{proof}
     Todo conjunto cerrado de un espacio compacto es compacto.
 \end{proof}
-\begin{lema}\label{lema:teo_lebesgue}
+\begin{lema}[(1)]\label{lema:teo_lebesgue}
     Sea $A \subset \real^n$ rectángulo compacto. Sean $T_1, \dots, T_n \subset A$ rectángulos compactos $\tq A = \bigcup_{i=1}^n T_i$. Existe una partición $\Pa$ de $A$ t.q. para cada subrectángulo $R$ de $\Pa$, existe un $i$ t.q. $R \subset T_i$.
 \end{lema}
 \begin{proof}
@@ -603,7 +603,7 @@
 \begin{col*}
     $f$ continua $\implies f$ integrable Riemann (ya que $f$ continua $\implies \forall x \: \omega \lp f, x \rp = 0$).
 \end{col*}
-\begin{lema*}[2]\label{lema:dos_lebesgue}
+\begin{lema*}[(2)]\label{lema:dos_lebesgue}
     Sean $A \subset \real^n$ rectángulo compacto, $f : A \to \real$ acotada, $c > 0$. Si $f$ es integrable Riemann, el conjunto $B_c = \{x \in A | \omega \lp f, x \rp \geq c\}$ tiene medida nula.
 \end{lema*}
 \begin{proof}
@@ -1310,7 +1310,7 @@ los rectángulos.
 
 \subsection*{Demostración del teorema del cambio de variable}
 
-\begin{lema*}[1]\label{lema:uno_cambio}
+\begin{lema*}[(1)]\label{lema:uno_cambio}
     Sea $\varphi \colon \real^n \to \real^n$ un isomorfismo lineal y sea $A \subset \real^n$ un rectángulo compacto, entonces,
     \[
         \vol\left( \varphi(A) \right) = \abs{\det \varphi} \vol(A).
@@ -1377,7 +1377,7 @@ los rectángulos.
     \end{enumerate}
 \end{proof}
 
-\begin{lema*}[2]\label{lema:dos_cambio}
+\begin{lema*}[(2)]\label{lema:dos_cambio}
     Sea $\phi \colon \real^n \to \real^n$ un isomorfismo lineal y sea $A \subset \real^n$ medible Jordan.
     Entonces,
     \[
@@ -1404,7 +1404,7 @@ los rectángulos.
     \]
 \end{proof}
 
-\begin{lema*}[3]\label{lema:tres_cambio}
+\begin{lema*}[(3)]\label{lema:tres_cambio}
     Si la fórmula del cambio de variable se satisface para $f = 1$ (constante), entonces se satisface para todo $f$ integrable Riemman.
 \end{lema*}
 
@@ -1423,7 +1423,7 @@ los rectángulos.
     \]
 \end{proof}
 
-\begin{lema*}[4]\label{lema:cuatro_cambio}
+\begin{lema*}[(4)]\label{lema:cuatro_cambio}
     La fórmula del cambio de variable se satisface si $\phi \colon \real^n \to \real^n$ es lineal.
 \end{lema*}
 \begin{proof}
@@ -1437,7 +1437,7 @@ los rectángulos.
     \]
 \end{proof}
 
-\begin{lema*}[5]\label{lema:cinco_cambio}
+\begin{lema*}[(5)]\label{lema:cinco_cambio}
     Si la fórmula del cambio de variable se satisface para $\psi \colon W \to V$ y para $\phi \colon V \to U$, entonces, se satisface para
     $\phi \circ \psi$.
 \end{lema*}
@@ -1590,7 +1590,7 @@ los rectángulos.
 
 \textbf{Acabada ya esta pequeña pausa para repasar algunas cosas importantes, continuamos con la demostración}
 
-\begin{lema*}[0]\label{lema:cero_cambio}
+\begin{lema*}[(0)]\label{lema:cero_cambio}
     Sea $\phi \colon V \to U$ un difeomorfismo de clase $\C^1$ entre abiertos. Sea $B \subset V$ tal que
     \begin{itemize}
         \item $B$ es medible Jordan
@@ -1608,7 +1608,7 @@ los rectángulos.
     \]
 \end{proof}
 
-\begin{lema*}[6]\label{lema:seis_cambio}
+\begin{lema*}[(6)]\label{lema:seis_cambio}
     Sea $\phi \colon V \to U$ un difeomorfismo de clase $\C^1$, $\psi = \inv{\phi}$, sea $B \subset V$ un cubo compacto y sean
     \[
         K := \max_{z \in B} \norm{\Dif_{\psi} \left( \phi(z) \right)} \qquad
@@ -1657,7 +1657,7 @@ los rectángulos.
     \]
 \end{proof}
 
-\begin{lema*}[7]\label{lema:siete_cambio}
+\begin{lema*}[(7)]\label{lema:siete_cambio}
     Sea $\phi \colon V \to U$ un difeomorfismo de clase $\C^1$, $B \subset V$ un cubo compacto, entonces,
     \[
         \vol\left( \phi(B) \right) \leq \int_B \abs{\det \Dif_\phi}
@@ -1753,7 +1753,7 @@ Procedemos a la demostración
     Sean $E \subset \real^n$ y $f \colon E \to \real$. Si $f\geq 0$, entonces el límite $\lim_i \int_{E_i} f$ no depende de la exhaustión $\lp E_i \rp$ considerada.
 \end{prop}
 
-\begin{lema}[(de la cebolla)]
+\begin{lema}[Lema de la cebolla]
     Sea $U \subset \real^n$ un conjunto abierto no vacío. Existe una sucesión $\lp V_i \rp $ de conjuntos abiertos medibles Jordan, con $\overline{V}_i \subset U$ tales que
     \begin{itemize}
         \item $\overline{V}_i$ es compacto,

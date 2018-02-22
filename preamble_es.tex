@@ -94,7 +94,7 @@
 {\bfseries}% Thm head font
 {}%        Punctuation after thm head
 {\newline}% Space after thm head: \newline = linebreak
-{#1 #2 \normalfont {\it #3}}%         Thm head spec
+{\thmname{#1}\thmnumber{ #2}.\thmnote{ {\it #3.}}}%         Thm head spec
 
 \newtheoremstyle{demo}% name
 {}%         Space above, empty = `usual value'
@@ -103,8 +103,8 @@
 {}%         Indent amount (empty = no indent, \parindent = para indent)
 {\it}% Thm head font
 {}%        Punctuation after thm head
-{\newline}% Space after thm head: \newline = linebreak
-{#1. #2 \normalfont {\it #3}}%         Thm head spec
+{5pt plus 1pt minus 1pt}% Space after thm head: \newline = linebreak
+{#1\thmnote{ #3}.}%         Thm head spec
 
 \newtheoremstyle{breakthm}% name
 {}%         Space above, empty = `usual value'
@@ -124,28 +124,30 @@
 {\bfseries}% Thm head font
 {}%        Punctuation after thm head
 {5pt plus 1pt minus 1pt}% Space after thm head: \newline = linebreak
-{#1 #2 \normalfont #3}%         Thm head spec
+{\thmname{#1}\thmnumber{ #2}.\thmnote{ {\it #3.}}}%         Thm head spec
 
-\theoremstyle{normal}
+% Normal
 \declaretheorem[style=normal,name=Lema,numberwithin=section]{lema}
-\declaretheorem[style=breakthm,name=Lema,numberwithin=section]{teolema}
 \declaretheorem[style=normal,name=Lema,numbered=no]{lema*}
 \declaretheorem[style=normal,name=Observación,sibling=lema]{obs}
 \declaretheorem[style=normal,name=Observación,numbered=no]{obs*}
+\declaretheorem[style=normal,name=Proposición,sibling=lema]{prop}
+\declaretheorem[style=normal,name=Proposición,numbered=no]{prop*}
+\declaretheorem[style=normal,name=Definición,sibling=lema]{defi}
+\declaretheorem[style=normal,name=Definición,numbered=no]{defi*}
+\declaretheorem[style=normal,name=Corolario,sibling=lema]{col}
+\declaretheorem[style=normal,name=Corolario,numbered=no]{col*}
+\declaretheorem[style=normal,name=Ejercicio,sibling=lema]{ej}
+\declaretheorem[style=normal,name=Ejercicio,numbered=no]{ej*}
+\declaretheorem[style=normal,name=Ejemplo,sibling=lema]{example}
+\declaretheorem[style=normal,name=Ejemplo,numbered=no]{example*}
 
-\declaretheorem[style=break,name=Proposición,sibling=lema]{prop}
-\declaretheorem[style=break,name=Proposición,numbered=no]{prop*}
-\declaretheorem[style=break,name=Definición,sibling=lema]{defi}
-\declaretheorem[style=break,name=Definición,numbered=no]{defi*}
-\declaretheorem[style=break,name=Corolario,sibling=lema]{col}
-\declaretheorem[style=break,name=Corolario,numbered=no]{col*}
-\declaretheorem[style=break,name=Ejercicio,sibling=lema]{ej}
-\declaretheorem[style=break,name=Ejercicio,numbered=no]{ej*}
-\declaretheorem[style=break,name=Ejemplo,sibling=lema]{example}
-\declaretheorem[style=break,name=Ejemplo,numbered=no]{example*}
-
+% Demo
 \declaretheorem[style=demo,name=Demostración,qed=$\square$,numbered=no]{proof}
 
-\let\thm\relax
-\declaretheorem[style=breakthm,name=Teorema,sibling=lema]{teo}
+% Break
 \declaretheorem[style=break,name=Teorema,sibling=lema]{teo*}
+
+% Breakthm
+\declaretheorem[style=breakthm,name=Teorema,sibling=lema]{teo}
+\declaretheorem[style=breakthm,name=Lema,numberwithin=section]{teolema}
