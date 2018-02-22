@@ -39,7 +39,7 @@
             \end{enumerate}
         \item Si $P_e$ degenerat ($\exists i \in \B$ tal que $x_{B\left(i\right)} = 0$) $d$ pot no ser factible:
             \begin{gather*}
-                \min \left\{ -\frac{x_{B\left(i\right)}}{d_{B\left(i\right)}} \right\} = 0 \implies \nexists \theta > 0 \tq y = x+\theta d \implies d \text{ infactible}
+                \min \left\{ -\frac{x_{B\left(i\right)}}{d_{B\left(i\right)}} \right\} = 0 \implies \nexists \theta > 0 \tq y = x+\theta d \implies d \text{ infactible}.
             \end{gather*}
     \end{enumerate}
 \end{prop}
@@ -105,7 +105,7 @@
         \item {\bf Anar} a \ref{simp_pri_pas2}.
     \end{enumerate}
 \end{alg}
-\begin{propobs}[Fase 1 del símplex]
+\begin{obs}[Fase 1 del símplex]
     A la fase 1 del símplex resolem el problema:
     \begin{equation*}
         \lp P_I \rp \begin{dcases*}
@@ -124,7 +124,7 @@
                 \item $\B_I^*$ conté alguna variable $y$. Tenim que $y_B^* = \left[0\right] \implies \B_I^*$ és SBF degenerada de $\left(P_I\right)$ i per tant podem obtenir una SBF de $\left(P\right)$ a partir de $\B_I^*$.
             \end{itemize}
     \end{itemize}
-\end{propobs}
+\end{obs}
 \begin{rgl}[de Bland] \label{rgl:bland}
     Usem la regla de Bland per a no entrar en bucle al utilitzar el símplex per a resoldre un problema degenerat.
     \begin{enumerate}
@@ -206,7 +206,7 @@
 
 \section{Programació lineal entera}
 
-\begin{propobs}
+\begin{obs}
     La següent taula explica les relacions possibles entre un $\left(PLE\right)$ i la seva relaxació lineal $\left(RL\right)$.
     \begin{center}
         \begin{tabular}{|l|c|c|c|} \hline
@@ -216,7 +216,7 @@
             Il·limitat & No & No & Sí \\ \hline
         \end{tabular}
     \end{center}
-\end{propobs}
+\end{obs}
 
 En aquest resum falta una part important de programació lineal entera, per a més informació, consulteu els apunts de classe!
 
