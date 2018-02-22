@@ -590,7 +590,20 @@
         d_2\lp A, B \rp= d_2 \lp B, A \rp=1, \quad d_2\lp B, C \rp= d_2 \lp C, B \rp=3, \quad d_2\lp C, A \rp= d_2 \lp A, C \rp=2, \\
         d_2\lp A, A \rp=0, \qquad d_2\lp B, B \rp=0, \qquad d_2\lp C, C \rp=0. \\
     \end{gather*}
-    Es trivial comprobar que tanto $d_1$ como $d_2$ son métricas. Consideremos ahora $d_{\min}\lp x, y \rp = \min \lc d_1\lp x, y \rp, d_2 \lp x, y \rp \rc$. Tenemos que $d_{\min}\lp B, C\rp = 3 > 1+1= d_2\lp B, A \rp + d_1 \lp A, C \rp = d_{\min}\lp B, A\rp+d_{\min}\lp A, C\rp$. Esto es incompatible con la desigualdad triangular de las métricas, de modo que $d_{\min}$ no és una métrica.
+    Es trivial comprobar que tanto $d_1$ como $d_2$ son métricas. Consideremos ahora $d_{\min}\lp x, y \rp = \min \lc d_1\lp x, y \rp, d_2 \lp x, y \rp \rc$. Tenemos que $d_{\min}\lp B, C\rp = 3 > 1+1= d_2\lp B, A \rp + d_1 \lp A, C \rp = d_{\min}\lp B, A\rp+d_{\min}\lp A, C\rp$. Esto es incompatible con la desigualdad triangular de las métricas, de modo que $d_{\min}$ no és una métrica.  Tratemos ahora $d_{\max}$. Puesto que $d_1$ y $d_2$ son métricas,
+    \begin{enumerate}[i)]
+        \item $d_{\max} \lp x, y \rp = \max \lc d_1 \lp x, y \rp, d_2 \lp x, y \rp \rc \geq 0$.
+        \item $d_{\max} \lp x, y \rp = \max \lc d_1 \lp x, y \rp, d_2 \lp x, y \rp \rc = 0 \iff x=y$.
+        \item $d_{\max} \lp x, y \rp = \max \lc d_1 \lp x, y \rp, d_2 \lp x, y \rp \rc = \max \lc d_1 \lp y, x \rp, d_2 \lp y, x \rp \rc = d_{\max} \lp y, x \rp$.
+        \item 
+            \begin{align*}  
+                d_{\max} \lp x, y \rp &= \max \lc d_1 \lp x, y \rp, d_2 \lp x, y \rp \rc \\
+                &\leq \max \lc d_1 \lp x, z \rp + d_1 \lp z, y \rp, d_2 \lp x, z \rp + d_2 \lp z, y \rp \rc \\
+                &\leq \max \lc d_1\lp x, z \rp , d_2 \lp x, z \rp \rc + \max \lc d_1 \lp z, y \rp , d_2 \lp z, y \rp \rc \\
+                &=d_{\max} \lp x, z \rp + d_{\max} \lp z, y \rp.
+            \end{align*}
+    \end{enumerate}
+    Así pues, $d_{\max}$ sí es una métrica.
 \end{eje}
 
 \begin{eje}
