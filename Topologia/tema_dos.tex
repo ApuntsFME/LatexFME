@@ -134,35 +134,39 @@
 
 %TODO 2.6 no es de ningu fes aquest exercici tan maco de PUTAAAAA SIDAAAAAA
 \begin{eje}
- Este ejercicio aún no está resuelto
+  Este ejercicio aún no está resuelto
 \end{eje}
 
 \begin{eje}
- Sea $\T$ una topología y $X$ un espacio topológico. Por definición de $\psi$ se tiene que $\forall A\subseteq X,\, \psi\lp A\rp =\overline{A}$ es un cerrado de $\T$. Por lo tanto, podemos definir un conjunto de abiertos de $\T$ como
- \[
-  \B = \lc B\subseteq X\, | \,\exists A \subseteq X \tq B=X\setminus \psi\lp A\rp \rc
- \]
- que son abiertos por ser el complementario de un cerrado ($\overline{A}$ es el cerrado más pequeño que contiene a $A$).
- 
- Ahora demostraremos que $\B$ es una base de la topología $\T$. 
+  Sea $\T$ una topología y $X$ un espacio topológico. Por definición de $\psi$ se tiene que $\forall A\subseteq X,\, \psi\lp A\rp =\overline{A}$ es un cerrado de $\T$. Por lo tanto, podemos definir un conjunto de abiertos de $\T$ como
+  \[
+    \B = \lc B\subseteq X\, | \,\exists A \subseteq X \tq B=X\setminus \psi\lp A\rp \rc
+  \]
+  que son abiertos por ser el complementario de un cerrado ($\overline{A}$ es el cerrado más pequeño que contiene a $A$).
+  
+  Ahora demostraremos que $\B$ es una base de la topología $\T$. 
 
- Primero veamos que
- \begin{gather*}
-  X\setminus \psi\lp \varnothing\rp = X\setminus\varnothing = X \in \B\\
-  X\setminus \psi\lp X\rp =X\setminus X = \varnothing \in \B.
- \end{gather*}
- 
-Entonces tenemos lo siguiente:
-\begin{enumerate}[i)]
- \item $\forall x\in X,\, \exists A\subseteq \tq \overline{A}\cap\lc x\rc = \varnothing \implies x\in B = X\setminus \psi\lp A\rp$.
- En concreto podemos coger $A=\varnothing$.
- \item Sean $B_1,B_2 \in \B$ y sea $x\in X \tq x\in B_1\cap B_2$. Entonces
- \begin{gather*}
-  x\in B_1\cap B_2 = \lp X\setminus \psi\lp A_1\rp \rp \cap \lp X\setminus\psi\lp A_2\rp \rp = X\setminus \lp\psi\lp A_1\rp\cup\psi\lp A_2\rp\rp = \\
-  = X\setminus\psi\lp A_1 \cup A_2\rp = X\setminus\psi\lp\psi\lp A_1 \cup A_2\rp \rp,
- \end{gather*}
- y como $A=\psi\lp A_1\cup A_2\rp \subseteq X$, $B=X\setminus\psi\lp A\rp \in \B$, tenemos que $\exists B \in \B \tq x\in B \subseteq B_1 \cap B_2$.
-\end{enumerate}
-Por lo tanto, $\B$ es la base de una topología (de $\T$), lo que nos dice que como $\B$ son los mínimos abiertos que debe contener una topología que cumpla que $\psi\lp A\rp = \overline{A}$ y una base define una única topología, existe una única topología $\T$ que lo cumple. 
+  Primero veamos que
+  \begin{gather*}
+      X\setminus \psi\lp \varnothing\rp = X\setminus\varnothing = X \in \B\\
+      X\setminus \psi\lp X\rp =X\setminus X = \varnothing \in \B.
+  \end{gather*}
+  
+  Entonces tenemos lo siguiente:
+  
+  \begin{enumerate}[i)]
+    \item $\forall x\in X,\, \exists A\subseteq \tq \overline{A}\cap\lc x\rc = \varnothing \implies x\in B = X\setminus \psi\lp A\rp$.
+    En concreto podemos coger $A=\varnothing$.
+    \item Sean $B_1,B_2 \in \B$ y sea $x\in X \tq x\in B_1\cap B_2$. Entonces
+    
+    \begin{gather*}
+	x\in B_1\cap B_2 = \lp X\setminus \psi\lp A_1\rp \rp \cap \lp X\setminus\psi\lp A_2\rp \rp = X\setminus \lp\psi\lp A_1\rp\cup\psi\lp A_2\rp\rp = \\
+	= X\setminus\psi\lp A_1 \cup A_2\rp = X\setminus\psi\lp\psi\lp A_1 \cup A_2\rp \rp,
+    \end{gather*}
+    
+    y como $A=\psi\lp A_1\cup A_2\rp \subseteq X$, $B=X\setminus\psi\lp A\rp \in \B$, tenemos que $\exists B \in \B \tq x\in B \subseteq B_1 \cap B_2$.
+  \end{enumerate}
+  
+  Por lo tanto, $\B$ es la base de una topología (de $\T$), lo que nos dice que como $\B$ son los mínimos abiertos que debe contener una topología que cumpla que $\psi\lp A\rp = \overline{A}$ y una base define una única topología, existe una única topología $\T$ que lo cumple. 
 \end{eje}
 
