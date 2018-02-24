@@ -78,6 +78,8 @@
             \end{center}
     \end{enumerate}
 \end{eje}
+
+%TODO aixo sha dacabar (ferran)
 \begin{eje}
     \begin{enumerate}[(a)]
         \item[]
@@ -95,14 +97,42 @@
     \end{enumerate}
 \end{eje}
 
+%TODO 2.4 (dale ernesto)
 \begin{eje}
  Este ejercicio aún no está resuelto.
 \end{eje}
 
 \begin{eje}
- Este ejercicio aún no está resuelto
+    Como viene siendo costumbre, para demostrar que $\T$ es una topología debemos
+    ver que cumple las propiedades de esta:
+    \begin{enumerate}[i)]
+        \item El vacío es un abierto de $\real$ que no contiene 0. 
+        \item $\real = \lp\real \setminus \lc 0 \rc \rp \cup \lc 0^-, 0^+ \rc \in \T$.
+        \item $\bigcup\limits_{i \in I} U_i = \bigcup\limits_{i \in I} U'_i 
+            \setminus \lc 0 \rc
+            \cup S_i = \lp \bigcup\limits_{i \in I} U'_i \rp
+            \setminus \lc 0 \rc \cup \bigcup\limits_{i \in I} S_i = V \setminus \lc 0 \rc 
+            \cup S \in \T$. Los $S_i$ son vacíos si $0 \notin U_i$ y en caso contrario
+            $S_i \subseteq \lc 0^-, 0^+ \rc$. Se ha usado que 
+            la unión de abiertos en $\real$ es un abierto.
+        \item $\bigcap\limits_{i = 1}^n U_i =  \bigcap\limits_{i = 1}^n U'_i 
+            \setminus \lc 0 \rc
+            \cup S_i = \lp \bigcap\limits_{i = 1}^n U'_i \rp
+            \setminus \lc 0 \rc \cup \bigcap\limits_{i = 1}^n S_i = V \setminus \lc 0 \rc 
+            \cup S \in \T$. 
+    \end{enumerate}
+   
+    $\T$ no es Hausdorff puesto que cualquier abierto que contenga $0^+$ debe contener
+    un intervalo alrededor del $0$ en $\real$ y lo mismo es cierto para $0^-$, con lo
+    que cualquier pareja de abiertos que los contenga tendrá intersección no nula.
+    $\T$ no es la topología m\'etrica de una distancia dado que cualquier topología
+    m\'etrica es Hausdorff: Dados dos puntos $x, y$ distintos, la bola
+    abierta con centro $x$ y radio $\frac{d \lp x, y \rp}{2}$ y la bola con centro
+    $y$ y de mismo radio tienen intersección nula (es consecuencia directa de la
+    desigualdad triangular), pero contienen a sus respectivos centros.
 \end{eje}
 
+%TODO 2.6 no es de ningu fes aquest exercici tan maco de PUTAAAAA SIDAAAAAA
 \begin{eje}
  Este ejercicio aún no está resuelto
 \end{eje}
