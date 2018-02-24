@@ -422,7 +422,21 @@
                 \end{gather*}
                 \item $d\lp u, v \rp = \| u -v \| = \| u -w +w -v \| \leq \|u-w \| + \| w-v \|= d \lp u, w \rp + d \lp w, v \rp$.
             \end{enumerate}
-        \item La métrica discreta no proviene de norma alguna y la norma $\| x \| = \sum | x_i |$ no proviene de ningún producto escalar.
+        \item La métrica discreta no proviene de norma alguna. 
+            Esto es así porque no es escalable, por ejemplo, 
+            $2 = 2 d\lp (0, \dots, 0) , (1, \dots, 1) \rp \neq  
+            d \lp \lp0, \dots, 0\rp , \lp2, \dots, 2\rp \rp  = 1$, cosa que debiera cumplir 
+            si proviniera de una norma.
+
+            
+            La norma $\| x \| = \sum | x_i |$  
+            no proviene de ningún producto escalar. De hacerlo, debiera cumplir la
+            identidad del paralelogramo, pero los vectores
+            $x = \lp 1, 0, \dots, 0 \rp,
+            y = \lp 0, 1, 0, \dots, 0  \rp$
+            no la cumplen: $2\norm{x}^2 + 2\norm{y}^2 = 4 \neq 8 = \norm{x+y}^2
+            + \norm{x-y}^2$. Para $n = 1$ este contraejemplo no es válido pero en
+            ese caso sí es cierto que toda norma proviene de un producto escalar.
     \end{enumerate}
 \end{eje}
 
@@ -461,12 +475,25 @@
     Para todo $\varepsilon > 0$, fijando $\delta = \frac{\varepsilon}{M}$, si
     $\norm{x-y}_{\text{ord}} < \delta$ se cumple
     \[
-        \abs{\norm{x} - \norm{y}} \leq \norm{x-y} \leq M\norm{x-y}_{\text{ord}} \leq 
-        \varepsilon
+        \abs{\norm{x} - \norm{y}} \leq \norm{x-y} \leq M\norm{x-y}_{\text{ord}} < 
+        \varepsilon.
     \]
     
+    De lo que $\norm{\cdot}$ es continua. Sabiendo esto, podemos deducir que existe
+    una cota $m$ tal que $m \leq \norm{v} \, \forall \: v \tq 
+    \norm{v}_\text{ord}=1$, 
+    puesto que cualquier función continua sobre un compacto (en este caso, la esfera
+    unidad con la m\'etrica habitual en $\real^n$) admite una cota inferior. Finalmente,
+    para cualquier vector $v$
+    \[
+        m\norm{v}_{\text{ord}} \leq \norm{\frac{v}{\norm{v}_\text{ord}}} 
+        \norm{v}_{\text{ord}} = \norm{v}.
+    \]
 
-    Una vez sabemos que $\norm{\cdot}$ es continua
+    Con lo que hemos encontrado las cotas $m$ y $M$ necesarias para ver que
+    cualquier norma es equivalente a la ordinaria en $\real^n$, y, como se ha explicado
+    antes, para ver que dos normas cualesquiera en un $\real$-espacio
+    vectorial de dimensión finita son equivalentes.
 \end{eje}
 
 \begin{eje}
