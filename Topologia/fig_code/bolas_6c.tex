@@ -1,0 +1,29 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[%
+    width= \linewidth*2/5,
+    height= \linewidth*2/5,
+    enlargelimits=0,
+  axis x line=center,
+  axis y line=center,
+  xtick={-1,-0.5,...,1},
+  ytick={-1,-0.5,...,1},
+  xlabel={$x$},
+  ylabel={$y$},
+  extra x ticks={-0.9,-0.8,...,0.9},
+  extra y ticks={-0.9,-0.8,...,0.9},
+  extra x tick label={\empty},
+  extra y tick label={\empty},
+  xlabel style={below right},
+  ylabel style={above left},
+  xmin=-1.1,
+  xmax=1.1,
+  ymin=-1.1,
+  ymax=1.1]
+
+  \draw [fill opacity=0.2, draw opacity=0.5, thick, fill=blue, draw=blue] (0,-1) -- (-1,0) -- (0,1) -- (1,0) -- cycle;
+\end{axis}
+\end{tikzpicture}
+\caption{$B_1 \left( 0,0 \right)$}
+\end{figure}
