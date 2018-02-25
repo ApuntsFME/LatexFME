@@ -15,11 +15,8 @@
 \tikzexternalize[prefix=figures/]
 \pgfplotsset{compat=1.11}
 
-\def\fbx#1{\vbox{\hbox{\hbox{#1}\setbox0\lastbox\copy0\kern\fboxsep\vrule width\fboxrule depth\dimexpr \fboxsep+\dp0\relax}%
-            \hrule height\fboxrule}}
-
-\newcommand{\bimplies}{\fbx{$\implies$}}
-\newcommand{\bimpliedby}{\fbx{$\impliedby$}}
+\newcommand*{\bimplies}{\boxed{\implies}}
+\newcommand*{\bimpliedby}{\boxed{\impliedby}}
 
 \newcommand{\n}{\mathbb{N}}
 \newcommand{\z}{\mathbb{Z}}
