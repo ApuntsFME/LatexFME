@@ -1,0 +1,8 @@
+#!/usr/bin/emacs24-x --script
+
+(find-file (elt argv 0))
+(setq fill-column 80)
+(setq LaTeX-indent-level 4)
+(LaTeX-fill-buffer nil)
+(save-buffer)
+
