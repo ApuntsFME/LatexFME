@@ -630,27 +630,33 @@
 \end{eje}
 
 \begin{eje}
-  \begin{enumerate}[(a)]
-   \item []
-   \item Vamos a comprobar que $D_1$ cumple las propiedades de las métricas.
-   \begin{enumerate}[i)]
-   \item $\abs{x_n - y_n} \geq 0 \implies D_1\lp x,y\rp \geq 0$.
-   \item $x_n = y_n \iff \abs{x_n-y_n}=0 \iff D_1\lp x,y\rp=0$.
-   \item $D_1\lp x,y\rp = \sup \lc \min\lc\abs{x_n-y_n},1\rc \rc = \sup\lc \min\lc\abs{y_n-x_n},1\rc \rc = D_1\lp y,x\rp$.
-   \item \begin{align*}
-          D_1\lp x,y\rp & = \sup\lc\min\lc\abs{x_n-y_n},1\rc\rc \\
-           & = \sup\lc\min\lc\abs{x_n-y_n+z_n-z_n},1\rc\rc\\
-           & \leq \sup\lc\min\lc\abs{x_n -z_n}+\abs{y_n-z_n},1\rc\rc \\
-           & \leq \sup\lc\min\lc\abs{x_n -z_n},1\rc\rc + \sup\lc\min\lc\abs{y_n-z_n},1\rc \rc\\
-           & = D_1\lp x,z\rp + D_1\lp y,z\rp.
-         \end{align*}
+    \begin{enumerate}[(a)]
+    \item []
+    \item Vamos a comprobar que $D_1$ cumple las propiedades de las métricas.
+        \begin{enumerate}[i)]
+            \item $\abs{x_n - y_n} \geq 0 \implies D_1\lp x,y\rp \geq 0$.
+            \item $x_n = y_n \iff \abs{x_n-y_n}=0 \iff D_1\lp x,y\rp=0$.
+            \item $D_1\lp x,y\rp = \sup \lc \min\lc\abs{x_n-y_n},1\rc \rc = \sup\lc \min\lc\abs{y_n-x_n},1\rc \rc = D_1\lp y,x\rp$.
+            \item \begin{align*}
+                    D_1\lp x,y\rp & = \sup\lc\min\lc\abs{x_n-y_n},1\rc\rc \\
+                    & = \sup\lc\min\lc\abs{x_n-y_n+z_n-z_n},1\rc\rc\\
+                    & \leq \sup\lc\min\lc\abs{x_n -z_n}+\abs{y_n-z_n},1\rc\rc \\
+                    & \leq \sup\lc\min\lc\abs{x_n -z_n},1\rc\rc + \sup\lc\min\lc\abs{y_n-z_n},1\rc \rc\\
+                    & = D_1\lp x,z\rp + D_1\lp y,z\rp.
+                \end{align*}
 
-   \end{enumerate}
-   La comprobación de que $D_2$ es equivalente a la de $D_1$.
-   \item Tenemos que para toda sucesión de la bola $y\in B_\varepsilon \lp 0\rp \iff D_1\lp y,0\rp <\varepsilon \iff \abs{y_n} < \varepsilon$, por lo tanto, la bola es el conjunto de sucesiones que tienden a $0$. 
+        \end{enumerate}
+        La comprobación de que $D_2$ es equivalente a la de $D_1$.
+    \item
+        Veamos qué conjunto conforma la bola $B^1_{\varepsilon}\lp 0 \rp = \lc x \in \real^{\omega} | D_1 \lp 0, x \rp < \varepsilon \rc$. Podemos separar dos casos. Si $\varepsilon > 1$, trivialmente tenemos que $B^1_{\varepsilon}\lp 0 \rp = \real ^{\omega}$. En cambio, si $\varepsilon \leq 1$, $B^1_{\varepsilon}\lp 0 \rp = \lc x \in \real^{\omega} | \quad  \abs{x_n} < \varepsilon \rc$.
    
-   Equivalentemente para $D_2$ tenemos que $\frac{\abs{y_n}}{n} <\varepsilon$ y por lo tanto tendremos que $y\in B_\varepsilon \lp 0\rp \iff \lp y_n\rp = o\lp n\rp$.
-  \end{enumerate}
+        Tratemos ahora la bola $B^2_{\varepsilon}\lp 0 \rp = \lc x \in \real^{\omega} | D_2 \lp 0, x \rp < \varepsilon \rc$. Sabemos que si $n > \frac{1}{\varepsilon}$, entonces $\frac{1}{n} < \varepsilon$. Por lo tanto,
+        \[
+            B^2_{\varepsilon}\lp 0 \rp = \lc x \in \real^{\omega} \tq \, \frac{\abs{x_n}}{n} < \varepsilon, \, \forall n \geq \frac{1}{\varepsilon} \rc
+        \]
+    \item 
+    
+    \end{enumerate}
 
  
 \end{eje}
