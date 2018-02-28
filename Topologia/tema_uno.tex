@@ -632,7 +632,8 @@
 \begin{eje}
     \begin{enumerate}[(a)]
     \item []
-    \item Vamos a comprobar que $D_1$ cumple las propiedades de las métricas.
+    \item
+        Vamos a comprobar que $D_1$ cumple las propiedades de las métricas.
         \begin{enumerate}[i)]
             \item $\abs{x_n - y_n} \geq 0 \implies D_1\lp x,y\rp \geq 0$.
             \item $x_n = y_n \iff \abs{x_n-y_n}=0 \iff D_1\lp x,y\rp=0$.
@@ -654,8 +655,24 @@
         \[
             B^2_{\varepsilon}\lp 0 \rp = \lc x \in \real^{\omega} \tq \, \frac{\abs{x_n}}{n} < \varepsilon, \, \forall n \geq \frac{1}{\varepsilon} \rc
         \]
-    \item 
-    
+    \item
+        Estudiemos, para empezar, el primer conjunto. Sea $x=\lp x_1, x_2, \dots \rp \in \lp a, b \rp \times \real \times \lp c, d \rp \times \real \times \cdots$ y tomemos $r=\min \lc x_1-a, b-x_1, x_3-c, d-x_3 \rc$. Entonces,
+        \begin{align*}
+            B^1_r\lp x \rp &= \lc y \in \lp a, b \rp \times \real \times \lp c, d \rp \times \real \times \cdots | D_1\lp y, x \rp < r \rc \subseteq \\
+            &\subseteq \lp a, b \rp \times \real \times \lp c, d \rp \times \real \times \cdots.
+        \end{align*}
+        Por consiguiente, $x$ es un punto interior por la métrica $D_1$ y $\lp a, b \rp \times \real \times \lp c, d \rp \times \real \times \cdots$ es un conjunto abierto por la métrica $D_1$. De forma similar, tomemos $r=\min \lc x_1-a, b-x_1, \frac{x_3-c}{3}, \frac{d-x_3}{3} \rc$. Entonces,
+        \begin{align*}
+            B^2_r\lp x \rp &= \lc y \in \lp a, b \rp \times \real \times \lp c, d \rp \times \real \times \cdots | D_2\lp y, x \rp < r \rc \subseteq \\
+            &\subseteq \lp a, b \rp \times \real \times \lp c, d \rp \times \real \times \cdots.
+        \end{align*}
+        Por consiguiente, $x$ es un punto interior por la métrica $D_2$ y $\lp a, b \rp \times \real \times \lp c, d \rp \times \real \times \cdots$ es un conjunto abierto por la métrica $D_2$.
+        
+        Estudiemos, ahora, el segundo conjunto. Sea $x=\lp a + \frac{b-a}{n} \rp$. Entonces, para cualquier $r>0$,
+        \[
+            B^1_r\lp x \rp = \lc y \in \lp a , b \rp ^{\omega}  | D_1\lp y, x \rp < r \rc \cap \lp \real^{\omega} \setminus \lp a, b \rp ^{\omega} \rp \neq \varnothing.
+        \]
+        Por consiguiente, $x$ no es un punto interior por la métrica $D_2$ y $\lp a, b \rp \times \real \times \lp c, d \rp \times \real \times \cdots$ no es un conjunto abierto por la métrica $D_2$.
     \end{enumerate}
 
  
