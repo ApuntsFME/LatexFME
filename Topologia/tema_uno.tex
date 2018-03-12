@@ -675,7 +675,40 @@
         Por consiguiente, $x$ no es un punto interior por la métrica $D_1$ y $\lp a, b \rp^{\omega}$ no es un conjunto abierto por la métrica $D_1$. Además, $B^1_r\lp x \rp \subseteq B^2_r\lp x \rp = \lc y \in \lp a, b \rp^{\omega} | D_2 \lp y, x \rp < r \rc$, con lo que $x$ no es un punto interior por la métrica $D_2$ y $\lp a, b \rp^{\omega}$ no es un conjunto abierto por la métrica $D_2$.
         
     \item
+        Estudiemos, para empezar, $f(t)$. Observemos que
+        \[
+            D_1 \lp f \lp x \rp, f \lp y \rp \rp = \sup \lc \min \lc \abs{x-y}, 1 \rc \rc \leq \abs{x-y} .
+        \]
+        Entonces,
+        \[
+            \forall x \in \real, \, \varepsilon > 0, \, \exists \delta = \varepsilon \tq \abs{x-y} < \delta \implies D_1 \lp f \lp x \rp, f \lp y \rp \rp \leq \abs{x-y} < \delta = \varepsilon.
+        \]
+        Por consiguiente, $f\lp t \rp$ es contínua si tomamos la métrica $D_1$ en $\real^{\omega}$. Observemos ahora que
+        \[
+            D_2 \lp f \lp x \rp, f \lp y \rp \rp = \sup \lc \frac{1}{n} \min \lc \abs{x-y}, 1 \rc \rc \leq \abs{x-y} .
+        \]
+        Entonces,
+        \[
+            \forall x \in \real, \, \varepsilon > 0, \, \exists \delta = \varepsilon \tq \abs{x-y} < \delta \implies D_2 \lp f \lp x \rp, f \lp y \rp \rp \leq \abs{x-y} < \delta = \varepsilon.
+        \]
+        Por lo tanto, $f\lp t \rp$ es contínua si tomamos la métrica $D_2$ en $\real^{\omega}$.
         
+        Estudiemos ahora $g\lp t \rp $. Observemos que
+        \[
+            D_1 \lp f \lp x \rp, f \lp y \rp \rp = \sup \lc \min \lc n \abs{x-y}, 1 \rc \rc = \left\{ \begin{array}{cc}
+                0 & \text{si } x=y, \\
+                1 & \text{si } x\neq y.
+            \end{array} \right.
+        \]
+        Entonces, la condición de continuidad no se satisface para $0 < \varepsilon < 1$, de modo que $f\lp t \rp$ no es contínua si tomamos la métrica $D_1$ en $\real^{\omega}$. Observemos ahora que
+        \[
+            D_2 \lp f \lp x \rp, f \lp y \rp \rp = \sup \lc \min \lc \abs{x-y}, \frac{1}{n} \rc \rc \leq \abs{x-y} .
+        \]
+        Entonces,
+        \[
+            \forall x \in \real, \, \varepsilon > 0, \, \exists \delta = \varepsilon \tq \abs{x-y} < \delta \implies D_2 \lp f \lp x \rp, f \lp y \rp \rp \leq \abs{x-y} < \delta = \varepsilon.
+        \]
+        Finalmente, $g\lp t \rp$ es contínua si tomamos la métrica $D_2$ en $\real^{\omega}$.
         
     \end{enumerate}
 
