@@ -1,0 +1,9 @@
+#!/bin/bash
+
+NAME="formulari"
+DEST="/pdfs/segundo/formulari_fisica.pdf"
+MSG="formulari física"
+
+source ../upload_file.sh
+
+upload "$NAME" "$DEST" "WEB: $MSG actualitzat"
