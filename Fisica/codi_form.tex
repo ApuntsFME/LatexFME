@@ -1,8 +1,17 @@
+\newif\ifland
+\landtrue
+%\landfalse              % Comenta aquesta linia per obtenir el formulari, descomenta-la per veure totes les formules en gran
+
+\ifland
 \documentclass[10pt]{article}
+\else
+\documentclass[12pt]{article}
+\fi
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
+\ifland
 \usepackage{fp}
 \def\rate{1}
 
@@ -11,12 +20,17 @@
 
 \usepackage[landscape,paperheight=\he mm,paperwidth=\wi mm,margin=0.2in,top=0.2in,bottom=0.2in]{geometry}
 
+\else
+\usepackage[margin=1in]{geometry}
+\fi
+
 \usepackage[pdftex]{hyperref}
 \usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
 \usepackage{mdframed,cleveref,cancel,stackengine,mathrsfs,thmtools}
 \usepackage{xfrac,stmaryrd,commath,units,titlesec,multicol}
 \usepackage[catalan]{babel}
 
+\ifland
 \titlespacing{\section}{0pt}{5pt}{0pt}
 \titlespacing{\subsection}{0pt}{5pt}{0pt}
 \titlespacing{\subsubsection}{0pt}{5pt}{0pt}
@@ -25,6 +39,7 @@
 \titleformat*{\section}{\large\bfseries}
 \titleformat*{\subsection}{\bfseries}
 \setlength{\columnseprule}{1pt}
+\fi
 
 \newcommand{\bimplies}{\fbx{$\implies$}}
 \newcommand{\bimpliedby}{\fbx{$\impliedby$}}
@@ -96,16 +111,72 @@
 \setlength\parindent{0pt}
 
 \begin{document}
+\ifland
 \raggedright
 \begin{multicols}{4}
+\fi
 
 % AQUI COMENCEN LES FORMULES
+\section{Cinem\`atica}
 
+\subsection{Descripci\'o del moviment}
+\emph{Arc d'una corba}: $s(t) = \int^t_{t_0} \|\vec{r}'(\tau)\| \dif\tau$. \\
+\ci $\frac{\dif s}{\dif t} = \|\vec{v}(t)\|$. \\
+\emph{Vec. unitari tg.}: $\frac{\dif \vec{r}}{\dif s} = \frac{\vec{r}'(t)}{|\vec{r}'(t)\|} = \frac{\vec{v}(t)}{\|\vec{v}(t)\|} = \vec{t}$. \\
+\emph{Vec. unitari normal}: $\vec{n} = \frac{\sfrac{\dif \vec{t}}{\dif s}}{\|\sfrac{\dif \vec{t}}{\dif s}\|}$. \\
+\emph{Binormal}: $\vec{b} = \vec{t} \times \vec{n}$. \\
+\emph{Curvatura}: $k = \|\frac{\dif \vec{t}}{\dif s}\|$. \\
+\emph{Radi de curvatura}: $\rho = \frac{1}{k}$. \\
+\emph{Centre de curvatura}: $P = \vec{r} + \rho\vec{n}$.\\
+\emph{Velocitat}: $\vec{v} = v\vec{t}$. \\
+\emph{Acceleraci\'o}: $\vec{a} = \frac{\dif v}{\dif t}\vec{t} + \frac{v^2}{\rho}\vec{n}$.
+
+\subsection{Moviment circular}
+\emph{Posici\'o}: $\vec{r}(t) = R(\cos \theta, \sin \theta, 0)$. \\
+\emph{Celeritat}: $v = R\dot\theta = R\omega$. \\
+\emph{Acceleraci\'o}: $\vec{a} = (R\alpha)\vec{t} + (R\omega^2)\vec{n}$.
+
+\subsection{S\`olid r\'igid}
+\emph{Centre instant\`ani de rotaci\'o}: $\vec{r}_{\text{CIR}} = \vec{r}_p + \frac{\vec{\omega} \times \vec{v}_p}{\omega^2}$.
+
+\section{Din\`amica}
+
+\subsection{$\real$}
+\emph{F. gravitat\`oria}: $\vec{F}_{ab} = -G \frac{m_a m_b}{\|\vec{r}_{ab}\|^3} \vec{r}_{ab}$. \\
+\emph{F. fregament visc\'os}: $F_{\text{f}} = b\vec{v}$. \\
+\emph{E. cin\`etica}: $E_{\text{c}} = \frac{1}{2}mv^2$. \\
+\emph{E. potencial}: $U(x) \tq \frac{\dif U}{\dif x} = -F(x),\, E_{\text{p}} = -\int_{x_0}^x F(z) \dif z$. \\
+\emph{E. cin\`etica}: $E_{\text{mec}} = E_{\text{c}} + E_{\text{p}}$. \\
+\emph{E. pot. el\`astica}: $\frac{1}{2}kx^2$.
+
+\subsection{$\real^3$}
+
+
+\section{Din\`amica de sistemes puntuals}
+
+\subsection{Moment lineal}
+\emph{Moment lineal}: $\vec{P} = m\vec{v}$. \\
+\emph{Impuls mec.}: $\vec{I} = \int_{t_1}^{t_2} F \dif t = \vec{P}(t_2) - \vec{P}(t_1) = \Delta\vec{P}$. \\
+\emph{Moment d'una força respecte $O$}: $\vec{M}_O = \vec{r}\times\vec{F},\, \vec{M}_A = \vec{AO}\times\vec{F} + \vec{M}_O$.
+
+\subsection{Moment angular}
+\emph{Moment angular}: $\vec{L}_O = \vec{r}\times m\vec{v} = \vec{r}\times\vec{P},\, \vec{L}_A = \vec{L}_O + \vec{AO}\times\vec{P}$. \\
+\ci $\vec{M}_O = \frac{\dif \vec{L}_O}{\dif t}$. \\
+\emph{Si $A$ en moviment}: $\frac{\dif \vec{L}_A}{\dif t} = \vec{M}_A - \vec{v}_A\times\vec{P}$.
+
+
+\ifland
 \vspace{3pt}
 \raggedleft
 {\large Nom: \underline{\hspace{5cm}}}
 
-
 \end{multicols}
+\vspace*{\fill}
+\begin{center}
+\textbf{\huge Aquest formulari no \'es complet.} \\
+\textbf{\huge Estem treballant per tal d'acabar-lo a temps.}
+\end{center}
+\vspace*{\fill}
+\fi
 
 \end{document}
