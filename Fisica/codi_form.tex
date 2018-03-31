@@ -113,7 +113,7 @@
 \begin{document}
 \ifland
 \raggedright
-\begin{multicols}{4}
+\begin{multicols}{3}
 \fi
 
 % AQUI COMENCEN LES FORMULES
@@ -137,36 +137,55 @@
 \emph{Acceleraci\'o}: $\vec{a} = (R\alpha)\vec{t} + (R\omega^2)\vec{n}$.
 
 \subsection{S\`olid r\'igid}
-\emph{Centre instant\`ani de rotaci\'o}: $\vec{r}_{\text{CIR}} = \vec{r}_p + \frac{\vec{\omega} \times \vec{v}_p}{\omega^2}$.
+\emph{Centre instantani de rotaci\'o}: $\vec{r}_{\text{CIR}} = \vec{r}_p + \frac{\vec{\omega} \times \vec{v}_p}{\omega^2}$.
 
 \section{Din\`amica}
 
 \subsection{$\real$}
 \emph{F. gravitat\`oria}: $\vec{F}_{ab} = -G \frac{m_a m_b}{\|\vec{r}_{ab}\|^3} \vec{r}_{ab}$. \\
-\emph{F. fregament visc\'os}: $F_{\text{f}} = b\vec{v}$. \\
+\emph{F. el\`astica}: $\vec{F}_{\text{e}}(x) = -kx$. \\
+\emph{Mov. osc. harm.}: $x(t) = A\sin (\omega t + \varphi_0)$, $\omega = \sqrt{\sfrac{k}{m}}$, $T = 2\pi\sqrt{\sfrac{m}{k}}$. \\
+\emph{F. fregament visc\'os}: $\vec{F}_{\text{f}} = b\vec{v}$. \\
 \emph{E. cin\`etica}: $E_{\text{c}} = \frac{1}{2}mv^2$. \\
-\emph{E. potencial}: $U(x) \tq \frac{\dif U}{\dif x} = -F(x),\, E_{\text{p}} = -\int_{x_0}^x F(z) \dif z$. \\
+\emph{E. potencial}: $U(x) \tq \frac{\dif U}{\dif x} = -F(x)$, $E_{\text{p}} = -\int_{x_0}^x F(z) \dif z$. \\
 \emph{E. cin\`etica}: $E_{\text{mec}} = E_{\text{c}} + E_{\text{p}}$. \\
 \emph{E. pot. el\`astica}: $\frac{1}{2}kx^2$.
 
 \subsection{$\real^3$}
-
+\emph{Treball (J)}: $W_{1\rightarrow 2} = \int_{x_1}^{x_2} \vec{F} \cdot\dif \vec{l}$. \\
+\ci $\dif W = \vec{F} \cdot\dif \vec{l}$. \\
+\emph{Pot\`encia (W)}: $P = \frac{\dif W}{\dif t} = \frac{\vec{F} \cdot\dif \vec{r}}{\dif t} = \vec{F}\cdot\vec{v}$. \\
+\ci $E_{\text{c}} = \frac{1}{2}m\vec{v}^2$, $\frac{\dif E_{\text{c}}}{\dif t} = m\vec{v}\cdot\vec{a} = \vec{F}\cdot\vec{v}$. \\
+\emph{Si F conservativa}: $\vec{F}(\vec{r}) = -\vec{\nabla}U(\vec{r})$. \\
+\ci $E_{\text{c}}(\vec{r}_2) - E_{\text{c}}(\vec{r}_1) = W_{1\rightarrow 2}$. \\
+\ci $\Delta E_{\text{mec}} = W_{\text{n.c.}}$.
 
 \section{Din\`amica de sistemes puntuals}
 
 \subsection{Moment lineal}
 \emph{Moment lineal}: $\vec{P} = m\vec{v}$. \\
 \emph{Impuls mec.}: $\vec{I} = \int_{t_1}^{t_2} F \dif t = \vec{P}(t_2) - \vec{P}(t_1) = \Delta\vec{P}$. \\
-\emph{Moment d'una força respecte $O$}: $\vec{M}_O = \vec{r}\times\vec{F},\, \vec{M}_A = \vec{AO}\times\vec{F} + \vec{M}_O$.
+\emph{Moment d'una força respecte $O$}: $\vec{M}_O = \vec{r}\times\vec{F}$, $\vec{M}_A = \vec{AO}\times\vec{F} + \vec{M}_O$.
 
 \subsection{Moment angular}
-\emph{Moment angular}: $\vec{L}_O = \vec{r}\times m\vec{v} = \vec{r}\times\vec{P},\, \vec{L}_A = \vec{L}_O + \vec{AO}\times\vec{P}$. \\
+\emph{Moment angular}: $\vec{L}_O = \vec{r}\times m\vec{v} = \vec{r}\times\vec{P}$, $\vec{L}_A = \vec{L}_O + \vec{AO}\times\vec{P}$. \\
 \ci $\vec{M}_O = \frac{\dif \vec{L}_O}{\dif t}$. \\
 \emph{Si $A$ en moviment}: $\frac{\dif \vec{L}_A}{\dif t} = \vec{M}_A - \vec{v}_A\times\vec{P}$.
 
+\subsection{Sistema de part\'icules}
+\emph{Centre de massa}: $\vec{r}_{\text{CM}} = \frac{\sum m_i \vec{r}_i}{\sum m_i}$. \\
+\emph{Moment lineal}: $\vec{P} = \sum \vec{P}_i = M\vec{v}_{\text{CM}}$. \\
+\emph{1a llei conservaci\'o}: $\frac{\dif \vec{P}}{\dif t} = \vec{F}^{\text{ext}}$. \\
+\emph{Moment angular}: $\vec{L}_O = \sum \vec{L}_{O_i} = \sum \vec{r}_i \times m_i\vec{v}_i$. \\
+\ci $\frac{\dif \vec{L}_O}{\dif t} = \sum \vec{r}_i\times\vec{F} = \vec{M}_O^{\text{ext}}$. \\
+\emph{A punt m\`obil}: $\vec{L}_A = \vec{L}_O + M(\vec{r}_A - \vec{r}_{\text{CM}}) \times \vec{v}_A - \vec{r}_A\times\vec{P}$. \\
+\emph{$A =$ CM}: $\vec{L}_{\text{CM}} = \vec{L}_O - \vec{r}_{\text{CM}}\times\vec{P}$, $\vec{L}_O = \vec{L}_{\text{CM}} + \vec{r}_{\text{CM}}\times\vec{P}$. \\
+\ci $\frac{\dif \vec{L}_A}{\dif t} = \vec{M}_A^{\text{ext}} + M(\vec{r}_A - \vec{r}_{\text{CM}})\times \vec{a}_A$. \\
+\ci $\frac{\dif \vec{L}_{\text{CM}}}{\dif t} = \vec{M}_{\text{CM}}^{\text{ext}}$. \\
+\emph{E. cin\`etica}: $E_{\text{c}} = \frac{1}{2} \sum m_i (\vec{v}_i - \vec{v}_{\text{CM}})^2 + M\vec{v}_{\text{CM}}^2$.
 
 \ifland
-\vspace{3pt}
+\vspace{10pt}
 \raggedleft
 {\large Nom: \underline{\hspace{5cm}}}
 
