@@ -1,6 +1,6 @@
 \newif\ifland
 \landtrue
-\landfalse              % Comenta aquesta linia per obtenir el formulari, descomenta-la per veure totes les formules en gran
+%\landfalse              % Comenta aquesta linia per obtenir el formulari, descomenta-la per veure totes les formules en gran
 
 \ifland
 \documentclass[10pt]{article}
@@ -113,7 +113,7 @@
 \begin{document}
 \ifland
 \raggedright
-\begin{multicols}{3}
+\begin{multicols}{4}
 \fi
 
 % AQUI COMENCEN LES FORMULES
@@ -184,12 +184,32 @@
 \ci $\frac{\dif \vec{L}_{\text{CM}}}{\dif t} = \vec{M}_{\text{CM}}^{\text{ext}}$. \\
 \emph{E. cin\`etica}: $E_{\text{c}} = \frac{1}{2} \sum m_i (\vec{v}_i - \vec{v}_{\text{CM}})^2 + M\vec{v}_{\text{CM}}^2$.
 
+\section{Canvis de sistema de referència}
+\ci $\lp \frac{\dif \vec{u}}{\dif t} \rp_S=\lp \frac{\dif \vec{u}}{\dif t} \rp_{S^{\, \prime}}+\vec{\omega}\times \vec{u}$. \\
+\ci $\vec{r}_P = \vec{r}_O + \vec{r}_{P}^{\, \prime}$. \\
+\ci $\vec{v}_P = \vec{v}_O + \vec{v}_{P}^{\, \prime} + \vec{\omega}\times\vec{r}_{P}^{\, \prime}$. \\
+\ci $\vec{a}_P = \vec{a}_O + \vec{a}_{P}^{\, \prime} + \underbrace{2\vec{\omega}\times\vec{v}_{P}^{\, \prime}}_{\text{acc. Coriolis}} + \underbrace{\vec{\omega}\times \lp \vec{\omega}\times \vec{r}_{P}^{\, \prime} \rp}_{\text{acc. centrípeta}} + \vec{\alpha}\times\vec{r}_{P}^{\, \prime}$. \\
+\ci $m\vec{a}_{P}^{\, \prime} = \underbrace{m\vec{a}_P}_{\text{f. real}} - [ \underbrace{m\vec{a}_O}_{\text{f. translació}} + \underbrace{2\vec{\omega}\times\vec{v}_{P}^{\, \prime}}_{\text{f. Coriolis}} + \underbrace{\vec{\omega}\times \lp \vec{\omega}\times \vec{r}_{P}^{\, \prime} \rp}_{\text{f. centrípeta}} + \underbrace{\vec{\alpha}\times\vec{r}_{P}^{\, \prime}}_{\text{f. Euler}} ]$.
+
+
+\section{Gravitació}
+\emph{Camp}: $\vec{g} = -G \frac{M}{\|\vec{r}\|^3} \vec{r}$. \\
+\emph{Força}: $\vec{F}_{ab} = -G \frac{m_a m_b}{\|\vec{r}_{ab}\|^3} \vec{r}_{ab}=m\vec{g}$. \\
+\emph{Potencial}: $V = -G \frac{M}{\|\vec{r}\|}. \qquad V_a-V_b = \int_a^b \vec{g} \cdot \vec{\dif r}$. \\
+\emph{Energia potencial}: $U = -G \frac{Mm}{\|\vec{r}\|}=mV. \quad U_a-U_b = \int_a^b \vec{F} \cdot \vec{\dif r}$.
+
+\subsection{Lleis de Kepler}
+\emph{1a}: Òrbites el·líptiques. \\
+\emph{2a}: El radi vector escombra àrees iguals en temps iguals. \\
+\emph{3a}: $T^2=\frac{4\pi^2}{GM}R^3$ ($R$ radi mitjà).
+
 
 \ifland
 \noindent\makebox[\linewidth]{\rule{\linewidth}{0.5pt}}
 \vspace{3pt}
 \raggedleft
 {\large Nom: \underline{\hspace{5cm}}}
+
 
 \end{multicols}
 \vspace*{\fill}
