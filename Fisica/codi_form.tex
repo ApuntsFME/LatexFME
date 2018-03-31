@@ -1,6 +1,6 @@
 \newif\ifland
 \landtrue
-%\landfalse              % Comenta aquesta linia per obtenir el formulari, descomenta-la per veure totes les formules en gran
+\landfalse              % Comenta aquesta linia per obtenir el formulari, descomenta-la per veure totes les formules en gran
 
 \ifland
 \documentclass[10pt]{article}
@@ -38,7 +38,7 @@
 \pagenumbering{gobble}
 \titleformat*{\section}{\large\bfseries}
 \titleformat*{\subsection}{\bfseries}
-\setlength{\columnseprule}{1pt}
+\setlength{\columnseprule}{0.5pt}
 \fi
 
 \newcommand{\bimplies}{\fbx{$\implies$}}
@@ -122,7 +122,7 @@
 \subsection{Descripci\'o del moviment}
 \emph{Arc d'una corba}: $s(t) = \int^t_{t_0} \|\vec{r}'(\tau)\| \dif\tau$. \\
 \ci $\frac{\dif s}{\dif t} = \|\vec{v}(t)\|$. \\
-\emph{Vec. unitari tg.}: $\frac{\dif \vec{r}}{\dif s} = \frac{\vec{r}'(t)}{|\vec{r}'(t)\|} = \frac{\vec{v}(t)}{\|\vec{v}(t)\|} = \vec{t}$. \\
+\emph{Vec. unitari tg.}: $\frac{\dif \vec{r}}{\dif s} = \frac{\vec{r}'(t)}{\|\vec{r}'(t)\|} = \frac{\vec{v}(t)}{\|\vec{v}(t)\|} = \vec{t}$. \\
 \emph{Vec. unitari normal}: $\vec{n} = \frac{\sfrac{\dif \vec{t}}{\dif s}}{\|\sfrac{\dif \vec{t}}{\dif s}\|}$. \\
 \emph{Binormal}: $\vec{b} = \vec{t} \times \vec{n}$. \\
 \emph{Curvatura}: $k = \|\frac{\dif \vec{t}}{\dif s}\|$. \\
@@ -184,8 +184,10 @@
 \ci $\frac{\dif \vec{L}_{\text{CM}}}{\dif t} = \vec{M}_{\text{CM}}^{\text{ext}}$. \\
 \emph{E. cin\`etica}: $E_{\text{c}} = \frac{1}{2} \sum m_i (\vec{v}_i - \vec{v}_{\text{CM}})^2 + M\vec{v}_{\text{CM}}^2$.
 
+
 \ifland
-\vspace{10pt}
+\noindent\makebox[\linewidth]{\rule{\linewidth}{0.5pt}}
+\vspace{3pt}
 \raggedleft
 {\large Nom: \underline{\hspace{5cm}}}
 
