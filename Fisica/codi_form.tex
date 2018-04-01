@@ -156,7 +156,7 @@ En un sistema inercial:\\
 \emph{F. fregament visc\'os}: $\vec{F}_{\text{f}} = b\vec{v}$. \\
 \emph{E. cin\`etica}: $E_{\text{c}} = \frac{1}{2}mv^2$. \\
 \emph{E. potencial}: $U(x) \tq \frac{\dif U}{\dif x} = -F(x)$, $E_{\text{p}} = -\int_{x_0}^x F(z) \dif z$. \\
-\emph{E. cin\`etica}: $E_{\text{mec}} = E_{\text{c}} + E_{\text{p}}$. \\
+\emph{E. mecànica}: $E_{\text{mec}} = E_{\text{c}} + E_{\text{p}}$. \\
 \emph{E. pot. el\`astica}: $\frac{1}{2}kx^2$.
 
 \subsection{$\real^3$}
@@ -186,8 +186,8 @@ En un sistema inercial:\\
 \ci $L_e = I_e\omega,\, \frac{\dif L_e}{\dif t} = I_e\alpha = M_e$. \\
 \ci $I_{\text{CM}} = \int r^2 \dif m$. \\
 \emph{Teo. Steiner}: $I_O = I_{\text{CM}} + Md^2$. \\
-\emph{Si l'eix és fix}: $E_\text{c} = \frac{1}{2} I_e \omega^2 $\\
-\emph{Si l'eix és mòbil}: $E_{\text{c}} = \frac{1}{2} I_\text{CM}\omega^2 + \frac{1}{2}  M\vec{v}_{\text{CM}}^2$.\\
+\emph{Eix fix}: $E_\text{c} = \frac{1}{2} I_e \omega^2 $\\
+\emph{Eix mòbil}: $E_{\text{c}} = \frac{1}{2} I_\text{CM}\omega^2 + \frac{1}{2}  M\vec{v}_{\text{CM}}^2$.\\
 \emph{Energia potencial}: Coincideix amb la d'una partícula de massa $M$ al CM.\\
 \emph{En el cas de la gravetat i altres forces distribuïdes}: $\vec{M}_\text{grav}
   = \vec{r}_\text{CM} \times \lp m \vec{g} \rp$.
@@ -203,13 +203,16 @@ En un sistema inercial:\\
 \emph{$A =$ CM o punt fix}: $\vec{L}_{\text{A}} = \vec{L}_O - \vec{r}_{\text{A}}\times\vec{P}$, $\vec{L}_O = \vec{L}_{\text{A}} + \vec{r}_{\text{A}}\times\vec{P}$. \\
 \ci $\frac{\dif \vec{L}_{\text{A}}}{\dif t} = \vec{M}_{\text{A}}^{\text{ext}}$. \\
 \emph{Energia cinètica}: $E_{\text{c}} = \frac{1}{2} \sum m_i (\vec{v}_i - \vec{v}_{\text{CM}})^2 + \frac{1}{2}  M\vec{v}_{\text{CM}}^2$.\\
-\emph{Teo. forces vives}: $\frac{\dif E_c}{\dif t}  =\sum \vec{F}^{\text{ext}}\cdot\vec{v}_i$. \\
+\emph{Quan les forces internes no treballen (sòlid rígid o forces depenents de la posició)}: $\frac{\dif E}{\dif t}  =\sum \vec{F}^{\text{ext}}_\text{nc}\cdot\vec{v}_i$. \\
 
-\section{Percussions}
+\section{Percussions i xocs}
 $\vec{P}$ i $\vec{J}$ són díscontinus.\\
-\emph{Canvi m. lineal}: $\Delta \vec{P} = \vec{I}$.\\
-\emph{Canvi m. angular}: Si $A$ és un punt fix o el CM, $\Delta \vec{L}_A = \vec{J}_A$.\\
-\emph{Per un sòlid rígid}: $I_A \Delta \omega = J_A$.
+\emph{Canvi m. lineal percussió}: $\Delta \vec{P} = \vec{I}$.\\
+\emph{Canvi m. angular percussió}: Si $A$ és un punt fix o el CM, $\Delta \vec{L}_A = \vec{J}_A$.\\
+\emph{Per un sòlid rígid}: $I_A \Delta \omega = J_A$.\\
+\emph{Coeficient de percussió (xoc)}: $e = - \frac{v_{1\text{f}} - v_{2\text{f}}}{v_{1\text{i}} - v_{2\text{i}}}=-\frac{v_{\text{rel,f}}}{v_{\text{rel,i}}}$.\\
+\emph{Energia xoc partícules}: $\Delta E_\text{c} = -\frac{1}{2} \mu \lp 1 - e^2 \rp v_\text{rel,i}^2$, $\mu=\frac{m_1m_2}{m_1+m_2}$ .\\
+
 
 
 \section{Canvis de sistema de referència}
@@ -224,13 +227,20 @@ $\vec{P}$ i $\vec{J}$ són díscontinus.\\
 \emph{Camp}: $\vec{g} = -G \frac{M}{\|\vec{r}\|^3} \vec{r}$. \\
 \emph{Força}: $\vec{F}_{ab} = -G \frac{m_a m_b}{\|\vec{r}_{ab}\|^3} \vec{r}_{ab}=m\vec{g}$. \\
 \emph{Potencial}: $V = -G \frac{M}{\|\vec{r}\|}. \qquad V_a-V_b = \int_a^b \vec{g} \cdot \vec{\dif r}$. \\
-\emph{Energia potencial}: $U = -G \frac{Mm}{\|\vec{r}\|}=mV. \quad U_a-U_b = \int_a^b \vec{F} \cdot \vec{\dif r}$.
+\emph{Energia potencial}: $U = -G \frac{Mm}{\|\vec{r}\|}=mV. \quad U_a-U_b = \int_a^b \vec{F} \cdot \vec{\dif r}$.\\
+\emph{Potencial efectiu}: $U_\text{ef}(r) = \frac{L^2}{2mr^2} - \frac{k}{r}$.
 
 \subsection{Lleis de Kepler}
 \emph{1a}: Òrbites el·líptiques. \\
 \emph{2a}: El radi vector escombra àrees iguals en temps iguals. \\
 \emph{3a}: $T^2=\frac{4\pi^2}{GM}R^3$ ($R$ radi mitjà).
 
+\subsection{Problema de Kepler}
+\emph{Excentricitat} $e = \sqrt{1 + \frac{2EL^2}{mk^2}}$.\\
+\emph{Posició} $\frac{1}{r} = \frac{mk}{L^2} \lp 1 + e cos \theta \rp$.
+
+\subsection{Problema dels dos cossos}
+\emph{Substitucions a Kepler}: $m = \mu = \frac{m_1m_2}{m_1+m_2},\, k = Gm_1m_2, \, L = L_\text{CM}$.
 
 \ifland
 \noindent\makebox[\linewidth]{\rule{\linewidth}{0.5pt}}
