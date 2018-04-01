@@ -137,14 +137,22 @@
 \emph{Acceleraci\'o}: $\vec{a} = (R\alpha)\vec{t} + (R\omega^2)\vec{n}$.
 
 \subsection{S\`olid r\'igid}
+\emph{Moviment fixant origen $P$ del sòlid}: $\vec{v} = \vec{w} \times \vec{r}$\\
+$\vec{a} =  \vec{\alpha} \times \vec{r} - w^2 \vec{r}$\\
 \emph{Centre instantani de rotaci\'o}: $\vec{r}_{\text{CIR}} = \vec{r}_p + \frac{\vec{\omega} \times \vec{v}_p}{\omega^2}$.
 
 \section{Din\`amica}
-
+\subsection{Lleis de Newton}
+En un sistema inercial:\\
+\emph{1a}: Un cos aïllat manté velocitat constant.\\
+\emph{2a}: $\vec{F} = m\vec{a}$\\
+\emph{3a}: Les forces es superposen i tota acció te una reacció.
 \subsection{$\real$}
 \emph{F. gravitat\`oria}: $\vec{F}_{ab} = -G \frac{m_a m_b}{\|\vec{r}_{ab}\|^3} \vec{r}_{ab}$. \\
 \emph{F. el\`astica}: $\vec{F}_{\text{e}}(x) = -kx$. \\
 \emph{Mov. osc. harm.}: $x(t) = A\sin (\omega t + \varphi_0)$, $\omega = \sqrt{\sfrac{k}{m}}$, $T = 2\pi\sqrt{\sfrac{m}{k}}$. \\
+\emph{F. fregament estàtica}: $|\vec{F}_\mu| \leq \mu |\vec{N}|$\\
+\emph{F. fregament dinàmica}: $|\vec{F}_\mu| = \mu' |\vec{N}|$\\
 \emph{F. fregament visc\'os}: $\vec{F}_{\text{f}} = b\vec{v}$. \\
 \emph{E. cin\`etica}: $E_{\text{c}} = \frac{1}{2}mv^2$. \\
 \emph{E. potencial}: $U(x) \tq \frac{\dif U}{\dif x} = -F(x)$, $E_{\text{p}} = -\int_{x_0}^x F(z) \dif z$. \\
@@ -195,9 +203,9 @@
 
 \section{Canvis de sistema de referència}
 \ci $\lp \frac{\dif \vec{u}}{\dif t} \rp_S=\lp \frac{\dif \vec{u}}{\dif t} \rp_{S^{\, \prime}}+\vec{\omega}\times \vec{u}$. \\
-\ci $\vec{r}_P = \vec{r}_O + \vec{r}_{P}^{\, \prime}$. \\
-\ci $\vec{v}_P = \vec{v}_O + \vec{v}_{P}^{\, \prime} + \vec{\omega}\times\vec{r}_{P}^{\, \prime}$. \\
-\ci $\vec{a}_P = \vec{a}_O + \vec{a}_{P}^{\, \prime} + \underbrace{2\vec{\omega}\times\vec{v}_{P}^{\, \prime}}_{\text{acc. Coriolis}} + \underbrace{\vec{\omega}\times \lp \vec{\omega}\times \vec{r}_{P}^{\, \prime} \rp}_{\text{acc. centrípeta}} + \vec{\alpha}\times\vec{r}_{P}^{\, \prime}$. \\
+\ci $\vec{r}_P = \vec{r}_{O'} + \vec{r}_{P}^{\, \prime}$. \\
+\ci $\vec{v}_P = \vec{v}_{O'} + \vec{v}_{P}^{\, \prime} + \vec{\omega}\times\vec{r}_{P}^{\, \prime}$. \\
+\ci $\vec{a}_P = \vec{a}_{O'} + \vec{a}_{P}^{\, \prime} + \underbrace{2\vec{\omega}\times\vec{v}_{P}^{\, \prime}}_{\text{acc. Coriolis}} + \underbrace{\vec{\omega}\times \lp \vec{\omega}\times \vec{r}_{P}^{\, \prime} \rp}_{\text{acc. centrípeta}} + \vec{\alpha}\times\vec{r}_{P}^{\, \prime}$. \\
 \ci $m\vec{a}_{P}^{\, \prime} = \underbrace{m\vec{a}_P}_{\text{f. real}} - [ \underbrace{m\vec{a}_O}_{\text{f. translació}} + \underbrace{m2\vec{\omega}\times\vec{v}_{P}^{\, \prime}}_{\text{f. Coriolis}} + \underbrace{m\vec{\omega}\times \lp \vec{\omega}\times \vec{r}_{P}^{\, \prime} \rp}_{\text{f. centrífuga}} + \underbrace{m\vec{\alpha}\times\vec{r}_{P}^{\, \prime}}_{\text{f. Euler}} ]$.
 
 
@@ -215,6 +223,7 @@
 
 \ifland
 \noindent\makebox[\linewidth]{\rule{\linewidth}{0.5pt}}
+\vspace{3pt}
 \raggedleft
 {\large Nom: \underline{\hspace{5cm}}}
 
