@@ -137,15 +137,15 @@
 \emph{Acceleraci\'o}: $\vec{a} = (R\alpha)\vec{t} + (R\omega^2)\vec{n}$.
 
 \subsection{S\`olid r\'igid}
-\emph{Moviment fixant origen $P$ del sòlid}: $\vec{v} = \vec{w} \times \vec{r}$\\
-$\vec{a} =  \vec{\alpha} \times \vec{r} - w^2 \vec{r}$\\
+\emph{Moviment fixant origen $P$ del sòlid}: $\vec{v} = \vec{w} \times \vec{r}$,\\
+$\vec{a} =  \vec{\alpha} \times \vec{r} - w^2 \vec{r}$.\\
 \emph{Centre instantani de rotaci\'o}: $\vec{r}_{\text{CIR}} = \vec{r}_p + \frac{\vec{\omega} \times \vec{v}_p}{\omega^2}$.
 
 \section{Din\`amica}
 \subsection{Lleis de Newton}
 En un sistema inercial:\\
 \emph{1a}: Un cos aïllat manté velocitat constant.\\
-\emph{2a}: $\vec{F} = m\vec{a}$\\
+\emph{2a}: $\vec{F} = m\vec{a}$.\\
 \emph{3a}: Les forces es superposen i tota acció te una reacció.
 \subsection{$\real$}
 \emph{F. gravitat\`oria}: $\vec{F}_{ab} = -G \frac{m_a m_b}{\|\vec{r}_{ab}\|^3} \vec{r}_{ab}$. \\
@@ -178,35 +178,46 @@ En un sistema inercial:\\
 \subsection{Moment angular}
 \emph{Moment angular}: $\vec{L}_O = \vec{r}\times m\vec{v} = \vec{r}\times\vec{P}$, $\vec{L}_A = \vec{L}_O + \vec{AO}\times\vec{P}$. \\
 \ci $\vec{M}_O = \frac{\dif \vec{L}_O}{\dif t}$. \\
-\emph{Si $A$ en moviment}: $\frac{\dif \vec{L}_A}{\dif t} = \vec{M}_A - \vec{v}_A\times\vec{P}$.
+\emph{Si $A$ en moviment}: $\frac{\dif \vec{L}_A}{\dif t} = \vec{M}_A - \vec{v}_A\times\vec{P}$.\\
+\emph{Impuls angular}: $\vec{J} = \int_{t_1}^{t_2} \vec{M}_O\dif t$.
 
 \subsection{Sòlid rígid}
 \emph{Moment d'inèrcia}: $I = \sum m_i d_i^2$. \\
 \ci $L_e = I_e\omega,\, \frac{\dif L_e}{\dif t} = I_e\alpha = M_e$. \\
 \ci $I_{\text{CM}} = \int r^2 \dif m$. \\
-\emph{Teo. Steiner}: $I_O = I_{\text{CM}} + Ma^2$. \\
-\emph{Teo. forces vives}: $\frac{\dif E_c}{\dif t}  =\sum \vec{F}^{\text{ext}}\cdot\vec{v}_i$. \\
-\emph{Impuls}: $\vec{I} = \int_{t_1}^{t_2} \vec{F}\dif t$. \\
-\emph{Impuls angular}: $\vec{J} = \int_{t_1}^{t_2} \vec{M}_O\dif t$.
-
+\emph{Teo. Steiner}: $I_O = I_{\text{CM}} + Md^2$. \\
+\emph{Si l'eix és fix}: $E_\text{c} = \frac{1}{2} I_e \omega^2 $\\
+\emph{Si l'eix és mòbil}: $E_{\text{c}} = \frac{1}{2} I_\text{CM}\omega^2 + \frac{1}{2}  M\vec{v}_{\text{CM}}^2$.\\
+\emph{Energia potencial}: Coincideix amb la d'una partícula de massa $M$ al CM.\\
+\emph{En el cas de la gravetat i altres forces distribuïdes}: $\vec{M}_\text{grav}
+  = \vec{r}_\text{CM} \times \lp m \vec{g} \rp$.
 \subsection{Sistema de part\'icules}
 \emph{Centre de massa}: $\vec{r}_{\text{CM}} = \frac{\sum m_i \vec{r}_i}{\sum m_i}$. \\
 \emph{Moment lineal}: $\vec{P} = \sum \vec{P}_i = M\vec{v}_{\text{CM}}$. \\
-\emph{1a llei conservaci\'o}: $\frac{\dif \vec{P}}{\dif t} = \vec{F}^{\text{ext}}$. \\
+\emph{1a llei conservaci\'o}: $\frac{\dif \vec{P}}{\dif t} = \vec{F}^{\text{ext}} = 
+  m \vec{a}_\text{CM}$. \\
 \emph{Moment angular}: $\vec{L}_O = \sum \vec{L}_{O_i} = \sum \vec{r}_i \times m_i\vec{v}_i$. \\
 \ci $\frac{\dif \vec{L}_O}{\dif t} = \sum \vec{r}_i\times\vec{F} = \vec{M}_O^{\text{ext}}$. \\
 \emph{A punt m\`obil}: $\vec{L}_A = \vec{L}_O + M(\vec{r}_A - \vec{r}_{\text{CM}}) \times \vec{v}_A - \vec{r}_A\times\vec{P}$. \\
-\emph{$A =$ CM}: $\vec{L}_{\text{CM}} = \vec{L}_O - \vec{r}_{\text{CM}}\times\vec{P}$, $\vec{L}_O = \vec{L}_{\text{CM}} + \vec{r}_{\text{CM}}\times\vec{P}$. \\
 \ci $\frac{\dif \vec{L}_A}{\dif t} = \vec{M}_A^{\text{ext}} + M(\vec{r}_A - \vec{r}_{\text{CM}})\times \vec{a}_A$. \\
-\ci $\frac{\dif \vec{L}_{\text{CM}}}{\dif t} = \vec{M}_{\text{CM}}^{\text{ext}}$. \\
-\emph{E. cin\`etica}: $E_{\text{c}} = \frac{1}{2} \sum m_i (\vec{v}_i - \vec{v}_{\text{CM}})^2 + M\vec{v}_{\text{CM}}^2$.
+\emph{$A =$ CM o punt fix}: $\vec{L}_{\text{A}} = \vec{L}_O - \vec{r}_{\text{A}}\times\vec{P}$, $\vec{L}_O = \vec{L}_{\text{A}} + \vec{r}_{\text{A}}\times\vec{P}$. \\
+\ci $\frac{\dif \vec{L}_{\text{A}}}{\dif t} = \vec{M}_{\text{A}}^{\text{ext}}$. \\
+\emph{Energia cinètica}: $E_{\text{c}} = \frac{1}{2} \sum m_i (\vec{v}_i - \vec{v}_{\text{CM}})^2 + \frac{1}{2}  M\vec{v}_{\text{CM}}^2$.\\
+\emph{Teo. forces vives}: $\frac{\dif E_c}{\dif t}  =\sum \vec{F}^{\text{ext}}\cdot\vec{v}_i$. \\
+
+\section{Percussions}
+$\vec{P}$ i $\vec{J}$ són díscontinus.\\
+\emph{Canvi m. lineal}: $\Delta \vec{P} = \vec{I}$.\\
+\emph{Canvi m. angular}: Si $A$ és un punt fix o el CM, $\Delta \vec{L}_A = \vec{J}_A$.\\
+\emph{Per un sòlid rígid}: $I_A \Delta \omega = J_A$.
+
 
 \section{Canvis de sistema de referència}
 \ci $\lp \frac{\dif \vec{u}}{\dif t} \rp_S=\lp \frac{\dif \vec{u}}{\dif t} \rp_{S^{\, \prime}}+\vec{\omega}\times \vec{u}$. \\
 \ci $\vec{r}_P = \vec{r}_{O'} + \vec{r}_{P}^{\, \prime}$. \\
 \ci $\vec{v}_P = \vec{v}_{O'} + \vec{v}_{P}^{\, \prime} + \vec{\omega}\times\vec{r}_{P}^{\, \prime}$. \\
 \ci $\vec{a}_P = \vec{a}_{O'} + \vec{a}_{P}^{\, \prime} + \underbrace{2\vec{\omega}\times\vec{v}_{P}^{\, \prime}}_{\text{acc. Coriolis}} + \underbrace{\vec{\omega}\times \lp \vec{\omega}\times \vec{r}_{P}^{\, \prime} \rp}_{\text{acc. centrípeta}} + \vec{\alpha}\times\vec{r}_{P}^{\, \prime}$. \\
-\ci $m\vec{a}_{P}^{\, \prime} = \underbrace{m\vec{a}_P}_{\text{f. real}} - [ \underbrace{m\vec{a}_O}_{\text{f. translació}} + \underbrace{m2\vec{\omega}\times\vec{v}_{P}^{\, \prime}}_{\text{f. Coriolis}} + \underbrace{m\vec{\omega}\times \lp \vec{\omega}\times \vec{r}_{P}^{\, \prime} \rp}_{\text{f. centrífuga}} + \underbrace{m\vec{\alpha}\times\vec{r}_{P}^{\, \prime}}_{\text{f. Euler}} ]$.
+\ci $m\vec{a}_{P}^{\, \prime} = \underbrace{m\vec{a}_P}_{\text{f. real}} - [ \underbrace{m\vec{a}_{O'}}_{\text{f. translació}} + \underbrace{m2\vec{\omega}\times\vec{v}_{P}^{\, \prime}}_{\text{f. Coriolis}} + \underbrace{m\vec{\omega}\times \lp \vec{\omega}\times \vec{r}_{P}^{\, \prime} \rp}_{\text{f. centrífuga}} + \underbrace{m\vec{\alpha}\times\vec{r}_{P}^{\, \prime}}_{\text{f. Euler}} ]$.
 
 
 \section{Gravitació}
