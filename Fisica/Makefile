@@ -1,5 +1,3 @@
-prova: codi_form.tex
-	pdflatex codi_form.tex
 formulari: formulari.tex codi_form.tex
 	pdflatex codi_form.tex
 	pdflatex formulari.tex
