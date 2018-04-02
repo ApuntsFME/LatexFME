@@ -113,7 +113,7 @@
 \begin{document}
 \ifland
 \raggedright
-\begin{multicols}{3}
+\begin{multicols}{4}
 \fi
 
 % AQUI COMENCEN LES FORMULES
@@ -125,8 +125,8 @@
 \emph{Vec. unitari tg.}: $\frac{\dif \vec{r}}{\dif s} = \frac{\vec{r}'(t)}{\|\vec{r}'(t)\|} = \frac{\vec{v}(t)}{\|\vec{v}(t)\|} = \vec{t}$. \\
 \emph{Vec. unitari normal}: $\vec{n} = \frac{\sfrac{\dif \vec{t}}{\dif s}}{\|\sfrac{\dif \vec{t}}{\dif s}\|}$. \\
 \emph{Binormal}: $\vec{b} = \vec{t} \times \vec{n}$. \\
-\emph{Curvatura}: $k = \|\frac{\dif \vec{t}}{\dif s}\|$. \\
-\emph{Radi de curvatura}: $\rho = \frac{1}{k}$. \\
+\emph{Curvatura}: $\kappa = \|\frac{\dif \vec{t}}{\dif s}\|$. \\
+\emph{Radi de curvatura}: $\rho = \frac{1}{\kappa}$. \\
 \emph{Centre de curvatura}: $P = \vec{r} + \rho\vec{n}$.\\
 \emph{Velocitat}: $\vec{v} = v\vec{t}$. \\
 \emph{Acceleraci\'o}: $\vec{a} = \frac{\dif v}{\dif t}\vec{t} + \frac{v^2}{\rho}\vec{n}$.
@@ -137,8 +137,8 @@
 \emph{Acceleraci\'o}: $\vec{a} = (R\alpha)\vec{t} + (R\omega^2)\vec{n}$.
 
 \subsection{S\`olid r\'igid}
-\emph{Moviment fixant origen $P$ del sòlid}: $\vec{v} = \vec{w} \times \vec{r}$,\\
-$\vec{a} =  \vec{\alpha} \times \vec{r} - w^2 \vec{r}$.\\
+\emph{Moviment fixant origen $P$ del sòlid}: $\vec{v} = \vec{\omega} \times \vec{r}$,\\
+$\vec{a} =  \vec{\alpha} \times \vec{r} - \omega^2 \vec{r}$.\\
 \emph{Centre instantani de rotaci\'o}: $\vec{r}_{\text{CIR}} = \vec{r}_p + \frac{\vec{\omega} \times \vec{v}_p}{\omega^2}$.
 
 
@@ -195,6 +195,24 @@ En un sistema inercial:\\
 \emph{Energia potencial}: Coincideix amb la d'una partícula de massa $M$ al CM.\\
 \emph{En el cas de la gravetat i altres forces distribuïdes}: $\vec{M}_\text{grav}
   = \vec{r}_\text{CM} \times \lp m \vec{g} \rp$.
+
+\subsubsection*{Moments d'inèrcia}
+Tots respecte al CM. Si no, Teorema de Steiner.\\
+\emph{Barra}: $\frac{1}{12}mL^2$ \\
+\emph{Pla (eix perpendicular)}: $\frac{1}{12}m(h^2+w^2)$ \\
+\emph{Pla (eix paral·lel)}: $\frac{1}{12}mL^2$ \\
+\emph{Corona circular/Tub}: $\frac{1}{2}m(R^2+r^2)$\\
+\begin{tabular}{|c|c|c|} 
+ \hline
+   & Sòlid & Buit \\
+ \hline
+ \emph{Disc/Cilindre} & $\frac{1}{2} mr^2$ & $mr^2$ \\ 
+ \emph{Esfera} & $\frac{2}{5} mr^2$ & $\frac{2}{3} mr^2$ \\ 
+ \emph{Cub} & $\frac{1}{6} ms^2$ & \\ 
+ \emph{Con} & $\frac{3}{10} mr^2$ & $\frac{1}{2} mr^2$\\
+ \hline
+\end{tabular}\\
+  
 \subsection{Sistema de part\'icules}
 \emph{Centre de massa}: $\vec{r}_{\text{CM}} = \frac{\sum m_i \vec{r}_i}{\sum m_i}$. \\
 \emph{Moment lineal}: $\vec{P} = \sum \vec{P}_i = M\vec{v}_{\text{CM}}$. \\
@@ -208,6 +226,7 @@ En un sistema inercial:\\
 \ci $\frac{\dif \vec{L}_{\text{A}}}{\dif t} = \vec{M}_{\text{A}}^{\text{ext}}$. \\
 \emph{Energia cinètica}: $E_{\text{c}} = \frac{1}{2} \sum m_i (\vec{v}_i - \vec{v}_{\text{CM}})^2 + \frac{1}{2}  M\vec{v}_{\text{CM}}^2$.\\
 \emph{Quan les forces internes no treballen (sòlid rígid o forces depenents de la posició)}: $\frac{\dif E}{\dif t}  =\sum \vec{F}^{\text{ext}}_\text{nc}\cdot\vec{v}_i$. \\
+
 
 \section{Percussions i xocs}
 $\vec{P}$ i $\vec{J}$ són díscontinus.\\
