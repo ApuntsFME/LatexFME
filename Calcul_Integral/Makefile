@@ -1,3 +1,5 @@
+all: main formulari
+
 main: *.tex
 	mkdir -p figures
 	pdflatex -shell-escape main.tex
@@ -10,5 +12,6 @@ silentformulari: formulari.tex codi_form.tex
 silentmain: *.tex
 	mkdir -p figures
 	pdflatex -halt-on-error -shell-escape main.tex > /dev/null
+
 clean:
 	rm *.aux *.log *.out *.auxlock *.toc codi_form.pdf
