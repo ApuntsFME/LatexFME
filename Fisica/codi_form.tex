@@ -13,7 +13,7 @@
 
 \ifland
 \usepackage{fp}
-\def\rate{1}
+\def\rate{1.01}
 
 \FPeval{\he}{297 * \rate}
 \FPeval{\wi}{210 * \rate}
@@ -270,6 +270,7 @@ $\vec{P}$ i $\vec{J}$ són díscontinus.\\
 \subsection{Problema dels dos cossos}
 \emph{Substitucions a Kepler}: $m = \mu = \frac{m_1m_2}{m_1+m_2},\, k = Gm_1m_2, \, L = L_\text{CM}$.
 
+% Després del parcial
 \section{Electrostàtica}
 \emph{F. camp e.}: $\vec{F} = k\frac{q_1q_2}{\|r|3}\vec{r}=q_2\vec{E}$. \\
 \emph{Camp e.}: $\vec{E} = k\frac{q_1}{\|r\|^3}\vec{r}$. \\
@@ -277,14 +278,21 @@ $\vec{P}$ i $\vec{J}$ són díscontinus.\\
 \emph{Pot. e}: $V=-\int_{\infty}^r \|\vec{E}\| \dif r,\, V_{\infty}=0$.
 \ci $\Delta V = \frac{\Delta U}{q_0}$.
 
-\ifland
+\addtocounter{section}{1}
+\noindent\makebox[\linewidth]{\rule{\linewidth}{0.5pt}}
+\subsection{Integrals}
+\ci $\int \frac{1}{\sqrt{a+x^2}^3}\dif x = \frac{x}{a\sqrt{a+x^2}}$. \\
+\ci $\int \frac{x}{\sqrt{a+x^2}^3}\dif x = -\frac{1}{\sqrt{a+x^2}}$. \\
+\ci $\int \frac{1}{\sqrt{a+x^2}}\dif x = \log (\sqrt{a+x^2} + x)$. \\
+\ci $\int \frac{x}{\sqrt{a+x^2}}\dif x = \sqrt{a+x^2}$.
+
 \noindent\makebox[\linewidth]{\rule{\linewidth}{0.5pt}}
 $x(t) \sim \theta(t)$, $v \sim \omega$, $a \sim \alpha$, $m \sim I$, $F = ma \sim M = I\alpha$, $W = \int F \dif x \sim W = \int M \dif \theta$, $E_c = \frac{1}{2}mv^2 \sim E_c = \frac{1}{2} I\omega^2$, $U(x) = -\int_{x_0}^x F(x) \dif x \sim U(\theta) = -\int_{\theta_0}^\theta M \dif \theta$, $\vec{P} = mv \sim \vec{L} = I\omega$. \\
 \vspace{15pt}
 \raggedleft
 {\Large Nom: \underline{\hspace{5cm}}}
 
-
+\ifland
 \end{multicols}
 %\vspace*{\fill}
 %\begin{center}
