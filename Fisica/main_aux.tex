@@ -1,0 +1,154 @@
+\newif\ifland
+\landtrue
+\landfalse              % Comenta aquesta linia per obtenir el formulari, descomenta-la per veure totes les formules en gran
+
+\ifland
+\documentclass[10pt]{article}
+\else
+\documentclass[12pt]{article}
+\fi
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\ifland
+\usepackage{fp}
+\def\rate{1.02}
+
+\FPeval{\he}{297 * \rate}
+\FPeval{\wi}{210 * \rate}
+
+\usepackage[landscape,paperheight=\he mm,paperwidth=\wi mm,margin=0.2in,top=0.2in,bottom=0.2in]{geometry}
+
+\else
+\usepackage[margin=1in]{geometry}
+\fi
+
+\usepackage[pdftex]{hyperref}
+\usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
+\usepackage{mdframed,cleveref,cancel,stackengine,mathrsfs,thmtools}
+\usepackage{xfrac,stmaryrd,commath,units,titlesec,multicol, esint}
+\usepackage[catalan]{babel}
+
+\ifland
+\titlespacing{\section}{0pt}{5pt}{0pt}
+\titlespacing{\subsection}{0pt}{5pt}{0pt}
+\titlespacing{\subsubsection}{0pt}{5pt}{0pt}
+\setlength{\parindent}{0pt}
+\pagenumbering{gobble}
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\bfseries}
+\setlength{\columnseprule}{0.5pt}
+\fi
+
+\newcommand{\bimplies}{\fbx{$\implies$}}
+\newcommand{\bimpliedby}{\fbx{$\impliedby$}}
+
+\newcommand{\n}{\mathbb{N}}
+\newcommand{\z}{\mathbb{Z}}
+\newcommand{\q}{\mathbb{Q}}
+\newcommand{\cx}{\mathbb{C}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\R}{\mathcal{R}}
+\newcommand{\C}{\mathscr{C}}
+\newcommand{\Pa}{\mathcal{P}}
+\newcommand{\Es}{\mathcal{E}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\let\u\relax
+\newcommand{\u}[1]{\underline{#1}}
+\newcommand{\pdv}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}
+\newcommand{\dv}[3][]{\frac{\dif^{#1} #2}{\dif #3^{#1}}}
+\let\k\relax
+\newcommand{\k}{\Bbbk}
+\newcommand{\ita}[1]{\textit{#1}}
+\newcommand\inv[1]{#1^{-1}}
+\newcommand\setb[1]{\left\{#1\right\}}
+\newcommand{\vbrack}[1]{\langle #1\rangle}
+\newcommand{\determinant}[1]{\begin{vmatrix}#1\end{vmatrix}}
+\newcommand{\Po}{\mathbb{P}}
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+\newcommand{\ci}{\textbullet\;}
+\DeclareMathOperator{\fr}{Fr}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\ext}{Ext}
+\DeclareMathOperator{\inte}{Int}
+\DeclareMathOperator{\rie}{Rie}
+\DeclareMathOperator{\rg}{rg}
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\nuc}{Nuc}
+\DeclareMathOperator{\car}{car}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\graf}{graf}
+\DeclareMathOperator{\tq}{\;t.q.\;}
+\DeclareMathOperator{\disc}{disc}
+\let\emptyset\varnothing
+\renewcommand{\thesubsubsection}{\Alph{subsubsection}}
+\setcounter{secnumdepth}{4}
+
+\hypersetup{
+    colorlinks,
+    linkcolor=blue
+}
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+\ifland
+\raggedright
+\begin{multicols}{4}
+\fi
+
+\input{parcial}
+\input{final}
+
+\addtocounter{section}{1}
+\noindent\makebox[\linewidth]{\rule{\linewidth}{0.5pt}}
+\subsection{Integrals}
+\ci $\int \frac{1}{\sqrt{a+x^2}}\dif x = \log (\sqrt{a+x^2} + x)$. \\
+\ci $\int \frac{x}{\sqrt{a+x^2}}\dif x = \sqrt{a+x^2}$. \\
+\ci $\int \frac{1}{\sqrt{a+x^2}^3}\dif x = \frac{x}{a\sqrt{a+x^2}}$. \\
+\ci $\int \frac{x}{\sqrt{a+x^2}^3}\dif x = -\frac{1}{\sqrt{a+x^2}}$.
+
+\subsection{Canvis de variables}
+\emph{Polars a $\real^2$}: $\int_U f( x,y ) \dif x\dif y = \int_V f( r\cos\varphi, r\sin\varphi )r \dif r\dif \varphi$. \\
+\emph{Cilíndriques a $\real^3$}: $\int_U f( x,y,z ) \dif x\dif y\dif z = \int_V f( \rho\cos\varphi, \rho\sin\varphi, z )\rho \dif \rho\dif \varphi\dif z$. \\
+% TODO aqui a baix sobra un $ $
+\emph{Esfèriques a $\real^3$}: $\int_U f( x,y,z ) \dif x\dif y\dif z = \int_V f ( r\cos\varphi\sin\theta, r\sin\varphi\sin\theta, r\cos\theta )$ $r^2\sin\theta \dif r\dif \varphi\dif \theta$.
+
+
+\noindent\makebox[\linewidth]{\rule{\linewidth}{0.5pt}}
+$x(t) \sim \theta(t)$, $v \sim \omega$, $a \sim \alpha$, $m \sim I$, $F = ma \sim M = I\alpha$, $W = \int F \dif x \sim W = \int M \dif \theta$, $E_c = \frac{1}{2}mv^2 \sim E_c = \frac{1}{2} I\omega^2$, $U(x) = -\int_{x_0}^x F(x) \dif x \sim U(\theta) = -\int_{\theta_0}^\theta M \dif \theta$, $\vec{P} = mv \sim \vec{L} = I\omega$. \\
+\vspace{15pt}
+\raggedleft
+{\Large Nom: \underline{\hspace{5cm}}}
+
+\ifland
+\end{multicols}
+%\vspace*{\fill}
+%\begin{center}
+%\textbf{\huge Aquest formulari no \'es complet.} \\
+%\textbf{\huge Estem treballant per tal d'acabar-lo a temps.}
+%\end{center}
+%\vspace*{\fill}
+
+\fi
+
+\end{document}

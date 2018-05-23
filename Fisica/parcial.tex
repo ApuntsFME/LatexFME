@@ -1,122 +1,3 @@
-\newif\ifland
-\landtrue
-%\landfalse              % Comenta aquesta linia per obtenir el formulari, descomenta-la per veure totes les formules en gran
-
-\ifland
-\documentclass[10pt]{article}
-\else
-\documentclass[12pt]{article}
-\fi
-
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-
-\ifland
-\usepackage{fp}
-\def\rate{1.01}
-
-\FPeval{\he}{297 * \rate}
-\FPeval{\wi}{210 * \rate}
-
-\usepackage[landscape,paperheight=\he mm,paperwidth=\wi mm,margin=0.2in,top=0.2in,bottom=0.2in]{geometry}
-
-\else
-\usepackage[margin=1in]{geometry}
-\fi
-
-\usepackage[pdftex]{hyperref}
-\usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
-\usepackage{mdframed,cleveref,cancel,stackengine,mathrsfs,thmtools}
-\usepackage{xfrac,stmaryrd,commath,units,titlesec,multicol, esint}
-\usepackage[catalan]{babel}
-
-\ifland
-\titlespacing{\section}{0pt}{5pt}{0pt}
-\titlespacing{\subsection}{0pt}{5pt}{0pt}
-\titlespacing{\subsubsection}{0pt}{5pt}{0pt}
-\setlength{\parindent}{0pt}
-\pagenumbering{gobble}
-\titleformat*{\section}{\large\bfseries}
-\titleformat*{\subsection}{\bfseries}
-\setlength{\columnseprule}{0.5pt}
-\fi
-
-\newcommand{\bimplies}{\fbx{$\implies$}}
-\newcommand{\bimpliedby}{\fbx{$\impliedby$}}
-
-\newcommand{\n}{\mathbb{N}}
-\newcommand{\z}{\mathbb{Z}}
-\newcommand{\q}{\mathbb{Q}}
-\newcommand{\cx}{\mathbb{C}}
-\newcommand{\real}{\mathbb{R}}
-\newcommand{\E}{\mathbb{E}}
-\newcommand{\F}{\mathbb{F}}
-\newcommand{\A}{\mathbb{A}}
-\newcommand{\R}{\mathcal{R}}
-\newcommand{\C}{\mathscr{C}}
-\newcommand{\Pa}{\mathcal{P}}
-\newcommand{\Es}{\mathcal{E}}
-\newcommand{\V}{\mathcal{V}}
-\newcommand{\bb}[1]{\mathbb{#1}}
-\let\u\relax
-\newcommand{\u}[1]{\underline{#1}}
-\newcommand{\pdv}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}
-\newcommand{\dv}[3][]{\frac{\dif^{#1} #2}{\dif #3^{#1}}}
-\let\k\relax
-\newcommand{\k}{\Bbbk}
-\newcommand{\ita}[1]{\textit{#1}}
-\newcommand\inv[1]{#1^{-1}}
-\newcommand\setb[1]{\left\{#1\right\}}
-\newcommand{\vbrack}[1]{\langle #1\rangle}
-\newcommand{\determinant}[1]{\begin{vmatrix}#1\end{vmatrix}}
-\newcommand{\Po}{\mathbb{P}}
-\newcommand{\lp}{\left(}
-\newcommand{\rp}{\right)}
-\newcommand{\ci}{\textbullet\;}
-\DeclareMathOperator{\fr}{Fr}
-\DeclareMathOperator{\Id}{Id}
-\DeclareMathOperator{\ext}{Ext}
-\DeclareMathOperator{\inte}{Int}
-\DeclareMathOperator{\rie}{Rie}
-\DeclareMathOperator{\rg}{rg}
-\DeclareMathOperator{\gr}{gr}
-\DeclareMathOperator{\nuc}{Nuc}
-\DeclareMathOperator{\car}{car}
-\DeclareMathOperator{\im}{Im}
-\DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\vol}{vol}
-\DeclareMathOperator{\grad}{grad}
-\DeclareMathOperator{\rot}{rot}
-\DeclareMathOperator{\diver}{div}
-\DeclareMathOperator{\sinc}{sinc}
-\DeclareMathOperator{\graf}{graf}
-\DeclareMathOperator{\tq}{\;t.q.\;}
-\DeclareMathOperator{\disc}{disc}
-\let\emptyset\varnothing
-\renewcommand{\thesubsubsection}{\Alph{subsubsection}}
-\setcounter{secnumdepth}{4}
-
-\hypersetup{
-    colorlinks,
-    linkcolor=blue
-}
-\def\upint{\mathchoice%
-    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-  \int}
-\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
-
-\setlength\parindent{0pt}
-
-\begin{document}
-\ifland
-\raggedright
-\begin{multicols}{4}
-\fi
-
-% AQUI COMENCEN LES FORMULES
 \section{Cinem\`atica}
 
 \subsection{Descripci\'o del moviment}
@@ -196,7 +77,7 @@ En un sistema inercial:\\
 \emph{En el cas de la gravetat i altres forces distribuïdes}: $\vec{M}_\text{grav}
   = \vec{r}_\text{CM} \times \lp m \vec{g} \rp$.
 
-\subsubsection*{Moments d'inèrcia}
+\subsubsection{Moments d'inèrcia}
 Tots respecte al CM. Si no, Teorema de Steiner.\\
 \emph{Barra}: $\frac{1}{12}mL^2$ \\
 \emph{Pla (eix perpendicular)}: $\frac{1}{12}m(h^2+w^2)$ \\
@@ -207,10 +88,10 @@ Tots respecte al CM. Si no, Teorema de Steiner.\\
         \hline
         & Sòlid & Buit \\
         \hline
-        \emph{Disc/Cilindre} & $\frac{1}{2} mr^2$ & $mr^2$ \\ 
-        \emph{Esfera} & $\frac{2}{5} mr^2$ & $\frac{2}{3} mr^2$ \\ 
-        \emph{Cub} & $\frac{1}{6} ms^2$ & \\ 
-        \emph{Con} & $\frac{3}{10} mr^2$ & $\frac{1}{2} mr^2$\\
+        \emph{Disc/Cilindre} & $\sfrac{1}{2} \,\, mr^2$ & $mr^2$ \\ 
+        \emph{Esfera} & $\sfrac{2}{5}\,\, mr^2$ & $\sfrac{2}{3}\,\, mr^2$ \\ 
+        \emph{Cub} & $\sfrac{1}{6}\,\, ms^2$ & \\ 
+        \emph{Con} & $\sfrac{3}{10}\,\, mr^2$ & $\sfrac{1}{2}\,\, mr^2$\\
         \hline
     \end{tabular}
 \end{center}
@@ -229,7 +110,6 @@ Tots respecte al CM. Si no, Teorema de Steiner.\\
 \emph{Energia cinètica}: $E_{\text{c}} = \frac{1}{2} \sum m_i (\vec{v}_i - \vec{v}_{\text{CM}})^2 + \frac{1}{2}  M\vec{v}_{\text{CM}}^2$.\\
 \emph{Quan les forces internes no treballen (sòlid rígid o forces depenents de la posició)}: $\frac{\dif E}{\dif t}  =\sum \vec{F}^{\text{ext}}_\text{nc}\cdot\vec{v}_i$. \\
 
-
 \section{Percussions i xocs}
 $\vec{P}$ i $\vec{J}$ són díscontinus.\\
 \emph{Canvi m. lineal percussió}: $\Delta \vec{P} = \vec{I}$.\\
@@ -237,7 +117,6 @@ $\vec{P}$ i $\vec{J}$ són díscontinus.\\
 \emph{Per un sòlid rígid}: $I_A \Delta \omega = J_A = \vec{r}\times \vec{I}$.\\
 \emph{Coeficient de percussió (xoc)}: $e = - \frac{v_{1\text{f}} - v_{2\text{f}}}{v_{1\text{i}} - v_{2\text{i}}}=-\frac{v_{\text{rel,f}}}{v_{\text{rel,i}}}$.\\
 \emph{Energia xoc partícules}: $\Delta E_\text{c} = -\frac{1}{2} \mu \lp 1 - e^2 \rp v_\text{rel,i}^2$, $\mu=\frac{m_1m_2}{m_1+m_2}$ .\\
-
 
 
 \section{Canvis de sistema de referència}
@@ -269,38 +148,3 @@ $\vec{P}$ i $\vec{J}$ són díscontinus.\\
 
 \subsection{Problema dels dos cossos}
 \emph{Substitucions a Kepler}: $m = \mu = \frac{m_1m_2}{m_1+m_2},\, k = Gm_1m_2, \, L = L_\text{CM}$.
-
-% Després del parcial
-\section{Electrostàtica}
-\emph{F. camp e.}: $\vec{F} = k\frac{q_1q_2}{\|r|3}\vec{r}=q_2\vec{E}$. \\
-\emph{Camp e.}: $\vec{E} = k\frac{q_1}{\|r\|^3}\vec{r}$. \\
-\emph{En. pot. e.}: $U = k\frac{q_1q_2}{\|r\|}$. \\
-\emph{Pot. e}: $V=-\int_{\infty}^r \|\vec{E}\| \dif r,\, V_{\infty}=0$.
-\ci $\Delta V = \frac{\Delta U}{q_0}$.
-
-\addtocounter{section}{1}
-\noindent\makebox[\linewidth]{\rule{\linewidth}{0.5pt}}
-\subsection{Integrals}
-\ci $\int \frac{1}{\sqrt{a+x^2}^3}\dif x = \frac{x}{a\sqrt{a+x^2}}$. \\
-\ci $\int \frac{x}{\sqrt{a+x^2}^3}\dif x = -\frac{1}{\sqrt{a+x^2}}$. \\
-\ci $\int \frac{1}{\sqrt{a+x^2}}\dif x = \log (\sqrt{a+x^2} + x)$. \\
-\ci $\int \frac{x}{\sqrt{a+x^2}}\dif x = \sqrt{a+x^2}$.
-
-\noindent\makebox[\linewidth]{\rule{\linewidth}{0.5pt}}
-$x(t) \sim \theta(t)$, $v \sim \omega$, $a \sim \alpha$, $m \sim I$, $F = ma \sim M = I\alpha$, $W = \int F \dif x \sim W = \int M \dif \theta$, $E_c = \frac{1}{2}mv^2 \sim E_c = \frac{1}{2} I\omega^2$, $U(x) = -\int_{x_0}^x F(x) \dif x \sim U(\theta) = -\int_{\theta_0}^\theta M \dif \theta$, $\vec{P} = mv \sim \vec{L} = I\omega$. \\
-\vspace{15pt}
-\raggedleft
-{\Large Nom: \underline{\hspace{5cm}}}
-
-\ifland
-\end{multicols}
-%\vspace*{\fill}
-%\begin{center}
-%\textbf{\huge Aquest formulari no \'es complet.} \\
-%\textbf{\huge Estem treballant per tal d'acabar-lo a temps.}
-%\end{center}
-%\vspace*{\fill}
-
-\fi
-
-\end{document}
