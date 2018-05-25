@@ -13,7 +13,7 @@
 
 \ifland
 \usepackage{fp}
-\def\rate{1.03}
+\def\rate{1.05}
 
 \FPeval{\he}{297 * \rate}
 \FPeval{\wi}{210 * \rate}
@@ -135,6 +135,10 @@
 \subsection{Mètode EDOs}
 \ci $\frac{1}{v}\frac{\dif v}{\dif t} = \frac{\dif\, (\ln v)}{\dif t}$. \\
 \emph{Mètode}: $a\dot{v}+bv+c=0$; $\frac{a}{b}\dot{v}+v+\frac{c}{b}=0$; ($w=v+\frac{c}{b}$), $\frac{a}{b}\dot{w}+w=0$; $\frac{a}{b}x+1=0$; $x=\frac{-b}{a}$; $w=k e^{\frac{-b}{a}t}=v+\frac{c}{b}$; $v=ke^{\frac{-b}{a}t}-\frac{c}{b}$.
+
+\subsection{Altres}
+\emph{Superfície esfera}: $S=4\pi r^2$. \\
+\emph{Volum esfera}: $V=\frac{4}{3}\pi r^3$.
 
 \noindent\makebox[\linewidth]{\rule{\linewidth}{0.5pt}}
 $x(t) \sim \theta(t)$, $v \sim \omega$, $a \sim \alpha$, $m \sim I$, $F = ma \sim M = I\alpha$, $W = \int F \dif x \sim W = \int M \dif \theta$, $E_c = \frac{1}{2}mv^2 \sim E_c = \frac{1}{2} I\omega^2$, $U(x) = -\int_{x_0}^x F(x) \dif x \sim U(\theta) = -\int_{\theta_0}^\theta M \dif \theta$, $\vec{P} = mv \sim \vec{L} = I\omega$. \\
