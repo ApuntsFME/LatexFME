@@ -31,3 +31,38 @@
     \[d(x, y) \leq d(x, a) + d(a, y) < \frac{1}{2n} + \frac{1}{2n} = \frac{1}{n}\]
     i, per tant, $y\in B_{\sfrac{1}{n}}(x) \subseteq U$.
 \end{proof}
+
+\section{Topologia quocient}
+\begin{obs}
+    Siguin $X$ un conjunt i $\sim$ una relació d'equivalència, llavors $X/\sim$ \'es el conjunt de classes d'equivalència. Si $f\colon X\rightarrow Y$ exhaustiva, definim $x\sim x' \iff f(x) = f(x')$ i tenim que
+    \begin{align*}
+        \overline{f} \colon X/\sim &\rightarrow Y \\
+        \left[ x \right] &\mapsto f(x)
+    \end{align*}
+    \'es bijectiva.
+\end{obs}
+\begin{defi}
+    Sigui $X$ un espai topològic. Siguin $Y\in X$ i $\pi \colon X \rightarrow Y$ exhaustiva. Diem que $Y$ t\'e la topologia quocient per $\pi$ si els oberts de $Y$ són
+    \[ \T_Y = \left\{ V\subseteq Y\,|\,\pi^{-1}(V) \in \T_X \right\}. \]
+\end{defi}
+\begin{prop}
+    Propietats:
+    \begin{enumerate}
+        \item La topologia quocient de $Y$ per $\pi$ \'es la m\'es fina que fa $\pi$ contínua.
+        \item Sigui $g\circ\pi \colon X \stackrel{\pi}{\rightarrow} Y \stackrel{g}{\rightarrow} Z$. $g$ \'es contínua $\iff g\circ\pi$ \'es contínua.
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    Vejem-ho.
+    \begin{enumerate}
+        \item Immediat per la definició de topologia quocient.
+        \item La implicació cap a la dreta: $g \circ \pi$ \'es contínua perquè \'es composició de contínues.
+
+            La implicació cap a l'esquerra: Sigui $W \subset Z$ obert, $g^{-1}(W) \subset Y$ \'es obert ja que
+            \[\pi^{-1}\left( g^{-1}\left( W \right) \right) = \left( g\circ \pi \right)^{-1}\left( W \right) \implies \text{obert.}\]
+    \end{enumerate}
+\end{proof}
+\begin{prop}[Tallar i enganxar]
+    Siguin $f\colon X\rightarrow Y$ un homeomorfisme i $\sim_X$, $\sim_Y$ relacions d'equivalència a $X$ i a $Y$ tals que $x \sim_X x' \iff f\left( x \right) \sim_Y f\left( x' \right)$, llavors $f$ indueix un homeomorfisme $\overline{f} \colon X/\sim \rightarrow Y/\sim$.
+\end{prop}
+%Falta la demo (pg 64) i exemples
