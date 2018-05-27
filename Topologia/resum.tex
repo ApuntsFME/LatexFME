@@ -66,3 +66,39 @@
     Siguin $f\colon X\rightarrow Y$ un homeomorfisme i $\sim_X$, $\sim_Y$ relacions d'equivalència a $X$ i a $Y$ tals que $x \sim_X x' \iff f\left( x \right) \sim_Y f\left( x' \right)$, llavors $f$ indueix un homeomorfisme $\overline{f} \colon X/\sim \rightarrow Y/\sim$.
 \end{prop}
 %Falta la demo (pg 64) i exemples
+
+
+\section{Espai compacte i compacitat del producte}
+
+\begin{defi}
+    Un espai topològic $X$ és compacte si per tot recobriment obert $\mathscr{U}$ existeix un subrecobriment $\mathscr{V}\subset\mathscr{U}$ finit.
+\end{defi}
+
+\begin{lema}[Lema del tub]
+    Siguin $X$ i $Y$ espais topològics, $Y$ compacte. Sigui $x\in X$ i $N$ obert de $X \times Y$ tal que $x\times Y \subset N$.
+    Aleshores existeix $W \subset X$ obert tal que $x\times Y \subset W \times Y \subset N$.
+\end{lema}
+\begin{proof}
+    Per cada punt $(x,y) \in x\times Y$ prenem un obert $U_y\times V_y$ de la base de $X\times Y$ que el contingui, de manera que $(U_y\times V_y) \subset N$. El conjunt de tots els $U_y\times V_y$ és un recobriment obert de $x_0\times Y$.
+    
+    $x \times Y \cong Y$ és compacte, del recobriment anterior se'n pot extraure un de finit $(U_1 \times V_1) \cup\dots\cup (U_n \times V_n)$.
+    
+    El conjunt $W = U_1 \cap\dots\cap U_n$ és obert de $X$ perquè és intersecció finita d'oberts, i $x \times Y \subset W\times Y \subset (U_1 \times V_1 \cup\dots\cup U_n \times V_n) \subset N$.
+\end{proof}
+
+\begin{prop}
+    $X$, $Y$ espais topològics i $X \times Y$ la topologia producte. Aleshores
+    \[X \times Y \text{ compacte } \Longleftrightarrow X,Y \text{ compactes}\]
+\end{prop}
+\begin{proof}
+    Si $X \times Y$ és compacte i la projecció $\pi_X\!: X \times Y \rightarrow X$ és contínua, $\pi_X(X\times Y)=X$ és compacte. Anàlogament per $Y$.
+    
+    \quad
+    
+    Suposem que $X$ i $Y$ són compactes. Sigui $\mathscr{U}$ un recobriment obert de $X \times Y$. $x \times Y$ és compacte, per tant hi ha un recobriment finit $x \times Y \subset V_1 \cup\dots\cup V_n$ amb elements de $\mathscr{U}$.
+    
+    Considerem $N = V_1 \cup\dots\cup V_n$, pel lema del tub existeix un $x \in W \subset X$ tal que $x\times Y \subset W \times Y \subset N$. Per tant $(W \times V_1) \cup\dots\cup (W \times V_n)$ és un recobriment obert finit de $W \times Y$ amb elements de $\mathscr{U}$.
+    
+    Ara, per cada $x\in X$ apliquem el lema del tub i obtenim un $x \in W_x$ tal que $W_x \times Y$ té un recobriment finit amb elements de $\mathscr{U}$. Els $W_x$ formen un recobriment de $X$, i $X$ és compacte, tenim un recobriment finit $X = W_1 \cup\dots\cup W_n$. Per cada $W_i$ prenem els $V$ corresponents i obtenim un subrecobriment de $\mathscr{U}$ finit, per tant $X\times Y$ és compacte.
+    
+\end{proof}
