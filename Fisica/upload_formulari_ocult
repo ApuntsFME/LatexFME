@@ -1,0 +1,9 @@
+#!/bin/bash
+
+NAME="main_aux"
+DEST="/pdfs/segundo/formulari_fisica1.pdf"
+MSG="formulari física ocult"
+
+source ../upload_file.sh
+
+upload "$NAME" "$DEST" "WEB: $MSG actualitzat"

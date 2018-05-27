@@ -1,0 +1,33 @@
+\section{Espais topològics 2AN i espais separables}
+
+\begin{defi}
+    Un espai topològic $X$ es diu que satisfà el segon axioma de numerabilitat (2AN) si té una base de cardinal numerable.
+\end{defi}
+
+\begin{example}
+    Amb la topologia usual, $\real$ t\'e una base numerable: la fam\'ilia de tots els intervals oberts $(a, b)$ amb $a, b \in \q$. An\`alogament, també $\real^n$ té una base numerable:
+    \[B=\left\{(a_1,b_1)\times\dots\times(a_n,b_n)\,|\,a_i, b_i\in \q, 1\leq i\leq n\right\}. \]
+\end{example}
+
+\begin{defi}
+    Es diu que un conjunt $A$ és dens en $X$ si $\overline{A} = X$. Un espai s'anomena separable si té un subconjunt numerable dens.
+\end{defi}
+
+\begin{example}
+    Tenim que $\overline{\q} = \real$. Com que $\q$ és numerable, $\real$ és separable. Més generalment, $\real^n$ és separable perquè admet $\q^n$ com a subconjunt dens.
+\end{example}
+
+\begin{prop}
+    Un espai mètric $X$ és 2AN si i només si és separable.
+\end{prop}
+\begin{proof}
+    Sigui $\B$ una base numerable de $X$. Per a cada $B \in \B$, prenem un punt $x_B \in B$ qualsevol. Llavors, com és fàcil de comprovar, el conjunt $\left\{x_B\right\}_{B \in \B}$ és dens.
+    
+    \quad
+    
+    Sigui $A$ un subconjunt numerable dens de l'espai. Llavors
+    \[\B = \left\{B_{\sfrac{1}{n}} (a) \, | \, a\in A, \, n\in \n\right\}\]
+    és una base numerable de l'espai. És numerable perquè és reunió numerable de conjunts numerables. A més, és una base ja que sigui $x$ un punt qualsevol i $U$ un entorn obert seu. Com que $x$ és interior a $U$, $\exists n>0$ tal que $B_{\sfrac{1}{2n}}(x)\cap A\subseteq U\cap A$. Provem que $x \in B_{\sfrac{1}{2n}}(a)\subseteq U$. Per la desigualtat triangular, sigui $y \in B_{\sfrac{1}{2n}}(a)$, es té
+    \[d(x, y) \leq d(x, a) + d(a, y) < \frac{1}{2n} + \frac{1}{2n} = \frac{1}{n}\]
+    i, per tant, $y\in B_{\sfrac{1}{n}}(x) \subseteq U$.
+\end{proof}
