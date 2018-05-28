@@ -8,5 +8,8 @@ silentmain: *.tex
 	pdflatex -halt-on-error -shell-escape main.tex > /dev/null
 resum:
 	pdflatex main_resum.tex
+silentresum:
+	pdflatex -halt-on-error main_resum.tex > /dev/null
+
 clean:
 	rm *.aux *.log *.out *.auxlock *.toc

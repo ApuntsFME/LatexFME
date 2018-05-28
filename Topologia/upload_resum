@@ -1,0 +1,9 @@
+#!/bin/bash
+
+NAME="resum"
+DEST="/pdfs/segundo/teoria_topologia.pdf"
+MSG="teoria topo"
+
+source ../upload_file.sh
+
+upload "$NAME" "$DEST" "WEB: $MSG actualitzat"

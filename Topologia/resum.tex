@@ -65,8 +65,34 @@
 \begin{prop}[Tallar i enganxar]
     Siguin $f\colon X\rightarrow Y$ un homeomorfisme i $\sim_X$, $\sim_Y$ relacions d'equivalència a $X$ i a $Y$ tals que $x \sim_X x' \iff f\left( x \right) \sim_Y f\left( x' \right)$, llavors $f$ indueix un homeomorfisme $\overline{f} \colon X/\sim \rightarrow Y/\sim$.
 \end{prop}
-%Falta la demo (pg 64) i exemples
-
+\begin{proof}
+    Com que $x\sim x' \implies f\left( x \right) \sim f\left( x' \right)$, $f$ indueix una aplicació $\overline{f}\colon X/\sim \rightarrow Y/\sim$ que fa commutatiu el diagrama
+        \[
+            \begin{tikzcd}
+                X\ar{r}{f}\ar{d}[swap]{p} & Y\ar{d}[swap]{q}\\[2ex]
+                X/\sim \ar{r}{\overline{f}} & Y/\sim
+            \end{tikzcd}
+        \]
+        Com que $q\circ f$ \'es contínua, per la propietat universal de la topologia quocient de $X/\sim$, $\overline{f}$ \'es contínua. Si $f$ \'es bijectiva, com que $x\sim x' \iff f\left( x \right) \sim f\left( x' \right)$, $\overline{f}$ \'es bijectiva. Apliquem el mateix raonament a $f^{-1}$ per deduir que $\overline{f}^{-1}$ \'es contínua.
+\end{proof}
+\begin{example}
+    \begin{enumerate}
+        \item[] 
+        \item
+            \[\includegraphics[scale=0.2]{../../cilindre.png}\]
+        \item $\mathbb{D} = \left\{ \left( x, y \right) \,|\, x^2 + y^2 \leq 1 \right\}$
+            \begin{multicols}{2}
+                \[
+                    \begin{tikzcd}
+                        \mathbb{D}\ar{dr}\ar{d} & \\[2ex]
+                        \mathbb{D}/\sim \ar{r}{\cong} & \mathbb{S}^2
+                    \end{tikzcd}
+                \]
+                \includegraphics[scale=0.15]{../../esfera.png}
+            \end{multicols}
+        \item Altres: banda de Möbius, pla projectiu, ampolla de Klein, tor...
+    \end{enumerate}
+\end{example}
 
 \section{Espai compacte i compacitat del producte}
 
