@@ -53,7 +53,7 @@
     \end{enumerate}
 \end{prop}
 \begin{proof}
-    Vejem-ho.
+    Vegem-ho.
     \begin{enumerate}
         \item Immediat per la definició de topologia quocient.
         \item La implicació cap a la dreta: $g \circ \pi$ \'es contínua perquè \'es composició de contínues.
@@ -102,3 +102,58 @@
     Ara, per cada $x\in X$ apliquem el lema del tub i obtenim un $x \in W_x$ tal que $W_x \times Y$ té un recobriment finit amb elements de $\mathscr{U}$. Els $W_x$ formen un recobriment de $X$, i $X$ és compacte, tenim un recobriment finit $X = W_1 \cup\dots\cup W_n$. Per cada $W_i$ prenem els $V$ corresponents i obtenim un subrecobriment de $\mathscr{U}$ finit, per tant $X\times Y$ és compacte.
     
 \end{proof}
+
+
+\section{Tancats, Hausdorff i compacitat}
+
+\begin{defi}
+    Un espai topològic $X$ \'es Hausdorff si $\forall \: x, y \in X, \, \exists \: U,\, V$
+    oberts tals que $U \cap V = \varnothing$ i $x \in U,\, y \in V$.
+\end{defi}
+\begin{prop}
+   Tot supespai tancat d'un espai compacte \'es un espai compacte. 
+\end{prop}
+\begin{proof}
+    Siguin $X$ un espai compacte, $Y \subseteq X$ un tancat i $\mathcal{U}$ un recobriment
+    de $Y$ per oberts de $X$. Afegint l'obert $X \setminus Y$ obtenim un 
+    recobriment obert de $X$ que, per ser $X$ compacte, cont\'e un 
+    subrecobriment finit. Els oberts d'aquest subrecobriment diferents 
+    de $X \setminus Y$  han de cobrir $Y$, i per tant formen un subrecobriment finit de 
+    $\mathcal{U}$.
+\end{proof}
+\begin{example}
+    La recta real amb la topologia de complements finits \'es un espai compacte i tamb\'e ho
+    \'es qualsevol subespai d'aquesta, però nom\'es són tancats els conjunts finits de punts,
+    d'on un subespai compacte pot no ser tancat.
+\end{example}
+\begin{prop}
+    Tot subespai compacte d'un espai de Hausdorff \'es tancat.
+\end{prop}
+\begin{proof}
+    Siguin $X$ un espai de Hausdorff i $Y \subseteq X$ un subconjunt compacte. Vegem que
+    $X \setminus Y$ \'es obert comprovant que tot punt $x_0 \in X \setminus Y$ \'es interior. Com $X$
+    \'es de Hausdorff, per a cada $y \in Y$ existeixen oberts disjunts $U_y, V_y$ tals
+    que $x_0 \in U_y, y \in V_y$.
+
+    La família $\{V_y\}_{y \in Y}$ forma un recobriment obert de $Y$. Per ser $Y$ compacte,
+    cont\'e un subrecobriment finit $Y \subseteq V_{y_1} \cup \dots \cup V_{y_n}$.
+    Considerem els oberts
+    \[ 
+        V = V_{y_1} \cup \dots \cup V_{y_n}, \,
+        U = U_{y_1} \cap \dots \cap U_{y_n},
+    \]
+    que són disjunts ja que si $z \in V$, aleshores 
+    existeix $y_i$ tal que $z \not\in U_{y_i}$,
+    d'on $z \not\in U$. Per tant, $U \subseteq X \setminus Y$.
+\end{proof}
+\begin{prop}
+   Sigui $f : X \longrightarrow Y$ una aplicació contínua i bijectiva. Si $X$ \'es compacte
+   i $Y$ \'es de Hausodrff, aleshores $f$ \'es un homeomorfisme.
+\end{prop}
+\begin{proof}
+    Hem de provar $f^{-1}$ \'es contínua, però això \'es equivalent a que $f$ sigui tancada. 
+    Sigui $C$ un tancat de $X$. Com $X$ \'es compacte, $C$ tamb\'e ho \'es. Per ser imatge
+    d'un compacte per una aplicació contínua, $f(C)$ \'es compacte i per la
+    proposició anterior, com $Y$ \'es de Hausdorff, tamb\'e \'es tancat.
+\end{proof}
+
