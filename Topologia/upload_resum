@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NAME="resum"
+NAME="main_resum"
 DEST="/pdfs/segundo/teoria_topologia.pdf"
 MSG="teoria topo"
 

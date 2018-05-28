@@ -1,4 +1,4 @@
-all: main resum
+all: main main_resum
 
 main: *.tex
 	mkdir -p figures
@@ -6,9 +6,9 @@ main: *.tex
 silentmain: *.tex
 	mkdir -p figures
 	pdflatex -halt-on-error -shell-escape main.tex > /dev/null
-resum:
+main_resum:
 	pdflatex main_resum.tex
-silentresum:
+silentmain_resum:
 	pdflatex -halt-on-error main_resum.tex > /dev/null
 
 clean:
