@@ -97,7 +97,7 @@
 \section{Espai compacte i compacitat del producte}
 
 \begin{defi}
-    Un espai topològic $X$ és compacte si per tot recobriment obert $\mathscr{U}$ existeix un subrecobriment $\mathscr{V}\subset\mathscr{U}$ finit.
+    Un espai topològic $X$ és compacte si per tot recobriment obert $\mathcal{U}$ existeix un subrecobriment $\mathcal{V}\subset\mathcal{U}$ finit.
 \end{defi}
 
 \begin{lema}[Lema del tub]
@@ -121,11 +121,11 @@
     
     \quad
     
-    Suposem que $X$ i $Y$ són compactes. Sigui $\mathscr{U}$ un recobriment obert de $X \times Y$. $x \times Y$ és compacte, per tant hi ha un recobriment finit $x \times Y \subset V_1 \cup\dots\cup V_n$ amb elements de $\mathscr{U}$.
+    Suposem que $X$ i $Y$ són compactes. Sigui $\mathcal{U}$ un recobriment obert de $X \times Y$. $x \times Y$ és compacte, per tant hi ha un recobriment finit $x \times Y \subset V_1 \cup\dots\cup V_n$ amb elements de $\mathcal{U}$.
     
-    Considerem $N = V_1 \cup\dots\cup V_n$, pel lema del tub existeix un $x \in W \subset X$ tal que $x\times Y \subset W \times Y \subset N$. Per tant $(W \times V_1) \cup\dots\cup (W \times V_n)$ és un recobriment obert finit de $W \times Y$ amb elements de $\mathscr{U}$.
+    Considerem $N = V_1 \cup\dots\cup V_n$, pel lema del tub existeix un $x \in W \subset X$ tal que $x\times Y \subset W \times Y \subset N$. Per tant $(W \times V_1) \cup\dots\cup (W \times V_n)$ és un recobriment obert finit de $W \times Y$ amb elements de $\mathcal{U}$.
     
-    Ara, per cada $x\in X$ apliquem el lema del tub i obtenim un $x \in W_x$ tal que $W_x \times Y$ té un recobriment finit amb elements de $\mathscr{U}$. Els $W_x$ formen un recobriment de $X$, i $X$ és compacte, tenim un recobriment finit $X = W_1 \cup\dots\cup W_n$. Per cada $W_i$ prenem els $V$ corresponents i obtenim un subrecobriment de $\mathscr{U}$ finit, per tant $X\times Y$ és compacte.
+    Ara, per cada $x\in X$ apliquem el lema del tub i obtenim un $x \in W_x$ tal que $W_x \times Y$ té un recobriment finit amb elements de $\mathcal{U}$. Els $W_x$ formen un recobriment de $X$, i $X$ és compacte, tenim un recobriment finit $X = W_1 \cup\dots\cup W_n$. Per cada $W_i$ prenem els $V$ corresponents i obtenim un subrecobriment de $\mathcal{U}$ finit, per tant $X\times Y$ és compacte.
     
 \end{proof}
 
@@ -185,6 +185,9 @@
 
 
 \section{Índexs}
+\begin{obs}
+    No cal saber les demostracions dels teoremes de Poincaré-Bohl i de no retracció (per l'examen, per la vida sí).
+\end{obs}
 \begin{teo*}[Invariància de l'index per homotopies]
     Siguin $f, g \colon \mathbb{S}^1 \to \real ^2$ corbes tancades i sigui $p\in \real^2 \setminus \lp f\lp \mathbb{S}^1\rp \cup g\lp \mathbb{S}^1\rp\rp$. Aleshores,
     \[
@@ -199,6 +202,14 @@
     \]
     
 \end{teo*}
+\begin{proof}
+Recordatori: aquesta demostració no entra a l'examen. Vegem que $f \simeq g \colon \mathbb{S}^1 \to \real ^2 \setminus \lc p \rc$. En virtut del teorema d'invariància de l'índex per homotopies, basta observar que l'apliació
+    \begin{align*}
+        H \colon \mathbb{S}^1 &\to \real ^2 \setminus \lc p \rc \\
+        \lp z, t \rp &\mapsto \lp 1-t \rp f\lp z \rp + tg\lp z \rp
+    \end{align*}
+    és una homotopia d'$f$ a $g$ en $\real^2 \setminus \lc p \rc$.
+\end{proof}
 
 \begin{teo*}[Rouché]
     Siguin $f, g \colon \mathbb{S}^1 \to \real ^2 \setminus \lc p \rc$ corbes tancades. Aleshores,
@@ -241,15 +252,35 @@
 \end{teo*}
 
 \begin{proof}
-
+    Recordatori: aquesta demostració no entra a l'examen.
+    Suposem que $r\colon \mathbb{D} \to \mathbb{S}^1$ és una retracció. Com que $r_{|\mathbb{S}^1} $ és la identitat, tenim
+    \[
+        \mu\lp r_{|\mathbb{S}^1}, 0\rp=1.
+    \]
+    Finalment, perl teorema de Bolzano, tenim que $\exists x \in \mathbb{D} \tq r\lp x\rp=0$, la qual cosa és una contradicció.
 \end{proof}
 
 \begin{teo*}[Punt fix de Brouwer]
-    Sigui $\mathbb{B}\subset \real ^n$ la bola tancada unitat de centre $0$ i sigui $f\colon \mathbb{D} \to \mathbb{D}$ contínua. Aleshores, $f$ té un punt fix.
+    Sigui $\mathbb{B}\subset \real ^n$ la bola tancada unitat de centre $0$ i sigui $f\colon \mathbb{B} \to \mathbb{B}$ contínua. Aleshores, $f$ té un punt fix.
 \end{teo*}
 
 \begin{proof}
-    Suposem que $f$ no té cap punt fix. Aleshores,
+    Només demostrarem el cas $n=2$. Suposem que $f$ no té cap punt fix. Definim $g\colon \mathbb{D} \to \mathbb{S}^1$, de manera que $g\lp x \rp$ és la intersecció de la semirecta amb origen $f\lp x \rp$ que passa per $x$ amb $\mathbb{S}^1$. Vegem que $g$ és contínua. Tenim que
+    \[
+        g\lp x \rp = x+\lambda\frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}}, \qquad \lambda \geq 0.
+    \]
+    Com que $g\lp x\rp \in \mathbb{S}^1$, podem imposar $\norm{g\lp x \rp}^2 = 1$
+    \begin{align*}
+        \norm{g\lp x \rp}^2 &= \left< x+\lambda\frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}}, x+\lambda\frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> = \\
+        &=  \left< x, x \right> + 2\left< x, \lambda\frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> + \left<\lambda\frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}}, \lambda\frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> = \\
+        &=  \left< x, x \right> + 2\lambda \left< x, \frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> + \lambda ^2 = 1.
+    \end{align*}
+    Ara, aïllem $\lambda$ i ens quedem amb la solució positiva
+    \begin{align*}
+        \lambda &= \frac{-2\left< x, \frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> + \sqrt{4\left< x, \frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> ^2 -4\lp \left<x, x\right> -1 \rp}}{2} = \\
+        &= -\left< x, \frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> + \sqrt{1+\left< x, \frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> ^2 -\left<x, x\right>}.
+    \end{align*}
+    L'expressió que ens dóna $\lambda$ és contínua i, per tant, $g$ també ho és. Però aleshores $g$ és una contracció i incorrem en una contradicció amb el teorema de no contracció.
 \end{proof}
 \section{Superfícies}
 
