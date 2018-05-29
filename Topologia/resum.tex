@@ -1,186 +1,186 @@
-	\section{Espais topològics 2AN i espais separables}
+\section{Espais topològics 2AN i espais separables}
 
-	\begin{defi}
-	    Un espai topològic $X$ es diu que satisfà el segon axioma de numerabilitat (2AN) si té una base de cardinal numerable.
-	\end{defi}
+\begin{defi}
+	Un espai topològic $X$ es diu que satisfà el segon axioma de numerabilitat (2AN) si té una base de cardinal numerable.
+\end{defi}
 
-	\begin{example}
-	    Amb la topologia usual, $\real$ t\'e una base numerable: la fam\'ilia de tots els intervals oberts $(a, b)$ amb $a, b \in \q$. An\`alogament, també $\real^n$ té una base numerable:
-	    \[B=\left\{(a_1,b_1)\times\dots\times(a_n,b_n)\,|\,a_i, b_i\in \q, 1\leq i\leq n\right\}. \]
-	\end{example}
+\begin{example}
+	Amb la topologia usual, $\real$ t\'e una base numerable: la fam\'ilia de tots els intervals oberts $(a, b)$ amb $a, b \in \q$. An\`alogament, també $\real^n$ té una base numerable:
+	\[B=\left\{(a_1,b_1)\times\dots\times(a_n,b_n)\,|\,a_i, b_i\in \q, 1\leq i\leq n\right\}. \]
+\end{example}
 
-	\begin{defi}
-	    Es diu que un conjunt $A$ és dens en $X$ si $\overline{A} = X$. Un espai s'anomena separable si té un subconjunt numerable dens.
-	\end{defi}
+\begin{defi}
+	Es diu que un conjunt $A$ és dens en $X$ si $\overline{A} = X$. Un espai s'anomena separable si té un subconjunt numerable dens.
+\end{defi}
 
-	\begin{example}
-	    Tenim que $\overline{\q} = \real$. Com que $\q$ és numerable, $\real$ és separable. Més generalment, $\real^n$ és separable perquè admet $\q^n$ com a subconjunt dens.
-	\end{example}
+\begin{example}
+	Tenim que $\overline{\q} = \real$. Com que $\q$ és numerable, $\real$ és separable. Més generalment, $\real^n$ és separable perquè admet $\q^n$ com a subconjunt dens.
+\end{example}
 
-	\begin{prop}
-	    Un espai mètric $X$ és 2AN si i només si és separable.
-	\end{prop}
-	\begin{proof}
-	    Sigui $\B$ una base numerable de $X$. Per a cada $B \in \B$, prenem un punt $x_B \in B$ qualsevol. Llavors, com és fàcil de comprovar, el conjunt $\left\{x_B\right\}_{B \in \B}$ és dens.
-	    
-	    \quad
-	    
-	    Sigui $A$ un subconjunt numerable dens de l'espai. Llavors
-	    \[\B = \left\{B_{\sfrac{1}{n}} (a) \, | \, a\in A, \, n\in \n\right\}\]
-	    és una base numerable de l'espai. És numerable perquè és reunió numerable de conjunts numerables. A més, és una base ja que sigui $x$ un punt qualsevol i $U$ un entorn obert seu. Com que $x$ és interior a $U$, $\exists n>0$ tal que $B_{\sfrac{1}{2n}}(x)\cap A\subseteq U\cap A$. Provem que $x \in B_{\sfrac{1}{2n}}(a)\subseteq U$. Per la desigualtat triangular, sigui $y \in B_{\sfrac{1}{2n}}(a)$, es té
-	    \[d(x, y) \leq d(x, a) + d(a, y) < \frac{1}{2n} + \frac{1}{2n} = \frac{1}{n}\]
-	    i, per tant, $y\in B_{\sfrac{1}{n}}(x) \subseteq U$.
-	\end{proof}
+\begin{prop}
+	Un espai mètric $X$ és 2AN si i només si és separable.
+\end{prop}
+\begin{proof}
+	Sigui $\B$ una base numerable de $X$. Per a cada $B \in \B$, prenem un punt $x_B \in B$ qualsevol. Llavors, com és fàcil de comprovar, el conjunt $\left\{x_B\right\}_{B \in \B}$ és dens.
+
+	\quad
+
+	Sigui $A$ un subconjunt numerable dens de l'espai. Llavors
+	\[\B = \left\{B_{\sfrac{1}{n}} (a) \, | \, a\in A, \, n\in \n\right\}\]
+	és una base numerable de l'espai. És numerable perquè és reunió numerable de conjunts numerables. A més, és una base ja que sigui $x$ un punt qualsevol i $U$ un entorn obert seu. Com que $x$ és interior a $U$, $\exists n>0$ tal que $B_{\sfrac{1}{2n}}(x)\cap A\subseteq U\cap A$. Provem que $x \in B_{\sfrac{1}{2n}}(a)\subseteq U$. Per la desigualtat triangular, sigui $y \in B_{\sfrac{1}{2n}}(a)$, es té
+	\[d(x, y) \leq d(x, a) + d(a, y) < \frac{1}{2n} + \frac{1}{2n} = \frac{1}{n}\]
+	i, per tant, $y\in B_{\sfrac{1}{n}}(x) \subseteq U$.
+\end{proof}
 
 \section{Topologia quocient}
 \begin{obs}
-    Siguin $X$ un conjunt i $\sim$ una relació d'equivalència, llavors $X/\sim$ \'es el conjunt de classes d'equivalència. Si $f\colon X\rightarrow Y$ exhaustiva, definim $x\sim x' \iff f(x) = f(x')$ i tenim que
-    \begin{align*}
-        \overline{f} \colon X/\sim &\rightarrow Y \\
-        \left[ x \right] &\mapsto f(x)
-    \end{align*}
-    \'es bijectiva.
+	Siguin $X$ un conjunt i $\sim$ una relació d'equivalència, llavors $X/\sim$ \'es el conjunt de classes d'equivalència. Si $f\colon X\rightarrow Y$ exhaustiva, definim $x\sim x' \iff f(x) = f(x')$ i tenim que
+	\begin{align*}
+		\overline{f} \colon X/\sim &\rightarrow Y \\
+		\left[ x \right] &\mapsto f(x)
+	\end{align*}
+	\'es bijectiva.
 \end{obs}
 \begin{defi}
-    Sigui $X$ un espai topològic. Siguin $Y\in X$ i $\pi \colon X \rightarrow Y$ exhaustiva. Diem que $Y$ t\'e la topologia quocient per $\pi$ si els oberts de $Y$ són
-    \[ \T_Y = \left\{ V\subseteq Y\,|\,\pi^{-1}(V) \in \T_X \right\}. \]
+	Sigui $X$ un espai topològic. Siguin $Y\in X$ i $\pi \colon X \rightarrow Y$ exhaustiva. Diem que $Y$ t\'e la topologia quocient per $\pi$ si els oberts de $Y$ són
+	\[ \T_Y = \left\{ V\subseteq Y\,|\,\pi^{-1}(V) \in \T_X \right\}. \]
 \end{defi}
 \begin{prop}
-    Propietats:
-    \begin{enumerate}
-        \item La topologia quocient de $Y$ per $\pi$ \'es la m\'es fina que fa $\pi$ contínua.
-        \item Sigui $g\circ\pi \colon X \stackrel{\pi}{\rightarrow} Y \stackrel{g}{\rightarrow} Z$. $g$ \'es contínua $\iff g\circ\pi$ \'es contínua.
-    \end{enumerate}
+	Propietats:
+	\begin{enumerate}
+		\item La topologia quocient de $Y$ per $\pi$ \'es la m\'es fina que fa $\pi$ contínua.
+		\item Sigui $g\circ\pi \colon X \stackrel{\pi}{\rightarrow} Y \stackrel{g}{\rightarrow} Z$. $g$ \'es contínua $\iff g\circ\pi$ \'es contínua.
+	\end{enumerate}
 \end{prop}
 \begin{proof}
-    Vegem-ho.
-    \begin{enumerate}
-        \item Immediat per la definició de topologia quocient.
-        \item La implicació cap a la dreta: $g \circ \pi$ \'es contínua perquè \'es composició de contínues.
+	Vegem-ho.
+	\begin{enumerate}
+		\item Immediat per la definició de topologia quocient.
+		\item La implicació cap a la dreta: $g \circ \pi$ \'es contínua perquè \'es composició de contínues.
 
-            La implicació cap a l'esquerra: Sigui $W \subset Z$ obert, $g^{-1}(W) \subset Y$ \'es obert ja que
-            \[\pi^{-1}\left( g^{-1}\left( W \right) \right) = \left( g\circ \pi \right)^{-1}\left( W \right) \implies \text{obert.}\]
-    \end{enumerate}
+			La implicació cap a l'esquerra: Sigui $W \subset Z$ obert, $g^{-1}(W) \subset Y$ \'es obert ja que
+			\[\pi^{-1}\left( g^{-1}\left( W \right) \right) = \left( g\circ \pi \right)^{-1}\left( W \right) \implies \text{obert.}\]
+	\end{enumerate}
 \end{proof}
 \begin{prop}[Tallar i enganxar]
-    Siguin $f\colon X\rightarrow Y$ un homeomorfisme i $\sim_X$, $\sim_Y$ relacions d'equivalència a $X$ i a $Y$ tals que $x \sim_X x' \iff f\left( x \right) \sim_Y f\left( x' \right)$, llavors $f$ indueix un homeomorfisme $\overline{f} \colon X/\sim \rightarrow Y/\sim$.
+	Siguin $f\colon X\rightarrow Y$ un homeomorfisme i $\sim_X$, $\sim_Y$ relacions d'equivalència a $X$ i a $Y$ tals que $x \sim_X x' \iff f\left( x \right) \sim_Y f\left( x' \right)$, llavors $f$ indueix un homeomorfisme $\overline{f} \colon X/\sim \rightarrow Y/\sim$.
 \end{prop}
 \begin{proof}
-    Com que $x\sim x' \implies f\left( x \right) \sim f\left( x' \right)$, $f$ indueix una aplicació $\overline{f}\colon X/\sim \rightarrow Y/\sim$ que fa commutatiu el diagrama
-        \[
-            \begin{tikzcd}
-                X\ar{r}{f}\ar{d}[swap]{p} & Y\ar{d}[swap]{q}\\[2ex]
-                X/\sim \ar{r}{\overline{f}} & Y/\sim
-            \end{tikzcd}
-        \]
-        Com que $q\circ f$ \'es contínua, per la propietat universal de la topologia quocient de $X/\sim$, $\overline{f}$ \'es contínua. Si $f$ \'es bijectiva, com que $x\sim x' \iff f\left( x \right) \sim f\left( x' \right)$, $\overline{f}$ \'es bijectiva. Apliquem el mateix raonament a $f^{-1}$ per deduir que $\overline{f}^{-1}$ \'es contínua.
+	Com que $x\sim x' \implies f\left( x \right) \sim f\left( x' \right)$, $f$ indueix una aplicació $\overline{f}\colon X/\sim \rightarrow Y/\sim$ que fa commutatiu el diagrama
+	\[
+		\begin{tikzcd}
+			X\ar{r}{f}\ar{d}[swap]{p} & Y\ar{d}[swap]{q}\\[2ex]
+			X/\sim \ar{r}{\overline{f}} & Y/\sim
+		\end{tikzcd}
+	\]
+	Com que $q\circ f$ \'es contínua, per la propietat universal de la topologia quocient de $X/\sim$, $\overline{f}$ \'es contínua. Si $f$ \'es bijectiva, com que $x\sim x' \iff f\left( x \right) \sim f\left( x' \right)$, $\overline{f}$ \'es bijectiva. Apliquem el mateix raonament a $f^{-1}$ per deduir que $\overline{f}^{-1}$ \'es contínua.
 \end{proof}
 \begin{example}
-    \begin{enumerate}
-        \item[] 
-        \item
-            \[\includegraphics[scale=0.2]{figs_resum/cilindre.png}\]
-        \item $\mathbb{D} = \left\{ \left( x, y \right) \,|\, x^2 + y^2 \leq 1 \right\}$
-            \begin{multicols}{2}
-                \[
-                    \begin{tikzcd}
-                        \mathbb{D}\ar{dr}\ar{d} & \\[2ex]
-                        \mathbb{D}/\sim \ar{r}{\cong} & \mathbb{S}^2
-                    \end{tikzcd}
-                \]
-                \includegraphics[scale=0.15]{figs_resum/esfera.png}
-            \end{multicols}
-        \item Altres: banda de Möbius, pla projectiu, ampolla de Klein, tor...
-    \end{enumerate}
+	\begin{enumerate}
+		\item[] 
+		\item
+			\[\includegraphics[scale=0.2]{figs_resum/cilindre.png}\]
+		\item $\mathbb{D} = \left\{ \left( x, y \right) \,|\, x^2 + y^2 \leq 1 \right\}$
+			\begin{multicols}{2}
+				\[
+					\begin{tikzcd}
+						\mathbb{D}\ar{dr}\ar{d} & \\[2ex]
+						\mathbb{D}/\sim \ar{r}{\cong} & \mathbb{S}^2
+					\end{tikzcd}
+				\]
+				\includegraphics[scale=0.15]{figs_resum/esfera.png}
+			\end{multicols}
+		\item Altres: banda de Möbius, pla projectiu, ampolla de Klein, tor...
+	\end{enumerate}
 \end{example}
 
 \section{Espai compacte i compacitat del producte}
 
 \begin{defi}
-    Un espai topològic $X$ és compacte si per tot recobriment obert $\mathcal{U}$ existeix un subrecobriment $\mathcal{V}\subset\mathcal{U}$ finit.
+	Un espai topològic $X$ és compacte si per tot recobriment obert $\mathcal{U}$ existeix un subrecobriment $\mathcal{V}\subset\mathcal{U}$ finit.
 \end{defi}
 
 \begin{lema}[Lema del tub]
-    Siguin $X$ i $Y$ espais topològics, $Y$ compacte. Sigui $x\in X$ i $N$ obert de $X \times Y$ tal que $x\times Y \subset N$.
-    Aleshores existeix $W \subset X$ obert tal que $x\times Y \subset W \times Y \subset N$.
+	Siguin $X$ i $Y$ espais topològics, $Y$ compacte. Sigui $x\in X$ i $N$ obert de $X \times Y$ tal que $x\times Y \subset N$.
+	Aleshores existeix $W \subset X$ obert tal que $x\times Y \subset W \times Y \subset N$.
 \end{lema}
 \begin{proof}
-    Per cada punt $(x,y) \in x\times Y$ prenem un obert $U_y\times V_y$ de la base de $X\times Y$ que el contingui, de manera que $(U_y\times V_y) \subset N$. El conjunt de tots els $U_y\times V_y$ és un recobriment obert de $x_0\times Y$.
-    
-    $x \times Y \cong Y$ és compacte, del recobriment anterior se'n pot extraure un de finit $(U_1 \times V_1) \cup\dots\cup (U_n \times V_n)$.
-    
-    El conjunt $W = U_1 \cap\dots\cap U_n$ és obert de $X$ perquè és intersecció finita d'oberts, i $x \times Y \subset W\times Y \subset (U_1 \times V_1 \cup\dots\cup U_n \times V_n) \subset N$.
+	Per cada punt $(x,y) \in x\times Y$ prenem un obert $U_y\times V_y$ de la base de $X\times Y$ que el contingui, de manera que $(U_y\times V_y) \subset N$. El conjunt de tots els $U_y\times V_y$ és un recobriment obert de $x_0\times Y$.
+
+	$x \times Y \cong Y$ és compacte, del recobriment anterior se'n pot extraure un de finit $(U_1 \times V_1) \cup\dots\cup (U_n \times V_n)$.
+
+	El conjunt $W = U_1 \cap\dots\cap U_n$ és obert de $X$ perquè és intersecció finita d'oberts, i $x \times Y \subset W\times Y \subset (U_1 \times V_1 \cup\dots\cup U_n \times V_n) \subset N$.
 \end{proof}
 
 \begin{prop}
-    $X$, $Y$ espais topològics i $X \times Y$ la topologia producte. Aleshores
-    \[X \times Y \text{ compacte } \Longleftrightarrow X,Y \text{ compactes}\]
+	$X$, $Y$ espais topològics i $X \times Y$ la topologia producte. Aleshores
+	\[X \times Y \text{ compacte } \Longleftrightarrow X,Y \text{ compactes}\]
 \end{prop}
 \begin{proof}
-    Si $X \times Y$ és compacte i la projecció $\pi_X\!: X \times Y \rightarrow X$ és contínua, $\pi_X(X\times Y)=X$ és compacte. Anàlogament per $Y$.
-    
-    \quad
-    
-    Suposem que $X$ i $Y$ són compactes. Sigui $\mathcal{U}$ un recobriment obert de $X \times Y$. $x \times Y$ és compacte, per tant hi ha un recobriment finit $x \times Y \subset V_1 \cup\dots\cup V_n$ amb elements de $\mathcal{U}$.
-    
-    Considerem $N = V_1 \cup\dots\cup V_n$, pel lema del tub existeix un $x \in W \subset X$ tal que $x\times Y \subset W \times Y \subset N$. Per tant $(W \times V_1) \cup\dots\cup (W \times V_n)$ és un recobriment obert finit de $W \times Y$ amb elements de $\mathcal{U}$.
-    
-    Ara, per cada $x\in X$ apliquem el lema del tub i obtenim un $x \in W_x$ tal que $W_x \times Y$ té un recobriment finit amb elements de $\mathcal{U}$. Els $W_x$ formen un recobriment de $X$, i $X$ és compacte, tenim un recobriment finit $X = W_1 \cup\dots\cup W_n$. Per cada $W_i$ prenem els $V$ corresponents i obtenim un subrecobriment de $\mathcal{U}$ finit, per tant $X\times Y$ és compacte.
-    
+	Si $X \times Y$ és compacte i la projecció $\pi_X\!: X \times Y \rightarrow X$ és contínua, $\pi_X(X\times Y)=X$ és compacte. Anàlogament per $Y$.
+
+	\quad
+
+	Suposem que $X$ i $Y$ són compactes. Sigui $\mathcal{U}$ un recobriment obert de $X \times Y$. $x \times Y$ és compacte, per tant hi ha un recobriment finit $x \times Y \subset V_1 \cup\dots\cup V_n$ amb elements de $\mathcal{U}$.
+
+	Considerem $N = V_1 \cup\dots\cup V_n$, pel lema del tub existeix un $x \in W \subset X$ tal que $x\times Y \subset W \times Y \subset N$. Per tant $(W \times V_1) \cup\dots\cup (W \times V_n)$ és un recobriment obert finit de $W \times Y$ amb elements de $\mathcal{U}$.
+
+	Ara, per cada $x\in X$ apliquem el lema del tub i obtenim un $x \in W_x$ tal que $W_x \times Y$ té un recobriment finit amb elements de $\mathcal{U}$. Els $W_x$ formen un recobriment de $X$, i $X$ és compacte, tenim un recobriment finit $X = W_1 \cup\dots\cup W_n$. Per cada $W_i$ prenem els $V$ corresponents i obtenim un subrecobriment de $\mathcal{U}$ finit, per tant $X\times Y$ és compacte.
+
 \end{proof}
 
 
 \section{Tancats, Hausdorff i compacitat}
 
 \begin{defi}
-    Un espai topològic $X$ \'es Hausdorff si $\forall \: x, y \in X, \, \exists \: U,\, V$
-    oberts tals que $U \cap V = \varnothing$ i $x \in U,\, y \in V$.
+	Un espai topològic $X$ \'es Hausdorff si $\forall \: x, y \in X, \, \exists \: U,\, V$
+	oberts tals que $U \cap V = \varnothing$ i $x \in U,\, y \in V$.
 \end{defi}
 \begin{prop}
-   Tot supespai tancat d'un espai compacte \'es un espai compacte. 
+	Tot supespai tancat d'un espai compacte \'es un espai compacte. 
 \end{prop}
 \begin{proof}
-    Siguin $X$ un espai compacte, $Y \subseteq X$ un tancat i $\mathcal{U}$ un recobriment
-    de $Y$ per oberts de $X$. Afegint l'obert $X \setminus Y$ obtenim un 
-    recobriment obert de $X$ que, per ser $X$ compacte, cont\'e un 
-    subrecobriment finit. Els oberts d'aquest subrecobriment diferents 
-    de $X \setminus Y$  han de cobrir $Y$, i per tant formen un subrecobriment finit de 
-    $\mathcal{U}$.
+	Siguin $X$ un espai compacte, $Y \subseteq X$ un tancat i $\mathcal{U}$ un recobriment
+	de $Y$ per oberts de $X$. Afegint l'obert $X \setminus Y$ obtenim un 
+	recobriment obert de $X$ que, per ser $X$ compacte, cont\'e un 
+	subrecobriment finit. Els oberts d'aquest subrecobriment diferents 
+	de $X \setminus Y$  han de cobrir $Y$, i per tant formen un subrecobriment finit de 
+	$\mathcal{U}$.
 \end{proof}
 \begin{example}
-    La recta real amb la topologia de complements finits \'es un espai compacte i tamb\'e ho
-    \'es qualsevol subespai d'aquesta, però nom\'es són tancats els conjunts finits de punts,
-    d'on un subespai compacte pot no ser tancat.
+	La recta real amb la topologia de complements finits \'es un espai compacte i tamb\'e ho
+	\'es qualsevol subespai d'aquesta, però nom\'es són tancats els conjunts finits de punts,
+	d'on un subespai compacte pot no ser tancat.
 \end{example}
 \begin{prop}
-    Tot subespai compacte d'un espai de Hausdorff \'es tancat.
+	Tot subespai compacte d'un espai de Hausdorff \'es tancat.
 \end{prop}
 \begin{proof}
-    Siguin $X$ un espai de Hausdorff i $Y \subseteq X$ un subconjunt compacte. Vegem que
-    $X \setminus Y$ \'es obert comprovant que tot punt $x_0 \in X \setminus Y$ \'es interior. Com $X$
-    \'es de Hausdorff, per a cada $y \in Y$ existeixen oberts disjunts $U_y, V_y$ tals
-    que $x_0 \in U_y, y \in V_y$.
+	Siguin $X$ un espai de Hausdorff i $Y \subseteq X$ un subconjunt compacte. Vegem que
+	$X \setminus Y$ \'es obert comprovant que tot punt $x_0 \in X \setminus Y$ \'es interior. Com $X$
+	\'es de Hausdorff, per a cada $y \in Y$ existeixen oberts disjunts $U_y, V_y$ tals
+	que $x_0 \in U_y, y \in V_y$.
 
-    La família $\{V_y\}_{y \in Y}$ forma un recobriment obert de $Y$. Per ser $Y$ compacte,
-    cont\'e un subrecobriment finit $Y \subseteq V_{y_1} \cup \dots \cup V_{y_n}$.
-    Considerem els oberts
-    \[ 
-        V = V_{y_1} \cup \dots \cup V_{y_n}, \,
-        U = U_{y_1} \cap \dots \cap U_{y_n},
-    \]
-    que són disjunts ja que si $z \in V$, aleshores 
-    existeix $y_i$ tal que $z \not\in U_{y_i}$,
-    d'on $z \not\in U$. Per tant, $U \subseteq X \setminus Y$.
+	La família $\{V_y\}_{y \in Y}$ forma un recobriment obert de $Y$. Per ser $Y$ compacte,
+	cont\'e un subrecobriment finit $Y \subseteq V_{y_1} \cup \dots \cup V_{y_n}$.
+	Considerem els oberts
+	\[ 
+		V = V_{y_1} \cup \dots \cup V_{y_n}, \,
+		U = U_{y_1} \cap \dots \cap U_{y_n},
+	\]
+	que són disjunts ja que si $z \in V$, aleshores 
+	existeix $y_i$ tal que $z \not\in U_{y_i}$,
+	d'on $z \not\in U$. Per tant, $U \subseteq X \setminus Y$.
 \end{proof}
 \begin{prop}
-   Sigui $f : X \longrightarrow Y$ una aplicació contínua i bijectiva. Si $X$ \'es compacte
-   i $Y$ \'es de Hausodrff, aleshores $f$ \'es un homeomorfisme.
+	Sigui $f : X \longrightarrow Y$ una aplicació contínua i bijectiva. Si $X$ \'es compacte
+	i $Y$ \'es de Hausodrff, aleshores $f$ \'es un homeomorfisme.
 \end{prop}
 \begin{proof}
-    Hem de provar $f^{-1}$ \'es contínua, però això \'es equivalent a que $f$ sigui tancada. 
-    Sigui $C$ un tancat de $X$. Com $X$ \'es compacte, $C$ tamb\'e ho \'es. Per ser imatge
-    d'un compacte per una aplicació contínua, $f(C)$ \'es compacte i per la
-    proposició anterior, com $Y$ \'es de Hausdorff, tamb\'e \'es tancat.
+	Hem de provar $f^{-1}$ \'es contínua, però això \'es equivalent a que $f$ sigui tancada. 
+	Sigui $C$ un tancat de $X$. Com $X$ \'es compacte, $C$ tamb\'e ho \'es. Per ser imatge
+	d'un compacte per una aplicació contínua, $f(C)$ \'es compacte i per la
+	proposició anterior, com $Y$ \'es de Hausdorff, tamb\'e \'es tancat.
 \end{proof}
 
 \section{Espais connexos}
@@ -220,7 +220,7 @@
 	\[ 
 		C = \lp[0, 1] \times \{0\}\rp \cup \lp 
 		\bigcup \limits_{n \in \n} \lp \lc  \frac{1}{n} \rc 
-				\times [0, 1] \rp \rp \cup \lp 0, 1\rp
+		\times [0, 1] \rp \rp \cup \lp 0, 1\rp
 	\]
 	que s'anomena ``la pinta i la puça``.
 \end{example}
@@ -244,9 +244,9 @@
 \end{proof}
 \section{Índexs}
 \iffalse
-\begin{obs}
-    No cal saber les demostracions dels teoremes de Poincaré-Bohl i de no retracció (per l'examen, per la vida sí).
-\end{obs}
+	\begin{obs}
+		No cal saber les demostracions dels teoremes de Poincaré-Bohl i de no retracció (per l'examen, per la vida sí).
+	\end{obs}
 \fi
 \begin{teo*}[Invariància de l'index per homotopies]
 	Siguin $f, g \colon \mathbb{S}^1 \to \real ^2$ corbes tancades i sigui $p\in \real^2 \setminus \lp f\lp \mathbb{S}^1\rp \cup g\lp \mathbb{S}^1\rp\rp$. Aleshores,
@@ -256,21 +256,21 @@
 \end{teo*}
 
 \iffalse
-\begin{teo*}[Poincaré-Bohl]
-	Siguin $f, g \colon \mathbb{S}^1 \to \real ^2 \setminus \lc p \rc$ corbes tancades tals que $p \notin \overline{f\lp z \rp g \lp z \rp}, \, \forall z \in \mathbb{S}^1$. Aleshores,
-	\[
-		\mu \lp f, p\rp = \mu\lp g, p \rp.
-	\]
+	\begin{teo*}[Poincaré-Bohl]
+		Siguin $f, g \colon \mathbb{S}^1 \to \real ^2 \setminus \lc p \rc$ corbes tancades tals que $p \notin \overline{f\lp z \rp g \lp z \rp}, \, \forall z \in \mathbb{S}^1$. Aleshores,
+		\[
+			\mu \lp f, p\rp = \mu\lp g, p \rp.
+		\]
 
-\end{teo*}
-\begin{proof}
-Recordatori: aquesta demostració no entra a l'examen. Vegem que $f \simeq g \colon \mathbb{S}^1 \to \real ^2 \setminus \lc p \rc$. En virtut del teorema d'invariància de l'índex per homotopies, basta observar que l'apliació
-    \begin{align*}
-        H \colon \mathbb{S}^1 &\to \real ^2 \setminus \lc p \rc \\
-        \lp z, t \rp &\mapsto \lp 1-t \rp f\lp z \rp + tg\lp z \rp
-    \end{align*}
-    és una homotopia d'$f$ a $g$ en $\real^2 \setminus \lc p \rc$.
-\end{proof}
+	\end{teo*}
+	\begin{proof}
+		Recordatori: aquesta demostració no entra a l'examen. Vegem que $f \simeq g \colon \mathbb{S}^1 \to \real ^2 \setminus \lc p \rc$. En virtut del teorema d'invariància de l'índex per homotopies, basta observar que l'apliació
+		\begin{align*}
+			H \colon \mathbb{S}^1 &\to \real ^2 \setminus \lc p \rc \\
+			\lp z, t \rp &\mapsto \lp 1-t \rp f\lp z \rp + tg\lp z \rp
+		\end{align*}
+		és una homotopia d'$f$ a $g$ en $\real^2 \setminus \lc p \rc$.
+	\end{proof}
 \fi
 
 \begin{teo*}[Rouché]
@@ -306,45 +306,45 @@ Recordatori: aquesta demostració no entra a l'examen. Vegem que $f \simeq g \co
 \end{proof}
 
 \iffalse
-\begin{defi}
-	Siguin $X$ un espai topològic i $A\subseteq X$. Una retracció d'$X$ en $A$ és una aplicació contínua $r\colon X \to A$ tal que $r_{|A}=\Id_A$.
-\end{defi}
+	\begin{defi}
+		Siguin $X$ un espai topològic i $A\subseteq X$. Una retracció d'$X$ en $A$ és una aplicació contínua $r\colon X \to A$ tal que $r_{|A}=\Id_A$.
+	\end{defi}
 
-\begin{teo*}[No retracció]
-	No existeix cap retracció de $\mathbb{D}$ a $\mathbb{S}^1$.
-\end{teo*}
+	\begin{teo*}[No retracció]
+		No existeix cap retracció de $\mathbb{D}$ a $\mathbb{S}^1$.
+	\end{teo*}
 
-\begin{proof}
-    Recordatori: aquesta demostració no entra a l'examen.
-    Suposem que $r\colon \mathbb{D} \to \mathbb{S}^1$ és una retracció. Com que $r_{|\mathbb{S}^1} $ és la identitat, tenim
-    \[
-        \mu\lp r_{|\mathbb{S}^1}, 0\rp=1.
-    \]
-    Finalment, perl teorema de Bolzano, tenim que $\exists x \in \mathbb{D} \tq r\lp x\rp=0$, la qual cosa és una contradicció.
-\end{proof}
+	\begin{proof}
+		Recordatori: aquesta demostració no entra a l'examen.
+		Suposem que $r\colon \mathbb{D} \to \mathbb{S}^1$ és una retracció. Com que $r_{|\mathbb{S}^1} $ és la identitat, tenim
+		\[
+			\mu\lp r_{|\mathbb{S}^1}, 0\rp=1.
+		\]
+		Finalment, perl teorema de Bolzano, tenim que $\exists x \in \mathbb{D} \tq r\lp x\rp=0$, la qual cosa és una contradicció.
+	\end{proof}
 \fi
 
 \begin{teo*}[Punt fix de Brouwer]
-    Sigui $\mathbb{B}\subset \real ^n$ la bola tancada unitat de centre $0$ i sigui $f\colon \mathbb{B} \to \mathbb{B}$ contínua. Aleshores, $f$ té un punt fix.
+	Sigui $\mathbb{B}\subset \real ^n$ la bola tancada unitat de centre $0$ i sigui $f\colon \mathbb{B} \to \mathbb{B}$ contínua. Aleshores, $f$ té un punt fix.
 \end{teo*}
 
 \begin{proof}
-    Només demostrarem el cas $n=2$. Suposem que $f$ no té cap punt fix. Definim $g\colon \mathbb{D} \to \mathbb{S}^1$, de manera que $g\lp x \rp$ és la intersecció de la semirecta amb origen $f\lp x \rp$ que passa per $x$ amb $\mathbb{S}^1$. Vegem que $g$ és contínua. Tenim que
-    \[
-        g\lp x \rp = x+\lambda\frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}}, \qquad \lambda \geq 0.
-    \]
-    Com que $g\lp x\rp \in \mathbb{S}^1$, podem imposar $\norm{g\lp x \rp}^2 = 1$
-    \begin{align*}
-        \norm{g\lp x \rp}^2 &= \left< x+\lambda\frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}}, x+\lambda\frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> = \\
-        &=  \left< x, x \right> + 2\left< x, \lambda\frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> + \left<\lambda\frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}}, \lambda\frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> = \\
-        &=  \left< x, x \right> + 2\lambda \left< x, \frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> + \lambda ^2 = 1.
-    \end{align*}
-    Ara, aïllem $\lambda$ i ens quedem amb la solució positiva
-    \begin{align*}
-        \lambda &= \frac{-2\left< x, \frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> + \sqrt{4\left< x, \frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> ^2 -4\lp \left<x, x\right> -1 \rp}}{2} = \\
-        &= -\left< x, \frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> + \sqrt{1+\left< x, \frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> ^2 -\left<x, x\right>}.
-    \end{align*}
-    L'expressió que ens dóna $\lambda$ és contínua i, per tant, $g$ també ho és. Però aleshores $g$ és una contracció i incorrem en una contradicció amb el teorema de no contracció.
+	Només demostrarem el cas $n=2$. Suposem que $f$ no té cap punt fix. Definim $g\colon \mathbb{D} \to \mathbb{S}^1$, de manera que $g\lp x \rp$ és la intersecció de la semirecta amb origen $f\lp x \rp$ que passa per $x$ amb $\mathbb{S}^1$. Vegem que $g$ és contínua. Tenim que
+	\[
+		g\lp x \rp = x+\lambda\frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}}, \qquad \lambda \geq 0.
+	\]
+	Com que $g\lp x\rp \in \mathbb{S}^1$, podem imposar $\norm{g\lp x \rp}^2 = 1$
+	\begin{align*}
+		\norm{g\lp x \rp}^2 &= \left< x+\lambda\frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}}, x+\lambda\frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> = \\
+		&=  \left< x, x \right> + 2\left< x, \lambda\frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> + \left<\lambda\frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}}, \lambda\frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> = \\
+		&=  \left< x, x \right> + 2\lambda \left< x, \frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> + \lambda ^2 = 1.
+	\end{align*}
+	Ara, aïllem $\lambda$ i ens quedem amb la solució positiva
+	\begin{align*}
+		\lambda &= \frac{-2\left< x, \frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> + \sqrt{4\left< x, \frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> ^2 -4\lp \left<x, x\right> -1 \rp}}{2} = \\
+		&= -\left< x, \frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> + \sqrt{1+\left< x, \frac{x-f\lp x \rp}{\norm{x-f\lp x \rp}} \right> ^2 -\left<x, x\right>}.
+	\end{align*}
+	L'expressió que ens dóna $\lambda$ és contínua i, per tant, $g$ també ho és. Però aleshores $g$ és una contracció i incorrem en una contradicció amb el teorema de no contracció.
 \end{proof}
 
 \section{Superfícies}
@@ -352,8 +352,8 @@ Recordatori: aquesta demostració no entra a l'examen. Vegem que $f \simeq g \co
 \begin{defi}[Varietat]
 	Sigui $M$ un espai topològic. Direm que $M$ és una varietat de dimensió $n$ si:
 	\begin{enumerate}[i)]
-	\item $M$ es Hausdorff
-	\item $M$ es $2AN$
+	\item $M$ és Hausdorff
+	\item $M$ és $2AN$
 	\item $\forall x \in M$, $\exists U \ni x$ obert i un homeomorfisme
 		$\phi \colon U \to \real^n$ ($M$ localment homeomorf a $\real^n$)
 \end{enumerate}
@@ -362,7 +362,7 @@ Recordatori: aquesta demostració no entra a l'examen. Vegem que $f \simeq g \co
 \begin{example}
 	\begin{enumerate}
 		\item[]
-		\item $n = 1$, són corbes, per example $\real$ o $\mathbb{S}$. Més en general:
+		\item $n = 1$, són corbes, per exemple $\real$ o $\mathbb{S}$. Més en general:
 			\begin{itemize}
 				\item No s'admeten autointerseccions
 				\item No podem afegir límits (extrems) a les corbes.
@@ -403,7 +403,7 @@ Recordatori: aquesta demostració no entra a l'examen. Vegem que $f \simeq g \co
 \end{example}
 
 \begin{defi}[Característica d'Euler]
-	Sigui $(S, T)$ superfície triangulada, definim la característica d'Euler de $T$ per
+	Sigui $(S, T)$ una superfície triangulada, definim la característica d'Euler de $T$ per
 	\[
 		\chi (s, t) = v - a + c
 	\]
