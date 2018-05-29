@@ -265,6 +265,7 @@
 
 \begin{example}
     \begin{enumerate}
+	\item[]
 	\item $n = 1$, son corbes, per example $\real$ o $\mathbb{S}$. Mes en general:
 	    \begin{itemize}
 		\item No s'admenten autointerseccions
@@ -287,7 +288,6 @@
 	    \rightarrow A_g \cong g \mathbb{T}$ ($g$-tors)
 	\item $B_g \colon a_1a_1 \cdots a_ga_g (g \geq 1) \rightarrow B_g \cong g \mathbb{P}^2$
 	    ($g$-plans projectius)
-	\item
     \end{itemize}
     ($g$ és el gènere de la superfície)
 \end{teo*}
@@ -298,6 +298,7 @@
 
 \begin{example}
     \begin{enumerate}
+	\item[]
 	\item $g \Po^2$, $g \geq 1$ NO és orientable.
 	\item $g \mathbb{T}^2$, $g \geq 0$ sí que és orientable. ($g = 0$, $A_0 \leadsto \mathbb{S}^2$)
 	\item $S \cong S^\prime \implies $ tenen la matteixa orientabilitat. De fet, dues superfícies
@@ -308,17 +309,35 @@
 \begin{defi}[Característia d'Euler]
     Sigui $(S, T)$ superfície triangulada, definim la caacterística d'Euler de $T$ per
     \[
-        \psi (S, T) = v - a + c
+        \chi (s, t) = v - a + c
     \]
     Donde $v$ són els vèrtex, $a$ les arestes i $c$ les cares.
 \end{defi}
 
 \begin{teo*}
-    $\psi(S)$ és independent de la tringulació.
+    $\chi(S)$ és independent de la tringulació.
 \end{teo*}
 
 \begin{example}
     \begin{enumerate}
-	\item $\psi$
-    \end{enumerate}<++>
-\end{example}<++>
+	\item[]
+	\item $\chi(\text{poligonal}) = \cdots = 1 + v^\prime - n$. Amb $v^\prime$, \# de punts que són
+		imatge dels vèrtexs del poligon.
+	\item
+	    \[
+		\begin{aligned}
+		    \chi (\text{estàndar}) : & \chi(A_0) = 2 \\ & \chi \left( g \mathbb{T}^2 \right) = 2 -2g \\
+		    & \chi \left( g\Po^2 \right) = 2 - g 
+		\end{aligned}
+	    \]
+    \end{enumerate}
+\end{example}
+
+\begin{defi}[Suma connexa de superfícies]
+    Siguin $S, S^\prime$ superfícies, $D \subset S$, $D^\prime \subset S^\prime$ discs tancats i
+    $h \colon \partial D \to D^\prime$ llavors
+    \[
+	S \# S^\prime = \frac{\left(S \setminus \mathring{D} \right) \cup 
+	\left( S^\prime \setminus \mathring{S^\prime} \right)}{h \colon \partial D \to \partial D^\prime}
+    \]
+\end{defi}
