@@ -184,11 +184,73 @@
 \end{proof}
 
 
-\section{Índexos}
+\section{Índexs}
 \begin{teo*}[Invariància de l'index per homotopies]
-    Siguin $f, g \colon \mathbb{S}^1 \to \real$ corbes tancades i sigui $p\in \real^2 \setminus \lp f\lp \mathbb{S}^1\rp \cup g\lp \mathbb{S}^1\rp\rp$
+    Siguin $f, g \colon \mathbb{S}^1 \to \real ^2$ corbes tancades i sigui $p\in \real^2 \setminus \lp f\lp \mathbb{S}^1\rp \cup g\lp \mathbb{S}^1\rp\rp$. Aleshores,
+    \[
+        \mu \lp f, p\rp = \mu\lp g, p \rp \iff f \simeq g  \colon \mathbb{S}^1 \to \real \setminus \lc p \rc.
+    \]
 \end{teo*}
 
+\begin{teo*}[Poincaré-Bohl]
+    Siguin $f, g \colon \mathbb{S}^1 \to \real ^2 \setminus \lc p \rc$ corbes tancades tals que $p \notin \overline{f\lp z \rp g \lp z \rp}, \, \forall z \in \mathbb{S}^1$. Aleshores,
+    \[
+        \mu \lp f, p\rp = \mu\lp g, p \rp.
+    \]
+    
+\end{teo*}
+
+\begin{teo*}[Rouché]
+    Siguin $f, g \colon \mathbb{S}^1 \to \real ^2 \setminus \lc p \rc$ corbes tancades. Aleshores,
+    \[
+        d \lp f \lp z \rp, g \lp z \rp \rp < d \lp f \lp z \rp, g \lp z \rp \rp, \, \forall z\in \mathbb{S}^1 \implies \mu \lp f, p\rp = \mu\lp g, p \rp.
+    \]
+    
+\end{teo*}
+\begin{proof}
+    \[
+        d \lp f \lp z \rp, g \lp z \rp \rp < d \lp f \lp z \rp, g \lp z \rp \rp \implies p \notin \overline{f\lp z \rp g \lp z \rp} \stackrel{\text{P-B}}{\implies} \mu \lp f, p\rp = \mu\lp g, p \rp.
+    \]
+\end{proof}
+\begin{teo*}[Bolzano (dim 2)]
+    Sigui $F\colon \mathbb{D} \to \real ^2$ contínua, on $\mathbb{D}$ és el disc unitat tancat. Sigui $f=F_{|\mathbb{S}^1}$ i sigui $P \in \real ^2$. Aleshores,
+    \[
+        \mu\lp f, P \rp \neq 0 \implies \exists Q \in \mathbb{D} \tq F\lp Q \rp = P.
+    \]
+\end{teo*}
+
+\begin{proof}
+    Suposem que $\mu\lp f, P \rp \neq 0$ i que $\nexists Q \in \mathbb{D} \tq F\lp Q\rp = P$.
+    \[
+        \begin{array}{lclcl}
+            \mathbb{S}^1 \times I & \stackrel{\pi}{\to} & \mathbb{D} & \stackrel{F}{\to} & \real ^2 \setminus \lc P \rc \\
+            \lp z, t \rp & \mapsto & zt & \mapsto & F\lp zt \rp \\
+            \lp z, 0 \rp & \mapsto & 0 & \mapsto & F\lp 0 \rp\\
+            \lp z, 1 \rp & \mapsto & z & \mapsto & F\lp z \rp = f\lp z \rp
+        \end{array}
+    \]
+    Tenim, doncs, que $F \circ \pi$ és una homotopia entre $f$ i la funció constant zero. Finalment, pel teorema d'invariància de l'índex d'homotopies, tenim que $\mu \lp f, P \rp = 0$ i hem incoregut en una contradicció.
+\end{proof}
+
+\begin{defi}
+    Siguin $X$ un espai topològic i $A\subseteq X$. Una retracció d'$X$ en $A$ és una aplicació contínua $r\colon X \to A$ tal que $r_{|A}=\Id_A$.
+\end{defi}
+
+\begin{teo*}[No retracció]
+    No existeix cap retracció de $\mathbb{D}$ a $\mathbb{S}^1$.
+\end{teo*}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{teo*}[Punt fix de Brouwer]
+    Sigui $\mathbb{B}\subset \real ^n$ la bola tancada unitat de centre $0$ i sigui $f\colon \mathbb{D} \to \mathbb{D}$ contínua. Aleshores, $f$ té un punt fix.
+\end{teo*}
+
+\begin{proof}
+    Suposem que $f$ no té cap punt fix. Aleshores,
+\end{proof}
 \section{Superfícies}
 
 \begin{defi}[Varietat]
