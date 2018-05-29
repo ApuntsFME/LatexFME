@@ -189,3 +189,72 @@
 
 \section{Superfícies}
 
+\begin{def}[Varietat]
+    Sigui $M$ un espai topològic. Direm que $M$ és una varietat de dimensió $n$ si:
+    \begin{enumerate}[i)]
+	\item $M$ es Haussdorff
+	\item $M$ es $2AN$
+	\item $\forall x \in M$, $\exists U \ni x$ obert i un homeomorfisme
+	    $\phi \colon U \to \real^n$ ($M$ localment homeomorf a $\real^n$)
+    \end{enumerate}
+\end{def}
+
+\begin{example}
+    \begin{enumerate}
+	\item $n = 1$, son corbes, per example $\real$ o $\mathbb{S}$. Mes en general:
+	    \begin{itemize}
+		\item No s'admenten autointerseccions
+		\item No podem afegir límits (extrems) a les corbes.
+	    \end{itemize}
+	\item $n = 2$ , son superfícies.
+	    % TODO poner pantallaso rico papi
+	\item Que $M$ hagi de ser Haussdorff i $2AN$ és per evitar patologies (como el punts
+	    dobles) y a més, ens permet triangular
+	\item superfícies poligonals: $\mathbb{T}$, $\mathbb{K}$ (són ompactes i convexes)
+	\item superfícies estàndar: superfícies poligonals corresponents a les paraules.
+    \end{enumerate}
+\end{example}
+
+\begin{teo*}[C]
+    Tota superfícies $S$ compacta i connexa és homeomorfa a una única superfície estàndar.
+    \begin{itemize}
+	\item $A_0 \colon aa^{-1} (g = 0) \rightarrow A_0 \cong \mathbb{S}^2$
+	\item $A_g \colon a_1b_1a^{-1}_1 b^{-1}_1 \cdots a_gb_ga^{-1}_gb^{-1}_g (g \geq 1)
+	    \rightarrow A_g \cong g \mathbb{T}$ ($g$-tors)
+	\item $B_g \colon a_1a_1 \cdots a_ga_g (g \geq 1) \rightarrow B_g \cong g \mathbb{P}^2$
+	    ($g$-plans projectius)
+	\item
+    \end{itemize}
+    ($g$ és el gènere de la superfície)
+\end{teo*}
+
+\begin{def}[Orientabilitat]
+    $S$ és no orientable si conté una cinta de Möbius. $S$ és orientable en cas contrari.
+\end{def}
+
+\begin{example}
+    \begin{enumerate}
+	\item $g \Po^2$, $g \geq 1$ NO és orientable.
+	\item $g \mathbb{T}^2$, $g \geq 0$ sí que és orientable. ($g = 0$, $A_0 \leadsto \mathbb{S}^2$)
+	\item $S \cong S^\prime \implies $ tenen la matteixa orientabilitat. De fet, dues superfícies
+	    són homeomorfes si tenen el mateix gènere i la mateixa orientabilitat.
+    \end{enumerate}
+\end{example}
+
+\begin{def}[Característia d'Euler]
+    Sigui $(S, T)$ superfície triangulada, definim la caacterística d'Euler de $T$ per
+    \[
+        \psi (S, T) = v - a + c
+    \]
+    Donde $v$ són els vèrtex, $a$ les arestes i $c$ les cares.
+\end{def}
+
+\begin{teo*}
+    $\psi(S)$ és independent de la tringulació.
+\end{teo*}
+
+\begin{example}
+    \begin{enumerate}
+	\item $\psi$
+    \end{enumerate}<++>
+\end{example}<++>
