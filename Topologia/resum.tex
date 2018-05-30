@@ -27,9 +27,9 @@
 
 	Sigui $A$ un subconjunt numerable dens de l'espai. Llavors
 	\[\B = \left\{B_{\sfrac{1}{n}} (a) \, | \, a\in A, \, n\in \n\right\}\]
-	és una base numerable de l'espai. És numerable perquè és reunió numerable de conjunts numerables. A més, és una base ja que sigui $x$ un punt qualsevol i $U$ un entorn obert seu. Com que $x$ és interior a $U$, $\exists n>0$ tal que $B_{\sfrac{1}{2n}}(x)\cap A\subseteq U\cap A$. Provem que $x \in B_{\sfrac{1}{2n}}(a)\subseteq U$. Per la desigualtat triangular, sigui $y \in B_{\sfrac{1}{2n}}(a)$, es té
+	és una base numerable de l'espai. És numerable perquè és reunió numerable de conjunts numerables. A més, és una base ja que sigui $x$ un punt qualsevol i $U$ un entorn obert seu. Com que $x$ és interior a $U$, $\exists n>0$ tal que $B_{\sfrac{1}{n}}(x)\subset U$, llavors $B_{\sfrac{1}{2n}}(x)\cap A \neq \emptyset$ perquè $A$ és dens en $X$. Sigui $a \in B_{\sfrac{1}{2n}}(x)\cap A\subseteq U\cap A$, tenim que $x \in B_{\sfrac{1}{2n}}(a)$. Vegem que $B_{\sfrac{1}{2n}}(a)\subset U$. Sigui $y \in B_{\sfrac{1}{2n}}(a)$, per la desigualtat triangular es té
 	\[d(x, y) \leq d(x, a) + d(a, y) < \frac{1}{2n} + \frac{1}{2n} = \frac{1}{n}\]
-	i, per tant, $y\in B_{\sfrac{1}{n}}(x) \subseteq U$.
+	i, per tant, $y\in B_{\sfrac{1}{n}}(x) \subset U \implies x \in B_{\sfrac{1}{2n}}(a)\subseteq B_{\sfrac{1}{n}}(x) \subset U$.
 \end{proof}
 
 \section{Topologia quocient}
@@ -186,7 +186,7 @@
 \section{Espais connexos}
 
 \begin{defi}
-	Sigui $X$ un espai topològic. Una descomposició de $X$ consisteix en dos
+	Sigui $X$ un espai topològic. Una desconnexió de $X$ consisteix en dos
 	subconjunts $U, V \subseteq X$ no buits tals que
 	\[
 		X = U \cup V, \quad \overline{U} \cap V = \varnothing, \quad U \cap
