@@ -42,7 +42,7 @@
 	\'es bijectiva.
 \end{obs}
 \begin{defi}
-	Sigui $X$ un espai topològic. Siguin $Y\in X$ i $\pi \colon X \rightarrow Y$ exhaustiva. Diem que $Y$ t\'e la topologia quocient per $\pi$ si els oberts de $Y$ són
+	Sigui $X$ un espai topològic. Siguin $Y\subset X$ i $\pi \colon X \rightarrow Y$ exhaustiva. Diem que $Y$ t\'e la topologia quocient per $\pi$ si els oberts de $Y$ són
 	\[ \T_Y = \left\{ V\subseteq Y\,|\,\pi^{-1}(V) \in \T_X \right\}. \]
 \end{defi}
 \begin{prop}
@@ -58,8 +58,10 @@
 		\item Immediat per la definició de topologia quocient.
 		\item La implicació cap a la dreta: $g \circ \pi$ \'es contínua perquè \'es composició de contínues.
 
-			La implicació cap a l'esquerra: Sigui $W \subset Z$ obert, $g^{-1}(W) \subset Y$ \'es obert ja que
-			\[\pi^{-1}\left( g^{-1}\left( W \right) \right) = \left( g\circ \pi \right)^{-1}\left( W \right) \implies \text{obert.}\]
+			La implicació cap a l'esquerra: Sigui $W \subseteq Z$ obert, $g^{-1}(W) \subseteq Y$ \'es obert ja que
+			\[
+				\left( g\circ \pi \right)^{-1}\left( W \right) \text{ obert} \implies \pi^{-1}\left( g^{-1}\left( W \right) \right) \text{obert} \implies g^{-1}\left( W \right) \text{ obert.}
+			\]
 	\end{enumerate}
 \end{proof}
 \begin{prop}[Tallar i enganxar]
