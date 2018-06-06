@@ -1,15 +1,137 @@
-\documentclass[10pt,a4paper]{article}
+\documentclass[12pt,a4paper]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-\usepackage[landscape,margin=0in,top=0in,bottom=0in]{geometry}
+\usepackage[landscape,margin=0.2in,top=0.2in,bottom=0.2in]{geometry}
 
 \usepackage[pdftex]{hyperref}
-\usepackage{pdfpages}
+\usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
+\usepackage{mdframed,cleveref,cancel,stackengine,mathrsfs,thmtools,pdfpages}
+\usepackage{xfrac,stmaryrd,commath,units,titlesec,multicol,esint,scrextend}
 \usepackage[catalan]{babel}
 
+\titlespacing{\section}{0pt}{5pt}{0pt}
+\titlespacing{\subsection}{0pt}{5pt}{0pt}
+\titlespacing{\subsubsection}{0pt}{5pt}{0pt}
+\setlength{\parindent}{0pt}
+\pagenumbering{gobble}
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\bfseries}
+\setlength{\columnseprule}{0.5pt}
+
+\newcommand{\bimplies}{\fbx{$\implies$}}
+\newcommand{\bimpliedby}{\fbx{$\impliedby$}}
+
+\newcommand{\n}{\mathbb{N}}
+\newcommand{\z}{\mathbb{Z}}
+\newcommand{\q}{\mathbb{Q}}
+\newcommand{\cx}{\mathbb{C}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\R}{\mathcal{R}}
+\newcommand{\C}{\mathscr{C}}
+\newcommand{\Pa}{\mathcal{P}}
+\newcommand{\Es}{\mathcal{E}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\let\u\relax
+\newcommand{\u}[1]{\underline{#1}}
+\newcommand{\pdv}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}
+\newcommand{\dv}[3][]{\frac{\dif^{#1} #2}{\dif #3^{#1}}}
+\let\k\relax
+\newcommand{\k}{\Bbbk}
+\newcommand{\ita}[1]{\textit{#1}}
+\newcommand\inv[1]{#1^{-1}}
+\newcommand\setb[1]{\left\{#1\right\}}
+\newcommand{\vbrack}[1]{\langle #1\rangle}
+\newcommand{\determinant}[1]{\begin{vmatrix}#1\end{vmatrix}}
+\newcommand{\Po}{\mathbb{P}}
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+\newcommand{\ci}{\textbullet\;}
+\DeclareMathOperator{\fr}{Fr}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\ext}{Ext}
+\DeclareMathOperator{\inte}{Int}
+\DeclareMathOperator{\rie}{Rie}
+\DeclareMathOperator{\rg}{rg}
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\nuc}{Nuc}
+\DeclareMathOperator{\car}{car}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\graf}{graf}
+\DeclareMathOperator{\tq}{\;t.q.\;}
+\DeclareMathOperator{\disc}{disc}
+\let\emptyset\varnothing
+\renewcommand{\thesubsubsection}{\Alph{subsubsection}}
+\setcounter{secnumdepth}{4}
+
+\hypersetup{
+    colorlinks,
+    linkcolor=blue
+}
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\setlength\parindent{0pt}
+
 \begin{document}
+
+\vspace*{\fill}
+\begin{center}
+     \Huge {\bf El document consta de 4 pàgines}
+\end{center}
+
+\quad
+
+{\Large 
+    \begin{addmargin}[10em]{0em}
+        \begin{itemize}
+            \item Fórmules 1a part (mecànica): pàgina 2.
+            \item Fórmules 2a part (electromagnetisme): pàgina 3.
+            \item Fórmules 1a part + 2a part: pàgina 4.
+        \end{itemize}
+    \end{addmargin}
+    
+    \quad
+    
+    \begin{addmargin}[8em]{8em}
+    Els que recupereu el parcial imprimiu les pàgines 2 i 3, els que no, podeu portar només la 3 (la pàgina 4 és pels qui no recupereu el parcial, però voleu les fórmules igualment).
+    
+    \end{addmargin}
+}
+\vspace*{\fill}
+
+\newpage
+
+\raggedright
+\begin{multicols}{4}
+{\fontsize{12}{12}\selectfont
+\input{parcial1}}
+\newpage
+\end{multicols}
+
+\begin{multicols}{3}
+\input{parcial2}
+
+\vspace{15pt}
+\raggedleft
+{\Large Nom: \underline{\hspace{6cm}}}
+\end{multicols}
 
 \includepdf[pages=1]{main_aux.pdf}
 

@@ -25,12 +25,6 @@ $\vec{a} =  \vec{\alpha} \times \vec{r} - \omega^2 \vec{r}$.\\
 
 \section{Din\`amica}
 
-\subsection{Lleis de Newton}
-En un sistema inercial:\\
-\emph{1a}: Un cos aïllat manté velocitat constant.\\
-\emph{2a}: $\vec{F} = m\vec{a}$.\\
-\emph{3a}: Les forces es superposen i tota acció te una reacció.
-
 \subsection{$\real$}
 \emph{F. gravitat\`oria}: $\vec{F}_{ab} = -G \frac{m_a m_b}{\|\vec{r}_{ab}\|^3} \vec{r}_{ab}$. \\
 \emph{F. el\`astica}: $\vec{F}_{\text{e}}(x) = -kx$. \\
@@ -73,9 +67,27 @@ En un sistema inercial:\\
 \emph{Teo. Steiner}: $I_O = I_{\text{CM}} + Md^2$. \\
 \emph{Eix fix}: $E_\text{c} = \frac{1}{2} I_e \omega^2 $\\
 \emph{Eix mòbil}: $E_{\text{c}} = \frac{1}{2} I_\text{CM}\omega^2 + \frac{1}{2}  M\vec{v}_{\text{CM}}^2$.\\
-\emph{Energia potencial}: Coincideix amb la d'una partícula de massa $M$ al CM.\\
-\emph{En el cas de la gravetat i altres forces distribuïdes}: $\vec{M}_\text{grav}
-  = \vec{r}_\text{CM} \times \lp m \vec{g} \rp$.
+\emph{E. potencial}: $U = U_{\text{CM}}$.\\
+\emph{Gravetat}: $\vec{M}_\text{grav} = \vec{r}_\text{CM} \times \lp m \vec{g} \rp$.
+
+\subsubsection*{Moments d'inèrcia}
+    Respecte al CM:\\
+    \emph{Barra}: $\frac{1}{12}mL^2$. \\
+    \emph{Pla (eix perpendicular)}: $\frac{1}{12}m(h^2+w^2)$. \\
+    \emph{Pla (eix paral·lel)}: $\frac{1}{12}mL^2$. \\
+    \emph{Corona circular/Tub}: $\frac{1}{2}m(R^2+r^2)$. \\
+    %\begin{center}
+        \begin{tabular}{|c|c|c|} 
+            \hline
+            & Sòlid & Buit \\
+            \hline
+            \emph{Disc/Cil.} & $\sfrac{1}{2} \,\, mr^2$ & $mr^2$ \\ 
+            \emph{Esfera} & $\sfrac{2}{5}\,\, mr^2$ & $\sfrac{2}{3}\,\, mr^2$ \\ 
+            \emph{Cub} & $\sfrac{1}{6}\,\, ms^2$ & \\ 
+            \emph{Con} & $\sfrac{3}{10}\,\, mr^2$ & $\sfrac{1}{2}\,\, mr^2$\\
+            \hline
+        \end{tabular}
+    %\end{center}
   
 \subsection{Sistema de part\'icules}
 \emph{Centre de massa}: $\vec{r}_{\text{CM}} = \frac{\sum m_i \vec{r}_i}{\sum m_i}$. \\
@@ -89,10 +101,9 @@ En un sistema inercial:\\
 \emph{$A =$ CM o punt fix}: $\vec{L}_{\text{A}} = \vec{L}_O - \vec{r}_{\text{A}}\times\vec{P}$, $\vec{L}_O = \vec{L}_{\text{A}} + \vec{r}_{\text{A}}\times\vec{P}$. \\
 \ci $\frac{\dif \vec{L}_{\text{A}}}{\dif t} = \vec{M}_{\text{A}}^{\text{ext}}$. \\
 \emph{Energia cinètica}: $E_{\text{c}} = \frac{1}{2} \sum m_i (\vec{v}_i - \vec{v}_{\text{CM}})^2 + \frac{1}{2}  M\vec{v}_{\text{CM}}^2$.\\
-\emph{Quan les forces internes no treballen (sòlid rígid o forces depenents de la posició)}: $\frac{\dif E}{\dif t}  =\sum \vec{F}^{\text{ext}}_\text{nc}\cdot\vec{v}_i$.
+\emph{$W_{F_{\text{int}}} = 0$}: $\frac{\dif E}{\dif t}  =\sum \vec{F}^{\text{ext}}_\text{nc}\cdot\vec{v}_i$.
 
 \section{Percussions i xocs}
-$\vec{P}$ i $\vec{J}$ són díscontinus.\\
 \emph{Canvi m. lineal percussió}: $\Delta \vec{P} = \vec{I}$.\\
 \emph{Canvi m. angular percussió}: Si $A$ és un punt fix o el CM, $\vec{J}_A = \Delta \vec{L}_A$.\\
 \emph{Per un sòlid rígid}: $I_A \Delta \omega = J_A = \vec{r}\times \vec{I}$.\\
@@ -119,13 +130,15 @@ $\vec{P}$ i $\vec{J}$ són díscontinus.\\
 \emph{Tma. de Gauss}: $\oiint\limits_{\dif V} g \cdot \dif{\vec{S}} = -4\pi GM_{int} $.
 
 \subsection{Lleis de Kepler}
-\emph{1a}: Òrbites el·líptiques. \\
 \emph{2a}: El radi vector escombra àrees iguals en temps iguals. \\
 \emph{3a}: $T^2=\frac{4\pi^2}{GM}R^3$ ($R$ radi mitjà).
 
 \subsection{Problema de Kepler}
-\emph{Excentricitat} $e = \sqrt{1 + \frac{2EL^2}{mk^2}}$.\\
-\emph{Posició} $\frac{1}{r} = \frac{mk}{L^2} \lp 1 + e cos \theta \rp$.
+\emph{Excentricitat}: $e = \sqrt{1 + \frac{2EL^2}{mk^2}}$.\\
+\emph{Posició}: $\frac{1}{r} = \frac{mk}{L^2} \lp 1 + e \cos \theta \rp$.
 
 \subsection{Problema dels dos cossos}
 \emph{Substitucions a Kepler}: $m = \mu = \frac{m_1m_2}{m_1+m_2},\, k = Gm_1m_2, \, L = L_\text{CM}$.
+
+\noindent\makebox[\linewidth]{\rule{\linewidth}{0.5pt}}
+{\fontsize{7}{12}\selectfont $x(t) \sim \theta(t)$, $v \sim \omega$, $a \sim \alpha$, $m \sim I$, $F = ma \sim M = I\alpha$, $W = \int F \dif x \sim W = \int M \dif \theta$, $E_c = \frac{1}{2}mv^2 \sim E_c = \frac{1}{2} I\omega^2$, $U(x) = -\int_{x_0}^x F(x) \dif x \sim U(\theta) = -\int_{\theta_0}^\theta M \dif \theta$, $\vec{P} = mv \sim \vec{L} = I\omega$. }
