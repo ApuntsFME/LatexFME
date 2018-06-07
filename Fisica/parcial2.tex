@@ -21,8 +21,10 @@
 
 \subsection{Condensadors}
 \emph{Capacitat}: $C = \frac{Q}{|V_1-V_2|}$. \\
-\emph{Intensitat}: $I=C\frac{\dif V}{\dif t} = \frac{\dif Q}{\dif t}$.
-%TODO formula carrega rc
+\emph{Intensitat}: $I=C\frac{\dif V}{\dif t} = \frac{\dif Q}{\dif t}$.\\
+\emph{Energia}: $U = \frac{1}{2}C (V_1-V_2)^2$.\\
+\emph{Càrrega RC}: $V(t) = \varepsilon (1 -  e^{-\frac{t}{RC}})$, 
+                    $I = \frac{\varepsilon}{R} e^{\frac{-t}{RC}}$.
 
 \section{Electrocinètica}
 \emph{Conserv. càrrega}: $\frac{\dif}{\dif t} \int_\nu \rho \dif V + 
@@ -39,14 +41,12 @@
 \emph{Camp m.}: $\vec{B} = \frac{\mu_0}{4\pi}\frac{q\cdot \vec{v}\times (\vec{r} - \vec{r'})}{\|\vec{r} -\vec{r'}\|^3}$, $\mu_0=4\pi \cdot 10^{-7}$. \\
 \emph{F. Lorentz}: $\vec{F} = q \cdot\vec{v}\times\vec{B} = \vec{Il} \times \vec{B}$. \\
 
-\emph{Camp Solenoidal}
-%TODO formula camp solenoidal
-\emph{L. Ampère}: $\oint_C \vec{B}\cdot \vec{\dif l} = I_{\text{int}} \mu_0$.
-%TODO forma diferencial l. ampere
+\emph{Camp Solenoidal}: $\oint_S \vec{B} \cdot \vec{\dif S} = 0$, $\nabla \cdot \vec{B} = 0$.\\
+\emph{L. Ampère}: $\oint_C \vec{B}\cdot \vec{\dif l} = I_{\text{int}} \mu_0, \, \nabla \times \vec{B} = \mu_0 \vec{j}$.
 
 \section{Inductància}
 \emph{Flux}: $\Phi = \int_S \vec{B}\cdot \vec{\dif S}$. \\
-\emph{L. Faraday}: $\varepsilon = -\frac{\dif \Phi_{\text{m}}}{\dif t}=\oint_{\partial S} \vec{E} \cdot \vec{\dif l} = -\frac{\dif}{\dif t}\int_S \vec{B} \cdot \vec{\dif S}$.
+\emph{L. Faraday}: $\varepsilon = -\frac{\dif \Phi_{\text{m}}}{\dif t}, \, \oint_{\partial S} \vec{E} \cdot \vec{\dif l} = -\frac{\dif}{\dif t}\int_S \vec{B} \cdot \vec{\dif S}$.
 \subsection{Bobines}
 \emph{Autoinductància}: $\varepsilon = L \frac{\dif I}{\dif t}$.\\
 \emph{Càrrega RL}: $I(t) = \frac{\varepsilon_0}{R} \lp 1 - e^{-\frac{Rt}{L}}\rp$.\\

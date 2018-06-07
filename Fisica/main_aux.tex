@@ -28,6 +28,7 @@
 \usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
 \usepackage{mdframed,cleveref,cancel,stackengine,mathrsfs,thmtools}
 \usepackage{xfrac,stmaryrd,commath,units,titlesec,multicol, esint}
+\usepackage{catchfilebetweentags}
 \usepackage[catalan]{babel}
 
 \ifland
@@ -116,7 +117,7 @@
 \begin{multicols}{5}
 \fi
 
-\input{parcial1retallat}
+\ExecuteMetaData[parcial1.tex]{retallat}
 \input{parcial2}
 
 \noindent\makebox[\linewidth]{\rule{\linewidth}{0.5pt}}
