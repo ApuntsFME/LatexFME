@@ -48,12 +48,24 @@
 \emph{Flux}: $\Phi = \int_S \vec{B}\cdot \vec{\dif S}$. \\
 \emph{L. Faraday}: $\varepsilon = -\frac{\dif \Phi_{\text{m}}}{\dif t}, \, \oint_{\partial S} \vec{E} \cdot \vec{\dif l} = -\frac{\dif}{\dif t}\int_S \vec{B} \cdot \vec{\dif S}$.
 \subsection{Bobines}
+\emph{Camp m.}: $B = \mu_0 n I$, $n = N/l$.\\
 \emph{Autoinductància}: $\varepsilon = L \frac{\dif I}{\dif t}$.\\
-\emph{Càrrega RL}: $I(t) = \frac{\varepsilon_0}{R} \lp 1 - e^{-\frac{Rt}{L}}\rp$.\\
+\emph{Càrrega RL}: $I(t) = \frac{\varepsilon}{R} \lp 1 - e^{-\frac{Rt}{L}}\rp$.\\
 \emph{Energia RL}: $U = \frac{1}{2}LI^2$.
 
 \section{Maxwell}
-%TODO equacions de MAXWELL!!
+\emph{Gauss}: $\nabla \cdot \vec{E} = \frac{\rho}{\varepsilon_0} $, $\oint_{\partial V} \vec{E}\cdot \vec{\dif S} = \frac{1}{\varepsilon_0} \int_\nu \rho \dif V$.\\
+\emph{Faraday}: $\nabla \times \vec{E} +  \frac{\partial{\vec{B}}}{\partial t} = \vec{0}$,
+                $\oint_{\partial S} \vec{E} \cdot \vec{\dif l} + 
+                \frac{\dif}{\dif t} \int_S \vec{B} \cdot \vec{\dif S} = 0$.\\
+\emph{Gauss m.}: $\nabla \cdot \vec{B} = 0$, $\oint_{\partial V} \vec{B} \cdot
+                \vec{\dif S} = 0$.\\
+\emph{Ampère-Maxwell}: $\nabla \times \vec{B} = \mu_0 \vec{j} + \varepsilon_0\mu_0
+                    \frac{\partial{\vec{E}}}{\partial t}$, $\oint_{\partial{S}}
+                    \vec{B} \cdot \vec{\dif l} = \mu_0 
+                    \int_S \vec{j} \cdot \vec{\dif S} + \varepsilon_0 \mu_0
+                    \frac{\dif}{\dif t} \int_S \vec{E} \cdot \vec{\dif S}$.
+
 \addtocounter{section}{1}
 \noindent\makebox[\linewidth]{\rule{\linewidth}{0.5pt}}
 
@@ -61,7 +73,8 @@
 \ci $\int \frac{1}{\sqrt{a+x^2}}\dif x = \log (\sqrt{a+x^2} + x)$. \\
 \ci $\int \frac{x}{\sqrt{a+x^2}}\dif x = \sqrt{a+x^2}$. \\
 \ci $\int \frac{1}{\sqrt{a+x^2}^3}\dif x = \frac{x}{a\sqrt{a+x^2}}$. \\
-\ci $\int \frac{x}{\sqrt{a+x^2}^3}\dif x = -\frac{1}{\sqrt{a+x^2}}$.
+\ci $\int \frac{x}{\sqrt{a+x^2}^3}\dif x = -\frac{1}{\sqrt{a+x^2}}$.\\
+\ci $\int sec \dif x = ln \lp |tan + sec| \rp$.
 
 \subsection{Canvis de variables}
 \emph{Polars a $\real^2$}: $\int_U f( x,y ) \dif x\dif y = \int_V f( r\cos\varphi, r\sin\varphi )r \dif r\dif \varphi$. \\
