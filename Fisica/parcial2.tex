@@ -1,16 +1,19 @@
-\section{Electrostàtica}
-\emph{Constants}: $k=\frac{1}{4\pi\varepsilon_0}$, $\varepsilon_0=8,854\cdot 10^{-12}$. \\
-\emph{Camp e.}: $\vec{E} = k\frac{q_\text{A}}{\|\vec{r}_{\text{AB}}\|^3}\vec{r}_{\text{AB}}$, $\vec{E}(\vec{r}) = \int_\nu \frac{k\rho(\vec{r'})}{\|\vec{r}-\vec{r'}\|^3}(\vec{r}-\vec{r'}) \dif V'$. \\
-\emph{Força (Coulomb)}: $\vec{F}_{\text{AB}} = k\frac{q_{\text{A}}q_{\text{B}}}{\|\vec{r}_{\text{AB}}\|^3}\vec{r}_{\text{AB}}=q_\text{B}\vec{E_\text{A}}$. \\
-\emph{E. potencial}: $U = k\frac{q_1q_2}{\|\vec{r}\|}$. \\
-\emph{Potencial}: $V(\vec{r}) = \int_\nu \frac{k\rho(\vec{r'})}{\|\vec{r}-\vec{r'}\|}\dif V'$; $V=-\int_{\infty}^r \|\vec{E}\| \dif r$, $V_{\infty}=0$. \\
+\section{Electrostàtica} \emph{Constants}: $k=\frac{1}{4\pi\varepsilon_0}$, $\varepsilon_0=8,854\cdot 10^{-12}$. \\ \emph{Camp e.}: $\vec{E} = k\frac{q_\text{A}}{\|\vec{r}_{\text{AB}}\|^3}\vec{r}_{\text{AB}}$, $\vec{E}(\vec{r}) = \int_\nu \frac{k\rho(\vec{r'})}{\|\vec{r}-\vec{r'}\|^3}(\vec{r}-\vec{r'}) \dif V'$. \\ \emph{Força (Coulomb)}: $\vec{F}_{\text{AB}} = k\frac{q_{\text{A}}q_{\text{B}}}{\|\vec{r}_{\text{AB}}\|^3}\vec{r}_{\text{AB}}=q_\text{B}\vec{E_\text{A}}$. \\ \emph{E. potencial}: $U = k\frac{q_1q_2}{\|\vec{r}\|}$. \\
+\emph{Potencial}: $V(\vec{r}) = \int_\nu \frac{k\rho(\vec{r'})}{\|\vec{r}-\vec{r'}\|}\dif V'$; $V=-\int_{\infty}^r \|\vec{E}\| \dif r$, $V_{\infty}=0$, $V_A -V_B = \int_A^B \|\vec{E}\| \dif r$. \\
 \ci $\vec{E}=-\nabla V$. \\
 \ci $\Delta V = \frac{\Delta U}{q_0}$. \\
 \emph{L. Gauss}: $\oint_S \vec{E}\cdot \vec{\dif S} = \frac{1}{\varepsilon_0} \int_\nu \rho \dif V = \frac{Q_\text{int}}{\varepsilon_0}$.
 
+\subsection{Dipols}
+\emph{Moment dipolar}: $\vec{P} = 2aq\vec{u}$. \\
+\emph{Potencial}: $V(\vec{r}) = k\frac{\cos \theta}{r^2}\cdot \vec{P} \approx \frac{k\vec{P}\cdot\vec{r}}{\vec{r^3}} (a \ll r)$. \\
+\emph{Camp e.}: $\vec{E} = \frac{3k\cdot (\vec{P}\cdot\vec{r})\vec{r}}{r^5} - \frac{k\vec{P}}{r^3}$. \\
+\emph{Força}: $\vec{F} = \vec{\nabla}(\vec{P}\cdot \vec{E}) = q\vec{E}$. \\
+\emph{Moment}: $\vec{M} = \vec{P}\times \vec{E}$.
+
 \subsection{Condensadors}
 \emph{Capacitat}: $C = \frac{Q}{|V_1-V_2|}$. \\
-\emph{Intensitat}: $I=C\frac{\dif V}{\dif t}$.
+\emph{Intensitat}: $I=C\frac{\dif V}{\dif t} = \frac{\dif Q}{\dif t}$.
 
 \section{Electrocinètica}
 \emph{L. Ohm}: $V=IR$. \\
@@ -22,7 +25,7 @@
 \section{Magnetostàtica}
 \emph{Camp m.}: $\vec{B} = \frac{\mu_0}{4\pi}\frac{q\cdot \vec{v}\times (\vec{r} - \vec{r'})}{\|\vec{r} -\vec{r'}\|^3}$, $\mu_0=4\pi \cdot 10^{-7}$. \\
 \emph{Força}: $\vec{F} = q \cdot\vec{v}\times\vec{B} = \vec{Il} \times \vec{B}$. \\
-\emph{L. Ampère}: $\oint_C \vec{B}\cdot \vec{\dif l} = I \mu_0$.
+\emph{L. Ampère}: $\oint_C \vec{B}\cdot \vec{\dif l} = I_{\text{int}} \mu_0$.
 
 \section{Maxwell}
 \emph{Flux}: $\Phi = \int_S \vec{B}\cdot \vec{\dif S}$. \\
