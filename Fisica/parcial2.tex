@@ -1,36 +1,59 @@
-\section{Electrostàtica} \emph{Constants}: $k=\frac{1}{4\pi\varepsilon_0}$, $\varepsilon_0=8,854\cdot 10^{-12}$. \\ \emph{Camp e.}: $\vec{E} = k\frac{q_\text{A}}{\|\vec{r}_{\text{AB}}\|^3}\vec{r}_{\text{AB}}$, $\vec{E}(\vec{r}) = \int_\nu \frac{k\rho(\vec{r'})}{\|\vec{r}-\vec{r'}\|^3}(\vec{r}-\vec{r'}) \dif V'$. \\ \emph{Força (Coulomb)}: $\vec{F}_{\text{AB}} = k\frac{q_{\text{A}}q_{\text{B}}}{\|\vec{r}_{\text{AB}}\|^3}\vec{r}_{\text{AB}}=q_\text{B}\vec{E_\text{A}}$. \\ \emph{E. potencial}: $U = k\frac{q_1q_2}{\|\vec{r}\|}$. \\
-\emph{Potencial}: $V(\vec{r}) = \int_\nu \frac{k\rho(\vec{r'})}{\|\vec{r}-\vec{r'}\|}\dif V'$; $V=-\int_{\infty}^r \|\vec{E}\| \dif r$, $V_{\infty}=0$, $V_A -V_B = \int_A^B \|\vec{E}\| \dif r$. \\
+\section{Electrostàtica} 
+\emph{Constants}: $k=\frac{1}{4\pi\varepsilon_0}$, $\varepsilon_0=8,854\cdot 10^{-12}$. \\ 
+\emph{Camp e.}: $\vec{E} = k\frac{q_\text{A}}{\|\vec{r}_{\text{AB}}\|^3}\vec{r}_{\text{AB}}$, $\vec{E}(\vec{r}) = \int_\nu \frac{k\rho(\vec{r'})}{\|\vec{r}-\vec{r'}\|^3}(\vec{r}-\vec{r'}) \dif V'$. \\ 
+\emph{Força (Coulomb)}: $\vec{F}_{\text{AB}} = k\frac{q_{\text{A}}q_{\text{B}}}{\|\vec{r}_{\text{AB}}\|^3}\vec{r}_{\text{AB}}=q_\text{B}\vec{E_\text{A}}$. \\ 
+\emph{E. potencial}: $U = k\frac{q_1q_2}{\|\vec{r}\|},\, U = \frac{1}{2}\int_\nu \rho(\vec{r})V(\vec{r})\dif V$. \\
+\emph{Potencial}: $V = k \frac{q}{r},\, V(\vec{r}) = \int_\nu \frac{k\rho(\vec{r'})}{\|\vec{r}-\vec{r'}\|}\dif V'$; $V=-\int_{\infty}^r \vec{E} \dif \vec{r}$, $V_{\infty}=0$, $V_A -V_B = \int_A^B \vec{E} \dif \vec{r}$. \\
 \ci $\vec{E}=-\nabla V$. \\
 \ci $\Delta V = \frac{\Delta U}{q_0}$. \\
-\emph{L. Gauss}: $\oint_S \vec{E}\cdot \vec{\dif S} = \frac{1}{\varepsilon_0} \int_\nu \rho \dif V = \frac{Q_\text{int}}{\varepsilon_0}$.
+\emph{Camp conservatiu}: $\oint_C \vec{E} \cdot \vec{\dif l} = 0$. \\
+\emph{L. Gauss}: $\oint_S \vec{E}\cdot \vec{\dif S} = \frac{1}{\varepsilon_0} \int_\nu \rho \dif V = \frac{Q_\text{int}}{\varepsilon_0}$.\\
+\emph{Discont. superf.}: $\boldsymbol{n} \cdot (\vec{E}_+ - \vec{E}_-) = \frac{\sigma}{\varepsilon_0}$.
 
 \subsection{Dipols}
-\emph{Moment dipolar}: $\vec{P} = 2aq\vec{u}$. \\
-\emph{Potencial}: $V(\vec{r}) = k\frac{\cos \theta}{r^2}\cdot \vec{P} \approx \frac{k\vec{P}\cdot\vec{r}}{\vec{r^3}} (a \ll r)$. \\
-\emph{Camp e.}: $\vec{E} = \frac{3k\cdot (\vec{P}\cdot\vec{r})\vec{r}}{r^5} - \frac{k\vec{P}}{r^3}$. \\
-\emph{Força}: $\vec{F} = \vec{\nabla}(\vec{P}\cdot \vec{E}) = q\vec{E}$. \\
-\emph{Moment}: $\vec{M} = \vec{P}\times \vec{E}$.
+\emph{Moment dipolar}: $\vec{p} = 2aq\vec{u}$. \\
+\emph{Potencial}: $V(\vec{r}) = k\frac{\cos \theta}{r^2}\cdot \vec{p} \approx \frac{k\vec{p}\cdot\vec{r}}{\vec{r^3}} (a \ll r)$. \\
+\emph{Camp e.}: $\vec{E} = \frac{3k\cdot (\vec{p}\cdot\vec{r})\vec{r}}{r^5} - \frac{k\vec{p}}{r^3}$. \\
+\emph{Força}: $\vec{F} = \vec{\nabla}(\vec{p}\cdot \vec{E})$. \\
+\emph{Moment}: $\vec{M} = \vec{p}\times \vec{E}$.
+
+
 
 \subsection{Condensadors}
 \emph{Capacitat}: $C = \frac{Q}{|V_1-V_2|}$. \\
 \emph{Intensitat}: $I=C\frac{\dif V}{\dif t} = \frac{\dif Q}{\dif t}$.
+%TODO formula carrega rc
 
 \section{Electrocinètica}
-\emph{L. Ohm}: $V=IR$. \\
+\emph{Conserv. càrrega}: $\frac{\dif}{\dif t} \int_\nu \rho \dif V + 
+                          \oint_{\partial V} \vec{j} \cdot \vec{\dif S} = 0$,
+                          $\frac{\partial\rho}{\partial t} + \nabla \vec{j} = 0 $.\\
+\emph{Intensitat} $I = \int_S \vec{j} \cdot \vec{\dif S}$\\
+\emph{L. Ohm}: $V=IR$, $\vec{j} = \gamma \vec{E}$\\
 \emph{Conductors}: $R = \frac{l}{S\gamma} = \frac{rl}{S}$. \\
 \emph{Conductivitat-Resistivitat}: $\gamma = \frac{1}{r}$. \\
-\emph{Potència}: $P=\frac{E}{t}=VI$. \\
+\emph{Potència}: $P=\frac{E}{t}=VI$, $P = \int_{V} \vec{j} \cdot \vec{E} \dif V$. \\
 \emph{Treball}: $W=\int_{r_1}^{r_2} F(\vec{r}) \cdot \dif \vec{r}$.
 
 \section{Magnetostàtica}
 \emph{Camp m.}: $\vec{B} = \frac{\mu_0}{4\pi}\frac{q\cdot \vec{v}\times (\vec{r} - \vec{r'})}{\|\vec{r} -\vec{r'}\|^3}$, $\mu_0=4\pi \cdot 10^{-7}$. \\
-\emph{Força}: $\vec{F} = q \cdot\vec{v}\times\vec{B} = \vec{Il} \times \vec{B}$. \\
-\emph{L. Ampère}: $\oint_C \vec{B}\cdot \vec{\dif l} = I_{\text{int}} \mu_0$.
+\emph{F. Lorentz}: $\vec{F} = q \cdot\vec{v}\times\vec{B} = \vec{Il} \times \vec{B}$. \\
 
-\section{Maxwell}
+\emph{Camp Solenoidal}
+%TODO formula camp solenoidal
+\emph{L. Ampère}: $\oint_C \vec{B}\cdot \vec{\dif l} = I_{\text{int}} \mu_0$.
+%TODO forma diferencial l. ampere
+
+\section{Inductància}
 \emph{Flux}: $\Phi = \int_S \vec{B}\cdot \vec{\dif S}$. \\
 \emph{L. Faraday}: $\varepsilon = -\frac{\dif \Phi_{\text{m}}}{\dif t}=\oint_{\partial S} \vec{E} \cdot \vec{\dif l} = -\frac{\dif}{\dif t}\int_S \vec{B} \cdot \vec{\dif S}$.
+\subsection{Bobines}
+\emph{Autoinductància}: $\varepsilon = L \frac{\dif I}{\dif t}$.\\
+\emph{Càrrega RL}: $I(t) = \frac{\varepsilon_0}{R} \lp 1 - e^{-\frac{Rt}{L}}\rp$.\\
+\emph{Energia RL}: $U = \frac{1}{2}LI^2$.
 
+\section{Maxwell}
+%TODO equacions de MAXWELL!!
 \addtocounter{section}{1}
 \noindent\makebox[\linewidth]{\rule{\linewidth}{0.5pt}}
 
