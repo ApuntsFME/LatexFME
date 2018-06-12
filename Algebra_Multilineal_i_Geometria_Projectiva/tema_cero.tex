@@ -1,9 +1,8 @@
-
 \chapter{Formas Cuadráticas}
 
 \section{Definición, matriz de una forma cuadrática y bases}
 
-\begin{defi}
+\begin{defi}[forma!bilineal simétrica]
     Sea $\E$ un $\k$-e.v. Diremos que una aplicación
     \[
         \begin{aligned}
@@ -18,7 +17,7 @@
     \end{itemize}
     $\forall u,v,u_1,u_2 \in \E$ y $\forall \lambda \in \k$.
 \end{defi}
-\begin{defi}
+\begin{defi}[forma!cuadrática]
     Sea $\phi$ una forma bilineal simétrica sobre un $\k$-e.v. $\E$.
     Diremos que la aplicación
     \[
@@ -48,7 +47,7 @@
     \end{split}
     \]
 \end{proof}
-\begin{defi}
+\begin{defi}[matriz de una forma bilineal simétrica]
     Sea $\phi$ una forma bilineal simétrica/cuadrática sobre un $\k$-e.v. $\E$ y sea
     $B = \{u_1, \cdots, u_n \}$ una base. La matriz de $\phi$ en base $B$ es
     \[
@@ -58,7 +57,7 @@
 \begin{obs}
     La matriz $M_B(\phi)$ es simétrica
 \end{obs}
-\begin{defi}
+\begin{defi}[AQUI!HI HA DUES DEFIS]
     Sea $\E$ un $\k$-e.v. y sea $\phi \colon \E \times \E \to \k$ una
     forma bilineal simétrica.
     \begin{itemize}
@@ -75,13 +74,13 @@
     Si $\phi$ es una forma bilineal simétrica y definida positiva
     entonces define un producto escalar sobre $\E$.
 \end{obs}
-\begin{defi}
+\begin{defi*}
     Dada una matriz cuadrada $A$ (dim $n$) definimos
     \[
         A_k = (a_{ij}), \quad 1 \leq i, j \leq k \quad \text{y}
         \quad \delta_k(A) = \determinant{A_k}
     \]
-\end{defi}
+\end{defi*}
 \begin{teo}[de Sylvester]
     Sea $\E$ un $\k$-e.v. de dimension $n$ y sea
     $\phi \colon \E\times \E \to \k$ una forma bilineal simétrica,
@@ -459,7 +458,7 @@
 
 \end{proof}
 \section{Clasificación afín y proyectiva}
-\begin{defi}
+\begin{defi}[forma!bilineal simétrica!afínmente equivalente]
     Sean $\E$ y $\F$ $\k$-espacios vectoriales. Sean
     \[
         \phi \colon \E \times \E \to \k,

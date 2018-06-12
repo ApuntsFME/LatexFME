@@ -892,7 +892,7 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometría af�
     \]
     de manera que la operación $\perp$ define una biyección entre $\E$ y $\E^*$ que invierte el orden de las inclusiones e intercambia $+$ y $\cap$.
 \end{ej}
-\begin{defi}[espacio dual!de $\Po\E)$]
+\begin{defi}[espacio!dual!de $\Po(\E)$]
     Sea $\Po^n=\Po\left(\E\right)$. Llamaremos espacio proyectivo dual de $\Po\left(\E\right)$ a
     \[
         \left( \Po^n \right)^* \equiv \Po\left(\E^*\right).
@@ -1422,7 +1422,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
   \]
 \end{obs}
 
-\begin{defi}[razón doble]
+\begin{defi}[razón!doble]
   Sean $q_1, q_2, q_3, q_4 \in \Po^1_\k$ con al menos 3 de ellos diferentes. Sea
   $\R$ un sistema de referencia y sean $\left( q_i \right)_\R = (x_i:y_i)$
   $\forall i=1,2,3,4$. Definimos la razón doble de $q_1,q_2,q_3,q_4$ como
@@ -1732,7 +1732,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
 
 \subsection{Completación proyectiva del espacio afín $\A^n$}
 
-\begin{defi}[AQUI!WTF]
+\begin{defi*}
   Sea $\F$ un $k$-e.v. de $\dim n$ asociado a $\A^n$ un espacio afín. Consideramos
   el espacio vectorial $\E = \k \times \F$, de manera que todo $v \in \E$ se puede 
   escribir como $v = \lp \alpha, \, \vec{\omega} \rp$, con $\alpha \in \k, \, 
@@ -1741,7 +1741,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
     \item $e_0 = \lp1, \vec{0}\rp.$
     \item Si $u \in \F, \, u = \lp 0, u \rp \in \E.$
   \end{enumerate}
-\end{defi}
+\end{defi*}
 
 \begin{obs}
   En el espacio vectorial $\E$ construido en la definición anterior,
@@ -1759,7 +1759,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
   \end{enumerate}
 \end{defi}
 
-\begin{defi}[AQUI!WTF]
+\begin{defi*}
   Fijado $p_0 \in \A^n$, definimos
    \[
      \begin{aligned}
@@ -1767,7 +1767,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
        p &\mapsto \varphi(p) \coloneqq [e_0 + \overrightarrow{p_0p}]
      \end{aligned}
    \]
-\end{defi}
+\end{defi*}
 
 %TODO aqui es pot fer un dibuix per il·lustrarho
 \begin{obs}
@@ -2099,10 +2099,12 @@ describen $\overline{V}$:
 
 \subsection{Relación entre la razón simple y la razón doble}
 
-\begin{defi}
-Sean $p_1, p_2, p_3$ puntos alineados en un espacio afín $\A$. Entonces llamamos razón
-simple de estos puntos a
-\[(p_1, p_2, p_3) = \lambda \iff \overrightarrow{p_1p_3} = \lambda \overrightarrow{p_2p_3}\]
+\begin{defi}[razón!simple]
+	Sean $p_1, p_2, p_3$ puntos alineados en un espacio afín $\A$. Entonces llamamos razón
+	simple de estos puntos a
+	\[
+		(p_1, p_2, p_3) = \lambda \iff \overrightarrow{p_1p_3} = \lambda \overrightarrow{p_2p_3}
+	\]
 \end{defi}
 
 \begin{prop}

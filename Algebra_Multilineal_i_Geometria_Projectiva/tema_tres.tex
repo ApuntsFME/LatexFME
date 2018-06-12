@@ -1,10 +1,12 @@
 \chapter{Proyectividades}
 \section{Definiciones y propiedades básicas}
 
-\begin{defi}
+\begin{defi}[proyectividad]
     \begin{enumerate}
         \item[]
-        \item Sean $\Po = \Po(\E), \overline{\Po} = \Po\left(\overline{\E}\right)$ espacios proyectivos de dimensión $n$. Sea $\varphi : \E \to \overline{\E}$ una aplicación lineal biyectiva. Una proyectividad, definida por $\varphi$, es una aplicación
+        \item Sean $\Po = \Po(\E), \overline{\Po} = \Po\left(\overline{\E}\right)$
+        espacios proyectivos de dimensión $n$. Sea $\varphi : \E \to \overline{\E}$
+        una aplicación lineal biyectiva. Una proyectividad, definida por $\varphi$, es una aplicación
         \begin{align*}
             f := [\varphi] : \Po &\to \overline{\Po} \\
             p = [v] &\mapsto f(p) = [\varphi(v)]
@@ -80,7 +82,7 @@
 \begin{proof}
     $\rho = (p_1, p_2, p_3, p_4) \implies \exists u,v \in \E$ tales que $p_1 = [u], p_2 = [v], p_3 = [u+v], p_4 = [\rho u + v] \implies f(p_1) = [\varphi(u)], f(p_2) = [\varphi(v)], f(p_3) = [\varphi(u) + \varphi(v)], f(p_4) = [\rho \varphi(u) + \varphi(v)] \implies \rho = (f(p_1), f(p_2), f(p_3), f(p_4))$.
 \end{proof}
-\begin{defi}
+\begin{defi}[matriz de una proyectividad]
     Sean $\Po(\E)$ y $\Po\left( \overline{\E} \right)$ espacios proyectivos, sea $f \colon \Po \to \overline{\Po}$ una proyectividad y sean $B$ y $\overline{B}$ bases de $\E$ y $\overline{\E}$ asociadas a $\R$ y a $\overline{\R}$ respectivamente. Definimos la matriz de una $f$ como $M_{\R, \overline{\R}} (f) := M_{B, \overline{B}}(\varphi)$.
 \end{defi}
 \begin{obs}
@@ -125,7 +127,7 @@ $M_{\R, \overline{\R}} (f)$ está definida salvo multiplicar por $\lambda \neq 0
 
 \section{Caracterización geométrica de las proyectividades}
 
-\begin{defi}
+\begin{defi}[AQUI!HI HA DUES DEFIS]
     $h : \Po \to \overline{\Po}$ (no necesariamente dim $\Po$ = dim $\overline{\Po}$)
     \begin{enumerate}
         \item $h$ es colineación $\iff \forall p_1, p_2, p_3 \in \Po$ diferentes dos a dos y alineados, $h(p_1), h(p_2), h(p_3) \in \overline{\Po}$ son diferentes dos a dos y están alineados.
@@ -284,7 +286,7 @@ $M_{\R, \overline{\R}} (f)$ está definida salvo multiplicar por $\lambda \neq 0
 \begin{proof}
     Es un caso particular $\lp n = m \rp$ la proposición \ref{prop:demo_teo2}.
 \end{proof}
-\begin{defi}
+\begin{defi}[perspectividad]
     Sean $V_1, V_2 \subseteq \Po^n$ variedades proyectivas de dimesión $d$. Sea $W$ una variedad suplementaria de $V_1$ y $V_2$. La perspectividad de centro $W$ de $V_1$ a $V_2$ es:
     \begin{align*}
         f : V_1 &\to V_2 \\
@@ -349,7 +351,7 @@ $M_{\R, \overline{\R}} (f)$ está definida salvo multiplicar por $\lambda \neq 0
     \[ f = [\varphi] : \Po^1_\cx \to \Po^1_\cx, \]
     $f$ no es una proyectividad, pero $f$ es una colineación.
 \end{example}
-\begin{defi}
+\begin{defi}[automorfismo]
     Sea $\k$ un cuerpo. Un automorfismo de $\k$ es:
     \[ \sigma : \k \to \k \text{ biyectiva} \]
     tal que:
@@ -371,7 +373,7 @@ $M_{\R, \overline{\R}} (f)$ está definida salvo multiplicar por $\lambda \neq 0
 \begin{ej}
     $\sigma : \real \to \real$ automorfismo $\implies \sigma = \Id$.
 \end{ej}
-\begin{defi}
+\begin{defi}[AQUI!semilineal]
     Sea $\E$ un $\k$ espacio vectorial, $\varphi : \E \to \E$ es semilineal si y solo si
     \begin{enumerate}[(1)]
         \item $\forall u_1, u_2, \; \varphi \lp v_1 + u_2 \rp = \varphi \lp u_1 \rp + \varphi \lp u_2 \rp$
@@ -592,7 +594,7 @@ el siguiente lema que resultará de utilidad.
 
 \subsection{Clasificación de homografías}
 
-\begin{defi}
+\begin{defi}[AQUI!WTF]
     Sean $f, g : \Po \to \Po$ homografías $\lp f = [\varphi], g = [\psi], \varphi, \psi : \E \to \E \text{ endomorfismos}\rp.$ Decimos que $f \sim g$ si y solo si (son equivalentes):
     \begin{enumerate}[(i)]
         \item $\exists h$ homografía $\tq g = \inv{h}fh$
@@ -646,7 +648,7 @@ el siguiente lema que resultará de utilidad.
 
 \subsection{Homografía dual y variedades $f$-invariantes}
 
-\begin{defi}
+\begin{defi}[homografía dual]
     En $\Po = \Po \lp\E\rp$, sea $f = [\varphi] : \Po \to \Po$ una homografía, la homografía dual de $f$ es
     \[
         f^* := [\varphi^*] : \Po^* \to \Po^*.
@@ -663,7 +665,7 @@ el siguiente lema que resultará de utilidad.
             \end{itemize}
     \end{enumerate}
 \end{obs}
-\begin{defi}
+\begin{defi}[AQUI!HI HA DUES DEFIS]
     Sea $f = [\varphi]: \Po \to \Po$ homografía,
     \begin{enumerate}
         \item $p \in \Po$ es un punto fijo de $f \iff f\lp p \rp = p$.
@@ -769,10 +771,10 @@ el siguiente lema que resultará de utilidad.
 
 \subsubsection{Involuciones}
 
-\begin{defi}
+\begin{defi*}
     Sea $f \colon \Po \to \Po$ una homografía,
     \[ f\text{ es una involución} \iff f \neq \Id, f^2 = \Id \]
-\end{defi}
+\end{defi*}
 \begin{obs}
     \[
         f = [\varphi]\text{ es involución} \iff
@@ -962,7 +964,7 @@ el siguiente lema que resultará de utilidad.
 
 \subsubsection{Homologías}
 
-\begin{defi}
+\begin{defi}[AQUI!HI HA DUES DEFIS]
     Sea $f \colon \Po \to \Po$ una homografía $\lp f \neq \Id \rp$
     \begin{itemize}
         \item $f$ es una homología $\iff f$ tiene un hiperplano de puntos fijos.
@@ -1109,7 +1111,7 @@ Posibles formas de Jordan:
     \begin{gather*}
     f\text{ biyectiva} \leftrightarrow \det A \ne 0 \leftrightarrow \det \overline{A} \ne 0 \leftrightarrow \overline{A} \text{ invertible}
     \end{gather*}
-    \begin{defi}
+    \begin{defi}[proyectividad asociada a $f$]
         Llamaremos proyectividad asociada a $f$ a una $\overline{f} \tq$:
         \begin{gather*}
             \overline{f} \colon \overline{\A^n} = \Po^n \mapsto \overline{\A^n} = \Po^n \\
@@ -1202,7 +1204,7 @@ Sea $g: \Po^n \to \Po^n$ una proyectividad, sea $\overline{A}=M_{\overline{\R}}\
                 \end{array} \rp
         \end{gather*}
     \end{minipage}\\
-    \begin{defi}
+    \begin{defi}[afinidad inducida por $g$]
         Llamaremos $g_\text{af} : \A^n \to \A^n$ a la afinidad inducida por $g$ en $\A^n = \Po^n\setminus H$ y tenemos que:
         \begin{gather*}
             M_\R \lp g_\text{af}\rp =
