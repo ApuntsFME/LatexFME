@@ -8,7 +8,7 @@
 
 \section{Espacio dual}
 
-\begin{defi}[Espacio dual]
+\begin{defi}[espacio!dual]
     Sea $\E$ un $\k$-ev. Definimos el espacio dual de $\E$ como
     $\E^* = \{ \phi : \E \to \k \text{ lineales} \}$ (también es un
     $\k$-espacio vectorial).
@@ -16,7 +16,7 @@
 \begin{obs}
     Para definir $\E^*$ tenemos que usar bases de $\E$.
 \end{obs}
-\begin{defi}[Base dual]
+\begin{defi}[base dual]
     Si $B = \{ u_1,\cdots, u_n \}$ es una base de $\E$ ($\k$-ev.)
     definimos
     \[
@@ -107,7 +107,7 @@
 
 \section{Tensores}
 
-\begin{defi}[Tensor]
+\begin{defi}[tensor]
     Sean $\E_1,\cdots , \E_r$ $\k$-ev. Diremos que
     $f \colon \E_1 \times \cdots \times \E_r \to \k$ es un tensor (o una aplicación
     multilineal) si $\forall i=1,\cdots , r$ y $\forall v_j \in \E_j$ ($i \neq j$)
@@ -120,7 +120,7 @@
     \]
     es una aplicación lineal.
 \end{defi}
-\begin{defi}[Tensor de tipo $(p,q)$]
+\begin{defi}[tensor!de tipo $(p,q)$]
     Sea $\E$ un $\k$-ev. Llamaremos tensor de tipo $(p,q)$ (o tensor p veces
     covariante y q veces contravariante) (o tensor p-covariante y q-contravariante)
     a un tensor
@@ -170,7 +170,7 @@
     \end{aligned}
     \]
 \end{prop}
-\begin{defi}[Producto tensorial]
+\begin{defi}[producto!tensorial]
     Dados $f \in T_p^q(\E)$ y $g \in T_{p'}^{q'}(\E)$, definimos el producto
     tensorial de $f$ y $g$ como
     \[
@@ -453,13 +453,13 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
 
 \section{Tensores simétricos y antisimétricos}
 
-\begin{defi}
+\begin{defi*}
     Sea $\E$ un $\k$-ev. de dimensión $n$, sea $f \in T_p(\E)$ y $s \in\mathcal{S}_p$,
     entonces, definimos $(\underline{s}f) \in T_p(\E)$ como
     \[
         (\underline{s}f)(v_1, \cdots, v_p) = f(v_{s(1)}, \cdots, v_{s(p)})
     \]
-\end{defi}
+\end{defi*}
 \begin{example}
     Sea $\E = \real^4$, $B = \setb{e_1, e_2, e_3, e_4}$, $f = e_1^* \otimes e_2^*
     \otimes e_3^* \in T_3(\E)$ y $s = (1,2,3) \in \mathcal{S}_3$, entonces
@@ -517,21 +517,18 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
     e_3^\ast \qquad \underline{s}f = 3e_2^\ast \otimes e_1^\ast + 5e_1^\ast \otimes e_1^\ast
     + 5e_3^\ast \otimes e_2^\ast\]
 \end{example}
-\begin{defi}[Tensores sim\'etricos y antisim\'etricos]
-    Sea $\E$ un $\k$-ev. de $\dim n$. Sea $f \in T_p(\E)$.
-    \begin{enumerate}
-        \item
-            $f$ es simétrica $\iff \forall s \in \mathcal{S}_p \quad \underline{s}f = f$
-
-        \item
-            $f$ es antisimétrica $\iff \forall s \in \mathcal{S}_p \quad \underline{s}f
-            = \varepsilon (s) f$
-
-        \item
-            $S_p(\E) = \setb{f \in T_p(\E) \mid f \text{ simétrica}} \subseteq T_p(\E)$\\
-            $A_p(\E) = \setb{f \in T_p(\E) \mid f \text{ antisimétrica}} \subseteq T_P(\E)$
-
-    \end{enumerate}
+\begin{defi}[tensor!simétrico]
+    Sea $\E$ un $\k$-ev. de $\dim n$. Sea $f \in T_p(\E)$. $f$ es simétrica $\iff \forall s \in \mathcal{S}_p,\, \underline{s}f = f$ y
+    \[
+		S_p(\E) = \setb{f \in T_p(\E) \mid f \text{ simétrica}} \subseteq T_p(\E).
+    \]
+\end{defi}
+\begin{defi}[tensor!antisimétrico]
+	Sea $\E$ un $\k$-ev. de $\dim n$. Sea $f \in T_p(\E)$. $f$ es antisimétrica $\iff \forall s \in \mathcal{S}_p,\, \underline{s}f
+            = \varepsilon (s) f$ y 
+	\[
+		A_p(\E) = \setb{f \in T_p(\E) \mid f \text{ antisimétrica}} \subseteq T_P(\E).
+	\]
 \end{defi}
 \begin{obs}
     $S_p(\E), A_p(\E) \subseteq T_p(\E)$ son s.e-v. (ver observación \ref{obs_1.6.1}).
@@ -713,7 +710,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
     Como $f$ es multilineal ($\implies f \in T_n(\E)$), $f$ es antisimétrico
     por la proposición \ref{prop:sim_comp}.
 \end{example}
-\begin{defi}[Simetrizado de un tensor]
+\begin{defi}[simetrizado de un tensor]
     Sea $\E$ un $\k$-ev. con $\car \k = 0$ y $f \in T_p(\E)$. Llamamos simetrizado de $f$ a
     \[
         S(f) = \frac{1}{p!}\sum_{s \in \mathcal{S}_p} \underline{s}f
@@ -822,7 +819,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
 \begin{obs}
     Lo haremos en $T_p(\E)$, análogamente se hará en $T^q(\E)$.
 \end{obs}
-\begin{defi}[Producto exterior de orden 1] \label{pr_ext}
+\begin{defi}[producto!exterior de orden 1] \label{pr_ext}
     Sea $\E$ un $\k$-e.v.; $\omega_1, \dots, \omega_p \in T_1(\E) = \E$, el producto exterior de orden 1 es:
     \[
         \omega_1 \wedge \dots \wedge \omega_p = p! A(\omega_1 \otimes \dots \otimes \omega_p)
@@ -1037,7 +1034,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
     \wedge \cdots \wedge e_{i_p} \right\}_{1 \leq i_1 < \cdots < i_p \leq n}$ si $B=\left\{e_i, \dots , e_n\right\}$ es base de $\E$.
 \end{obs}
 
-\begin{defi}[Producto exterior]
+\begin{defi}[producto!exterior]
     Sea $\E$ un $\k$-ev. y sean $f \in A_p(\E)$ y $g \in A_q(\E)$. Definimos el
     producto exterior de $f$ y $g$ como
     \[

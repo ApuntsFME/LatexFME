@@ -8,15 +8,16 @@
 \usepackage[shortlabels]{enumitem}
 \usepackage[spanish,es-lcroman]{babel}
 
-\usepackage[xindy]{imakeidx}
+\usepackage{makeidx}
+%\usepackage[xindy]{imakeidx}
 % GUARRADA PARA QUE EL INDICE QUEDE BONITO
-\makeatletter
-% Global redefinition of indexentry to use section, then page%
-\renewcommand{\imki@wrindexentrysplit}[3]{%
- \expandafter\protected@write\csname#1@idxfile\endcsname{}%
-    {\string\indexentry{#2}{\arabic{section}.\arabic{subsection},p\thepage}}%
-}%
-\makeatother
+%\makeatletter
+%% Global redefinition of indexentry to use section, then page%
+%\renewcommand{\imki@wrindexentrysplit}[3]{%
+% \expandafter\protected@write\csname#1@idxfile\endcsname{}%
+%    {\string\indexentry{#2}{\arabic{section}.\arabic{subsection},p\thepage}}%
+%}%
+%\makeatother
 
 \newmdenv[leftline=false,topline=false]{topright}
 \let\proof\relax
@@ -133,7 +134,7 @@
 {5pt plus 1pt minus 1pt}% Space after thm head: \newline = linebreak
 {\thmname{#1}\thmnumber{ #2}.\thmnote{ {\it #3.}}}%         Thm head spec
 
-\newtheoremstyle{demos}% name
+\newtheoremstyle{autodefi}% name
 {}%         Space above, empty = `usual value'
 {}%         Space below
 {}% Body font
@@ -141,7 +142,7 @@
 {\bfseries}% Thm head font
 {}%        Punctuation after thm head
 {5pt plus 1pt minus 1pt}% Space after thm head: \newline = linebreak
-{\index{#3}\thmname{#1}\thmnumber{ #2}.\thmnote{ {\it #3.}}}%         Thm head spec
+{\index{#3 (\ref{defi:#2})}\label{defi:#2}\thmname{#1}\thmnumber{ #2}.}%         Thm head spec
 
 
 % Normal
@@ -151,8 +152,8 @@
 \declaretheorem[style=normal,name=Observación,numbered=no]{obs*}
 \declaretheorem[style=normal,name=Proposición,sibling=lema]{prop}
 \declaretheorem[style=normal,name=Proposición,numbered=no]{prop*}
-\declaretheorem[style=demos,name=Definición,sibling=lema]{defi}
-\declaretheorem[style=demos,name=Definición,numbered=no]{defi*}
+\declaretheorem[style=autodefi,name=Definición,sibling=lema]{defi}
+\declaretheorem[style=normal,name=Definición,numbered=no]{defi*}
 \declaretheorem[style=normal,name=Corolario,sibling=lema]{col}
 \declaretheorem[style=normal,name=Corolario,numbered=no]{col*}
 \declaretheorem[style=normal,name=Ejercicio,sibling=lema]{ej}
@@ -170,4 +171,4 @@
 \declaretheorem[style=breakthm,name=Teorema,sibling=lema]{teo}
 \declaretheorem[style=breakthm,name=Lema,numberwithin=section]{teolema}
 
-\makeindex[options=-M sectionindex_sectionpage.xdy]
+\makeindex

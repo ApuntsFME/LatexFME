@@ -92,7 +92,7 @@ Veremos que la solucion para \ref{item:prob_r1} y \ref{item:prob_r2} consistirá
 en añadir puntos en el $\infty$.
 
 \section{Definición y caracterizaciones del espacio proyectivo}
-\begin{defi}
+\begin{defi}[espacio!proyectivo]
     Sea $\k$ un cuerpo, $\E$ un $\k$-e.v. de $\dim n+1$. El espacio proyectivo asociado a $\E$ es
     \[\Po (\E) = \setb{\text{s.e.v. de } \dim 1 \text{ de } \E}\]
     Diremos que $\Po (\E)$ tiene dimensión $n$.
@@ -101,7 +101,7 @@ en añadir puntos en el $\infty$.
     Se cumple $\Po (\E) = (\E \setminus \setb{0}) / \sim$, donde $v \sim v'  \iff \exists \lambda \neq 0, \ v' = \lambda v$ para
     $v, v' \in \E \setminus \setb{0}$.
 \end{obs}
-\begin{defi}
+\begin{defi*}
     Tenemos la siguiente aplicación $\pi$ dada por el paso al cociente.
     \[
     \begin{aligned}
@@ -110,8 +110,8 @@ en añadir puntos en el $\infty$.
     \setb{\text{s.e.v. de } \dim 1 \text{ de } \E} &\leftrightarrow [v]
     \end{aligned}
     \]
-\end{defi}
-\begin{defi}
+\end{defi*}
+\begin{defi}[punto!de $\Po (\E)$]
     A los elementos de $\Po (\E)$ los llamaremos puntos de $\Po (\E)$.
     \[p = \pi(v) = [v]\]
 \end{defi}
@@ -415,7 +415,7 @@ en añadir puntos en el $\infty$.
 
 \section{Variedades lineales proyectivas}
 
-\begin{defi}
+\begin{defi}[variedad lineal!proyectiva]
     Sea $\E$ un $\k$-e.v. de dimensión $n+1$, sea $\Po^n = \Po(\E)$.
     Llamaremos variedad lineal (proyectiva) de dimensión $r$ a cualquier conjunto
     de la forma:
@@ -433,14 +433,14 @@ en añadir puntos en el $\infty$.
         \item $\emptyset = \pi({\emptyset_{\E}})$ es una variedad lineal de dimensión $-1$.
     \end{itemize}
 \end{example}
-\begin{defi}
+\begin{defi*}
     \begin{itemize}
         \item []
         \item $\dim V = 1 \longrightarrow$ Recta
         \item $\dim V = 2 \longrightarrow$ Plano
         \item $\dim V = n-1 \longrightarrow$ Hiperplano
     \end{itemize}
-\end{defi}
+\end{defi*}
 \begin{lema}
     $V = \pi(H\setminus\setb{0}) \iff H \setminus \setb{0} = \pi^{-1}(V)$
 \end{lema}
@@ -481,7 +481,7 @@ en añadir puntos en el $\infty$.
     \end{gather*}
     El resto sigue de lo que sabemos de s.e.v.s.
 \end{proof}
-\begin{defi}
+\begin{defi}[join]
     Sean $V_1, V_2 \subseteq \Po^n$ variedades lineales, $V_i = \pi (H_i)$, definimos \textit{join} o variedad lineal generada como:
     \[
     V_1 \vee V_2 = \pi (H_1 + H_2)
@@ -555,7 +555,7 @@ en añadir puntos en el $\infty$.
 \begin{proof}
     Fórmula de Grassmann.
 \end{proof}
-\begin{defi}
+\begin{defi}[variedad lineal!suplementaria]
     Sean $V_1, V_2 \subseteq \Po^n, (V_i = \pi \left( H_i \right)$ variedades lineales, $V_1$ y $V_2$ son suplementarias $\iff H_1$ y $H_2$
     son complementarios.
 \end{defi}
@@ -583,7 +583,7 @@ en añadir puntos en el $\infty$.
         \item Fórmula de Grassmann.
     \end{enumerate}
 \end{proof}
-\begin{defi}
+\begin{defi}[punto!linealmente independiente]
     Sea $\Po^n = \real(\E )$, y sean $p_0, \dots, p_m \in \Po^n$ tal que $p_i = [v_i], v_i \in \E$, decimos que $p_0, \dots,
     p_m$ son linealmente independientes (l.i.) $\iff v_0, \dots, v_m \in \E$ son linealmente independientes.
 \end{defi}
@@ -606,7 +606,7 @@ en añadir puntos en el $\infty$.
 \begin{proof}
     Inmediata a partir de propiedades de s.e.v..
 \end{proof}
-\begin{defi}
+\begin{defi}[punto!en posición general]
     $p_0, \dots, p_r \in \Po^n (r \geq n)$ están en posición general $\iff n+1$ puntos cualesquiera de ellos son l.i..
 \end{defi}
 
@@ -624,22 +624,21 @@ en añadir puntos en el $\infty$.
     \end{tabular} \end{center}
     Vemos que las coordenadas estarían definidas salvor por multiplicar por $\lambda$.
 \end{obs}
-\begin{defi}
-    $\Po^n = \Po(\E)$
-    \begin{enumerate}
-        \item Un sistema de referencia proyectivo en $\Po^n$ es:
-            \[ R= \{ p_0, \dots, p_n; \overline{p} \} \]
-            Donde $p_0, \dots, p_n, \overline{p}$ están en posición general.
-            \begin{itemize}
-                \item $\{ p_0, \dots, p_n \}$ son los vertices de $R$
-                \item $\overline{p}$ es el punto unidad
-            \end{itemize}
-        \item Fijado un sistema de referencia $R$. Sea $B = \{ u_0, \dots, u_n \}$ base de $\E$. Diremos que $B$ está adaptada a $R$ si y solo si:
-            \[ \begin{cases} p_i = [u_i], \forall i = 0, \dots, n \\ \overline{p} = [u_0 + \dots + u_n ] \end{cases} \]
-        \item \textit{Asignación de coordenadas proyectivas} \\
-            $\Po^n = \Po(\E)$, Sea $R = \{ p_0, \dots, p_n; \overline{p} \}$, y $B = \{u_0, \dots, u_n\}$ una base adaptada. Sea $q \in \Po^n, q = [v]$, entonces
-            $q_R = v_B$. (Hace falta ver que la definición es consistente)
-    \end{enumerate}
+\begin{defi}[sistema de referencia proyectivo]
+    Sea $\Po^n = \Po(\E)$.Un sistema de referencia proyectivo en $\Po^n$ es:
+        \[ R= \{ p_0, \dots, p_n; \overline{p} \} \]
+    Donde $p_0, \dots, p_n, \overline{p}$ están en posición general.
+        \begin{itemize}
+            \item $\{ p_0, \dots, p_n \}$ son los vertices de $R$
+            \item $\overline{p}$ es el punto unidad
+        \end{itemize}
+\end{defi}
+\begin{defi}[base dual!adaptada a $R$]
+    Sea $\Po^n = \Po(\E)$. Fijado un sistema de referencia $R$. Sea $B = \{ u_0, \dots, u_n \}$ base de $\E$. Diremos que $B$ está adaptada a $R$ si y solo si:
+        \[ \begin{cases} p_i = [u_i], \forall i = 0, \dots, n \\ \overline{p} = [u_0 + \dots + u_n ] \end{cases} \]
+    \textit{Asignación de coordenadas proyectivas} \\
+        $\Po^n = \Po(\E)$, Sea $R = \{ p_0, \dots, p_n; \overline{p} \}$, y $B = \{u_0, \dots, u_n\}$ una base adaptada. Sea $q \in \Po^n, q = [v]$, entonces
+        $q_R = v_B$. (Hace falta ver que la definición es consistente)
 \end{defi}
 \begin{prop}
     Sea $R$ un sistema de referencia en $\Po^n$. Sean $B_1 = \{ u_0, \dots, u_n\}, B_2 = \{ u'_0, \dots u'_n \}$ bases adaptadas a $R$. Sea $q = [v] \in \Po^n$,
@@ -893,7 +892,7 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometría af�
     \]
     de manera que la operación $\perp$ define una biyección entre $\E$ y $\E^*$ que invierte el orden de las inclusiones e intercambia $+$ y $\cap$.
 \end{ej}
-\begin{defi}
+\begin{defi}[espacio dual!de $\Po\E)$]
     Sea $\Po^n=\Po\left(\E\right)$. Llamaremos espacio proyectivo dual de $\Po\left(\E\right)$ a
     \[
         \left( \Po^n \right)^* \equiv \Po\left(\E^*\right).
@@ -906,7 +905,7 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometría af�
         \item $\left( \left( \Po ^n \right)^* \right) ^* = \Po^n. $
     \end{enumerate}
 \end{obs}
-\begin{defi}
+\begin{defi}[variedad lineal!dual]
     Sea $\F\subseteq \E$ y sea $V=\pi\left(\F\right)\subseteq\Po^n$ una variedad lineal de $\dim m$. Entonces, se define la variedad lineal dual de $V$ como
     \[
         V^* \equiv \pi \left( \F^\perp\right) \subseteq \left( \Po^n \right)^*.
@@ -954,12 +953,11 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometría af�
     \underline{Conclusión}: los hiperplanos de $\Po^n$ son (\textit{están en biyección con}) un espacio proyectivo de $\dim n$.
 \end{obs}
 
-\begin{defi}
-    Sean $H_0, \dots, H_m$ hiperplanos de $\Po^n$.
-    \begin{enumerate}[(i)]
-        \item $H_0, \dots, H_m$ son l.i. $\iff H_0^*, \dots, H_m^*$ son l.i.
-        \item $H_0, \dots, H_m$ están en posición general $\iff H_0^*, \dots, H_m^*$ están en posición general.
-    \end{enumerate}
+\begin{defi}[hiperplano!linealmente independiente]
+    Sean $H_0, \dots, H_m$ hiperplanos de $\Po^n$. $H_0, \dots, H_m$ son linealmente independientes $\iff H_0^*, \dots, H_m^*$ son linealmente independientes.
+\end{defi}
+\begin{defi}[hiperplano!en posición general]
+    Sean $H_0, \dots, H_m$ hiperplanos de $\Po^n$. $H_0, \dots, H_m$ están en posición general $\iff H_0^*, \dots, H_m^*$ están en posición general.
 \end{defi}
 
 \begin{prop}
@@ -974,7 +972,7 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometría af�
     = \dim(H_0 \cap \cdots \cap H_m)$
 \end{proof}
 
-\begin{defi}
+\begin{defi}[haz de hiperplanos]
     Una recta (o haz) de hiperplanos en $\Po^n$ es la colección de hiperplanos que contienen a una variedad
     fijada $V$ de dimensión $n-2$.
 \end{defi}
@@ -1097,7 +1095,7 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometría af�
 \]
 \end{example}
 
-\begin{defi}
+\begin{defi}[referencia dual de una base]
 Sea $\mathcal{R} = \setb{p_0,\dots,p_n;\overline{p}}$ una referencia de $\Po^n$, sea
 $B = \setb{u_0,\dots,u_n}$ una base adaptada y sea $B^* = \setb{u_0^*,\dots,u_n^*}$
 su base dual. Entonces, llamamos referencia dual de $\mathcal{R}$ a
@@ -1399,10 +1397,10 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
 
 \section{Coordenadas absolutas. Razón doble}
 
-\begin{defi}
+\begin{defi}[coordenadas absolutas]
   Sea $\R = \setb{p_0,p_1;\overline{p}}$ un sistema de referencia de $\Po^1_\k$ y
   sea $q \in \Po^1_k$ con $q_\R = (x_0,x_1)$ las coordenadas de $q$ en la
-  referencia $\R$. Definimos las coordenas absolutas de $q$ como
+  referencia $\R$. Definimos las coordenadas absolutas de $q$ como
   \[
     \alpha = \frac{x_0}{x_1} \in k \cup \setb{\infty}
   \]
@@ -1424,7 +1422,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
   \]
 \end{obs}
 
-\begin{defi}
+\begin{defi}[razón doble]
   Sean $q_1, q_2, q_3, q_4 \in \Po^1_\k$ con al menos 3 de ellos diferentes. Sea
   $\R$ un sistema de referencia y sean $\left( q_i \right)_\R = (x_i:y_i)$
   $\forall i=1,2,3,4$. Definimos la razón doble de $q_1,q_2,q_3,q_4$ como
@@ -1533,7 +1531,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
 
 \end{prop}
 
-\begin{defi}
+\begin{defi}[AQUI!HI HA DUES DEFIS]
  Sean $V,r \subseteq \Po^n$ dos variedades suplementarias con $\dim r = 1$ ($\implies \dim V = n-2$).
  Entonces, definimos la proyección desde $V$ como
  \[
@@ -1620,7 +1618,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
  \]
 \end{obs}
 
-\begin{defi}
+\begin{defi}[cuaterna armónica]
  Sean $p_1,p_2,p_3,p_4 \in \Po^n$ diferentes dos a dos. Entonces $\setb{p_1,p_2,p_3,p_4}$ forman
  una cuaterna armónica si y solo si
  \[
@@ -1734,7 +1732,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
 
 \subsection{Completación proyectiva del espacio afín $\A^n$}
 
-\begin{defi}
+\begin{defi}[AQUI!WTF]
   Sea $\F$ un $k$-e.v. de $\dim n$ asociado a $\A^n$ un espacio afín. Consideramos
   el espacio vectorial $\E = \k \times \F$, de manera que todo $v \in \E$ se puede 
   escribir como $v = \lp \alpha, \, \vec{\omega} \rp$, con $\alpha \in \k, \, 
@@ -1752,7 +1750,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
   tenemos $E = [e_0] \oplus \F$.
 \end{obs}
 
-\begin{defi}
+\begin{defi}[AQUI!HI HA DUES DEFIS]
   Con las mismas hipótesis y con el mismo espacio $\E$ que en la última definición,
   \begin{enumerate}[i)]
     \item $\Po^n = \Po (\E) = \overline{\A^n}$ es la completación proyectiva
@@ -1761,7 +1759,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
   \end{enumerate}
 \end{defi}
 
-\begin{defi}
+\begin{defi}[AQUI!WTF]
   Fijado $p_0 \in \A^n$, definimos
    \[
      \begin{aligned}
@@ -1818,7 +1816,7 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
 Veamos ahora como se comporta la completación proyectiva de un espaci afín
 al usar coordenadas.
 
-\begin{defi}
+\begin{defi}[proyectivizado de un sistema de referencia]
   Sea $\R = \left \{p;u_1, \dots, u_n \right \}$ un sistema de referencia en
   $\A^n$. Llamaremos el proyectivizado de $\R$ a
   \[
@@ -1865,7 +1863,7 @@ En lo que concierne a este apartado, diremos que $V \subseteq \A^n$ es una varie
 lineal afín $V = p+G$, $G \subseteq \F$ s.e.v de $\F$, siendo $\F$ el espacio vectorial
 asociado a $\A^n$.
 
-\begin{defi}
+\begin{defi}[AQUI!HI HA DUES DEFIS]
   \begin{enumerate}[i)]
     \item[]
     \item $V_\infty = \pi(G) \subseteq \Po^n = \overline{\A^n}$
