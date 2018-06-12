@@ -10,4 +10,7 @@
 *.directory
 *.pdf
 *~
+*.idx
+*.ind
+*.ilg
 .Rhistory

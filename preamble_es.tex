@@ -8,6 +8,8 @@
 \usepackage[shortlabels]{enumitem}
 \usepackage[spanish,es-lcroman]{babel}
 
+\usepackage{makeidx}
+
 \newmdenv[leftline=false,topline=false]{topright}
 \let\proof\relax
 \usetikzlibrary{positioning,arrows, calc, babel}
@@ -123,6 +125,17 @@
 {5pt plus 1pt minus 1pt}% Space after thm head: \newline = linebreak
 {\thmname{#1}\thmnumber{ #2}.\thmnote{ {\it #3.}}}%         Thm head spec
 
+\newtheoremstyle{demos}% name
+{}%         Space above, empty = `usual value'
+{}%         Space below
+{}% Body font
+{}%         Indent amount (empty = no indent, \parindent = para indent)
+{\bfseries}% Thm head font
+{}%        Punctuation after thm head
+{5pt plus 1pt minus 1pt}% Space after thm head: \newline = linebreak
+{\index{#3}\thmname{#1}\thmnumber{ #2}.\thmnote{ {\it #3.}}}%         Thm head spec
+
+
 % Normal
 \declaretheorem[style=normal,name=Lema,numberwithin=section]{lema}
 \declaretheorem[style=normal,name=Lema,numbered=no]{lema*}
@@ -130,8 +143,8 @@
 \declaretheorem[style=normal,name=Observación,numbered=no]{obs*}
 \declaretheorem[style=normal,name=Proposición,sibling=lema]{prop}
 \declaretheorem[style=normal,name=Proposición,numbered=no]{prop*}
-\declaretheorem[style=normal,name=Definición,sibling=lema]{defi}
-\declaretheorem[style=normal,name=Definición,numbered=no]{defi*}
+\declaretheorem[style=demos,name=Definición,sibling=lema]{defi}
+\declaretheorem[style=demos,name=Definición,numbered=no]{defi*}
 \declaretheorem[style=normal,name=Corolario,sibling=lema]{col}
 \declaretheorem[style=normal,name=Corolario,numbered=no]{col*}
 \declaretheorem[style=normal,name=Ejercicio,sibling=lema]{ej}
@@ -148,3 +161,5 @@
 % Breakthm
 \declaretheorem[style=breakthm,name=Teorema,sibling=lema]{teo}
 \declaretheorem[style=breakthm,name=Lema,numberwithin=section]{teolema}
+
+\makeindex
