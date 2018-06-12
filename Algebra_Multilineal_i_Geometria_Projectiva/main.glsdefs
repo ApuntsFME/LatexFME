@@ -1,0 +1,2040 @@
+\ifglsentryexists{0.1.1}{}%
+{%
+\gls@defglossaryentry{0.1.1}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 0.1.1},%
+firstplural={, 0.1.1s},%
+text={, 0.1.1},%
+plural={, 0.1.1s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{0.1.2}{}%
+{%
+\gls@defglossaryentry{0.1.2}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 0.1.2},%
+firstplural={, 0.1.2s},%
+text={, 0.1.2},%
+plural={, 0.1.2s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{0.1.5}{}%
+{%
+\gls@defglossaryentry{0.1.5}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 0.1.5},%
+firstplural={, 0.1.5s},%
+text={, 0.1.5},%
+plural={, 0.1.5s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{0.1.7}{}%
+{%
+\gls@defglossaryentry{0.1.7}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 0.1.7},%
+firstplural={, 0.1.7s},%
+text={, 0.1.7},%
+plural={, 0.1.7s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{0.1.9}{}%
+{%
+\gls@defglossaryentry{0.1.9}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 0.1.9},%
+firstplural={, 0.1.9s},%
+text={, 0.1.9},%
+plural={, 0.1.9s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{0.2.1}{}%
+{%
+\gls@defglossaryentry{0.2.1}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 0.2.1},%
+firstplural={, 0.2.1s},%
+text={, 0.2.1},%
+plural={, 0.2.1s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{1.1.1}{}%
+{%
+\gls@defglossaryentry{1.1.1}%
+{%
+name={Espacio dual, \csname thedefi\endcsname },%
+sort={Espacio dual, \csname thedefi\endcsname },%
+type={main},%
+first={Espacio dual, 1.1.1},%
+firstplural={Espacio dual, 1.1.1s},%
+text={Espacio dual, 1.1.1},%
+plural={Espacio dual, 1.1.1s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{1.1.3}{}%
+{%
+\gls@defglossaryentry{1.1.3}%
+{%
+name={Base dual, \csname thedefi\endcsname },%
+sort={Base dual, \csname thedefi\endcsname },%
+type={main},%
+first={Base dual, 1.1.3},%
+firstplural={Base dual, 1.1.3s},%
+text={Base dual, 1.1.3},%
+plural={Base dual, 1.1.3s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{1.2.1}{}%
+{%
+\gls@defglossaryentry{1.2.1}%
+{%
+name={Tensor, \csname thedefi\endcsname },%
+sort={Tensor, \csname thedefi\endcsname },%
+type={main},%
+first={Tensor, 1.2.1},%
+firstplural={Tensor, 1.2.1s},%
+text={Tensor, 1.2.1},%
+plural={Tensor, 1.2.1s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{1.2.2}{}%
+{%
+\gls@defglossaryentry{1.2.2}%
+{%
+name={Tensor de tipo $(p,q)$, \csname thedefi\endcsname },%
+sort={Tensor de tipo $(p,q)$, \csname thedefi\endcsname },%
+type={main},%
+first={Tensor de tipo $(p,q)$, 1.2.2},%
+firstplural={Tensor de tipo $(p,q)$, 1.2.2s},%
+text={Tensor de tipo $(p,q)$, 1.2.2},%
+plural={Tensor de tipo $(p,q)$, 1.2.2s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{1.2.8}{}%
+{%
+\gls@defglossaryentry{1.2.8}%
+{%
+name={Producto tensorial, \csname thedefi\endcsname },%
+sort={Producto tensorial, \csname thedefi\endcsname },%
+type={main},%
+first={Producto tensorial, 1.2.8},%
+firstplural={Producto tensorial, 1.2.8s},%
+text={Producto tensorial, 1.2.8},%
+plural={Producto tensorial, 1.2.8s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{1.5.1}{}%
+{%
+\gls@defglossaryentry{1.5.1}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 1.5.1},%
+firstplural={, 1.5.1s},%
+text={, 1.5.1},%
+plural={, 1.5.1s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{1.5.7}{}%
+{%
+\gls@defglossaryentry{1.5.7}%
+{%
+name={Tensores sim\'etricos y antisim\'etricos, \csname thedefi\endcsname },%
+sort={Tensores sim\'etricos y antisim\'etricos, \csname thedefi\endcsname },%
+type={main},%
+first={Tensores sim\'etricos y antisim\'etricos, 1.5.7},%
+firstplural={Tensores sim\'etricos y antisim\'etricos, 1.5.7s},%
+text={Tensores sim\'etricos y antisim\'etricos, 1.5.7},%
+plural={Tensores sim\'etricos y antisim\'etricos, 1.5.7s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{1.5.15}{}%
+{%
+\gls@defglossaryentry{1.5.15}%
+{%
+name={Simetrizado de un tensor, \csname thedefi\endcsname },%
+sort={Simetrizado de un tensor, \csname thedefi\endcsname },%
+type={main},%
+first={Simetrizado de un tensor, 1.5.15},%
+firstplural={Simetrizado de un tensor, 1.5.15s},%
+text={Simetrizado de un tensor, 1.5.15},%
+plural={Simetrizado de un tensor, 1.5.15s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{1.6.5}{}%
+{%
+\gls@defglossaryentry{1.6.5}%
+{%
+name={Producto exterior de orden 1, \csname thedefi\endcsname },%
+sort={Producto exterior de orden 1, \csname thedefi\endcsname },%
+type={main},%
+first={Producto exterior de orden 1, 1.6.5},%
+firstplural={Producto exterior de orden 1, 1.6.5s},%
+text={Producto exterior de orden 1, 1.6.5},%
+plural={Producto exterior de orden 1, 1.6.5s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{1.6.13}{}%
+{%
+\gls@defglossaryentry{1.6.13}%
+{%
+name={Producto exterior, \csname thedefi\endcsname },%
+sort={Producto exterior, \csname thedefi\endcsname },%
+type={main},%
+first={Producto exterior, 1.6.13},%
+firstplural={Producto exterior, 1.6.13s},%
+text={Producto exterior, 1.6.13},%
+plural={Producto exterior, 1.6.13s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.2.1}{}%
+{%
+\gls@defglossaryentry{2.2.1}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.2.1},%
+firstplural={, 2.2.1s},%
+text={, 2.2.1},%
+plural={, 2.2.1s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.2.3}{}%
+{%
+\gls@defglossaryentry{2.2.3}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.2.3},%
+firstplural={, 2.2.3s},%
+text={, 2.2.3},%
+plural={, 2.2.3s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.2.4}{}%
+{%
+\gls@defglossaryentry{2.2.4}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.2.4},%
+firstplural={, 2.2.4s},%
+text={, 2.2.4},%
+plural={, 2.2.4s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.3.1}{}%
+{%
+\gls@defglossaryentry{2.3.1}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.3.1},%
+firstplural={, 2.3.1s},%
+text={, 2.3.1},%
+plural={, 2.3.1s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.3.3}{}%
+{%
+\gls@defglossaryentry{2.3.3}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.3.3},%
+firstplural={, 2.3.3s},%
+text={, 2.3.3},%
+plural={, 2.3.3s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.3.8}{}%
+{%
+\gls@defglossaryentry{2.3.8}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.3.8},%
+firstplural={, 2.3.8s},%
+text={, 2.3.8},%
+plural={, 2.3.8s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.3.14}{}%
+{%
+\gls@defglossaryentry{2.3.14}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.3.14},%
+firstplural={, 2.3.14s},%
+text={, 2.3.14},%
+plural={, 2.3.14s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.3.17}{}%
+{%
+\gls@defglossaryentry{2.3.17}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.3.17},%
+firstplural={, 2.3.17s},%
+text={, 2.3.17},%
+plural={, 2.3.17s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.3.21}{}%
+{%
+\gls@defglossaryentry{2.3.21}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.3.21},%
+firstplural={, 2.3.21s},%
+text={, 2.3.21},%
+plural={, 2.3.21s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.4.2}{}%
+{%
+\gls@defglossaryentry{2.4.2}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.4.2},%
+firstplural={, 2.4.2s},%
+text={, 2.4.2},%
+plural={, 2.4.2s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.5.2}{}%
+{%
+\gls@defglossaryentry{2.5.2}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.5.2},%
+firstplural={, 2.5.2s},%
+text={, 2.5.2},%
+plural={, 2.5.2s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.5.4}{}%
+{%
+\gls@defglossaryentry{2.5.4}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.5.4},%
+firstplural={, 2.5.4s},%
+text={, 2.5.4},%
+plural={, 2.5.4s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.5.7}{}%
+{%
+\gls@defglossaryentry{2.5.7}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.5.7},%
+firstplural={, 2.5.7s},%
+text={, 2.5.7},%
+plural={, 2.5.7s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.5.9}{}%
+{%
+\gls@defglossaryentry{2.5.9}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.5.9},%
+firstplural={, 2.5.9s},%
+text={, 2.5.9},%
+plural={, 2.5.9s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.5.12}{}%
+{%
+\gls@defglossaryentry{2.5.12}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.5.12},%
+firstplural={, 2.5.12s},%
+text={, 2.5.12},%
+plural={, 2.5.12s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.7.1}{}%
+{%
+\gls@defglossaryentry{2.7.1}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.7.1},%
+firstplural={, 2.7.1s},%
+text={, 2.7.1},%
+plural={, 2.7.1s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.7.5}{}%
+{%
+\gls@defglossaryentry{2.7.5}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.7.5},%
+firstplural={, 2.7.5s},%
+text={, 2.7.5},%
+plural={, 2.7.5s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.7.13}{}%
+{%
+\gls@defglossaryentry{2.7.13}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.7.13},%
+firstplural={, 2.7.13s},%
+text={, 2.7.13},%
+plural={, 2.7.13s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.8.2}{}%
+{%
+\gls@defglossaryentry{2.8.2}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.8.2},%
+firstplural={, 2.8.2s},%
+text={, 2.8.2},%
+plural={, 2.8.2s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.9.2}{}%
+{%
+\gls@defglossaryentry{2.9.2}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.9.2},%
+firstplural={, 2.9.2s},%
+text={, 2.9.2},%
+plural={, 2.9.2s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.9.4}{}%
+{%
+\gls@defglossaryentry{2.9.4}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.9.4},%
+firstplural={, 2.9.4s},%
+text={, 2.9.4},%
+plural={, 2.9.4s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.9.5}{}%
+{%
+\gls@defglossaryentry{2.9.5}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.9.5},%
+firstplural={, 2.9.5s},%
+text={, 2.9.5},%
+plural={, 2.9.5s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.9.8}{}%
+{%
+\gls@defglossaryentry{2.9.8}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.9.8},%
+firstplural={, 2.9.8s},%
+text={, 2.9.8},%
+plural={, 2.9.8s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.9.11}{}%
+{%
+\gls@defglossaryentry{2.9.11}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.9.11},%
+firstplural={, 2.9.11s},%
+text={, 2.9.11},%
+plural={, 2.9.11s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{2.9.19}{}%
+{%
+\gls@defglossaryentry{2.9.19}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 2.9.19},%
+firstplural={, 2.9.19s},%
+text={, 2.9.19},%
+plural={, 2.9.19s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{3.1.1}{}%
+{%
+\gls@defglossaryentry{3.1.1}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 3.1.1},%
+firstplural={, 3.1.1s},%
+text={, 3.1.1},%
+plural={, 3.1.1s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{3.1.7}{}%
+{%
+\gls@defglossaryentry{3.1.7}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 3.1.7},%
+firstplural={, 3.1.7s},%
+text={, 3.1.7},%
+plural={, 3.1.7s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{3.2.1}{}%
+{%
+\gls@defglossaryentry{3.2.1}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 3.2.1},%
+firstplural={, 3.2.1s},%
+text={, 3.2.1},%
+plural={, 3.2.1s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{3.2.10}{}%
+{%
+\gls@defglossaryentry{3.2.10}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 3.2.10},%
+firstplural={, 3.2.10s},%
+text={, 3.2.10},%
+plural={, 3.2.10s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{3.2.16}{}%
+{%
+\gls@defglossaryentry{3.2.16}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 3.2.16},%
+firstplural={, 3.2.16s},%
+text={, 3.2.16},%
+plural={, 3.2.16s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{3.2.19}{}%
+{%
+\gls@defglossaryentry{3.2.19}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 3.2.19},%
+firstplural={, 3.2.19s},%
+text={, 3.2.19},%
+plural={, 3.2.19s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{3.4.1}{}%
+{%
+\gls@defglossaryentry{3.4.1}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 3.4.1},%
+firstplural={, 3.4.1s},%
+text={, 3.4.1},%
+plural={, 3.4.1s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{3.4.4}{}%
+{%
+\gls@defglossaryentry{3.4.4}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 3.4.4},%
+firstplural={, 3.4.4s},%
+text={, 3.4.4},%
+plural={, 3.4.4s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{3.4.6}{}%
+{%
+\gls@defglossaryentry{3.4.6}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 3.4.6},%
+firstplural={, 3.4.6s},%
+text={, 3.4.6},%
+plural={, 3.4.6s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{3.4.10}{}%
+{%
+\gls@defglossaryentry{3.4.10}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 3.4.10},%
+firstplural={, 3.4.10s},%
+text={, 3.4.10},%
+plural={, 3.4.10s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{3.4.18}{}%
+{%
+\gls@defglossaryentry{3.4.18}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 3.4.18},%
+firstplural={, 3.4.18s},%
+text={, 3.4.18},%
+plural={, 3.4.18s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{3.5.1}{}%
+{%
+\gls@defglossaryentry{3.5.1}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 3.5.1},%
+firstplural={, 3.5.1s},%
+text={, 3.5.1},%
+plural={, 3.5.1s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{3.5.3}{}%
+{%
+\gls@defglossaryentry{3.5.3}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 3.5.3},%
+firstplural={, 3.5.3s},%
+text={, 3.5.3},%
+plural={, 3.5.3s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{4.1.1}{}%
+{%
+\gls@defglossaryentry{4.1.1}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 4.1.1},%
+firstplural={, 4.1.1s},%
+text={, 4.1.1},%
+plural={, 4.1.1s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{4.1.4}{}%
+{%
+\gls@defglossaryentry{4.1.4}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 4.1.4},%
+firstplural={, 4.1.4s},%
+text={, 4.1.4},%
+plural={, 4.1.4s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{4.1.8}{}%
+{%
+\gls@defglossaryentry{4.1.8}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 4.1.8},%
+firstplural={, 4.1.8s},%
+text={, 4.1.8},%
+plural={, 4.1.8s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{4.1.12}{}%
+{%
+\gls@defglossaryentry{4.1.12}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 4.1.12},%
+firstplural={, 4.1.12s},%
+text={, 4.1.12},%
+plural={, 4.1.12s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{4.2.4}{}%
+{%
+\gls@defglossaryentry{4.2.4}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 4.2.4},%
+firstplural={, 4.2.4s},%
+text={, 4.2.4},%
+plural={, 4.2.4s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{4.2.7}{}%
+{%
+\gls@defglossaryentry{4.2.7}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 4.2.7},%
+firstplural={, 4.2.7s},%
+text={, 4.2.7},%
+plural={, 4.2.7s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{4.2.8}{}%
+{%
+\gls@defglossaryentry{4.2.8}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 4.2.8},%
+firstplural={, 4.2.8s},%
+text={, 4.2.8},%
+plural={, 4.2.8s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{4.2.12}{}%
+{%
+\gls@defglossaryentry{4.2.12}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 4.2.12},%
+firstplural={, 4.2.12s},%
+text={, 4.2.12},%
+plural={, 4.2.12s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{4.3.3}{}%
+{%
+\gls@defglossaryentry{4.3.3}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 4.3.3},%
+firstplural={, 4.3.3s},%
+text={, 4.3.3},%
+plural={, 4.3.3s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{4.3.8}{}%
+{%
+\gls@defglossaryentry{4.3.8}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 4.3.8},%
+firstplural={, 4.3.8s},%
+text={, 4.3.8},%
+plural={, 4.3.8s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{4.3.12}{}%
+{%
+\gls@defglossaryentry{4.3.12}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 4.3.12},%
+firstplural={, 4.3.12s},%
+text={, 4.3.12},%
+plural={, 4.3.12s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{4.4.1}{}%
+{%
+\gls@defglossaryentry{4.4.1}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 4.4.1},%
+firstplural={, 4.4.1s},%
+text={, 4.4.1},%
+plural={, 4.4.1s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{4.4.6}{}%
+{%
+\gls@defglossaryentry{4.4.6}%
+{%
+name={, \csname thedefi\endcsname },%
+sort={, \csname thedefi\endcsname },%
+type={main},%
+first={, 4.4.6},%
+firstplural={, 4.4.6s},%
+text={, 4.4.6},%
+plural={, 4.4.6s},%
+description={holi},%
+descriptionplural={holi},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{1.1.89}{}%
+{%
+\gls@defglossaryentry{1.1.89}%
+{%
+name={Holi},%
+sort={Holi},%
+type={main},%
+first={Holi},%
+firstplural={Holis},%
+text={Holi},%
+plural={Holis},%
+description={holi caracoli},%
+descriptionplural={holi caracoli},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

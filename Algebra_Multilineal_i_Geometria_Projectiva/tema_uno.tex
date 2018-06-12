@@ -8,7 +8,7 @@
 
 \section{Espacio dual}
 
-\begin{defi}
+\begin{defi}[Espacio dual]
     Sea $\E$ un $\k$-ev. Definimos el espacio dual de $\E$ como
     $\E^* = \{ \phi : \E \to \k \text{ lineales} \}$ (también es un
     $\k$-espacio vectorial).
@@ -16,7 +16,7 @@
 \begin{obs}
     Para definir $\E^*$ tenemos que usar bases de $\E$.
 \end{obs}
-\begin{defi}
+\begin{defi}[Base dual]
     Si $B = \{ u_1,\cdots, u_n \}$ es una base de $\E$ ($\k$-ev.)
     definimos
     \[
@@ -107,7 +107,7 @@
 
 \section{Tensores}
 
-\begin{defi}
+\begin{defi}[Tensor]
     Sean $\E_1,\cdots , \E_r$ $\k$-ev. Diremos que
     $f \colon \E_1 \times \cdots \times \E_r \to \k$ es un tensor (o una aplicación
     multilineal) si $\forall i=1,\cdots , r$ y $\forall v_j \in \E_j$ ($i \neq j$)
@@ -120,7 +120,7 @@
     \]
     es una aplicación lineal.
 \end{defi}
-\begin{defi}
+\begin{defi}[Tensor de tipo $(p,q)$]
     Sea $\E$ un $\k$-ev. Llamaremos tensor de tipo $(p,q)$ (o tensor p veces
     covariante y q veces contravariante) (o tensor p-covariante y q-contravariante)
     a un tensor
@@ -517,7 +517,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
     e_3^\ast \qquad \underline{s}f = 3e_2^\ast \otimes e_1^\ast + 5e_1^\ast \otimes e_1^\ast
     + 5e_3^\ast \otimes e_2^\ast\]
 \end{example}
-\begin{defi}
+\begin{defi}[Tensores sim\'etricos y antisim\'etricos]
     Sea $\E$ un $\k$-ev. de $\dim n$. Sea $f \in T_p(\E)$.
     \begin{enumerate}
         \item
@@ -593,7 +593,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
 
     \end{enumerate}
 \end{example}
-\begin{obs}~
+\begin{obs}
     \begin{itemize}
         \item $\varepsilon (s) = (-1)^n$ si $\varepsilon (s) = t_1 \cdots t_n$, donde
         $t_1,\dots,t_n$ son transposiciones.
@@ -625,7 +625,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
         \end{split}\]
     \end{enumerate}
 \end{prop}
-\begin{proof}~
+\begin{proof}
     \begin{enumerate}
         \item La implicación directa es una consecuencia de la definición de simetría.
 
@@ -713,7 +713,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
     Como $f$ es multilineal ($\implies f \in T_n(\E)$), $f$ es antisimétrico
     por la proposición \ref{prop:sim_comp}.
 \end{example}
-\begin{defi}
+\begin{defi}[Simetrizado de un tensor]
     Sea $\E$ un $\k$-ev. con $\car \k = 0$ y $f \in T_p(\E)$. Llamamos simetrizado de $f$ a
     \[
         S(f) = \frac{1}{p!}\sum_{s \in \mathcal{S}_p} \underline{s}f
@@ -822,7 +822,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
 \begin{obs}
     Lo haremos en $T_p(\E)$, análogamente se hará en $T^q(\E)$.
 \end{obs}
-\begin{defi} \label{pr_ext}
+\begin{defi}[Producto exterior de orden 1] \label{pr_ext}
     Sea $\E$ un $\k$-e.v.; $\omega_1, \dots, \omega_p \in T_1(\E) = \E$, el producto exterior de orden 1 es:
     \[
         \omega_1 \wedge \dots \wedge \omega_p = p! A(\omega_1 \otimes \dots \otimes \omega_p)
@@ -1037,7 +1037,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
     \wedge \cdots \wedge e_{i_p} \right\}_{1 \leq i_1 < \cdots < i_p \leq n}$ si $B=\left\{e_i, \dots , e_n\right\}$ es base de $\E$.
 \end{obs}
 
-\begin{defi}
+\begin{defi}[Producto exterior]
     Sea $\E$ un $\k$-ev. y sean $f \in A_p(\E)$ y $g \in A_q(\E)$. Definimos el
     producto exterior de $f$ y $g$ como
     \[
