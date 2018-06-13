@@ -2,7 +2,7 @@
 
 \section{Longitud de una curva}
 
-\begin{defi}[camino] \index{curva parametrizada((tlab))}
+\begin{defi}[camino] \index{curva!parametrizada((tlab))}
     Denominamos camino o curva parametrizada a una aplicación continua $\gamma \colon I \to \real^n$, donde
     $I \subset \real$ es un intervalo no degenerado.
 
@@ -25,7 +25,7 @@
     Refinar la partición aumenta la longitud. (Demostración por la desigualdad triangular).
 \end{obs}
 
-\begin{defi}[longitud de una curva]
+\begin{defi}[longitud!de una curva]
     Sea $\gamma \colon I \to \real^n$ una curva. La longitud de $\gamma$ es
     \[
         L(\gamma) = \sup_{\Pa \subset I} L(\gamma, \Pa) \in [0, \infty].
@@ -103,7 +103,7 @@
     entonces, $l$ es estrictamente creciente.
 \end{prop}
 
-\begin{defi}[caminos equivalentes]\index{composición de un camino y un homeomorfismo((tlab))}
+\begin{defi}[camino!equivalente]\index{composición!camino y homeomorfismo((tlab))}
     Sean $\sigma \colon [a, b] \to \real^n$ un camino y $\varphi \colon [c, d] \to [a, b]$ un homeomorfismo. Entonces,
     la composición $\tau = \sigma \circ \varphi \colon [c,d] \to \real^n$ es un camino, y diremos que $\sigma$ y $\tau$
     son caminos equivalentes.
@@ -240,7 +240,7 @@
     La fórmula anterior es igualmente válida si $\gamma$ es $\C^1$ a trozos.
 \end{obs}
 
-\begin{defi}[longitud de un camino]
+\begin{defi}[longitud!de un camino]
     Sea $\gamma \colon I \to \real^n$ un camino definido en un intervalo no compacto. Podemos definir la longitud de $\gamma$, $L(\gamma)$,
     como el supremo de las longitudes $L(\gamma\vert_{k})$, donde $k \subset I$ es un subintervalo compacto de $I$.
 
@@ -248,7 +248,7 @@
 \end{defi}
 
 
-\begin{defi}[longitud de una curva regular de clase $\C^1$] \label{defi:observaciones_curvas}
+\begin{defi}[longitud!de una curva regular de clase $\C^1$] \label{defi:observaciones_curvas}
     Sea $C \subset \real^n$ una curva regular de clase $\C^1$. Si $C$ es la imagen de una parametrización inyectiva $\gamma \colon I \to \real^n$, definiremos la longitud de $C$ como la longitud de $\gamma$.
 
     Si la imagen de $\gamma$ es todo $C$ salvo en un número finito de puntos, tambi\'en diremos que la longitud de $C$ es la longitud de $\gamma$.
@@ -326,7 +326,7 @@
 
 \section{Integrales de línea de campos vectoriales}
 
-\begin{defi}[circulación de una función a lo largo de un camino]
+\begin{defi}[circulación de una función!a lo largo de un camino]
     Sean $I \subset \real$ un intervalo, $\sigma \colon I \to \real^n$ un camino de clase $\C^1$ a trozos con $C = \sigma(I)$, por último,
     sea $\vec{f} \colon C \to \real^n$ un campo vectorial definido en un conjunto abierto $W \supset C$. Definimos la integral de línea o de circulación
     de $\vec{f}$ a lo largo de $\sigma$ como
@@ -349,7 +349,7 @@
     Ejercicio.
 \end{proof}
 
-\begin{defi}[orientación de una curva regular parametrizada]\index{curva orientada((tlab))}
+\begin{defi}[orientación!de una curva regular]\index{curva!orientada((tlab))}
     Sea $C \subset \real^n$ una curva regular parametrizada por una parametrización regular inyectiva. Una orientación de $C$ es una clase
     de equivalencia de parametrizaciones de $C$, donde se considera que dos parametrizaciones son equivalentes cuando la reparametrización
     tiene una derivada positiva. Así mismo, diremos que una curva está orientada cuando se ha tomado una orientación.
@@ -372,7 +372,7 @@
     Una curva no conexa se orienta orientando cada componente conexa.
 \end{example}
 
-\begin{defi}[circulación de una función a lo largo de una curva orientada]
+\begin{defi}[circulación de una función!a lo largo de una curva orientada]
     Sea $C \subset \real^n$ una curva orientada por una parametrización regular inyectiva $\sigma \colon I \to \real^n$. Sea $\vec{f} \colon C \to \real^n$.
     Definimos la integral de línea o circulación de $\vec{f}$ a lo largo de $C$
     \[
@@ -419,7 +419,7 @@
     Orientar $C$ equivale a hacer una elección continua de un vector tangente unitario sobre $C$.
 \end{obs}
 
-\begin{defi}[componente tangencial de una función]
+\begin{defi}[componente!tangencial de una función]
     Sea $C \subset \real^n$ una curva y $\vec{f} \colon C \to \real^n$ un campo vectorial. Llamamos componente tangencial de $\vec{f}$ a
     la función
     \[
@@ -460,9 +460,9 @@
     \]
 \end{example}
 
-\section{Integral de superficie de funciones escalares}
+\section{integral de superficie de funciones escalares}
 
-\begin{defi}[superfície parametrizada regular]
+\begin{defi}[superficie!regular]
     Sea $U \subset  \real^2$ abierto y $\sigma \colon U \to \real^n$ una superficie parametrizada con $M = \sigma(U)$. Denotamos por
     $\vec{T_1} = \Dif_1\sigma$ y $\vec{T_2} = \Dif_2 \sigma$, a los vectores tangentes a la parametrización, es decir
     \[
@@ -483,7 +483,7 @@
     es invertible en todo punto. Representaremos por $g := \det G$.
 \end{defi}
 
-\begin{defi}[integral de superfície (parametrizada) de una función]
+\begin{defi}[integral de superficie!(parametrizada) de una funci\'on]
     Sea $M$ una superficie parametrizada por $\sigma$ y sea $f \colon M \subset \real^n \to \real$, definimos la integral de superficie de $f$
     sobre/a lo largo de $\sigma$ como
     \[
@@ -511,7 +511,7 @@
     Eso quiere decir que la integral de superficie no está referida a la parametrización, sino al objeto parametrizado.
 \end{obs}
 
-\begin{defi}[integral de superfície (regular) de una función]
+\begin{defi}[integral de superficie!(regular) de una función]
     Sea $M \subseteq \real^n$ una superficie regular. Si $M$ es la imagen de una parametrización regular inyectiva $\sigma \colon U \to \real^n$,
     denominamos integral de superficie de una función $f$ sobre $M$ a
     \[
@@ -614,14 +614,14 @@
     Donde el signo es el mismo que el de $\det J_\varphi$.
 \end{lema}
 
-\begin{defi}[orientación de una superficie regular]
+\begin{defi}[orientación!de una superficie regular]
     Sea $M \subset \real^3$ una superficie regular parametrizada por una parametrización regular inyectiva. Una orientación de $M$ es una
     clase de equivalencia de parametrizaciones donde se dice que dos parametrizaciones son equivalentes si el difeomorfismo que nos permite
     obtener una reparametrización de la otra tiene jacobiana positiva.
 \end{defi}
 
-\begin{defi}[superficie orientada]
-    Diremos que una superficie $M \subset \real^3$ está orientada, cuando hemos elegido una orientación. A partir de la orientación de $M$ dada
+\begin{defi}[superficie!orientada]
+    Diremos que una superficie $M \subset \real^3$ está orientada cuando hemos elegido una orientación. A partir de la orientación de $M$ dada
     por $\sigma$, cada $T_pM$ está orientado por la base $\begin{pmatrix} \vec{T_1} & \vec{T_2} \end{pmatrix}$. Esta orientación no cambia si
     usamos otra parametrización de $M$ correspondiente a la misma orientación que $\sigma$.
 \end{defi}
@@ -631,7 +631,7 @@
     estas parametrizaciones definan las mismas orientaciones de los espacios tangentes de los puntos que recubren comúnmente.
 \end{obs}
 
-\begin{defi}[superficie orientable]
+\begin{defi}[superficie!orientable]
     Una superficie se dice que es orientable cuando tiene una orientación, así mismo, una superficie orientable, diremos que está
     orientada cuando se ha elegido una orientación.
 \end{defi}
@@ -678,7 +678,7 @@
     \]
 \end{obs}
 
-\begin{defi}
+\begin{defi}[AQUI!no se que estan definint]
     Sea $M \subset \real^3$ una superficie regular orientada, $p \in M$, el subespacio $T_pM \subset T_p\real^3$ está orientado y tiene
     dimensión 2, y por tanto, su ortogonal $\left( T_pM \right)^\perp$ tambi\'en está orientado y tiene dimensión 1. Respecto al producto
     escalar estándar de $\real^3$, el espacio $\left( T_pM \right)^\perp$, tiene un único vector normal \emph{unitario} $\vec{n}(p)$, 
@@ -695,7 +695,7 @@
     Por este motivo, se dice que una superficie tiene ``dos caras''.
 \end{obs}
 
-\begin{defi}
+\begin{defi}[componente!normal de un campo vectorial]
     Sea $\vec{f} \colon M \to \real^3$ un campo vectorial. La componente normal de $\vec{f}$ sobre $M$ es 
     \[
         f_n = \vec{f} \cdot \vec{n},

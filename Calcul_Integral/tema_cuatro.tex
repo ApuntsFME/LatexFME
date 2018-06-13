@@ -17,7 +17,7 @@
     Aunque tambi\'en es habitual representarla por $\setb{\hat{i}, \hat{j}, \hat{k}}$.
 \end{obs}
 
-\begin{defi}
+\begin{defi}[gradiente]\index{rotacional((tlab))}\index{divergencia((tlab))}
     En $\real^3$ hay tres operadores diferenciales lineales de primer orden canónicos.
     \begin{itemize}
  
@@ -54,8 +54,8 @@
     vector tal que, $\forall \vec{u} \in \real^n$, $\left( \grad f(p) \vert u \right) = \Dif_f(p) \cdot u$.
 \end{obs}
 
-\begin{defi}
-    Definimos es operador \emph{nabla} como
+\begin{defi}[operador nabla]
+    Definimos e operador \emph{nabla} como
     \[
         \vec{\nabla} := \hat{i} \pdv{}{x} + \hat{j} \pdv{}{y} + \hat{k} \pdv{}{z}.
     \]
@@ -102,7 +102,7 @@
     \end{gather*}
 \end{col}
 
-\begin{defi}
+\begin{defi}[campo vectorial!conservativo]
     Sea $\vec{F}$ un campo vectorial. Diremos que $\vec{F}$ es un campo conservativo si $\exists f$ tal que
     \[
         \vec{F} = \grad f.
@@ -112,7 +112,7 @@
         \rot \vec{F} = 0.
     \]
 \end{defi}
-\begin{defi}
+\begin{defi}[campo vectorial!solenoidal]
     Sea $\vec{G}$ un campo vectorial. Diremos que $\vec{G}$ es solenoidal si $\exists \vec{F}$ tal que
     \[
         \vec{G} = \rot \vec{F}.
@@ -130,7 +130,7 @@
     Posteriormente estudiaremos los recíprocos de estas afirmaciones.
 \end{obs}
 
-\begin{defi}
+\begin{defi}[laplaciano]
     Sea $f \in \Es^{(2)}(U)$. Definimos el laplaciano como
     \[
         \Delta f := \diver \left( \grad f \right),
@@ -324,7 +324,7 @@
 
 \section{Potenciales}
 
-\begin{defi}
+\begin{defi}[AQUI!esto ya esta definido]
     Sea $U \subseteq \real^n$ un abierto conexo, $\vec{F} \colon U \to \real^n$ un campo vectorial. Diremos que $\vec{F}$ es conservativo
     cuando existe $f \colon U \to \real$ de clase $\C^1$ tal que $\vec{F} = \grad f$, diremos que $f$ es el potencial escalar para $\vec{F}$.
 \end{defi}
@@ -416,7 +416,7 @@
     depende de la topología de $U$ y es cierto en algunas circunstancias. 
 \end{teo*}
 
-\begin{defi}
+\begin{defi}[subconjunto estrellado]
     Un subconjunto $A \subset \real^n$ se dice que es estrellado respecto a un punto $p \in A$  si $\forall q \in A$,
     $[p, q] \subset A$. Diremos que $A$ es estrellado si lo es respecto a un punto.
 \end{defi}
@@ -445,7 +445,7 @@
     (tiene potencial escalar).
 \end{lema}
 
-\begin{defi}
+\begin{defi}[camino!hom\'otopo]
     Sea $A$ un espacio m\'etrico. Sean $\gamma_0, \gamma_1 \colon [0,1] \to A$ dos caminos con los mismos puntos
     de origen $p$ y t\'ermino $q$. Diremos que $\gamma_0$ y $\gamma_1$ son caminos homótopos (con extremos fijos)
     si existe una homotopía de caminos entre $\gamma_0$ y $\gamma_1$, es decir:
@@ -458,11 +458,11 @@
         \item La aplicación $\Gamma \colon [0,1] \times [0,1] \to A$ definida por $\Gamma(s,t) = \Gamma_s(t)$ es continua.
     \end{itemize}
 \end{defi}
-\begin{defi}
+\begin{defi}[camino!cerrado]
     Un camino cerrado o lazo de punto base $p$, es un camino con origen y t\'ermino $p$.
 \end{defi}
 
-\begin{defi}
+\begin{defi}[conjunto!simplemente conexo]
     Diremos que un conjunto $A$ es simplemente conexo si
     \begin{enumerate}[i)]
         \item Es arco-conexo.
@@ -549,7 +549,7 @@ ello, el lema de Poincar\'e, nos asegura que si $U$ es estrellado, todo campo si
 
 \section{Campos en el plano: Teorema de Green y potenciales}
 
-\begin{defi}
+\begin{defi}[gradiente!de un campo escalar]\index{divergencia!de un campo escalar((tlab))}
     Sea $U \subseteq \real^2$ un abierto. Se puede definir el gradiente de un campo escalar y la divergencia de un campo
     vectorial en $U$, de hecho, en coordenadas cartesianas
     \[
