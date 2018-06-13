@@ -92,11 +92,11 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
         \end{align*}
 \end{defi}
 
-\begin{obs*}
+\begin{obs}
     Si $\omega \in \Omega^k \left( \real^n \right)$, entonces, $\dif \omega \in \Omega^{k+1} \left( \real^n \right)$.
-\end{obs*}
+\end{obs}
 
-\begin{example*}
+\begin{example}
     En $\real^2$, se tiene que
     \begin{gather*}
         \dif f = \pdv{f}{x} \dif x + \pdv{f}{y} \dif y, \\
@@ -113,7 +113,7 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
         \dif \left( g_1 \dif y \wedge \dif z +  g_2 \dif z \wedge \dif x + g_3 \dif x \wedge \dif y \right) = \cdots =
         \left( \pdv{g_1}{x} + \pdv{g_2}{y} + \pdv{g_3}{z} \right) \dif x \wedge \dif y \wedge \dif z.
     \end{gather*}
-\end{example*}
+\end{example}
 
 \begin{obs}
     La diferencial exterior $\dif \colon \Omega^\bullet \left( \real^n \right) \to \Omega^\bullet \left( \real^n \right)$ es una antiderivación de
@@ -145,9 +145,9 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
     forma diferencial $\alpha$ tal que $\beta = \dif \alpha$.
 \end{defi}
 
-\begin{obs*}
+\begin{obs}
     La propiedad \ref{prop:d-cuadrado} significa que exacta $\implies$ cerrada.
-\end{obs*}
+\end{obs}
 
 \begin{prop}
     Sean $y^j$ $(1 \leq j \leq n)$ funciones en $\real^n$. Tenemos
@@ -202,7 +202,7 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
     \]
 \end{proof}
 
-\begin{example*}
+\begin{example}
     En $\real^2$, podemos considerar el cambio de coordenadas de ($x, y$) a ($r, \phi$), entonces
     \begin{gather*}
         x = r \cos \phi, \qquad y = r \sin \phi, \\
@@ -229,7 +229,7 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
             \sin \phi &   r \cos \phi
         \end{pmatrix} \dif r \wedge \dif \phi = r \dif r \wedge \dif \phi.
     \end{gather*}
-\end{example*}
+\end{example}
 
 \section{Pullback de formas diferenciales en $\real^n$}
 
@@ -241,9 +241,9 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
     se denomina \emph{pullback} de $g$ por $F$. Así, tenemos una aplicación $\real$-lineal $F^\ast \colon \C^\infty \left( \real^n \right)
     \to \C^\infty \left( \real^m \right)$.
 \end{defi}
-\begin{obs*}
+\begin{obs}
     Es similar a la aplicación transponer de álgebra lineal.
-\end{obs*}
+\end{obs}
 
 \begin{defi}
     Podemos extender el pullback a formas diferenciales, definiendo una aplicación $F^\ast \colon \Omega^\bullet \left( \real^n \right) \to
@@ -293,7 +293,7 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
     $\dif x^i$ es la matriz jacobiana $J_F$.
 \end{prop}
 
-\begin{example*}
+\begin{example}
     Consideramos la función
     \[
         \begin{aligned}
@@ -312,7 +312,7 @@ En este tema, consideraremos, salvo mención contraria, que todas las funciones 
         4 \left( u^2 + v^2 \right) \dif u \wedge \dif v, \\
         F^\ast\left( -y\dif x + x \dif y\right) = \cdots = 2 \left( u^2 + v^2 \right) \left( -v \dif u + u \dif v \right).
     \end{gather*}
-\end{example*}
+\end{example}
 
 \section{Integral de formas diferenciales}
 
@@ -387,10 +387,10 @@ subvariedades.
 
 \section{Formas diferenciales en una variedad}
 
-\begin{obs*}
+\begin{obs}
     No trataremos el tema de los campos vectoriales en subvariedades, pero sí que aparecen en el resumen de apuntes. Como siempre, los curiosos
     a los apuntes.
-\end{obs*}
+\end{obs}
 
 \setcounter{lema}{4}
 
@@ -469,9 +469,9 @@ El resto de este tema tampoco se ha realizado en clase, ante cualquier duda o cu
     Una forma diferencial $\Omega$ en $M$ de grado máximo que no se anula en ningún punto, se denomina forma de volumen.
 \end{defi}
 
-\begin{prop*}
+\begin{prop}
     Si una variedad tiene una forma de volumen, entonces es orientable.
-\end{prop*}
+\end{prop}
 
 \begin{proof}
     En cada punto $p \in M$ la forma diferencial $\Omega_p$ define una orientación del espcaio tangente $T_pM$:
@@ -484,9 +484,9 @@ El resto de este tema tampoco se ha realizado en clase, ante cualquier duda o cu
     Las cartas positivas constituyen un atlas orientado en $M$, y por tanto, definen na orientación.
 \end{proof}
 
-\begin{obs*}
+\begin{obs}
     Recíprocamente, se puede demostrar que si una variedad tiene un atlas orientado, entonces tiene una forma de volumen.
-\end{obs*}
+\end{obs}
 
 \begin{obs}
     Una variedad orientada conexa tiene exactamente 2 orientaciones.
@@ -501,9 +501,9 @@ El resto de este tema tampoco se ha realizado en clase, ante cualquier duda o cu
     \]
 \end{defi}
 
-\begin{lema*}
+\begin{lema}
     La integral anterior no depende de la parametrización escogida.
-\end{lema*}
+\end{lema}
 
 \begin{proof}
     Sea $g^\prime \colon W^\prime \to M$ otra parametrización y sea $X \colon W^\prime \to W$ un difeomorfismo, entonces

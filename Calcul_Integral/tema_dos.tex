@@ -2,7 +2,7 @@
 
 \section{Integral de Riemann sobre rectángulos compactos}
 
-\begin{defi}
+\begin{defi}[rectángulo de $\real^n$]
     Un rectángulo de $\real^n$ es un producto $A := I_1 \times \dots \times I_n$
     donde $I_j \in \real$ son intervalos que suponemos acotados y no degenerados,
     es decir, ni vacios, ni reducidos a un punto.
@@ -10,7 +10,7 @@
     Si los $I_j$ son compactos o abiertos, también lo es $A$.
 \end{defi}
 
-\begin{defi}
+\begin{defi}[volumen $n$-dimensional]
     La medida o volumen $n$-dimensional (o área si $n=2$) de un rectángulo
     acotado $A = I_1 \times \cdots \times I_n$ es el producto de las longitudes
     de sus costados, es decir
@@ -28,13 +28,13 @@
         [a,b] = [x_0,x_1] \cup \cdots \cup [x_{N-1},x_N].
     \]
 \end{obs}
-\begin{obs*}
+\begin{obs}
     Una partición $\Pa^\prime$ se dice que es más fina que otra
     $\Pa$ cuando $\Pa \subset \Pa^\prime$ (es decir, cuando
     tiene más puntos).
-\end{obs*}
+\end{obs}
 
-\begin{defi}
+\begin{defi}[partición!de un rectángulo]
     Dado un rectángulo compacto $A = I_1 \times \cdots \times I_n$, denominamos
     una partición $\Pa$ de $A$ al resultado de hacer una partición $\Pa_j$ a cada
     intervalo $I_j$.
@@ -43,10 +43,10 @@
     \cdots \times (\abs{\Pa_n}-1)$ subrectángulos más pequeños.
 \end{defi}
 
-\begin{obs*}
+\begin{obs}
     Sean $A^\prime,A^{\prime\prime}\subset A$ rectángulos de la partición, entonces
     $\mathring{A^\prime} \cap \mathring{A^{\prime\prime}} = \emptyset$.
-\end{obs*}
+\end{obs}
 
 \begin{lema}
     Si $A$ es un rectángulo, y $\Pa$ una partición de $A$, se tiene que
@@ -55,7 +55,7 @@
     \]
 \end{lema}
 
-\begin{defi}
+\begin{defi}[partición!más fina]
     Dadas dos particiones $\Pa = \prod\limits^n_{j=1} \Pa_j$ y
     $P^\prime = \prod\limits^n_{j=1} \Pa^\prime_j$ de un rectángulo $A$. Diremos
     que la partición $P^\prime$ es más fina que $\Pa$ si cada $\Pa^\prime_j$ es más
@@ -66,7 +66,7 @@
     $\Pa^\prime$.
 \end{defi}
 
-\begin{defi}
+\begin{defi}[suma!inferior]\index{suma!superior((tlab))}
     Sea $A \subset \real^n$ un rectángulo compacto y $f \colon A \to \real$ una
     función acotada. Sea $\Pa$ una partición de $A$. Para cada subrectángulo $R$
     de $\Pa$ escribimos
@@ -106,7 +106,7 @@
     y $\setb{S(f;\Pa) \vert\Pa\text{ partición de } A}$ está acotado inferiormente.
 \end{col}
 
-\begin{defi}
+\begin{defi}[integral!inferior]\index{integral!superior((tlab))}
     Sea $A$ un rectángulo compacto y sea $f \colon A \to \real$ una función
     acotada. Denominamos integral inferior e integral superior de $f$ en $A$ a los
     números
@@ -119,10 +119,10 @@
     \overline{\int}_A f$.
 \end{defi}
 
-\begin{defi}
+\begin{defi}[función!integrable]\index{integral!doble((tlab))}\index{integral!triple((tlab))}
     Diremos que una función $f$ acotada es integrable en $A$ cuando sus integrales
     inferior y superior coinciden. En este caso, su valor común se denomina
-    integral de Riemman de $f$ en $A$ y se denota por
+    integral de Riemann de $f$ en $A$ y se denota por
     \[
         \int_A f, \quad \int_A f(x) \dif^nx, \quad \int_A f(x_1,\dots,x_n)
         \dif x_1 \cdots \dif x_n \quad \text{o} \quad \int_A f \dif V
@@ -132,16 +132,16 @@
     representarlas.
 \end{defi}
 
-\begin{prop}[Criterio de Riemman]
+\begin{prop}[Criterio de Riemann]
     Sea $A \subset \real^n$ un rectángulo compacto y $f \colon A \to \real$ una
-    función acotada. $f$ es integrable Riemman sii $\forall \varepsilon > 0$,
+    función acotada. $f$ es integrable Riemann sii $\forall \varepsilon > 0$,
     $\exists \Pa$ partición de $A$ tal que $S(f;\Pa)-s(f;\Pa) < \varepsilon$.
 \end{prop}
 \begin{proof}
     Cálculo I
 \end{proof}
 
-\begin{example*}
+\begin{example}
     \begin{itemize}
         \item[]
         \item Si $f \colon A \to \real$ constante, entonces  $f(x) = c$ y
@@ -150,7 +150,7 @@
                 s(f;\Pa) = \sum_R m_R \vol(R) = c \sum_R \vol(R)
                 = c\vol(A) = S(f;\Pa)
             \]
-            Por lo tanto, $f$ es integrable Riemman, y además
+            Por lo tanto, $f$ es integrable Riemann, y además
             \[
                 \int_A f = c\vol(a) \implies \int_A 1 = \vol(A)
             \]
@@ -164,21 +164,21 @@
                 \underline{\int}_A f = 0 \qquad
                 \overline{\int}_A f = \vol(A) = 1\times1 = 1
             \]
-            Y por lo tanto, $f$ no es integrable Riemman.
+            Y por lo tanto, $f$ no es integrable Riemann.
     \end{itemize}
-\end{example*}
+\end{example}
 
 \begin{prop}[Linealidad]\label{prop:lin_int}
-    Sea $A$ un rectángulo compacto y $f,g \colon A \to \real$ integrables Riemman.
+    Sea $A$ un rectángulo compacto y $f,g \colon A \to \real$ integrables Riemann.
     Entonces
     \begin{enumerate}[i)]
-        \item $f+g$ es integrable Riemman y $\int_A (f+g) = \int_A f+\int_A g$.
+        \item $f+g$ es integrable Riemann y $\int_A (f+g) = \int_A f+\int_A g$.
         \item Si $\lambda \in \real$, entonces $\lambda f$ es integrable
-            Riemman y $\int_A (\lambda f) = \lambda \int_A f$.
+            Riemann y $\int_A (\lambda f) = \lambda \int_A f$.
     \end{enumerate}
 
     Es decir, $\text{Rie}(A) = \setb{f \colon A \to \real \vert f \text{ integrable
-    Riemman}}$ es un $\real$-espacio vectorial y
+    Riemann}}$ es un $\real$-espacio vectorial y
     \[
         \begin{aligned}
             \text{Rie}(A) &\to \real \\ f &\mapsto \int_A f
@@ -206,7 +206,7 @@
                 \underline{\int}_A f+g \leq \overline{\int}_A f+g \leq
                 \overline{\int}_A f + \overline{\int}_A g
             \]
-            Como $f,g$ son integrables Riemman, $(f+g)$ también lo es
+            Como $f,g$ son integrables Riemann, $(f+g)$ también lo es
             y vale $\int_A f + \int_A g$
         \item Suponemos que $\lambda > 0$, entonces,
             \[
@@ -227,7 +227,7 @@
 \end{proof}
 
 \begin{prop}[Positividad]\label{prop:pos_int}
-    Sea $f \colon A \to \real$ integrable Riemman. Si $f \geq 0$, entonces
+    Sea $f \colon A \to \real$ integrable Riemann. Si $f \geq 0$, entonces
     $\int_A f \geq 0$.
 \end{prop}
 \begin{proof}
@@ -238,7 +238,7 @@
 \end{proof}
 
 \begin{col}
-    Sean $f,g \colon A \to \real$ integrables Riemman. Si $f \leq g$, entonces
+    Sean $f,g \colon A \to \real$ integrables Riemann. Si $f \leq g$, entonces
     \[
         \int_A f \leq \int_A g
     \]
@@ -258,11 +258,11 @@
     Sea $A$ un rectángulo compacto, sea $f \colon A \to \real$ una función acotada,
     sea $\Pa$ una partición de $A$ y $\xi = \left(\xi_k\right)$ una familia de
     puntos $\xi_k \in R_k$, donde $R_k$ son los rectángulos de la partición. Se
-    define la suma de Riemman
+    define la suma de Riemann
     \[
         R(f,\Pa,\xi) = \sum_k f(\xi_k)\vol(R_k)
     \]
-    Si $f$ es integrable Riemman entonces, en un sentido que habría que precisar,
+    Si $f$ es integrable Riemann entonces, en un sentido que habría que precisar,
     $R(f,\Pa,\xi)$ se aproxima al valor de $\int_A f$ a medida que la malla de
     $\Pa$ (el máximo de las longitudes de los costados de los rectángulos $R_k$ de
     $\Pa$) tiende a 0.
@@ -270,7 +270,7 @@
 
 \section{Conjuntos de medida nula}
 
-\begin{defi}
+\begin{defi}[medida nula]
     Diremos que un subconjunto $T \subset \real^n$ tiene medida ($n$-dimensional)
     cero o medida nula, si, $\forall \varepsilon > 0$ Se puede recubrir $T$ con
     una familia numerable de rectángulos compactos tales que la suma de sus
@@ -281,10 +281,10 @@
         \varepsilon
     \]
 \end{defi}
-\begin{obs*}
+\begin{obs}
     En la definición es irrelevante usar rectángulos compactos o retángulos
     abiertos.
-\end{obs*}
+\end{obs}
 \begin{obs}
     Todo conjunto finito tiene medida nula.\\
     Si $T$ tiene medida nula, entonces todo $S \subset T$ tiene medida nula
@@ -308,7 +308,7 @@
     Todo conjunto numerable tiene medida nula
 \end{col*}
 
-\begin{example*}
+\begin{example}
     \begin{itemize}
         \item[]
         \item $\begin{rcases} \z \subset \real \\ \q \subset \real\end{rcases}$
@@ -332,13 +332,13 @@
             (unión numerable de $R$ con medida nula).
         \item Si $a < b$, entonces $[a,b] \subset \real$ no tiene medida nula.
     \end{itemize}
-\end{example*}
+\end{example}
 \begin{col}
     Dentro de $\real^n$, el subespacio, $\real^m \times \{0\} \subset \real^n$
     tiene medida nula.
 \end{col}
 
-\begin{defi}
+\begin{defi}[contenido nulo]
     Diremos que un subconjunto $A \subset \real^n$ tiene contenido
     ($n$-dimensional) cero o contenido nulo, si $\forall \varepsilon > 0$, hay un
     recubrimiento finito de $A$ por rectángulos compactos $R_i$ tal que
@@ -346,16 +346,16 @@
         \sum \vol(R_i) < \varepsilon
     \]
 \end{defi}
-\begin{obs*}
+\begin{obs}
     En la definición, se pueden substituir los rectángulos compactos por
     rectángulos abiertos.
-\end{obs*}
-\begin{obs*}
+\end{obs}
+\begin{obs}
     Un conjunto de contenido cero, tiene medida cero.
-\end{obs*}
-\begin{obs*}
+\end{obs}
+\begin{obs}
     Que un conjunto tenga medida cero, no implica que tenga contenido cero.
-\end{obs*}
+\end{obs}
 
 \begin{prop}
     Si $A \subset \real^n$ es compacto y tiene medida cero, entonces tiene contenido
@@ -391,10 +391,10 @@
 \begin{col*}
     Si $a < b$, $[a,b]\subset \real$, no tiene medida nula.
 \end{col*}
-\begin{obs*}
+\begin{obs}
     De la misma manera, un rectángulo compacto no degenerado de $\real^n$ no
     tiene medida nula.
-\end{obs*}
+\end{obs}
 \begin{col*}
     Si un conjunto $A \subset \real^n$ tiene un punto interior, entonces, no tiene
     medida nula.
@@ -447,14 +447,14 @@
     Finalmente, por el corolario anterior y la proposición \ref{prop_2_2_3},
     $\graf \left( f \right) $ tiene medida nula.
 \end{proof}
-\begin{defi}
+\begin{defi}[cuadrado]
     Diremos que un \textit{cuadrado} es un rectángulo cuyos lados tienen la misma
     longitud.
 \end{defi}
-\begin{prop*}
+\begin{prop}
     Sea $Q$ un cuadrado en $\real ^n$. Si la longitud de su lado es $l$, su volumen
     es $l^n$ y su diámetro (en la norma euclideana de $\real^n$) es $l\sqrt{n}$.
-\end{prop*}
+\end{prop}
 \begin{prop}
     Sea $Z \subset \real^n$ de medida nula. Para toda $\varepsilon >0$ existe una
     familia numerable de cuadrados compactos $Q_k$ tales que $Z\subset
@@ -485,7 +485,7 @@
 \end{col}
 
 \section{El Teorema de Lebesgue}
-\begin{defi}
+\begin{defi}[oscilación de una función]\index{diámetro de una función((tlab))}
     Sean $X$ un espacio métrico y $f\colon X \to \real$. Llamamos
     \textit{oscilación} de $f$ sobre $E \subset X$ a
     \[
@@ -504,19 +504,19 @@
     Si $f\colon E \to \real$ es acotada, $\omega \left( f, E \right)= \sup_{x\in E}
     f\left( x\right) - \inf_{x\in E} f\left( x\right)$.
 \end{lema}
-\begin{defi}
+\begin{defi}[oscilación de una función!en un punto]
     Sean $f\colon X \to \real$, $a\in X$. Llamamos oscilación de $f$ en $a$ a
     \[
         \omega\left( f, a\right) := \lim_{r\to 0} \omega\left( f, B\left( a, r
         \right) \right).
     \]
 \end{defi}
-\begin{obs*}
+\begin{obs}
     \[
         \omega\left( f, a\right) = \inf_{r>0} \omega\left( f, B\left(
         a, r\right) \right).
     \]
-\end{obs*}
+\end{obs}
 \begin{lema}
     \[
         f\colon X \to \real \text{  es contínua en $a$} \iff \omega\left( f, a\right)
@@ -545,7 +545,7 @@
     $\bimpliedby$ \\
     Supongamos $\omega \left( f, a \right) = 0$. Sea $\varepsilon > 0, \exists \delta > 0 \tq \omega \left( f, \text{B}\left(a, \delta \right) \right) < \varepsilon$. Per tant, $|f(x) - f(a)| < \varepsilon$ si $\text{d}\left( x, a \right) < \delta \implies f$ continua en a.
 \end{proof}
-\begin{example*}
+\begin{example}
     Sea $f: \real \to \real$
     \begin{enumerate}
         \item $f(x) = \begin{cases}
@@ -559,7 +559,7 @@
             \end{cases}$ \\
             $\omega \left( f, 0 \right) = \lim_{r \to 0} \omega \left( f, \text{B} \left( 0, r \right) \right) = 2 \implies f$ no es continua en $x = 0$.
     \end{enumerate}
-\end{example*}
+\end{example}
 \begin{lema} \label{lema:2.3.6}
     Sea $a \tq \omega \left( f, a \right) < c$. $\exists \delta \tq \omega \left( f, \text{B}(a, \delta) \right) < c.$
 \end{lema}
@@ -592,9 +592,9 @@
     \[ \Pa_k = \{x_0 = a, x_{1^-}, x_{1^+}, \dots, x_{i^-}, x_{i^+}, \dots, x_{n^-}, x_{n^+}, b\}, \]
     donde $x_{i^-}, x_{i^+}$ son los extremos inferiores y superiores (respectivamente) de $T_i$. Por construcción, $R \subseteq T_i$.
 \end{proof}
-\begin{lema*}\label{lema:uno_lebesgue}
+\begin{lema}\label{lema:uno_lebesgue}
     Sea $A \subseteq \real^n$ rectángulo compacto, $f : A \to \real$, $f$ acotada. Suponemos $\forall x  \in A$, $\omega \lp f, x \rp < \varepsilon$. Entonces existe una partición $\Pa$ de $A \tq S \lp f, \Pa \rp - s \lp f, \Pa \rp < \varepsilon \vol \lp A \rp$.
-\end{lema*}
+\end{lema}
 \begin{proof}
     Sea $x \in A$, existe un rectángulo compacto $R_x \subset A \tq x \in \mathring{R}_x$ (interior relativo a $A$) y $\omega \lp f, R_x \rp = M_{R_x} - m_{R_x} < \varepsilon$. \\
     Sean $R_{x_i}$ un conjunto finito de los $R_x$ que recubren $A$. Sea $\Pa$ una partición de $A \tq$ cada subrectángulo de $\Pa$ esté dentro de uno de los $R_{x_i}$, para cada subrectángulo $R$ de $\Pa$, $M_R - m_R < \varepsilon$. Entonces,
@@ -603,9 +603,9 @@
 \begin{col*}
     $f$ continua $\implies f$ integrable Riemann (ya que $f$ continua $\implies \forall x \: \omega \lp f, x \rp = 0$).
 \end{col*}
-\begin{lema*}[(2)]\label{lema:dos_lebesgue}
+\begin{lema}[(2)]\label{lema:dos_lebesgue}
     Sean $A \subset \real^n$ rectángulo compacto, $f : A \to \real$ acotada, $c > 0$. Si $f$ es integrable Riemann, el conjunto $B_c = \{x \in A | \omega \lp f, x \rp \geq c\}$ tiene medida nula.
-\end{lema*}
+\end{lema}
 \begin{proof}
     Sea $\varepsilon > 0$, aplicando el criterio de Riemann, existe una partición $\Pa$ de $A \tq S \lp f, \Pa \rp - s \lp f, \Pa \rp < c\varepsilon$. \\
     Observamos que
@@ -633,16 +633,16 @@
     $< 2\varepsilon \implies B_c$ tiene medida nula.
 \end{proof}
 
-\begin{defi*}
+\begin{defi}[discontinuidad de una función]
     Sea $f \colon A \to R$. Definimos discontinuidad de $f$ como
     \[
         \disc\left( f \right) = \setb{x \in A \vert x \text{ no es continua en }A}.
     \]
-\end{defi*}
+\end{defi}
 
 \begin{teo}[de Lebesgue]
     Sean $A \subseteq \real^n$ un rectángulo compacto, $f \colon A \to \real$ una
-    función acotada. $f$ es integrable Riemman en $A$ si y solo si
+    función acotada. $f$ es integrable Riemann en $A$ si y solo si
     $\disc\left( f \right)$ tiene medida nula.
 \end{teo}
 
@@ -652,7 +652,7 @@
 
     \bimplies
 
-    Sea $f$ integrable Riemman en $A$. Observamos que
+    Sea $f$ integrable Riemann en $A$. Observamos que
     \[
         B = \bigcup_{k \geq 1} B_{\sfrac{1}{k}}
     \]
@@ -709,7 +709,7 @@
     + \vol \left( A \right)\right)$ lo podemos hacer tan pequeño como queramos.
 \end{proof}
 
-\begin{defi}
+\begin{defi}[casi para todo]
     Una propiedad que se satisface para todos los puntos de un conjunto $A$,
     excepto en un conjunto $N \subset A$ de medida nula, se dice que se satisface
     casi para todo.
@@ -720,9 +720,9 @@
     integrable.
 \end{prop}
 
-\section{Integral de Riemman sobre conjuntos más generales}
+\section{Integral de Riemann sobre conjuntos más generales}
 
- \begin{defi}
+ \begin{defi}[conjunto admisible Jordan]
     Un subconjunto $C \subset \real^n$ se dice que es admisible (o mesurable Jordan) si es acotado y $\fr(C)$ es de medida nula.
  \end{defi}
  \begin{obs}
@@ -753,7 +753,7 @@
     \end{enumerate}
 \end{example}
 
-\begin{defi}
+\begin{defi}[función!característica de un subespacio]
     Sea $X$ un espacio métrico, y sea $C\subset X$. Definimos la función característica de $C$ como
     \[
         \begin{aligned}
@@ -831,7 +831,7 @@
         \item $\forall x \in \fr \lp E \rp, \; \tilde{g}$ es continua en $x \implies g$ es continua en $x $.
     \end{itemize}
 \end{proof}
-\begin{defi}
+\begin{defi}[extensión de una función a todo $\real$]
     Sea $C \subset \real^n$ un conjunto admisible, sea $f \colon C \to \real$ una función acotada y sea $R \supset C$ un rectángulo compacto. Definimos la extensión de $f$ a todo $R$ como
     \begin{align*}
         f \chi_C \colon R &\to \real \\
@@ -877,7 +877,7 @@
     \]
 \end{col}
 
-\begin{defi}
+\begin{defi}[valor medio de una función]
     Sea $E$ medible Jordan, el valor medio de $f : E \to \real $:
     \[
     <f> := \frac{\int_E f}{\int_E 1} = \frac{1}{\vol(E)} \int_E f, \qquad \lp \vol(E) \neq 0 \rp.
@@ -916,16 +916,16 @@
     $\disc(h \circ f) \subset \disc(f)$ (medida nula) y teorema de Lebesgue.
 \end{proof}
 
-\begin{obs*}
+\begin{obs}
     $f,h$ integrables Riemann no implica $h \circ f$ integrable Riemann.
-\end{obs*}
+\end{obs}
 
 \section{El teorema de Fubini}
 
-\begin{lema*}
+\begin{lema}
     Siguin $B_i \subset \real \lp i\in I\rp$ no vacíos y acotados inferiormente, $B = \bigcup\limits_{i\in I} B_i$. Entonces
     \[ \inf B = \inf\left\{\inf B_i | i\in I\right\}.\]
-\end{lema*}
+\end{lema}
 \begin{proof}
     Ejercicio 2. Indicación: $B \colon \left\{ \inf B_i | i\in I\right\}$ tienen las mismas cotas inferiores.
 \end{proof}
@@ -979,11 +979,11 @@
         \lowint_{A \times B} f \leq \lowint_A \phi
     \]
 \end{proof}
-\begin{lema*}
+\begin{lema}
     Sea $D \subset \real^{n-1}$ admisible y compacto, $\phi, \psi \colon D \to \real$ continuas, $\phi \leq \psi$. Sea
     \[ E = \left\{\lp x,y\rp \in \real^{n-1} \times \real | x\in D, \phi\lp x\rp \leq y \leq \psi\lp x\rp \right\}. \]
     $E$ es admisible y compacto, y $\fr\lp E\rp \subset \left( \graf\lp\phi\rp \cup \graf\lp\psi\rp\cup\lp \fr\lp D\rp\times\real\rp \right)$.
-\end{lema*}
+\end{lema}
 
 \begin{proof}
     $\graf (\phi)$, $\graf(\psi)$ y $\fr(D) \times \real$ tienen medida nula, como
@@ -993,42 +993,42 @@
 
 \begin{teo}[de Fubini]
     Sean $A \subseteq \real^m$, $B \subseteq \real^n$ rectángulos compactos, sea
-    $f \colon A \times B \to \real$ integrable Riemman. Sea $\phi \colon A \to \real$
+    $f \colon A \times B \to \real$ integrable Riemann. Sea $\phi \colon A \to \real$
     tal que
     \[
         \lowint_B f(x, \cdot) \leq \phi(x) \leq \upint_B f(x, \cdot) \qquad
         \forall x \in A
     \]
-    Entonces, $\phi$ es integrable Riemman y
+    Entonces, $\phi$ es integrable Riemann y
     \[
         \int_{A \times B} f = \int_A \phi
     \]
     Análogamente, si tenemos $\psi \colon B \to \real$ tal que $\lowint_A f(\cdot, y)
     \leq \psi(y) \leq \upint_A f(\cdot, y)$ ($\forall y \in B$), entonces $\psi$ es
-    integrable Riemman y $\int_{A \times B} f = \int_B \psi$
+    integrable Riemann y $\int_{A \times B} f = \int_B \psi$
 \end{teo}
 
 \begin{proof}
     Por el lema \ref{lema:fubin_exp}
     \begin{gather*}
         \lowint_{A \times B} f \leq \lowint_A \phi \leq \upint_A \phi \leq
-        \upint_{A \times B} f \stackrel{f \text{ integrable Riemman}}{\implies}
+        \upint_{A \times B} f \stackrel{f \text{ integrable Riemann}}{\implies}
         \lowint_{A \times B} f = \lowint_A \phi = \upint_A \phi = \upint_{A \times B} f
-        \implies \\ \implies \phi \text{ es integrable Riemman y } \int_{A \times B} f
+        \implies \\ \implies \phi \text{ es integrable Riemann y } \int_{A \times B} f
         = \int_A \phi
     \end{gather*}
 \end{proof}
-\begin{obs*}
+\begin{obs}
     A partir de ahora, usaremos la siguiente notación:
     \[
         \int_A f = \int_A f(x) \dif^n x = \int_A \dif^n x f(x)
     \]
-\end{obs*}
+\end{obs}
 
 \begin{obs}
-    Si $f \colon A \times B \to \real$ es integrable Riemman, el conjunto
+    Si $f \colon A \times B \to \real$ es integrable Riemann, el conjunto
     \[
-        \setb{x \in A \vert f(x, \cdot) \text{ \textbf{NO} es integrable Riemman}}
+        \setb{x \in A \vert f(x, \cdot) \text{ \textbf{NO} es integrable Riemann}}
     \]
     tiene medida nula
 \end{obs}
@@ -1067,7 +1067,7 @@
     \]
 \end{col}
 
-\begin{example*}
+\begin{example}
     Sea $A = [0,1] \times [0,1]$ y $D = \left( [0,1] \cap \q \right) \times \{0\}$ y
     consideramos $f = X_D$, es decir
     \[
@@ -1094,10 +1094,10 @@
         \int_A f = \int^1_0 \dif y \lowint^1_0 \dif x f(x, y) = 0 \qquad
         \int_A f = \int^1_0 \dif y \upint^1_0 \dif x f(x, y) = 0
     \]
-\end{example*}
+\end{example}
 
 \begin{obs}
-    Hay funciones $f \colon A \times B \to \real$ acotadas y no integrables Riemman,
+    Hay funciones $f \colon A \times B \to \real$ acotadas y no integrables Riemann,
     tales que
     \[
         \int_A \dif x \int_B \dif y f(x, y) = \int_B \dif y \int_A \dif x f(x, y)
@@ -1177,8 +1177,8 @@ los rectángulos.
     \end{gather*}
 \end{proof}
 
-\begin{defi}
-    Una región elemental, es un conjunto $E \subseteq \real^n$ de la forma siguiente:
+\begin{defi}[región elemental]
+    Una región elemental es un conjunto $E \subseteq \real^n$ de la forma siguiente:
     \begin{itemize}
         \item $n = 1$, $E$ es un intervalo compacto.
         \item $n > 1$, $E = \setb{(x,y) \in \real^{n-1} \times \real \vert x \in D, \phi(x) \leq y \leq \psi(x)}$, con $D \subset \real^{n-1}$
@@ -1188,19 +1188,19 @@ los rectángulos.
     En esta construcción, admitimos cambios de orden el las variables
 \end{defi}
 
-\begin{obs*}
+\begin{obs}
     Entonces, una integral $\int_E f$ se reduce al cálculo de $n$ integrales sucesivas más simples.
-\end{obs*}
+\end{obs}
 
-\begin{example*}
+\begin{example}
     $E = \setb{(x, y, z) \in \real^3 \vert a \leq x \leq b, \phi(x) \leq y \leq \psi(x), \alpha(x, y) \leq z \leq \beta(x,y)}$,
     entonces,
     \[
         \int_E f = \int^b_a \dif x \int^{\psi(x)}_{\phi(x)} \dif y \int^{\alpha(x,y)}_{\beta\left( x, y \right)} \dif z f(x, y, z)
     \]
-\end{example*}
+\end{example}
 
-\begin{example*}
+\begin{example}
     Si tenemos $E: x^2 + y^2 = a^2$, podemos reescribirlo como
     \[
         E = \setb{(x,y) \in \real^2 \vert -a \leq x \leq a, -\sqrt{a^2 + x^2} \leq y \leq \sqrt{a^2 + x^2}}
@@ -1211,7 +1211,7 @@ los rectángulos.
         \int^a_{-a} \dif x 2 \sqrt{a^2 - x^2} = 4 \int^a_0 \sqrt{a^2 - x^2} \dif x = \\
         \stackrel{x = a\sin\theta}{=} 4 a^2 \int^{\sfrac{\pi}{2}}_0 \dif \theta \cos^2 \theta = \pi a^2
     \end{gather*}
-\end{example*}
+\end{example}
 
 \begin{obs}
     En algunos casos, la región de integración se puede presentar como unión finita de regiones elementales, entonces se puede
@@ -1237,10 +1237,10 @@ los rectángulos.
 \end{teo}
 
 \begin{obs}
-    El teorema es cierto, literalmente, para la integral de Lebesgue, pero para la integral de Riemman hay que suponer que
+    El teorema es cierto, literalmente, para la integral de Lebesgue, pero para la integral de Riemann hay que suponer que
     \begin{itemize}
         \item $U,V$ abiertos medibles Jordan
-        \item $f \colon U \to \real$ de soporte compacto e integrable Riemman ($\text{supp}(f) = \overline{\setb{x \vert f(x) \neq 0}}$)
+        \item $f \colon U \to \real$ de soporte compacto e integrable Riemann ($\text{supp}(f) = \overline{\setb{x \vert f(x) \neq 0}}$)
     \end{itemize}
 \end{obs}
 
@@ -1300,22 +1300,22 @@ los rectángulos.
     \]
 \end{obs}
 
-\begin{example*}
+\begin{example}
     Sea $B: x^2 + y^2 + z^2 < a^2$, en esf\'ericas, $r < a$,
     \[
         \vol(B) = \int_B \dif x \dif y \dif z = \int^{2\pi}_0 \dif \phi \int^\pi_0 \dif \theta \int^{a}_0  \dif r r^2 \sin\theta
         = \frac{4}{3} \pi a^3.
     \]
-\end{example*}
+\end{example}
 
 \subsection*{Demostración del teorema del cambio de variable}
 
-\begin{lema*}[(1)]\label{lema:uno_cambio}
+\begin{lema}[(1)]\label{lema:uno_cambio}
     Sea $\varphi \colon \real^n \to \real^n$ un isomorfismo lineal y sea $A \subset \real^n$ un rectángulo compacto, entonces,
     \[
         \vol\left( \varphi(A) \right) = \abs{\det \varphi} \vol(A).
     \]
-\end{lema*}
+\end{lema}
 
 \begin{proof}
     Toda matriz invertible es producto de matrices elementales y, por tanto, basta demostrarlo con matrices de transformaciones elementales
@@ -1377,18 +1377,18 @@ los rectángulos.
     \end{enumerate}
 \end{proof}
 
-\begin{lema*}[(2)]\label{lema:dos_cambio}
+\begin{lema}[(2)]\label{lema:dos_cambio}
     Sea $\phi \colon \real^n \to \real^n$ un isomorfismo lineal y sea $A \subset \real^n$ medible Jordan.
     Entonces,
     \[
         \vol\left( \phi(A) \right) = \abs{\det \phi} \vol(A).
     \]
-\end{lema*}
+\end{lema}
 
 \begin{proof}
-    Sea $R \supset A$ un rectángulo compacto. $X_A$ es integrable Riemman.
+    Sea $R \supset A$ un rectángulo compacto. $X_A$ es integrable Riemann.
 
-    Por el criterio de Riemman, $\forall \varepsilon > 0$ $\exists \Pa$ partición de $R$ tal que
+    Por el criterio de Riemann, $\forall \varepsilon > 0$ $\exists \Pa$ partición de $R$ tal que
     \[
         S\left( X_A, \Pa \right) - s\left( X_A, \Pa \right) < \varepsilon.
     \]
@@ -1404,12 +1404,12 @@ los rectángulos.
     \]
 \end{proof}
 
-\begin{lema*}[(3)]\label{lema:tres_cambio}
-    Si la fórmula del cambio de variable se satisface para $f = 1$ (constante), entonces se satisface para todo $f$ integrable Riemman.
-\end{lema*}
+\begin{lema}[(3)]\label{lema:tres_cambio}
+    Si la fórmula del cambio de variable se satisface para $f = 1$ (constante), entonces se satisface para todo $f$ integrable Riemann.
+\end{lema}
 
 \begin{proof}
-    Sea $f \colon U \to \real$ integrable Riemman, y sea $R \supset U$ un rectángulo compacto. Tomamamos $\Pa$ una partición de $R$, entonces,
+    Sea $f \colon U \to \real$ integrable Riemann, y sea $R \supset U$ un rectángulo compacto. Tomamamos $\Pa$ una partición de $R$, entonces,
     \begin{gather*}
         s\left( f, \Pa \right) = \sum_i m_{R_i} \vol\left( R_i \right) = \sum_{i} \int_{R_i} m_{R_i} \stackrel{\text{hipótesis}}{=}
         \sum_i \int_{\inv{\phi}\left( R_i \right)} \left( m_{R_i} \circ \phi \right)\abs{\det\phi} \leq \\ \leq
@@ -1423,9 +1423,9 @@ los rectángulos.
     \]
 \end{proof}
 
-\begin{lema*}[(4)]\label{lema:cuatro_cambio}
+\begin{lema}[(4)]\label{lema:cuatro_cambio}
     La fórmula del cambio de variable se satisface si $\phi \colon \real^n \to \real^n$ es lineal.
-\end{lema*}
+\end{lema}
 \begin{proof}
     Por el lema \hyperref[lema:dos_cambio]{2}, tenemos que
     \[
@@ -1437,10 +1437,10 @@ los rectángulos.
     \]
 \end{proof}
 
-\begin{lema*}[(5)]\label{lema:cinco_cambio}
+\begin{lema}[(5)]\label{lema:cinco_cambio}
     Si la fórmula del cambio de variable se satisface para $\psi \colon W \to V$ y para $\phi \colon V \to U$, entonces, se satisface para
     $\phi \circ \psi$.
-\end{lema*}
+\end{lema}
 
 \begin{proof}
     \begin{gather*}
@@ -1452,41 +1452,41 @@ los rectángulos.
 
 \textbf{Ahora, haremos un breve repaso antes de proseguir con la demostración.}
 
-\begin{defi*}
+\begin{defi}[norma de una matriz]
     Recordemos que definíamos la norma de una matriz $M$ como
     \[
         \norm{M} = \sup_{\norm{x} \leq 1} \norm{T x}
     \]
-\end{defi*}
+\end{defi}
 
-\begin{prop*}
+\begin{prop}
     La norma cumple que
     \begin{itemize}
         \item $\norm{TS} \leq \norm{T}\norm{S}$
         \item $\norm{\Id} = 1$
         \item $\norm{Tx} \leq \norm{T} \norm{x}$
     \end{itemize}
-\end{prop*}
+\end{prop}
 
-\begin{defi*}
+\begin{defi}[aplicación lipschitziana]
     Una aplicación $\phi \colon X \to Y$ diremos que es lipschitziana con constante de Lipschitz $L \geq 0$, si
     \[
         \forall x, \bar{x} \qquad
         d\left( \phi(x), \phi\left( \bar{x} \right) \right) \leq L d\left( x, \bar{x} \right)
     \]
-\end{defi*}
+\end{defi}
 
-\begin{obs*}
+\begin{obs}
     Se tiene que
     \begin{itemize}
         \item $\text{diámetro}\left( \phi(E) \right) \leq L \text{diámetro}(E)$
         \item $\phi\left( B(a; r) \right) \subset B\left( \phi(a); Lr \right)$
     \end{itemize}
-\end{obs*}
+\end{obs}
 
-\begin{prop*}
+\begin{prop}
     Si $\phi \colon U \subset \real^m \to \real^n$ de clase $\C^1$, entonces, $\phi$ es localmente lipschitziana.
-\end{prop*}
+\end{prop}
 
 \begin{proof}
     Por el teorema del valor medio, tenemos que, si $[x, \bar{x}] \subset U$, entonces
@@ -1496,21 +1496,21 @@ los rectángulos.
     Por lo tanto, si $B \subset U$ bola, tal que $\bar{B} \subset U$, $\phi\vert_{\bar{B}}$ es lipschitziana con $L = \sup\limits_{z \in \bar{B}} \norm{\Dif_\phi(z)}$.
 \end{proof}
 
-\begin{lema*}
+\begin{lema}
     Sea $R \subset \real^n$ un rectángulo compacto, $\forall \varepsilon > 0$, existe un conjunto finito de cubos compactos $Q_k \subset R$ tal que
     \[
         R = \bigcup_{j} Q_k \qquad
         \sum_{q} \vol(Q_k) < \vol(R) + \varepsilon
     \]
-\end{lema*}
+\end{lema}
 
-\begin{lema*}
+\begin{lema}
     Sea $C \subset \real^n$ de medida nula (contenido nulo). $\forall \varepsilon > 0$ existe una sucesión (finita) de cubos compactos $Q_j$ tal que
     \[
         C \subset \bigcup_{j} Q_j \qquad
         \sum_j \vol\left( Q_j \right) < \varepsilon
     \]
-\end{lema*}
+\end{lema}
 
 \begin{proof}
     Sea $\varepsilon > 0$, existen rectángulos $R_i$, tal que
@@ -1526,14 +1526,14 @@ los rectángulos.
     Por lo tanto, $\sum \vol\left(Q_{ij}\right) < \varepsilon$
 \end{proof}
 
-\begin{lema*}
+\begin{lema}
     Sea $Q \subset \real^n$ un cubo compacto y $\phi \colon Q \to \real^n$ con constante $L$. Entonces, existe un cubo
     $\bar{Q}$ tal qu
     \[
         \phi(Q) \subseteq \bar{Q} \qquad
         \vol\left( \bar{Q} \right) \leq L^n \vol(Q)
     \]
-\end{lema*}
+\end{lema}
 
 \begin{proof}
     Si consideramos la distancia manhattan (de orden 1), tenemos
@@ -1543,10 +1543,10 @@ los rectángulos.
     Y se tiene que $\vol\left( \bar{Q} \right) = L^n (2r)^n \leq L^n \vol(Q) = L^n (2r)^n$.
 \end{proof}
 
-\begin{lema*}
+\begin{lema}
     Sea $A \subset \real^n$ un rectángulo compacto, $\phi \colon A \to \real^n$ una función lipschistzciana. Si $N \subset A$ tiene
     medida nula, $\phi(N)$ tambi\'en 
-\end{lema*}
+\end{lema}
 
 \begin{proof}
     Sea $\varepsilon > 0$. Existe una sucesión de cubos compactos $Q_j \subset \real^n$ tal que
@@ -1566,10 +1566,10 @@ los rectángulos.
     \]
 \end{proof}
 
-\begin{lema*}
+\begin{lema}
     Sea $U \subset \real^n$ un abierto y $\phi \colon U \to \real^n$ una función localmente lipschitziana, Si $N \subset U$ tiene
     medida nula, $\phi(N)$ tambi\'en.
-\end{lema*}
+\end{lema}
 
 \begin{proof}
     Para  cada $x \in N$, hay una vecindad $R_x \subset U$ de $x$ tal que $\phi\vert_{R_x}$ es lipschitziana. Los internos $\mathring{R_x}$ recubren
@@ -1590,14 +1590,14 @@ los rectángulos.
 
 \textbf{Acabada ya esta pequeña pausa para repasar algunas cosas importantes, continuamos con la demostración}
 
-\begin{lema*}[(0)]\label{lema:cero_cambio}
+\begin{lema}[(0)]\label{lema:cero_cambio}
     Sea $\phi \colon V \to U$ un difeomorfismo de clase $\C^1$ entre abiertos. Sea $B \subset V$ tal que
     \begin{itemize}
         \item $B$ es medible Jordan
         \item $\bar{B} \subset V$ y $\bar{B}$ es compacto.
     \end{itemize}
     Entonces, $A = \phi(B)$ es medible Jordan.
-\end{lema*}
+\end{lema}
 
 \begin{proof}
     Tenemos que ver que $A$ es acotado y que su frontera tiene medida nula. Sabemos que $A = \phi(B) \subset \phi\left( \bar{B} \right)$ que es compacto,
@@ -1608,7 +1608,7 @@ los rectángulos.
     \]
 \end{proof}
 
-\begin{lema*}[(6)]\label{lema:seis_cambio}
+\begin{lema}[(6)]\label{lema:seis_cambio}
     Sea $\phi \colon V \to U$ un difeomorfismo de clase $\C^1$, $\psi = \inv{\phi}$, sea $B \subset V$ un cubo compacto y sean
     \[
         K := \max_{z \in B} \norm{\Dif_{\psi} \left( \phi(z) \right)} \qquad
@@ -1618,7 +1618,7 @@ los rectángulos.
     \[
         \vol\left( \phi(B) \right) \leq \abs{\det \Dif_\phi(x)}(1+K\Delta)^n \vol(B)
     \]
-\end{lema*}
+\end{lema}
 
 \begin{proof}
     Por el teorema del valor medio, tenemos que
@@ -1657,12 +1657,12 @@ los rectángulos.
     \]
 \end{proof}
 
-\begin{lema*}[(7)]\label{lema:siete_cambio}
+\begin{lema}[(7)]\label{lema:siete_cambio}
     Sea $\phi \colon V \to U$ un difeomorfismo de clase $\C^1$, $B \subset V$ un cubo compacto, entonces,
     \[
         \vol\left( \phi(B) \right) \leq \int_B \abs{\det \Dif_\phi}
     \]
-\end{lema*}
+\end{lema}
 
 \begin{proof}
     Como $\phi$ es de clase $\C^1$, $\Dif_\phi$ es continua y, como $B$ es compacto, $\Dif_\phi$ es uniformemente continua, por ello,
@@ -1722,7 +1722,7 @@ Procedemos a la demostración
  
 \section{Integrales impropias}
 
-\begin{defi}
+\begin{defi}[exhaustión de una sucesión]
     Sea $E \subset \real^n$. Definimos por \textit{exhaustión} de $E$ una sucesión $\lp E_i \rp$ de conjuntos medibles Jordan tales que
     \begin{itemize}
         \item $E_i \subset E$
@@ -1731,7 +1731,7 @@ Procedemos a la demostración
     \end{itemize}
 \end{defi}
 
-\begin{defi}
+\begin{defi}[integral!de Riemann impropia]
     Sea $f \colon E \to \real$. Sea $\lp E_i \rp$ una exhaustión de $E$, y suponemos que $f$ es integrable Riemann en cada $E_i$. Definimos la \textit{integral de Riemann impropia} de $f$ en $E$ como el límite
     \[
         \int_E f := \lim\limits_i \int_{E_i} f,
@@ -1762,7 +1762,7 @@ Procedemos a la demostración
     \end{itemize}
 \end{lema}
 
-\begin{defi}
+\begin{defi}[función!localmente integrable Riemann]
     Sea $U \subset \real^n$ un conjunto abierto. Decimos que una función $f \colon U \to \real$ es \textit{localmente integrable Riemann} si todo punto $x \in U$ tiene un entorno abierto $V_x$ tal que $V_x$ es medible Jordan y $f_{|V_x}$ es integrable Riemann.
 \end{defi}
 
@@ -1770,7 +1770,7 @@ Procedemos a la demostración
     Sea $U\subset \real^n$ un conjunto abierto y sea $f\colon U \to \real$ localmente integrable Riemann. Entonces, $f$ es integrable Riemann sobre todo subconjunto compacto medible Jordan $A \subset U$.
 \end{prop}
 
-\begin{defi}
+\begin{defi}[función!localmente acotada]
     Decimos que una función $f \colon X \to \real$ es \textit{localmente acotada} si todo punto $x \in X$ tiene un entorno $V_x$ tal que $f_{|V_x}$ es acotada.
 \end{defi}
 

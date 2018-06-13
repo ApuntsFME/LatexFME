@@ -1,3 +1,5 @@
+all: main
+
 main: *.tex
 	mkdir -p figures
 	pdflatex -shell-escape main.tex
@@ -6,7 +8,7 @@ main: *.tex
 silentmain: *.tex
 	mkdir -p figures
 	pdflatex -halt-on-error -shell-escape main.tex > /dev/null
-	makeindex main > /dev/null
+	python ../script.py main.idx 2> /dev/null
 	pdflatex -shell-escape main.tex > /dev/null
 clean:
-	rm *.aux *.log *.out *.auxlock *.toc
+	rm *.aux *.log *.out *.auxlock *.toc *.ind *.ilg *.idx *.pdf

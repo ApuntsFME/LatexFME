@@ -40,13 +40,13 @@
     \end{itemize}
 \end{defi}
 
-\begin{obs*}
+\begin{obs}
     Si los campos son de clase $\C^k$ el resultado es de clase $\C^{k-1}$.
-\end{obs*}
+\end{obs}
 
-\begin{obs*}
+\begin{obs}
     Las definiciones de gradiente y de divergnecia se pueden aplicar sin casi ningún cambio a $\real^n$.
-\end{obs*}
+\end{obs}
 
 \begin{obs}
     Recordemos que el gradiente tiene una relación directa con la diferencial a trav\'es del producto escalar
@@ -142,12 +142,12 @@
     \]
 \end{defi}
 
-\begin{obs*}
+\begin{obs}
     Podemos extender la definición del laplaciano a $\real^n$, y en coordenadas cartesianas sería
     \[
         \Delta = \pdv[2]{}{x_1} + \cdots + \pdv[2]{}{x_n}.
     \]
-\end{obs*}
+\end{obs}
 
 \begin{obs}
     La expresión en coordenadas cartesianas del laplaciano, permite aplicarlo también a campos vectoriales en
@@ -221,15 +221,15 @@
     si todos los puntos frontera de $M$ son regulares; o, más generalmente, si el conjunto de puntos de la frontera singulares es finito.
 \end{teo}
 
-\begin{obs*}
+\begin{obs}
     Los puntos frontera de $M$ se clasifican en:
     \begin{itemize}
         \item Puntos frontera regulares, si pertenecen a una curva regular incluida en la frontera de $M$,
         \item Puntos singulares.
     \end{itemize}
-\end{obs*}
+\end{obs}
 
-\begin{example*}
+\begin{example}
     Consideramos
     \[
         H =
@@ -277,7 +277,7 @@
         \int_{\partial H} \vec{F} \dif \vec{l} = \int^{2\pi}_{0} \dif t R^2 = 2 \pi R^2.
     \]
     Y como vemos, se satisface el teorema.
-\end{example*}
+\end{example}
 
 \begin{teo}[de Gauss-Ostrogradski, o de la divergencia]
     Sea $W \subset \real^3$ abierto, $\vec{F} \colon W \to \real^3$ de clase $\C^1$, $B \subset W$ un abierto tal que $\bar{B}$ es compacto y $\bar{B} \subset W$.
@@ -293,7 +293,7 @@
     La definición precisa de puntos frontera regulares y singulares, de borde y su orientación, se explicarán con más detalle en la sección \ref{section:5-8}.
 \end{obs}
 
-\begin{example*}
+\begin{example}
     Consideramos
     \[
         \vec{r} =
@@ -320,7 +320,7 @@
     \[
         \vol(B) = \frac{1}{3} R \vol\left( \partial B \right).
     \]
-\end{example*}
+\end{example}
 
 \section{Potenciales}
 
@@ -333,10 +333,10 @@
     Si $c \in \real$ y $f$ es potencial escalar para $\vec{F}$, $f+c$ tambi\'en lo es $\left( \grad(f+c)=\grad f \right)$.
 \end{obs}
 
-\begin{prop*}
+\begin{prop}
     Sea $U \subset \real^n$ conexo, $\vec{F} \colon U \to \real^n$ un campo vectorial, si $f,g$ son dos potenciales escalares para $\vec{F}$, entonces
     $f - g$ es una constante.
-\end{prop*}
+\end{prop}
 \begin{proof}
     $f,g$ son potenciales escalares para $\vec{F} \implies \grad f = \grad g \implies \grad (f-g) = 0 \stackrel{U \text{ conexo}}{\implies} f-g =$ constante.
 \end{proof}
@@ -366,7 +366,7 @@
     a lo largo de cualquier camino de clase $\C^1$ a trozos solo depende de los puntos iniciales y final. Entonces, $\vec{F}$ es conservativo.
 \end{prop}
 
-\begin{obs*}
+\begin{obs}
     Se puede construir $f$ fijando $x_0 \in U$ un punto que llamaremos el origen del potencial. Entonces, la función
     \[
         \begin{aligned}
@@ -374,7 +374,7 @@
         \end{aligned}
     \]
     que está bien definida y $\grad f = \vec{F}$.
-\end{obs*}
+\end{obs}
 
 \begin{proof}
     Sea $x \in U$, $\vec{u} \in \real^n$. Calculamos
@@ -421,11 +421,11 @@
     $[p, q] \subset A$. Diremos que $A$ es estrellado si lo es respecto a un punto.
 \end{defi}
 
-\begin{obs*}
+\begin{obs}
     Un conjunto es convexo $\iff$ es estrellado respecto a todos sus puntos.
-\end{obs*}
+\end{obs}
 
-\begin{example*}
+\begin{example}
     Los siguientes conjuntos son estrellados
     \begin{itemize}
         \item Las semirectas en $\real^2$.
@@ -436,7 +436,7 @@
         \item $\real^2 \setminus \text{ un punto}$.
         \item $\real^3 \setminus \text{ un punto}$.
     \end{itemize}
-\end{example*}
+\end{example}
 
 \begin{lema}[de Poincar\'e]
     \begin{itemize} \item[] \end{itemize}
@@ -458,9 +458,9 @@
         \item La aplicación $\Gamma \colon [0,1] \times [0,1] \to A$ definida por $\Gamma(s,t) = \Gamma_s(t)$ es continua.
     \end{itemize}
 \end{defi}
-\begin{defi*}
+\begin{defi}
     Un camino cerrado o lazo de punto base $p$, es un camino con origen y t\'ermino $p$.
-\end{defi*}
+\end{defi}
 
 \begin{defi}
     Diremos que un conjunto $A$ es simplemente conexo si
@@ -471,10 +471,10 @@
     \end{enumerate}
 \end{defi}
 
-\begin{obs*}
+\begin{obs}
     \ref{item:2-simp_conexo} es equivalente a requerir que cualquier camino $\gamma_0$ cerrado es homótopo al camino
     constante.
-\end{obs*}
+\end{obs}
 
 \begin{obs}
     Ejemplos de conjuntos simplemente conexos son: $\real^n$, las bolas, los rectángulos, los semiespacios de $\real^n$,
@@ -496,7 +496,7 @@
     elemental, en términos del cálculo de primitivas.
 \end{obs}
 
-\begin{example*}
+\begin{example}
     Consideramos $U = \real^3$ y 
     \[
         \vec{F} =
@@ -515,9 +515,9 @@
     \[
         f(x, y, z) = xy + \sin(yz) + C
     \]
-\end{example*}
+\end{example}
 
-\begin{example*}
+\begin{example}
     Sea $U = \real^3 \setminus$eje $z$. Tomamos
     \[
         \vec{F} = 
@@ -536,7 +536,7 @@
     \]
     orientada ``positivamente''. Se puede comprobar que $\oint_C \vec{F} \dif \vec{l} = 2\pi \neq 0$, es decir,
     que $\vec{F}$ no es conservativa
-\end{example*}
+\end{example}
 
 \subsection*{Potenciales vectoriales}
 

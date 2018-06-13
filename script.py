@@ -24,6 +24,7 @@ newidx = ''
 with open(ifile, 'r') as f:
     lines = f.readlines()
     for line in reversed(lines):
+        print(line)
         save = re.findall(lab, line)
         if (save[0] == 'tlab'):
             labels.append(labels[-1])

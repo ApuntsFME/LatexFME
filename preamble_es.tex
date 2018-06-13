@@ -9,15 +9,12 @@
 \usepackage[spanish,es-lcroman]{babel}
 
 \usepackage{makeidx}
-%\usepackage[xindy]{imakeidx}
-% GUARRADA PARA QUE EL INDICE QUEDE BONITO
-%\makeatletter
-%% Global redefinition of indexentry to use section, then page%
-%\renewcommand{\imki@wrindexentrysplit}[3]{%
-% \expandafter\protected@write\csname#1@idxfile\endcsname{}%
-%    {\string\indexentry{#2}{\arabic{section}.\arabic{subsection},p\thepage}}%
-%}%
-%\makeatother
+\usepackage{hyperref}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+    version={4.0},
+]{doclicense}
 
 \newmdenv[leftline=false,topline=false]{topright}
 \let\proof\relax
@@ -172,3 +169,4 @@
 \declaretheorem[style=breakthm,name=Lema,numberwithin=section]{teolema}
 
 \makeindex
+\usepackage[totoc]{idxlayout}       % Glossari a l'índex

@@ -2,7 +2,7 @@
 
 \section{Series numéricas}
 
-\begin{defi}
+\begin{defi}[serie!de números reales]
     Una serie de números reales es una pareja de sucesiones de números reales
     $(a_n)_{n \geq 0}$, $(s_n)_{n \geq 0}$, relacionadas por
     \[
@@ -11,26 +11,27 @@
     Denominaremmos término $n$-ésimo de la serie al elemento $a_n$ y llamaremos
     suma parcial $n$-ésima de la serie a $s_n$.
 \end{defi}
-\begin{obs*}
+\begin{obs}
     Las sumas parciales definen los términos
     \[
         a_0 = s_0, \qquad a_n = s_n - s_{n-1} \quad (n \geq 1).
     \]
-\end{obs*}
+\end{obs}
 
-\begin{defi}
+\begin{defi}[suma de una serie]
     Llamaremos suma de una serie a
     \[
         s = \lim s_n = \lim\limits_{n \to \infty} \sum_{k=0}^{n} a_n,
     \]
     suponiendo que existe.
 \end{defi}
-\begin{obs*}
+\begin{obs}
     Denotaremos $s = \sum\limits_{n \geq 0} a_n = \sum\limits_{n \geq 0}^{\infty} a_n$.
     Esta misma notación nos servirá para representar la serie.
-\end{obs*}
+\end{obs}
 
-\begin{defi}
+\begin{defi}[serie!convergente]\index{serie!de números reales!divergente((tlab))}
+\index{serie!de números reales!oscilante((tlab))}
     Diremos que una serie $\sum a_n$ es convergente o divergente si lo es la
     sucesión de sumas parciales,
     \begin{itemize}
@@ -48,20 +49,20 @@
 \end{obs}
 
 
-\begin{defi}
+\begin{defi}[serie!geométrica]
     Sea $r \in \real$. Llamaremos serie geométrica de razón $r$ a la serie
     \[
         \sum_{n \geq 0} r^n.
     \]
 \end{defi}
 
-\begin{prop*}
+\begin{prop}
     La serie geométrica es convergente si y solo si $\abs{r} < 1$, en tal caso
     la suma es
     \[
         \sum_{n \geq 0} r^n = \frac{1}{1-r}.
     \]
-\end{prop*}
+\end{prop}
 
 \begin{proof}
     Primero, calculamos el término $n$-ésimo
@@ -178,14 +179,14 @@
     la convergencia.
 \end{proof}
 
-\begin{defi*}
+\begin{defi}[serie!harmónica]
     Llamamos serie harmónica a la serie
     \[
         \sum_{n \geq 1} \frac{1}{n}.
     \]
-\end{defi*}
+\end{defi}
 
-\begin{defi}
+\begin{defi}[serie!de Riemann]
     Sea $p \in \real$. Llamaremos serie harmónica generalizada o serie de Riemman
     de parámetro $p$ a la serie
     \[
@@ -193,9 +194,9 @@
     \]
 \end{defi}
 
-\begin{prop*}
+\begin{prop}
     La serie de Riemman es convergente si y solo si $p > 1$.
-\end{prop*}
+\end{prop}
 
 \begin{proof}
     Distinguiremos entre varios casos:
@@ -365,7 +366,7 @@
     \end{itemize}
 \end{proof}
 
-\begin{example*}
+\begin{example}
     Estudiar la convergencia de
     \begin{itemize}
         \item $\sum\limits_{n \geq 0} \frac{1}{n!}$.
@@ -388,7 +389,7 @@
             \text{ convergente} \\ \alpha > 1 \text{ divergente}\end{cases}$. Si $\alpha =1$,
             la serie es $\sum 1^{n + \sqrt{n}} = \sum 1$ que es divergente.
     \end{itemize}
-\end{example*}
+\end{example}
 
 \begin{obs}
     Los criterios anteriores no deciden cuando $\alpha = 1$. Como $\sfrac{a_{n+1}}{a_n} \to
@@ -405,15 +406,15 @@
     divergente.
 \end{prop}
 
-\begin{prop*}[Criterio de condensación]
+\begin{prop}[Criterio de condensación]
     Sea $(a_n)$ una sucesión de números positivos decreciente, entonces
     \[
         \sum_{n=0}^{\infty} a_n \text{ converge} \iff \sum_{n=0}^{\infty} 2^n a_{2^n}
         \text{ converge}
     \]
-\end{prop*}
+\end{prop}
 
-\begin{prop*}[Criterio logarítmico]
+\begin{prop}[Criterio logarítmico]
     Sea $\sum a_n$ una serie de términos positivos tal que existe el límite
     \[
         L = \lim_{n \to \infty} \frac{- \ln(a_n)}{\ln(n)} = \lim_{n \to \infty}
@@ -421,7 +422,7 @@
     \]
     Si $L > 1$, la serie $\sum a_n$ es convergente. Si $L < 1$, la serie $\sum a_n$ es
     divergente.
-\end{prop*}
+\end{prop}
 
 \begin{prop}[Criterio de la integral]
     Sea $n_0 \in \n$ y $f \colon \left[ n_0, +\infty \right) \to \real$ positiva, localmente integrable
@@ -438,7 +439,7 @@
     \end{enumerate}
 \end{prop}
 
-\begin{example*}
+\begin{example}
     \begin{itemize}
         \item[]
         \item $\sum \frac{1}{n^\alpha}$ tiene el mismo carácter que
@@ -455,7 +456,7 @@
                 \frac{\dif x}{x^{1.01}} \simeq 100.577 \simeq\sum_{n\geq 1}\frac{1}{n^{1.01}}
             \]
     \end{itemize}
-\end{example*}
+\end{example}
 
 \begin{prop}
     Sea $\sum a_n$ una serie de términos positivos. Dada cualquier permutación $\sigma
@@ -477,7 +478,7 @@
 
 \section{Series absoluta y condicionalmente convergentes}
 
-\begin{defi}
+\begin{defi}[serie!absolutamente convergente]
   Diremos que una serie $\sum a_n$ es absolutamente convergente, si la serie $\sum \abs{a_n}$ es convergente.
 \end{defi}
 
@@ -500,33 +501,33 @@
 
 \end{proof}
 
-\begin{defi}
+\begin{defi}[serie!condicionalmente convergente]
   Una serie convergente, que no es absolutamente convergente, se dice que es condicionalmente convergente.
 \end{defi}
 
-\begin{example*}
+\begin{example}
   La serie armónica alternada $\sum \frac{(-1)^n}{n}$ es condicionalmente convergente.
-\end{example*}
+\end{example}
 
 \begin{prop}
     Si $\sum a_n$ y $\sum b_n$ son absolutamente convergentes, y $\lambda \in \real$,
     entonces $\sum (a_n + b_n)$ y $\sum \lambda a_n$ son absolutamente convergentes.
 \end{prop}
 
-\begin{defi}
+\begin{defi}[parte!positiva de un real]\index{parte!negativa de un real((tlab))}
   Sea $a \in \real$. Definimos $a_+$ (la parte positiva de $a$) como $a_+ = \max(a, 0)$, asimismo, definimos
   la parte negativa de $a$ como $a_- = \max(-a,0)$.
 \end{defi}
 
-\begin{obs*}
+\begin{obs}
   Dado un $a$, podemos expresar $a = a_+ - a_-$ y $\abs{a} = a_+ + a_-$.
-\end{obs*}
+\end{obs}
 
-\begin{obs*}
+\begin{obs}
   Dada $f \colon X \to \real$, podemos hacer exactamente lo mismo, ($f = f_+ - f_-$, $\abs{f} = f_+ + f_-$).
-\end{obs*}
+\end{obs}
 
-\begin{example*} \hspace{0pt}
+\begin{example} \hspace{0pt}
   \begin{center}
   \begin{tikzpicture}
   \begin{axis}[
@@ -549,7 +550,7 @@
   \end{tikzpicture}
   \end{center}
 
-\end{example*}
+\end{example}
 
 \begin{lema}
   Sea $(a_n)$ una sucesión de números reales. Sean $(p_n)$ y $(q_n)$ sus partes positiva y negativa
@@ -609,7 +610,7 @@
     $\sum a_{\sigma(n)} = s$.
 \end{teo}
 
-\begin{defi}
+\begin{defi}[serie!alternada]
     Una serie alternada es una serie donde los términos cambian de signo alternativamente.
     Es decir, una serie de la forma $\sum (-1)^n a_n$ donde $a_n \geq 0$.
 \end{defi}
@@ -646,10 +647,10 @@
     $\abs{S - S_N} \leq a_{N+1}$.
 \end{proof}
 
-\begin{example*}
+\begin{example}
     La serie harmónica alternada, $\sum \frac{(-1)^n}{n}$ es convergente por el
     criterio de Laibnitz.
-\end{example*}
+\end{example}
 
 \noindent Hay otros criterios de convergencia para series cualesquiera, entre los cuales
 destaca el criterio de Dirichlet.
@@ -665,7 +666,7 @@ destaca el criterio de Dirichlet.
 
 \section{Aplicación: Series de potencias}
 
-\begin{defi}
+\begin{defi}[serie!de potencias]
     Una serie de potencias (centrada en 0) es una expresión
     \[
         \sum_{n \geq 0} a_nx^n,
@@ -684,21 +685,21 @@ destaca el criterio de Dirichlet.
     $\sum \abs{a_n}0^n$ converge a 0 trivialmente.
 \end{proof}
 
-\begin{defi}
+\begin{defi}[radio de convergencia]\index{dominio de convergencia((tlab))}
     Sea $\sum a_nx^n$ una serie de potencias y sea $I$ el intervalo de los $r \geq$ tales que
     $\sum \abs{a_n}r^n$ converge. Llamamos radio de convergencia de la serie a $R$ el
     extremo superior del intervalo $I$. Denominamos dominio de convergencia de la serie
     al intervalo $(-R,R)$.
 \end{defi}
 
-\begin{obs*}
+\begin{obs}
     La serie puede converger en los puntos frontera del dominio de convergencia.
-\end{obs*}
+\end{obs}
 
-\begin{obs*}
+\begin{obs}
     Los casos extremos corresponden a $R = 0$ (la serie solo converge para $x = 0$)
     y $R = +\infty$ (la serie converge para todo $x$).
-\end{obs*}
+\end{obs}
 
 \begin{teo}[de Cauchy-Hadamard]
     Sea $\sum a_nx^n$ una serie de potencias. Su radio de convergencia $R$ viene dado por
@@ -709,9 +710,9 @@ destaca el criterio de Dirichlet.
     si $\abs{x} > R$.
 \end{teo}
 
-\begin{obs*}
+\begin{obs}
     A priori no se puede afirmar nada cuando $\abs{x} = R$.
-\end{obs*}
+\end{obs}
 
 \begin{proof}
     Separaremos la demostración en varios casos
@@ -752,7 +753,7 @@ destaca el criterio de Dirichlet.
     Suponiendo que los límites existan.
 \end{obs}
 
-\begin{example*}
+\begin{example}
     \begin{itemize}
         \item[]
         \item $\sum n!x^n$, $\frac{1}{R} = \lim \frac{(n+1)!}{n!} = \lim (n+1)
@@ -765,25 +766,25 @@ destaca el criterio de Dirichlet.
             y $\sum \frac{1}{n^2}$ tienen $R = 1$, pero tienen comportamiento
             distinto en la frontera.
     \end{itemize}
-\end{example*}
+\end{example}
 
-\begin{defi}
+\begin{defi*}
     Si una serie de potencias $\sum a_n x^n$ tiene radio de convergencia $R > 0$,
     define una función
     \[\begin{aligned}
         f \colon (-R,R) &\to \real \\ x &\mapsto f(x) = \sum a_n x^n
     \end{aligned}\]
-\end{defi}
+\end{defi*}
 
-\begin{obs*}
+\begin{obs}
     Se puede probar que $f$ es continua, integrable y derivable
     ``término a término’’.
-\end{obs*}
+\end{obs}
 
-\begin{obs*}
+\begin{obs}
     La serie derivada término a término tiene radio de convergencia $R$, y por
     lo tanto, la función es de clase $\C^\infty$.
-\end{obs*}
+\end{obs}
 
 \begin{proof}
     Primero, consideramos la función derivada $f^\prime (x) = \sum\limits_{n \geq 0}
@@ -802,12 +803,12 @@ destaca el criterio de Dirichlet.
     \]
 \end{proof}
 
-\begin{defi*}
+\begin{defi}[serie!analítica]
     Una función tal que alrededor de cada punto se puede expresar como una serie
     de potencias (convergente) se llama analítica.
-\end{defi*}
+\end{defi}
 
-\begin{defi}
+\begin{defi}[serie!de Taylor]
     Sea $D$ un intervalo abierto tal que $0 \in D$ y sea $f \colon D \to \real$
     de clase $\C^\infty$. Entonces, $f$ define una serie de potencias
     \[
@@ -816,7 +817,7 @@ destaca el criterio de Dirichlet.
     que es la serie de Taylor de $f$ (centrada en 0).
 \end{defi}
 
-\begin{prop*}
+\begin{prop}
     Sea $D$ un intervalo abierto tal que $0 \in D$ y sea $f \colon D \to \real$
     de clase $\C^\infty$. Suponemos que la serie de Taylor de $f$ tiene radio
     de convergencia $R > 0$. Recordando la fórmula de Taylor $f(x) = P_n(x) + R_n(x)$
@@ -826,7 +827,7 @@ destaca el criterio de Dirichlet.
         f(x) = \sum_{n \geq 0} \frac{f^{(n)}(0)}{n!}x^n \iff
         \lim_{n \to \infty} R_n(x) = 0.
     \]
-\end{prop*}
+\end{prop}
 
 \begin{obs}
     Hay funciones $f \colon \real \to \real$ de clase $\C^\infty$ tales que su
@@ -836,7 +837,7 @@ destaca el criterio de Dirichlet.
     serie de Taylor (centrada en 0) tiene radio de convergencia 0.
 \end{obs}
 
-\begin{example*}
+\begin{example}
     La función $f(x) = \begin{cases} 0 \quad \text{si } x \leq 0 \\
     e^{-\sfrac{1}{x}} \quad \text{si } x > 0 \end{cases}$
     \begin{center}
@@ -857,7 +858,7 @@ destaca el criterio de Dirichlet.
     Su serie de Taylor es nula ($f^{(k)}(0) = 0$ $\forall k \in \n$). Pero $f$ no
     se anula en ningún entorno de 0 $\implies$ $f$ no coincide con la serie de
     Taylor en ningún entorno de 0.
-\end{example*}
+\end{example}
 
 \begin{prop}[Algunas series de Taylor importantes]
     \begin{itemize}
@@ -877,7 +878,7 @@ destaca el criterio de Dirichlet.
     \end{itemize}
 \end{prop}
 
-\begin{example*}
+\begin{example}
     \begin{itemize}
         \item[]
         \item $\displaystyle \sum_{n \geq 0} \frac{1}{n!} = e^1 = e$.
@@ -896,7 +897,7 @@ destaca el criterio de Dirichlet.
                 \frac{x^{2n+1}}{2n+1}.
             \]
     \end{itemize}
-\end{example*}
+\end{example}
 
 \subsection{Series de números complejos}
 
@@ -906,45 +907,45 @@ destaca el criterio de Dirichlet.
     complejos.
 \end{defi*}
 
-\begin{prop*}
+\begin{prop}
     Una serie $\sum c_n$ de números complejos es convergente si y solo si lo son
     separadamente sus partes real e imaginaria.
-\end{prop*}
+\end{prop}
 
-\begin{prop*}
+\begin{prop}
     Toda serie $\sum c_n$ de números complejos absolutamente convegente, es
     convergente.
-\end{prop*}
+\end{prop}
 
-\begin{obs*}
+\begin{obs}
     El estudio de las series de potencias es completamente análogo. En el caso
     complejo, si la serie de potencias $\sum c_n z^n$ tiene radio de convergencia
     $R$ ($\frac{1}{R} = \limsup \abs{c_n}^{\sfrac{1}{n}}$). Entonces, el dominio de
     convergencia es un disco abierto $\abs{z} < R$ del plano complejo.
-\end{obs*}
+\end{obs}
 
-\begin{obs*}
+\begin{obs}
     La serie de Taylor de la función exponencial real permite definir la exponencial
     compleja como
     \[
         e^z = \sum_{n \geq 0} \frac{z^n}{n!}, \forall z \in \cx.
     \]
-\end{obs*}
+\end{obs}
 
-\begin{prop*}
+\begin{prop}
     Tomando $z \in \cx$ un imaginario puro, y separando las partes real e imaginaria
     de las potencias, obtenemos la formula de Euler,
     \[
         e^{ix} = \cos(x) + i\sin(x).
     \]
     En particular para $x = \pi$, se tiene que $e^{i\pi} + 1 = 0$.
-\end{prop*}
+\end{prop}
 
 
 
 \section{Integrales impropias: definición y ejemplos}
 
-\begin{defi}
+\begin{defi}[función!localmente integrable]
     Sea $D \subset \real$ un intervalo, y $f \colon D \to \real$ una función.
     Diremos que $f$ es localmente integrable si es integrable para todo intervalo
     compacto $K \subset D$.
@@ -959,16 +960,16 @@ destaca el criterio de Dirichlet.
     \]
 \end{obs}
 
-\begin{obs*}
+\begin{obs}
     A veces se dice que una integral impropia es
     \begin{itemize}
         \item De primera especie, si el intervalo no es acotado.
         \item De segunda especie, si la función no es acotada.
         \item De tercera especie, sin ni la función ni el intervalo son acotados.
     \end{itemize}
-\end{obs*}
+\end{obs}
 
-\begin{defi}
+\begin{defi}[integral!impropia!convergente]\index{integral!impropia!divergente((tlab))}
     Diremos que la integral impropia es convergente si $\exists\abs{\int^b_a f}
     <+\infty$, y divergente si $\exists\int^b_a f = \pm\infty$.
 \end{defi}
@@ -979,7 +980,7 @@ destaca el criterio de Dirichlet.
     < b$.
 \end{obs}
 
-\begin{defi}
+\begin{defi}[integral!impropia]
     Consideramos una función localmente integrable $f \colon (a,b) \to \real$. Si
     tomamos un punto arbitrario $c$ tal que $a < c < b$, podemos descomponer
     \[
@@ -991,12 +992,12 @@ destaca el criterio de Dirichlet.
     signo, entonces se define la integral impropia del primer miembro como la
     suma de las dos del segundo miembro.
 \end{defi}
-\begin{obs*}
+\begin{obs}
     Más generalmente, podemos considerar una función localmente integrable definida
     en un dominio $D$ que sea unión finita y disjunta de intervalos. Entonces,
     definimos $\int_D f$ como la suma de las integrales sobre estos intervalos,
     suponiendo que sean convergentes.
-\end{obs*}
+\end{obs}
 
 \begin{prop}
     Consideramos una función integrable por Riemman, $f \colon [a,b] \to \real$,
@@ -1006,10 +1007,10 @@ destaca el criterio de Dirichlet.
     \]
 \end{prop}
 
-\begin{obs*}
+\begin{obs}
     Así, la notación introducida para las integrales impropias no produce ningún
     conflicto con la notación habitual definida para integrales ``propias’’.
-\end{obs*}
+\end{obs}
 
 \begin{example}
     Algunos ejemplos de integrales importantes son
@@ -1048,7 +1049,7 @@ destaca el criterio de Dirichlet.
     \end{itemize}
 \end{example}
 
-\begin{example*}
+\begin{example}
     \begin{itemize}
         \item[]
         \item $\int^{+\infty}_0 \frac{\dif x}{1+x^2}$
@@ -1078,7 +1079,7 @@ destaca el criterio de Dirichlet.
                 \text{ No existe.}
             \]
     \end{itemize}
-\end{example*}
+\end{example}
 
 \begin{obs}
     Las reglas de cálculo de integrales se aplican a las integrales impropias
@@ -1136,7 +1137,7 @@ Es consecuencia del criterio de Cauchy aplicado a la función
     \]
 \end{proof}
 
-\begin{defi}
+\begin{defi}[integral!impropia!absolutamente convergente]
     Diremos que una integral impropia $\int^b_a f$ es absolutamente convergente,
     si la integral impropia $\int^b_a \abs{f}$ es convergente.
 \end{defi}
@@ -1156,7 +1157,7 @@ Es consecuencia del criterio de Cauchy aplicado a la función
     lo tanto, es convergente.
 \end{proof}
 
-\begin{defi}
+\begin{defi}[integral!impropia!condicionalmente convergente]
     Una integral impropia convergente pero no absolutamente convegente, diremos que
     es condicionalmente convergente.
 \end{defi}
@@ -1243,7 +1244,7 @@ Es consecuencia del criterio de Cauchy aplicado a la función
     Entonces, la integral impropia $\int^b_a f(x)g(x)\dif x$ es convergente.
 \end{prop}
 
-\begin{example*}
+\begin{example}
     \begin{itemize}
         \item[]
         \item $\int^{+\infty}_{-\infty} e^{-x^2} \dif x = 2
@@ -1269,9 +1270,9 @@ Es consecuencia del criterio de Cauchy aplicado a la función
             Como sabemos que $\huge\int^{+\infty}_1 \frac{\dif x}{x^2} <
             +\infty$, aplicamos comparación en el límite.
     \end{itemize}
-\end{example*}
+\end{example}
 
-\begin{example*}
+\begin{example}
     La integral impropia $\int^{+\infty}_0 \frac{\sin x}{x} \dif x$ es
     condicionalmente convergente. \\
     Primero, observamos que la función es el seno cardinal
@@ -1308,4 +1309,4 @@ Es consecuencia del criterio de Cauchy aplicado a la función
     \end{gather*}
     Ya que la segunda integral es absolutamente convergente (por la misma razón que
     lo era $\int^{+\infty}_1 \frac{\cos x}{x^2}$).
-\end{example*}
+\end{example}

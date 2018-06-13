@@ -2,7 +2,7 @@
 
 \section{Longitud de una curva}
 
-\begin{defi}
+\begin{defi}[camino] \index{curva parametrizada((tlab))}
     Denominamos camino o curva parametrizada a una aplicación continua $\gamma \colon I \to \real^n$, donde
     $I \subset \real$ es un intervalo no degenerado.
 
@@ -10,33 +10,33 @@
     siempre lo es.
 \end{defi}
 
-\begin{obs*}
+\begin{obs}
     De aquí en adelante, a no ser que se especifique lo contrario, supondremos que $I$ es un intervalo compacto.
-\end{obs*}
+\end{obs}
 
-\begin{defi}
+\begin{defi}[vértices de una poligonal]\index{poligonal de longitud((tlab))}
     Sea $\gamma \colon [a, b] \to \real$ y  sea $\Pa = \setb{t_0, \dots, t_n}$ una partición de $[a, b]$.
     Entonces, los $\gamma(t_i)$ son los v\'ertices de una poligonal, que denominamos poligonal de longitud y cuya longitud es
     \[
         L(\gamma, \Pa) = \sum^N_{i=1} \norm{\gamma(t_i) - \gamma(t_{i-1})}.
     \]
 \end{defi}
-\begin{obs*}
+\begin{obs}
     Refinar la partición aumenta la longitud. (Demostración por la desigualdad triangular).
-\end{obs*}
+\end{obs}
 
-\begin{defi}
+\begin{defi}[longitud de una curva]
     Sea $\gamma \colon I \to \real^n$ una curva. La longitud de $\gamma$ es
     \[
         L(\gamma) = \sup_{\Pa \subset I} L(\gamma, \Pa) \in [0, \infty].
     \]
 \end{defi}
 
-\begin{obs*}
+\begin{obs}
     Si $L(\gamma) = 0$ entonces $\gamma$ es constante.
-\end{obs*}
+\end{obs}
 
-\begin{defi}
+\begin{defi}[camino!rectificable]
     Diremos que un camino es rectificable, cuando su longitud es finita, es decir, cuando
     \[
         L(\gamma) < +\infty.
@@ -61,9 +61,9 @@
     (Suponiendo que $I = [a, b]$).
 \end{proof}
 
-\begin{obs*}
+\begin{obs}
     Hay caminos (continuos) definidos en un intervalo compacto con longitud infinita.
-\end{obs*}
+\end{obs}
 
 \begin{prop}
     Sea $\gamma \colon [a, b] \to \real^n$ un camino y sea $a < c < b$, entonces
@@ -103,7 +103,7 @@
     entonces, $l$ es estrictamente creciente.
 \end{prop}
 
-\begin{defi}
+\begin{defi}[caminos equivalentes]\index{composición de un camino y un homeomorfismo((tlab))}
     Sean $\sigma \colon [a, b] \to \real^n$ un camino y $\varphi \colon [c, d] \to [a, b]$ un homeomorfismo. Entonces,
     la composición $\tau = \sigma \circ \varphi \colon [c,d] \to \real^n$ es un camino, y diremos que $\sigma$ y $\tau$
     son caminos equivalentes.
@@ -111,9 +111,9 @@
     Tambi\'en diremos que $\tau$ es el camino parametrizado de $\sigma$ para la reparametrización $\varphi$.
 \end{defi}
 
-\begin{obs*}
+\begin{obs}
     $\sigma$ y $\tau$ recorren la misma curva, $\im(\sigma) = \im(\tau) = \im(\sigma \circ \varphi)$.
-\end{obs*}
+\end{obs}
 
 \begin{obs}
     Si $\varphi$ es creciente, $\sigma$ y $\tau$ tienen la misma orientación, si $\varphi$ es decreciente,
@@ -167,21 +167,21 @@
     \]
 \end{defi*}
 
-\begin{prop*}[Regla de Barrow]\label{prop:regla_barrow}
+\begin{prop}[Regla de Barrow]\label{prop:regla_barrow}
     Sea $E = [a, b]$ un intervalo y $\vec{f} \colon E \to \real^n$ una función. Si $\vec{f}$ tiene una primitiva $\vec{F}$
     $\left( \vec{F}^\prime = \vec{f}\right)$, entonces
     \[
         \int^b_a \vec{f} = \vec{F}(b) - \vec{F}(a).
     \]
-\end{prop*}
+\end{prop}
 
-\begin{prop*}
+\begin{prop}
     Sea $\vec{f} \colon E \to \real^n$ una función cualquiera, si $\vec{f}$ es integrable, $\norm{\vec{f}}$ tambi\'en y
     \[
         \norm{\int_E \vec{f}} \leq \int_E \norm{\vec{f}},
     \]
     considerando la norma euclidiana.
-\end{prop*}
+\end{prop}
 
 \begin{proof}
     Tenemos que $\norm{\vec{f}} = \left( f^2_1 + \cdots + f^2_n \right)^{\sfrac{1}{2}}$, que es integrable por ser composición de
@@ -240,18 +240,16 @@
     La fórmula anterior es igualmente válida si $\gamma$ es $\C^1$ a trozos.
 \end{obs}
 
-\begin{defi}
+\begin{defi}[longitud de un camino]
     Sea $\gamma \colon I \to \real^n$ un camino definido en un intervalo no compacto. Podemos definir la longitud de $\gamma$, $L(\gamma)$,
     como el supremo de las longitudes $L(\gamma\vert_{k})$, donde $k \subset I$ es un subintervalo compacto de $I$.
 
-    Cuando $\gamma$ es de clase $\C^1$ definida a trozos, la longitud viene dada por $\int_I \norm{\gamma^\prime}$ (tomada como integral impropia
-    si es necesario).
+    Cuando $\gamma$ es de clase $\C^1$ definida a trozos, la longitud viene dada por $\int_I \norm{\gamma^\prime}$ (tomada como integral impropia si es necesario).
 \end{defi}
 
 
-\begin{defi} \label{defi:observaciones_curvas}
-    Sea $C \subset \real^n$ una curva regular de clase $\C^1$. Si $C$ es la imagen de una parametrización inyectiva $\gamma \colon I \to \real^n$,
-    definiremos la longitud de $C$ como la longitud de $\gamma$.
+\begin{defi}[longitud de una curva regular de clase $\C^1$] \label{defi:observaciones_curvas}
+    Sea $C \subset \real^n$ una curva regular de clase $\C^1$. Si $C$ es la imagen de una parametrización inyectiva $\gamma \colon I \to \real^n$, definiremos la longitud de $C$ como la longitud de $\gamma$.
 
     Si la imagen de $\gamma$ es todo $C$ salvo en un número finito de puntos, tambi\'en diremos que la longitud de $C$ es la longitud de $\gamma$.
 
@@ -280,7 +278,7 @@
 
 \section{Integrales de línea de funciones escalares}
 
-\begin{defi}
+\begin{defi}[integral de línea de una función!a lo largo de un camino]
     Sea $\sigma \colon I \to \real^n$ un camino de clase $\C^1$ a trozos, $C = \sigma(I)$ y $f \colon C \to \real$. Definimos
     la integral de línea de $f$ a lo largo de $\sigma$ como
     \[
@@ -290,9 +288,9 @@
     La integral existe, por ejemplo, si $I$ es compacto y $f$ continua.
 \end{defi}
 
-\begin{obs*}
+\begin{obs}
     Cuando $f$ es 1, recuperamos la longitud $\int_\sigma \dif l = L(\sigma)$.
-\end{obs*}
+\end{obs}
 
 \begin{prop}[Invariancia bajo reparametrizaciones]
     Si tenemos $\sigma \colon I \to C$ y $\tau \colon J \to C$ dos curvas equivalentes, y consideramos una función $f \colon C \to \real$,
@@ -311,7 +309,7 @@
     \end{gather*}
 \end{proof}
 
-\begin{defi}
+\begin{defi}[integral de línea de una función!a lo largo de una curva regular]
     Sea $C \subset \real^n$ una curva regular. Si $C$ es la imagen de una parametrización inyectiva $\sigma \colon I \to \real^n$,
     llamamos integral de línea de $f$ a lo largo de $C$ a
     \[
@@ -319,16 +317,16 @@
     \]
 \end{defi}
 
-\begin{obs*}
+\begin{obs}
     Está bien definido y no depende de la parametrización tomada.
-\end{obs*}
-\begin{obs*}
+\end{obs}
+\begin{obs}
     Se pueden hacer las mismas consideraciones que en \ref{defi:observaciones_curvas}.
-\end{obs*}
+\end{obs}
 
 \section{Integrales de línea de campos vectoriales}
 
-\begin{defi}
+\begin{defi}[circulación de una función a lo largo de un camino]
     Sean $I \subset \real$ un intervalo, $\sigma \colon I \to \real^n$ un camino de clase $\C^1$ a trozos con $C = \sigma(I)$, por último,
     sea $\vec{f} \colon C \to \real^n$ un campo vectorial definido en un conjunto abierto $W \supset C$. Definimos la integral de línea o de circulación
     de $\vec{f}$ a lo largo de $\sigma$ como
@@ -351,7 +349,7 @@
     Ejercicio.
 \end{proof}
 
-\begin{defi}
+\begin{defi}[orientación de una curva regular parametrizada]\index{curva orientada((tlab))}
     Sea $C \subset \real^n$ una curva regular parametrizada por una parametrización regular inyectiva. Una orientación de $C$ es una clase
     de equivalencia de parametrizaciones de $C$, donde se considera que dos parametrizaciones son equivalentes cuando la reparametrización
     tiene una derivada positiva. Así mismo, diremos que una curva está orientada cuando se ha tomado una orientación.
@@ -367,14 +365,14 @@
     Una curva regular compleja puede requerir 2 parametrizaciones regulares para recubrirla completamente. En tal caso, para orientar $C$, se
     requiere que, en la imagen común de las 2 parametrizaciones, las orientaciones coincidan.
 \end{obs}
-\begin{example*}
+\begin{example}
     Una curva conexa tiene exactamente dos orientaciones.
-\end{example*}
-\begin{example*}
+\end{example}
+\begin{example}
     Una curva no conexa se orienta orientando cada componente conexa.
-\end{example*}
+\end{example}
 
-\begin{defi}
+\begin{defi}[circulación de una función a lo largo de una curva orientada]
     Sea $C \subset \real^n$ una curva orientada por una parametrización regular inyectiva $\sigma \colon I \to \real^n$. Sea $\vec{f} \colon C \to \real^n$.
     Definimos la integral de línea o circulación de $\vec{f}$ a lo largo de $C$
     \[
@@ -417,11 +415,11 @@
         \vec{t}\left( \sigma(s) \right) = \frac{\sigma^\prime(s)}{\norm{\sigma^\prime(s)}} \in T_{\sigma(s)}C.
     \]
 \end{prop}
-\begin{obs*}
+\begin{obs}
     Orientar $C$ equivale a hacer una elección continua de un vector tangente unitario sobre $C$.
-\end{obs*}
+\end{obs}
 
-\begin{defi}
+\begin{defi}[componente tangencial de una función]
     Sea $C \subset \real^n$ una curva y $\vec{f} \colon C \to \real^n$ un campo vectorial. Llamamos componente tangencial de $\vec{f}$ a
     la función
     \[
@@ -430,13 +428,13 @@
     ($f_t \colon C \to \real$).
 \end{defi}
 
-\begin{obs*}
+\begin{obs}
     Si $E$ es un e.v. euclidiano y $F \subseteq E$, $E = F \oplus F^\perp$. Si $F = <u_1, \dots, u_r>$, $\Pi_F(x) = <x,u_1>u_1 + \cdots + <x,u_r>u_r$, lo
     que quiere decir que
     \[
         \real^n = T_pC \oplus T_pC^\perp \quad \text{y} \quad \Pi_{T_pC} \left( \vec{f}(p) \right) =\underbrace{\left< \vec{f}(p), \vec{t}(p) \right>}_{f_t(p)}\vec{t}(p).
     \]
-\end{obs*}
+\end{obs}
 
 \begin{prop}
     Bajo las condiciones anteriores,
@@ -454,17 +452,17 @@
     \end{gather*}
 \end{proof}
 
-\begin{example*}
+\begin{example}
     En $\real^2$ consideramos $C \colon y = x^3$ desde (1,1) a (2,8) y $\vec{F}(x, y) = \left( 6x^3y, 10xy^2 \right)$. Consideramos
     la parametrización $\gamma(x) = \left( x,x^3 \right)$ para $x \in [1,2]$, entonces
     \[
         \int_C \vec{F} \dif \vec{l} = \cdots = \frac{22245}{7} \approx 3177.9.
     \]
-\end{example*}
+\end{example}
 
 \section{Integral de superficie de funciones escalares}
 
-\begin{defi}
+\begin{defi}[superfície parametrizada regular]
     Sea $U \subset  \real^2$ abierto y $\sigma \colon U \to \real^n$ una superficie parametrizada con $M = \sigma(U)$. Denotamos por
     $\vec{T_1} = \Dif_1\sigma$ y $\vec{T_2} = \Dif_2 \sigma$, a los vectores tangentes a la parametrización, es decir
     \[
@@ -485,7 +483,7 @@
     es invertible en todo punto. Representaremos por $g := \det G$.
 \end{defi}
 
-\begin{defi}
+\begin{defi}[integral de superfície (parametrizada) de una función]
     Sea $M$ una superficie parametrizada por $\sigma$ y sea $f \colon M \subset \real^n \to \real$, definimos la integral de superficie de $f$
     sobre/a lo largo de $\sigma$ como
     \[
@@ -493,13 +491,13 @@
     \]
 \end{defi}
 
-\begin{obs*}
+\begin{obs}
     Siempre supondremos que $\sigma \in \C^1$.
-\end{obs*}
+\end{obs}
 
-\begin{obs*}
+\begin{obs}
     Si suponemos que $U$ es un abierto medible Jordan, $f$ es continua, $\sqrt{\det G(w)}$ acotado, podemos asegurar que la integral existe.
-\end{obs*}
+\end{obs}
 
 \begin{lema}
     Sean $\varphi \colon U \to \widetilde{U}$ difeomorfismo de clase $\C^1$, $\sigma \colon U \to \real^n$ una superficie parametrizada.
@@ -509,11 +507,11 @@
     \]
 \end{lema}
 
-\begin{obs*}
+\begin{obs}
     Eso quiere decir que la integral de superficie no está referida a la parametrización, sino al objeto parametrizado.
-\end{obs*}
+\end{obs}
 
-\begin{defi}
+\begin{defi}[integral de superfície (regular) de una función]
     Sea $M \subseteq \real^n$ una superficie regular. Si $M$ es la imagen de una parametrización regular inyectiva $\sigma \colon U \to \real^n$,
     denominamos integral de superficie de una función $f$ sobre $M$ a
     \[
@@ -521,9 +519,9 @@
     \]
 \end{defi}
 
-\begin{obs*}
+\begin{obs}
     Ya hemos visto que no depende del $\sigma$ elegido.
-\end{obs*}
+\end{obs}
 
 \begin{obs}\label{obs:anterior_a}
     Si $M$ es, a parte de un conjunto ``negligible'' (unión finita de puntos y curvas regulares conexas), la imagen de una parametrización regular inyectiva,
@@ -533,14 +531,14 @@
     \]
 \end{obs}
 
-\begin{obs*}
+\begin{obs}
     Si $M$ es unión finita disjunta de superficies como las de la observación \ref{obs:anterior_a}, calculamos
     \[
         \int_M f \dif S = \sum_i \int_{M_i} f \dif S.
     \]
-\end{obs*}
+\end{obs}
 
-\begin{defi}
+\begin{defi}[area de una superficie regular]
     Definimos el area de $M$ (una superficie regular) como
     \[
         \text{\'area}(M) := \int_M \dif S.
@@ -562,7 +560,7 @@
     \]
 \end{proof}
 
-\begin{example*}
+\begin{example}
     Consideramos $M: x^2 + y^2 + z^2 = R^2$ una esfera en $\real^3$. Vamos a calcular su área. Consideramos la parametrización
     \[
         \sigma(\theta, \phi) = \left( R \cos \phi \sin \theta, R \sin\phi \sin \theta, R \cos \theta \right),
@@ -588,11 +586,11 @@
         \text{\'area}(M) = \int_M \dif S = \int_\sigma \dif S = \int_U R^2 \sin \theta \dif \theta \dif \phi = R^2 \int^{2\pi}_0 \dif\phi \int^\pi_0 \sin \theta \dif \theta = \\
         = R^2 2\pi \left( \left[ -\cos\theta \right]^\pi_0 \right) = 4\pi R^2.
     \end{gather*}
-\end{example*}
+\end{example}
 
 \section{Integrales de superficie en campos vectoriales (en $\real^3$)}
 
-\begin{defi}
+\begin{defi}[AQUI!PER LERNESTO]
     Sea $U \subseteq \real^2$ abierto, $\sigma \colon U \to \real^3$ una superficie parametrizada regular con
     $M = \sigma(U)$. Sea $J_\sigma = \left( \vec{T_1}, \vec{T_2} \right)$, con $\vec{T_i} = \Dif_i \sigma$.
     Sea $\vec{f} \colon M \to \real^3$ un campo vectorial a lo largo de $M$. Denominamos integral de superficie de $\vec{f}$
@@ -602,10 +600,10 @@
     \]
 \end{defi}
 
-\begin{obs*}
+\begin{obs}
     Suponiendo $\vec{f}$ continua, $U$ abierto medible Jordan, $\sigma$ con derivadas parciales acotadas (p.e. $\sigma \in \C^1$),
     podemos asegurar que la integral anterior existe.
-\end{obs*}
+\end{obs}
 
 \begin{lema}
     Sea $\varphi \colon U \to \widetilde{U}$ un difeomorfismo entre abiertos conexos de $\real^2$, $\sigma \colon U \to \real^3$ una superficie
@@ -616,13 +614,13 @@
     Donde el signo es el mismo que el de $\det J_\varphi$.
 \end{lema}
 
-\begin{defi}
+\begin{defi}[orientación de una superficie regular]
     Sea $M \subset \real^3$ una superficie regular parametrizada por una parametrización regular inyectiva. Una orientación de $M$ es una
     clase de equivalencia de parametrizaciones donde se dice que dos parametrizaciones son equivalentes si el difeomorfismo que nos permite
     obtener una reparametrización de la otra tiene jacobiana positiva.
 \end{defi}
 
-\begin{defi}
+\begin{defi}[superficie orientada]
     Diremos que una superficie $M \subset \real^3$ está orientada, cuando hemos elegido una orientación. A partir de la orientación de $M$ dada
     por $\sigma$, cada $T_pM$ está orientado por la base $\begin{pmatrix} \vec{T_1} & \vec{T_2} \end{pmatrix}$. Esta orientación no cambia si
     usamos otra parametrización de $M$ correspondiente a la misma orientación que $\sigma$.
@@ -633,7 +631,7 @@
     estas parametrizaciones definan las mismas orientaciones de los espacios tangentes de los puntos que recubren comúnmente.
 \end{obs}
 
-\begin{defi}
+\begin{defi}[superficie orientable]
     Una superficie se dice que es orientable cuando tiene una orientación, así mismo, una superficie orientable, diremos que está
     orientada cuando se ha elegido una orientación.
 \end{defi}
@@ -649,7 +647,7 @@
     Hay superficies no orientables, como por ejemplo, la banda de Möbius.
 \end{obs}
 
-\begin{defi}
+\begin{defi}[AQUI!FAAAAART]
     Sea $M$ una superficie orientada. Suponemos que es la imagen de una parametrización inyectiva regular $\sigma \colon U \to \real^3$
     correspondiente a la orientación de $M$. Sea $\vec{f} \colon M \to \real^3$ un campo vectorial. La integral de superficie, o flujo de $\vec{f}$
     a trav\'es de $M$ es
@@ -720,7 +718,7 @@
     \]
 \end{proof}
 
-\begin{example*}
+\begin{example}
     Sea $M : x^2 + y^2 + z^2 = R^2$ orientada ``hacia el exterior'', consideramos la función $\vec{f} = r^\alpha \vec{r}$, donde
     $\vec{r} = (x,y,z)$, y $r = \norm{\vec{r}}$, es decir, $r = \sqrt{x^2 + y^2 + z^2}$.
 
@@ -755,7 +753,7 @@
     \[
         \int_M \vec{f} \dif \vec{S} = \int_M f_n \dif S = R^{\alpha+1} \underbrace{\int_M \dif M}_{\text{Área}(M) = 4\pi R^2} = 4\pi R^{\alpha+3}.
     \]
-\end{example*}
+\end{example}
 
 \section[Integración de funciones en una subvariedad $m$-dimensional de $\real^n$]{
         Integración de funciones en una subvariedad $m$-dimensional de $\real^n$
