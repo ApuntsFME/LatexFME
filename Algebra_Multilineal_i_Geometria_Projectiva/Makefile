@@ -1,7 +1,7 @@
 main: *.tex
 	mkdir -p figures
 	pdflatex -shell-escape main.tex
-	makeindex main
+	python ../script.py main.idx
 	pdflatex -shell-escape main.tex
 silentmain: *.tex
 	mkdir -p figures

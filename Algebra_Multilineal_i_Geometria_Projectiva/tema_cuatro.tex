@@ -35,11 +35,11 @@
     q\lp u\rp = \varphi\lp u, u\rp &\leftarrow \varphi\lp u,v\rp
   \end{align*}
 \end{obs}
-\begin{defi}
+\begin{defi*}
   $\Po^n = \Po\lp\E\rp$, sea $q \colon \E \to \k$ asociada a $\varphi \colon \E \times \E \to \k, Q = [q]$. Sean $\R$ una referencia de $\Po^n$, $B$ una base de $\E$ adaptada a $\R$.
   \[ M_\R \lp Q\rp := M_B\lp q\rp \stackrel{\text{por def.}}{=} M_B\lp\varphi\rp \]
   $M_\R\lp Q\rp$ está definida salvo multiplicar por una constante.
-\end{defi}
+\end{defi*}
 \begin{example}
   En $\Po^2_\real$, sean $\R$ (de $\Po^2$), $B$ (de $\real^3$). Sea $Q\colon x_0^2+ x_1^2+2x_2^2-2x_0x_1+4x_0x_2 + 6x_1x_2 = 0$.
   \begin{gather*}
@@ -73,7 +73,7 @@
   Sean $Q = [q], \R, A = M_\R\lp Q\rp$. Sea $\R'$ otro sistema de referencia en $\Po^n$ y sea $S_{\R, \R'}$ la matriz de cambio de sistema de referencia de $\R$ a $\R'$. Entonces $A' = M_{\R'}\lp Q\rp = S^tAS$.
 \end{example}
 
-\begin{defi}
+\begin{defi}[intersección de una cuádrica y una variedad lineal]
   Sea $Q= \left[ q \right] \subseteq \Po ^n$ una cuádrica y sea $V = \left[ F \right] \subseteq \Po ^n$ una variedad lineal. Definimos su intersección como
   \[
     Q_{|V} := \left[q_{|F} \right].
@@ -154,7 +154,7 @@
   \end{enumerate}
 \end{proof}
 
-\begin{defi}
+\begin{defi}[punto!singular] \index{punto!liso((tlab))}
   Sea $Q=\left[ q \right] \subseteq \Po ^n$, sea $p = \left[ v \right] \in Q$ y sea $\varphi$ la forma bilineal simétrica asociada a $q$. Entonces, 
   \begin{enumerate}[(1)] 
     \item Decimos que $p$ es un \textit{punto singular} de $Q \iff \varphi \lp v, \cdot \rp = 0$.
@@ -270,7 +270,7 @@
   \label{exampleLinQ}
 \end{example}
 
-\begin{defi}
+\begin{defi}[generatriz de una cuádrica] \index{secante a una cuádrica((tlab))} \index{tangente a una cuádrica((tlab))}
   Sean $L$ una recta y $Q$ una cuádrica:
   \begin{enumerate}[(1)]
     \item Si $L\subseteq Q$ diremos que $L$ es una generatriz de $Q$.
@@ -376,13 +376,14 @@
 \end{example}
 
 \subsection{Polaridad}
-\begin{defi}
+
+\begin{defi}[cuádrica!no degenerada]
   Sea $Q=[q]=[\phi]$ una cuádrica y sea $A=M_\R\lp Q\rp$ su matriz. Entonces diremos que $Q$ es no
   degenerada $\iff \det A \neq 0$. Es decir, las cuádricas no degeneradas son aquellas que no tienen
   puntos singulares.
 \end{defi}
 
-\begin{defi}
+\begin{defi}[punto!polar respecto a una cuádrica]
   Sea $Q$ una cuádrica no degenerada $\tq Q=[q]=[\phi]$ y $A=M_\R\lp Q\rp$. Sean $p_1=[v_1]$ y 
   $p_2=[v_2]$ dos puntos $\in \Po^n$. Entonces diremos que $p_1$ y $p_2$ son polares respecto a $Q\iff
   \phi\lp v_1,v_2\rp=0$ y lo notaremos con $p_1 \stackrel{Q}{\sim} p_2$. 
@@ -522,7 +523,7 @@
 \end{example}
 
 \subsection{Cuádrica dual}
-\begin{defi}
+\begin{defi}[cuádrica!dual]
   Sea $Q\subseteq \Po^n$ una cuádrica, $A=M_\R\lp Q\rp$ su matriz asociada y sea
   \begin{align*}
     F_Q (=F):\Po^n & \to \lp\Po^n \rp ^*\\
@@ -627,7 +628,7 @@
     \end{pmatrix}
   \end{gather*}
 \end{example}
-\begin{defi}
+\begin{defi}[completación proyectiva!de una cuádrica]
   Dada una cuádrica afín $Q$ que cumple
   \begin{gather*}
     A = M_\R\left( Q \right) =
@@ -727,7 +728,7 @@
       $L_3$ en $\overline{\R} \colon \overline{x}_1 = 0$
   \end{enumerate}
 \end{example}
-\begin{defi}
+\begin{defi}[centro de una cuádrica]
   Sea $Q$ una cuádrica afín y $\overline{Q}$ su completación proyectiva 
   $\left( \overline{\A^n} = \Po^n \right)$. Sea $p=[v]\in\A^n$, $p$ es un 
   centro de $Q$ $\iff \varphi\left( v, \omega \right) = 0, \, 
@@ -834,7 +835,7 @@
     \iff p = \frac{1}{2}\left( p_1 + p_2 \right).
   \end{gather*}
 \end{proof}
-\begin{defi}
+\begin{defi}[asíntota de una cuádrica]
   Sea $Q$ una cuádrica con centro $p\in\A^n$. Una asíntota de $Q$ es una recta $L \ni p$ t.q. $\overline{L}$ es tangente a $\overline{Q}$ en un punto de $\overline{\A^n_\infty}$.
 \end{defi}
 \begin{example}
@@ -898,7 +899,7 @@
 
 \section{Clasificación proyectiva de cuádricas}
 
-\begin{defi}
+\begin{defi}[forma!cuadrática!equivalente]
   $\Po^n = \Po\left( \E \right)$. Sean $Q_1 = [q_1], Q_2 = [q_2], q_1,q_2 \colon \E \to \k$ (formas cuadráticas).
   \[
     Q_1 \sim Q_2 \iff \exists \lambda \neq 0 \tq q_1\sim \lambda q_2 \text{ (como formas cuadráticas)}
@@ -964,9 +965,9 @@
 
   Lo importante para clasificar $Q$ es la pareja $\{i_+, i_-\}$.
 \end{obs}
-\begin{defi}
+\begin{defi*}
   Definimos, para una cuádrica $Q$, los valores $r = i_+ + i_-$ y $m = \min \{i_+, i_-\}$. 
-\end{defi}
+\end{defi*}
 \begin{prop}
   Sean $Q_1, Q_2 \subseteq \Po^2_\real$ cuádricas.
   \[Q_1 \sim Q_2 \iff r_1 = r_2, \, m_1 = m_2\]

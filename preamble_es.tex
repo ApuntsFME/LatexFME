@@ -142,7 +142,7 @@
 {\bfseries}% Thm head font
 {}%        Punctuation after thm head
 {5pt plus 1pt minus 1pt}% Space after thm head: \newline = linebreak
-{\index{#3 (\ref{defi:#2})}\label{defi:#2}\thmname{#1}\thmnumber{ #2}.}%         Thm head spec
+{\index{#3((defi:#2))}\label{defi:#2}\thmname{#1}\thmnumber{ #2}.}%         Thm head spec
 
 
 % Normal
@@ -153,7 +153,7 @@
 \declaretheorem[style=normal,name=Proposición,sibling=lema]{prop}
 \declaretheorem[style=normal,name=Proposición,numbered=no]{prop*}
 \declaretheorem[style=autodefi,name=Definición,sibling=lema]{defi}
-\declaretheorem[style=normal,name=Definición,numbered=no]{defi*}
+\declaretheorem[style=normal,name=Definición,sibling=lema]{defi*}
 \declaretheorem[style=normal,name=Corolario,sibling=lema]{col}
 \declaretheorem[style=normal,name=Corolario,numbered=no]{col*}
 \declaretheorem[style=normal,name=Ejercicio,sibling=lema]{ej}
