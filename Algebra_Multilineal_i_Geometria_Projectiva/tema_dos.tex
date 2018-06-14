@@ -22,14 +22,13 @@ se muestra una tabla con las distintas geometrías en la cual cada una esta
         Topología & transformaciones por funciones de clase $\mathscr{C}^0$\\ \hline
     \end{tabular}
 \end{center}
-\vfill                                      % TODO vigilar amb aquesta cutrada
 
-\subsubsection{Problema matemático}
+\subsection{Problema matemático}
 \begin{center}
     \begin{tikzpicture}
     \begin{axis}[%
     hide axis,
-    width= 15 cm,
+    width= 0.91\linewidth,
     enlargelimits=0.1
     ]
 
@@ -209,7 +208,7 @@ en añadir puntos en el $\infty$.
             hide axis,
             enlargelimits=0.1
         ]
-            \addplot [domain=-180:180, samples=50, color=red] ({cos(x)},{sin(x)});
+            \addplot [domain=-180:180, samples=1000, color=red] ({cos(x)},{sin(x)});
 
             \addplot [mark=*,color=blue] coordinates {(-1,0)}
                 node[label=left:$\infty$]{};
@@ -1041,21 +1040,21 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometría af�
 \draw [line width=\pgflinewidth,dash pattern=on 2pt off 2pt,color=teal,domain=2.:8.5] plot(\x,{(--14.942080928528313-1.2454296879136713*\x)/4.177002403922524});
 \draw [line width=\pgflinewidth,dash pattern=on 2pt off 2pt,color=teal,domain=2.:8.5] plot(\x,{(--7.52--0.12*\x)/2.});
 \begin{scriptsize}
-\draw [fill=red] (4.,4.) circle (2.5pt);
+\draw [fill=red, color=red] (4.,4.) circle (2pt);
 \draw[color=red] (3.8004958677685994,4.598347107438018) node {$q_4$};
-\draw [fill=red] (5.,6.) circle (2.5pt);
+\draw [fill=red, color=red] (5.,6.) circle (2pt);
 \draw[color=red] (5.35,6.135537190082645) node {$q_1$};
-\draw [fill=red] (6.,4.12) circle (2.5pt);
+\draw [fill=red, color=red] (6.,4.12) circle (2pt);
 \draw[color=red] (6.1806611570247965,4.647933884297522) node {$q_2$};
-\draw [fill=red] (4.76,3.42) circle (2.5pt);
+\draw [fill=red, color=red] (4.76,3.42) circle (2pt);
 \draw[color=red] (5.23,3.44) node {$q_3$};
 \draw[color=blue] (5.957520661157028,8.606611570247933) node {$f$};
 \draw[color=blue] (-5.216033057851232,-1.8396694214875977) node {$g$};
 \draw[color=blue] (-2.1747107438016466,9.0198347107438) node {$h$};
 \draw[color=blue] (3.420330578512401,8.598347107438016) node {$r_1$};
-\draw [fill=red] (3.2970786516853927,2.594157303370786) circle (2.5pt);
+\draw [fill=red, color=red] (3.2970786516853927,2.594157303370786) circle (2pt);
 \draw[color=red] (3.1062809917355416,3.011570247933887) node {$q_5$};
-\draw [fill=red] (7.4740810556079165,1.3487276154571146) circle (2.5pt);
+\draw [fill=red, color=red] (7.4740810556079165,1.3487276154571146) circle (2pt);
 \draw[color=red] (7.635206611570251,1.6892561983471108) node {$q_6$};
 \draw[color=teal] (5.131074380165293,9.730578512396692) node {$j$};
 \draw[color=teal] (-6.34,5.350413223140498) node {$k$};
@@ -1072,13 +1071,13 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometría af�
 \draw [line width=\pgflinewidth,color=red,domain=5.5:12.] plot(\x,{(--26.1456-1.2*\x)/2.78});
 \draw [line width=\pgflinewidth,color=red,domain=5.5:12.] plot(\x,{(--10.0756-2.18*\x)/-1.44});
 \begin{scriptsize}
-\draw [fill=blue] (6.22,6.72) circle (2.5pt);
+\draw [fill=blue, color=blue] (6.22,6.72) circle (2pt);
 \draw[color=blue] (6.3,7.1) node {$r_1$};
-\draw [fill=blue] (9.14,6.84) circle (2.5pt);
+\draw [fill=blue, color=blue] (9.14,6.84) circle (2pt);
 \draw[color=blue] (9.43,6.67) node {$r_4$};
-\draw [fill=blue] (9.,5.52) circle (2.5pt);
+\draw [fill=blue, color=blue] (9.,5.52) circle (2pt);
 \draw[color=blue] (9.27,5.1) node {$r_3$};
-\draw [fill=blue] (7.7,4.66) circle (2.5pt);
+\draw [fill=blue, color=blue] (7.7,4.66) circle (2pt);
 \draw[color=blue] (7.55,5.32) node {$r_2$};
 \draw[color=red] (-2.42,6.21) node {$f$};
 \draw[color=red] (9.3,10.83) node {$g$};
@@ -1086,9 +1085,9 @@ La \textbf{dualidad} es una diferencia fundamental respecto de la geometría af�
 \draw[color=red] (3.52,10.83) node {$i$};
 \draw[color=red] (-2.42,10.31) node {$j$};
 \draw[color=red] (11.48,10.83) node {$k$};
-\draw [fill=teal] (8.753295272078507,3.193926851025867) circle (2.0pt);
-\draw [fill=teal] (11.11824048913044,6.921297554347826) circle (2.0pt);
-\draw [fill=teal] (8.4304647937959,5.765842535052128) circle (2.0pt);
+\draw [fill=teal, color=teal] (8.753295272078507,3.193926851025867) circle (2pt);
+\draw [fill=teal, color=teal] (11.11824048913044,6.921297554347826) circle (2pt);
+\draw [fill=teal, color=teal] (8.4304647937959,5.765842535052128) circle (2pt);
 \end{scriptsize}
 \end{tikzpicture}
 \end{aligned}
@@ -1165,25 +1164,25 @@ BC \cap B'C' = X
 \draw [line width=\pgflinewidth,color=gray,domain=-0.5:9.] plot(\x,{(--2.1171944617344565--0.5677140507842084*\x)/3.11902478948039});
 \draw [line width=\pgflinewidth,color=orange,domain=-0.5:9.] plot(\x,{(--2.855613634592153-0.8059659723881762*\x)/-0.14358796715525868});
 \begin{scriptsize}
-\draw [fill=purple] (8.49396904325508,2.2248428604738715) circle (2.5pt);
+\draw [fill=purple, color=purple] (8.49396904325508,2.2248428604738715) circle (2pt);
 \draw[color=purple] (8.5756934700623,2.511596640794484) node {$O$};
-\draw [fill=teal] (3.3336552362849274,1.992339795349051) circle (2.5pt);
+\draw [fill=teal, color=teal] (3.3336552362849274,1.992339795349051) circle (2pt);
 \draw[color=teal] (3.1818813007858053,2.3100939843529726) node {$A$};
-\draw [fill=teal] (-0.19217003454083312,0.6438220176250907) circle (2.5pt);
+\draw [fill=teal, color=teal] (-0.19217003454083312,0.6438220176250907) circle (2pt);
 \draw[color=teal] (-0.1104456077336135,0.9305757979457029) node {$B$};
-\draw [fill=teal] (1.9793647349081451,0.1168150700088304) circle (2.5pt);
+\draw [fill=teal, color=teal] (1.9793647349081451,0.1168150700088304) circle (2pt);
 \draw[color=teal] (1.8742904718702913,0.4500694633544068) node {$C$};
-\draw [fill=teal] (4.403859447556563,2.040558909290155) circle (2.5pt);
+\draw [fill=teal, color=teal] (4.403859447556563,2.040558909290155) circle (2pt);
 \draw[color=teal] (4.52449688404727,2.3255941886946276) node {$A'$};
-\draw [fill=teal] (4.738313888759495,1.0095694436469795) circle (2.5pt);
+\draw [fill=teal, color=teal] (4.738313888759495,1.0095694436469795) circle (2pt);
 \draw[color=teal] (4.512821965931953,1.2250796804371424) node {$C'$};
-\draw [fill=teal] (5.374944253774689,1.657128809689663) circle (2.5pt);
+\draw [fill=teal, color=teal] (5.374944253774689,1.657128809689663) circle (2pt);
 \draw[color=teal] (5.365090988350101,1.4265823368786539) node {$B'$};
-\draw [fill=red] (4.082899471593713,3.029950328105273) circle (2.0pt);
+\draw [fill=red, color=red] (4.082899471593713,3.029950328105273) circle (2.0pt);
 \draw[color=red] (3.8006519608976106,3.1316048144606725) node {$Y$};
-\draw [fill=red] (3.939311504438454,2.223984355717097) circle (2.0pt);
+\draw [fill=red, color=red] (3.939311504438454,2.223984355717097) circle (2.0pt);
 \draw[color=red] (3.8240017971282447,2.511596640794484) node {$Z$};
-\draw [fill=red] (3.498235188833963,-0.2517976241139916) circle (2.0pt);
+\draw [fill=red, color=red] (3.498235188833963,-0.2517976241139916) circle (2.0pt);
 \draw[color=red] (3.3803549087461957,0.07806455915469361) node {$X$};
 \draw[color=orange] (3.6,1) node {$r$};
 \end{scriptsize}
@@ -1263,19 +1262,19 @@ Consideramos el espacio proyectivo dual y dualizamos las hipótesis:
 \draw [line width=\pgflinewidth,color=red,domain=-0.8:10.] plot(\x,{(--2.0204412296839145--0.6567027381863184*\x)/3.4308235460323857});
 \draw [line width=\pgflinewidth,color=purple,domain=-0.8:10.] plot(\x,{(--3.193311356394389-0.8938251320959107*\x)/-0.1608060938655136});
 \begin{scriptsize}
-\draw [fill=orange] (9.194464130174113,2.34884449520712) circle (2.5pt);
+\draw [fill=orange, color=orange] (9.194464130174113,2.34884449520712) circle (2pt);
 \draw[color=orange] (9.276188556981314,2.55) node {$r^*$};
-\draw [fill=blue] (3.5905034348218994,2.7363496037484754) circle (2.5pt);
+\draw [fill=blue, color=blue] (3.5905034348218994,2.7363496037484754) circle (2pt);
 \draw[color=blue] (3.78,2.55) node {\tiny $(AB)^*$};
-\draw [fill=blue] (-0.36,0.52) circle (2.5pt);
+\draw [fill=blue, color=blue] (-0.36,0.52) circle (2pt);
 \draw[color=blue] (-0.4,0.7) node {\tiny $(AC)^*$};
-\draw [fill=blue] (2.236212933445119,0.3958187481586135) circle (2.5pt);
+\draw [fill=blue, color=blue] (2.236212933445119,0.3958187481586135) circle (2pt);
 \draw[color=blue] (2.1,0.6) node {\tiny $(BC)^*$};
-\draw [fill=blue] (4.564320062604457,2.6690117085413894) circle (2.5pt);
+\draw [fill=blue, color=blue] (4.564320062604457,2.6690117085413894) circle (2pt);
 \draw[color=blue] (4.95,2.85) node {\tiny $(A'B')^*$};
-\draw [fill=blue] (4.909911174012507,1.1462661459359629) circle (2.5pt);
+\draw [fill=blue, color=blue] (4.909911174012507,1.1462661459359629) circle (2pt);
 \draw[color=blue] (5.3,1.05) node {\tiny $(B'C')^*$};
-\draw [fill=blue] (5.7636405841417275,1.6921417570208015) circle (2.5pt);
+\draw [fill=blue, color=blue] (5.7636405841417275,1.6921417570208015) circle (2pt);
 \draw[color=blue] (5.84,1.93) node {\tiny $(A'C')^*$};
 \draw[color=blue] (2.7966090029803388,1.76) node {\tiny $(B)^*$};
 \draw[color=blue] (0.9753217769908749,0.35) node {\tiny $(C)^*$};
@@ -1283,11 +1282,11 @@ Consideramos el espacio proyectivo dual y dualizamos las hipótesis:
 \draw[color=blue] (4.5,1.75) node {\tiny $(B')^*$};
 \draw[color=blue] (5.61,1.3955819281953425) node {\tiny $(C')^*$};
 \draw[color=blue] (5.330066234004144,2.3410943930362804) node {\tiny $(A')^*$};
-\draw [fill=gray] (4.278993131711778,3.926220888888763) circle (2.0pt);
+\draw [fill=gray, color=gray] (4.278993131711778,3.926220888888763) circle (2.0pt);
 \draw[color=gray] (4.7,3.9531156445683706) node {\tiny $(BB')^*$};
-\draw [fill=gray] (4.118187037846265,3.032395756792852) circle (2.0pt);
+\draw [fill=gray, color=gray] (4.118187037846265,3.032395756792852) circle (2.0pt);
 \draw[color=gray] (3.78,3.02) node {\tiny $(AA')^*$};
-\draw [fill=gray] (3.631836574987902,0.32906371097595916) circle (2.0pt);
+\draw [fill=gray, color=gray] (3.631836574987902,0.32906371097595916) circle (2.0pt);
 \draw[color=gray] (3.38,0.5) node {\tiny $(CC')^*$};
 \draw[color=red] (7.6,2.57) node {$Z^*$};
 \draw[color=red] (7.209728050570193,2.1) node {$Y^*$};
@@ -1353,26 +1352,26 @@ y $x_2 \equiv BC^\prime \cap B^\prime C$ están alineados.
 \draw [line width=\pgflinewidth,dashed=on 3.pt off 3.pt,color=blue,domain=0.:16.] plot(\x,{(--0.10340002392072734-2.86144742431515*\x)/-4.5646671604961195});
 \draw [line width=\pgflinewidth,color=orange,domain=0.:16.] plot(\x,{(--6.478551211506101--0.15741244291993972*\x)/2.100043160860284});
 \begin{scriptsize}
-\draw [fill=purple] (15.08,3.32) circle (2.5pt);
+\draw [fill=purple, color=purple] (15.08,3.32) circle (2pt);
 \draw[color=purple] (15.27,3.74) node {$O$};
-\draw [fill=purple] (1.0220234435922084,5.63230182077741) circle (2.5pt);
+\draw [fill=purple, color=purple] (1.0220234435922084,5.63230182077741) circle (2pt);
 \draw[color=purple] (1.16,6.01) node {$A$};
-\draw [fill=purple] (4.321575861599462,5.089580680697614) circle (2.5pt);
+\draw [fill=purple, color=purple] (4.321575861599462,5.089580680697614) circle (2pt);
 \draw[color=purple] (4.26,5.45) node {$B$};
-\draw [fill=purple] (7.358368190651445,4.590079176792411) circle (2.5pt);
+\draw [fill=purple, color=purple] (7.358368190651445,4.590079176792411) circle (2pt);
 \draw[color=purple] (7.5,4.97) node {$C$};
-\draw [fill=purple] (2.793701030155326,1.728631752477261) circle (2.5pt);
+\draw [fill=purple, color=purple] (2.793701030155326,1.728631752477261) circle (2pt);
 \draw[color=purple] (2.8,2.09) node {$A'$};
-\draw [fill=purple] (4.9981656312778995,2.0141624055750422) circle (2.5pt);
+\draw [fill=purple, color=purple] (4.9981656312778995,2.0141624055750422) circle (2pt);
 \draw[color=purple] (5.2,2.39) node {$B'$};
-\draw [fill=purple] (8.019291487213156,2.4054701354866563) circle (2.5pt);
+\draw [fill=purple, color=purple] (8.019291487213156,2.4054701354866563) circle (2pt);
 \draw[color=purple] (8.22,2.77) node {$C'$};
 
-\draw [fill=orange] (6.420232165913115,3.566200819314453) circle (2.0pt);
+\draw [fill=orange, color=orange] (6.420232165913115,3.566200819314453) circle (2.0pt);
 \draw[color=orange] (6.56,3.89) node {$x_2$};
-\draw [fill=orange] (5.630631420487521,3.507014901336497) circle (2.0pt);
+\draw [fill=orange, color=orange] (5.630631420487521,3.507014901336497) circle (2.0pt);
 \draw[color=orange] (5.78,3.83) node {$x_1$};
-\draw [fill=orange] (3.5305882596272373,3.349602458416557) circle (2.0pt);
+\draw [fill=orange, color=orange] (3.5305882596272373,3.349602458416557) circle (2.0pt);
 \draw[color=orange] (3.5,3.67) node {$x_0$};
 \end{scriptsize}
 \end{tikzpicture}
@@ -1657,23 +1656,23 @@ con $a,b \neq 0$. Calculamos ahora $x_0$, $x_1$ y $x_
         \draw [line width=\pgflinewidth,color=orange,domain=-0.4:22.] plot(\x,{(-34.929545144732934--3.1050034233737476*\x)/1.0457864758935198});
         \draw [line width=\pgflinewidth,color=orange,domain=-0.4:22.] plot(\x,{(-37.6337145915516-0.07046134035648155*\x)/5.566445888162099});
         \begin{scriptsize}
-        \draw [fill=blue] (9.764063698503698,-4.410167889099014) circle (2.0pt);
+        \draw [fill=blue, color=blue] (9.764063698503698,-4.410167889099014) circle (2.0pt);
         \draw[color=blue] (10.01967608046732,-3.826713320136143) node {$A$};
-        \draw [fill=blue] (11.076596185814555,-6.901025749138286) circle (2.5pt);
+        \draw [fill=blue, color=blue] (11.076596185814555,-6.901025749138286) circle (2pt);
         \draw[color=blue] (11.323210877062243,-6.257629562434783) node {$B$};
-        \draw [fill=blue] (8.718277222610178,-7.515171312472762) circle (2.0pt);
+        \draw [fill=blue, color=blue] (8.718277222610178,-7.515171312472762) circle (2.0pt);
         \draw[color=blue] (9.13890932601129,-7.1383963168908116) node {$C$};
-        \draw [fill=blue] (5.510150297652456,-6.830564408781805) circle (2.5pt);
+        \draw [fill=blue, color=blue] (5.510150297652456,-6.830564408781805) circle (2pt);
         \draw[color=blue] (5.756764988900144,-6.1871682220783) node {$D$};
-        \draw [fill=green] (8.934259258114592,-6.87390756018006) circle (2.0pt);
+        \draw [fill=green, color=green] (8.934259258114592,-6.87390756018006) circle (2.0pt);
         \draw[color=green] (8.6,-6.6) node {$O$};
-        \draw [fill=blue] (0.5839299191135113,-9.633490922758353) circle (2.0pt);
+        \draw [fill=blue, color=blue] (0.5839299191135113,-9.633490922758353) circle (2.0pt);
         \draw[color=blue] (0.912547839391988,-8.95277583107023) node {$p_1$};
-        \draw [fill=blue] (11.74,-8.16) circle (2.5pt);
+        \draw [fill=blue, color=blue] (11.74,-8.16) circle (2pt);
         \draw[color=blue] (12.080670285894428,-7.40262634322762) node {$p_2$};
-        \draw [fill=green] (8.350302560934376,-8.607710382880954) circle (2.0pt);
+        \draw [fill=green, color=green] (8.350302560934376,-8.607710382880954) circle (2.0pt);
         \draw[color=green] (8.9,-8.1) node {$p_3$};
-        \draw [fill=green] (20.380280676850695,-7.018793907252667) circle (2.0pt);
+        \draw [fill=green, color=green] (20.380280676850695,-7.018793907252667) circle (2.0pt);
         \draw[color=green] (20.712184479563508,-6.6) node {$p_4$};
         \end{scriptsize}
         \end{tikzpicture}

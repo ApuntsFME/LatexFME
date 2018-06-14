@@ -962,7 +962,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
         \item
             $\ref{teo_it2} \implies \ref{teo_it1}$ trivialmente.
         \item
-            \underline{L.I.}: Sea
+            \textbf{L.I.}: Sea
             \[
                 w=\sum_{\substack{I=\left\{ i_1, \dots , i_p \right\} \\ 1\leq i_1 < \cdots < i_p \leq n}} \alpha _I e_{i_1}^* \wedge \cdots \wedge e_{i_p}^*=0.
             \]
@@ -970,16 +970,19 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
             \[
                 0=w \left( e_{i_1^0} , \dots , e_{i_p^0} \right)= \sum_{\substack{I=\left\{ i_1, \dots , i_p \right\} \\ 1\leq i_1 < \cdots < i_p \leq n}} \alpha _I e_{i_1}^* \wedge \cdots \wedge e_{i_p}^* \left( e_{i_1^0} , \dots , e_{i_p^0} \right) \stackrel{\ref{obs_2_pr_ext}} = \alpha _ {I_0}.
             \]
-            \underline{Generadores}:
-            \[
-                A_p \left( \E \right) = A \left( T_p \left( \E \right) \right) = A_p \left( \left[ e_{i_1} \otimes \cdots \otimes e_{i_p} \right]_I \right) = \left[ \left\{ e_{i_1} \wedge \cdots \wedge e_{i_p} \right\}_I \right] \stackrel{\ref{prop_pr_ext_ii}}= \left[ \left\{ e_{i_1} \wedge \cdots \wedge e_{i_p} \right\}_{I\text{ ordenado}} \right].
-            \]
+            \textbf{Generadores}:
+            \begin{gather*}
+                A_p \left( \E \right) = A \left( T_p \left( \E \right) \right) = A_p \left( \left[ e_{i_1} \otimes \cdots \otimes e_{i_p} \right]_I \right) = \left[ \left\{ e_{i_1} \wedge \cdots \wedge e_{i_p} \right\}_I \right] = \\
+                \stackrel{\ref{prop_pr_ext_ii}}= \left[ \left\{ e_{i_1} \wedge \cdots \wedge e_{i_p} \right\}_{I\text{ ordenado}} \right].
+            \end{gather*}
         \item
             Sea $w \in A_p\left(\E\right)$. Consideremos
             \[
                 \tilde{w}=\sum_{\substack{I=\left\{ i_1, \dots , i_p \right\} \\ 1\leq i_1 < \cdots < i_p \leq n}} \left( w \left( e_{i_1} , \dots , e_{i_p} \right) \right) e_{i_1}^* \wedge \cdots \wedge e_{i_p}^*.
             \]
-            Veremos que $\tilde{w}=w$. Como tensores, basta ver que coinciden sobre vectores $\left( e_{j_1}, \dots , e_{j_p} \right)$. Como ambos son alternados, podemos suponer $1 \leq j_1  < \cdots < j_p \leq n$. Entonces,
+            Veremos que $\tilde{w}=w$.
+            
+            Como tensores, basta ver que coinciden sobre vectores $\left( e_{j_1}, \dots , e_{j_p} \right)$. Como ambos son alternados, podemos suponer $1 \leq j_1  < \cdots < j_p \leq n$. Entonces,
             \[
                 \tilde{w} \left( e_{j_1}, \dots , e_{j_p} \right) = w \left( e_{j_1}, \dots , e_{j_p} \right).
             \]
@@ -994,7 +997,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
             \hline
             Espacio & $\dim$ & base & coordenadas \\
             \hline \hline
-            $A_1(\E)= T_1(\E) (=\E^*)$ & 3 & $\setb{e_1^*,e_2^*,e_3^*}$ &
+            $A_1(\E)= T_1(\E)$ & 3 & $\setb{e_1^*,e_2^*,e_3^*}$ &
             $w = (a_1,b_1,c_1)$ \\ \hline $A_2(\E) \subseteq T_2(\E)$ & 3 &
             $\setb{e_1^* \wedge e_2^*, e_1^* \wedge e_3^*, e_2^* \wedge e_3^*}$ &
             $\begin{aligned}
@@ -1016,7 +1019,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
         (e_2^* \wedge e_3^*) =
     \]
     \[
-        \determinant{a_1 & b_1 \\ a_2 & b_2}(e_1^* \wedge e_2^*) +
+        = \determinant{a_1 & b_1 \\ a_2 & b_2}(e_1^* \wedge e_2^*) +
         \determinant{a_1 & b_1 \\ a_3 & b_3}(e_1^* \wedge e_3^*)
         + \determinant{a_2 & b_2 \\ a_3 & b_3}(e_2^* \wedge e_3^*)
     \]
@@ -1038,7 +1041,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
     Sea $\E$ un $\k$-ev. y sean $f \in A_p(\E)$ y $g \in A_q(\E)$. Definimos el
     producto exterior de $f$ y $g$ como
     \[
-        f \wedge g = \frac{(p+q)!}{p!q!}A(f \otimes g)
+        f \wedge g = \frac{(p+q)!}{p!q!}A(f \otimes g).
     \]
 \end{defi}
 \begin{prop}
@@ -1051,7 +1054,7 @@ Recordemos que $T_p^q(\E)$ es un $\k$-ev.
 \end{prop}
 \begin{obs}
     $w_1 \wedge w_2 \wedge \cdots \wedge w_r = w_1 \wedge (w_2 \wedge (
-    \cdots w_{r-1} \wedge (w_r)))$
+    \cdots w_{r-1} \wedge (w_r)))$.
 \end{obs}
 \begin{example}
     Sea $\E = \real ^4$, $B = \setb{e_1,e_2,e_3,e_4}$ y $f,g \in A_2(\E)$
