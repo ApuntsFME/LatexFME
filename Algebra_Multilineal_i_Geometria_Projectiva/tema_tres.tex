@@ -246,7 +246,7 @@ $M_{\R, \overline{\R}} (f)$ está definida salvo multiplicar por $\lambda \neq 0
             \implies f : \Po^1 \to L \cong \overline{\Po^1} \\
             f \text{ mantiene las razones dobles}
         \end{rcases}
-        \stackrel{\ref{teo:proy_dim_1}}{\implies} f$ es una proyectividad (en particular $V = f \lp \Po^1 \rp = L$).
+        \stackrel{\text{\ref{teo:proy_dim_1}}}{\implies} f$ es una proyectividad (en particular $V = f \lp \Po^1 \rp = L$).
         \item $n > 1$, supongamos el resultado cierto para $n-1$ (hipótesis de inducción). Probemoslo para $n$. \\
         Definimos $H_i := p_0 \vee \dots \vee \widehat{p_i} \vee \dots \vee p_n$, $i = 0, \dots, n$ (hiperplano sin $p_i$). Demostremos que $p \not \in H_i \implies f \lp p \rp \notin f \lp H_i \rp$: \\
         $\begin{rcases}
@@ -267,14 +267,14 @@ $M_{\R, \overline{\R}} (f)$ está definida salvo multiplicar por $\lambda \neq 0
         \end{enumerate}
         Hemos de ver que $\forall p \in \Po^n, f \lp p \rp = g \lp p \rp$:
         \begin{itemize}
-            \item Si $p = \overline{p}$ o $p \in \bigcup_{i=0}^n H_i$ ya lo sabemos por \eqref{item:1_dela_prop} y \eqref{item:2_dela_prop}.
+            \item Si $p = \overline{p}$ o $p \in \bigcup_{i=0}^n H_i$ ya lo sabemos por \ref{item:1_dela_prop} y \ref{item:2_dela_prop}.
             \item Si $p \neq \overline{p}$ y $p \notin \bigcup_{i=0}^n H_i$
         \end{itemize}
         Sean $L := p \vee \overline{p}$ y sean $q_n := L \cap H_n, q_0 := L \cap H_0$. Como $f$ es una colineación, $f \lp L \rp$ es una recta, $f \lp L \rp = f \lp p \rp \vee f \lp \overline{p} \rp$.
         Entonces:
         \begin{gather*}
             \lp f \lp q_0 \rp, f \lp q_1 \rp, f \lp \overline{p} \rp, f \lp p \rp \rp \substack{f \text{ mantiene} \\ = \\ \text{razón doble}} \lp q_0, q_1, \overline{p}, p \rp \stackrel{g \text{ proyec.}}{=} \lp g \lp q_0 \rp, g \lp q_1 \rp, g \lp \overline{p} \rp, g \lp p \rp \rp = \\
-            \stackrel{\eqref{item:1_dela_prop} + \eqref{item:2_dela_prop}}{=} \lp f \lp p_0 \rp, f \lp p_1 \rp, f \lp \overline{p} \rp, g \lp p \rp \rp \implies f \lp p \rp = g \lp p \rp.
+            \stackrel{\ref{item:1_dela_prop} + \ref{item:2_dela_prop}}{=} \lp f \lp p_0 \rp, f \lp p_1 \rp, f \lp \overline{p} \rp, g \lp p \rp \rp \implies f \lp p \rp = g \lp p \rp.
         \end{gather*}
     \end{itemize}
 \end{proof}
@@ -339,10 +339,10 @@ $M_{\R, \overline{\R}} (f)$ está definida salvo multiplicar por $\lambda \neq 0
         \[ \lp p_1, p_2, p_3, p_4 \rp = \lp f \lp p_1 \rp, f \lp p_2 \rp, f \lp p_3 \rp, f \lp p_4 \rp \rp \implies f \text{ conserva razones dobles.}
         \]
     \end{enumerate}
-    \noindent Los puntos \eqref{item:col_teo2_it1} y \eqref{item:col_teo2_it2} implican que $f$ es una colineación. Los puntos \eqref{item:col_teo2_it1}, \eqref{item:col_teo2_it2} y \eqref{item:col_teo2_it3} implican (por el teorema \ref{teo:proyectividades}) que $f$ es una proyectividad
+    \noindent Los puntos \ref{item:col_teo2_it1} y \ref{item:col_teo2_it2} implican que $f$ es una colineación. Los puntos \ref{item:col_teo2_it1}, \ref{item:col_teo2_it2} y \ref{item:col_teo2_it3} implican (por el teorema \ref{teo:proyectividades}) que $f$ es una proyectividad
 \end{proof}
 \begin{teo}[fundamental de la geometría proyectiva]
-    \[ f : \Po^n \to \Po^n \text{ colineación} \implies f = [\varphi], \varphi : \E \to \E, \varphi \text{ aplicación semilineal}. \]
+    \[ f : \Po^n \to \Po^n \text{ colineación},\, n\geq2 \implies f = [\varphi], \varphi : \E \to \E, \varphi \text{ aplicación semilineal}. \]
     En particular, si $\k = \real, f$ colineación $\implies f$ proyectividad.
 \end{teo}
 \begin{example}
@@ -746,7 +746,7 @@ el siguiente lema que resultará de utilidad.
     \begin{enumerate}[(1)]
         \item[]
         \item Visto.
-        \item Por dualidad de \eqref{item:1_homografias} y \eqref{item:5_homografias}.
+        \item Por dualidad de \ref{item:1_homografias} y \ref{item:5_homografias}.
         \item $\begin{rcases}
             Q_A\lp t\rp = Q_A\in\lp t\rp\\
             J_A = J_{A^t}
@@ -767,7 +767,7 @@ el siguiente lema que resultará de utilidad.
         Por tanto $\exists \lambda_i$ vap de $\varphi_{|F}$ y por tanto $\exists \omega_i\in F, \varphi\lp\omega_i\rp=\lambda_i\omega_i \implies f\lp p\rp=p\;\lp p = [\omega_i]\in V\rp.$ \\
         Veamos que $\exists H\subseteq \Po$ hiperplano $f$-invariante t.q. $V\subseteq H$,
         \[
-            V \subseteq H \iff \overbrace{V^*}^{f\text{-inv. por }\eqref{item:5_homografias}} \supseteq \overbrace{H^*}^{f\text{-inv. por }\eqref{item:2_homografias}}
+            V \subseteq H \iff \overbrace{V^*}^{f\text{-inv. por }\ref{item:5_homografias}} \supseteq \overbrace{H^*}^{f\text{-inv. por }\ref{item:2_homografias}}
         \]
     \end{enumerate}
 \end{proof}
