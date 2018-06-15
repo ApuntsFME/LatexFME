@@ -11,7 +11,7 @@ formulari: formulari.tex aux_form_main.tex
 silentmain: *.tex
 	mkdir -p figures
 	pdflatex -halt-on-error -shell-escape main.tex > /dev/null
-	python ../script.py main.idx 2> /dev/null
+	python ../script.py main.idx > /dev/null 2> /dev/null
 	pdflatex -shell-escape main.tex > /dev/null
 silentformulari: formulari.tex aux_form_main.tex
 	pdflatex -halt-on-error aux_form_main.tex > /dev/null
