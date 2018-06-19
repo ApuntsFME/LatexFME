@@ -1,1 +1,433 @@
-\chapter{Tema 1}
+\chapter{Errores}
+
+\section{Errores numéricos}
+	
+\begin{example}\label{ej:1_errores}
+    Consideramos el sistema de ecuaciones:
+    \[
+        \begin{pmatrix}
+            1 & 2\\
+            0,4999 & 1,001\\
+        \end{pmatrix}
+        \begin{pmatrix}
+        x\\
+        y\\
+        \end{pmatrix} =
+        \begin{pmatrix}
+        3\\
+        1,5\\
+        \end{pmatrix}.
+    \]
+    Con solución $x = 1, y = 1$. Si cambiamos $0.499 \rightarrow 0.500$ para obtener el sistema
+    \[
+        \begin{pmatrix}
+            1 & 2\\
+            0,5000 & 1,001\\
+        \end{pmatrix}
+        \begin{pmatrix}
+        x\\
+        y\\
+        \end{pmatrix} =
+        \begin{pmatrix}
+        3\\
+        1,5\\
+        \end{pmatrix}.
+    \]
+    Las solución ahora es $x = 3, y = 0$. Un cambio de $10^-3$ en uno de los parámetros ha llevado a cabo un cambio del orden del $10^1$ en la solución; este tipo de error recibe el nombre de error en los datos.
+\end{example}
+
+\begin{example}\label{ej:2_errores}
+    Consideramos el calculo de las raíces del polinomio $x^2 - 18x +1$ usando aritmética de $4$ cifras decimales en el calculo de $\sqrt{\phantom{x}}$:
+    \[
+            x = \dfrac{18 \pm \sqrt{18^2 - 4 \cdot 1 \cdot 1}}{2 \cdot 1} = 9 \pm \sqrt{80} \nonumber.
+    \]
+    Si tenemos como valor para $\sqrt{80} \simeq 8.9442$, obtenemos las soluciones:
+    \begin{gather*}
+            x_{+}=9+8.9442=17.9442 \\
+            x_{-}=9-8.9442=0.0558
+    \end{gather*}.
+    Hemos obtenido la primera solución con $6$ dígitos significativos, pero la segunda solo con $3$; esto es una perdida importante de información debida al error cometido en la operación $\sqrt{\phantom{x}}$ al truncar a $4$ dígitos.
+\end{example}
+
+\begin{example}\label{ej:3_errores}
+    Consideramos el calculo de $I_n \coloneqq \int_{0}^{1}x^ne^{x-1}dx$, para $n = 0,1,2,...$.
+    Algoritmo: obtenemos una recurrencia a partir de la formula de integración por partes
+    \[
+            I_n = \int_{0}^{1}x^ne^{x-1}dx = [x^ne^{x-1}]_{0}^{1} - \int_{0}^{1}nx^{x-1}e^{x-1}dx = 1 - nI_{n-1} \nonumber
+    \]
+    con el valor inicial $I_0 = \int_{0}^{1}x^0e^{x-1}dx = [e^{x-1}]_{0}^{1} = 1 - \frac{1}{e} \simeq 0.63212055$.
+    
+    Así calculamos $I_0 = 0.63212055, I_1 = 0.367899, ..., I_9 = -0.068480$; lo cual es un resultado absurdo ya que $x^ne^{x-1}$ es no negativo para $x \in [0,1]$, y por lo tanto su integral en ese intervalo también. Aunque la recurrencia sea cierta matemáticamente, el algoritmo empleado es malo numéricamente (error en el algoritmo).
+\end{example}
+
+\begin{example}\label{ej:4_errores}
+    Consideramos el cálculo de la derivada de una función $f$ em el punto $x_0$
+    \[
+            f'(x_0) = \limvar{h}{0} \dfrac{f(x_0 + h) - f(x_0)}{h} \nonumber
+    \]
+    Sin embargo, un límite es imposible de calcular numéricamente, y por lo tanto estamos obligados a tomar una aproximación:
+    \[
+            f'(x_0) \simeq \dfrac{f(x_0 + h) - f(x_0)}{h} = \frac{\Delta f(x_0)}{h} \nonumber
+    \]
+    Para $h$ suficientemente pequeña, la teoría sobre límites nos dice que a medida que $h$ se acerca a $0$, el valor de la aproximación se acercará cada vez más al valor real. Desafortunadamente la teoría vuelve a fallar en la practica: si calculamos el cociente para $\frac{\Delta f(x_0)}{h}$ para $h$ sucesivamente pequeñas, el valor que obtenemos mejorará al principio pero a partir de un momento volverá a empeorar. 
+\end{example}
+    
+\begin{defi}[Errores]\index{Error!de redondeo}\index{Error!truncado}
+    Existen diferentes clases de errores según su procedencia:
+    \begin{enumerate}
+            \item Error de \it{redondeo}: $\varepsilon_R$
+            \begin{itemize}
+                    \item Errores en los datos \ref{ej:1_errores}
+                    \item Error en las operaciones \ref{ej:2_errores}
+            \end{itemize}
+            \item Error de \it{truncado}: $\varepsilon_T$
+            \begin{itemize}
+                    \item Error en el algoritmo (en el paso de contínua a aproximación discreta/numérica, \ref{ej:3_errores} y \ref{ej:4_errores})
+            \end{itemize}
+    \end{enumerate}
+\end{defi}
+
+\begin{defi}[Error!total]
+    Definimos el error total $\varepsilon \coloneqq$ $\varepsilon_R + \varepsilon_T$.
+\end{defi}
+
+\begin{obs}
+    En general, el error de tipo redondeo será alto con un número de pasos pequeño y bajo con un número de pasos más grande, mientras que el error de tipo truncado sera bajo con un número de pasos pequeño y grande con un número de pasos más grande. Debido a que el error total es la suma de los dos, no existe una solución trivial para el número de pasos óptimo $h^*$ que deberíamos emplear en los cálculos; el minimizador del error total que la teoría asegura que existe.
+\end{obs}
+
+\section{Representación digital de un número real}
+    
+\begin{prop}
+    Todo $x \in \R$ admite una representación única en base $b \in \n$, $b>1$ con dígitos $\lp a_j\rp _{j \in \z}$ tal que 
+    \[
+            x = \cdots + a_kb^k + \cdots a_0b^0 + a_{-1}b^{-1} + \cdots \nonumber.
+    \]
+\end{prop}
+
+\begin{obs}
+    En general la secuencia de dígitos $a_j$ tendrá un numero infinito de valores distintos de cero. Al ser la capacidad de los ordenadores finita, es imposible representar todos los reales con precisión exacta, lo cual generará errores.
+\end{obs}
+
+\begin{comment}
+    \begin{definition}
+            La representación normalizada (única) en coma flotante de $x \in \R$ en base $b$ con dígitos $(d_n)_{n \in Z^{+}}$ i exponente $e \in \Z$ es:
+            \[
+                    x = \pm 0.d_1d_2... \cdot b^e \nonumber
+            \]
+            Con la restricción de que $d_1 \neq 0$
+    \end{definition}
+
+    \begin{example}
+            La representación normalizada de $172.456$ en base $10$ es $\SI{0.172456e3}{}$
+    \end{example}
+
+    \begin{definition}
+            La representación en coma flotante con $n$ dígitos de un numero real $x$ con representación normalizada $x = \pm 0d_1..d_n... \cdot b^e$ es:
+            \begin{itemize}
+                    \item  $\fl$ por truncado:
+                    \[
+                            \fl_T(x) = \pm 0.d_1..d_n \cdot b^e \nonumber
+                    \]
+                    \item $\fl$ por redondeo:
+                            \[
+                            \fl(x) = \left.
+                            \begin{cases}
+                            \pm 0.d_1..d_n \cdot b^e & 0 \leq d_n < \frac{b}{2} \\
+                            \pm (0.d_1..d_n + b^{-n}) \cdot b^e & \frac{b}{2} \leq x < b
+                            \end{cases}
+                            \right.
+                            \]
+            \end{itemize}
+    \end{definition}
+
+    Supongamos que queremos almacenar $\fl(x)$ con la siguiente estructura (en base $b = 2$):
+    
+    \[
+            \underbrace{[*]}_{s_1}
+            \hspace{0.1cm}
+            \underbrace{[{}*|*|*|*|*|*|*{}]}_{d_1,...,d_n}
+            \hspace{0.1cm}
+            \underbrace{[*]}_{s_2}
+            \hspace{0.1cm}
+            \underbrace{[{}*|*|*|*|*{}]}_{e_1,..,e_k}
+            \nonumber
+    \]
+    
+    Donde $s_1$ es el signo de $x$, $d_1,...,d_n$ son los dígitos de $\fl(x)$, $s_2$ és el signo del exponente y $e_1,...,e_k$ los dígitos del exponente de $\fl(x)$.
+    
+    Sin embargo, este mecanismo de representación no es del todo eficiente:
+    
+    \begin{idea}
+            Una primera mejora se basaría en darnos cuenta de que al ser la base $2$ y $d_1 \neq 0$, que necesariamente $d_1 = 1$. Así pues, no hay razón para guardarlo y malgastar memoria; esto nos da un dígito más de precisión con el mismo espacio.
+    \end{idea}
+
+    \begin{idea}
+            Una segunda mejora sería cambiar la manera en el que guardamos el exponente $e$. Difinimos $e' = e + n^{\underline{\text{o}}}$, con un $n^{\underline{\text{o}}}$ fijo, definido como el mínimo natural tal que $e' > 0$ para todos los $e$ posibles en la representación original; observamos que la definición de $e'$ establece una biyección, así que guardando $e'$ obtenemos unívocamente $e$. Al ser $e' > 0$ siempre, al guardarlo podemos prescindir el bit asignado al signo de $e$ i utilizarlo para guardar un dígito más de $e'/e$. El valor de $n^{\underline{\text{o}}}$ para el tipo float ($32$ bits, $23$ para la mantisa, $8$ para el exponente) es $127$, y $1023$ para el tipo double ($64$ bits, $52$ para la mantisa, $11$ para el exponente).
+    \end{idea}
+
+    \begin{definition}
+            El $\epsilon$-máquina de un ordenador es el mínimo $\epsilon > 0$ tal que $\fl(1 + \epsilon) > 1$
+    \end{definition}
+        
+        \section{Errores en la representación de los números}
+        
+        \subsubsection{Error absoluto y relativo}
+        
+        \begin{definition}
+            Sea $x \in \R$ un número real y $\overline{x}$ una aproximación de $x$
+            \begin{itemize}
+                    \item Definimos el \textbf{error absoluto} cometido en aproximar $x$ con $\overline{x}$ como: $e_a(\overline{x}) = \overline{x} - x$
+                    \item Definimos el \textbf{error relativo} cometido en aproximar $x$ con $\overline{x}$ como: $e_r(\overline{x}) = \frac{e_a(\overline{x})}{x} \simeq \frac{e_a(\overline{x})}{\overline{x}}$
+            \end{itemize}
+        \end{definition}
+
+    \begin{note}
+            Los errores no son conocidos; manejaremos cotas superiores de ellos:
+            \begin{align*}
+                    \overline{x} &= x + e_a(\overline{x}) && |e_a(\overline{x})| \leq \epsilon_a(\overline{x}) \text{ Cota del error absoluto} \\
+                    \overline{x} &= x(1 + \delta) && \underset{= |e_r(\overline{x})|}{|\delta|} \leq \epsilon_r(\overline{x}) \text{ Cota del error relativo}
+            \end{align*}
+    \end{note}
+
+    \begin{observation}
+            $\overline{x} = x(1 + \delta) = x + \underbrace{\delta x}_{e_a(\overline{x})}$
+    \end{observation}
+
+    \subsubsection{Errores cometidos al representar $x$ en punto flotante}
+    
+    Sea $x = \pm 0.d_1..d_nd_{n+1}... \cdot b^e$.
+    
+    Error cometido en punto flotante por trucando: La representación de $x$ en coma flotante con $n$ dígitos por truncado es $\fl(x) = \pm 0.d_1..d_n$. Entonces por definición tenemos que:
+    
+    \begin{align*}
+            |e_a(\fl_T(x))| &= |\fl(x) - x| = d_{n+1}... \cdot b^{-(n+1)} \cdot b^e \leq b \cdot b^{-(n+1)} \cdot b^e &= b^{-n+e} = \epsilon_a(\fl_T(x)) \\
+            |e_r(\fl_T(x))| &= |\frac{e_a(\overline{x})}{x}| \leq \frac{b^{-n+e}}{b^{-1+e}} &= b^{-n+1} = \epsilon_r(\fl_T(x))
+    \end{align*}
+    
+    Error cometido en punto flotante por redondeo: Con un argumento similar al anterior vemos que las cotas para el error absoluto y relativo al hacer punto flotante por redondeo es:
+    
+    \begin{align}
+            |e_a(\fl_R(x))| &=  \frac{1}{2}b^{-n+e} = \epsilon_a(\fl_R(x)) \\
+            |e_r(\fl_R(x))| &=  \frac{1}{2}b^{-n+1} = \epsilon_r(\fl_R(x))
+    \end{align}
+    
+    \begin{definition}
+            Usualmente consideraremos $b = 10$
+            \begin{itemize}
+                    \item Si $e_a(\overline{x}) \leq \frac{1}{2}10^{-k}$, diremos que $\overline{x}$ tiene \underline{$k$ cifras decimales correctas}
+                    \item Si $e_r(\overline{x}) \leq \frac{1}{2}10^{-k+1}$, diremos que $\overline{x}$ tiene \underline{$k$ dígitos significativos corectos}
+            \end{itemize}
+            En esta definición aparecen los $\frac{1}{2}$ ya que por defecto consideramos coma flotante por redondeo (al ser el error menor); en caso de utilizar coma flotante por truncado, las definiciones serían iguales sin el $\frac{1}{2}$.
+    \end{definition}
+
+    \subsubsection{Propagación de errores en los datos}
+    
+    En principio tenemos que $e_a(\overline{x} \pm \overline{y}) = e_a(\overline{x}) + \overline{y}$. Sin embargo al manejar cotas, estamos obligados a usar: 
+    
+    \begin{definition}
+            \begin{equation*}
+            \epsilon_a(\overline{x} \pm \overline{y}) = \epsilon_a(\overline{x}) + \epsilon_a(\overline{y})
+            \end{equation*}
+    \end{definition}
+    
+    En el caso del producto, tenemos que $e_r(\overline{x}\overline{y}) = xy(1+\delta_x)(1+\delta_y) = xy(1 + \delta_x + \delta_y + \delta_x\delta_y) \simeq xy(1 + \delta_x + \delta_y)$; nos quedamos con la aproximación de orden uno de esta expresión, ya que si $\delta_x,\delta_y << 1$,entonces $\delta_x\delta_y << \delta_x + \delta_y$. Así pues tenemos que:
+    
+    \begin{definition}
+            \begin{equation*}
+            \epsilon_r(\overline{x}\cdot\overline{y}) \lessapprox \epsilon_r(\overline{x}) + \epsilon_r(\overline{y})
+            \end{equation*}
+    \end{definition}
+
+    \begin{note}
+            Ojo con restar variables ''cercanas"; se generaran errores relativos grandes:
+            \begin{equation*}
+                    e_r(\ap{x}-\ap{y}) = \dfrac{e_a(\ap{x} - \ap{y})}{\ap{x}-\ap{y}} = \dfrac{\ap{x}}{\ap{x}-\ap{y}}e_r(\ap{x}) - \dfrac{\ap{y}}{\ap{x}-\ap{y}}e_r(\ap{y})
+            \end{equation*}
+            Si ahora tomamos el valor absoluto:
+            \begin{equation*}
+                    |e_r(\ap{x}-\ap{y})| \leq |\dfrac{\ap{x}}{\ap{x}-\ap{y}}|\cdot|e_r(\ap{x}) + |\dfrac{\ap{y}}{\ap{x}-\ap{y}}|\cdot|e_r(\ap{y})|
+            \end{equation*}
+            Vemos que si $\ap{x}$,$\ap{y}$ son cercanos, $\ap{x}-\ap{y}$ será muy pequeño y al dividir la cota del error incrementa muchísimo.
+    \end{note}
+    
+    \begin{example}
+            Calcular las raízes del polinomio  $x^2 - 18x + 1$, con calculo de $\sqrt{\phantom{x}}$ de 4 cifras decimales (por truncado)
+            Obteniamos:
+            \begin{align*}
+                    x_+ &= 9 + \sqrt{80} = 17.94442 &&\text{ 6 dígitos significativos} \\
+                    x_- &= 9 - \sqrt{80} = \enspace 0.0558 &&\text{ 3 dígitos significativos!!!}
+            \end{align*}
+            Analizamos este resultado en terminos de la cota del error relativo en el calculo de $x_-$: Sea $x = 9$,$y = \sqrt{80}$,$\ap{x}=9$,$\ap{y}=8.4492$. Entonces tenemos que:
+            \begin{equation*}
+                    e_r(\ap{x}-\ap{y}) \simeq |\frac{\ap{y}}{\ap{x}-\ap{y}}|\cdot|e_r(\ap{y})| = \dfrac{8.9442}{0.0588}\cdot \underbrace{10^{-5+1}}_{\text{5 díg sig}} \simeq \scin{0.16e-1} < 1^{-2+1}
+            \end{equation*}
+            Es decir, me puedo creer solo $\approx 2$ dígitos significativos !!
+    \end{example}
+
+    \begin{example}
+            Consideramos el calculo de $I_n = \int_{0}^{1}x^ne^{x-1}dx$,$n = 0,1,2,...$, y para ese fín el uso de la recurrencia $I_n = 1 - nI_{n-1}$,$I_0 = 1 - \frac{1}{e} \approx 0,63212055$. Para $I_9$ obteníamos un valor negativo! (cuando la función era positiva en el intervalo de integración). Si analizamos este problema en términos del error absoluto: $e_a(I_n) \lessapprox e_a(1) + ne_a(I_{n-1})$, es decir $e_a(I_n) \simeq n!e_a(I_0)$. El error absoluto aumenta factorialmente; este procedimiento no es bueno.
+    \end{example}
+
+    \section{Fórmula de la propagación del error en los datos}
+    
+    Tenemos $x$ valor real, $\overline{x}$ aproximación. Queremos calcular $f(x)$, pero solo podemos tener una aproximación $\overline{f(x)} = f(\overline{x})$.
+    
+    \subsection{Error absoluto y relativo de $f(\overline{x})$ con cálculo perfecto de $f$}
+    
+    Supongamos que todo el error viene de los datos y que el cálculo de $f$ es perfecto:
+    
+    \subsubsection{Error absoluto}
+    
+    \begin{equation*}
+            f(\overline{x}) = f(x + e_a(x)) = f(x) + f'(x)e_a(x) + \underbrace{\theta_2(e_a(x))}_{\text{od. dos en } e_a(x)} \simeq f(x) + f'(x)e_a(x)
+    \end{equation*} 
+    
+    $\therefore |e_a(f(\overline{x}))| \simeq |f'(\overline{x})||e_a(x)|$
+    
+    \subsubsection{Error relativo}
+    
+    \begin{equation*}
+            e_r(f(\overline{x})) = \frac{e_a(f(\overline{x}))}{f(\overline{x})} \simeq \frac{f'(\overline{x})e_a(x)}{f(\overline{x})} = \frac{\overline{x}f'(\overline{x})e_a(x|}{f(\overline{x})\overline{x}} = \frac{\overline{x}f'(\overline{x})}{f(\overline{x})}e_r(x)
+    \end{equation*}
+    
+    $\therefore |e_r(f(\overline{x}))| = |\frac{\overline{x}f'(\overline{x})}{f(\overline{x})}||e_r(x)|$, dónde el término $|\frac{\overline{x}f'(\overline{x})}{f(\overline{x})}|$ recibe el nombre de factor de propagación/amplificación del error (fdp).
+    
+    \begin{example}[Seguridad de la operación raíz cuadrada]
+            Consideramos el cálculo de $f(x) = \sqrt{x}$: fdp = $\frac{x\frac{1}{2\sqrt{x}}}{\sqrt{x}} = \frac{1}{2}$. $\therefore |e_r(\sqrt{\overline{x}})| \simeq \frac{1}{2}|e_r(\overline{x})|$ Calcular la raíz cuadrada es una operación segura.
+    \end{example}
+
+    \begin{example}[Seguridad de la operación $\frac{1}{1-x^2}$]
+            Consideramos el cálculo de $f(x) = \frac{1}{1-x^2}$: fdp = $\frac{x\frac{4x}{(1-x^2)^2}}{\frac{1}{1-x^2}} = \frac{4x^2}{1-x^2} = 4(1 - \frac{1}{1-x^2})$; vemos que el fdp sería muy grande cuando $x \simeq 1$; en ese caso, calcular $f$ de esta manera sería una operación insegura. En vez de calcularlo dividiendo, podemos expandir en Taylor: $f(x) \equiv 1 + x^2 + x^4 + x^6 + ...$
+    \end{example}
+    
+    \begin{example}[Efecto en el cambio de los coeficientes de un sistema lineal en la solución]\hfill
+            Consideramos el sistema:
+            \begin{alignat*}{4}
+                    ax & {}+{} &  by  & {}={} & 3 \\
+                    cx & {}+{} &  dy & {}={} &  1.5 \\
+            \end{alignat*}
+            Con soluciones $x = \frac{3d-1.5b}{ad-bc}$,$y = \frac{1.5a-3c}{ad-bc}$. Supongamos que sabemos $a = 1,b = 2,d = 1.001$ de manera exacta, pero solo tenemos una aproximación de $c$ dada por $\overline{c} = 0.499$; con error absoluto $e_r(c) \simeq \scin{1e-3}$. Al resolver este sistema, nosotros calculamos $\overline{x} = \frac{3d-1.5b}{ad-b\overline{c}} \cong f(\overline{c})$. El error absoluto cometido en el cálculo de $\overline{x}$ esta dado por:
+            \begin{align*}
+                    |e_a(\overline{x})| & = |e_a(f(\overline{c}))| \simeq |f'(\overline{c})||e_a(\overline{c})| \\
+                    |f'(\overline{c})| & = \left|\frac{(3\cdot 1.001-1.5\cdot 2)\cdot 2}{(1\cdot 1.001 -2\cdot\overline{c})^2}\right|_{|\overline{c}=0.499} \simeq \scin{6e3} \\
+                    \therefore |e_a(x)| & \simeq 6
+            \end{align*}
+    \end{example}
+
+    \begin{note}
+            Supongamos que queremos calcular $f(x) \equiv f(x_1,...,x_n)$, pero solo tenemos $\overline{x} = (\overline{x_1},...,\overline{x_n})$. Entonces el error cometido (suponiendo que el cálculo de $f$ es perfecto) viene dado por:
+            \begin{equation*}
+                    f(\overline{x}) = f(x + e_a(x)) = f(x) + \nabla f(x)^te_a(x) + \theta_2(e_a(x))
+            \end{equation*}
+            Tal que:
+            \begin{equation*}
+                    e_a(f(\overline{x})) \simeq \nabla f(x)^te_a(x) = \sum_{k=1}^{n}\pdv{f}{x_k} (\overline{x})e_a(\overline{x_k})
+            \end{equation*}
+    \end{note}
+
+    \subsection{Error absoluto y relativo de $f(\overline{x})$ con cálculo aproximado de $f$}
+    
+    Supongamos que ademas del error en los datos $\overline{x} = x + e_a(x)$, obtenemos un error relativo al calcular $f$ acotado por $\delta_f$. Entonces tenemos la siguiente expresión para el error absoluto cometido:
+    
+    \begin{equation*}
+            e_a(\overline{f}(\overline{x})) \simeq |\overline{f}'(\overline{x})||e_a(x)| + \delta_f|\overline{f}(\overline{x})|
+    \end{equation*}
+
+    \section{Análisis del error en el cálculo de raízes de un polinomio}
+    
+    Consideramos las raíces de un polinomio como una función implícita de sus coeficientes. Veremos que es una relación muy sensible y mal condicionada. 
+    
+    \subsection{Análisis de un polinomio general}
+    
+    Consideramos el polinomio general:
+    \begin{equation*}
+            p(x) = a_nx^n + \cdots a_kx^k + \cdots a_1x + a_0
+    \end{equation*}
+    
+    \begin{itemize}[label=($\bullet$)]
+            \item Sabemos que las raíces de $p(x)$ son $\alpha_1,...,\alpha_n$
+            \item También sabemos que cada raíz $\alpha_l$ es función de los coeficientes: $\alpha_l = \alpha_l(\ap{a}_n,...,\ap{a}_0)$
+            \item Queremos estudiar $e_a(\alpha_l(\ap{a}_n,...,\ap{a}_0))$, $e_r((\alpha_l(\ap{a}_n,...,\ap{a}_0))$ $l = 1\divisionsymbol n$
+    \end{itemize}
+
+    En general sabemos, de la fórmula del factor de propagación del error:
+    \begin{equation*}
+    e_a(\alpha_l(\ap{a}_n,...,\ap{a}_0)) \simeq \sum_{j=1}^{n}\dv{\alpha_l}{a_j}e_a(\ap{a}_j)
+    \end{equation*}
+    
+    En nuestro ejemplo supondrems que solo hay error en el coeficiente $a_k$. Por lo tanto:
+    \begin{equation*}
+            e_a(\alpha_l(\ap{a}_k)) \simeq \pdv{\alpha_l}{a_k}(a_k)e_a(\ap{a}_k)
+    \end{equation*}
+    
+    Necesitamos calcular $\pdv{\alpha_l}{a_k}(a_k)$. Utilizaremos derivación implícita respecto $a_k$ sobre la siguiente igualdad:
+    \begin{equation*}
+            a_n\alpha_l^n + \cdots a_k\alpha_l^k + \cdots a_0 = p(\alpha_l)) = p(\alpha_l(a_k))
+    \end{equation*}
+    
+    Para obtener:
+    \begin{equation*}
+            \alpha_l^k = p'(\alpha_l(a_k))\pdv{\alpha_l}{a_k}(a_k) \implies \pdv{\alpha_l}{a_k}(a_k) = \dfrac{\alpha_l^k}{p'(\alpha_l(a_k))}
+    \end{equation*}
+    
+    El numerador de la expresión obtenida es fácil de calcular; para calcular el denominador haremos uso de la representación de un polinomio como producto de sus factores simples:
+    \begin{align*}
+            p(x) & = a_n(x-\alpha_l)\prod_{j=1,j\neq l}^{n}(x-\alpha_j) \\
+            \implies p'(x) & = a_n\prod_{j=1,j\neq l}^{n}(x-\alpha_j) + a_n(x-\alpha_l)\dv{x}\left(\prod_{j=1,j\neq l}^{n}(x-\alpha_j)\right) \\
+            \therefore p'(\alpha_l) & = a_n\prod_{j=1,j\neq l}^{n}(\alpha_l-\alpha_j)
+    \end{align*}
+    
+    De manera que obtenemos la expresión deseada para le error absoluto del calculo de $\alpha_l$ debido al error en $\ap{a}_k$:
+    \begin{equation*}
+            \therefore |e_a(\alpha_l(\ap{a}_k))| \simeq \left|\frac{\alpha_l^k}{ a_n\prod_{j=1,j\neq l}^{n}(\alpha_l-\alpha_j)}\right||e_a(\ap{a}_k)|
+    \end{equation*}
+    
+    Con respecto al error relativo:
+    \begin{align*}
+            e_r(\alpha_l(\ap{a}_k)) & = \left|\frac{e_a(\alpha_l(\ap{a}_k))}{\alpha_l(\ap{a}_k)}\right| \simeq \left|\frac{\alpha_l^{k-1}}{ a_n\prod_{j=1,j\neq l}^{n}(\alpha_l-\alpha_j)}\right|\left|\frac{e_a(\ap{a}_k)}{a_k}\right||a_k| \\
+            & = \left|\frac{a_k\alpha_l^{k-1}}{a_n\prod_{j=1,j\neq l}^{n}(\alpha_l-\alpha_j)}\right| |e_r(\ap{a}_k)|
+    \end{align*}
+    
+    Hasta aquí en general. En nuestro caso particular de Wilkinson, tenemos $n=20$,$\alpha_1 = 1$,...,$\alpha_{20} = 20$,$k = 19 \leftrightarrow a_{19} = -210$,$l = 16 \leftrightarrow \alpha_l = 16$. Calculamos el error relativo:
+    
+    \begin{align*}
+                    e_r(\alpha_l(\ap{a}_k)) = \left|\frac{(-210)\cdot(16^{19-1})}{1\cdot(15!4!(-1)^4)}\right| |e_r(\ap{a}_{19})| \approx \scin{0.31e11}e_r(\ap{a}_{19})
+    \end{align*}
+    
+    Consequencia: Suponemos que queremos calcular el nuevo $\alpha_l(\ap{a}_k)$ (ex. $\alpha_{16}(\ap{a}_{19})$) con $t$ dígitos significativos. ¿Cuantos dig. sig. correctos debería tener, aproximadamente, $a_{19}$?
+    
+    \begin{align*}
+            & \frac{1}{2}\cdot10^{1-t} \sim \scin{0.31e11}\frac{1}{2}\cdot10^{1-s} \\
+            \therefore & 1 - t = 12 - s \iff \\
+            & s \sim 11 + t
+    \end{align*}
+    
+    Es decir que si queremos un valor para la raíz que nos podamos creer $t$ dígitos, entonces necesitamos saber $11 + t$ dígitos del coeficiente $a_{19}$ (suponiendo que conocemos los otros de manera exacta).
+    
+    \section{Problema: ''No asociatividad de la suma en numérica"}
+    
+    Suponemos $\delta$ cota del error relativo en el almacenamiento ($\delta \sim \frac{1}{2}10^{1-t} \equiv t$ cifras significativas). Queremos analizar las diferencias entre: $\sum_{n=1}^{N}\frac{1}{n^2}$ vs $\sum_{n=N}^{1}\frac{1}{n^2}$. Calculamos primero el error cometido al sumar una secuencia general de $n$ términos:
+    
+    \begin{table}[H]
+            \centering
+            \label{no-asociativa}
+            \begin{tabular}{lll}
+                    Valor real & Aproximación & Cota del error absoluto \\
+                    $s_1 = x_ 1$ & $\ap{s_1} = \ap{x_1}$ & $\varepsilon(\ap{s_1}) = \varepsilon_a(\ap{x_1}) = \ap{x_1}\delta$ \\
+                    $s_2 = s_1 + x_ 2$ & $\ap{s_2} = \ap{s_1} + \ap{x_2}$  &   $\varepsilon_a(\ap{s_2}) \simeq (2x_1 + 2x_2)\delta$  \\
+                    $s_3 = s_2 + x_3$ & $\ap{s_3} = \ap{s_2} + \ap{x_3}$   &   $\varepsilon_a(\ap{s_3}) \simeq (3x_1 + 3x_2 + 2x_3)\delta$\\
+                    $s_4 = s_3 + x_4$ & $\ap{s_4} = \ap{s_3} + \ap{x_4}$   &   $\varepsilon_a(\ap{s_4}) \simeq (4x_1 + 4x_2 + 3x_3 + 2x_4)\delta$ \\
+                    $s_N = s_{N-1} + x_N$ & $\ap{s_N} = \ap{s_{N-1}} + \ap{x_N}$ & $\varepsilon_a(\ap{s_N}) \simeq (Nx_1 + Nx_2 + (N-1)x_3 + (N-2)x_4 + \cdots + 2x_N)\delta$
+            \end{tabular}
+    \end{table}
+
+    Derivación de las cotas (casos $s_1$,$s_2$; las demás se obtienen análogamente):
+
+    \begin{align*}
+            (1) : & \varepsilon_a(\ap{s_2}) = \varepsilon_a(\ap{s_1}) + \varepsilon_a(x_2) + (\ap{s_1} + \ap{x_2})\delta = x_1\delta + x_2\delta + (\ap{x_1} + \ap{x_2})\delta \simeq (2x_1 + 2x_2)\delta \\
+            (2) : & \varepsilon_a(\ap{s_3}) = \varepsilon_a(\ap{s_2}) + \varepsilon_a(x_3) + (\ap{s_2} + \ap{x_3})\delta \simeq (2x_1 + 2x_2)\delta + x_3\delta + (x_1 + x_2 + x_3)\delta = (3x_1 + 3x_2 + 2x_3)\delta \\
+    \end{align*}
+    
+    Para minimizar el error, querríamos: $x_1 \leq x_ 2 \leq x_3 \leq \cdots \leq x_N$. En nuestro caso particular con $x_j \coloneqq \frac{1}{j^2}$, este resultado nos indica que la suma inversa ($\sum_{j=N}^{1}\frac{1}{j^2}$) daría un resultado mejor.
+    \end{comment}
+    
