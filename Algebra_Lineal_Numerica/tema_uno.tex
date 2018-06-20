@@ -263,7 +263,7 @@
 	Consideramos el calculo de $I_n = \int_{0}^{1}x^ne^{x-1}dx$,$n = 0,1,2,...$ del ejemplo \ref{ej:3_errores}, y para ese fín el uso de la recurrencia $I_n = 1 - nI_{n-1}$, $I_0 = 1 - \frac{1}{e} \approx 0,63212055$. Para $I_9$ obteníamos un valor negativo (cuando la función era positiva en el intervalo de integración) . Si analizamos este problema en términos del error absoluto: $e_a\lp I_n\rp  \lessapprox e_a\lp 1\rp  + ne_a\lp I_{n-1}\rp $, es decir $e_a\lp I_n\rp  \simeq n!\,e_a\lp I_0\rp $. El error absoluto aumenta factorialmente, por lo tanto, este procedimiento no es bueno.
 \end{example}
 
-\begin{prop}
+\begin{prop}\label{prop:1_error_funcion}
   Sea $x \in \real$, $\overline{x}$ una aproximación de $x$ y $f:\: \real \to \real$, $f\in \C^1$, una función. Entonces,
   \begin{enumerate}[i)]
    \item $\abs{e_a\lp f\lp\overline{x}\rp\rp} \simeq \abs{f'\lp \overline{x}\rp}\abs{e_a\lp x\rp}$
@@ -331,16 +331,21 @@
       \]
 \end{obs}
 
-\begin{comment} 
-    \subsection{Error absoluto y relativo de $f\lp \overline{x}\rp $ con cálculo aproximado de $f$}
-    
-    Supongamos que ademas del error en los datos $\overline{x} = x + e_a\lp x\rp $, obtenemos un error relativo al calcular $f$ acotado por $\delta_f$. Entonces tenemos la siguiente expresión para el error absoluto cometido:
-    
-    \[
-            e_a\lp \overline{f}\lp \overline{x}\rp \rp  \simeq |\overline{f}'\lp \overline{x}\rp ||e_a\lp x\rp | + \delta_f|\overline{f}\lp \overline{x}\rp |
-    \]
+\begin{prop}
+  Sea $x \in \real$, $\overline{x}$ una aproximación de $x$ y $f:\: \real \to \real$, $f\in \C^1$, una función. Sea $\delta_f$ una cota del error de la función tal que $\abs{f(x)-\overline{f}(x)}<\delta_f$, $\forall x \in \real$. Entonces tenemos la siguiente expresión para el error cometido
+  \[
+      e_a\lp \overline{f}\lp \overline{x}\rp \rp  \simeq \abs{\overline{f}'\lp \overline{x}\rp }\abs{e_a\lp x\rp} + \delta_f\abs{\overline{f}\lp \overline{x}\rp}.
+  \]
+\end{prop}
+\begin{proof}
+  Igual que la demostración de la proposición \ref{prop:1_error_funcion}.
+\end{proof}
 
-    \section{Análisis del error en el cálculo de raízes de un polinomio}
+\section{Cálculo de raízes de un polinomio}
+
+\begin{comment} 
+
+    
     
     Consideramos las raíces de un polinomio como una función implícita de sus coeficientes. Veremos que es una relación muy sensible y mal condicionada. 
     
