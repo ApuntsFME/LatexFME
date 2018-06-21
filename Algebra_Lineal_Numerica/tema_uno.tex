@@ -33,35 +33,35 @@
         1,5\\
         \end{pmatrix}.
     \]
-    Las solución ahora es $x = 3, y = 0$. Un cambio de $10^-3$ en uno de los parámetros ha llevado a cabo un cambio del orden del $10^1$ en la solución; este tipo de error recibe el nombre de error en los datos.
+    Las solución ahora es $x = 3, y = 0$. Un cambio de $10^{-3}$ en uno de los parámetros ha llevado a cabo un cambio del orden del $10^1$ en la solución; este tipo de error recibe el nombre de error en los datos.
 \end{example}
 
 \begin{example}\label{ej:2_errores}
-    Consideramos el calculo de las raíces del polinomio $x^2 - 18x +1$ usando aritmética de $4$ cifras decimales en el calculo de $\sqrt{\phantom{x}}$:
+    Consideramos el cálculo de las raíces del polinomio $x^2 - 18x +1$ usando aritmética de $4$ cifras decimales en el cálculo de la raíz cuadrada:  %TODO aqui hi havia alguna cosa com aixo $\sqrt{\phantom{x}}$
     \[
             x = \dfrac{18 \pm \sqrt{18^2 - 4 \cdot 1 \cdot 1}}{2 \cdot 1} = 9 \pm \sqrt{80} \nonumber.
     \]
     Si tenemos como valor para $\sqrt{80} \simeq 8.9442$, obtenemos las soluciones:
     \begin{gather*}
             x_{+}=9+8.9442=17.9442 \\
-            x_{-}=9-8.9442=0.0558
-    \end{gather*}.
-    Hemos obtenido la primera solución con $6$ dígitos significativos, pero la segunda solo con $3$; esto es una perdida importante de información debida al error cometido en la operación $\sqrt{\phantom{x}}$ al truncar a $4$ dígitos.
+            x_{-}=9-8.9442=0.0558.
+    \end{gather*}
+    Hemos obtenido la primera solución con $6$ dígitos significativos, pero la segunda solo con $3$; esto es una perdida importante de información debida al error cometido al tomar la raíz y truncar a $4$ dígitos.
 \end{example}
 
 \begin{example}\label{ej:3_errores}
-    Consideramos el calculo de $I_n \coloneqq \int_{0}^{1}x^ne^{x-1}dx$, para $n = 0,1,2,...$.
+    Consideramos el cálculo de $I_n \coloneqq \int_{0}^{1}x^ne^{x-1}dx$, para $n = 0,1,2,...$.
     Algoritmo: obtenemos una recurrencia a partir de la formula de integración por partes
     \[
-            I_n = \int_{0}^{1}x^ne^{x-1}dx = [x^ne^{x-1}]_{0}^{1} - \int_{0}^{1}nx^{x-1}e^{x-1}dx = 1 - nI_{n-1} \nonumber
+            I_n = \int_{0}^{1}x^ne^{x-1}\dif x = [x^ne^{x-1}]_{0}^{1} - \int_{0}^{1}nx^{x-1}e^{x-1}\dif x = 1 - nI_{n-1} \nonumber
     \]
-    con el valor inicial $I_0 = \int_{0}^{1}x^0e^{x-1}dx = [e^{x-1}]_{0}^{1} = 1 - \frac{1}{e} \simeq 0.63212055$.
+    con el valor inicial $I_0 = \int_{0}^{1}x^0e^{x-1}\dif x = [e^{x-1}]_{0}^{1} = 1 - e^{-1} \simeq 0.63212055$.
     
-    Así calculamos $I_0 = 0.63212055, I_1 = 0.367899, ..., I_9 = -0.068480$; lo cual es un resultado absurdo ya que $x^ne^{x-1}$ es no negativo para $x \in [0,1]$, y por lo tanto su integral en ese intervalo también. Aunque la recurrencia sea cierta matemáticamente, el algoritmo empleado es malo numéricamente (error en el algoritmo).
+    Así calculamos $I_0 = 0.63212055,\, I_1 = 0.367899,\, \dots,\, I_9 = -0.068480$; lo cual es un resultado absurdo ya que $x^ne^{x-1}$ es no negativo para $x \in [0,1]$, y por lo tanto su integral en ese intervalo también. Aunque la recurrencia sea cierta matemáticamente, el algoritmo empleado es malo numéricamente (error en el algoritmo).
 \end{example}
 
 \begin{example}\label{ej:4_errores}
-    Consideramos el cálculo de la derivada de una función $f$ em el punto $x_0$
+    Consideramos el cálculo de la derivada de una función $f$ en el punto $x_0$
     \[
             f'\lp x_0\rp  = \limvar{h}{0} \dfrac{f\lp x_0 + h\rp  - f\lp x_0\rp }{h} \nonumber
     \]
@@ -72,22 +72,22 @@
     Para $h$ suficientemente pequeña, la teoría sobre límites nos dice que a medida que $h$ se acerca a $0$, el valor de la aproximación se acercará cada vez más al valor real. Desafortunadamente la teoría vuelve a fallar en la practica: si calculamos el cociente para $\frac{\Delta f\lp x_0\rp }{h}$ para $h$ sucesivamente pequeñas, el valor que obtenemos mejorará al principio pero a partir de un momento volverá a empeorar. 
 \end{example}
     
-\begin{defi}[Errores]\index{Error!de redondeo}\index{Error!truncado}
+\begin{defi}[error]\index{error!de redondeo((tlab))}\index{error!de truncado((tlab))}
     Existen diferentes clases de errores según su procedencia:
     \begin{enumerate}
             \item Error de \emph{redondeo}: $\varepsilon_R$
             \begin{itemize}
-                    \item Errores en los datos \ref{ej:1_errores}
-                    \item Error en las operaciones \ref{ej:2_errores}
+                    \item Errores en los datos (ejemplo \ref{ej:1_errores}).
+                    \item Error en las operaciones (ejemplo \ref{ej:2_errores}).
             \end{itemize}
             \item Error de \emph{truncado}: $\varepsilon_T$
             \begin{itemize}
-                    \item Error en el algoritmo en el paso de contínua a aproximación discreta/numérica, \ref{ej:3_errores} y \ref{ej:4_errores}
+                    \item Error en el algoritmo en el paso de contínua a aproximación discreta (numérica), (ejemplos \ref{ej:3_errores} y \ref{ej:4_errores}).
             \end{itemize}
     \end{enumerate}
 \end{defi}
 
-\begin{defi}[Error!total]
+\begin{defi}[error!total]
     Definimos el error total $\varepsilon \coloneqq$ $\varepsilon_R + \varepsilon_T$.
 \end{defi}
 
@@ -108,7 +108,7 @@
     En general la secuencia de dígitos $a_j$ tendrá un numero infinito de valores distintos de cero. Al ser la capacidad de los ordenadores finita, es imposible representar todos los reales con precisión exacta, lo cual generará errores.
 \end{obs}
 
-\begin{defi}[Representación!normalizada]\index{Representación!única}
+\begin{defi}[representación!normalizada]\index{representación!única((tlab))}
     La representación normalizada o única de $x \in \real$ en base $b$ con dígitos $\lp  d_n\rp $, $n \in \z^{+}$ y exponente $e \in \z$ es
     \[
       x = \pm 0,d_1d_2... \cdot b^e \nonumber,
@@ -120,7 +120,7 @@
   Representación normalizada de $172.456$ en base $10$ es $\SI{0.172456e3}{}$.
 \end{example}
 
-\begin{defi}[Representación!en coma flotante]
+\begin{defi}[representación!en coma flotante]
 	La representación en coma flotante con $n$ dígitos de un numero real $x$ con representación normalizada $x = \pm 0d_1..d_n... \cdot b^e$ es:
 	\begin{itemize}
 		\item  Por truncado:
@@ -159,13 +159,13 @@
   Una segunda mejora sería cambiar la manera en el que guardamos el exponente $e$. Definimos $e' = e + n^{\underline{\text{o}}}$, con un $n^{\underline{\text{o}}}$ fijo, definido como el mínimo natural tal que $e' > 0$ para todos los $e$ posibles en la representación original. Observamos que la definición de $e'$ establece una biyección, así que guardando $e'$ obtenemos unívocamente $e$. Al ser $e' > 0$ siempre, al guardarlo podemos prescindir del bit asignado al signo de $e$ i utilizarlo para guardar un dígito más de $e'/e$. El valor de $n^{\underline{\text{o}}}$ para el tipo float ($32$ bits, $23$ para la mantisa, $8$ para el exponente) es $127$, y $1023$ para el tipo double ($64$ bits, $52$ para la mantisa, $11$ para el exponente).
 \end{obs}
 
-\begin{defi}[Épsilon!máquina]
+\begin{defi}[épsilon máquina]
 	El $\varepsilon$-máquina de un ordenador es el mínimo $\varepsilon > 0$ tal que $\fl\lp 1 + \varepsilon\rp  > 1$.
 \end{defi}
         
 \section{Errores en la representación de los números}
 
-\begin{defi}[Error!absoluto]\index{Error!relativo}
+\begin{defi}[error!absoluto]\index{error!relativo((tlab))}
     Sea $x \in \R$ un número real y $\overline{x}$ una aproximación de $x$
     \begin{itemize}
 	\item Definimos el error absoluto cometido en aproximar $x$ con $\overline{x}$ como $e_a\lp \overline{x}\rp  = \overline{x} - x$.
@@ -247,12 +247,12 @@
 \end{obs}
 
 \begin{example}
-	Calcular las raízes del polinomio  $x^2 - 18x + 1$, con calculo de $\sqrt{\phantom{x}}$ de 4 cifras decimales por truncado del ejemplo \ref{ej:2_errores}.
+	Calcular las raízes del polinomio  $x^2 - 18x + 1$, con cálculo de $\sqrt{\phantom{x}}$ de 4 cifras decimales por truncado del ejemplo \ref{ej:2_errores}.
 	\begin{align*}
 		x_+ &= 9 + \sqrt{80} = 17.94442 &&\text{ 6 dígitos significativos} \\
 		x_- &= 9 - \sqrt{80} = \enspace 0.0558 &&\text{ 3 dígitos significativos}.
 	\end{align*}
-	Analizamos este resultado en terminos de la cota del error relativo en el calculo de $x_-$: Sea $x = 9$, $y = \sqrt{80}$, $\ap{x}=9$, $\ap{y}=8.4492$. Entonces tenemos que:
+	Analizamos este resultado en terminos de la cota del error relativo en el cálculo de $x_-$: Sea $x = 9$, $y = \sqrt{80}$, $\ap{x}=9$, $\ap{y}=8.4492$. Entonces tenemos que:
 	\[
 		e_r\lp \ap{x}-\ap{y}\rp  \simeq \abs{\frac{\ap{y}}{\ap{x}-\ap{y}}}\cdot\abs{e_r\lp \ap{y}\rp} = \dfrac{8.9442}{0.0588}\cdot \underbrace{10^{-5+1}}_{\text{5 díg sig}} \simeq \scin{0.16e-1} < 1^{-2+1}
 	\]
@@ -260,7 +260,7 @@
 \end{example}
 
 \begin{example}
-	Consideramos el calculo de $I_n = \int_{0}^{1}x^ne^{x-1}dx$,$n = 0,1,2,...$ del ejemplo \ref{ej:3_errores}, y para ese fín el uso de la recurrencia $I_n = 1 - nI_{n-1}$, $I_0 = 1 - \frac{1}{e} \approx 0,63212055$. Para $I_9$ obteníamos un valor negativo (cuando la función era positiva en el intervalo de integración) . Si analizamos este problema en términos del error absoluto: $e_a\lp I_n\rp  \lessapprox e_a\lp 1\rp  + ne_a\lp I_{n-1}\rp $, es decir $e_a\lp I_n\rp  \simeq n!\,e_a\lp I_0\rp $. El error absoluto aumenta factorialmente, por lo tanto, este procedimiento no es bueno.
+	Consideramos el cálculo de $I_n = \int_{0}^{1}x^ne^{x-1}dx$,$n = 0,1,2,...$ del ejemplo \ref{ej:3_errores}, y para ese fín el uso de la recurrencia $I_n = 1 - nI_{n-1}$, $I_0 = 1 - \frac{1}{e} \approx 0,63212055$. Para $I_9$ obteníamos un valor negativo (cuando la función era positiva en el intervalo de integración) . Si analizamos este problema en términos del error absoluto: $e_a\lp I_n\rp  \lessapprox e_a\lp 1\rp  + ne_a\lp I_{n-1}\rp $, es decir $e_a\lp I_n\rp  \simeq n!\,e_a\lp I_0\rp $. El error absoluto aumenta factorialmente, por lo tanto, este procedimiento no es bueno.
 \end{example}
 
 \begin{prop}\label{prop:1_error_funcion}
@@ -280,7 +280,7 @@
   \end{enumerate}
 \end{proof}
 
-\begin{defi}[factor!de propagación]
+\begin{defi}[factor de propagación]
    Sea $x \in \real$, $\overline{x}$ una aproximación de $x$ y $f:\: \real \to \real$, $f\in \C^1$, una función. Entonces definimos el factor de propagación del error (f.d.p) por $f$ como $\alpha = \abs{\frac{\overline{x}f'\lp\overline{x}\rp}{f\lp\overline{x}\rp}}$.
 \end{defi}
 
@@ -389,7 +389,7 @@
             \therefore p'\lp \alpha_l\rp  & = a_n\prod_{j=1,j\neq l}^{n}\lp \alpha_l-\alpha_j\rp 
     \end{align*}
     
-    De manera que obtenemos la expresión deseada para le error absoluto del calculo de $\alpha_l$ debido al error en $\ap{a}_k$:
+    De manera que obtenemos la expresión deseada para le error absoluto del cálculo de $\alpha_l$ debido al error en $\ap{a}_k$:
     \[
             \therefore |e_a\lp \alpha_l\lp \ap{a}_k\rp \rp | \simeq \left|\frac{\alpha_l^k}{ a_n\prod_{j=1,j\neq l}^{n}\lp \alpha_l-\alpha_j\rp }\right||e_a\lp \ap{a}_k\rp |
     \]

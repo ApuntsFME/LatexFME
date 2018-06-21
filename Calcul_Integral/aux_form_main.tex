@@ -4,7 +4,7 @@
 \usepackage[T1]{fontenc}
 
 \usepackage{fp}
-\def\rate{1.023}
+\def\rate{1.04}
 
 \FPeval{\he}{297 * \rate}
 \FPeval{\wi}{210 * \rate}
@@ -101,7 +101,7 @@
 
 \u{C. Cauchy (sèries)}: $\sum a_n$ conv. $\iff \forall \varepsilon > 0, \exists n_0 \tq m>n\geq n_0$ llavors, $\abs{s_m-s_n} = \abs{a_{n+1} + \dots + a_m} < \varepsilon$. \\
 \ci La convergència és lineal i associativa. \\
-\u{S\`eries geom\`etriques}: $\sum_{n \geq 1} \alpha^n$ conv. sii $\alpha \in (-1, 1)$, div. sii $\alpha > 1$, oscil·lant altrament.
+\u{S\`eries geom\`etriques}: $\sum_{n \geq 1} \alpha^n$ conv. sii $\alpha \in (-1, 1)$, oscil·lant sii $\alpha=-1$, div. altrament.
 
 \section{Sèries n. positius}
 Dins aquest apartat les successions són totes de termes positius. \\
@@ -230,7 +230,7 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..
 \u{Longitud d'una poligonal}: $L( \gamma, \Pa ) = \sum_{i=0}^N ||\gamma( t_i ) - \gamma( t_{i-1} )||$. \\
 \u{Longitud d'una corba}: $L( \gamma ) = \sup_\Pa L( \gamma, \Pa ) \in [0, +\infty]$. \\
 \u{Camí rectificable}: Si longitud \'es finita. \\
-\u{Additivitat camí}: $a<c<b \implies L( \gamma ) = L( \gamma_{|[ a,c ]} ) + L( \gamma_{|[ c, b ]} )$. \\
+\u{Additivitat camí}: $a<c<b$ $\implies$ $L( \gamma ) = L( \gamma_{|[ a,c ]} ) + L( \gamma_{|[ c, b ]} )$. \\
 \ci Sigui $\gamma\colon [ a,b ]\to\real, l(a) = 0$ i $l(t) = L( \gamma_{|[ a,t ]} ), a < t \leq b,\, l :[ a,b ]\to\real$ \'es creixent i continua. \\
 \ci Si $\vec{f}\colon E\to\real^n$ int., $\|\vec{f}\|$ també (norma euclidiana). \\
 \ci $\gamma \colon I\to \real^n$ classe $\C^1 \implies$ rectificable i $L(\gamma) = \int_I \|\gamma'\|$.
@@ -311,20 +311,23 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..
 \addtocounter{section}{1}
 
 \noindent\makebox[\linewidth]{\rule{\linewidth}{0.5pt}}
-\subsection{Altres. Sèries}
-\ci $\sum r^n$ conv. $\iff \abs{r} < 1$ (\verb|else| div.). \\
-\ci $\sum \frac{1}{n^p}$ conv. $\iff p > 1$ (\verb|else| div.).
+\subsection{Altres. Volums $n$-dimensionals}
+\u{Esfera}: $S=4\pi r^2$, $V=\frac{4}{3}\pi r^3$. \\
+\u{Piràmide}: $V = \frac{1}{3} bh$. \\
+\u{Con}: $A = \pi r\sqrt{r^2 + h^2} + \pi r^2$. \\
+\u{Casquet esfèric}: $A = 2\pi Rh$, $V = \frac{1}{3} \pi h^2 (3R-h)$.
 
 \subsection{Altres. Integrals}
 \ci $\int_1^{+\infty} \frac{1}{x^\alpha}$ d$x$ conv. $\iff \alpha > 1$ i és $\frac{1}{\alpha-1}$. \\
 \ci $\int_0^1 \frac{1}{x^\alpha}$ d$x$ conv. $\iff \alpha < 1$ i és $\frac{1}{1-\alpha}$. \\
-\ci $\int_0^{+\infty} e^{-\alpha t}$ d$t$ conv. $\iff \alpha > 0$ i és $\frac{1}{\alpha}$.
+\ci $\int_0^{+\infty} e^{-\alpha t}$ d$t$ conv. $\iff \alpha > 0$ i és $\frac{1}{\alpha}$. \\
+\ci $\int \sqrt{1-x^2} = \frac{1}{2}(\arcsin(x) + x\sqrt{1-x^2})+ C$. \\
 
 \subsection{Altres. Taylor}
 \ci $e^x = \sum_{n\geq 0} \frac{x^n}{n!}$. \\
 \ci $\cos x = \sum_{n\geq 0} (-1)^n \frac{x^{2n}}{(2n)!}$. \\
 \ci $\sin x = \sum_{n\geq 0} (-1)^n \frac{x^{2n+1}}{(2n+1)!}$. \\
-\ci $\log (1+x) = \sum_{n\geq 1} (-1)^n+1 \frac{x^n}{n}$. \\
+\ci $\log (1+x) = \sum_{n\geq 1} (-1)^{n+1} \frac{x^n}{n}$. \\
 \ci $(1+x)^p = \sum_{n\geq 0} \binom{p}{n} x^n$. \\
 \ci $(1+x)^{-1} = \sum_{n\geq 0} (-1)^n x^n$. \\
 
@@ -335,7 +338,7 @@ amb $\lim\limits_{x\to b} g=0$. Aleshores $\int_a^b fg$ és conv..
 \ci $\cos(a) + \cos(b) = 2\cos(\frac{a+b}{2})\cos(\frac{a-b}{2})$.
 
 \noindent\makebox[\linewidth]{\rule{\linewidth}{0.5pt}}
-$^\ast$ amb orientació induïda (m\`a dreta) i punts frontera de $M$ regulars o conjunt de punts frontera singulars \'es finit. \\
+$^\ast$ amb orientació induïda (interior a l'esquerra) i punts frontera de $M$ regulars o conjunt de punts frontera singulars \'es finit. \\
 \vspace{3pt}
 \raggedleft
 {\large Nom: \underline{\hspace{5cm}}}
