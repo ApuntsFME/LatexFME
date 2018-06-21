@@ -1,7 +1,7 @@
 import sys
 import os
 import re
-
+ 
 def usage():
     print("\033[91mError: Invalid number of arguments\033[0m")
     print("\033[93mUsage: python " + sys.argv[0] + " [indexfile]\033[0m")
