@@ -343,6 +343,51 @@
 
 \section{Cálculo de raízes de un polinomio}
 
+\begin{prop}
+  Sea $p(x)=\sum\limits_{i=0}^{n} a_ix^i$ un polinomio real con raíces reales $\alpha_1,\,\dots,\,\alpha_n$. Sea $1\leq k\leq n$ tal que $a_k$ es el único coeficiente con error y del que solo conocemos una aproximación $\overline{a}_k$. Entonces,
+  \begin{enumerate}[i)]
+    \item $\abs{e_a\lp \alpha_l\lp \ap{a}_k\rp \rp} \simeq \abs{\frac{\alpha_l^k}{ a_n\prod_{j=1,j\neq l}^{n}\lp \alpha_l-\alpha_j\rp }}\abs{e_a\lp \ap{a}_k\rp}$.
+    \item $e_r\lp \alpha_l\lp \ap{a}_k\rp \rp \simeq \left|\frac{a_k\alpha_l^{k-1}}{a_n\prod_{j=1,j\neq l}^{n}\lp \alpha_l-\alpha_j\rp }\right| \abs{e_r\lp \ap{a}_k\rp}$.
+  \end{enumerate}
+\end{prop}
+\begin{proof}
+  Por Cardano-Vieta, sabemos que $\forall l,\, \alpha_l\lp\overline{a}_n,\,\dots\,\overline{a}_0\rp$. Debido a que solo hay error en el coeficiente $a_k$ y por la fórmula de propagación del error tenemos que
+  \[
+    e_a\lp \alpha_l\lp \ap{a}_k\rp \rp  \simeq \pdv{\alpha_l}{a_k}\lp a_k\rp e_a\lp \ap{a}_k\rp .
+  \]
+  Usando derivación implícita respecto a $a_k$ sobre la siguiente igualdad
+  \[
+     a_n\alpha_l^n + \cdots a_k\alpha_l^k + \cdots a_0 = p\lp \alpha_l\rp  = p\lp \alpha_l\lp a_k\rp \rp 
+  \]
+  tenemos que
+  \[
+    \alpha_l^k = p'\lp \alpha_l\lp a_k\rp \rp \pdv{\alpha_l}{a_k}\lp a_k\rp  \implies \pdv{\alpha_l}{a_k}\lp a_k\rp  = \dfrac{\alpha_l^k}{p'\lp \alpha_l\lp a_k\rp \rp}.
+  \]
+  El numerador de la expresión obtenida es fácil de calcular. Para calcularlo  haremos uso de la representación de un polinomio como producto de sus factores simples
+  \[
+      p\lp x\rp = a_n\lp x-\alpha_l\rp \prod_{j=1,j\neq l}^{n}\lp x-\alpha_j\rp.
+  \]
+  Derivando tenemos
+  \[
+    p'\lp x\rp  = a_n\prod_{j=1,j\neq l}^{n}\lp x-\alpha_j\rp  + a_n\lp x-\alpha_l\rp \frac{\partial}{\partial x}\lp \prod_{j=1,j\neq l}^{n}\lp x-\alpha_j\rp\rp,
+  \]
+  lo que nos dice que
+  \[
+    p'\lp \alpha_l\rp = a_n\prod_{j=1,j\neq l}^{n}\lp \alpha_l-\alpha_j\rp.
+  \]
+  Finalmente obtenemos el resultado deseado para el error absoluto del cálculo de $\alpha_l$ debido al error en $\ap{a}_k$
+  \[
+    \abs{e_a\lp \alpha_l\lp \ap{a}_k\rp \rp} \simeq \abs{\frac{\alpha_l^k}{ a_n\prod_{j=1,j\neq l}^{n}\lp \alpha_l-\alpha_j\rp }}\abs{e_a\lp \ap{a}_k\rp}.
+  \]
+  Para el segundo apartado, simplemente usando la definición de error relativo,
+  \begin{align*}
+    e_r\lp \alpha_l\lp \ap{a}_k\rp \rp & = \left|\frac{e_a\lp \alpha_l\lp \ap{a}_k\rp \rp }{\alpha_l\lp \ap{a}_k\rp }\right| \simeq \left|\frac{\alpha_l^{k-1}}{ a_n\prod_{j=1,j\neq l}^{n}\lp \alpha_l-\alpha_j\rp }\right|\left|\frac{e_a\lp \ap{a}_k\rp }{a_k}\right||a_k|=\\
+           & = \left|\frac{a_k\alpha_l^{k-1}}{a_n\prod_{j=1,j\neq l}^{n}\lp \alpha_l-\alpha_j\rp }\right| |e_r\lp \ap{a}_k\rp |
+  \end{align*}
+
+
+\end{proof}
+
 \begin{comment} 
 
     
