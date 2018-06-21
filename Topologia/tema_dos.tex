@@ -102,7 +102,104 @@
 
 %TODO 2.4 (dale ernesto)
 \begin{eje}
-    Este ejercicio aún no está resuelto.
+    \begin{enumerate}[(a)]
+	\item Para ver que son una topología, tenemos que comprobar que:
+	    \begin{enumerate}[i)]
+                \item $K^n = V\left( \setb{0} \right)$ y $\emptyset = V\left( \setb{x - x_1, x - x_2} \right)$
+                    (con $x_1 \neq x_2$).
+	    	\item La unión de dos conjuntos $V\left( I_1 \right), \, V\left( I_2 \right) \in K^n$
+		    es parte de la topología.
+                    
+                    Tomamos los susodichos subconjuntos $V\left( I_1 \right)$ y
+		    $V\left( I_2 \right)$. Veremos ahora que la unión pertenece a la topología:
+
+		    Para todo $f_\alpha \in I_1$ tomamos el conjunto $f_\alpha I_2$ (el producto de
+                    $f_\alpha$ por cada elemento de $I_2$). Y ahora, consideramos el conjunto
+                    \[
+                        I = \bigcup_{f_\alpha \in I_1} f_\alpha I_2
+                    \]
+                    Por último, comprobaremos que $V\left( I_1 \right) \cup V\left( I_2 \right) = V(I)$.
+                    Es trivial que si $x \in V\left( I_1 \right)$ entonces $x \in V(I)$, ya que $x$ anula
+                    a tosos los elementos del conjunto $I_1$ y por lo tanto también a los de $f_\alpha I_2$
+                    ($f_\alpha \in I_1$). Análogamente, si $x \in V\left( I_2 \right)$, $x \in V(I)$.
+
+                    Ahora, $\forall x \in V(I)$. Suponemos que $x \notin V\left( I_1 \right)$ por lo tanto,
+                    existe una $f_\alpha \in I_1$ tal que $f_\alpha(x) \neq 0$. Como $x \in V(I)$, $x$ anula
+                    a $f_\alpha I_2$, como $f_\alpha(x) \neq 0$ entonces $x \in V\left( I_2 \right)$ y
+                    análogamente para $V\left( I_2 \right)$.
+
+                    Con lo cual deducimos que $V\left( I_1 \right) \cup V\left( I_2 \right) = V(I)$ y la
+                    unión finita de cerrados, es cerrado.
+                \item La intersección arbitraria de cerrados es cerrada.
+
+                    Tomamos una familia arbitraria de cerrados $\setb{V\left( I_\alpha \right)}_{\alpha}$.
+                    Consideramos el conjunto
+                    \[
+                        I = \bigcup_{\alpha} I_\alpha
+                    \]
+                    Y vermos que $\cap V\left( I_\alpha \right) = V(I)$. Si $x \in V(I) \implies
+                    x \in V\left( I_\alpha \right)$ ($\forall \alpha$), ya que si $x$ anula a todo $I$,
+                    en particular anula a un subconjunto de $I$ ($I_\alpha$). Y si $x$ anula a $I_\alpha$
+                    para todo $\alpha$ por definición, $x \in V(I)$.
+
+	    \end{enumerate}
+        \item  En el caso $n = 1$, obtenemos la topología de los complementos finitos. De forma trivial un
+            conjunto finito de puntos es cerrado:
+            \[
+                \setb{x_1, \dots, x_n} = V\left( \setb{ (x - x_1) \cdots (x - x_n)} \right).
+            \]
+            Suponemos ahora que existe un subconjunto
+            cerrado $C$ con un número no finito de elementos (y distinto del total). Entonces $C = V(I)$ para
+            algún $I$. Como $C \neq K$, $\exists f \in I$ y todo elemento de $C$ anula a $f$. Pero esto es
+            imposible, ya que un polinomio tiene un número finito de raices. Por lo tanto no existe un conjunto
+            cerrado con infinitos elementos.
+        \item Si $K$ es finito, entonces $K^n$ tmbién es finito y podemos suponer que 
+            \[
+                K^n = \setb{ x_1, x_2, \dots, x_m }.
+            \]
+            Consideramos ahora el polinomio
+            \[
+                f(x) = \left( x - x_2 \right) \left( x - x_3 \right) \dots \left( x - x_n \right)
+            \]
+            Ahora, de forma trivial, $V\left( \setb{f} \right) = K^n \setminus \setb{x_1}$, de donde se deduce
+            que $x_1$ es abierto. Como esta construcción se puede hacer para cualquier punto $x_i$, cualquer
+            punto es abierto, y por lo tanto la topología es la discreta.
+
+        \item Para el caso $n = 1$ ya lo hemos demostrado en el apartado anterior. Ahora, procederemos a
+            demostrar el paso de inducción:
+            Suponemos que existe un polinomio
+            \[
+                \begin{aligned}
+                    f \colon \real^{n-1} \times \real &\to \real \\
+                    (x, y) &\mapsto f(x, y)
+                \end{aligned}
+            \]
+            que se anula en todo $[0, 1]^n$. Entonces, el polinomio
+            \[
+                \begin{aligned}
+                    f^\prime \colon \real^{n-1} &\to \real \\
+                    x &\mapsto f(x, 1)
+                \end{aligned}
+            \]
+            Se anula en todo $[0, 1]^{n-1}$, lo cual es una contradicción con la hipótesis de induccón. De aquí
+            deducimos que la topología euclideana es más fina, ya que contiene más cerrados (como hemos visto,
+            la de Zariski no contiene ningún cerrado que contenga a $I^n$, y como tiene más cerrados, tiene
+            más abiertos.
+
+        \item Primero, ``traducimos'' la definición de Hausdorff a cerrados: Un espacio es Hausdorff, si
+            $\forall x, y \in X$, $\exists C_1 \not\ni x, C_2 \not\ni y$ tales que $C_1 \cup C_2 = X$. Ahora,
+            veremos que no existen cerrados $C_1$ y $C_2$ no triviales tales que su unión sea el total. 
+
+            Suponemos que existen dichos cerrados $C_1 = V\left( I_1 \right)$ y $C_2 = V\left( I_2 \right)$, como
+            hemos visto en el primer apartado, $C_1 \cup C_2 = V\left( I \right)$ donde $I = I_1I_2$
+            (simplificando la notación del primer apartado). Como la unión es el total y la única familia
+            de polinomios que se anula en todo $\real^n$ es $\setb{0}$, ya que, si se anula en todo $\real^n$,
+            en particular se anula en $[0, 1]^n$. Entonces $I_1I_2 = \setb{0}$, por lo tanto, o bien $I_1$, o
+            bien $I_2$ son el conjunto formado por el polinomio 0. Con lo cual o bien $C_1$, o bien $C_2$ son
+            el total, contradicción con la suposición de que fueran abiertos no triviales.
+
+        \item %TODO acabar esto que no tengo claro cual es pero pinta que es \real^n
+\end{enumerate}
 \end{eje}
 
 \begin{eje}
