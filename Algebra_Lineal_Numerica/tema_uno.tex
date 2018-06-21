@@ -1,9 +1,9 @@
-\chapter{Errores}
+\chapter{Errors}
 
-\section{Errores numéricos}
+\section{Errors numèrics}
 	
 \begin{example}\label{ej:1_errores}
-    Consideramos el sistema de ecuaciones:
+   Considerem el següent sistema d'equacions
     \[
         \begin{pmatrix}
             1 & 2\\
@@ -16,9 +16,9 @@
         \begin{pmatrix}
         3\\
         1,5\\
-        \end{pmatrix}.
+        \end{pmatrix}
     \]
-    Con solución $x = 1, y = 1$. Si cambiamos $0.499 \rightarrow 0.500$ para obtener el sistema
+    amb solució $x = 1, y = 1$. Si canviem $0.499 \rightarrow 0.500$ obenim el sistema
     \[
         \begin{pmatrix}
             1 & 2\\
@@ -33,101 +33,101 @@
         1,5\\
         \end{pmatrix}.
     \]
-    Las solución ahora es $x = 3, y = 0$. Un cambio de $10^{-3}$ en uno de los parámetros ha llevado a cabo un cambio del orden del $10^1$ en la solución; este tipo de error recibe el nombre de error en los datos.
+    La solució ara és $x = 3, y = 0$. Un canvi de  $10^{-3}$ en un dels paràmetres ha provocat un canvi de l'ordre de $10^1$ al resultat. Aquest tipus d'error rep el nom d'error de dada.
 \end{example}
 
 \begin{example}\label{ej:2_errores}
-    Consideramos el cálculo de las raíces del polinomio $x^2 - 18x +1$ usando aritmética de $4$ cifras decimales en el cálculo de la raíz cuadrada:  %TODO aqui hi havia alguna cosa com aixo $\sqrt{\phantom{x}}$
+    Considerem el càlcul de les arrels del polinomi $p(x)=x^2 - 18x +1$ fent servir quatre xifres decimals en el càlcul de l'arrel quadrada  %TODO aqui hi havia alguna cosa com aixo $\sqrt{\phantom{x}}$
     \[
             x = \dfrac{18 \pm \sqrt{18^2 - 4 \cdot 1 \cdot 1}}{2 \cdot 1} = 9 \pm \sqrt{80} \nonumber.
     \]
-    Si tenemos como valor para $\sqrt{80} \simeq 8.9442$, obtenemos las soluciones:
+    Si considerem l'aproximació $\sqrt{80} \simeq 8.9442$, obtenim les solucions
     \begin{gather*}
             x_{+}=9+8.9442=17.9442 \\
             x_{-}=9-8.9442=0.0558.
     \end{gather*}
-    Hemos obtenido la primera solución con $6$ dígitos significativos, pero la segunda solo con $3$; esto es una perdida importante de información debida al error cometido al tomar la raíz y truncar a $4$ dígitos.
+    Hem obtingut la primera solució amb sis xifres significatives, però la segona només amb tres. Aquest fet és una pèrdua important d'informació deguda a l'error comès en el truncament als quatre dígits.
 \end{example}
 
 \begin{example}\label{ej:3_errores}
-    Consideramos el cálculo de $I_n \coloneqq \int_{0}^{1}x^ne^{x-1}dx$, para $n = 0,1,2,...$.
-    Algoritmo: obtenemos una recurrencia a partir de la formula de integración por partes
+    Considerem el càlcul de $I_n \coloneqq \int_{0}^{1}x^ne^{x-1}dx$, per a $n = 0,1,2,...$.
+    Per fer-ho, obtindrem una formula recurrent per les $I_n$:
     \[
             I_n = \int_{0}^{1}x^ne^{x-1}\dif x = [x^ne^{x-1}]_{0}^{1} - \int_{0}^{1}nx^{x-1}e^{x-1}\dif x = 1 - nI_{n-1} \nonumber
     \]
-    con el valor inicial $I_0 = \int_{0}^{1}x^0e^{x-1}\dif x = [e^{x-1}]_{0}^{1} = 1 - e^{-1} \simeq 0.63212055$.
+    amb valor inicial $I_0 = \int_{0}^{1}x^0e^{x-1}\dif x = [e^{x-1}]_{0}^{1} = 1 - e^{-1} \simeq 0.63212055$.
     
-    Así calculamos $I_0 = 0.63212055,\, I_1 = 0.367899,\, \dots,\, I_9 = -0.068480$; lo cual es un resultado absurdo ya que $x^ne^{x-1}$ es no negativo para $x \in [0,1]$, y por lo tanto su integral en ese intervalo también. Aunque la recurrencia sea cierta matemáticamente, el algoritmo empleado es malo numéricamente (error en el algoritmo).
+    Així calculem $I_0 = 0.63212055,\, I_1 = 0.367899,\, \dots,\, I_9 = -0.068480$. Veiem que el resultat de $I_9$ és absurd ja que $x^ne^{x-1}$ és no negatiu per $x \in [0,1]$ i per tant la seva integral a l'interval també ho és. Tot i que la recurrència és correcte, l'algorisme és numèricament dolent ja que l'error és prou considerable.
 \end{example}
 
 \begin{example}\label{ej:4_errores}
-    Consideramos el cálculo de la derivada de una función $f$ en el punto $x_0$
+    Considerem el càlcul de la derivada d'una funció $f$ al punt $x_0$
     \[
-            f'\lp x_0\rp  = \limvar{h}{0} \dfrac{f\lp x_0 + h\rp  - f\lp x_0\rp }{h} \nonumber
+            f'\lp x_0\rp  = \limvar{h}{0} \dfrac{f\lp x_0 + h\rp  - f\lp x_0\rp }{h} \nonumber.
     \]
-    Sin embargo, un límite es imposible de calcular numéricamente, y por lo tanto estamos obligados a tomar una aproximación:
+    Com un límit és impossible de calcular numèricament, estem obligats a aproximar-lo de la forma
     \[
-            f'\lp x_0\rp  \simeq \dfrac{f\lp x_0 + h\rp  - f\lp x_0\rp }{h} = \frac{\Delta f\lp x_0\rp }{h} \nonumber
+            f'\lp x_0\rp  \simeq \dfrac{f\lp x_0 + h\rp  - f\lp x_0\rp }{h} = \frac{\Delta f\lp x_0\rp }{h} \nonumber.
     \]
-    Para $h$ suficientemente pequeña, la teoría sobre límites nos dice que a medida que $h$ se acerca a $0$, el valor de la aproximación se acercará cada vez más al valor real. Desafortunadamente la teoría vuelve a fallar en la practica: si calculamos el cociente para $\frac{\Delta f\lp x_0\rp }{h}$ para $h$ sucesivamente pequeñas, el valor que obtenemos mejorará al principio pero a partir de un momento volverá a empeorar. 
+    Per $h$ suficientment petita, la teoria sorbre límits ens diu que a mesura que $h$ s'apropa a $0$, el valor de l'aproximació s'aproparà cada cop més al valor real. Desafortunadament la teoria torna a fallar a la pràctica: si calculem el cocient $\frac{\Delta f\lp x_0\rp }{h}$ per $h$ successivament prou petita, el valor obtingut del límit millora al principi però a partir d'un cert punt s'allunya del valor real.
 \end{example}
     
-\begin{defi}[error]\index{error!de redondeo((tlab))}\index{error!de truncado((tlab))}
-    Existen diferentes clases de errores según su procedencia:
+\begin{defi}[error]\index{error!d'arrodoniment((tlab))}\index{error!de truncat((tlab))}
+    Existeixen diferents tipus d'errors segons la seva procedència:
     \begin{enumerate}
-            \item Error de \emph{redondeo}: $\varepsilon_R$
+            \item Error d'\emph{arrodoniment}: $\varepsilon_R$
             \begin{itemize}
-                    \item Errores en los datos (ejemplo \ref{ej:1_errores}).
-                    \item Error en las operaciones (ejemplo \ref{ej:2_errores}).
+                    \item Errors de dada (exemple \ref{ej:1_errores}).
+                    \item Error d'operació (exemple\ref{ej:2_errores}).
             \end{itemize}
-            \item Error de \emph{truncado}: $\varepsilon_T$
+            \item Error de \emph{truncat}: $\varepsilon_T$
             \begin{itemize}
-                    \item Error en el algoritmo en el paso de contínua a aproximación discreta (numérica), (ejemplos \ref{ej:3_errores} y \ref{ej:4_errores}).
+                    \item Error en l'algorisme al pas de contínua a la discretització (exemples \ref{ej:3_errores} y \ref{ej:4_errores}).
             \end{itemize}
     \end{enumerate}
 \end{defi}
 
 \begin{defi}[error!total]
-    Definimos el error total $\varepsilon \coloneqq$ $\varepsilon_R + \varepsilon_T$.
+    Definim l'error total $\varepsilon \coloneqq$ $\varepsilon_R + \varepsilon_T$.
 \end{defi}
 
 \begin{obs}
-    En general, el error de tipo redondeo será alto con un número de pasos pequeño y bajo con un número de pasos más grande, mientras que el error de tipo truncado sera bajo con un número de pasos pequeño y grande con un número de pasos más grande. Debido a que el error total es la suma de los dos, no existe una solución trivial para el número de pasos óptimo $h^*$ que deberíamos emplear en los cálculos; el minimizador del error total que la teoría asegura que existe.
+  En general, l'error d'arrodoniment serà alt amb pocs passos i baix amb molts passos, mentre que l'error de truncat es comportarà a la inversa. Degut a que l'eerror total és la seva suma, no existeix una solució trivial pel número de pasos òptims que hauriem de fer servir. 
 \end{obs}
 
-\section{Representación digital de un número real}
+\section{Representació digital d'un número real}
     
 \begin{prop}
-    Todo $x \in \R$ admite una representación única en base $b \in \n$, $b>1$ con dígitos $\lp  a_j\rp  _{j \in \z}$ tal que 
+    Tot $x \in \R$ admet una representació única en base $b \in \n$, $b>1$ amb dígits $\lp  a_j\rp  _{j \in \z}$ tal que 
     \[
             x = \cdots + a_kb^k + \cdots a_0b^0 + a_{-1}b^{-1} + \cdots \nonumber.
     \]
 \end{prop}
 
 \begin{obs}
-    En general la secuencia de dígitos $a_j$ tendrá un numero infinito de valores distintos de cero. Al ser la capacidad de los ordenadores finita, es imposible representar todos los reales con precisión exacta, lo cual generará errores.
+  En general, la seqüència de xifres $a_j$ tindrà un nombre infinit de valors diferent de zero. Al ser la capacitat dels ordinadors finita, és impossible representar tots els reals amb precisió exacta, el qual generarà errors.
 \end{obs}
 
-\begin{defi}[representación!normalizada]\index{representación!única((tlab))}
-    La representación normalizada o única de $x \in \real$ en base $b$ con dígitos $\lp  d_n\rp $, $n \in \z^{+}$ y exponente $e \in \z$ es
+\begin{defi}[representació!normalitzada]\index{representació!única((tlab))}
+    La representació normalitzada o única de $x \in \real$ en base $b$ amb dígits $\lp  d_n\rp $, i exponent $n \in \z^{+}$  $e \in \z$ és
     \[
       x = \pm 0,d_1d_2... \cdot b^e \nonumber,
     \]
-    con la restricción de que $d_1 \neq 0$.
+    amb la restricció que $d_1 \neq 0$.
 \end{defi}
 
 \begin{example}
-  Representación normalizada de $172.456$ en base $10$ es $\SI{0.172456e3}{}$.
+  Representació normalitzada de $172.456$ en base $10$ és $\SI{0.172456e3}{}$.
 \end{example}
 
-\begin{defi}[representación!en coma flotante]
-	La representación en coma flotante con $n$ dígitos de un numero real $x$ con representación normalizada $x = \pm 0d_1..d_n... \cdot b^e$ es:
+\begin{defi}[representació!en coma flotant]
+	La representació en coma flotant amb $n$ dígits d'un nombre real $x$ amb representació normalitzada $x = \pm 0d_1..d_n... \cdot b^e$ és:
 	\begin{itemize}
-		\item  Por truncado:
+		\item  Per truncat:
 		\[
 			\fl_T\lp x\rp  = \pm 0.d_1..d_n \cdot b^e \nonumber
 		\]
-		\item Por redondeo:
+		\item Per arrodoniment:
 			\[
 			\fl\lp x\rp  = \left.
 			\begin{cases}
