@@ -140,7 +140,7 @@
 \end{defi}
 
 \begin{obs}
-  Supongamos que queremos almacenar $\fl\lp x\rp $ con la siguiente estructura en base $b = 2$:
+  Suposem que volem guardar $\fl\lp x\rp $ amb la següent estructura en base $b = 2$:
   \[
 	  \underbrace{[*]}_{s_1}
 	  \hspace{0.1cm}
@@ -152,30 +152,33 @@
 	  \nonumber
   \]
 
-  Donde $s_1$ es el signo de $x$, $d_1,...,d_n$ son los dígitos de $\fl\lp x\rp $, $s_2$ es el signo del exponente y $e_1,...,e_k$ los dígitos del exponente de $\fl\lp x\rp $. Sin embargo, este mecanismo de representación no es del todo eficiente.
-
-  Una primera mejora se basaría en darnos cuenta de que, al ser la base $2$ y $d_1 \neq 0$, necesariamente $d_1 = 1$. Así pues, no hay razón para guardarlo y malgastar memoria. Esto nos da un dígito más de precisióncon el mismo espacio.
-
-  Una segunda mejora sería cambiar la manera en el que guardamos el exponente $e$. Definimos $e' = e + n^{\underline{\text{o}}}$, con un $n^{\underline{\text{o}}}$ fijo, definido como el mínimo natural tal que $e' > 0$ para todos los $e$ posibles en la representación original. Observamos que la definición de $e'$ establece una biyección, así que guardando $e'$ obtenemos unívocamente $e$. Al ser $e' > 0$ siempre, al guardarlo podemos prescindir del bit asignado al signo de $e$ i utilizarlo para guardar un dígito más de $e'/e$. El valor de $n^{\underline{\text{o}}}$ para el tipo float ($32$ bits, $23$ para la mantisa, $8$ para el exponente) es $127$, y $1023$ para el tipo double ($64$ bits, $52$ para la mantisa, $11$ para el exponente).
+  On $s_1$ és el signe de $x$, $d_1,...,d_n$ són les xifres de $\fl\lp x\rp $, $s_2$ és el signe de l'exponent i $e_1,...,e_k$ els dígits de l'exponent de $\fl\lp x\rp $. Veiem que aquest emagatzament es pot fer més eficient.
+  
+  Una primera millora consistiria en donar-se compte que, al ser en base dos i $d_1 \neq 0$, necessàriament $d_1=1$. Així doncs, no tenim perquè emmagatzemar-lo. Això ens dona una xifra extra de precisió amb la mateixa memòria.
+  
+  Una segona millora seria canviar la forma en que emmagatzemem l'exponent $e$. Definim $e' = e + n^{\underline{\text{o}}}$, amb un $n^{\underline{\text{o}}}$ fix, definit com el mínim natural tal que $e'>0,\, \forall e$. Observem que la definició de $e'$ estableix una bijecció, així que amb l'emmagatzament de $e'$ obtenim $e$. A més, com també és positiu podem prescindir de guardar el signe.
+  El valor de $n^{\underline{\text{o}}}$ per el tipus \emph{float} ($32$ bits, $23$ per la mantissa, $8$ per l'exponent) és $127$, y $1023$ per al tipus \emph{double} ($64$ bits, $52$ per la mantissa, $11$ per l'exponent).
 \end{obs}
+ 
 
-\begin{defi}[épsilon máquina]
-	El $\varepsilon$-máquina de un ordenador es el mínimo $\varepsilon > 0$ tal que $\fl\lp 1 + \varepsilon\rp  > 1$.
+\begin{defi}[èpsilon màquina]
+	El $\varepsilon$-màquina d'un ordinador és el mínim $\varepsilon > 0$ tal que $\fl\lp 1 + \varepsilon\rp  > 1$.
 \end{defi}
         
-\section{Errores en la representación de los números}
+\section{Errors en la representació de nombres}
 
-\begin{defi}[error!absoluto]\index{error!relativo((tlab))}
-    Sea $x \in \R$ un número real y $\overline{x}$ una aproximación de $x$
+\begin{defi}[error!absolut]\index{error!relatiu((tlab))}
+    Sigui $x \in \R$ un nombre real i $\overline{x}$ una aproximació de $x$
     \begin{itemize}
-	\item Definimos el error absoluto cometido en aproximar $x$ con $\overline{x}$ como $e_a\lp \overline{x}\rp  = \overline{x} - x$.
-	\item Definimos el error relativo cometido en aproximar $x$ con $\overline{x}$ como
+	\item Definim l'error absolut dut a terme en aproximar $x$ amb $\overline{x}$ com $e_a\lp \overline{x}\rp  = \overline{x} - x$.
+	\item Definim l'error relatiu dut a terme en aproximar $x$ amb $\overline{x}$ com
 	$e_r\lp \overline{x}\rp  = \frac{e_a\lp \overline{x}\rp }{x} \simeq \frac{e_a\lp \overline{x}\rp }{\overline{x}}$.
     \end{itemize}
 \end{defi}
 
 \begin{obs}
-    Como los errores no suelen ser conocidos, manejaremos cotas superiores de ellos:    \begin{align*}
+   Com els errors no solen ser coneguts, treballarem amb cotes superiors d'aquestos:
+   \begin{align*}
 	\overline{x} &= x + e_a\lp \overline{x}\rp  & \abs{e_a\lp \overline{x}\rp } \leq \varepsilon_a\lp \overline{x}\rp  \text{ cota del error absoluto} \\
 	\overline{x} &= x\lp 1 + \delta\rp  & \abs{e_r\lp \overline{x}\rp }=\abs{\delta} \leq \varepsilon_r\lp \overline{x}\rp  \text{ cota del error relativo}.
     \end{align*}
@@ -186,85 +189,85 @@
 \end{obs}
   
 \begin{prop} 
-  Sea $x = \pm 0.d_1..d_nd_{n+1}... \cdot b^e$. Entonces, las cotas para el error absoluto y relativo al hacer punto flotante por redondeo son
+   Sigui $x = \pm 0.d_1..d_nd_{n+1}... \cdot b^e$. Aleshores, les cotes de l'error absolut i el relatiu al fer el punt flotant per arrodoniment són
   \begin{align*}
     e_a\lp \fl_R\lp x\rp \rp  &=  \frac{1}{2}b^{-n+e} \\
     e_r\lp \fl_R\lp x\rp \rp  &=  \frac{1}{2}b^{-n+1}.
   \end{align*}
 \end{prop}
 \begin{proof}
-   La representación de $x$ en coma flotante con $n$ dígitos por truncado es $\fl\lp x\rp  = \pm 0.d_1..d_n$. Entonces por definición tenemos que
+   La representació de $x$ en coma flotant amb $n$ xifres per truncat és $\fl\lp x\rp  = \pm 0.d_1..d_n$. Aleshores per definició tenim
     \begin{align*}
             |e_a\lp \fl_T\lp x\rp \rp | &= |\fl\lp x\rp  - x| = d_{n+1}... \cdot b^{-\lp n+1\rp } \cdot b^e \leq b \cdot b^{-\lp n+1\rp } \cdot b^e &= b^{-n+e} = \epsilon_a\lp \fl_T\lp x\rp \rp  \\
-            |e_r\lp \fl_T\lp x\rp \rp | &= |\frac{e_a\lp \overline{x}\rp }{x}| \leq \frac{b^{-n+e}}{b^{-1+e}} &= b^{-n+1} = \epsilon_r\lp \fl_T\lp x\rp \rp .
+            |e_r\lp \fl_T\lp x\rp \rp | &= |\frac{e_a\lp \overline{x}\rp }{x}| \leq \frac{b^{-n+e}}{b^{-1+e}} &= b^{-n+1} = \epsilon_r\lp \fl_T\lp x\rp \rp.
     \end{align*}
-    Con un argumento similar al anterior vemos que las cotas para el error absoluto y relativo al hacer punto flotante por redondeo son
+    Amb un argument similar a l'anterior veiem que les cotes per l'error absolut i relatiu al fer el punt flotant per arrodoniment són
     \begin{align*}
             \abs{e_a\lp \fl_R\lp x\rp \rp } &=  \frac{1}{2}b^{-n+e} = \varepsilon_a\lp \fl_R\lp x\rp \rp  \\
-            \abs{e_r\lp \fl_R\lp x\rp \rp } &=  \frac{1}{2}b^{-n+1} = \varepsilon_r\lp \fl_R\lp x\rp \rp 
+            \abs{e_r\lp \fl_R\lp x\rp \rp } &=  \frac{1}{2}b^{-n+1} = \varepsilon_r\lp \fl_R\lp x\rp \rp.
     \end{align*}
 \end{proof}
  
-\begin{defi}[cifras!decimales correctas]
-    Considerando $b = 10$ definimos:
+\begin{defi}[xifres!decimals correctes]
+    Considerant $b = 10$ definim
     \begin{itemize}
-	\item Si $e_a\lp \overline{x}\rp  \leq \frac{1}{2}10^{-k}$, diremos que $\overline{x}$ tiene $k$ cifras decimales correctas.
-	\item Si $e_r\lp \overline{x}\rp  \leq \frac{1}{2}10^{-k+1}$, diremos que $\overline{x}$ tiene $k$ dígitos significativos corectos.
+	\item Si $e_a\lp \overline{x}\rp  \leq \frac{1}{2}10^{-k}$, direm que $\overline{x}$ té $k$ xifres decimals correctes.
+	\item Si $e_r\lp \overline{x}\rp  \leq \frac{1}{2}10^{-k+1}$, direm que $\overline{x}$ té $k$ xifres significatives correctes.
     \end{itemize}
 \end{defi}
 
 \begin{obs}
-  En esta definición aparecen los $\frac{1}{2}$ ya que por defecto consideramos coma flotante por redondeo al ser el error menor. En caso de utilizar coma flotante por truncado, las definiciones serían iguales sin el $\frac{1}{2}$.
+  A la definició anterior apareixen els factors $\frac{1}{2}$ ja que per defecte considerem el coma flotant per arrodoniment al ser l'error menor. En caas d'utilitar el coma flotant per truncat, les definicions són les mateixes sense el factor $\frac{1}{2}$.
 \end{obs}
 
-\section{Propagación de errores en los datos}
+\section{Propagació d'errors}
 
 \begin{prop}
-  Como propiedades fundamentales de la propagación de errores tenemos
+  Com a propietats fonamentals de la propagació d'errores tenim
   \begin{enumerate}[i)]
-    \item $\varepsilon_a\lp \overline{x} \pm \overline{y}\rp  = \varepsilon_a\lp \overline{x}\rp  + \varepsilon_a\lp \overline{y}\rp$.
+    \item $\varepsilon_a\lp \overline{x} \pm \overline{y}\rp  = \varepsilon_a\lp \overline{x}\rp  + \varepsilon_a\lp \overline{y}\rp$
     \item $\varepsilon_r\lp \overline{x}\cdot\overline{y}\rp  \lessapprox \varepsilon_r\lp \overline{x}\rp  + \varepsilon_r\lp \overline{y}\rp$.
   \end{enumerate}
 \end{prop}
 \begin{proof}
   \begin{enumerate}[i)]
    \item []
-   \item Directo de la definición.
-   \item Tenemos que $e_r\lp \overline{x}\cdot\overline{y}\rp  = xy\lp 1+\delta_x\rp \lp 1+\delta_y\rp  = xy\lp 1 + \delta_x + \delta_y + \delta_x\delta_y\rp  \simeq xy\lp 1 + \delta_x + \delta_y\rp$ y si $\delta_x,\delta_y << 1$, entonces $\delta_x\delta_y << \delta_x + \delta_y$ y tenemos que $\varepsilon_r\lp \overline{x}\cdot\overline{y}\rp  \lessapprox \varepsilon_r\lp \overline{x}\rp  + \varepsilon_r\lp \overline{y}\rp$.
+   \item Directe a partir de la definició.
+   \item Tenim $e_r\lp \overline{x}\cdot\overline{y}\rp  = xy\lp 1+\delta_x\rp \lp 1+\delta_y\rp  = xy\lp 1 + \delta_x + \delta_y + \delta_x\delta_y\rp  \simeq xy\lp 1 + \delta_x + \delta_y\rp$ y si $\delta_x,\delta_y << 1$, aleshores $\delta_x\delta_y << \delta_x + \delta_y$ i ens diu que $\varepsilon_r\lp \overline{x}\cdot\overline{y}\rp  \lessapprox \varepsilon_r\lp \overline{x}\rp  + \varepsilon_r\lp \overline{y}\rp$.
   \end{enumerate}
 \end{proof}
 
 \begin{obs}
-    Ojo con restar variables \emph{cercanas}, se generaran errores relativos grandes.
+    Cuidado al fer la resta de variables properes ja que es generen errors relatius grans.
     \[
 	e_r\lp \ap{x}-\ap{y}\rp  = \dfrac{e_a\lp \ap{x} - \ap{y}\rp }{\ap{x}-\ap{y}} = \dfrac{\ap{x}}{\ap{x}-\ap{y}}e_r\lp \ap{x}\rp  - \dfrac{\ap{y}}{\ap{x}-\ap{y}}e_r\lp \ap{y}\rp.
     \]
-    Si ahora tomamos el valor absoluto,
+    Si ara prenem valor absolut,
     \[
 	\abs{e_r\lp \ap{x}-\ap{y}\rp} \leq \abs{\dfrac{\ap{x}}{\ap{x}-\ap{y}}}\cdot\abs{e_r\lp \ap{x}\rp} + \abs{\dfrac{\ap{y}}{\ap{x}-\ap{y}}}\cdot\abs{e_r\lp \ap{y}\rp}.
     \]
-    Vemos que si $\ap{x}$, $\ap{y}$ son cercanos, $\ap{x}-\ap{y}$ será muy pequeño y al dividir la cota del error incrementa mucho.
+    Vegem que si $\ap{x}$, $\ap{y}$ són properes, $\ap{x}-\ap{y}$ serà molt petit i al dividir la cota de l'error augmentarà molt.
 \end{obs}
 
 \begin{example}
-	Calcular las raízes del polinomio  $x^2 - 18x + 1$, con cálculo de $\sqrt{\phantom{x}}$ de 4 cifras decimales por truncado del ejemplo \ref{ej:2_errores}.
+	Calcular les arrels del polinomi  $x^2 - 18x + 1$, amb el càlcul de l'arrel per tuncat a les cuatre xifres de l'exemple \ref{ej:2_errores}.
 	\begin{align*}
-		x_+ &= 9 + \sqrt{80} = 17.94442 &&\text{ 6 dígitos significativos} \\
-		x_- &= 9 - \sqrt{80} = \enspace 0.0558 &&\text{ 3 dígitos significativos}.
+		x_+ &= 9 + \sqrt{80} = 17.94442 &&\text{ 6 xifres significatives} \\
+		x_- &= 9 - \sqrt{80} = \enspace 0.0558 &&\text{ 3 xifres significatives}.
 	\end{align*}
-	Analizamos este resultado en terminos de la cota del error relativo en el cálculo de $x_-$: Sea $x = 9$, $y = \sqrt{80}$, $\ap{x}=9$, $\ap{y}=8.4492$. Entonces tenemos que:
+	Analitzem aquest resultat a partir de la cota de l'error relatiu en el càlcul de $x_-$. Sigui $x = 9$, $y = \sqrt{80}$, $\ap{x}=9$, $\ap{y}=8.4492$. Aleshores,
 	\[
 		e_r\lp \ap{x}-\ap{y}\rp  \simeq \abs{\frac{\ap{y}}{\ap{x}-\ap{y}}}\cdot\abs{e_r\lp \ap{y}\rp} = \dfrac{8.9442}{0.0588}\cdot \underbrace{10^{-5+1}}_{\text{5 díg sig}} \simeq \scin{0.16e-1} < 1^{-2+1}
 	\]
-	Es decir, me puedo creer solo $\approx 2$ dígitos significativos.
+	És a dir, em puc creure només $\approx 2$ xifres significatives.
 \end{example}
 
 \begin{example}
-	Consideramos el cálculo de $I_n = \int_{0}^{1}x^ne^{x-1}dx$,$n = 0,1,2,...$ del ejemplo \ref{ej:3_errores}, y para ese fín el uso de la recurrencia $I_n = 1 - nI_{n-1}$, $I_0 = 1 - \frac{1}{e} \approx 0,63212055$. Para $I_9$ obteníamos un valor negativo (cuando la función era positiva en el intervalo de integración) . Si analizamos este problema en términos del error absoluto: $e_a\lp I_n\rp  \lessapprox e_a\lp 1\rp  + ne_a\lp I_{n-1}\rp $, es decir $e_a\lp I_n\rp  \simeq n!\,e_a\lp I_0\rp $. El error absoluto aumenta factorialmente, por lo tanto, este procedimiento no es bueno.
+  Considerem el càlcul de $I_n = \int_{0}^{1}x^ne^{x-1}dx$,$n = 0,1,2,...$ de l'exemple  \ref{ej:3_errores}, i, per fer-ho, l'ús de la recurrència $I_n = 1 - nI_{n-1}$, $I_0 = 1 - \frac{1}{e} \approx 0,63212055$. Per $I_9$ obteniem un valor negatiu. Si analitzem aquest problema a partir de l'error absolut tenim que $e_a\lp I_n\rp  \lessapprox e_a\lp 1\rp  + ne_a\lp I_{n-1}\rp $, és a dir $e_a\lp I_n\rp  \simeq n!\,e_a\lp I_0\rp $. L'error absolut augmenta factorialment amb el nombre de pasos i per tant aques procediment no és bo numèricament.
 \end{example}
 
 \begin{prop}\label{prop:1_error_funcion}
-  Sea $x \in \real$, $\overline{x}$ una aproximación de $x$ y $f:\: \real \to \real$, $f\in \C^1$, una función. Entonces,
+  Sigui $x \in \real$, $\overline{x}$ una aproximació de $x$ i $f:\: \real \to \real$, $f\in \C^1$, una funció. Aleshores,
   \begin{enumerate}[i)]
    \item $\abs{e_a\lp f\lp\overline{x}\rp\rp} \simeq \abs{f'\lp \overline{x}\rp}\abs{e_a\lp x\rp}$
    \item $\abs{e_r\lp f\lp\overline{x}\rp\rp} \simeq \abs{\frac{\overline{x}f'\lp\overline{x}\rp}{f\lp\overline{x}\rp}}\abs{e_r\lp x\rp}$.
@@ -280,21 +283,21 @@
   \end{enumerate}
 \end{proof}
 
-\begin{defi}[factor de propagación]
-   Sea $x \in \real$, $\overline{x}$ una aproximación de $x$ y $f:\: \real \to \real$, $f\in \C^1$, una función. Entonces definimos el factor de propagación del error (f.d.p) por $f$ como $\alpha = \abs{\frac{\overline{x}f'\lp\overline{x}\rp}{f\lp\overline{x}\rp}}$.
+\begin{defi}[factor de propagació]
+   Sigui $x \in \real$, $\overline{x}$ una aproximació de $x$ i $f:\: \real \to \real$, $f\in \C^1$, una funció. Aleshores definim el factor de propagació de l'error (f.d.p) per $f$ com a $\alpha = \abs{\frac{\overline{x}f'\lp\overline{x}\rp}{f\lp\overline{x}\rp}}$.
 \end{defi}
 
-\begin{example}[Seguridad de la operación raíz cuadrada]
-      Consideramos el cálculo de $f\lp x\rp  = \sqrt{x}$. Tenemos que en ese caso f.d.p = $\frac{x\frac{1}{2\sqrt{x}}}{\sqrt{x}} = \frac{1}{2}$. Por lo tanto,  $\abs{e_r\lp \sqrt{\overline{x}}\rp} \simeq \frac{1}{2}\abs{e_r\lp \overline{x}\rp}$. Lo que nos dice que calcular la raíz cuadrada es una operación que no aumenta el error.
+\begin{example}[Seguretat de l'operació \emph{arrel quadrada}]
+      Considerem el càlcul de $f\lp x\rp  = \sqrt{x}$. Tenim que en aquest cas f.d.p = $\frac{x\frac{1}{2\sqrt{x}}}{\sqrt{x}} = \frac{1}{2}$. Per tant,  $\abs{e_r\lp \sqrt{\overline{x}}\rp} \simeq \frac{1}{2}\abs{e_r\lp \overline{x}\rp}$. El que ens diu que fer l'arrel quadrada no és una operació que augmenti l'error: és una operació segura.
 \end{example}
 
-\begin{example}[Seguridad de la operación $\frac{1}{1-x^2}$]
-      Consideramos el cálculo de $f\lp x\rp  = \frac{1}{1-x^2}$. Entonces tenemos que f.d.p = $\frac{x\frac{4x}{\lp 1-x^2\rp ^2}}{\frac{1}{1-x^2}} = \frac{4x^2}{1-x^2} = 4\lp 1 - \frac{1}{1-x^2}\rp $. Vemos que el f.d.p será muy grande cuando $x \simeq 1$, y en ese caso, calcular $f$ de esta manera sería una operación insegura. En vez de calcularlo dividiendo, podemos expandir en Taylor: $f\lp x\rp  \equiv 1 + x^2 + x^4 + x^6 + ...$ y entonces hacer el cálculo.
+\begin{example}[Seguretat de l'operació $\frac{1}{1-x^2}$]
+      Considerem el càlcul de $f\lp x\rp  = \frac{1}{1-x^2}$. Aleshores, f.d.p = $\frac{x\frac{4x}{\lp 1-x^2\rp ^2}}{\frac{1}{1-x^2}} = \frac{4x^2}{1-x^2} = 4\lp 1 - \frac{1}{1-x^2}\rp $. Vegem que l'f.d.p serà molt gran quan $x \simeq 1$, i en aquest cas, calcular $f$ d'aquesta manera seria una operació insegura. En comptes de fer el càlcul a partir de la divisió, podem expandir per Taylor i obtenir $f\lp x\rp  \equiv 1 + x^2 + x^4 + x^6 + ...$ per finalment fer el càlcul.
 \end{example}
 
-\begin{example}[Efecto en el cambio de los coeficientes de un sistema lineal en la solución]
+\begin{example}[Efecte del canvi de coeficients d'un sistema lineal en la solució]
       
-    Consideramos el sistema de ecuaciones:
+    Considerem el sistema d'equacions:
     \[
 	\begin{pmatrix}
 	    a & b\\
@@ -309,77 +312,77 @@
 	1,5\\
 	\end{pmatrix}.
     \]
-    Con soluciones $x = \frac{3d-1.5b}{ad-bc}$,$y = \frac{1.5a-3c}{ad-bc}$. Supongamos que sabemos $a = 1,b = 2,d = 1.001$ de manera exacta, pero solo tenemos una aproximación de $c$ dada por $\overline{c} = 0.499$, con error absoluto $e_r\lp c\rp  \simeq \scin{1e-3}$. Al resolver este sistema, nosotros calculamos $\overline{x} = \frac{3d-1.5b}{ad-b\overline{c}} \cong f\lp \overline{c}\rp $. El error absoluto cometido en el cálculo de $\overline{x}$ está dado por
+    Amb solució $x = \frac{3d-1.5b}{ad-bc}$,$y = \frac{1.5a-3c}{ad-bc}$. Suposem que sabem $a = 1,b = 2,d = 1.001$ de manera exacta, però només tenim una aproximació de $c$ donada per $\overline{c} = 0.499$, amb error absolut $e_r\lp c\rp  \simeq \scin{1e-3}$. Al resoldre el sistema, calculem que $\overline{x} = \frac{3d-1.5b}{ad-b\overline{c}} \cong f\lp \overline{c}\rp $. L'error absolut comès en el càlcul de $\overline{x}$ ve donat per
     \[
 	    \abs{e_a\lp \overline{x}\rp} = \abs{e_a\lp f\lp \overline{c}\rp \rp} \simeq \abs{f'\lp \overline{c}\rp}\abs{e_a\lp \overline{c}\rp}.
     \]
-    Donde
+    On
     \[
 	    \abs{f'\lp \overline{c}\rp}= \abs{\frac{\lp 3\cdot 1.001-1.5\cdot 2\rp \cdot 2}{\lp 1\cdot 1.001 -2\cdot\overline{c}\rp ^2}}_{\overline{c}=0.499} \simeq \scin{6e3}.
     \]
-    Y por lo tanto, $\abs{e_a\lp x\rp}\simeq 6$, lo que nos dice que para estos valores tenemos una operación insegura.
+    I per tant, $\abs{e_a\lp x\rp}\simeq 6$, el que ens diu que per aquests valors la resolució del sistema és una operació insegura.
 \end{example}
 
 \begin{obs}
-      Supongamos que queremos calcular $f\lp x\rp  \equiv f\lp x_1,...,x_n\rp $, pero solo tenemos $\overline{x} = \lp \overline{x_1},...,\overline{x_n}\rp $. Entonces el error cometido, suponiendo que el cálculo de $f$ es perfecto, viene dado por
+      Suposem que volem calcular $f\lp x\rp  \equiv f\lp x_1,...,x_n\rp $, però només tenim $\overline{x} = \lp \overline{x_1},...,\overline{x_n}\rp $. Aleshores l'error comès, suposant el càlcul de $f$ perfecte, ve donat per
       \[
 	      f\lp \overline{x}\rp  = f\lp x + e_a\lp x\rp \rp  = f\lp x\rp  + \nabla f\lp x\rp^Te_a\lp x\rp  + \theta_2\lp e_a\lp x\rp \rp.
       \]
-      Entonces,
+      Aleshores,
       \[
 	      e_a\lp f\lp \overline{x}\rp \rp  \simeq \nabla f\lp x\rp ^Te_a\lp x\rp  = \sum_{k=1}^{n}\pdv{f}{x_k} \lp \overline{x}\rp e_a\lp \overline{x}_k\rp.
       \]
 \end{obs}
 
 \begin{prop}
-  Sea $x \in \real$, $\overline{x}$ una aproximación de $x$ y $f:\: \real \to \real$, $f\in \C^1$, una función. Sea $\delta_f$ una cota del error de la función tal que $\abs{f(x)-\overline{f}(x)}<\delta_f$, $\forall x \in \real$. Entonces tenemos la siguiente expresión para el error cometido
+  Sigui $x \in \real$, $\overline{x}$ una aproximació de $x$ i $f:\: \real \to \real$, $f\in \C^1$, una funció. Sigui $\delta_f$ una cota de l'error de la funció tal que $\abs{f(x)-\overline{f}(x)}<\delta_f$, $\forall x \in \real$. Aleshores tenim la següent expresió per a l'error comès:
   \[
       e_a\lp \overline{f}\lp \overline{x}\rp \rp  \simeq \abs{\overline{f}'\lp \overline{x}\rp }\abs{e_a\lp x\rp} + \delta_f\abs{\overline{f}\lp \overline{x}\rp}.
   \]
 \end{prop}
 \begin{proof}
-  Igual que la demostración de la proposición \ref{prop:1_error_funcion}.
+  Igual que la demostració de la proposició \ref{prop:1_error_funcion}.
 \end{proof}
 
-\section{Cálculo de raízes de un polinomio}
+\section{Càlcul d'arrels d'un polinomi}
 
 \begin{prop}
-  Sea $p(x)=\sum\limits_{i=0}^{n} a_ix^i$ un polinomio real con raíces reales $\alpha_1,\,\dots,\,\alpha_n$. Sea $1\leq k\leq n$ tal que $a_k$ es el único coeficiente con error y del que solo conocemos una aproximación $\overline{a}_k$. Entonces,
+  Sigui $p(x)=\sum\limits_{i=0}^{n} a_ix^i$ un polinomi real d'arrels reals $\alpha_1,\,\dots,\,\alpha_n$. Sigui $1\leq k\leq n$ tal que $a_k$ és l'únic coeficient amb error i del qual només en coneixem una aproximació $\overline{a}_k$. Aleshores,
   \begin{enumerate}[i)]
     \item $\abs{e_a\lp \alpha_l\lp \ap{a}_k\rp \rp} \simeq \abs{\frac{\alpha_l^k}{ a_n\prod_{j=1,j\neq l}^{n}\lp \alpha_l-\alpha_j\rp }}\abs{e_a\lp \ap{a}_k\rp}$.
     \item $e_r\lp \alpha_l\lp \ap{a}_k\rp \rp \simeq \left|\frac{a_k\alpha_l^{k-1}}{a_n\prod_{j=1,j\neq l}^{n}\lp \alpha_l-\alpha_j\rp }\right| \abs{e_r\lp \ap{a}_k\rp}$.
   \end{enumerate}
 \end{prop}
 \begin{proof}
-  Por Cardano-Vieta, sabemos que $\forall l,\, \alpha_l\lp\overline{a}_n,\,\dots\,\overline{a}_0\rp$. Debido a que solo hay error en el coeficiente $a_k$ y por la fórmula de propagación del error tenemos que
+  Per Cardano-Vieta, sabem que $\forall l,\, \alpha_l\lp\overline{a}_n,\,\dots\,\overline{a}_0\rp$. Degut a que només hi ha error al coeficient $a_k$ i per la fórmula de propagació d'errors tenim que
   \[
     e_a\lp \alpha_l\lp \ap{a}_k\rp \rp  \simeq \pdv{\alpha_l}{a_k}\lp a_k\rp e_a\lp \ap{a}_k\rp .
   \]
-  Usando derivación implícita respecto a $a_k$ sobre la siguiente igualdad
+  Fent servir derivació implícita respecte a $a_k$ sobre la següent igualtat
   \[
      a_n\alpha_l^n + \cdots a_k\alpha_l^k + \cdots a_0 = p\lp \alpha_l\rp  = p\lp \alpha_l\lp a_k\rp \rp 
   \]
-  tenemos que
+  tenim que
   \[
     \alpha_l^k = p'\lp \alpha_l\lp a_k\rp \rp \pdv{\alpha_l}{a_k}\lp a_k\rp  \implies \pdv{\alpha_l}{a_k}\lp a_k\rp  = \dfrac{\alpha_l^k}{p'\lp \alpha_l\lp a_k\rp \rp}.
   \]
-  El numerador de la expresión obtenida es fácil de calcular. Para calcularlo  haremos uso de la representación de un polinomio como producto de sus factores simples
+  El numerador de l'expresió obtinguda és fàcil de calcular. Per calcular-lo farem servir la representació d'un polinomi com a producte de factors simples
   \[
       p\lp x\rp = a_n\lp x-\alpha_l\rp \prod_{j=1,j\neq l}^{n}\lp x-\alpha_j\rp.
   \]
-  Derivando tenemos
+  Derivant obtenim
   \[
     p'\lp x\rp  = a_n\prod_{j=1,j\neq l}^{n}\lp x-\alpha_j\rp  + a_n\lp x-\alpha_l\rp \frac{\partial}{\partial x}\lp \prod_{j=1,j\neq l}^{n}\lp x-\alpha_j\rp\rp,
   \]
-  lo que nos dice que
+  el que ens diu que
   \[
     p'\lp \alpha_l\rp = a_n\prod_{j=1,j\neq l}^{n}\lp \alpha_l-\alpha_j\rp.
   \]
-  Finalmente obtenemos el resultado deseado para el error absoluto del cálculo de $\alpha_l$ debido al error en $\ap{a}_k$
+  Finalment obtenim el resultat desitjat per l'error absolut del càlcul de $\alpha_l$ degut a l'error en $\ap{a}_k$
   \[
     \abs{e_a\lp \alpha_l\lp \ap{a}_k\rp \rp} \simeq \abs{\frac{\alpha_l^k}{ a_n\prod_{j=1,j\neq l}^{n}\lp \alpha_l-\alpha_j\rp }}\abs{e_a\lp \ap{a}_k\rp}.
   \]
-  Para el segundo apartado, simplemente usando la definición de error relativo,
+  Pel segon apartat, simplement fent servir la definició d'error relatiu 
   \begin{align*}
     e_r\lp \alpha_l\lp \ap{a}_k\rp \rp & = \left|\frac{e_a\lp \alpha_l\lp \ap{a}_k\rp \rp }{\alpha_l\lp \ap{a}_k\rp }\right| \simeq \left|\frac{\alpha_l^{k-1}}{ a_n\prod_{j=1,j\neq l}^{n}\lp \alpha_l-\alpha_j\rp }\right|\left|\frac{e_a\lp \ap{a}_k\rp }{a_k}\right||a_k|=\\
            & = \left|\frac{a_k\alpha_l^{k-1}}{a_n\prod_{j=1,j\neq l}^{n}\lp \alpha_l-\alpha_j\rp }\right| |e_r\lp \ap{a}_k\rp |
