@@ -1,15 +1,65 @@
-\documentclass[10pt,a4paper]{article}
+\documentclass[12pt,a4paper]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-\usepackage[landscape,margin=0in,top=0in,bottom=0in]{geometry}
+\usepackage[landscape,margin=0.2in,top=0.2in,bottom=0.2in]{geometry}
 
 \usepackage[pdftex]{hyperref}
-\usepackage{pdfpages}
+\usepackage{pdfpages,scrextend,datetime}
 \usepackage[catalan]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+    version={4.0},
+]{doclicense}
+
+\hypersetup{
+    colorlinks,
+    linkcolor=blue
+}
+
+\newcommand*{\vcenteredhbox}[1]{\begingroup
+\setbox0=\hbox{#1}\parbox{\wd0}{\box0}\endgroup}
+
+\setlength\parindent{0pt}
 
 \begin{document}
+
+\vspace*{\fill}
+\begin{center}
+     \Huge {\bf Formulari de càlcul integral}
+\end{center}
+
+\quad
+
+{\Large
+    
+    \begin{addmargin}[8em]{8em}
+		El formulari consta de dues cares. Tot i aix\'i, la primera cara \textbf{no} correspon al contingut del parcial.
+        
+        \quad
+        
+        Assegura't que tens l'última versió el dia de l'examen!
+        
+        \quad
+        
+        \begin{flushright}
+            {\bf Última modificació: \currenttime, \today}
+        \end{flushright}
+        
+        \qquad
+        
+        \qquad
+        
+        \begin{center}
+            \vcenteredhbox{\includegraphics[width=5cm]{../logo.pdf}} \qquad \qquad \vcenteredhbox{\doclicenseImage[imagewidth=7em]}
+        \end{center}
+    
+    \end{addmargin}
+}
+\vspace*{\fill}
+\newpage
 
 \includepdf[pages=1]{aux_form_main.pdf}
 \includepdf[pages=2]{aux_form_main.pdf}

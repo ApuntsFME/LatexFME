@@ -10,6 +10,11 @@
 \usepackage{mdframed,cleveref,cancel,stackengine,mathrsfs,thmtools,pdfpages}
 \usepackage{xfrac,stmaryrd,commath,units,titlesec,multicol,esint,scrextend,datetime}
 \usepackage[catalan]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+    version={4.0},
+]{doclicense}
 
 \titlespacing{\section}{0pt}{5pt}{0pt}
 \titlespacing{\subsection}{0pt}{5pt}{0pt}
@@ -89,16 +94,26 @@
 
 \setlength\parindent{0pt}
 
+\newcommand*{\vcenteredhbox}[1]{\begingroup
+\setbox0=\hbox{#1}\parbox{\wd0}{\box0}\endgroup}
+
 \begin{document}
 
 \vspace*{\fill}
 \begin{center}
-     \Huge {\bf El document consta de 4 pàgines}
+     \Huge {\bf Formulari de f\'isica}
 \end{center}
 
 \quad
 
-{\Large 
+{\Large
+    
+    \begin{addmargin}[8em]{8em}
+        El document consta de 4 pàgines.
+    \end{addmargin}
+    
+    \quad
+    
     \begin{addmargin}[10em]{0em}
         \begin{itemize}
             \item Fórmules 1a part (mecànica): pàgina 2.
@@ -110,17 +125,25 @@
     \quad
     
     \begin{addmargin}[8em]{8em}
-    Els qui recupereu el parcial imprimiu les pàgines 2 i 3, els que no, podeu portar només la 3 (la pàgina 4 és pels qui no recupereu el parcial, però voleu algunes fórmules del parcial igualment).
-    
-    \quad
-    
-    Assegura't que tens l'última versió el dia de l'examen!
-    
-    \quad
-    
-    \begin{flushright}
-        {\bf Última modificació: \currenttime, \today}
-    \end{flushright}
+        Els qui recupereu el parcial imprimiu les pàgines 2 i 3, els que no, podeu portar només la 3 (la pàgina 4 és pels qui no recupereu el parcial, però voleu algunes fórmules del parcial igualment).
+        
+        \quad
+        
+        Assegura't que tens l'última versió el dia de l'examen!
+        
+        \quad
+        
+        \begin{flushright}
+            {\bf Última modificació: \currenttime, \today}
+        \end{flushright}
+        
+        \qquad
+        
+        \qquad
+        
+        \begin{center}
+            \vcenteredhbox{\includegraphics[width=5cm]{../logo.pdf}} \qquad \qquad \vcenteredhbox{\doclicenseImage[imagewidth=7em]}
+        \end{center}
     
     \end{addmargin}
 }
