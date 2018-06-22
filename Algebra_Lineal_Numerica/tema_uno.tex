@@ -387,107 +387,44 @@
     e_r\lp \alpha_l\lp \ap{a}_k\rp \rp & = \left|\frac{e_a\lp \alpha_l\lp \ap{a}_k\rp \rp }{\alpha_l\lp \ap{a}_k\rp }\right| \simeq \left|\frac{\alpha_l^{k-1}}{ a_n\prod_{j=1,j\neq l}^{n}\lp \alpha_l-\alpha_j\rp }\right|\left|\frac{e_a\lp \ap{a}_k\rp }{a_k}\right||a_k|=\\
            & = \left|\frac{a_k\alpha_l^{k-1}}{a_n\prod_{j=1,j\neq l}^{n}\lp \alpha_l-\alpha_j\rp }\right| |e_r\lp \ap{a}_k\rp |
   \end{align*}
-
-
 \end{proof}
 
-\begin{comment} 
+\begin{example}[Exemple de Wilkinson]
+  Si considerem $n=20$, $\alpha_1 = 1,\,\cdots,\,\alpha_{20} = 20$, $k = 19 \leftrightarrow a_{19} = -210$ i $l = 16 \leftrightarrow \alpha_l = 16$, calculant l'error relatiu tenim
+  \[
+     e_r\lp \alpha_l\lp \ap{a}_k\rp \rp  = \left|\frac{\lp -210\rp \cdot\lp 16^{19-1}\rp }{1\cdot\lp 15!4!\lp -1\rp ^4\rp }\right| |e_r\lp \ap{a}_{19}\rp | \approx \scin{0.31e11}e_r\lp \ap{a}_{19}\rp.
+  \]
+  Si volem calcular $\alpha_l\lp \ap{a}_k\rp $ (ex. $\alpha_{16}\lp \ap{a}_{19}\rp $) amb $t$ xifres singificatives, les xifres correctes que necessitariem de $a_{19}$ serien
+  \[
+    \frac{1}{2}\cdot10^{1-t} \sim \scin{0.31e11}\frac{1}{2}\cdot10^{1-s},
+  \]
+  i per tant
+  \[
+    1 - t = 12 - s \iff s \sim 11 + t.
+  \]
+  És a dir, que si volem un valor per a l'arrel amb $t$ xifres correctes, necessitem saber $11+t$ xifres del coeficient $a_{19}$ (suposant que coneixem els altres de forma exacta).
+\end{example}
+\begin{example}[La no asociativitat de la suma numèrica]
+  Sigui $\delta$ cota de l'error relatiu en l'emmagatzament ($\delta \sim \frac{1}{2}10^{1-t} \equiv t$ xifres significatives). Volem analitzar les diferencies entre $\sum_{n=1}^{N}\frac{1}{n^2}$ i $\sum_{n=N}^{1}\frac{1}{n^2}$. Calculem primer l'error comès al sumar una seqüència general de $n$ termes.
+  \begin{table}[H]
+	  \centering
+	  \label{no-asociativa}
+	  \begin{tabular}{lll}
+		  Valor real & Aproximació & Cota de l'error absolut \\
+		  $s_1 = x_ 1$ & $\ap{s}_1 = \ap{x}_1$ & $\varepsilon\lp \ap{s}_1\rp  = \varepsilon_a\lp \ap{x}_1\rp  = \ap{x}_1\delta$ \\
+		  $s_2 = s_1 + x_ 2$ & $\ap{s}_2 = \ap{s}_1 + \ap{x}_2$  &   $\varepsilon_a\lp \ap{s}_2\rp  \simeq \lp 2x_1 + 2x_2\rp \delta$  \\
+		  $s_3 = s_2 + x_3$ & $\ap{s}_3 = \ap{s}_2 + \ap{x}_3$   &   $\varepsilon_a\lp \ap{s}_3\rp  \simeq \lp 3x_1 + 3x_2 + 2x_3\rp \delta$\\
+		  $s_4 = s_3 + x_4$ & $\ap{s}_4 = \ap{s}_3 + \ap{x}_4$   &   $\varepsilon_a\lp \ap{s_4}\rp  \simeq \lp 4x_1 + 4x_2 + 3x_3 + 2x_4\rp \delta$ \\
+		  $s_N = s_{N-1} + x_N$ & $\ap{s}_N = \ap{s}_{N-1} + \ap{x}_N$ & $\varepsilon_a\lp \ap{s}_N\rp  \simeq \lp N\lp x_1 +x_2\rp + \cdots + 2x_N\rp \delta$
+	  \end{tabular}
+  \end{table}
 
-    
-    
-    Consideramos las raíces de un polinomio como una función implícita de sus coeficientes. Veremos que es una relación muy sensible y mal condicionada. 
-    
-    \subsection{Análisis de un polinomio general}
-    
-    Consideramos el polinomio general:
-    \[
-            p\lp x\rp  = a_nx^n + \cdots a_kx^k + \cdots a_1x + a_0
-    \]
-    
-    \begin{itemize}[label=\lp $\bullet$\rp ]
-            \item Sabemos que las raíces de $p\lp x\rp $ son $\alpha_1,...,\alpha_n$
-            \item También sabemos que cada raíz $\alpha_l$ es función de los coeficientes: $\alpha_l = \alpha_l\lp \ap{a}_n,...,\ap{a}_0\rp $
-            \item Queremos estudiar $e_a\lp \alpha_l\lp \ap{a}_n,...,\ap{a}_0\rp \rp $, $e_r\lp \lp \alpha_l\lp \ap{a}_n,...,\ap{a}_0\rp \rp $ $l = 1\divisionsymbol n$
-    \end{itemize}
+  Derivació de les cotes (casos $s_1$,$s_2$; la resta s'obtenen anàlogament):
 
-    En general sabemos, de la fórmula del factor de propagación del error:
-    \[
-    e_a\lp \alpha_l\lp \ap{a}_n,...,\ap{a}_0\rp \rp  \simeq \sum_{j=1}^{n}\dv{\alpha_l}{a_j}e_a\lp \ap{a}_j\rp 
-    \]
-    
-    En nuestro ejemplo supondrems que solo hay error en el coeficiente $a_k$. Por lo tanto:
-    \[
-            e_a\lp \alpha_l\lp \ap{a}_k\rp \rp  \simeq \pdv{\alpha_l}{a_k}\lp a_k\rp e_a\lp \ap{a}_k\rp 
-    \]
-    
-    Necesitamos calcular $\pdv{\alpha_l}{a_k}\lp a_k\rp $. Utilizaremos derivación implícita respecto $a_k$ sobre la siguiente igualdad:
-    \[
-            a_n\alpha_l^n + \cdots a_k\alpha_l^k + \cdots a_0 = p\lp \alpha_l\rp \rp  = p\lp \alpha_l\lp a_k\rp \rp 
-    \]
-    
-    Para obtener:
-    \[
-            \alpha_l^k = p'\lp \alpha_l\lp a_k\rp \rp \pdv{\alpha_l}{a_k}\lp a_k\rp  \implies \pdv{\alpha_l}{a_k}\lp a_k\rp  = \dfrac{\alpha_l^k}{p'\lp \alpha_l\lp a_k\rp \rp }
-    \]
-    
-    El numerador de la expresión obtenida es fácil de calcular; para calcular el denominador haremos uso de la representación de un polinomio como producto de sus factores simples:
-    \begin{align*}
-            p\lp x\rp  & = a_n\lp x-\alpha_l\rp \prod_{j=1,j\neq l}^{n}\lp x-\alpha_j\rp  \\
-            \implies p'\lp x\rp  & = a_n\prod_{j=1,j\neq l}^{n}\lp x-\alpha_j\rp  + a_n\lp x-\alpha_l\rp \dv{x}\left\lp \prod_{j=1,j\neq l}^{n}\lp x-\alpha_j\rp \right\rp  \\
-            \therefore p'\lp \alpha_l\rp  & = a_n\prod_{j=1,j\neq l}^{n}\lp \alpha_l-\alpha_j\rp 
-    \end{align*}
-    
-    De manera que obtenemos la expresión deseada para le error absoluto del cálculo de $\alpha_l$ debido al error en $\ap{a}_k$:
-    \[
-            \therefore |e_a\lp \alpha_l\lp \ap{a}_k\rp \rp | \simeq \left|\frac{\alpha_l^k}{ a_n\prod_{j=1,j\neq l}^{n}\lp \alpha_l-\alpha_j\rp }\right||e_a\lp \ap{a}_k\rp |
-    \]
-    
-    Con respecto al error relativo:
-    \begin{align*}
-            e_r\lp \alpha_l\lp \ap{a}_k\rp \rp  & = \left|\frac{e_a\lp \alpha_l\lp \ap{a}_k\rp \rp }{\alpha_l\lp \ap{a}_k\rp }\right| \simeq \left|\frac{\alpha_l^{k-1}}{ a_n\prod_{j=1,j\neq l}^{n}\lp \alpha_l-\alpha_j\rp }\right|\left|\frac{e_a\lp \ap{a}_k\rp }{a_k}\right||a_k| \\
-            & = \left|\frac{a_k\alpha_l^{k-1}}{a_n\prod_{j=1,j\neq l}^{n}\lp \alpha_l-\alpha_j\rp }\right| |e_r\lp \ap{a}_k\rp |
-    \end{align*}
-    
-    Hasta aquí en general. En nuestro caso particular de Wilkinson, tenemos $n=20$,$\alpha_1 = 1$,...,$\alpha_{20} = 20$,$k = 19 \leftrightarrow a_{19} = -210$,$l = 16 \leftrightarrow \alpha_l = 16$. Calculamos el error relativo:
-    
-    \begin{align*}
-                    e_r\lp \alpha_l\lp \ap{a}_k\rp \rp  = \left|\frac{\lp -210\rp \cdot\lp 16^{19-1}\rp }{1\cdot\lp 15!4!\lp -1\rp ^4\rp }\right| |e_r\lp \ap{a}_{19}\rp | \approx \scin{0.31e11}e_r\lp \ap{a}_{19}\rp 
-    \end{align*}
-    
-    Consequencia: Suponemos que queremos calcular el nuevo $\alpha_l\lp \ap{a}_k\rp $ \lp ex. $\alpha_{16}\lp \ap{a}_{19}\rp $\rp  con $t$ dígitos significativos. ¿Cuantos dig. sig. correctos debería tener, aproximadamente, $a_{19}$?
-    
-    \begin{align*}
-            & \frac{1}{2}\cdot10^{1-t} \sim \scin{0.31e11}\frac{1}{2}\cdot10^{1-s} \\
-            \therefore & 1 - t = 12 - s \iff \\
-            & s \sim 11 + t
-    \end{align*}
-    
-    Es decir que si queremos un valor para la raíz que nos podamos creer $t$ dígitos, entonces necesitamos saber $11 + t$ dígitos del coeficiente $a_{19}$ \lp suponiendo que conocemos los otros de manera exacta\rp .
-    
-    \section{Problema: ''No asociatividad de la suma en numérica"}
-    
-    Suponemos $\delta$ cota del error relativo en el almacenamiento \lp $\delta \sim \frac{1}{2}10^{1-t} \equiv t$ cifras significativas\rp . Queremos analizar las diferencias entre: $\sum_{n=1}^{N}\frac{1}{n^2}$ vs $\sum_{n=N}^{1}\frac{1}{n^2}$. Calculamos primero el error cometido al sumar una secuencia general de $n$ términos:
-    
-    \begin{table}[H]
-            \centering
-            \label{no-asociativa}
-            \begin{tabular}{lll}
-                    Valor real & Aproximación & Cota del error absoluto \\
-                    $s_1 = x_ 1$ & $\ap{s_1} = \ap{x_1}$ & $\varepsilon\lp \ap{s_1}\rp  = \varepsilon_a\lp \ap{x_1}\rp  = \ap{x_1}\delta$ \\
-                    $s_2 = s_1 + x_ 2$ & $\ap{s_2} = \ap{s_1} + \ap{x_2}$  &   $\varepsilon_a\lp \ap{s_2}\rp  \simeq \lp 2x_1 + 2x_2\rp \delta$  \\
-                    $s_3 = s_2 + x_3$ & $\ap{s_3} = \ap{s_2} + \ap{x_3}$   &   $\varepsilon_a\lp \ap{s_3}\rp  \simeq \lp 3x_1 + 3x_2 + 2x_3\rp \delta$\\
-                    $s_4 = s_3 + x_4$ & $\ap{s_4} = \ap{s_3} + \ap{x_4}$   &   $\varepsilon_a\lp \ap{s_4}\rp  \simeq \lp 4x_1 + 4x_2 + 3x_3 + 2x_4\rp \delta$ \\
-                    $s_N = s_{N-1} + x_N$ & $\ap{s_N} = \ap{s_{N-1}} + \ap{x_N}$ & $\varepsilon_a\lp \ap{s_N}\rp  \simeq \lp Nx_1 + Nx_2 + \lp N-1\rp x_3 + \lp N-2\rp x_4 + \cdots + 2x_N\rp \delta$
-            \end{tabular}
-    \end{table}
-
-    Derivación de las cotas \lp casos $s_1$,$s_2$; las demás se obtienen análogamente\rp :
-
-    \begin{align*}
-            \lp 1\rp  : & \varepsilon_a\lp \ap{s_2}\rp  = \varepsilon_a\lp \ap{s_1}\rp  + \varepsilon_a\lp x_2\rp  + \lp \ap{s_1} + \ap{x_2}\rp \delta = x_1\delta + x_2\delta + \lp \ap{x_1} + \ap{x_2}\rp \delta \simeq \lp 2x_1 + 2x_2\rp \delta \\
-            \lp 2\rp  : & \varepsilon_a\lp \ap{s_3}\rp  = \varepsilon_a\lp \ap{s_2}\rp  + \varepsilon_a\lp x_3\rp  + \lp \ap{s_2} + \ap{x_3}\rp \delta \simeq \lp 2x_1 + 2x_2\rp \delta + x_3\delta + \lp x_1 + x_2 + x_3\rp \delta = \lp 3x_1 + 3x_2 + 2x_3\rp \delta \\
-    \end{align*}
-    
-    Para minimizar el error, querríamos: $x_1 \leq x_ 2 \leq x_3 \leq \cdots \leq x_N$. En nuestro caso particular con $x_j \coloneqq \frac{1}{j^2}$, este resultado nos indica que la suma inversa \lp $\sum_{j=N}^{1}\frac{1}{j^2}$\rp  daría un resultado mejor.
-    \end{comment}
-    
+  \begin{enumerate}[1)]
+	  \item $\varepsilon_a\lp \ap{s}_2\rp  = \varepsilon_a\lp \ap{s}_1\rp  + \varepsilon_a\lp x_2\rp  + \lp \ap{s}_1 + \ap{x}_2\rp \delta = x_1\delta + x_2\delta + \lp \ap{x}_1 + \ap{x}_2\rp \delta \simeq \lp 2x_1 + 2x_2\rp \delta $
+	  \item $\varepsilon_a\lp \ap{s}_3\rp  = \varepsilon_a\lp \ap{s}_2\rp  + \varepsilon_a\lp x_3\rp  + \lp \ap{s}_2 + \ap{x}_3\rp \delta \simeq \lp 2x_1 + 2x_2\rp \delta + x_3\delta + \lp x_1 + x_2 + x_3\rp \delta = \lp 3x_1 + 3x_2 + 2x_3\rp \delta $
+  \end{enumerate}
+  
+  Per minimitzar l'error voldríem que $x_1 \leq x_ 2 \leq x_3 \leq \cdots \leq x_N$. En el nostre cas tenim $x_j = \frac{1}{j^2}$. Aquest resultat ens indica que la suma inversa ($\sum_{j=N}^{1}\frac{1}{j^2}$)  donaria un millor resultat.
+\end{example}
