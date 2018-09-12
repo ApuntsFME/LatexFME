@@ -1,25 +1,25 @@
 \chapter{Grupos}
 
 \begin{defi}[grupo]
-    Un grupo $G$ es un conjunto, no vacío, donde hay definida una operación interna
+    Un grupo es un par $\lp G, \cdot \rp$, donde $G$ es un conjunto no vacío y $\cdot$ es una operación interna, es decir, una aplicación
     \[
         \begin{aligned}
-            G \times G &\mapsto G \\
-            (a, b) &\to a * b
+            \cdot \colon G \times G &\to G \\
+            (a, b) &\mapsto a \cdot b
         \end{aligned}
     \]
-    que cumple
+    que satisface
     \begin{enumerate}
-        \item $(a*b)*c = a*(b*c)$
-        \item $\exists$ elemento neutro, e.d., $\exists e \forall a \in G \tq a*e = e*a = a$
-        \item $\forall a \in G, \, \exists \tilde{a} \in G \tq a * \tilde{a} = \tilde{a}*a = e$
+        \item $(a\cdot b)\cdot c = a\cdot (b\cdot c)$, i.e., la propiedad asociativa,
+        \item $\exists e \tq \forall a \in G, \, a\cdot e = e\cdot a = a$, i.e., existe un elemento neutro,
+        \item $\forall a \in G, \, \exists \tilde{a} \in G \tq a \cdot \tilde{a} = \tilde{a}\cdot a = e$, i.e., todo elemento tiene inverso.
     \end{enumerate}
 \end{defi}
 
 \begin{defi}[grupo!abeliano o conmutativo]
-    Diremos que $G$ es un grupo abeliano o conmutativo, si es un grupo y además verifica la propiedad conmutativa:
+    Diremos que $\lp G, \cdot \rp$ es un grupo abeliano o conmutativo si es un grupo y además satisface la propiedad conmutativa:
     \[
-        a*b = b*a \quad \forall a, b \in G
+        a\cdot b = b\cdot a, \quad \forall a, b \in G.
     \]
 \end{defi}
 
@@ -35,54 +35,56 @@
 \end{obs}
 
 \begin{defi}[subgrupo]
-    Sea $G$ un grupo, diremos que un subgrupo de $G$ es un subconjunto $H \subseteq G$ tal que
+    Sea $\lp G, \cdot \rp$ un grupo. Decimos que $\lp H, \cdot_{\mid H} \rp$ (o, cometiendo un abuso de notación, $\lp H, \cdot \rp$) es un subgrupo de $\lp G, \cdot \rp$ si $H \subseteq G$ y se satisface
     \begin{itemize}
         \item $H \neq \emptyset$
-        \item $a, b \in H \implies a*b \in H$ (operación cerrada)
+        \item $a, b \in H \implies a\cdot b \in H$ (la operación es cerrada)
         \item $\forall a \in H, a^{-1} \in H$
     \end{itemize}
 \end{defi}
 
 \begin{obs}
-    Los subgrupos son los grupos (con operación restringida) incluidos en el grupo.
+    Los subgrupos son aquellos grupos $\lp H, \cdot_{\mid H} \rp$ con $H\subseteq G$.
 \end{obs}
 \begin{proof}
-    Sea $H \subset G$ un subgrupo de $G$. Queremos ver que $H$ es un grupo:
-    Tenemos una operación:
+    Sea $\lp H, \cdot \rp$ un subgrupo de $\lp G, \cdot \rp$. Queremos ver que $\lp H, \cdot \rp$ es un grupo.
+    Tenemos la operación
     \[
         \begin{aligned}
-            H \times H &\mapsto H \\
-            (x, y) &\to x*y \in H
+            \cdot \colon H \times H &\to H \\
+            (a, b) &\mapsto a\cdot b \in H.
         \end{aligned}
     \]
-    Tiene la propiedad asociativa ya que todos los elementos de $G$ la cumplen, por lo tanto también los de $H$.
-    Existe elemento neutro ya que $\exists a \in H$ y $\exists a^{-1} \in H$, entonces $a*a^{-1}=e \in H$.
-    Y la última propiedad está impuesta.
+    Tiene la propiedad asociativa porque es la restricción de una operación con la propiedad asociativa.
+    Existe elemento neutro ya que $\exists a \in H$ y $\exists a^{-1} \in H$, de modo que $a\cdot a^{-1}=e \in H$.
+    La última propiedad está impuesta.
+    
+    (creo que hace falta ver el recíproco)
 \end{proof}
 
 \begin{example}
     \begin{itemize}
         \item[]
-        \item Sea $G$ un grupo, los subgrupos impropios son
+        \item Sea $\lp G, \cdot \rp$ un grupo. Los subgrupos impropios son
                 $\begin{cases}
-                    \setb{1} &\text{trivial} \\
-                    G &
-                \end{cases}$.
-        \item $\z \subset \q \subset \real \subset \cx$ con la suma son grupos y subgrupos.
-        \item $\z/n\z$.
+                    \lp \setb{1}, \cdot \rp &\text{(el subgrupo trivial)} \\
+                    \lp G, \cdot \rp. &
+                \end{cases}$
+        \item $\lp \z, + \rp, \lp \n, + \rp, \lp \real, + \rp, \lp \cx, + \rp$ son grupos y subgrupos.
+        \item $\lp \z/n\z, + \rp$.
         \item Si $G$ y $H$ son dos grupos, entonces
             \[
                  G \times H = \setb{(x,y) \vert x \in G, \, y \in H}   
             \]
             es un grupo, con $(a, b) \cdot (c, d) = (ac, bd)$.
-        \item $S_n$ es el grupo simétrico de $n$ elementos (permutaciones de $n$ elementos).
-        \item Grupo diedial. $D_{2n} =$ conjuntos de las isometrías del plano que dejan invariante $P_n$.
-            Donde $P_n$ es un polígono regular de $n$ lados (raices $n$-esimas de 1)
+        \item $\lp S_n, \circ \rp$ es el grupo simétrico de $n$ elementos (permutaciones de $n$ elementos).
+        \item Grupo diedial. $\lp D_{2n}, \circ \rp$, donde $D_{2n}$ son los conjuntos de las isometrías del plano que dejan invariante $P_n$.
+            $P_n$ es un polígono regular de $n$ lados (raices $n$-esimas de 1). Por ejemplo,
 
             \[
                 D_{2 \cdot 4} = \setb{id, r, r^2, r^3, s, rs, r^2s, r^3s}
             \]
-            Con $r$ la rotación horaria de 90º y $s$ la simetría respecto al eje $x$.
+            Con $r$ la rotación horaria de $\pi / 2$ y $s$ la simetría respecto del eje $x$.
     \end{itemize}
 \end{example}
 
