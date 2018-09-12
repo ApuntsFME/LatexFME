@@ -1,8 +1,8 @@
 #!/bin/bash
 
 NAME="main"
-DEST="/pdfs/segundo/algebra_multilineal_y_geometria.pdf"
-MSG="multi"
+DEST="/pdfs/tercero/estructuras_algebraicas.pdf"
+MSG="estructures"
 
 source ../upload_file.sh
 

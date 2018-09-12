@@ -16,21 +16,22 @@
     \end{enumerate}
 \end{defi}
 
-\begin{defi}[grupo!conmutativo]
-    Diremos que $G$ es un grupo conmutativo, si es un grupo y además verifica la propiedad conmutativa:
+\begin{defi}[grupo!abeliano o conmutativo]
+    Diremos que $G$ es un grupo abeliano o conmutativo, si es un grupo y además verifica la propiedad conmutativa:
     \[
         a*b = b*a \quad \forall a, b \in G
     \]
 \end{defi}
 
 \begin{obs}
-    Notación: existen varias notaciones para referirnos a esta operación:
-    \begin{tabular}{cccc}
-        Notación & Operación & Elemento neutro & Inverso \\
-        \hline \\
-        Aditiva & $+$ & 0 & $-a$ \\
-        Multiplicativa & $\cdot$ & 1 & $a^{-1}$ 
-    \end{tabular}
+    Existen varias notaciones para referirnos a esta operación:
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|} \hline
+            Operación & S\'imbolo & Elemento neutro & Elemento inverso \\ \hline \hline
+            Aditiva & $+$ & 0 & $-a$ (e. opuesto) \\ \hline
+            Multiplicativa & $\cdot$ & 1 & $a^{-1}$ \\ \hline
+        \end{tabular}
+    \end{center}
 \end{obs}
 
 \begin{defi}[subgrupo]
@@ -61,22 +62,20 @@
 
 \begin{example}
     \begin{itemize}
-        \item
-            \[
-                \text{Sea $G$ un grupo, los subgrupos impropios son}
-                \begin{cases}
-                    \setb{1} \text{ trivial} \\
-                    G
-                \end{cases}
-            \]
-        \item $\z \subset \q \subset \real \subset \cx$ con la suma son grupos y subgrupos
-        \item TODO $\z$ modulo n
-        \item Si $G$ y $H$ son dos grupos
+        \item[]
+        \item Sea $G$ un grupo, los subgrupos impropios son
+                $\begin{cases}
+                    \setb{1} &\text{trivial} \\
+                    G &
+                \end{cases}$.
+        \item $\z \subset \q \subset \real \subset \cx$ con la suma son grupos y subgrupos.
+        \item $\z/n\z$.
+        \item Si $G$ y $H$ son dos grupos, entonces
             \[
                  G \times H = \setb{(x,y) \vert x \in G, \, y \in H}   
             \]
             es un grupo, con $(a, b) \cdot (c, d) = (ac, bd)$.
-        \item $S_n$ es el grupo simétrico de $n$ elementos (permutaciones de $n$ elementos)
+        \item $S_n$ es el grupo simétrico de $n$ elementos (permutaciones de $n$ elementos).
         \item Grupo diedial. $D_{2n} =$ conjuntos de las isometrías del plano que dejan invariante $P_n$.
             Donde $P_n$ es un polígono regular de $n$ lados (raices $n$-esimas de 1)
 
