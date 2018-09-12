@@ -1,0 +1,26 @@
+\documentclass[12pt]{book}
+
+\input{../preamble_es}
+
+\AtBeginDocument{\renewcommand{\contentsname}{Contenidos}}
+\AtBeginDocument{\renewcommand{\chaptername}{Tema}}
+
+\begin{document}
+
+\frontmatter
+
+\input{title}
+
+\tableofcontents
+
+\mainmatter
+
+\setcounter{chapter}{-1}
+
+% INPUTS
+\input{tema_cero}
+\input{tema_uno}
+
+\printindex
+
+\end{document}

@@ -1,0 +1,90 @@
+\chapter{Grupos}
+
+\begin{defi}[grupo]
+    Un grupo $G$ es un conjunto, no vacío, donde hay definida una operación interna
+    \[
+        \begin{aligned}
+            G \times G &\mapsto G \\
+            (a, b) &\to a * b
+        \end{aligned}
+    \]
+    que cumple
+    \begin{enumerate}
+        \item $(a*b)*c = a*(b*c)$
+        \item $\exists$ elemento neutro, e.d., $\exists e \forall a \in G \tq a*e = e*a = a$
+        \item $\forall a \in G, \, \exists \tilde{a} \in G \tq a * \tilde{a} = \tilde{a}*a = e$
+    \end{enumerate}
+\end{defi}
+
+\begin{defi}[grupo!conmutativo]
+    Diremos que $G$ es un grupo conmutativo, si es un grupo y además verifica la propiedad conmutativa:
+    \[
+        a*b = b*a \quad \forall a, b \in G
+    \]
+\end{defi}
+
+\begin{obs}
+    Notación: existen varias notaciones para referirnos a esta operación:
+    \begin{tabular}{cccc}
+        Notación & Operación & Elemento neutro & Inverso \\
+        \hline \\
+        Aditiva & $+$ & 0 & $-a$ \\
+        Multiplicativa & $\cdot$ & 1 & $a^{-1}$ 
+    \end{tabular}
+\end{obs}
+
+\begin{defi}[subgrupo]
+    Sea $G$ un grupo, diremos que un subgrupo de $G$ es un subconjunto $H \subseteq G$ tal que
+    \begin{itemize}
+        \item $H \neq \emptyset$
+        \item $a, b \in H \implies a*b \in H$ (operación cerrada)
+        \item $\forall a \in H, a^{-1} \in H$
+    \end{itemize}
+\end{defi}
+
+\begin{obs}
+    Los subgrupos son los grupos (con operación restringida) incluidos en el grupo.
+\end{obs}
+\begin{proof}
+    Sea $H \subset G$ un subgrupo de $G$. Queremos ver que $H$ es un grupo:
+    Tenemos una operación:
+    \[
+        \begin{aligned}
+            H \times H &\mapsto H \\
+            (x, y) &\to x*y \in H
+        \end{aligned}
+    \]
+    Tiene la propiedad asociativa ya que todos los elementos de $G$ la cumplen, por lo tanto también los de $H$.
+    Existe elemento neutro ya que $\exists a \in H$ y $\exists a^{-1} \in H$, entonces $a*a^{-1}=e \in H$.
+    Y la última propiedad está impuesta.
+\end{proof}
+
+\begin{example}
+    \begin{itemize}
+        \item
+            \[
+                \text{Sea $G$ un grupo, los subgrupos impropios son}
+                \begin{cases}
+                    \setb{1} \text{ trivial} \\
+                    G
+                \end{cases}
+            \]
+        \item $\z \subset \q \subset \real \subset \cx$ con la suma son grupos y subgrupos
+        \item TODO $\z$ modulo n
+        \item Si $G$ y $H$ son dos grupos
+            \[
+                 G \times H = \setb{(x,y) \vert x \in G, \, y \in H}   
+            \]
+            es un grupo, con $(a, b) \cdot (c, d) = (ac, bd)$.
+        \item $S_n$ es el grupo simétrico de $n$ elementos (permutaciones de $n$ elementos)
+        \item Grupo diedial. $D_{2n} =$ conjuntos de las isometrías del plano que dejan invariante $P_n$.
+            Donde $P_n$ es un polígono regular de $n$ lados (raices $n$-esimas de 1)
+
+            \[
+                D_{2 \cdot 4} = \setb{id, r, r^2, r^3, s, rs, r^2s, r^3s}
+            \]
+            Con $r$ la rotación horaria de 90º y $s$ la simetría respecto al eje $x$.
+    \end{itemize}
+\end{example}
+
+
