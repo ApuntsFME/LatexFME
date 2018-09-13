@@ -55,7 +55,7 @@ with open(nfile, 'r') as f:
         fpage = re.findall(pa, line)
         if (len(fpage) > 0):
             i = int(fpage[0])
-            line = re.sub(pa, '\hyperref[' + labels[i] + ']{' + pages[i] + '}', line)
+            line = re.sub(pa, r'\\hyperref[' + labels[i] + ']{' + pages[i] + '}', line)
         newind += line
     f.close
     
