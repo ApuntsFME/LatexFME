@@ -1,3 +1,143 @@
 \chapter{Permutaciones}
 
+\section{Repaso de permutaciones}
 
+El grupo simétrico $S_n$ es el grupo de las permutaciones de los elementos
+$\setb{1, 2, \dots, n}$ y el cardinal de $S_n$ es $\# S_n = \abs{S_n} = n!$
+
+Si $\sigma \in S_n$, podemos escribir $\sigma$ como
+\[
+    \begin{pmatrix}
+        1 & 2 & 3 & \cdots & n \\
+        \sigma(1) & \sigma(2) & \sigma(3) & \cdots & \sigma(n)
+    \end{pmatrix}
+\]
+
+Cualquier permutación se descompone en ciclos, por ejemplo
+$\sigma = (1, 4, 5, 2) \in S_5$ es lo mismo que
+\[
+    \sigma = 
+    \begin{pmatrix}
+        1 & 2 & 3 & 4 & 5 \\
+        4 & 1 & 3 & 5 & 2
+    \end{pmatrix}
+\]
+
+Entones $\sigma = \sigma_1 \cdots \sigma_r$ con $\sigma_i$ son ciclos disjuntos.
+
+\begin{obs}
+    La multiplicación no es conmutativa. Pero las permutaciones con elementos disjuntos sí que conmutan.
+\end{obs}
+
+Todo ciclo se puede descomponer como producto de transposiciones $z = (i, j)$
+
+Por lo tanto, podemos descomponer toda permutación como producto de transposiciones, pero esta
+descomposición no es única.
+
+Lo que sí que se mantiene es la paridad del número de trasposiciones. Es decir
+\[
+    \begin{aligned}
+        \sigma &= z_1 \cdots z_r \\
+        \sigma &= \bar{z}_1 \cdots \bar{z}_s
+    \end{aligned} \implies r \text{ par} \iff s \text{ par}
+\]
+
+Esto nos permite definir unequivocamente el signo de la permutación:
+\[
+    \sgn(\sigma) = (-1)^{r}
+\]
+donde $r$ es el número de trasposiciones.
+
+\begin{defi}[orden de una permutación]
+    Definimos el orden de una permutación como el mínimo $k$ tal que $\sigma^k = \Id$
+\end{defi}
+
+\begin{example}
+    $\sigma = (1, 4, 5, 2)$. Calcular el orden de $\sigma$.
+    \[
+        \sigma^2 = \sigma \cdot \sigma =
+        \begin{pmatrix}
+            1 & 2 & 3 & 4 & 5 \\
+            4 & 1 & 3 & 5 &2
+        \end{pmatrix}
+        \begin{pmatrix}
+            1 & 2 & 3 & 4 & 5 \\
+            4 & 2 & 3 & 5 & 2
+        \end{pmatrix} = 
+        \begin{pmatrix}
+            1 & 2 & 3 & 4 & 5 \\
+            5 & 4 & 3 & 2 & 1
+        \end{pmatrix}
+    \]
+    Y así sucesivamente, llegaremos a que $\sigma^4 = \Id$
+\end{example}
+
+Más en general, se tiene que, si $\sigma = \sigma_1 \sigma_2 \cdots \sigma_n$ entonces
+\[
+    \ord(\sigma) = \mcm \left( \ord (\sigma_1), \ord(\sigma_2), \dots, \ord(\sigma_r) \right)
+\]
+
+\section{Ejercicios}
+
+\begin{ej} %TODO poner ejercicios 3 y 4
+    En general toda permutación de $S_n$ descompone en producto de trasposiciones
+    $(1, 2), (1, 3), \dots (1, n)$
+\end{ej}
+
+\begin{proof}
+    En general tenemos que una trasposición cualquiera
+    \[
+        (i, j) = (1, i)(1, j)(1,i)
+    \]
+\end{proof}
+
+\begin{ej}
+    \[
+        \sigma =
+        \begin{pmatrix}
+            1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+            3 & 7 & 8 & 9 & 4 & 5 & 2 & 1 & 6
+        \end{pmatrix}
+        = (1, 3, 8) (2, 7) (4, 9, 6, 5)
+    \]
+    Por lo tanto, el orden de $\sigma$ es:
+    \[
+        \ord(\sigma) = \mcm\left( 3, 2, 4 \right) = 12
+    \]
+    Ahora, descomponemos en trasposiciones:
+    \[
+        \begin{aligned}
+            (1, 3, 8) &= (1, 8) (1, 3) \\
+            (2, 7) &= (2, 7) \\
+            (4, 9, 6, 5) &= (4, 5) (4, 6) (4, 9)
+        \end{aligned}
+    \]
+    Con lo cual, $\sgn(\sigma) = (-1)^6 = 1$.
+\end{ej}
+
+\begin{ej} %TODO de verdad nos queremos aburrir con los casos? preguno eh.
+    Encontrar todos los valores $x, y, z, t$ tales que 
+    \[
+        \sigma =
+        \begin{pmatrix}
+            1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+            3 & 5 & 6 & x & y & 1 & z & t
+        \end{pmatrix}
+    \]
+    tenga orden tres.
+    Primero descomponemos $\sigma$:
+    \[
+        \sigma = (1, 3, 6)
+        \begin{pmatrix}
+            2 & 4 & 5 & 7 & 8 \\
+            5 & x & y & z & t
+        \end{pmatrix}
+    \]
+    y queremos que el segundo miembro tenga orden 3.
+
+    \begin{itemize}
+        \item Si $y = 2$, tenemos el ciclo $(2, 5)$ que tiene orden 2 y por lo tanto $\ord(\sigma)$
+            es multiplo de 2.
+        \item Si $y = 4$ 
+    \end{itemize}<++>
+\end{ej}
