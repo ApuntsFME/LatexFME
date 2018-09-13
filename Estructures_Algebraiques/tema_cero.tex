@@ -10,7 +10,7 @@ Si $\sigma \in S_n$, podemos escribir $\sigma$ como
     \begin{pmatrix}
         1 & 2 & 3 & \cdots & n \\
         \sigma(1) & \sigma(2) & \sigma(3) & \cdots & \sigma(n)
-    \end{pmatrix}
+    \end{pmatrix}.
 \]
 
 Cualquier permutación se descompone en ciclos, por ejemplo
@@ -20,7 +20,7 @@ $\sigma = (1, 4, 5, 2) \in S_5$ es lo mismo que
     \begin{pmatrix}
         1 & 2 & 3 & 4 & 5 \\
         4 & 1 & 3 & 5 & 2
-    \end{pmatrix}
+    \end{pmatrix}.
 \]
 
 Entones $\sigma = \sigma_1 \cdots \sigma_r$ con $\sigma_i$ son ciclos disjuntos.
@@ -29,11 +29,9 @@ Entones $\sigma = \sigma_1 \cdots \sigma_r$ con $\sigma_i$ son ciclos disjuntos.
     La multiplicación no es conmutativa. Pero las permutaciones con elementos disjuntos sí que conmutan.
 \end{obs}
 
-Todo ciclo se puede descomponer como producto de transposiciones $z = (i, j)$
-
+Todo ciclo se puede descomponer como producto de transposiciones $z = (i, j)$.
 Por lo tanto, podemos descomponer toda permutación como producto de transposiciones, pero esta
 descomposición no es única.
-
 Lo que sí que se mantiene es la paridad del número de trasposiciones. Es decir,
 \[
     \begin{aligned}
@@ -49,7 +47,7 @@ Esto nos permite definir unequívocamente el signo de la permutación:
 donde $r$ es el número de trasposiciones.
 
 \begin{defi}[orden de una permutación]
-    Definimos el orden de una permutación como el mínimo $k$ tal que $\sigma^k = \Id$
+    Definimos el orden de una permutación como el mínimo $k$ tal que $\sigma^k = \Id$.
 \end{defi}
 
 \begin{example}
@@ -67,27 +65,27 @@ donde $r$ es el número de trasposiciones.
         \begin{pmatrix}
             1 & 2 & 3 & 4 & 5 \\
             5 & 4 & 3 & 2 & 1
-        \end{pmatrix}
+        \end{pmatrix},
     \]
-    Y así sucesivamente, llegaremos a que $\sigma^4 = \Id$.
+    y así sucesivamente, llegaremos a que $\sigma^4 = \Id$.
 \end{example}
 
-Más en general, se tiene que, si $\sigma = \sigma_1 \sigma_2 \cdots \sigma_n$ entonces
+Más en general, se tiene que, si $\sigma = \sigma_1 \sigma_2 \cdots \sigma_n$, entonces
 \[
-    \ord(\sigma) = \mcm \left( \ord (\sigma_1), \ord(\sigma_2), \dots, \ord(\sigma_r) \right)
+    \ord(\sigma) = \mcm \left( \ord (\sigma_1), \ord(\sigma_2), \dots, \ord(\sigma_r) \right).
 \]
 
 \section{Ejercicios}
 
 \begin{ej} %TODO poner ejercicios 3 y 4
     En general toda permutación de $S_n$ descompone en producto de trasposiciones
-    $(1, 2), (1, 3), \dots (1, n)$
+    $(1, 2), (1, 3), \dots (1, n)$.
 \end{ej}
 
 \begin{proof}
     En general tenemos que una trasposición cualquiera
     \[
-        (i, j) = (1, i)(1, j)(1,i)
+        (i, j) = (1, i)(1, j)(1,i).
     \]
 \end{proof}
 
@@ -102,17 +100,17 @@ Más en general, se tiene que, si $\sigma = \sigma_1 \sigma_2 \cdots \sigma_n$ e
     \]
     Por lo tanto, el orden de $\sigma$ es:
     \[
-        \ord(\sigma) = \mcm\left( 3, 2, 4 \right) = 12
+        \ord(\sigma) = \mcm\left( 3, 2, 4 \right) = 12.
     \]
     Ahora, descomponemos en trasposiciones:
     \[
         \begin{aligned}
             (1, 3, 8) &= (1, 8) (1, 3) \\
             (2, 7) &= (2, 7) \\
-            (4, 9, 6, 5) &= (4, 5) (4, 6) (4, 9)
+            (4, 9, 6, 5) &= (4, 5) (4, 6) (4, 9),
         \end{aligned}
     \]
-    Con lo cual, $\sgn(\sigma) = (-1)^6 = 1$.
+    con lo cual $\sgn(\sigma) = (-1)^6 = 1$.
 \end{ej}
 
 \begin{ej} %TODO de verdad nos queremos aburrir con los casos? preguno eh.
@@ -125,6 +123,7 @@ Más en general, se tiene que, si $\sigma = \sigma_1 \sigma_2 \cdots \sigma_n$ e
         \end{pmatrix}
     \]
     tenga orden tres.
+
     Primero descomponemos $\sigma$:
     \[
         \sigma = (1, 3, 6)
@@ -137,7 +136,7 @@ Más en general, se tiene que, si $\sigma = \sigma_1 \sigma_2 \cdots \sigma_n$ e
 
     \begin{itemize}
         \item Si $y = 2$, tenemos el ciclo $(2, 5)$ que tiene orden 2 y por lo tanto $\ord(\sigma)$
-            es multiplo de 2.
-        \item Si $y = 4$ 
+            es m\'ultiplo de 2.
+        \item Si $y = 4$??%TODO
     \end{itemize}
 \end{ej}
