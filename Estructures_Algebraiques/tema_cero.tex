@@ -2,7 +2,7 @@
 
 \section{Repaso de permutaciones}
 
-El grupo simétrico $S_n$ es el grupo de las permutaciones de los elementos
+El grupo simétrico $\lp S_n, \circ \rp$ es el grupo de las permutaciones de los elementos
 $\setb{1, 2, \dots, n}$ y el cardinal de $S_n$ es $\# S_n = \abs{S_n} = n!$
 
 Si $\sigma \in S_n$, podemos escribir $\sigma$ como
@@ -34,17 +34,17 @@ Todo ciclo se puede descomponer como producto de transposiciones $z = (i, j)$
 Por lo tanto, podemos descomponer toda permutación como producto de transposiciones, pero esta
 descomposición no es única.
 
-Lo que sí que se mantiene es la paridad del número de trasposiciones. Es decir
+Lo que sí que se mantiene es la paridad del número de trasposiciones. Es decir,
 \[
     \begin{aligned}
         \sigma &= z_1 \cdots z_r \\
         \sigma &= \bar{z}_1 \cdots \bar{z}_s
-    \end{aligned} \implies r \text{ par} \iff s \text{ par}
+    \end{aligned} \implies r \text{ par} \iff s \text{ par}.
 \]
 
-Esto nos permite definir unequivocamente el signo de la permutación:
+Esto nos permite definir unequívocamente el signo de la permutación:
 \[
-    \sgn(\sigma) = (-1)^{r}
+    \sgn(\sigma) = (-1)^{r},
 \]
 donde $r$ es el número de trasposiciones.
 
@@ -62,14 +62,14 @@ donde $r$ es el número de trasposiciones.
         \end{pmatrix}
         \begin{pmatrix}
             1 & 2 & 3 & 4 & 5 \\
-            4 & 2 & 3 & 5 & 2
+            4 & 1 & 3 & 5 & 2
         \end{pmatrix} = 
         \begin{pmatrix}
             1 & 2 & 3 & 4 & 5 \\
             5 & 4 & 3 & 2 & 1
         \end{pmatrix}
     \]
-    Y así sucesivamente, llegaremos a que $\sigma^4 = \Id$
+    Y así sucesivamente, llegaremos a que $\sigma^4 = \Id$.
 \end{example}
 
 Más en general, se tiene que, si $\sigma = \sigma_1 \sigma_2 \cdots \sigma_n$ entonces
