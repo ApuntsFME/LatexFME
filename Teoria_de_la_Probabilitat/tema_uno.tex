@@ -1,0 +1,51 @@
+\chapter{Espai de probabilitat}
+
+\section{Definició axiomàtica de probabilitat}
+
+\begin{defi}[Espai de probabilitat]
+    Un espai de probabilitat és un espai de mesura $(\Omega,\Asuc, p)$ tal que $p(\Omega)=1$.
+\end{defi}
+
+\begin{defi}[Espai mostral]
+    $\Omega$ és l'espai mostral.
+\end{defi}
+
+\begin{defi}[Conjunt d'esdeveniments]
+    $\Asuc$ és el conjunt d'esdeveniments o de successos.
+\end{defi}
+
+\begin{defi}[Funció de probabilitat]
+    $p$ és la funció de probabilitat.
+\end{defi}
+
+\begin{obs}
+    $(\Omega,\Asuc)$ és un espai mesurable si compleix les tres condicions de $\sigma$-àlgebra:
+    \begin{enumerate}
+        \item $\emptyset \in \Asuc$
+        \item $A \in \Asuc \iff \overline{A} = A^c \in \Asuc$
+        \item Si $\lc A_i\rc _{i\ge1}$ és una família en $\Asuc$, aleshores $\bigcup_{i\ge1}{A_i} \in \Asuc$.
+    \end{enumerate}
+    Si $\mu$ és una mesura sobre l'espai de mesura ($(\Omega,\Asuc,\mu)$ és un espai mesurable):
+    \begin{enumerate}
+        \item $\mu(\emptyset) = 0$
+        \item $\forall A \in \Asuc,\quad \mu(A) \ge0$
+        \item ($\sigma$-additivitat) Si $\lc A_i\rc_{i\ge 1}$ és una família en $\Asuc$ tal que $\forall i \neq j,\quad A_i \cap A_j = \emptyset$,
+        aleshores \[\mu\lp\bigcup_{i\ge 1}{A_i}\rp = \sum_{i\ge1}{\mu(A_i)}\]
+    \end{enumerate}
+\end{obs}
+
+\begin{prop}[Propietats d'un espai de probabilitat]
+    Sigui $(\Omega,\Asuc, p)$ espai de probabilitat. Aleshores:
+    \begin{enumerate}
+        \item $A \in \Asuc \Longrightarrow p(\overline{A})=1-p(A)$
+        \item $A,B \in \Asuc, A \subseteq B \Longrightarrow p(A) \le p(B)$
+        \item %TODO
+        \item %TODO
+        \item %TODO
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    %TODO
+\end{proof}
+
+
