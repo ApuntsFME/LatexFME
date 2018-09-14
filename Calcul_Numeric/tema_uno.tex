@@ -1,6 +1,6 @@
 \chapter{Ceros de funciones}
 
-Los métodos numéricos nos proporcionan aproximaciones succesivas de la raíz ($\alpha$).
+Los métodos numéricos nos proporcionan aproximaciones succesivas de una raíz ($\alpha$) de una función.
 Comenzaremos con una aproximación inicial $x^0$  y el método nos proporcionará $x^1$. Más
 generalmente, dado un $x^k$, el método nos proporcionará $x^{k+1}$.
 
@@ -20,31 +20,35 @@ El inconveniente principal de este método es la velocidad: es un método muy le
 
 Dada una aproximación de la raíz $x^k$, calcularemos la siguiente aproximación $x^{k+1}$ como el cero de 
 la recta tangente a $f$ en $x^k$, es decir, aproximaremos $f(x) \approx
-f\left( x^k \right) + f^\prime\left( x^k \right) \left( x - x^k \right) = 0$  solución de esta ecuación,
-será nuestro $x^{k+1}$,
+f\left( x^k \right) + f^\prime\left( x^k \right) \left( x - x^k \right)$ y $x^{k+1}$ será el 0 de esta función aproximada:
+
 \[
     x^{k+1} = x^k - \frac{f\left( x^k \right)}{f^\prime\left( x^k \right)}.
 \]
 
-La venteja de este método es la velocidad (tiene convergencia cuadrática para raices simples).
+La ventaja de este método es la velocidad (tiene convergencia cuadrática para raíces simples).
 El inconveniente principal es que no es tan robusto: necesita una aproximación inicial suficientemente buena.
-Además, este método requiere de conocer la derivada $f^\prime(x)$, lo cual puede ser caro o imposible.
-
-%TODO poner un dibujico del método de newton??
+Además, este método requiere de conocer la derivada $f^\prime(x)$, lo cual puede ser costoso o imposible.
 
 \begin{center}
     \begin{tikzpicture}
         \begin{axis}[
                 xmin = 0.5,
                 xmax = 2,
-                ymin = -1,
-                ymax = 1,
+                ymin = -0.5,
+                ymax = 0.5,
                 samples = 100,
                 axis lines = center
         ]
             \addplot[domain=0.5:2, thick]{1/x-1};
-            \addplot[mark=*,color=red] coordinates {(0.8, 1/0.8 - 1)} node[pin=0:$x^0$]{};
+            \addplot[mark=*,color=gray] coordinates {(0.8, 1/0.8 - 1)} node[]{};
+            \addplot[mark=*,color=red] coordinates {(0.8, 0)} node[label=120:$x^0$]{};
             \addplot[domain=0.5:2, thick]{1/0.8 - 1 + (x - 0.8)*(-1/(0.8*0.8))};
+            \addplot[mark=*, color=blue] coordinates {(0.8 - (1/0.8 - 1)/(-1/(0.8*0.8)), 0)} node[pin=90:$x^1$]{};
+            \addplot[mark=*, color=teal] coordinates {(1, 0)} node[label=80:$\alpha$]{};
+            
+	    \draw (axis cs:0.8, 1/0.8 - 1) [color=gray, dashed] -- (axis cs:0.8, 0);
+        
         \end{axis}
     \end{tikzpicture}
 \end{center}
@@ -59,7 +63,33 @@ que pasa por $x^0$ y $x^1$ (substituye la derivada por la recta secante). Es dec
 
 Las ventajas e inconvenientes de este método son casi identicas a las del método de newton. Este método
 es un poco más lento que el de Newton, aunque converge bastante rápidamente y, igual que el de Newton,
-el punto flaco es que no es tan robusto.
+el punto flaco es que no es tan robusto como el de la bisección.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+                xmin = 0.2,
+                xmax = 2,
+                ymin = -0.5,
+                ymax = 0.5,
+                samples = 100,
+                axis lines = center
+        ]
+            \addplot[domain=0.5:2, thick]{1/x-1};
+            \addplot[mark=*,color=gray] coordinates {(0.7, 1/0.7 - 1)} node[]{};
+            \addplot[mark=*,color=gray] coordinates {(1.4, 1/1.4 - 1)} node[]{};
+            
+            \addplot[mark=*,color=red] coordinates {(0.7, 0)} node[label=270:$x^0$]{};
+            \addplot[mark=*,color=blue] coordinates {(1.4, 0)} node[label=90:$x^1$]{};
+            \addplot[domain=0.5:2, thick]{-50/49*x + 56/49};
+            \addplot[mark=*, color=green] coordinates {(56/50, 0)} node[label=85:$x^2$]{};
+            \addplot[mark=*, color=teal] coordinates {(1, 0)} node[label=90:$\alpha$]{};
+            
+            \draw (axis cs:0.7, 1/0.7 - 1) [color=gray, dashed] -- (axis cs:0.7, 0);
+            \draw (axis cs:1.4, 1/1.4 - 1) [color=gray, dashed] -- (axis cs:1.4, 0);
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
 
 \begin{obs*}
     El coste computacional se mide en número de evaluaciones de $f(x)$ (i de $F^\prime(x)$).
@@ -70,7 +100,7 @@ el punto flaco es que no es tan robusto.
 \section{Consistencia y convergencia}
 
 \begin{defi}[método!consistente]
-    Diremos que un método $x^{k+1} = \phi\left( x^k \right)$ es consistente si las raices son
+    Diremos que un método $x^{k+1} = \phi\left( x^k \right)$ es consistente si las raíces son
     los únicos puntos fijos, es decir,
     \[
         f(\alpha) = 0 \iff \phi(\alpha) = \alpha.
@@ -88,10 +118,10 @@ el punto flaco es que no es tan robusto.
     \[
         \phi(\alpha) = \alpha \implies \frac{f(\alpha)}{f^\prime(\alpha)} = 0 \implies f(\alpha) = 0.
     \]
-    Con la raíz doble, no podemos evaluar el método de Newton en $\alpha$, pero por l'Hopital llegaríamos
+    Con la raíz doble, no podemos evaluar el método de Newton en $\alpha$, pero por la regla de l'Hôpital llegaríamos
     a la conclusión de que, tomando el límite de $\phi$ se sigue cumpliendo.
 
-    Análogamente, podemos que el método de Newton es un método consistente para una raíz $\alpha$ de
+    Análogamente, podemos deducir que el método de Newton es un método consistente para una raíz $\alpha$ de
     cualquier múltiplicidad.
 \end{ej}
 
@@ -113,22 +143,22 @@ el punto flaco es que no es tan robusto.
 \begin{defi}[convergencia!lineal]
     Diremos que un esquema tiene convergencia lineal si
     \[
-        \abs{E^{k+a}} \leq \lambda \abs{E^k}, \;\lambda < 1.
+        \abs{E^{k+a}} \leq \lambda \abs{E^k}, \; \lambda < 1.
     \]
 \end{defi}
 
 \begin{defi}[convergencia!de orden $p$]
     Diremos que un esquema tiene convergencia de orden $p$ si
     \[
-        \abs{E^{k+1}} = \lambda \abs{E^k}^p.
+        \abs{E^{k+1}} \leq \lambda \abs{E^k}^p.
     \]
 \end{defi}
 
 \begin{defi}[convergencia!superlineal]
     Diremos que un esquema tiene convergencia superlineal si
-    \[
-        \abs{E^{k+a}} \leq \lambda_k \abs{E^k} \text{ ó }
-        \abs{E^{k+1}} \leq \lambda \abs{E^k}^q
-    \]
-    con $q \in (1, 2)$ y con $\lambda_k \to \infty$.
+    \begin{gather*}
+        \abs{E^{k+a}} \leq \lambda_k \abs{E^k}, \; \lambda_k \to 0 \\
+        \text{o bien} \\
+        \abs{E^{k+1}} \leq \lambda \abs{E^k}^q, \; q \in (1, 2).
+    \end{gather*}
 \end{defi}
