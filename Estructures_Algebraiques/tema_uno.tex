@@ -156,7 +156,7 @@
     \[
         H \cdot K = \setb{\Id, (1 \, 3), (1 \, 2), (1 \, 2)(1 \, 3) = (1 \, 3 \, 2)},
     \]
-    que no es un subgrupo.
+    que no es un grupo.
 \end{example}
 
 \begin{obs}
@@ -164,7 +164,7 @@
 \end{obs}
 
 \begin{proof}
-    Vamos a comprobar que $H \cdot K$ es subgrupo comprobando las propiedades.
+    Comprobemos que $H \cdot K$ satisface las propiedades de los grupos.
     \begin{itemize}
         \item 
             $
@@ -172,7 +172,7 @@
                     H \text{ sg.} \implies 1 \in H \\
                     K \text{ sg.} \implies 1 \in K
                 \end{rcases}
-                \implies 1 = 1\cdot 1 \in H \cdot K
+                \implies 1 = 1\cdot 1 \in H \cdot K.
             $
         \item
             $
@@ -180,11 +180,11 @@
                     xy \in HK \\
                     zt \in HK
                 \end{rcases}
-                \implies (xy)(zt) = (xyzt) = (xz)(yt) \in HK
+                \implies (xy)(zt) = (xyzt) = (xz)(yt) \in HK.
             $
         \item
             $
-                (xy)^{-1} = y^{-1} x^{.1} = x^{-1}y^{-1} \in HK
+                (xy)^{-1} = y^{-1} x^{.1} = x^{-1}y^{-1} \in HK.
             $
     \end{itemize}
 \end{proof}
@@ -192,7 +192,7 @@
 \begin{obs}
     Se tiene que
     \[
-        H \cap K \subset H, K \subset H \cup K \subset H \cdot K.
+        H \cap K \subseteq H, K \subseteq H \cup K \subseteq H \cdot K.
     \]
 \end{obs}
 
@@ -201,7 +201,7 @@
 \end{obs}
 
 \begin{proof}
-    Es claro que $H \cup K \subset HK$, ya que
+    Es claro que $H \cup K \subseteq HK$, ya que
     \[
         \forall x \in H, \, x\cdot1 = x \in HK
     \]
@@ -213,7 +213,7 @@
         \begin{rcases}
             a \in H \subset L \\
             b \in K \subset L \\
-            L \text{ es sg.}
+            L \text{ es subgrupo}
         \end{rcases}
         \implies ab = z \in L
     \]
@@ -221,14 +221,14 @@
 \end{proof}
 
 \begin{defi}[subgrupo!generado]
-        Sea $G$ un grupo y sea $S$ un subconjunto de $G$. Definimos 
+        Sea $\lp G, \cdot\rp$ un grupo y sea $S\subseteq G$. Definimos 
         \[
-            \left<S\right> = \setb{a_1 \cdots a_r \,\vert\, a_i \in S \text{ ó } a^{-1}_i \in S}.
+            \left<S\right> = \lp \lc 1 \rc \cup \setb{a_1 \cdots a_r \,\vert\, a_i \in S \text{ ó } a^{-1}_i \in S}, \cdot \rp.
         \]
 \end{defi}
 
 \begin{obs}
-    Si $S = \emptyset$, entonces $\left<S\right> = \setb{1}$.
+    Si $S = \emptyset$, entonces $\left<S\right> = \lp \setb{1}, \cdot \rp$.
 \end{obs}
 
 \begin{obs}
@@ -237,24 +237,24 @@
 
 \begin{proof}
     Si $S = \emptyset$ entonces es trivial.
-    Si $S \neq \emptyset$, es trivial que $S \subset \left<S\right>$, veremos ahora que es un subgrupo:
+    Si $S \neq \emptyset$, es trivial que $S \subset \left<S\right>$, veamos ahora que es un subgrupo de $G$:
     \begin{itemize}
-        \item $\exists a \in S \implies a \in \left<S\right> \implies \left<S\right> \neq \emptyset$
-        \item Si $a_1\cdots a_r, b_1 \cdots b_s \in \left<S\right> \implies a_1 \cdots a_r b_1 \cdots b_s \in \left<S\right>$
-        \item Si $a_1 \cdots a_r \in \left<S\right> \implies \left( a_1 \cdots a_r \right)^{-1} =
-            a^{-1}_r \cdots a^{-1}_1 \in \left<S\right>$
+        \item $\exists a \in S \implies a \in \left<S\right> \implies \left<S\right> \neq \emptyset$,
+        \item Si $a_1\cdots a_r, b_1 \cdots b_s \in \left<S\right>$, entonces $a_1 \cdots a_r b_1 \cdots b_s \in \left<S\right>$,
+        \item Si $a_1 \cdots a_r \in \left<S\right>$, entonces $\left( a_1 \cdots a_r \right)^{-1} =
+            a^{-1}_r \cdots a^{-1}_1 \in \left<S\right>$.
     \end{itemize}
-    Tomamos ahora $L$ un subgrupo, queremos ver que $\left<S\right> \subset L$.
+    Tomamos ahora $L$ un subgrupo de $G$ que contiene a $S$. Queremos ver que $\left<S\right> \subseteq L$.
     Para cualquier $a_1 \cdots a_r \in \left<S\right>$ tenemos que
     \[
         \begin{rcases}
-            a_1 \in S \subset L \text{ ó } a^{-1}_1 \in S \implies \left( a^{-1}_1 \right)^{-1} \in L\\
+            a_1 \in S \subseteq L \text{ o } a^{-1}_1 \in S \implies \left( a^{-1}_1 \right)^{-1} \in L\\
             \vdots \\
-            a_r \in S \subset L
+            a_r \in S \subseteq L\text{ o } a^{-1}_r \in S \implies \left( a^{-1}_r \right)^{-1} \in L
         \end{rcases}
-        \implies a_1 \cdots a_r \in L
+        \implies a_1 \cdots a_r \in L.
     \]
-    y por lo tanto, $\left<S\right> \subset L$
+    y por lo tanto, $\left<S\right> \subset L$.
 \end{proof}
 
 \begin{ej}
@@ -267,6 +267,6 @@
 \begin{ej}
     Demostrar que
     \[
-        \left<S\right> = \bigcap_{\substack{H \text{ sg. de } G \\ S \subset H}} H.
+        \left<S\right> = \bigcap_{\substack{H \text{ sg. de } G \\ S \subseteq H}} H.
     \]
 \end{ej}
