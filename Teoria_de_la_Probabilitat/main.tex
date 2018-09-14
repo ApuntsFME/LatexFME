@@ -1,0 +1,25 @@
+\documentclass[12pt]{book}
+
+\input{../preamble_ca}
+
+\AtBeginDocument{\renewcommand{\contentsname}{Continguts}}
+\AtBeginDocument{\renewcommand{\chaptername}{Tema}}
+
+\begin{document}
+
+\frontmatter
+
+\input{title}
+
+\tableofcontents
+
+\mainmatter
+
+\setcounter{chapter}{0}
+
+% INPUTS
+\input{tema_uno}
+
+\printindex
+
+\end{document}
