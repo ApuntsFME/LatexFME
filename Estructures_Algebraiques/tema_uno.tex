@@ -88,4 +88,178 @@
     \end{itemize}
 \end{example}
 
+\section{Intersección y producto de subgrupos}
 
+\begin{defi}[intesección de subgrupos]
+    Sea $G$ un grupo y sean $H, K \subset G$ subgrupos de $G$. Definimos la intersección de
+    $H$ y $K$ como
+    \[
+        H \cap K = \setb{x \in G \vert x \in H \text{ y } x \in K}
+    \]
+\end{defi}
+
+\begin{obs}
+    Si $H$ y $K$ son subgrupos de $G \implies H \cap K$ es subgrupo de $G$.
+    También es cierto con la instersección arbitraria.
+\end{obs}
+
+\begin{defi}[unión de subespacios]
+    Sea $G$ un grupo y sean $H, K \subset G$ subgrupos de $G$. Llamaremos unión de $H$ y $K$ a
+    \[
+        H \cap K = \setb{x \in G \vert x \in H ó x \in K}
+    \]
+\end{defi}
+
+\begin{obs}
+    En general, la unión de subgrupos no es subgrupo.
+\end{obs}
+
+\begin{example}
+    Tomamos el grupo simétrico como ejemplo:
+    \[
+        \Sim_3 = \setb{ \Id, (1 \, 2), (1 \, 3), (2 \, 3), (1 \, 2 \, 3), (1 \, 3 \, 2)}
+    \]
+    y tomamos
+    \[
+        H = \setb{\Id, (1 \, 2)}, \, K = \setb{\Id, (1 \, 3)}
+    \]
+    ahora
+    \[
+        H \cup K = \setb{\Id, (1 \, 2), (1\, 3)}
+    \]
+    pero
+    \[
+        (1 \, 2)(1 \, 3) = (1 \, 3 \, 2) \notin H \cup K
+    \]
+\end{example}
+
+\begin{defi}[producto de subespacios]
+    Sea $G$ un grupo y sean $H, K \subset G$ subespacios. Definimos el producto $H \cdot K$ como
+    \[
+        H \cdot K = \setb{xy \vert x \in H \text{ y } x \in K}
+    \]
+\end{defi}
+
+\begin{obs}
+    En general, el producto de subgrupos, no es subgrupo.
+\end{obs}
+
+\begin{example}
+    Tomando las definiciones de $G$, $H$ y $K$ del ejemplo anterior, tenemos que
+    \[
+        H \cdot K = \setb{\Id, (1 \, 3), (1 \, 2), (1 \, 2)(1 \, 3) = (1 \, 3 \, 2)}
+    \]
+    Que no es un subgrupo.
+\end{example}
+
+\begin{obs}
+    Si $G$ es conmutativo, el producto de subgrupos es un subgrupo.
+\end{obs}
+
+\begin{proof}
+    Vamos a comprobar que $H \cdot K$ es subgrupo comprobando las propiedades:
+    \begin{itemize}
+        \item 
+            \[
+                \begin{rcases}
+                    H \text{ sg.} \implies 1 \in H \\
+                    K \text{ sg.} \implies 1 \in K
+                \end{rcases}
+                \implies 1 = 1\cdot 1 \in H \cdot K
+            \]
+        \item
+            \[
+                \begin{rcases}
+                    xy \in HK \\
+                    zt \in HK
+                \end{rcases}
+                \implies (xy)(zt) = (xyzt) = (xz)(yt) \in HK
+            \]
+        \item
+            \[
+                (xy)^{-1} = y^{-1} x^{.1} = x^{-1}y^{-1} \in HK
+            \]
+    \end{itemize}
+\end{proof}
+
+\begin{obs}
+    Se tiene que
+    \[
+        H \cap K \subset H, K \subset H \cup K \subset H \cdot K
+    \]
+\end{obs}
+
+\begin{obs}
+    Si $HK$ es un subgrupo, entonces es el menor subgrupo que contiene a $H \cup K$. 
+\end{obs}
+
+\begin{proof}
+    Es claro que $H \cup K \subset HK$, ya que
+    \[
+        \forall x \in H, \, x\cdot1 = x \in HK
+    \]
+    y análogamente para $K$.
+
+    Suponemos ahora que $L$ es un subgrupo de $G$ que contiene a $H \cup K$. Queremos ver que
+    $ H \cdot K \subseteq L$. Tenemos que, dado cualquier $z = ab \in HK$ ($a \in H$, $b \in K$)
+    \[
+        \begin{rcases}
+            a \in H \subset L \\
+            b \in K \subset L \\
+            L \text{ es sg.}
+        \end{rcases}
+        \implies ab = z \in L
+    \]
+    por lo tanto, $HK \in L$.
+\end{proof}
+
+\begin{defi}[subgruppo gensubgruppo generadoo]
+        Sea $G$ un grupo y sea $S$ un subconjunto de $G$. Definimos 
+        \[
+            <S> = \setb{a_1 \cdots a_r \vert a_i \in S \text{ ó } a^{-1}_i \in S}
+        \]
+\end{defi}
+
+\begin{obs}
+    Si $S = \emptyset$, entonces $<S> = \setb{1}$.
+\end{obs}
+
+\begin{obs}
+    $<S>$ es el menor subgrupo de de $G$ que contiene a $S$
+\end{obs}
+
+\begin{proof}
+    Si $S = \emptyset$ entonces es trivial.
+    Si $S \neq \emptyset$, es trivial que $S \subset <S>$, veremos ahora que es un subgrupo:
+    \begin{itemize}
+        \item $\exists a \in S \implies a \in <S> \implies <S> \neq \emptyset$
+        \item Si $a_1\cdots a_r, b_1 \cdots b_s \in <S> \implies a_1 \cdots a_r b_1 \cdots b_s \in <S>$
+        \item Si $a_1 \cdots a_r \in <S> \implies \left( a_1 \cdots a_r \right)^{-1} =
+            a^{-1}_r \cdots a^{-1}_1 \in <S>$
+    \end{itemize}
+    Tomamos ahora $L$ un subgrupo, queremos ver que $<S> \subset L$.
+    Para cualquier $a_1 \cdots a_r \in <S>$ tenemos que
+    \[
+        \begin{rcases}
+            a_1 \in S \subset L \text{ ó } a^{-1}_1 \in S \implies \left( a^{-1}_1 \right)^{-1} \in L\\
+            \vdots \\
+            a_r \in S \subset L
+        \end{rcases}
+        \implies a_1 \cdots a_r \in L
+    \]
+    y por lo tanto, $<S> \subset L$
+\end{proof}
+
+\begin{ej}
+    Demostrar que
+    \[
+        <S> = \setb{a^{n_1}_1 \cdots a^{n_r}_r \vert a_i \in S, \, n_i \in \z}
+    \]
+\end{ej}
+
+\begin{ej}
+    Demostrar que
+    \[
+        <S> = \bigcap_{\substack{H \text{ sg. de } G \\ S \subset H}}
+    \]
+\end{ej}
