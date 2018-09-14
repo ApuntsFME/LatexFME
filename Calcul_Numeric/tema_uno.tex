@@ -2,7 +2,7 @@
 
 Los métodos numéricos nos proporcionan aproximaciones succesivas de la raíz ($\alpha$).
 Comenzaremos con una aproximación inicial $x^0$  y el método nos proporcionará $x^1$. Más
-generalmente, dad un $x^k$, el método nos proporcionará $x^{k+1}$.
+generalmente, dado un $x^k$, el método nos proporcionará $x^{k+1}$.
 
 \section{Métodos clasicos}
 
@@ -21,9 +21,9 @@ El inconveniente principal de este método es la velocidad: es un método muy le
 Dada una aproximación de la raíz $x^k$, calcularemos la siguiente aproximación $x^{k+1}$ como el cero de 
 la recta tangente a $f$ en $x^k$, es decir, aproximaremos $f(x) \approx
 f\left( x^k \right) + f^\prime\left( x^k \right) \left( x - x^k \right) = 0$  solución de esta ecuación,
-será nuestro $x^{k+1}$:
+será nuestro $x^{k+1}$,
 \[
-    x^{k+1} = x^k - \frac{f\left( x^k \right)}{f^\prime\left( x^k \right)}
+    x^{k+1} = x^k - \frac{f\left( x^k \right)}{f^\prime\left( x^k \right)}.
 \]
 
 La venteja de este método es la velocidad (tiene convergencia cuadrática para raices simples).
@@ -52,9 +52,9 @@ Además, este método requiere de conocer la derivada $f^\prime(x)$, lo cual pue
 \subsection{Método de la secante}
 
 Este método parte de dos aproximaciones iniciales $x^0$ y $x^1$, tomaremos $x^2$ como el cero de la recta
-que pasa por $x^0$ y $x^1$ (substituye la derivada por la recta secante). Es decir, dados $x^k$ y $x^{k-1}$:
+que pasa por $x^0$ y $x^1$ (substituye la derivada por la recta secante). Es decir, dados $x^k$ y $x^{k-1}$,
 \[
-    x^{k+1} = x^k - f\left( x^k \right) \frac{x^k - x^{k-1}}{f\left( x^k \right) - f\left( x^{k-1} \right)}
+    x^{k+1} = x^k - f\left( x^k \right) \frac{x^k - x^{k-1}}{f\left( x^k \right) - f\left( x^{k-1} \right)}.
 \]
 
 Las ventajas e inconvenientes de este método son casi identicas a las del método de newton. Este método
@@ -71,22 +71,22 @@ el punto flaco es que no es tan robusto.
 
 \begin{defi}[método!consistente]
     Diremos que un método $x^{k+1} = \phi\left( x^k \right)$ es consistente si las raices son
-    los únicos puntos fijos, es decir:
+    los únicos puntos fijos, es decir,
     \[
-        f(\alpha) = 0 \iff \phi(\alpha) = \alpha
+        f(\alpha) = 0 \iff \phi(\alpha) = \alpha.
     \]
 \end{defi}
 
 \begin{ej}
-    Un ejemplo es el método de Newton:
+    Un ejemplo es el método de Newton.
 
-    Si $\alpha$ es una raíz simple:
+    Si $\alpha$ es una raíz simple,
     \[
-        f(\alpha) = 0 \implies \phi(\alpha) = \alpha - \frac{f(\alpha)}{f^\prime(\alpha)} = \alpha
+        f(\alpha) = 0 \implies \phi(\alpha) = \alpha - \frac{f(\alpha)}{f^\prime(\alpha)} = \alpha.
     \]
-    y por otro lado
+    Por otro lado,
     \[
-        \phi(\alpha) = \alpha \implies \frac{f(\alpha)}{f^\prime(\alpha)} = 0 \implies f(\alpha) = 0
+        \phi(\alpha) = \alpha \implies \frac{f(\alpha)}{f^\prime(\alpha)} = 0 \implies f(\alpha) = 0.
     \]
     Con la raíz doble, no podemos evaluar el método de Newton en $\alpha$, pero por l'Hopital llegaríamos
     a la conclusión de que, tomando el límite de $\phi$ se sigue cumpliendo.
@@ -98,7 +98,7 @@ el punto flaco es que no es tan robusto.
 \begin{defi}[método!convergente]
     Diremos que un esquema es convergente si
     \[
-        \lim_{k \to \infty} x^k = \alpha
+        \lim_{k \to \infty} x^k = \alpha.
     \]
 \end{defi}
 
@@ -113,15 +113,14 @@ el punto flaco es que no es tan robusto.
 \begin{defi}[convergencia!lineal]
     Diremos que un esquema tiene convergencia lineal si
     \[
-        \abs{E^{k+a}} \leq \lambda \abs{E^k}
+        \abs{E^{k+a}} \leq \lambda \abs{E^k}, \;\lambda < 1.
     \]
-    (con $\lambda < 1$).
 \end{defi}
 
 \begin{defi}[convergencia!de orden $p$]
     Diremos que un esquema tiene convergencia de orden $p$ si
     \[
-        \abs{E^{k+1}} = \lambda \abs{E^k}^p
+        \abs{E^{k+1}} = \lambda \abs{E^k}^p.
     \]
 \end{defi}
 

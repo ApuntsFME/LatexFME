@@ -1,8 +1,8 @@
 #!/bin/bash
 
 NAME="main"
-DEST="/pdfs/segundo/calculo_integral.pdf"
-MSG="calcul integral"
+DEST="/pdfs/tercero/calculo_numerico.pdf"
+MSG="calcul numeric"
 
 source ../upload_file.sh
 
