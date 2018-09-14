@@ -72,13 +72,13 @@
 \begin{example}
     \begin{itemize}
         \item[]
-        \item Sea $\lp G, \cdot \rp$ un grupo. Los subgrupos impropios son
+        \item Sea $G$ un grupo. Los subgrupos impropios son
                 $\begin{cases}
-                    \lp \setb{1}, \cdot \rp &\text{(el subgrupo trivial)} \\
-                    \lp G, \cdot \rp. &
+                    \setb{1} &\text{(el subgrupo trivial)} \\
+                    G. &
                 \end{cases}$
         \item $\lp \z, + \rp, \lp \n, + \rp, \lp \real, + \rp, \lp \cx, + \rp$ son grupos y subgrupos.
-        \item $\lp \z/n\z, + \rp$.
+        \item $\lp \z/n\z, + \rp$ es un grupo.
         \item Si $G$ y $H$ son dos grupos, entonces
             \[
                  G \times H = \setb{(x,y) \vert x \in G, \, y \in H}   
@@ -101,24 +101,24 @@
     Sea $G$ un grupo y sean $H, K \subset G$ subgrupos de $G$. Definimos la intersección de
     $H$ y $K$ como
     \[
-        H \cap K = \setb{x \in G \vert x \in H \text{ y } x \in K}.
+        H \cap K = \setb{x \in G \; \vert \; x \in H \text{ y } x \in K}.
     \]
 \end{defi}
 
 \begin{obs}
-    Si $H$ y $K$ son subgrupos de $G \implies H \cap K$ es subgrupo de $G$.
+    Si $H$ y $K$ son subgrupos de $G$, $H \cap K$ es un subgrupo de $G$.
     También es cierto con la instersección arbitraria.
 \end{obs}
 
-\begin{defi}[unión de subespacios]
-    Sea $G$ un grupo y sean $H, K \subset G$ subgrupos de $G$. Llamaremos unión de $H$ y $K$ a
+\begin{defi}[unión de subgrupos]
+    Sea $G$ un grupo y sean $H, K \subseteq G$ subgrupos de $G$. Llamaremos unión de $H$ y $K$ a
     \[
-        H \cap K = \setb{x \in G \, \vert\, x \in H ó x \in K}.
+        H \cup K = \setb{x \in G \, \vert\, x \in H \text{ o } x \in K}.
     \]
 \end{defi}
 
 \begin{obs}
-    En general, la unión de subgrupos no es subgrupo.
+    En general, la unión de subgrupos no es un grupo.
 \end{obs}
 
 \begin{example}
