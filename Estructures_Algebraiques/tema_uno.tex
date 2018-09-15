@@ -9,7 +9,7 @@
         \end{aligned}
     \]
     que satisface
-    \begin{enumerate}
+    \begin{enumerate}[i)]
         \item $(a\cdot b)\cdot c = a\cdot (b\cdot c)$, i.e., la propiedad asociativa,
         \item $\exists e \tq \forall a \in G, \, a\cdot e = e\cdot a = a$, i.e., existe un elemento neutro,
         \item $\forall a \in G, \, \exists \tilde{a} \in G \tq a \cdot \tilde{a} = \tilde{a}\cdot a = e$, i.e., todo elemento tiene inverso.
@@ -18,7 +18,7 @@
     
     \vspace{1.15ex}
     
-    \noindent \emph{Nota segunda.} Además, a menudo también escribiremos $ab$ en lugar de $a\cdot b$ o en lugar de $a\circ b$, como por ejemplo en la composición de permutaciones.
+    \noindent \emph{Nota segunda.} Además, a menudo también escribiremos $ab$ en lugar de $a\cdot b$ y $a\cdot b$ en lugar de $a\circ b$, como por ejemplo en la composición de permutaciones.
 \end{defi}
 
 \begin{defi}[grupo!abeliano o conmutativo]
@@ -42,17 +42,17 @@
 
 \begin{defi}[subgrupo]
     Sea $\lp G, \cdot \rp$ un grupo. Decimos que $\lp H, \cdot_{\mid H} \rp$ es un subgrupo de $\lp G, \cdot \rp$ si $H \subseteq G$ y se satisface
-    \begin{itemize}
-        \item $H \neq \emptyset$
-        \item $a, b \in H \implies a\cdot b \in H$ (la operación es cerrada)
-        \item $\forall a \in H, a^{-1} \in H$
-    \end{itemize}
+    \begin{enumerate}[i)]
+        \item $H \neq \emptyset$,
+        \item $a, b \in H \implies a\cdot b \in H$ (la operación es cerrada),
+        \item $\forall a \in H, a^{-1} \in H$.
+    \end{enumerate}
     \emph{Nota. } A menudo cometeremos un abuso de notación, escribiendo $\lp H, \cdot \rp$ en lugar de $\lp H, \cdot_{\mid H} \rp$.
 \end{defi}
 
-\begin{obs}
+\begin{prop}
     Los subgrupos son aquellos grupos $\lp H, \cdot_{\mid H} \rp$ con $H\subseteq G$.
-\end{obs}
+\end{prop}
 \begin{proof}
     Sea $\lp H, \cdot \rp$ un subgrupo de $\lp G, \cdot \rp$. Queremos ver que $\lp H, \cdot \rp$ es un grupo.
     Tenemos la operación
@@ -70,11 +70,11 @@
 \end{proof}
 
 \begin{example}
-    \begin{itemize}
+    \begin{enumerate}[1.]
         \item[]
         \item Sea $G$ un grupo. Los subgrupos impropios son
                 $\begin{cases}
-                    \setb{1} &\text{(el subgrupo trivial)} \\
+                    \setb{1} &\text{(el subgrupo trivial)}, \\
                     G. &
                 \end{cases}$
         \item $\lp \z, + \rp, \lp \n, + \rp, \lp \real, + \rp, \lp \cx, + \rp$ son grupos y subgrupos.
@@ -87,12 +87,11 @@
         \item $\lp S_n, \circ \rp$ es el grupo simétrico de $n$ elementos (permutaciones de $n$ elementos).
         \item Grupo diedial. $\lp D_{2n}, \circ \rp$, donde $D_{2n}$ son los conjuntos de las isometrías del plano que dejan invariante $P_n$.
             $P_n$ es un polígono regular de $n$ lados (raices $n$-esimas de 1). Por ejemplo,
-
             \[
                 D_{2 \cdot 4} = \setb{id, r, r^2, r^3, s, rs, r^2s, r^3s}
             \]
             Con $r$ la rotación horaria de $\pi / 2$ y $s$ la simetría respecto del eje $x$.
-    \end{itemize}
+    \end{enumerate}
 \end{example}
 
 \section{Intersección y producto de subgrupos}
@@ -165,7 +164,7 @@
 
 \begin{proof}
     Comprobemos que $H \cdot K$ satisface las propiedades de los grupos.
-    \begin{itemize}
+    \begin{enumerate}[i)]
         \item 
             $
                 \begin{rcases}
@@ -186,7 +185,7 @@
             $
                 (xy)^{-1} = y^{-1} x^{.1} = x^{-1}y^{-1} \in HK.
             $
-    \end{itemize}
+    \end{enumerate}
 \end{proof}
 
 \begin{obs}
@@ -237,13 +236,13 @@
 
 \begin{proof}
     Si $S = \emptyset$ entonces es trivial.
-    Si $S \neq \emptyset$, es trivial que $S \subset \left<S\right>$, veamos ahora que es un subgrupo de $G$:
-    \begin{itemize}
+    Si $S \neq \emptyset$, es trivial que $S \subset \left<S\right>$, veamos ahora que es un subgrupo de $G$.
+    \begin{enumerate}[i)]
         \item $\exists a \in S \implies a \in \left<S\right> \implies \left<S\right> \neq \emptyset$,
         \item Si $a_1\cdots a_r, b_1 \cdots b_s \in \left<S\right>$, entonces $a_1 \cdots a_r b_1 \cdots b_s \in \left<S\right>$,
         \item Si $a_1 \cdots a_r \in \left<S\right>$, entonces $\left( a_1 \cdots a_r \right)^{-1} =
             a^{-1}_r \cdots a^{-1}_1 \in \left<S\right>$.
-    \end{itemize}
+    \end{enumerate}
     Tomamos ahora $L$ un subgrupo de $G$ que contiene a $S$. Queremos ver que $\left<S\right> \subseteq L$.
     Para cualquier $a_1 \cdots a_r \in \left<S\right>$ tenemos que
     \[

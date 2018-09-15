@@ -23,7 +23,7 @@ $\sigma = (1, 4, 5, 2) \in S_5$ es lo mismo que
     \end{pmatrix}.
 \]
 
-Entones $\sigma = \sigma_1 \cdots \sigma_r$ con $\sigma_i$ son ciclos disjuntos.
+Entones $\sigma = \sigma_1 \cdots \sigma_r$, siendo $\sigma_i$ ciclos disjuntos.
 
 \begin{obs}
     La multiplicación no es conmutativa. Pero las permutaciones con elementos disjuntos sí que conmutan.
@@ -34,20 +34,20 @@ Por lo tanto, podemos descomponer toda permutación como producto de transposici
 descomposición no es única.
 Lo que sí que se mantiene es la paridad del número de trasposiciones. Es decir,
 \[
-    \begin{aligned}
-        \sigma &= z_1 \cdots z_r \\
-        \sigma &= \bar{z}_1 \cdots \bar{z}_s
-    \end{aligned} \implies r \text{ par} \iff s \text{ par}.
+    \begin{rcases}
+        \sigma = z_1 \cdots z_r \\
+        \sigma = \bar{z}_1 \cdots \bar{z}_s
+    \end{rcases} \implies \lp r \text{ par} \iff s \text{ par}\rp.
 \]
 
 Esto nos permite definir unequívocamente el signo de la permutación:
 \[
     \sgn(\sigma) = (-1)^{r},
 \]
-donde $r$ es el número de trasposiciones.
+donde $r$ es el número de trasposiciones de cualquiera de sus descomposiciones en transposiciones.
 
 \begin{defi}[orden de una permutación]
-    Definimos el orden de una permutación como el mínimo $k$ tal que $\sigma^k = \Id$.
+    Definimos el orden de una permutación $\sigma$ como el mínimo $k$ tal que $\sigma^k = \Id$.
 \end{defi}
 
 \begin{example}
@@ -100,15 +100,15 @@ Más en general, se tiene que, si $\sigma = \sigma_1 \sigma_2 \cdots \sigma_n$ e
         \end{pmatrix}
         = (1, 3, 8) (2, 7) (4, 9, 6, 5)
     \]
-    Por lo tanto, el orden de $\sigma$ es:
+    Por lo tanto, el orden de $\sigma$ es
     \[
         \ord(\sigma) = \mcm\left( 3, 2, 4 \right) = 12.
     \]
-    Ahora, descomponemos en trasposiciones:
+    Ahora, descomponemos en trasposiciones.
     \[
         \begin{aligned}
-            (1, 3, 8) &= (1, 8) (1, 3) \\
-            (2, 7) &= (2, 7) \\
+            (1, 3, 8) &= (1, 8) (1, 3), \\
+            (2, 7) &= (2, 7), \\
             (4, 9, 6, 5) &= (4, 5) (4, 6) (4, 9),
         \end{aligned}
     \]
@@ -126,15 +126,15 @@ Más en general, se tiene que, si $\sigma = \sigma_1 \sigma_2 \cdots \sigma_n$ e
     \]
     tenga orden tres.
 
-    Primero descomponemos $\sigma$:
+    Primero descomponemos $\sigma$.
     \[
         \sigma = (1, 3, 6)
         \begin{pmatrix}
             2 & 4 & 5 & 7 & 8 \\
             5 & x & y & z & t
-        \end{pmatrix}
+        \end{pmatrix}.
     \]
-    y queremos que el segundo miembro tenga orden 3.
+    Queremos que el segundo miembro tenga orden 3.
 
     \begin{itemize}
         \item Si $y = 2$, tenemos el ciclo $(2, 5)$ que tiene orden 2 y por lo tanto $\ord(\sigma)$
