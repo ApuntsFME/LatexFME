@@ -3,75 +3,70 @@
 \section{Definició axiomàtica de probabilitat}
 
 \begin{defi}[espai!de probabilitat]
-    Un espai de probabilitat és un espai de mesura $(\Omega,\Asuc, p)$ tal que $p(\Omega)=1$, sent .
+    Un espai de probabilitat és un espai de mesura $(\Omega,\Asuc, p)$ tal que $p(\Omega)=1$.
 \end{defi}
 
 \begin{defi}[espai!mostral]
-    $\Omega$ és l'espai mostral.
+    Diem que $\Omega$ és l'espai mostral.
 \end{defi}
 
 \begin{defi}[conjunt!d'esdeveniments]
-    $\Asuc$ és el conjunt d'esdeveniments o de successos.
+    Diem que $\Asuc$ és el conjunt d'esdeveniments o de successos.
 \end{defi}
 
 \begin{defi}[funció!de probabilitat]
-    $p$ és la funció de probabilitat.
+    Diem que $p$ és la funció de probabilitat.
 \end{defi}
 
 \begin{obs}
-    $\lp\Omega,\Asuc\rp$ és un espai mesurable si compleix les tres condicions de $\sigma$-àlgebra:
+    Recordem que $\lp\Omega,\Asuc\rp$ és un espai mesurable si $\Asuc\subseteq \Pa\lp\Omega\rp$ és una $\sigma$-àlgebra d'$\Omega$, és a dir,
     \begin{enumerate}
-        \item $\emptyset \in \Asuc$
-        \item $A \in \Asuc \iff A^C \in \Asuc$
-        \item Si $\lc A_i\rc _{i\ge1}$ és una família en $\Asuc$, aleshores $\bigcup_{i\ge1}{A_i} \in \Asuc$.
+        \item $\emptyset \in \Asuc$,
+        \item $A \in \Asuc \iff A^C \in \Asuc$,
+        \item Si $\lc A_i\rc _{i\in\n}\subseteq \Asuc$, aleshores $\bigcup_{i\in\n}{A_i} \in \Asuc$.
     \end{enumerate}
-    Si $\mu$ és una mesura sobre l'espai de mesura ($\lp\Omega,\Asuc,\mu\rp$ és un espai mesurable):
+    I que $\lp\Omega,\Asuc,\mu\rp$ és un espai de mesura si $\mu$ és una mesura sobre l'espai mesurable $\lp\Omega,\Asuc\rp$, és a dir,
     \begin{enumerate}
-        \item $\mu(\emptyset) = 0$
-        \item $\forall A \in \Asuc,\quad \mu(A) \ge0$
-        \item ($\sigma$-additivitat) Si $\lc A_i\rc_{i\ge 1}$ és una família en $\Asuc$ tal que $\forall i \neq j,\quad A_i \cap A_j = \emptyset$,
-        aleshores \[\mu\lp\bigcup_{i\ge 1}{A_i}\rp = \sum_{i\ge1}{\mu(A_i)}\]
+        \item $\mu(\emptyset) = 0$,
+        \item $\forall A \in \Asuc,\quad \mu(A) \ge0$,
+        \item ($\sigma$-additivitat) Si $\lc A_i\rc_{i\in\n}\subseteq\Asuc$ és tal que $\forall i \neq j, \, A_i \cap A_j = \emptyset$,
+        aleshores 
+        \[
+            \mu\lp\bigcup_{i\in\n}{A_i}\rp = \sum_{i\in\n}{\mu(A_i)}.
+        \]
     \end{enumerate}
 \end{obs}
 
 \begin{prop}
-    Sigui $(\Omega,\Asuc, p)$ espai de probabilitat. Aleshores:
+    Sigui $(\Omega,\Asuc, p)$ espai de probabilitat. Aleshores,
     \begin{enumerate}
-	\item Si $A_1, \dots, A_r \in \Asuc\; \tq \forall i\neq j,\, A_i \cap A_j = \emptyset \implies 
-        p\lp \bigcap\limits_{i=1}^{r} A_i \rp= \sum\limits_{i=1}^{r} p\lp A_i \rp $
-        \item \label{item:esp_prob_2}$A \in \Asuc \implies p(\overline{A})=1-p(A)$
-        \item \label{item:esp_prob_3}$A,B\in \Asuc \tq A\subseteq B,\, p\lp B\setminus A \rp = p\lp B\rp - p\lp A\rp$
-        \item $A,B \in \Asuc, A \subseteq B \implies p(A) \le p(B)$
+        \item Si $A_1, \dots, A_r \in \Asuc$ són tals que $\forall i\neq j,\, A_i \cup A_j = \emptyset,$ aleshores $p\lp \bigcap\limits_{i=1}^{r} A_i \rp= \sum\limits_{i=1}^{r} p\lp A_i \rp.$.
+        \item \label{item:esp_prob_2}$A \in \Asuc \implies p(\overline{A})=1-p(A)$.
+        \item \label{item:esp_prob_3} $A,B \in \Asuc, A \subseteq B \implies p\lp B\setminus A \rp = p\lp B\rp - p\lp A\rp$.
+        \item $A,B \in \Asuc, A \subseteq B \implies p(A) \le p(B)$.
         \item Succecions monòtones:
         \begin{enumerate}[a)]
-         \item Si $\left\{A_i\right\}_{i\geq 1} \in \Asuc,\, A_1\subseteq A_2 \subseteq \dots \implies 
-         p\lp \bigcap\limits_{i\geq 1} A_i\rp = \lim\limits_{i\to\infty} p\lp A_i\rp$
-         \item Si $\left\{A_i\right\}_{i\geq 1} \in \Asuc,\, A_1\supseteq A_2 \supseteq \dots \implies 
-         p\lp \bigcup\limits_{i\geq 1} A_i\rp = \lim\limits_{i\to\infty} p\lp A_i\rp$.
+         \item Si $\left\{A_i\right\}_{i\in\n} \subseteq \Asuc$ són tals que $A_i\subseteq A_{i+1}$, aleshores $p\lp \bigcup\limits_{i\in\n} A_i\rp = \lim\limits_{i\to\infty} p\lp A_i\rp$.
+         \item Si $\left\{A_i\right\}_{i\in\n} \subseteq \Asuc$ són tals que $A_i\supseteq A_{i+1}$, aleshores $p\lp \bigcap\limits_{i\in\n} A_i\rp = \lim\limits_{i\to\infty} p\lp A_i\rp$.
         \end{enumerate}
     \end{enumerate}
 \end{prop}
 \begin{proof}
     \begin{enumerate}
-     \item[]
-     \item Conseqüència directa de la $\sigma$-additivitat.
-     \item Conseqüència diecta de \ref{item:esp_prob_2} usant que $\Asuc = A\cap A^C$.
-     \item Com $A\subseteq B,\, B=\lp B\setminus A\rp \cap A$ i per tant $p\lp B\setminus A \rp = p\lp B\rp - p\lp A\rp$.
-     \item Conseqüència directa de \ref{item:esp_prob_3} ja que $p\lp B\setminus A\rp\geq 0$.
-     \item 
-     \begin{enumerate}[a)]
-       \item[]
-       \item Sigui $B_1=A_1$ i per $i>0$ sigui $B_i = A_i\setminus A_{i-1}$. Aleshores es compleix que
-       \begin{gather*}
-        \begin{rcases}
-	  \forall i\neq j \tq B_i \cup \B_j =\emptyset \\
-	  \bigcap\limits_{i\geq 1} B_i = \bigcap\limits_{i\geq 1} A_i
-        \end{rcases}
-        \implies p\lp\bigcap\limits_{i\geq 1} A_i\rp = p\lp\bigcap\limits_{i\geq 1} B_i\rp \\
-        = \sum\limits_{i\geq 1} p\lp B_i\rp = \lim\limits_{N\to\infty} p\lp B_i\rp = \lim\limits_{N\to\infty} p\lp\bigcap\limits_{i=1}^N B_i\rp = 
-        \lim\limits_{N\to\infty} p\lp\bigcap\limits_{i=1}^N A_i\rp.
-       \end{gather*}
-      \item Anàleg al cas anterior.
-     \end{enumerate}
+        \item[]
+        \item Conseqüència directa de la $\sigma$-additivitat.
+        \item Conseqüència diecta de \ref{item:esp_prob_2} usant que $\Asuc = A\cup A^C$.
+        \item Com que $A\subseteq B,\, B=\lp B\setminus A\rp \cup A$ i, per tant, $p\lp B\setminus A \rp = p\lp B\rp - p\lp A\rp$.
+        \item Conseqüència directa de \ref{item:esp_prob_3} ja que $p\lp B\setminus A\rp\geq 0$.
+        \item 
+        \begin{enumerate}[a)]
+            \item[]
+            \item Sigui $B_0=A_0$ i per $i>0$ sigui $B_i = A_i\setminus A_{i-1}$. Aleshores, es compleix que $\forall i\neq j, \, B_i \cap B_j =\emptyset$ i que $\bigcup\limits_{i\in \n} B_i = \bigcup\limits_{i\in\n} A_i$, de manera que
+            \begin{gather*}
+                p\lp\bigcup\limits_{i\in\n} A_i\rp = p\lp\bigcup\limits_{i\in\n} B_i\rp = \sum\limits_{i\in\n} p\lp B_i\rp =\\
+                = \lim\limits_{N\to\infty} \sum_{i=0}^N p\lp B_i\rp = \lim\limits_{N\to\infty} p\lp \bigcup_{i=0}^N B_i\rp = \lim\limits_{N\to\infty} p\lp A_N\rp.
+            \end{gather*}
+            \item Anàleg al cas anterior.
+        \end{enumerate}
     \end{enumerate}
 \end{proof}
