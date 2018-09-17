@@ -71,10 +71,10 @@
     \end{enumerate}
 \end{proof}
 
-\ref{item:esp_prob_5} només es pot aplicar en casos molt particulars. En general, si tenim $A_i,\dots,A_r$ succcessos,
-hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i}$:
+Observem que l'apartat \ref{item:esp_prob_5} només es pot aplicar en casos molt particulars. En general, si tenim $A_i,\dots,A_r$ succcessos,
+hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
 
-\begin{prop}[Desigualtats de Bonferroni]
+\begin{teo}[Desigualtats de Bonferroni]
     Siguin $A_1,\dots,A_r\in\Asuc$, i per $I\subseteq\{1,\dots,r\}$ sigui $A_I = bigcap_{i \in I}{A_i}$. Definim
     \[
         S_k = \sum_{I \in \{1,\dots,n\},\#I=k}{p(A_I)}
@@ -86,15 +86,27 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i}$:
          \item Si $t$ és senar,
             \[p\lp\bigcup_{i=1}^{r}{A_i}\rp \leq \sum_{i=1}^{r}{(-1)^{i+1}S_i}\]
     \end{enumerate}
-\end{prop}
+\end{teo}
 
 \begin{obs}
     Amb els casos $t=1$ (desigualtat de Boole) i $t=2$ es poden donar fites inferiors i superiors.
 \end{obs}
 
+\begin{example}
+    \begin{enumerate}
+     \item []
+     \item Espais de probabilitat numerables
+     Prenem $\Omega$ un conjunt numerable $\Omega =\left\{a_i\right\}_{i\geq 1}$. Prenem $\Asuc = \Pa\lp \Omega\rp$
+     (que és una $\sigma$-àlgebra). Per a definir la probabilitat sobre $\lp\Omega,\,\Asuc\rp$ prenem una successió 
+     $\left\{p_i\right\}_{i\geq 1} \tq 0\geq p_i\geq 1$ que cumpleix que $\forall i,\, p\lp a_i\rp = p_i$ i 
+     $\sum\limits_{i\geq1}p_i=1$. Per tant, per a qualsevol element $A\in\Asuc$, tenim que
+     \[
+	p\lp\bigcup\limits_{a\in A} \left\{a\right\}\rp = p\lp A\rp = \sum\limits_{i\geq 1} p\lp \left\{a\right\}\rp.
+     \]
+     Si, a més, $|\Omega|<+\infty$, $\Asuc = \Pa\lp\Omega\rp$ té $2^{|\Omega|}$ elements i si premnem 
+     $\Omega =\left\{a_i\right\}_{i=1}^{N}$ i $p_1=p_2=\dots=p_N = \frac{1}{N}$ obtenim un espai clàssic de probabilitat.
+    \end{enumerate}
 
-\begin{example}[Espais de probabilitat]
-    %TODO
 \end{example}
 
 
