@@ -220,7 +220,7 @@
 \end{proof}
 
 \begin{defi}[subgrupo!generado]
-        Sea $\lp G, \cdot\rp$ un grupo y sea $S\subseteq G$. Definimos 
+        Sea $\lp G, \cdot\rp$ un grupo y sea $S\subseteq G$. Definimos el subgrupo generado por $S$ a
         \[
             \left<S\right> = \lp \lc 1 \rc \cup \setb{a_1 \cdots a_r \,\vert\, a_i \in S \text{ ó } a^{-1}_i \in S}, \cdot \rp.
         \]
@@ -337,8 +337,7 @@
 \end{proof}
 
 \begin{defi}[grupo!cíclico]
-    Diremos que un grupo $G$ es cíclico si está generado por un solo elemento $x \in G$.
-    Escribiremos $G = \left< x \right>$, $G$ generado por $x$ o $x$ generdor de $G$.
+    Diremos que un grupo $G$ es cíclico si está generado por un solo elemento $x \in G$. Escribiremos $G = \left< x \right>$, $G$ generado por $x$ o $x$ generdor de $G$.
 \end{defi}
 
 \begin{obs}
@@ -356,22 +355,22 @@
 \begin{example}
     \begin{enumerate}[1.]
         \item[]
-        \item $\z = \left< 1 \right> = \left< -1 \right>$
-        \item $\z/n\z = \left< \bar{k} \right>$ con $\mcd(n, k) = 1$
+        \item $\z = \left< 1 \right> = \left< -1 \right>$.
+        \item $\z/n\z = \left< \bar{k} \right>$ con $\mcd(n, k) = 1$.
     \end{enumerate}
 \end{example}
 
 \begin{defi}[función de Euler]
-    Sea $d \in \z, d \geq 1$, definimos la función de Euler como
+    Sea $d \in \z, d \geq 1$, definimos la función $\varphi$ de Euler como
     \[
-        \phi(d) = \card \setb{ 1 \leq k \leq d \vert \mcd(k, d) = 1}.
+        \varphi(d) = \card \setb{ 1 \leq k \leq d \vert \mcd(k, d) = 1}.
     \]
 \end{defi}
 
 \begin{example}
     \begin{align*}
-        \phi(1) &= 1, & \phi(5) &= 4, & \phi(3) &= 2, & \phi(7) &= 6, \\
-        \phi(2) &= 1, & \phi(6) &= 2, & \phi(4) &= 2, & \phi(p) &= p-1 \text{(con } p \text{ primo).} 
+        \varphi(1) &= 1, & \varphi(5) &= 4, & \varphi(3) &= 2, & \varphi(7) &= 6, \\
+        \varphi(2) &= 1, & \varphi(6) &= 2, & \varphi(4) &= 2, & \varphi(p) &= p-1 \text{(con } p \text{ primo).} 
     \end{align*}
 \end{example}
 
@@ -379,18 +378,18 @@
     Sea $G = \left< x \right>$ un grupo cíclico, con $\ord(x) = n$, entonces
     \begin{enumerate}[i)]
         \item $\forall y \in G, \ord(y) \vert n$,
-        \item $\forall d \vert n \, \exists \phi(d)$ elementos de $G = C_n$ de orden $d$.
+        \item $\forall d \vert n,$ existen $\varphi(d)$ elementos de $G = C_n$ de orden $d$.
     \end{enumerate}
 \end{prop}
 
 \begin{proof}
     \begin{enumerate}[i)]
         \item[]
-        \item $y \in G = \left< x \right> = \setb{1, x, \dots, x^{n-1}} \implies$
+        \item Por ser $y$ un elemento de $G$, es de la forma $y=x^m,\,0\leq m\leq n$. Entonces,
                 \[
-                    \ord(y) = \ord\left( x^m \right) = \frac{\ord(x)}{\mcd\left(\ord(x), m \right)} =
-                    \left.\frac{n}{\mcd(n, m)} \right\vert n
+                    \ord(y) = \ord\left( x^m \right) = \frac{\ord(x)}{\mcd\left(\ord(x), m \right)} = \frac{n}{\mcd(n, m)}.
                 \]
+            Y conclumos $\ord\lp y\rp \mid n$.
         \item Sea $y \in G \tq \ord(y) = d$, tenemos que
                 \[
                     y = x^m \implies \ord(y) = \frac{n}{\mcd(n, m)} \implies d = \frac{n}{\mcd(n, m)} 
@@ -412,7 +411,7 @@
                 \]
                 Con esta última condición, tenemos que
                 \[
-                    \phi(d) = \card \setb{ k \in \z \vert \mcd(k, d) = 1 \text{ y } 1 \leq k \leq d}
+                    \varphi(d) = \card \setb{ k \in \z \vert \mcd(k, d) = 1 \text{ y } 1 \leq k \leq d}
                     = \card \setb{ x^m \vert \ord\left( x^m \right) = d}.
                 \]
     \end{enumerate}
@@ -421,14 +420,14 @@
 \begin{col}
     Se tiene que
     \[
-        n = \sum_{d \vert n} \phi(d).
+        n = \sum_{d \vert n} \varphi(d).
     \]
 \end{col}
 
 \begin{proof}
     Tomamos $G = C_n = \left< x \right>$, entonces
     \[
-        n = \abs{G} = \sum_{d \vert n} \card \setb{ x \in G \vert \ord(x) =d } = \sum_{d \vert n} \phi(d).
+        n = \abs{G} = \sum_{d \vert n} \card \setb{ x \in G \vert \ord(x) =d } = \sum_{d \vert n} \varphi(d).
     \]
     Ya que
     \[
