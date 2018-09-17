@@ -162,3 +162,110 @@ el punto flaco es que no es tan robusto como el de la bisección.
         \abs{E^{k+1}} \leq \lambda \abs{E^k}^q, \; q \in (1, 2).
     \end{gather*}
 \end{defi}
+
+\begin{prop}
+    Para estudiar la convergencia, en general, necesitamos estudiar $E^{k+1}$ en función de $E^k$.
+    Para ello, podemos usar la siguiente fórmula:
+    \[
+        E^{k+1} = \phi^\prime(\alpha)E^k + \frac{1}{2} \phi^{\prime \prime}(\alpha)\left( E^k \right)^2 - \cdots
+    \]
+    o más generalmente
+    \[
+        E^{k+1} = \sum^{\infty}_{i = 1} \frac{1}{i!} \phi^{(i)}(\alpha) \left( E^k \right)^i
+    \]
+\end{prop}
+
+\begin{proof}
+    Tenemos que
+    \[
+        E^{k+1} = x^{k+1} - \alpha = \phi(x^k) - \phi(\alpha)
+    \]
+    Aproximando ahora por Taylor (centrado en $\alpha$):
+    \[
+        E^{k+1} = \cancel{-\phi(\alpha)} + \cancel{\phi(\alpha)} + \phi^\prime(\alpha)(x^k - \alpha) + ..
+    \]
+    substituyendo ahora $x^k - \alpha = E^k$, obtenemos la fórmula original.
+\end{proof}
+
+\begin{prop}
+    Si $\phi^\prime(\alpha) \neq 0$ y $\abs{\phi(\alpha)} < 1$, entonces el método converge linealmente.
+\end{prop}
+
+\begin{proof}
+    Veremos ahora que la convergencia es lineal:
+    \[
+        \abs{E^{k+1}} \leq \abs{E^k} \left( \abs{\phi^\prime(\alpha)} + 
+            \underbrace{\abs{\frac{1}{2} \phi^{\prime \prime}(\alpha)} E^k +
+            \O\left( \left( E^k \right)^2 \right)}_{\leq \varepsilon} \right)
+    \]
+    Consideramos $\varepsilon$ tal que $\abs{\phi^\prime(\alpha)} + \varepsilon \leq 1$. Esto pasa
+    si $\abs{E^k}$ es suficientemente pequeño. Entonces
+    \[
+        \abs{E^{k+1}} \leq \lambda \abs{E^k}
+    \]
+    con $\lambda = \abs{\phi^\prime} + \varepsilon < 1$.
+\end{proof}
+
+\begin{prop}
+    Si $\phi^\prime(\alpha) = \cdots = \phi^{(p-1)}(\alpha) = 0$ y $\phi^{(p)}(\alpha) = 0$. Tenemos que
+    \[
+        E^{k+1} = \frac{1}{p!}\phi^{(p)}(\alpha) \left( E^k \right)^p +
+        \frac{1}{(p+1)!} \phi^{(p+1)}(\alpha) \left( E^k \right)^{p+1} + \cdots
+    \]
+    Entonces, para $E^k$ pequeño, se tiene que
+    \[
+        \abs{E^{k+1}} \approx \abs{\frac{\phi^{(p)}(\alpha)}{p!}} \left( E^k \right)^p
+    \]
+    y la convergencia es de orden $p$.
+\end{prop}
+
+\begin{proof}
+    Se tiene que
+    \[
+        \abs{E^{k+1}} \leq \abs{E^k} \left( \abs{\frac{\phi^{(p)}(\alpha)}{p!}} +
+        \underbrace{\abs{\frac{\phi^{(p+1)}(\alpha)}{(p+1)!}} \left( E^k \right) +
+        \O\left( \left( E^k \right)^2 \right)}_{\leq \varepsilon} \right)
+    \]
+    Con $\abs{E^k}$ suficientemente pequeño
+    \[
+        \abs{E^{k+1}} \leq \left( \abs{E^k} \right)^p
+        \underbrace{\left( \frac{\phi^{(p)}(\alpha)}{p!} + \varepsilon  \right)}_{\lambda}
+    \]
+\end{proof}
+
+\begin{defi}[factor asintótico de convergencia]
+    Sea $\phi$ un método lineal, por lo tanto,
+    \[
+        \abs{E^{k+1}} \leq \lambda \abs{E^k}
+    \]
+    Llamaremos factor asintótico de convergencia a $\lambda$.
+\end{defi}
+
+\subsection{Análisis del método de Newton}
+
+\begin{itemize}
+    \item Caso de una raíz simple, $f(\alpha) = 0$ y $f^\prime(\alpha) \neq 0$.
+        Tenemos
+        \[
+            \phi^\prime = 1 - \frac{f^2 - f^\prime f^{\prime \prime}}{f^2} =
+            \frac{f^\prime f^{\prime \prime}}{f^2}
+        \]
+        entonces
+        \[
+            \phi^\prime(\alpha) = 0 \, \phi^{\prime \prime}(\alpha) =
+            \frac{f^{\prime \prime}}{f^\prime(\alpha)} \neq 0
+        \]
+        En general $\phi^{\prime \prime}(\alpha) \neq 0$, por lo tanto el método de Newton
+        tiene, en general orden 2.
+    \item Caso de una raíz doble $f(\alpha) = f^\prime(\alpha) = 0$ y $f^{\prime \prime} \neq 0$.
+        Obtenemos que
+        \[
+            \lim_{x \to \infty} \phi^\prime(\alpha) = \cdots = \frac{1}{2}
+        \]
+        Por lo tanto es lineal con F.A.C igual a $\frac{1}{2}$. (Los pasos intermedios del límite se 
+        dejan como ejercicio).
+    \item El caso de multiplicidad $p$, es decir, $f(\alpha) = \cdots = f^{(p-1)}(\alpha) = 0$ y
+        $f^{(p)} \neq 0$.
+
+        El método es lineal con F.A.C. igual a $1 - \frac{1}{p}$.
+\end{itemize}
