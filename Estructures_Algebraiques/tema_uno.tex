@@ -392,22 +392,12 @@
             Y conclumos $\ord\lp y\rp \mid n$.
         \item Sea $y \in G \tq \ord(y) = d$, tenemos que
                 \[
-                    y = x^m \implies \ord(y) = \frac{n}{\mcd(n, m)} \implies d = \frac{n}{\mcd(n, m)} 
-                    \implies \mcd(n, m) = \frac{n}{d}.
+                    y = x^m \implies \ord(y) = d = \frac{n}{\mcd(n, m)} \iff \mcd(n, m) = \frac{n}{d}.
                 \]
-                Buscamos los $m$ tales que $\mcd(m, n) = \frac{n}{d}$ y por lo tanto
-                \[
-                    \begin{rcases}
-                        \frac{n}{d} \vert m \implies m = \left( \frac{n}{d} \right)k \\
-                        1 \leq m \leq n
-                    \end{rcases}
-                    \implies 1 \leq \left( \frac{n}{d} \right)k \leq n = \left( \frac{n}{d} \right)d
-                    \implies 1 \leq k \leq d.
-                \]
-                Buscamos por lo tanto, $k\, 1 \leq k \leq d$ tal que $\mcd(n, m) = \frac{n}{d}$ y tenemos
+                Buscamos los $m$ tales que $\mcd(m, n) = \frac{n}{d}$.
                 \[
                     \mcd(n, m) = \frac{n}{d} \iff \mcd\left( \frac{n}{d}d, \frac{n}{d}k \right) = \frac{n}{d}
-                    \implies \mcd(k, d) = 1.
+                    \iff \mcd(k, d) = 1.
                 \]
                 Con esta última condición, tenemos que
                 \[
@@ -425,11 +415,11 @@
 \end{col}
 
 \begin{proof}
-    Tomamos $G = C_n = \left< x \right>$, entonces
+    Tomamos $G = C_n = \left< x \right>$. Entonces,
     \[
-        n = \abs{G} = \sum_{d \vert n} \card \setb{ x \in G \vert \ord(x) =d } = \sum_{d \vert n} \varphi(d).
+        n = \abs{G} = \sum_{d \vert n} \card \setb{ x \in G \vert \ord(x) =d } = \sum_{d \vert n} \varphi(d),
     \]
-    Ya que
+    ya que
     \[
         G = \bigcup_{d \vert n} \setb{x \in G \vert \ord(x) = d}.
     \]
