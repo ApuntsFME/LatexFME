@@ -301,19 +301,18 @@
 \end{example}
 
 \begin{lema}
-    Sea $G$ un grupo y $x \in G$ con $\ord(x) = n$ finito. Entonces
+    Sea $G$ un grupo y $x \in G$ con $\ord(x) = n\in\n$. Entonces,
     \begin{enumerate}[i)]
-        \item $x^m = 1 \iff n \vert m$
-        \item $x^m = x^{m^\prime} \iff m \cong m^\prime (\mod n)$
-        \item $\ord\left( x^m \right) = \frac{n}{\mcd(n, m} = \frac{\ord(x)}{\mcd\left( \ord(x), m \right)}$
+        \item $x^m = 1 \iff n \vert m$.
+        \item $x^m = x^{m^\prime} \iff m \cong m^\prime \, \pmod{n}$.
+        \item $\ord\left( x^m \right) = \frac{n}{\mcd(n, m)} = \frac{\ord(x)}{\mcd\left( \ord(x), m \right)}$.
     \end{enumerate}
 \end{lema}
 
 \begin{proof}
     \begin{enumerate}[i)]
         \item[]
-        \item Si $n \vert m$, entonces $m = n \cdot d \implies x^m = \left( x^n \right)^d = 1^d = 1$
-            Suponemos que $m = nq + r$ con $0 \leq r < n$, entonces
+        \item Si $n \vert m$, entonces $m = n \cdot d$, con lo cual, $x^m = \left( x^n \right)^d = 1^d = 1$. Recíprocamente, pongamos $m = nq + r$, con $0 \leq r < n$. Entonces,
             \[
                 \begin{rcases}
                     1 = x^m = x^{nq + r} = \left( x^n \right)^q x^r = x^r \\
@@ -322,13 +321,13 @@
                 \implies r = 0 \implies n \vert m.
             \]
         \item $x^m = x^{m^\prime} \iff x^{m - m^\prime} = 1 \iff n \vert m - m^\prime \iff
-            m \cong m^\prime (\mod n)$.
-        \item Llamamos $k = \ord\left( x^m \right), g = \mcd(n, m)$. Queremos ver que $k = n/g$.
+            m \cong m^\prime \pmod{n}$.
+        \item Sean $k = \ord\left( x^m \right)$ y $g = \mcd(n, m)$. Queremos ver que $k = n/g$.
             \[
                 \left( x^m \right)^{\frac{n}{g}} = x^{\frac{mn}{g}} = \left( x^n \right)^{\frac{m}{g}} = 1
                 \implies k \left\vert \frac{n}{g} \right. .
             \]
-            Por otro lado
+            Por otro lado,
             \[
                 1 = \left( x^m \right)^k = x^{mk} \implies n \vert mk \implies \left.\frac{n}{g} \right\vert \frac{m}{g} k
                 \substack{n/g \text{ y } m/g \\ \implies \\ \text{ primos entre si}} \left.\frac{n}{g} \right\vert k.
