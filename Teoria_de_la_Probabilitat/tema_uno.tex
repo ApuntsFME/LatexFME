@@ -3,7 +3,7 @@
 \section{Definició axiomàtica de probabilitat}
 
 \begin{defi}[espai!de probabilitat]
-    Un espai de probabilitat és un espai de mesura $(\Omega,\Asuc, p)$ tal que $p(\Omega)=1$.
+    Un espai de probabilitat és un espai de mesura $(\Omega,\Asuc, p) \tq p(\Omega)=1$.
 \end{defi}
 
 \begin{defi}[espai!mostral]
@@ -40,8 +40,9 @@
 \begin{prop}
     Sigui $(\Omega,\Asuc, p)$ un espai de probabilitat. Aleshores,
     \begin{enumerate}[i)]
-        \item Si $A_1, \dots, A_r \in \Asuc$ són tals que $\forall i\neq j,\, A_i \cup A_j = \emptyset,$ aleshores $p\lp \bigcap\limits_{i=1}^{r} A_i \rp= \sum\limits_{i=1}^{r} p\lp A_i \rp.$.
-        \item \label{item:esp_prob_2}$A \in \Asuc \implies p(\overline{A})=1-p(A)$.
+        \item Si $A_1, \dots, A_r \in \Asuc$ són tals que $\forall i\neq j,\, A_i \cup A_j = \emptyset,$ aleshores 
+	  $p\lp \bigcap\limits_{i=1}^{r} A_i \rp= \sum\limits_{i=1}^{r} p\lp A_i \rp$.
+        \item \label{item:esp_prob_2}$A \in \Asuc \implies p(A^C)=1-p(A)$.
         \item \label{item:esp_prob_3}$A,B \in \Asuc, A \subseteq B \implies p\lp B\setminus A \rp = p\lp B\rp - p\lp A\rp$.
         \item $A,B \in \Asuc, A \subseteq B \implies p(A) \le p(B)$.
         \item \label{item:esp_prob_5}Successions monòtones:
@@ -75,11 +76,11 @@ Observem que l'apartat \ref{item:esp_prob_5} només es pot aplicar en casos molt
 hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
 
 \begin{teo}[Desigualtats de Bonferroni]
-    Siguin $A_1,\dots,A_r\in\Asuc$, i per $I\subseteq\{1,\dots,r\}$ sigui $A_I = bigcap_{i \in I}{A_i}$. Definim
+    Siguin $A_1,\dots,A_r\in\Asuc$, i per $I\subseteq\{1,\dots,r\}$ sigui $A_I = \bigcap\limits_{i \in I}{A_i}$. Definim
     \[
-        S_k = \sum_{I \in \{1,\dots,n\},\#I=k}{p(A_I)}
-    \],
-    això és, $S_1 = \sum{p(A_i)}$, $S_2 = \sum_{i \neq j}{p(A_i \cap A_j}$... Aleshores:
+        S_k = \sum_{I \in \{1,\dots,n\},\#I=k}{p(A_I)},
+    \]
+    això és, $S_1 = \sum{p(A_i)}$, $S_2 = \sum_{i \neq j}p\lp A_i \cap A_j\rp,\dots$. Aleshores:
     \begin{enumerate}[i)]
          \item Si $t$ és parell,
             \[p\lp\bigcup_{i=1}^{r}{A_i}\rp \geq \sum_{i=1}^{r}{(-1)^{i+1}S_i}\]
@@ -137,12 +138,14 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
 
 
 \section{Probabilitat condicionada}
+
 \begin{defi}[probabilitat!condicionada]
     Sigui $\lp \Omega, \Asuc, p\rp$ un espai de probabilitat i siguin $A, B \in \Asuc$. Definim la probabilitat d'$A$ condicionada a $B$ com
     \[
         p\lp A\mid B\rp = \frac{p\lp A\cap B\rp}{p\lp B\rp}.
     \]
 \end{defi}
+
 \begin{obs}
     Sigui $\lp \Omega, \Asuc, p\rp$ un espai de probabilitat i sigui $B \in \Asuc$ tal que $p\lp B\rp > 0$. Aleshores, l'aplicació
     \begin{align*}
@@ -154,7 +157,7 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
 
 \begin{prop}
     Sigui $I$ un conjunt numerable o finit i siguin $\lc A_i \rc_{i\in I} \subseteq \Asuc$ tals que 
-    \begin{enumerate}[a)]
+    \begin{enumerate}[i)]
         \item $p\lp A_i\rp>0$,
         \item $i\neq j \implies A_i \cap A_j = \varnothing$,
         \item $\bigcup\limits_{i\in I} A_i = \Omega$.
@@ -171,7 +174,6 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
             \]
     \end{enumerate}
 \end{prop}
-
 \begin{proof}
     \begin{enumerate}[1)]
         \item[]
@@ -195,20 +197,21 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
     Quina és la probabilitat de perdre tot el capital?
 \end{problema}
 \begin{sol}
-    
-    Sigui $A_k$ el succés ``el jugador, començant amb capital $k$, perd''.
-    
-    Condicionem $A_k$ a la primera tirada de la moneda, definim $B$: ``la primera tirada surt cara''.
-    
-    \[p(A_k) = p(A_k|B)p(B) + p(A_k|B^C)p(B^C) = p(A_k|B)\frac{1}{2} + p(A_k|B^C)\frac{1}{2} \implies\]
-    \[\implies 2p(A_k)=p(A_{k-1}) + p(A_{k+1}) \implies p(A_k) - p(A_{k-1}) = p(A_{k+1}) - p(A_k) = C\]
-    
-    és constant. Per tant $p(A_k) = p(A_0)+kC$. Sabent que $p(A_0)=1$ i $p(A_N)=0$:
-    \[0 = 1 + CN \implies C = -\frac{1}{n} \implies p(A_k) = 1 - \frac{k}{N}\]
+    Sigui $A_k$ el succés ``el jugador, començant amb capital $k$, perd''.Condicionem $A_k$ a la primera tirada de la moneda, 
+    definim $B$: ``la primera tirada surt cara''.
+    \begin{gather*}
+      p(A_k) = p(A_k|B)p(B) + p(A_k|B^C)p(B^C) = p(A_k|B)\frac{1}{2} + p(A_k|B^C)\frac{1}{2}\\
+      \implies 2p(A_k)=p(A_{k-1}) + p(A_{k+1}) \implies p(A_k) - p(A_{k-1}) = p(A_{k+1}) - p(A_k) = C,
+    \end{gather*}
+
+    el que ens diu que la diferència entre nivells és constant. Per tant $p(A_k) = p(A_0)+kC$. Sabent que $p(A_0)=1$ i $p(A_N)=0$ ens queda que
+    \[0 = 1 + CN \implies C = -\frac{1}{n} \implies p(A_k) = 1 - \frac{k}{N}.\]
 \end{sol}
 
+
 \section{Independència}
-\begin{defi}
+
+\begin{defi}[esdeveniments!independents]
     Sigui $\lp \Omega, \Asuc, p\rp$ un espai de probabilitat, sigui $I$ un conjunt finit o numerable i sigui $\lc A_i\rc_{i\in I} \subseteq \Asuc$. Diem que els esdeveniments $A_i$ són independents si per tot $J\subseteq I$ amb $\abs{J}\in\n$ es té que
     \[
         p\lp\bigcap_{j\in J} A_j\rp = \prod_{j\in J} p\lp A_j\rp.
