@@ -96,7 +96,7 @@
 
 \section{Intersección y producto de subgrupos}
 
-\begin{defi}[intesección de subgrupos]
+\begin{defi}[intersección de subgrupos]
     Sea $G$ un grupo y sean $H, K \subset G$ subgrupos de $G$. Definimos la intersección de
     $H$ y $K$ como
     \[
@@ -281,29 +281,30 @@
 \end{defi}
 
 \begin{obs}
-    Escribiremos el orden de $x$ como $\o(x)$ o $\ord(x)$.
+    Escribiremos el orden de $x$ como $\orden(x)$ o $\ord(x)$.
 \end{obs}
 
 \begin{obs}
-    El orden de $G$ es su cardinal, y lo denotaremos $\o(G)$, $\ord(G)$, $\abs{G}$ o $\card{G}$
+    El orden de $G$ es su cardinal, y lo denotaremos $\orden(G)$, $\ord(G)$, $\abs{G}$ o $\card(G)$.
 \end{obs}
 
 \begin{example}
-    \begin{itemize}
+    \begin{enumerate}[1.]
+        \item[]
         \item $\ord(e) = 2$ y es el único elemento (el neutro) que tiene orden 1.
-        \item $G = \sim_n$ $\ord\left( a_1, \dots, a_n \right) = n$
-        \item $\z, \q, \real, \cx$ con la suma, $\forall x \neq 0 \, \ord(x) = \infty$
-        \item $\z/p\z$ con $p$ primo, $\forall \bar{x} \neq \bar{0} \, \ord\left( \bar{x} \right) = p$
+        \item $G = \Sim_n$ $\ord\left( a_1, \dots, a_n \right) = n$.
+        \item $\z, \q, \real, \cx$ con la suma, $\forall x \neq 0 \, \ord(x) = \infty$.
+        \item $\z/p\z$ con $p$ primo, $\forall \bar{x} \neq \bar{0} \, \ord\left( \bar{x} \right) = p$.
         \item $\q, \real$ con el producto, $\ord(-1) = 2$, $\ord(1) = 1$ y
-            $\forall x \notin \setb{-1, 1} \, \ord(x) = \infty$
+            $\forall x \notin \setb{-1, 1} \, \ord(x) = \infty$.
         \item $\cx$ con el producto, $\forall n \geq 1$ $\ord\left( e^{\frac{2 \pi i}{n}} \right) = n$
-            $\forall z \in \cx \tq \abs{z} \neq 1, \, \ord(z) = \infty$
-    \end{itemize}
+            $\forall z \in \cx \tq \abs{z} \neq 1, \, \ord(z) = \infty$.
+    \end{enumerate}
 \end{example}
 
 \begin{lema}
     Sea $G$ un grupo y $x \in G$ con $\ord(x) = n$ finito. Entonces
-    \begin{enumerate}
+    \begin{enumerate}[i)]
         \item $x^m = 1 \iff n \vert m$
         \item $x^m = x^{m^\prime} \iff m \cong m^\prime (\mod n)$
         \item $\ord\left( x^m \right) = \frac{n}{\mcd(n, m} = \frac{\ord(x)}{\mcd\left( \ord(x), m \right)}$
@@ -311,7 +312,8 @@
 \end{lema}
 
 \begin{proof}
-    \begin{enumerate}
+    \begin{enumerate}[i)]
+        \item[]
         \item Si $n \vert m$, entonces $m = n \cdot d \implies x^m = \left( x^n \right)^d = 1^d = 1$
             Suponemos que $m = nq + r$ con $0 \leq r < n$, entonces
             \[
@@ -319,82 +321,83 @@
                     1 = x^m = x^{nq + r} = \left( x^n \right)^q x^r = x^r \\
                     0 \leq r < n
                 \end{rcases}
-                \implies r = 0 \implies n \vert m
+                \implies r = 0 \implies n \vert m.
             \]
         \item $x^m = x^{m^\prime} \iff x^{m - m^\prime} = 1 \iff n \vert m - m^\prime \iff
-            m \cong m^\prime (\mod n)$
+            m \cong m^\prime (\mod n)$.
         \item Llamamos $k = \ord\left( x^m \right), g = \mcd(n, m)$. Queremos ver que $k = n/g$.
             \[
                 \left( x^m \right)^{\frac{n}{g}} = x^{\frac{mn}{g}} = \left( x^n \right)^{\frac{m}{g}} = 1
-                \implies k \vert \frac{n}{g}
+                \implies k \left\vert \frac{n}{g} \right. .
             \]
             Por otro lado
             \[
-                1 = \left( x^m \right)^k = x^{mk} \implies n \vert mk \implies \frac{n}{g} \vert \frac{m}{g} k
-                \stackrel{n/g \text{ y } m/g \text{ primos entre si}}{\implies} \frac{n}{g} \vert k
+                1 = \left( x^m \right)^k = x^{mk} \implies n \vert mk \implies \left.\frac{n}{g} \right\vert \frac{m}{g} k
+                \substack{n/g \text{ y } m/g \\ \implies \\ \text{ primos entre si}} \left.\frac{n}{g} \right\vert k.
             \]
-            Y sumando los dos resultados, tenemos que $\frac{n}{g} = k$
+            Y sumando los dos resultados, tenemos que $\frac{n}{g} = k$.
     \end{enumerate}
 \end{proof}
 
 \begin{defi}[grupo!cíclico]
-    Diremos que un grupo $G$ es cíclico si está generado por un solo elemento $x @in G$.
-
+    Diremos que un grupo $G$ es cíclico si está generado por un solo elemento $x \in G$.
     Escribiremos $G = \left< x \right>$, $G$ generado por $x$ o $x$ generdor de $G$.
 \end{defi}
 
 \begin{obs}
-    Si $\ord(G) = n$ (con $n$ finito), entones
+    Si $\ord(G) = n$ (con $n$ finito), entonces
     \[
-        G = \setb{ 1 \left( = x^0 \right), x, x^2, \dots, x^{n-1}}
+        G = \setb{ 1 \left( = x^0 \right), x, x^2, \dots, x^{n-1}}.
     \]
     Y lo denotaremos cono $G = C_n$ (grupo cíclico de orden $n$).
-    
     Si $\ord(G) = \infty$, entonces
     \[
-        G = \setb{x^k \vert k \in \z}
+        G = \setb{x^k \vert k \in \z}.
     \]
 \end{obs}
 
 \begin{example}
-    \begin{itemize}
+    \begin{enumerate}[1.]
+        \item[]
         \item $\z = \left< 1 \right> = \left< -1 \right>$
         \item $\z/n\z = \left< \bar{k} \right>$ con $\mcd(n, k) = 1$
-    \end{itemize}
+    \end{enumerate}
 \end{example}
 
 \begin{defi}[función de Euler]
-    Sea $d \in \z, d \geq 1$, definiremos
+    Sea $d \in \z, d \geq 1$, definimos la función de Euler como
     \[
-        \phi(d) = \card \setb{ 1 \leq k \leq d \vert \mcd(k, d) = 1}
+        \phi(d) = \card \setb{ 1 \leq k \leq d \vert \mcd(k, d) = 1}.
     \]
-    llamaremos a $\phi$ la función de Euler.
 \end{defi}
 
 \begin{example}
-    $\phi(1) := 1, \phi(2) = 1, \phi(3) = 2, \phi(4) = 2, \phi(5) = 4, \phi(6) = 2, \phi(p) = p-1$
-    (con $p$ primo).
+    \begin{align*}
+        \phi(1) &= 1, & \phi(5) &= 4, & \phi(3) &= 2, & \phi(7) &= 6, \\
+        \phi(2) &= 1, & \phi(6) &= 2, & \phi(4) &= 2, & \phi(p) &= p-1 \text{(con } p \text{ primo).} 
+    \end{align*}
 \end{example}
 
 \begin{prop}
-    Sea $G = \left< x \right>$ un grupo cíclico, con $\ord(x) = n$. Entonces
-    \begin{enumerate}
-        \item $\forall y \in G, \ord(y) \vert n$
+    Sea $G = \left< x \right>$ un grupo cíclico, con $\ord(x) = n$, entonces
+    \begin{enumerate}[i)]
+        \item $\forall y \in G, \ord(y) \vert n$,
         \item $\forall d \vert n \, \exists \phi(d)$ elementos de $G = C_n$ de orden $d$.
     \end{enumerate}
 \end{prop}
 
 \begin{proof}
-    \begin{enumerate}
+    \begin{enumerate}[i)]
+        \item[]
         \item $y \in G = \left< x \right> = \setb{1, x, \dots, x^{n-1}} \implies$
                 \[
                     \ord(y) = \ord\left( x^m \right) = \frac{\ord(x)}{\mcd\left(\ord(x), m \right)} =
-                    \frac{n}{\mcd(n, m)} \vert n
+                    \left.\frac{n}{\mcd(n, m)} \right\vert n
                 \]
-        \item Sea $y \in G \tq \ord(y) = d$, tenemos:
+        \item Sea $y \in G \tq \ord(y) = d$, tenemos que
                 \[
                     y = x^m \implies \ord(y) = \frac{n}{\mcd(n, m)} \implies d = \frac{n}{\mcd(n, m)} 
-                    \implies \mcd(n, m) = \frac{n}{d}
+                    \implies \mcd(n, m) = \frac{n}{d}.
                 \]
                 Buscamos los $m$ tales que $\mcd(m, n) = \frac{n}{d}$ y por lo tanto
                 \[
@@ -403,17 +406,17 @@
                         1 \leq m \leq n
                     \end{rcases}
                     \implies 1 \leq \left( \frac{n}{d} \right)k \leq n = \left( \frac{n}{d} \right)d
-                    \implies 1 \leq k \leq d
+                    \implies 1 \leq k \leq d.
                 \]
                 Buscamos por lo tanto, $k\, 1 \leq k \leq d$ tal que $\mcd(n, m) = \frac{n}{d}$ y tenemos
                 \[
                     \mcd(n, m) = \frac{n}{d} \iff \mcd\left( \frac{n}{d}d, \frac{n}{d}k \right) = \frac{n}{d}
-                    \implies \mcd(k, d) = 1
+                    \implies \mcd(k, d) = 1.
                 \]
-                Y, con esta última condición, tenemos que
+                Con esta última condición, tenemos que
                 \[
                     \phi(d) = \card \setb{ k \in \z \vert \mcd(k, d) = 1 \text{ y } 1 \leq k \leq d}
-                    = \card \setb{ x^m \vert \ord\left( x^m \right) = d}
+                    = \card \setb{ x^m \vert \ord\left( x^m \right) = d}.
                 \]
     \end{enumerate}
 \end{proof}
@@ -421,17 +424,17 @@
 \begin{col}
     Se tiene que
     \[
-        n = \sum_{d \vert n} \phi(d)
+        n = \sum_{d \vert n} \phi(d).
     \]
 \end{col}
 
 \begin{proof}
     Tomamos $G = C_n = \left< x \right>$, entonces
     \[
-        n = \abs{G} = \sum_{d \vert n} \card \setb{ x \in G \vert \ord(x) =d } = \sum_{d \vert n} \phi(d)
+        n = \abs{G} = \sum_{d \vert n} \card \setb{ x \in G \vert \ord(x) =d } = \sum_{d \vert n} \phi(d).
     \]
     Ya que
     \[
-        G = \bigcup_{d \vert n} \setb{x \in G \vert \ord(x) = d }
+        G = \bigcup_{d \vert n} \setb{x \in G \vert \ord(x) = d}.
     \]
 \end{proof}
