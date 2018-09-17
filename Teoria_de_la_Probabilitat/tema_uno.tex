@@ -38,7 +38,7 @@
 \end{obs}
 
 \begin{prop}
-    Sigui $(\Omega,\Asuc, p)$ espai de probabilitat. Aleshores,
+    Sigui $(\Omega,\Asuc, p)$ un espai de probabilitat. Aleshores,
     \begin{enumerate}
         \item Si $A_1, \dots, A_r \in \Asuc$ són tals que $\forall i\neq j,\, A_i \cup A_j = \emptyset,$ aleshores $p\lp \bigcap\limits_{i=1}^{r} A_i \rp= \sum\limits_{i=1}^{r} p\lp A_i \rp.$.
         \item \label{item:esp_prob_2}$A \in \Asuc \implies p(\overline{A})=1-p(A)$.
@@ -70,3 +70,40 @@
         \end{enumerate}
     \end{enumerate}
 \end{proof}
+
+\section{Probabilitat condicionada}
+\begin{defi}[probabilitat!condicionada]
+    Sigui $\lp \Omega, \Asuc, p\rp$ un espai de probabilitat i siguin $A, B \in \Asuc$. Definim la probabilitat d'$A$ condicionada a $B$ com
+    \[
+        p\lp A\mid B\rp = \frac{p\lp A\cap B\rp}{p\lp B\rp}.
+    \]
+\end{defi}
+\begin{obs}
+    Sigui $\lp \Omega, \Asuc, p\rp$ un espai de probabilitat i sigui $B \in \Asuc$ tal que $p\lp B\rp > 0$. Aleshores, l'aplicació
+    \begin{align*}
+        p_B\colon \Asuc &\to \real \\
+        A &\mapsto p_B\lp A\rp := p\lp A\mid B\rp
+    \end{align*}
+    defineix un espai de probabilitat $\lp \Omega, \Asuc, p_B\rp$.
+\end{obs}
+
+\begin{prop}
+    Sigui $I$ un conjunt numerable o finit i siguin $\lc A_i \rc_{i\in I} \subseteq \Asuc$ tals que 
+    \begin{enumerate}[i)]
+        \item $p\lp A_i\rp>0$,
+        \item $i\neq j \implies A_i \cap A_j = \varnothing$,
+        \item $\bigcup\limits_{i\in I} A_i = \Omega$.
+    \end{enumerate}
+    Aleshores,
+    \begin{enumerate}[a)]
+        \item Probabilitat total:
+            \[
+                p\lp B\rp=\sum_{i\in I} p\lp B\mid A_i\rp p\lp A_i\rp, \quad \forall B\in \Asuc.
+            \]
+        \item Fórmula de Bayes:
+            \[
+                p\lp A_i\mid B\rp=\frac{P\lp B\mid A_i\rp p\lp A_i\rp}{\sum_{i\in I} p\lp B\mid A_i\rp p\lp A_i\rp}, \quad \forall B\in \Asuc \text{ amb } p\lp B\rp>0.
+            \]
+    \end{enumerate}
+\end{prop}
+
