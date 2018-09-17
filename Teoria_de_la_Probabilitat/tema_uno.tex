@@ -122,34 +122,32 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i}$:
         \item $\bigcup\limits_{i\in I} A_i = \Omega$.
     \end{enumerate}
     Aleshores,
-    \begin{enumerate}[i)]
+    \begin{enumerate}[1)]
         \item Probabilitat total:
             \[
                 p\lp B\rp=\sum_{i\in I} p\lp B\mid A_i\rp p\lp A_i\rp, \quad \forall B\in \Asuc.
             \]
         \item Fórmula de Bayes:
             \[
-                p\lp A_i\mid B\rp=\frac{P\lp B\mid A_i\rp p\lp A_i\rp}{\sum_{i\in I} p\lp B\mid A_i\rp p\lp A_i\rp}, \quad \forall B\in \Asuc \text{ amb } p\lp B\rp>0.
+                p\lp A_i\mid B\rp=\frac{P\lp B\mid A_i\rp p\lp A_i\rp}{\sum_{j\in I} p\lp B\mid A_j\rp p\lp A_j\rp}, \quad \forall B\in \Asuc \text{ amb } p\lp B\rp>0.
             \]
     \end{enumerate}
 \end{prop}
 
 \begin{proof}
-    \begin{enumerate}[i)]
+    \begin{enumerate}[1)]
         \item[]
-        \item Com que els $A_i$ són disjunts i $\bigcup_{i \in I}{A_i} = \Omega$, aleshores $\forall B \in \Asuc$,
-        $B = \bigcup_{i\in I}{B \cap A_i}$, i la unió és disjunta:
+        \item Com que els $A_i$ són disjunts i $\bigcup_{i \in I}{A_i} = \Omega$, $\forall B \in \Asuc$,
+        $B = \bigcup_{i\in I}{B \cap A_i}$, i la unió és disjunta. Es té
         \[
             p(B) = p\lp\bigcup_{i\in I}{B \cap A_i}\rp \stackrel{\sigma-add.}{=} \sum_{i\in I}{p(B \cap A_i)} =
-            \sum_{i\in I}{p(B|A_i)p(A_i)}
+            \sum_{i\in I}{p(B|A_i)p(A_i)}.
         \]
         \item
-        \[
-            p(A_i|B) \sum_{j \in I}{p(B|A_j)p(A_j)} \stackrel{i)}{=} p(A_i|B)p(B) = \frac{p(B\cap A_i)}{p(B)}p(B) =
-            p(B \cap A_i) \implies
-        \]\[
-            \implies p\lp A_i\mid B\rp=\frac{P\lp B\mid A_i\rp p\lp A_i\rp}{\sum_{i\in I} p\lp B\mid A_i\rp p\lp A_i\rp}
-        \]
+        \begin{gather*}
+            p(A_i|B) \sum_{j \in I}{p(B|A_j)p(A_j)} \stackrel{i)}{=} p(A_i|B)p(B) =\\
+            \frac{p(B\cap A_i)}{p(B)}p(B) = p(B \cap A_i) = P\lp B\mid A_i\rp p\lp A_i\rp.
+        \end{gather*}
     \end{enumerate}
 \end{proof}
 
@@ -165,11 +163,27 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i}$:
     Condicionem $A_k$ a la primera tirada de la moneda, definim $B$: ``la primera tirada ix cara''.
     
     \[p(A_k) = p(A_k|B)p(B) + p(A_k|\overline{B})p(\overline{B}) = p(A_k|B)\frac{1}{2} + p(A_k|\overline{B})\frac{1}{2} \implies\]
-    \[\implies 2p(A_k)=p(A_{k-1}) + p(A_{k+1} \implies p(A_k) - p(A_{k-1} = p(A_{k+1}) - p(A_k) = C\]
+    \[\implies 2p(A_k)=p(A_{k-1}) + p(A_{k+1}) \implies p(A_k) - p(A_{k-1}) = p(A_{k+1}) - p(A_k) = C\]
     
     és constant. Per tant $p(A_k) = p(A_0)+kC$. Sabent que $p(A_0)=1$ i $p(A_N)=0$:
     \[0 = 1 + CN \implies C = -\frac{1}{n} \implies p(A_k) = 1 - \frac{k}{N}\]
 \end{sol}
+
+\section{Independència}
+\begin{defi}
+    Sigui $\lp \Omega, \Asuc, p\rp$ un espai de probabilitat, sigui $I$ un conjunt finit o numerable i sigui $\lc A_i\rc_{i\in I} \subseteq \Asuc$. Diem que els esdeveniments $A_i$ són independents si per tot $J\subseteq I$ amb $\abs{J}\in\n$ es té que
+    \[
+        p\lp\bigcap_{j\in J} A_j\rp = \prod_{j\in J} p\lp A_j\rp.
+    \]
+\end{defi}
+
+\begin{example}
+    \begin{enumerate}[1.]
+        \item[]
+        \item $\varnothing, \Omega$ són independents entre si.
+        \item $A$ és independent amb si mateix si i només si $p\lp A\rp=1$ o $p\lp A\rp =0$.
+    \end{enumerate}
+\end{example}
 
 
 
