@@ -95,7 +95,8 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
 \begin{example}
     \begin{enumerate}
      \item []
-     \item Espais de probabilitat numerables
+     \item Espais de probabilitat numerables.
+     
      Prenem $\Omega$ un conjunt numerable $\Omega =\left\{a_i\right\}_{i\geq 1}$. Prenem $\Asuc = \Pa\lp \Omega\rp$
      (que és una $\sigma$-àlgebra). Per a definir la probabilitat sobre $\lp\Omega,\,\Asuc\rp$ prenem una successió 
      $\left\{p_i\right\}_{i\geq 1} \tq 0\geq p_i\geq 1$ que cumpleix que $\forall i,\, p\lp a_i\rp = p_i$ i 
@@ -105,8 +106,33 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
      \]
      Si, a més, $|\Omega|<+\infty$, $\Asuc = \Pa\lp\Omega\rp$ té $2^{|\Omega|}$ elements i si premnem 
      $\Omega =\left\{a_i\right\}_{i=1}^{N}$ i $p_1=p_2=\dots=p_N = \frac{1}{N}$ obtenim un espai clàssic de probabilitat.
+     
+     \item Espai de probabilitat en $\left[a,b\right]\subseteq \real$.
+     
+      Sigui $\Omega=\left[a,b\right]$ i prenem $\Asuc=\B\cap\left[a,b\right]$ amb $\B$ un borelià i com a funció de probabilitat $p=\frac{\lambda}{b-a}$, on $\lambda$
+      és la mesura de Lebesgue. Observem que no podem prendre tot $\real$ perquè no podem normalitzar $\lambda\lp\real\rp$. Malgrat això, usant $\lambda$ construirem
+      més endavant funcions de probabilitat sobre $\lp\real,\,\B\rp$.
+      
+     \item Tirada indefinida d'una moneda.
+     
+     En aquest cas tenim que $\Omega = \left\{a_i\right\}_{i\geq1}$, $a_i \in \left\{0,1\right\}$ de la forma
+     \begin{gather*}
+	00010001110110\dots \\
+	01001110101101\dots \\
+	10010111110010\dots 
+     \end{gather*}
+      sent $0$ creu i $1$ cara. Aquest conjunt és no numerable fàcilment demostrable amb l'argument de la diagonal de Cantor.
+      Per a construir una $\sigma$-àlgebra sobre $\Omega$ trobem una ``bijecció'' amb $\left[0,1\right]$ de la forma
+      \[
+        \begin{aligned}
+            \varphi\colon\Omega &\to [0,1]\subseteq\real \\
+            a=a_1a_2\dots a_n &\mapsto 0.a_1a_2\dots a_n
+        \end{aligned}.
+      \]
+      No és una bijecció completa ja que hi ha elements diferrents que van a la mateixa imatge degut als nombres que acaben en $1$ periòdic, però al ser tots racionals,
+      el conjunt d'aquests nombres és numerable i per tant té mesura nul·la. És per això que podem definir una $\sigma$-àlgebra sobre $\Omega$ prenent 
+      $\left\{\varphi^{-1}\lp A\rp \right\}_{A\subseteq \B\cup[0,1]}$. Similarment ho fem amb la mesura.
     \end{enumerate}
-
 \end{example}
 
 
@@ -172,9 +198,9 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
     
     Sigui $A_k$ el succés ``el jugador, començant amb capital $k$, perd''.
     
-    Condicionem $A_k$ a la primera tirada de la moneda, definim $B$: ``la primera tirada ix cara''.
+    Condicionem $A_k$ a la primera tirada de la moneda, definim $B$: ``la primera tirada surt cara''.
     
-    \[p(A_k) = p(A_k|B)p(B) + p(A_k|\overline{B})p(\overline{B}) = p(A_k|B)\frac{1}{2} + p(A_k|\overline{B})\frac{1}{2} \implies\]
+    \[p(A_k) = p(A_k|B)p(B) + p(A_k|B^C)p(B^C) = p(A_k|B)\frac{1}{2} + p(A_k|B^C)\frac{1}{2} \implies\]
     \[\implies 2p(A_k)=p(A_{k-1}) + p(A_{k+1}) \implies p(A_k) - p(A_{k-1}) = p(A_{k+1}) - p(A_k) = C\]
     
     és constant. Per tant $p(A_k) = p(A_0)+kC$. Sabent que $p(A_0)=1$ i $p(A_N)=0$:
