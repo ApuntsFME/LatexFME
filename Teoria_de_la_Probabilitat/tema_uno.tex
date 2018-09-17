@@ -20,13 +20,13 @@
 
 \begin{obs}
     Recordem que $\lp\Omega,\Asuc\rp$ és un espai mesurable si $\Asuc\subseteq \Pa\lp\Omega\rp$ és una $\sigma$-àlgebra d'$\Omega$, és a dir,
-    \begin{enumerate}
+    \begin{enumerate}[i)]
         \item $\emptyset \in \Asuc$,
         \item $A \in \Asuc \iff A^C \in \Asuc$,
         \item Si $\lc A_i\rc _{i\in\n}\subseteq \Asuc$, aleshores $\bigcup_{i\in\n}{A_i} \in \Asuc$.
     \end{enumerate}
     I que $\lp\Omega,\Asuc,\mu\rp$ és un espai de mesura si $\mu$ és una mesura sobre l'espai mesurable $\lp\Omega,\Asuc\rp$, és a dir,
-    \begin{enumerate}
+    \begin{enumerate}[i)]
         \item $\mu(\emptyset) = 0$,
         \item $\forall A \in \Asuc,\quad \mu(A) \ge0$,
         \item ($\sigma$-additivitat) Si $\lc A_i\rc_{i\in\n}\subseteq\Asuc$ és tal que $\forall i \neq j, \, A_i \cap A_j = \emptyset$,
@@ -39,12 +39,12 @@
 
 \begin{prop}
     Sigui $(\Omega,\Asuc, p)$ un espai de probabilitat. Aleshores,
-    \begin{enumerate}
+    \begin{enumerate}[i)]
         \item Si $A_1, \dots, A_r \in \Asuc$ són tals que $\forall i\neq j,\, A_i \cup A_j = \emptyset,$ aleshores $p\lp \bigcap\limits_{i=1}^{r} A_i \rp= \sum\limits_{i=1}^{r} p\lp A_i \rp.$.
         \item \label{item:esp_prob_2}$A \in \Asuc \implies p(\overline{A})=1-p(A)$.
-        \item \label{item:esp_prob_3} $A,B \in \Asuc, A \subseteq B \implies p\lp B\setminus A \rp = p\lp B\rp - p\lp A\rp$.
+        \item \label{item:esp_prob_3}$A,B \in \Asuc, A \subseteq B \implies p\lp B\setminus A \rp = p\lp B\rp - p\lp A\rp$.
         \item $A,B \in \Asuc, A \subseteq B \implies p(A) \le p(B)$.
-        \item Succecions monòtones:
+        \item \label{item:esp_prob_5}Successions monòtones:
         \begin{enumerate}[a)]
          \item Si $\left\{A_i\right\}_{i\in\n} \subseteq \Asuc$ són tals que $A_i\subseteq A_{i+1}$, aleshores $p\lp \bigcup\limits_{i\in\n} A_i\rp = \lim\limits_{i\to\infty} p\lp A_i\rp$.
          \item Si $\left\{A_i\right\}_{i\in\n} \subseteq \Asuc$ són tals que $A_i\supseteq A_{i+1}$, aleshores $p\lp \bigcap\limits_{i\in\n} A_i\rp = \lim\limits_{i\to\infty} p\lp A_i\rp$.
@@ -71,6 +71,33 @@
     \end{enumerate}
 \end{proof}
 
+\ref{item:esp_prob_5} només es pot aplicar en casos molt particulars. En general, si tenim $A_i,\dots,A_r$ succcessos,
+hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i}$:
+
+\begin{prop}[Desigualtats de Bonferroni]
+    Siguin $A_1,\dots,A_r\in\Asuc$, i per $I\subseteq\{1,\dots,r\}$ sigui $A_I = bigcap_{i \in I}{A_i}$. Definim
+    \[
+        S_k = \sum_{I \in \{1,\dots,n\},\#I=k}{p(A_I)}
+    \],
+    això és, $S_1 = \sum{p(A_i)}$, $S_2 = \sum_{i \neq j}{p(A_i \cap A_j}$... Aleshores:
+    \begin{enumerate}[i)]
+         \item Si $t$ és parell,
+            \[p\lp\bigcup_{i=1}^{r}{A_i}\rp \geq \sum_{i=1}^{r}{(-1)^{i+1}S_i}\]
+         \item Si $t$ és senar,
+            \[p\lp\bigcup_{i=1}^{r}{A_i}\rp \leq \sum_{i=1}^{r}{(-1)^{i+1}S_i}\]
+    \end{enumerate}
+\end{prop}
+
+\begin{obs}
+    Amb els casos $t=1$ (desigualtat de Boole) i $t=2$ es poden donar fites inferiors i superiors.
+\end{obs}
+
+
+\begin{example}[Espais de probabilitat]
+    %TODO
+\end{example}
+
+
 \section{Probabilitat condicionada}
 \begin{defi}[probabilitat!condicionada]
     Sigui $\lp \Omega, \Asuc, p\rp$ un espai de probabilitat i siguin $A, B \in \Asuc$. Definim la probabilitat d'$A$ condicionada a $B$ com
@@ -89,13 +116,13 @@
 
 \begin{prop}
     Sigui $I$ un conjunt numerable o finit i siguin $\lc A_i \rc_{i\in I} \subseteq \Asuc$ tals que 
-    \begin{enumerate}[i)]
+    \begin{enumerate}[a)]
         \item $p\lp A_i\rp>0$,
         \item $i\neq j \implies A_i \cap A_j = \varnothing$,
         \item $\bigcup\limits_{i\in I} A_i = \Omega$.
     \end{enumerate}
     Aleshores,
-    \begin{enumerate}[a)]
+    \begin{enumerate}[i)]
         \item Probabilitat total:
             \[
                 p\lp B\rp=\sum_{i\in I} p\lp B\mid A_i\rp p\lp A_i\rp, \quad \forall B\in \Asuc.
@@ -106,4 +133,44 @@
             \]
     \end{enumerate}
 \end{prop}
+
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item[]
+        \item Com que els $A_i$ són disjunts i $\bigcup_{i \in I}{A_i} = \Omega$, aleshores $\forall B \in \Asuc$,
+        $B = \bigcup_{i\in I}{B \cap A_i}$, i la unió és disjunta:
+        \[
+            p(B) = p\lp\bigcup_{i\in I}{B \cap A_i}\rp \stackrel{\sigma-add.}{=} \sum_{i\in I}{p(B \cap A_i)} =
+            \sum_{i\in I}{p(B|A_i)p(A_i)}
+        \]
+        \item
+        \[
+            p(A_i|B) \sum_{j \in I}{p(B|A_j)p(A_j)} \stackrel{i)}{=} p(A_i|B)p(B) = \frac{p(B\cap A_i)}{p(B)}p(B) =
+            p(B \cap A_i) \implies
+        \]\[
+            \implies p\lp A_i\mid B\rp=\frac{P\lp B\mid A_i\rp p\lp A_i\rp}{\sum_{i\in I} p\lp B\mid A_i\rp p\lp A_i\rp}
+        \]
+    \end{enumerate}
+\end{proof}
+
+\begin{problema}[Ruïna del jugador]
+    Partim d'un capital de $k$ unitats i, en cada jugada (sense memòria) augmenta o disminueix el capital en una unitat,
+    amb probabilitats 1/2 i 1/2. El joc acaba si ens quedem sense capital o si assolim un objectiu $N$ ($N>k$).
+    Quina és la probabilitat de perdre tot el capital?
+\end{problema}
+\begin{sol}
+    
+    Sigui $A_k$ el succés ``el jugador, començant amb capital $k$, perd''.
+    
+    Condicionem $A_k$ a la primera tirada de la moneda, definim $B$: ``la primera tirada ix cara''.
+    
+    \[p(A_k) = p(A_k|B)p(B) + p(A_k|\overline{B})p(\overline{B}) = p(A_k|B)\frac{1}{2} + p(A_k|\overline{B})\frac{1}{2} \implies\]
+    \[\implies 2p(A_k)=p(A_{k-1}) + p(A_{k+1} \implies p(A_k) - p(A_{k-1} = p(A_{k+1}) - p(A_k) = C\]
+    
+    és constant. Per tant $p(A_k) = p(A_0)+kC$. Sabent que $p(A_0)=1$ i $p(A_N)=0$:
+    \[0 = 1 + CN \implies C = -\frac{1}{n} \implies p(A_k) = 1 - \frac{k}{N}\]
+\end{sol}
+
+
+
 
