@@ -272,33 +272,31 @@
 
 \section{Orden de un elemento}
 
-\begin{defi}[orden]
-    Sea $G$ un grupo y sea $x \in G$. Llamaremos orden de $x$, si existe, al menor entero $n \geq 1$ tal que
+\begin{defi}[orden!de los elementos de un grupo]
+    Sea $G$ un grupo y sea $x \in G$. Llamamos orden de $x$, si existe, al menor entero $n \geq 1$ tal que
     \[
         x^n = 1.
     \]
-    Si no existe, diremos que $x$ tiene orden infinito.
+    Si no existe, decimos que $x$ tiene orden infinito.
 \end{defi}
 
 \begin{obs}
-    Escribiremos el orden de $x$ como $\orden(x)$ o $\ord(x)$.
+    Escribimos el orden de $x$ como $\orden(x)$ o $\ord(x)$.
 \end{obs}
 
-\begin{obs}
-    El orden de $G$ es su cardinal, y lo denotaremos $\orden(G)$, $\ord(G)$, $\abs{G}$ o $\card(G)$.
-\end{obs}
+\begin{defi}[orden!de un grupo]
+    Sea $G$ un grupo. Llamamos orden de $G$ a su cardinal y lo denotamos $\orden(G)$, $\ord(G)$, $\abs{G}$ o $\card(G)$.
+\end{defi}
 
 \begin{example}
     \begin{enumerate}[1.]
         \item[]
-        \item $\ord(e) = 2$ y es el único elemento (el neutro) que tiene orden 1.
-        \item $G = \Sim_n$ $\ord\left( a_1, \dots, a_n \right) = n$.
-        \item $\z, \q, \real, \cx$ con la suma, $\forall x \neq 0 \, \ord(x) = \infty$.
-        \item $\z/p\z$ con $p$ primo, $\forall \bar{x} \neq \bar{0} \, \ord\left( \bar{x} \right) = p$.
-        \item $\q, \real$ con el producto, $\ord(-1) = 2$, $\ord(1) = 1$ y
-            $\forall x \notin \setb{-1, 1} \, \ord(x) = \infty$.
-        \item $\cx$ con el producto, $\forall n \geq 1$ $\ord\left( e^{\frac{2 \pi i}{n}} \right) = n$
-            $\forall z \in \cx \tq \abs{z} \neq 1, \, \ord(z) = \infty$.
+        \item $\ord(e) = 1$ y es el único elemento (el neutro) que tiene orden 1.
+        \item En el grupo simétrico $G = \Sim_n$, $\ord\left( a_1, \dots, a_n \right) = n$.
+        \item En los grupos $\lp \z, +\rp , \lp \q, +\rp, \lp \real, +\rp$ y $\lp \cx, +\rp$, $\forall x \neq 0 \, \ord(x) = \infty$.
+        \item En el grupo $\z/p\z$ con $p$ primo, $\forall \bar{x} \neq \bar{0} \, \ord\left( \bar{x} \right) = p$.
+        \item En los grupos $\q^{\ast}=\lp \q\setminus \lc 0\rc, \cdot \rp, \real^{\ast}=\lp \real\setminus \lc 0\rc, \cdot\rp$, $\ord(-1) = 2$, $\ord(1) = 1$ y $\forall x \notin \setb{-1, 1} \, \ord(x) = \infty$.
+        \item En el grupo $\cx^{\ast}=\lp \cx\setminus \lc 0\rc, \cdot \rp$, $\forall n \geq 1$ $\ord\left( e^{\frac{2 \pi i}{n}} \right) = n$ y $\forall z \in \cx \tq \abs{z} \neq 1, \, \ord(z) = \infty$.
     \end{enumerate}
 \end{example}
 
