@@ -243,27 +243,46 @@ el punto flaco es que no es tan robusto como el de la bisección.
 
 \subsection{Análisis del método de Newton}
 
+Para estudiar la convergencia, primero es conveniente, conocer las derivadas de la función $\phi$, así pues,
+tenemos
+\[
+    \begin{aligned}
+        \phi(x) &= x - \frac{f(x)}{f^\prime(x)} \\
+        \phi^\prime(x) &= \frac{f(x)f^{\prime \prime}(x)}{f^\prime(x)^2} \\
+        \phi^{\prime \prime}(x) &= \frac{f^{\prime \prime}(x)}{f^\prime(x)} -
+        \frac{2 f(x)f^{\prime \prime}(x)^2}{f^\prime(x)^3} +
+        \frac{f(x)f^{\prime \prime \prime}(x)}{f^\prime(x)^2}
+    \end{aligned}
+\]
 \begin{itemize}
     \item Caso de una raíz simple, $f(\alpha) = 0$ y $f^\prime(\alpha) \neq 0$.
-        Tenemos
+        En este caso,
         \[
-            \phi^\prime = 1 - \frac{f^2 - f^\prime f^{\prime \prime}}{f^2} =
-            \frac{f^\prime f^{\prime \prime}}{f^2}
-        \]
-        entonces
-        \[
-            \phi^\prime(\alpha) = 0 \, \phi^{\prime \prime}(\alpha) =
-            \frac{f^{\prime \prime}}{f^\prime(\alpha)} \neq 0
+            \begin{aligned}
+                \phi^\prime(\alpha) &= 0 \\
+                \phi^{\prime \prime}(\alpha) &= \frac{f^{\prime \prime}(\alpha)}{f^\prime(\alpha)^2}
+            \end{aligned}
         \]
         En general $\phi^{\prime \prime}(\alpha) \neq 0$, por lo tanto el método de Newton
-        tiene, en general orden 2.
-    \item Caso de una raíz doble $f(\alpha) = f^\prime(\alpha) = 0$ y $f^{\prime \prime} \neq 0$.
-        Obtenemos que
+        tiene, en general, convergencia de orden 2.
+    \item Caso de una raíz doble $f(\alpha) = f^\prime(\alpha) = 0$ y $f^{\prime \prime}(\alpha) \neq 0$.
+        Observamos que $\phi^\prime(\alpha)$ no está bien definido, pero podemos calcular el límite, teniendo
         \[
-            \lim_{x \to \infty} \phi^\prime(\alpha) = \cdots = \frac{1}{2}
+            \begin{aligned}
+                \lim_{x \to \alpha} \phi^\prime(x) &= \frac{f(x)f^{\prime \prime}(x)}{f^\prime(x)^2}
+                \stackrel{\text{L.H}}{=} \lim_{x \to \alpha}
+                \frac{f^\prime(x)f^{\prime \prime}(x) + f(x)f^{\prime \prime \prime}(x)}
+                {2 f^\prime(x)f^{\prime \prime}(x)} = \\ &= \lim_{x \to \alpha} 
+                \frac{f^\prime(x)f^{\prime \prime}(x)}{2 f^\prime(x) f^{\prime \prime}(x)} +
+                \frac{f(x)f^{\prime \prime \prime}(x)}{2 f^\prime(x)f^{\prime \prime}(x)} =
+                \frac{1}{2} + \lim_{x \to \alpha} \frac{f(x)f^{\prime \prime \prime}(x)}
+                {2f^\prime(x)f^{\prime \prime}(x)} \stackrel{\text{L.H.}}{=} \\ &= \frac{1}{2} +
+                \lim_{x \to \alpha} \frac{f^\prime(x)f^{\prime \prime \prime}(x) + f(x)f^{(4)}(x)}
+                {2f^{\prime \prime}(x)^2 + 2f^\prime(x)f^{\prime \prime \prime}(x)} = \frac{1}{2}
+            \end{aligned}
         \]
-        Por lo tanto es lineal con F.A.C igual a $\frac{1}{2}$. (Los pasos intermedios del límite se 
-        dejan como ejercicio).
+        Por lo tanto es lineal con F.A.C igual a $\frac{1}{2}$.
+
     \item El caso de multiplicidad $p$, es decir, $f(\alpha) = \cdots = f^{(p-1)}(\alpha) = 0$ y
         $f^{(p)} \neq 0$.
 
