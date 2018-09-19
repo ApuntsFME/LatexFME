@@ -223,9 +223,48 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
         \item[]
         \item $\varnothing, \Omega$ són independents entre si.
         \item $A$ és independent amb si mateix si i només si $p\lp A\rp=1$ o $p\lp A\rp =0$.
+        %TODO
     \end{enumerate}
 \end{example}
 
+\section{Espai producte}
 
+Donats dos espais de probabilitat $\lp\Omega_1,\Asuc_1,p_1\rp$ i $\lp\Omega_2,\Asuc_2,p_2\rp$, volem construir un nou espai de probabilitat $\lp\Omega_3,\Asuc_3,p_3\rp$
+que codifiqui els dos espais de probabilitat inicials. A aquest espai de probabilitat l'anomenarem espai de probabilitat producte.
 
+\begin{defi}[espai!de probabilitat producte]
+  Siguin $\lp\Omega_1,\Asuc_1,p_1\rp$ i $\lp\Omega_2,\Asuc_2,p_2\rp$ dos espais de probabilitat. Anomenem espai de probabilitat producte a la terna $\lp\Omega_3,\Asuc_3,p_3\rp$
+  tal que
+  \begin{enumerate}[i)]
+   \item $\Omega_3=\Omega_1\times\Omega_2$
+   \item $\Asuc_3 = \sigma\lp\Asuc_1\times\Asuc_2\rp$ ($\sigma$-àlgebra generada per $\Asuc_1\times\Asuc_2$)
+   \item \label{item:espai_prod_3}$p_3$ és una funció de probabilitat que cumpleix que $\forall A_1, A_2 \tq A_1\times A_2\in\Asuc_1\times\Asuc_2$ aleshores 
+   $p_3\lp A_1\times A_2\rp = p_1\lp A_1\rp p_2\lp A_2\rp$.
+  \end{enumerate}
+\end{defi}
 
+\begin{obs}
+  $p_3$ està ben definida ja que pel Teorema d'extensió de Carathéodory podem construir una $\sigma$-àlgebra sobre $\Omega_1\times\Omega_2$ a partir d'una 
+  extensió de $\sigma\lp\Asuc_1\times\Asuc_2\rp$ i restringir $p_3$ segons \ref{item:espai_prod_3}.
+\end{obs}
+
+\begin{obs}
+  Podem extendre $\lambda$ (la mesura de Lebesgue) a $\real^2$ de la següent forma. Sabem que $\lp[0,1], \B\cap[0,1],\lambda_{[0,1]}\rp$ és un espai de probabilitat.
+  Aleshores \[\lp [0,1]\times[0,1], \sigma\lp\B\cap[0,1]\times\B\cap[0,1]\rp, \lambda_{[0,1]\times[0,1]}\rp\] defineix un espai de probabilitat a $\real^2$.
+\end{obs}
+
+\begin{problema}[Agulla de Buffon]
+  Considerem el pla $\real^2$ tesel·lat amb linies paral·leles indefinides separades per una distància $L$. Llancem una agulla de longitud $l\leq L$ sobre el pla.
+  Trobar quina és la probabilitat que l'agulla toqui una de les linies.
+\end{problema}
+\begin{sol}
+  Considerarem dues variables: $x$ com la distància del centre de l'agulla a la linia més propera i $\theta$ com l'angle de l'agulla amb la direcció de les lines.
+  Tenim que $x\in\left[0,\frac{L}{2}\right]$ i $\theta\in[0,\pi)$ i per tant, $\Omega =\left[0,\frac{L}{2}\right]\times[0,\pi)$, $\Asuc$ són els borelians 
+  del conjunt i $p$ la mesura de Lebesgue normalitzada en $\Asuc$. Sigui $A\in\Asuc$ l'esdeveniment ``l'agulla talla una recta'' i $\omega\in\Omega$ una tirada.
+  Aleshores $w\in A \iff x\leq \frac{l}{2}\sin\theta$. Per tant,
+  \[
+   p\lp A\rp = \frac{\int_0^{\pi}\frac{l}{2}\sin\theta \dif\theta}{\frac{L\pi}{2}}=\frac{2l}{L\pi}.
+  \]
+\end{sol}
+
+%TODO
