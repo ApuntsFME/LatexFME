@@ -378,7 +378,10 @@
     Sea $G = \left< x \right>$ un grupo cíclico, con $\ord(x) = n$, entonces
     \begin{enumerate}[i)]
         \item $\forall y \in G, \ord(y) \vert n$,
-        \item $\forall d \vert n,$ existen $\varphi(d)$ elementos de $G = C_n$ de orden $d$.
+        \item $\forall d \vert n,$ existen $\varphi(d)$ elementos de $G = C_n$ de orden $d$. De hecho, son
+            \[
+                \setb{\left. x^{\frac{n}{d} k} \right\vert 1 \leq k \leq d \tq \mcd(k, d) = 1}
+            \]
     \end{enumerate}
 \end{prop}
 
@@ -423,4 +426,143 @@
     \[
         G = \bigcup_{d \vert n} \setb{x \in G \vert \ord(x) = d}.
     \]
+\end{proof}
+
+\begin{prop}
+    Sea $G = C_n = \left< x \right>$ (con $n$ finito). Entonces
+    \begin{enumerate}[i)]
+        \item Si $d \vert n \implies x^{\frac{n}{d}}$ es un elemento de orden $d$
+            y el subgrupo $H_d := \left< x^{\frac{n}{d}} \right>$ es subgrupo cíclico de orden $d$.
+        \item Si $H$ es un subgrupo de $G$, entonces $\exists! d \vert n$ tal que $H = H_d$.
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item Se tiene que
+            \[
+                \orden\left( x^{\frac{n}{d}} \right) = \frac{n}{\mcd(n, \frac{n}{d}} = d
+            \]
+            Como $x{\frac{n}{d}}$ tiene orden $d \implies H_d = \left< x^{\frac{n}{d}} \right>$ es un grupo
+            cíclico de orden $d$.
+        \item Sea $H$ un subgrupo de $G = C_n$ y sea $1 \leq t \leq n$ el menor exponente tal que 
+            $x^t \in H$. Veremos que $t \vert t$. Expresamos $n = td + r$ (con $0 \leq r < t$).
+            \[
+                1 = x^n = x^{td + r} = \left( x^t \right)^d x^r \implies
+                \left( \left( x^t \right)^d \right)^{-1} \in H
+            \]
+            Pero $t$ es el exponente más pequeño (a excepción del 0) y por lo tanto $r = 0$ y $n = td$.
+            Verems ahora que $H = H_d$.
+            
+            Claramente $\left< x^{\frac{n}{d}} \right> H_d \subseteq H$, ya que $x^{\frac{n}{d}} = x^t \in H$
+            y por lo tanto, todos sus múltiplos están en $H$.
+
+            Sea $y \in H$, claramente $y = x^m$, ya que $H \subseteq G$. Escribimos $m = tq + s$
+            (con $0 \leq s < t$). Entonces
+            \[
+                x^m = x^{tq + s} = \left( x^t \right)^q x^s \implies
+                x^s = \stackrel{\left( \left( x^t \right)^q \right)^{-1}}{\in H}
+                \stackrel{x^m}{\in H} \in H
+            \]
+            de nuevo, por la definición de $t$, $s = 0$ y por lo tanto $y = \left( x^t \right)^q \in 
+            \left< x^{\frac{n}{d}} \right> = H_d$, es decir, $H \subseteq H_d$.
+
+            Solo resta ver que $d$ es único, pero es obvio ya que, si $H = H_d = H_e$, entonces
+            \[
+                \orden(H) = \orden\left( H_d \right) = \orden\left( H_e \right) \implies
+                d = e
+            \]
+    \end{enumerate}
+\end{proof}
+
+\begin{col}[Retículo de subgrupo de un grupo cíclico]
+    Sea $G = C_n = \left< x^n \right>$ un grupo cíclico de orden $n \geq 1$. Existe una biyección
+    \[
+        \begin{aligned}
+            \setb{d \left\vert 1 \leq d \leq n, d \vert n \right.} &\leftrightarrow
+            \setb{\text{subgrupos de }G} \\
+            d &\longmapsto H_d
+        \end{aligned}
+    \]
+\end{col}
+
+\section{Morfismos de grupos}
+
+\begin{defi}[homeomorfismo]
+    Sean $G_1$, $G_2$ dos grupos y sea $F \colon G_1 \to G_2$ una aplicación. Diremos que $f$ es 
+    (homeo)morfismo de grupos si
+    \[
+        f(xy) = f(x)f(y)
+    \]
+\end{defi}
+
+\begin{prop}
+    Si $f$ es un morfismo de grupos, entonces
+    \begin{enumerate}[i)]
+        \item $f(1) = 1$
+        \item $f\left( x^{-1} \right) = \left( f(x) \right)^{-1}$
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    Ejercicio
+\end{proof}
+
+\begin{obs}
+    Notación:
+    \begin{center}
+        \begin{tabular}{|c|c|}
+            \hline
+            monomorfismo & inyectiva \\
+            epimorfismo & exhaustiva \\
+            isomorfismo &  biyectiva \\
+            endomorfismo & $G_1 = G_2$ \\
+            automorfismo & biyectiva y $G_1 = G_2$ \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{obs}
+
+\begin{prop}
+    Sea $f \colon G_1 \to G_2$ un morfismo biyectivo (isomorfismo). Entonces
+    $f^{-1} \colon G_2 \to G_1$ es un morfismo de grupos.
+\end{prop}
+
+\begin{proof}
+    Ejercicio.
+\end{proof}
+
+\begin{defi}[grupo!isomorfo]
+    Sean $G_1$ y $G_2$ grupos. Diremos que $G_1$ y $G_2$ son isomorfos si $\exists f \colon G_1 \to G_2$
+    isomorfismo. Y lo notaremos como $G_1$
+\end{defi}
+
+\begin{prop}
+    Sea $f \colon G_1 \to G_2$ un morfismo de grupos
+    \begin{enumerate}
+        \item Si $H$ es subgrupo de $G_1 \implies f(H)$ es subgrupo de $G_2$
+        \item Si $K$ es subgrupo de $G_2 \implies f^{-1}(K)$ es subgrupo de $G_1$
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    Ejercicio.
+\end{proof}
+
+\begin{obs}
+    \begin{itemize}
+        \item $f\left( G_1 \right) = \im(f)$
+        \item $f^{-1}(1) = \ker(f)$
+    \end{itemize}
+\end{obs}
+
+\begin{prop}
+    \begin{enumerate}[i)]
+        \item $f$ inyectiva $\iff \ker(f) = \setb{1}$
+        \item $f$ exhaustiva $\iff \im(f) = G_2$
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    Ejercicio.
 \end{proof}
