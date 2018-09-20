@@ -182,7 +182,7 @@ el punto flaco es que no es tan robusto como el de la bisección.
     \]
     Aproximando ahora por Taylor (centrado en $\alpha$):
     \[
-        E^{k+1} = \cancel{-\phi(\alpha)} + \cancel{\phi(\alpha)} + \phi^\prime(\alpha)(x^k - \alpha) + ..
+        E^{k+1} = \cancel{-\phi(\alpha)} + \cancel{\phi(\alpha)} + \phi^\prime(\alpha)(x^k - \alpha) + \dots
     \]
     substituyendo ahora $x^k - \alpha = E^k$, obtenemos la fórmula original.
 \end{proof}
@@ -196,12 +196,12 @@ el punto flaco es que no es tan robusto como el de la bisección.
     \[
         \abs{E^{k+1}} \leq \abs{E^k} \left( \abs{\phi^\prime(\alpha)} + 
             \underbrace{\abs{\frac{1}{2} \phi^{\prime \prime}(\alpha)} E^k +
-            \O\left( \left( E^k \right)^2 \right)}_{\leq \varepsilon} \right)
+            \O\left( \left( E^k \right)^2 \right)}_{\leq \varepsilon} \right).
     \]
     Consideramos $\varepsilon$ tal que $\abs{\phi^\prime(\alpha)} + \varepsilon \leq 1$. Esto pasa
     si $\abs{E^k}$ es suficientemente pequeño. Entonces
     \[
-        \abs{E^{k+1}} \leq \lambda \abs{E^k}
+        \abs{E^{k+1}} \leq \lambda \abs{E^k},
     \]
     con $\lambda = \abs{\phi^\prime} + \varepsilon < 1$.
 \end{proof}
@@ -210,7 +210,7 @@ el punto flaco es que no es tan robusto como el de la bisección.
     Si $\phi^\prime(\alpha) = \cdots = \phi^{(p-1)}(\alpha) = 0$ y $\phi^{(p)}(\alpha) = 0$. Tenemos que
     \[
         E^{k+1} = \frac{1}{p!}\phi^{(p)}(\alpha) \left( E^k \right)^p +
-        \frac{1}{(p+1)!} \phi^{(p+1)}(\alpha) \left( E^k \right)^{p+1} + \cdots
+        \frac{1}{(p+1)!} \phi^{(p+1)}(\alpha) \left( E^k \right)^{p+1} + \dots
     \]
     Entonces, para $E^k$ pequeño, se tiene que
     \[
@@ -224,19 +224,19 @@ el punto flaco es que no es tan robusto como el de la bisección.
     \[
         \abs{E^{k+1}} \leq \abs{E^k} \left( \abs{\frac{\phi^{(p)}(\alpha)}{p!}} +
         \underbrace{\abs{\frac{\phi^{(p+1)}(\alpha)}{(p+1)!}} \left( E^k \right) +
-        \O\left( \left( E^k \right)^2 \right)}_{\leq \varepsilon} \right)
+        \O\left( \left( E^k \right)^2 \right)}_{\leq \varepsilon} \right).
     \]
     Con $\abs{E^k}$ suficientemente pequeño
     \[
         \abs{E^{k+1}} \leq \left( \abs{E^k} \right)^p
-        \underbrace{\left( \frac{\phi^{(p)}(\alpha)}{p!} + \varepsilon  \right)}_{\lambda}
+        \underbrace{\left( \frac{\phi^{(p)}(\alpha)}{p!} + \varepsilon  \right)}_{\lambda}.
     \]
 \end{proof}
 
 \begin{defi}[factor asintótico de convergencia]
     Sea $\phi$ un método lineal, por lo tanto,
     \[
-        \abs{E^{k+1}} \leq \lambda \abs{E^k}
+        \abs{E^{k+1}} \leq \lambda \abs{E^k}.
     \]
     Llamaremos factor asintótico de convergencia a $\lambda$.
 \end{defi}
@@ -247,11 +247,11 @@ Para estudiar la convergencia, primero es conveniente, conocer las derivadas de 
 tenemos
 \[
     \begin{aligned}
-        \phi(x) &= x - \frac{f(x)}{f^\prime(x)} \\
-        \phi^\prime(x) &= \frac{f(x)f^{\prime \prime}(x)}{f^\prime(x)^2} \\
+        \phi(x) &= x - \frac{f(x)}{f^\prime(x)}, \\
+        \phi^\prime(x) &= \frac{f(x)f^{\prime \prime}(x)}{f^\prime(x)^2}, \\
         \phi^{\prime \prime}(x) &= \frac{f^{\prime \prime}(x)}{f^\prime(x)} -
         \frac{2 f(x)f^{\prime \prime}(x)^2}{f^\prime(x)^3} +
-        \frac{f(x)f^{\prime \prime \prime}(x)}{f^\prime(x)^2}
+        \frac{f(x)f^{\prime \prime \prime}(x)}{f^\prime(x)^2}.
     \end{aligned}
 \]
 \begin{itemize}
@@ -259,8 +259,8 @@ tenemos
         En este caso,
         \[
             \begin{aligned}
-                \phi^\prime(\alpha) &= 0 \\
-                \phi^{\prime \prime}(\alpha) &= \frac{f^{\prime \prime}(\alpha)}{f^\prime(\alpha)^2}
+                \phi^\prime(\alpha) &= 0, \\
+                \phi^{\prime \prime}(\alpha) &= \frac{f^{\prime \prime}(\alpha)}{f^\prime(\alpha)^2}.
             \end{aligned}
         \]
         En general $\phi^{\prime \prime}(\alpha) \neq 0$, por lo tanto el método de Newton
@@ -270,21 +270,19 @@ tenemos
         \[
             \begin{aligned}
                 \lim_{x \to \alpha} \phi^\prime(x) &= \frac{f(x)f^{\prime \prime}(x)}{f^\prime(x)^2}
-                \stackrel{\text{L.H}}{=} \lim_{x \to \alpha}
+                \stackrel{\text{R.H.}}{=} \lim_{x \to \alpha}
                 \frac{f^\prime(x)f^{\prime \prime}(x) + f(x)f^{\prime \prime \prime}(x)}
                 {2 f^\prime(x)f^{\prime \prime}(x)} = \\ &= \lim_{x \to \alpha} 
                 \frac{f^\prime(x)f^{\prime \prime}(x)}{2 f^\prime(x) f^{\prime \prime}(x)} +
                 \frac{f(x)f^{\prime \prime \prime}(x)}{2 f^\prime(x)f^{\prime \prime}(x)} =
                 \frac{1}{2} + \lim_{x \to \alpha} \frac{f(x)f^{\prime \prime \prime}(x)}
-                {2f^\prime(x)f^{\prime \prime}(x)} \stackrel{\text{L.H.}}{=} \\ &= \frac{1}{2} +
+                {2f^\prime(x)f^{\prime \prime}(x)} \stackrel{\text{R.H.}}{=} \\ &= \frac{1}{2} +
                 \lim_{x \to \alpha} \frac{f^\prime(x)f^{\prime \prime \prime}(x) + f(x)f^{(4)}(x)}
-                {2f^{\prime \prime}(x)^2 + 2f^\prime(x)f^{\prime \prime \prime}(x)} = \frac{1}{2}
+                {2f^{\prime \prime}(x)^2 + 2f^\prime(x)f^{\prime \prime \prime}(x)} = \frac{1}{2}.
             \end{aligned}
         \]
-        Por lo tanto es lineal con F.A.C igual a $\frac{1}{2}$.
+        Por lo tanto es lineal con factor asintótico de convergencia igual a $\frac{1}{2}$.
 
     \item El caso de multiplicidad $p$, es decir, $f(\alpha) = \cdots = f^{(p-1)}(\alpha) = 0$ y
-        $f^{(p)} \neq 0$.
-
-        El método es lineal con F.A.C. igual a $1 - \frac{1}{p}$.
+        $f^{(p)} \neq 0$. El método es lineal con factor asintótico de convergencia igual a $1 - \frac{1}{p}$.
 \end{itemize}
