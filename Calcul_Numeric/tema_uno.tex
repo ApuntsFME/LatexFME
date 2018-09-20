@@ -284,5 +284,17 @@ tenemos
         Por lo tanto es lineal con factor asintótico de convergencia igual a $\frac{1}{2}$.
 
     \item El caso de multiplicidad $p$, es decir, $f(\alpha) = \cdots = f^{(p-1)}(\alpha) = 0$ y
-        $f^{(p)} \neq 0$. El método es lineal con factor asintótico de convergencia igual a $1 - \frac{1}{p}$.
+        $f^{(p)} \neq 0$. Para resolver este caso, aplicaremos $p-2$ veces la regla de L'Hôpital
+        \[
+            \begin{aligned}
+                \lim_{x \to \alpha} \phi^\prime(x) &= \frac{f(x)f^{\prime \prime}(x)}{f^\prime(x) f^\prime(x)}
+                \stackrel{\text{Leibniz}}{=} \lim_{x \to \alpha} \frac{\sum\limits^{p-2}_{k = 0} {p-2 \choose k}
+                f^{(2p-k)}(x)f^{(k)}}{\sum\limits^{p-2}_{k = 0} {p-2 \choose k }f^{(2p-1-k)}(x)f^{(k+1)}(x)} = \\
+                &= \lim_{x \to \alpha} \frac{{2p-2 \choose p} \cancel{f^{(p)}(x)f^{(p)}(x)}}
+                {{2p-2 \choose p-1}\cancel{f^{(p)}(x)f^{(p)}(x)}} =
+                \frac{ {2p-2 \choose p} }{ {2p-2 \choose p-1} } = \frac{(p-1)!(p-1)!}{p!(p-2)!} = \\
+                &= \frac{p-1}{p} = 1 - \frac{1}{p}
+            \end{aligned}
+        \]
+        El método es lineal con F.A.C. igual a $1 - \frac{1}{p}$.
 \end{itemize}
