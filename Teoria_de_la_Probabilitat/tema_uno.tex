@@ -267,4 +267,32 @@ que codifiqui els dos espais de probabilitat inicials. A aquest espai de probabi
   \]
 \end{sol}
 
+\section{Lema de Borel-Cantelli}
+Siguin $\lp\Omega,\Asuc ,p\rp$ un espai de probabilitat i $\left\{ A_n\right\}_{n\geq1} \in \Asuc$. Volem donar-li 
+un sentit a ``límit de $\left\{ A_n\right\}_{n\geq1}$''. Farem com a $\real$ i definirem els límits superior i inferior 
+(que sempre existiran) i si coincideixen aquest serà el límit.
+
+\begin{defi}[límit!superior i inferior d'esdeveniments]
+  Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat. Donats $\left\{ A_n\right\}_{n\geq1} \in \Asuc$, definim
+  \begin{gather*}
+    \limsup_{n\to\infty} A_n = \bigcap_{n=1}^{\infty}\bigcup_{k=n}^{\infty} A_k \\
+    \liminf_{n\to\infty} A_n = \bigcup_{n=1}^{\infty}\bigcap_{k=n}^{\infty} A_k
+  \end{gather*}
+\end{defi}
+
+\begin{obs}
+  Els dos límits pertanyen a $\Asuc$ ja que son unió i intersecció numerable de sucessos.
+\end{obs}
+
+\begin{prop}
+  Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat. Donats $\left\{ A_n\right\}_{n\geq1} \in \Asuc$, aleshores
+  \begin{enumerate}[i)]
+   \item $\liminf\limits_{n\to\infty} A_n= \left\{\omega\in\Omega\colon \exists m:=m(\omega) \tq \omega\in A_r \;\forall r\geq m(\omega)\right\}$
+   \item $\limsup\limits_{n\to\infty} A_n= \left\{\omega\in\Omega \colon \omega \text{ pertany a un nombre infinit dels } A_n\right\}$
+   \item $\liminf\limits_{n\to\infty} A_n \subseteq \limsup\limits_{n\to\infty} A_n$.
+  \end{enumerate}
+
+\end{prop}
+
+
 %TODO
