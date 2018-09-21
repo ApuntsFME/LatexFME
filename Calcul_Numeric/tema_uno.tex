@@ -298,3 +298,59 @@ tenemos
         \]
         El método es lineal con F.A.C. igual a $1 - \frac{1}{p}$.
 \end{itemize}
+
+\subsection{Gráficos de convergencia}
+
+\begin{defi}[error relativo]
+    Definimos el error relativo como
+    \[
+        r^k = \frac{E^k}{\alpha} = \frac{x^k - \alpha}{\alpha}.
+    \]
+\end{defi}
+\begin{obs}
+    $x^k$ tiene $q$ cifras significativas correctas si $\abs{r^k} \leq \frac{1}{2} 10^{-q}$.
+\end{obs}
+\noindent Caso de convergencia lineal
+\begin{align*}
+    \abs{E^{k+1}} &\approx \lambda \abs{E^k},\, \lambda = F.A.C. \stackrel{x^{k+1} = \phi(x^k)}{=} \abs{\phi'(\alpha)}, \\
+    \frac{\abs{E^k}}{\abs{\alpha}} &\approx \lambda^k\frac{\abs{E^0}}{\abs{\alpha}} \implies \abs{r^k} \approx \lambda^k\abs{r^0}.
+\end{align*}
+
+\noindent Si la convergencia es de orden $p \geq 2$,
+\begin{align*}
+    \abs{E^k} &\approx \lambda \left( \abs{E^{k-1}} \right)^p \approx \lambda \left( \lambda \abs{E^{k-2}}^p \right)^p = \lambda^{1+p} \abs{E^{k-2}} \approx \lambda^{p+1} \left( \lambda\abs{E^{k-2}}^p \right)^{p^2} = \dots \\
+    &\approx \lambda^{1+p+\dots+p^{k-1}} \abs{E^0}^{p^k} \stackrel{\text{serie geométrica}}{=} \lambda^{\frac{p^k-1}{p-1}} \abs{E^0}^{p^k}, \\
+    \frac{\abs{E^k}}{\abs{\alpha}} &\approx \lambda^{\frac{p^k-1}{p-1}}\frac{\abs{E^0}^{p^k}}{\abs{\alpha}^{p^k}}\abs{\alpha}^{p^k-1}, \\
+    \abs{r^k} &\approx A^{p^k}\cdot B, \\
+    \log \abs{r^k} &\approx \log B + p^k\log A, \,\text{donde }A = \lambda^{\frac{1}{p-1}}\abs{r^0}\abs{\alpha}, \, B = \lambda^{\frac{-1}{p-1}} \abs{\alpha}^{-1}.
+\end{align*}
+\begin{example}
+    El error nos proporciona información sobre el tipo de convergencia.
+    \begin{center}
+        \begin{tabular}{|c|c|c|} \hline
+            & \begin{tabular}{@{}c@{}}Bisección \\ (lineal $\lambda = \sfrac{1}{2}$) \end{tabular} & \begin{tabular}{@{}c@{}}Newton \\ (cuadrática) \end{tabular} \\ \hline\hline
+            $|r^0|$ & $0,1 \cdot 10^{-1}$ & $0,1\cdot 10^{-1}$ \\\hline
+            $|r^1|$ & $0,5 \cdot 10^{-2}$ & $0,1\cdot 10^{-2}$ \\\hline
+            $|r^2|$ & $0,25 \cdot 10^{-2}$ & $0,1\cdot 10^{-4}$ \\\hline
+            $|r^3|$ & $0,12 \cdot 10^{-2}$ & $0,1\cdot 10^{-8}$ \\\hline
+        \end{tabular}
+    \end{center}
+\end{example}
+
+\subsection{Criterios prácticos de convergencia}
+\noindent Si queremos $q$ cifras significativas correctas (C.S.C.), pararemos el algoritmo cuando
+\[
+    \frac{1}{2}10^{-q} > \abs{r^k} = \frac{\abs{x^k - \alpha}}{\abs{\alpha}} \stackrel{\alpha\approx x^{k+1}}{\approx} \frac{\abs{x^k-x^{k+1}}}{\abs{x^{k+1}}}.
+\]
+En caso que $\alpha \approx 0$, podemos hacer una variación
+\[
+    \abs{x^k-\alpha} < \varepsilon\abs{x^k} + \varepsilon.
+\]
+Conviene comprobar el error en el ``residuo'' $f\left( x \right)$. El criterio puede ser combinado
+\[
+    \abs{x^k-\alpha} + \abs{f\left( x^k \right)} < \varepsilon_f.
+\]
+
+\section{Métodos híbridos}
+
+\noindent Método de Brent: véase \href{https://en.wikipedia.org/wiki/Brent\%27s_method}{Brent's method - Wikipedia}.
