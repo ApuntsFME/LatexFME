@@ -1,5 +1,7 @@
 \chapter{Grupos}
 
+\section{Grupos}
+
 \begin{defi}[grupo]
     Un grupo es un par $\lp G, \cdot \rp$, donde $G$ es un conjunto no vacío y $\cdot$ es una operación interna, es decir, una aplicación
     \[
@@ -570,3 +572,147 @@
 \begin{proof}
     Ejercicio.
 \end{proof}
+
+\section{Clases laterales}
+
+\begin{defi}
+    Sea $G$ un grupo y $H \subseteq G$ un subgrupo. Dados $a, b \in G$, diremos que
+    $a$ está relacionado con $b$ por la izquierda, si
+    \[
+        a^{-1}b \in H
+    \]
+\end{defi}
+
+\begin{ej}
+    Demostrar que que la relación definida es una relación de equivalencia. Para ello, hace falta ver que es
+    reflexivo, simétrico y transitivo.
+\end{ej}
+
+\begin{defi}[clase lateral!por la izquierda]
+    Con la relación que hemos visto ahora, denotaremos la clase de equivalencia de $a \in G$ como
+    \[
+        \begin{aligned}
+            \bar{a} &= \setb{b \in G \vert a^{-1}b = x, \, x \in H} = \\ &=
+            \setb{b \in G \vert b = ax, \, x \in H} &= aH
+        \end{aligned}
+    \]
+    y llamaremos a $aH$ clase lateral por la izquierda del elemento $a$ módulo el subgrupo $H$.
+\end{defi}
+
+\begin{example}
+    Si $a = 1$, tenemos que
+    \[
+        1\cdot H = \setb{1x \vert x \in H} = H
+    \]
+\end{example}
+
+\begin{obs}
+    Sea
+    \[
+        \begin{aligned}
+            f_a \colon G &\to G \\
+            x &\mapsto f_a(x) = ax
+        \end{aligned}.
+    \]
+    Que es una aplicación biyectiva ($f^{-1}_a = f_{a^{-1}}$). Notemos, que $f$ no es un morfismo
+    de grupos (en general), ya que $f(1) = a \neq 1$. Se tiene también que
+    \[
+        f_a(H) = \setb{f_a(x) \vert x \in H} = \setb{ax \vert x \in H} = aH
+    \]
+    Diremos pues que hay una biyección $H \leftrightarrow aH$, en particular, si $G$ es finito, se tiene que
+    $\abs{H} = \abs{aH}$.
+\end{obs}
+
+\begin{defi}[conjunto!cociente]
+    Llamaremos conjunto conciente de $G$ módulo $H$ a 
+    \[
+        G/H = \setb{aH \vert a \in G} = \setb{ \bar{a} \vert a \in G}
+    \]
+    es decir, el conjunto de las clases laterales por la izquierda de $G$ módulo $H$.
+    
+\end{defi}
+
+\begin{teo}[de Lagrange]
+    Sea $G$ n grupo finito y sea $H$ un subgrupo de $G$. Entonces
+    \[
+        \abs{g} = \abs{H} \abs{G/H}
+    \]
+\end{teo}
+
+\begin{proof}
+    Se tiene que
+    \[
+        G = \sqcup aH
+    \]
+    Por lo tanto,
+    \[
+        \abs{G} = \abs{\sqcup aH} = \sum \abs{aH} = \sum^{\abs{G/H}}_{k = 1} \abs{H} = \abs{H} \abs{G/H}
+    \]
+\end{proof}
+
+\begin{col}
+    Si $G$ es finito y $H$ es subgrupo. Entonces $\abs{H}$ divide a $\abs{G}$. Si $x \in G$
+    \[
+        \orden(x) \vert \orden(G) = \abs{G}
+    \]
+\end{col}
+
+\begin{proof}
+    Ya que $\orden(x) = \orden\left( \left< x \right> \right)$  y $\orden(H) \vert \orden(G)$
+\end{proof}
+
+\begin{defi}
+    Sea $G$ un grupo y sea $H \subseteq G$ un subgrupo. Diremos que $a, b \in G$ están relacionados
+    por la derecha si
+    \[
+        ab^{-1} \in H
+    \]
+\end{defi}
+
+\begin{ej}
+    Demostrar que se trata de una relación de equivalencia.
+\end{ej}
+
+\begin{defi}
+    Tenemoa que
+    \[
+        \bar{a} = \setb{b \in G \vert ab^{-1} = x, \, y \in H} = \setb{b \in G \vert b = ya, \, y \in H} = Ha
+    \]
+    Y Llamaremos clase lateral por la derecha de $a$ módulo $H$ a $Ha$.
+\end{defi}
+
+\begin{obs}
+    Sea
+    \[
+        \begin{aligned}
+            g_a \colon G &\to G \\
+            x &\mapsto g_a(x) = xa
+        \end{aligned}
+    \]
+    Notamos que es una aplicación biyectiva ($g^{-1}_a = g_{a^{-1}}$), pero no es un morfismo de grupos.
+    Además, $g_a(H) = Ha$, por lo tanto, se tiene una biyección $H \leftrightarrow Ha$. En particular si
+    $G$ es finito, $\abs{H} = \abs{Ha}$
+\end{obs}
+
+\begin{prop}
+    Existe una biyección
+    \[
+        \begin{aligned}
+            \setb{aH \vert a \in G} &\to \setb{Hb \vert b \in G} \\
+            xH &\mapsto Hx^{-1}
+        \end{aligned}
+    \]
+\end{prop}
+
+\begin{proof}
+    Ejercicio: demostrar que está bien definida y es biyectiva.
+\end{proof}
+
+\begin{defi}[índice! de un grupo en un subgrupo]
+    Sea $G$ un grupo y $H \subseteq G$ un subgrupo. Llamaremos índice de $G$ en $H$ al cardinal de $G/H$.
+    Y lo denotaremos como
+    \[
+        \left[G \colon H \right] = \abs{G/H} \stackrel{\text{TL}}{=} \frac{\abs{G}}{\abs{H}}
+    \]
+\end{defi}
+
