@@ -22,7 +22,7 @@
     Recordem que $\lp\Omega,\Asuc\rp$ és un espai mesurable si $\Asuc\subseteq \Pa\lp\Omega\rp$ és una $\sigma$-àlgebra d'$\Omega$, és a dir,
     \begin{enumerate}[i)]
         \item $\emptyset \in \Asuc$,
-        \item $A \in \Asuc \iff A^C \in \Asuc$,
+        \item $A \in \Asuc \iff \comp{A} \in \Asuc$,
         \item Si $\lc A_i\rc _{i\in\n}\subseteq \Asuc$, aleshores $\bigcup_{i\in\n}{A_i} \in \Asuc$.
     \end{enumerate}
     I que $\lp\Omega,\Asuc,\mu\rp$ és un espai de mesura si $\mu$ és una mesura sobre l'espai mesurable $\lp\Omega,\Asuc\rp$, és a dir,
@@ -42,7 +42,7 @@
     \begin{enumerate}[i)]
         \item Si $A_1, \dots, A_r \in \Asuc$ són tals que $\forall i\neq j,\, A_i \cup A_j = \emptyset,$ aleshores 
 	  $p\lp \bigcap\limits_{i=1}^{r} A_i \rp= \sum\limits_{i=1}^{r} p\lp A_i \rp$.
-        \item \label{item:esp_prob_2}$A \in \Asuc \implies p(A^C)=1-p(A)$.
+        \item \label{item:esp_prob_2}$A \in \Asuc \implies p(\comp{A})=1-p(A)$.
         \item \label{item:esp_prob_3}$A,B \in \Asuc, A \subseteq B \implies p\lp B\setminus A \rp = p\lp B\rp - p\lp A\rp$.
         \item $A,B \in \Asuc, A \subseteq B \implies p(A) \le p(B)$.
         \item \label{item:esp_prob_5}Successions monòtones:
@@ -56,7 +56,7 @@
     \begin{enumerate}
         \item[]
         \item Conseqüència directa de la $\sigma$-additivitat.
-        \item Conseqüència diecta de \ref{item:esp_prob_2} usant que $\Asuc = A\cup A^C$.
+        \item Conseqüència diecta de \ref{item:esp_prob_2} usant que $\Asuc = A\cup \comp{A}$.
         \item Com que $A\subseteq B,\, B=\lp B\setminus A\rp \cup A$ i, per tant, $p\lp B\setminus A \rp = p\lp B\rp - p\lp A\rp$.
         \item Conseqüència directa de \ref{item:esp_prob_3} ja que $p\lp B\setminus A\rp\geq 0$.
         \item 
@@ -200,7 +200,7 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
     Sigui $A_k$ el succés ``el jugador, començant amb capital $k$, perd''.Condicionem $A_k$ a la primera tirada de la moneda, 
     definim $B$: ``la primera tirada surt cara''.
     \begin{gather*}
-      p(A_k) = p(A_k|B)p(B) + p(A_k|B^C)p(B^C) = p(A_k|B)\frac{1}{2} + p(A_k|B^C)\frac{1}{2}\\
+      p(A_k) = p(A_k|B)p(B) + p(A_k|\comp{B})p(\comp{B}) = p(A_k|B)\frac{1}{2} + p(A_k|\comp{B})\frac{1}{2}\\
       \implies 2p(A_k)=p(A_{k-1}) + p(A_{k+1}) \implies p(A_k) - p(A_{k-1}) = p(A_{k+1}) - p(A_k) = C,
     \end{gather*}
 
@@ -285,14 +285,24 @@ un sentit a ``límit de $\left\{ A_n\right\}_{n\geq1}$''. Farem com a $\real$ i 
 \end{obs}
 
 \begin{prop}
-  Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat. Donats $\left\{ A_n\right\}_{n\geq1} \in \Asuc$, aleshores
-  \begin{enumerate}[i)]
-   \item $\liminf\limits_{n\to\infty} A_n= \left\{\omega\in\Omega\colon \exists m:=m(\omega) \tq \omega\in A_r \;\forall r\geq m(\omega)\right\}$
-   \item $\limsup\limits_{n\to\infty} A_n= \left\{\omega\in\Omega \colon \omega \text{ pertany a un nombre infinit dels } A_n\right\}$
-   \item $\liminf\limits_{n\to\infty} A_n \subseteq \limsup\limits_{n\to\infty} A_n$.
-  \end{enumerate}
-
+    Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat. Donats $\left\{ A_n\right\}_{n\geq1} \in \Asuc$, aleshores
+    \begin{enumerate}[i)]
+        \item $\liminf\limits_{n\to\infty} A_n= \left\{\omega\in\Omega\colon \exists m:=m(\omega) \tq \omega\in A_r \;\forall r\geq m(\omega)\right\}$
+        \item $\limsup\limits_{n\to\infty} A_n= \left\{\omega\in\Omega \colon \omega \text{ pertany a un nombre infinit dels } A_n\right\}$
+        \item $\liminf\limits_{n\to\infty} A_n \subseteq \limsup\limits_{n\to\infty} A_n$.
+    \end{enumerate}
 \end{prop}
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item[]
+        \item $\omega\in\liminf{A_n} \iff \omega\in\bigcup_{n=1}^{\infty}\bigcap_{k=n}^{\infty} A_k \iff
+        \exists m \colon= m(\omega) \tq \omega\in\bigcap_{k=m(\omega)}^{\infty} A_k \iff
+        \omega\in A_r \quad\forall r \ge m(\omega)$
+        \item $\omega\in\limsup{A_n} \iff \omege\in\bigcap_{n=1}^{\infty}\bigcup_{k=n}^{\infty} A_k \iff
+        \omega\in\bigcup_{k=n}^{\infty}A_k \quad\forall n \iff \forall n,\quad \exists$ %TODO
+    \end{enumerate}
+\end{proof}
+
 
 
 %TODO
