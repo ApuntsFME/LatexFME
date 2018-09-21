@@ -260,7 +260,7 @@ tenemos
         \[
             \begin{aligned}
                 \phi^\prime(\alpha) &= 0, \\
-                \phi^{\prime \prime}(\alpha) &= \frac{f^{\prime \prime}(\alpha)}{f^\prime(\alpha)^2}.
+                \phi^{\prime \prime}(\alpha) &= \frac{f^{\prime \prime}(\alpha)}{f^\prime(\alpha)}.
             \end{aligned}
         \]
         En general $\phi^{\prime \prime}(\alpha) \neq 0$, por lo tanto el método de Newton
@@ -269,7 +269,7 @@ tenemos
         Observamos que $\phi^\prime(\alpha)$ no está bien definido, pero podemos calcular el límite, teniendo
         \[
             \begin{aligned}
-                \lim_{x \to \alpha} \phi^\prime(x) &= \frac{f(x)f^{\prime \prime}(x)}{f^\prime(x)^2}
+                \lim_{x \to \alpha} \phi^\prime(x) &= \lim_{x \to \alpha} \frac{f(x)f^{\prime \prime}(x)}{f^\prime(x)^2}
                 \stackrel{\text{R.H.}}{=} \lim_{x \to \alpha}
                 \frac{f^\prime(x)f^{\prime \prime}(x) + f(x)f^{\prime \prime \prime}(x)}
                 {2 f^\prime(x)f^{\prime \prime}(x)} = \\ &= \lim_{x \to \alpha} 
@@ -287,13 +287,13 @@ tenemos
         $f^{(p)} \neq 0$. Para resolver este caso, aplicaremos $p-2$ veces la regla de L'Hôpital
         \[
             \begin{aligned}
-                \lim_{x \to \alpha} \phi^\prime(x) &= \frac{f(x)f^{\prime \prime}(x)}{f^\prime(x) f^\prime(x)}
+                \lim_{x \to \alpha} \phi^\prime(x) &= \lim_{x \to \alpha} \frac{f(x)f^{\prime \prime}(x)}{f^\prime(x) f^\prime(x)}
                 \stackrel{\text{Leibniz}}{=} \lim_{x \to \alpha} \frac{\sum\limits^{p-2}_{k = 0} {p-2 \choose k}
                 f^{(2p-k)}(x)f^{(k)}}{\sum\limits^{p-2}_{k = 0} {p-2 \choose k }f^{(2p-1-k)}(x)f^{(k+1)}(x)} = \\
                 &= \lim_{x \to \alpha} \frac{{2p-2 \choose p} \cancel{f^{(p)}(x)f^{(p)}(x)}}
                 {{2p-2 \choose p-1}\cancel{f^{(p)}(x)f^{(p)}(x)}} =
                 \frac{ {2p-2 \choose p} }{ {2p-2 \choose p-1} } = \frac{(p-1)!(p-1)!}{p!(p-2)!} = \\
-                &= \frac{p-1}{p} = 1 - \frac{1}{p}
+                &= \frac{p-1}{p} = 1 - \frac{1}{p}.
             \end{aligned}
         \]
         El método es lineal con F.A.C. igual a $1 - \frac{1}{p}$.
