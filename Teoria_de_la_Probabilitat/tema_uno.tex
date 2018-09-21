@@ -10,11 +10,11 @@
     Diem que $\Omega$ és l'espai mostral.
 \end{defi}
 
-\begin{defi}[conjunt!d'esdeveniments]
+\begin{defi}[conjunt d'esdeveniments]
     Diem que $\Asuc$ és el conjunt d'esdeveniments o de successos.
 \end{defi}
 
-\begin{defi}[funció!de probabilitat]
+\begin{defi}[funció de probabilitat]
     Diem que $p$ és la funció de probabilitat.
 \end{defi}
 
@@ -139,7 +139,7 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
 
 \section{Probabilitat condicionada}
 
-\begin{defi}[probabilitat!condicionada]
+\begin{defi}[probabilitat condicionada]
     Sigui $\lp \Omega, \Asuc, p\rp$ un espai de probabilitat i siguin $A, B \in \Asuc$. Definim la probabilitat d'$A$ condicionada a $B$ com
     \[
         p\lp A\mid B\rp = \frac{p\lp A\cap B\rp}{p\lp B\rp}.
@@ -211,7 +211,7 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
 
 \section{Independència}
 
-\begin{defi}[esdeveniments!independents]
+\begin{defi}[esdeveniments independents]
     Sigui $\lp \Omega, \Asuc, p\rp$ un espai de probabilitat, sigui $I$ un conjunt finit o numerable i sigui $\lc A_i\rc_{i\in I} \subseteq \Asuc$. Diem que els esdeveniments $A_i$ són independents si per tot $J\subseteq I$ amb $\abs{J}\in\n$ es té que
     \[
         p\lp\bigcap_{j\in J} A_j\rp = \prod_{j\in J} p\lp A_j\rp.
@@ -232,7 +232,7 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
 Donats dos espais de probabilitat $\lp\Omega_1,\Asuc_1,p_1\rp$ i $\lp\Omega_2,\Asuc_2,p_2\rp$, volem construir un nou espai de probabilitat $\lp\Omega_3,\Asuc_3,p_3\rp$
 que codifiqui els dos espais de probabilitat inicials. A aquest espai de probabilitat l'anomenarem espai de probabilitat producte.
 
-\begin{defi}[espai!de probabilitat producte]
+\begin{defi}[espai!de probabilitat!producte]
   Siguin $\lp\Omega_1,\Asuc_1,p_1\rp$ i $\lp\Omega_2,\Asuc_2,p_2\rp$ dos espais de probabilitat. Anomenem espai de probabilitat producte a la terna $\lp\Omega_3,\Asuc_3,p_3\rp$
   tal que
   \begin{enumerate}[i)]
@@ -272,7 +272,7 @@ Siguin $\lp\Omega,\Asuc ,p\rp$ un espai de probabilitat i $\left\{ A_n\right\}_{
 un sentit a ``límit de $\left\{ A_n\right\}_{n\geq1}$''. Farem com a $\real$ i definirem els límits superior i inferior 
 (que sempre existiran) i si coincideixen aquest serà el límit.
 
-\begin{defi}[límit!superior i inferior d'esdeveniments]
+\begin{defi}[límit!superior d'esdeveniments]\index{límit!inferior d'esdeveniments((tlab))}
   Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat. Donats $\left\{ A_n\right\}_{n\geq1} \in \Asuc$, definim
   \begin{gather*}
     \limsup_{n\to\infty} A_n = \bigcap_{n=1}^{\infty}\bigcup_{k=n}^{\infty} A_k \\
