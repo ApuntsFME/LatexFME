@@ -268,15 +268,15 @@ que codifiqui els dos espais de probabilitat inicials. A aquest espai de probabi
 \end{sol}
 
 \section{Lema de Borel-Cantelli}
-Siguin $\lp\Omega,\Asuc ,p\rp$ un espai de probabilitat i $\left\{ A_n\right\}_{n\geq1} \in \Asuc$. Volem donar-li 
+Siguin $\lp\Omega,\Asuc ,p\rp$ un espai de probabilitat i $\left\{ A_n\right\}_{n\geq1} \subseteq \Asuc$. Volem donar-li 
 un sentit a ``límit de $\left\{ A_n\right\}_{n\geq1}$''. Farem com a $\real$ i definirem els límits superior i inferior 
-(que sempre existiran) i si coincideixen aquest serà el límit.
+(que sempre existiran) i, si coincideixen, aquest serà el límit.
 
 \begin{defi}[límit!superior d'esdeveniments]\index{límit!inferior d'esdeveniments((tlab))}
-  Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat. Donats $\left\{ A_n\right\}_{n\geq1} \in \Asuc$, definim
+  Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat. Donats $\left\{ A_n\right\}_{n\geq1} \subseteq \Asuc$, definim els límits superior i inferior de la successió de successos $\left\{ A_n\right\}_{n\geq1}$ com
   \begin{gather*}
-    \limsup_{n\to\infty} A_n = \bigcap_{n=1}^{\infty}\bigcup_{k=n}^{\infty} A_k \\
-    \liminf_{n\to\infty} A_n = \bigcup_{n=1}^{\infty}\bigcap_{k=n}^{\infty} A_k
+    \limsup_{n\to\infty} A_n = \bigcap_{n=1}^{\infty}\bigcup_{k=n}^{\infty} A_k ,\\
+    \liminf_{n\to\infty} A_n = \bigcup_{n=1}^{\infty}\bigcap_{k=n}^{\infty} A_k.
   \end{gather*}
 \end{defi}
 
@@ -285,10 +285,10 @@ un sentit a ``límit de $\left\{ A_n\right\}_{n\geq1}$''. Farem com a $\real$ i 
 \end{obs}
 
 \begin{prop}
-    Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat. Donats $\left\{ A_n\right\}_{n\geq1} \in \Asuc$, aleshores
+    Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat i siguin $\left\{ A_n\right\}_{n\geq1} \subseteq \Asuc$. Aleshores,
     \begin{enumerate}[i)]
-        \item $\liminf\limits_{n\to\infty} A_n= \left\{\omega\in\Omega\colon \exists m:=m(\omega) \tq \omega\in A_r \;\forall r\geq m(\omega)\right\}$
-        \item $\limsup\limits_{n\to\infty} A_n= \left\{\omega\in\Omega \colon \omega \text{ pertany a un nombre infinit dels } A_n\right\}$
+        \item $\liminf\limits_{n\to\infty} A_n= \left\{\omega\in\Omega\colon \exists m\equiv m(\omega) \text{ amb } \omega\in A_r \;\forall r\geq m(\omega)\right\}$,
+        \item $\limsup\limits_{n\to\infty} A_n= \left\{\omega\in\Omega \colon \omega \text{ pertany a un nombre infinit dels } A_n\right\}$,
         \item $\liminf\limits_{n\to\infty} A_n \subseteq \limsup\limits_{n\to\infty} A_n$.
     \end{enumerate}
 \end{prop}
@@ -296,13 +296,59 @@ un sentit a ``límit de $\left\{ A_n\right\}_{n\geq1}$''. Farem com a $\real$ i 
     \begin{enumerate}[i)]
         \item[]
         \item $\omega\in\liminf{A_n} \iff \omega\in\bigcup_{n=1}^{\infty}\bigcap_{k=n}^{\infty} A_k \iff
-        \exists m \colon= m(\omega) \tq \omega\in\bigcap_{k=m(\omega)}^{\infty} A_k \iff
-        \omega\in A_r \quad\forall r \ge m(\omega)$
-        \item $\omega\in\limsup{A_n} \iff \omege\in\bigcap_{n=1}^{\infty}\bigcup_{k=n}^{\infty} A_k \iff
-        \omega\in\bigcup_{k=n}^{\infty}A_k \quad\forall n \iff \forall n,\quad \exists$ %TODO
+        \exists m \equiv m(\omega) \tq \omega\in\bigcap_{k=m(\omega)}^{\infty} A_k \iff
+        \omega\in A_r \quad\forall r \ge m(\omega).$
+        \item $\omega\in\limsup{A_n} \iff \omega\in\bigcap_{n=1}^{\infty}\bigcup_{k=n}^{\infty} A_k \iff
+        \omega\in\bigcup_{k=n}^{\infty}A_k \quad\forall n \iff \forall n,\, \exists n_0\geq n \tq \omega\in A_{n_0}\iff \omega$ pertany a un nombre infinit dels $A_n$. 
+        \item Si $\omega\in\liminf A_n$, aleshores $\omega\in A_r, \, \forall r\geq m\lp\omega\rp$, de manera que pertany a un nombre infinit dels $A_n$ i, en conseqüència, pertany a $\limsup A_n$.
     \end{enumerate}
 \end{proof}
 
-
-
-%TODO
+\begin{prop}
+    Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat i siguin $\left\{ A_n\right\}_{n\geq1} \subseteq \Asuc$, amb $\lim A_n=A$. Aleshores, $p\lp A\rp = p\lp \lim A_n\rp = \lim p \lp A_n\rp$ i aquest límit existeix.
+\end{prop}
+\begin{proof}
+    Definim $B_n=\cup_{k\geq n}A_k$ i $C_n=\cap_{k\geq n}A_k$. Observem que $\lc B_n\rc_{n\geq 1}$ és decreixent i que $\lc B_n\rc_{n\geq 1}$ és creixent. Naturalment, $C_n\subseteq A_n\subseteq B_n$, $\limsup A_n = \cap_{n\geq 1} B_n$ i $\liminf A_n = \cup_{n\geq 1} C_n$.
+    
+    \noindent Vegem que $p\lp\liminf A_n\rp\leq\liminf p\lp A_n\rp$.
+    \[
+        p\lp\liminf A_n\rp=p\lp\bigcup_{n\geq 1} C_n\rp = \lim p\lp C_n\rp=\lim p\lp \bigcap_{k\geq n} A_k\rp\leq\liminf p\lp A_n\rp.
+    \]
+    Al darrer pas hem utilitzat el fet que $p\lp \cap_{k\geq n} A_k\rp\leq p\lp A_n\rp$. Anàlogament, $\limsup p\lp A_n\rp\leq p\lp\limsup A_n\rp$. Així doncs, tenim que
+    \[
+        p\lp\liminf A_n\rp\leq\liminf p\lp A_n\rp\leq\limsup p\lp A_n\rp\leq p\lp\limsup A_n\rp.
+    \]
+    Atàs que $p\lp\liminf A_n\rp=p\lp\limsup A_n\rp=p\lp A\rp$, concloem que 
+    \[
+        \liminf p\lp A_n\rp=\limsup p\lp A_n\rp=\lim p\lp A_n\rp=p\lp A\rp.
+    \]
+\end{proof}
+\begin{teo}[Lema de Borel-Cantelli]
+    Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat i siguin $\left\{ A_n\right\}_{n\geq1} \subseteq \Asuc$. Aleshores,
+    \begin{enumerate}[i)]
+        \item $\sum\limits_{n\geq 1} p\lp A_n\rp<\infty\implies p\lp\limsup A_n\rp=0$.
+        \item Si $\left\{ A_n\right\}_{n\geq1}$ és independent, $\sum\limits_{n\geq 1} p\lp A_n\rp=\infty\implies p\lp\limsup A_n\rp=1$.
+    \end{enumerate}
+\end{teo}
+\begin{proof}
+    Posem $A=\limsup A_n=\cap_{n\geq 1}\cup_{k\geq n} A_k$.
+    \begin{enumerate}[i)]
+        \item Sabem que
+            \[
+                0\leq p\lp A\rp\leq p\lp\bigcup_{k\geq n}A_k\rp\leq\sum_{k\geq n} p\lp A_k\rp ,\,\forall n\in\n
+            \]
+            i que $\sum_{n\geq 1} p\lp A_n\rp<\infty$, de manera que $\lim \sum_{k\geq n} p\lp A_k\rp=0$ i immediatament deduïm que $p\lp A\rp=0$.
+        \item Observem primer que $\comp{A}=\comp{\cap_{n\geq 1}\cup_{k\geq n} A_k}=\cup_{n\geq 1}\cap_{k\geq n} \comp{A_k}=\liminf\comp{A_n}$. Veurem que $p\lp \comp{A}\rp=0$. Calculem $p\lp \cap_{m\geq n} \comp{A_m}\rp$.
+        \begin{align*}
+            0&\leq p\lp \cap_{m\geq n} \comp{A_m}\rp = \lim_{r\to\infty} p\lp \cap_{m= n}^r \comp{A_m}\rp = \lim_{r\to\infty} \prod_{m= n}^r \lp p\lp\comp{A_m}\rp\rp =\\
+            &= \lim_{r\to\infty} \prod_{m= n}^r \lp 1-p\lp A_m\rp\rp \leq \lim_{r\to\infty} \prod_{m= n}^r \lp e^{-p\lp A_m\rp}\rp =\\
+            &=\lim_{r\to\infty} e^{-\sum_{m= n}^r p\lp A_m\rp} = 0,
+        \end{align*}
+        de manera que $p\lp \cap_{m\geq n} \comp{A_m}\rp=0, \,\forall n\in\n$.
+        Finalment,
+        \[
+            0\leq p\lp\comp{A}\rp=p\lp\cup_{n\geq 1}\cap_{m\geq n} \comp{A_m}\rp\leq\sum_{n\geq 1}p\lp\cap_{m\geq n} \comp{A_m}\rp=0+0+\cdots=0,
+        \]
+        i concloem que $p\lp A\rp=1$.
+    \end{enumerate}
+\end{proof}
