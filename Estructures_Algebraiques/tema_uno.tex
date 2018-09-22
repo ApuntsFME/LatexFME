@@ -24,7 +24,7 @@
 \end{defi}
 
 \begin{defi}[grupo!abeliano o conmutativo]
-    Diremos que $G$ es un grupo abeliano o conmutativo si es un grupo y además satisface la propiedad conmutativa:
+    Decimos que $G$ es un grupo abeliano o conmutativo si es un grupo y además satisface la propiedad conmutativa:
     \[
         ab = ba, \quad \forall a, b \in G.
     \]
@@ -112,7 +112,7 @@
 \end{obs}
 
 \begin{defi}[unión de subgrupos]
-    Sea $G$ un grupo y sean $H, K \subseteq G$ subgrupos de $G$. Llamaremos unión de $H$ y $K$ a
+    Sea $G$ un grupo y sean $H, K \subseteq G$ subgrupos de $G$. Llamamos unión de $H$ y $K$ a
     \[
         H \cup K = \setb{x \in G \, \vert\, x \in H \text{ o } x \in K}.
     \]
@@ -339,7 +339,7 @@
 \end{proof}
 
 \begin{defi}[grupo!cíclico]
-    Diremos que un grupo $G$ es cíclico si está generado por un solo elemento $x \in G$. Escribiremos $G = \left< x \right>$, $G$ generado por $x$ o $x$ generdor de $G$.
+    Diremos que un grupo $G$ es cíclico si está generado por un solo elemento $x \in G$. Escribimos $G = \left< x \right>$, $G$ generado por $x$ o $x$ generdor de $G$.
 \end{defi}
 
 \begin{obs}
@@ -495,7 +495,7 @@
 \section{Morfismos de grupos}
 
 \begin{defi}[homeomorfismo]
-    Sean $G_1$, $G_2$ dos grupos y sea $f \colon G_1 \to G_2$ una aplicación. Diremos que $f$ es un
+    Sean $G_1$, $G_2$ dos grupos y sea $f \colon G_1 \to G_2$ una aplicación. Decimos que $f$ es un
     (homeo)morfismo de grupos si
     \[
         f(xy) = f(x)f(y).
@@ -541,7 +541,7 @@
 \end{proof}
 
 \begin{defi}[grupo!isomorfo]
-    Sean $G_1$ y $G_2$ grupos. Diremos que $G_1$ y $G_2$ son isomorfos si $\exists f \colon G_1 \to G_2$
+    Sean $G_1$ y $G_2$ grupos. Decimos que $G_1$ y $G_2$ son isomorfos si $\exists f \colon G_1 \to G_2$
     isomorfismo. Y lo notaremos como $G_1\cong G_2$.
 \end{defi}
 
@@ -579,7 +579,7 @@
 \section{Clases laterales}
 
 \begin{defi}[elemento relacionado!por la izquierda]
-    Sea $G$ un grupo y $H \subseteq G$ un subgrupo. Dados $a, b \in G$, diremos que
+    Sea $G$ un grupo y $H \subseteq G$ un subgrupo. Dados $a, b \in G$, decimos que
     $a$ está relacionado con $b$ por la izquierda si
     \[
         a^{-1}b \in H.
@@ -592,7 +592,7 @@
 \end{ej}
 
 \begin{defi}[clase lateral!por la izquierda]
-    Con la relación que hemos visto ahora, denotaremos la clase de equivalencia de $a \in G$ como
+    Con la relación que hemos visto ahora, denotamos la clase de equivalencia de $a \in G$ como
     \[
         \begin{aligned}
             \bar{a} &= \setb{b \in G \vert a^{-1}b = x, \, x \in H} =\\ &=
@@ -627,7 +627,7 @@
 \end{obs}
 
 \begin{defi}[conjunto cociente de un grupo]
-    Llamaremos conjunto cociente de $G$ módulo $H$ a 
+    Sea $G$ un grupo y sea $H$ uns ubgrupo de $G$. Llamamos conjunto cociente de $G$ módulo $H$ a 
     \[
         \faktor{G}{H} = \setb{aH \vert a \in G} = \setb{ \bar{a} \vert a \in G},
     \]
@@ -636,9 +636,9 @@
 \end{defi}
 
 \begin{teo}[de Lagrange]
-    Sea $G$ un grupo finito y sea $H$ un subgrupo de $G$, entonces
+    Sea $G$ un grupo finito y sea $H$ un subgrupo de $G$. Entonces,
     \[
-        \abs{g} = \abs{H} \abs{\faktor{G}{H}}.
+        \abs{G} = \abs{H} \abs{\faktor{G}{H}}.
     \]
 \end{teo}
 
@@ -665,7 +665,7 @@
 \end{proof}
 
 \begin{defi}[elemento relacionado!por la derecha]
-    Sea $G$ un grupo y sea $H \subseteq G$ un subgrupo, diremos que $a, b \in G$ están relacionados
+    Sea $G$ un grupo y sea $H \subseteq G$ un subgrupo, decimos que $a, b \in G$ están relacionados
     por la derecha si
     \[
         ab^{-1} \in H.
@@ -681,7 +681,7 @@
     \[
         \bar{a} = \setb{b \in G \vert ab^{-1} = x, \, y \in H} = \setb{b \in G \vert b = ya, \, y \in H} = Ha.
     \]
-    Llamaremos clase lateral por la derecha de $a$ módulo $H$ a $Ha$.
+    Llamamos clase lateral por la derecha de $a$ módulo $H$ a $Ha$.
 \end{defi}
 
 \begin{obs}
@@ -692,8 +692,8 @@
             x &\mapsto g_a(x) = xa.
         \end{aligned}
     \]
-    Notamos que es una aplicación biyectiva ($g^{-1}_a = g_{a^{-1}}$), pero no es un morfismo de grupos.
-    Además, $g_a(H) = Ha$, por lo tanto, se tiene una biyección $H \leftrightarrow Ha$. En particular si
+    Notamos que es una aplicación biyectiva ($g^{-1}_a = g_{a^{-1}}$), pero que no es un morfismo de grupos.
+    Además, $g_a(H) = Ha$ y, por lo tanto, se tiene una biyección $H \leftrightarrow Ha$. En particular, si
     $G$ es finito, $\abs{H} = \abs{Ha}$.
 \end{obs}
 
@@ -702,7 +702,7 @@
     \[
         \begin{aligned}
             \setb{aH \vert a \in G} &\to \setb{Hb \vert b \in G} \\
-            xH &\mapsto Hx^{-1}
+            xH &\mapsto Hx^{-1}.
         \end{aligned}
     \]
 \end{prop}
@@ -712,10 +712,10 @@
 \end{proof}
 
 \begin{defi}[índice de un grupo en un subgrupo]
-    Sea $G$ un grupo y $H \subseteq G$ un subgrupo. Llamaremos índice de $G$ en $H$ al cardinal de $\faktor{G}{H}$.
-    Y lo denotaremos como
+    Sea $G$ un grupo y $H \subseteq G$ un subgrupo. Llamamos índice de $G$ en $H$ al cardinal de $\faktor{G}{H}$.
+    Y lo denotamos como
     \[
-        \left[G : H \right] = \faktor{G}{H} \stackrel{\text{TL}}{=} \frac{\abs{G}}{\abs{H}}.
+        \left[G : H \right] = \abs{\faktor{G}{H}} \stackrel{\text{TL}}{=} \frac{\abs{G}}{\abs{H}}.
     \]
 \end{defi}
 
