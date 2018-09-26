@@ -767,7 +767,7 @@
 \begin{prop}
     Sea $G$ un grupo finito y $H \subseteq G$ un subgrupo,
     \[
-        [G:H] = 2 \implies H \triaangleleft G
+        [G:H] = 2 \implies H \triangleleft G
     \]
 \end{prop}
 
@@ -834,5 +834,17 @@
 \begin{example}
     Sea $G = \Sim_4$, $H = \setb{ \Id, (12)(34)}$ y $K = \setb{ \Id, (12)(34), (13)(24), (23)(14)}$.
     Tenemos que $[K : H]] = 2$, es decir, $H \triangleleft K$. Ejercicio: $K \triangleleft G$. Pero
-    $H \not\triangleleft G$
+    $H \not\triangleleft G$:
+    \[
+        \begin{aligned}
+            (123)H &= \setb{(123), (134)} \\
+            H(123) &= \setb{(123), (243)}
+        \end{aligned}
+    \]
+    %TODO ordenar esto
+    Queremos ver que $\sigma (12)(34) \sigma^{-1} \in K$, se tien que
+    \[
+        \sigma(12)(34)\sigma^{-1} = \sigma(12)\sigma^{-1}\sigma(34)\sigma^{-1} = (\sigma_1 \sigma_2)
+        (\sigma_3 \sigma_4) \in K
+    \]
 \end{example}
