@@ -725,29 +725,31 @@
     Sea $G$ un grupo y $H \subseteq G$ un subgrupo. Decimos que $H$ es un subgrupo normal de $G$ si
     $\forall a \in G$
     \[
-        aH = Ha
+        aH = Ha,
     \]
-    Y lo denotaremos como $H \triangleleft G$
+    y lo denotaremos como $H \triangleleft G$.
 \end{defi}
 
 \begin{obs}
     $H \triangleleft G$ no quiere decir que $ax = xa$ ($x \in H, \, a \in G$). Quiere decir que
-    $\forall x \in H, \, a \in G \exists y \in H$ tal que $ax = ya$.
+    $\forall x \in H, \, a \in G, \, \exists y \in H$ tal que $ax = ya$.
 \end{obs}
 
 \begin{prop}
     Sea $G$ un grupo y $H \subseteq G$ un subgrupo, entonces son equivalentes
     \begin{enumerate}[(i)]
-        \item $H \triangleleft G$,
-        \item $aH = Ha, \, \forall a \in G$,
-        \item $aH \subseteq Ha, \, \forall a \in G$,
-        \item $aHa^{-1} = H, \, \forall a \in G$,
-        \item $aHa^{-1} \subseteq H, \, \forall a \in G$.
+        \item\label{item:eq_norm_1} $H \triangleleft G$,
+        \item\label{item:eq_norm_2} $aH = Ha, \, \forall a \in G$,
+        \item\label{item:eq_norm_3} $aH \subseteq Ha, \, \forall a \in G$,
+        \item\label{item:eq_norm_4} $aHa^{-1} = H, \, \forall a \in G$,
+        \item\label{item:eq_norm_5} $aHa^{-1} \subseteq H, \, \forall a \in G$.
     \end{enumerate}
 \end{prop}
 
 \begin{proof}
-    Ejercicio.
+    En primer lugar, \ref{item:eq_norm_1}$\iff$\ref{item:eq_norm_2} por definición y \ref{item:eq_norm_2}$\implies$\ref{item:eq_norm_3} es inmediato.
+    
+    \noindent Veamos que \ref{item:eq_norm_3}$\implies$\ref{item:eq_norm_5}. Sea $x=aba^{-1}\in aHa^{-1}, b\in H$. Entonces, 
 \end{proof}
 
 \begin{example}
