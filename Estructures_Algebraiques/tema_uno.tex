@@ -719,3 +719,120 @@
     \]
 \end{defi}
 
+\section{Subgrupos normales. Grupo cociente}
+
+\begin{defi}
+    Sea $G$ un grupo y $H \subseteq G$ un subgrupo. Decimos que $H$ es un subgrupo normal de $G$ si
+    $\forall a \in G$
+    \[
+        aH = Ha
+    \]
+    Y lo denotaremos como $H \triangleleft G$
+\end{defi}
+
+\begin{obs}
+    $H \triangleleft G$ no quiere decir que $ax = xa$ ($x \in H, \, a \in G$). Quiere decir que
+    $\forall x \in H, \, a \in G \exists y \in H$ tal que $ax = ya$.
+\end{obs}
+
+\begin{prop}
+    Sea $G$ un grupo y $H \subseteq G$ un subgrupo, entonces son equivalentes
+    \begin{enumerate}[(i)]
+        \item $H \triangleleft G$,
+        \item $aH = Ha, \, \forall a \in G$,
+        \item $aH \subseteq Ha, \, \forall a \in G$,
+        \item $aHa^{-1} = H, \, \forall a \in G$,
+        \item $aHa^{-1} \subseteq H, \, \forall a \in G$.
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    Ejercicio.
+\end{proof}
+
+\begin{example}
+    \begin{enumerate}[1.]
+        \item Tomamos $G = \Sim_3 = \setb{\Id, (12), (13), (23), (123), (132)}$ y
+            $H = A_3 = \setb{\Id, (123), (132)}$. Sabemos ahora que
+            \[
+                \abs{G} = \abs{H}\abs{\faktor{G}{H}} \implies
+                \frac{\abs{G}}{\abs{H}} = \frac{6}{3} = 2 = \abs{\faktor{G}{H}}
+            \]
+            Como $\forall x \in H, \, xH = H = Hx$, $H$ es un grupo normal, ya que solo existen 2 clases.
+        \item Tomamos $G = D_{2 \cdot 4} = \setb{\Id, r, r^2, r^3, s, rs, r^2s, r^3s}$ y
+            $H = \setb{ \Id, r, r^2, r^3}$.
+    \end{enumerate}
+\end{example}
+
+\begin{prop}
+    Sea $G$ un grupo finito y $H \subseteq G$ un subgrupo,
+    \[
+        [G:H] = 2 \implies H \triaangleleft G
+    \]
+\end{prop}
+
+\begin{example}
+    Tomamos $G = \Sim_3$ y $H = \setb{ \Id, (12)}$. Tenemos que
+    \[
+        \begin{aligned}
+            (13)H &= (13) \setb{\Id, (12)} = \setb{(13), (123)} \\
+            H(13) &= \setb{\Id, (12)} (13) = \setb{(13), (132)}
+        \end{aligned}
+    \]
+\end{example}
+
+\begin{lema}
+    Sean $G_1, G_2$ grupos y sea $f \colon G_1 \to G_2$ un morfismo de grupos, entonces
+    \begin{enumerate}[i)]
+        \item $H \triangleleft G_1 \implies f(H) \triangleleft f\left(G_1 \right)$
+        \item $K \triangleleft G_2 \implies f^{-1}(K) \triangleleft G_1$
+    \end{enumerate}
+\end{lema}
+
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item Veremos que $f(H) \triangleleft f\left( G_1 \right)$. Sea $f(x) \in f(H)$ y
+            $\forall f(a) \in f\left( G_1 \right)$.
+            \[
+                f(a) f(x) f(a)^{-1} = f(a) f(x) f\left( a^{-1} \right) =
+                f\left( axa^{-1} \right) \in f(H)
+            \]
+            Ya que $axa^{-1} \in H$.
+        \item Ejercicio.
+    \end{enumerate}
+\end{proof}
+
+\begin{obs}
+    Si $G$ es un grupo conmutativo, todo subgrupo es normal.
+\end{obs}
+
+\begin{obs}
+    Sea $G$ un grupo, entonces $G$ y $\setb{\Id}$ son subgrupos normales.
+\end{obs}
+
+\begin{prop}
+    Sea $G$ un grupo y sean $H \subseteq K \subseteq G$ subgrupos.
+    \[
+        H \triangleleft G \implies H \triangleleft K
+    \]
+\end{prop}
+
+\begin{proof}
+    Para todo $a \in K$ y $x \in H$ se tiene que
+    \[
+        axa^{-1} \stackrel{H \triangleleft G}{\in} H
+    \]
+    Y por lo tanto, $H \triangleleft K$.
+\end{proof}
+
+\begin{obs}
+    \[
+        H \triangleleft K \triangleleft G \not\implies H \triangleleft G
+    \]
+\end{obs}
+
+\begin{example}
+    Sea $G = \Sim_4$, $H = \setb{ \Id, (12)(34)}$ y $K = \setb{ \Id, (12)(34), (13)(24), (23)(14)}$.
+    Tenemos que $[K : H]] = 2$, es decir, $H \triangleleft K$. Ejercicio: $K \triangleleft G$. Pero
+    $H \not\triangleleft G$
+\end{example}
