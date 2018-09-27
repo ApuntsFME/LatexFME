@@ -323,31 +323,31 @@ un sentit a ``límit de $\left\{ A_n\right\}_{n\geq1}$''. Farem com a $\real$ i 
         \liminf p\lp A_n\rp=\limsup p\lp A_n\rp=\lim p\lp A_n\rp=p\lp A\rp.
     \]
 \end{proof}
-\begin{teo}[Lema de Borel-Cantelli]
+\begin{teolema}[de Borel-Cantelli]
     Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat i siguin $\left\{ A_n\right\}_{n\geq1} \subseteq \Asuc$. Aleshores,
     \begin{enumerate}[i)]
         \item $\sum\limits_{n\geq 1} p\lp A_n\rp<\infty\implies p\lp\limsup A_n\rp=0$.
         \item Si $\left\{ A_n\right\}_{n\geq1}$ és independent, $\sum\limits_{n\geq 1} p\lp A_n\rp=\infty\implies p\lp\limsup A_n\rp=1$.
     \end{enumerate}
-\end{teo}
+\end{teolema}
 \begin{proof}
-    Posem $A=\limsup A_n=\cap_{n\geq 1}\cup_{k\geq n} A_k$.
+    Posem $A=\limsup A_n=\bigcap\limits_{n\geq 1}\bigcup\limits_{k\geq n} A_k$.
     \begin{enumerate}[i)]
         \item Sabem que
             \[
                 0\leq p\lp A\rp\leq p\lp\bigcup_{k\geq n}A_k\rp\leq\sum_{k\geq n} p\lp A_k\rp ,\,\forall n\in\n
             \]
             i que $\sum_{n\geq 1} p\lp A_n\rp<\infty$, de manera que $\lim \sum_{k\geq n} p\lp A_k\rp=0$ i immediatament deduïm que $p\lp A\rp=0$.
-        \item Observem primer que $\comp{A}=\comp{\cap_{n\geq 1}\cup_{k\geq n} A_k}=\cup_{n\geq 1}\cap_{k\geq n} \comp{A_k}=\liminf\comp{A_n}$. Veurem que $p\lp \comp{A}\rp=0$. Calculem $p\lp \cap_{m\geq n} \comp{A_m}\rp$.
+        \item Observem primer que $\comp{A}=\comp{\bigcap\limits_{n\geq 1}\bigcup\limits_{k\geq n} A_k}=\bigcup\limits_{n\geq 1}\bigcap\limits_{k\geq n} \comp{A_k}=\liminf\comp{A_n}$. Veurem que $p\lp \comp{A}\rp=0$. Calculem $p\lp \bigcap\limits_{m\geq n} \comp{A_m}\rp$.
         \begin{align*}
-            0&\leq p\lp \cap_{m\geq n} \comp{A_m}\rp = \lim_{r\to\infty} p\lp \cap_{m= n}^r \comp{A_m}\rp = \lim_{r\to\infty} \prod_{m= n}^r \lp p\lp\comp{A_m}\rp\rp =\\
+            0&\leq p\lp \bigcap\limits_{m\geq n} \comp{A_m}\rp = \lim_{r\to\infty} p\lp \bigcap\limits_{m= n}^r \comp{A_m}\rp = \lim_{r\to\infty} \prod_{m= n}^r \lp p\lp\comp{A_m}\rp\rp =\\
             &= \lim_{r\to\infty} \prod_{m= n}^r \lp 1-p\lp A_m\rp\rp \leq \lim_{r\to\infty} \prod_{m= n}^r \lp e^{-p\lp A_m\rp}\rp =\\
             &=\lim_{r\to\infty} e^{-\sum_{m= n}^r p\lp A_m\rp} = 0,
         \end{align*}
-        de manera que $p\lp \cap_{m\geq n} \comp{A_m}\rp=0, \,\forall n\in\n$.
+        de manera que $p\lp \bigcap\limits_{m\geq n} \comp{A_m}\rp=0, \,\forall n\in\n$.
         Finalment,
         \[
-            0\leq p\lp\comp{A}\rp=p\lp\cup_{n\geq 1}\cap_{m\geq n} \comp{A_m}\rp\leq\sum_{n\geq 1}p\lp\cap_{m\geq n} \comp{A_m}\rp=0+0+\cdots=0,
+            0\leq p\lp\comp{A}\rp=p\lp\bigcup\limits_{n\geq 1}\bigcap\limits_{m\geq n} \comp{A_m}\rp\leq\sum_{n\geq 1}p\lp\bigcap\limits_{m\geq n} \comp{A_m}\rp=0+0+\cdots=0,
         \]
         i concloem que $p\lp A\rp=1$.
     \end{enumerate}
