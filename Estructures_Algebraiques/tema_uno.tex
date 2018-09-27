@@ -762,7 +762,7 @@
             $H = A_3 = \setb{\Id, (123), (132)}$. Sabemos ahora que
             \[
                 \abs{G} = \abs{H}\abs{\faktor{G}{H}} \implies
-                \frac{\abs{G}}{\abs{H}} = \frac{6}{3} = 2 = \abs{\faktor{G}{H}}
+                \frac{\abs{G}}{\abs{H}} = \frac{6}{3} = 2 = \abs{\faktor{G}{H}}.
             \]
             Como $\forall x \in H, \, xH = H = Hx$, $H$ es un grupo normal, ya que solo existen 2 clases.
         \item Tomamos $G = D_{2 \cdot 4} = \setb{\Id, r, r^2, r^3, s, rs, r^2s, r^3s}$ y
@@ -793,8 +793,8 @@
 \begin{lema}
     Sean $G_1, G_2$ grupos, sean $H, K$ subgrupos de $G_1$ y $G_2$ respectivamente y sea $f \colon G_1 \to G_2$ un morfismo de grupos, entonces
     \begin{enumerate}[i)]
-        \item $H \triangleleft G_1 \implies f(H) \triangleleft f\left(G_1 \right)$
-        \item $K \triangleleft G_2 \implies f^{-1}(K) \triangleleft G_1$
+        \item $H \triangleleft G_1 \implies f(H) \triangleleft f\left(G_1 \right).$
+        \item $K \triangleleft G_2 \implies f^{-1}(K) \triangleleft G_1.$
     \end{enumerate}
 \end{lema}
 
@@ -836,23 +836,23 @@
 
 \begin{obs}
     \[
-        H \triangleleft K \triangleleft G \notimplies H \triangleleft G
+        H \triangleleft K \triangleleft G \notimplies H \triangleleft G.
     \]
 \end{obs}
 
 \begin{example}
-    Sea $G = \Sim_4$, $H = \setb{ \Id, (12)(34)}$ y $K = \setb{ \Id, (12)(34), (13)(24), (23)(14)}$.
+    Sea $G = \Sim_4$, $H = \setb{ \Id, (1,2)(3,4)}$ y $K = \setb{ \Id, (1,2)(3,4), (1,3)(2,4), (2,3)(1,4)}$.
     Tenemos que $[K : H] = 2$, lo cual implica que $H \triangleleft K$. También es cierto que $K \triangleleft G$:
     \[
-        \sigma(12)(34)\sigma^{-1} = \sigma(12)\sigma^{-1}\sigma(34)\sigma^{-1} = (\sigma\lp 1\rp \sigma\lp 2\rp)
+        \sigma(1,2)(3,4)\sigma^{-1} = \sigma(1,2)\sigma^{-1}\sigma(3,4)\sigma^{-1} = (\sigma\lp 1\rp \sigma\lp 2\rp)
         (\sigma\lp 3\rp \sigma\lp 4\rp) \in K
     \]
     y análogamente para el resto de permutaciones de $K$. Sin embargo,
     $H \centernot\triangleleft G$:
     \[
         \begin{aligned}
-            (123)H &= \setb{(123), (134)}, \\
-            H(123) &= \setb{(123), (243)}.
+            (1,2,3)H &= \setb{(1,2,3), (1,3,4)}, \\
+            H(1,2,3) &= \setb{(1,2,3), (2,4,3)}.
         \end{aligned}
     \]
 \end{example}
