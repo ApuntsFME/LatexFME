@@ -1,0 +1,2 @@
+let g:Tex_Env_defi = "\\begin{defi}[<++>]\<CR><++>\<CR>\\end{defi}\<CR><++>"
+let g:Tex_Env_enumerate = "\\begin{enumerate}[<++]\<CR><++>\<CR>\\end{enumerate}\<CR><++>"
