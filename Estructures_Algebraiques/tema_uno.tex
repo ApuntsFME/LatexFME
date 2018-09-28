@@ -856,3 +856,146 @@
         \end{aligned}
     \]
 \end{example}
+
+\begin{prop}
+    Sea $G$ un grupo, y sea $H \triangleleft G$ un subgrupo normal, entonces
+    \begin{enumerate}[i)]
+        \item En $\faktor{G}{H}$ existe una estructura de grupo definida por 
+            \[
+                (xH)(yH) = (xy)H
+            \]
+        \item La función
+            \[
+                \begin{aligned}
+                    \Pi \colon G &\to  \faktor{G}{H} \\
+                    x &\mapsto xH = \bar{x}
+                \end{aligned}
+            \]
+            es un morfismo de grupos exhaustivo y de nucleo $H$.
+        \item Existe una biyección entre
+            \[
+                \begin{aligned}
+                    \setb{ \text{sg. normales de $G$ que contienen a $H$}} &\leftrightarrow
+                    \setb{ \text{sg. normales de $\faktor{G}{H}$}} \\
+                    K \supset H &\mapsto \Pi(K) \\
+                    \Pi^{-1}(L) &\rightarrow L
+                \end{aligned}
+            \]
+    \end{enumerate}
+\end{prop}
+
+%TODO demoooooo
+
+\begin{teo}[del isomorfismo]
+    Sean $G_1, G_2$ grupos, sea $f \colon G_1 \to G_2$ un morfismo de grupos. Sea $H \triangleleft G_1$
+    un subgrupo normal. Definimos
+    \[
+        \begin{aligned}
+            \tilde{f} \colon \faktor{G_1}{H} &\to G_2 \\
+            xH &\mapsto \tilde{f}(xH) = f(x)
+        \end{aligned}
+    \]
+    entonces
+    \begin{enumerate}[i)]
+        \item $\tilde{f}$ está bien definida $\iff H \subseteq \ker(f)$
+            
+            En caso de que $H \subseteq \ker(f)$, se cumple que 
+        \item $\tilde{f}$ es un morfismo de grupos
+        \item $xH \in \ker\left( \tilde{f} \right) \iff x \in \ker(f)$
+        \item $\Im\left( \tilde{f} \right) = \Im(f)$
+    \end{enumerate}
+\end{teo}
+
+\begin{col}
+    En particular $\tilde{f} \colon \faktor{G_1}{\ker(f)} \to f\left( G_1 \right)$ es un morfismo de
+    grupos biyectivo.
+\end{col}
+
+\begin{col}
+    Hay un único grupo cíclico de orden $n$ (a parte de morfismos).
+\end{col}
+
+\begin{proof}
+    Sea $G = C_n(x) = \setb{ 1, x, \dots, x^{n-1}} = \langle x \rangle$ tomamos
+    \[
+        \begin{aligned}
+            f \colon \z &\to C_n(x) \\
+            k &\mapsto x^k
+        \end{aligned}
+    \]
+    que es un morfismo de grupos, entonces, por el teorema,
+    \[
+        \faktor{\z}{\z_{n}} \cong C_n
+    \]
+\end{proof}
+
+\section{El grupo multiplicativo de un cuerpo finito}
+
+\begin{defi}[todo]
+    Sea $G$ un grupo finito con $\orden(G) = n$ y $d \vert n$, notamos
+    \[
+        \mathcal{O}_d = \setb{y \in G \vert \orden(y) = d}
+    \]
+    y sea $x \in G$ con $\orden(x) = m$, notaremos
+    \[
+        C_m(x) = \langle x \rangle = \setb{1, x, \dots, x^{m-1}}
+    \]
+\end{defi}
+
+\begin{obs}
+    Dado un cuerpo $\k$, notaremos $\k^\ast = \k \setminus \setb{0}$.
+\end{obs}
+
+\begin{lema}
+    Sea $\k$ un cuerpo. Sea $p(T) \in \k[T]$ un polinomio de grado $n$, entonces
+    \[
+        \# \setb{\text{raices de } p(T)} \leq n
+    \]
+\end{lema}
+
+\begin{lema}
+    Sea $\k$ un cuerpo, sea $x \in \k^\ast$ con $\orden(x) = n$, entonces
+    \[
+        \O\left( \k^\ast \right) \subseteq \setb{ \text{raices de } T^n -1}
+        = C_n(x) \subseteq \k^\ast
+    \]
+    Además, $\#\O_n\left( \k^\ast \right) \leq \varphi(n)$
+\end{lema}
+
+\begin{proof}
+    Si $y \in \O_n(\k^\ast) \implies y^n = 1 \implies y^n -1 = 0 \implies y$ es raíz de $T^n -1$.
+    Por lo tanto, $\O_n\left( \k^\ast \right) \subseteq{\text{raices de } T^n -1}$. Ahora, vemos que
+    \[
+        y \in C_n(x) \implies y = x^k \implies y^n = \left( x^k \right)^n = \left( x^n \right)^k = 1
+    \]
+    y $C_n(X) \subseteq \setb{\text{raices de } T^n -1}$. Por último tenemo que 
+    $\# C_n(x) \leq \# \setb{\text{raices de } T^n -1} \leq n$
+    %TODO
+\end{proof}
+
+\begin{teo}
+    Sea $\k$ un cuerpo y sea $G$ un subgrupo finito de $\k^\ast$. Entonces $G$ es un grupo
+    ciclico. En particular, si $\k$ es finito, entonces $\k^\ast$ es un grupo cíclico.
+\end{teo}
+
+\begin{proof}
+    Sea $\abs{G} = n$ y sea $d \vert n$. Tomamos
+    \[
+        \O_d(G) = \setb{y \in G \vert \orden(y) = d} \subseteq
+        \subseteq \setb{y \in \k^\ast \vert \orden(y) = } = \O_d\left( \k^\ast \right)
+    \]
+    Definimos $m_d = \abs{\O_d(G)} \leq \abs{\O_d\left( \k^\ast \right)} \leq \varphi(d)$.
+    entonces
+    \[
+        n = \sum_{d \vert n} m_d \leq \sum_{d \vert n} \varphi(d) = n \implies m_d = \varphi(d)
+    \]
+    Tomamos ahora $d = n$, se tiene que
+    \[
+        \begin{rcases}
+            m_n = \varphi(n) \geq 1 \implies \exists y \in G \tq \orden(y) = n \\
+            \abs{G} = n
+        \end{rcases}
+        \implies G = C_n(y)
+    \]
+\end{proof}
+

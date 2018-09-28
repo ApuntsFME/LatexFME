@@ -1,2 +1,3 @@
-let g:Tex_Env_defi = "\\begin{defi}[<++>]\<CR><++>\<CR>\\end{defi}\<CR><++>"
-let g:Tex_Env_enumerate = "\\begin{enumerate}[<++]\<CR><++>\<CR>\\end{enumerate}\<CR><++>"
+let g:Tex_Env_defi = "\\begin{defi}[<++>]\<CR><++>\<CR>\\end{defi}<++>"
+let g:Tex_Env_teo = "\\begin{teo}[<++>]\<CR><++>\<CR>\\end{teo}<++>"
+let g:Tex_Env_enumerate = "\\begin{enumerate}[<++>]\<CR>\\item <++>\<CR>\\end{enumerate}<++>"
