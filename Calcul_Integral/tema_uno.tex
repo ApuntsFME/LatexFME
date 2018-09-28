@@ -6,7 +6,7 @@
     Una serie de números reales es una pareja de sucesiones de números reales
     $(a_n)_{n \geq 0}$, $(s_n)_{n \geq 0}$, relacionadas por
     \[
-        s_n = \sum_{i=0}^{n} a_n.
+        s_n = \sum_{i=0}^{n} a_i.
     \]
     Denominaremmos término $n$-ésimo de la serie al elemento $a_n$ y llamaremos
     suma parcial $n$-ésima de la serie a $s_n$.
@@ -21,7 +21,7 @@
 \begin{defi}[suma!de una serie]
     Llamaremos suma de una serie a
     \[
-        s = \lim s_n = \lim\limits_{n \to \infty} \sum_{k=0}^{n} a_n,
+        s = \lim s_n = \lim\limits_{n \to \infty} \sum_{k=0}^{n} a_i,
     \]
     suponiendo que existe.
 \end{defi}
@@ -44,8 +44,8 @@
 \begin{obs}
     Una serie no tiene por qué comenzar por el índice 0, y por tanto, podemos considerar
     series con términos $a_n$ donde $n \geq n_0$. En tal caso, las sumas parciales son
-    $s_n = \sum\limits_{k=n_0}^n a_n$, y la suma (si existe) $\sum\limits_{k=n_0}^{\infty}
-    a_n = \lim\limits_{n \to +\infty} \sum\limits_{k=n_0}^n a_n$.
+    $s_n = \sum\limits_{k=n_0}^n a_k$, y la suma (si existe) $\sum\limits_{k=n_0}^{\infty}
+    a_n = \lim\limits_{n \to +\infty} \sum\limits_{k=n_0}^n a_k$.
 \end{obs}
 
 
@@ -335,8 +335,10 @@
         \]
         donde $C = \frac{a_{n_0}}{r^{n_0}}$ y, por el criterio de comparación
         directa, $\sum a_n$ converge.
-        \item $\frac{a_{n+1}}{a_n} \geq 1$: $\frac{a_{n+1}}{a_n} \geq 1\implies a_{n+1} \geq a_n \implies a_n$ es creciente
-            $\implies \sum a_n$ diverge.
+        \item $\frac{a_{n+1}}{a_n} \geq 1$: 
+            \[
+                \frac{a_{n+1}}{a_n} \geq 1\implies a_{n+1} \geq a_n \implies a_n\text{ es creciente }\implies \sum a_n\text{ diverge}.
+            \]
     \end{itemize}
 \end{proof}
 
@@ -495,7 +497,7 @@
   \]
   De donde se deduce que
   \[
-    \abs{a_{n+1} + \cdots + a_n} < \abs{a_{n+1}} + \cdots + \abs{a_m} < \varepsilon,
+    \abs{a_{n+1} + \cdots + a_m} < \abs{a_{n+1}} + \cdots + \abs{a_m} < \varepsilon,
   \]
   por la desigualdad triangular. Y por lo tanto, $\sum a_n$ cumple el criterio de Cauchy.
 
@@ -570,7 +572,7 @@
                 \sum\limits_{k=0}^ n \abs{a_k} = \sum\limits_{k=0}^ n p_k + \sum\limits_{k=0}^n q_k.
         \]
         Si $\sum \abs{a_n}$ converge $\implies \sum p_n$ y $\sum q_n$ tienen el mismo carácter,
-            como ambas son series de términos positivos, $\sum a_n$ y $\sum b_n$ convergen.
+            como ambas son series de términos positivos, $\sum p_n$ y $\sum q_n$ convergen.
 
             El recíproco es directo por linealidad.
         \item Se tiene que
@@ -671,12 +673,12 @@ destaca el criterio de Dirichlet.
     \[
         \sum_{n \geq 0} a_nx^n,
     \]
-    donde $a_n$ son los coeficientes de la serie.
+    donde $a_n$ son los coeficientes de la serie. A menudo, notaremos simplemente $\sum a_nx^n$.
 \end{defi}
 
 \begin{lema}
-    Sea $\sum a_nx^n$ una serie de potencias. El conjunto de los $r \geq 0$ tales
-    que $\sum \abs{a_n}r^n$ converge es un intervalo que contiene al 0.
+    El conjunto de los $r \geq 0$ tales
+    que $\sum \abs{a_n}r^n$ converge es un intervalo que contiene el 0.
 \end{lema}
 
 \begin{proof}
@@ -789,7 +791,7 @@ destaca el criterio de Dirichlet.
 \begin{proof}
     Primero, consideramos la función derivada $f^\prime (x) = \sum\limits_{n \geq 0}
     n a_n x^{n-1} = \sum\limits_{k \geq 0} (k+1) a_{k+1} x^k$, calculamos ahora
-    el raido de convergencia por la definición.
+    el radio de convergencia por la definición.
     \[
         \limsup \abs{n+1}^{\sfrac{1}{n}}\abs{a_{n+1}}^{\sfrac{1}{n}} =
         \limsup \abs{n}^{\sfrac{1}{n-1}}\abs{a_{n}}^{\sfrac{1}{n-1}} =
