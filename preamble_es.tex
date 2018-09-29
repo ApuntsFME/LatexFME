@@ -5,6 +5,7 @@
 \usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
 \usepackage{mdframed,cleveref,cancel,stackengine,pgf,pgfplots,mathrsfs,thmtools}
 \usepackage{xfrac,stmaryrd,commath,needspace,multirow,float,siunitx,faktor, centernot}
+\usepackage{tikz-cd,multicol}
 \usepackage[shortlabels]{enumitem}
 \usepackage[spanish,es-lcroman]{babel}
 
@@ -41,7 +42,8 @@
 \newcommand{\V}{\mathcal{V}}
 \newcommand{\T}{\mathcal{T}}
 \newcommand{\B}{\mathcal{B}}
-%\newcommand{\O}{\mathcal{O}}
+\let\O\relax
+\newcommand{\O}{\mathcal{O}}
 \newcommand{\Sim}{\mathcal{S}}
 \newcommand{\bb}[1]{\mathbb{#1}}
 \newcommand{\pdv}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}

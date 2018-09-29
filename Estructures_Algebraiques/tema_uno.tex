@@ -88,7 +88,7 @@
             es un grupo, con $(a, b) \cdot (c, d) = (ac, bd)$.
         \item $\lp S_n, \circ \rp$ es el grupo simétrico de $n$ elementos (permutaciones de $n$ elementos).
         \item Grupo diedial. $\lp D_{2n}, \circ \rp$, donde $D_{2n}$ son los conjuntos de las isometrías del plano que dejan invariante $P_n$.
-            $P_n$ es un polígono regular de $n$ lados (raices $n$-esimas de 1). Por ejemplo,
+            $P_n$ es un polígono regular de $n$ lados (raíces $n$-esimas de 1). Por ejemplo,
             \[
                 D_{2 \cdot 4} = \setb{id, r, r^2, r^3, s, rs, r^2s, r^3s}
             \]
@@ -721,7 +721,7 @@
 
 \section{Subgrupos normales. Grupo cociente}
 
-\begin{defi}
+\begin{defi}[subgrupo!normal a un grupo]
     Sea $G$ un grupo y $H \subseteq G$ un subgrupo. Decimos que $H$ es un subgrupo normal de $G$ si
     $\forall a \in G$
     \[
@@ -758,6 +758,7 @@
 
 \begin{example}
     \begin{enumerate}[1.]
+        \item[]
         \item Tomamos $G = \Sim_3 = \setb{\Id, (12), (13), (23), (123), (132)}$ y
             $H = A_3 = \setb{\Id, (123), (132)}$. Sabemos ahora que
             \[
@@ -841,7 +842,12 @@
 \end{obs}
 
 \begin{example}
-    Sea $G = \Sim_4$, $H = \setb{ \Id, (1,2)(3,4)}$ y $K = \setb{ \Id, (1,2)(3,4), (1,3)(2,4), (2,3)(1,4)}$.
+    Sean
+    \begin{align*}
+        G &= \Sim_4,\\
+        H &= \setb{ \Id, (1,2)(3,4)}, \\
+        K &= \setb{ \Id, (1,2)(3,4), (1,3)(2,4), (2,3)(1,4)}.
+    \end{align*}
     Tenemos que $[K : H] = 2$, lo cual implica que $H \triangleleft K$. También es cierto que $K \triangleleft G$:
     \[
         \sigma(1,2)(3,4)\sigma^{-1} = \sigma(1,2)\sigma^{-1}\sigma(3,4)\sigma^{-1} = (\sigma\lp 1\rp \sigma\lp 2\rp)
@@ -884,110 +890,146 @@
     \end{enumerate}
 \end{prop}
 
-%TODO demoooooo
+%TODO acabar demoooooo
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item[]
+        \item Sean $x\sim x'$ y $y\sim y'$, queremos ver que $xy\sim x'y'$.
+            \[
+                \begin{rcases}
+                    x\sim x' \implies x^{-1}x' \in H\\
+                    y\sim y' \implies y^{-1}y' \in H
+                \end{rcases}
+                \implies \lp xy\rp ^{-1}\lp x'y'\rp = y^{-1} \underbrace{\lp x^{-1}x'\rp}_{\in H} y'\stackrel{H\triangleleft G}{=} \underbrace{y^{-1}y'}_{\in H}t \in H
+            \]
+            Comprovamos las propiedades de la operación de un grupo:
+            \begin{itemize}
+                \item \emph{Associativa}: $\lp xH\rp\lp yHzH\rp = \lp xH\rp \lp\lp yz\rp H\rp = \lp x\lp yz\rp \rp H = \lp \lp xy\rp z\rp H = \lp xyH\rp \lp zH\rp = \lp \lp xH\rp \lp yH\rp \rp \lp zH\rp$.
+                \item \emph{Elemento neutro}:
+                    \begin{align*}
+                        H\lp xH\rp &= \lp 1H\rp \lp xH\rp = \lp 1x\rp H = xH, \\
+                        \lp xH\rp H &= \lp xH\rp \lp 1H\rp = \lp x1\rp H = xH.
+                    \end{align*}
+                \item \emph{Elemento inverso}: $\lp xH\rp\lp x^{-1}H\rp = \lp xx^{-1}\rp H = 1H = H$.
+            \end{itemize}
+    \end{enumerate}
+\end{proof}
 
-\begin{teo}[del isomorfismo]
+\begin{teo}[de isomorfía (primero)] \label{teo:1_iso}
     Sean $G_1, G_2$ grupos, sea $f \colon G_1 \to G_2$ un morfismo de grupos. Sea $H \triangleleft G_1$
     un subgrupo normal. Definimos
-    \[
-        \begin{aligned}
-            \tilde{f} \colon \faktor{G_1}{H} &\to G_2 \\
-            xH &\mapsto \tilde{f}(xH) = f(x)
-        \end{aligned}
-    \]
+    \begin{center}
+        \begin{tabular}{cc}
+            $
+            \begin{aligned}
+                \tilde{f} \colon \faktor{G_1}{H} &\to G_2 \\
+                xH &\mapsto \tilde{f}(xH) = f(x),
+            \end{aligned}
+            $
+            \qquad \qquad & \qquad \qquad
+            \tikzexternaldisable
+            $
+                \begin{tikzcd}
+                    G_1\ar{r}{f}\ar{d} & G_2\\[2ex]
+                    \faktor{G_1}{H} \arrow[ur, swap, dashed, "\tilde{f}\lp xH\rp = f\lp x\rp"] & 
+                \end{tikzcd}
+            $
+            \tikzexternalenable
+        \end{tabular}
+    \end{center}
     entonces
     \begin{enumerate}[i)]
-        \item $\tilde{f}$ está bien definida $\iff H \subseteq \ker(f)$
+        \item $\tilde{f}$ está bien definida $\iff H \subseteq \ker(f)$.
             
-            En caso de que $H \subseteq \ker(f)$, se cumple que 
-        \item $\tilde{f}$ es un morfismo de grupos
-        \item $xH \in \ker\left( \tilde{f} \right) \iff x \in \ker(f)$
-        \item $\Im\left( \tilde{f} \right) = \Im(f)$
+            Si esta bien definida, se cumple que 
+        \item $\tilde{f}$ es un morfismo de grupos,
+        \item $xH \in \ker\left( \tilde{f} \right) \iff x \in \ker(f)$,
+        \item $\im\left( \tilde{f} \right) = \im(f)$.
     \end{enumerate}
 \end{teo}
 
 \begin{col}
     En particular $\tilde{f} \colon \faktor{G_1}{\ker(f)} \to f\left( G_1 \right)$ es un morfismo de
-    grupos biyectivo.
+    grupos biyectivo (isomorfismo).
 \end{col}
 
 \begin{col}
-    Hay un único grupo cíclico de orden $n$ (a parte de morfismos).
+    Hay un único grupo cíclico de orden $n$ (salvo isomorfismos).
 \end{col}
 
 \begin{proof}
-    Sea $G = C_n(x) = \setb{ 1, x, \dots, x^{n-1}} = \langle x \rangle$ tomamos
+    Sea $G = C_n(x) = \setb{ 1, x, \dots, x^{n-1}} = \langle x \rangle$, tomamos
     \[
         \begin{aligned}
             f \colon \z &\to C_n(x) \\
             k &\mapsto x^k
         \end{aligned}
     \]
-    que es un morfismo de grupos, entonces, por el teorema,
+    que es un morfismo de grupos exhaustivo, $\ker(f) = n\z$. Por el primer teorema de isomorfía (\ref{teo:1_iso}),
     \[
-        \faktor{\z}{\z_{n}} \cong C_n
+        \faktor{\z}{\z_{n}} \cong C_n.
     \]
 \end{proof}
 
 \section{El grupo multiplicativo de un cuerpo finito}
 
-\begin{defi}[todo]
-    Sea $G$ un grupo finito con $\orden(G) = n$ y $d \vert n$, notamos
+\begin{obs}[Notación]
+    Sea $G$ un grupo finito con $\orden(G) = n$ y $d \vert n$, notaremos
     \[
-        \mathcal{O}_d = \setb{y \in G \vert \orden(y) = d}
+        \O_d = \setb{y \in G \vert \orden(y) = d}
     \]
     y sea $x \in G$ con $\orden(x) = m$, notaremos
     \[
         C_m(x) = \langle x \rangle = \setb{1, x, \dots, x^{m-1}}
     \]
-\end{defi}
+\end{obs}
 
-\begin{obs}
+\begin{obs}[Notación]
     Dado un cuerpo $\k$, notaremos $\k^\ast = \k \setminus \setb{0}$.
 \end{obs}
 
 \begin{lema}
     Sea $\k$ un cuerpo. Sea $p(T) \in \k[T]$ un polinomio de grado $n$, entonces
     \[
-        \# \setb{\text{raices de } p(T)} \leq n
+        \# \setb{\text{raíces de } p(T)} \leq n.
     \]
 \end{lema}
 
 \begin{lema}
-    Sea $\k$ un cuerpo, sea $x \in \k^\ast$ con $\orden(x) = n$, entonces
+    Sea $\k$ un cuerpo, sea $x \in \k^\ast$, $\orden(x) = n$, entonces
     \[
-        \O\left( \k^\ast \right) \subseteq \setb{ \text{raices de } T^n -1}
+        \O_d\left( \k^\ast \right) \subseteq \setb{ \text{raíces de } T^n -1}
         = C_n(x) \subseteq \k^\ast
     \]
-    Además, $\#\O_n\left( \k^\ast \right) \leq \varphi(n)$
+    Además, $\#\O_d\left( \k^\ast \right) \leq \varphi(n)$.
 \end{lema}
 
 \begin{proof}
     Si $y \in \O_n(\k^\ast) \implies y^n = 1 \implies y^n -1 = 0 \implies y$ es raíz de $T^n -1$.
-    Por lo tanto, $\O_n\left( \k^\ast \right) \subseteq{\text{raices de } T^n -1}$. Ahora, vemos que
+    Por lo tanto, $\O_n\left( \k^\ast \right) \subseteq{\text{raíces de } T^n -1}$. Ahora, vemos que
     \[
         y \in C_n(x) \implies y = x^k \implies y^n = \left( x^k \right)^n = \left( x^n \right)^k = 1
     \]
-    y $C_n(X) \subseteq \setb{\text{raices de } T^n -1}$. Por último tenemo que 
-    $\# C_n(x) \leq \# \setb{\text{raices de } T^n -1} \leq n$
+    y $C_n(X) \subseteq \setb{\text{raíces de } T^n -1}$. Por último tenemo que 
+    $\# C_n(x) \leq \# \setb{\text{raíces de } T^n -1} \leq n$
     %TODO
 \end{proof}
 
-\begin{teo}
-    Sea $\k$ un cuerpo y sea $G$ un subgrupo finito de $\k^\ast$. Entonces $G$ es un grupo
-    ciclico. En particular, si $\k$ es finito, entonces $\k^\ast$ es un grupo cíclico.
-\end{teo}
+\begin{teo*}
+    Sea $\k$ un cuerpo y sea $G$ un subgrupo finito de $\k^\ast$, entonces $G$ es un grupo
+    cíclico. En particular, si $\k$ es finito, $\k^\ast$ es un grupo cíclico.
+\end{teo*}
 
 \begin{proof}
     Sea $\abs{G} = n$ y sea $d \vert n$. Tomamos
     \[
         \O_d(G) = \setb{y \in G \vert \orden(y) = d} \subseteq
-        \subseteq \setb{y \in \k^\ast \vert \orden(y) = } = \O_d\left( \k^\ast \right)
+        \setb{y \in \k^\ast \vert \orden(y) = d} = \O_d\left( \k^\ast \right).
     \]
     Definimos $m_d = \abs{\O_d(G)} \leq \abs{\O_d\left( \k^\ast \right)} \leq \varphi(d)$.
     entonces
     \[
-        n = \sum_{d \vert n} m_d \leq \sum_{d \vert n} \varphi(d) = n \implies m_d = \varphi(d)
+        n = \sum_{d \vert n} m_d \leq \sum_{d \vert n} \varphi(d) = n \implies m_d = \varphi(d).
     \]
     Tomamos ahora $d = n$, se tiene que
     \[
@@ -995,7 +1037,6 @@
             m_n = \varphi(n) \geq 1 \implies \exists y \in G \tq \orden(y) = n \\
             \abs{G} = n
         \end{rcases}
-        \implies G = C_n(y)
+        \implies G = C_n(y).
     \]
 \end{proof}
-
