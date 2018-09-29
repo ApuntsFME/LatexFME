@@ -4,7 +4,8 @@
 \usepackage[pdftex]{hyperref}
 \usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
 \usepackage{mdframed,cleveref,cancel,stackengine,pgf,pgfplots,mathrsfs,thmtools}
-\usepackage{xfrac,stmaryrd,commath,needspace,multirow,float,siunitx,faktor}
+\usepackage{xfrac,stmaryrd,commath,needspace,multirow,float,siunitx,faktor, centernot}
+\usepackage{tikz-cd,multicol,dsfont}
 \usepackage[shortlabels]{enumitem}
 \usepackage[catalan]{babel}
 
@@ -56,7 +57,10 @@
 \newcommand{\lp}{\left(}
 \newcommand{\rp}{\right)}
 \newcommand{\lc}{\left\{}
-\newcommand{\rc}{\right\}}\newcommand{\limvar}[2]{\lim\limits_{#1 \rightarrow #2}}   % Para escribir limites más rapido
+\newcommand{\rc}{\right\}}
+\newcommand{\lb}{\left[}
+\newcommand{\rb}{\right]}
+\newcommand{\limvar}[2]{\lim\limits_{#1 \rightarrow #2}}   % Para escribir limites más rapido
 \newcommand{\fl}[0]{\text{fl}} % Representación en coma flotante
 \newcommand{\sgn}[0]{\text{sgn}}% Función signo (sgn) de una permutación
 \newcommand{\diag}[0]{\text{diag}}% Notación corta para matriz diagonal: diag(d_1,...,d_n)

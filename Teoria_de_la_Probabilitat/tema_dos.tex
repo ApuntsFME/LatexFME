@@ -1,0 +1,122 @@
+\chapter{Variables aleatòries}
+\begin{defi}[varible!aleatòria]
+    Siguin $\lp \Omega_1, \Asuc_1\rp$ i $\lp \Omega_2, \Asuc_2\rp$ espais mesurables. Diem que $X\colon \Omega_1\to\Omega_2$ és una variable aleatòria si
+    \[
+        X^{-1}\lp A_2\rp\in\Asuc_1,\,\forall A_2\in\Asuc_2.
+    \]
+\end{defi}
+\noindent En aquest curs, sempre pendrem $\lp \Omega_2, \Asuc_2\rp=\lp \real,\B\rp$. Per tant, quan parlem de variable aleatòria ens estarem referint a una aplicació $X\colon\Omega\to\real$ amb $B\in\B\implies X^{-1}\lp B\rp\in\Asuc$, on $\lp \Omega, \Asuc\rp$ és un espai de mesura.
+\begin{example}
+    \begin{enumerate}[1.]
+        \item[]
+        \item Sigui $\lp \Omega, \Asuc\rp$ un espai de mesura. Aleshores, $\forall c\in\real$, l'aplicació
+            \begin{align*}
+                X\colon \Omega &\to\real\\
+                \omega &\mapsto c
+            \end{align*}
+            és una variable aleatòria, atès que, $\forall B\in\B$, es té que
+            \[
+                X^{-1}\lp B\rp=\begin{cases}
+                    \Omega, \text{ si } c\in B,\\
+                    \varnothing, \text{ si } c\notin B.
+                \end{cases}
+            \]
+        \item Siguin $X$ i $Y$ variables aleatòries. Aleshores, també son variables aleatòries les següents funcions.
+            \begin{itemize}
+                \item $X+Y$
+                \item $X-Y$
+                \item $aX,\,\forall a\in\real$
+                \item $XY$
+                \item $\abs{X}$
+                \item $\max\lc X, Y\rc$
+                \item $\min\lc X, Y\rc$
+                \item $X^+$
+                \item $X^-$
+                \item $g\lp X, Y\rp$, on $g\colon \real^2\to\real$ és ua funció mesurable.
+            \end{itemize}
+        \item Sigui $\lp \Omega, \Asuc\rp$ un espai de mesura i sigui $A\in\Asuc$. Definim la variable aleatòria indicadora d'$A$ com
+            \begin{align*}
+                \mathbb{I}_A\equiv\mathds{1}_A\colon \Omega &\to\real\\
+                \omega &\mapsto\mathbb{I}_A\lp\omega\rp=\begin{cases}
+                    0, \text{ si } \omega\notin A,\\
+                    1, \text{ si } \omega\in A.
+                \end{cases}
+            \end{align*}
+            Vegem que, efectivament, es tracta d'una variable aleatòria. Sigui $B\in\B$. Aleshores,
+            \[
+                \mathbb{I}_A\lp B\rp=\begin{cases}
+                    \Omega, \text{ si } 0\in B,\, 1\in B,\\
+                    \comp{A}, \text{ si } 0\in B,\, 1\notin B,\\
+                    A, \text{ si } 0\notin B,\, 1\in B,\\
+                    \varnothing, \text{ si } 0\notin B,\, 1\notin B.
+                \end{cases}
+            \]
+    \end{enumerate}
+\end{example}
+
+\begin{obs}
+    A partir d'ara, emprarem la notació següent. Sigui $(\Omega,\Asuc, p)$ un espai de probabilitat i sigui $B\in\B$, escrivim
+    \[
+        p\lp X\in B\rp:= p\lp\lc\omega\in\Omega\mid\omega\in X^{-1}\lp B\rp\rc\rp.
+    \]
+\end{obs}
+
+\begin{example}
+    $p\lp X\leq 2\rp = p\lp\lc\omega\in\Omega\mid X\lp\omega\rp\leq 2\rc\rp$.
+\end{example}
+
+\begin{obs}
+    Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat i sigui $X$ una variable aleatòria. $X$ indueix una funció de probabilitat $P_X$ sobre l'espai de mesura $\lp\real,\B\rp$
+    \[
+        P_X\lp B\rp:=p\lp X\in B\rp.
+    \]
+    És a dir, $\lp\real,\B,P_x\rp$ és un espai de probabilitat. Comprovem, primer, que és un espai de mesura.
+    \begin{enumerate}[i)]
+        \item $P_X\lp\varnothing\rp=p\lp\lc\omega\in\Omega\mid\omega\in X^{-1}\lp \varnothing\rp\rc\rp=p\lp\varnothing\rp=0$, atès que $p$ és una funció de probabilitat.
+        \item $0\leq p\lp\lc\omega\in\Omega\mid\omega\in X^{-1}\lp B\rp\rc\rp = P_X\lp B\rp$, atès que $p$ és una funció de probabilitat. 
+        \item Si $\lc B_i\rc_{i\in\n}\subseteq\B$ són disjunts dos a dos, aleshores $\lc X^{-1}\lp B_i\rp\rc_{i\in\n}\subseteq\Asuc$ també són disjunts dos a dos. I, per ser $p$ una funció de probabilitat, es té que
+        \begin{align*}
+            P_X\lp \bigcup_{i\in\n} B_i\rp &= p\lp\lc\omega\in\Omega\mid\omega\in X^{-1}\lp \bigcup_{i\in\n} B_i\rp\rc\rp =\\
+            &= \sum_{i\in\n} p\lp\lc\omega\in\Omega\mid\omega\in X^{-1}\lp B_i\rp\rc\rp=\\
+            &=\sum_{i\in\n}P_X\lp B_i\rp.
+        \end{align*}
+    \end{enumerate}
+    A més a més, per ser $p$ una funció de probabilitat,
+    \[
+        P_X\lp\real\rp = p\lp\lc\omega\in\Omega\mid\omega\in X^{-1}\lp\real\rp\rc\rp = p\lp\Omega\rp=1
+    \]
+    i $\lp\real,\B,P_x\rp$ és un espai de probabilitat.
+\end{obs}
+
+\begin{obs}
+    Sigui $\lp\Omega,\Asuc\rp$ un espai mesurable. Recordem que $X\colon\Omega\to\real$ és una funció mesurable si i només si $X^{-1}\lp\lp-\infty, a\rb\rp\in\Asuc,\,\forall a\in\real$.
+\end{obs}
+
+\begin{defi}[funció!de distribució de probabilitat]
+    Sigui $\lp\Omega,\Asuc, p\rp$ un espai de probabilitat i sigui $X$ una variable aleatòria. Anomenem funció de distribució de probabilitat d'$X$ a l'aplicació
+    \begin{align*}
+        F_X\colon\real &\to\lb 0,1\rb\\
+        x &\mapsto F_X\lp x\rp = p\lp X\leq x\rp = P_X\lp\lp-\infty,x\rb\rp.
+    \end{align*}
+\end{defi}
+
+\begin{prop}
+    Sigui $\lp\Omega,\Asuc, p\rp$ un espai de probabilitat i sigui $F_X$ la funció de distribució de probabilitat d'una variable aleatòria $X$ sobre $\lp\Omega,\Asuc, p\rp$. Aleshores,
+    \begin{enumerate}[i)]
+        \item $x_1\leq x_2\implies F_X\lp x_1\rp \leq F_X\lp x_2\rp$.
+        \item $\lim_{x\to-\infty}F_X\lp x\rp = 0$ i $\lim_{x\to\infty}F_X\lp x\rp = 1$.
+        \item $F_X$ és contínua per la dreta, és a dir, $\lim_{h\to 0^+}F_X\lp x+h\rp = F_X\lp x\rp$.
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item[]
+        \item $F_X\lp x_1\rp = p\lp\lc \omega\in\Omega\mid X\lp\omega\rp\leq x_1\rc\rp \leq p\lp\lc \omega\in\Omega\mid X\lp\omega\rp\leq x_2\rc\rp = F_X\lp x_2\rp$, atès que $\lc \omega\in\Omega\mid X\lp\omega\rp\leq x_1\rc \subseteq \lc \omega\in\Omega\mid X\lp\omega\rp\leq x_2\rc$ i que $p$ és una funció mesurable.
+        \item Vegem que $\forall\lc x_n\rc_{n\in\n}$ tal que $\lim_{n\to\infty} x_n = -\infty$, es té que $\lim_{n\to\infty}F_X\lp x_n\rp = 0$. Definim $A_n=\lc\omega\in\Omega\mid X\lp\omega\rp\leq x_n\rc$. Tenim que $\varnothing\subseteq\liminf A_n\subseteq\limsup A_n$. A més, $\limsup A_n=\varnothing$ perquè, altrament, hi hauria un nombre infinit de conjunts $A_n$ contenint un $\omega\in\Omega$ determinat. Per tant, 
+            \[
+                \lim_{n\to\infty} F_X\lp x_n\rp=\lim_{n\to\infty} p\lp A_n\rp = p\lp\lim_{n\to\infty} A_n \rp = p\lp\varnothing\rp=0.
+            \]
+            Anàlogament, es demostra que $\lim_{x\to\infty}F_X\lp x\rp = 1$.
+        \item 
+    \end{enumerate}
+\end{proof}
