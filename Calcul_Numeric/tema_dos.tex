@@ -1,0 +1,17 @@
+\chapter{Sistemas de ecuaciones no lineales}
+
+Dada $\vec{f} \colon \real^n \to \real^n$, queremos encontrar $\vec{\alpha} \in \real^n$ tal que $\vec{f}\left( \vec{a} \right) = \vec{0}$.
+
+\section{M\'etodo de Newton-Raphson}
+
+Dada una aproximaci\'on $\vec{x}^k \approx \vec{\alpha}$, consideramos l'aproximaci\'on lineal de $\vec{f}\left( \vec{x} \right)$ en $\vec{x}^k$
+\begin{align*}
+    \vec{f}\left( \vec{x} \right) &\approx \vec{f}\left( \vec{x}^k \right) + \frac{\partial \vec{f}}{\partial \vec{x}}\left( \vec{x}^{k+1}-\vec{x}^k \right) + \O \left( \|x-x^k\|^2 \right) = 0, \\
+    \vec{x}^{k+1} &= \vec{x}^k - \left[ \frac{\partial\vec{f}}{\partial\vec{x}}\left( x^k \right) \right]^{-1} \vec{f}\left( \vec{x}^k \right),\, \text{donde } J = \frac{\partial\vec{f}}{\partial x} \text{ es la jacobiana.}
+\end{align*}
+
+Se puede ver que tiene convergencia cuadr\'atica si $\det\left( J(x) \right) \neq 0$.
+
+\begin{obs}
+    No calcularemos 
+\end{obs}

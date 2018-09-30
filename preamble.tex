@@ -7,7 +7,6 @@
 \usepackage{xfrac,stmaryrd,commath,needspace,multirow,float,siunitx,faktor, centernot}
 \usepackage{tikz-cd,multicol,dsfont}
 \usepackage[shortlabels]{enumitem}
-\usepackage[spanish,es-lcroman]{babel}
 
 \usepackage{makeidx}
 \usepackage{hyperref}
@@ -60,6 +59,8 @@
 \newcommand{\rp}{\right)}
 \newcommand{\lc}{\left\{}
 \newcommand{\rc}{\right\}}
+\newcommand{\lb}{\left[}
+\newcommand{\rb}{\right]}
 \newcommand{\limvar}[2]{\lim\limits_{#1 \rightarrow #2}}   % Para escribir limites más rapido
 \newcommand{\fl}[0]{\text{fl}} % Representación en coma flotante
 \newcommand{\sgn}[0]{\text{sgn}}% Función signo (sgn) de una permutación
@@ -73,6 +74,7 @@
 \newcommand{\notimplies}{\mathrel{{\ooalign{\hidewidth$\not\phantom{=}$\hidewidth\cr$\implies$}}}}
 \newcommand{\spr}[1]{\langle #1 \rangle}% Prodcuto escalar
 \newcommand{\Asuc}{\mathcal{A}} %Conjunt de successos
+\newcommand\comp[1]{\overline{#1}} %Complementari
 
 \DeclareMathOperator{\Ec}{Ec}
 \DeclareMathOperator{\Ep}{Ep}
@@ -167,37 +169,7 @@
 {\bfseries}% Thm head font
 {}%        Punctuation after thm head
 {5pt plus 1pt minus 1pt}% Space after thm head: \newline = linebreak
-{\index{#3((defi:#2))}\label{defi:#2}\thmname{#1}\thmnumber{ #2}.}%         Thm head spec
-
-% Normal
-\declaretheorem[style=normal,name=Lema,numberwithin=section]{lema}
-\declaretheorem[style=normal,name=Lema,numbered=no]{lema*}
-\declaretheorem[style=normal,name=Observación,sibling=lema]{obs}
-\declaretheorem[style=normal,name=Observación,numbered=no]{obs*}
-\declaretheorem[style=normal,name=Proposición,sibling=lema]{prop}
-\declaretheorem[style=normal,name=Proposición,numbered=no]{prop*}
-\declaretheorem[style=autodefi,name=Definición,sibling=lema]{defi}
-\declaretheorem[style=normal,name=Definición,sibling=lema]{defi*}
-\declaretheorem[style=normal,name=Corolario,sibling=lema]{col}
-\declaretheorem[style=normal,name=Corolario,numbered=no]{col*}
-\declaretheorem[style=normal,name=Ejercicio,sibling=lema]{ej}
-\declaretheorem[style=normal,name=Ejercicio,numbered=no]{ej*}
-\declaretheorem[style=normal,name=Ejemplo,sibling=lema]{example}
-\declaretheorem[style=normal,name=Ejemplo,numbered=no]{example*}
-\declaretheorem[style=normal,name=Problema,sibling=lema]{problema}
-\declaretheorem[style=normal,name=Problema,numbered=no]{problema*}
-
-% Demo
-\declaretheorem[style=demo,name=Demostración,qed=$\square$,numbered=no]{proof}
-\declaretheorem[style=demo,name=Solución,numbered=no]{sol}
-
-
-% Break
-\declaretheorem[style=break,name=Teorema,sibling=lema]{teo*}
-
-% Breakthm
-\declaretheorem[style=breakthm,name=Teorema,sibling=lema]{teo}
-\declaretheorem[style=breakthm,name=Lema,numberwithin=section]{teolema}
+{\index{#3((defi:#2))}\label{defi:#2}\thmname{#1}\thmnumber{ #2}.}% Thm head specko
 
 \makeindex
 \usepackage[totoc]{idxlayout}       % Glossari a l'índex

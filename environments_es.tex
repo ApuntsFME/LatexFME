@@ -1,0 +1,32 @@
+\usepackage[spanish,es-lcroman]{babel}
+
+% Normal
+\declaretheorem[style=normal,name=Lema,numberwithin=section]{lema}
+\declaretheorem[style=normal,name=Lema,numbered=no]{lema*}
+\declaretheorem[style=normal,name=Observación,sibling=lema]{obs}
+\declaretheorem[style=normal,name=Observación,numbered=no]{obs*}
+\declaretheorem[style=normal,name=Proposición,sibling=lema]{prop}
+\declaretheorem[style=normal,name=Proposición,numbered=no]{prop*}
+\declaretheorem[style=normal,name=Definición,sibling=lema]{defi*}
+\declaretheorem[style=normal,name=Corolario,sibling=lema]{col}
+\declaretheorem[style=normal,name=Corolario,numbered=no]{col*}
+\declaretheorem[style=normal,name=Ejercicio,sibling=lema]{ej}
+\declaretheorem[style=normal,name=Ejercicio,numbered=no]{ej*}
+\declaretheorem[style=normal,name=Ejemplo,sibling=lema]{example}
+\declaretheorem[style=normal,name=Ejemplo,numbered=no]{example*}
+\declaretheorem[style=normal,name=Problema,sibling=lema]{problema}
+\declaretheorem[style=normal,name=Problema,numbered=no]{problema*}
+
+% Autodefi
+\declaretheorem[style=autodefi,name=Definición,sibling=lema]{defi}
+
+% Demo
+\declaretheorem[style=demo,name=Demostración,qed=$\square$,numbered=no]{proof}
+\declaretheorem[style=demo,name=Solución,numbered=no]{sol}
+
+% Break
+\declaretheorem[style=break,name=Teorema,sibling=lema]{teo*}
+
+% Breakthm
+\declaretheorem[style=breakthm,name=Teorema,sibling=lema]{teo}
+\declaretheorem[style=breakthm,name=Lema,numberwithin=section]{teolema}
