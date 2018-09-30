@@ -950,7 +950,7 @@
             $
             \begin{aligned}
                 \tilde{f} \colon \faktor{G_1}{H} &\to G_2 \\
-                xH &\mapsto \tilde{f}(xH) = f(x),
+                xH &\mapsto \tilde{f}(xH) = f(x).
             \end{aligned}
             $
             \qquad \qquad & \qquad \qquad
@@ -964,16 +964,36 @@
             \tikzexternalenable
         \end{tabular}
     \end{center}
-    entonces
+    Entonces,
     \begin{enumerate}[i)]
         \item $\tilde{f}$ está bien definida $\iff H \subseteq \ker(f)$.
-            
-            Si esta bien definida, se cumple que 
+    \end{enumerate}
+     \noindent Si $\tilde{f}$ esté bien definida, se cumple que 
+    \begin{enumerate}[i)]
+        \setcounter{enumi}{1}
         \item $\tilde{f}$ es un morfismo de grupos,
         \item $xH \in \ker\left( \tilde{f} \right) \iff x \in \ker(f)$,
         \item $\im\left( \tilde{f} \right) = \im(f)$.
     \end{enumerate}
 \end{teo}
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item[]
+        \item 
+            \begin{align*}
+                \tilde{f}\text{ está bien definida } &\iff \lp xH=yH\implies f\lp x\rp = f\lp y\rp \rp \iff \\
+                &\iff \lp x^{-1}y\in H \implies f\lp x\rp = f\lp y\rp \rp \iff \\
+                &\iff \lp x^{-1}y\in H \implies f\lp x\rp f^{-1}\lp y\rp = 1 \rp \iff \\
+                &\iff \lp x^{-1}y\in H \implies f\lp x\rp f\lp y^{-1}\rp = 1 \rp \iff \\
+                &\iff \lp x^{-1}y\in H \implies f\lp x y^{-1}\rp = 1 \rp \iff \\
+                &\iff H\subseteq \ker\lp f\rp.
+            \end{align*}
+        \item $\tilde{f}\lp xH\rp\tilde{f}\lp yH\rp=f\lp x\rp f\lp y\rp = f\lp xy\rp = \tilde{f}\lp \lp xy\rp H\rp$.
+        \item $xH\in\ker\lp\tilde{f}\rp\iff\tilde{f}\lp xH\rp = f\lp x\rp = 1\iff x\in\ker\lp f\rp$.
+        \item $\im\lp\tilde{f}\rp=\lc \tilde{f}\lp xH\rp \,\mid\, x\in G_1\rc =\lc f\lp x\rp \,\mid\, x\in G_1\rc = \im\lp f\rp$.
+    \end{enumerate}
+
+\end{proof}
 
 \begin{col}
     En particular $\tilde{f} \colon \faktor{G_1}{\ker(f)} \to f\left( G_1 \right)$ es un morfismo de
