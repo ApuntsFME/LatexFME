@@ -1023,9 +1023,9 @@
 \begin{obs}[Notación]
     Sea $G$ un grupo finito con $\orden(G) = n$ y $d \vert n$, notaremos
     \[
-        \O_d = \setb{y \in G \vert \orden(y) = d}
+        \O_d = \setb{y \in G \vert \orden(y) = d}.
     \]
-    y sea $x \in G$ con $\orden(x) = m$, notaremos
+    Sea $x \in G$ con $\orden(x) = m$, notaremos
     \[
         C_m(x) = \langle x \rangle = \setb{1, x, \dots, x^{m-1}}
     \]
@@ -1036,14 +1036,28 @@
 \end{obs}
 
 \begin{lema}
-    Sea $\k$ un cuerpo. Sea $p(T) \in \k[T]$ un polinomio de grado $n$, entonces
+    Sea $\k$ un cuerpo y sea $p(T) \in \k[T]$ un polinomio de grado $n$. Entonces,
     \[
         \# \setb{\text{raíces de } p(T)} \leq n.
     \]
 \end{lema}
+\begin{proof}
+    Pongamos $p\lp T\rp = a_nT^n+a_{n-1}T^{n-1}+\cdots+a_1T+a_0$. Entonces, si $t$ es una raíz de $p$ o, dicho de otro modo, $p\lp t\rp = 0$, se tiene que
+    \[
+        p\lp t\rp = a_nt^n+a_{n-1}t^{n-1}+\cdots+a_1t+a_0=0,
+    \]
+    de modo que
+    \begin{align*}
+        p\lp T\rp &= p\lp T\rp - p\lp t\rp =\\
+        &= a_nT^n+a_{n-1}T^{n-1}+\cdots+a_1T+a_0-a_nt^n-a_{n-1}t^{n-1}-\cdots-a_1t-a_0=\\
+        &= \lp T-t\rp\lb a_n\lp T^{n-1} + T^{n-2}t+ \cdots +Tt^{n-2} +t^{n-1}\rp + \cdots+ a_1\rb=\\
+        &= \lp T-t\rp q\lp T\rp,
+    \end{align*}
+    donde $q\lp T\rp$ es un polinomio de grado $n-1$. Así pues, las demás raíces de $p\lp T\rp$ dividen $q\lp T\rp$ y así sucesivamente. Entonces, si $p\lp T\rp$ tubiera más de $n$ raíces, sería de la forma $\lp T-t_1\rp \cdots \lp T-t_{n+1}\rp q\lp T\rp$ y tendría, almenos, grado $n+1$, lo cual supone una contradicción.
+\end{proof}
 
 \begin{lema}
-    Sea $\k$ un cuerpo, sea $x \in \k^\ast$, $\orden(x) = n$, entonces
+    Sea $\k$ un cuerpo y sea $x \in \k^\ast$, $\orden(x) = n$. Entonces,
     \[
         \O_d\left( \k^\ast \right) \subseteq \setb{ \text{raíces de } T^n -1}
         = C_n(x) \subseteq \k^\ast
