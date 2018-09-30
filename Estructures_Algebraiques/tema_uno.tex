@@ -289,7 +289,7 @@
     \begin{enumerate}[1.]
         \item[]
         \item $\ord(e) = 1$ y es el único elemento (el neutro) que tiene orden 1.
-        \item En el grupo simétrico $G = \Sim_n$, $\ord\left( a_1, \dots, a_n \right) = n$.
+        \item En el grupo simétrico $G = \Sim_n$, sean $a_1, \dots, a_n \in G$, $\ord\left(\left( a_1, \dots, a_n \right)\right) = n$.
         \item En los grupos $\lp \z, +\rp , \lp \q, +\rp, \lp \real, +\rp$ y $\lp \cx, +\rp$, $\forall x \neq 0 \, \ord(x) = \infty$.
         \item En el grupo $\z/p\z$ con $p$ primo, $\forall \bar{x} \neq \bar{0} \, \ord\left( \bar{x} \right) = p$.
         \item En los grupos $\q^{\ast}=\lp \q\setminus \lc 0\rc, \cdot \rp, \real^{\ast}=\lp \real\setminus \lc 0\rc, \cdot\rp$, $\ord(-1) = 2$, $\ord(1) = 1$ y $\forall x \notin \setb{-1, 1} \, \ord(x) = \infty$.
@@ -301,7 +301,7 @@
     Sea $G$ un grupo y $x \in G$ con $\ord(x) = n\in\n$. Entonces,
     \begin{enumerate}[i)]
         \item $x^m = 1 \iff n \vert m$.
-        \item $x^m = x^{m^\prime} \iff m \cong m^\prime \, \pmod{n}$.
+        \item $x^m = x^{m^\prime} \iff m \equiv m^\prime \, \pmod{n}$.
         \item $\ord\left( x^m \right) = \frac{n}{\mcd(n, m)} = \frac{\ord(x)}{\mcd\left( \ord(x), m \right)}$.
     \end{enumerate}
 \end{lema}
@@ -318,7 +318,7 @@
                 \implies r = 0 \implies n \vert m.
             \]
         \item $x^m = x^{m^\prime} \iff x^{m - m^\prime} = 1 \iff n \vert m - m^\prime \iff
-            m \cong m^\prime \pmod{n}$.
+            m \equiv m^\prime \pmod{n}$.
         \item Sean $k = \ord\left( x^m \right)$ y $g = \mcd(n, m)$. Queremos ver que $k = n/g$.
             \[
                 \left( x^m \right)^{\frac{n}{g}} = x^{\frac{mn}{g}} = \left( x^n \right)^{\frac{m}{g}} = 1
@@ -968,7 +968,7 @@
     \begin{enumerate}[i)]
         \item $\tilde{f}$ está bien definida $\iff H \subseteq \ker(f)$.
     \end{enumerate}
-     \noindent Si $\tilde{f}$ esté bien definida, se cumple que 
+     \noindent Si $\tilde{f}$ está bien definida, se cumple que 
     \begin{enumerate}[i)]
         \setcounter{enumi}{1}
         \item $\tilde{f}$ es un morfismo de grupos,
