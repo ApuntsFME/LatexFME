@@ -13,6 +13,7 @@
 *.idx
 *.ind
 *.ilg
+.DS_Store
 .Rhistory
 commit.sh
 update_all.sh

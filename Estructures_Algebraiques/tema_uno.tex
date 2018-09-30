@@ -75,19 +75,21 @@
     \begin{enumerate}[1.]
         \item[]
         \item Sea $G$ un grupo. Los subgrupos impropios son
-                $\begin{cases}
+            \[
+                \begin{cases}
                     \setb{1} &\text{(el subgrupo trivial)}, \\
                     G. &
-                \end{cases}$
+                \end{cases}
+            \]
         \item $\lp \z, + \rp, \lp \n, + \rp, \lp \real, + \rp, \lp \cx, + \rp$ son grupos y subgrupos.
-        \item $\lp \z/n\z, + \rp$ es un grupo.
+        \item $\lp \faktor{\z}{n\z}, + \rp$ es un grupo.
         \item Si $G$ y $H$ son dos grupos, entonces
             \[
                  G \times H = \setb{(x,y) \vert x \in G, \, y \in H}   
             \]
             es un grupo, con $(a, b) \cdot (c, d) = (ac, bd)$.
-        \item $\lp S_n, \circ \rp$ es el grupo simétrico de $n$ elementos (permutaciones de $n$ elementos).
-        \item Grupo diedial. $\lp D_{2n}, \circ \rp$, donde $D_{2n}$ son los conjuntos de las isometrías del plano que dejan invariante $P_n$.
+        \item $\lp \Sim_n, \circ \rp$ es el grupo simétrico de $n$ elementos (permutaciones de $n$ elementos).
+        \item Grupo diedral. $\lp D_{2n}, \circ \rp$, donde $D_{2n}$ son los conjuntos de las isometrías del plano que dejan invariante $P_n$.
             $P_n$ es un polígono regular de $n$ lados (raíces $n$-esimas de 1). Por ejemplo,
             \[
                 D_{2 \cdot 4} = \setb{id, r, r^2, r^3, s, rs, r^2s, r^3s}
@@ -185,40 +187,40 @@
             $
         \item
             $
-                (xy)^{-1} = y^{-1} x^{.1} = x^{-1}y^{-1} \in HK.
+                (xy)^{-1} = y^{-1} x^{-1} = x^{-1}y^{-1} \in HK.
             $
     \end{enumerate}
 \end{proof}
 
-\begin{obs}
+\begin{obs} \label{obs:inclusiones_ops}
     Se tiene que
     \[
         H \cap K \subseteq H, K \subseteq H \cup K \subseteq H \cdot K.
     \]
 \end{obs}
 
+\begin{proof}
+    Tenemos que $H \cup K \subseteq HK$ ya que \forall x \in H, \, x\cdot1 = x \in HK
+    y análogamente para $K$. Las otras inclusiones son triviales a partir de las definiciones.
+\end{proof}
+
 \begin{obs}
     Si $HK$ es un subgrupo, entonces es el menor subgrupo que contiene a $H \cup K$. 
 \end{obs}
 
 \begin{proof}
-    Es claro que $H \cup K \subseteq HK$, ya que
-    \[
-        \forall x \in H, \, x\cdot1 = x \in HK
-    \]
-    y análogamente para $K$.
+    Sabemos que $H \cup K \subseteq HK$ por \ref{obs:inclusiones_ops}.
 
     Suponemos ahora que $L$ es un subgrupo de $G$ que contiene a $H \cup K$. Queremos ver que
-    $ H \cdot K \subseteq L$. Tenemos que, dado cualquier $z = ab \in HK$ ($a \in H$, $b \in K$)
+    $ H \cdot K \subseteq L$. Sea $z = ab \in HK$ ($a \in H$, $b \in K$),
     \[
         \begin{rcases}
             a \in H \subset L \\
             b \in K \subset L \\
             L \text{ es subgrupo}
         \end{rcases}
-        \implies ab = z \in L
+        \implies ab = z \in L \implies HK \in L.
     \]
-    por lo tanto, $HK \in L$.
 \end{proof}
 
 \begin{defi}[subgrupo!generado]
@@ -339,18 +341,19 @@
 \end{proof}
 
 \begin{defi}[grupo!cíclico]
-    Diremos que un grupo $G$ es cíclico si está generado por un solo elemento $x \in G$. Escribimos $G = \left< x \right>$, $G$ generado por $x$ o $x$ generdor de $G$.
+    Diremos que un grupo $G$ es cíclico si está generado por un solo elemento $x \in G$. Escribimos $G = \left< x \right>$, $G$
+    generado por $x$ o $x$ generador de $G$.
 \end{defi}
 
 \begin{obs}
-    Si $\ord(G) = n$ (con $n$ finito), entonces
+    Sea $G$ un grupo cíclico. Si $\ord(G) = n$ (con $n$ finito), entonces
     \[
         G = \setb{ 1 \left( = x^0 \right), x, x^2, \dots, x^{n-1}}.
     \]
-    Y lo denotaremos cono $G = C_n$ (grupo cíclico de orden $n$).
+    Y lo denotaremos como $G = C_n$ (grupo cíclico de orden $n$).
     Si $\ord(G) = \infty$, entonces
     \[
-        G = \setb{x^k \vert k \in \z}.
+        G = \setb{x^k \,\vert\, k \in \z}.
     \]
 \end{obs}
 
@@ -382,7 +385,7 @@
         \item $\forall y \in G, \ord(y) \vert n$,
         \item $\forall d \vert n,$ existen $\varphi(d)$ elementos de $G = C_n$ de orden $d$. De hecho, son
             \[
-                \setb{\left. x^{\frac{n}{d} k} \right\vert 1 \leq k \leq d \tq \mcd(k, d) = 1}
+                \setb{\left. x^{\frac{n}{d} k} \right\vert 1 \leq k \leq d \tq \mcd(k, d) = 1}.
             \]
     \end{enumerate}
 \end{prop}
