@@ -74,22 +74,16 @@
 \begin{example}
     \begin{enumerate}[1.]
         \item[]
-        \item Sea $G$ un grupo. Los subgrupos impropios son
-            \[
-                \begin{cases}
-                    \setb{1} &\text{(el subgrupo trivial)}, \\
-                    G. &
-                \end{cases}
-            \]
+        \item Sea $G$ un grupo. Los subgrupos impropios son $\setb{1}$ (el grupo trivial) y $G$.
         \item $\lp \z, + \rp, \lp \n, + \rp, \lp \real, + \rp, \lp \cx, + \rp$ son grupos y subgrupos.
         \item $\lp \faktor{\z}{n\z}, + \rp$ es un grupo.
         \item Si $G$ y $H$ son dos grupos, entonces
             \[
-                 G \times H = \setb{(x,y) \vert x \in G, \, y \in H}   
+                 G \times H = \setb{(x,y) \,\vert\, x \in G, \, y \in H}   
             \]
             es un grupo, con $(a, b) \cdot (c, d) = (ac, bd)$.
-        \item $\lp \Sim_n, \circ \rp$ es el grupo simétrico de $n$ elementos (permutaciones de $n$ elementos).
-        \item Grupo diedral. $\lp D_{2n}, \circ \rp$, donde $D_{2n}$ son los conjuntos de las isometrías del plano que dejan invariante $P_n$.
+        \item \emph{Grupo simétrico}. $\lp \Sim_n, \circ \rp$ es el grupo simétrico de $n$ elementos (permutaciones de $n$ elementos).
+        \item \emph{Grupo diedral}. $\lp D_{2n}, \circ \rp$, donde $D_{2n}$ son los conjuntos de las isometrías del plano que dejan invariante $P_n$.
             $P_n$ es un polígono regular de $n$ lados (raíces $n$-esimas de 1). Por ejemplo,
             \[
                 D_{2 \cdot 4} = \setb{id, r, r^2, r^3, s, rs, r^2s, r^3s}
@@ -200,7 +194,7 @@
 \end{obs}
 
 \begin{proof}
-    Tenemos que $H \cup K \subseteq HK$ ya que \forall x \in H, \, x\cdot1 = x \in HK
+    Tenemos que $H \cup K \subseteq HK$ ya que $\forall x \in H, \, x\cdot1 = x \in HK$
     y análogamente para $K$. Las otras inclusiones son triviales a partir de las definiciones.
 \end{proof}
 
@@ -210,7 +204,6 @@
 
 \begin{proof}
     Sabemos que $H \cup K \subseteq HK$ por \ref{obs:inclusiones_ops}.
-
     Suponemos ahora que $L$ es un subgrupo de $G$ que contiene a $H \cup K$. Queremos ver que
     $ H \cdot K \subseteq L$. Sea $z = ab \in HK$ ($a \in H$, $b \in K$),
     \[
@@ -350,7 +343,7 @@
     \[
         G = \setb{ 1 \left( = x^0 \right), x, x^2, \dots, x^{n-1}}.
     \]
-    Y lo denotaremos como $G = C_n$ (grupo cíclico de orden $n$).
+    Lo denotaremos como $G = C_n$ (grupo cíclico de orden $n$).
     Si $\ord(G) = \infty$, entonces
     \[
         G = \setb{x^k \,\vert\, k \in \z}.
