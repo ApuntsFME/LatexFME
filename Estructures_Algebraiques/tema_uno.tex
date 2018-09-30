@@ -864,7 +864,7 @@
     \begin{enumerate}[i)]
         \item En $\faktor{G}{H}$ existe una estructura de grupo definida por 
             \[
-                (xH)(yH) = (xy)H
+                (xH)(yH) = (xy)H.
             \]
         \item La función
             \[
@@ -873,20 +873,19 @@
                     x &\mapsto xH = \bar{x}
                 \end{aligned}
             \]
-            es un morfismo de grupos exhaustivo y de nucleo $H$.
+            es un morfismo de grupos exhaustivo y de núcleo $H$.
         \item Existe una biyección entre
             \[
                 \begin{aligned}
-                    \setb{ \text{sg. normales de $G$ que contienen a $H$}} &\leftrightarrow
-                    \setb{ \text{sg. normales de $\faktor{G}{H}$}} \\
+                    \setb{ \text{sg. (normales) de $G$ que contienen a $H$}} &\leftrightarrow
+                    \setb{ \text{sg. (normales) de $\faktor{G}{H}$}} \\
                     K \supset H &\mapsto \Pi(K) \\
-                    \Pi^{-1}(L) &\rightarrow L
+                    \Pi^{-1}(L) &\mapsfrom L
                 \end{aligned}
             \]
     \end{enumerate}
 \end{prop}
 
-%TODO acabar demoooooo
 \begin{proof}
     \begin{enumerate}[i)]
         \item[]
@@ -896,7 +895,7 @@
                     x\sim x' \implies x^{-1}x' \in H\\
                     y\sim y' \implies y^{-1}y' \in H
                 \end{rcases}
-                \implies \lp xy\rp ^{-1}\lp x'y'\rp = y^{-1} \underbrace{\lp x^{-1}x'\rp}_{\in H} y'\stackrel{H\triangleleft G}{=} \underbrace{y^{-1}y'}_{\in H}t \in H
+                \implies \lp xy\rp ^{-1}\lp x'y'\rp = y^{-1} \underbrace{\lp x^{-1}x'\rp}_{\in H} y'\stackrel{H\triangleleft G}{=} \underbrace{y^{-1}y'}_{\in H}t \in H.
             \]
             Comprovamos las propiedades de la operación de un grupo:
             \begin{itemize}
@@ -908,6 +907,38 @@
                     \end{align*}
                 \item \emph{Elemento inverso}: $\lp xH\rp\lp x^{-1}H\rp = \lp xx^{-1}\rp H = 1H = H$.
             \end{itemize}
+        \item Sean $x, y\in G$. Entonces, $\Pi\lp xy\rp = \lp xy\rp H=\lp xH\rp\lp yH\rp = \Pi\lp x\rp\Pi\lp y\rp$, con lo que $\Pi$ es un morfismo de grupos. Ver que es un morfismo exhaustivo es inmediato, puesto que, dada una clase, cualquiera de sus respresentates la tiene por imagen. Su núcleo es $\Pi^{-1}\lp H\rp$, es decir los elementos que tienen $H$ por imagen. Sabemos que $xH=H,\,\forall x\in H$ y que $y\notin H\implies y1\notin H\implies \Pi\lp y\rp=yH\neq H$, de modo que $\nuc\lp\Pi\rp=H$.
+        \item Demostraremos primero que $\Pi$ define un morfismo biyectivo entre los subgrupos de $G$ que contienen $H$ y los subgrupos de $\faktor{G}{H}$. Sea $K\supseteq H$ un subgrupo de $G$. Veamos que $\Pi\lp K\rp$ es un subgrupo de $\faktor{G}{H}$.
+            \begin{itemize}
+                \item $H=\Pi\lp H\rp \subseteq\Pi\lp K\rp$, así que $\Pi\lp K\rp$ tiene elemento neutro.
+                \item Sea $a\in\Pi\lp K\rp$. Entonces, $a=xH$, para algún $x\in K$, de modo que $x^{-1}\in K$ y concluimos que $x^{-1}H\in\Pi\lp K\rp$, es decir, $a$ tiene elemento inverso en $\Pi\lp K\rp$.
+                \item Sean $a,b\in\Pi\lp K\rp$. Entonces, $a=xH$ y $b=yH$, para algún par $x,y\in K$, de modo que $xy\in K$ y concluimos que $\lp xy\rp H\in\Pi\lp K\rp$, es decir, $\Pi\lp K\rp$ es cerrado por la operación.
+            \end{itemize}
+            Sea $L$ un subgrupo de $\faktor{G}{H}$. Veamos que $\Pi^{-1}\lp L\rp$ es un subgrupo de $G$ que contiene $H$.
+            \begin{itemize}
+                \item $1\in H = \Pi^{-1}\lp H\rp \subseteq \Pi^{-1}\lp L\rp$, es decir, $\Pi^{-1}\lp L\rp$ contiene a $H$ y, por ende, tiene elemento neutro. 
+                \item $x\in\Pi^{-1}\lp L\rp \implies \Pi\lp x\rp=xH\in L\implies x^{-1}H\in L\implies x^{-1}\in\Pi^{-1}\lp L\rp$, es decir, todo elemento de $\Pi^{-1}\lp L\rp$ tiene inverso en $\Pi^{-1}\lp L\rp$.
+                \item $x,y\in\Pi^{-1}\lp L\rp \implies \Pi\lp x\rp = xH,\, \Pi\lp y\rp=yH\in L\implies \lp xH\rp \lp yH\rp = \lp xy\rp H\in L \implies xy\in \Pi^{-1}\lp L\rp$, es decir, $\Pi^{-1}\lp L\rp$ es cerrado por la operación.
+            \end{itemize}
+            Para acabar, basta ver que $\Pi$ restringida a los subgrupos de $G$ que contienen $H$ es inyectiva. Sean $K_1, K_2$ subgrupos de $G$ que contienen $H$ tales que $\Pi\lp K_1\rp = \Pi\lp K_2\rp$. Supongamos que $K_1\neq K_2$. Sin pérdida de generalidad, $\exists x\in K_1$ tal que $x\notin K_2$. Puesto que $xH\in\Pi\lp K_1\rp=\Pi\lp K_1\rp$, necesariamente $\exists y\in K_2$ tal que $yH=xH$. Entonces, $x\in xH=yH\implies y^{-1}x\in H\subseteq K_2\implies yy^{-1}x=x\in K_2$ e incurrimos en una contradicción. Por consiguiente, $K_1 = K_2$ y sigui que $\Pi$ restringida a los subgrupos de $G$ que contienen $H$ es inyectiva.
+            
+            \noindent Para demostrar que $\Pi$ define un morfismo biyectivo entre los subgrupos normales de $G$ que contienen $H$ y los subgrupos normales de $\faktor{G}{H}$, es suficiente comprobar que la imagen y la antiimagen de subgrupos normales (que, como ya hemos visto, son subgrupos) son normales. Sea $K\supseteq H$ un subgrupo normal de $G$. Veamos que $\Pi\lp K\rp\triangleleft \faktor{G}{H}$. Sea $xH\in\faktor{G}{H}$. Entonces, se tiene que 
+            \begin{align*}
+                \lp xH\rp \Pi\lp K\rp &= \bigcup_{yH\in\Pi\lp K\rp}\lc\lp xH\rp\lp yH\rp\rc = \bigcup_{y\in K}\lc\lp xH\rp\lp yH\rp\rc =\\
+                &= \bigcup_{y\in K}\lc\lp xy\rp H\rc = \bigcup_{y\in K}\bigcup_{z\in H}\lc xyz\rc = \bigcup_{z\in H}\bigcup_{y\in K}\lc xyz\rc =\\ 
+                &= \bigcup_{z\in H}\lc \lp xK\rp z\rc = \bigcup_{z\in H}\lc \lp Kx\rp z\rc = \bigcup_{z\in H}\bigcup_{y\in K}\lc yxz\rc =\\ 
+                &= \bigcup_{y\in K}\bigcup_{z\in H}\lc yxz\rc = \bigcup_{y\in K}\lc\lp yx\rp H\rc = \bigcup_{y\in K}\lc\lp yH\rp\lp xH\rp\rc =\\
+                &= \Pi\lp K\rp\lp xH\rp,
+            \end{align*}    
+            de modo que $\Pi\lp K\rp$ es un subgrupo normal de $\faktor{G}{H}$. Por otro lado, sea $L$ un subgrupo normal de $\faktor{G}{H}$. Veamos que $\Pi^{-1}\lp L\rp\triangleleft G$. Sea $x\in G$. Se tiene que $x\Pi^{-1}\lp L\rp x^-1$ es un grupo, de lo que sigue
+            \begin{align*}
+                x\Pi^{-1}\lp L\rp x^{-1} &= \Pi^{-1}\lp \Pi\lp x\Pi^{-1}\lp L\rp x^{-1}\rp\rp =\\
+                &=\Pi^{-1}\lp \lp xH\rp L \lp x^{-1}H\rp\rp =\\
+                &=\Pi^{-1}\lp \lp xH\rp \lp x^{-1}H\rp L\rp =\\
+                &=\Pi^{-1}\lp HL\rp =\\
+                &=\Pi^{-1}\lp L\rp.
+            \end{align*}
+            Así pues, $\Pi^{-1}\lp L\rp$ es un subgrupo normal de $G$ y hemos terminado.
     \end{enumerate}
 \end{proof}
 
