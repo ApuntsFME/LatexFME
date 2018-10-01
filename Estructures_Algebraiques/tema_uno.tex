@@ -291,7 +291,7 @@
         \item $\ord(e) = 1$ y es el único elemento (el neutro) que tiene orden 1.
         \item En el grupo simétrico $G = \Sim_n$, sean $a_1, \dots, a_n \in G$, $\ord\left(\left( a_1, \dots, a_n \right)\right) = n$.
         \item En los grupos $\lp \z, +\rp , \lp \q, +\rp, \lp \real, +\rp$ y $\lp \cx, +\rp$, $\forall x \neq 0 \, \ord(x) = \infty$.
-        \item En el grupo $\z/p\z$ con $p$ primo, $\forall \bar{x} \neq \bar{0} \, \ord\left( \bar{x} \right) = p$.
+        \item En el grupo $\faktor{\z}{p\z}$ con $p$ primo, $\forall \bar{x} \neq \bar{0} \, \ord\left( \bar{x} \right) = p$.
         \item En los grupos $\q^{\ast}=\lp \q\setminus \lc 0\rc, \cdot \rp, \real^{\ast}=\lp \real\setminus \lc 0\rc, \cdot\rp$, $\ord(-1) = 2$, $\ord(1) = 1$ y $\forall x \notin \setb{-1, 1} \, \ord(x) = \infty$.
         \item En el grupo $\cx^{\ast}=\lp \cx\setminus \lc 0\rc, \cdot \rp$, $\forall n \geq 1$ $\ord\left( e^{\frac{2 \pi i}{n}} \right) = n$ y $\forall z \in \cx \tq \abs{z} \neq 1, \, \ord(z) = \infty$.
     \end{enumerate}
@@ -354,21 +354,21 @@
     \begin{enumerate}[1.]
         \item[]
         \item $\z = \left< 1 \right> = \left< -1 \right>$.
-        \item $\z/n\z = \left< \bar{k} \right>$ con $\mcd(n, k) = 1$.
+        \item $\faktor{\z}{n\z} = \left< \bar{k} \right>$ con $\mcd(n, k) = 1$.
     \end{enumerate}
 \end{example}
 
 \begin{defi}[función de Euler]
     Sea $d \in \z, d \geq 1$, definimos la función $\varphi$ de Euler como
     \[
-        \varphi(d) = \card \setb{ 1 \leq k \leq d \vert \mcd(k, d) = 1}.
+        \varphi(d) = \card \setb{ 1 \leq k \leq d \,\vert\, \mcd(k, d) = 1}.
     \]
 \end{defi}
 
 \begin{example}
     \begin{align*}
         \varphi(1) &= 1, & \varphi(5) &= 4, & \varphi(3) &= 2, & \varphi(7) &= 6, \\
-        \varphi(2) &= 1, & \varphi(6) &= 2, & \varphi(4) &= 2, & \varphi(p) &= p-1 \text{(con } p \text{ primo).} 
+        \varphi(2) &= 1, & \varphi(6) &= 2, & \varphi(4) &= 2, & \varphi(p) &= p-1 \text{ (con } p \text{ primo).} 
     \end{align*}
 \end{example}
 
@@ -378,7 +378,7 @@
         \item $\forall y \in G, \ord(y) \vert n$,
         \item $\forall d \vert n,$ existen $\varphi(d)$ elementos de $G = C_n$ de orden $d$. De hecho, son
             \[
-                \setb{\left. x^{\frac{n}{d} k} \right\vert 1 \leq k \leq d \tq \mcd(k, d) = 1}.
+                \setb{\left. x^{\frac{n}{d} k} \,\right\vert 1 \leq k \leq d \tq \mcd(k, d) = 1}.
             \]
     \end{enumerate}
 \end{prop}
@@ -402,7 +402,7 @@
                 \]
                 Con esta última condición, tenemos que
                 \[
-                    \varphi(d) = \card \setb{ k \in \z \vert \mcd(k, d) = 1 \text{ y } 1 \leq k \leq d}
+                    \varphi(d) = \card \setb{ k \in \z \,\vert\, \mcd(k, d) = 1 \text{ y } 1 \leq k \leq d}
                     = \card \setb{ x^m \vert \ord\left( x^m \right) = d}.
                 \]
     \end{enumerate}
@@ -920,7 +920,7 @@
                 \item $x\in\Pi^{-1}\lp L\rp \implies \Pi\lp x\rp=xH\in L\implies x^{-1}H\in L\implies x^{-1}\in\Pi^{-1}\lp L\rp$, es decir, todo elemento de $\Pi^{-1}\lp L\rp$ tiene inverso en $\Pi^{-1}\lp L\rp$.
                 \item $x,y\in\Pi^{-1}\lp L\rp \implies \Pi\lp x\rp = xH,\, \Pi\lp y\rp=yH\in L\implies \lp xH\rp \lp yH\rp = \lp xy\rp H\in L \implies xy\in \Pi^{-1}\lp L\rp$, es decir, $\Pi^{-1}\lp L\rp$ es cerrado por la operación.
             \end{itemize}
-            Para acabar, basta ver que $\Pi$ restringida a los subgrupos de $G$ que contienen $H$ es inyectiva. Sean $K_1, K_2$ subgrupos de $G$ que contienen $H$ tales que $\Pi\lp K_1\rp = \Pi\lp K_2\rp$. Supongamos que $K_1\neq K_2$. Sin pérdida de generalidad, $\exists x\in K_1$ tal que $x\notin K_2$. Puesto que $xH\in\Pi\lp K_1\rp=\Pi\lp K_1\rp$, necesariamente $\exists y\in K_2$ tal que $yH=xH$. Entonces, $x\in xH=yH\implies y^{-1}x\in H\subseteq K_2\implies yy^{-1}x=x\in K_2$ e incurrimos en una contradicción. Por consiguiente, $K_1 = K_2$ y sigui que $\Pi$ restringida a los subgrupos de $G$ que contienen $H$ es inyectiva.
+            Para acabar, basta ver que $\Pi$ restringida a los subgrupos de $G$ que contienen $H$ es inyectiva. Sean $K_1, K_2$ subgrupos de $G$ que contienen $H$ tales que $\Pi\lp K_1\rp = \Pi\lp K_2\rp$. Supongamos que $K_1\neq K_2$. Sin pérdida de generalidad, $\exists x\in K_1$ tal que $x\notin K_2$. Puesto que $xH\in\Pi\lp K_1\rp=\Pi\lp K_1\rp$, necesariamente $\exists y\in K_2$ tal que $yH=xH$. Entonces, $x\in xH=yH\implies y^{-1}x\in H\subseteq K_2\implies yy^{-1}x=x\in K_2$ e incurrimos en una contradicción. Por consiguiente, $K_1 = K_2$ y sigue que $\Pi$ restringida a los subgrupos de $G$ que contienen $H$ es inyectiva.
             
             \noindent Para demostrar que $\Pi$ define un morfismo biyectivo entre los subgrupos normales de $G$ que contienen $H$ y los subgrupos normales de $\faktor{G}{H}$, es suficiente comprobar que la imagen y la antiimagen de subgrupos normales (que, como ya hemos visto, son subgrupos) son normales. Sea $K\supseteq H$ un subgrupo normal de $G$. Veamos que $\Pi\lp K\rp\triangleleft \faktor{G}{H}$. Sea $xH\in\faktor{G}{H}$. Entonces, se tiene que 
             \begin{align*}
