@@ -42,7 +42,7 @@
     \emph{Nota.} Siempre que utilicemos $+$ para la operación del grupo, la operación será conmutativa.
 \end{obs}
 
-\begin{defi}[subgrupo]
+\begin{defi}[subgrupo] \label{defi:subgrupo}
     Sea $\lp G, \cdot \rp$ un grupo. Decimos que $\lp H, \cdot_{\mid H} \rp$ es un subgrupo de $\lp G, \cdot \rp$ si $H \subseteq G$ y se satisface
     \begin{enumerate}[i)]
         \item $H \neq \emptyset$,
@@ -390,7 +390,7 @@
                 \[
                     \ord(y) = \ord\left( x^m \right) = \frac{\ord(x)}{\mcd\left(\ord(x), m \right)} = \frac{n}{\mcd(n, m)}.
                 \]
-            Y conclumos $\ord\lp y\rp \vert n$.
+            Y concluimos $\ord\lp y\rp \vert n$.
         \item Sea $y \in G \tq \ord(y) = d$, tenemos que
                 \[
                     y = x^m \implies \ord(y) = d = \frac{n}{\mcd(n, m)} \iff \mcd(n, m) = \frac{n}{d}.
@@ -442,21 +442,21 @@
             \[
                 \orden\left( x^{\frac{n}{d}} \right) = \frac{n}{\mcd(n, \frac{n}{d})} = d.
             \]
-            Como $x{\frac{n}{d}}$ tiene orden $d$, $H_d = \left< x^{\frac{n}{d}} \right>$ es un grupo
+            Como $x^{\frac{n}{d}}$ tiene orden $d$, $H_d = \left< x^{\frac{n}{d}} \right>$ es un grupo
             cíclico de orden $d$.
         \item Sea $H$ un subgrupo de $G = C_n$ y sea $1 \leq t \leq n$ el menor exponente tal que 
-            $x^t \in H$. Veremos que $t \vert n$. Expresamos $n = td + r$ (con $0 \leq r < t$).
+            $x^t \in H$. Veremos que $t \vert n$. Expresamos $n = tk + r$ (con $0 \leq r < t$).
             \[
-                1 = x^n = x^{td + r} = \left( x^t \right)^d x^r.
+                1 = x^n = x^{tk + r} = \left( x^t \right)^k x^r.
             \]
-            Como $x^t\in H$, se tiene que $\lp x^t\rp^d, \lp \lp x^t\rp^d \rp ^{-1} \in H$. Así,
+            Como $x^t\in H$, se tiene que $\lp x^t\rp^k, \lp \lp x^t\rp^k \rp ^{-1} \in H$. Así,
             \[
-                x^r=\lp \lp x^t\rp^d \rp ^{-1} \lp x^t\rp^d x^r = \lp \lp x^t\rp^d \rp ^{-1} \in H.
+                x^r=\lp \lp x^t\rp^k \rp ^{-1} \lp x^t\rp^k x^r = \lp \lp x^t\rp^k \rp ^{-1} \in H.
             \]
-            Pero $t$ es el exponente más pequeño (a excepción del 0) tal que $x^r\in H$ y, en consecuencia, $r = 0$ y $n = td$.
-            Veremos ahora que $H = H_d$.
+            Pero $t$ es el exponente más pequeño (a excepción del 0) tal que $x^t\in H$ y, en consecuencia, como $r<t$, $r = 0$ y $n = tk$.
+            Veremos ahora que $H = H_k$.
             
-            Claramente, $\left< x^{\frac{n}{d}} \right> = H_d \subseteq H$, ya que $x^{\frac{n}{d}} = x^t \in H$
+            Claramente, $\left< x^{\frac{n}{k}} \right> = H_k \subseteq H$, ya que $x^{\frac{n}{k}} = x^t \in H$
             y, por lo tanto, todos sus múltiplos están en $H$.
 
             Sea $y = x^m \in H$. Necesariamente, $m\geq t$. Escribimos $m = tq + s$
@@ -467,12 +467,12 @@
                 \underbrace{x^m}_{\in H} \in H.
             \]
             de nuevo, por la definición de $t$, $s = 0$ y concluimos que $y = \left( x^t \right)^q \in 
-            \left< x^{\frac{n}{d}} \right> = H_d$, es decir, $H \subseteq H_d$.
+            \left< x^{\frac{n}{k}} \right> = H_k$, es decir, $H \subseteq H_k$.
 
-            Solo resta ver que $d$ es único, pero es obvio ya que, si $H = H_d = H_e$, entonces,
+            Solo resta ver que $k$ es único, pero es obvio ya que, si $H = H_k = H_e$, entonces,
             \[
-                \orden(H) = \orden\left( H_d \right) = \orden\left( H_e \right) \implies
-                d = e.
+                \frac{n}{k} = \orden\left( H_k \right) = \orden\left( H \right)  = \orden\left( H_e \right)  = \frac{n}{e}\implies
+                k = e.
             \]
     \end{enumerate}
 \end{proof}
@@ -481,7 +481,7 @@
     Sea $G = C_n = \left< x^n \right>$ un grupo cíclico de orden $n \geq 1$. Existe una biyección
     \[
         \begin{aligned}
-            \setb{d \in \n \vert 1 \leq d \leq n, d \vert n } &\longleftrightarrow
+            \setb{d \in \n \mid 1 \leq d \leq n, d \vert n } &\longleftrightarrow
             \setb{\text{subgrupos de }G} \\
             d &\longleftrightarrow H_d.
         \end{aligned}
@@ -490,7 +490,7 @@
 
 \section{Morfismos de grupos}
 
-\begin{defi}[homeomorfismo]
+\begin{defi}[homeomorfismo de grupos]\index{morfismo de grupos((tlab))}
     Sean $G_1$, $G_2$ dos grupos y sea $f \colon G_1 \to G_2$ una aplicación. Decimos que $f$ es un
     (homeo)morfismo de grupos si
     \[
@@ -501,13 +501,17 @@
 \begin{prop}
     Si $f$ es un morfismo de grupos, entonces
     \begin{enumerate}[i)]
-        \item $f(1) = 1$,
+        \item \label{item:morf1} $f(1) = 1$,
         \item $f\left( x^{-1} \right) = \left( f(x) \right)^{-1}$.
     \end{enumerate}
 \end{prop}
 
 \begin{proof}
-    Ejercicio.
+    \begin{enumerate}[i)]
+        \item[]
+        \item Sea $x \in G_1$, $f \lp x \rp = f\lp x\cdot 1\rp = f\left(x \right)f\lp 1 \rp \implies f\lp 1 \rp = 1$.
+        \item Sea $x \in G_1$, $f \lp xx^{-1} \rp = f\lp 1\rp \stackrel{\ref{item:morf1}}{=} 1 = f\left(x \right)f\lp x^{-1} \rp \implies f\lp x^{-1} \rp = f\lp x \rp^{-1}$.
+    \end{enumerate}
 \end{proof}
 
 \begin{obs}
@@ -533,24 +537,41 @@
 \end{prop}
 
 \begin{proof}
-    Ejercicio.
+    Como $f$ es biyectiva, en particular es exhaustiva y inyectiva y tenemos que $\forall x' \in G_2,\, \exists! x \in G_1 \tq f\lp x \rp = x'$. Sean $f\lp x\rp, f\lp y\rp \in G_2$ dos elementos cualesquiera de $G_2$,
+    \[
+        f^{-1}\lp f\lp x\rp f\lp y\rp \rp = f^{-1} \lp f\lp xy\rp \rp = xy = f^{-1} \lp f\lp x\rp \rp f^{-1}\lp f\lp y\rp \rp.
+    \]
 \end{proof}
 
 \begin{defi}[grupo!isomorfo]
     Sean $G_1$ y $G_2$ grupos. Decimos que $G_1$ y $G_2$ son isomorfos si $\exists f \colon G_1 \to G_2$
-    isomorfismo. Y lo notaremos como $G_1\cong G_2$.
+    isomorfismo. Lo notaremos como $G_1\cong G_2$.
 \end{defi}
 
 \begin{prop}
     Sea $f \colon G_1 \to G_2$ un morfismo de grupos.
-    \begin{enumerate}
+    \begin{enumerate}[i)]
         \item Si $H$ es un subgrupo de $G_1$, entonces $f(H)$ es subgrupo de $G_2$.
         \item Si $K$ es un subgrupo de $G_2$, entonces, $f^{-1}(K)$ es subgrupo de $G_1$.
     \end{enumerate}
 \end{prop}
 
 \begin{proof}
-    Ejercicio.
+    \begin{enumerate}[i)]
+        \item[]
+        \item Veamos que se cumplen las tres propiedades de la definición \ref{defi:subgrupo}.
+        \begin{enumerate}[i)]
+            \item $1 \in H \implies f(1) = 1 \in f(H) \implies f(H) \neq \emptyset$.
+            \item Sean $a, b \in H$, entonces $ab \in H$ y $f(a) f(b) = f(ab) \in f(H)$.
+            \item Sea $a \in H$, entonces $a^{-1} \in H$ y $f(a)^{-1} = f\lp a\rp ^{-1} \in H$.
+        \end{enumerate}
+        \item Veamos que se cumplen las tres propiedades de la definición \ref{defi:subgrupo}.
+        \begin{enumerate}[i)]
+            \item $1 \in K, f(1) = 1 \implies 1 \in f^{-1}(K) \neq \emptyset$.
+            \item Sean $a, b \in f^{-1}\lp K\rp$, entonces $\exists a', b' \in K \tq f\lp a\rp = a', \, f\lp b\rp = b'$ y tenemos que $ab = f^{-1}\lp f\lp ab\rp \rp = f^{-1}\lp f\lp a \rp f\lp b\rp\rp = f^{-1}\lp a'b'\rp \in f^{-1}\lp K\rp$, ya que $a'b' \in K$.
+            \item Sea $a \in f^{-1}\lp K\rp$, entonces $\exists a' \in K \tq f\lp a \rp = a'$, y tenemos que $a^{-1} = f^{-1}\lp f\lp a^{-1}\rp \rp = f^{-1}\lp f\lp a \rp ^{-1} \rp = f^{-1}\lp \lp a'\rp^{-1}\rp \in f^{-1}\lp K\rp$, ya que $\lp a'\rp^{-1} \in K$.
+        \end{enumerate}
+    \end{enumerate}
 \end{proof}
 
 \begin{obs}
@@ -591,8 +612,8 @@
     Con la relación que hemos visto ahora, denotamos la clase de equivalencia de $a \in G$ como
     \[
         \begin{aligned}
-            \bar{a} &= \setb{b \in G \vert a^{-1}b = x, \, x \in H} =\\ &=
-            \setb{b \in G \vert b = ax, \, x \in H} =\\&= aH.
+            \bar{a} &= \setb{b \in G \mid a^{-1}b = x, \, x \in H} \\ &=
+            \setb{b \in G \mid b = ax, \, x \in H} \\&= aH.
         \end{aligned}
     \]
     y llamaremos a $aH$ clase lateral por la izquierda del elemento $a$ módulo el subgrupo $H$.
@@ -601,7 +622,7 @@
 \begin{example}
     Si $a = 1$, tenemos que
     \[
-        1\cdot H = \setb{1x \vert x \in H} = H.
+        1\cdot H = \setb{1x \mid x \in H} = H.
     \]
 \end{example}
 
@@ -887,6 +908,8 @@
 \end{prop}
 
 \begin{proof}
+    Ejercicio.  % TODO revisar corregir això per poder-ho penjar
+    \iffalse
     \begin{enumerate}[i)]
         \item[]
         \item Sean $x\sim x'$ y $y\sim y'$, queremos ver que $xy\sim x'y'$.
@@ -940,6 +963,7 @@
             \end{align*}
             Así pues, $\Pi^{-1}\lp L\rp$ es un subgrupo normal de $G$ y hemos terminado.
     \end{enumerate}
+    \fi
 \end{proof}
 
 \begin{teo}[de isomorfía (primero)] \label{teo:1_iso}
