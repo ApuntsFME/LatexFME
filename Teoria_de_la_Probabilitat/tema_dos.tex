@@ -145,20 +145,40 @@
     \[
         A_n=\lc x_d\in D\mid \frac{1}{n+1}\leq\lim_{x\to x_d^+}f\lp x\rp-\lim_{x\to x_d^-}f\lp x\rp<\frac{1}{n}\rc,
     \]
-    on cometem l'abús de notació $\frac{1}{0}=\infty$. Com que $D$ és no numerable, $\exists n\in\n$ tal que $\abs{A_n}\notin\n$. Per tant, hi ha un nombre infinit de salts de, com a mínim $\frac{1}{n+1}$, la qual cosa contradiu la hipòtesi que $f$ és fitada. Per tant, $f$ té un nombre numerable de discontinuïtats i és, doncs, mesurable.
+    on cometem l'abús de notació $\frac{1}{0}=\infty$. Com que $D$ és no numerable, hi ha un nombre numerable de conjunts $A_n$ i $\cup_{n\in\n}A_n=D$, necessàriament $\exists n\in\n$ tal que $\abs{A_n}\notin\n$. Per tant, hi ha un nombre infinit de salts de, com a mínim $\frac{1}{n+1}$, la qual cosa contradiu la hipòtesi que $f$ és fitada. Per tant, $f$ té un nombre numerable de discontinuïtats i és, doncs, mesurable.
 \end{proof}
 
 \begin{teo}[de l'existència d'una funció de distribució]
   Sigui $F\colon \real \to [0,1]$ una funció de probabilitat tal que
   \begin{enumerate}[i)]
-       \item $x_1\leq x_2\implies F_X\lp x_1\rp \leq F_X\lp x_2\rp$.
-       \item $\lim\limits_{x\to-\infty}F_X\lp x\rp = 0$ i $\lim\limits_{x\to\infty}F_X\lp x\rp = 1$.
-       \item $F_X$ és contínua per la dreta, és a dir, $\lim\limits_{h\to 0^+}F_X\lp x+h\rp = F_X\lp x\rp$.
+       \item $x_1\leq x_2\implies F_X\lp x_1\rp \leq F\lp x_2\rp$.
+       \item $\lim\limits_{x\to-\infty}F\lp x\rp = 0$ i $\lim\limits_{x\to\infty}F\lp x\rp = 1$.
+       \item $F$ és contínua per la dreta, és a dir, $\lim\limits_{h\to 0^+}F\lp x+h\rp = F\lp x\rp$.
    \end{enumerate}
-   Aleshores, $\exists \lp \Omega,\Asuc,p\rp$ i una variàble aleatòria $X \tq F_X(x)=F(x)$.
+   Aleshores, existeixen un espai de probabilitat $\lp \Omega,\Asuc,p\rp$ i una variàble aleatòria $X\colon\Omega\to\real$ tals que $F_X(x)=F(x)$.
 \end{teo}
 \begin{proof}
- %TODO
+    Prenem $\lp\Omega,\Asuc,p\rp=\lp\lb 0,1\rb,\B\cap\lb 0,1\rb,\lambda_{\lb 0,1\rb}\rp$ i definim
+    \begin{align*}
+        X\colon\lb 0,1\rb &\to\lb 0,1\rb\\
+        \omega &\mapsto X\lp\omega\rp=\sup\lc y\in\real\mid F\lp y\rp\leq\omega\rc.
+    \end{align*}
+    Observem que a tots els punts on $F$ és contínua $X$ també ho és, de manera que $X$ és una funció mesurable. Vegem que $F_X\lp x\rp=F\lp x\rp,\,\forall x\in\real$. Donat $x\in\real$, definim els conjunts
+    \begin{align*}
+        A&=\lc\omega\in\lb 0,1\rb\mid X\lp\omega\rp\leq x\rc,\\
+        B&=\lc\omega\in\lb 0,1\rb\mid \omega\leq F\lp x\rp\rc
+    \end{align*}
+    i observem que
+    \begin{align*}
+        P\lp A\rp&=P\lp X\leq x\rp = F_X\lp x\rp,\\
+        P\lp B\rp&=\lambda\lp\lb 0,F\lp x\rp\rb\rp=F\lp x\rp.\\
+    \end{align*}
+    Si demostrem que $A=B$, haurem acabat.
+    \begin{itemize}
+        \item $\omega\in B\implies\omega\leq F\lp x\rp\implies x\notin\lc y\in\real\mid F\lp y\rp<\omega\rc\implies x\geq X\lp\omega\rp\implies\omega\in A$.
+        \item $\omega\notin B\implies\omega>F\lp x\rp\implies\exists\varepsilon>0\tq\omega>F\lp x+\varepsilon\rp\implies x\lp\omega\rp\geq x+\varepsilon>x\implies X\lp\omega\rp>x\implies\omega\notin A.$
+    \end{itemize}
+    
 \end{proof}
 
 
