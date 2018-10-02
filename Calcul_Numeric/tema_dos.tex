@@ -1,6 +1,6 @@
 \chapter{Sistemas de ecuaciones no lineales}
 
-Dada $\vec{f} \colon \real^n \to \real^n$, queremos encontrar $\vec{\alpha} \in \real^n$ tal que $\vec{f}\left( \vec{a} \right) = \vec{0}$.
+\noindent Dada $\vec{f} \colon \real^n \to \real^n$, queremos encontrar $\vec{\alpha} \in \real^n$ tal que $\vec{f}\left( \vec{\alpha} \right) = \vec{0}$.
 
 \section{M\'etodo de Newton-Raphson}
 
@@ -36,7 +36,7 @@ En Matlab: $x = x-(J\setminus f)$ resuelve el sistema.
 \section{M\'etodos casi-Newton}
 
 \begin{itemize}
-    \item $\vec{x}^k+1 = \vec{x}^k - \left[ S^k \right]^{-1} \vec{f}\left( \vec{x}^k \right)$, donde $S^k \approx J\left( \vec{x}^k \right)$.
+    \item $\vec{x}^{k+1} = \vec{x}^k - \left[ S^k \right]^{-1} \vec{f}\left( \vec{x}^k \right)$, donde $S^k \approx J\left( \vec{x}^k \right)$.
     \item $S^k$ se calcula a partir de $S^{k-1}$, con la \emph{ecuaci\'on secante}:
         \[
             S^k\Delta\vec{x}^k = \Delta \vec{f}^k,\text{ con }
@@ -58,7 +58,7 @@ En Matlab: $x = x-(J\setminus f)$ resuelve el sistema.
 \noindent El m\'etodo de Broyden es un m\'etodo $QN$ que impone
 \begin{enumerate}[i)]
     \item\label{item:broyden1} $S^k\Delta\vec{x}^k = \Delta f^k$ (ecuaci\'on secante),
-    \item\label{item:broyden2} $\left( S^k - S^{k-1} \right)\vec{\omega} = \vec{0}, \, \forall \vec{omega} \bot \Delta \vec{x}^k$.
+    \item\label{item:broyden2} $\left( S^k - S^{k-1} \right)\vec{\omega} = \vec{0}, \, \forall \vec{\omega} \bot \Delta \vec{x}^k$.
 \end{enumerate}
 
 \noindent Podemos conseguir \ref{item:broyden2} con $S^k = S^{k-1} + \vec{u}\left( \Delta\vec{x}^k \right)^T$.
