@@ -149,7 +149,17 @@
 {\bfseries}% Thm head font
 {}%        Punctuation after thm head
 {\newline}% Space after thm head: \newline = linebreak
-{#1 \normalfont #3 (#2)\addcontentsline{toc}{subsection}{#1 #3}}%         Thm head spec
+{#1 {\normalfont \it #3 \normalfont(}#2{\normalfont)}\addcontentsline{toc}{subsection}{#1 #3}}%         Thm head spec
+
+\newtheoremstyle{specialthm}% name
+{}%         Space above, empty = `usual value'
+{}%         Space below
+{}% Body font
+{}%         Indent amount (empty = no indent, \parindent = para indent)
+{\bfseries}% Thm head font
+{}%        Punctuation after thm head
+{\newline}% Space after thm head: \newline = linebreak
+{\thmname{#1}\thmnumber{ #2}.\thmnote{ {\it #3.}}\addcontentsline{toc}{subsection}{#3}}%         Thm head spec
 
 \newtheoremstyle{normal}% name
 {}%         Space above, empty = `usual value'
