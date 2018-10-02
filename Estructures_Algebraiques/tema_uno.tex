@@ -390,7 +390,7 @@
                 \[
                     \ord(y) = \ord\left( x^m \right) = \frac{\ord(x)}{\mcd\left(\ord(x), m \right)} = \frac{n}{\mcd(n, m)}.
                 \]
-            Y conclumos $\ord\lp y\rp \mid n$.
+            Y conclumos $\ord\lp y\rp \vert n$.
         \item Sea $y \in G \tq \ord(y) = d$, tenemos que
                 \[
                     y = x^m \implies \ord(y) = d = \frac{n}{\mcd(n, m)} \iff \mcd(n, m) = \frac{n}{d}.
@@ -403,7 +403,7 @@
                 Con esta última condición, tenemos que
                 \[
                     \varphi(d) = \card \setb{ k \in \z \,\vert\, \mcd(k, d) = 1 \text{ y } 1 \leq k \leq d}
-                    = \card \setb{ x^m \vert \ord\left( x^m \right) = d}.
+                    = \card \setb{ x^m \,\vert\, \ord\left( x^m \right) = d}.
                 \]
     \end{enumerate}
 \end{proof}
@@ -418,11 +418,11 @@
 \begin{proof}
     Tomamos $G = C_n = \left< x \right>$. Entonces,
     \[
-        n = \abs{G} = \sum_{d \vert n} \card \setb{ x \in G \vert \ord(x) =d } = \sum_{d \vert n} \varphi(d),
+        n = \abs{G} = \sum_{d \vert n} \card \setb{ x \in G \,\vert\, \ord(x) =d } = \sum_{d \vert n} \varphi(d),
     \]
     ya que
     \[
-        G = \bigcup_{d \vert n} \setb{x \in G \vert \ord(x) = d}.
+        G = \bigcup_{d \vert n} \setb{x \in G \,\vert\, \ord(x) = d}.
     \]
 \end{proof}
 
