@@ -104,19 +104,56 @@
     Sigui $\lp\Omega,\Asuc, p\rp$ un espai de probabilitat i sigui $F_X$ la funció de distribució de probabilitat d'una variable aleatòria $X$ sobre $\lp\Omega,\Asuc, p\rp$. Aleshores,
     \begin{enumerate}[i)]
         \item $x_1\leq x_2\implies F_X\lp x_1\rp \leq F_X\lp x_2\rp$.
-        \item $\lim_{x\to-\infty}F_X\lp x\rp = 0$ i $\lim_{x\to\infty}F_X\lp x\rp = 1$.
-        \item $F_X$ és contínua per la dreta, és a dir, $\lim_{h\to 0^+}F_X\lp x+h\rp = F_X\lp x\rp$.
+        \item $\lim\limits_{x\to-\infty}F_X\lp x\rp = 0$ i $\lim\limits_{x\to\infty}F_X\lp x\rp = 1$.
+        \item $F_X$ és contínua per la dreta, és a dir, $\lim\limits_{h\to 0^+}F_X\lp x+h\rp = F_X\lp x\rp$.
     \end{enumerate}
 \end{prop}
 \begin{proof}
     \begin{enumerate}[i)]
         \item[]
         \item $F_X\lp x_1\rp = p\lp\lc \omega\in\Omega\mid X\lp\omega\rp\leq x_1\rc\rp \leq p\lp\lc \omega\in\Omega\mid X\lp\omega\rp\leq x_2\rc\rp = F_X\lp x_2\rp$, atès que $\lc \omega\in\Omega\mid X\lp\omega\rp\leq x_1\rc \subseteq \lc \omega\in\Omega\mid X\lp\omega\rp\leq x_2\rc$ i que $p$ és una funció mesurable.
-        \item Vegem que $\forall\lc x_n\rc_{n\in\n}$ tal que $\lim_{n\to\infty} x_n = -\infty$, es té que $\lim_{n\to\infty}F_X\lp x_n\rp = 0$. Definim $A_n=\lc\omega\in\Omega\mid X\lp\omega\rp\leq x_n\rc$. Tenim que $\varnothing\subseteq\liminf A_n\subseteq\limsup A_n$. A més, $\limsup A_n=\varnothing$ perquè, altrament, hi hauria un nombre infinit de conjunts $A_n$ contenint un $\omega\in\Omega$ determinat. Per tant, 
+        \item Vegem que $\forall\lc x_n\rc_{n\in\n}$ tal que $\lim\limits_{n\to\infty} x_n = -\infty$, es té que $\lim\limits_{n\to\infty}F_X\lp x_n\rp = 0$. Definim $A_n=\lc\omega\in\Omega\mid X\lp\omega\rp\leq x_n\rc$. Tenim que $\varnothing\subseteq\liminf A_n\subseteq\limsup A_n$. A més, $\limsup A_n=\varnothing$ perquè, altrament, hi hauria un nombre infinit de conjunts $A_n$ contenint un $\omega\in\Omega$ determinat. Per tant, 
             \[
-                \lim_{n\to\infty} F_X\lp x_n\rp=\lim_{n\to\infty} p\lp A_n\rp = p\lp\lim_{n\to\infty} A_n \rp = p\lp\varnothing\rp=0.
+                \lim\limits_{n\to\infty} F_X\lp x_n\rp=\lim\limits_{n\to\infty} p\lp A_n\rp = p\lp\lim\limits_{n\to\infty} A_n \rp = p\lp\varnothing\rp=0.
             \]
-            Anàlogament, es demostra que $\lim_{x\to\infty}F_X\lp x\rp = 1$.
-        \item 
+            Anàlogament, es demostra que $\lim\limits_{x\to\infty}F_X\lp x\rp = 1$.
+        \item Fixat $x$, volem veure que $\lim\limits_{h \to 0^+} F_X \lp x+h\rp =F_X \lp x\rp$. 
+        
+        Prenem $C_n=\left\{\omega\in\Omega\mid X(\omega) \leq x + h_n\right\}$,
+	 on $\left\{h_n\right\}$  amb $h_n\geq 0\, \forall n$, és una successió amb límit zeo per la dreta. Aleshores, $\liminf C_n =\limsup C_n = \lc \omega\in\Omega\mid X(\omega)\leq x\rc$.
+	 El que ens diu que
+	 \[
+	  \lim\limits_{n\to \infty} F_X\lp x+h_n\rp = \lim\limits_{n\to\infty} p\lp C_n\rp = p\lp\lim\limits_{n\to\infty} C_n \rp = p\lp C\rp =F_X (x).
+	 \]
+	 Com això és cert $\forall h \tq \lc h_n\rc \to 0$, tenim que $\lim\limits_{h\to 0^+} F_X\lp x+h\rp = F_X (x)$.
     \end{enumerate}
 \end{proof}
+
+\begin{obs}
+  En general no podem assegurar que sigui contínua per l'esquerra. Fent la mateixa prova prenent $x-h_n$ amb $h_n\to 0^+$ en comptes de $x+h_n$, obtenim que
+  $C=\lc \omega\in\Omega\mid X(\omega)<x\rc$ i, per tant
+  \[
+   \lim\limits_{h\to 0^-} F_X\lp x+h\rp = p\lp X<x\rp = F_X(x)-p\lp X=x\rp.
+  \]
+\end{obs}
+
+\begin{lema}
+ Sigui $f\colon \real \to \real$ una funció creixent i fitada. Aleshores $f$ és mesuable Lebesgue.
+\end{lema}
+%TODO demo
+
+\begin{teo}[de l'existència d'una funció de distribució]
+  Sigui $F\colon \real \to [0,1]$ una funció de probabilitat tal que
+  \begin{enumerate}[i)]
+       \item $x_1\leq x_2\implies F_X\lp x_1\rp \leq F_X\lp x_2\rp$.
+       \item $\lim\limits_{x\to-\infty}F_X\lp x\rp = 0$ i $\lim\limits_{x\to\infty}F_X\lp x\rp = 1$.
+       \item $F_X$ és contínua per la dreta, és a dir, $\lim\limits_{h\to 0^+}F_X\lp x+h\rp = F_X\lp x\rp$.
+   \end{enumerate}
+   Aleshores, $\exists \lp \Omega,\Asuc,p\rp$ i una variàble aleatòria $X \tq F_X(x)=F(x)$.
+\end{teo}
+\begin{proof}
+ %TODO
+\end{proof}
+
+
+
