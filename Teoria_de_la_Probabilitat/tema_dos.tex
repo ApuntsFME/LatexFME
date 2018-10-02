@@ -140,7 +140,13 @@
 \begin{lema}
  Sigui $f\colon \real \to \real$ una funció creixent i fitada. Aleshores $f$ és mesuable Lebesgue.
 \end{lema}
-%TODO demo
+\begin{proof}
+    Suposem que $f$ té un nombre no numerable de discontinuïats. Observem que totes les discontinuïtats són de salt. Sigui $D\subseteq \real$ el conjunt de punts on $f$ és discontínua. Aleshores, tenim que, per tots els punts $x_d\in D$, existeixen els límits $\lim_{x\to x_d^+}f\lp x\rp$ i $\lim_{x\to x_d^-}f\lp x\rp$. Definim, per tot $n\in\n$, els conjunts
+    \[
+        A_n=\lc x_d\in D\mid \frac{1}{n+1}\leq\lim_{x\to x_d^+}f\lp x\rp-\lim_{x\to x_d^-}f\lp x\rp<\frac{1}{n}\rc,
+    \]
+    on cometem l'abús de notació $\frac{1}{0}=\infty$. Com que $D$ és no numerable, $\exists n\in\n$ tal que $\abs{A_n}\notin\n$. Per tant, hi ha un nombre infinit de salts de, com a mínim $\frac{1}{n+1}$, la qual cosa contradiu la hipòtesi que $f$ és fitada. Per tant, $f$ té un nombre numerable de discontinuïtats i és, doncs, mesurable.
+\end{proof}
 
 \begin{teo}[de l'existència d'una funció de distribució]
   Sigui $F\colon \real \to [0,1]$ una funció de probabilitat tal que
