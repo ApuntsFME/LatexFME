@@ -79,7 +79,7 @@
         \item $\lp \faktor{\z}{n\z}, + \rp$ es un grupo.
         \item Si $G$ y $H$ son dos grupos, entonces
             \[
-                 G \times H = \setb{(x,y) \,\vert\, x \in G, \, y \in H}   
+                 G \times H = \setb{(x,y) \mid x \in G, \, y \in H}   
             \]
             es un grupo, con $(a, b) \cdot (c, d) = (ac, bd)$.
         \item \emph{Grupo simétrico}. $\lp \Sim_n, \circ \rp$ es el grupo simétrico de $n$ elementos (permutaciones de $n$ elementos).
@@ -98,7 +98,7 @@
     Sea $G$ un grupo y sean $H, K \subset G$ subgrupos de $G$. Definimos la intersección de
     $H$ y $K$ como
     \[
-        H \cap K = \setb{x \in G \; \vert \; x \in H \text{ y } x \in K}.
+        H \cap K = \setb{x \in G \mid x \in H \text{ y } x \in K}.
     \]
 \end{defi}
 
@@ -110,7 +110,7 @@
 \begin{defi}[unión de subgrupos]
     Sea $G$ un grupo y sean $H, K \subseteq G$ subgrupos de $G$. Llamamos unión de $H$ y $K$ a
     \[
-        H \cup K = \setb{x \in G \, \vert\, x \in H \text{ o } x \in K}.
+        H \cup K = \setb{x \in G \mid x \in H \text{ o } x \in K}.
     \]
 \end{defi}
 
@@ -140,7 +140,7 @@
 \begin{defi}[producto de subgrupos]
     Sea $G$ un grupo y sean $H, K \subset G$ subgrupos. Definimos el producto $H \cdot K$ como
     \[
-        H \cdot K = \setb{xy \,\vert\, x \in H \text{ y } x \in K}.
+        H \cdot K = \setb{xy \mid x \in H \text{ y } x \in K}.
     \]
 \end{defi}
 
@@ -219,7 +219,7 @@
 \begin{defi}[subgrupo!generado]
         Sea $\lp G, \cdot\rp$ un grupo y sea $S\subseteq G$. Definimos el subgrupo generado por $S$ a
         \[
-            \left<S\right> = \lp \lc 1 \rc \cup \setb{a_1 \cdots a_r \,\vert\, a_i \in S \text{ ó } a^{-1}_i \in S}, \cdot \rp.
+            \left<S\right> = \lp \lc 1 \rc \cup \setb{a_1 \cdots a_r \mid a_i \in S \text{ ó } a^{-1}_i \in S}, \cdot \rp.
         \]
 \end{defi}
 
@@ -256,7 +256,7 @@
 \begin{ej}
     Demostrar que
     \[
-        \left<S\right> = \setb{a^{n_1}_1 \cdots a^{n_r}_r \,\vert\, a_i \in S, \, n_i \in \z}.
+        \left<S\right> = \setb{a^{n_1}_1 \cdots a^{n_r}_r \mid a_i \in S, \, n_i \in \z}.
     \]
 \end{ej}
 
@@ -346,7 +346,7 @@
     Lo denotaremos como $G = C_n$ (grupo cíclico de orden $n$).
     Si $\ord(G) = \infty$, entonces
     \[
-        G = \setb{x^k \,\vert\, k \in \z}.
+        G = \setb{x^k \mid k \in \z}.
     \]
 \end{obs}
 
@@ -361,7 +361,7 @@
 \begin{defi}[función de Euler]
     Sea $d \in \z, d \geq 1$, definimos la función $\varphi$ de Euler como
     \[
-        \varphi(d) = \card \setb{ 1 \leq k \leq d \,\vert\, \mcd(k, d) = 1}.
+        \varphi(d) = \card \setb{ 1 \leq k \leq d \mid \mcd(k, d) = 1}.
     \]
 \end{defi}
 
@@ -402,8 +402,8 @@
                 \]
                 Con esta última condición, tenemos que
                 \[
-                    \varphi(d) = \card \setb{ k \in \z \,\vert\, \mcd(k, d) = 1 \text{ y } 1 \leq k \leq d}
-                    = \card \setb{ x^m \,\vert\, \ord\left( x^m \right) = d}.
+                    \varphi(d) = \card \setb{ k \in \z \mid \mcd(k, d) = 1 \text{ y } 1 \leq k \leq d}
+                    = \card \setb{ x^m \mid \ord\left( x^m \right) = d}.
                 \]
     \end{enumerate}
 \end{proof}
@@ -418,18 +418,18 @@
 \begin{proof}
     Tomamos $G = C_n = \left< x \right>$. Entonces,
     \[
-        n = \abs{G} = \sum_{d \vert n} \card \setb{ x \in G \,\vert\, \ord(x) =d } = \sum_{d \vert n} \varphi(d),
+        n = \abs{G} = \sum_{d \vert n} \card \setb{ x \in G \mid \ord(x) =d } = \sum_{d \vert n} \varphi(d),
     \]
     ya que
     \[
-        G = \bigcup_{d \vert n} \setb{x \in G \,\vert\, \ord(x) = d}.
+        G = \bigcup_{d \vert n} \setb{x \in G \mid \ord(x) = d}.
     \]
 \end{proof}
 
 \begin{prop}
     Sea $G = C_n = \left< x \right>$ (con $n$ finito). Entonces
     \begin{enumerate}[i)]
-        \item Si $d \vert n$, entonces $x^{\frac{n}{d}}$ es un elemento de orden $d$
+        \item Si $d \mid n$, entonces $x^{\frac{n}{d}}$ es un elemento de orden $d$
             y el subgrupo $H_d := \left< x^{\frac{n}{d}} \right>$ es subgrupo cíclico de orden $d$.
         \item Si $H$ es un subgrupo de $G$, entonces $\exists! d \vert n$ tal que $H = H_d$.
     \end{enumerate}
@@ -637,7 +637,7 @@
     una aplicación biyectiva ($f^{-1}_a = f_{a^{-1}}$). Notemos, que $f$ no es un morfismo
     de grupos (en general), ya que $f(1) = a$ (en general $a \neq 1$). Se tiene también que
     \[
-        f_a(H) = \setb{f_a(x) \vert x \in H} = \setb{ax \vert x \in H} = aH.
+        f_a(H) = \setb{f_a(x) \mid x \in H} = \setb{ax \mid x \in H} = aH.
     \]
     Diremos pues que hay una biyección $H \leftrightarrow aH$, en particular, si $G$ es finito, se tiene que
     $\abs{H} = \abs{aH}$.
@@ -646,7 +646,7 @@
 \begin{defi}[conjunto cociente de un grupo]
     Sea $G$ un grupo y sea $H$ un subgrupo de $G$. Llamamos conjunto cociente de $G$ módulo $H$ a 
     \[
-        \faktor{G}{H} = \setb{aH \vert a \in G} = \setb{ \bar{a} \vert a \in G},
+        \faktor{G}{H} = \setb{aH \mid a \in G} = \setb{ \bar{a} \mid a \in G},
     \]
     es decir, el conjunto de las clases laterales por la izquierda de $G$ módulo $H$.
     
@@ -696,7 +696,7 @@
 \begin{defi}[clase lateral!por la derecha]
     Tenemos que
     \[
-        \bar{a} = \setb{b \in G \vert ab^{-1} = x, \, y \in H} = \setb{b \in G \vert b = ya, \, y \in H} = Ha.
+        \bar{a} = \setb{b \in G \mid ab^{-1} = x, \, y \in H} = \setb{b \in G \mid b = ya, \, y \in H} = Ha.
     \]
     Llamamos clase lateral por la derecha de $a$ módulo $H$ a $Ha$.
 \end{defi}
@@ -718,7 +718,7 @@
     Existe una biyección
     \[
         \begin{aligned}
-            \setb{aH \vert a \in G} &\to \setb{Hb \vert b \in G} \\
+            \setb{aH \mid a \in G} &\to \setb{Hb \mid b \in G} \\
             xH &\mapsto Hx^{-1}.
         \end{aligned}
     \]
@@ -1014,7 +1014,7 @@
             \end{align*}
         \item $\tilde{f}\lp xH\rp\tilde{f}\lp yH\rp=f\lp x\rp f\lp y\rp = f\lp xy\rp = \tilde{f}\lp \lp xy\rp H\rp$.
         \item $xH\in\ker\lp\tilde{f}\rp\iff\tilde{f}\lp xH\rp = f\lp x\rp = 1\iff x\in\ker\lp f\rp$.
-        \item $\im\lp\tilde{f}\rp=\lc \tilde{f}\lp xH\rp \,\mid\, x\in G_1\rc =\lc f\lp x\rp \,\mid\, x\in G_1\rc = \im\lp f\rp$.
+        \item $\im\lp\tilde{f}\rp=\lc \tilde{f}\lp xH\rp \mid x\in G_1\rc =\lc f\lp x\rp \mid x\in G_1\rc = \im\lp f\rp$.
     \end{enumerate}
 
 \end{proof}
@@ -1047,7 +1047,7 @@
 \begin{obs}[Notación]
     Sea $G$ un grupo finito con $\orden(G) = n$ y $d \vert n$, notaremos
     \[
-        \O_d = \setb{y \in G \vert \orden(y) = d}.
+        \O_d = \setb{y \in G \mid \orden(y) = d}.
     \]
     Sea $x \in G$ con $\orden(x) = m$, notaremos
     \[
@@ -1113,8 +1113,8 @@
 \begin{proof}
     Sea $\abs{G} = n$ y sea $d \vert n$. Tenemos que
     \[
-        \O_d(G) = \setb{y \in G \vert \orden(y) = d} \subseteq
-        \setb{y \in \k^\ast \vert \orden(y) = d} = \O_d\left( \k^\ast \right).
+        \O_d(G) = \setb{y \in G \mid \orden(y) = d} \subseteq
+        \setb{y \in \k^\ast \mid \orden(y) = d} = \O_d\left( \k^\ast \right).
     \]
     Definimos $m_d = \abs{\O_d(G)} \leq \abs{\O_d\left( \k^\ast \right)} \leq \varphi(d)$.
     Entonces,
@@ -1134,52 +1134,51 @@
 \section{Grupos simples}
 
 \begin{defi}[grupo!simple]
-    Sea $G$ un grupo no trivial ($G \neq \setb{1}$). Decimos que $G$ es simple si los unicos subgrupos
+    Sea $G$ un grupo no trivial ($G \neq \setb{1}$). Decimos que $G$ es simple si los únicos subgrupos
     normales de $G$ son $\setb{1}$ y $G$.
 \end{defi}
 
 \begin{teo*}
-    Sea $G$ un grupo no trivial, entonces son equivalentes
+    Sea $G$ un grupo no trivial, entonces son equivalentes:
     \begin{enumerate}[(i)]
         \item\label{item:teo-random1} $G$ es simple abeliano
         \item\label{item:teo-random2} $\abs{G} = p$, con $p$ primo.
-        \item\label{item:teo-random3} $G \cong \faktor{\z}{p\z}$ con $p$ primo
+        \item\label{item:teo-random3} $G \cong \faktor{\z}{p\z}$ con $p$ primo.
     \end{enumerate}
 \end{teo*}
 
 \begin{proof}
-    Veremos que \ref{item:teo-random1} $\implies$ \ref{item:teo-random2}.
-
+    Veremos que \ref{item:teo-random1}$\implies$\ref{item:teo-random2}.
     Como $G \neq \setb{1}, \, \exists x \in G$ con $x \neq 1$. Veamos que si $\orden(x) = \infty \implies
     \langle x^2 \rangle \subset G$. Si $\langle x^2 \rangle = G \implies x \in \langle x^2\rangle
     \implies x = \left( x^2 \right)^n = x^{2n} \implies x^{-1}x = x^{-1}x^{2n} \implies
     1 = x^{2n-1} \implies \orden(x) \leq 2n-1$ lo cual es una contradicción.
-
-    Tenemos ahora $\langle x^2 \rangle$ subgrupo propio de $G$. Pero $G$ es abeliano por lo tanto
-    $\langle x^2 \rangle \triangleleft G$ contradicción con que $G$ es simple.
-
-    Por tanto, $\orden(x) = n > 1$. Tomamos $p \vert n$, con $p$ primo. Sabemos que
+    Tenemos ahora que $\langle x^2 \rangle$ es subgrupo propio de $G$. Pero $G$ es abeliano por lo tanto 
+    $\langle x^2 \rangle \triangleleft G$ que entra en contradicción con que $G$ es simple. Por tanto, $\orden(x) = n > 1$. 
+    Tomamos $p \vert n$, con $p$ primo. Sabemos que
     \[
         \orden\left( x^{\frac{n}{p}} \right) = \frac{n}{\mcd\left(n, \frac{n}{p}\right)} =
-        \frac{n}{\frac{n}{p}} = p
+        \frac{n}{\frac{n}{p}} = p.
     \]
-    Es decir, $X^{\frac{n}{p}}$ tiene orden $p$. Tomamos $H = \langle x^{\frac{n}{p}}\rangle \neq \setb{1}$.
-    Por tanto, $H$ es subgrupo de $G$ y $G$ es abeliano, es decir $H \triangleleft G$, pero $G$ es simple,
+    Es decir, $x^{\frac{n}{p}}$ tiene orden $p$. Tomamos $H = \langle x^{\frac{n}{p}}\rangle \neq \setb{1}$.
+    Por lo tanto, $H$ es subgrupo de $G$ y $G$ es abeliano, es decir $H \triangleleft G$, pero $G$ es simple,
     con lo cual $H = G$ y $\abs{G} = \abs{H} = p$.
-
-    Ahora veremos que \ref{item:teo-random2} $\implies$ \ref{item:teo-random3}. Suponemos que $\abs{G} = p$
-    con $p$ primo, por lo tanto, $\exists x \in G, \, x \neq 1$. En particular $\orden(x) \vert \orden(G) = p$
-    como $p$ es primo, $\orden(x) = p$. Ahora se tiene que $\langle x\rangle \subseteq G$, pero los ordenes
+    \\
+    
+    Ahora veremos que \ref{item:teo-random2}$\implies$\ref{item:teo-random3}. Suponemos que $\abs{G} = p$
+    con $p$ primo, por lo tanto, $\exists x \in G, \, x \neq 1$. En particular $\orden(x) \vert \orden(G) = p$ 
+    y como $p$ es primo, $\orden(x) = p$. Ahora se tiene que $\langle x\rangle \subseteq G$, pero los ordenes
     de los grupos son iguales, en consecuencia $G = \langle x\rangle \equiv \faktor{\z}{p\z}$.
-
-    Por último, veremos que \ref{item:teo-random3} $\implies$ \ref{item:teo-random1}. Se tiene
+    \\
+    
+    Por último, veremos que \ref{item:teo-random3}$\implies$\ref{item:teo-random1}. Se tiene
     que $G \equiv \faktor{\z}{p\z}$ que es abeliano y por lo tanto $G$ es un grupo cíclico de $p$ elementos.
-    Vimos que
+    A demás vimos que
     \[
         \begin{aligned}
-            \setb{d \mid d \vert n \; 1 \leq d \leq n} &\leftrightarrow
+            \setb{d \in \z \bigm\vert d \vert n, \; 1 \leq d \leq n } &\leftrightarrow
             \setb{H \mid H \text{ sg. de } G, \; \abs{H} = d} \\
-            d &\mapsto \langle y^{\frac{n}{d}} \rangle
+            d &\mapsto \langle y^{\frac{n}{d}} \rangle.
         \end{aligned}
     \]
     Como $n$ es primo, los únicos subgrupos de $G$ son $\setb{1}$ y $G$ y, en particular, son los únicos simples
@@ -1207,19 +1206,17 @@
     \[
         \tilde{\sigma} = \sigma \left( a_4, a_5 \right)
     \]
-    con todos los $a_{i}$ diferentes entre ellos. ($a_4$ y $a_5$ existen porque $n \geq 5$) y se tiene que
+    con todos los $a_{i}$ diferentes entre ellos ($a_4$ y $a_5$ existen porque $n \geq 5$). Entonces se tiene que
     \[
         \begin{aligned}
             \tilde{\sigma} \left( a_1, a_2, a_3 \right) \tilde{\sigma}^{-1} &=
             \sigma \left( a_4, a_5 \right) \left( a_1, a_2, a_3 \right) \left( a_4, a_5 \right) \sigma^{-1} \\
-            &= \sigma \left( a_1, a_2, a_3 \right) \cancels{\left( a_4, a_5 \right)}
-            \cancels{\left( a_4, a_5 \right)} \sigma^{-1} \\
+            &= \sigma \left( a_1, a_2, a_3 \right) \cancel{\left( a_4, a_5 \right)}
+            \cancel{\left( a_4, a_5 \right)} \sigma^{-1} \\
             &= \sigma\left( a_1, a_2, a_3 \right)\sigma^{-1} = \left( b_1, b_2, b_3 \right)
         \end{aligned}
     \]
-    y $\tilde{\sigma} \in \Asim_n$.
-
-    Tomamos $H \triangleleft \Asim_n$  con $H$ no trivial. Entonces $H$ contiene un 3-ciclo. Tomamos 
+    y $\tilde{\sigma} \in \Asim_n$. Tomamos $H \triangleleft \Asim_n$  con $H$ no trivial. Entonces $H$ contiene un 3-ciclo. Tomamos 
     $\sigma \in H$ con $\sigma \neq \Id$. Por el ejercicio 20 se tiene que
     \[
         \begin{cases}
@@ -1229,5 +1226,6 @@
         \end{cases}
     \]
 
-    Ahora queremos ver que $H = \Asim_n$, acabamos de ver que $\exists \sigma \in H$ que es un 3-ciclo
+    Ahora queremos ver que $H = \Asim_n$. Acabamos de ver que $\exists \sigma \in H$ 3-ciclo y que todo $\tau$ 3-ciclo es el conjugado de $\sigma$
+    por un elemento $\rho\in\Asim_n$. Por lo tanto $\tau\in H$ lo que nos dice que $\Asim_n=\langle\text{3-ciclos}\rangle \subseteq H$ y hemos acabado.
 \end{proof}
