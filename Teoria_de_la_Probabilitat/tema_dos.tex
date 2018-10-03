@@ -1,4 +1,7 @@
 \chapter{Variables aleatòries}
+
+\section{Definició i propietats bàsiques de les variables aleatòries}
+
 \begin{defi}[varible!aleatòria]
     Siguin $\lp \Omega_1, \Asuc_1\rp$ i $\lp \Omega_2, \Asuc_2\rp$ espais mesurables. Diem que $X\colon \Omega_1\to\Omega_2$ és una variable aleatòria si
     \[
@@ -183,21 +186,27 @@
 
 %TODO Aqui comença el 3/10. No se si hi falta res d'abans
 
-\section{Esperança d'una variable aleatòria}
-
-Sigui $(\Omega,\Asuc,p)$ espai de probabilitat, $X$ variable aleatòria. X indueix una probabilitat $p_X$ sobre $(\real,\B)$.
+\section{Esperança d'una variable aleatòria. Desigualtats de Markov i Chebyshev}
 
 \begin{defi}[esperança d'una variable aleatòria]
-    L'esperança d'una variable aleatòria X és:
-    \[\esp[X] = \int_{\Omega}{X \dif p} = \int_{\real}{x \dif p_X}\]
+    Sigui $(\Omega,\Asuc,p)$ un espai de probabilitat i sigui $X\colon\Omega\to\real$ una variable aleatòria. Com ja sabem, $X$ indueix una probabilitat $P_X$ sobre $\lp\real,\B\rp$. Definim l'esperança de la variable aleatòria d'$X$, $\esp[X]$ com
+    \[
+        \esp[X] = \int_{\Omega}{X \dif p} = \int_{\real}{x \dif P_X},
+    \]
+    si existeix aquesta integral.
 \end{defi}
 
 \begin{obs}
-    Pot ser que $\esp[X]$ no existeixi, com al curs de teoria de la mesura.
-    Però $|\int_{\Omega}{f\dif p}| \le \int_{\Omega}{|f|\dif p}$,
-    per tant si demanem que $\esp[|X|] \le +\infty$ aleshores $\esp[X] \le +\infty$.
+    La demostració que aquestes dues integrals són iguals resulta de l'aplicació de la definició de la integral de Lebesgue, però escapa dels objectius d'aquest curs i no l'escriurem.
 \end{obs}
 
+\begin{obs}
+    Igual que es va veure al curs de teoria de la mesura, pot ser que $\esp[X]$ no existeixi o que sigui infinita.
+    No obstant això, atès que $|\int_{\Omega}{f\dif p}| \le \int_{\Omega}{|f|\dif p}$, sovint demanarem que
+    $\esp[|X|] \le +\infty$ per poder afirmar que $\esp[X] \le +\infty$.
+\end{obs}
+
+\iffalse %TODO aquest exemple el farà bé el proper dia
 \begin{example}
     $A\in\Asuc$, i considerem $X(\omega) = \mathbb{I}_A(\omega) = \begin{cases}
     0 & \omega \in \A \\ 1 & \omega \notin \A \end{cases}$. L'esperança, calculada de les dues maneres, és:
@@ -206,10 +215,55 @@ Sigui $(\Omega,\Asuc,p)$ espai de probabilitat, $X$ variable aleatòria. X indue
     p_{\mathbb{I}_A}(1) = p(\mathbb{I}_A = 1) = p(A)\]
     Cal tenir en compte que $p_X(B) = p(\omega\in\Omega, X(\omega)\in B)$, $p_{\mathbb{I}_A}(B) = p(\omega\in\Omega, \mathbb{I}_A(\omega)\in B)$.
 \end{example}
+\fi
 
-Si $f\colon\real\to\real$ és una funció mesurable, $f(X)$ una v.a. i
-\[\esp[f(X)] = \int_{\Omega}{f(x) \dif p} = \int_\real{f(x) \dif p_X}\]
-(definit si $\esp[|X|] \le +\infty$), definim:
+\begin{prop}
+    Sigui $f\colon\real\to\real$ una funció mesurable i sigui $X$ una variable aleatòria. Aleshores, $f(X)$ és una variable aleatòria i
+    \[
+        \esp[f(X)] = \int_{\Omega}{f(X) \dif p} = \int_\real{x \dif P_{f\lp X\rp}}.
+    \]
+\end{prop}
+\begin{proof}
+    Si $f$ és mesurable, aleshores $f\lp X\rp$ també, de manera que $f\lp X\rp$ és una varible aleatòria i la resta segueix de la definició.
+\end{proof}
+
+\begin{defi}[moment!d'ordre $r$]\index{moment!factorial d'ordre $r$((tlab))}\index{variància((tlab))}\index{desviació típica((tlab))}
+    Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat i sigui $X\colon\Omega\to\real$ una variable aleatòria. Aleshores, definim
+    \begin{itemize}
+        \item Moment d'ordre $r$ d'$X$: 
+            \[
+                \esp\lb X^r\rb,
+            \]
+            on $r\in\real$ i hem suposat que $\esp\lb\abs{X}^r\rb<+\infty$.
+        \item Moment factorial d'ordre $r$ d'$X$: 
+            \[
+                \esp\lb \lp X\rp_r\rb=X\lp X-1\rp\cdots\lp X-r+1\rp,
+            \]
+            on $r\in\n$.
+        \item Variància d'$X$:
+            \[
+                \var\lb X\rb=\esp\lb\lp X-\esp\lb X\rb\rp^2\rb.
+            \]
+        \item Desviació típica d'$X$:
+            \[
+                \sigma=\sqrt{\var\lb X\rb}.
+            \]
+    \end{itemize}
+\end{defi}
+
+\begin{prop}
+    Siguin $X, Y$ variables aleatòries, siguin $a, b\in\n$ i sigui $A\in\Asuc$. Es tenen les següents propietats de l'esperança.
+    \begin{itemize}
+        \item $\esp\lb a\rb=a$,
+        \item $\esp\lb aX+bY\rb=a\esp\lb X\rb+b\esp\lb Y\rb$,
+        \item $\esp\lb \mathbb{I}_A\rb=p\lp A\rp$,
+        \item $\abs{\esp\lb X\rb}\leq\esp\lb\abs{X}\rb$.
+    \end{itemize}
+    Es tenen les següents propietats de la variància.
+    \begin{itemize}
+        \item $\var\lb X\rb=\esp\lb\lp X-\esp\lb X\rb\rp^2\rb=\esp\lb X^2+\esp\lb X\rb^2-2X\esp\lb X\rb\rb=\esp\lb X^2\rb+\esp\lb X\rb^2-2\esp\lb X\rb^2=\esp\lb X^2\rb-\esp\lb X\rb^2$.
+    \end{itemize}
+\end{prop}
 
 
 
