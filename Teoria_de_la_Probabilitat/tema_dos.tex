@@ -181,5 +181,36 @@
     
 \end{proof}
 
+%TODO Aqui comença el 3/10. No se si hi falta res d'abans
+
+\section{Esperança d'una variable aleatòria}
+
+Sigui $(\Omega,\Asuc,p)$ espai de probabilitat, $X$ variable aleatòria. X indueix una probabilitat $p_X$ sobre $(\real,\B)$.
+
+\begin{defi}[esperança d'una variable aleatòria]
+    L'esperança d'una variable aleatòria X és:
+    \[\esp[X] = \int_{\Omega}{X \dif p} = \int_{\real}{x \dif p_X}\]
+\end{defi}
+
+\begin{obs}
+    Pot ser que $\esp[X]$ no existeixi, com al curs de teoria de la mesura.
+    Però $|\int_{\Omega}{f\dif p}| \le \int_{\Omega}{|f|\dif p}$,
+    per tant si demanem que $\esp[|X|] \le +\infty$ aleshores $\esp[X] \le +\infty$.
+\end{obs}
+
+\begin{example}
+    $A\in\Asuc$, i considerem $X(\omega) = \mathbb{I}_A(\omega) = \begin{cases}
+    0 & \omega \in \A \\ 1 & \omega \notin \A \end{cases}$. L'esperança, calculada de les dues maneres, és:
+    \[\esp[\mathbb{I}_A] = \int_\Omega{\mathbb{I}_A \dif p} = 1\cdot p(A) + 0\cdot p(\comp{A}) = p(A) \]
+    \[\esp[\mathbb{I}_A] = \int_\real{x\dif p_X} = 1\cdot p_{\mathbb{I}_A}(1) + 0\cdot p_{\mathbb{I}_A}(\real\setminus1) =
+    p_{\mathbb{I}_A}(1) = p(\mathbb{I}_A = 1) = p(A)\]
+    Cal tenir en compte que $p_X(B) = p(\omega\in\Omega, X(\omega)\in B)$, $p_{\mathbb{I}_A}(B) = p(\omega\in\Omega, \mathbb{I}_A(\omega)\in B)$.
+\end{example}
+
+Si $f\colon\real\to\real$ és una funció mesurable, $f(X)$ una v.a. i
+\[\esp[f(X)] = \int_{\Omega}{f(x) \dif p} = \int_\real{f(x) \dif p_X}\]
+(definit si $\esp[|X|] \le +\infty$), definim:
+
+
 
 
