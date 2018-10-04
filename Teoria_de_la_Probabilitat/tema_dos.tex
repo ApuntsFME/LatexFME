@@ -252,7 +252,7 @@
 \end{defi}
 
 \begin{prop}
-    Siguin $X, Y$ variables aleatòries, siguin $a, b\in\n$ i sigui $A\in\Asuc$. Es tenen les següents propietats de l'esperança.
+    Siguin $X, Y$ variables aleatòries, siguin $a, b\in\real$ i sigui $A\in\Asuc$. Es tenen les següents propietats de l'esperança.
     \begin{itemize}
         \item $\esp\lb a\rb=a$,
         \item $\esp\lb aX+bY\rb=a\esp\lb X\rb+b\esp\lb Y\rb$,
@@ -261,9 +261,49 @@
     \end{itemize}
     Es tenen les següents propietats de la variància.
     \begin{itemize}
-        \item $\var\lb X\rb=\esp\lb\lp X-\esp\lb X\rb\rp^2\rb=\esp\lb X^2+\esp\lb X\rb^2-2X\esp\lb X\rb\rb=\esp\lb X^2\rb+\esp\lb X\rb^2-2\esp\lb X\rb^2=\esp\lb X^2\rb-\esp\lb X\rb^2$.
+        \item $\var\lb X\rb=\esp\lb\lp X-\esp\lb X\rb\rp^2\rb=\esp\lb X^2+\esp\lb X\rb^2-2X\esp\lb X\rb\rb=\esp\lb X^2\rb+\esp\lb X\rb^2-2\esp\lb X\rb^2=\esp\lb X^2\rb-\esp\lb X\rb^2$,
+        \item $\var\lb a\rb=0$,
+        \item $\var\lb a+X\rb=\var\lb X\rb$,
+        \item $\var\lb aX\rb=a^2\var\lb X\rb$.
     \end{itemize}
 \end{prop}
+
+\begin{prop}
+    \textit{Desigualtat de Holder}. Siguin $X,Y$ variables aleatòries i siguin $p,q\in\real$ tals que $\frac{1}{p}+\frac{1}{q}=1$. Si $\esp\lb\abs{X}^p\rb,\esp\lb\abs{Y}^q\rb<+\infty$, aleshores
+    \[
+        \esp\lb\abs{XY}\rb\leq\esp\lb\abs{X}^p\rb^{\frac{1}{p}}\esp\lb\abs{Y}^q\rb^{\frac{1}{q}}<+\infty.
+    \]
+    \textit{Desigualtat de Cauchy-Schwartz}. Siguin $X,Y$ variables aleatòries. Si $\esp\lb\abs{X}^2\rb,\esp\lb\abs{Y}^2\rb<+\infty$, aleshores
+    \[
+        \esp\lb\abs{XY}\rb\leq\esp\lb\abs{X}^2\rb^{\frac{1}{2}}\esp\lb\abs{Y}^2\rb^{\frac{1}{2}}<+\infty.
+    \]
+    \textit{Desigualtat de Minkowsky}. Siguin $X,Y$ variables aleatòries i sigui $p\in\real$. Si $\esp\lb\abs{X}^p\rb,\esp\lb\abs{Y}^p\rb<+\infty$, aleshores
+    \[
+        \esp\lb\abs{X+Y}^p\rb^{\frac{1}{p}}\leq\esp\lb\abs{X}^p\rb^{\frac{1}{p}}+\esp\lb\abs{Y}^p\rb^{\frac{1}{p}}<+\infty.
+    \]
+\end{prop}
+\begin{proof}
+    Tots aquests resultats són l'aplicació de les desigualtats corresponents demostrades al curs de teoria de la mesura.
+\end{proof}
+\begin{obs}
+    La desigualtat de Cauchy-Schwartz és el cas particular $p=q=2$ de la desigualtat de Holder.
+\end{obs}
+\begin{specialteo}[Desigualtat de Markov]
+    Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat, sigui $X\colon\Omega\to\real$ una variable aleatòria amb $X>0$ i sigui $a\in\real^+$. Aleshores,
+    \[
+        P\lp X\geq a\rp \leq \frac{\esp\lb X\rb}{a}.
+    \]
+\end{specialteo}
+\begin{proof}
+    Sigui $A=\lc \omega\in\Omega\mid X\lp\omega\rp\geq a\rc$. Com que $X$ és mesurable, $A$ és un succés. Observem que
+    \[
+        a\mathbb{I}_A\lp\omega\rp\leq X\lp\omega\rp,\,\forall\omega\in\Omega.
+    \]
+    Aleshores,
+    \[
+        ap\lp X\geq a\rp = \esp\lb a\mathbb{I}_A\lp\omega\rp\rb \leq \esp\lb X\lp\omega\rp\rb = \esp\lb X\rb.
+    \]
+\end{proof}
 
 
 
