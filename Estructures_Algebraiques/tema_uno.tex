@@ -907,9 +907,7 @@
     \end{enumerate}
 \end{prop}
 
-\begin{proof}
-    Ejercicio.  % TODO revisar corregir això per poder-ho penjar
-    \iffalse
+\begin{proof}% TODO revisar demo
     \begin{enumerate}[i)]
         \item[]
         \item Sean $x\sim x'$ y $y\sim y'$, queremos ver que $xy\sim x'y'$.
@@ -963,7 +961,6 @@
             \end{align*}
             Así pues, $\Pi^{-1}\lp L\rp$ es un subgrupo normal de $G$ y hemos terminado.
     \end{enumerate}
-    \fi
 \end{proof}
 
 \begin{teo}[de isomorfía (primero)] \label{teo:1_iso}
@@ -1138,42 +1135,42 @@
     normales de $G$ son $\setb{1}$ y $G$.
 \end{defi}
 
-\begin{teo*}
-    Sea $G$ un grupo no trivial, entonces son equivalentes:
+\begin{teo*}\label{teo:ordprimo}
+    Sea $G$ un grupo. Son equivalentes
     \begin{enumerate}[(i)]
-        \item\label{item:teo-random1} $G$ es simple abeliano
-        \item\label{item:teo-random2} $\abs{G} = p$, con $p$ primo.
+        \item\label{item:teo-random1} $G$ es simple y abeliano,
+        \item\label{item:teo-random2} $\abs{G} = p$, con $p$ primo,
         \item\label{item:teo-random3} $G \cong \faktor{\z}{p\z}$ con $p$ primo.
     \end{enumerate}
 \end{teo*}
 
 \begin{proof}
-    Veremos que \ref{item:teo-random1}$\implies$\ref{item:teo-random2}.
-    Como $G \neq \setb{1}, \, \exists x \in G$ con $x \neq 1$. Veamos que si $\orden(x) = \infty \implies
-    \langle x^2 \rangle \subset G$. Si $\langle x^2 \rangle = G \implies x \in \langle x^2\rangle
+    Empecemos probando que \ref{item:teo-random1}$\implies$\ref{item:teo-random2}.
+    Como $G \neq \setb{1}, \, \exists x \in G$ con $x \neq 1$. Veamos que $\orden(x) = \infty \implies
+    \langle x^2 \rangle \subset G$. Supogamos que $\orden(x) = \infty$. Entonces, $\langle x^2 \rangle = G \implies x \in \langle x^2\rangle
     \implies x = \left( x^2 \right)^n = x^{2n} \implies x^{-1}x = x^{-1}x^{2n} \implies
-    1 = x^{2n-1} \implies \orden(x) \leq 2n-1$ lo cual es una contradicción.
-    Tenemos ahora que $\langle x^2 \rangle$ es subgrupo propio de $G$. Pero $G$ es abeliano por lo tanto 
-    $\langle x^2 \rangle \triangleleft G$ que entra en contradicción con que $G$ es simple. Por tanto, $\orden(x) = n > 1$. 
+    1 = x^{2n-1} \implies \orden(x) \leq 2n-1$ lo cual contradice la hipótesis $\orden(x) = \infty$.
+    Tenemos ahora que $\langle x^2 \rangle$ es subgrupo propio de $G$. Pero $G$ es abeliano y, por lo tanto, 
+    $\langle x^2 \rangle \triangleleft G$, cosa que supone una contradicción con la hipótesis de que $G$ es simple.
+    Así pues, $\orden(x) = n > 1$. 
     Tomamos $p \vert n$, con $p$ primo. Sabemos que
     \[
         \orden\left( x^{\frac{n}{p}} \right) = \frac{n}{\mcd\left(n, \frac{n}{p}\right)} =
         \frac{n}{\frac{n}{p}} = p.
     \]
     Es decir, $x^{\frac{n}{p}}$ tiene orden $p$. Tomamos $H = \langle x^{\frac{n}{p}}\rangle \neq \setb{1}$.
-    Por lo tanto, $H$ es subgrupo de $G$ y $G$ es abeliano, es decir $H \triangleleft G$, pero $G$ es simple,
-    con lo cual $H = G$ y $\abs{G} = \abs{H} = p$.
+    $H$ es un subgrupo de $G$ y $G$ es abeliano, de modo que $H \triangleleft G$. Sin embargo, $G$ es simple,
+    con lo cual $H = G$ y concluimos que $\abs{G} = \abs{H} = p$.
     \\
     
-    Ahora veremos que \ref{item:teo-random2}$\implies$\ref{item:teo-random3}. Suponemos que $\abs{G} = p$
-    con $p$ primo, por lo tanto, $\exists x \in G, \, x \neq 1$. En particular $\orden(x) \vert \orden(G) = p$ 
-    y como $p$ es primo, $\orden(x) = p$. Ahora se tiene que $\langle x\rangle \subseteq G$, pero los ordenes
-    de los grupos son iguales, en consecuencia $G = \langle x\rangle \equiv \faktor{\z}{p\z}$.
+    \noindent Veamos ahora que \ref{item:teo-random2}$\implies$\ref{item:teo-random3}. Suponemos que $\abs{G} = p$
+    con $p$ primo, y sigue que $\exists x \in G, \, x \neq 1$. En particular $\orden(x) \vert \orden(G) = p$ 
+    y, puesto que $p$ es primo, $\orden(x) = p$. Ahora se tiene que $\langle x\rangle \subseteq G$, pero los órdenes
+    de los grupos son iguales y, por consiguiente, $G = \langle x\rangle \cong \faktor{\z}{p\z}$.
     \\
     
-    Por último, veremos que \ref{item:teo-random3}$\implies$\ref{item:teo-random1}. Se tiene
-    que $G \equiv \faktor{\z}{p\z}$ que es abeliano y por lo tanto $G$ es un grupo cíclico de $p$ elementos.
-    A demás vimos que
+    \noindent Por último, veamos que \ref{item:teo-random3}$\implies$\ref{item:teo-random1}. $G \cong \faktor{\z}{p\z}$ es el grupo cíclico de $p$ elementos y es abeliano.
+    Además, vimos que los siguientes conjuntos están en biyección:
     \[
         \begin{aligned}
             \setb{d \in \z \bigm\vert d \vert n, \; 1 \leq d \leq n } &\leftrightarrow
@@ -1181,28 +1178,38 @@
             d &\mapsto \langle y^{\frac{n}{d}} \rangle.
         \end{aligned}
     \]
-    Como $n$ es primo, los únicos subgrupos de $G$ son $\setb{1}$ y $G$ y, en particular, son los únicos simples
-    por lo tanto, $G$ es simple abeliano.
+    Como $n$ es primo, los únicos subgrupos de $G$ son $\setb{1}$ y $G$ y, en particular, son los únicos normales. Concluimos que
+    $G$ es simple.
 \end{proof}
 
-\begin{teo}[de Feit-Thompson]
-    Sea $G$ un grupo tal que $\abs{G} = n$ impar. Si $G$ es simple, entonces
-    \[
-        n = p \text{ primo} \quad \text{y} \quad G \equiv \faktor{\z}{p\z}
-    \]
+\begin{teo}[de Feit-Thompson]\label{teo:ordnonprimo}
+    Sea $G$ un grupo tal que $\abs{G} = n\in\n$, con $n$ non. Entonces, $n$ es un número primo.
 \end{teo}
+\begin{proof}
+    La demostración es demasiado larga y complicada como para abarcarla en esta asignatura.
+\end{proof}
+\begin{col}
+    Sea $G$ un grupo tal que $\abs{G} = n\in\n$, con $n$ non. Se tiene que
+    \[
+        G \equiv \faktor{\z}{p\z},
+    \]
+    con $p=n$ primo.
+\end{col}
+\begin{proof}
+    El resultado es una consecuencia inmediata de los teoremas \ref{teo:ordnonprimo} y \ref{teo:ordprimo}.
+\end{proof}
 
 \begin{teo*}
-    Sea $n \geq 5$, entonces $\Asim_n$ es simple.
+    Sea $n \geq 5$, entonces $A_n$ es simple.
 \end{teo*}
 
 \begin{proof}
-    Sabemos (por problemas) que $\Asim_n = \langle \text{3-ciclos}\rangle$. Sean ahora
+    Sabemos (por problemas) que $A_n = \langle \text{3-ciclos}\rangle$. Sean ahora
     $\left( a_1, a_2, a_3 \right)$ y $\left( b_1, b_2, b_3 \right)$ dos 3-ciclos, veremos que
-    $\exists \sigma \in \Asim_n$ tal que
+    $\exists \sigma \in A_n$ tal que
     $\sigma \left( a_1, a_2, a_3 \right) \sigma^{-1} = \left( b_1, b_2, b_3 \right)$. Tomamos
     $\sigma$ la permutación que envía $a_1$ a $b_1$, $a_2$ a $b_2$, $a_3$ a $b_3$ y el resto a donde sea.
-    Si $\sigma \in \Asim_n$ ya hemos acabado. Si $\sigma \notin \Asim_n$, tomamos
+    Si $\sigma \in A_n$ ya hemos acabado. Si $\sigma \notin A_n$, tomamos
     \[
         \tilde{\sigma} = \sigma \left( a_4, a_5 \right)
     \]
@@ -1216,16 +1223,17 @@
             &= \sigma\left( a_1, a_2, a_3 \right)\sigma^{-1} = \left( b_1, b_2, b_3 \right)
         \end{aligned}
     \]
-    y $\tilde{\sigma} \in \Asim_n$. Tomamos $H \triangleleft \Asim_n$  con $H$ no trivial. Entonces $H$ contiene un 3-ciclo. Tomamos 
-    $\sigma \in H$ con $\sigma \neq \Id$. Por el ejercicio 20 se tiene que
+    y $\tilde{\sigma} \in A_n$. Tomamos $H \triangleleft A_n$,  con $H$ no trivial. Entonces $H$ contiene un 3-ciclo. Tomamos 
+    $\sigma \in H$, con $\sigma \neq \Id$. Por el ejercicio 20 se tiene que o bien
     \[
-        \begin{cases}
-            \exists \tau \in \Asim_n \tq \tau \sigma \tau^{-1} \sigma^{-1} \text{ es un 3-ciclo} \\
-            \exists \tau_1 \tau_2 \in \Asim_n \tq \tau_2 \tau_1\sigma\tau^{-1}\sigma^{-1}\tau_2^{-1}
-            \sigma\tau\sigma^{-1}\tau^{-1}
-        \end{cases}
+            \exists \tau \in A_n \tq \tau \sigma \tau^{-1} \sigma^{-1} \text{ es un 3-ciclo},
+    \]
+    o bien
+    \[
+        \exists \tau_1 \tau_2 \in A_n \tq \tau_2 \tau_1\sigma\tau^{-1}\sigma^{-1}\tau_2^{-1}
+            \sigma\tau\sigma^{-1}\tau^{-1} \text{ es un 3-ciclo}.
     \]
 
-    Ahora queremos ver que $H = \Asim_n$. Acabamos de ver que $\exists \sigma \in H$ 3-ciclo y que todo $\tau$ 3-ciclo es el conjugado de $\sigma$
-    por un elemento $\rho\in\Asim_n$. Por lo tanto $\tau\in H$ lo que nos dice que $\Asim_n=\langle\text{3-ciclos}\rangle \subseteq H$ y hemos acabado.
+    \noindent Ahora queremos ver que $H = A_n$. Acabamos de ver que $\exists \sigma \in H$ 3-ciclo y que todo $\tau$ 3-ciclo es el conjugado de $\sigma$
+    por un elemento $\rho\in A_n$. Por lo tanto, $\tau\in H$, lo que nos dice que $A_n=\langle\text{3-ciclos}\rangle \subseteq H$ y hemos acabado.
 \end{proof}
