@@ -1147,7 +1147,7 @@
 \begin{proof}
     Empecemos probando que \ref{item:teo-random1}$\implies$\ref{item:teo-random2}.
     Como $G \neq \setb{1}, \, \exists x \in G$ con $x \neq 1$. Veamos que $\orden(x) = \infty \implies
-    \langle x^2 \rangle \subset G$. Supogamos que $\orden(x) = \infty$. Entonces, $\langle x^2 \rangle = G \implies x \in \langle x^2\rangle
+    \langle x^2 \rangle \subsetneq G$. Supongamos que $\orden(x) = \infty$. Entonces, $\langle x^2 \rangle = G \implies x \in \langle x^2\rangle
     \implies x = \left( x^2 \right)^n = x^{2n} \implies x^{-1}x = x^{-1}x^{2n} \implies
     1 = x^{2n-1} \implies \orden(x) \leq 2n-1$ lo cual contradice la hipótesis $\orden(x) = \infty$.
     Tenemos ahora que $\langle x^2 \rangle$ es subgrupo propio de $G$. Pero $G$ es abeliano y, por lo tanto, 
@@ -1189,7 +1189,7 @@
     La demostración es demasiado larga y complicada como para abarcarla en esta asignatura.
 \end{proof}
 \begin{col}
-    Sea $G$ un grupo tal que $\abs{G} = n\in\n$, con $n$ non. Se tiene que
+    Sea $G$ un grupo simple tal que $\abs{G} = n\in\n$, con $n$ non. Se tiene que
     \[
         G \equiv \faktor{\z}{p\z},
     \]
@@ -1223,15 +1223,15 @@
             &= \sigma\left( a_1, a_2, a_3 \right)\sigma^{-1} = \left( b_1, b_2, b_3 \right)
         \end{aligned}
     \]
-    y $\tilde{\sigma} \in A_n$. Tomamos $H \triangleleft A_n$,  con $H$ no trivial. Entonces $H$ contiene un 3-ciclo. Tomamos 
+    y $\tilde{\sigma} \in A_n$. Tomamos $H \triangleleft A_n$,  con $H$ no trivial. Veamos que $H$ contiene un 3-ciclo. Tomamos 
     $\sigma \in H$, con $\sigma \neq \Id$. Por el ejercicio 20 se tiene que o bien
     \[
             \exists \tau \in A_n \tq \tau \sigma \tau^{-1} \sigma^{-1} \text{ es un 3-ciclo},
     \]
     o bien
     \[
-        \exists \tau_1 \tau_2 \in A_n \tq \tau_2 \tau_1\sigma\tau^{-1}\sigma^{-1}\tau_2^{-1}
-            \sigma\tau\sigma^{-1}\tau^{-1} \text{ es un 3-ciclo}.
+        \exists \tau_1 \tau_2 \in A_n \tq \tau_2 \tau_1\sigma\tau_1^{-1}\sigma^{-1}\tau_2^{-1}
+            \sigma\tau_1\sigma^{-1}\tau_1^{-1} \text{ es un 3-ciclo}.
     \]
 
     \noindent Ahora queremos ver que $H = A_n$. Acabamos de ver que $\exists \sigma \in H$ 3-ciclo y que todo $\tau$ 3-ciclo es el conjugado de $\sigma$
