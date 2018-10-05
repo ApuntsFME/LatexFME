@@ -206,16 +206,32 @@
     $\esp[|X|] \le +\infty$ per poder afirmar que $\esp[X] \le +\infty$.
 \end{obs}
 
-\iffalse %TODO aquest exemple el farà bé el proper dia
+%TODO aquest exemple el farà bé el proper dia
 \begin{example}
-    $A\in\Asuc$, i considerem $X(\omega) = \mathbb{I}_A(\omega) = \begin{cases}
-    0 & \omega \in \A \\ 1 & \omega \notin \A \end{cases}$. L'esperança, calculada de les dues maneres, és:
-    \[\esp[\mathbb{I}_A] = \int_\Omega{\mathbb{I}_A \dif p} = 1\cdot p(A) + 0\cdot p(\comp{A}) = p(A) \]
-    \[\esp[\mathbb{I}_A] = \int_\real{x\dif p_X} = 1\cdot p_{\mathbb{I}_A}(1) + 0\cdot p_{\mathbb{I}_A}(\real\setminus1) =
-    p_{\mathbb{I}_A}(1) = p(\mathbb{I}_A = 1) = p(A)\]
-    Cal tenir en compte que $p_X(B) = p(\omega\in\Omega, X(\omega)\in B)$, $p_{\mathbb{I}_A}(B) = p(\omega\in\Omega, \mathbb{I}_A(\omega)\in B)$.
+    Sigui $\lp \Omega, \Asuc, p\rp$ un espai de probabilitat i sigui $A\in\Asuc$. Considerem la variable aleatòria
+    \[
+        X(\omega) = \mathbb{I}_A(\omega) = \begin{cases}
+        0,\text{ si } \omega\in \A, \\ 1,\text{ si } \omega \notin \A.
+        \end{cases}
+    \]
+    Observem que, donat $B\in\B$,
+    \[
+        P_{\mathbb{I}_A}\lp B\rp = \begin{cases}
+            1, \text{ si } 0,1\in B,\\
+            p\lp A\rp, \text{ si } 0\notin B,\, 1\in B,\\
+            p\lp \comp{A}\rp, \text{ si } 0\in B,\, 1\notin B,\\
+            0, \text{ si } 0,1\notin B.
+        \end{cases}
+    \]
+    Així, podem calcular l'esperança amb les dues integrals i comprovar que el resultat és el matex.
+    \[
+        \esp[\mathbb{I}_A] = \int_\Omega{\mathbb{I}_A \dif p} = 1\cdot p(A) + 0\cdot p(\comp{A}) = p(A),
+    \]
+    \[
+        \esp[\mathbb{I}_A] = \int_\real{x\dif P_{\mathbb{I}_A}} = 1\cdot P_{\mathbb{I}_A}\lp\lc 1\rc\rp + 0\cdot P_{\mathbb{I}_A}\lp\lc 0\rc\rp+ \int_{\real\setminus\lc 0,1\rc} x\dif P_{\mathbb{I}_A} = P_{\mathbb{I}_A}\lp\lc 1\rc\rp = p\lp A\rp.
+    \]
 \end{example}
-\fi
+
 
 \begin{prop}
     Sigui $f\colon\real\to\real$ una funció mesurable i sigui $X$ una variable aleatòria. Aleshores, $f(X)$ és una variable aleatòria i
@@ -304,7 +320,94 @@
         ap\lp X\geq a\rp = \esp\lb a\mathbb{I}_A\lp\omega\rp\rb \leq \esp\lb X\lp\omega\rp\rb = \esp\lb X\rb.
     \]
 \end{proof}
+\begin{specialteo}[Desigualtat de Chebyshev]
+    Sigui $X$ una variable aleatòria amb $\esp\lb X\rb<+\infty$, $\var\lb X\rb$ i $\var\lb X\rb\neq 0$. Aleshores, per tot $k>0$, es té que
+    \[
+        P\lp \abs{X-\esp\lb X\rb}\geq k\var\lb X\rb^{\frac{1}{2}}\rp\leq\frac{1}{k^2}.
+    \]
+\end{specialteo}
+\begin{proof}
+    Posem $Y:=\abs{X-\esp\lb X\rb}$. Observem que $Y$ és una variable aleatòria. Tenim que, per tot $a>0$,
+    \begin{align*}
+        P\lp Y\geq a\rp &= P\lp\abs{X-\esp\lb X\rb}\geq a\rp = \\
+        &= P\lp\lp X-\esp\lb X\rb\rp^2\geq a^2\rp \leq\\
+        &\leq \frac{\esp\lb \lp X-\esp\lb X\rb\rp^2\rb}{a^2} =\\
+        &=\frac{\var\lb X\rb}{a^2},
+    \end{align*}
+    on hem aplicat la desigualtat de Markov. Prenent ara $a=k\var\lb X\rb^{\frac{1}{2}}$, deduïm el resultat volgut.
+\end{proof}
+\begin{obs}
+    Quan $\var\lb X\rb=0$, seguim tenint que, per tot $a>0$,
+    \[
+        0\leq P\lp\abs{X-\esp\lb X\rb} \geq a\rp\leq \frac{\var\lb X\rb}{a^2} =0,
+    \]
+    i tenim que $P\lp X=\esp\lb X\rb\rp=1$.
+\end{obs}
 
+\section{Vectors de variables aleatòries. Independència de variables aleatòries}
+\begin{defi}[vector!de variables aleatòries]\index{variable!aleatòria multidimensional((tlab))}
+    Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat. Diem que un vector de variables aleatòries o una variable aleatòria multidimensional de dimansió $n$ és una funció mesurable $\vec{X}\colon\Omega\to\real^n$.
+\end{defi}
+\begin{obs}
+    La funció 
+    \begin{align*}
+        \pi_i\colon\real^n &\to\real\\
+        \lp x_1,\cdots,x_n\rp &\mapsto x_i
+    \end{align*}
+    és una funció mesurable. Per tant, les components $\pi_i\circ\vec{X}=\pi_i\lp\vec{X}\rp=X_i$ d'$\vec{X}$ són variables aleatòries.
+\end{obs}
+\begin{defi}[funció!de distribució de probabilitat]\index{distribució!marginal((tlab))}
+    Sigui $\vec{X}=\lp X_1,\cdots, X_n\rp$ un vector de variables aleatòries de dimensió $n$. Anomenem funció de distribució de probabilitat d'$\vec{X}$ a 
+    \[
+        F_{\vec{X}}\lp x_1,\dots,x_n\rp = P\lp X_1\leq x_1,\dots, X_n\leq x_n\rp.
+    \]
+\end{defi}
+\begin{prop}
+    Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat i sigui $\vec{X}=\lp X,Y\rp\colon\Omega\to\real^2$ un vector de variables aleatòries amb funció de distribució $F_{\vec{X}}\lp x,y\rp$. Aleshores,
+    \begin{enumerate}[i)]
+        \item $\lim_{\lp x,y \rp\to\lp-\infty,-\infty\rp}F_{\vec{x}}\lp x, y\rp=0$ i $\lim_{\lp x,y \rp\to\lp+\infty,+\infty\rp}F_{\vec{x}}\lp x, y\rp=1$.
+        \item $x_1\leq x_2\implies F_{\vec{X}}\lp x_1,y\rp\leq F_{\vec{X}}\lp x_2,y\rp,\,\forall y\in\real$.
+        \item $\lim_{\lp x,y \rp\to\lp x_0^+,y_0^+\rp}F_{\vec{x}}\lp x, y\rp=F_{\vec{X}}\lp x_0,y_0\rp$.
+        \item $\lim_{y\to+\infty}F_{\vec{x}}\lp x, y\rp=F_X\lp x\rp$. A aquestes funcions les anomenem distribucions marginals.
+        \item $P\lp a<x\leq b, c<y\leq d\rp=F_{\vec{X}}\lp b,d\rp-F_{\vec{X}}\lp b,c\rp-F_{\vec{X}}\lp a,d\rp+F_{\vec{X}}\lp a,c\rp=\Delta_RF$,
+    \end{enumerate}
+    on $R$ és el rectangle que determinen $a, b, c, d$.
+\end{prop}
+\begin{proof}
+    Les demostracions de les tres primeres propietats son anàlogues a les de una sola dimensió. Les altres no les farem.
+\end{proof}
 
-
-
+\begin{prop}
+    Sigui una $F\lp x,y\rp$ una funció que satisfà les cinc propietats de la proposició anterior i tal que $\Delta_RF>0$ per tot rectangle $R$. Aleshores,
+    \[
+        \exists \vec{X}=\lp X,Y\rp \text{ variable aleatòria tal que } F\lp x,y\rp = F_{\vec{X}}.
+    \]
+\end{prop}
+\begin{proof}
+    La demostració és llarga i pesada, i no la farem.
+\end{proof}
+\begin{defi}
+    Sigui $\lc X_i\rc_{i\in I}$ una família de variables aletòries sobre un espai de probabilitat $\lp\Omega,\Asuc,p\rp$. Diem que $\lc X_i\rc_{i\in I}$ és independent si per tot $J\subseteq I$ amb $\abs{J}<+\infty$ i per qualssevol $B_1,\dots,B_{\abs{J}}\in\B$ es té que
+    \[
+        P\lp\bigcap_{j\in J}X_j\in B_j\rp = \prod_{j\in J} P\lp X_j\in B_j\rp.
+    \]
+\end{defi}
+En general, no podem conéixer la distribució de $X_1,\dots,X_n$ si coneixem només les seves distribucions marginals. Tanmateix, sí que podem conéixer-la si les variables aleatòries són independents.
+\begin{prop}
+    Si prenem $B_i=\lp-\infty,x_i\rp$ i una família finita de variables aleatòries independent $\lc X_i\rc_{i=1}^n$ (i posant $\vec{X}=\lp X_1,\dots,X_n\rp$), tenim que
+    \[
+        F_{\vec{X}}\lp x_1,\dots,x_n\rp = \prod_{i=1}^n F_{X_i}\lp x_i\rp.
+    \]
+\end{prop}
+\begin{proof}
+    \begin{align*}
+        F_{\vec{X}}\lp x_1,\dots,x_n\rp &= p\lp \bigcap_{i=1}^n X_i\in B_i\rp =p\lp \bigcap_{i=1}^n X_i\leq x_i\rp =\\
+        &= \prod_{i=1}^n P\lp X_i\leq x_i\rp = \prod_{i=1}^n F_{X_i}\lp x_i\rp.
+    \end{align*}
+\end{proof}
+\begin{obs}
+    Es pot demostrar que la impliació recíproca és certa, és a dir, que si una determinada família de variables aleatòries satisfà la igualtat anterior, aleshores és independent.
+\end{obs}
+\begin{obs}
+    Siguin $\lc X_i\rc_{i=1}^n$ una família de variables aleatòries independent i siguin $f_1,\dots,f_n\colon \real\to\real$ funcions mesurables. Aleshores, $\lc f_1\lp X_i\rp\rc_{i=1}^n$ també són independents.
+\end{obs}
