@@ -941,7 +941,7 @@
                 \item $x\in\Pi^{-1}\lp L\rp \implies \Pi\lp x\rp=xH\in L\implies x^{-1}H\in L\implies x^{-1}\in\Pi^{-1}\lp L\rp$, es decir, todo elemento de $\Pi^{-1}\lp L\rp$ tiene inverso en $\Pi^{-1}\lp L\rp$.
                 \item $x,y\in\Pi^{-1}\lp L\rp \implies \Pi\lp x\rp = xH,\, \Pi\lp y\rp=yH\in L\implies \lp xH\rp \lp yH\rp = \lp xy\rp H\in L \implies xy\in \Pi^{-1}\lp L\rp$, es decir, $\Pi^{-1}\lp L\rp$ es cerrado por la operación.
             \end{itemize}
-            Para acabar, basta ver que $\Pi$ restringida a los subgrupos de $G$ que contienen $H$ es inyectiva. Sean $K_1, K_2$ subgrupos de $G$ que contienen $H$ tales que $\Pi\lp K_1\rp = \Pi\lp K_2\rp$. Supongamos que $K_1\neq K_2$. Sin pérdida de generalidad, $\exists x\in K_1$ tal que $x\notin K_2$. Puesto que $xH\in\Pi\lp K_1\rp=\Pi\lp K_1\rp$, necesariamente $\exists y\in K_2$ tal que $yH=xH$. Entonces, $x\in xH=yH\implies y^{-1}x\in H\subseteq K_2\implies yy^{-1}x=x\in K_2$ e incurrimos en una contradicción. Por consiguiente, $K_1 = K_2$ y sigue que $\Pi$ restringida a los subgrupos de $G$ que contienen $H$ es inyectiva.
+            Para acabar, basta ver que $\Pi$ restringida a los subgrupos de $G$ que contienen $H$ es inyectiva. Sean $K_1, K_2$ subgrupos de $G$ que contienen $H$ tales que $\Pi\lp K_1\rp = \Pi\lp K_2\rp$. Supongamos que $K_1\neq K_2$. Sin pérdida de generalidad, $\exists x\in K_1$ tal que $x\notin K_2$. Puesto que $xH\in\Pi\lp K_1\rp=\Pi\lp K_2\rp$, necesariamente $\exists y\in K_2$ tal que $yH=xH$. Entonces, $x\in xH=yH\implies y^{-1}x\in H\subseteq K_2\implies yy^{-1}x=x\in K_2$ e incurrimos en una contradicción. Por consiguiente, $K_1 = K_2$ y sigue que $\Pi$ restringida a los subgrupos de $G$ que contienen $H$ es inyectiva.
             
             \noindent Para demostrar que $\Pi$ define un morfismo biyectivo entre los subgrupos normales de $G$ que contienen $H$ y los subgrupos normales de $\faktor{G}{H}$, es suficiente comprobar que la imagen y la antiimagen de subgrupos normales (que, como ya hemos visto, son subgrupos) son normales. Sea $K\supseteq H$ un subgrupo normal de $G$. Veamos que $\Pi\lp K\rp\triangleleft \faktor{G}{H}$. Sea $xH\in\faktor{G}{H}$. Entonces, se tiene que 
             \begin{align*}
@@ -951,7 +951,7 @@
                 &= \bigcup_{y\in K}\bigcup_{z\in H}\lc yxz\rc = \bigcup_{y\in K}\lc\lp yx\rp H\rc = \bigcup_{y\in K}\lc\lp yH\rp\lp xH\rp\rc =\\
                 &= \bigcup_{yH\in \Pi\lp K\rp}\lc\lp yH\rp\lp xH\rp\rc = \Pi\lp K\rp\lp xH\rp,
             \end{align*}    
-            de modo que $\Pi\lp K\rp$ es un subgrupo normal de $\faktor{G}{H}$. Por otro lado, sea $L$ un subgrupo normal de $\faktor{G}{H}$. Veamos que $\Pi^{-1}\lp L\rp\triangleleft G$. Sea $x\in G$. Se tiene que $x\Pi^{-1}\lp L\rp x^-1$ es un grupo, de lo que sigue
+	    de modo que $\Pi\lp K\rp$ es un subgrupo normal de $\faktor{G}{H}$. Por otro lado, sea $L$ un subgrupo normal de $\faktor{G}{H}$. Veamos que $\Pi^{-1}\lp L\rp\triangleleft G$. Sea $x\in G$. Se tiene que $x\Pi^{-1}\lp L\rp x^{-1}$ es un grupo, de lo que sigue
             \begin{align*}
                 x\Pi^{-1}\lp L\rp x^{-1} &= \Pi^{-1}\lp \Pi\lp x\Pi^{-1}\lp L\rp x^{-1}\rp\rp =\\
                 &=\Pi^{-1}\lp \lp xH\rp L \lp x^{-1}H\rp\rp =\\
@@ -1083,7 +1083,7 @@
         \O_n\left( \k^\ast \right) \subseteq \setb{ \text{raíces de } T^n -1}
         = C_n(x) \subseteq \k^\ast.
     \]
-    Además, $\abs{\O_n\left( \k^\ast \right)} \leq \varphi(n)$.
+    Además, $\abs{\O_n\left( \k^\ast \right)} = \varphi(n)$.
 \end{lema}
 
 \begin{proof}
@@ -1183,7 +1183,7 @@
 \end{proof}
 
 \begin{teo}[de Feit-Thompson]\label{teo:ordnonprimo}
-    Sea $G$ un grupo tal que $\abs{G} = n\in\n$, con $n$ non. Entonces, $n$ es un número primo.
+    Sea $G$ un grupo simple tal que $\abs{G} = n\in\n$, con $n$ non. Entonces, $n$ es un número primo.
 \end{teo}
 \begin{proof}
     La demostración es demasiado larga y complicada como para abarcarla en esta asignatura.
