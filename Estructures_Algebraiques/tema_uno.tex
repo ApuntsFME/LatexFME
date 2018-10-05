@@ -880,7 +880,7 @@
     \]
 \end{example}
 
-\begin{prop}
+\begin{prop}\label{prop:normalbiyec}
     Sea $G$ un grupo, y sea $H \triangleleft G$ un subgrupo normal, entonces
     \begin{enumerate}[i)]
         \item En $\faktor{G}{H}$ existe una estructura de grupo definida por 
@@ -900,7 +900,7 @@
                 \begin{aligned}
                     \setb{ \text{sg. (normales) de $G$ que contienen a $H$}} &\leftrightarrow
                     \setb{ \text{sg. (normales) de $\faktor{G}{H}$}} \\
-                    K \supset H &\mapsto \Pi(K) \\
+                    K \supseteq H &\mapsto \Pi(K) \\
                     \Pi^{-1}(L) &\mapsfrom L
                 \end{aligned}
             \]
@@ -1237,3 +1237,62 @@
     \noindent Ahora queremos ver que $H = A_n$. Acabamos de ver que $\exists \sigma \in H$ 3-ciclo y que todo $\tau$ 3-ciclo es el conjugado de $\sigma$
     por un elemento $\rho\in A_n$. Por lo tanto, $\tau\in H$, lo que nos dice que $A_n=\langle\text{3-ciclos}\rangle \subseteq H$ y hemos acabado.
 \end{proof}
+
+\begin{lema}
+    Sea $G$ un grupo no trivial y sea $H$ un subgrupo normal a $G$. Entonces, $\faktor{G}{H}$ es simple si y solo si $H$ es un elemeno maximal del conjunto $\lc K\mid K\triangleleft G, K\neq G, H\subseteq K\rc$.
+\end{lema}
+
+\begin{proof}
+    Como establece la proposición \ref{prop:normalbiyec}, existe una biyección entre los subgrupos normales de $\faktor{G}{H}$ y los subgrupos normales de $G$ que contien $H$. Por definición, $\faktor{G}{H}$ es simple si y solo su tiene exactamente dos subgrupos normales. Así, si $\faktor{G}{H}$ es simple, $H\neq G$ y hay exactamente dos subgrupos normales de $G$: $H$ y $G$. Entonces, $H$ es el elemento maximal de los subgrupos propios de $G$ que contienen $H$. Recíprocamente, si $H$ es un elemeno maximal del conjunto $\lc K\mid K\triangleleft G, K\neq G, H\subseteq K\rc$, entonces $\lc K\mid K\triangleleft G, H\subseteq K\rc = \lc K\mid K\triangleleft G, K\neq G, H\subseteq K\rc \cup \lc G\rc=\lc H, G\rc$. Por consiguiente, $\faktor{G}{H}$ tiene exactamente dos subgrupos normales, es decir, es simple.
+\end{proof}
+\begin{defi}[torre!normal]
+    Sea $G$ un grupo. Llamamos torre normal de $G$ a una cadena de subgrupos de $G$ tal que
+    \[
+        G=G_0\triangleright G_1\triangleright\cdots\triangleright G_n=\lc 1\rc,
+    \]
+    es decir, que $G_i$ es un subgrupo normal de $G_{i+1}$. Decimos que los grupos
+    \[
+        \faktor{G_0}{G_1}, \faktor{G_1}{G_2}, \dots, \faktor{G_{n-1}}{G_n}
+    \]
+    son los cocientes de la torre y que la longitud de la torre es $n$.
+\end{defi}
+\begin{defi}[torre!normal abeliana]
+    Sea $G$ un grupo. Decimos que una torre normal de $G$ es una torre normal abeliana de $G$ si todos los grupos
+    \[
+        \faktor{G_0}{G_1}, \faktor{G_1}{G_2}, \dots, \faktor{G_{n-1}}{G_n}
+    \]
+    son abelianos.
+\end{defi}
+\begin{defi}[grupo!resoluble]
+    Sea $G$ un grupo. Decimos que es resoluble si tiene una torre normal abeliana.
+\end{defi}
+\begin{defi}[serie!de composición]
+    Sea $G$ un grupo. Decimos que una torre normal de $G$ es una serie de descomposición de $G$ si todos los grupos
+    \[
+        \faktor{G_0}{G_1}, \faktor{G_1}{G_2}, \dots, \faktor{G_{n-1}}{G_n}
+    \]
+    son simples.
+\end{defi}
+\begin{example}
+    \begin{enumerate}[1.]
+        \item[]
+        \item Todo grupo tiene, almenos, una torre normal. En particular, $G=G_0\triangleright G_1=\lc 1\rc$ es una torre normal. Además, es una torre abeliana si y solo si $G$ es abeliano, y es simple si y solo si $G$ es simple. Así pues, si $G$ es abeliano, es resoluble porque $G\triangleright \lc 1\rc$ es una torre normal abeliana.
+        \item Consideremos $G=D_{2n}$. Se tiene que $D_{2n}\triangleright \left<r\right> \triangleright\lc 1\rc$ es una torre normal. Veamos que es abeliana.
+            \[
+                \faktor{\left< r\right>}{\lc 1\rc}=\left< r\right>\cong \faktor{\z}{n\z},
+            \]
+            que es abeliano, y
+            \[
+                \faktor{D_{2n}}{\left< r\right>}\cong C_2,
+            \]
+            que es abeliano. Por lo tanto, $D_{2n}$ es resoluble. Además, puesto que $C_2$ es simple, $D_{2n}\triangleright \left<r\right> \triangleright\lc 1\rc$ es una serie de descomposición si y solo si $n$ es primo.
+        \item Consideremos $G=\Sim_4$. Se tiene que $\Sim_4\trir V_4=\lc \Id, \lp 1, 2\rp\lp 3,4\rp,\lp 1,3\rp\lp 2,4\rp,\lp 1,4\rp\lp 2,3\rp\rc\trir\lc 1\rc$ es una torre normal. Para ver que $\Sim_4\trir V_4$, observamos que $\sigma\lp a, b\rp\lp c, d\rp\sigma^{-1}=\sigma\lp a, b\rp\sigma^{-1}\sigma\lp c, d\rp\sigma^{-1}=\lp\sigma\lp a\rp\sigma\lp b\rp\rp\lp\sigma\lp c\rp\sigma\lp d\rp\rp\in V_4$. Veamos que $\faktor{G_4}{V_4}$ no conmuta.
+        \begin{align*}
+            \lp 1,2,3\rp V_4\lp 1,4\rp V_4 &= \lp 1,2,3\rp\lp 1,4\rp V_4 = \\
+            &= \lp 1,4,2,3\rp V_4 \neq \lp 1,2,3,4\rp V_4 =\\
+            &= \lp 1,4\rp\lp 1,2,3\rp V_4 = \\
+            &= \lp 1,4\rp V_4\lp 1,2,3\rp V_4.
+        \end{align*}
+        Así pues, la torre no es abeliana y no es una serie de descomposición porque $V_4$ no es simple.
+    \end{enumerate}
+\end{example}
