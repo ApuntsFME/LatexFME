@@ -318,7 +318,7 @@ tenemos
 
 \noindent Si la convergencia es de orden $p \geq 2$,
 \begin{align*}
-    \abs{E^k} &\approx \lambda \left( \abs{E^{k-1}} \right)^p \approx \lambda \left( \lambda \abs{E^{k-2}}^p \right)^p = \lambda^{1+p} \abs{E^{k-2}} \approx \lambda^{p+1} \left( \lambda\abs{E^{k-2}}^p \right)^{p^2} = \dots \\
+	\abs{E^k} &\approx \lambda \left( \abs{E^{k-1}} \right)^p \approx \lambda \left( \lambda \abs{E^{k-2}}^p \right)^p = \lambda^{1+p} \abs{E^{k-2}}^{p^2} \approx \lambda^{p+1} \left( \lambda\abs{E^{k-3}}^p \right)^{p^2} = \dots \\
     &\approx \lambda^{1+p+\dots+p^{k-1}} \abs{E^0}^{p^k} \stackrel{\text{serie geométrica}}{=} \lambda^{\frac{p^k-1}{p-1}} \abs{E^0}^{p^k}, \\
     \frac{\abs{E^k}}{\abs{\alpha}} &\approx \lambda^{\frac{p^k-1}{p-1}}\frac{\abs{E^0}^{p^k}}{\abs{\alpha}^{p^k}}\abs{\alpha}^{p^k-1}, \\
     \abs{r^k} &\approx A^{p^k}\cdot B, \\
