@@ -35,7 +35,7 @@
                 \item $\min\lc X, Y\rc$
                 \item $X^+$
                 \item $X^-$
-                \item $g\lp X, Y\rp$, on $g\colon \real^2\to\real$ és ua funció mesurable.
+                \item $g\lp X, Y\rp$, on $g\colon \real^2\to\real$ és una funció mesurable.
             \end{itemize}
         \item Sigui $\lp \Omega, \Asuc\rp$ un espai de mesura i sigui $A\in\Asuc$. Definim la variable aleatòria indicadora d'$A$ com
             \begin{align*}
@@ -47,7 +47,7 @@
             \end{align*}
             Vegem que, efectivament, es tracta d'una variable aleatòria. Sigui $B\in\B$. Aleshores,
             \[
-                \mathbb{I}_A\lp B\rp=\begin{cases}
+		    \mathbb{I}_A^{-1}\lp B\rp=\begin{cases}
                     \Omega, \text{ si } 0\in B,\, 1\in B,\\
                     \comp{A}, \text{ si } 0\in B,\, 1\notin B,\\
                     A, \text{ si } 0\notin B,\, 1\in B,\\
@@ -141,7 +141,7 @@
 \end{obs}
 
 \begin{lema}
- Sigui $f\colon \real \to \real$ una funció creixent i fitada. Aleshores $f$ és mesuable Lebesgue.
+ Sigui $f\colon \real \to \real$ una funció creixent i fitada. Aleshores $f$ és mesurable Lebesgue.
 \end{lema}
 \begin{proof}
     Suposem que $f$ té un nombre no numerable de discontinuïats. Observem que totes les discontinuïtats són de salt. Sigui $D\subseteq \real$ el conjunt de punts on $f$ és discontínua. Aleshores, tenim que, per tots els punts $x_d\in D$, existeixen els límits $\lim_{x\to x_d^+}f\lp x\rp$ i $\lim_{x\to x_d^-}f\lp x\rp$. Definim, per tot $n\in\n$, els conjunts
@@ -273,7 +273,7 @@
     \[
         \esp\lb\abs{XY}\rb\leq\esp\lb\abs{X}^p\rb^{\frac{1}{p}}\esp\lb\abs{Y}^q\rb^{\frac{1}{q}}<+\infty.
     \]
-    \textit{Desigualtat de Cauchy-Schwartz}. Siguin $X,Y$ variables aleatòries. Si $\esp\lb\abs{X}^2\rb,\esp\lb\abs{Y}^2\rb<+\infty$, aleshores
+    \textit{Desigualtat de Cauchy-Schwarz}. Siguin $X,Y$ variables aleatòries. Si $\esp\lb\abs{X}^2\rb,\esp\lb\abs{Y}^2\rb<+\infty$, aleshores
     \[
         \esp\lb\abs{XY}\rb\leq\esp\lb\abs{X}^2\rb^{\frac{1}{2}}\esp\lb\abs{Y}^2\rb^{\frac{1}{2}}<+\infty.
     \]
@@ -286,7 +286,7 @@
     Tots aquests resultats són l'aplicació de les desigualtats corresponents demostrades al curs de teoria de la mesura.
 \end{proof}
 \begin{obs}
-    La desigualtat de Cauchy-Schwartz és el cas particular $p=q=2$ de la desigualtat de Holder.
+    La desigualtat de Cauchy-Schwarz és el cas particular $p=q=2$ de la desigualtat de Holder.
 \end{obs}
 \begin{specialteo}[Desigualtat de Markov]
     Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat, sigui $X\colon\Omega\to\real$ una variable aleatòria amb $X>0$ i sigui $a\in\real^+$. Aleshores,
