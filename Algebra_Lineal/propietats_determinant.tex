@@ -1,0 +1,21 @@
+\newpage
+\section{Propietats del determinant}
+\begin{prop}
+	El determinant de la matriu $A'$ que s'obté multiplicant una fila o una columna sencera d'una matriu $A\in\mathcal{M}_n(\real)$ per un escalar $\lambda\in\real$ és \[\det A' = \lambda\det A\,.\]
+	\begin{proof}
+		A partir del \hyperref[teo:laplace]{teorema de Laplace}, podem calcular el determinant d'$A'$ mitjançant l'expansió per la fila o columna que ha estat multiplicada; per exemple, si la s'ha multiplicat per $\lambda$ la fila $k$:
+		\[\det A' = \sum_{j=1}^{n} {a'}_{k,j}\cdot C_{k,j} =\sum_{j=1}^{n} \lambda {a}_{k,j} \cdot C_{k,j} = \lambda \sum_{j=1}^{n} {a'}_{k,j} {a}_{k,j} \cdot C_{k,j} = \lambda\det A\,. \]
+	\end{proof}
+\end{prop}
+
+\begin{prop}
+	Siguin $A,B\in\matspace{n}$ matrius que \textit{difereixen només en els coeficients d'una fila o d'una columna}. Sigui $M=A+B$. Llavors \[\det M = \det A + \det B \]
+	\begin{proof}
+		Sigui $k$ l'índex de la columna diferent entre $A$ i $B$. Pel \hyperref[teo:laplace]{teorema de Laplace}, podem expandir el determinant de $M$ per la $k$-èsima columna:
+		\begin{multline*}
+			\det M = \sum_{i=1}^{n} {m}_{i,k}\cdot C_{i,k} = \sum_{i=1}^{n} ({a}_{i,k}+ {b}_{i,k})\cdot C_{i,k}=\\
+			=\sum_{i=1}^{n}{a}_{i,k}\cdot C_{i,k} +\sum_{i=1}^{n} {b}_{i,k}\cdot C_{i,k}=\det A + \det B\,.
+		\end{multline*}
+		Es pot fer exactament el mateix raonament per la $k$-èsima fila. Noteu, a més, que els cofactors $C_{i,k}$ són iguals per totes tres matrius, ja que, excepte la $k$-èsima columna/fila, tota la resta de columnes/files són iguals.
+	\end{proof}
+\end{prop}
