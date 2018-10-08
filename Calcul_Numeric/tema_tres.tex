@@ -4,5 +4,101 @@
 \begin{itemize}
     \item $f\left( x \right)$ analíticamente o evaluable,
     \item $\left\{ f_i \right\}^n_{i=0}$ valor de $f$ en $n+1$ puntos $\left\{ x_i \right\}^n_{i=0}$,
-    \item $\left\{ f_i \right\}^n_{i=0},\left\{ f'_i \right\}^n_{i=0},\dots$.
+    \item $\left\{ f_i \right\}^n_{i=0},\left\{ f'_i \right\}^n_{i=0},\dots$,
+    \item Espai d'aproximació $V$ (espai vectorial).
 \end{itemize}
+
+\noindent El objetivo es determinar $p\in V\tq p\left( x \right) \approx f\left( x \right)$ ($V$ es el tipo de aproximación y $\approx$ el criterio de aproximación). Tanto si los datos son discretos como si son continuos, podemos decidir diferentes criterios y tipos de aproximación. %TODO dibujo
+
+\quad
+
+\noindent Tipos de aproximación:
+\begin{itemize}
+    \item Polinómica: $f\left( x \right)\approx p_n\left( x \right) \in \Pa^n,\, n$ fixat.
+    \item Trogonométrica: $f\left( x \right)\approx \sum\limits^n_{k=1} a_k \sin\left( nkl \right) + b_k \cos\left( nkl \right)$.
+    \item Splines: Polinomios a trozos.
+\end{itemize}
+Criterios de aproximación:
+\begin{itemize}
+    \item Interpolación: $p\left( x_i \right) = f\left( x_i \right), \, i=0,\dots,n$.
+    \item Mínimos cuadrados: $p = \arg\min\limits_{q\in V} \|f-q\|^2$, por ejemplo, $\|f-p\|^2 = \sum\limits^n_{i=0} \left( f_i -p\left( x_i \right) \right)^2$.
+    \item Min-max.
+\end{itemize}
+
+\section{Interpolación polinómica}
+
+\begin{teo*}
+    Dados $n+1$ puntos $\left\{ x_i \right\}^n_{i=0}$ diferents i $n+1$ valors $\left\{ f_i \right\}^n_{i=0}$, existeix un únic polinomi $p_n\left( x \right)$ de grau $\leq n$ tal que $p_n\left( x_i \right) = f_i,\, i=0,\dots,n$.
+\end{teo*}
+
+\begin{proof}
+    Consideramos $p_n\left( x \right) = a_0+a_1x+ \dots+a_n x^n$ (en la base natural) e imponemos $f_i = p_n\left( x_i \right) = a_0 + a_1 x_i + \dots + a_n x_i^n,\, i = 0,\dots,n$.
+    \[
+        \underbrace{
+        \begin{pmatrix}
+            1 & x_0 & \dots & x_0^n \\
+            \vdots & \vdots & & \vdots \\
+            1 & x_n & \dots & x_n^n
+        \end{pmatrix}}_A
+        \begin{pmatrix}
+            a_0 \\
+            \vdots \\
+            a_n
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            f_0 \\
+            \vdots \\
+            f_n
+        \end{pmatrix}.
+    \]
+    $A$ es una matriz de Vandermonde, $\det\left( A \right) = \prod\limits_{1\leq i < j\leq n} \left( x_i-x_j \right) \neq 0$ si $\left\{ x_i \right\}$ son no repetidos y por tanto existe una única solución al sistema.
+\end{proof}
+
+\begin{obs}
+    En la práctica, el determinante no sirve para saber si una matriz es singular. Hay que mirar el rango, el numero de condición ($\kappa_2$), etc.
+\end{obs}
+
+\begin{example}
+    Si tenemos $\det\left( A \right) = 0,1$, entonces $\det\left( 0,1\cdot A \right) = 10^{-(n+1)}$.
+\end{example}
+
+\begin{obs}
+    Las matrices de Vandermonde están muy mal condicionadas
+    \begin{center}
+        \begin{tabular}{|c|c|}\hline
+            $n$ & $\kappa_2\left( A \right)$ \\ \hline \hline
+            $2$ & $13$ \\ \hline
+            $3$ & $154$ \\ \hline
+            $5$ & $5,7\cdot 10^4$ \\ \hline
+            $10$ & $4,5 \cdot 10^{12}$ \\ \hline 
+        \end{tabular}
+    \end{center}
+    $\kappa_2\left( A \right) = \|A\|\cdot \|A^{-1}\|$, si $A$ es simétrica,
+    \[
+        \kappa_2\left( A \right) = \frac{\abs{\lambda_{\text{máx}}}}{\abs{\lambda_{\text{mín}}}}.
+    \]
+    Si $\kappa_2\left( A \right) \gg 1 \implies$ mal condicionada.
+\end{obs}
+
+\noindent Mal condicionamiento:
+\begin{enumerate}[1)]
+    \item Los errores de redondeo se propagan mucho. Los métodos iterativos convergen muy lentamente.
+    \item Aunque hiciéramos aritmética exacta:
+        \[
+            \|\vec{r}_x\| \leq \underbrace{\kappa_2 \left( A \right)}_{\mathclap{10^{12}\cdot \frac{1}{2}10^{-16} = \frac{1}{2}10^{-4} \,\rightarrow\, 3\text{ cifras significativas correctas}}} \|\vec{r}_b\|\text{ donde }\vec{x}\text{ es solución de }A\vec{x} = \vec{b}
+        \]
+\end{enumerate}
+
+Así pues, intentaremos no trabajar con matrices de Vandermonde. Escogeremos una base $\left\{ L_j\left( x \right) \right\}^n_{j=0}$ (base de Lagranje) tal que, $\forall \left\{ f_i \right\}^n_{i=0}$,
+\[
+    f_i = f\left( x_i \right) \approx p_n\left( x_i \right) = \sum^n_{j=0} f_jL_j\left( x_i \right).
+\]
+Es decir, tenemos que imponer
+\[
+    L_j\left( x_i \right) = \delta_{ij} =
+    \begin{cases}
+        1 & i=j \\
+        0 & i\neq j
+    \end{cases}
+\]
