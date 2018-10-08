@@ -4,30 +4,29 @@
 
 \section{M\'etodo de Newton-Raphson}
 
-Dada una aproximaci\'on $\vec{x}^k \approx \vec{\alpha}$, consideramos l'aproximaci\'on lineal de $\vec{f}\left( \vec{x} \right)$ en $\vec{x}^k$
+\noindent Dada una aproximaci\'on $\vec{x}^k \approx \vec{\alpha}$, consideramos l'aproximaci\'on lineal de $\vec{f}\left( \vec{x} \right)$ en $\vec{x}^k$
 \begin{align*}
-    \vec{f}\left( \vec{x} \right) &\approx \vec{f}\left( \vec{x}^k \right) + \frac{\partial \vec{f}}{\partial \vec{x}}\left( \vec{x}^{k+1}-\vec{x}^k \right) + \O \left( \|x-x^k\|^2 \right) = 0, \\
-    \vec{x}^{k+1} &= \vec{x}^k - \left[ \frac{\partial\vec{f}}{\partial\vec{x}}\left( x^k \right) \right]^{-1} \vec{f}\left( \vec{x}^k \right),\, \text{donde } J = \frac{\partial\vec{f}}{\partial x} \text{ es la jacobiana.}
+    \vec{f}\left( \vec{x} \right) &\approx \vec{f}\left( \vec{x}^k \right) + \frac{\partial \vec{f}}{\partial \vec{x}}\left( \vec{x}^{k+1}-\vec{x}^k \right) + \cancel{\O \left( \|x-x^k\|^2 \right)} = 0, \\
+    \vec{x}^{k+1} &= \vec{x}^k - \left[ \frac{\partial\vec{f}}{\partial\vec{x}}\left( x^k \right) \right]^{-1} \vec{f}\left( \vec{x}^k \right),\, \text{donde } J = \frac{\partial\vec{f}}{\partial \vec{x}} \text{ es la jacobiana.}
 \end{align*}
 
-Se puede ver que tiene convergencia cuadr\'atica si $\det\left( J(x) \right) \neq 0$.
+\noindent Se puede ver que tiene convergencia cuadr\'atica (de orden 2) si $\det\left( J(\alpha) \right) \neq 0$.
 
 \begin{obs}
-    No calcularemos $J^{-1}$ (porqu\'e es aproximadamente el coste de resolver $n$ sistemas lineales).
+    No calcularemos $J^{-1}$ (porqu\'e es aproximadamente el coste de resolver $n$ sistemas lineales). Calculamos:
+    \begin{enumerate}[i)]
+        \item $J\left( \vec{x}^k \right)\Delta \vec{x}^k = -\vec{f}\left( \vec{x}^k \right) \longrightarrow \Delta \vec{x}^k$,
+        \item $\vec{x}^{k+1} = \vec{x}^k + \Delta\vec{x}^k$.
+    \end{enumerate}
+    En Matlab: $x = x-(J\setminus f)$ resuelve el sistema.
 \end{obs}
 
-\noindent Calculamos:
-\begin{enumerate}[i)]
-    \item $J\left( \vec{x}^k \right)\Delta \vec{x}^k = -\vec{f}\left( \vec{x}^k \right) \longrightarrow \Delta \vec{x}^k$,
-    \item $\vec{x}^{k+1} = \vec{x}^k + \Delta\vec{x}^k$.
-\end{enumerate}
-En Matlab: $x = x-(J\setminus f)$ resuelve el sistema.
-
-\noindent Qu\'e hacemos si no podemos calcular $J = \frac{\partial \vec{f}}{\partial \vec{x}}$?
+\noindent ¿Qu\'e hacemos si no podemos calcular $J = \frac{\partial \vec{f}}{\partial \vec{x}}$?
 \emph{Aproximaci\'on de las derivadas}:
-\[
-    \frac{\partial \vec{f}}{\partial x_i}\left( \vec{x}^k \right) \approx \frac{\vec{f}\left( \vec{x}^k + he_i \right) - \vec{f}\left( \vec{x}^k \right)}{h} \text{ con } h \text{ pequeña.}
-\]
+\begin{align*}
+    \frac{\partial \vec{f}}{\partial x_i}\left( \vec{x}^k \right) &\approx \frac{\vec{f}\left( \vec{x}^k + h\vec{e}_i \right) - \vec{f}\left( \vec{x}^k \right)}{h} \text{ con } h \text{ pequeña,} \\
+    J &= \frac{\partial \vec{f}}{\partial \vec{x}} = \left[ \frac{\partial \vec{f}}{\partial x_1}, \dots, \frac{\partial \vec{f}}{\partial x_n} \right].
+\end{align*}
 
 \begin{obs}
     Si Newton converge pero no con convergencia cuadr\'atica, hay que comprobar que $J = \frac{\partial\vec{f}}{\partial\vec{x}}$ en la implementaci\'on.
@@ -35,11 +34,12 @@ En Matlab: $x = x-(J\setminus f)$ resuelve el sistema.
 
 \section{M\'etodos casi-Newton}
 
+\noindent Si no podemos calcular $J = \frac{\partial \vec{f}}{\partial \vec{x}}$, también podemos usar métodos casi-Newton.
+
 \begin{itemize}
     \item $\vec{x}^{k+1} = \vec{x}^k - \left[ S^k \right]^{-1} \vec{f}\left( \vec{x}^k \right)$, donde $S^k \approx J\left( \vec{x}^k \right)$.
-    \item $S^k$ se calcula a partir de $S^{k-1}$, con la \emph{ecuaci\'on secante}:
+    \item $S^k$ se calcula a partir de $S^{k-1}$, con la \emph{ecuaci\'on secante} $\lp S^k\Delta\vec{x}^k = \Delta \vec{f}^k\rp$:
         \[
-            S^k\Delta\vec{x}^k = \Delta \vec{f}^k,\text{ con }
             \begin{cases}
                 \Delta\vec{x}^k = \vec{x}^k - \vec{x}^{k-1}, \\
                 \Delta\vec{f}^k = \vec{f}\left( \vec{x}^k \right) - \vec{f}\left( \vec{x}^{k-1} \right).
@@ -47,11 +47,13 @@ En Matlab: $x = x-(J\setminus f)$ resuelve el sistema.
         \]
 \end{itemize}
 
-\noindent En una dimensi\'on, es el m\'etodo de la secante, $S^k\left( x^k - x^{k-1} \right) = f^k - f^{k-1}$, por lo tanto,
-\[
-    S^k = \frac{f^k - f^{k-1}}{x^k - x^{k-1}}.
-\]
-\noindent En $n$ dimensiones, la ecuaci\'on secante no determina de manera \'unica $S^k$, se añaden otras condiciones que generan muchos m\'etodos $QN$.
+\begin{obs}
+    En una dimensi\'on, es el m\'etodo de la secante. $S^k\left( x^k - x^{k-1} \right) = f^k - f^{k-1}$, por lo tanto
+    \[
+        S^k = \frac{f^k - f^{k-1}}{x^k - x^{k-1}}.
+    \]
+    En $n$ dimensiones, la ecuaci\'on secante no determina de manera \'unica $S^k$. Se añaden otras condiciones que generan muchos m\'etodos $QN$.
+\end{obs}
 
 \subsection{M\'etodo de Broyden}
 
@@ -64,10 +66,10 @@ En Matlab: $x = x-(J\setminus f)$ resuelve el sistema.
 \noindent Podemos conseguir \ref{item:broyden2} con $S^k = S^{k-1} + \vec{u}\left( \Delta\vec{x}^k \right)^T$.
 Ahora imponemos \ref{item:broyden1}
 \[
-    \Delta f^k = S^k\Delta \vec{x}^k = \left( S^{k-1}+\vec{u}\left( \Delta\vec{x}^k \right)^T \right)\Delta\vec{x}^k = -\vec{f}^{k-1} + \vec{u}\left\| \Delta \vec{x}^k\right\|^2.
+    \Delta f^k = S^k\Delta \vec{x}^k = \left( S^{k-1}+\vec{u}\left( \Delta\vec{x}^k \right)^T \right)\Delta\vec{x}^k = -\vec{f}^{k-1} + \vec{u}\left\| \Delta \vec{x}^k\right\|^2,
 \]
 
-\noindent De donde aislamos
+\noindent de donde aislamos
 
 \[
     \vec{u}\left\|\Delta\vec{x}^k\right\|^2 = \Delta \vec{f}^k + \vec{f}^{k-1} = \vec{f}^k \implies \vec{u} = \frac{\vec{f}^k}{\left\|\Delta\vec{x}^k\right\|^2}.
@@ -75,13 +77,13 @@ Ahora imponemos \ref{item:broyden1}
 
 \noindent En resumen,
 \begin{itemize}
-    \item Dado $\vec{x}^0\in\real^n,\, S^0 \in \real^{n\times n}$,
+    \item Dado $\vec{x}^0\in\real^n,\, S^0 \in \real^{n\times n},\, (S_0 = \Id$ ó $S_0 = J\lp \vec{x}^0\rp$ aproximación lineal),
     \item Calcular $\vec{f}^0 = \vec{f}\left( \vec{x}^0 \right)$,
     \item Para $k = 0, 1, \dots$,
         \begin{itemize}
-            \item Resolver $S^k \Delta \vec{x}^{k+1} = -f^k$,
+            \item Resolver $S^k \Delta \vec{x}^{k+1} = -f^k \longrightarrow \Delta\vec{x}^{k+1}$,
             \item $\vec{x}^{k+1} = x^k + \Delta x^{k+1}$,
-            \item Calculamos $\vec{f}^{k+1} = \vec{f}\left( \vec{x}^{k+1} \right)$,
+            \item Calcular $\vec{f}^{k+1} = \vec{f}\left( \vec{x}^{k+1} \right)$,
             \item $S^{k+1} = S^k + \vec{f}^{k+1}\left( \frac{\Delta\vec{x}^k}{\left\|\Delta \vec{x}^k \right\|^2} \right)^T$.
         \end{itemize}
 \end{itemize}
