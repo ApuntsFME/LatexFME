@@ -137,8 +137,8 @@
 {}%         Indent amount (empty = no indent, \parindent = para indent)
 {\bfseries}% Thm head font
 {}%        Punctuation after thm head
-{\newline}% Space after thm head: \newline = linebreak
-{\thmname{#1}\thmnumber{ #2}.\thmnote{ {\it #3.}}}%         Thm head spec
+{5pt plus 1pt minus 1pt}% Space after thm head: \newline = linebreak
+{\thmname{#1}\thmnumber{ #2}.\thmnote{ {\it #3.} \newline}}%         Thm head spec
 
 \newtheoremstyle{demo}% name
 {}%         Space above, empty = `usual value'
