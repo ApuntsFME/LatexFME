@@ -1238,7 +1238,7 @@
     por un elemento $\rho\in A_n$. Por lo tanto, $\tau\in H$, lo que nos dice que $A_n=\langle\text{3-ciclos}\rangle \subseteq H$ y hemos acabado.
 \end{proof}
 
-\begin{lema}
+\begin{lema}\label{lema:maximal_normal}
     Sea $G$ un grupo no trivial y sea $H$ un subgrupo normal a $G$. Entonces, $\faktor{G}{H}$ es simple si y solo si $H$ es un elemeno maximal del conjunto $\lc K\mid K\triangleleft G, K\neq G, H\subseteq K\rc$.
 \end{lema}
 
@@ -1309,6 +1309,7 @@
                 \faktor{\lc \Id,\lp 1,2\rp\rc}{\lc\Id\rc} &\cong \faktor{\z}{2\z},
             \end{align*}
             que son todos simples y conmutativos.
+        \item Todo grupo finito tiene una serie de composición. Demostrémoslo. Sea $G$ un grupo finito y supongamos que no tiene serie de composición. De entre sus torres normales (el primer ejemplo nos muestra que hay, almenos, una) tomemos una que no pueda ser refinada, es decir, que para todo par de grupos consecutivos $G_i$ y $G_{i+1}$ de la torre, no exista un grupo $H$ (distinto de $G_i$ y $G_{i+1}$) con $G_i\trir H\trir G_{i+1}$. Sabemos que una tal torre normal existe porque, de no ser así, la torre tendría infinitos grupos de distinto cardinal, lo cual supondría una contradicción con la finitud de $G$. Entonces, la torre en cuestión tiene un par de grupos consecutivos $G_k$ y $G_{k+1}$ tales que $\faktor{G_k}{G_{k+1}}$ no es simple ya que, de lo contrario, seria una serie de composición. Sin embargo, el lema \ref{lema:maximal_normal} nos asegura que $G_{k+1}$ no es un elemento maximal del conjunto de grupos $\lc H\mid H\tril G_k, H\neq G_k, G_{k+1}\subseteq H\rc$. Por lo tanto, existe un grupo $H$ (distinto de $G_k$ y $G_{k+1}$) con $G_k\trir H\supseteq G_{k+1}$. Pero $G_k\trir G_{k+1}$, y necesariamente $H\trir G_{k+1}$. Esto contradice la suposición que no existía un tal $H$ y concluimos que $G$ tiene serie de composición.
     \end{enumerate}
 \end{example}
 
