@@ -1016,7 +1016,7 @@
 
 \end{proof}
 
-\begin{col}
+\begin{col}\label{col:1_teo_iso}
     En particular $\tilde{f} \colon \faktor{G_1}{\ker(f)} \to f\left( G_1 \right)$ es un morfismo de
     grupos biyectivo (isomorfismo).
 \end{col}
@@ -1331,5 +1331,14 @@
         \item Naturalmente, $HK\subseteq G$. Veamos que $HK$ es un grupo. $1\in H, K\implies 1\in HK$. Sean $h_1,h_2\in H$ y sean $k_1,k_2\in K$. Entonces, como que $H\tril G\implies aH=Ha$, $h_1k_1h_2k_2=h_1h_3k_1k_2$, para algún $h_3\in H$. Por ser $H$ y $K$ grupos, $h_1k_1h_2k_2=h_1h_3k_1k_2\in HK$. Finalmente, sea $hk\in HK$. Entonces, $\lp hk\rp ^{-1} = k^{-1}h^{-1}\in k^{-1}H=Hk^{-1}$. Así pues, existe $\comp{h}\in H$ tal que $\lp hk\rp^{-1} = \comp{h}k^{-1}\in HK$.
         \item Sea $a\in H$ y sea $hk\in HK$. Entonces, $hka\lp hk\rp ^{-1} = hkak^{-1}h^{-1}$. Puesto que $H\tril G$, $kak^{-1}=\comp{a}\in H$ y concluimos que $hka\lp hk\rp ^{-1} = hkak^{-1}h^{-1} = h\comp{a}h^{-1}\in H$, de modo que $H\tril HK$.
     \end{enumerate}
-    \noindent Sigui $\varphi\colon K\xhookrightarrow{i} HK \xrightarrow{\pi} \faktor{HK}{H}$. $\faktor{HK}{H}$ es un grupo porque $H\tril HK$. La composición de morfismos de grupos es un morfismo de grupos, de manera que $\varphi$ es un morfismo de grupos. Veamos que $\varphi$ es exhaustiva.
+    \noindent Sea $\varphi\colon K\xhookrightarrow{i} HK \xrightarrow{\pi} \faktor{HK}{H}$. El cociente $\faktor{HK}{H}$ es un grupo porque $HK$ es un grupo y $H\tril HK$. La composición de morfismos de grupos es un morfismo de grupos, de manera que $\varphi$ es un morfismo de grupos.
+    
+    \noindent Veamos que $\varphi$ es exhaustivo. Sea $\comp{hk}=hkH\in\faktor{HK}{H}$ la clase de $hk\in HK$. Por ser $H$ un subgrupo normal de $G$, existe algún $h^{\prime}\in H$ tal que $hk=kh^{\prime}$. Entonces, $\comp{hk}=hkH=kh^{\prime}H=kH=\comp{k}$. Así pues, $\comp{hk}=\comp{k}=\varphi\lp k\rp,\,\forall\comp{hk}\in\faktor{HK}{H}$, y concluimos que $\varphi$ es exhaustivo.
+    
+    \noindent Veamos que $\ker\lp\varphi\rp=H\cap K$. Sea $k\in\ker\lp\varphi\rp$, es decir, $k\in K$ tal que $\varphi\lp k\rp=\comp{1}=H$. Entonces, $\varphi\lp k\rp=\comp{k}=kH=H$, lo cual implica que $k\in H$, de modo que $k\in H\cap K$ y sigue que $\ker\lp\varphi\rp\subseteq H\cap K$. Sea ahora $k\in H\cap K$. Puesto que $k\in K$, $k$ es del dominio de $\varphi$ y tenemos que $\varphi\lp k\rp = \comp{k}=kH=H=\comp{1}$, por ser $k$ de $H$. Finalmente, $\ker\lp\varphi\rp\supseteq H\cap K$ y se da la igualdad.
+    
+    \noindent Para terminar, $\faktor{K}{H\cap K}$ es un grupo porque $\lp H\cap K\rp\tril K$ y podemos aplicar el primer teorema de isomorfía para deducir que
+    \[
+        \faktor{K}{H\cap K}\cong\faktor{K}{\ker\lp\varphi\rp}\cong\faktor{HK}{H}.
+    \]
 \end{proof}
