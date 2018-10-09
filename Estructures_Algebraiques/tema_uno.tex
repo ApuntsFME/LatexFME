@@ -358,7 +358,7 @@
     \end{enumerate}
 \end{example}
 
-\begin{defi}[función de Euler]
+\begin{defi}[función $\varphi$ de Euler]
     Sea $d \in \z, d \geq 1$, definimos la función $\varphi$ de Euler como
     \[
         \varphi(d) = \card \setb{ 1 \leq k \leq d \mid \mcd(k, d) = 1}.
@@ -1286,7 +1286,7 @@
                 \faktor{D_{2n}}{\left< r\right>}\cong C_2,
             \]
             que es abeliano. Por lo tanto, $D_{2n}$ es resoluble. Además, puesto que $C_2$ es simple, $D_{2n}\triangleright \left<r\right> \triangleright\lc 1\rc$ es una serie de descomposición si y solo si $n$ es primo.
-        \item Consideremos $G=\Sim_4$. Se tiene que $\Sim_4\trir V_4=\lc \Id, \lp 1, 2\rp\lp 3,4\rp,\lp 1,3\rp\lp 2,4\rp,\lp 1,4\rp\lp 2,3\rp\rc\trir\lc 1\rc$ es una torre normal. Para ver que $\Sim_4\trir V_4$, observamos que $\sigma\lp a, b\rp\lp c, d\rp\sigma^{-1}=\sigma\lp a, b\rp\sigma^{-1}\sigma\lp c, d\rp\sigma^{-1}=\lp\sigma\lp a\rp\sigma\lp b\rp\rp\lp\sigma\lp c\rp\sigma\lp d\rp\rp\in V_4$. Veamos que $\faktor{G_4}{V_4}$ no conmuta.
+        \item Consideremos $G=\Sim_4$. Se tiene que $\Sim_4\trir V_4=\lc \Id, \lp 1, 2\rp\lp 3,4\rp,\lp 1,3\rp\lp 2,4\rp,\lp 1,4\rp\lp 2,3\rp\rc\trir\lc \Id\rc$ es una torre normal. Para ver que $\Sim_4\trir V_4$, observamos que $\sigma\lp a, b\rp\lp c, d\rp\sigma^{-1}=\sigma\lp a, b\rp\sigma^{-1}\sigma\lp c, d\rp\sigma^{-1}=\lp\sigma\lp a\rp\sigma\lp b\rp\rp\lp\sigma\lp c\rp\sigma\lp d\rp\rp\in V_4$. Veamos que $\faktor{G_4}{V_4}$ no conmuta.
         \begin{align*}
             \lp 1,2,3\rp V_4\lp 1,4\rp V_4 &= \lp 1,2,3\rp\lp 1,4\rp V_4 = \\
             &= \lp 1,4,2,3\rp V_4 \neq \lp 1,2,3,4\rp V_4 =\\
@@ -1294,5 +1294,10 @@
             &= \lp 1,4\rp V_4\lp 1,2,3\rp V_4.
         \end{align*}
         Así pues, la torre no es abeliana y no es una serie de descomposición porque $V_4$ no es simple.
+        \item Podemos refinar la torre anterior para que sea abeliana y serie de composición. Consideremos la torre
+            \[
+                \Sim_4\trir A_4 \trir V_4 \trir \lc \Id, \lp 1,2\rp \rc\trir\lc \Id\rc.
+            \]
+            Veamos que efectivamente es una torre. $\Sim_4\trir A_4$ porque $A_4$ es un subgrupo y $\lb \Sim_4 : A_4\rb=2$. $A_4\trir V_4$ porque $\Sim_4\trir V_4$. $V_4\trir \lc \Id, \lp 1,2\rp \rc$ porque $\lc \Id, \lp 1,2\rp \rc$ es un subgrupo y $\lb V_4 : \lc \Id, \lp 1,2\rp \rc\rb=2$.
     \end{enumerate}
 \end{example}
