@@ -1,4 +1,4 @@
-\begin{prop}
+\begin{prop}\label{prop:filaescalada}
 	El determinant de la matriu $A'$ que s'obté multiplicant una fila o una columna sencera d'una matriu $A\in\mathcal{M}_n(\real)$ per un escalar $\lambda\in\real$ és \[\det A' = \lambda\det A\,.\]
 	\begin{proof}
 		A partir del \hyperref[teo:laplace]{teorema de Laplace}, podem calcular el determinant d'$A'$ mitjançant l'expansió per la fila o columna que ha estat multiplicada; per exemple, si la s'ha multiplicat per $\lambda$ la fila $k$:
@@ -6,14 +6,68 @@
 	\end{proof}
 \end{prop}
 
-\begin{prop}
-	Siguin $A,B\in\matspace{n}$ matrius que \textit{difereixen només en els coeficients d'una fila o d'una columna}. Sigui $M=A+B$. Llavors \[\det M = \det A + \det B \]
+\begin{prop}\label{prop:sumafila}
+	Siguin $A,B\in\matspace{n}$ matrius que \textit{difereixen només en els coeficients d'una fila o d'una columna} (com a màxim). Sigui la matriu $M$ la matriu que s'obté sumant les dues files/columnes diferents D'$A$ i $B$ i deixant la resta de coeficients iguals (que a $A$ i a $B$). Llavors \[\det M = \det A + \det B \]
 	\begin{proof}
 		Sigui $k$ l'índex de la columna diferent entre $A$ i $B$. Pel \hyperref[teo:laplace]{teorema de Laplace}, podem expandir el determinant de $M$ per la $k$-èsima columna:
 		\begin{multline*}
 			\det M = \sum_{i=1}^{n} {m}_{i,k}\cdot C_{i,k} = \sum_{i=1}^{n} ({a}_{i,k}+ {b}_{i,k})\cdot C_{i,k}=\\
 			=\sum_{i=1}^{n}{a}_{i,k}\cdot C_{i,k} +\sum_{i=1}^{n} {b}_{i,k}\cdot C_{i,k}=\det A + \det B\,.
 		\end{multline*}
-		Es pot fer exactament el mateix raonament per la $k$-èsima fila. Noteu, a més, que els cofactors $C_{i,k}$ són iguals per totes tres matrius, ja que, excepte la $k$-èsima columna/fila, tota la resta de columnes/files són iguals.
+		Es pot fer exactament el mateix raonament per files. Noteu, a més, que els cofactors $C_{i,k}$ són iguals per totes tres matrius, ja que, excepte la $k$-èsima columna/fila, tota la resta de columnes/files són iguals.
 	\end{proof}
+\end{prop}
+
+\begin{prop}\label{prop:filaigual}
+	Per qualsevol $A\in\matspace{n}$, si $A$ conté dues files (o columnes) iguals entre elles, llavors $\det A = 0$.
+	\begin{proof}
+		Siguin $r$ i $s$ els índex de les files idèntiques en $A$. Sigui $B$ la matriu que s'obté intercanviant les files $r$ i $s$ d'$A$. Llavors, per una banda, $\det B = \det A$ ja que les dues matrius són idèntiques. D'altra banda, pel lema \ref{lema:intercanvi} $\det B = -\det A$. Per tant, \[\det A = -\det A \quad \therefore \det A = 0\,. \] El mateix raonament és vàlid per columnes també.
+	\end{proof}
+\end{prop}
+
+\begin{prop}
+	Si sumem un múltiple d'una fila/columna d'$A\in\matspace{n}$ a una fila/columna diferent, el determinant d'$A$ no canvia.
+	\begin{proof}
+		Sigui $B$ la matriu que s'obté sumant la fila $r$ d'$A$ a la fila $s$ (on $r\ne s$). Sigui $\tilde{A}$ la matriu que s'obté reemplaçant la $r$-èsima fila d'$A$ per la $s$-èsima fila multiplicada per l'escalar $\lambda \in\real$. És a dir,
+		\[
+		A = 
+		\begin{pmatrix}
+		a_{1,1}&	\cdots&		a_{1,n}\\
+		\vdots&		\ddots&		\vdots\\
+		a_{r,1}&	\cdots&		a_{r,n}\\
+		\vdots&		\ddots&		\vdots\\
+		a_{s,1}&	\cdots&		a_{s,n}\\
+		\vdots&		\ddots&		\vdots\\
+		a_{1,1}&	\cdots&		a_{1,n}\\
+		\end{pmatrix}\,,
+		\quad
+		\tilde{A} = 
+		\begin{pmatrix}
+		a_{1,1}&	\cdots&		a_{1,n}\\
+		\vdots&		\ddots&		\vdots\\
+		\lambda a_{s,1}&	\cdots&		\lambda a_{s,n}\\
+		\vdots&		\ddots&		\vdots\\
+		a_{s,1}&	\cdots&		a_{s,n}\\
+		\vdots&		\ddots&		\vdots\\
+		a_{1,1}&	\cdots&		a_{1,n}\\
+		\end{pmatrix}\,.
+		\]
+		
+		Per la propietat que s'enuncia en \ref{prop:sumafila}, 
+		\begin{equation}\label{eq:decomposition}
+			\det B = \det A + \det \tilde{A}\,. 
+		\end{equation}
+		Sigui la matriu $\tilde{A}'$ la matriu que s'obté reemplaçant la $r$-èsima fila d'$A$ per la $s$-èsima fila (sense multiplicar per $\lambda $): 
+		\[\tilde{A}' = 
+		\begin{pmatrix}
+		a_{1,1}&	\cdots&		a_{1,n}\\
+		\vdots&		\ddots&		\vdots\\
+		a_{s,1}&	\cdots&		a_{s,n}\\
+		\vdots&		\ddots&		\vdots\\
+		a_{s,1}&	\cdots&		a_{s,n}\\
+		\vdots&		\ddots&		\vdots\\
+		a_{1,1}&	\cdots&		a_{1,n}\\
+		\end{pmatrix}\,.\]
+		Aplicant la proposició \ref{prop:filaescalada} en \eqref{eq:decomposition}, obtenim \[\det B = \det A + \lambda \cdot\det \tilde{A}'\,.\] Per la propietat de \ref{prop:filaigual}, $\det \tilde{A}' = 0$, ja que $\tilde{A}'$ conté una fila duplicada (la fila $s$ d'$A$). Per tant, \[\det B=\det A\,. \]
+	\end{proof}	
 \end{prop}
