@@ -1309,6 +1309,27 @@
                 \faktor{\lc \Id,\lp 1,2\rp\rc}{\lc\Id\rc} &\cong \faktor{\z}{2\z},
             \end{align*}
             que son todos simples y conmutativos.
-        \item 
     \end{enumerate}
 \end{example}
+
+\begin{teo}[de isomorfía (segundo)]
+    Sea $G$ un grupo y sean $H,K$ subgrupos de $G$ con $H\tril G$. Entonces,
+    \begin{enumerate}[i)]
+        \item $\lp H\cap K\rp\tril K$,
+        \item $HK$ es un subgrupo de $G$,
+        \item $H\tril HK$.
+    \end{enumerate}
+    Además, se tiene que
+    \[
+        \faktor{K}{H\cap K}\cong\faktor{HK}{H}.
+    \]
+\end{teo}
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item[]
+        \item Sean $x\in H\cap K,\, a\in K$. Entonces, $axa^{-1}\in K$ trivialmente. Además, puesto que $H\tril G$ y $a\in K\subseteq G$, $axa^{-1}\in H$. Así pues, $axa^{-1}\in H\cap K$ y $\lp H\cap K\rp\tril K$.
+        \item Naturalmente, $HK\subseteq G$. Veamos que $HK$ es un grupo. $1\in H, K\implies 1\in HK$. Sean $h_1,h_2\in H$ y sean $k_1,k_2\in K$. Entonces, como que $H\tril G\implies aH=Ha$, $h_1k_1h_2k_2=h_1h_3k_1k_2$, para algún $h_3\in H$. Por ser $H$ y $K$ grupos, $h_1k_1h_2k_2=h_1h_3k_1k_2\in HK$. Finalmente, sea $hk\in HK$. Entonces, $\lp hk\rp ^{-1} = k^{-1}h^{-1}\in k^{-1}H=Hk^{-1}$. Así pues, existe $\comp{h}\in H$ tal que $\lp hk\rp^{-1} = \comp{h}k^{-1}\in HK$.
+        \item Sea $a\in H$ y sea $hk\in HK$. Entonces, $hka\lp hk\rp ^{-1} = hkak^{-1}h^{-1}$. Puesto que $H\tril G$, $kak^{-1}=\comp{a}\in H$ y concluimos que $hka\lp hk\rp ^{-1} = hkak^{-1}h^{-1} = h\comp{a}h^{-1}\in H$, de modo que $H\tril HK$.
+    \end{enumerate}
+    \noindent Sigui $\varphi\colon K\xhookrightarrow{i} HK \xrightarrow{\pi} \faktor{HK}{H}$. $\faktor{HK}{H}$ es un grupo porque $H\tril HK$. La composición de morfismos de grupos es un morfismo de grupos, de manera que $\varphi$ es un morfismo de grupos. Veamos que $\varphi$ es exhaustiva.
+\end{proof}
