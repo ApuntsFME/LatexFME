@@ -18,7 +18,7 @@
     \end{enumerate}
     \emph{Nota.} Cuando la operación del grupo sea irrelevante, evidente o se deduzca del contexto, escribiremos $G$ en lugar de $\lp G, \cdot\rp$, o de $\lp G, +\rp$, etc., cometiendo un abuso de notación.
     
-    \vspace{1.15ex}
+    \vspace{1.15ex} %TODO asi no eh
     
     \noindent \emph{Nota segunda.} Además, a menudo también escribiremos $ab$ en lugar de $a\cdot b$ y $a\cdot b$ en lugar de $a\circ b$, como por ejemplo en la composición de permutaciones.
 \end{defi}
@@ -1343,4 +1343,87 @@
     \[
         \faktor{K}{H\cap K}\cong\faktor{K}{\ker\lp\varphi\rp}\cong\faktor{HK}{H}.
     \]
+\end{proof}
+
+\begin{teo}[Teorema de Jordan-Hölder]
+    Sea $G$ un grupo y sean
+    \[
+        \begin{aligned}
+            G &= G_0 &\triangleright G_1 &\triangleright & \cdots & \triangleright G_n &= \setb{1} \\
+            G &= H_0 &\triangleright H_1 &\triangleright & \cdots & \triangleright H_m &= \setb{1}
+        \end{aligned}
+    \]
+    dos series de composición de $G$. Entonces $n = m$ y $\exists \sigma \in \Sim_n$ tal que
+    \[
+        \faktor{H_{i-1}}{H_i} \cong \faktor{G_{\sigma(i)-1}}{G_{\sigma(i)}}
+    \]
+    Para $i = 1, \dots , n$
+\end{teo}
+
+\begin{proof}
+    Aunque el teorema es cierto para grupos infinitos, realizaremos la demostración para grupos
+    finitos por inducción sobre $\abs{G}$. Para simplificar la notación, diremos que dos series de composición
+    son ``equivalentes'' si ocurren las hipótesis del enunciado.
+
+    La hipóteis de inducción dice que si $H$ es un grupo con $\abs{H} < \abs{G}$ entonces dos series de 
+    composición de $H$ son ``equivalentes''.
+
+    Supondremos dadas dos series $\setb{G_i}_{i=0,\dots,n}$ y $\setb{H_i}_{i=0, \dots, m}$
+
+    Si $H_1 = G_1$ entonces $\abs{G_1} = \abs{H_1} < \abs{G}$ ya que $\faktor{G_0}{G_1}$ es simpole y por
+    lo tanto $\neq \setb{1}$. Tenemos entonces que $n-1 = m-1$ y las series $\left\{ G_i \right\}_{i=1,\dots,n}$
+    y $\left\{ H_i \right\}_{i=1,\dots,n}$ son equivalentes. Por lo tanto, $n = m$ y las series completas
+    son equivalentes.
+
+    En caso de que $H_1 \neq G_1$. Sabemos que $G_1, H_1 \triangleleft G \implies G_1 H_1 \triangleleft G$.
+    Como $\faktor{G}{G_1}$ es simple y $H_1 G_1 \supseteq G_1$, entonces $H_1 G_1 = G$. Llamamos entonces
+    $K_2 = H_1 \cap G_1$ y veamos que $K_2 \triangleleft H_1$. Tomamos $x \in K_2, \, a \in H_1$, entonces
+    \[
+        x \in G_1, a \in H_1 \subset G \stackrel{G_1 \triangleleft G} axa^{-1} \in G_1
+    \]
+    Además, claramente $axa^{-1} \in H_1$ y por lo tanto $K_2 \triangleleft H_1$ y analogamente,
+    $K_2 \triangleleft G_1$.
+
+    Por el segundo teorema del isomorfismo, tenemos que
+    \[
+        \faktor{G_1}{K_2} = \faktor{G_1}{H_1 \cap G_1} \cong \faktor{G_1H_1}{H_1} = \faktor{G}{H_1} =
+        \faktor{H}{H_0}
+    \]
+    analogamnte, $\faktor{H_1}{K_2} \cong \faktor{G_0}{G_1}$. Como $K_2$ es subgrupo finito $\implies$
+    $K_2$ tiene serie de composición $K_2 \triangleright K_3 \triangleright \cdots \triangleright K_p =\setb{1}$.
+    Por lo tanto
+    \[
+        \begin{cases}
+            G_1 \triangleright K_2 \triangleright K_3 \triangleright K_p = \setb{1} \text{ y }
+            G_1 \triangleright G_2 \triangleright \cdots \triangleright G_n = \left\{ 1 \right\} \\
+            H_1 \triangleright K_2 \triangleright K_3 \triangleright K_p = \setb{1} \text{ y }
+            H_1 \triangleright H_2 \triangleright \cdots \triangleright H_m = \left\{ 1 \right\} \\
+        \end{cases}
+    \]
+    Pero $\abs{G_1} < \abs{G} \implies$ por hipótesis de inducción que $n-1 = p-1$ y
+    \[
+        \left\{ \faktor{G_1}{K_2}, \faktor{K_2}{K_3}, \dots, \faktor{K_{n-1}}{K_n} \right\} \cong
+        \left\{ \faktor{G_1}{G_2}, \faktor{G_2}{G_3}, \dots, \faktor{G_{n-1}}{G_n}  \right\}
+    \]
+    y analogamente con $H_1$. Entonces se tiene que $n = m$ y
+    \[
+        \begin{aligned}
+            \left\{ \faktor{G_0}{G_1}, \faktor{G_1}{G_2}, \dots, \faktor{G_{n-1}}{G_n} \right\} &\cong
+            \left\{ \faktor{H_1}{K_2},\faktor{G_1}{K_2},\faktor{k_2}{K_3},\dots,\faktor{K_{n-1}}{K_n} \right\}\\
+             & \cong \left\{ \faktor{H_0}{H_1}, \faktor{H_1}{H_2}, \dots, \faktor{H_{n-1}}{H_n}  \right\}
+        \end{aligned}
+    \]
+\end{proof}
+
+\begin{prop}
+    Sea $G$ un gupo y $H$ un subgrupo, entonces
+    \begin{enumerate}[i)]
+        \item Si $G$ resoluble $\implies H$ es resoluble.
+        \item Si $H \triangleleft G$, entonces $G$ resoluble $\implies \faktor{G}{H}$ es resoluble.
+        \item Si $H \triangleleft G$ y $H, \, \faktor{G}{H}$ son resolubles $\implies G$ es resoluble.
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    Ejercicio.
 \end{proof}
