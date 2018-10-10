@@ -1,15 +1,24 @@
-\documentclass[12pt]{article}
+\documentclass[12pt]{report}
 
 \input{../preamble}
 \input{../environments_ca}
 \usepackage{parskip,blkarray}
 \usepackage{changepage}
+\renewcommand{\matspace}[1]{\mathcal{M}_{#1}(\real)}
 
 \begin{document}
 
 \input{title}
 % INPUTS
-\input{laplace}
-\input{demos_teoremes}
+\chapter{Matrius i sistemes lineals}
+	\section{Teorema de Laplace}
+	\input{laplace}
+	\newpage
+	\section{Propietats del determinant}
+	\input{propietats_determinant}
+
+
+\chapter{Espais vectorials}
+	\input{demos_teoremes}
 
 \end{document}
