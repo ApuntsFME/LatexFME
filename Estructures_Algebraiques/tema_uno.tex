@@ -1267,7 +1267,7 @@
     Sea $G$ un grupo. Decimos que es resoluble si tiene una torre normal abeliana.
 \end{defi}
 \begin{defi}[serie!de composición]
-    Sea $G$ un grupo. Decimos que una torre normal de $G$ es una serie de descomposición de $G$ si todos los grupos
+    Sea $G$ un grupo. Decimos que una torre normal de $G$ es una serie de composición de $G$ si todos los grupos
     \[
         \faktor{G_0}{G_1}, \faktor{G_1}{G_2}, \dots, \faktor{G_{n-1}}{G_n}
     \]
@@ -1285,7 +1285,7 @@
             \[
                 \faktor{D_{2n}}{\left< r\right>}\cong C_2,
             \]
-            que es abeliano. Por lo tanto, $D_{2n}$ es resoluble. Además, puesto que $C_2$ es simple, $D_{2n}\triangleright \left<r\right> \triangleright\lc 1\rc$ es una serie de descomposición si y solo si $n$ es primo.
+            que es abeliano. Por lo tanto, $D_{2n}$ es resoluble. Además, puesto que $C_2$ es simple, $D_{2n}\triangleright \left<r\right> \triangleright\lc 1\rc$ es una serie de composición si y solo si $n$ es primo.
         \item Consideremos $G=\Sim_4$. Se tiene que $\Sim_4\trir V_4=\lc \Id, \lp 1, 2\rp\lp 3,4\rp,\lp 1,3\rp\lp 2,4\rp,\lp 1,4\rp\lp 2,3\rp\rc\trir\lc \Id\rc$ es una torre normal. Para ver que $\Sim_4\trir V_4$, observamos que $\sigma\lp a, b\rp\lp c, d\rp\sigma^{-1}=\sigma\lp a, b\rp\sigma^{-1}\sigma\lp c, d\rp\sigma^{-1}=\lp\sigma\lp a\rp\sigma\lp b\rp\rp\lp\sigma\lp c\rp\sigma\lp d\rp\rp\in V_4$. Veamos que $\faktor{G_4}{V_4}$ no conmuta.
         \begin{align*}
             \lp 1,2,3\rp V_4\lp 1,4\rp V_4 &= \lp 1,2,3\rp\lp 1,4\rp V_4 = \\
@@ -1294,7 +1294,7 @@
             &= \lp 1,4\rp\lp 1,2,3\rp V_4 = \\
             &= \lp 1,4\rp V_4\lp 1,2,3\rp V_4.
         \end{align*}
-        Así pues, la torre no es abeliana y no es una serie de descomposición porque $V_4$ no es simple.
+        Así pues, la torre no es abeliana y no es una serie de composición porque $V_4$ no es simple.
         \item Podemos refinar la torre anterior para que sea abeliana y serie de composición. Consideremos la torre
             \[
                 \Sim_4\trir A_4 \trir V_4 \trir \lc \Id, \lp 1,2\rp \rc\trir\lc \Id\rc.
@@ -1321,7 +1321,7 @@
     Sea $G$ un grupo finito y supongamos que no tiene serie de composición. De entre sus torres normales (el primer ejemplo nos muestra que hay, almenos, una) tomemos una que no pueda ser refinada, es decir, que para todo par de grupos consecutivos $G_i$ y $G_{i+1}$ de la torre, no exista un grupo $H$ (distinto de $G_i$ y $G_{i+1}$) con $G_i\trir H\trir G_{i+1}$. Sabemos que una tal torre normal existe porque, de no ser así, la torre tendría infinitos grupos de distinto cardinal, lo cual supondría una contradicción con la finitud de $G$. Entonces, la torre en cuestión tiene un par de grupos consecutivos $G_k$ y $G_{k+1}$ tales que $\faktor{G_k}{G_{k+1}}$ no es simple ya que, de lo contrario, seria una serie de composición. Sin embargo, el lema \ref{lema:maximal_normal} nos asegura que $G_{k+1}$ no es un elemento maximal del conjunto de grupos $\lc H\mid H\tril G_k, H\neq G_k, G_{k+1}\subseteq H\rc$. Por lo tanto, existe un grupo $H$ (distinto de $G_k$ y $G_{k+1}$) con $G_k\trir H\supseteq G_{k+1}$. Pero $G_k\trir G_{k+1}$, y necesariamente $H\trir G_{k+1}$. Esto contradice la suposición que no existía un tal $H$ y concluimos que $G$ tiene serie de composición.
 \end{proof}
 
-\begin{teo}[de isomorfía (segundo)]
+\begin{teo}[de isomorfía (segundo)]\label{teo_dos_iso}
     Sea $G$ un grupo y sean $H,K$ subgrupos de $G$ con $H\tril G$. Entonces,
     \begin{enumerate}[i)]
         \item $\lp H\cap K\rp\tril K$,
@@ -1381,52 +1381,54 @@
     y $\left\{ H_i \right\}_{i=1,\dots,n}$ son equivalentes. Por lo tanto, $n = m$ y las series de composición completas
     son equivalentes.
 
-    Consideremos ahora el caso $H_1 \neq G_1$. Sabemos que $G_1, H_1 \triangleleft G \implies G_1 H_1 \triangleleft G$.
-    Como $\faktor{G}{G_1}$ es simple y $H_1 G_1 \supseteq G_1$, se tiene que $H_1 G_1 = G$. Llamamos entonces
-    $K_2 = H_1 \cap G_1$ y veamos que $K_2 \triangleleft H_1$. Tomamos $x \in K_2, \, a \in H_1$, entonces
+    Consideremos ahora el caso $H_1 \neq G_1$. Sabemos que $G_1, H_1 \triangleleft G$, lo que implica que $G_1 H_1 \triangleleft G$.
+    Como $\faktor{G}{G_1}$ es simple y $H_1 G_1 \supset G_1$, se tiene que $G_1H_1  = G$. Definamos el grupo
+    $K_2 = H_1 \cap G_1$ y veamos que $K_2 \triangleleft H_1$. Sea $x \in K_2$ y sea $a \in H_1$, entonces
     \[
-        x \in G_1, a \in H_1 \subset G \stackrel{G_1 \triangleleft G} axa^{-1} \in G_1
+        x \in G_1, a \in H_1 \subset G \stackrel{G_1 \triangleleft G}{\implies} axa^{-1} \in G_1.
     \]
-    Además, claramente $axa^{-1} \in H_1$ y por lo tanto $K_2 \triangleleft H_1$ y analogamente,
-    $K_2 \triangleleft G_1$.
-
-    Por el segundo teorema del isomorfismo, tenemos que
+    Además, claramente $axa^{-1} \in H_1$, de modo que $K_2 \triangleleft H_1$. Análogamente,
+    se demuestra que $K_2 \triangleleft G_1$. Por el segundo teorema del isomorfismo (\ref{teo_dos_iso}), tenemos que
     \[
-        \faktor{G_1}{K_2} = \faktor{G_1}{H_1 \cap G_1} \cong \faktor{G_1H_1}{H_1} = \faktor{G}{H_1} =
-        \faktor{H}{H_0}
+        \faktor{G_1}{K_2} = \faktor{G_1}{H_1 \cap G_1} \cong \faktor{G_1H_1}{H_1} = \faktor{G}{H_1}.
     \]
-    analogamnte, $\faktor{H_1}{K_2} \cong \faktor{G_0}{G_1}$. Como $K_2$ es subgrupo finito $\implies$
+    Por el mismo razonamiento, $\faktor{H_1}{K_2} \cong \faktor{G}{G_1}$. Por ser serie de composición,
     $K_2$ tiene serie de composición $K_2 \triangleright K_3 \triangleright \cdots \triangleright K_p =\setb{1}$.
-    Por lo tanto
-    \[
-        \begin{cases}
-            G_1 \triangleright K_2 \triangleright K_3 \triangleright K_p = \setb{1} \text{ y }
-            G_1 \triangleright G_2 \triangleright \cdots \triangleright G_n = \left\{ 1 \right\} \\
-            H_1 \triangleright K_2 \triangleright K_3 \triangleright K_p = \setb{1} \text{ y }
-            H_1 \triangleright H_2 \triangleright \cdots \triangleright H_m = \left\{ 1 \right\} \\
-        \end{cases}
-    \]
-    Pero $\abs{G_1} < \abs{G} \implies$ por hipótesis de inducción que $n-1 = p-1$ y
-    \[
-        \left\{ \faktor{G_1}{K_2}, \faktor{K_2}{K_3}, \dots, \faktor{K_{n-1}}{K_n} \right\} \cong
-        \left\{ \faktor{G_1}{G_2}, \faktor{G_2}{G_3}, \dots, \faktor{G_{n-1}}{G_n}  \right\}
-    \]
-    y analogamente con $H_1$. Entonces se tiene que $n = m$ y
+    Hasta ahora tenemos las series
+    \begin{gather*}
+        G_1 \triangleright K_2 \triangleright \cdots \triangleright K_p = \setb{1}, \quad \quad
+        G_1 \triangleright G_2 \triangleright \cdots \triangleright G_n = \left\{ 1 \right\}, \\
+        H_1 \triangleright K_2 \triangleright \cdots \triangleright K_p = \setb{1}, \quad \quad
+        H_1 \triangleright H_2 \triangleright \cdots \triangleright H_m = \left\{ 1 \right\}.
+    \end{gather*}
+    Puesto que $\abs{G_1} < \abs{G} \implies$, podemos afirmar que, en virtud de la hipótesis de inducción, $n-1 = p-1$ y que
+    la series de composición
+    \begin{gather*}
+        G_1 \triangleright K_2 \triangleright \cdots \triangleright K_p=\lc 1\rc,\\
+        G_1 \triangleright G_2 \triangleright \cdots \triangleright G_n = \left\{ 1 \right\}
+    \end{gather*}
+    son equivalentes. Análogamente,
+    \begin{gather*}
+        H_1 \triangleright K_2 \triangleright \cdots \triangleright K_p=\lc 1\rc,\\
+        H_1 \triangleright H_2 \triangleright \cdots \triangleright H_m = \left\{ 1 \right\}
+    \end{gather*}
+    también son series de composición equivalentes. En particular, $n=m$. Recordemos las series de composición originales
     \[
         \begin{aligned}
-            \left\{ \faktor{G_0}{G_1}, \faktor{G_1}{G_2}, \dots, \faktor{G_{n-1}}{G_n} \right\} &\cong
-            \left\{ \faktor{H_1}{K_2},\faktor{G_1}{K_2},\faktor{k_2}{K_3},\dots,\faktor{K_{n-1}}{K_n} \right\}\\
-             & \cong \left\{ \faktor{H_0}{H_1}, \faktor{H_1}{H_2}, \dots, \faktor{H_{n-1}}{H_n}  \right\}
+            G &= G_0 \triangleright G_1 \triangleright \cdots \triangleright G_n = \setb{1}, \\
+            G &= H_0 \triangleright H_1 \triangleright \cdots \triangleright H_n = \setb{1}.
         \end{aligned}
     \]
+    Debido a que $\faktor{G_1}{K_2} \cong \faktor{G}{H_1}$ y que $\faktor{H_1}{K_2} \cong \faktor{G}{G_1}$, concluimos que
+    las dos series de composición de $G$ son equivalentes.
 \end{proof}
 
 \begin{prop}
-    Sea $G$ un gupo y $H$ un subgrupo, entonces
+    Sea $G$ un gupo y $H$ un subgrupo. Entonces,
     \begin{enumerate}[i)]
-        \item Si $G$ resoluble $\implies H$ es resoluble.
-        \item Si $H \triangleleft G$, entonces $G$ resoluble $\implies \faktor{G}{H}$ es resoluble.
-        \item Si $H \triangleleft G$ y $H, \, \faktor{G}{H}$ son resolubles $\implies G$ es resoluble.
+        \item Si $G$ es resoluble, $H$ es resoluble.
+        \item Si $H \triangleleft G$ y $G$ es resoluble, $\faktor{G}{H}$ es resoluble.
+        \item Si $H \triangleleft G$ y $H, \, \faktor{G}{H}$ son resolubles, $G$ es resoluble.
     \end{enumerate}
 \end{prop}
 
