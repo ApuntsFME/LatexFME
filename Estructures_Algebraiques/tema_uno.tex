@@ -1352,38 +1352,37 @@
     \]
 \end{proof}
 
-\begin{teo}[Teorema de Jordan-Hölder]
+\begin{teo}[de Jordan-Hölder]
     Sea $G$ un grupo y sean
     \[
         \begin{aligned}
-            G &= G_0 \triangleright G_1 \triangleright \cdots \triangleright G_n = \setb{1} \\
+            G &= G_0 \triangleright G_1 \triangleright \cdots \triangleright G_n = \setb{1}, \\
             G &= H_0 \triangleright H_1 \triangleright \cdots \triangleright H_m = \setb{1}
         \end{aligned}
     \]
     dos series de composición de $G$. Entonces $n = m$ y $\exists \sigma \in \Sim_n$ tal que
-    \[
-        \faktor{H_{i-1}}{H_i} \cong \faktor{G_{\sigma(i)-1}}{G_{\sigma(i)}}
-    \]
-    Para $i = 1, \dots , n$
+    \begin{equation}\label{equation:series_equivalentes}
+        \faktor{H_{i-1}}{H_i} \cong \faktor{G_{\sigma(i)-1}}{G_{\sigma(i)}},\,\forall 1\leq i\leq n.
+    \end{equation}
 \end{teo}
 
 \begin{proof}
-    Aunque el teorema es cierto para grupos infinitos, realizaremos la demostración para grupos
-    finitos por inducción sobre $\abs{G}$. Para simplificar la notación, diremos que dos series de composición
-    son ``equivalentes'' si ocurren las hipótesis del enunciado.
+    Aunque el teorema es cierto para cualquier grupo, realizaremos la demostración para grupos
+    finitos solamente, por inducción sobre $\abs{G}$. Para simplificar la notación, diremos que dos series de composición
+    son equivalentes si satisfacen \ref{equation:series_equivalentes}.
 
-    La hipóteis de inducción dice que si $H$ es un grupo con $\abs{H} < \abs{G}$ entonces dos series de 
-    composición de $H$ son ``equivalentes''.
+    Sea $G$ un grupo finito y sean $\setb{G_i}_{i=0,\dots,n}$ y $\setb{H_i}_{i=0, \dots, m}$ series de composición de $G$.
 
-    Supondremos dadas dos series $\setb{G_i}_{i=0,\dots,n}$ y $\setb{H_i}_{i=0, \dots, m}$
+    La hipóteis de inducción dice que si $H$ es un grupo con $\abs{H} < \abs{G}$, entonces dos series de 
+    composición cualesquiera de $H$ son equivalentes.
 
-    Si $H_1 = G_1$ entonces $\abs{G_1} = \abs{H_1} < \abs{G}$ ya que $\faktor{G_0}{G_1}$ es simpole y por
-    lo tanto $\neq \setb{1}$. Tenemos entonces que $n-1 = m-1$ y las series $\left\{ G_i \right\}_{i=1,\dots,n}$
-    y $\left\{ H_i \right\}_{i=1,\dots,n}$ son equivalentes. Por lo tanto, $n = m$ y las series completas
+    Si $H_1 = G_1$ entonces $\abs{G_1} = \abs{H_1} < \abs{G}$, ya que $\faktor{G_0}{G_1}$ es simple.
+    Tenemos entonces que $n-1 = m-1$ y las series de composición $\left\{ G_i \right\}_{i=1,\dots,n}$
+    y $\left\{ H_i \right\}_{i=1,\dots,n}$ son equivalentes. Por lo tanto, $n = m$ y las series de composición completas
     son equivalentes.
 
-    En caso de que $H_1 \neq G_1$. Sabemos que $G_1, H_1 \triangleleft G \implies G_1 H_1 \triangleleft G$.
-    Como $\faktor{G}{G_1}$ es simple y $H_1 G_1 \supseteq G_1$, entonces $H_1 G_1 = G$. Llamamos entonces
+    Consideremos ahora el caso $H_1 \neq G_1$. Sabemos que $G_1, H_1 \triangleleft G \implies G_1 H_1 \triangleleft G$.
+    Como $\faktor{G}{G_1}$ es simple y $H_1 G_1 \supseteq G_1$, se tiene que $H_1 G_1 = G$. Llamamos entonces
     $K_2 = H_1 \cap G_1$ y veamos que $K_2 \triangleleft H_1$. Tomamos $x \in K_2, \, a \in H_1$, entonces
     \[
         x \in G_1, a \in H_1 \subset G \stackrel{G_1 \triangleleft G} axa^{-1} \in G_1
