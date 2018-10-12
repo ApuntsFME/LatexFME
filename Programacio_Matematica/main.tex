@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[12pt]{report}
 
 \input{../preamble}
 \input{../environments_ca}
@@ -11,11 +11,14 @@
 \declaretheorem[style=breakthm,name=Algorisme,sibling=lema]{alg}
 \declaretheorem[style=breakthm,name=Regla,sibling=lema]{rgl}
 
+\AtBeginDocument{\renewcommand{\chaptername}{Tema}}
+
 \begin{document}
 
 \input{title}
 
 \tableofcontents
+\newpage
 
 \input{resum}
 
