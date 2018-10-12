@@ -1,0 +1,70 @@
+\chapter{Teoria de dualitat}
+
+\begin{teo}[feble de dualitat]
+    Sigui $x$ SBF de $\left(P\right)$ i $\lambda$ SBF del $\left(D\right)$ associat, llavors
+    \[ \lambda' b\leq c'x. \]
+\end{teo}
+\begin{col}
+    \begin{itemize}
+        \item[]
+        \item $\left(P\right)$ il·limitat $\implies \left(D\right)$ infactible.
+        \item $\left(D\right)$ il·limitat $\implies \left(P\right)$ infactible.
+    \end{itemize}
+\end{col}
+\begin{teo}[fort de dualitat]
+    Siguin $x^*, \lambda^*$ solucions òptimes de $\left(P\right)$ i el seu dual $\left(D\right)$, respectivament, llavors
+    \[ \left(\lambda^*\right)^\prime b = c^\prime x^*.\]
+\end{teo}
+\begin{col}
+    Si $\left(P\right)_e$ de rang complet amb solució, llavors $\left(D\right)$ té solució i òptim a $\lambda' = c_B'B^{-1}$.
+\end{col}
+\begin{teo}[de folga complementària]
+    Siguin $x, \lambda$ solucions factibles de $\left(P\right)$ i $\left(D\right)$, respectivament. $x, \lambda$ són solucions òptimes si i només si
+    \begin{center}
+        \begin{tabular}{cl}
+            $\lambda_j \left(a_j'x - b_j\right) = 0$, & $\forall j \in \left\{1, \dots, m\right\}$, \\
+            $\left(c_i - \lambda'A_i\right) x_i = 0$, & $\forall i \in \left\{1, \dots, n\right\}$.
+        \end{tabular}
+    \end{center}
+\end{teo}
+\begin{defi}[Solució bàsica factible dual]
+    Sigui $\left(P\right)_e$, una SBFD és tota SB de $\left(P\right)_e$ tal que $r \geq \left[0\right]$.
+\end{defi}
+\begin{alg}[del símplex dual]
+    \begin{enumerate}
+        \item[]
+        \item {\bf Inicialització}: Trobem una SBFD ($\B, \N, x_B, z$).
+        \item \label{simp_dual_pas2} {\bf Identificació de la SBF òptima i selecció VB sortint}:
+            \begin{itemize}
+                \item Si $x_B \geq \left[0\right]$, llavors és la SBF òptima. \textcolor{red}{\bf STOP!}
+            \end{itemize}
+            Altrament seleccionem VB $p$ amb $x_{B\left(p\right)} < 0$ (VB sortint).
+        \item {\bf Càlcul de DBF de $\left(D\right)_e$}:
+            \begin{itemize}
+                \item $d_{r_N} = \left(\beta_p A_N\right)^\prime$ ($\beta_p$ és la fila $p$-èssima de $B^{-1}$).
+                \item Si $d_{r_N} \geq \left[0\right]$, $\left(D\right)_e$ il·limitat. \textcolor{red}{\bf STOP!}
+            \end{itemize}
+        \item {\bf Càlcul de $\theta^*$ i selecció de la VNB entrant}:
+            \begin{itemize}
+                \item Càlcul de $\theta_D^*$: 
+                    \[\theta_D^* = \min_{j \in \N \,|\, d_{r_{N_j}} < 0} \left\{-\frac{r_j}{d_{r_{N_j}}} \right\}.\]
+                \item Variable no bàsica entrant: $q$ tal que $\theta^* = -\frac{x_q}{d_{r_{N_q}}}$.
+            \end{itemize}
+        \item {\bf Actualitzacions i canvi de base}:
+            \begin{itemize}
+                \item $r_N := r_N + \theta_D^* d_{r_N}$, \\
+                    $\lambda := \lambda - \theta_D^* \beta_p^\prime$, \\
+                    $r_{B\left(p\right)} := \theta_D^*$, \\
+                    $z := z - \theta^* x_{B\left(p\right)}$.
+                \item $\B := \B \setminus \left\{B\left(p\right)\right\} \cup \left\{q\right\}$, \\
+                    $\N := \N \setminus \left\{q\right\} \cup \left\{B\left(p\right)\right\}$.
+            \end{itemize}
+        \item {\bf Anar} a \ref{simp_dual_pas2}.
+    \end{enumerate}
+\end{alg}
+\begin{prop}
+    Una SBFD òptima és degenerada ($\exists j \in \N$ tal que $r_j = 0$) si i només si $\left(P\right)_e$ té òptims alternatius.
+\end{prop}
+\begin{prop}
+    Si $\left(P\right)_e$ no té cap SBFD degenerada, el símplex dual convergeix amb un nombre finit d'iteracions. Altrament, podem usar la regla de Bland (\ref{rgl:bland}) per a que convergeixi amb un nombre finit d'iteracions.
+\end{prop}

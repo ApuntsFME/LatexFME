@@ -1,0 +1,47 @@
+\chapter{Programaci\'o no lineal amb restriccions}
+
+Donat el problema:
+\begin{equation*}
+    \lp P \rp \begin{dcases*}
+        \min f \left( x \right) \\
+        \text{s.a.: } \\
+        \quad \left( 1 \right) \quad h \left( x \right) = 0 \\
+        \quad \left( 2 \right) \quad g \left( x \right) \leq 0 \\
+    \end{dcases*}
+\end{equation*}
+amb $\mathcal{L} \left( x, \lambda, \mu \right) = f\left( x \right) + \lambda^t h\left( x \right) + \mu^t g\left( x \right)$.
+
+\begin{prop}[Condicions necess\`aries]
+    Sigui $x^*$ \`optim local. Si \'es punt regular, llavors $\exists \lambda^* \in \real^m$ i $\mu^* \in \real^p$ tals que:
+    \begin{enumerate}[i)]
+        \item \label{nec:1} $h\left( x^* \right) = 0,\, g\left( x^* \right) \leq 0$.
+        \item \label{nec:2} $\nabla_x \mathcal{L}\left( x^*, \lambda^*, \mu^* \right) = \nabla f\left( x^* \right) + \nabla h\left( x^* \right) \lambda^* + \nabla g\left( x^* \right)\mu^* = 0$.
+        \item \label{nec:3} $\mu^* \geq 0$ i $\left( \mu^* \right)^t g\left( x^* \right) = 0$ (si $g_i\left( x^* \right)$ \'es inactiva, llavors $\mu_j^* = 0$).
+        \item \label{nec:4} $d^t \nabla_{x_ix_j}^2 \mathcal{L} \left( x^*, \lambda^*, \mu^* \right) d \geq 0, \forall d\in M =
+            \begin{cases}
+                \left( \nabla h_i\left( x^* \right) \right)^t d = 0 & i \in \left\{1,\dots,m\right\} \\
+                \left( \nabla g_j\left( x^* \right) \right)^t d = 0 & j \in \mathcal{A}\left( x^* \right)
+            \end{cases}$ \\
+    \end{enumerate}
+    Els punts \ref{nec:1}, \ref{nec:2} i \ref{nec:3} s\'on les condicions de 1r ordre del KKT i el punt \ref{nec:4} \'es la condici\'o de 2n ordre.
+    \begin{adjustwidth}{1cm}{}
+    {\it Nota}: $\mathcal{A}\left( x^* \right) = \left\{ j \in \left\{ 1, \dots, p \right\} \, |\, g_j \left( x \right) = 0\right\}$ \'es el conjunt d'\'index de desigualtats actives a $x$.
+    \end{adjustwidth}
+\end{prop}
+\begin{prop}[Condicions suficients]
+    Sigui $x^*$, \'es \`optim local si satisf\`a:
+    \begin{enumerate}[i)]
+        \item \label{suf:1} $h\left( x^* \right) = 0,\, g\left( x^* \right) \leq 0$.
+        \item \label{suf:2} $\nabla_x \mathcal{L} \left( x^*, \lambda^*, \mu^* \right) = \nabla f\left( x^* \right) + \nabla h\left( x^* \right)\lambda^* + \nabla g\left( x^* \right)\mu^* = 0$.
+        \item \label{suf:3} $\mu^* \geq 0$ i $\left( \mu^* \right)^t g\left( x^* \right) = 0$ ($g_i\left( x^* \right) < 0 \implies \mu_j^* = 0$).
+        \item \label{suf:4} $d^t \nabla_{x_ix_j}^2 \mathcal{L}\left( x^*, \lambda^*, \mu^* \right) d > 0, d \in M' =
+            \begin{cases}
+                \left( \nabla h_i\left( x^* \right) \right)^t d = 0 & i \in \left\{1,\dots,m\right\} \\
+                \left( \nabla g_j\left( x^* \right) \right)^t d = 0 & j \in \mathcal{A}\left( x^* \right) \cap \left\{ j \,|\, \mu^* > 0 \right\}
+            \end{cases}$ \\
+    \end{enumerate}
+    Els punts \ref{suf:1}, \ref{suf:2} i \ref{suf:3} s\'on les condicions de 1r ordre del KKT i el punt \ref{suf:4} \'es la condici\'o de 2n ordre.
+    \begin{adjustwidth}{1cm}{}
+    {\it Nota}: $\mathcal{A}\left( x^* \right) = \left\{ j \in \left\{ 1, \dots, p \right\} \, |\, g_j \left( x \right) = 0\right\}$ \'es el conjunt d'\'index de desigualtats actives a $x$.
+    \end{adjustwidth}
+\end{prop}
