@@ -32,6 +32,21 @@
 
 \section{Dependència lineal}
 
+\begin{defi}\label{defi:ld}
+	Es diu que els vectors d'un conjunt $ V = \{v_1, \ldots, v_n\}$ són linealment dependents (abreviat l.d.) si i només si \[\exists \lambda_1, \ldots, \lambda_n\qcolon \left(\exists i \colon \lambda_i \ne 0 \quad\land\quad \sum_{i=1}^{n} \lambda_i v_i = \vec{0}\right)\,. \] Si els vectors d'un conjunt no són l.d. es diu que són linealment independents (abreviat l.i.).
+	
+	\begin{col}
+		S'obté directament a partir de la definició \ref{defi:ld} que:
+		\begin{enumerate}[i)]
+			\item Qualsevol conjunt de vectors que contingui l'element neutre $\vec{0}$ és linealment dependent
+			\item Dos vectors són linealment dependents entre sí si i només si són proporcionals
+			\item Si els vectors $v_1, \ldots, v_k$ són linealment dependents, almenys dos d'aquests es poden expressar com a combinació lineal dels altres.
+			\item Si $v_1, \ldots, v_k$ són l.i. i generen un subespai vectorial $V$, i $u\notin V$, llavors $u, v_1, \ldots, v_k$ són l.i. entre sí.
+		\end{enumerate}
+	\end{col}
+\end{defi}
+
+
 \section{Generadors, base i dimensió}
 
 \begin{specialteo}[Teorema de Steinitz]\label{teo:steinitz}
@@ -49,7 +64,7 @@
 			
 			Com que (per hipòtesi) $w_k\in\E$ i el conjunt $U'$ genera $\E$, $w_k$ es pot expressar com a combinació lineal dels vectors d'$U'$: 
 			\begin{equation}\label{eq:lincomb}
-				\exists \lambda_1,\ldots, \lambda_n \in \real \qcolon w_k = \sum_{i=1}^{k-1} \lambda_i w_i + \sum_{i = k}^{n} \lambda_i u_i\,.
+				\exists \lambda_1,\ldots, \lambda_n \in \k \qcolon w_k = \sum_{i=1}^{k-1} \lambda_i w_i + \sum_{i = k}^{n} \lambda_i u_i\,.
 			\end{equation}
 			Sigui $r \defeq \min \{k-1, n\}$. Des de \eqref{eq:lincomb} es pot deduir que $k-1 < n$: en cas contrari, el terme de la dreta desapareixeria i per tant $w_k$ seria una combinació lineal de $w_1, \ldots, w_r$ (només agafem $r$ vectors ja que com a màxim podem substituir $r$ vectors d'$U$): $w_k = \sum_{i=1}^{r} \lambda_iw_i$. Això entraria en contradicció amb la hipòtesi (els vectors $\{w_1, \ldots, w_k\}$ són l.i.); per tant $k-1 < n$.
 			
