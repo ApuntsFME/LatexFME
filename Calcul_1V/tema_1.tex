@@ -1,2 +1,52 @@
-\chapter{Successions i límits}
+\chapter{Límits de successions}
 
+\newcommand{\succession}[2][n]{({#2}_n)_{#1}}
+
+\section{Successions}
+
+\begin{defi*}[Successió]
+	Una successió de nombres reals consisteix en una relació que associa un nombre real $a$ a cada un conjunt de nombres naturals $S\subseteq\mathbb{N}$, i es denota $(a_n)_{n\in S}$: el subíndex fora del parèntesi indica el nombre natural que va variant, al qual se li associa el real $a_n$. Anomenarem ``terme'' de la successió cada element del subconjunt de reals generat per aquesta relació.
+\end{defi*}
+
+Algunes de les maneres alternatives de denotar una successió són $(a_n)_{n\geq1}$ (aquí $S=\mathbb{N}$), $(a_n)_n$ o simplement $(a_n)$. Els parèntesis es posen per evitar confusió amb el terme general de la successió.
+
+\section{Límits de successions}
+\begin{defi*}[Límit d'una successió]
+	Direm que la successió $(a_n)_n\in\n$ és convergent i té límit $L\in\real$ si i només si
+	\[
+	\forall\varepsilon>0\; \exists n_0\in\n\; \forall n \ge n_0\qcolon
+	\abs{a_n - L} < \varepsilon\,.
+	\]
+	Això serà denotat per
+	\[
+	\lim\limits_{n\to\infty} a_n = L\,,
+	\]
+	o, alternativament, per $(a_n)_n\in\n \to L$
+\end{defi*}
+
+\begin{prop}
+	Per qualsevol successió $\succession{a}$, si eliminem un nombre finit de termes, el límit segueix sent el mateix.
+	\begin{proof}
+		content...
+	\end{proof}
+\end{prop}
+
+\begin{defi}
+	Direm que la successió $\succession[n\in S]{a}$ està \textit{fitada} si i només si \[\exists k\in\real\; \forall n \in S \qcolon a_n \le k\,. \]
+\end{defi}
+
+\begin{prop}
+	Si $\succession{a}$ és convergent, $\succession{a}$ està fitada.
+	\begin{proof}
+		content...
+	\end{proof}
+\end{prop}
+
+\begin{prop}
+	Siguin $\succession{a}$ i $\succession{b}$ dues successions convergents amb límit $L_a$ i $L_b$ respectivament. Llavors
+	\begin{enumerate}[i)]
+		\item $(a_n + b_n)_n \to L_a + L_b$
+		\item $(a_nb_n)_n \to L_aL_b$
+		\item $\left(\dfrac{a_n}{b_n}\right)_n \to \dfrac{L_a}{L_b}$
+	\end{enumerate}
+\end{prop}
