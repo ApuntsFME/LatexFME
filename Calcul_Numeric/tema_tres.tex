@@ -90,7 +90,7 @@ Criterios de aproximación:
         \]
 \end{enumerate}
 
-Así pues, intentaremos no trabajar con matrices de Vandermonde. Escogeremos una base $\left\{ L_j\left( x \right) \right\}^n_{j=0}$ (base de Lagranje) tal que, $\forall \left\{ f_i \right\}^n_{i=0}$,
+\noindent Así pues, intentaremos no trabajar con matrices de Vandermonde. Escogeremos una base $\left\{ L_j\left( x \right) \right\}^n_{j=0}$ (base de Lagranje) tal que, $\forall \left\{ f_i \right\}^n_{i=0}$,
 \[
     f_i = f\left( x_i \right) \approx p_n\left( x_i \right) = \sum^n_{j=0} f_jL_j\left( x_i \right).
 \]
@@ -102,3 +102,72 @@ Es decir, tenemos que imponer
         0 & i\neq j
     \end{cases}
 \]
+
+\begin{defi}[interpolaci\'on de Lagrange]
+    \[
+        f\left( x \right) \approx p_n\left( x \right) = \sum_{j=0}^{n} f_jL_j\left( x \right), \text{ donde } L_j = \frac{\prod\limits_{k\neq j}\left( x-x_k \right)}{\prod\limits_{k\neq j}\left( x_j - x_k \right)} \in \Pa^n.
+    \]
+\end{defi}
+
+\begin{example} %TODO dibuixos
+    $f\left( x \right)\approx p_2\left( x \right) = f_0L_0\left( x \right) + f_1L_1\left( x \right) + f_2L_2\left( x \right)$
+    \begin{align*}
+        L_0\left( x \right) &= \frac{\left( x-0,5 \right)\left( x-1 \right)}{\left( 0-0,5 \right)\left( 0-1 \right)} = 2\left( x-0,5 \right)\left( x-1 \right),\\
+        L_1\left( x \right) &= \frac{\left( x-0 \right)\left( x-1 \right)}{\left( 0,5-0 \right)\left( 0,5-1 \right)} = \left( -4 \right)x\left( x-1 \right),\\
+        L_2\left( x \right) &= 2x\left( x-0,5 \right).
+    \end{align*}
+\end{example}
+
+\begin{teo}[del residuo de Lagrange]
+    Dada $f\in \C^{n+1}$ i $\left\{ x_i \right\}_{i=0}^n$, el polinomio interpolador $p_n\left( x \right)\in \Pa^n$ tal que $p_n\left( x_i \right) = f\left( x_i \right), i=0,\dots,n$. Tiene error
+    \[
+        f\left( x \right) = p_n\left( x \right) + \frac{f^{\left( n+1 \right)}\left( \mu\left( x \right) \right)}{\left( n+1 \right)!}L\left( x \right), \text{ donde }
+        \begin{cases}
+            L\left( x \right) = \left( x-x_0 \right) \dots \left( x-x_n \right), \\
+            \mu\left( x \right) \in \left[ x_0, x_n; x \right].
+        \end{cases}
+    \]
+\end{teo}
+
+\begin{proof}
+    Observamos que es cierto cuando $x=x_i$ (uno de los puntos base):
+    \[
+        \underbrace{f\left( x_i \right) - p_n\left( x_i \right)}_{=0} - \frac{f^{n+1}\left( \mu \right)}{\left( n+1 \right)!}\underbrace{L\left( x_i \right)}_{=0} = 0-0 = 0.
+    \]
+    Consideramos ahora $\hat{x} \neq x_i, \forall i$ (fijado) y $g\left( x \right) = f\left( x \right) - p_n\left( x \right) - k\left( \hat{x} \right)L\left( x \right)$, donde escogemos $k$ tal que $g\left( \hat{x} \right) = 0\, \left( k\left( \hat{x} \right) = \frac{f\left( \hat{x} \right) - p\left( \hat{x} \right)}{L\left( \hat{x} \right)} \right)$.
+    
+    \noindent Entonces $g\left( x \right)$ tiene $n+2$ ceros diferentes:
+    \[
+        \begin{cases}
+            \hat{x} \text{ es un cero},\\
+            \left\{ x_i \right\}_{i=0}^n \text{ son }n\text{ ceros}.
+        \end{cases}
+    \]
+    Por tanto $g'\left( x \right)$ tiene almenos $n+1$ ceros (por el teorema de Rolle), $g''\left( x \right)$ tiene almenos $n$ ceros, \dots, $g^{\left( n+1 \right)} \left( x \right)$ tiene almenos $1$ cero. Llamemosle $\mu\left( \hat{x} \right) = \mu$,
+    \[
+        g^{\left( n+1 \right)}\left( \mu \right) = f^{\left( n+1 \right)}\left( \mu \right) - k\left( \hat{x} \right)\left( n+1 \right)! = 0.
+    \]
+    Sabiendo que $k\left( \hat{x} \right) = \frac{f\left( \hat{x} \right) - p\left( \hat{x} \right)}{L\left( \hat{x} \right)}$, tenemos que
+    \begin{align*}
+        f^{\left( n+1 \right)}\left( \mu \right) - \frac{f\left( \hat{x} \right) - p\left( \hat{x} \right)}{L\left( \hat{x} \right)}\left( n+1 \right)! = 0 &\implies \dots \implies\\
+        &\implies f\left( \hat{x} \right) = p_n\left( \hat{x} \right) + \frac{f^{\left( n+1 \right)}\left( \mu\left( \hat{x} \right) \right)}{\left( n+1 \right)!}L\left( \hat{x} \right),\quad \forall \hat{x}.
+    \end{align*}
+\end{proof}
+
+\begin{obs}[La paradoja de Runge]
+    Uno de los problemas que la aproximaci\'on funcional presenta es la ``paradoja de Runge''. Sea $f\left( x \right) = \frac{1}{1+25x^2}$, la interpolaci\'on con $n+1$ puntos equiespaciados empeora cuando $n$ crece. Si $n$ es muy grando (hay muchos datos), es necesario hacer un cambio de criterio (m\'inimos cuadrados) o cambiar de tipo (Splines).
+\end{obs}
+
+\section{Interpolaci\'on de Splines}
+
+\begin{prop}
+    Dados unos puntos base $\left\{ x_i \right\}_{i=0}^n$, un grado $n$ y una continuidad $\C^q$, consideramos
+    \begin{align*}
+        E_{S} &= \setb{S\left( x \right) \in \C^q\left( \left[ x_0, x_n \right] \right) \tq S_{|[ x_i, x_{i+1} ]_{i=0,\dots,n}} \in \Pa^m}, \\
+        S_i\left( x \right) &= S\left( x \right)_{|[ x_i, x_{i+1} ]}.
+    \end{align*}
+\end{prop}
+
+\begin{obs}
+    $E_S$ es un espacio vectorial (tiene una base, etc.).
+\end{obs}
