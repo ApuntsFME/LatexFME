@@ -420,3 +420,59 @@ En general, no podem conéixer la distribució de $X_1,\dots,X_n$ si coneixem no
 \begin{obs}
     Siguin $\lc X_i\rc_{i=1}^n$ una família de variables aleatòries independent i siguin $f_1,\dots,f_n\colon \real\to\real$ funcions mesurables. Aleshores, $\lc f_1\lp X_i\rp\rc_{i=1}^n$ també són independents.
 \end{obs}
+\begin{prop}
+    Siguin $X_1, \dots, X_n$ variables aleatòries independents. Aleshores 
+    \[
+        \esp[X_1\dots X_n] = \prod \limits_{i=1}^n \esp[X_i].
+    \]
+\end{prop}
+\begin{defi}[covariància]
+    Siguin $X, Y$ variables aleatòries. La covariància de $X$ i $Y$ \'es:
+    \[
+        \cov(X, Y) = \esp \left[\lp X - \esp(X) \rp \lp Y - \esp(Y) \rp \right]
+    \]
+\end{defi}
+
+\begin{obs}
+    Està ben definida sempre que $\esp[|X|], \esp[|Y|] < \infty$ i
+    \[
+        \cov(X, Y) = \esp[XY] - \esp[X]\esp[Y]
+    \]
+\end{obs}
+
+\begin{proof}
+    \begin{gather*} 
+        \cov(X,Y) = \esp\left[XY - \esp[X]Y - \esp[Y]X + \esp[X]\esp[Y]\right] = \\
+        = \esp[XY] - 2\esp[X]\esp[Y] + \esp[X]\esp[Y] 
+        = \esp[XY] - \esp[X]\esp[Y].
+    \end{gather*} 
+\end{proof}
+
+\begin{obs}
+    Si $X$ i $Y$ són independents, aleshores $\cov(X,Y)$ = 0.
+\end{obs}
+
+\begin{obs}
+    Per $X, Y$ variables aleatòries, es satisfà $\var[X + Y] = \var[X] + \var[Y] 
+    + 2 \cov(X, Y)$. Si a m\'es són independents, $\var[X+Y] = \var[X] + \var[Y]$.
+\end{obs}
+
+\begin{proof}
+    \begin{gather*} 
+        \esp[(X+Y)^2] - \esp[X+Y]^2 =\\
+        = \esp[X^2] + \esp[Y^2] + 2\esp[XY] - \esp[X]^2
+        - \esp[Y]^2 - 2\esp[X]\esp[Y] =\\
+        = \var[X] + \var[Y] + 2\cov(X, Y).
+    \end{gather*} 
+\end{proof}
+
+\begin{prop}
+    Siguin $X, Y, Z$ variables aleatòries, i $a, b, C$  constants. Aleshores
+    \begin{enumerate}[i)]
+    \item $\cov(C, X) = 0.$
+    \item $\cov(X, X) = \var[X].$
+    \item $\cov(X, Y) = \cov(Y, X).$
+    \item $\cov(aX + bY, Z) = a \cov(X,Z) + b\cov(Y, Z).$
+    \item $\cov(X, Y)^2 \leq \var[X]\var[Y].$
+    \end{enumerate}
+\end{prop}
