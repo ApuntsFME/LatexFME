@@ -426,6 +426,8 @@ En general, no podem conéixer la distribució de $X_1,\dots,X_n$ si coneixem no
         \esp[X_1\dots X_n] = \prod \limits_{i=1}^n \esp[X_i].
     \]
 \end{prop}
+
+%TODO no se si falta quelcom d'abans
 \begin{defi}[covariància]
     Siguin $X, Y$ variables aleatòries. La covariància de $X$ i $Y$ \'es:
     \[
@@ -476,3 +478,64 @@ En general, no podem conéixer la distribució de $X_1,\dots,X_n$ si coneixem no
     \item $\cov(X, Y)^2 \leq \var[X]\var[Y].$
     \end{enumerate}
 \end{prop}
+
+\begin{proof}
+    Demostrarem nom\'es l'últim apartat. Els altres es deixen com exercici pel lector.
+    Tenim doncs que
+    \[
+        \left|\cov(X, Y)\right| = 
+        \left|\esp\lb\lp X - \esp[X] \rp \lp Y- \esp[Y]\rp\rb\right| 
+        \leq \esp\lb\left|\lp X - \esp[X] \rp \lp Y- \esp[Y]\rp\right|\rb
+    \]
+    Que, aplicant Cauchy-Schwarz, \'es menor que
+    \[
+        \sqrt{\esp \lb \lp X - \esp[X] \rp^2\rb} 
+        \sqrt{\esp \lb \lp Y - \esp[Y] \rp^2\rb} = \\
+        = \sqrt{\lp\var[X]\rp} \sqrt{\lp \var[Y] \rp}.
+    \]
+    \'Es a dir, $\cov(X, Y)^2 \leq \var[X] \var[Y]$.
+\end{proof}
+
+\begin{obs}
+    Com es conclou de la desigualtat de Cauchy-Schwarz, la desigualtat anterior \'es una
+    igualtat si i nom\'es si $X - \esp[X] = \lambda (Y - \esp[Y])$.
+\end{obs}
+
+\begin{obs}
+    $\cov(X, Y) = 0 \centernot \implies X,Y$ independents.
+\end{obs}
+
+\begin{proof}
+    En donem un contraexemple. Definim $X, Y$ variables aleatòries tals que
+    \[
+        X = 
+        \begin{cases}
+            1 &\text{amb probabilitat } \frac{1}{2}\\
+            -1 &\text{amb probabilitat } \frac{1}{2} 
+        \end{cases}, \,
+        Y =
+        \begin{cases}
+            0 &\text{si } X = -1 \\
+            \pm 1 &\text{amb probabilitat } \frac{1}{2} \text{ si } X = 1
+        \end{cases}.
+    \]
+    En aquest cas,
+    \begin{align*}
+        \esp[XY] &= \int\limits_{\Omega} XY \dif p = \\
+        &= 0 \cdot P(X = -1) + 1 \cdot 
+        P(X = 1, Y = 1) - 1 \cdot P(X= 1, Y= -1) = \\
+        &= \frac{1}{4} - \frac{1}{4} = 0,
+    \end{align*}
+    i tamb\'e tenim que
+    \[
+        \esp[X] = 1\cdot P(x = 1) - 1 \cdot P(X = -1) = 0. 
+    \]
+    Per les últimes dues igualtats, $\cov(X, Y) = \esp[XY] - \esp[X]\esp[Y] = 0$. Vegem
+    però que no són indepedents:
+    \[
+        P(X = 1)P(Y = 0) = \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4}.
+    \]
+    Però $P(X = 1, Y = 0) = 0$, \'es a dir, com volíem veure $X$ i $Y$ no són independents.
+\end{proof}
+
+

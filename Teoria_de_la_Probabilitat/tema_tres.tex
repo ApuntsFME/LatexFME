@@ -92,6 +92,129 @@
 \end{proof}
 
 
+\section{Funció generadora de probabilitat}
+D'aquí en endavant, prendrem $X$ variable aleatòria discreta amb $\im(X) \subseteq \n_{\geq 0}$.
+\begin{defi}[funció!generadora de probabilitat]
+    La funció generadora de probabilitat de $X$ \'es la sèrie formal de potències
+    \[G_X(z) = \sum_{n \geq 0} P(X = n) z^n.\]
+    Podem pensar-la com $\esp[z^X]$.
+\end{defi}
 
+\begin{prop}
+    $G_X(z)$ satisfà les següents propietats:
+    \begin{enumerate}[i)]
+    \item $G_X(z)$ \'es una funció holomorfa al voltant de $z = 0$ amb radi de convergència
+        major o igual a $1$.
+    \item $G_X(0) = P(X = 0)$ i $G_X(1)$ = 1.
+    \item $\eval{\dv[k]{G_X(z)}{z}}_{z = 1} = 
+        \esp\lb X(X-1)\dots(X-k+1)\rb = \esp \lb (X)_k\rb $.
+    \end{enumerate}
+\end{prop}
 
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item[]
+        \item Si $\rho \in \cx$, $|\rho| < 1$, aleshores:
+            \[
+                0 \leq |G_X(\rho)| = \left|\sum_{n \geq 0} P(X = n) \rho^n \right|
+                \leq \sum P(X=n) |\rho|^n
+            \]
+            Que, quan $|\rho| \leq 1$, \'es menor o igual a
+            \[
+                \sum_{n \geq 0} P(X = n) = 1.
+            \]
+            Per tant $G_X(\rho)$ \'es analítica (es pot expressar com una sèrie de
+            potències convergent) a $B_1(0)$, i per tant, com s'ha vist a variable
+            complexa, $G_x(\rho)$ \'es holomorfa a $B_1(0)$ (per tant infinitament
+            derivable en sentit complex).
+        \item \'Es directe.
+        \item Si derivem terme a terme obtenim
+            \[
+                \dv[k]{G_X(z)}{z} = \dv[k]{\sum_{n \geq 0} P(X = n) z^n}{z} =
+                \sum_{n \geq 0} n(n-1)\dots(n-k+1)(P(X = n)) z^{n-k}.
+            \]
+            Que, avaluat en $z = 1$, \'es
+            \[ 
+                \sum_{n \geq 0} n(n-1)\dots(n-k+1)(P(X=n)) = \esp\lb(X)_n\rb.
+            \]
+    \end{enumerate}
+\end{proof}
 
+\begin{example}
+   Definim $X$ com una variable aleatòria discreta tal que $P(X = 0) = 0$ i
+   $P(X = n) = \frac{6}{\pi^2}\cdot \frac{1}{n^2}$. Aleshores
+    \[
+        G_X(z) =  \frac{6}{\pi^2} \sum_{n \geq 1} \frac{1}{n^2}z^n,
+    \]
+    que t\'e radi de convergència igual a $1$, i
+    \[
+        G_X(1) = \frac{6}{\pi^2} \sum_{n \geq 1} \frac{1}{n^2} =
+        \frac{6}{\pi^2}\cdot \frac{\pi^2}{6} = 1.
+    \]
+    Finalment, en calculem la seva esperança,
+    \[
+        \esp[X] = \eval{\dv{G_X(z)}{z}}_{z = 1} = 
+        \frac{6}{\pi^2}\sum_{n \geq 1} \frac{1}{n} = \infty.
+    \]
+\end{example}
+
+\begin{obs}
+    $G_X(z)$ codifica totes les probabilitats $P(X = n)$ i per tant coneixent
+    $G_x(z)$ coneixem $X$.
+\end{obs}
+
+L'aplicació m\'es útil de les funcions generadores de probabilitat \'es que
+ens permet trobar convolucions discretes de variables aleatòries.
+
+\begin{obs}
+    Siguin $X, Y$ variables aleatòries discretes, amb $\im(X) = \im(Y) =
+    \n_{\geq 0}$. Aleshores
+    \[
+        P(X+Y = n) = \sum_{k = 0}^{n} P(X+Y = n, X = k) = 
+        \sum_{k = 0}^{n} P(Y = n-k, X = k). 
+    \]
+\end{obs}
+
+\begin{prop}
+    Si $X, Y$ són variables aleatòries discretes independents amb $\im(X) = \im(Y) =
+    \n_{\geq 0}$ aleshores:
+    \[
+        G_{X+Y}(z) = G_X(z)G_Y(z)
+    \]
+\end{prop}
+
+\begin{proof}
+    \[
+        G_X(z)G_Y(z) = \sum_{i \geq 0} P(X = i) z^i  \sum_{j \geq 0} P(X = j) z^j =
+        = \sum_{i, j \geq 0} P(X = i)P(Y = j) z^{(i+j)}
+    \]
+    I, com $X,Y$ són independents, podem unir el producte i obtenim
+    \begin{gather*} 
+        \sum_{i, j \geq 0} P(X = i, Y = j) z^{(i+j)} = \sum_{n \geq 0} \sum_{i = 0}^n
+        P(X = i, Y = n-i)z^n =\\
+        = \sum_{n \geq 0} \sum_{i = 0}^n P(X = i, X+Y = n)z^n 
+        = \sum_{n \geq 0} \sum_{i = 0}^n P(X = i | X+Y = n) P(X+Y = n)z^n = \\
+        = \sum_{n \geq 0} \ P(X+Y = n)z^n \sum_{i = 0}^n P(X = i | X+Y = n).
+    \end{gather*}
+    Si observem que la suma interior val $1$ perquè està sumant la probabilitat de tots
+    esdeveniments possibles, ens queda
+    \[
+        \sum_{n \geq 0} P(X+Y = n)z^n = G_{X+Y}(z).
+    \]
+\end{proof}
+
+\begin{obs}
+    Això \'es equivalent a que si $X, Y$ són variables aleatòries discretes independents
+    amb $\im(X) = \im(Y) = \n_{\geq 0}$ aleshores
+    \[
+        \esp[z^X]\esp[z^Y] = \esp[z^{X+Y}].
+    \]
+\end{obs}
+
+\begin{obs}
+    En general, si $X_1, \dots, X_n$ són variables aleatòries discretes independents amb
+    $\im X_i = \n_{\geq 0}$:
+    \[
+        G_{X_1,\dots,X_n}(z) = \prod_{i = 1}^n G_{X_i}(z)
+    \]
+\end{obs}
