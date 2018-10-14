@@ -161,13 +161,147 @@ Es decir, tenemos que imponer
 \section{Interpolaci\'on de Splines}
 
 \begin{prop}
-    Dados unos puntos base $\left\{ x_i \right\}_{i=0}^n$, un grado $n$ y una continuidad $\C^q$, consideramos
+    Dados unos puntos base $\left\{ x_i \right\}_{i=0}^n$, un grado $m$ y una continuidad $\C^q$, consideramos
     \begin{align*}
         E_{S} &= \setb{S\left( x \right) \in \C^q\left( \left[ x_0, x_n \right] \right) \tq S_{|[ x_i, x_{i+1} ]_{i=0,\dots,n}} \in \Pa^m}, \\
         S_i\left( x \right) &= S\left( x \right)_{|[ x_i, x_{i+1} ]}.
     \end{align*}
+    Entonces $E_S$ es un espacio vectorial (tiene una base, etc.).
 \end{prop}
 
+\subsection{Splines lineals ($m=1$) $\C^0$}
+
+$S_i\left( x \right) = a_i\left( x-x_i \right) + b_i$, ¿cuánto vale $\dim\left( E_S \right)$?
+\begin{center}
+    \begin{tabular}{crcl}
+        & $\#$coeficientes &=& $2n$ (2 coeficientes por $n$ intervalos)\\
+        $-$ & $\#$condiciones &=& $n-1$ (continuidad de $S$ en cada punto interior)\\\hline
+        &$\dim\left( E_S \right)$ &=& $n+1$ (parámetros libres).
+    \end{tabular}
+\end{center}
+
+Los $n+1$ parámetros libres están determinados unequívocamente por los $n+1$ valores de la función.
+
+Cálculo del Spline: 
+\[
+    S_i\left( x \right) = a_i\left( x-x_i \right) + b_i
+\]
+donde $a_i = \frac{f_{i+1}-f_i}{x_{i+1}-x_i}$, $b_i = f_i$.
+
+De todas las bases de Splines lineales $\C^0$, una interesante es
+\[
+    \{ \underbrace{\Phi_i}_{\in E_S} \}_{i=0}^n \tq S\left( x \right) = \sum_{i=0}^n f_i\Phi_i\left( x \right).
+\]
+Las funciones de la base deberán cumplir
+\[
+    \Phi_i\left( x_j \right) = \delta_{ij}
+\]
+ya que
+\[
+    f_j = S\left( x_j \right) = \sum_{i=0}^n f_i\Phi_i\left( x_j \right),\quad \forall \left\{ f_i \right\}_{i=0}^n
+\]
+
 \begin{obs}
-    $E_S$ es un espacio vectorial (tiene una base, etc.).
+    Podem hacer servir la base para hacer un ajuste por mínimos cuadrados.
 \end{obs}
+
+\subsection{Splines cuadráticos ($m=2$) $\C^1$}
+
+$S_i\left( x \right) = a_i\left( x-x_i \right)^2 + b_i \left( x-x_i \right) + c_i$, ¿cuánto vale $\dim\left( E_S \right)$?
+
+\begin{center}
+    \begin{tabular}{crcl}
+        & $\#$coeficientes &=& $3n$\\
+        $-$ & $\#$condiciones &=& $2\left( n-1\right)$\\\hline
+        &$\dim\left( E_S \right)$ &=& $n+2$.
+    \end{tabular}
+\end{center}
+
+Los $n+2$ parámetros quedan determinados por los $n+1$ valores de $f$ y $S'\left( x_0 \right) = f'_0$.
+
+\subsection{Splines cúbicos ($m=3$) $\C^1$}
+
+$S_i\left( x \right) = a_i\left( x-x_i \right)^3 + b_i \left( x-x_i \right)^2 + c_i\left( x-x_i \right) + d_i$, ¿cuánto vale $\dim\left( E_S \right)$?
+
+\begin{center}
+    \begin{tabular}{crcl}
+        & $\#$coeficientes &=& $4n$\\
+        $-$ & $\#$condiciones &=& $2\left( n-1\right)$\\\hline
+        &$\dim\left( E_S \right)$ &=& $2n+2$.
+    \end{tabular}
+\end{center}
+
+Para determinar un Spline necesitamos $2(n+1)$ datos: $\left\{ f_i \right\}_{i=0}^n$ y $\left\{ f'_i \right\}_{i=0}^n$.
+
+\begin{obs}
+    Si solo tenemos $\left\{ f_i \right\}_{i=0}^n$, podemos calcular aproximaciones
+    \[
+        f'_i = \frac{f_{i+1}-f_{i-1}}{2h}\approx f'\left( x_i \right)
+    \]
+    si los puntos son equiespaciados. Si los puntos no son equiespaciados hay que deducir una forma diferente.
+
+    Cálculo de una Spline:
+    \begin{align*}
+        f_i &= S_i\left( x_i \right) = d_i, \\
+        f_{i+1} &= S_i\left( x_{i+1} \right) = a_i h_i^3 + b_ih_i^2 + c_ih_i + d_i, \\
+        f'i &= S'_i\left( x_i \right) = c_i, \\
+        f'_{i+1} &= S'_i\left( x_{i+1} \right) = 3a_ih_i^2 + 2b_ih_i + c_i,
+    \end{align*}
+    con $h_i = x_{i+1} - x_i$.
+
+    Si aislamos, obtenemos
+    \begin{align*}
+        a_i &= \frac{h_i\left( f'_i + f'_{i+1} \right) - 2+i}{h_i^3}, \\
+        b_i &= \frac{3t_i - h_i\left( 2f'_i + f'_{i+1} \right)}{h_i^2}, \\
+        c_i &= f'_i, \\
+        d_i &= f_i,
+    \end{align*}
+    con $h_i = x_{i+1} - x_i$ y $t_i = f_{i+1} - f_i$.
+\end{obs}
+
+La base que nos interesa para los Splines cúbicos $\C^1$ es la base 
+\[
+    \left\{ \Phi_i \right\}_{i=0}^n \cup \left\{ \tilde{\Phi}_i \right\}_{i=0}^n \tq S\left( x \right) = \sum_{i=0}^n f_i\Phi_i\left( x \right) + \sum_{i=0}^n f'_i\tilde{\Phi}_i\left( x \right).
+\]
+
+Tenemos que
+\begin{gather*}
+    \begin{rcases}
+        f_j = S\left( x_j \right) = \sum\limits_{i=0}^n f_i\Phi_i\left( x_j \right) + \sum\limits_{i=0}^n f'_i\tilde{\Phi}_i\left( x_j \right) \\
+        f'_j = S'\left( x_j \right) = \sum\limits_{i=0}^n f_i\Phi'_i\left( x_j \right) + \sum\limits_{i=0}^n f'_i\tilde{\Phi}'_i\left( x_j \right)
+    \end{rcases}
+    \implies \\
+    \implies
+    \begin{cases}
+        \Phi_i \left( x_j \right) = \delta_{ij},\, \tilde{\Phi}_i\left( x_j \right) = 0\quad \forall i,j\\
+        \Phi_i \left( x_j \right) = 0\quad \forall i,j,\, \tilde{\Phi}_i\left( x_j \right) = \delta_{ij}.
+    \end{cases}
+\end{gather*}
+Por lo tanto, las funciones de la base deberán cumplir
+\begin{align*}
+    \Phi_i &= \left\{ f_i = 1, f_j=0\quad \forall j\neq i, f'_j = 0 \quad\forall j \right\}, \\
+    \tilde{\Phi}_i &= \left\{ f_i = 0\quad \forall i, f'_i = 1, f'_j = 0 \quad\forall j\neq i \right\}.
+\end{align*}
+
+\begin{obs}
+    Es una base local, lo cual es bueno para mínimos cuadrados, EDPs, una matriz con muchos valores nulos, etc. ya que hay una dependencia local de $S\left( x \right)$ con los datos.
+\end{obs}
+
+\subsection{Splines cúbicos ($m=3$) $\C^2$}
+
+$S_i\left( x \right) = a_i\left( x-x_i \right)^3 + b_i\left( x-x_i \right)^2 + c_i\left( x-x_i \right) + d_i$, ¿cuánto vale $\dim\left( E_S \right)$?
+
+\begin{center}
+    \begin{tabular}{crcl}
+        & $\#$coeficientes &=& $4n$\\
+        $-$ & $\#$condiciones &=& $3\left( n-1\right)$ (continuidad de $S$, $S'$ y $S''$ en $\left\{ x_i \right\}_{i=1}^{n-1}$)\\\hline
+        &$\dim\left( E_S \right)$ &=& $n+3$.
+    \end{tabular}
+\end{center}
+
+Tenemos $n+1$ valores de la función, y hay que añadir $2$ condiciones adicionales. Estas pueden ser:
+
+\begin{itemize}
+    \item \emph{Spline natural} (el más ``suave'' posible): $f''_0 = 0$, $f''_n = 0$.
+    \item $S'\left( x_0 \right) = f'_0$, $S'\left( x_n \right) = f'_n$.
+\end{itemize}
