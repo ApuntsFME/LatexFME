@@ -93,7 +93,7 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
      
      Prenem $\Omega$ un conjunt numerable $\Omega =\left\{a_i\right\}_{i\geq 1}$. Prenem $\Asuc = \Pa\lp \Omega\rp$
      (que és una $\sigma$-àlgebra). Per a definir la probabilitat sobre $\lp\Omega,\,\Asuc\rp$ prenem una successió 
-     $\left\{p_i\right\}_{i\geq 1} \tq 0\geq p_i\geq 1$ que cumpleix que $\forall i,\, p\lp a_i\rp = p_i$ i 
+     $\left\{p_i\right\}_{i\geq 1}$ tal que $0\geq p_i\geq 1$ que compleix que $\forall i,\, p\lp a_i\rp = p_i$ i 
      $\sum\limits_{i\geq1}p_i=1$. Per tant, per a qualsevol element $A\in\Asuc$, tenim que
      \[
 	p\lp\bigcup\limits_{a\in A} \left\{a\right\}\rp = p\lp A\rp = \sum\limits_{i\geq 1} p\lp \left\{a\right\}\rp.
@@ -289,8 +289,9 @@ un sentit a ``límit de $\left\{ A_n\right\}_{n\geq1}$''. Farem com a $\real$ i 
     \begin{enumerate}[i)]
         \item[]
         \item $\omega\in\liminf{A_n} \iff \omega\in\bigcup_{n=1}^{\infty}\bigcap_{k=n}^{\infty} A_k \iff
-        \exists m \equiv m(\omega) \tq \omega\in\bigcap_{k=m(\omega)}^{\infty} A_k \iff
-        \omega\in A_r \quad\forall r \ge m(\omega).$
+        \exists m \equiv m(\omega) \tq \omega\in\bigcap_{k=m(\omega)}^{\infty} A_k$,
+        \'es a dir, si $\exists m \equiv m(\omega) \tq \omega\in A_r 
+        \quad\forall r \ge m(\omega).$
         \item $\omega\in\limsup{A_n} \iff \omega\in\bigcap_{n=1}^{\infty}\bigcup_{k=n}^{\infty} A_k \iff
         \omega\in\bigcup_{k=n}^{\infty}A_k \quad\forall n \iff \forall n,\, \exists n_0\geq n \tq \omega\in A_{n_0}\iff \omega$ pertany a un nombre infinit dels $A_n$. 
         \item Si $\omega\in\liminf A_n$, aleshores $\omega\in A_r, \, \forall r\geq m\lp\omega\rp$, de manera que pertany a un nombre infinit dels $A_n$ i, en conseqüència, pertany a $\limsup A_n$.
@@ -307,7 +308,7 @@ un sentit a ``límit de $\left\{ A_n\right\}_{n\geq1}$''. Farem com a $\real$ i 
     \[
         p\lp\liminf A_n\rp=p\lp\bigcup_{n\geq 1} C_n\rp = \lim p\lp C_n\rp=\lim p\lp \bigcap_{k\geq n} A_k\rp\leq\liminf p\lp A_n\rp.
     \]
-    Al darrer pas hem utilitzat el fet que $p\lp \cap_{k\geq n} A_k\rp\leq p\lp A_n\rp$. Anàlogament, $\limsup p\lp A_n\rp\leq p\lp\limsup A_n\rp$. Així doncs, tenim que
+    Al darrer pas hem utilitzat el fet que $p\lp \cap_{k\geq n} A_k\rp\leq p\lp A_n\rp$. Anàlogament, tenim que $\limsup p\lp A_n\rp\leq p\lp\limsup A_n\rp$. Així doncs,
     \[
         p\lp\liminf A_n\rp\leq\liminf p\lp A_n\rp\leq\limsup p\lp A_n\rp\leq p\lp\limsup A_n\rp.
     \]
