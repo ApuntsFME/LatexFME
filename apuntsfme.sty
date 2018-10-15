@@ -1,21 +1,18 @@
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[a4paper,margin=1in]{geometry}
-\usepackage[pdftex]{hyperref}
-\usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
-\usepackage{mdframed,cleveref,cancel,stackengine,pgf,pgfplots,mathrsfs,thmtools}
-\usepackage{xfrac,stmaryrd,commath,needspace,multirow,float,siunitx,faktor, centernot}
-\usepackage{tikz-cd,multicol,dsfont}
-\usepackage[shortlabels]{enumitem}
-\usepackage{xcolor}
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{apuntsfme}[2018/10/15 ApuntsFME Package]
 
-\usepackage{makeidx}
-\usepackage{hyperref}
-\usepackage[
-    type={CC},
-    modifier={by-nc-sa},
-    version={4.0},
-]{doclicense}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[pdftex]{hyperref}
+\RequirePackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref,enumerate}
+\RequirePackage{mdframed,cleveref,cancel,stackengine,pgf,pgfplots,mathrsfs,thmtools}
+\RequirePackage{xfrac,stmaryrd,commath,needspace,multirow,float,siunitx,faktor, centernot}
+\RequirePackage{tikz-cd,multicol,dsfont}
+\RequirePackage[shortlabels]{enumitem}
+\RequirePackage{xcolor}
+
+\RequirePackage{makeidx}
+\RequirePackage{hyperref}
 
 \newmdenv[leftline=false,topline=false]{topright}
 \let\proof\relax
@@ -182,4 +179,97 @@
 {\index{#3((defi:#2))}\label{defi:#2}\thmname{#1}\thmnumber{ #2}.}% Thm head specko
 
 \makeindex
-\usepackage[totoc]{idxlayout}       % Glossari a l'índex
+\RequirePackage[totoc]{idxlayout}       % Glossari a l'índex
+
+\newif\if@babel\@babeltrue
+\DeclareOption{nobabel}{
+    \@babelfalse
+}
+
+\DeclareOption{spanish}{
+    \PassOptionsToPackage{spanish,es-lcroman}{babel}
+    % Normal
+    \declaretheorem[style=normal,name=Lema,numberwithin=section]{lema}
+    \declaretheorem[style=normal,name=Lema,numbered=no]{lema*}
+    \declaretheorem[style=normal,name=Observación,sibling=lema]{obs}
+    \declaretheorem[style=normal,name=Observación,numbered=no]{obs*}
+    \declaretheorem[style=normal,name=Proposición,sibling=lema]{prop}
+    \declaretheorem[style=normal,name=Proposición,numbered=no]{prop*}
+    \declaretheorem[style=normal,name=Definición,sibling=lema]{defi*}
+    \declaretheorem[style=normal,name=Corolario,sibling=lema]{col}
+    \declaretheorem[style=normal,name=Corolario,numbered=no]{col*}
+    \declaretheorem[style=normal,name=Ejercicio,sibling=lema]{ej}
+    \declaretheorem[style=normal,name=Ejercicio,numbered=no]{ej*}
+    \declaretheorem[style=normal,name=Ejemplo,sibling=lema]{example}
+    \declaretheorem[style=normal,name=Ejemplo,numbered=no]{example*}
+    \declaretheorem[style=normal,name=Problema,sibling=lema]{problema}
+    \declaretheorem[style=normal,name=Problema,numbered=no]{problema*}
+
+    % Autodefi
+    \declaretheorem[style=autodefi,name=Definición,sibling=lema]{defi}
+
+    % Demo
+    \declaretheorem[style=demo,name=Demostración,qed=$\square$,numbered=no]{proof}
+    \declaretheorem[style=demo,name=Solución,numbered=no]{sol}
+
+    % Break
+    \declaretheorem[style=break,name=Teorema,sibling=lema]{teo*}
+
+    % Breakthm
+    \declaretheorem[style=breakthm,name=Teorema,sibling=lema]{teo}
+    
+    
+    
+    \@ifclassloaded{book}{%
+        \AtBeginDocument{\renewcommand{\contentsname}{Contenidos}}
+        \AtBeginDocument{\renewcommand{\chaptername}{Tema}}
+    }{}
+    
+    
+    
+    
+}
+
+\DeclareOption{catalan}{
+    \PassOptionsToPackage{catalan}{babel}
+
+    % Normal
+    \declaretheorem[style=normal,name=Lema,numberwithin=section]{lema}
+    \declaretheorem[style=normal,name=Lema,numbered=no]{lema*}
+    \declaretheorem[style=normal,name=Observació,sibling=lema]{obs}
+    \declaretheorem[style=normal,name=Observació,numbered=no]{obs*}
+    \declaretheorem[style=normal,name=Proposició,sibling=lema]{prop}
+    \declaretheorem[style=normal,name=Proposició,numbered=no]{prop*}
+    \declaretheorem[style=normal,name=Definició,sibling=lema]{defi*}
+    \declaretheorem[style=normal,name=Corol·lari,sibling=lema]{col}
+    \declaretheorem[style=normal,name=Corol·lari,numbered=no]{col*}
+    \declaretheorem[style=normal,name=Exercici,sibling=lema]{ej}
+    \declaretheorem[style=normal,name=Exercici,numbered=no]{ej*}
+    \declaretheorem[style=normal,name=Exemple,sibling=lema]{example}
+    \declaretheorem[style=normal,name=Exemple,numbered=no]{example*}
+    \declaretheorem[style=normal,name=Problema,sibling=lema]{problema}
+    \declaretheorem[style=normal,name=Problema,numbered=no]{problema*}
+
+    % Autodefi
+    \declaretheorem[style=autodefi,name=Definició,sibling=lema]{defi}
+
+    % Demo
+    \declaretheorem[style=demo,name=Demostració,qed=$\square$,numbered=no]{proof}
+    \declaretheorem[style=demo,name=Solució,numbered=no]{sol}
+
+    % Break
+    \declaretheorem[style=break,name=Teorema,sibling=lema]{teo*}
+
+    % Breakthm
+    \declaretheorem[style=breakthm,name=Teorema,sibling=lema]{teo}
+}
+
+
+\ProcessOptions\relax
+\if@babel
+    \RequirePackage{babel}
+\fi
+
+\endinput
+
+% ../../apuntsfme.github.io/usepackage/apuntsfme.sty

@@ -1,21 +1,26 @@
-\documentclass[12pt]{book}
+\documentclass[12pt,spanish]{../notes}
 
-\input{../preamble}
-\input{../environments_es}
+%\usepackage{../apuntsfme}
 
 \AtBeginDocument{\renewcommand{\contentsname}{Contenidos}}
 \AtBeginDocument{\renewcommand{\chaptername}{Tema}}
 
+\title{ÁLGEBRA MULTILINEAL\\ Y\\ GEOMETRÍA PROYECTIVA}
+\author{Òscar Benedito\and Ernesto Lanchares\and Miquel Ortega}
+\otherauthor{Jordi Castellví\and Èric Sierra}
+\subtitle{Apuntes basados en el curso impartido por Miguel Ángel Barja}
+\reviewer{Iñaki Garrido}
+\thankscomment{La elaboración de este documento no habría sido posible sin los apuntes de Oriol Navarro del curso de Álgebra Multilineal y Geometría Proyectiva, impartido por Miguel Ángel Barja en la Facultat de Matemàtiques i Estadística de la Universitat Politècnica de Catalunya.}
+\titlemonth{Enero 2018}
+
 \begin{document}
 
-\frontmatter
+    \frontmatter
+    \maketitle
+    \tableofcontents
+    \mainmatter
 
-\input{title}
-
-\tableofcontents
-
-\mainmatter
-
+\iffalse
 \setcounter{chapter}{-1}
 
 % INPUTS
@@ -26,5 +31,6 @@
 \input{tema_cuatro}
 
 \printindex
+\fi
 
 \end{document}
