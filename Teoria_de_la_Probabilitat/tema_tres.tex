@@ -217,3 +217,140 @@ ens permet trobar convolucions discretes de variables aleatòries.
         G_{X_1,\dots,X_n}(z) = \prod_{i = 1}^n G_{X_i}(z)
     \]
 \end{obs}
+
+\section{Models de variables aleatòries discretes}
+
+En aquesta secció introduirem les variables aleatòries discretes més comunes que torbarem
+
+\begin{obs}
+    Escriurem $X \sim Y$ si $X$ i $Y$ tenen la mateixa distribució de probabilitat
+\end{obs}
+
+\subsection*{Distribució de Bernoulli}
+
+Modela l'èxit o fracàs s'un experiment amb probabilitat $p$ d'èxit
+
+\begin{defi}[distribució!de Bernoulli]
+    \[X \sim \mathrm{B}(p) \iff \begin{cases}
+                       p(X=1) = p \\
+                       p(X=0) = 1-p
+                       \end{cases}
+    \]
+    També es pot escriure $\mathrm{Be}(p)$.
+\end{defi}
+
+\begin{prop}
+    \begin{enumerate}[i)]
+        \item[]
+        \item $G_X(z) = (1-p)z^0 + pz^1 = (1-p) + p(z)$
+        \item $\esp[X] = p$
+        \item $\var[X] = p(1-p)$
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item[]
+        \item[iii)] $\esp[x(x-1)] = 0 = \esp[x^2-x] \implies \esp[x^2] = p \implies \var[x] = \esp[x^2] + \esp[x]^2
+        = p-p^2 = p(1-p)$
+    \end{enumerate}
+\end{proof}
+
+\subsection*{Distribució binomial}
+
+Modela el nombre d'èxits en fer $N$ experiments independents, on cadascun és $\mathrm{Be}(p)$
+
+\begin{defi}[distribució!binomial]
+    $X \sim \mathrm{Bin}(N,p) \iff X = X_1 + \cdots + X_N$,
+    on $\lc X_i \rc_{i=1}^{N}$ són independents i $X_i \sim \mathrm{B}(p) \enspace\forall i$
+\end{defi}
+
+\begin{prop}
+    \begin{enumerate}[i)]
+        \item[]
+        \item $p(X=i) = \binom{N}{i}p^i(1-p)^{N-i}$
+        \item $G_X(z) = \sum_{i=0}^{n} \binom{N}{i}p^i(1-p)^{N-i}z^i$
+        \item $\esp[X] = N\esp[X_1] = Np$
+        \item $\var[X] = N\var[X_1] = Np(1-p)$
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item[]
+        \item[ii)] Per ser $X_i$ independents,
+        \begin{gather*}
+        G_X(z) = G_{X_1 + \cdots + X_N}(z) = \prod_{i=1}^{n}G_{X_i}(z) = (pz+(1-p))^N = \\
+        = \sum_{i=0}^n \binom{N}{i}(pz)^i(1-p)^{N-i} = \sum_{i=0}^{n} \binom{N}{i}p^i(1-p)^{N-i}z^i
+        \end{gather*}
+    \end{enumerate}
+\end{proof}
+
+\begin{obs} La suma de dos variables amb aquesta distribució també té distribució binomial:
+    \begin{gather*}
+    \begin{rcases*} X \sim \mathrm{Bin}(N_1,p) \\ Y \sim \mathrm{Bin}(N_2,p) \end{rcases*} \implies
+    \begin{rcases*} G_X(z) = (pz+(1-p))^{N_1} \\ G_Y(z) = (pz+(1-p))^{N_2} \end{rcases*}
+    \implies \\
+    \implies G_{X+Y}(z) = G_X(z)G_Y(z) = (pz+(1-p))^{N_1+N_2} \implies \\
+    \implies X+Y \sim \mathrm{Bin}(N_1+N_2,p)
+    \end{gather*}
+\end{obs}
+
+\subsection*{Distribució uniforme}
+
+\begin{defi}[distribució!uniforme]
+    $X \sim \mathrm{U}[1,n] \iff p(X=i)=\frac{1}{N}$ per $i = 1,\dots,N$.
+\end{defi}
+
+\begin{prop}
+    $G_X(z) = \sum_{n=1}^N \frac{1}{N}z^n = \frac{1}{N}(z+z^2+\cdots+z^N) = \frac{1}{N}\frac{z(z^N-1)}{z-1}$
+\end{prop}
+
+\subsection*{Distribució de Poisson}
+
+S'usa per modelar successos ``estranys'' (persones en una cua, emissió de partícules...).
+
+\begin{defi}[distribució!de Poisson]
+    \[X \sim \mathrm{P}(\lambda) \iff P(X=i) = \frac{1}{i!}\lambda^i e^{-\lambda}\]
+    També es pot escriure $\mathrm{Po}(\lambda)$.
+\end{defi}
+
+\begin{obs}
+    La distribució està ben definida:
+    \[\sum_{i=0}^\infty p(X=i) = \sum_{i=0}^\infty \frac{1}{i!}\lambda^i e^{-\lambda} = e^\lambda e^{-\lambda} = 1\]
+\end{obs}
+
+\begin{prop}
+    \begin{enumerate}[i)]
+        \item[]
+        \item $G_X(z) = e^{\lambda(z-1)}$
+        \item $\esp[X] = \lambda$
+        \item $\var[X] = \lambda$
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item[]
+        \item \[G_X(z) = \sum_{i=0}^\infty \frac{1}{i!}\lambda^i e^{-\lambda} z^i =
+            e^{-\lambda} \sum_{i=0}^\infty \frac{1}{i!}(\lambda z)^i = e^{-\lambda}e^{\lambda z} = e^{\lambda(z-1)}\]
+        \item $\esp[X] = \lambda e^{\lambda(z-1)}|_{z=1} = \lambda$
+        \item $\esp[X(X-1)] = \lambda^2 e^{\lambda(z-1)}|_{z=1} = \lambda^2 \implies \esp[x^2] = \lambda^2+\lambda \implies
+         \var[X] = \esp[X^2] - \esp[X]^2 = \lambda^2 + \lambda - \lambda^2 = \lambda$
+    \end{enumerate}
+\end{proof}
+
+\begin{obs} La suma de dos variables amb aquesta distribució també té distribució de Poisson:
+    \begin{gather*}
+    \begin{rcases*} X \sim \mathrm{Po}(\lambda_1) \\ Y \sim \mathrm{Po}(\lambda_2) \end{rcases*} \implies
+    \begin{rcases*} G_X(z) = e^{\lambda_1(z-1)} \\ G_Y(z) = e^{\lambda_2(z-1)} \end{rcases*}
+    \implies \\
+    \implies G_{X+Y}(z) = G_X(z)G_Y(z) = e^{(\lambda_1+\lambda_2)(z-1)} \implies \\
+    \implies X+Y \sim \mathrm{Po}(\lambda_1+\lambda_2)
+    \end{gather*}
+\end{obs}
+
+\subsection*{Distribució geomètrica}
+
+
+\subsection*{Distribució binomial negativa}
