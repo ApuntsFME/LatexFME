@@ -1435,3 +1435,156 @@
 \begin{proof}
     Ejercicio.
 \end{proof}
+
+\section{Acción de un grupo sobre un conjunto}
+
+\begin{defi}[Acción de un grupo sobre un conjunto]
+    Sea $X$ un conjunto y $G$ uun grupo. Llamamos acción de $G$ en $X$  una aplicación
+    \[
+        \begin{aligned}
+            G \times X &\to X \\
+            (a, x) &\mapsto ax
+        \end{aligned}
+    \]
+    que verifica
+    \begin{itemize}
+        \item $a(bx) = (ab)x$, $\forall a,b \in G$ y $\forall x \in G$
+        \item $1x = x$
+    \end{itemize}
+    Diremos que $G$ AUX en $X$ o bien que $X$ es un $G$-conjunto.
+\end{defi}
+
+\begin{obs}
+    Una acción de $G$ en $X$, define, $\forall a \in G$, una aplicación
+    \[
+        \begin{aligned}
+            m_a \colon X &\to X \\
+            x &\mapsto m_a(x) = ax
+        \end{aligned}
+    \]
+    $m_a$ es biyectiva ya que $\left( m_a \right)^{-1} = m_{a^{-1}}$
+    $\left( a^{-1}(ax) = \left( a^{-1}a \right)x = 1x = x \right)$.
+
+    %TODO m es morfismo de grupos
+    
+    Es decir, una acción de $G$ en $X$, nos define una aplicación
+    \[
+        \begin{aligned}
+            G &\to \text{Perm}(X) = \left\{ f \colon X \to X \mid f \text{ biyectiva} \right\} \\
+            a &\mapsto m_a
+        \end{aligned}
+    \]
+    
+    Reciprocamente, dada $f \colon G \to \text{Perm}(X)$ morfismo de grupos. Entonces, podemos
+    definir una acción
+    \[
+        \begin{aligned}
+            \tilde{f} \colon G \times X &\to X \\
+            (a, x) &\mapsto \tilde{f}(a, x) = f(a)(x)
+        \end{aligned}
+    \]
+    Que es una acción ya que
+    \[
+        \begin{aligned}
+            a(bx) &= f(a)\left( f(b)(x) \right) = \left( f(a)f(b) \right)(x) = f(ab)(x) = (ab)x \\
+            qx &= = f(1)x = \Id(x) = x
+        \end{aligned}
+    \]
+
+    Por lo tanto, existe una biyección
+    \[
+        \left\{ \text{acciones } G \times X \to X \right\} \leftrightarrow
+        \left\{ \text{morfismo de grupos } G \to \text{Perm}(X) \right\}
+    \]
+\end{obs}
+
+\begin{defi}[Órbita de un elemento]
+    Sea $G$ un grupo y $X$ un $G$-conjunto. Llamamos órbita de $x \in X$ a
+    \[
+        Gx = \left\{ ax \mid a \in G \right\} \subseteq X
+    \]
+\end{defi}
+
+\begin{prop}
+    Sean $x, y \in X$ diremos que $x \sim y \iff \exists a \in G$ tal que $y = ax$. Entonces
+    $\sim$ es una relación de equivalencia
+\end{prop}
+
+\begin{obs}
+    Si tenemos la relación de equivialencia anterior, entonces
+    $\bar{x} = \left\{ y \in X \mid x \sim y \right\} = \left\{ y \in X \mid \exists a \in G \tq y = ax \right\}
+    = \left\{ ax \mid a \in G \right\} = Gx =$ órbita de $x$.
+
+    El conjunto de órbita se escribe $G \ X = \faktor{X}{\sim}$
+\end{obs}
+
+\begin{defi}[estabilizador de un elemento]\idx{grupo!de isotopía de un elemento}
+    Sea $G$ un grupo y $X$ un $G$-conjunto. Llamamos estabilizador de $x \in X$ o isotopia de $x$ a
+    \[
+        G_x = \left\{ a \in G \mid ax = x \right\} \subset G
+    \]
+\end{defi}
+
+\begin{prop}
+    $G_x$ es un subgrupo.
+\end{prop}
+
+\begin{proof}
+    Ejercicio.
+\end{proof}
+%TODO ver que es un subgrupo
+
+\begin{lema}
+    Sea $G$ un grupo y $X$ un $G$-conjunto. Sean $x, y \in X$, si $x \sim y$, entonces $G_x$ y $G_y$ son
+    subgrupos conjugados.
+\end{lema}
+
+\begin{proof}
+    $x \sim y \implies y = ax$ para algún $a \in G$. Veremos que $G_y = aG_aa^{-1}$.
+
+    \fbox{$\subseteq$}
+    Sea $\alpha \in G_y$
+    \[
+        \begin{aligned}
+            \alpha \in G_y &\implies \alpha y = y \implies \alpha ax = ax \implies
+            \left( a^{-1} \alpha a \right)x = x \implies a^{-1} \alpha a \in G_x
+            &\implies \alpha a \in a G_x \implies \alpha \in a G_x a^{-1}.
+        \end{aligned}
+    \]
+    La otra inclusión resta como ejercicio.
+\end{proof}
+
+\begin{prop}
+    Sea $G$ un grupo y $X$ un $G$-conjunto. Entonces $\forall x \in X$, tenemos
+    \[
+        \begin{aligned}
+            G x &\to \faktor{G}{G_x} \\
+            ax &\mapsto a G_x
+        \end{aligned}
+    \]
+    es una aplicación bien definida y biyectiva.
+    En particular
+    \begin{enumerate}[i)]
+        \item $\abs{G_x} = \faktor{G}{G_x} = \left[ G : G_x \right] = \frac{\abs{G}}{\abs{G_x}}$. Es decir,
+            $\abs{Gx} = \abs{G}$.
+        \item Si $X$ es finito, entonces $X = \bigsqcup\limits^r_{i = 1} G x_i$ y por tanto
+            \[
+                \abs{X} = \sum^r_{i = 1} \abs{G x_i} = \sum^r_{i = 1} \left[ G : G_{x_i} \right]
+            \]
+            Lo que conocemos como fórmula de órbitas.
+        \item 
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    Veamos que si $ax = bx$, entonces $a G_x = b G_x$. En efecto
+    \[
+        ax = bx \implies b^{-1}ax = x \implies b^{-1}a \in G_x \implies aG_x = bG_x
+    \]
+    Veamos ahora que la aplicación es inyectiva. Supongamos que $aG_x = bG_x$, entones
+    \[
+        a G_x = b G_x \implies b^{-1}a \in G_x \implies b^{-1}a x = x \implies ax = bx
+    \]
+    por lo tanto es inyectiva. Y la aplicación es evidentemente exhaustiva por construcción.
+\end{proof}
+
