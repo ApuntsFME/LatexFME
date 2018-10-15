@@ -25,7 +25,7 @@
 \end{obs}
 
 \begin{obs}
-    La funció de distribució, amb $|\im(X)|<+\inf$, és
+    La funció de distribució, amb $|\im(X)|<+\infty$, és
     \[F_X(x) = \begin{cases}
         0 &\text{si } x<x_1\\
         p_1+\cdots+p_j &\text{si } x_j \le x < x_{j+1}\\
@@ -78,7 +78,7 @@
 \end{defi}
 
 \begin{lema}
-    Si $X,Y$ són v.a. discretes independents, amb $\esp[|X|], \esp[|Y|] < +\inf$,
+    Si $X,Y$ són v.a. discretes independents, amb $\esp[|X|], \esp[|Y|] < +\infty$,
     \[\esp[xy] = \esp[x]\esp[y]\]
 \end{lema}
 
@@ -88,7 +88,6 @@
     &= \sum_{u\in\im(X,Y)}{uP(XY=u)} \\
     &= \sum_{x\in\im(X)\setminus\{0\}} \lp\sum_{\frac{u}{x}\in\im(Y)} uP\lp X=x,Y=\frac{u}{x} \rp\rp
     \end{aligned}\]
-
 \end{proof}
 
 
