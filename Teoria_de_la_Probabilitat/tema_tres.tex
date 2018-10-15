@@ -231,12 +231,12 @@ En aquesta secció introduirem les variables aleatòries discretes més comunes 
 Modela l'èxit o fracàs s'un experiment amb probabilitat $p$ d'èxit
 
 \begin{defi}[distribució!de Bernoulli]
-    \[X \sim \mathrm{B}(p) \iff \begin{cases}
+    \[X \sim \operatorname{B}(p) \iff \begin{cases}
                        p(X=1) = p \\
                        p(X=0) = 1-p
                        \end{cases}
-    \]
-    També es pot escriure $\mathrm{Be}(p)$.
+    \]s
+    També es pot escriure $\operatorname{Be}(p)$.
 \end{defi}
 
 \begin{prop}
@@ -258,11 +258,11 @@ Modela l'èxit o fracàs s'un experiment amb probabilitat $p$ d'èxit
 
 \subsection*{Distribució binomial}
 
-Modela el nombre d'èxits en fer $N$ experiments independents, on cadascun és $\mathrm{Be}(p)$
+Modela el nombre d'èxits en fer $N$ experiments independents, on cadascun és $\operatorname{Be}(p)$
 
 \begin{defi}[distribució!binomial]
-    $X \sim \mathrm{Bin}(N,p) \iff X = X_1 + \cdots + X_N$,
-    on $\lc X_i \rc_{i=1}^{N}$ són independents i $X_i \sim \mathrm{B}(p) \enspace\forall i$
+    $X \sim \operatorname{Bin}(N,p) \iff X = X_1 + \cdots + X_N$,
+    on $\lc X_i \rc_{i=1}^{N}$ són independents i $X_i \sim \operatorname{B}(p) \enspace\forall i$
 \end{defi}
 
 \begin{prop}
@@ -288,18 +288,18 @@ Modela el nombre d'èxits en fer $N$ experiments independents, on cadascun és $
 
 \begin{obs} La suma de dos variables amb aquesta distribució també té distribució binomial:
     \begin{gather*}
-    \begin{rcases*} X \sim \mathrm{Bin}(N_1,p) \\ Y \sim \mathrm{Bin}(N_2,p) \end{rcases*} \implies
+    \begin{rcases*} X \sim \operatorname{Bin}(N_1,p) \\ Y \sim \operatorname{Bin}(N_2,p) \end{rcases*} \implies
     \begin{rcases*} G_X(z) = (pz+(1-p))^{N_1} \\ G_Y(z) = (pz+(1-p))^{N_2} \end{rcases*}
     \implies \\
     \implies G_{X+Y}(z) = G_X(z)G_Y(z) = (pz+(1-p))^{N_1+N_2} \implies \\
-    \implies X+Y \sim \mathrm{Bin}(N_1+N_2,p)
+    \implies X+Y \sim \operatorname{Bin}(N_1+N_2,p)
     \end{gather*}
 \end{obs}
 
 \subsection*{Distribució uniforme}
 
 \begin{defi}[distribució!uniforme]
-    $X \sim \mathrm{U}[1,n] \iff p(X=i)=\frac{1}{N}$ per $i = 1,\dots,N$.
+    $X \sim \operatorname{U}[1,n] \iff p(X=i)=\frac{1}{N}$ per $i = 1,\dots,N$.
 \end{defi}
 
 \begin{prop}
@@ -311,8 +311,8 @@ Modela el nombre d'èxits en fer $N$ experiments independents, on cadascun és $
 S'usa per modelar successos ``estranys'' (persones en una cua, emissió de partícules...).
 
 \begin{defi}[distribució!de Poisson]
-    \[X \sim \mathrm{P}(\lambda) \iff P(X=i) = \frac{1}{i!}\lambda^i e^{-\lambda}\]
-    També es pot escriure $\mathrm{Po}(\lambda)$.
+    \[X \sim \operatorname{P}(\lambda) \iff P(X=i) = \frac{1}{i!}\lambda^i e^{-\lambda}\]
+    També es pot escriure $\operatorname{Po}(\lambda)$.
 \end{defi}
 
 \begin{obs}
@@ -342,11 +342,11 @@ S'usa per modelar successos ``estranys'' (persones en una cua, emissió de part�
 
 \begin{obs} La suma de dos variables amb aquesta distribució també té distribució de Poisson:
     \begin{gather*}
-    \begin{rcases*} X \sim \mathrm{Po}(\lambda_1) \\ Y \sim \mathrm{Po}(\lambda_2) \end{rcases*} \implies
+    \begin{rcases*} X \sim \operatorname{Po}(\lambda_1) \\ Y \sim \operatorname{Po}(\lambda_2) \end{rcases*} \implies
     \begin{rcases*} G_X(z) = e^{\lambda_1(z-1)} \\ G_Y(z) = e^{\lambda_2(z-1)} \end{rcases*}
     \implies \\
     \implies G_{X+Y}(z) = G_X(z)G_Y(z) = e^{(\lambda_1+\lambda_2)(z-1)} \implies \\
-    \implies X+Y \sim \mathrm{Po}(\lambda_1+\lambda_2)
+    \implies X+Y \sim \operatorname{Po}(\lambda_1+\lambda_2)
     \end{gather*}
 \end{obs}
 
