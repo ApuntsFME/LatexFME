@@ -154,7 +154,7 @@
     on cometem l'abús de notació $\frac{1}{0}=\infty$. Com que $D$ és no numerable, hi ha un nombre numerable de conjunts $A_n$ i $\cup_{n\in\n}A_n=D$, necessàriament $\exists n\in\n$ tal que $\abs{A_n}\notin\n$. Per tant, hi ha un nombre infinit de salts de, com a mínim $\frac{1}{n+1}$, la qual cosa contradiu la hipòtesi que $f$ és fitada. Per tant, $f$ té un nombre numerable de discontinuïtats i és, doncs, mesurable.
 \end{proof}
 
-\begin{teo}[de l'existència d'una funció de distribució]
+\begin{teo}[Teorema de l'existència d'una funció de distribució]
   Sigui $F\colon \real \to [0,1]$ una funció de probabilitat tal que
   \begin{enumerate}[i)]
        \item $x_1\leq x_2\implies F_X\lp x_1\rp \leq F\lp x_2\rp$.
@@ -310,12 +310,12 @@
 \begin{obs}
     La desigualtat de Cauchy-Schwarz és el cas particular $p=q=2$ de la desigualtat de Holder.
 \end{obs}
-\begin{specialteo}[Desigualtat de Markov]
+\begin{teo}[Desigualtat de Markov]
     Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat, sigui $X\colon\Omega\to\real$ una variable aleatòria amb $X>0$ i sigui $a\in\real^+$. Aleshores,
     \[
         P\lp X\geq a\rp \leq \frac{\esp\lb X\rb}{a}.
     \]
-\end{specialteo}
+\end{teo}
 \begin{proof}
     Sigui $A=\lc \omega\in\Omega\mid X\lp\omega\rp\geq a\rc$. Com que $X$ és mesurable, $A$ és un succés. Observem que
     \[
@@ -326,12 +326,12 @@
         ap\lp X\geq a\rp = \esp\lb a\mathbb{I}_A\lp\omega\rp\rb \leq \esp\lb X\lp\omega\rp\rb = \esp\lb X\rb.
     \]
 \end{proof}
-\begin{specialteo}[Desigualtat de Chebyshev]
+\begin{teo}[Desigualtat de Chebyshev]
     Sigui $X$ una variable aleatòria amb $\esp\lb X\rb<+\infty$, $\var\lb X\rb$ i $\var\lb X\rb\neq 0$. Aleshores, per tot $k>0$, es té que
     \[
         P\lp \abs{X-\esp\lb X\rb}\geq k\var\lb X\rb^{\frac{1}{2}}\rp\leq\frac{1}{k^2}.
     \]
-\end{specialteo}
+\end{teo}
 \begin{proof}
     Posem $Y:=\abs{X-\esp\lb X\rb}$. Observem que $Y$ és una variable aleatòria. Tenim que, per tot $a>0$,
     \begin{align*}

@@ -68,7 +68,7 @@
 Observem que l'apartat \ref{item:esp_prob_5} només es pot aplicar en casos molt particulars. En general, si tenim $A_i,\dots,A_r$ succcessos,
 hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
 
-\begin{specialteo}[Desigualtats de Bonferroni]
+\begin{teo}[Desigualtats de Bonferroni]
     Siguin $A_1,\dots,A_r\in\Asuc$, i per $I\subseteq\{1,\dots,r\}$ sigui $A_I = \bigcap\limits_{i \in I}{A_i}$. Definim
     \[
         S_k = \sum_{I \in \{1,\dots,n\},\#I=k}{p(A_I)},
@@ -80,7 +80,7 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
          \item Si $t$ és senar,
             \[p\lp\bigcup_{i=1}^{r}{A_i}\rp \leq \sum_{i=1}^{r}{(-1)^{i+1}S_i}\]
     \end{enumerate}
-\end{specialteo}
+\end{teo}
 
 \begin{obs}
     Amb els casos $t=1$ (desigualtat de Boole) i $t=2$ es poden donar fites inferiors i superiors.
@@ -321,13 +321,13 @@ un sentit a ``límit de $\left\{ A_n\right\}_{n\geq1}$''. Farem com a $\real$ i 
         \liminf p\lp A_n\rp=\limsup p\lp A_n\rp=\lim p\lp A_n\rp=p\lp A\rp.
     \]
 \end{proof}
-\begin{specialteo}[Lema de Borel-Cantelli]
+\begin{teo}[Lema de Borel-Cantelli]
     Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat i siguin $\left\{ A_n\right\}_{n\geq1} \subseteq \Asuc$. Aleshores,
     \begin{enumerate}[i)]
         \item $\sum\limits_{n\geq 1} p\lp A_n\rp<\infty\implies p\lp\limsup A_n\rp=0$.
         \item Si $\left\{ A_n\right\}_{n\geq1}$ és independent, $\sum\limits_{n\geq 1} p\lp A_n\rp=\infty\implies p\lp\limsup A_n\rp=1$.
     \end{enumerate}
-\end{specialteo}
+\end{teo}
 \begin{proof}
     Posem $A=\limsup A_n=\bigcap\limits_{n\geq 1}\bigcup\limits_{k\geq n} A_k$.
     \begin{enumerate}[i)]
