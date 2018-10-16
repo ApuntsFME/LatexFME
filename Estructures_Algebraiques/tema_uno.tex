@@ -422,14 +422,14 @@
     \]
     ya que
     \[
-        G = \bigcup_{d \vert n} \setb{x \in G \mid \ord(x) = d}.
+        G = \bigsqcup_{d \vert n} \setb{x \in G \mid \ord(x) = d}.
     \]
 \end{proof}
 
 \begin{prop}
     Sea $G = C_n = \left< x \right>$ (con $n$ finito). Entonces
     \begin{enumerate}[i)]
-        \item Si $d \mid n$, entonces $x^{\frac{n}{d}}$ es un elemento de orden $d$
+        \item Si $d \vert n$, entonces $x^{\frac{n}{d}}$ es un elemento de orden $d$
             y el subgrupo $H_d := \left< x^{\frac{n}{d}} \right>$ es subgrupo cíclico de orden $d$.
         \item Si $H$ es un subgrupo de $G$, entonces $\exists! d \vert n$ tal que $H = H_d$.
     \end{enumerate}
@@ -481,7 +481,7 @@
     Sea $G = C_n = \left< x^n \right>$ un grupo cíclico de orden $n \geq 1$. Existe una biyección
     \[
         \begin{aligned}
-            \setb{d \in \n \mid 1 \leq d \leq n, d \vert n } &\longleftrightarrow
+            \setb{d \in \n \mid 1 \leq d \leq n,\, d \vert n } &\longleftrightarrow
             \setb{\text{subgrupos de }G} \\
             d &\longleftrightarrow H_d.
         \end{aligned}
@@ -582,7 +582,7 @@
     \end{itemize}
 \end{obs}
 
-\begin{prop} Sean $G_1, G_2$ grupos y sea $f\colon G_1\to G_2$ un morfismo de grupos. Entonces,
+\begin{prop} Sean $G_1, G_2$ grupos y sea $f\colon G_1\to G_2$ un morfismo de grupos, entonces
     \begin{enumerate}[i)]
         \item $f$ inyectiva $\iff \ker(f) = \setb{1}$.
         \item $f$ exhaustiva $\iff \im(f) = G_2$.
