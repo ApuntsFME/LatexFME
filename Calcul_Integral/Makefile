@@ -1,4 +1,5 @@
 all: main formulari
+silentall: silentmain silentformulari
 
 main: *.tex
 	mkdir -p figures
@@ -18,4 +19,4 @@ silentformulari: formulari.tex aux_form_main.tex
 	pdflatex -halt-on-error formulari.tex > /dev/null
 
 clean:
-	rm *.aux *.log *.out *.auxlock *.toc *.ind *.ilg *.idx *.pdf
+	rm -f *.aux *.log *.out *.auxlock *.toc *.ind *.ilg *.idx *.pdf

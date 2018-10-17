@@ -1,4 +1,5 @@
-all: main 
+all: main
+silentall: silentmain
 
 main: *.tex
 	mkdir -p figures
@@ -12,4 +13,4 @@ silentmain: *.tex
 	pdflatex -shell-escape main.tex > /dev/null
 
 clean:
-	rm *.aux *.log *.out *.auxlock *.toc *.ind *.ilg *.idx *.pdf
+	rm -f *.aux *.log *.out *.auxlock *.toc *.ind *.ilg *.idx *.pdf

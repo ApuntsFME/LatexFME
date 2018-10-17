@@ -1,4 +1,5 @@
 all: formulari
+silentall: silentformulari
 
 formulari: formulari.tex main_aux parcial1.tex parcial2.tex 
 	pdflatex formulari.tex
@@ -10,4 +11,4 @@ silentmain_aux:
 	pdflatex -halt-on-error main_aux.tex > /dev/null
 
 clean:
-	rm *.aux *.log *.out *.auxlock *.toc main_aux.pdf
+	rm -f *.aux *.log *.out *.auxlock *.toc main_aux.pdf

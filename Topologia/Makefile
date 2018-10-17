@@ -1,4 +1,5 @@
 all: main main_resum
+silentall: silentmain silentmain_resum
 
 main: *.tex
 	mkdir -p figures
@@ -12,4 +13,4 @@ silentmain_resum:
 	pdflatex -halt-on-error main_resum.tex > /dev/null
 
 clean:
-	rm *.aux *.log *.out *.auxlock *.toc
+	rm -f *.aux *.log *.out *.auxlock *.toc

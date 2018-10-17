@@ -1,0 +1,20 @@
+#!/bin/bash
+cd Algebra_Lineal
+make silentall
+cd ../Algebra_Lineal_Numerica
+make silentall
+cd ../Algebra_Multilineal_i_Geometria_Projectiva
+make silentall
+cd ../Calcul_Integral
+make silentall
+cd ../Calcul_Numeric
+make silentall
+cd ../Estructures_Algebraiques
+make silentall
+cd ../Fisica
+make silentall
+cd ../Programacio_Matematica
+make silentall
+cd ../Teoria_de_la_Probabilitat
+make silentall
+cd ../Topologia
