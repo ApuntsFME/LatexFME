@@ -22,6 +22,9 @@
     \renewcommand*{\@reviewertext}{Revisores}
     \renewcommand*{\@lastupdatetext}{\'Ultima modificaci\'on}
     \renewcommand*{\@titlemonth}{\ifcase \the\month \or Enero\or Febrero\or Marzo\or Abril\or Mayo \or Junio\or Julio\or Agosto\or Septiembre\or Octubre\or Noviembre\or Diciembre\fi \:  \number \year}
+
+    \AtBeginDocument{\renewcommand{\contentsname}{Contenidos}}
+    \AtBeginDocument{\renewcommand{\chaptername}{Tema}}
 }
 
 \DeclareOption{catalan}{
@@ -32,6 +35,9 @@
     \renewcommand*{\@reviewertext}{Revisors}
     \renewcommand*{\@lastupdatetext}{\'Ultima modificaci\'o}
     \renewcommand*{\@titlemonth}{\ifcase \the\month \or Gener\or Febrer\or Mar\c{c}\or Abril\or Maig \or Juny\or Juliol\or Agost\or Setembre\or Octubre\or Novembre\or Desembre\fi \:  \number \year}
+
+    \AtBeginDocument{\renewcommand{\contentsname}{Continguts}}
+\   AtBeginDocument{\renewcommand{\chaptername}{Tema}}
 }
 
 \ProcessOptions\relax

@@ -6,7 +6,7 @@ if test "$1" = 'web'; then
 	
 	cd Algebra_Lineal
 	echo Algebra_Lineal
-	(printf %s\\n%s\\n "$usr" "$psw"; cat) | ./upload_pdf
+	#(printf %s\\n%s\\n "$usr" "$psw"; cat) | ./upload_pdf
 	cd ../Algebra_Lineal_Numerica
 	echo Algebra_Lineal_Numerica
 	(printf %s\\n%s\\n "$usr" "$psw"; cat) | ./upload_pdf
