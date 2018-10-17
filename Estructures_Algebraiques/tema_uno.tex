@@ -1588,3 +1588,144 @@
     por lo tanto es inyectiva. Y la aplicación es evidentemente exhaustiva por construcción.
 \end{proof}
 
+\begin{defi}[punto fijo]
+    Sea $G$ un grupo y $X$ un $G$-conjunto. Diremos que $x \in X$ es un punto fijo si 
+    \[
+        ax = x \quad \forall a \in G
+    \]
+    es decir, $Gx = \left\{ x \right\}$ o $G_x = \left\{ a \in G \mid ax = x \right\} = G$.
+\end{defi}
+
+\begin{defi}[acción!transitiva]
+    Sea $G$ un grupo, $X$ un conjunto y $G \times X \to X$ una acción de $G$ en $X$. Diremos
+    que esta acción es transitiva si $\forall x, y \in X$ se tiene que $x \sim y$, es decir,
+    $\exists !$ órbita o $X = Gx$ $\forall x \in X$.
+\end{defi}
+
+\begin{defi}[acción!fiel]
+    Sea $G$ un grupo, $X$ un conjunto y $G \times X \to X$ una acción de $G$ sobre $X$.
+    Diremos que esta acción es fiel si $\forall a, b \in G$ tales que $a \neq b$, se tiene que
+    $m_a \neq m_b$, es decir,
+    \[
+        \begin{aligned}
+            G &\to \text{Perm}(X) \\
+            a &\mapsto m_a
+        \end{aligned}
+    \]
+    es un morfismo inyectivo de grupos.
+\end{defi}
+
+\subsection{Acción por traslación de $G$ en $X= G$}
+
+\begin{defi}[acción!por traslación]
+    Sea $G$ un grupo. Definiremos una acción por traslación como la aplicación
+    \[
+        \begin{aligned}
+            G \times G &\to G \\
+            (a, x) &\mapsto a\cdot x = ax
+        \end{aligned}
+    \]
+\end{defi}
+
+\begin{obs}
+    Las acciones por traslación son transitivas y fieles.
+\end{obs}
+
+\begin{teo}[Teorema de Carley]
+    Sea $G$ un grupo finito con $\abs{G} = n$. Entonces, $G$ es isomorfo a un subgrupo de $\Sim_n$
+\end{teo}
+
+\begin{proof}
+    Tomamos la acción de $G$ en $X=G$ por traslación. Sabemos que se trata de una acción fiel, por
+    lo tanto,
+    \[
+        TODO %TODO
+    \]
+\end{proof}
+
+\subsection{Acción por conjugación de $G$ en $X= G$}
+
+\begin{defi}[acción!por conjugación]
+    Sea $G$ un grupo. Definiremos la acción por conjugación de $G$ como la aplicación
+    \[
+        \begin{aligned}
+            G \times G &\to G \\
+            (a, x) &\mapsto axa^{-1}
+        \end{aligned}
+    \]
+\end{defi}
+
+\begin{prop}
+    Sea $G$ un grupo. Si $x \in G$ es punto fijo por conjugación, entonces $x \in Z(G)$ (centro de $G$).
+\end{prop}
+\begin{proof}
+    $x$ punto fijo $\iff axa^{-1} \forall a \in G \iff ax = xa \forall a \in G \iff x \in Z(G)$
+\end{proof}
+
+\begin{prop}
+    Sea $G$ un grupo. Si $x \in G \implies G_x = Z_G(x)$
+\end{prop}
+\begin{proof}
+    $G_x = \left\{ a \in G \mid axa^{-1} = x \right\} = \left\{ a \in G \mid ax = xa \right\} = Z_G(x)$
+\end{proof}
+
+\begin{prop}[Fórmula de órbitas de la acción por conjugación de $G$ en $G$]
+    Sea $G$ un grupo, y sean $x_1, \dots, x_r$ representantes de órbitas no puntuales. Entonces
+    \[
+        \abs{G} = \abs{Z(G)} + \sum^r_{i=1} \left[ G : Z_G\left( x_i \right) \right]
+    \]
+\end{prop}
+\begin{proof}
+    Se tiene que
+    \[
+        \abs{G} = \sum^s_{i=1} \abs{Gx_i} = \abs{Z(G)} + \sum^r_{i=1} \left[ G : G_{x_i} \right]
+    \]
+\end{proof}
+
+\begin{teo}[Teorema de Cauchy]
+    Sea $G$ un grupo finito con $\abs{G} = n$ y sea $p \vert n$ un primo. Entonces
+    existe $x \in G$ tal que $\orden(x) = p$.
+\end{teo}
+\begin{proof}
+    Si $G$ es un grupo abeliano, procederemos a demostrar el enunciado por inducción sobre $n$. El caso
+    $n = 1$ es trivial. Suponemos $n \geq 4$ y tomamos $x \in  G$, por el teorema de Lagrange tenemos que
+    $\orden(x) = m \vert n$. Separamos ahora en dos casos:
+
+    Si $p \vert m$, entonces, $\orden\left( x^{\frac{m}{p}} \right) = p$ y hemos acabado.
+
+    Si $p \not\vert m$, tenemos $\langle x\rangle \triangleleft G$ (por ser $G$ abeliano), por lo 
+    tanto $\faktor{G}{\langle x\rangle}$ es grupo cociente. y tenemos
+    \[
+        \abs{\faktor{G}{\langle x \rangle}} = \frac{\abs{G}}{\abs{\langle x \rangle}} = \frac{n}{m}
+    \]
+    Como $p \vert n$ y $p \not\vert n$ se tiene que $p \vert \abs{\faktor{G}{\langle x \rangle}} < n$
+    y por hipótesis de inducción, $\exists \bar{y} \in \faktor{G}{\langle x \rangle}$ tal que
+    $\orden\left( \bar{y} \right) = p$, pero
+    \[
+        \begin{aligned}
+            \orden\left( \bar{y} \right) = p &\implies \left( \bar{y} \right) = \bar{1} \implies
+            y^p \in \langle x \rangle \implies y^p = x^r \implies
+            \left( y^m \right)^p = \left( y^p \right)^m = \left( x^r \right)^m = 
+            \left( x^m \right)^r = 1^r = 1
+        \end{aligned}
+    \]
+    y por lo tanto, $\orden\left( y^m \right) \vert p$, pero $p$ es primo, con lo cual, o bien
+    $\orden\left( y^m \right) = 1$ pero entonces
+    \[
+        \orden\left( y^m \right) = 1 \implies y^m = 1 \implies \bar{y^m} = \bar{1} \implies 
+        \left( \bar{y} \right)^m = 1 \implies p \vert m
+    \]
+    Lo cual es una contradicción. Por lo tanto, $\orden\left( y^m \right) = p$ y hemos acabado.
+
+    En el caso de que $G$ no sea abeliano aplicaremos la fórmula de órbitas separando en varios casos.
+    
+    \begin{itemize}
+        \item Si $\exists x_1, \dots, x_r$ tal que $\mcd\left( p, \left[ G : G_{x_i} \right] \right) = 1$.
+            Entonces $p \not\vert \left[ G : G_{x_i} \right] = \frac{\abs{G}}{ \abs{G_{x_i}}}$, pero
+            $p \vert \abs{G} \implies p \vert \abs{G_{x_i}} \leq n$ y, aplicando la hipótesis de inducción
+            $\exists x \in G_{x_i} \subset G$ tal que $\orden(x) = p$.
+        \item Si $\forall x_1, \dots, x_r$ se tiene que $p \vert \left[ G : G_{x_i} \right] \implies
+            p \vert \abs{Z(G)}$, pero $Z(G) \subset no igual G$, es decir, $\abs{Z(G)} < n$ y por lo tanto,
+            por la hipótesis de inducción, $\exists x \in Z(G)$ tal que $\orden(x) = p$.
+    \end{itemize}
+\end{proof}
