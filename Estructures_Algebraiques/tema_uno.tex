@@ -1573,7 +1573,7 @@
     En particular,
     \begin{enumerate}[i)]
         \item\label{prop_q_orb_ite_1} $\abs{Gx} =  \abs{\faktor{G}{G_x}} = \left[ G : G_x \right] = \frac{\abs{G}}{\abs{G_x}}$. Es decir,
-            $\label{Gx}\abs{G_x} = \abs{G}$.
+            $\label{Gx}\abs{G_x}\abs{Gx} = \abs{G}$.
         \item\label{prop_q_orb_ite_2} Si $X$ es finito, entonces $X = \bigsqcup\limits^r_{i = 1} G x_i$ y, por consiguiente,
             \[
                 \abs{X} = \sum^r_{i = 1} \abs{G x_i} = \sum^r_{i = 1} \left[ G : G_{x_i} \right],
@@ -1677,51 +1677,56 @@
         \item $m_am_b\lp x\rp = abx=m_{ab}\lp x\rp\in\im\lp m\rp$,
         \item $m_{a^{-1}}m_a\lp x\rp = a^{-1}ax=x\implies m_a^{-1}\in\im\lp m\rp$.
     \end{itemize}
-    %TODO
+    Así pues, la aplicación
+    \begin{align*}
+        \widetilde{m}\colon G&\to\im\lp m\rp\\
+        a&\mapsto m_a
+    \end{align*}
+    es un morfismo biyectivo de grupos de $G$ a un subgrupo de $\Sim_n$.
 \end{proof}
 
 \subsection{Acción por conjugación de $G$ en $X= G$}
 
 \begin{defi}[acción!por conjugación]
-    Sea $G$ un grupo. Definiremos la acción por conjugación de $G$ como la aplicación
+    Sea $G$ un grupo. Definimos la acción por conjugación de $G$ como la aplicación
     \[
         \begin{aligned}
             G \times G &\to G \\
-            (a, x) &\mapsto axa^{-1}
+            (a, x) &\mapsto axa^{-1}.
         \end{aligned}
     \]
 \end{defi}
 
 \begin{prop}
-    Sea $G$ un grupo. Si $x \in G$ es punto fijo por conjugación, entonces $x \in Z(G)$ (centro de $G$).
+    Sea $G$ un grupo. Si $x \in G$ es punto fijo por conjugación, entonces $x \in Z(G)$.
 \end{prop}
 \begin{proof}
-    $x$ punto fijo $\iff axa^{-1} \forall a \in G \iff ax = xa \forall a \in G \iff x \in Z(G)$
+    $x$ punto fijo $\iff axa^{-1} = x,\,\forall a \in G \iff ax = xa,\, \forall a \in G \iff x~\in~Z(G)$.
 \end{proof}
 
 \begin{prop}
-    Sea $G$ un grupo. Si $x \in G \implies G_x = Z_G(x)$
+    Sea $G$ un grupo. Si consideramos la acción por conjugación de $G$, entonces $G_x = Z_G(x)$.
 \end{prop}
 \begin{proof}
-    $G_x = \left\{ a \in G \mid axa^{-1} = x \right\} = \left\{ a \in G \mid ax = xa \right\} = Z_G(x)$
+    $G_x = \left\{ a \in G \mid axa^{-1} = x \right\} = \left\{ a \in G \mid ax = xa \right\} = Z_G(x)$.
 \end{proof}
 
 \begin{prop}[Fórmula de órbitas de la acción por conjugación de $G$ en $G$]
-    Sea $G$ un grupo, y sean $x_1, \dots, x_r$ representantes de órbitas no puntuales. Entonces
+    Sea $G$ un grupo, y sean $x_1, \dots, x_r$ representantes de órbitas no puntuales. Entonces,
     \[
-        \abs{G} = \abs{Z(G)} + \sum^r_{i=1} \left[ G : Z_G\left( x_i \right) \right]
+        \abs{G} = \abs{Z(G)} + \sum^r_{i=1} \left[ G : Z_G\left( x_i \right) \right].
     \]
 \end{prop}
 \begin{proof}
     Se tiene que
     \[
-        \abs{G} = \sum^s_{i=1} \abs{Gx_i} = \abs{Z(G)} + \sum^r_{i=1} \left[ G : G_{x_i} \right]
+        \abs{G} = \sum^s_{i=1} \abs{Gx_i} = \abs{Z(G)} + \sum^r_{i=1} \left[ G : G_{x_i} \right].
     \]
 \end{proof}
 
 \begin{teo}[Teorema de Cauchy]
-    Sea $G$ un grupo finito con $\abs{G} = n$ y sea $p \vert n$ un primo. Entonces
-    existe $x \in G$ tal que $\orden(x) = p$.
+    Sea $G$ un grupo finito de orden $n$ y sea $p \vert n$ un número primo. Entonces,
+    existe algún $x \in G$ tal que $\orden(x) = p$.
 \end{teo}
 \begin{proof}
     Si $G$ es un grupo abeliano, procederemos a demostrar el enunciado por inducción sobre $n$. El caso
