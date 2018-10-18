@@ -61,7 +61,7 @@
 \section{Generadors, base i dimensió}
 
 \begin{specialteo}[Teorema de Steinitz]\label{teo:steinitz}
-	Sigui $\E$ un $\k$-espai vectorial finitament generat; sigui $U = \{u_1,\dots, u_n\}$ un conjunt de generadors d'$\E$ i sigui $W = \{w_1,..., w_m\}$ un conjunt de vectors linealment independents d'$\E$. Aleshores:
+	Sigui $\E$ un $\K$-espai vectorial finitament generat; sigui $U = \{u_1,\dots, u_n\}$ un conjunt de generadors d'$\E$ i sigui $W = \{w_1,..., w_m\}$ un conjunt de vectors linealment independents d'$\E$. Aleshores:
 	\begin{enumerate}[i)]
 		\item $m \leq n$
 		\item Podem substituir $m$ vectors del conjunt $\{u_1, ..., u_n\}$ pels $m$ vectors de $\{w_1,..., w_m\}$ de manera que el conjunt segueixi sent generador d'$\E$.
@@ -75,7 +75,7 @@
 			
 			Com que (per hipòtesi) $w_k\in\E$ i el conjunt $U'$ genera $\E$, $w_k$ es pot expressar com a combinació lineal dels vectors d'$U'$: 
 			\begin{equation}\label{eq:lincomb}
-				\exists \lambda_1,\ldots, \lambda_n \in \k \qcolon w_k = \sum_{i=1}^{k-1} \lambda_i w_i + \sum_{i = k}^{n} \lambda_i u_i\,.
+				\exists \lambda_1,\ldots, \lambda_n \in \K \qcolon w_k = \sum_{i=1}^{k-1} \lambda_i w_i + \sum_{i = k}^{n} \lambda_i u_i\,.
 			\end{equation}
 			Sigui $r \defeq \min \{k-1, n\}$. Des de \eqref{eq:lincomb} es pot deduir que $k-1 < n$: en cas contrari, el terme de la dreta desapareixeria i per tant $w_k$ seria una combinació lineal de $w_1, \ldots, w_r$ (només agafem $r$ vectors ja que com a màxim podem substituir $r$ vectors d'$U$): $w_k = \sum_{i=1}^{r} \lambda_iw_i$. Això entraria en contradicció amb la hipòtesi (els vectors $\{w_1, \ldots, w_k\}$ són l.i.); per tant $k-1 < n$.
 			
@@ -96,7 +96,7 @@
 	\end{proof}
 	
 	\begin{col}
-		En un $\k$-espai vectorial $\E$ finitament generat, totes les bases són finites i tenen la mateixa cardinalitat (el mateix nombre de vectors).
+		En un $\K$-espai vectorial $\E$ finitament generat, totes les bases són finites i tenen la mateixa cardinalitat (el mateix nombre de vectors).
 	\end{col}
 	
 	\begin{proof} Sigui $B_1$ base d'$\E$  de cardinalitat $n$ ($|B_1| = n$) i sigui $B_2$ base d'$\E$ de cardinalitat $m$ ($|B_2| = m$). D'una banda, per definició, els $n$ vectors de $B_1$ generen $\E$ i els $m$ vectors de $B_2$ són vectors linealment independents d'$\E$; per tant, pel \hyperref[teo:steinitz]{Teorema de Steinitz}, $n \le m$. D'altra banda, commutant el raonament, els $m$ vectors de $B_2$ generen $\E$ i els $n$ vectors de $B_1$ són vectors linealment independents d'$\E$; per tant, pel \hyperref[teo:steinitz]{Teorema de Steinitz}, $m \le n$.  Conseqüentment, $n=m$.
