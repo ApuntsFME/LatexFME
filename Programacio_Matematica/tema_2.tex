@@ -1,15 +1,43 @@
-\chapter{Teoria de dualitat}
+\chapter{Dualitat}
 
-\begin{teo}[feble de dualitat]
-    Sigui $x$ SBF de $\left(P\right)$ i $\lambda$ SBF del $\left(D\right)$ associat, llavors
-    \[ \lambda' b\leq c'x. \]
+\begin{teo}[feble de dualitat]\label{teo:dualitat-feble}
+    Per tota solució factible $x$ d'un problema primal $\left(P\right)$ i tota solució factible $\lambda$ del dual $\left(D\right)$ associat
+    \[ \lambda'b\leq c'x\,. \]
+    \begin{proof}
+    	Sigui $m\times n$ l'ordre de la matriu de restriccions $A$ al problema primal. Definim, per cada $i\in\{1,\ldots,m\}$ (per cada restricció de $(P)$) i per cada $j\in\{1,\ldots,n\}$ (per cada variable de $(P)$), respectivament, 
+    	\begin{align*}
+    		u_i &\defeq \lambda_i(a_i'x-b_i)\\
+    		v_j &\defeq (c_j - \lambda'A_j)x_j\,.
+    	\end{align*}
+    	
+    	Primerament, veiem que $u_i$ i $v_j$ sempre són positius. Si $a_i'x_i-b_i \ge 0$, llavors la $i$-èsima restricció de $(P)$ serà de la forma \[a_i'x \ge b_i\,,\] i per tant la corresponent variable dual $\lambda_i$ complirà $\lambda_i \ge 0$. D'altra banda, si $a_i'x_i-b_i \le 0$ la variable dual $\lambda_i$ serà negativa. Finalment, si $a_i'x_i-b_i = 0$, es té que $u_i = 0$ independentment de $\lambda_i$. Per tant $u_i \ge 0$ per tot $i$. Es pot fer un raonament similar per $v_j$.
+    	
+    	Ara, observem que
+    	\begin{alignat}{2}{}
+    		\sum_{i = 1}^{m} u_i &= \sum_{i = 1}^{m} \lambda_ia_i'x-\lambda_ib_i &= \lambda'Ax - \lambda'b \label{eq:ui}\\
+    		\sum_{j = 1}^{n} v_i &= \sum_{j = 1}^{n} c_jx_j - \lambda'A_jx_j &= c'x - \lambda'Ax \label{eq:vj}
+    	\end{alignat}
+    	Si sumem \eqref{eq:ui} i \eqref{eq:vj} i tenim en compte que $u_i \ge 0$ i $v_j \ge 0$ per tot $i$ i $j$, obtenim
+    	\begin{equation*}
+    		\sum_{i = 1}^{m} u_i + \sum_{j = 1}^{n} v_i= c'x-\lambda'b \ge 0\,
+    	\end{equation*}
+    	i per tant \[c'x \ge \lambda'b\,.\]
+    \end{proof}
 \end{teo}
 \begin{col}
-    \begin{itemize}
-        \item[]
+	Per qualsevol problema primal $(P)$ i el seu dual $(D)$: 
+    \begin{enumerate}[i)]
         \item $\left(P\right)$ il·limitat $\implies \left(D\right)$ infactible.
         \item $\left(D\right)$ il·limitat $\implies \left(P\right)$ infactible.
-    \end{itemize}
+    \end{enumerate}
+	\begin{proof}
+		\begin{enumerate}[i)]
+			\item[]
+			\item Sigui $x$ solució factible de $(P)$ i $\lambda$ solució factible de $(D)$. Per hipòtesi $(P)$ és il·limitat i per tant \[\forall k \in \real\ \exists x\in P\qcolon c'x < k\,. \] Suposem que existís una solució dual $\lambda$ factible. Llavors, pel \hyperref[teo:dualitat-feble]{teorema feble de dualitat}, $\forall x\in P\colon \lambda'b \le c'x$. D'altra banda, per la proposició anterior, tenim que $\exists x\in P\colon \lambda'b > c'x\,$; contradicció. Per tant $(D)$ és infactible.
+			%
+			\item Sigui $\lambda$ solució factible de $(D)$ i $x$ solució factible de $(P)$. Per hipòtesi $(D)$ és il·limitat i per tant \[\forall k \in \real\ \exists x\in P\qcolon \lambda'b > k\,. \] Suposem que existís una solució primal $x$ factible. Llavors, pel \hyperref[teo:dualitat-feble]{teorema feble de dualitat}, $\forall \lambda\in D\colon \lambda'b \le c'x$. D'altra banda, per la proposició anterior, tenim que $\exists \lambda\in D\colon \lambda'b > c'x\,$; contradicció. Per tant $(P)$ és infactible.
+		\end{enumerate}
+	\end{proof}
 \end{col}
 \begin{teo}[fort de dualitat]
     Siguin $x^*, \lambda^*$ solucions òptimes de $\left(P\right)$ i el seu dual $\left(D\right)$, respectivament, llavors

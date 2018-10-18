@@ -10,7 +10,7 @@ El fet que hi hagi solucions òptimes que siguin punts extrems no és de gran aj
 \begin{defi*}[Solució bàsica]
 	Donat un poliedre en forma estàndard $P_e$ associat a un problema de programació lineal, una solució bàsica és un vector $\vec{x}\in P_e$ del qual es pot fer la partició $\x = \left[\x[\B]\mid\x[\N]\right]$ tal que
 	\begin{enumerate}[i)]
-		\item $\B,\N\subset\{1,\ldots,m \}$ són conjunts d'índexos (i són complementaris). $\B$ s'anomena el conjunt d'índexos de variables bàsiques o \textbf{base}, i $\N$ s'anomena el conjunt d'índexos de variables no bàsiques.
+		\item $\B,\N\subseteq\{1,\ldots,m \}$ són conjunts d'índexos (i són complementaris). $\B$ s'anomena el conjunt d'índexos de variables bàsiques o \textbf{base}, i $\N$ s'anomena el conjunt d'índexos de variables no bàsiques.
 		%
 		\item $\x[\B] \defeq 
 		\begin{bmatrix}x_{\B(1)} & x_{\B(2)} & \cdots & x_{\B(m)}\end{bmatrix}\,$
@@ -20,7 +20,7 @@ El fet que hi hagi solucions òptimes que siguin punts extrems no és de gran aj
 		%
 		\item La matriu bàsica es defineix com 
 		\[
-			B =
+			B \defeq
 			\begin{bmatrix}
 			\arrowvert& 	\arrowvert& 	  & 	\arrowvert\\
 			A_{\B(1)}&		A_{\B(1)}&	\cdots&		A_{\B(m)}\\
@@ -45,18 +45,18 @@ Aquesta definició no és gaire intuïtiva; a continuació es presenta una versi
     \end{bmatrix}
     \in \real^n$ tal que:
     \begin{itemize}
-        \item $d_{N\left(i\right)} \stackrel{\text{def.}}{=}
+        \item $d_{N\left(i\right)} \defeq
             \begin{cases}
                 1 & N\left(i\right) = q \\
                 0 & N\left(i\right) \neq q
             \end{cases}
             ,\, \forall i \in \left\{1, \dots, n-m \right\}$,
-        \item $A \left(x + \theta d\right) = b$ per algun $\theta \in \real^+ \implies d_B \stackrel{\text{def.}}{=} -B^{-1} A_q$.
+        \item $A \left(x + \theta d\right) = b$ per algun $\theta \in \real^+ \implies d_B \defeq -B^{-1} A_q$.
     \end{itemize}
 \end{defi}
 
 \begin{prop}[Càlcul de $\theta^*$]
-    Calculem $\theta^* \stackrel{\text{def.}}{=} \max \left\{ \theta > 0 \, |\, y = x + \theta d \in P_e\right\}$:
+    Calculem $\theta^* \defeq \max \left\{ \theta > 0 \, |\, y = x + \theta d \in P_e\right\}$:
     \begin{enumerate}
         \item $A\left(x + \theta d\right) = b,\, \forall \theta$ és cert.
         \item $y = x + \theta d \geq 0$:
