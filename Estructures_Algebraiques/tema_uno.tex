@@ -652,7 +652,7 @@
     
 \end{defi}
 
-\begin{teo}[Teorema de Lagrange]
+\begin{teo}[Teorema de Lagrange]\label{teo_lag}
     Sea $G$ un grupo finito y sea $H$ un subgrupo de $G$. Entonces,
     \[
         \abs{G} = \abs{H} \abs{\faktor{G}{H}}.
@@ -1451,11 +1451,11 @@
         \item $a(bx) = (ab)x$, $\forall a,b \in G$, $\forall x \in X$,
         \item $1x = x$.
     \end{enumerate}
-    Diremos que $G$ opera en $X$ o bien que $X$ es un $G$-conjunto.
+    Decimos que $G$ opera en $X$ o bien que $X$ es un $G$-conjunto.
 \end{defi}
 
 \begin{obs}
-    Una acción de $G$ en $X$, define, $\forall a \in G$, una aplicación
+    Una acción de $G$ en $X$ define, $\forall a \in G$, una aplicación
     \[
         \begin{aligned}
             m_a \colon X &\to X \\
@@ -1463,8 +1463,6 @@
         \end{aligned}
     \]
     Además, $m_a$ es biyectiva y tenemos $\left( m_a \right)^{-1} = m_{a^{-1}}$ ya que $a^{-1}(ax) = \left( a^{-1}a \right)x = 1x = x$.
-
-    %TODO m es morfismo de grupos
     
     Es decir, una acción de $G$ en $X$, nos define una aplicación
     \[
@@ -1473,8 +1471,12 @@
             a &\mapsto m_a.
         \end{aligned}
     \]
+    Esta aplicación es un morfismo de grupos, ya que
+    \[
+        m_am_b\lp x\rp=abx=m_{ab}\lp x\rp,\,\forall x\in X.
+    \]
     
-    Recíprocamente, dada $f \colon G \to \text{Perm}(X)$ morfismo de grupos. Entonces, podemos
+    Recíprocamente, sea $f \colon G \to \text{Perm}(X)$ un morfismo de grupos. Podemos
     definir una acción
     \[
         \begin{aligned}
@@ -1482,35 +1484,38 @@
             (a, x) &\mapsto \tilde{f}(a, x) = f(a)(x),
         \end{aligned}
     \]
-    que es una acción ya que
+    que está bien definida porque
     \begin{enumerate}[i)]
         \item $a(bx) = f(a)\left( f(b)(x) \right) = \left( f(a)f(b) \right)(x) = f(ab)(x) = (ab)x$,
         \item $1x = f(1)x = \Id(x) = x$.
     \end{enumerate}
 
-    Por lo tanto, existe una biyección
+    Por lo tanto, podremos afirmar que existe una biyección
     \[
         \left\{ \text{acciones } G \times X \to X \right\} \leftrightarrow
         \left\{ \text{morfismo de grupos } G \to \text{Perm}(X) \right\}
     \]
+    si demostramos que es una inyección en alguna de las direcciones.
 \end{obs}
 
 \begin{defi}[órbita de un elemento]
     Sea $G$ un grupo y $X$ un $G$-conjunto. Llamamos órbita de $x \in X$ a
     \[
-        Gx = \left\{ ax \mid a \in G \right\} \subseteq X
+        Gx = \left\{ ax \mid a \in G \right\} \subseteq X.
     \]
 \end{defi}
 
 \begin{prop}
-    Sean $x, y \in X$ diremos que $x \sim y \iff \exists a \in G$ tal que $y = ax$. Entonces
-    $\sim$ es una relación de equivalencia.
+    Sean $x, y \in X$. La relación $x \sim y \iff \exists a \in G$ tal que $y = ax$ es una relación de equivalencia.
 \end{prop}
 
 \begin{obs}
     Si tenemos la relación de equivalencia anterior, entonces
-    $\bar{x} = \left\{ y \in X \mid x \sim y \right\} = \left\{ y \in X \mid \exists a \in G \tq y = ax \right\}
-    = \left\{ ax \mid a \in G \right\} = Gx$ que es la órbita de $x$. El conjunto de órbitas se escribe como
+    \[
+        \bar{x} = \left\{ y \in X \mid x \sim y \right\} = \left\{ y \in X \mid \exists a \in G \tq y = ax \right\}
+    = \left\{ ax \mid a \in G \right\} = Gx,
+    \]
+    que es la órbita de $x$. El conjunto de órbitas se escribe como
     $G \setminus X$ ó $\faktor{X}{\sim}$.
 \end{obs}
 
@@ -1557,7 +1562,7 @@
 \end{proof}
 
 \begin{prop}
-    Sea $G$ un grupo y $X$ un $G$-conjunto. Entonces $\forall x \in X$, tenemos que
+    Sea $G$ un grupo y $X$ un $G$-conjunto. Entonces, $\forall x \in X$, tenemos que
     \[
         \begin{aligned}
             G x &\to \faktor{G}{G_x} \\
@@ -1565,44 +1570,50 @@
         \end{aligned}
     \]
     es una aplicación bien definida y biyectiva.
-    En particular
+    En particular,
     \begin{enumerate}[i)]
-        \item $\abs{G_x} = \faktor{G}{G_x} = \left[ G : G_x \right] = \frac{\abs{G}}{\abs{G_x}}$. Es decir,
-            $\abs{Gx} = \abs{G}$.
-        \item Si $X$ es finito, entonces $X = \bigsqcup\limits^r_{i = 1} G x_i$ y por tanto
+        \item\label{prop_q_orb_ite_1} $\abs{Gx} =  \abs{\faktor{G}{G_x}} = \left[ G : G_x \right] = \frac{\abs{G}}{\abs{G_x}}$. Es decir,
+            $\label{Gx}\abs{G_x} = \abs{G}$.
+        \item\label{prop_q_orb_ite_2} Si $X$ es finito, entonces $X = \bigsqcup\limits^r_{i = 1} G x_i$ y, por consiguiente,
             \[
-                \abs{X} = \sum^r_{i = 1} \abs{G x_i} = \sum^r_{i = 1} \left[ G : G_{x_i} \right]
+                \abs{X} = \sum^r_{i = 1} \abs{G x_i} = \sum^r_{i = 1} \left[ G : G_{x_i} \right],
             \]
-            Lo que conocemos como fórmula de órbitas.
-        \item
+            que es lo que conocemos como fórmula de órbitas.
+        \item %TODO(no sabem que hi hauria d'haver aqui)
     \end{enumerate}
 \end{prop}
 
 \begin{proof}
-    Veamos que si $ax = bx$, entonces $a G_x = b G_x$. En efecto
+    Veamos que si $ax = bx$, entonces $a G_x = b G_x$. En efecto,
     \[
-        ax = bx \implies b^{-1}ax = x \implies b^{-1}a \in G_x \implies aG_x = bG_x
+        ax = bx \implies b^{-1}ax = x \implies b^{-1}a \in G_x \implies aG_x = bG_x.
     \]
     Veamos ahora que la aplicación es inyectiva. Supongamos que $aG_x = bG_x$, entones
     \[
-        a G_x = b G_x \implies b^{-1}a \in G_x \implies b^{-1}a x = x \implies ax = bx
+        a G_x = b G_x \implies b^{-1}a \in G_x \implies b^{-1}a x = x \implies ax = bx.
     \]
-    por lo tanto es inyectiva. Y la aplicación es evidentemente exhaustiva por construcción.
+    La aplicación es evidentemente exhaustiva por construcción.
+    El punto \ref{prop_q_orb_ite_1} es una consecuencia inmediata del teorema de Lagrange (\ref{teo_lag}) y el punto \ref{prop_q_orb_ite_2} sigue del \ref{prop_q_orb_ite_1}.
+    
 \end{proof}
 
 \begin{defi}[punto fijo]
     Sea $G$ un grupo y $X$ un $G$-conjunto. Diremos que $x \in X$ es un punto fijo si 
     \[
-        ax = x \quad \forall a \in G
+        ax = x \quad \forall a \in G.
     \]
-    es decir, $Gx = \left\{ x \right\}$ o $G_x = \left\{ a \in G \mid ax = x \right\} = G$.
 \end{defi}
+\begin{obs}
+    $x$ es un punto fijo $\iff Gx = \left\{ x \right\} \iff G_x = G$.
+\end{obs}
 
 \begin{defi}[acción!transitiva]
     Sea $G$ un grupo, $X$ un conjunto y $G \times X \to X$ una acción de $G$ en $X$. Diremos
-    que esta acción es transitiva si $\forall x, y \in X$ se tiene que $x \sim y$, es decir,
-    $\exists !$ órbita o $X = Gx$ $\forall x \in X$.
+    que esta acción es transitiva si, $\forall x, y \in X$, se tiene que $x \sim y$.
 \end{defi}
+\begin{obs}
+    Una acción es transitiva si y solo si $X=Gx,\,\forall x\in X$, es decir, si hay una sola órbita.
+\end{obs}
 
 \begin{defi}[acción!fiel]
     Sea $G$ un grupo, $X$ un conjunto y $G \times X \to X$ una acción de $G$ sobre $X$.
@@ -1617,14 +1628,31 @@
     es un morfismo inyectivo de grupos.
 \end{defi}
 
+\begin{defi}[centralizador!de un elemento]\index{centralizador!de un subgrupo((tlab))}\index{centro!de un grupo((tlab))}
+    Sea $G$ un grupo y sea $a\in G$. Definimos el centralizador de $a$, $Z_G\lp a\rp$, como
+    \[
+        Z_G\lp a\rp = \lc b\in G \mid ab=ba\rc,
+    \]
+    es decir, el conjunto de elementos que conmutan con $a$. Sea $S\subseteq G$. Definimos el centralizador de $S$, $Z_G\lp S\rp$, como
+    \[
+        Z_G\lp S\rp = \lc b\in G \mid ab=ba, \,\forall a\in S\rc,
+    \]
+    es decir, la intersección de los centralizadores de todos sus elementos.
+    Definimos el centro de $G$, $Z\lp G\rp$ como
+    \[
+        Z\lp G\rp = Z_G\lp G\rp,
+    \]
+    es decir, el conjunto de elementos que conmutan con cualquier otro elemento.
+\end{defi}
+
 \subsection{Acción por traslación de $G$ en $X= G$}
 
 \begin{defi}[acción!por traslación]
-    Sea $G$ un grupo. Definiremos una acción por traslación como la aplicación
+    Sea $G$ un grupo. Definimos la acción por traslación de $G$ como la aplicación
     \[
         \begin{aligned}
             G \times G &\to G \\
-            (a, x) &\mapsto a\cdot x = ax
+            (a, x) &\mapsto a\cdot x = ax.
         \end{aligned}
     \]
 \end{defi}
@@ -1634,15 +1662,22 @@
 \end{obs}
 
 \begin{teo}[Teorema de Carley]
-    Sea $G$ un grupo finito con $\abs{G} = n$. Entonces, $G$ es isomorfo a un subgrupo de $\Sim_n$
+    Sea $G$ un grupo finito con $\abs{G} = n$. Entonces, $G$ es isomorfo a un subgrupo de $\Sim_n$.
 \end{teo}
 
 \begin{proof}
-    Tomamos la acción de $G$ en $X=G$ por traslación. Sabemos que se trata de una acción fiel, por
-    lo tanto,
-    \[
-        TODO %TODO
-    \]
+    Tomamos la acción de $G$ en $X=G$ por traslación. Puesto que de trata de una acción fiel, la aplicación
+    \begin{align*}
+        m\colon G&\to\Sim_n\\
+        a&\mapsto m_a
+    \end{align*}
+    es inyectiva. Veamos que $\im\lp m\rp$ es un grupo.
+    \begin{itemize}
+        \item $m_1=\Id\in\im\lp m\rp$,
+        \item $m_am_b\lp x\rp = abx=m_{ab}\lp x\rp\in\im\lp m\rp$,
+        \item $m_{a^{-1}}m_a\lp x\rp = a^{-1}ax=x\implies m_a^{-1}\in\im\lp m\rp$.
+    \end{itemize}
+    %TODO
 \end{proof}
 
 \subsection{Acción por conjugación de $G$ en $X= G$}
