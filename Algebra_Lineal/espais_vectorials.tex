@@ -1,7 +1,7 @@
 \chapter{Espais vectorials}
 \section{Definicions d'espais i subespais vectorials}
 \begin{defi}[Espai vectorial]
-	Un espai vectorial $V$ sobre un cos $\mathbb{K}$ (també anomenat un $\K$-espai vectorial) equipat d'un producte (o operació) intern
+	Un espai vectorial $V$ sobre un cos $\mathbb{K}$ (també anomenat un $\K$-espai vectorial) equipat d'un producte intern
 	\begin{equation*}
 	\begin{aligned}
 		(+)\colon\quad	&V\times V &&\rightarrow&& V\\
@@ -18,7 +18,7 @@
 	anomenat multiplicació escalar, és un conjunt d'elements anomenats vectors que compleix les següents propietats:
 	\begin{enumerate}[i)]
 		\item \textit{Tancat per la suma.} $\forall v,w \in V\qcolon v+w\in V$
-		\item \textit{Tancat per la multiplicació escalar.} $\forall \lambda \in \mathbb{K}\; \forall v \in V\qcolon \lambda\cdot v\in V$
+		\item \textit{Tancat per la multiplicació escalar.} $\forall \lambda \in \mathbb{K}\ \forall v \in V\qcolon \lambda\cdot v\in V$
 	\end{enumerate}
 \end{defi}
 
@@ -35,7 +35,7 @@
 \begin{defi}\label{defi:ld}
 	Es diu que els vectors d'un conjunt $ V = \{v_1, \ldots, v_n\}$ són linealment dependents (abreviat l.d.) si i només si \[\exists \lambda_1, \ldots, \lambda_n\qcolon \left(\exists i \colon \lambda_i \ne 0 \quad\land\quad \sum_{i=1}^{n} \lambda_i v_i = \vec{0}\right)\,. \] Si els vectors d'un conjunt no són l.d. es diu que són linealment independents (abreviat l.i.).
 	
-	\begin{col}
+	\begin{col}\label{col:ld}
 		S'obté directament a partir de la definició \ref{defi:ld} que:
 		\begin{enumerate}[i)]
 			\item Qualsevol conjunt de vectors que contingui l'element neutre $\vec{0}$ és linealment dependent
@@ -45,6 +45,17 @@
 		\end{enumerate}
 	\end{col}
 \end{defi}
+
+\begin{prop}
+	El rang d'una matriu és equivalent al nombre de files linealment independents i al nombre de columnes linealment independents.
+	\begin{proof}
+		Primer demostrarem que el nombre de files l.i. correspon amb la definició que hem fet del rang d'una matriu. Sigui $A\in\matspace{m\times n}$ la matriu de la qual volem determinar el rang. Per arribar a la forma esglaonada (per files), realitzarem un seguit de transformacions elementals per files per tal d'obtenir coeficients nuls per sota de cada pivot.
+		
+		Sigui $\tilde{A}$ la forma esglaonada de la matriu $A$. Denotarem $\tilde{a}_i$ la $i$-èsima fila d'$\tilde{A}$. Sigui $k$ el nombre de files d'$\tilde{A}$ que tenen pivot. Siguin $i_1, i_2, \ldots, i_k$ els índexos d'aquestes files, i siguin $j_1, j_2, \ldots, j_k$ els índexos de la columna que correspon al pivot de les files $\tilde{a}_{i_1}, \tilde{a}_{i_2}, \ldots, \tilde{a}_{i_k}$ respectivament. Suposem que \[\exists\lambda_1,\ldots,\lambda_k\in\real\qcolon \lambda_1\tilde{a}_{i_1} + \lambda_2\tilde{a}_{i_2} + \cdots + \lambda_k\tilde{a}_{i_k} = \vec{0}\,.\] Per la definició de l'algorisme de Gauss, $\tilde{a}_{i_1}$ serà l'única fila amb un coeficient no nul a la posició $j_1$. Per tant, $\lambda_1 = 0$. A més, $\tilde{a}_{i_2}$ serà l'única fila a part d'$\tilde{a}_{i_1}$ amb un coeficient no nul a la posició $j_2$; com que $\lambda_1$ ja és $0$, $\lambda_2$ només pot ser 0. Seguint aquest raonament inductiu concloem que tots els coeficients han de ser nuls. Per tant, aplicant la definició \ref{defi:ld}, els vectors $\tilde{a}_{i_1}, \tilde{a}_{i_2}, \ldots, \tilde{a}_{i_k}$ són l.i.. És a dir, que el nombre total de files l.i. d'$A$ és com a mínim $k$.
+		
+		Finalment, el nombre de files l.i. no pot ser major que $k$, ja que les altres files d'$\tilde{A}$ no tenen pivot i per tant (per definició) són nul·les, cosa que implica (vegeu $\ref{col:ld}$) que són l.d. amb les altres.
+	\end{proof}
+\end{prop}
 
 
 \section{Generadors, base i dimensió}
