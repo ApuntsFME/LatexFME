@@ -305,3 +305,58 @@ Tenemos $n+1$ valores de la función, y hay que añadir $2$ condiciones adiciona
     \item \emph{Spline natural} (el más ``suave'' posible): $f''_0 = 0$, $f''_n = 0$.
     \item $S'\left( x_0 \right) = f'_0$, $S'\left( x_n \right) = f'_n$.
 \end{itemize}
+
+Formulación en derivadas: expresamos el Spline en función de $\left\{ f_i \right\}_{i=0}^n$ (conocido) y de las derivadas $\left\{ S'_i \right\}_{i=0}^n$ (no conocido).
+\begin{align*}
+    a_i &= a_i\left( f_i, f_{i+1}, S'_i,S'_{i+1} \right) \\
+    b_i &= b_i\left( f_i, f_{i+1}, S'_i,S'_{i+1} \right) \\
+    c_i &= c_i\left( f_i, f_{i+1}, S'_i,S'_{i+1} \right) \\
+    d_i &= d_i\left( f_i, f_{i+1}, S'_i,S'_{i+1} \right) \\
+\end{align*}
+
+Con la formula del Spline cúbico $\C^1$ tenemos continuidad de $S(x)$ y de $S'(x)$. Escogeremos $\left\{ S'_i \right\}_{i=0}^n$ para tener continuidad de $S''(x)$:
+\[
+    S''_{i-1}\left( x_i, S'_{i-1}, S'_i \right) = S''_i\left( x_i, S'_i, S'_{i+1} \right),\quad i = 1, \dots, n-1
+\]
+
+Es decir,
+
+\[
+\begin{pmatrix}
+    \lambda_1   & 2 & \mu_1 & \\
+    & \lambda_2 & 2 & \mu_2 & & \\
+    & & \ddots    & \ddots & \ddots & \\
+    & & & \lambda_{n-1} & 2 & \mu_{n-1} 
+\end{pmatrix}
+\begin{pmatrix}
+    S'_0 \\
+    \vdots \\
+    \vdots \\
+    S'_n
+\end{pmatrix}
+=
+\begin{pmatrix}
+    e_i \\
+    \vdots \\
+    \vdots \\
+    e_{n-1}
+\end{pmatrix}
+,\,\,\,
+\begin{cases}
+    \lambda_i = \frac{h_i}{h_{i-1} + h_i} \\
+    \mu_i = \frac{h_{i-1}}{h_{i-1}+h_i} \\
+    e_i = \frac{3}{h_{i-1} + h_i}\left( \frac{h_i}{h_{i-1}}t_{i-1} + \frac{h_{i-1}}{h_i}t_i \right).
+\end{cases}
+\]
+
+Para tener un SCD nos faltan dos datos adicionales:
+\begin{itemize}
+    \item Podemos imponer
+        \begin{align*}
+            S'\left( x_0 \right) &= f'_0 = S'_0 \\
+            S'\left( x_n \right) &= f'_n = S'_n.
+        \end{align*}
+    \item También podemos imponer $S''\left( x_0 \right) = S''\left( x_n \right) = 0$ para obtener un Spline natural (curvatura inicial y final nula).
+        % TODO aqui falta alguna cosa que no entenc
+\end{itemize}
+
