@@ -306,7 +306,7 @@ Tenemos $n+1$ valores de la función, y hay que añadir $2$ condiciones adiciona
     \item $S'\left( x_0 \right) = f'_0$, $S'\left( x_n \right) = f'_n$.
 \end{itemize}
 
-Formulación en derivadas: expresamos el Spline en función de $\left\{ f_i \right\}_{i=0}^n$ (conocido) y de las derivadas $\left\{ S'_i \right\}_{i=0}^n$ (no conocido).
+\emph{Formulación con derivadas}: expresamos el Spline en función de $\left\{ f_i \right\}_{i=0}^n$ (conocido) y de las derivadas $\left\{ S'_i \right\}_{i=0}^n$ (no conocido).
 \begin{align*}
     a_i &= a_i\left( f_i, f_{i+1}, S'_i,S'_{i+1} \right) \\
     b_i &= b_i\left( f_i, f_{i+1}, S'_i,S'_{i+1} \right) \\
@@ -353,10 +353,107 @@ Para tener un SCD nos faltan dos datos adicionales:
 \begin{itemize}
     \item Podemos imponer
         \begin{align*}
-            S'\left( x_0 \right) &= f'_0 = S'_0 \\
+            S'\left( x_0 \right) &= f'_0 = S'_0, \\
             S'\left( x_n \right) &= f'_n = S'_n.
         \end{align*}
     \item También podemos imponer $S''\left( x_0 \right) = S''\left( x_n \right) = 0$ para obtener un Spline natural (curvatura inicial y final nula).
-        % TODO aqui falta alguna cosa que no entenc
+        \begin{enumerate}[i)]
+            \item $0=S''\left( x_0 \right)=S''_0\left( x_0 \right)=6a_0\left( x_0-x_0 \right)+2b_0 = b_0(S'_0, S'_1) = 0$,
+
+                $3t_0-h_0\left( 2S'_0+S'_1 \right)=0$.
+            \item $0=S''_{n-1}\left( x_n \right) = a_{n-1} \underbrace{\left( x_n-x_{n-1} \right)}_{h_{n-1}} + b_{n-1}$.
+
+                Nos queda una ecuación en función de $S'_{n-1}$ y $S'_n$. Añadimos $2$ ecuaciones y nos queda un sistema $\left( n+1 \right)\times \left( n+1 \right)$.
+        \end{enumerate}
 \end{itemize}
 
+Cálculo del Spline:
+\begin{enumerate}[i)]
+    \item Planteamos y resolem el sistema lineal $\rightarrow \left\{ S_i \right\}_{i=0}^n$.
+    \item Con la fórmula del Spline cúbico $\C^1$ calculamos $a_i, b_i, c_i, d_i$ en cada intervalo (con $f'_i=S'_i$).
+\end{enumerate}
+
+Veamos cual es la base del Spline natural ($S''_0=S''_n=0$). Tenemos que $\dim\left( E_S \right)=n+1$,
+\[
+    S\left( x \right) = \sum_{i=0}^n f_i \Phi_i\left( x \right).
+\]
+Queremos $\Phi_i\left( x \right)$ tal que sean cúbicas a trozos, $\C^2$, $S''_0=S''_n=0$, $\Phi_i\left( x_j \right) = \delta_{ij}$. La base no será local pero tendrá amortiguamiento rápido. La podemos dibujar tomando
+\[
+    \begin{cases}
+        f_j = 0 & j\neq i, \\
+        f_i = 1.
+    \end{cases}
+\]
+
+\begin{obs}[Formulación con curvaturas]
+    Fijamos $S''_0=S''_n=0$ y resolvemos el sistema
+
+    \[
+        \begin{pmatrix}
+            \lambda_1   & 2 & \mu_1 & \\
+            & \lambda_2 & 2 & \mu_2 & & \\
+            & & \ddots    & \ddots & \ddots & \\
+            & & & \lambda_{n-1} & 2 & \mu_{n-1} 
+        \end{pmatrix}
+        \begin{pmatrix}
+            S''_0 \\
+            \vdots \\
+            \vdots \\
+            S''_n
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            e_i \\
+            \vdots \\
+            \vdots \\
+            e_{n-1}
+        \end{pmatrix}
+        ,\,\,\,
+        \begin{cases}
+            \lambda_i = \frac{h_i}{h_{i-1} + h_i} \\
+            \mu_i = \frac{h_{i-1}}{h_{i-1}+h_i} \\
+            e_i = \frac{6}{h_{i-1} + h_i}\left( \frac{t_i}{h_{i}} + \frac{t_{i-1}}{h_{i-1}} \right).
+        \end{cases}
+    \]
+\end{obs}
+
+\begin{teo}[Teorema de la suavidad del Spline dual]
+    De todas las funciones $\C^2$ que pasan por $\left( x_i, f_i \right)$, $i=0,\dots,n$, el Spline natural es la que minimiza la ``rugosidad'':
+    \[
+        I\left( g \right) := \int_{x_0}^{x_n} \left[ g''\left( x \right) \right]^2 \dif x
+    \]
+    El Spline es la interpolación más suave.
+\end{teo}
+
+\begin{proof}
+    Sean $g$ una función $\C^2$ que pasa por los puntos $\left( x_i, f_i \right)$ y $S$ el Spline natural.
+    \[
+        I\left( g \right) - I \left( S \right) = \int_{x_0}^{x_n} \left[ \left( g'' \right)^2 - \left( s'' \right)^2 \right] \dif x = \underbrace{\int_{x_0}^{x_n} \left( g''-S'' \right)^2 \dif x}_{>0,\,\, =0 \iff g=S} + \underbrace{2\int_{x_0}^{x_n} S''\left( g'' - S'' \right) \dif x}_{:= A}.
+    \]
+    Tenemos que $A$ es
+    \begin{align*}
+        A &= \int_{x_0}^{x_n} S''\left( g''-S'' \right) \dif x = \sum_{i=0}^{n-1} \left( -\int_{x_i}^{x_{i+1}} S'''\left( g'-S' \right) \dif x + \left[ S''\left( g' - S' \right) \right]_{x_i}^{x_{i+1}} \right) = \\
+        &= \sum_{i=0}^{n-1} -S'''_i\cancel{\left[ g-S \right]_{x_i}^{x_{i+1}}} + \cancel{S''\left( g'-S' \right)_{x_0}^{x_n}}.
+    \end{align*}
+    Por lo tanto $I\left( g \right) \geq I\left( S \right)$ y la igualdad se da solo si $g = S$.
+\end{proof}
+
+\begin{obs}
+    Vemos que $I\left( g \right) \geq I\left( S \right) + \left[ S''\left( g'-S' \right) \right]_{x_0}^{x_n}$ para $S$ Spline $\C^2$ cúbico. Si los datos son $\left\{ f_i \right\}_{i=0}^n$ y $\left\{ S'_0, S'_n \right\}$, el Spline $\C^2$ cúbico es el más suave posible en estas condiciones.
+\end{obs}
+
+\section{Mínimos cuadrados}
+\begin{obs}
+    Si tenemos muchos datos puede no ser necesario que la aproximación pase exactamente por los puntos, especialmente experimentales.
+\end{obs}
+
+Tenemos lo siguiente:
+\begin{itemize}
+    \item Datos: $\left\{ f_i \right\}_{i=0}^n$ o bien $f(x)$.
+    \item Espacio de aproximación $V$: Polinomios de grado menor que $m$, funciones lineales a trozos, etc.
+    \item Norma (producto escalar):
+        \begin{itemize}
+            \item Datos discretos: $\gen{u, v} = \sum\limits_{i=0}^n u\left( x_i \right) v\left( x_i \right)$, $\|u\| = \sqrt{\gen{u, u}} = \sqrt{\sum\limits_{i=0}^n\left( u\left( x_i \right) \right)^2}$.
+            \item Datos continuos: $\gen{u, v} = \int_a^b u\left( x \right) v\left( x \right) \dif x$, $\|u\|=\sqrt{\gen{u, u}} = \sqrt{\int_a^b\left( u\left( x \right) \right)^2 \dif x}$.
+        \end{itemize}
+\end{itemize}
