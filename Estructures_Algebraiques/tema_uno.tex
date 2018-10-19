@@ -652,7 +652,7 @@
     
 \end{defi}
 
-\begin{teo}[Teorema de Lagrange]\label{teo_lag}
+\begin{teo}[Teorema de Lagrange]\label{teo:lag}
     Sea $G$ un grupo finito y sea $H$ un subgrupo de $G$. Entonces,
     \[
         \abs{G} = \abs{H} \abs{\faktor{G}{H}}.
@@ -1593,7 +1593,7 @@
         a G_x = b G_x \implies b^{-1}a \in G_x \implies b^{-1}a x = x \implies ax = bx.
     \]
     La aplicación es evidentemente exhaustiva por construcción.
-    El punto \ref{prop_q_orb_ite_1} es una consecuencia inmediata del teorema de Lagrange (\ref{teo_lag}) y el punto \ref{prop_q_orb_ite_2} sigue del \ref{prop_q_orb_ite_1}.
+    El punto \ref{prop_q_orb_ite_1} es una consecuencia inmediata del teorema de Lagrange (\ref{teo:lag}) y el punto \ref{prop_q_orb_ite_2} sigue del \ref{prop_q_orb_ite_1}.
     
 \end{proof}
 
@@ -1724,7 +1724,7 @@
     \]
 \end{proof}
 
-\begin{teo}[Teorema de Cauchy]
+\begin{teo}[Teorema de Cauchy]\label{teo:cauchy}
     Sea $G$ un grupo finito de orden $n$ y sea $p \vert n$ un número primo. Entonces,
     existe algún $x \in G$ tal que $\orden(x) = p$.
 \end{teo}
@@ -1769,5 +1769,103 @@
         \item Si $\forall x_1, \dots, x_r$ se tiene que $p \vert \left[ G : G_{x_i} \right] \implies
             p \vert \abs{Z(G)}$, pero $Z(G) \subset no igual G$, es decir, $\abs{Z(G)} < n$ y por lo tanto,
             por la hipótesis de inducción, $\exists x \in Z(G)$ tal que $\orden(x) = p$.
+    \end{itemize}
+\end{proof}
+
+\section{$p$-grupos}
+
+\begin{defi}[$p$-grupo]
+    Un $p$-grupo $G$, es un grupo de orden $\abs{G} = p^r$ con $p$ primo y $r \geq 0$
+\end{defi}
+
+\begin{obs}
+    $\left\{ 1 \right\}$ es un $p$-grupo para todo primo $p$. ($r = 0$).
+\end{obs}
+
+\begin{teo*}
+    Sea $G$ un $p$-grupo. Entonces:
+    \begin{enumerate}[i)]
+        \item\label{item:pgrupo-1} $G$ es trivial $\iff Z(G)$ es trivial.
+        \item\label{item:pgrupo-2} $G$ es resoluble.
+        \item Si $G$ es simple, entonces $G \cong \faktor{\z}{p\z}$.
+    \end{enumerate}
+\end{teo*}
+
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item \bimplies OK. \bimpliedby Suponemos $G$ no trivial. Si $G$ es abeliano $\implies Z(G) = G$
+            no trivial. Por lo tanto, $Z(G)$ es no trivial.
+            Tomamos $x_1, \dots, x_s$ representantes de las órbitas no puntuales y $x_i \notin Z(G)$. En
+            particular, $Z_G\left( x_i \right) \subsetneq G$ y tenemos
+            \[
+                \left[ G : Z_G\left( x_i \right) \right] = \frac{\abs{G}}{\abs{Z_G\left( x_i \right)}} =
+                \frac{p^r}{p^{s_i}} = p^{t_i}
+            \]
+            con $t_i \geq 1$, ya que $t_i = 0 \implies s_i = r \implies Z_G\left( x_i \right) = G$, lo cual no
+            puede ser. Por lo tanto, $p \vert \left[ G : Z_G\left( x_i \right) \right]$ y $p \vert i\abs{G}$, 
+            $\implies p \vert \abs{Z(G)}$ y por lo tanto, $Z(G)$ es no trivial.
+        \item Procederemos por inducción sobre $\abs{G}$. Si $\abs{G} = 1 = p^0 \implies G$ es abeliano.
+            Supondremos ahora que $G$ no es abeliano y que $\abs{G} > 1 \stackrel{\ref{teo:pgrupo-1}}{\implies}$
+            $Z(G)$ no trivial y $Z(G) \subsetneq G$.
+            Tenemos $G \triangleright Z(G) \triangleright \left\{ 1 \right\}$. Tenemos
+            $\faktor{Z(G)}{ \left\{ 1 \right\} } \cong Z(G)$ es abeliano y
+            $\abs{\faktor{G}{Z(G)}} = \frac{p^r}{p^{s}}$ con $0 < s < r$, ya que $Z(G)$ es no trivial y
+            $G$ no es abeliano. Aplicando ahora la hipótesis de inducción
+            \[
+                \faktor{G}{Z(G)} \text{ es resoluble y } Z(G) \text{ es resoluble} \implies G
+                \text{ es resoluble}.
+            \]
+        \item Sea $G$ un $p$-grupo simple. Por \ref{item:pgrupo-2}, $\exists G = G_0 \triangleright G_1
+            \triangleright \cdots \triangleright G_n = \left\{ 1 \right\}$ torre normal abeliana.
+            Como $G$ es simple, no tiene subgrupos normales propios $\implies n = 1$ y
+            $G \triangleright \left\{ 1 \right\}$ es una torre normal abeliana $\implies G \cong
+            \faktor{G}{ \left\{ 1 \right\} }$ es abeliano simple $\implies G \cong \faktor{\z}{p\z}$.
+    \end{enumerate}
+\end{proof}
+
+\section{Grupos de Sylow}
+
+El Teorema de Lagrange \ref{teo:lag} nos dice que si $H$ es subgrupo de $G$ finito
+$\implies \abs{H} \vert \abs{G}$. Lo natural, es preguntarse si el recíproco es cierto, es decir, que si
+$n \vert \abs{G} \implies \exists H$ subgrupo de $G$ tal que $\abs{H} = n$. Si $n = p$ primo, es cierto,
+ya que por el Teorema de Cauchy (\ref{teo:cauchy}) $\exists x \in G$ con $\orden(x) = p$ y $H = \langle x\rangle$.
+Aunque en general, este enunciado es falso.
+\begin{example}
+    Tomamos $G = \Asim_5$, $\abs{G} = 60$. Tomamos $n = 30$. No existe ningún subgrupo $H$ con $\abs{H} = 30$, ya
+    que si existiera:
+    \[
+        \abs{H} = 30 \implies \left[ G : H \right] = \frac{\abs{G}}{\abs{H}} = \frac{60}{30} = 2
+        \implies H \triangleleft G
+    \]
+    Lo cual es una contradicción con que $G$ es simple.
+\end{example}
+
+\begin{teo}[Primer teorema de Sylow]
+    Sea $G$ un grupo finito y sea $p$ un primo tal que $p^r \vert \abs{G}$. Entonces $\exists H$ subgrupo
+    de $G$ tal que $\abs{H} = p^r$.
+\end{teo}
+
+\begin{proof}
+    Realizaremos la demostración por inducción sobre $\abs{G}$. El caso base ($\abs{G} = 1$) es trivial.
+    Dividiremos la demostración en dos casos:
+    \begin{itemize}
+        \item $p \not\vert \abs{Z(G)}$. Por la fórmula de órbitas \ref{prop:orb}, $\exists x_1,\dots,x_s$ tal que
+            \[
+                p \not\vert \left[ G : Z_G\left(x_i \right) \right] = \frac{\abs{G}}{\abs{Z_G\left( x_i \right)}}
+                \implies p \vert \abs{Z_G\left( x_i \right)} < \abs{G}
+            \]
+            Y por hipótesis de inducción $\exists H$ subgrupo de $Z_G\left( x_i \right)$, y por lo tanto de $G$,
+            tal que $\abs{H} = p^r$.
+        \item $p \vert \abs{Z(G)}$. Por el Teorema de Cauchy (\ref{teo:cauchy}) $\exists  \in Z(G)$ tal que
+            $\orden(x) = p$. Tomamos $L = \langle x \rangle$. Como $x \in Z(G) \implies L \triangleleft G$, por
+            lo tanto, $\faktor{G}{L}$ es grupo y tiene orden $\abs{\faktor{G}{L}} = \frac{\abs{G}}{\abs{L}} =
+            \frac{\abs{G}}{p}$. Como $p^r \vert \abs{G} \implies p^{r-1} \vert \abs{\faktor{G}{L}} < G$ y por la
+        hipótesis de inducción $\exists \bar{H}$ subgrupo de $\faktor{G}{L}$ tal que $\abs{H} = p^{r-1}$.
+        Pero $\bar{H}$ es subgrupo de $\faktor{G}{L} \implies \bar{H} = \faktor{H}{L}$ con $H$ subgrupo de $G$,
+        $L \subseteq H$. Entonces
+        \[
+            p^{r-1} = \abs{\bar{H}} = \abs{\faktor{H}{L}} = \frac{\abs{H}}{\abs{L}} = \frac{\abs{H}}{p}
+            \implies \abs{H} = p
+        \]
     \end{itemize}
 \end{proof}
