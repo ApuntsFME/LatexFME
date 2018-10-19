@@ -97,7 +97,7 @@
     Si $\left(P\right)_e$ és un problema factible i amb matriu de restriccions $A$ de rang complet, llavors $\left(D\right)$ té solució factible òptima a $\lambda' = c_\B'B^{-1}$.
 \end{col}
 
-\begin{teo}[de folga complementària]
+\begin{teo}[de folga complementària]\label{teo:folga-complement}
     Siguin $x, \lambda$ solucions factibles de $\left(P\right)$ i $\left(D\right)$, respectivament. Llavors $x$ i $\lambda$ són solucions òptimes si i només si
     \begin{alignat*}{2}{}
         u_i &\defeq \lambda_i \left(a_i'x - b_i\right) &= 0 &\quad \forall i \in \left\{1, \dots, m\right\} \\
@@ -113,6 +113,8 @@
     	Per demostrar la implicació recíproca, només cal notar que, com hem demostrat a la demostració del corol·lari \ref{col:feb}, $u_i$ i $v_j$ sempre són no negatius, i per tant l'única manera de que es compleixi \[\sum_{i=1}^{m} u_i + \sum_{j=1}^{n} v_j = 0 \] és que $u_i = 0$ per tot $i$ i $v_j = 0$ per tot $j$. Per tant només cal recórrer en sentit recíproc totes les implicacions de la demostració que acabem de fer.
     \end{proof}
 \end{teo}
+
+Noteu que el teorema \ref{teo:folga-complement} s'anomena de ``folga complementària'' perquè les expressions \[(a_i'x-b_i) \quad \text{i}\quad (c_j-\lambda'A_j) \] es poden interpretar com les ``folgues'' associades a les restriccions primals i duals \[Ax \lesseqgtr b \quad \text{i}\quad \lambda'A \lesseqgtr c\,,\] respectivament.
 
 \begin{defi}[Solució bàsica factible dual]
     Sigui $\left(P\right)_e$, una SBFD és tota SB de $\left(P\right)_e$ tal que $r \geq \left[0\right]$.
@@ -135,7 +137,7 @@
         \item {\bf Càlcul de $\theta^*$ i selecció de la VNB entrant}:
             \begin{itemize}
                 \item Càlcul de $\theta_D^*$: 
-                    \[\theta_D^* = \min_{i \in \N \,|\, d_{r_{N_j}} < 0} \left\{-\frac{r_j}{d_{r_{N_j}}} \right\}.\]
+                    \[\theta_D^* = \min_\{i \in \N \,|\, d_{r_{N_j}} < 0\} \left\{-\frac{r_j}{d_{r_{N_j}}} \right\}.\]
                 \item Variable no bàsica entrant: $q$ tal que $\theta^* = -\frac{x_q}{d_{r_{N_q}}}$.
             \end{itemize}
         \item {\bf Actualitzacions i canvi de base}:
