@@ -1730,11 +1730,10 @@
 \end{teo}
 \begin{proof}
     Si $G$ es un grupo abeliano, procederemos a demostrar el enunciado por inducción sobre $n$. Los casos $n=2$ y $n=3$ son grupos conocidos. Suponemos $n \geq 4$ y tomamos $x \in  G$. Por el teorema de Lagrange tenemos que
-    $\orden(x) = m \vert n$. Separamos ahora en dos casos:
+    $\orden(x) = m \vert n$. Separamos ahora en dos casos.
+    Si $p \vert m$, entonces $\orden\left( x^{\frac{m}{p}} \right) = p$ y hemos acabado.
 
-    Si $p \vert m$, entonces, $\orden\left( x^{\frac{m}{p}} \right) = p$ y hemos acabado.
-
-    Si $p \not\vert m$, tenemos $\langle x\rangle \triangleleft G$ (por ser $G$ abeliano), por lo 
+    Si $p \not\vert m$, tenemos que $\langle x\rangle \triangleleft G$ (por ser $G$ abeliano), por lo 
     tanto $\faktor{G}{\langle x\rangle}$ es grupo cociente. y tenemos
     \[
         \abs{\faktor{G}{\langle x \rangle}} = \frac{\abs{G}}{\abs{\langle x \rangle}} = \frac{n}{m}
@@ -1792,7 +1791,7 @@
 
 \begin{proof}
     \begin{enumerate}[i)]
-        \item \bimplies OK. \bimpliedby Suponemos $G$ no trivial. Si $G$ es abeliano $\implies Z(G) = G$
+        \item \fbox{$\implies$} OK. \fbox{$\impliedby$} Suponemos $G$ no trivial. Si $G$ es abeliano $\implies Z(G) = G$
             no trivial. Por lo tanto, $Z(G)$ es no trivial.
             Tomamos $x_1, \dots, x_s$ representantes de las órbitas no puntuales y $x_i \notin Z(G)$. En
             particular, $Z_G\left( x_i \right) \subsetneq G$ y tenemos
