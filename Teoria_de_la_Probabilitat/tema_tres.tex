@@ -1,0 +1,356 @@
+\chapter{Variables aleatòries discretes}
+
+\section[Definició i objectes relacionats]
+    {Definició i objectes relacionats
+    \sectionmark{Definició i objectes relacionats}}
+    \sectionmark{Definició i objectes relacionats}
+
+\begin{defi}[variable!aleatòria!discreta]
+    Sigui $\lp \Omega, \Asuc, p\rp$ un e. prob. i $X\colon \Omega\to\real$ una variable aleatòria. Diem que $X$ és discreta si
+    $\im(X)$ és numerable.
+\end{defi}
+
+\begin{obs}
+    En la pràctica $\im(X) = \lc x_i < x_2 < \dots \rc$ és un conjunt numerable ordenat, en els casos que veurem $\im(X)\subseteq\z$.
+    Escriurem $p_i = p(X=x_i)$
+\end{obs}
+
+\begin{obs}
+    Sigui $A\subset\mathcal{B}$, $p_X(A) = p(x\in A) = \sum_{i\in A}{p_i}$.
+\end{obs}
+
+\begin{obs}
+    Donat $\lc x_i \rc_{i \ge 1} \subset\real$ creixent i valors $\lc x_i \rc_{i \ge 1} \subset [0,1] \tq \sum{p_i}=1$, es pot definir
+    una variable discreta $X$ que pren valors a $\lc x_i \rc$ tals que $p(X=x_i) = p_i$.
+\end{obs}
+
+\begin{obs}
+    La funció de distribució, amb $|\im(X)|<+\infty$, és
+    \[F_X(x) = \begin{cases}
+        0 &\text{si } x<x_1\\
+        p_1+\cdots+p_j &\text{si } x_j \le x < x_{j+1}\\
+        1 &\text{si } x \ge x_n
+    \end{cases}\]
+\end{obs}
+
+\begin{prop}[Operador esperança] Sigui $X$ v.a. discreta,
+    \begin{enumerate}[i)]
+        \item \[\esp[X] = \sum_{i \ge 1}{x_i p_i}\]
+        \item $g\colon \real\to\real$ mesurable, \[\esp[g(x)] = \sum_{i \ge 1}{g(x_i) p_i}\]
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item[]
+        \item \[        \esp[X] = \int_{\real}{x\dif P_x} = \sum{x_i P_X(X=x_i) + \int_{\real\setminus\cup\{x_i\}}{x\mathbb{I}(x) \dif P_X}} = \sum_{i \ge 1}{x_i p_i} + 0\]
+            perquè $P_X(\real\setminus\cup\{x_i\}) = 0$
+        \item Exercici
+    \end{enumerate}
+\end{proof}
+
+\begin{obs}
+    $\var[X] = \esp[X^2] + \esp[X]^2 = \sum_{i \ge 1}{x_i^2 p_i} - (\sum_{i \ge 1}{x_i p_i})^2$
+\end{obs}
+
+\begin{prop}
+    $X, Y$ v.a. discretes, $\im(X) = \lc x_i \rc_{i \ge 1}$, $\im(Y) = \lc y_i \rc_{i \ge 1}$, $g\colon \real^2\to\real$. Alsehores
+    \[\esp[g(X,Y)] = \sum_{i,j \ge 1}{g(x_i,y_i) p(X=x_i, Y=y_i)}\]
+\end{prop}
+
+\begin{prop}
+    $X,Y$ v.a. discretes. Són independents si i només si, $\forall x \in\im(X)$ i $\forall y \in\im(Y)$,
+    \[P(X=x, Y=y) = P(X=x)P(Y=y)\]
+\end{prop}
+
+\begin{defi}[vector de variables aleatòries!discret]
+    Sigui $(X,Y)\colon \Omega\to\real^2$ un vector aleatori. Direm que és discret si $\im((X.Y))$ és numerable.
+\end{defi}
+
+\begin{obs}
+    $(X,Y)$ vector aleatori és discret $\iff$ $X$ i $Y$ són discretes.
+\end{obs}
+
+\begin{defi}
+    Sigui $(X,Y)$ vector aleatori discret, $\forall(X,Y) \in \im((X,Y))$ definim
+    \[P_{(X,Y)}(x,y) = P(X=x)P(Y=y)\]
+    que si $X,Y$ són independents és $P(X=x,Y=y)$.
+\end{defi}
+
+\begin{lema}
+    Si $X,Y$ són v.a. discretes independents, amb $\esp[|X|], \esp[|Y|] < +\infty$,
+    \[\esp[xy] = \esp[x]\esp[y]\]
+\end{lema}
+
+\begin{proof}
+    \[\begin{aligned}
+    \esp[xy] =& \int_\real x\dif P_{XY} \\
+    &= \sum_{u\in\im(X,Y)}{uP(XY=u)} \\
+    &= \sum_{x\in\im(X)\setminus\{0\}} \lp\sum_{\frac{u}{x}\in\im(Y)} uP\lp X=x,Y=\frac{u}{x} \rp\rp
+    \end{aligned}\]
+\end{proof}
+
+
+\section{Funció generadora de probabilitat}
+D'aquí en endavant, prendrem $X$ variable aleatòria discreta amb $\im(X) \subseteq \n_{\geq 0}$.
+\begin{defi}[funció!generadora de probabilitat]
+    La funció generadora de probabilitat de $X$ \'es la sèrie formal de potències
+    \[G_X(z) = \sum_{n \geq 0} P(X = n) z^n.\]
+    Podem pensar-la com $\esp[z^X]$.
+\end{defi}
+
+\begin{prop}
+    $G_X(z)$ satisfà les següents propietats:
+    \begin{enumerate}[i)]
+    \item $G_X(z)$ \'es una funció holomorfa al voltant de $z = 0$ amb radi de convergència
+        major o igual a $1$.
+    \item $G_X(0) = P(X = 0)$ i $G_X(1)$ = 1.
+    \item $\eval{\dv[k]{G_X(z)}{z}}_{z = 1} = 
+        \esp\lb X(X-1)\dots(X-k+1)\rb = \esp \lb (X)_k\rb $.
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item[]
+        \item Si $\rho \in \cx$, $|\rho| < 1$, aleshores:
+            \[
+                0 \leq |G_X(\rho)| = \left|\sum_{n \geq 0} P(X = n) \rho^n \right|
+                \leq \sum P(X=n) |\rho|^n
+            \]
+            Que, quan $|\rho| \leq 1$, \'es menor o igual a
+            \[
+                \sum_{n \geq 0} P(X = n) = 1.
+            \]
+            Per tant $G_X(\rho)$ \'es analítica (es pot expressar com una sèrie de
+            potències convergent) a $B_1(0)$, i per tant, com s'ha vist a variable
+            complexa, $G_x(\rho)$ \'es holomorfa a $B_1(0)$ (per tant infinitament
+            derivable en sentit complex).
+        \item \'Es directe.
+        \item Si derivem terme a terme obtenim
+            \[
+                \dv[k]{G_X(z)}{z} = \dv[k]{\sum_{n \geq 0} P(X = n) z^n}{z} =
+                \sum_{n \geq 0} n(n-1)\dots(n-k+1)(P(X = n)) z^{n-k}.
+            \]
+            Que, avaluat en $z = 1$, \'es
+            \[ 
+                \sum_{n \geq 0} n(n-1)\dots(n-k+1)(P(X=n)) = \esp\lb(X)_n\rb.
+            \]
+    \end{enumerate}
+\end{proof}
+
+\begin{example}
+   Definim $X$ com una variable aleatòria discreta tal que $P(X = 0) = 0$ i
+   $P(X = n) = \frac{6}{\pi^2}\cdot \frac{1}{n^2}$. Aleshores
+    \[
+        G_X(z) =  \frac{6}{\pi^2} \sum_{n \geq 1} \frac{1}{n^2}z^n,
+    \]
+    que t\'e radi de convergència igual a $1$, i
+    \[
+        G_X(1) = \frac{6}{\pi^2} \sum_{n \geq 1} \frac{1}{n^2} =
+        \frac{6}{\pi^2}\cdot \frac{\pi^2}{6} = 1.
+    \]
+    Finalment, en calculem la seva esperança,
+    \[
+        \esp[X] = \eval{\dv{G_X(z)}{z}}_{z = 1} = 
+        \frac{6}{\pi^2}\sum_{n \geq 1} \frac{1}{n} = \infty.
+    \]
+\end{example}
+
+\begin{obs}
+    $G_X(z)$ codifica totes les probabilitats $P(X = n)$ i per tant coneixent
+    $G_x(z)$ coneixem $X$.
+\end{obs}
+
+L'aplicació m\'es útil de les funcions generadores de probabilitat \'es que
+ens permet trobar convolucions discretes de variables aleatòries.
+
+\begin{obs}
+    Siguin $X, Y$ variables aleatòries discretes, amb $\im(X) = \im(Y) =
+    \n_{\geq 0}$. Aleshores
+    \[
+        P(X+Y = n) = \sum_{k = 0}^{n} P(X+Y = n, X = k) = 
+        \sum_{k = 0}^{n} P(Y = n-k, X = k). 
+    \]
+\end{obs}
+
+\begin{prop}
+    Si $X, Y$ són variables aleatòries discretes independents amb $\im(X) = \im(Y) =
+    \n_{\geq 0}$ aleshores:
+    \[
+        G_{X+Y}(z) = G_X(z)G_Y(z)
+    \]
+\end{prop}
+
+\begin{proof}
+    \[
+        G_X(z)G_Y(z) = \sum_{i \geq 0} P(X = i) z^i  \sum_{j \geq 0} P(X = j) z^j =
+        = \sum_{i, j \geq 0} P(X = i)P(Y = j) z^{(i+j)}
+    \]
+    I, com $X,Y$ són independents, podem unir el producte i obtenim
+    \begin{gather*} 
+        \sum_{i, j \geq 0} P(X = i, Y = j) z^{(i+j)} = \sum_{n \geq 0} \sum_{i = 0}^n
+        P(X = i, Y = n-i)z^n =\\
+        = \sum_{n \geq 0} \sum_{i = 0}^n P(X = i, X+Y = n)z^n 
+        = \sum_{n \geq 0} \sum_{i = 0}^n P(X = i | X+Y = n) P(X+Y = n)z^n = \\
+        = \sum_{n \geq 0} \ P(X+Y = n)z^n \sum_{i = 0}^n P(X = i | X+Y = n).
+    \end{gather*}
+    Si observem que la suma interior val $1$ perquè està sumant la probabilitat de tots
+    esdeveniments possibles, ens queda
+    \[
+        \sum_{n \geq 0} P(X+Y = n)z^n = G_{X+Y}(z).
+    \]
+\end{proof}
+
+\begin{obs}
+    Això \'es equivalent a que si $X, Y$ són variables aleatòries discretes independents
+    amb $\im(X) = \im(Y) = \n_{\geq 0}$ aleshores
+    \[
+        \esp[z^X]\esp[z^Y] = \esp[z^{X+Y}].
+    \]
+\end{obs}
+
+\begin{obs}
+    En general, si $X_1, \dots, X_n$ són variables aleatòries discretes independents amb
+    $\im X_i = \n_{\geq 0}$:
+    \[
+        G_{X_1,\dots,X_n}(z) = \prod_{i = 1}^n G_{X_i}(z)
+    \]
+\end{obs}
+
+\section{Models de variables aleatòries discretes}
+
+En aquesta secció introduirem les variables aleatòries discretes més comunes que torbarem
+
+\begin{obs}
+    Escriurem $X \sim Y$ si $X$ i $Y$ tenen la mateixa distribució de probabilitat
+\end{obs}
+
+\subsection*{Distribució de Bernoulli}
+
+Modela l'èxit o fracàs s'un experiment amb probabilitat $p$ d'èxit
+
+\begin{defi}[distribució!de Bernoulli]
+    \[X \sim \operatorname{B}(p) \iff \begin{cases}
+                       p(X=1) = p \\
+                       p(X=0) = 1-p
+                       \end{cases}
+    \]s
+    També es pot escriure $\operatorname{Be}(p)$.
+\end{defi}
+
+\begin{prop}
+    \begin{enumerate}[i)]
+        \item[]
+        \item $G_X(z) = (1-p)z^0 + pz^1 = (1-p) + p(z)$
+        \item $\esp[X] = p$
+        \item $\var[X] = p(1-p)$
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item[]
+        \item[iii)] $\esp[x(x-1)] = 0 = \esp[x^2-x] \implies \esp[x^2] = p \implies \var[x] = \esp[x^2] + \esp[x]^2
+        = p-p^2 = p(1-p)$
+    \end{enumerate}
+\end{proof}
+
+\subsection*{Distribució binomial}
+
+Modela el nombre d'èxits en fer $N$ experiments independents, on cadascun és $\operatorname{Be}(p)$
+
+\begin{defi}[distribució!binomial]
+    $X \sim \operatorname{Bin}(N,p) \iff X = X_1 + \cdots + X_N$,
+    on $\lc X_i \rc_{i=1}^{N}$ són independents i $X_i \sim \operatorname{B}(p) \enspace\forall i$
+\end{defi}
+
+\begin{prop}
+    \begin{enumerate}[i)]
+        \item[]
+        \item $p(X=i) = \binom{N}{i}p^i(1-p)^{N-i}$
+        \item $G_X(z) = \sum_{i=0}^{n} \binom{N}{i}p^i(1-p)^{N-i}z^i$
+        \item $\esp[X] = N\esp[X_1] = Np$
+        \item $\var[X] = N\var[X_1] = Np(1-p)$
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item[]
+        \item[ii)] Per ser $X_i$ independents,
+        \begin{gather*}
+        G_X(z) = G_{X_1 + \cdots + X_N}(z) = \prod_{i=1}^{n}G_{X_i}(z) = (pz+(1-p))^N = \\
+        = \sum_{i=0}^n \binom{N}{i}(pz)^i(1-p)^{N-i} = \sum_{i=0}^{n} \binom{N}{i}p^i(1-p)^{N-i}z^i
+        \end{gather*}
+    \end{enumerate}
+\end{proof}
+
+\begin{obs} La suma de dos variables amb aquesta distribució també té distribució binomial:
+    \begin{gather*}
+    \begin{rcases*} X \sim \operatorname{Bin}(N_1,p) \\ Y \sim \operatorname{Bin}(N_2,p) \end{rcases*} \implies
+    \begin{rcases*} G_X(z) = (pz+(1-p))^{N_1} \\ G_Y(z) = (pz+(1-p))^{N_2} \end{rcases*}
+    \implies \\
+    \implies G_{X+Y}(z) = G_X(z)G_Y(z) = (pz+(1-p))^{N_1+N_2} \implies \\
+    \implies X+Y \sim \operatorname{Bin}(N_1+N_2,p)
+    \end{gather*}
+\end{obs}
+
+\subsection*{Distribució uniforme}
+
+\begin{defi}[distribució!uniforme]
+    $X \sim \operatorname{U}[1,n] \iff p(X=i)=\frac{1}{N}$ per $i = 1,\dots,N$.
+\end{defi}
+
+\begin{prop}
+    $G_X(z) = \sum_{n=1}^N \frac{1}{N}z^n = \frac{1}{N}(z+z^2+\cdots+z^N) = \frac{1}{N}\frac{z(z^N-1)}{z-1}$
+\end{prop}
+
+\subsection*{Distribució de Poisson}
+
+S'usa per modelar successos ``estranys'' (persones en una cua, emissió de partícules...).
+
+\begin{defi}[distribució!de Poisson]
+    \[X \sim \operatorname{P}(\lambda) \iff P(X=i) = \frac{1}{i!}\lambda^i e^{-\lambda}\]
+    També es pot escriure $\operatorname{Po}(\lambda)$.
+\end{defi}
+
+\begin{obs}
+    La distribució està ben definida:
+    \[\sum_{i=0}^\infty p(X=i) = \sum_{i=0}^\infty \frac{1}{i!}\lambda^i e^{-\lambda} = e^\lambda e^{-\lambda} = 1\]
+\end{obs}
+
+\begin{prop}
+    \begin{enumerate}[i)]
+        \item[]
+        \item $G_X(z) = e^{\lambda(z-1)}$
+        \item $\esp[X] = \lambda$
+        \item $\var[X] = \lambda$
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item[]
+        \item \[G_X(z) = \sum_{i=0}^\infty \frac{1}{i!}\lambda^i e^{-\lambda} z^i =
+            e^{-\lambda} \sum_{i=0}^\infty \frac{1}{i!}(\lambda z)^i = e^{-\lambda}e^{\lambda z} = e^{\lambda(z-1)}\]
+        \item $\esp[X] = \lambda e^{\lambda(z-1)}|_{z=1} = \lambda$
+        \item $\esp[X(X-1)] = \lambda^2 e^{\lambda(z-1)}|_{z=1} = \lambda^2 \implies \esp[x^2] = \lambda^2+\lambda \implies
+         \var[X] = \esp[X^2] - \esp[X]^2 = \lambda^2 + \lambda - \lambda^2 = \lambda$
+    \end{enumerate}
+\end{proof}
+
+\begin{obs} La suma de dos variables amb aquesta distribució també té distribució de Poisson:
+    \begin{gather*}
+    \begin{rcases*} X \sim \operatorname{Po}(\lambda_1) \\ Y \sim \operatorname{Po}(\lambda_2) \end{rcases*} \implies
+    \begin{rcases*} G_X(z) = e^{\lambda_1(z-1)} \\ G_Y(z) = e^{\lambda_2(z-1)} \end{rcases*}
+    \implies \\
+    \implies G_{X+Y}(z) = G_X(z)G_Y(z) = e^{(\lambda_1+\lambda_2)(z-1)} \implies \\
+    \implies X+Y \sim \operatorname{Po}(\lambda_1+\lambda_2)
+    \end{gather*}
+\end{obs}
+
+\subsection*{Distribució geomètrica}
+
+
+\subsection*{Distribució binomial negativa}

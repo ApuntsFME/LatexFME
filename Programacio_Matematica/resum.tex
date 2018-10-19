@@ -72,7 +72,7 @@
         \item $x$ SBF i no degenerada $\implies r \geq \left[0\right]$.
     \end{enumerate}
 \end{teo*}
-\begin{alg}[del símplex primal]
+\begin{alg}[Algorisme del símplex primal]
     \begin{enumerate}
         \item[]
         \item {\bf Inicialització}: Trobem una SBF ($\B, \N, x_B, z$).
@@ -124,17 +124,17 @@
             \end{itemize}
     \end{itemize}
 \end{obs}
-\begin{rgl}[de Bland] \label{rgl:bland}
+\begin{prop}[Regla de Bland] \addcontentsline{toc}{subsection}{Regla de Bland} \label{prop:rgl_bland}
     Usem la regla de Bland per a no entrar en bucle al utilitzar el símplex per a resoldre un problema degenerat.
     \begin{enumerate}
         \item Seleccionem com VNB d'entrada la VNB d'índex menor que compleix $r_q < 0$.
         \item Si al seleccionar la variable de sortida hi ha empat, seleccionem la VB amb índex menor.
     \end{enumerate}
-\end{rgl}
+\end{prop}
 
 \section{Teoria de dualitat}
 
-\begin{teo}[feble de dualitat]
+\begin{teo}[Teorema feble de dualitat]
     Sigui $x$ SBF de $\left(P\right)$ i $\lambda$ SBF del $\left(D\right)$ associat, llavors
     \[ \lambda' b\leq c'x. \]
 \end{teo}
@@ -145,14 +145,14 @@
         \item $\left(D\right)$ il·limitat $\implies \left(P\right)$ infactible.
     \end{itemize}
 \end{col}
-\begin{teo}[fort de dualitat]
+\begin{teo}[Teorema fort de dualitat]
     Siguin $x^*, \lambda^*$ solucions òptimes de $\left(P\right)$ i el seu dual $\left(D\right)$, respectivament, llavors
     \[ \left(\lambda^*\right)^\prime b = c^\prime x^*.\]
 \end{teo}
 \begin{col}
     Si $\left(P\right)_e$ de rang complet amb solució, llavors $\left(D\right)$ té solució i òptim a $\lambda' = c_B'B^{-1}$.
 \end{col}
-\begin{teo}[de folga complementària]
+\begin{teo}[Teorema de folga complementària]
     Siguin $x, \lambda$ solucions factibles de $\left(P\right)$ i $\left(D\right)$, respectivament. $x, \lambda$ són solucions òptimes si i només si
     \begin{center}
         \begin{tabular}{cl}
@@ -164,7 +164,7 @@
 \begin{defi}[Solució bàsica factible dual]
     Sigui $\left(P\right)_e$, una SBFD és tota SB de $\left(P\right)_e$ tal que $r \geq \left[0\right]$.
 \end{defi}
-\begin{alg}[del símplex dual]
+\begin{alg}[Algorisme del símplex dual]
     \begin{enumerate}
         \item[]
         \item {\bf Inicialització}: Trobem una SBFD ($\B, \N, x_B, z$).
@@ -200,7 +200,7 @@
     Una SBFD òptima és degenerada ($\exists j \in \N$ tal que $r_j = 0$) si i només si $\left(P\right)_e$ té òptims alternatius.
 \end{prop}
 \begin{prop}
-    Si $\left(P\right)_e$ no té cap SBFD degenerada, el símplex dual convergeix amb un nombre finit d'iteracions. Altrament, podem usar la regla de Bland (\ref{rgl:bland}) per a que convergeixi amb un nombre finit d'iteracions.
+    Si $\left(P\right)_e$ no té cap SBFD degenerada, el símplex dual convergeix amb un nombre finit d'iteracions. Altrament, podem usar la regla de Bland (\ref{prop:rgl_bland}) per a que convergeixi amb un nombre finit d'iteracions.
 \end{prop}
 
 \section{Programació lineal entera}
@@ -234,15 +234,21 @@ En aquest resum falta una part important de programació lineal entera, per a m�
 \begin{teo*}[Condicions d'optimalitat en problemes convexos]
     Si $f$ \'es convexa i diferenciable, llavors $\nabla f\left( x^* \right) = 0 \iff x^*$ \'es m\'inim global de $f$.
 \end{teo*}
-\begin{met}[del Gradient]
-    $x^{k+1} = x^k + \alpha^kd^k$, \quad $d^k = -\nabla f\left( x^k \right)$. \\
-    $\alpha^k$ ha de complir les condicions d'Armijo-Wolfe.
+\begin{met}[Mètode del Gradient] \addcontentsline{toc}{subsection}{Mètode del Gradient}
+    \begin{align*}
+        x^{k+1} &= x^k + \alpha^kd^k, \\
+        d^k &= -\nabla f\left( x^k \right).
+    \end{align*}
+    $\alpha^k$ ha de complir les condicions d'Armijo-Wolfe (\ref{prop:arm}).
 \end{met}
-\begin{met}[de Newton]
-    $x^{k+1} = x^k + \alpha^kd^k$, \quad $d^k = -\left( \nabla^2 f\left( x^k \right) \right)^{-1} \nabla f\left( x^k \right)$. \\
-    $\alpha^k$ ha de complir les condicions d'Armijo-Wolfe, normalment $\alpha^k = 1$.
+\begin{met}[Mètode de Newton] \addcontentsline{toc}{subsection}{Mètode de Newton}
+    \begin{align*}
+        x^{k+1} &= x^k + \alpha^kd^k, \\
+        d^k &= -\left( \nabla^2 f\left( x^k \right) \right)^{-1} \nabla f\left( x^k \right).
+    \end{align*}
+    $\alpha^k$ ha de complir les condicions d'Armijo-Wolfe (\ref{prop:arm}), normalment $\alpha^k = 1$.
 \end{met}
-\begin{prop}[Condicions d'Armijo-Wolfe]
+\begin{prop}[Condicions d'Armijo-Wolfe] \label{prop:arm}
     \begin{enumerate}[i)]
         \item[]
         \item Condici\'o de descens suficient (AW-1): \\

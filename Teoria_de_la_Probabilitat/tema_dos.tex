@@ -154,7 +154,7 @@
     on cometem l'abús de notació $\frac{1}{0}=\infty$. Com que $D$ és no numerable, hi ha un nombre numerable de conjunts $A_n$ i $\cup_{n\in\n}A_n=D$, necessàriament $\exists n\in\n$ tal que $\abs{A_n}\notin\n$. Per tant, hi ha un nombre infinit de salts de, com a mínim $\frac{1}{n+1}$, la qual cosa contradiu la hipòtesi que $f$ és fitada. Per tant, $f$ té un nombre numerable de discontinuïtats i és, doncs, mesurable.
 \end{proof}
 
-\begin{teo}[de l'existència d'una funció de distribució]
+\begin{teo}[Teorema de l'existència d'una funció de distribució]
   Sigui $F\colon \real \to [0,1]$ una funció de probabilitat tal que
   \begin{enumerate}[i)]
        \item $x_1\leq x_2\implies F_X\lp x_1\rp \leq F\lp x_2\rp$.
@@ -298,7 +298,8 @@
     \[
         \esp\lb\abs{XY}\rb\leq\esp\lb\abs{X}^2\rb^{\frac{1}{2}}\esp\lb\abs{Y}^2\rb^{\frac{1}{2}}<+\infty.
     \]
-    \textit{Desigualtat de Minkowsky}. Siguin $X,Y$ variables aleatòries i sigui $p\in\real$. Si $\esp\lb\abs{X}^p\rb,\esp\lb\abs{Y}^p\rb<+\infty$, aleshores
+    \textit{Desigualtat de Minkowsky}. Siguin $X,Y$ variables aleatòries i sigui $p\in\real$.
+    Si $\esp\lb\abs{X}^p\rb,\allowbreak \esp\lb\abs{Y}^p\rb<+\infty$, aleshores
     \[
         \esp\lb\abs{X+Y}^p\rb^{\frac{1}{p}}\leq\esp\lb\abs{X}^p\rb^{\frac{1}{p}}+\esp\lb\abs{Y}^p\rb^{\frac{1}{p}}<+\infty.
     \]
@@ -309,12 +310,12 @@
 \begin{obs}
     La desigualtat de Cauchy-Schwarz és el cas particular $p=q=2$ de la desigualtat de Holder.
 \end{obs}
-\begin{specialteo}[Desigualtat de Markov]
+\begin{teo}[Desigualtat de Markov]
     Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat, sigui $X\colon\Omega\to\real$ una variable aleatòria amb $X>0$ i sigui $a\in\real^+$. Aleshores,
     \[
         P\lp X\geq a\rp \leq \frac{\esp\lb X\rb}{a}.
     \]
-\end{specialteo}
+\end{teo}
 \begin{proof}
     Sigui $A=\lc \omega\in\Omega\mid X\lp\omega\rp\geq a\rc$. Com que $X$ és mesurable, $A$ és un succés. Observem que
     \[
@@ -325,12 +326,12 @@
         ap\lp X\geq a\rp = \esp\lb a\mathbb{I}_A\lp\omega\rp\rb \leq \esp\lb X\lp\omega\rp\rb = \esp\lb X\rb.
     \]
 \end{proof}
-\begin{specialteo}[Desigualtat de Chebyshev]
+\begin{teo}[Desigualtat de Chebyshev]
     Sigui $X$ una variable aleatòria amb $\esp\lb X\rb<+\infty$, $\var\lb X\rb$ i $\var\lb X\rb\neq 0$. Aleshores, per tot $k>0$, es té que
     \[
         P\lp \abs{X-\esp\lb X\rb}\geq k\var\lb X\rb^{\frac{1}{2}}\rp\leq\frac{1}{k^2}.
     \]
-\end{specialteo}
+\end{teo}
 \begin{proof}
     Posem $Y:=\abs{X-\esp\lb X\rb}$. Observem que $Y$ és una variable aleatòria. Tenim que, per tot $a>0$,
     \begin{align*}
@@ -420,3 +421,122 @@ En general, no podem conéixer la distribució de $X_1,\dots,X_n$ si coneixem no
 \begin{obs}
     Siguin $\lc X_i\rc_{i=1}^n$ una família de variables aleatòries independent i siguin $f_1,\dots,f_n\colon \real\to\real$ funcions mesurables. Aleshores, $\lc f_1\lp X_i\rp\rc_{i=1}^n$ també són independents.
 \end{obs}
+\begin{prop}
+    Siguin $X_1, \dots, X_n$ variables aleatòries independents. Aleshores 
+    \[
+        \esp[X_1\dots X_n] = \prod \limits_{i=1}^n \esp[X_i].
+    \]
+\end{prop}
+
+%TODO no se si falta quelcom d'abans
+\begin{defi}[covariància]
+    Siguin $X, Y$ variables aleatòries. La covariància de $X$ i $Y$ \'es:
+    \[
+        \cov(X, Y) = \esp \left[\lp X - \esp(X) \rp \lp Y - \esp(Y) \rp \right]
+    \]
+\end{defi}
+
+\begin{obs}
+    Està ben definida sempre que $\esp[|X|], \esp[|Y|] < \infty$ i
+    \[
+        \cov(X, Y) = \esp[XY] - \esp[X]\esp[Y]
+    \]
+\end{obs}
+
+\begin{proof}
+    \begin{gather*} 
+        \cov(X,Y) = \esp\left[XY - \esp[X]Y - \esp[Y]X + \esp[X]\esp[Y]\right] = \\
+        = \esp[XY] - 2\esp[X]\esp[Y] + \esp[X]\esp[Y] 
+        = \esp[XY] - \esp[X]\esp[Y].
+    \end{gather*} 
+\end{proof}
+
+\begin{obs}
+    Si $X$ i $Y$ són independents, aleshores $\cov(X,Y)$ = 0.
+\end{obs}
+
+\begin{obs}
+    Per $X, Y$ variables aleatòries, es satisfà $\var[X + Y] = \var[X] + \var[Y] 
+    + 2 \cov(X, Y)$. Si a m\'es són independents, $\var[X+Y] = \var[X] + \var[Y]$.
+\end{obs}
+
+\begin{proof}
+    \begin{gather*} 
+        \esp[(X+Y)^2] - \esp[X+Y]^2 =\\
+        = \esp[X^2] + \esp[Y^2] + 2\esp[XY] - \esp[X]^2
+        - \esp[Y]^2 - 2\esp[X]\esp[Y] =\\
+        = \var[X] + \var[Y] + 2\cov(X, Y).
+    \end{gather*} 
+\end{proof}
+
+\begin{prop}
+    Siguin $X, Y, Z$ variables aleatòries, i $a, b, C$  constants. Aleshores
+    \begin{enumerate}[i)]
+    \item $\cov(C, X) = 0.$
+    \item $\cov(X, X) = \var[X].$
+    \item $\cov(X, Y) = \cov(Y, X).$
+    \item $\cov(aX + bY, Z) = a \cov(X,Z) + b\cov(Y, Z).$
+    \item $\cov(X, Y)^2 \leq \var[X]\var[Y].$
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    Demostrarem nom\'es l'últim apartat. Els altres es deixen com exercici pel lector.
+    Tenim doncs que
+    \[
+        \left|\cov(X, Y)\right| = 
+        \left|\esp\lb\lp X - \esp[X] \rp \lp Y- \esp[Y]\rp\rb\right| 
+        \leq \esp\lb\left|\lp X - \esp[X] \rp \lp Y- \esp[Y]\rp\right|\rb
+    \]
+    Que, aplicant Cauchy-Schwarz, \'es menor que
+    \[
+        \sqrt{\esp \lb \lp X - \esp[X] \rp^2\rb} 
+        \sqrt{\esp \lb \lp Y - \esp[Y] \rp^2\rb} = \\
+        = \sqrt{\lp\var[X]\rp} \sqrt{\lp \var[Y] \rp}.
+    \]
+    \'Es a dir, $\cov(X, Y)^2 \leq \var[X] \var[Y]$.
+\end{proof}
+
+\begin{obs}
+    Com es conclou de la desigualtat de Cauchy-Schwarz, la desigualtat anterior \'es una
+    igualtat si i nom\'es si $X - \esp[X] = \lambda (Y - \esp[Y])$.
+\end{obs}
+
+\begin{obs}
+    $\cov(X, Y) = 0 \centernot \implies X,Y$ independents.
+\end{obs}
+
+\begin{proof}
+    En donem un contraexemple. Definim $X, Y$ variables aleatòries tals que
+    \[
+        X = 
+        \begin{cases}
+            1 &\text{amb probabilitat } \frac{1}{2}\\
+            -1 &\text{amb probabilitat } \frac{1}{2} 
+        \end{cases}, \,
+        Y =
+        \begin{cases}
+            0 &\text{si } X = -1 \\
+            \pm 1 &\text{amb probabilitat } \frac{1}{2} \text{ si } X = 1
+        \end{cases}.
+    \]
+    En aquest cas,
+    \begin{align*}
+        \esp[XY] &= \int\limits_{\Omega} XY \dif p = \\
+        &= 0 \cdot P(X = -1) + 1 \cdot 
+        P(X = 1, Y = 1) - 1 \cdot P(X= 1, Y= -1) = \\
+        &= \frac{1}{4} - \frac{1}{4} = 0,
+    \end{align*}
+    i tamb\'e tenim que
+    \[
+        \esp[X] = 1\cdot P(x = 1) - 1 \cdot P(X = -1) = 0. 
+    \]
+    Per les últimes dues igualtats, $\cov(X, Y) = \esp[XY] - \esp[X]\esp[Y] = 0$. Vegem
+    però que no són indepedents:
+    \[
+        P(X = 1)P(Y = 0) = \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4}.
+    \]
+    Però $P(X = 1, Y = 0) = 0$, \'es a dir, com volíem veure $X$ i $Y$ no són independents.
+\end{proof}
+
+
