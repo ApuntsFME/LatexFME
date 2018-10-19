@@ -14,8 +14,8 @@
     	
     	Ara, observem que
     	\begin{alignat}{2}{}
-    		\sum_{i = 1}^{m} u_i &= \sum_{i = 1}^{m} \lambda_ia_i'x-\lambda_ib_i &= \lambda'Ax - \lambda'b \label{eq:ui}\\
-    		\sum_{j = 1}^{n} v_i &= \sum_{j = 1}^{n} c_jx_j - \lambda'A_jx_j &= c'x - \lambda'Ax \label{eq:vj}
+    		\sum_{i = 1}^{m} u_i &= \sum_{i = 1}^{m} \lambda_ia_i'x-\lambda_ib_i &= \lambda'Ax - \lambda'b\,, \label{eq:ui}\\
+    		\sum_{j = 1}^{n} v_j &= \sum_{j = 1}^{n} c_jx_j - \lambda'A_jx_j &= c'x - \lambda'Ax\,. \label{eq:vj}
     	\end{alignat}
     	Si sumem \eqref{eq:ui} i \eqref{eq:vj} i tenim en compte que $u_i \ge 0$ i $v_j \ge 0$ per tot $i$ i $j$, obtenim
     	\begin{equation*}
@@ -24,40 +24,91 @@
     	i per tant \[c'x \ge \lambda'b\,.\]
     \end{proof}
 \end{teo}
-\begin{col}
+\begin{col}[Corol·laris del teorema feble de dualitat (\ref{teo:dualitat-feble})]\label{col:feb}
 	Per qualsevol problema primal $(P)$ i el seu dual $(D)$: 
     \begin{enumerate}[i)]
         \item $\left(P\right)$ il·limitat $\implies \left(D\right)$ infactible.
         \item $\left(D\right)$ il·limitat $\implies \left(P\right)$ infactible.
+        \item Siguin $x^\ast \in P$ i $\lambda^\ast \in D$ solucions factibles del primal i del dual respectivament. Si ${\lambda^\ast}'b = c'x^\ast$ llavors $\lambda^\ast$ i $x^\ast$ són solucions òptimes pel problema dual i primal respectivament.
     \end{enumerate}
 	\begin{proof}
 		\begin{enumerate}[i)]
 			\item[]
-			\item Sigui $x$ solució factible de $(P)$ i $\lambda$ solució factible de $(D)$. Per hipòtesi $(P)$ és il·limitat i per tant \[\forall k \in \real\ \exists x\in P\qcolon c'x < k\,. \] Suposem que existís una solució dual $\lambda$ factible. Llavors, pel \hyperref[teo:dualitat-feble]{teorema feble de dualitat}, $\forall x\in P\colon \lambda'b \le c'x$. D'altra banda, per la proposició anterior, tenim que $\exists x\in P\colon \lambda'b > c'x\,$; contradicció. Per tant $(D)$ és infactible.
+			\item Sigui $x$ solució factible de $(P)$ i $\lambda$ solució factible de $(D)$. Per hipòtesi $(P)$ és il·limitat i per tant \[\forall k \in \real\ \exists x\in P\qcolon c'x < k\,. \] Suposem que existís una solució dual $\lambda$ factible. Llavors, pel \hyperref[teo:dualitat-feble]{teorema feble de dualitat}, $\forall x\in P\colon \lambda'b \le c'x$. D'altra banda, per la proposició anterior, tenim que $\exists x\in P\colon \lambda'b > c'x$---prenent el valor $\lambda'b$ per $k\in\real$; contradicció. Per tant $(D)$ és infactible.
 			%
-			\item Sigui $\lambda$ solució factible de $(D)$ i $x$ solució factible de $(P)$. Per hipòtesi $(D)$ és il·limitat i per tant \[\forall k \in \real\ \exists x\in P\qcolon \lambda'b > k\,. \] Suposem que existís una solució primal $x$ factible. Llavors, pel \hyperref[teo:dualitat-feble]{teorema feble de dualitat}, $\forall \lambda\in D\colon \lambda'b \le c'x$. D'altra banda, per la proposició anterior, tenim que $\exists \lambda\in D\colon \lambda'b > c'x\,$; contradicció. Per tant $(P)$ és infactible.
+			\item Sigui $\lambda$ solució factible de $(D)$ i $x$ solució factible de $(P)$. Per hipòtesi $(D)$ és il·limitat i per tant \[\forall k \in \real\ \exists x\in P\qcolon \lambda'b > k\,. \] Suposem que existís una solució primal $x$ factible. Llavors, pel {teorema feble de dualitat}, $\forall \lambda\in D\colon \lambda'b \le c'x$. D'altra banda, per la proposició anterior, tenim que $\exists \lambda\in D\colon \lambda'b > c'x\,$; contradicció. Per tant $(P)$ és infactible.
+			%
+			\item Pel teorema feble de dualitat, tenim que $\forall \lambda \in D: \lambda'b \le c'{x^\ast}$, i per tant, aplicant la hipòtesi, \[\forall \lambda \in D: \lambda 'b \le {\lambda^\ast}'b\,;\] ergo, $\lambda^\ast$ és l'òptim del dual (ja que és un problema de maximització). D'altra banda, novament pel teorema anterior, $\forall x \in P: {\lambda^\ast}'b \le c'x\,$, cosa que implica per hipòtesi que \[\forall x \in D: c'{x^\ast} \le c'x\] i per tant $x^\ast$ és un òptim.
 		\end{enumerate}
 	\end{proof}
 \end{col}
-\begin{teo}[fort de dualitat]
-    Siguin $x^*, \lambda^*$ solucions òptimes de $\left(P\right)$ i el seu dual $\left(D\right)$, respectivament, llavors
-    \[ \left(\lambda^*\right)^\prime b = c^\prime x^*.\]
+
+\begin{teo}[fort de dualitat]\label{teo:dualitat-fort}
+    Sigui $\left(P\right)$ un problema primal i $\left(D\right)$ el seu dual. Llavors $(D)$ té òptim si i només si $(P)$ té òptim. A més, si en tenen, el valor de la funció objectiu en l'òptim coincideix.
+    \begin{proof}
+    	Considerem la forma estàndard del problema primal $(P)$,
+    	
+    	\[
+    		(P_e)
+    		\begin{cases}
+    		\begin{aligned}
+			   	\min 			&&& c'x\\
+	    		\text{s.a.}		&&& Ax = b\\
+	    						&&& x\ge0
+    		\end{aligned}
+    		\end{cases}\ ,
+    	\]
+    	on la matriu $A$ és d'ordre $m\times n$, i el dual corresponent (a $P_e$):
+    	\[
+	    	(D_{P_e})
+	    	\begin{cases}
+	    	\begin{aligned}
+	    	\max 			&&& \lambda'b\\
+	    	\text{s.a.}		&&& \lambda'A \le c'
+	    	\end{aligned}
+	    	\end{cases}\ ,
+    	\]
+    	
+    	Primer demostrarem que si $(P_e)$ té òptim, $(D_{P_e})$ també. Si $(P_e)$ té òptim, l'algorisme del símplex primal aplicat a $(P_e)$ terminarà amb una SBF òptima $x^\ast$ de $(P_e)$ tal que el vector de costos reduïts sigui no negatiu: \[r' = c_\N '- c_\B' B^{-1} A_\N \ge 0\,.\] Sigui $\lambda^\ast$ el vector definit per ${\lambda^\ast}'\defeq c_\B'B^{-1}$. Demostrarem que $\lambda^\ast$ és solució òptima de $(D_{P_e})$.
+    	
+    	Primer hem de comprovar si és factible. Efectivament, 
+    	\[
+    		{\lambda^\ast}'A = 
+    		c_\B' B^{-1}
+    		\begin{bmatrix}
+		   		B 	\vert 	A_\N
+    		\end{bmatrix} =
+    		\begin{bmatrix}
+    			c_\B' \Id & c_\B B^{-1} A_\N    			
+    		\end{bmatrix}
+    		\le
+    		\begin{bmatrix}
+	    		c_\B' 	&c_\N'
+    		\end{bmatrix}
+    		= c'\,.
+    	\]
+    	D'altra banda, \[{\lambda^\ast}'b = c_\B' B^{-1} b = c_\B' {x^\ast}_\B = c'{x^\ast}\,. \] Aplicant el corol·lari \ref{col:feb}, deduïm que $\lambda^\ast$ és solució òptima de $(D_{P_e})$. Queda demostrat que si $(P_e)$ té solució òptima existeix una solució òptima de $(D_{P_e})$ (i pel corol·lari mencionat produeixen el mateix valor de la f.o.).
+    	
+    	Finalment, podem afirmar que aquest resultat és vàlid per els problemes que no estan en forma estàndard, ja que el problema $(P)$ i el seu estàndard són equivalents---sempre es pot passar d'una solució de l'un a una solució de l'altre, i el valor de la f.o. en l'òptim és el mateix---, i el dual de l'estàndard $(D_{P_e})$ és equivalent al dual de $(P)$.
+    \end{proof}
 \end{teo}
-\begin{col}
-    Si $\left(P\right)_e$ de rang complet amb solució, llavors $\left(D\right)$ té solució i òptim a $\lambda' = c_B'B^{-1}$.
+
+\begin{col}[Corol·lari del teorema fort de dualitat (\ref{teo:dualitat-fort})]
+    Si $\left(P\right)_e$ és un problema factible i amb matriu de restriccions $A$ de rang complet, llavors $\left(D\right)$ té solució factible òptima a $\lambda' = c_\B'B^{-1}$.
 \end{col}
+
 \begin{teo}[de folga complementària]
     Siguin $x, \lambda$ solucions factibles de $\left(P\right)$ i $\left(D\right)$, respectivament. $x, \lambda$ són solucions òptimes si i només si
-    \begin{center}
-        \begin{tabular}{cl}
-            $\lambda_j \left(a_j'x - b_j\right) = 0$, & $\forall j \in \left\{1, \dots, m\right\}$, \\
-            $\left(c_i - \lambda'A_i\right) x_i = 0$, & $\forall i \in \left\{1, \dots, n\right\}$.
-        \end{tabular}
-    \end{center}
+    \begin{alignat*}{2}{}
+        u_i &\defeq \lambda_i \left(a_i'x - b_i\right) &= 0 &\quad \forall i \in \left\{1, \dots, m\right\} \\
+        v_j &\defeq \left(c_j - \lambda'A_j\right) x_j &= 0 &\quad \forall j \in \left\{1, \dots, n\right\}\,.
+    \end{alignat*}
 \end{teo}
+
 \begin{defi}[Solució bàsica factible dual]
     Sigui $\left(P\right)_e$, una SBFD és tota SB de $\left(P\right)_e$ tal que $r \geq \left[0\right]$.
 \end{defi}
+
 \begin{alg}[del símplex dual]
     \begin{enumerate}
         \item[]
@@ -75,7 +126,7 @@
         \item {\bf Càlcul de $\theta^*$ i selecció de la VNB entrant}:
             \begin{itemize}
                 \item Càlcul de $\theta_D^*$: 
-                    \[\theta_D^* = \min_{j \in \N \,|\, d_{r_{N_j}} < 0} \left\{-\frac{r_j}{d_{r_{N_j}}} \right\}.\]
+                    \[\theta_D^* = \min_{i \in \N \,|\, d_{r_{N_j}} < 0} \left\{-\frac{r_j}{d_{r_{N_j}}} \right\}.\]
                 \item Variable no bàsica entrant: $q$ tal que $\theta^* = -\frac{x_q}{d_{r_{N_q}}}$.
             \end{itemize}
         \item {\bf Actualitzacions i canvi de base}:
@@ -90,9 +141,11 @@
         \item {\bf Anar} a \ref{simp_dual_pas2}.
     \end{enumerate}
 \end{alg}
+
 \begin{prop}
     Una SBFD òptima és degenerada ($\exists j \in \N$ tal que $r_j = 0$) si i només si $\left(P\right)_e$ té òptims alternatius.
 \end{prop}
+
 \begin{prop}
     Si $\left(P\right)_e$ no té cap SBFD degenerada, el símplex dual convergeix amb un nombre finit d'iteracions. Altrament, podem usar la regla de Bland (\ref{rgl:bland}) per a que convergeixi amb un nombre finit d'iteracions.
 \end{prop}
