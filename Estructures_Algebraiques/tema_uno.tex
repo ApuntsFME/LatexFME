@@ -1423,7 +1423,7 @@
     las dos series de composición de $G$ son equivalentes.
 \end{proof}
 
-\begin{prop}
+\begin{prop}\label{prop:resoluble}
     Sea $G$ un gupo y $H$ un subgrupo. Entonces,
     \begin{enumerate}[i)]
         \item Si $G$ es resoluble, $H$ es resoluble.
@@ -1711,7 +1711,7 @@
     $G_x = \left\{ a \in G \mid axa^{-1} = x \right\} = \left\{ a \in G \mid ax = xa \right\} = Z_G(x)$.
 \end{proof}
 
-\begin{prop}[Fórmula de órbitas de la acción por conjugación de $G$ en $G$]
+\begin{prop}[Fórmula de órbitas de la acción por conjugación de $G$ en $G$]\label{prop_form_orbitas}
     Sea $G$ un grupo, y sean $x_1, \dots, x_r$ representantes de órbitas no puntuales. Entonces,
     \[
         \abs{G} = \abs{Z(G)} + \sum^r_{i=1} \left[ G : Z_G\left( x_i \right) \right].
@@ -1731,49 +1731,49 @@
 \begin{proof}
     Si $G$ es un grupo abeliano, procederemos a demostrar el enunciado por inducción sobre $n$. Los casos $n=2$ y $n=3$ son grupos conocidos. Suponemos $n \geq 4$ y tomamos $x \in  G$. Por el teorema de Lagrange tenemos que
     $\orden(x) = m \vert n$. Separamos ahora en dos casos.
+    
     Si $p \vert m$, entonces $\orden\left( x^{\frac{m}{p}} \right) = p$ y hemos acabado.
 
-    Si $p \not\vert m$, tenemos que $\langle x\rangle \triangleleft G$ (por ser $G$ abeliano), por lo 
-    tanto $\faktor{G}{\langle x\rangle}$ es grupo cociente. y tenemos
+    Si $p \ndiv m$, tenemos que $\langle x\rangle \triangleleft G$ (por ser $G$ abeliano), de modo que
+     $\faktor{G}{\langle x\rangle}$ es un grupo cociente. Así pues,
     \[
-        \abs{\faktor{G}{\langle x \rangle}} = \frac{\abs{G}}{\abs{\langle x \rangle}} = \frac{n}{m}
+        \abs{\faktor{G}{\langle x \rangle}} = \frac{\abs{G}}{\abs{\langle x \rangle}} = \frac{n}{m}.
     \]
-    Como $p \vert n$ y $p \not\vert n$ se tiene que $p \vert \abs{\faktor{G}{\langle x \rangle}} < n$
-    y por hipótesis de inducción, $\exists \bar{y} \in \faktor{G}{\langle x \rangle}$ tal que
-    $\orden\left( \bar{y} \right) = p$, pero
+    Como $p \vert n$ y $p \ndiv m$, se tiene que $p \vert \abs{\faktor{G}{\langle x \rangle}} < n$
+    y, por hipótesis de inducción, $\exists \bar{y} \in \faktor{G}{\langle x \rangle}$ tal que
+    $\orden\left( \bar{y} \right) = p$. Esto quiere decir que $\lp\bar{y}\rp ^p=\bar{1}=\left< x\right>$, cosa que implica que $y^p=x^r$ para algún $1\leq r\leq m$. Entonces,
     \[
-        \begin{aligned}
-            \orden\left( \bar{y} \right) = p &\implies \left( \bar{y} \right) = \bar{1} \implies
-            y^p \in \langle x \rangle \implies y^p = x^r \implies
-            \left( y^m \right)^p = \left( y^p \right)^m = \left( x^r \right)^m = 
-            \left( x^m \right)^r = 1^r = 1
-        \end{aligned}
+        \left( y^m \right)^p = \left( y^p \right)^m = \left( x^r \right)^m = 
+        \left( x^m \right)^r = 1^r = 1,
     \]
-    y por lo tanto, $\orden\left( y^m \right) \vert p$, pero $p$ es primo, con lo cual, o bien
-    $\orden\left( y^m \right) = 1$ pero entonces
+    y necesariamente $\orden\left( y^m \right) \vert p$. Puesto que $p$ es primo, solo existen las posibilidades $\orden\left( y^m \right)=1$ y $\orden\left( y^m \right)=p$. Si se da el primer caso,
     \[
-        \orden\left( y^m \right) = 1 \implies y^m = 1 \implies \bar{y^m} = \bar{1} \implies 
-        \left( \bar{y} \right)^m = 1 \implies p \vert m
+        \orden\left( y^m \right) = 1 \implies y^m = 1 \implies \overline{y^m} = \bar{1} \implies 
+        \left( \bar{y} \right)^m = 1 \implies p \vert m,
     \]
-    Lo cual es una contradicción. Por lo tanto, $\orden\left( y^m \right) = p$ y hemos acabado.
+    lo cual supone una contradicción. Por lo tanto, $\orden\left( y^m \right) = p$ y hemos acabado.
 
-    En el caso de que $G$ no sea abeliano aplicaremos la fórmula de órbitas separando en varios casos.
+    En el caso de que $G$ no sea abeliano, aplicamos la fórmula de órbitas (\ref{prop_form_orbitas}), que establece que
+    \[
+        \abs{G} = \abs{Z(G)} + \sum^r_{i=1} \left[ G : G_{x_i} \right].
+    \]
+    Podemos separar los dos casos siguientes.
     
     \begin{itemize}
-        \item Si $\exists x_1, \dots, x_r$ tal que $\mcd\left( p, \left[ G : G_{x_i} \right] \right) = 1$.
-            Entonces $p \not\vert \left[ G : G_{x_i} \right] = \frac{\abs{G}}{ \abs{G_{x_i}}}$, pero
-            $p \vert \abs{G} \implies p \vert \abs{G_{x_i}} \leq n$ y, aplicando la hipótesis de inducción
-            $\exists x \in G_{x_i} \subset G$ tal que $\orden(x) = p$.
-        \item Si $\forall x_1, \dots, x_r$ se tiene que $p \vert \left[ G : G_{x_i} \right] \implies
-            p \vert \abs{Z(G)}$, pero $Z(G) \subset no igual G$, es decir, $\abs{Z(G)} < n$ y por lo tanto,
-            por la hipótesis de inducción, $\exists x \in Z(G)$ tal que $\orden(x) = p$.
+        \item Si $\exists i\in\lc 1,\dots,r\rc$ tal que $\mcd\left( p, \left[ G : G_{x_i} \right] \right) = 1$.
+            Entonces, $p \ndiv \left[ G : G_{x_i} \right] = \frac{\abs{G}}{ \abs{G_{x_i}}}$, pero
+            $p$ divide $\abs{G}$, de manera que $p$ divide también $\abs{G_{x_i}} \leq n$. Aplicando ahora la hipótesis de inducción,
+            se tiene que $\exists x^{\prime} \in G_{x_i} \subset G$ tal que $\orden(x^{\prime}) = p$.
+        \item Si $\forall i\in\lc 1,\dots,r\rc$ se tiene que $p \vert \left[ G : G_{x_i} \right]$. Entonces,
+            $p$ divide $\abs{Z(G)}$, pero $Z(G)$ es un subgrupo propio de $G$, de modo que $\abs{Z(G)} < n$.
+            Finalmente, aplicando de nuevo la hipótesis de inducción, $\exists x \in Z(G)$ tal que $\orden(x) = p$.
     \end{itemize}
 \end{proof}
 
-\section{$p$-grupos}
+\section{Grupos de Sylow}
 
 \begin{defi}[$p$-grupo]
-    Un $p$-grupo $G$, es un grupo de orden $\abs{G} = p^r$ con $p$ primo y $r \geq 0$
+    Un $p$-grupo $G$ es un grupo de orden $\abs{G} = p^r$ con $p$ primo y $r \geq 0$.
 \end{defi}
 
 \begin{obs}
@@ -1781,7 +1781,7 @@
 \end{obs}
 
 \begin{teo*}
-    Sea $G$ un $p$-grupo. Entonces:
+    Sea $G$ un $p$-grupo de orden $p^r$. Entonces:
     \begin{enumerate}[i)]
         \item\label{item:pgrupo-1} $G$ es trivial $\iff Z(G)$ es trivial.
         \item\label{item:pgrupo-2} $G$ es resoluble.
@@ -1791,79 +1791,86 @@
 
 \begin{proof}
     \begin{enumerate}[i)]
-        \item \fbox{$\implies$} OK. \fbox{$\impliedby$} Suponemos $G$ no trivial. Si $G$ es abeliano $\implies Z(G) = G$
-            no trivial. Por lo tanto, $Z(G)$ es no trivial.
-            Tomamos $x_1, \dots, x_s$ representantes de las órbitas no puntuales y $x_i \notin Z(G)$. En
-            particular, $Z_G\left( x_i \right) \subsetneq G$ y tenemos
+        \item[]
+        \item La implicación directa es inmediata. Veamos la inversa. Supongamos que $G$ es no trivial y separemos casos en función de la conmutatividad de $G$. Si $G$ es abeliano, entonces $Z(G) = G$ y $Z(G)$ es no trivial.
+            Recordemos la fórmula de órbitas (\ref{prop_form_orbitas})
+            \[
+                \abs{G} =  \abs{Z(G)} + \sum^s_{i=1} \left[ G : G_{x_i} \right] =  \abs{Z(G)} + \sum^s_{i=1} \left[ G : Z_G\left( x_i \right) \right],
+            \]
+            donde $x_1, \dots, x_s$ son representantes de las órbitas no puntuales de $G$. En
+            particular, $Z_G\left( x_i \right) \subsetneq G$ y tenemos que para todo $1\leq i\leq s$
             \[
                 \left[ G : Z_G\left( x_i \right) \right] = \frac{\abs{G}}{\abs{Z_G\left( x_i \right)}} =
-                \frac{p^r}{p^{s_i}} = p^{t_i}
+                \frac{p^r}{p^{r_i}} = p^{t_i},
             \]
-            con $t_i \geq 1$, ya que $t_i = 0 \implies s_i = r \implies Z_G\left( x_i \right) = G$, lo cual no
-            puede ser. Por lo tanto, $p \vert \left[ G : Z_G\left( x_i \right) \right]$ y $p \vert i\abs{G}$, 
-            $\implies p \vert \abs{Z(G)}$ y por lo tanto, $Z(G)$ es no trivial.
-        \item Procederemos por inducción sobre $\abs{G}$. Si $\abs{G} = 1 = p^0 \implies G$ es abeliano.
-            Supondremos ahora que $G$ no es abeliano y que $\abs{G} > 1 \stackrel{\ref{teo:pgrupo-1}}{\implies}$
-            $Z(G)$ no trivial y $Z(G) \subsetneq G$.
-            Tenemos $G \triangleright Z(G) \triangleright \left\{ 1 \right\}$. Tenemos
-            $\faktor{Z(G)}{ \left\{ 1 \right\} } \cong Z(G)$ es abeliano y
+            con $t_i \geq 1$, ya que $t_i = 0 \implies r_i = r \implies Z_G\left( x_i \right) = G$, lo cual no
+            puede ser. Entonces, $p$ divide todos los sumandos $\left[ G : Z_G\left( x_i \right) \right]$ de la fórmula de órbitas y divide también a $\abs{G}$, así que necesariamente divide a $\abs{Z_G}$, de lo que deducimos que $Z(G)$ es no trivial.
+            
+        \item Procederemos por inducción sobre $\abs{G}$. Si $\abs{G} = 1$, $G$ es trivialmente abeliano.
+            Supongamos ahora que $G$ no es abeliano y que $\abs{G} > 1$. En virtud del primer apartado,
+            $Z(G)$ es no trivial y $Z(G) \subsetneq G$ porque no es abeliano.
+            $G \triangleright Z(G) \triangleright \left\{ 1 \right\}$ es una torre normal
+            porque los elementos de $Z\lp G\rp$ conmutan con todos los de $G$ y, en particular,
+            entre ellos. Se tiene que 
             $\abs{\faktor{G}{Z(G)}} = \frac{p^r}{p^{s}}$ con $0 < s < r$, ya que $Z(G)$ es no trivial y
-            $G$ no es abeliano. Aplicando ahora la hipótesis de inducción
+            $G\neq Z\lp G\rp$. Aplicando ahora la hipótesis de inducción, $\faktor{G}{Z(G)}$ es resoluble.
+            Finalmente, la proposición (\ref{prop:resoluble}) afirma que             
             \[
                 \faktor{G}{Z(G)} \text{ es resoluble y } Z(G) \text{ es resoluble} \implies G
                 \text{ es resoluble}.
             \]
-        \item Sea $G$ un $p$-grupo simple. Por \ref{item:pgrupo-2}, $\exists G = G_0 \triangleright G_1
-            \triangleright \cdots \triangleright G_n = \left\{ 1 \right\}$ torre normal abeliana.
-            Como $G$ es simple, no tiene subgrupos normales propios $\implies n = 1$ y
-            $G \triangleright \left\{ 1 \right\}$ es una torre normal abeliana $\implies G \cong
-            \faktor{G}{ \left\{ 1 \right\} }$ es abeliano simple $\implies G \cong \faktor{\z}{p\z}$.
+        \item Sea $G$ un $p$-grupo simple. En virtud del apartado anterior, $G$ tiene una torre normal abeliana.
+            Como $G$ es simple, no tiene subgrupos normales propios y
+            $G \trir \left\{ 1 \right\}$ es la única torre normal abeliana posible.
+            Así pues, $\faktor{G}{\lc 1\rc}$ es abeliano y simple y concluimos $G \cong \faktor{\z}{p\z}$.
     \end{enumerate}
 \end{proof}
 
-\section{Grupos de Sylow}
 
-El Teorema de Lagrange \ref{teo:lag} nos dice que si $H$ es subgrupo de $G$ finito
-$\implies \abs{H} \vert \abs{G}$. Lo natural, es preguntarse si el recíproco es cierto, es decir, que si
-$n \vert \abs{G} \implies \exists H$ subgrupo de $G$ tal que $\abs{H} = n$. Si $n = p$ primo, es cierto,
-ya que por el Teorema de Cauchy (\ref{teo:cauchy}) $\exists x \in G$ con $\orden(x) = p$ y $H = \langle x\rangle$.
-Aunque en general, este enunciado es falso.
+El Teorema de Lagrange (\ref{teo:lag}) nos dice que si $H$ es un subgrupo de un grupo finito $G$,
+el cardinal de $H$ divide al de $G$. Lo natural es preguntarse si el recíproco es cierto, es decir, si
+para cada divisor $n$ del orden de $G$ existe un subgrupo $H$ de $G$ con $\abs{H}=n$. Si $n = p$ primo, es cierto,
+ el Teorema de Cauchy (\ref{teo:cauchy}) nos asegura que $\abs{\left< x\right>}=p$ para algún $x\in G$.
+Veamos que, en general, este enunciado es falso.
 \begin{example}
-    Tomamos $G = \Asim_5$, $\abs{G} = 60$. Tomamos $n = 30$. No existe ningún subgrupo $H$ con $\abs{H} = 30$, ya
-    que si existiera:
+    Sea $G = \Asim_5$, $\abs{G} = 60$ y sea $n = 30$. No existe ningún subgrupo $H$ con $\abs{H} = 30$ debido a
+    que, de lo contrario,
     \[
-        \abs{H} = 30 \implies \left[ G : H \right] = \frac{\abs{G}}{\abs{H}} = \frac{60}{30} = 2
-        \implies H \triangleleft G
+        \left[ G : H \right] = \frac{\abs{G}}{\abs{H}} = \frac{60}{30} = 2,
+        \implies H \triangleleft G.
     \]
-    Lo cual es una contradicción con que $G$ es simple.
+    lo cual supone una contradicción con que $G=\Asim_5$ es simple.
 \end{example}
 
 \begin{teo}[Primer teorema de Sylow]
-    Sea $G$ un grupo finito y sea $p$ un primo tal que $p^r \vert \abs{G}$. Entonces $\exists H$ subgrupo
+    Sea $G$ un grupo finito y sea $p$ un primo tal que $p^r$ divide $\abs{G}$. Entonces existe un subgrupo $H$
     de $G$ tal que $\abs{H} = p^r$.
 \end{teo}
 
 \begin{proof}
-    Realizaremos la demostración por inducción sobre $\abs{G}$. El caso base ($\abs{G} = 1$) es trivial.
-    Dividiremos la demostración en dos casos:
+    Realizaremos la demostración por inducción sobre $\abs{G}$. El caso $\abs{G} = 1$ es trivial y para $\abs{G}=p$
+    el teorema de Cauchy (\ref{teo:cauchy}) nos proporciona el resultado.
+    Dividiremos la demostración en dos casos.
     \begin{itemize}
-        \item $p \not\vert \abs{Z(G)}$. Por la fórmula de órbitas \ref{prop:orb}, $\exists x_1,\dots,x_s$ tal que
+        \item $p \ndiv\, \abs{Z(G)}$. Por la fórmula de órbitas (\ref{prop_form_orbitas}), y teniendo en cuenta que $p$ divide $\abs{G}$,
+        existe almenos un representante $x_i$ de una órbita no puntual tal que
             \[
-                p \not\vert \left[ G : Z_G\left(x_i \right) \right] = \frac{\abs{G}}{\abs{Z_G\left( x_i \right)}}
-                \implies p \vert \abs{Z_G\left( x_i \right)} < \abs{G}
+                p \ndiv \left[ G : Z_G\left(x_i \right) \right] = \frac{\abs{G}}{\abs{Z_G\left( x_i \right)}},
             \]
-            Y por hipótesis de inducción $\exists H$ subgrupo de $Z_G\left( x_i \right)$, y por lo tanto de $G$,
-            tal que $\abs{H} = p^r$.
-        \item $p \vert \abs{Z(G)}$. Por el Teorema de Cauchy (\ref{teo:cauchy}) $\exists  \in Z(G)$ tal que
-            $\orden(x) = p$. Tomamos $L = \langle x \rangle$. Como $x \in Z(G) \implies L \triangleleft G$, por
-            lo tanto, $\faktor{G}{L}$ es grupo y tiene orden $\abs{\faktor{G}{L}} = \frac{\abs{G}}{\abs{L}} =
-            \frac{\abs{G}}{p}$. Como $p^r \vert \abs{G} \implies p^{r-1} \vert \abs{\faktor{G}{L}} < G$ y por la
-        hipótesis de inducción $\exists \bar{H}$ subgrupo de $\faktor{G}{L}$ tal que $\abs{H} = p^{r-1}$.
-        Pero $\bar{H}$ es subgrupo de $\faktor{G}{L} \implies \bar{H} = \faktor{H}{L}$ con $H$ subgrupo de $G$,
-        $L \subseteq H$. Entonces
+            de modo que $p^r$ divide $\abs{Z_G\lp x_i\rp}<\abs{G}$. Por hipótesis de inducción, existe un
+            subgrupo $H$ de $Z_G\left( x_i \right)\subseteq G$ con $\abs{H} = p^r$.
+        \item $p$ divide $\abs{Z(G)}$. Por el Teorema de Cauchy (\ref{teo:cauchy}), existe un $x\in Z(G)$ tal que
+            $\orden(x) = p$. Sea $L = \langle x \rangle$. Como $x \in Z(G)$, $L \tril G$, de modo que
+            $\faktor{G}{L}$ es un grupo y tiene orden 
+            \[
+                \abs{\faktor{G}{L}} = \frac{\abs{G}}{\abs{L}} = \frac{\abs{G}}{p}.
+            \]
+             Como $p^r$ divide $\abs{G}$, $p^{r-1}$ divide $\abs{\faktor{G}{L}} < \abs{G}$ y, por la
+        hipótesis de inducción, existe un subgrupo $K$ de $\faktor{G}{L}$ tal que $\abs{K} = p^{r-1}$.
+        Entonces, $K = \faktor{H}{L}$, para algún subgrupo $H$ de $G$, con $L \subseteq H$. Finalmente,
         \[
-            p^{r-1} = \abs{\bar{H}} = \abs{\faktor{H}{L}} = \frac{\abs{H}}{\abs{L}} = \frac{\abs{H}}{p}
-            \implies \abs{H} = p
+            p^{r-1} = \abs{K} = \abs{\faktor{H}{L}} = \frac{\abs{H}}{\abs{L}} = \frac{\abs{H}}{p}
+            \implies \abs{H} = p.
         \]
     \end{itemize}
 \end{proof}
