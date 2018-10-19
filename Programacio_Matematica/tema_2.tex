@@ -18,9 +18,9 @@
     		\sum_{j = 1}^{n} v_j &= \sum_{j = 1}^{n} c_jx_j - \lambda'A_jx_j &= c'x - \lambda'Ax\,. \label{eq:vj}
     	\end{alignat}
     	Si sumem \eqref{eq:ui} i \eqref{eq:vj} i tenim en compte que $u_i \ge 0$ i $v_j \ge 0$ per tot $i$ i $j$, obtenim
-    	\begin{equation*}
+    	\begin{equation}\label{eq:sum-ui-vj}
     		\sum_{i = 1}^{m} u_i + \sum_{j = 1}^{n} v_i= c'x-\lambda'b \ge 0\,
-    	\end{equation*}
+    	\end{equation}
     	i per tant \[c'x \ge \lambda'b\,.\]
     \end{proof}
 \end{teo}
@@ -98,11 +98,20 @@
 \end{col}
 
 \begin{teo}[de folga complementària]
-    Siguin $x, \lambda$ solucions factibles de $\left(P\right)$ i $\left(D\right)$, respectivament. $x, \lambda$ són solucions òptimes si i només si
+    Siguin $x, \lambda$ solucions factibles de $\left(P\right)$ i $\left(D\right)$, respectivament. Llavors $x$ i $\lambda$ són solucions òptimes si i només si
     \begin{alignat*}{2}{}
         u_i &\defeq \lambda_i \left(a_i'x - b_i\right) &= 0 &\quad \forall i \in \left\{1, \dots, m\right\} \\
         v_j &\defeq \left(c_j - \lambda'A_j\right) x_j &= 0 &\quad \forall j \in \left\{1, \dots, n\right\}\,.
     \end{alignat*}
+    \begin{proof}
+    	Demostrem primer que si $u_i = 0 \land v_j = 0$ per tot $i$ i tot $j$, llavors $x$ i $\lambda$ són òptimes. Com hem vist a la demostració del teorema feble de dualitat---l'equació \eqref{eq:sum-ui-vj}---, 
+    	\begin{equation*}
+	    	\sum_{i = 1}^{m} u_i + \sum_{j = 1}^{n} v_j = c'x - \lambda'b\,.
+    	\end{equation*}
+    	Sabent que $u_i = 0$ per tot $i$ i $v_j = 0$ per tot $j$, tenim que \[\sum_{i = 1}^{m} u_i + \sum_{j = 1}^{n} v_j = 0 = c'x - \lambda'b \Leftrightarrow c'x = \lambda'b\,,  \] i pel corol·lari \ref{col:feb} del teorema feble, $x$ i $\lambda$ són solucions òptimes per al problema respectiu.
+    	
+    	Per demostrar la implicació recíproca, només cal notar que, com hem demostrat a la demostració del corol·lari \ref{col:feb}, $u_i$ i $v_j$ sempre són no negatius, i per tant l'única manera de que es compleixi \[\sum_{i=1}^{m} u_i + \sum_{j=1}^{n} v_j = 0 \] és que $u_i = 0$ per tot $i$ i $v_j = 0$ per tot $j$. Per tant només cal recórrer en sentit recíproc totes les implicacions de la demostració que acabem de fer.
+    \end{proof}
 \end{teo}
 
 \begin{defi}[Solució bàsica factible dual]
