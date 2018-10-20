@@ -5,7 +5,7 @@
     \sectionmark{Definició i propietats de les variables aleatòries}}
     \sectionmark{Definició i propietats de les variables aleatòries}
 
-\begin{defi}[variable!aleatòria]
+\begin{defi}[variable aleatòria]
     Siguin $\lp \Omega_1, \Asuc_1\rp$ i $\lp \Omega_2, \Asuc_2\rp$ espais mesurables. Diem que $X\colon \Omega_1\to\Omega_2$ és una variable aleatòria si
     \[
         X^{-1}\lp A_2\rp\in\Asuc_1,\,\forall A_2\in\Asuc_2.
@@ -20,14 +20,14 @@
                 X\colon \Omega &\to\real\\
                 \omega &\mapsto c
             \end{align*}
-            és una variable aleatòria, atès que, $\forall B\in\B$, es té que
+            és una variable aleatòria, atès que $\forall B\in\B$, es té que
             \[
                 X^{-1}\lp B\rp=\begin{cases}
                     \Omega, \text{ si } c\in B,\\
                     \varnothing, \text{ si } c\notin B.
                 \end{cases}
             \]
-        \item Siguin $X$ i $Y$ variables aleatòries. Aleshores, també son variables aleatòries les següents funcions.
+        \item Siguin $X$ i $Y$ variables aleatòries. Aleshores, també son variables aleatòries les següents funcions
             \begin{itemize}
                 \item $X+Y$
                 \item $X-Y$
@@ -68,11 +68,15 @@
 \end{obs}
 
 \begin{example}
-    $p\lp X\leq 2\rp = p\lp\lc\omega\in\Omega\mid X\lp\omega\rp\leq 2\rc\rp$.
+    Per a considerar la probabilitat de que $X$ sigui més petit o igual que $2$ escriurem
+    \[
+      p\lp X\leq 2\rp = p\lp\lc\omega\in\Omega\mid X\lp\omega\rp\leq 2\rc\rp.
+    \]
 \end{example}
 
 \begin{obs}
-    Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat i sigui $X$ una variable aleatòria. $X$ indueix una funció de probabilitat $P_X$ sobre l'espai de mesura $\lp\real,\B\rp$
+    Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat i sigui $X$ una variable aleatòria. $X$ indueix una funció de probabilitat $P_X$ 
+    sobre l'espai de mesura $\lp\real,\B\rp$ de la forma
     \[
         P_X\lp B\rp:=p\lp X\in B\rp.
     \]
@@ -154,10 +158,10 @@
     on cometem l'abús de notació $\frac{1}{0}=\infty$. Com que $D$ és no numerable, hi ha un nombre numerable de conjunts $A_n$ i $\cup_{n\in\n}A_n=D$, necessàriament $\exists n\in\n$ tal que $\abs{A_n}\notin\n$. Per tant, hi ha un nombre infinit de salts de, com a mínim $\frac{1}{n+1}$, la qual cosa contradiu la hipòtesi que $f$ és fitada. Per tant, $f$ té un nombre numerable de discontinuïtats i és, doncs, mesurable.
 \end{proof}
 
-\begin{teo}[de l'existència d'una funció de distribució]
+\begin{teo}[Teorema de l'existència d'una funció de distribució]
   Sigui $F\colon \real \to [0,1]$ una funció de probabilitat tal que
   \begin{enumerate}[i)]
-       \item $x_1\leq x_2\implies F_X\lp x_1\rp \leq F\lp x_2\rp$.
+       \item $x_1\leq x_2\implies F\lp x_1\rp \leq F\lp x_2\rp$.
        \item $\lim\limits_{x\to-\infty}F\lp x\rp = 0$ i $\lim\limits_{x\to\infty}F\lp x\rp = 1$.
        \item $F$ és contínua per la dreta, és a dir, $\lim\limits_{h\to 0^+}F\lp x+h\rp = F\lp x\rp$.
    \end{enumerate}
@@ -179,10 +183,10 @@
         P\lp A\rp&=P\lp X\leq x\rp = F_X\lp x\rp,\\
         P\lp B\rp&=\lambda\lp\lb 0,F\lp x\rp\rb\rp=F\lp x\rp.\\
     \end{align*}
-    Si demostrem que $A=B$, haurem acabat.
+    Si demostrem que $A=B$, haurem acabat. Però tenim que
     \begin{itemize}
-        \item $\omega\in B\implies\omega\leq F\lp x\rp\implies x\notin\lc y\in\real\mid F\lp y\rp<\omega\rc\implies x\geq X\lp\omega\rp\implies\omega\in A$.
-        \item $\omega\notin B\implies\omega>F\lp x\rp\implies\exists\varepsilon>0\tq\omega>F\lp x+\varepsilon\rp\implies x\lp\omega\rp\geq x+\varepsilon>x\implies X\lp\omega\rp>x\implies\omega\notin A.$
+        \item $\omega\in B\implies\omega\leq F\lp x\rp\implies x\notin\lc y\in\real\mid F\lp y\rp<\omega\rc\implies x\geq X\lp\omega\rp$$\implies\omega\in A$.
+        \item $\omega\notin B$$\implies\omega>F\lp x\rp\implies\exists\varepsilon>0\tq\omega>F\lp x+\varepsilon\rp$$\implies x\lp\omega\rp\geq x+\varepsilon>x\implies X\lp\omega\rp>x\implies\omega\notin A.$
     \end{itemize}
     
 \end{proof}
@@ -216,21 +220,21 @@
     Sigui $\lp \Omega, \Asuc, p\rp$ un espai de probabilitat i sigui $A\in\Asuc$. Considerem la variable aleatòria
     \[
         X(\omega) = \mathbb{I}_A(\omega) = \begin{cases}
-        0,\text{ si } \omega\in \A, \\ 1,\text{ si } \omega \notin \A.
+        1&\text{ si } \omega\in A, \\ 0&\text{ si } \omega \notin A.
         \end{cases}
     \]
     Observem que, donat $B\in\B$,
     \[
         P_{\mathbb{I}_A}\lp B\rp = \begin{cases}
-            1, \text{ si } 0,1\in B,\\
-            p\lp A\rp, \text{ si } 0\notin B,\, 1\in B,\\
-            p\lp \comp{A}\rp, \text{ si } 0\in B,\, 1\notin B,\\
-            0, \text{ si } 0,1\notin B.
+            1 &\text{ si } 0,1\in B,\\
+            p\lp A\rp &\text{ si } 0\notin B,\, 1\in B,\\
+            p\,( \comp{A}) &\text{ si } 0\in B,\, 1\notin B,\\
+            0 & \text{ si } 0,1\notin B.
         \end{cases}
     \]
     Així, podem calcular l'esperança amb les dues integrals i comprovar que el resultat és el matex.
     \[
-        \esp[\mathbb{I}_A] = \int_\Omega{\mathbb{I}_A \dif p} = 1\cdot p(A) + 0\cdot p(\comp{A}) = p(A),
+        \esp[\mathbb{I}_A] = \int_\Omega{\mathbb{I}_A \dif p} = 1\cdot p\,(A) + 0\cdot p\,(\comp{A}) = p\,(A),
     \]
     \[
         \esp[\mathbb{I}_A] = \int_\real{x\dif P_{\mathbb{I}_A}} = 1\cdot P_{\mathbb{I}_A}\lp\lc 1\rc\rp + 0\cdot P_{\mathbb{I}_A}\lp\lc 0\rc\rp+ \int_{\real\setminus\lc 0,1\rc} x\dif P_{\mathbb{I}_A} = P_{\mathbb{I}_A}\lp\lc 1\rc\rp = p\lp A\rp.
@@ -274,20 +278,29 @@
 
 \begin{prop}
     Siguin $X, Y$ variables aleatòries, siguin $a, b\in\real$ i sigui $A\in\Asuc$. Es tenen les següents propietats de l'esperança.
-    \begin{itemize}
+    \begin{enumerate}[i)]
         \item $\esp\lb a\rb=a$,
         \item $\esp\lb aX+bY\rb=a\esp\lb X\rb+b\esp\lb Y\rb$,
         \item $\esp\lb \mathbb{I}_A\rb=p\lp A\rp$,
         \item $\abs{\esp\lb X\rb}\leq\esp\lb\abs{X}\rb$.
-    \end{itemize}
-    Es tenen les següents propietats de la variància.
-    \begin{itemize}
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+ La demostració d'aquestes propietats es deixa com a exercici ja que es dedueixen directament de la definició o d'altres propietats bàsiques.
+\end{proof}
+
+\begin{prop}
+    Siguin $X, Y$ variables aleatòries, siguin $a, b\in\real$ i sigui $A\in\Asuc$. Es tenen les següents propietats de la variància.
+    \begin{enumerate}[i)]
         \item $\var\lb X\rb=\esp\lb\lp X-\esp\lb X\rb\rp^2\rb=\esp\lb X^2+\esp\lb X\rb^2-2X\esp\lb X\rb\rb=\esp\lb X^2\rb+\esp\lb X\rb^2-2\esp\lb X\rb^2=\esp\lb X^2\rb-\esp\lb X\rb^2$,
         \item $\var\lb a\rb=0$,
         \item $\var\lb a+X\rb=\var\lb X\rb$,
         \item $\var\lb aX\rb=a^2\var\lb X\rb$.
-    \end{itemize}
+    \end{enumerate}
 \end{prop}
+\begin{proof}
+ La demostració d'aquestes propietats es deixa com a exercici ja que es dedueixen directament de la definició o d'altres propietats bàsiques.
+\end{proof}
 
 \begin{prop}
     \textit{Desigualtat de Holder}. Siguin $X,Y$ variables aleatòries i siguin $p,q\in\real$ tals que $\frac{1}{p}+\frac{1}{q}=1$. Si $\esp\lb\abs{X}^p\rb,\esp\lb\abs{Y}^q\rb<+\infty$, aleshores
@@ -298,7 +311,8 @@
     \[
         \esp\lb\abs{XY}\rb\leq\esp\lb\abs{X}^2\rb^{\frac{1}{2}}\esp\lb\abs{Y}^2\rb^{\frac{1}{2}}<+\infty.
     \]
-    \textit{Desigualtat de Minkowsky}. Siguin $X,Y$ variables aleatòries i sigui $p\in\real$. Si $\esp\lb\abs{X}^p\rb,\esp\lb\abs{Y}^p\rb<+\infty$, aleshores
+    \textit{Desigualtat de Minkowsky}. Siguin $X,Y$ variables aleatòries i sigui $p\in\real$.
+    Si $\esp\lb\abs{X}^p\rb,\allowbreak \esp\lb\abs{Y}^p\rb<+\infty$, aleshores
     \[
         \esp\lb\abs{X+Y}^p\rb^{\frac{1}{p}}\leq\esp\lb\abs{X}^p\rb^{\frac{1}{p}}+\esp\lb\abs{Y}^p\rb^{\frac{1}{p}}<+\infty.
     \]
@@ -309,12 +323,12 @@
 \begin{obs}
     La desigualtat de Cauchy-Schwarz és el cas particular $p=q=2$ de la desigualtat de Holder.
 \end{obs}
-\begin{specialteo}[Desigualtat de Markov]
+\begin{teo}[Desigualtat de Markov]
     Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat, sigui $X\colon\Omega\to\real$ una variable aleatòria amb $X>0$ i sigui $a\in\real^+$. Aleshores,
     \[
         P\lp X\geq a\rp \leq \frac{\esp\lb X\rb}{a}.
     \]
-\end{specialteo}
+\end{teo}
 \begin{proof}
     Sigui $A=\lc \omega\in\Omega\mid X\lp\omega\rp\geq a\rc$. Com que $X$ és mesurable, $A$ és un succés. Observem que
     \[
@@ -325,12 +339,12 @@
         ap\lp X\geq a\rp = \esp\lb a\mathbb{I}_A\lp\omega\rp\rb \leq \esp\lb X\lp\omega\rp\rb = \esp\lb X\rb.
     \]
 \end{proof}
-\begin{specialteo}[Desigualtat de Chebyshev]
+\begin{teo}[Desigualtat de Txebixov]
     Sigui $X$ una variable aleatòria amb $\esp\lb X\rb<+\infty$, $\var\lb X\rb$ i $\var\lb X\rb\neq 0$. Aleshores, per tot $k>0$, es té que
     \[
         P\lp \abs{X-\esp\lb X\rb}\geq k\var\lb X\rb^{\frac{1}{2}}\rp\leq\frac{1}{k^2}.
     \]
-\end{specialteo}
+\end{teo}
 \begin{proof}
     Posem $Y:=\abs{X-\esp\lb X\rb}$. Observem que $Y$ és una variable aleatòria. Tenim que, per tot $a>0$,
     \begin{align*}
@@ -354,8 +368,8 @@
     \sectionmark{Vectors i independència de variables aleatòries}}
     \sectionmark{Vectors i independència de variables aleatòries}
 
-\begin{defi}[vector de variables aleatòries]\index{variable!aleatòria!multidimensional((tlab))}
-    Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat. Diem que un vector de variables aleatòries o una variable aleatòria multidimensional de dimansió $n$ és una funció mesurable $\vec{X}\colon\Omega\to\real^n$.
+\begin{defi}[vector de variables aleatòries]\index{variable aleatòria!multidimensional((tlab))}
+    Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat. Diem que un vector de variables aleatòries o una variable aleatòria multidimensional de dimensió $n$ és una funció mesurable $\vec{X}\colon\Omega\to\real^n$.
 \end{defi}
 \begin{obs}
     La funció 
@@ -374,10 +388,10 @@
 \begin{prop}
     Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat i sigui $\vec{X}=\lp X,Y\rp\colon\Omega\to\real^2$ un vector de variables aleatòries amb funció de distribució $F_{\vec{X}}\lp x,y\rp$. Aleshores,
     \begin{enumerate}[i)]
-        \item $\lim_{\lp x,y \rp\to\lp-\infty,-\infty\rp}F_{\vec{x}}\lp x, y\rp=0$ i $\lim_{\lp x,y \rp\to\lp+\infty,+\infty\rp}F_{\vec{x}}\lp x, y\rp=1$.
+        \item $\lim\limits_{\lp x,y \rp\to\lp-\infty,-\infty\rp}F_{\vec{x}}\lp x, y\rp=0$ i $\lim\limits_{\lp x,y \rp\to\lp+\infty,+\infty\rp}F_{\vec{x}}\lp x, y\rp=1$.
         \item $x_1\leq x_2\implies F_{\vec{X}}\lp x_1,y\rp\leq F_{\vec{X}}\lp x_2,y\rp,\,\forall y\in\real$.
-        \item $\lim_{\lp x,y \rp\to\lp x_0^+,y_0^+\rp}F_{\vec{x}}\lp x, y\rp=F_{\vec{X}}\lp x_0,y_0\rp$.
-        \item $\lim_{y\to+\infty}F_{\vec{x}}\lp x, y\rp=F_X\lp x\rp$. A aquestes funcions les anomenem distribucions marginals.
+        \item $\lim\limits_{\lp x,y \rp\to\lp x_0^+,y_0^+\rp}F_{\vec{x}}\lp x, y\rp=F_{\vec{X}}\lp x_0,y_0\rp$.
+        \item $\lim\limits_{y\to+\infty}F_{\vec{x}}\lp x, y\rp=F_X\lp x\rp$ i les anomenem distribucions marginals.
         \item $P\lp a<x\leq b, c<y\leq d\rp=F_{\vec{X}}\lp b,d\rp-F_{\vec{X}}\lp b,c\rp-F_{\vec{X}}\lp a,d\rp+F_{\vec{X}}\lp a,c\rp=\Delta_RF$,
     \end{enumerate}
     on $R$ és el rectangle que determinen $a, b, c, d$.
@@ -395,7 +409,7 @@
 \begin{proof}
     La demostració és llarga i pesada, i no la farem.
 \end{proof}
-\begin{defi}
+\begin{defi}[independència de variables aleatòries]
     Sigui $\lc X_i\rc_{i\in I}$ una família de variables aletòries sobre un espai de probabilitat $\lp\Omega,\Asuc,p\rp$. Diem que $\lc X_i\rc_{i\in I}$ és independent si per tot $J\subseteq I$ amb $\abs{J}<+\infty$ i per qualssevol $B_1,\dots,B_{\abs{J}}\in\B$ es té que
     \[
         P\lp\bigcap_{j\in J}X_j\in B_j\rp = \prod_{j\in J} P\lp X_j\in B_j\rp.
@@ -403,12 +417,13 @@
 \end{defi}
 En general, no podem conéixer la distribució de $X_1,\dots,X_n$ si coneixem només les seves distribucions marginals. Tanmateix, sí que podem conéixer-la si les variables aleatòries són independents.
 \begin{prop}
-    Si prenem $B_i=\lp-\infty,x_i\rp$ i una família finita de variables aleatòries independent $\lc X_i\rc_{i=1}^n$ (i posant $\vec{X}=\lp X_1,\dots,X_n\rp$), tenim que
+    Si prenem $B_i=\lp-\infty,x_i\rp$ i una família finita de variables aleatòries independents $\lc X_i\rc_{i=1}^n$ (i posant $\vec{X}=\lp X_1,\dots,X_n\rp$), tenim que
     \[
         F_{\vec{X}}\lp x_1,\dots,x_n\rp = \prod_{i=1}^n F_{X_i}\lp x_i\rp.
     \]
 \end{prop}
 \begin{proof}
+    Directament a partir de la definició tenim que
     \begin{align*}
         F_{\vec{X}}\lp x_1,\dots,x_n\rp &= p\lp \bigcap_{i=1}^n X_i\in B_i\rp =p\lp \bigcap_{i=1}^n X_i\leq x_i\rp =\\
         &= \prod_{i=1}^n P\lp X_i\leq x_i\rp = \prod_{i=1}^n F_{X_i}\lp x_i\rp.
@@ -420,3 +435,124 @@ En general, no podem conéixer la distribució de $X_1,\dots,X_n$ si coneixem no
 \begin{obs}
     Siguin $\lc X_i\rc_{i=1}^n$ una família de variables aleatòries independent i siguin $f_1,\dots,f_n\colon \real\to\real$ funcions mesurables. Aleshores, $\lc f_1\lp X_i\rp\rc_{i=1}^n$ també són independents.
 \end{obs}
+\begin{prop}
+    Siguin $X_1, \dots, X_n$ variables aleatòries independents. Aleshores 
+    \[
+        \esp[X_1\dots X_n] = \prod \limits_{i=1}^n \esp[X_i].
+    \]
+\end{prop}
+
+%TODO no se si falta quelcom d'abans
+\begin{defi}[covariància]
+    Siguin $X, Y$ variables aleatòries. La covariància de $X$ i $Y$ \'es:
+    \[
+        \cov(X, Y) = \esp \left[\lp X - \esp(X) \rp \lp Y - \esp(Y) \rp \right]
+    \]
+\end{defi}
+
+\begin{obs}
+    Està ben definida sempre que $\esp[|X|], \esp[|Y|] < +\infty$ i
+    \[
+        \cov(X, Y) = \esp[XY] - \esp[X]\esp[Y]
+    \]
+\end{obs}
+
+\begin{proof}
+    Directament de la definició de covariància i usant les propietats de l'esperança
+    \begin{gather*} 
+        \cov(X,Y) = \esp\left[XY - \esp[X]Y - \esp[Y]X + \esp[X]\esp[Y]\right] = \\
+        = \esp[XY] - 2\esp[X]\esp[Y] + \esp[X]\esp[Y] 
+        = \esp[XY] - \esp[X]\esp[Y].
+    \end{gather*} 
+\end{proof}
+
+\begin{obs}
+    Si $X$ i $Y$ són independents, aleshores $\cov(X,Y)$ = 0.
+\end{obs}
+
+\begin{obs}
+    Per $X, Y$ variables aleatòries, es satisfà $\var[X + Y] = \var[X] + \var[Y] 
+    + 2 \cov(X, Y)$. Si a m\'es són independents, $\var[X+Y] = \var[X] + \var[Y]$.
+\end{obs}
+
+\begin{proof}
+    Usant la definició de variància tenim que
+    \begin{gather*} 
+        \esp[(X+Y)^2] - \esp[X+Y]^2 =\\
+        = \esp[X^2] + \esp[Y^2] + 2\esp[XY] - \esp[X]^2
+        - \esp[Y]^2 - 2\esp[X]\esp[Y] =\\
+        = \var[X] + \var[Y] + 2\cov(X, Y).
+    \end{gather*} 
+\end{proof}
+
+\begin{prop}
+    Siguin $X, Y, Z$ variables aleatòries, i $a, b, C$  constants. Aleshores
+    \begin{enumerate}[i)]
+    \item $\cov(C, X) = 0.$
+    \item $\cov(X, X) = \var[X].$
+    \item $\cov(X, Y) = \cov(Y, X).$
+    \item $\cov(aX + bY, Z) = a \cov(X,Z) + b\cov(Y, Z).$
+    \item $\cov(X, Y)^2 \leq \var[X]\var[Y].$
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    Demostrarem nom\'es l'últim apartat. Els altres es deixen com exercici pel lector.
+    Tenim doncs que
+    \[
+        \left|\cov(X, Y)\right| = 
+        \left|\esp\lb\lp X - \esp[X] \rp \lp Y- \esp[Y]\rp\rb\right| 
+        \leq \esp\lb\left|\lp X - \esp[X] \rp \lp Y- \esp[Y]\rp\right|\rb
+    \]
+    que, aplicant la desigualtat de Cauchy-Schwarz, \'es menor que
+    \[
+        \sqrt{\esp \lb \lp X - \esp[X] \rp^2\rb} 
+        \sqrt{\esp \lb \lp Y - \esp[Y] \rp^2\rb} = \\
+        = \sqrt{\lp\var[X]\rp} \sqrt{\lp \var[Y] \rp}.
+    \]
+    \'Es a dir, $\cov(X, Y)^2 \leq \var[X] \var[Y]$.
+\end{proof}
+
+\begin{obs}
+    Com es conclou de la desigualtat de Cauchy-Schwarz, la desigualtat anterior \'es una
+    igualtat si i nom\'es si $X - \esp[X] = \lambda (Y - \esp[Y])$.
+\end{obs}
+
+\begin{obs}
+    $\cov(X, Y) = 0 \centernot \implies X,Y$ independents.
+\end{obs}
+
+\begin{proof}
+    En donem un contraexemple. Definim $X, Y$ variables aleatòries tals que
+    \[
+        X = 
+        \begin{cases}
+            1 &\text{amb probabilitat } \frac{1}{2}\\
+            -1 &\text{amb probabilitat } \frac{1}{2} 
+        \end{cases}, \,
+        Y =
+        \begin{cases}
+            0 &\text{si } X = -1 \\
+            \pm 1 &\text{amb probabilitat } \frac{1}{2} \text{ si } X = 1
+        \end{cases}.
+    \]
+    En aquest cas,
+    \begin{align*}
+        \esp[XY] &= \int\limits_{\Omega} XY \dif p = \\
+        &= 0 \cdot P(X = -1) + 1 \cdot 
+        P(X = 1, Y = 1) - 1 \cdot P(X= 1, Y= -1) = \\
+        &= \frac{1}{4} - \frac{1}{4} = 0,
+    \end{align*}
+    i tamb\'e tenim que
+    \[
+        \esp[X] = 1\cdot P(x = 1) - 1 \cdot P(X = -1) = 0. 
+    \]
+    Per les últimes dues igualtats, $\cov(X, Y) = \esp[XY] - \esp[X]\esp[Y] = 0$. Vegem
+    però que no són indepedents:
+    \[
+        P(X = 1)P(Y = 0) = \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4}.
+    \]
+    Però $P(X = 1, Y = 0) = 0$, \'es a dir, com volíem veure $X$ i $Y$ no són independents.
+\end{proof}
+
+

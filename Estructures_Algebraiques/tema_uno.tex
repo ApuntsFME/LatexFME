@@ -422,14 +422,14 @@
     \]
     ya que
     \[
-        G = \bigcup_{d \vert n} \setb{x \in G \mid \ord(x) = d}.
+        G = \bigsqcup_{d \vert n} \setb{x \in G \mid \ord(x) = d}.
     \]
 \end{proof}
 
 \begin{prop}
     Sea $G = C_n = \left< x \right>$ (con $n$ finito). Entonces
     \begin{enumerate}[i)]
-        \item Si $d \mid n$, entonces $x^{\frac{n}{d}}$ es un elemento de orden $d$
+        \item Si $d \vert n$, entonces $x^{\frac{n}{d}}$ es un elemento de orden $d$
             y el subgrupo $H_d := \left< x^{\frac{n}{d}} \right>$ es subgrupo cíclico de orden $d$.
         \item Si $H$ es un subgrupo de $G$, entonces $\exists! d \vert n$ tal que $H = H_d$.
     \end{enumerate}
@@ -481,7 +481,7 @@
     Sea $G = C_n = \left< x^n \right>$ un grupo cíclico de orden $n \geq 1$. Existe una biyección
     \[
         \begin{aligned}
-            \setb{d \in \n \mid 1 \leq d \leq n, d \vert n } &\longleftrightarrow
+            \setb{d \in \n \mid 1 \leq d \leq n,\, d \vert n } &\longleftrightarrow
             \setb{\text{subgrupos de }G} \\
             d &\longleftrightarrow H_d.
         \end{aligned}
@@ -582,7 +582,7 @@
     \end{itemize}
 \end{obs}
 
-\begin{prop} Sean $G_1, G_2$ grupos y sea $f\colon G_1\to G_2$ un morfismo de grupos. Entonces,
+\begin{prop} Sean $G_1, G_2$ grupos y sea $f\colon G_1\to G_2$ un morfismo de grupos, entonces
     \begin{enumerate}[i)]
         \item $f$ inyectiva $\iff \ker(f) = \setb{1}$.
         \item $f$ exhaustiva $\iff \im(f) = G_2$.
@@ -652,7 +652,7 @@
     
 \end{defi}
 
-\begin{teo}[de Lagrange]
+\begin{teo}[Teorema de Lagrange]\label{teo:lag}
     Sea $G$ un grupo finito y sea $H$ un subgrupo de $G$. Entonces,
     \[
         \abs{G} = \abs{H} \abs{\faktor{G}{H}}.
@@ -963,7 +963,7 @@
     \end{enumerate}
 \end{proof}
 
-\begin{teo}[de isomorfía (primero)] \label{teo:1_iso}
+\begin{teo}[Primer teorema de isomorfía] \label{teo:1_iso}
     Sean $G_1, G_2$ grupos, sea $f \colon G_1 \to G_2$ un morfismo de grupos. Sea $H \triangleleft G_1$
     un subgrupo normal. Definimos
     \begin{center}
@@ -1182,7 +1182,7 @@
     $G$ es simple.
 \end{proof}
 
-\begin{teo}[de Feit-Thompson]\label{teo:ordnonprimo}
+\begin{teo}[Teorema de Feit-Thompson]\label{teo:ordnonprimo}
     Sea $G$ un grupo simple tal que $\abs{G} = n\in\n$, con $n$ non. Entonces, $n$ es un número primo.
 \end{teo}
 \begin{proof}
@@ -1266,7 +1266,7 @@
 \begin{defi}[grupo!resoluble]
     Sea $G$ un grupo. Decimos que es resoluble si tiene una torre normal abeliana.
 \end{defi}
-\begin{defi}[serie!de composición]
+\begin{defi}[serie de composición]
     Sea $G$ un grupo. Decimos que una torre normal de $G$ es una serie de composición de $G$ si todos los grupos
     \[
         \faktor{G_0}{G_1}, \faktor{G_1}{G_2}, \dots, \faktor{G_{n-1}}{G_n}
@@ -1314,14 +1314,14 @@
 \end{example}
 
 \begin{prop}
-    Todo grupo finito tiene una serie de composición
+    Todo grupo finito tiene una serie de composición.
 \end{prop}
 
 \begin{proof}
-    Sea $G$ un grupo finito y supongamos que no tiene serie de composición. De entre sus torres normales (el primer ejemplo nos muestra que hay, almenos, una) tomemos una que no pueda ser refinada, es decir, que para todo par de grupos consecutivos $G_i$ y $G_{i+1}$ de la torre, no exista un grupo $H$ (distinto de $G_i$ y $G_{i+1}$) con $G_i\trir H\trir G_{i+1}$. Sabemos que una tal torre normal existe porque, de no ser así, la torre tendría infinitos grupos de distinto cardinal, lo cual supondría una contradicción con la finitud de $G$. Entonces, la torre en cuestión tiene un par de grupos consecutivos $G_k$ y $G_{k+1}$ tales que $\faktor{G_k}{G_{k+1}}$ no es simple ya que, de lo contrario, seria una serie de composición. Sin embargo, el lema \ref{lema:maximal_normal} nos asegura que $G_{k+1}$ no es un elemento maximal del conjunto de grupos $\lc H\mid H\tril G_k, H\neq G_k, G_{k+1}\subseteq H\rc$. Por lo tanto, existe un grupo $H$ (distinto de $G_k$ y $G_{k+1}$) con $G_k\trir H\supseteq G_{k+1}$. Pero $G_k\trir G_{k+1}$, y necesariamente $H\trir G_{k+1}$. Esto contradice la suposición que no existía un tal $H$ y concluimos que $G$ tiene serie de composición.
+    Sea $G$ un grupo finito y supongamos que no tiene serie de composición. De entre sus torres normales (el primer ejemplo nos muestra que hay, almenos, una) tomemos una que no pueda ser refinada, es decir, que para todo par de grupos consecutivos $G_i$ y $G_{i+1}$ de la torre, no exista un grupo $H$ (distinto de $G_i$ y $G_{i+1}$) con $G_i\trir H\trir G_{i+1}$. Sabemos que una tal torre normal existe porque, de no ser así, podríamos encontrar una torre normal con un número arbitrario de grupos de distinto cardinal, lo cual supondría una contradicción con la finitud de $G$. Entonces, la torre en cuestión tiene un par de grupos consecutivos $G_k$ y $G_{k+1}$ tales que $\faktor{G_k}{G_{k+1}}$ no es simple ya que, de lo contrario, seria una serie de composición. Sin embargo, el lema \ref{lema:maximal_normal} nos asegura que $G_{k+1}$ no es un elemento maximal del conjunto de grupos $\lc H\mid H\tril G_k, H\neq G_k, G_{k+1}\subseteq H\rc$. Por lo tanto, existe un grupo $H$ (distinto de $G_k$ y $G_{k+1}$) con $G_k\trir H\supseteq G_{k+1}$. Pero $G_k\trir G_{k+1}$, y necesariamente $H\trir G_{k+1}$. Esto contradice la suposición de que no existía un tal $H$ y concluimos que $G$ tiene serie de composición.
 \end{proof}
 
-\begin{teo}[de isomorfía (segundo)]\label{teo_dos_iso}
+\begin{teo}[Segundo teorema de isomorfía]\label{teo_dos_iso}
     Sea $G$ un grupo y sean $H,K$ subgrupos de $G$ con $H\tril G$. Entonces,
     \begin{enumerate}[i)]
         \item $\lp H\cap K\rp\tril K$,
@@ -1352,7 +1352,7 @@
     \]
 \end{proof}
 
-\begin{teo}[de Jordan-Hölder]
+\begin{teo}[Teorema de Jordan-Hölder]
     Sea $G$ un grupo y sean
     \[
         \begin{aligned}
@@ -1423,7 +1423,7 @@
     las dos series de composición de $G$ son equivalentes.
 \end{proof}
 
-\begin{prop}
+\begin{prop}\label{prop:resoluble}
     Sea $G$ un gupo y $H$ un subgrupo. Entonces,
     \begin{enumerate}[i)]
         \item Si $G$ es resoluble, $H$ es resoluble.
@@ -1434,4 +1434,443 @@
 
 \begin{proof}
     Ejercicio.
+\end{proof}
+
+\section{Acción de un grupo sobre un conjunto}
+
+\begin{defi}[acción de un grupo sobre un conjunto]
+    Sea $X$ un conjunto y $G$ un grupo. Llamamos acción de $G$ en $X$ a una aplicación
+    \[
+        \begin{aligned}
+            G \times X &\to X \\
+            (a, x) &\mapsto ax
+        \end{aligned}
+    \]
+    que verifica
+    \begin{enumerate}[i)]
+        \item $a(bx) = (ab)x$, $\forall a,b \in G$, $\forall x \in X$,
+        \item $1x = x$.
+    \end{enumerate}
+    Decimos que $G$ opera en $X$ o bien que $X$ es un $G$-conjunto.
+\end{defi}
+
+\begin{obs}
+    Una acción de $G$ en $X$ define, $\forall a \in G$, una aplicación
+    \[
+        \begin{aligned}
+            m_a \colon X &\to X \\
+            x &\mapsto m_a(x) = ax.
+        \end{aligned}
+    \]
+    Además, $m_a$ es biyectiva y tenemos $\left( m_a \right)^{-1} = m_{a^{-1}}$ ya que $a^{-1}(ax) = \left( a^{-1}a \right)x = 1x = x$.
+    
+    Es decir, una acción de $G$ en $X$, nos define una aplicación
+    \[
+        \begin{aligned}
+            G &\to \text{Perm}(X) = \left\{ f \colon X \to X \mid f \text{ biyectiva} \right\} \\
+            a &\mapsto m_a.
+        \end{aligned}
+    \]
+    Esta aplicación es un morfismo de grupos, ya que
+    \[
+        m_am_b\lp x\rp=abx=m_{ab}\lp x\rp,\,\forall x\in X.
+    \]
+    
+    Recíprocamente, sea $f \colon G \to \text{Perm}(X)$ un morfismo de grupos. Podemos
+    definir una acción
+    \[
+        \begin{aligned}
+            \tilde{f} \colon G \times X &\to X \\
+            (a, x) &\mapsto \tilde{f}(a, x) = f(a)(x),
+        \end{aligned}
+    \]
+    que está bien definida porque
+    \begin{enumerate}[i)]
+        \item $a(bx) = f(a)\left( f(b)(x) \right) = \left( f(a)f(b) \right)(x) = f(ab)(x) = (ab)x$,
+        \item $1x = f(1)x = \Id(x) = x$.
+    \end{enumerate}
+
+    Por lo tanto, podremos afirmar que existe una biyección
+    \[
+        \left\{ \text{acciones } G \times X \to X \right\} \leftrightarrow
+        \left\{ \text{morfismo de grupos } G \to \text{Perm}(X) \right\}
+    \]
+    si demostramos que es una inyección en alguna de las direcciones.
+\end{obs}
+
+\begin{defi}[órbita de un elemento]
+    Sea $G$ un grupo y $X$ un $G$-conjunto. Llamamos órbita de $x \in X$ a
+    \[
+        Gx = \left\{ ax \mid a \in G \right\} \subseteq X.
+    \]
+\end{defi}
+
+\begin{prop}
+    Sean $x, y \in X$. La relación $x \sim y \iff \exists a \in G$ tal que $y = ax$ es una relación de equivalencia.
+\end{prop}
+
+\begin{obs}
+    Si tenemos la relación de equivalencia anterior, entonces
+    \[
+        \bar{x} = \left\{ y \in X \mid x \sim y \right\} = \left\{ y \in X \mid \exists a \in G \tq y = ax \right\}
+    = \left\{ ax \mid a \in G \right\} = Gx,
+    \]
+    que es la órbita de $x$. El conjunto de órbitas se escribe como
+    $G \setminus X$ ó $\faktor{X}{\sim}$.
+\end{obs}
+
+\begin{defi}[estabilizador de un elemento]\idx{grupo!de isotopía de un elemento}
+    Sea $G$ un grupo y $X$ un $G$-conjunto. Llamamos estabilizador de $x \in X$ o grupo de isotopía de $x$ a
+    \[
+        G_x = \left\{ a \in G \mid ax = x \right\} \subseteq G.
+    \]
+\end{defi}
+
+\begin{prop}
+    $G_x$ es un subgrupo.
+\end{prop}
+
+\begin{proof}
+    Veamos las tres propiedades de la definición \ref{defi:subgrupo}.
+    \begin{enumerate}[i)]
+        \item $1x = x \implies 1\in G_x$.
+        \item Sean $a, b \in G$ tales que $ax = x$, $bx = x$. Entonces, $(ab)x = a(bx) = ax = x$ y por lo tanto $ab \in G_x$.
+        \item Sea $a \in G$ tal que $ax = x$. Entonces, $x = (a^{-1}a)x = a^{-1}(ax) = a^{-1}x$ y por lo tanto $a^{-1} \in G_x$.
+    \end{enumerate}
+\end{proof}
+
+\begin{lema}
+    Sea $G$ un grupo y $X$ un $G$-conjunto. Sean $x, y \in X$, si $x \sim y$, entonces $G_x$ y $G_y$ son
+    subgrupos conjugados.
+\end{lema}
+
+\begin{proof}
+    $x \sim y \implies y = ax$ para algún $a \in G$. Veremos que $G_y = aG_xa^{-1}$.
+
+    Veamos que $G_y \subseteq aG_xa^{-1}$. Sea $\alpha \in G_y$
+    \[
+        \begin{aligned}
+            \alpha \in G_y &\implies \alpha y = y \implies \\
+            &\implies \alpha ax = ax \implies \\
+            &\implies \left( a^{-1} \alpha a \right)x = x \implies \\
+            &\implies a^{-1} \alpha a \in G_x \implies \\
+            &\implies \alpha a \in a G_x \implies \\
+            &\implies \alpha \in a G_x a^{-1}.
+        \end{aligned}
+    \]
+    La otra inclusión resta como ejercicio.
+\end{proof}
+
+\begin{prop}
+    Sea $G$ un grupo y $X$ un $G$-conjunto. Entonces, $\forall x \in X$, tenemos que
+    \[
+        \begin{aligned}
+            G x &\to \faktor{G}{G_x} \\
+            ax &\mapsto a G_x
+        \end{aligned}
+    \]
+    es una aplicación bien definida y biyectiva.
+    En particular,
+    \begin{enumerate}[i)]
+        \item\label{prop_q_orb_ite_1} $\abs{Gx} =  \abs{\faktor{G}{G_x}} = \left[ G : G_x \right] = \frac{\abs{G}}{\abs{G_x}}$. Es decir,
+            $\label{Gx}\abs{G_x}\abs{Gx} = \abs{G}$.
+        \item\label{prop_q_orb_ite_2} Si $X$ es finito, entonces $X = \bigsqcup\limits^r_{i = 1} G x_i$ y, por consiguiente,
+            \[
+                \abs{X} = \sum^r_{i = 1} \abs{G x_i} = \sum^r_{i = 1} \left[ G : G_{x_i} \right],
+            \]
+            que es lo que conocemos como fórmula de órbitas.
+        \item %TODO(no sabem que hi hauria d'haver aqui)
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    Veamos que si $ax = bx$, entonces $a G_x = b G_x$. En efecto,
+    \[
+        ax = bx \implies b^{-1}ax = x \implies b^{-1}a \in G_x \implies aG_x = bG_x.
+    \]
+    Veamos ahora que la aplicación es inyectiva. Supongamos que $aG_x = bG_x$, entones
+    \[
+        a G_x = b G_x \implies b^{-1}a \in G_x \implies b^{-1}a x = x \implies ax = bx.
+    \]
+    La aplicación es evidentemente exhaustiva por construcción.
+    El punto \ref{prop_q_orb_ite_1} es una consecuencia inmediata del teorema de Lagrange (\ref{teo:lag}) y el punto \ref{prop_q_orb_ite_2} sigue del \ref{prop_q_orb_ite_1}.
+    
+\end{proof}
+
+\begin{defi}[punto fijo]
+    Sea $G$ un grupo y $X$ un $G$-conjunto. Diremos que $x \in X$ es un punto fijo si 
+    \[
+        ax = x \quad \forall a \in G.
+    \]
+\end{defi}
+\begin{obs}
+    $x$ es un punto fijo $\iff Gx = \left\{ x \right\} \iff G_x = G$.
+\end{obs}
+
+\begin{defi}[acción!transitiva]
+    Sea $G$ un grupo, $X$ un conjunto y $G \times X \to X$ una acción de $G$ en $X$. Diremos
+    que esta acción es transitiva si, $\forall x, y \in X$, se tiene que $x \sim y$.
+\end{defi}
+\begin{obs}
+    Una acción es transitiva si y solo si $X=Gx,\,\forall x\in X$, es decir, si hay una sola órbita.
+\end{obs}
+
+\begin{defi}[acción!fiel]
+    Sea $G$ un grupo, $X$ un conjunto y $G \times X \to X$ una acción de $G$ sobre $X$.
+    Diremos que esta acción es fiel si $\forall a, b \in G$ tales que $a \neq b$, se tiene que
+    $m_a \neq m_b$, es decir,
+    \[
+        \begin{aligned}
+            G &\to \text{Perm}(X) \\
+            a &\mapsto m_a
+        \end{aligned}
+    \]
+    es un morfismo inyectivo de grupos.
+\end{defi}
+
+\begin{defi}[centralizador!de un elemento]\index{centralizador!de un subgrupo((tlab))}\index{centro de un grupo((tlab))}
+    Sea $G$ un grupo y sea $a\in G$. Definimos el centralizador de $a$, $Z_G\lp a\rp$, como
+    \[
+        Z_G\lp a\rp = \lc b\in G \mid ab=ba\rc,
+    \]
+    es decir, el conjunto de elementos que conmutan con $a$. Sea $S\subseteq G$. Definimos el centralizador de $S$, $Z_G\lp S\rp$, como
+    \[
+        Z_G\lp S\rp = \lc b\in G \mid ab=ba, \,\forall a\in S\rc,
+    \]
+    es decir, la intersección de los centralizadores de todos sus elementos.
+    Definimos el centro de $G$, $Z\lp G\rp$ como
+    \[
+        Z\lp G\rp = Z_G\lp G\rp,
+    \]
+    es decir, el conjunto de elementos que conmutan con cualquier otro elemento.
+\end{defi}
+
+\subsection{Acción por traslación de $G$ en $X= G$}
+
+\begin{defi}[acción!por traslación]
+    Sea $G$ un grupo. Definimos la acción por traslación de $G$ como la aplicación
+    \[
+        \begin{aligned}
+            G \times G &\to G \\
+            (a, x) &\mapsto a\cdot x = ax.
+        \end{aligned}
+    \]
+\end{defi}
+
+\begin{obs}
+    Las acciones por traslación son transitivas y fieles.
+\end{obs}
+
+\begin{teo}[Teorema de Carley]
+    Sea $G$ un grupo finito con $\abs{G} = n$. Entonces, $G$ es isomorfo a un subgrupo de $\Sim_n$.
+\end{teo}
+
+\begin{proof}
+    Tomamos la acción de $G$ en $X=G$ por traslación. Puesto que de trata de una acción fiel, la aplicación
+    \begin{align*}
+        m\colon G&\to\Sim_n\\
+        a&\mapsto m_a
+    \end{align*}
+    es inyectiva. Veamos que $\im\lp m\rp$ es un grupo.
+    \begin{itemize}
+        \item $m_1=\Id\in\im\lp m\rp$,
+        \item $m_am_b\lp x\rp = abx=m_{ab}\lp x\rp\in\im\lp m\rp$,
+        \item $m_{a^{-1}}m_a\lp x\rp = a^{-1}ax=x\implies m_a^{-1}\in\im\lp m\rp$.
+    \end{itemize}
+    Así pues, la aplicación
+    \begin{align*}
+        \widetilde{m}\colon G&\to\im\lp m\rp\\
+        a&\mapsto m_a
+    \end{align*}
+    es un morfismo biyectivo de grupos de $G$ a un subgrupo de $\Sim_n$.
+\end{proof}
+
+\subsection{Acción por conjugación de $G$ en $X= G$}
+
+\begin{defi}[acción!por conjugación]
+    Sea $G$ un grupo. Definimos la acción por conjugación de $G$ como la aplicación
+    \[
+        \begin{aligned}
+            G \times G &\to G \\
+            (a, x) &\mapsto axa^{-1}.
+        \end{aligned}
+    \]
+\end{defi}
+
+\begin{prop}
+    Sea $G$ un grupo. Si $x \in G$ es punto fijo por conjugación, entonces $x \in Z(G)$.
+\end{prop}
+\begin{proof}
+    $x$ punto fijo $\iff axa^{-1} = x,\,\forall a \in G \iff ax = xa,\, \forall a \in G \iff x~\in~Z(G)$.
+\end{proof}
+
+\begin{prop}
+    Sea $G$ un grupo. Si consideramos la acción por conjugación de $G$, entonces $G_x = Z_G(x)$.
+\end{prop}
+\begin{proof}
+    $G_x = \left\{ a \in G \mid axa^{-1} = x \right\} = \left\{ a \in G \mid ax = xa \right\} = Z_G(x)$.
+\end{proof}
+
+\begin{prop}[Fórmula de órbitas de la acción por conjugación de $G$ en $G$]\label{prop_form_orbitas}
+    Sea $G$ un grupo, y sean $x_1, \dots, x_r$ representantes de órbitas no puntuales. Entonces,
+    \[
+        \abs{G} = \abs{Z(G)} + \sum^r_{i=1} \left[ G : Z_G\left( x_i \right) \right].
+    \]
+\end{prop}
+\begin{proof}
+    Se tiene que
+    \[
+        \abs{G} = \sum^s_{i=1} \abs{Gx_i} = \abs{Z(G)} + \sum^r_{i=1} \left[ G : G_{x_i} \right].
+    \]
+\end{proof}
+
+\begin{teo}[Teorema de Cauchy]\label{teo:cauchy}
+    Sea $G$ un grupo finito de orden $n$ y sea $p \vert n$ un número primo. Entonces,
+    existe algún $x \in G$ tal que $\orden(x) = p$.
+\end{teo}
+\begin{proof}
+    Si $G$ es un grupo abeliano, procederemos a demostrar el enunciado por inducción sobre $n$. Los casos $n=2$ y $n=3$ son grupos conocidos. Suponemos $n \geq 4$ y tomamos $x \in  G$. Por el teorema de Lagrange tenemos que
+    $\orden(x) = m \vert n$. Separamos ahora en dos casos.
+    
+    Si $p \vert m$, entonces $\orden\left( x^{\frac{m}{p}} \right) = p$ y hemos acabado.
+
+    Si $p \ndiv m$, tenemos que $\langle x\rangle \triangleleft G$ (por ser $G$ abeliano), de modo que
+     $\faktor{G}{\langle x\rangle}$ es un grupo cociente. Así pues,
+    \[
+        \abs{\faktor{G}{\langle x \rangle}} = \frac{\abs{G}}{\abs{\langle x \rangle}} = \frac{n}{m}.
+    \]
+    Como $p \vert n$ y $p \ndiv m$, se tiene que $p \vert \abs{\faktor{G}{\langle x \rangle}} < n$
+    y, por hipótesis de inducción, $\exists \bar{y} \in \faktor{G}{\langle x \rangle}$ tal que
+    $\orden\left( \bar{y} \right) = p$. Esto quiere decir que $\lp\bar{y}\rp ^p=\bar{1}=\left< x\right>$, cosa que implica que $y^p=x^r$ para algún $1\leq r\leq m$. Entonces,
+    \[
+        \left( y^m \right)^p = \left( y^p \right)^m = \left( x^r \right)^m = 
+        \left( x^m \right)^r = 1^r = 1,
+    \]
+    y necesariamente $\orden\left( y^m \right) \vert p$. Puesto que $p$ es primo, solo existen las posibilidades $\orden\left( y^m \right)=1$ y $\orden\left( y^m \right)=p$. Si se da el primer caso,
+    \[
+        \orden\left( y^m \right) = 1 \implies y^m = 1 \implies \overline{y^m} = \bar{1} \implies 
+        \left( \bar{y} \right)^m = 1 \implies p \vert m,
+    \]
+    lo cual supone una contradicción. Por lo tanto, $\orden\left( y^m \right) = p$ y hemos acabado.
+
+    En el caso de que $G$ no sea abeliano, aplicamos la fórmula de órbitas (\ref{prop_form_orbitas}), que establece que
+    \[
+        \abs{G} = \abs{Z(G)} + \sum^r_{i=1} \left[ G : G_{x_i} \right].
+    \]
+    Podemos separar los dos casos siguientes.
+    
+    \begin{itemize}
+        \item Si $\exists i\in\lc 1,\dots,r\rc$ tal que $\mcd\left( p, \left[ G : G_{x_i} \right] \right) = 1$.
+            Entonces, $p \ndiv \left[ G : G_{x_i} \right] = \frac{\abs{G}}{ \abs{G_{x_i}}}$, pero
+            $p$ divide $\abs{G}$, de manera que $p$ divide también $\abs{G_{x_i}} \leq n$. Aplicando ahora la hipótesis de inducción,
+            se tiene que $\exists x^{\prime} \in G_{x_i} \subset G$ tal que $\orden(x^{\prime}) = p$.
+        \item Si $\forall i\in\lc 1,\dots,r\rc$ se tiene que $p \vert \left[ G : G_{x_i} \right]$. Entonces,
+            $p$ divide $\abs{Z(G)}$, pero $Z(G)$ es un subgrupo propio de $G$, de modo que $\abs{Z(G)} < n$.
+            Finalmente, aplicando de nuevo la hipótesis de inducción, $\exists x \in Z(G)$ tal que $\orden(x) = p$.
+    \end{itemize}
+\end{proof}
+
+\section{Grupos de Sylow}
+
+\begin{defi}[$p$-grupo]
+    Un $p$-grupo $G$ es un grupo de orden $\abs{G} = p^r$ con $p$ primo y $r \geq 0$.
+\end{defi}
+
+\begin{obs}
+    $\left\{ 1 \right\}$ es un $p$-grupo para todo primo $p$. ($r = 0$).
+\end{obs}
+
+\begin{teo*}
+    Sea $G$ un $p$-grupo de orden $p^r$. Entonces:
+    \begin{enumerate}[i)]
+        \item\label{item:pgrupo-1} $G$ es trivial $\iff Z(G)$ es trivial.
+        \item\label{item:pgrupo-2} $G$ es resoluble.
+        \item Si $G$ es simple, entonces $G \cong \faktor{\z}{p\z}$.
+    \end{enumerate}
+\end{teo*}
+
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item[]
+        \item La implicación directa es inmediata. Veamos la inversa. Supongamos que $G$ es no trivial y separemos casos en función de la conmutatividad de $G$. Si $G$ es abeliano, entonces $Z(G) = G$ y $Z(G)$ es no trivial.
+            Recordemos la fórmula de órbitas (\ref{prop_form_orbitas})
+            \[
+                \abs{G} =  \abs{Z(G)} + \sum^s_{i=1} \left[ G : G_{x_i} \right] =  \abs{Z(G)} + \sum^s_{i=1} \left[ G : Z_G\left( x_i \right) \right],
+            \]
+            donde $x_1, \dots, x_s$ son representantes de las órbitas no puntuales de $G$. En
+            particular, $Z_G\left( x_i \right) \subsetneq G$ y tenemos que para todo $1\leq i\leq s$
+            \[
+                \left[ G : Z_G\left( x_i \right) \right] = \frac{\abs{G}}{\abs{Z_G\left( x_i \right)}} =
+                \frac{p^r}{p^{r_i}} = p^{t_i},
+            \]
+            con $t_i \geq 1$, ya que $t_i = 0 \implies r_i = r \implies Z_G\left( x_i \right) = G$, lo cual no
+            puede ser. Entonces, $p$ divide todos los sumandos $\left[ G : Z_G\left( x_i \right) \right]$ de la fórmula de órbitas y divide también a $\abs{G}$, así que necesariamente divide a $\abs{Z_G}$, de lo que deducimos que $Z(G)$ es no trivial.
+            
+        \item Procederemos por inducción sobre $\abs{G}$. Si $\abs{G} = 1$, $G$ es trivialmente abeliano.
+            Supongamos ahora que $G$ no es abeliano y que $\abs{G} > 1$. En virtud del primer apartado,
+            $Z(G)$ es no trivial y $Z(G) \subsetneq G$ porque no es abeliano.
+            $G \triangleright Z(G) \triangleright \left\{ 1 \right\}$ es una torre normal
+            porque los elementos de $Z\lp G\rp$ conmutan con todos los de $G$ y, en particular,
+            entre ellos. Se tiene que 
+            $\abs{\faktor{G}{Z(G)}} = \frac{p^r}{p^{s}}$ con $0 < s < r$, ya que $Z(G)$ es no trivial y
+            $G\neq Z\lp G\rp$. Aplicando ahora la hipótesis de inducción, $\faktor{G}{Z(G)}$ es resoluble.
+            Finalmente, la proposición (\ref{prop:resoluble}) afirma que             
+            \[
+                \faktor{G}{Z(G)} \text{ es resoluble y } Z(G) \text{ es resoluble} \implies G
+                \text{ es resoluble}.
+            \]
+        \item Sea $G$ un $p$-grupo simple. En virtud del apartado anterior, $G$ tiene una torre normal abeliana.
+            Como $G$ es simple, no tiene subgrupos normales propios y
+            $G \trir \left\{ 1 \right\}$ es la única torre normal abeliana posible.
+            Así pues, $\faktor{G}{\lc 1\rc}$ es abeliano y simple y concluimos $G \cong \faktor{\z}{p\z}$.
+    \end{enumerate}
+\end{proof}
+
+
+El Teorema de Lagrange (\ref{teo:lag}) nos dice que si $H$ es un subgrupo de un grupo finito $G$,
+el cardinal de $H$ divide al de $G$. Lo natural es preguntarse si el recíproco es cierto, es decir, si
+para cada divisor $n$ del orden de $G$ existe un subgrupo $H$ de $G$ con $\abs{H}=n$. Si $n = p$ primo, es cierto,
+ el Teorema de Cauchy (\ref{teo:cauchy}) nos asegura que $\abs{\left< x\right>}=p$ para algún $x\in G$.
+Veamos que, en general, este enunciado es falso.
+\begin{example}
+    Sea $G = \Asim_5$, $\abs{G} = 60$ y sea $n = 30$. No existe ningún subgrupo $H$ con $\abs{H} = 30$ debido a
+    que, de lo contrario,
+    \[
+        \left[ G : H \right] = \frac{\abs{G}}{\abs{H}} = \frac{60}{30} = 2,
+        \implies H \triangleleft G.
+    \]
+    lo cual supone una contradicción con que $G=\Asim_5$ es simple.
+\end{example}
+
+\begin{teo}[Primer teorema de Sylow]
+    Sea $G$ un grupo finito y sea $p$ un primo tal que $p^r$ divide $\abs{G}$. Entonces existe un subgrupo $H$
+    de $G$ tal que $\abs{H} = p^r$.
+\end{teo}
+
+\begin{proof}
+    Realizaremos la demostración por inducción sobre $\abs{G}$. El caso $\abs{G} = 1$ es trivial y para $\abs{G}=p$
+    el teorema de Cauchy (\ref{teo:cauchy}) nos proporciona el resultado.
+    Dividiremos la demostración en dos casos.
+    \begin{itemize}
+        \item $p \ndiv\, \abs{Z(G)}$. Por la fórmula de órbitas (\ref{prop_form_orbitas}), y teniendo en cuenta que $p$ divide $\abs{G}$,
+        existe almenos un representante $x_i$ de una órbita no puntual tal que
+            \[
+                p \ndiv \left[ G : Z_G\left(x_i \right) \right] = \frac{\abs{G}}{\abs{Z_G\left( x_i \right)}},
+            \]
+            de modo que $p^r$ divide $\abs{Z_G\lp x_i\rp}<\abs{G}$. Por hipótesis de inducción, existe un
+            subgrupo $H$ de $Z_G\left( x_i \right)\subseteq G$ con $\abs{H} = p^r$.
+        \item $p$ divide $\abs{Z(G)}$. Por el Teorema de Cauchy (\ref{teo:cauchy}), existe un $x\in Z(G)$ tal que
+            $\orden(x) = p$. Sea $L = \langle x \rangle$. Como $x \in Z(G)$, $L \tril G$, de modo que
+            $\faktor{G}{L}$ es un grupo y tiene orden 
+            \[
+                \abs{\faktor{G}{L}} = \frac{\abs{G}}{\abs{L}} = \frac{\abs{G}}{p}.
+            \]
+             Como $p^r$ divide $\abs{G}$, $p^{r-1}$ divide $\abs{\faktor{G}{L}} < \abs{G}$ y, por la
+        hipótesis de inducción, existe un subgrupo $K$ de $\faktor{G}{L}$ tal que $\abs{K} = p^{r-1}$.
+        Entonces, $K = \faktor{H}{L}$, para algún subgrupo $H$ de $G$, con $L \subseteq H$. Finalmente,
+        \[
+            p^{r-1} = \abs{K} = \abs{\faktor{H}{L}} = \frac{\abs{H}}{\abs{L}} = \frac{\abs{H}}{p}
+            \implies \abs{H} = p.
+        \]
+    \end{itemize}
 \end{proof}

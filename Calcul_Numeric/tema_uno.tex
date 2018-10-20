@@ -91,11 +91,11 @@ el punto flaco es que no es tan robusto como el de la bisección.
     \end{tikzpicture}
 \end{center}
 
-\begin{obs*}
-    El coste computacional se mide en número de evaluaciones de $f(x)$ (i de $F^\prime(x)$).
+\begin{obs}
+    El coste computacional se mide en número de evaluaciones de $f(x)$ (y de $f^\prime(x)$).
     El método de la secante necesita 1 evaluación por iteración y por lo tanto, necesita menos que
     el método de Newton.
-\end{obs*}
+\end{obs}
 
 \section{Consistencia y convergencia}
 
@@ -132,13 +132,13 @@ el punto flaco es que no es tan robusto como el de la bisección.
     \]
 \end{defi}
 
-\begin{obs}
-    Llamaremos error de la aproximación $E^k$ a 
+\begin{defi}[error!absoluto]
+    Llamaremos error absoluto de la aproximación a 
     \[
         E^k = \abs{x^k - \alpha}
     \]
     y es equivalente que el método sea convergente a que $\lim\limits_{k \to \infty} E^k = 0$.
-\end{obs}
+\end{defi}
 
 \begin{defi}[convergencia!lineal]
     Diremos que un esquema tiene convergencia lineal si
@@ -171,7 +171,7 @@ el punto flaco es que no es tan robusto como el de la bisección.
     \]
     o más generalmente
     \[
-        E^{k+1} = \sum^{\infty}_{i = 1} \frac{1}{i!} \phi^{(i)}(\alpha) \left( E^k \right)^i
+        E^{k+1} = \sum^{\infty}_{i = 1} \frac{1}{i!} \phi^{(i)}(\alpha) \left( E^k \right)^i.
     \]
 \end{prop}
 
@@ -301,7 +301,7 @@ tenemos
 
 \subsection{Gráficos de convergencia}
 
-\begin{defi}[error relativo]
+\begin{defi}[error!relativo]
     Definimos el error relativo como
     \[
         r^k = \frac{E^k}{\alpha} = \frac{x^k - \alpha}{\alpha}.

@@ -90,7 +90,7 @@ Criterios de aproximación:
         \]
 \end{enumerate}
 
-Así pues, intentaremos no trabajar con matrices de Vandermonde. Escogeremos una base $\left\{ L_j\left( x \right) \right\}^n_{j=0}$ (base de Lagranje) tal que, $\forall \left\{ f_i \right\}^n_{i=0}$,
+\noindent Así pues, intentaremos no trabajar con matrices de Vandermonde. Escogeremos una base $\left\{ L_j\left( x \right) \right\}^n_{j=0}$ (base de Lagranje) tal que, $\forall \left\{ f_i \right\}^n_{i=0}$,
 \[
     f_i = f\left( x_i \right) \approx p_n\left( x_i \right) = \sum^n_{j=0} f_jL_j\left( x_i \right).
 \]
@@ -102,3 +102,358 @@ Es decir, tenemos que imponer
         0 & i\neq j
     \end{cases}
 \]
+
+\begin{defi}[interpolaci\'on de Lagrange]
+    \[
+        f\left( x \right) \approx p_n\left( x \right) = \sum_{j=0}^{n} f_jL_j\left( x \right), \text{ donde } L_j = \frac{\prod\limits_{k\neq j}\left( x-x_k \right)}{\prod\limits_{k\neq j}\left( x_j - x_k \right)} \in \Pa^n.
+    \]
+\end{defi}
+
+\begin{example} %TODO dibuixos
+    $f\left( x \right)\approx p_2\left( x \right) = f_0L_0\left( x \right) + f_1L_1\left( x \right) + f_2L_2\left( x \right)$
+    \begin{align*}
+        L_0\left( x \right) &= \frac{\left( x-0,5 \right)\left( x-1 \right)}{\left( 0-0,5 \right)\left( 0-1 \right)} = 2\left( x-0,5 \right)\left( x-1 \right),\\
+        L_1\left( x \right) &= \frac{\left( x-0 \right)\left( x-1 \right)}{\left( 0,5-0 \right)\left( 0,5-1 \right)} = \left( -4 \right)x\left( x-1 \right),\\
+        L_2\left( x \right) &= 2x\left( x-0,5 \right).
+    \end{align*}
+\end{example}
+
+\begin{teo}[Teorema del residuo de Lagrange]
+    Dada $f\in \C^{n+1}$ i $\left\{ x_i \right\}_{i=0}^n$, el polinomio interpolador $p_n\left( x \right)\in \Pa^n$ tal que $p_n\left( x_i \right) = f\left( x_i \right), i=0,\dots,n$. Tiene error
+    \[
+        f\left( x \right) = p_n\left( x \right) + \frac{f^{\left( n+1 \right)}\left( \mu\left( x \right) \right)}{\left( n+1 \right)!}L\left( x \right), \text{ donde }
+        \begin{cases}
+            L\left( x \right) = \left( x-x_0 \right) \dots \left( x-x_n \right), \\
+            \mu\left( x \right) \in \left[ x_0, x_n; x \right].
+        \end{cases}
+    \]
+\end{teo}
+
+\begin{proof}
+    Observamos que es cierto cuando $x=x_i$ (uno de los puntos base):
+    \[
+        \underbrace{f\left( x_i \right) - p_n\left( x_i \right)}_{=0} - \frac{f^{n+1}\left( \mu \right)}{\left( n+1 \right)!}\underbrace{L\left( x_i \right)}_{=0} = 0-0 = 0.
+    \]
+    Consideramos ahora $\hat{x} \neq x_i, \forall i$ (fijado) y $g\left( x \right) = f\left( x \right) - p_n\left( x \right) - k\left( \hat{x} \right)L\left( x \right)$, donde escogemos $k$ tal que $g\left( \hat{x} \right) = 0\, \left( k\left( \hat{x} \right) = \frac{f\left( \hat{x} \right) - p\left( \hat{x} \right)}{L\left( \hat{x} \right)} \right)$.
+    
+    \noindent Entonces $g\left( x \right)$ tiene $n+2$ ceros diferentes:
+    \[
+        \begin{cases}
+            \hat{x} \text{ es un cero},\\
+            \left\{ x_i \right\}_{i=0}^n \text{ son }n\text{ ceros}.
+        \end{cases}
+    \]
+    Por tanto $g'\left( x \right)$ tiene almenos $n+1$ ceros (por el teorema de Rolle), $g''\left( x \right)$ tiene almenos $n$ ceros, \dots, $g^{\left( n+1 \right)} \left( x \right)$ tiene almenos $1$ cero. Llamemosle $\mu\left( \hat{x} \right) = \mu$,
+    \[
+        g^{\left( n+1 \right)}\left( \mu \right) = f^{\left( n+1 \right)}\left( \mu \right) - k\left( \hat{x} \right)\left( n+1 \right)! = 0.
+    \]
+    Sabiendo que $k\left( \hat{x} \right) = \frac{f\left( \hat{x} \right) - p\left( \hat{x} \right)}{L\left( \hat{x} \right)}$, tenemos que
+    \begin{align*}
+        f^{\left( n+1 \right)}\left( \mu \right) - \frac{f\left( \hat{x} \right) - p\left( \hat{x} \right)}{L\left( \hat{x} \right)}\left( n+1 \right)! = 0 &\implies \dots \implies\\
+        &\implies f\left( \hat{x} \right) = p_n\left( \hat{x} \right) + \frac{f^{\left( n+1 \right)}\left( \mu\left( \hat{x} \right) \right)}{\left( n+1 \right)!}L\left( \hat{x} \right),\quad \forall \hat{x}.
+    \end{align*}
+\end{proof}
+
+\begin{obs}[La paradoja de Runge]
+    Uno de los problemas que la aproximaci\'on funcional presenta es la ``paradoja de Runge''. Sea $f\left( x \right) = \frac{1}{1+25x^2}$, la interpolaci\'on con $n+1$ puntos equiespaciados empeora cuando $n$ crece. Si $n$ es muy grando (hay muchos datos), es necesario hacer un cambio de criterio (m\'inimos cuadrados) o cambiar de tipo (Splines).
+\end{obs}
+
+\section{Interpolaci\'on de Splines}
+
+\begin{prop}
+    Dados unos puntos base $\left\{ x_i \right\}_{i=0}^n$, un grado $m$ y una continuidad $\C^q$, consideramos
+    \begin{align*}
+        E_{S} &= \setb{S\left( x \right) \in \C^q\left( \left[ x_0, x_n \right] \right) \tq S_{|[ x_i, x_{i+1} ]_{i=0,\dots,n}} \in \Pa^m}, \\
+        S_i\left( x \right) &= S\left( x \right)_{|[ x_i, x_{i+1} ]}.
+    \end{align*}
+    Entonces $E_S$ es un espacio vectorial (tiene una base, etc.).
+\end{prop}
+
+\subsection{Splines lineals ($m=1$) $\C^0$}
+
+$S_i\left( x \right) = a_i\left( x-x_i \right) + b_i$, ¿cuánto vale $\dim\left( E_S \right)$?
+\begin{center}
+    \begin{tabular}{crcl}
+        & $\#$coeficientes &=& $2n$ (2 coeficientes por $n$ intervalos)\\
+        $-$ & $\#$condiciones &=& $n-1$ (continuidad de $S$ en cada punto interior)\\\hline
+        &$\dim\left( E_S \right)$ &=& $n+1$ (parámetros libres).
+    \end{tabular}
+\end{center}
+
+Los $n+1$ parámetros libres están determinados unequívocamente por los $n+1$ valores de la función.
+
+Cálculo del Spline: 
+\[
+    S_i\left( x \right) = a_i\left( x-x_i \right) + b_i
+\]
+donde $a_i = \frac{f_{i+1}-f_i}{x_{i+1}-x_i}$, $b_i = f_i$.
+
+De todas las bases de Splines lineales $\C^0$, una interesante es
+\[
+    \{ \underbrace{\Phi_i}_{\in E_S} \}_{i=0}^n \tq S\left( x \right) = \sum_{i=0}^n f_i\Phi_i\left( x \right).
+\]
+Las funciones de la base deberán cumplir
+\[
+    \Phi_i\left( x_j \right) = \delta_{ij}
+\]
+ya que
+\[
+    f_j = S\left( x_j \right) = \sum_{i=0}^n f_i\Phi_i\left( x_j \right),\quad \forall \left\{ f_i \right\}_{i=0}^n
+\]
+
+\begin{obs}
+    Podem hacer servir la base para hacer un ajuste por mínimos cuadrados.
+\end{obs}
+
+\subsection{Splines cuadráticos ($m=2$) $\C^1$}
+
+$S_i\left( x \right) = a_i\left( x-x_i \right)^2 + b_i \left( x-x_i \right) + c_i$, ¿cuánto vale $\dim\left( E_S \right)$?
+
+\begin{center}
+    \begin{tabular}{crcl}
+        & $\#$coeficientes &=& $3n$\\
+        $-$ & $\#$condiciones &=& $2\left( n-1\right)$\\\hline
+        &$\dim\left( E_S \right)$ &=& $n+2$.
+    \end{tabular}
+\end{center}
+
+Los $n+2$ parámetros quedan determinados por los $n+1$ valores de $f$ y $S'\left( x_0 \right) = f'_0$.
+
+\subsection{Splines cúbicos ($m=3$) $\C^1$}
+
+$S_i\left( x \right) = a_i\left( x-x_i \right)^3 + b_i \left( x-x_i \right)^2 + c_i\left( x-x_i \right) + d_i$, ¿cuánto vale $\dim\left( E_S \right)$?
+
+\begin{center}
+    \begin{tabular}{crcl}
+        & $\#$coeficientes &=& $4n$\\
+        $-$ & $\#$condiciones &=& $2\left( n-1\right)$\\\hline
+        &$\dim\left( E_S \right)$ &=& $2n+2$.
+    \end{tabular}
+\end{center}
+
+Para determinar un Spline necesitamos $2(n+1)$ datos: $\left\{ f_i \right\}_{i=0}^n$ y $\left\{ f'_i \right\}_{i=0}^n$.
+
+\begin{obs}
+    Si solo tenemos $\left\{ f_i \right\}_{i=0}^n$, podemos calcular aproximaciones
+    \[
+        f'_i = \frac{f_{i+1}-f_{i-1}}{2h}\approx f'\left( x_i \right)
+    \]
+    si los puntos son equiespaciados. Si los puntos no son equiespaciados hay que deducir una forma diferente.
+
+    Cálculo de una Spline:
+    \begin{align*}
+        f_i &= S_i\left( x_i \right) = d_i, \\
+        f_{i+1} &= S_i\left( x_{i+1} \right) = a_i h_i^3 + b_ih_i^2 + c_ih_i + d_i, \\
+        f'_i &= S'_i\left( x_i \right) = c_i, \\
+        f'_{i+1} &= S'_i\left( x_{i+1} \right) = 3a_ih_i^2 + 2b_ih_i + c_i,
+    \end{align*}
+    con $h_i = x_{i+1} - x_i$.
+
+    Si aislamos, obtenemos
+    \begin{align*}
+        a_i &= \frac{h_i\left( f'_i + f'_{i+1} \right) - 2t_i}{h_i^3}, \\
+        b_i &= \frac{3t_i - h_i\left( 2f'_i + f'_{i+1} \right)}{h_i^2}, \\
+        c_i &= f'_i, \\
+        d_i &= f_i,
+    \end{align*}
+    con $h_i = x_{i+1} - x_i$ y $t_i = f_{i+1} - f_i$.
+\end{obs}
+
+La base que nos interesa para los Splines cúbicos $\C^1$ es la base 
+\[
+    \left\{ \Phi_i \right\}_{i=0}^n \cup \left\{ \tilde{\Phi}_i \right\}_{i=0}^n \tq S\left( x \right) = \sum_{i=0}^n f_i\Phi_i\left( x \right) + \sum_{i=0}^n f'_i\tilde{\Phi}_i\left( x \right).
+\]
+
+Tenemos que
+\begin{gather*}
+    \begin{rcases}
+        f_j = S\left( x_j \right) = \sum\limits_{i=0}^n f_i\Phi_i\left( x_j \right) + \sum\limits_{i=0}^n f'_i\tilde{\Phi}_i\left( x_j \right) \\
+        f'_j = S'\left( x_j \right) = \sum\limits_{i=0}^n f_i\Phi'_i\left( x_j \right) + \sum\limits_{i=0}^n f'_i\tilde{\Phi}'_i\left( x_j \right)
+    \end{rcases}
+    \implies \\
+    \implies
+    \begin{cases}
+        \Phi_i \left( x_j \right) = \delta_{ij},\, \tilde{\Phi}_i\left( x_j \right) = 0\quad \forall i,j\\
+        \Phi_i \left( x_j \right) = 0\quad \forall i,j,\, \tilde{\Phi}_i\left( x_j \right) = \delta_{ij}.
+    \end{cases}
+\end{gather*}
+Por lo tanto, las funciones de la base deberán cumplir
+\begin{align*}
+    \Phi_i &= \left\{ f_i = 1, f_j=0\quad \forall j\neq i, f'_j = 0 \quad\forall j \right\}, \\
+    \tilde{\Phi}_i &= \left\{ f_i = 0\quad \forall i, f'_i = 1, f'_j = 0 \quad\forall j\neq i \right\}.
+\end{align*}
+
+\begin{obs}
+    Es una base local, lo cual es bueno para mínimos cuadrados, EDPs, una matriz con muchos valores nulos, etc. ya que hay una dependencia local de $S\left( x \right)$ con los datos.
+\end{obs}
+
+\subsection{Splines cúbicos ($m=3$) $\C^2$}
+
+$S_i\left( x \right) = a_i\left( x-x_i \right)^3 + b_i\left( x-x_i \right)^2 + c_i\left( x-x_i \right) + d_i$, ¿cuánto vale $\dim\left( E_S \right)$?
+
+\begin{center}
+    \begin{tabular}{crcl}
+        & $\#$coeficientes &=& $4n$\\
+        $-$ & $\#$condiciones &=& $3\left( n-1\right)$ (continuidad de $S$, $S'$ y $S''$ en $\left\{ x_i \right\}_{i=1}^{n-1}$)\\\hline
+        &$\dim\left( E_S \right)$ &=& $n+3$.
+    \end{tabular}
+\end{center}
+
+Tenemos $n+1$ valores de la función, y hay que añadir $2$ condiciones adicionales. Estas pueden ser:
+
+\begin{itemize}
+    \item \emph{Spline natural} (el más ``suave'' posible): $f''_0 = 0$, $f''_n = 0$.
+    \item $S'\left( x_0 \right) = f'_0$, $S'\left( x_n \right) = f'_n$.
+\end{itemize}
+
+\emph{Formulación con derivadas}: expresamos el Spline en función de $\left\{ f_i \right\}_{i=0}^n$ (conocido) y de las derivadas $\left\{ S'_i \right\}_{i=0}^n$ (no conocido).
+\begin{align*}
+    a_i &= a_i\left( f_i, f_{i+1}, S'_i,S'_{i+1} \right) \\
+    b_i &= b_i\left( f_i, f_{i+1}, S'_i,S'_{i+1} \right) \\
+    c_i &= c_i\left( f_i, f_{i+1}, S'_i,S'_{i+1} \right) \\
+    d_i &= d_i\left( f_i, f_{i+1}, S'_i,S'_{i+1} \right) \\
+\end{align*}
+
+Con la formula del Spline cúbico $\C^1$ tenemos continuidad de $S(x)$ y de $S'(x)$. Escogeremos $\left\{ S'_i \right\}_{i=0}^n$ para tener continuidad de $S''(x)$:
+\[
+    S''_{i-1}\left( x_i, S'_{i-1}, S'_i \right) = S''_i\left( x_i, S'_i, S'_{i+1} \right),\quad i = 1, \dots, n-1
+\]
+
+Es decir,
+
+\[
+\begin{pmatrix}
+    \lambda_1   & 2 & \mu_1 & \\
+    & \lambda_2 & 2 & \mu_2 & & \\
+    & & \ddots    & \ddots & \ddots & \\
+    & & & \lambda_{n-1} & 2 & \mu_{n-1} 
+\end{pmatrix}
+\begin{pmatrix}
+    S'_0 \\
+    \vdots \\
+    \vdots \\
+    S'_n
+\end{pmatrix}
+=
+\begin{pmatrix}
+    e_i \\
+    \vdots \\
+    \vdots \\
+    e_{n-1}
+\end{pmatrix}
+,\,\,\,
+\begin{cases}
+    \lambda_i = \frac{h_i}{h_{i-1} + h_i} \\
+    \mu_i = \frac{h_{i-1}}{h_{i-1}+h_i} \\
+    e_i = \frac{3}{h_{i-1} + h_i}\left( \frac{h_i}{h_{i-1}}t_{i-1} + \frac{h_{i-1}}{h_i}t_i \right).
+\end{cases}
+\]
+
+Para tener un SCD nos faltan dos datos adicionales:
+\begin{itemize}
+    \item Podemos imponer
+        \begin{align*}
+            S'\left( x_0 \right) &= f'_0 = S'_0, \\
+            S'\left( x_n \right) &= f'_n = S'_n.
+        \end{align*}
+    \item También podemos imponer $S''\left( x_0 \right) = S''\left( x_n \right) = 0$ para obtener un Spline natural (curvatura inicial y final nula).
+        \begin{enumerate}[i)]
+            \item $0=S''\left( x_0 \right)=S''_0\left( x_0 \right)=6a_0\left( x_0-x_0 \right)+2b_0 = b_0(S'_0, S'_1) = 0$,
+
+                $3t_0-h_0\left( 2S'_0+S'_1 \right)=0$.
+            \item $0=S''_{n-1}\left( x_n \right) = a_{n-1} \underbrace{\left( x_n-x_{n-1} \right)}_{h_{n-1}} + b_{n-1}$.
+
+                Nos queda una ecuación en función de $S'_{n-1}$ y $S'_n$. Añadimos $2$ ecuaciones y nos queda un sistema $\left( n+1 \right)\times \left( n+1 \right)$.
+        \end{enumerate}
+\end{itemize}
+
+Cálculo del Spline:
+\begin{enumerate}[i)]
+    \item Planteamos y resolem el sistema lineal $\rightarrow \left\{ S_i \right\}_{i=0}^n$.
+    \item Con la fórmula del Spline cúbico $\C^1$ calculamos $a_i, b_i, c_i, d_i$ en cada intervalo (con $f'_i=S'_i$).
+\end{enumerate}
+
+Veamos cual es la base del Spline natural ($S''_0=S''_n=0$). Tenemos que $\dim\left( E_S \right)=n+1$,
+\[
+    S\left( x \right) = \sum_{i=0}^n f_i \Phi_i\left( x \right).
+\]
+Queremos $\Phi_i\left( x \right)$ tal que sean cúbicas a trozos, $\C^2$, $S''_0=S''_n=0$, $\Phi_i\left( x_j \right) = \delta_{ij}$. La base no será local pero tendrá amortiguamiento rápido. La podemos dibujar tomando
+\[
+    \begin{cases}
+        f_j = 0 & j\neq i, \\
+        f_i = 1.
+    \end{cases}
+\]
+
+\begin{obs}[Formulación con curvaturas]
+    Fijamos $S''_0=S''_n=0$ y resolvemos el sistema
+
+    \[
+        \begin{pmatrix}
+            \lambda_1   & 2 & \mu_1 & \\
+            & \lambda_2 & 2 & \mu_2 & & \\
+            & & \ddots    & \ddots & \ddots & \\
+            & & & \lambda_{n-1} & 2 & \mu_{n-1} 
+        \end{pmatrix}
+        \begin{pmatrix}
+            S''_0 \\
+            \vdots \\
+            \vdots \\
+            S''_n
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            e_i \\
+            \vdots \\
+            \vdots \\
+            e_{n-1}
+        \end{pmatrix}
+        ,\,\,\,
+        \begin{cases}
+            \lambda_i = \frac{h_i}{h_{i-1} + h_i} \\
+            \mu_i = \frac{h_{i-1}}{h_{i-1}+h_i} \\
+            e_i = \frac{6}{h_{i-1} + h_i}\left( \frac{t_i}{h_{i}} + \frac{t_{i-1}}{h_{i-1}} \right).
+        \end{cases}
+    \]
+\end{obs}
+
+\begin{teo}[Teorema de la suavidad del Spline dual]
+    De todas las funciones $\C^2$ que pasan por $\left( x_i, f_i \right)$, $i=0,\dots,n$, el Spline natural es la que minimiza la ``rugosidad'':
+    \[
+        I\left( g \right) := \int_{x_0}^{x_n} \left[ g''\left( x \right) \right]^2 \dif x
+    \]
+    El Spline es la interpolación más suave.
+\end{teo}
+
+\begin{proof}
+    Sean $g$ una función $\C^2$ que pasa por los puntos $\left( x_i, f_i \right)$ y $S$ el Spline natural.
+    \[
+        I\left( g \right) - I \left( S \right) = \int_{x_0}^{x_n} \left[ \left( g'' \right)^2 - \left( s'' \right)^2 \right] \dif x = \underbrace{\int_{x_0}^{x_n} \left( g''-S'' \right)^2 \dif x}_{>0,\,\, =0 \iff g=S} + \underbrace{2\int_{x_0}^{x_n} S''\left( g'' - S'' \right) \dif x}_{:= A}.
+    \]
+    Tenemos que $A$ es
+    \begin{align*}
+        A &= \int_{x_0}^{x_n} S''\left( g''-S'' \right) \dif x = \sum_{i=0}^{n-1} \left( -\int_{x_i}^{x_{i+1}} S'''\left( g'-S' \right) \dif x + \left[ S''\left( g' - S' \right) \right]_{x_i}^{x_{i+1}} \right) = \\
+        &= \sum_{i=0}^{n-1} -S'''_i\cancel{\left[ g-S \right]_{x_i}^{x_{i+1}}} + \cancel{S''\left( g'-S' \right)_{x_0}^{x_n}}.
+    \end{align*}
+    Por lo tanto $I\left( g \right) \geq I\left( S \right)$ y la igualdad se da solo si $g = S$.
+\end{proof}
+
+\begin{obs}
+    Vemos que $I\left( g \right) \geq I\left( S \right) + \left[ S''\left( g'-S' \right) \right]_{x_0}^{x_n}$ para $S$ Spline $\C^2$ cúbico. Si los datos son $\left\{ f_i \right\}_{i=0}^n$ y $\left\{ S'_0, S'_n \right\}$, el Spline $\C^2$ cúbico es el más suave posible en estas condiciones.
+\end{obs}
+
+\section{Mínimos cuadrados}
+\begin{obs}
+    Si tenemos muchos datos puede no ser necesario que la aproximación pase exactamente por los puntos, especialmente experimentales.
+\end{obs}
+
+Tenemos lo siguiente:
+\begin{itemize}
+    \item Datos: $\left\{ f_i \right\}_{i=0}^n$ o bien $f(x)$.
+    \item Espacio de aproximación $V$: Polinomios de grado menor que $m$, funciones lineales a trozos, etc.
+    \item Norma (producto escalar):
+        \begin{itemize}
+            \item Datos discretos: $\gen{u, v} = \sum\limits_{i=0}^n u\left( x_i \right) v\left( x_i \right)$, $\|u\| = \sqrt{\gen{u, u}} = \sqrt{\sum\limits_{i=0}^n\left( u\left( x_i \right) \right)^2}$.
+            \item Datos continuos: $\gen{u, v} = \int_a^b u\left( x \right) v\left( x \right) \dif x$, $\|u\|=\sqrt{\gen{u, u}} = \sqrt{\int_a^b\left( u\left( x \right) \right)^2 \dif x}$.
+        \end{itemize}
+\end{itemize}

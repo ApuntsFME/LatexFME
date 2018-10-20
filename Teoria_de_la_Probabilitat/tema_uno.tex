@@ -3,7 +3,7 @@
 \section{Definició axiomàtica de probabilitat}
 
 \begin{defi}[espai!de probabilitat]\index{espai!mostral((tlab))}\index{conjunt!d'esdeveniments((tlab))}\index{conjunt!de successos((tlab))}\index{funció!de probabilitat((tlab))}
-    Un espai de probabilitat és un espai de mesura $(\Omega,\Asuc, p)$ tal que $p(\Omega)=1$. Diem que 
+    Un espai de probabilitat és un espai de mesura format per la terna $(\Omega,\Asuc, p)$ tal que $p(\Omega)=1$. Diem que 
     \begin{itemize}
         \item $\Omega$ és l'espai mostral,
         \item $\Asuc$ és el conjunt d'esdeveniments o de successos,
@@ -16,7 +16,7 @@
     \begin{enumerate}[i)]
         \item $\emptyset \in \Asuc$,
         \item $A \in \Asuc \iff \comp{A} \in \Asuc$,
-        \item Si $\lc A_i\rc _{i\in\n}\subseteq \Asuc$, aleshores $\bigcup_{i\in\n}{A_i} \in \Asuc$.
+        \item Si $\lc A_i\rc _{i\in\n}\subseteq \Asuc$, aleshores $\bigcup\limits_{i\in\n}{A_i} \in \Asuc$.
     \end{enumerate}
     I que $\lp\Omega,\Asuc,\mu\rp$ és un espai de mesura si $\mu$ és una mesura sobre l'espai mesurable $\lp\Omega,\Asuc\rp$, és a dir,
     \begin{enumerate}[i)]
@@ -33,11 +33,11 @@
 \begin{prop}
     Sigui $(\Omega,\Asuc, p)$ un espai de probabilitat. Aleshores,
     \begin{enumerate}[i)]
-        \item Si $A_1, \dots, A_r \in \Asuc$ són tals que $\forall i\neq j,\, A_i \cup A_j = \emptyset,$ aleshores 
+        \item Si $A_1, \dots, A_r \in \Asuc\tq\forall i\neq j,\, A_i \cup A_j = \emptyset,$ aleshores 
 	  $p\lp \bigcap\limits_{i=1}^{r} A_i \rp= \sum\limits_{i=1}^{r} p\lp A_i \rp$.
         \item \label{item:esp_prob_2}$A \in \Asuc \implies p(\comp{A})=1-p(A)$.
-        \item \label{item:esp_prob_3}$A,B \in \Asuc, A \subseteq B \implies p\lp B\setminus A \rp = p\lp B\rp - p\lp A\rp$.
-        \item $A,B \in \Asuc, A \subseteq B \implies p(A) \le p(B)$.
+        \item \label{item:esp_prob_3}$A,B \in \Asuc,\, A \subseteq B \implies p\lp B\setminus A \rp = p\lp B\rp - p\lp A\rp$.
+        \item $A,B \in \Asuc,\, A \subseteq B \implies p(A) \le p(B)$.
         \item \label{item:esp_prob_5}Successions monòtones:
         \begin{enumerate}[a)]
          \item Si $\left\{A_i\right\}_{i\in\n} \subseteq \Asuc$ són tals que $A_i\subseteq A_{i+1}$, aleshores $p\lp \bigcup\limits_{i\in\n} A_i\rp = \lim\limits_{i\to\infty} p\lp A_i\rp$.
@@ -49,7 +49,7 @@
     \begin{enumerate}
         \item[]
         \item Conseqüència directa de la $\sigma$-additivitat.
-        \item Conseqüència diecta de \ref{item:esp_prob_2} usant que $\Asuc = A\cup \comp{A}$.
+        \item Conseqüència directa de \ref{item:esp_prob_2} usant que $\Asuc = A\cup \comp{A}$.
         \item Com que $A\subseteq B,\, B=\lp B\setminus A\rp \cup A$ i, per tant, $p\lp B\setminus A \rp = p\lp B\rp - p\lp A\rp$.
         \item Conseqüència directa de \ref{item:esp_prob_3} ja que $p\lp B\setminus A\rp\geq 0$.
         \item 
@@ -66,21 +66,21 @@
 \end{proof}
 
 Observem que l'apartat \ref{item:esp_prob_5} només es pot aplicar en casos molt particulars. En general, si tenim $A_i,\dots,A_r$ succcessos,
-hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
+hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$ com es veu al teorema següent.
 
-\begin{specialteo}[Desigualtats de Bonferroni]
+\begin{teo}[Desigualtats de Bonferroni]
     Siguin $A_1,\dots,A_r\in\Asuc$, i per $I\subseteq\{1,\dots,r\}$ sigui $A_I = \bigcap\limits_{i \in I}{A_i}$. Definim
     \[
         S_k = \sum_{I \in \{1,\dots,n\},\#I=k}{p(A_I)},
     \]
-    això és, $S_1 = \sum{p(A_i)}$, $S_2 = \sum_{i \neq j}p\lp A_i \cap A_j\rp,\dots$. Aleshores:
+    això és, $S_1 = \sum{p(A_i)}$, $S_2 = \sum\limits_{i \neq j}p\lp A_i \cap A_j\rp,\dots$. Aleshores:
     \begin{enumerate}[i)]
          \item Si $t$ és parell,
-            \[p\lp\bigcup_{i=1}^{r}{A_i}\rp \geq \sum_{i=1}^{r}{(-1)^{i+1}S_i}\]
+            \[p\lp\bigcup_{i=1}^{r}{A_i}\rp \geq \sum_{i=1}^{t}{(-1)^{i+1}S_i}\]
          \item Si $t$ és senar,
-            \[p\lp\bigcup_{i=1}^{r}{A_i}\rp \leq \sum_{i=1}^{r}{(-1)^{i+1}S_i}\]
+            \[p\lp\bigcup_{i=1}^{r}{A_i}\rp \leq \sum_{i=1}^{t}{(-1)^{i+1}S_i}\]
     \end{enumerate}
-\end{specialteo}
+\end{teo}
 
 \begin{obs}
     Amb els casos $t=1$ (desigualtat de Boole) i $t=2$ es poden donar fites inferiors i superiors.
@@ -91,10 +91,10 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
      \item []
      \item Espais de probabilitat numerables.
      
-     Prenem $\Omega$ un conjunt numerable $\Omega =\left\{a_i\right\}_{i\geq 1}$. Prenem $\Asuc = \Pa\lp \Omega\rp$
+     Prenem un conjunt numerable $\Omega =\left\{a_i\right\}_{i\geq 1}$. Prenem $\Asuc = \Pa\lp \Omega\rp$
      (que és una $\sigma$-àlgebra). Per a definir la probabilitat sobre $\lp\Omega,\,\Asuc\rp$ prenem una successió 
-     $\left\{p_i\right\}_{i\geq 1} \tq 0\geq p_i\geq 1$ que cumpleix que $\forall i,\, p\lp a_i\rp = p_i$ i 
-     $\sum\limits_{i\geq1}p_i=1$. Per tant, per a qualsevol element $A\in\Asuc$, tenim que
+     $\left\{p_i\right\}_{i\geq 1}$ tal que $0\leq p_i\leq 1$ que compleix que $\forall i,\, p\lp a_i\rp = p_i$ i 
+     $\sum p_i=1$. Per tant, per a qualsevol element $A\in\Asuc$, tenim que
      \[
 	p\lp\bigcup\limits_{a\in A} \left\{a\right\}\rp = p\lp A\rp = \sum\limits_{i\geq 1} p\lp \left\{a\right\}\rp.
      \]
@@ -120,10 +120,11 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
       \[
         \begin{aligned}
             \varphi\colon\Omega &\to [0,1]\subseteq\real \\
-            a=a_1a_2\dots a_n &\mapsto 0.a_1a_2\dots a_n
+            a=a_1a_2\dots &\mapsto 0.a_1a_2\dots
         \end{aligned}.
       \]
-      No és una bijecció completa ja que hi ha elements diferrents que van a la mateixa imatge degut als nombres que acaben en $1$ periòdic, però al ser tots racionals,
+      on $0.a_1a_2\dots$ és un nombre en binari. No és una bijecció completa ja que hi ha elements diferents que van
+      a la mateixa imatge degut als nombres que acaben en $1$ periòdic, però al ser tots racionals,
       el conjunt d'aquests nombres és numerable i per tant té mesura nul·la. És per això que podem definir una $\sigma$-àlgebra sobre $\Omega$ prenent 
       $\left\{\varphi^{-1}\lp A\rp \right\}_{A\subseteq \B\cup[0,1]}$. Similarment ho fem amb la mesura.
     \end{enumerate}
@@ -140,7 +141,7 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
 \end{defi}
 
 \begin{obs}
-    Sigui $\lp \Omega, \Asuc, p\rp$ un espai de probabilitat i sigui $B \in \Asuc$ tal que $p\lp B\rp > 0$. Aleshores, l'aplicació
+    Sigui $\lp \Omega, \Asuc, p\rp$ un espai de probabilitat i sigui $B \in \Asuc \tq p\lp B\rp > 0$. Aleshores, l'aplicació
     \begin{align*}
         p_B\colon \Asuc &\to \real \\
         A &\mapsto p_B\lp A\rp := p\lp A\mid B\rp
@@ -163,7 +164,7 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
             \]
         \item Fórmula de Bayes:
             \[
-                p\lp A_i\mid B\rp=\frac{P\lp B\mid A_i\rp p\lp A_i\rp}{\sum_{j\in I} p\lp B\mid A_j\rp p\lp A_j\rp}, \quad \forall B\in \Asuc \text{ amb } p\lp B\rp>0.
+                p\lp A_i\mid B\rp=\frac{P\lp B\mid A_i\rp p\lp A_i\rp}{\sum\limits_{j\in I} p\lp B\mid A_j\rp p\lp A_j\rp}, \quad \forall B\in \Asuc \text{ amb } p\lp B\rp>0.
             \]
     \end{enumerate}
 \end{prop}
@@ -190,13 +191,12 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
     Quina és la probabilitat de perdre tot el capital?
 \end{problema}
 \begin{sol}
-    Sigui $A_k$ el succés ``el jugador, començant amb capital $k$, perd''.Condicionem $A_k$ a la primera tirada de la moneda, 
-    definim $B$: ``la primera tirada surt cara''.
+    Sigui $A_k$ el succés ``el jugador, començant amb capital $k$, perd''. Condicionem $A_k$ a la primera tirada de la moneda i 
+    definim $B$ com el succés ``la primera tirada surt cara''. Aleshores,
     \begin{gather*}
-      p(A_k) = p(A_k|B)p(B) + p(A_k|\comp{B})p(\comp{B}) = p(A_k|B)\frac{1}{2} + p(A_k|\comp{B})\frac{1}{2}\\
+      p(A_k) = p(A_k|B)p(B) + p(A_k|\comp{B})p(\comp{B}) = \frac{p(A_k|B)}{2} + \frac{p(A_k|\comp{B})}{2}\\
       \implies 2p(A_k)=p(A_{k-1}) + p(A_{k+1}) \implies p(A_k) - p(A_{k-1}) = p(A_{k+1}) - p(A_k) = C,
     \end{gather*}
-
     el que ens diu que la diferència entre nivells és constant. Per tant $p(A_k) = p(A_0)+kC$. Sabent que $p(A_0)=1$ i $p(A_N)=0$ ens queda que
     \[0 = 1 + CN \implies C = -\frac{1}{n} \implies p(A_k) = 1 - \frac{k}{N}.\]
 \end{sol}
@@ -205,18 +205,26 @@ hi ha estimacions per a $p(\bigcup_{i=1}^{r}{A_i})$:
 \section{Independència}
 
 \begin{defi}[esdeveniments independents]
-    Sigui $\lp \Omega, \Asuc, p\rp$ un espai de probabilitat, sigui $I$ un conjunt finit o numerable i sigui $\lc A_i\rc_{i\in I} \subseteq \Asuc$. Diem que els esdeveniments $A_i$ són independents si per tot $J\subseteq I$ amb $\abs{J}\in\n$ es té que
+    Sigui $\lp \Omega, \Asuc, p\rp$ un espai de probabilitat, sigui $I$ un conjunt finit o numerable i sigui $\lc A_i\rc_{i\in I} \subseteq \Asuc$. 
+    Diem que els esdeveniments $A_i$ són independents si $\forall J\subseteq I$ amb $\abs{J}\in\n$ es té que
     \[
         p\lp\bigcap_{j\in J} A_j\rp = \prod_{j\in J} p\lp A_j\rp.
-    \]
+    \] 
 \end{defi}
+
 
 \begin{example}
     \begin{enumerate}[1.]
         \item[]
         \item $\varnothing, \Omega$ són independents entre si.
         \item $A$ és independent amb si mateix si i només si $p\lp A\rp=1$ o $p\lp A\rp =0$.
-        %TODO
+        \item No tenim independència si només les interseccións dos a dos compleixen que la probabilitat de la intersecció és el producte de probabilitats.
+        \item $A$ i $B$ independents $\iff A$ i $\comp{B}$ independents, ja que
+        \begin{gather*}
+         p( A\cap\comp{B})=p\lp A\rp-p\lp A\cap B\rp= p\lp A\rp-p\lp A\rp\lp B\rp\\
+	 =p\lp A\rp\lp p\lp B\rp + p(\comp{B}) -p\lp B\rp\rp=p\lp A\rp p(\comp{B})
+        \end{gather*}
+
     \end{enumerate}
 \end{example}
 
@@ -274,7 +282,7 @@ un sentit a ``límit de $\left\{ A_n\right\}_{n\geq1}$''. Farem com a $\real$ i 
 \end{defi}
 
 \begin{obs}
-  Els dos límits pertanyen a $\Asuc$ ja que son unió i intersecció numerable de sucessos.
+  Els dos límits pertanyen a $\Asuc$ ja que són unió i intersecció numerable de sucessos.
 \end{obs}
 
 \begin{prop}
@@ -289,8 +297,9 @@ un sentit a ``límit de $\left\{ A_n\right\}_{n\geq1}$''. Farem com a $\real$ i 
     \begin{enumerate}[i)]
         \item[]
         \item $\omega\in\liminf{A_n} \iff \omega\in\bigcup_{n=1}^{\infty}\bigcap_{k=n}^{\infty} A_k \iff
-        \exists m \equiv m(\omega) \tq \omega\in\bigcap_{k=m(\omega)}^{\infty} A_k \iff
-        \omega\in A_r \quad\forall r \ge m(\omega).$
+        \exists m \equiv m(\omega) \tq \omega\in\bigcap_{k=m(\omega)}^{\infty} A_k$,
+        \'es a dir, si $\exists m \equiv m(\omega) \tq \omega\in A_r 
+        \quad\forall r \ge m(\omega).$
         \item $\omega\in\limsup{A_n} \iff \omega\in\bigcap_{n=1}^{\infty}\bigcup_{k=n}^{\infty} A_k \iff
         \omega\in\bigcup_{k=n}^{\infty}A_k \quad\forall n \iff \forall n,\, \exists n_0\geq n \tq \omega\in A_{n_0}\iff \omega$ pertany a un nombre infinit dels $A_n$. 
         \item Si $\omega\in\liminf A_n$, aleshores $\omega\in A_r, \, \forall r\geq m\lp\omega\rp$, de manera que pertany a un nombre infinit dels $A_n$ i, en conseqüència, pertany a $\limsup A_n$.
@@ -301,13 +310,13 @@ un sentit a ``límit de $\left\{ A_n\right\}_{n\geq1}$''. Farem com a $\real$ i 
     Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat i siguin $\left\{ A_n\right\}_{n\geq1} \subseteq \Asuc$, amb $\lim A_n=A$. Aleshores, $p\lp A\rp = p\lp \lim A_n\rp = \lim p \lp A_n\rp$ i aquest límit existeix.
 \end{prop}
 \begin{proof}
-    Definim $B_n=\cup_{k\geq n}A_k$ i $C_n=\cap_{k\geq n}A_k$. Observem que $\lc B_n\rc_{n\geq 1}$ és decreixent i que $\lc B_n\rc_{n\geq 1}$ és creixent. Naturalment, $C_n\subseteq A_n\subseteq B_n$, $\limsup A_n = \cap_{n\geq 1} B_n$ i $\liminf A_n = \cup_{n\geq 1} C_n$.
-    
+    Definim $B_n=\bigcup\limits_{k\geq n}A_k$ i $C_n=\bigcap\limits_{k\geq n}A_k$. Observem que $\lc B_n\rc_{n\geq 1}$ és decreixent i que $\lc C_n\rc_{n\geq 1}$ és creixent. Naturalment tenim que, $C_n\subseteq A_n\subseteq B_n$, $\limsup A_n = \bigcap\limits_{n\geq 1} B_n$ i $\liminf A_n = \bigcup\limits_{n\geq 1} C_n$.
+ 
     \noindent Vegem que $p\lp\liminf A_n\rp\leq\liminf p\lp A_n\rp$.
     \[
         p\lp\liminf A_n\rp=p\lp\bigcup_{n\geq 1} C_n\rp = \lim p\lp C_n\rp=\lim p\lp \bigcap_{k\geq n} A_k\rp\leq\liminf p\lp A_n\rp.
     \]
-    Al darrer pas hem utilitzat el fet que $p\lp \cap_{k\geq n} A_k\rp\leq p\lp A_n\rp$. Anàlogament, $\limsup p\lp A_n\rp\leq p\lp\limsup A_n\rp$. Així doncs, tenim que
+    Al darrer pas hem utilitzat el fet que $p\lp \bigcap\limits_{k\geq n} A_k\rp\leq p\lp A_n\rp$. Anàlogament, tenim que $\limsup p\lp A_n\rp\leq p\lp\limsup A_n\rp$. Així doncs,
     \[
         p\lp\liminf A_n\rp\leq\liminf p\lp A_n\rp\leq\limsup p\lp A_n\rp\leq p\lp\limsup A_n\rp.
     \]
@@ -316,31 +325,31 @@ un sentit a ``límit de $\left\{ A_n\right\}_{n\geq1}$''. Farem com a $\real$ i 
         \liminf p\lp A_n\rp=\limsup p\lp A_n\rp=\lim p\lp A_n\rp=p\lp A\rp.
     \]
 \end{proof}
-\begin{specialteo}[Lema de Borel-Cantelli]
+\begin{teo}[Lema de Borel-Cantelli]
     Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat i siguin $\left\{ A_n\right\}_{n\geq1} \subseteq \Asuc$. Aleshores,
     \begin{enumerate}[i)]
         \item $\sum\limits_{n\geq 1} p\lp A_n\rp<\infty\implies p\lp\limsup A_n\rp=0$.
         \item Si $\left\{ A_n\right\}_{n\geq1}$ és independent, $\sum\limits_{n\geq 1} p\lp A_n\rp=\infty\implies p\lp\limsup A_n\rp=1$.
     \end{enumerate}
-\end{specialteo}
+\end{teo}
 \begin{proof}
-    Posem $A=\limsup A_n=\bigcap\limits_{n\geq 1}\bigcup\limits_{k\geq n} A_k$.
+    Anomenem $A=\limsup A_n=\bigcap\limits_{n\geq 1}\bigcup\limits_{k\geq n} A_k$.
     \begin{enumerate}[i)]
         \item Sabem que
             \[
                 0\leq p\lp A\rp\leq p\lp\bigcup_{k\geq n}A_k\rp\leq\sum_{k\geq n} p\lp A_k\rp ,\,\forall n\in\n
             \]
-            i que $\sum_{n\geq 1} p\lp A_n\rp<\infty$, de manera que $\lim \sum_{k\geq n} p\lp A_k\rp=0$ i immediatament deduïm que $p\lp A\rp=0$.
-        \item Observem primer que $\comp{A}=\comp{\bigcap\limits_{n\geq 1}\bigcup\limits_{k\geq n} A_k}=\bigcup\limits_{n\geq 1}\bigcap\limits_{k\geq n} \comp{A_k}=\liminf\comp{A_n}$. Veurem que $p\lp \comp{A}\rp=0$. Calculem $p\lp \bigcap\limits_{m\geq n} \comp{A_m}\rp$.
+            i que $\sum\limits_{n\geq 1} p\lp A_n\rp<\infty$, de manera que $\lim \sum\limits_{k\geq n} p\lp A_k\rp=0$ i immediatament deduïm que $p\lp A\rp=0$.
+        \item Observem primer que $\comp{A}=\comp{\bigcap\limits_{n\geq 1}\bigcup\limits_{k\geq n} A_k}=\bigcup\limits_{n\geq 1}\bigcap\limits_{k\geq n} \comp{A}_k=\liminf\comp{A}_n$. Veurem que $p( \comp{A})=0$. Calculem $p\lp \bigcap\limits_{m\geq n} \comp{A}_m\rp$.
         \begin{align*}
-            0&\leq p\lp \bigcap\limits_{m\geq n} \comp{A_m}\rp = \lim_{r\to\infty} p\lp \bigcap\limits_{m= n}^r \comp{A_m}\rp = \lim_{r\to\infty} \prod_{m= n}^r \lp p\lp\comp{A_m}\rp\rp =\\
+            0&\leq p\lp \bigcap\limits_{m\geq n} \comp{A}_m\rp = \lim_{r\to\infty} p\lp \bigcap\limits_{m= n}^r \comp{A}_m\rp = \lim_{r\to\infty} \prod_{m= n}^r \lp p\lp\comp{A}_m\rp\rp =\\
             &= \lim_{r\to\infty} \prod_{m= n}^r \lp 1-p\lp A_m\rp\rp \leq \lim_{r\to\infty} \prod_{m= n}^r \lp e^{-p\lp A_m\rp}\rp =\\
-            &=\lim_{r\to\infty} e^{-\sum_{m= n}^r p\lp A_m\rp} = 0,
+            &=\lim_{r\to\infty} e^{-\sum\limits_{m= n}^r p\lp A_m\rp} = 0,
         \end{align*}
-        de manera que $p\lp \bigcap\limits_{m\geq n} \comp{A_m}\rp=0, \,\forall n\in\n$.
+        de manera que $p\lp \bigcap\limits_{m\geq n} \comp{A}_m\rp=0, \,\forall n\in\n$.
         Finalment,
         \[
-            0\leq p\lp\comp{A}\rp=p\lp\bigcup\limits_{n\geq 1}\bigcap\limits_{m\geq n} \comp{A_m}\rp\leq\sum_{n\geq 1}p\lp\bigcap\limits_{m\geq n} \comp{A_m}\rp=0+0+\cdots=0,
+            0\leq p\lp\comp{A}\rp=p\lp\bigcup\limits_{n\geq 1}\bigcap\limits_{m\geq n} \comp{A}_m\rp\leq\sum_{n\geq 1}p\lp\bigcap\limits_{m\geq n} \comp{A}_m\rp=0+0+\cdots=0,
         \]
         i concloem que $p\lp A\rp=1$.
     \end{enumerate}
