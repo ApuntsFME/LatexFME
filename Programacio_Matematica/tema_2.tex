@@ -2,6 +2,45 @@
 
 \section{Definició del problema dual}
 
+Donat un problema primal $(P)$, ell problema dual corresponent es defineix segons la taula \ref{table:dual}.
+
+\begin{table}[ht]
+	\centering
+	\setlength{\tabcolsep}{6ex}
+	\renewcommand{\arraystretch}{1.5}
+	\[
+	\begin{array}{ll|ll}
+		\multicolumn{2}{c|}{(P)}				
+		&\multicolumn{2}{c}{(D)} \\
+		%
+		\hline
+		\min 	&\vb{c}'\vb{x}
+		&\max 	&\vb{\lambda}'\vb{b}\\
+		%
+		\hline
+		\text{s.a.}\quad	&\vb{a_i}'\vb{x} \ge \vb{b}
+		&\text{s.a.}\quad	&{\lambda_i} \ge 0\\
+		%
+							&\vb{a_i}'\vb{x} \le \vb{b}
+		&					&{\lambda_i} \le 0\\
+		%
+							&\vb{a_i}'\vb{x} = \vb{b}
+		&					&\lambda_i \text{ lliure}\\
+		%
+		\hline
+		\text{s.a.}\quad	&x_j \ge 0
+		&\text{s.a.}\quad	&\vb{\lambda}'A_j \le \vb{c}\\
+		%
+							&x_j \le 0
+		&					&\vb{\lambda}'A_j \ge \vb{c}\\
+		%
+							&x_j \text{ lliure}
+		&					&\vb{\lambda}'A_j = \vb{c}\\
+	\end{array}
+	\]
+	\caption{Taula de transformació d'un problema primal al seu dual.}\label{table:dual}
+\end{table}
+
 \section{Propietats del dual}
 \begin{teo}[feble de dualitat]\label{teo:dualitat-feble}
     Per tota solució factible $\vb{x}$ d'un problema primal $\left(P\right)$ i tota solució factible $\vb{\lambda}$ del dual $\left(D\right)$ associat
@@ -120,7 +159,7 @@
 Noteu que el teorema \ref{teo:folga-complement} s'anomena de ``folga complementària'' perquè les expressions \[(\vb{a_i}'\vb{x}-b_i) \quad \text{i}\quad (c_j-\vb{\lambda}'A_j) \] es poden interpretar com les ``folgues'' associades a les restriccions primals i duals \[A\vb{x} \lesseqgtr \vb{b} \quad \text{i}\quad \vb{\lambda}'A \lesseqgtr \vb{c}\,,\] respectivament; ``complementària'' perquè la ``folga'' d'un problema està associada amb una component del vector variable de l'altre problema---$(\vb{a_i}'\vb{x}-b_i)$ amb $\lambda_i$ i $(c_j-\vb{\lambda}'A_j)$ amb $x_j$.
 
 \begin{defi*}[Solució bàsica factible dual]\label{defi:SBFD}
-    Sigui $\left(P\right)$ un problema de PL i sigui $(P)_e$ la seva forma estàndard. Llavors, direm que tota solució bàsica $\vb{x}$ de $\left(P\right)_e$ tal que $\mathbf{r} \geq \left[0\right]$ és una solució bàsica factible dual (SBFD).
+    Sigui $\left(P\right)$ un problema de PL i sigui $(P)_e$ la seva forma estàndard. Llavors, direm que tota solució bàsica $\vb{x}$ de $\left(P\right)_e$ tal que $\mathbf{r} \geq \vb{0}$ és una solució bàsica factible dual (SBFD).
 \end{defi*}
 
 Noteu que la definició \ref{defi:SBFD} deriva directament dels resultats que hem obtingut durant la demostració del teorema fort de dualitat (\ref{teo:dualitat-fort}): extrapolant l'argument que vam utilitzar, per tota solució bàsica $\vb{x}$---d'una forma estàndard $(P)_e$---amb matriu bàsica $B$ i un vector de costos reduïts no negatius, el vector $\vb{\lambda}' \defeq c_\B' B^{-1}$ és una solució factible del problema dual corresponent.
@@ -137,13 +176,13 @@ Per últim, noteu que si una solució bàsica $\vb{x}$ de $(P)_e$ és factible d
         \item {\bf Inicialització}: Trobem una SBFD ($\B, \N, \vb{x_\B}, z$).
         \item \label{simp_dual_pas2} {\bf Identificació de la SBF òptima i selecció VB sortint}:
             \begin{itemize}
-                \item Si $\vb{x_\B} \geq \left[0\right]$, llavors és la SBF òptima. \textcolor{red}{\bf STOP!}
+                \item Si $\vb{x_\B} \geq \vb{0}$, llavors és la SBF òptima. \textcolor{red}{\bf STOP!}
             \end{itemize}
             Altrament seleccionem VB $p$ amb $\vb{x_{\B\left(p\right)}} < 0$ (VB sortint).
         \item {\bf Càlcul de DBF de $\left(D\right)_e$}:
             \begin{itemize}
-                \item $d_{r_\N} = \left(\beta_p A_\N\right)^\prime$ ($\beta_p$ és la fila $p$-èsima de $B^{-1}$).
-                \item Si $d_{r_\N} \geq \left[0\right]$, $\left(D\right)_e$ il·limitat. \textcolor{red}{\bf STOP!}
+                \item $\vb{d}_{r_\N} = \left(\beta_p A_\N\right)^\prime$ ($\beta_p$ és la fila $p$-èsima de $B^{-1}$).
+                \item Si $\vb{d}_{r_\N} \geq \vb{0}$, $\left(D\right)_e$ il·limitat. \textcolor{red}{\bf STOP!}
             \end{itemize}
         \item {\bf Càlcul de $\theta^*$ i selecció de la VNB entrant}:
             \begin{itemize}
@@ -153,7 +192,7 @@ Per últim, noteu que si una solució bàsica $\vb{x}$ de $(P)_e$ és factible d
             \end{itemize}
         \item {\bf Actualitzacions i canvi de base}:
             \begin{itemize}
-                \item $\vb{r}_\N := \vb{r}_\N + \theta_D^* d_{\vb{r}_\N}$, \\
+                \item $\vb{r}_\N := \vb{r}_\N + \theta_D^* \vb{d}_{\vb{r}_\N}$, \\
                     $\vb{\lambda} := \vb{\lambda} - \theta_D^* \beta_p^\prime$, \\
                     $\vb{r}_{B\left(p\right)} := \theta_D^*$, \\
                     $z := z - \theta^* \vb{x_{B\left(p\right)}}$.
