@@ -317,12 +317,18 @@ Modela el nombre d'èxits en fer $N$ experiments independents, on cadascun és $
 
 \begin{prop}
     Sigui $X$ una variable aleatòria que segueix una distribució binomial. Aleshores,
-    \[ G_X(z) =  \frac{1}{N}\frac{z(z^N-1)}{z-1}.\]
+    \begin{enumerate}[i)]
+     \item $G_X(z) =  \frac{1}{N}\frac{z(z^N-1)}{z-1}$,
+     \item $\esp[X]=$,
+     \item $\var[x]=$.
+    \end{enumerate}
 \end{prop}
 
-\begin{proof}
+\begin{proof}%TODO falten demos
   Directament de la definició de distribució uniforme tenim que
-  \[G_X(z) = \sum_{n=1}^N \frac{1}{N}z^n = \frac{1}{N}(z+z^2+\cdots+z^N) = \frac{1}{N}\frac{z(z^N-1)}{z-1}.\]
+  \begin{enumerate}[i)]
+   \item $G_X(z) = \sum_{n=1}^N \frac{1}{N}z^n = \frac{1}{N}(z+z^2+\cdots+z^N) = \frac{1}{N}\frac{z(z^N-1)}{z-1}$.
+  \end{enumerate}
 \end{proof}
 
 
@@ -372,6 +378,75 @@ S'usa per modelar successos ``estranys'' (persones en una cua, emissió de part�
 \end{obs}
 
 \subsection*{Distribució geomètrica}
+La distribució geomètrica representa el nombre d'experiments necessaris abans d'obtenir el primer èxit en un succés binari.
+\begin{defi}[distribució!geomètrica]
+    Sigui $X$ una variable aleatoria. Direm que $X$ segueix una distribució geomètrica
+    \[X \sim \operatorname{Geom}(p) \iff P(X=i) = \lp 1-p \rp ^{i-1}p,\;\forall i\geq1.\]
+\end{defi}
 
+\begin{prop}
+    Sigui $X$ una variable aleatòria que segueix una distribució geomètrica. Aleshores,
+    \begin{enumerate}[i)]
+        \item $G_X(z) =  \frac{pz}{1-\lp 1-p\rp z}$,
+        \item $\esp[X] = \frac{1}{p}$,
+        \item $\var[X] = \frac{1-p}{p^2}$.
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+  Directament de les definicions tenim que
+  \begin{enumerate}[i)]
+   \item $G_X(z) = \sum_{i\geq 1}\lp 1-p \rp ^{i-1}p z^i = \frac{p}{1-p}\sum_{i\geq 1}\lp\lp 1-p \rp z\rp^{i} = 
+   \frac{p}{1-p}\cdot\frac{\lp 1-p \rp z}{1-\lp 1-p\rp z}= \frac{pz}{1-\lp 1-p\rp z}$.
+  \end{enumerate}
+\end{proof}
 
 \subsection*{Distribució binomial negativa}
+Modela el nombre d'experiments necessaris per aconseguir un nombre d'èxits donat.
+
+\begin{defi}[distribució!binomial!negativa]
+  Sigui $X$ una variable aleatoria. Direm que $X$ segueix una distribució binomial negativa
+    \[X \sim \operatorname{BinN}(r,p) \iff X = X_1 + \cdots + X_r,\]
+    on $\lc X_i \rc_{i=1}^{r}$ són independents i $X_i \sim \operatorname{Geom}(p) \enspace\forall i$.
+\end{defi}
+
+\begin{prop}
+    Sigui $X$ una variable aleatòria que segueix una distribució binomial. Aleshores,
+    \begin{enumerate}[i)]
+        \item $p(X=i) = \begin{cases}
+                         0 &\text{ si } i< r\\
+                         \binom{i-1}{r-1}p^{r}(1-p)^{k-r} & \text{ si }i\geq r,
+                        \end{cases}$
+        \item $G_X(z) = \lp \frac{pz}{1-\lp 1-p\rp z}\rp^r$,
+        \item $\esp[X] = N\esp[X_1] = \frac{r}{p}$,
+        \item $\var[X] = N\var[X_1] = r\frac{1-p}{p^2}$.
+    \end{enumerate}
+\end{prop}
+
+\begin{proof} %TODO falten tots els apartats per demostrar
+    \begin{enumerate}[i)]
+    \end{enumerate}
+\end{proof}
+
+\section{Distribucions condicionades i esperança condicionada}
+
+\begin{defi}[funció!de distribució!condicionada]\idx{funció!de probabilitat!condicionada}
+  Siguin $X$ i $Y$ variables aleatòries discretes i sigui $x\in\real$ tal que $p\lp X=x\rp >0$. Aleshores definim
+  \begin{enumerate}[1)]
+   \item $F_{Y\vert X} \lp y,x\rp=p\lp Y\geq y\mid X=x \rp$ com la funció de distribució condicionada de $Y$ amb $X=x$,
+   \item $P_{Y\vert X} \lp y,x\rp=p\lp Y = y\mid X=x \rp$ com la funció de probabilitat condicionada.
+  \end{enumerate} 
+\end{defi}
+
+\begin{obs}
+ Una definició anàloga consisteix en prendre $A\in\Asuc$ enlloc de $X=x$ sempre que $p(A)>0$. Aleshores tenim
+ \begin{enumerate}[1)]
+   \item $F_{Y\vert X} \lp y,x\rp=p\lp Y\geq y\mid A \rp$,
+   \item $P_{Y\vert X} \lp y,x\rp=p\lp Y = y\mid A \rp$.
+  \end{enumerate} 
+\end{obs}
+
+\begin{example}
+ Siguin $\left\{Y_r\right\}_{r\geq 1}$ variables aleatòries independents tals que $Y_r \sim \operatorname{Be}(p)\; \forall i$. Sigui $X$ una 
+ variable aleatòria tal que $X=i$ si $Y_1 = Y_2 = \cdots = Y_{i-1}=0$ i $Y_i=1$. Observem que $X\mid\{Y_1=1\}= X\vert_{Y_1=1}=1$, 
+ $X\vert_{Y_1=0}=1+\operatorname{Geom}(p)$ i $X\vert_{Y_1=0,Y_2=0}=2+\operatorname{Geom}(p)$.
+\end{example}
