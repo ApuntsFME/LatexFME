@@ -5,7 +5,7 @@
     \sectionmark{Definició i propietats de les variables aleatòries}}
     \sectionmark{Definició i propietats de les variables aleatòries}
 
-\begin{defi}[variable!aleatòria]
+\begin{defi}[variable aleatòria]
     Siguin $\lp \Omega_1, \Asuc_1\rp$ i $\lp \Omega_2, \Asuc_2\rp$ espais mesurables. Diem que $X\colon \Omega_1\to\Omega_2$ és una variable aleatòria si
     \[
         X^{-1}\lp A_2\rp\in\Asuc_1,\,\forall A_2\in\Asuc_2.
@@ -368,7 +368,7 @@
     \sectionmark{Vectors i independència de variables aleatòries}}
     \sectionmark{Vectors i independència de variables aleatòries}
 
-\begin{defi}[vector de variables aleatòries]\index{variable!aleatòria!multidimensional((tlab))}
+\begin{defi}[vector de variables aleatòries]\index{variable aleatòria!multidimensional((tlab))}
     Sigui $\lp\Omega,\Asuc,p\rp$ un espai de probabilitat. Diem que un vector de variables aleatòries o una variable aleatòria multidimensional de dimensió $n$ és una funció mesurable $\vec{X}\colon\Omega\to\real^n$.
 \end{defi}
 \begin{obs}
@@ -409,7 +409,7 @@
 \begin{proof}
     La demostració és llarga i pesada, i no la farem.
 \end{proof}
-\begin{defi}
+\begin{defi}[independència de variables aleatòries]
     Sigui $\lc X_i\rc_{i\in I}$ una família de variables aletòries sobre un espai de probabilitat $\lp\Omega,\Asuc,p\rp$. Diem que $\lc X_i\rc_{i\in I}$ és independent si per tot $J\subseteq I$ amb $\abs{J}<+\infty$ i per qualssevol $B_1,\dots,B_{\abs{J}}\in\B$ es té que
     \[
         P\lp\bigcap_{j\in J}X_j\in B_j\rp = \prod_{j\in J} P\lp X_j\in B_j\rp.
@@ -417,7 +417,7 @@
 \end{defi}
 En general, no podem conéixer la distribució de $X_1,\dots,X_n$ si coneixem només les seves distribucions marginals. Tanmateix, sí que podem conéixer-la si les variables aleatòries són independents.
 \begin{prop}
-    Si prenem $B_i=\lp-\infty,x_i\rp$ i una família finita de variables aleatòries independent $\lc X_i\rc_{i=1}^n$ (i posant $\vec{X}=\lp X_1,\dots,X_n\rp$), tenim que
+    Si prenem $B_i=\lp-\infty,x_i\rp$ i una família finita de variables aleatòries independents $\lc X_i\rc_{i=1}^n$ (i posant $\vec{X}=\lp X_1,\dots,X_n\rp$), tenim que
     \[
         F_{\vec{X}}\lp x_1,\dots,x_n\rp = \prod_{i=1}^n F_{X_i}\lp x_i\rp.
     \]
