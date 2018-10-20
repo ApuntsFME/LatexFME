@@ -1,5 +1,8 @@
 \chapter{Dualitat}
 
+\section{Definició del problema dual}
+
+\section{Propietats del dual}
 \begin{teo}[feble de dualitat]\label{teo:dualitat-feble}
     Per tota solució factible $x$ d'un problema primal $\left(P\right)$ i tota solució factible $\lambda$ del dual $\left(D\right)$ associat
     \[ \lambda'b\leq c'x\,. \]
@@ -49,7 +52,7 @@
     	Considerem la forma estàndard del problema primal $(P)$,
     	
     	\[
-    		(P_e)
+    		(P)_e
     		\begin{cases}
     		\begin{aligned}
 			   	\min 			&&& c'x\\
@@ -60,7 +63,7 @@
     	\]
     	on la matriu $A$ és d'ordre $m\times n$, i el dual corresponent (a $P_e$):
     	\[
-	    	(D_{P_e})
+	    	(D_e)
 	    	\begin{cases}
 	    	\begin{aligned}
 	    	\max 			&&& \lambda'b\\
@@ -69,7 +72,7 @@
 	    	\end{cases}\ ,
     	\]
     	
-    	Primer demostrarem que si $(P_e)$ té òptim, $(D_{P_e})$ també. Si $(P_e)$ té òptim, l'algorisme del símplex primal aplicat a $(P_e)$ terminarà amb una SBF òptima $x^\ast$ de $(P_e)$ tal que el vector de costos reduïts sigui no negatiu: \[r' = c_\N '- c_\B' B^{-1} A_\N \ge 0\,.\] Sigui $\lambda^\ast$ el vector definit per ${\lambda^\ast}'\defeq c_\B'B^{-1}$. Demostrarem que $\lambda^\ast$ és solució òptima de $(D_{P_e})$.
+    	Primer demostrarem que si $(P)_e$ té òptim, $(D_e)$ també. Si $(P)_e$ té òptim, l'algorisme del símplex primal aplicat a $(P)_e$ terminarà amb una SBF òptima $x^\ast$ de $(P)_e$, amb matriu bàsica $B$, tal que el vector de costos reduïts sigui no negatiu: \[r' = c_\N '- c_\B' B^{-1} A_\N \ge 0\,.\] Sigui $\lambda^\ast$ el vector definit per ${\lambda^\ast}'\defeq c_\B'B^{-1}$. Demostrarem que $\lambda^\ast$ és solució òptima de $(D_e)$.
     	
     	Primer hem de comprovar si és factible. Efectivament, 
     	\[
@@ -87,14 +90,14 @@
     		\end{bmatrix}
     		= c'\,.
     	\]
-    	D'altra banda, \[{\lambda^\ast}'b = c_\B' B^{-1} b = c_\B' {x^\ast}_\B = c'{x^\ast}\,. \] Aplicant el corol·lari \ref{col:feb}, deduïm que $\lambda^\ast$ és solució òptima de $(D_{P_e})$. Queda demostrat que si $(P_e)$ té solució òptima existeix una solució òptima de $(D_{P_e})$ (i pel corol·lari mencionat produeixen el mateix valor de la f.o.).
+    	D'altra banda, \[{\lambda^\ast}'b = c_\B' B^{-1} b = c_\B' {x^\ast}_\B = c'{x^\ast}\,. \] Aplicant el corol·lari \ref{col:feb}, deduïm que $\lambda^\ast$ és solució òptima de $(D_e)$. Queda demostrat que si $(P)_e$ té solució òptima existeix una solució òptima de $(D_e)$ (i pel corol·lari mencionat produeixen el mateix valor de la f.o.).
     	
-    	Finalment, podem afirmar que aquest resultat és vàlid per els problemes que no estan en forma estàndard, ja que el problema $(P)$ i el seu estàndard són equivalents---sempre es pot passar d'una solució de l'un a una solució de l'altre, i el valor de la f.o. en l'òptim és el mateix---, i el dual de l'estàndard $(D_{P_e})$ és equivalent al dual de $(P)$.
+    	Finalment, podem afirmar que aquest resultat és vàlid per els problemes que no estan en forma estàndard, ja que el problema $(P)$ i el seu estàndard són equivalents---sempre es pot passar d'una solució de l'un a una solució de l'altre, i el valor de la f.o. en l'òptim és el mateix---, i el dual de l'estàndard $(D_e)$ és equivalent al dual de $(P)$.
     \end{proof}
 \end{teo}
 
 \begin{col}[Corol·lari del teorema fort de dualitat (\ref{teo:dualitat-fort})]
-    Si $\left(P\right)_e$ és un problema factible i amb matriu de restriccions $A$ de rang complet, llavors $\left(D\right)$ té solució factible òptima a $\lambda' = c_\B'B^{-1}$.
+    Si $\left(P\right)_e$ és un problema factible i amb matriu de restriccions $A$ de rang complet, i té una SBF òptima $x^\ast$ amb matriu bàsica $B$, llavors $\left(D\right)$ té solució factible òptima a $\lambda' = c_\B'B^{-1}$.
 \end{col}
 
 \begin{teo}[de folga complementària]\label{teo:folga-complement}
@@ -114,35 +117,43 @@
     \end{proof}
 \end{teo}
 
-Noteu que el teorema \ref{teo:folga-complement} s'anomena de ``folga complementària'' perquè les expressions \[(a_i'x-b_i) \quad \text{i}\quad (c_j-\lambda'A_j) \] es poden interpretar com les ``folgues'' associades a les restriccions primals i duals \[Ax \lesseqgtr b \quad \text{i}\quad \lambda'A \lesseqgtr c\,,\] respectivament.
+Noteu que el teorema \ref{teo:folga-complement} s'anomena de ``folga complementària'' perquè les expressions \[(a_i'x-b_i) \quad \text{i}\quad (c_j-\lambda'A_j) \] es poden interpretar com les ``folgues'' associades a les restriccions primals i duals \[Ax \lesseqgtr b \quad \text{i}\quad \lambda'A \lesseqgtr c\,,\] respectivament; ``complementària'' perquè la ``folga'' d'un problema està associada amb una component del vector variable de l'altre problema---$(a_i'x-b_i)$ amb $\lambda_i$ i $(c_j-\lambda'A_j)$ amb $x_j$.
 
-\begin{defi}[Solució bàsica factible dual]
-    Sigui $\left(P\right)_e$, una SBFD és tota SB de $\left(P\right)_e$ tal que $r \geq \left[0\right]$.
-\end{defi}
+\begin{defi*}[Solució bàsica factible dual]\label{defi:SBFD}
+    Sigui $\left(P\right)$ un problema de PL i sigui $(P)_e$ la seva forma estàndard. Llavors, direm que tota solució bàsica $x$ de $\left(P\right)_e$ tal que $r \geq \left[0\right]$ és una solució bàsica factible dual (SBFD).
+\end{defi*}
 
+Noteu que la definició \ref{defi:SBFD} deriva directament dels resultats que hem obtingut durant la demostració del teorema fort de dualitat (\ref{teo:dualitat-fort}): extrapolant l'argument que vam utilitzar, per tota solució bàsica $x$---d'una forma estàndard $(P)_e$---amb matriu bàsica $B$ i un vector de costos reduïts no negatius, el vector $\lambda' \defeq c_\B' B^{-1}$ és una solució factible del problema dual corresponent.
+
+Observeu també que l'adjectiu ``factible'' en la definició de SBFD es refereix a una solució bàsica de $(P)_e$, que \textbf{pot no ser factible} per a aquest (és a dir, que $x\notin P_e$), que es \textit{correspon}, però, a una \textbf{solució factible del problema dual} $(D^e)$ corresponent: $\lambda \defeq (c_\B' B^{-1})' \in D^e$. Potser ajuda pensar en ``Solució bàsica factible dual'' en dos blocs: ``Solució bàsica'' i ``factible dual''.
+
+Per últim, noteu que si una solució bàsica $x$ de $(P)_e$ és factible dual (per tant és SBFD) i és alhora factible primal ($x \in P_e \Leftrightarrow Ax = b$), llavors és solució òptima de $(P)_e$, ja que és una solució factible amb $r\ge 0$.
+
+
+\section{Símplex dual}
 \begin{alg}[del símplex dual]
     \begin{enumerate}
         \item[]
-        \item {\bf Inicialització}: Trobem una SBFD ($\B, \N, x_B, z$).
+        \item {\bf Inicialització}: Trobem una SBFD ($\B, \N, x_\B, z$).
         \item \label{simp_dual_pas2} {\bf Identificació de la SBF òptima i selecció VB sortint}:
             \begin{itemize}
-                \item Si $x_B \geq \left[0\right]$, llavors és la SBF òptima. \textcolor{red}{\bf STOP!}
+                \item Si $x_\B \geq \left[0\right]$, llavors és la SBF òptima. \textcolor{red}{\bf STOP!}
             \end{itemize}
             Altrament seleccionem VB $p$ amb $x_{B\left(p\right)} < 0$ (VB sortint).
         \item {\bf Càlcul de DBF de $\left(D\right)_e$}:
             \begin{itemize}
-                \item $d_{r_N} = \left(\beta_p A_N\right)^\prime$ ($\beta_p$ és la fila $p$-èssima de $B^{-1}$).
-                \item Si $d_{r_N} \geq \left[0\right]$, $\left(D\right)_e$ il·limitat. \textcolor{red}{\bf STOP!}
+                \item $d_{r_\N} = \left(\beta_p A_\N\right)^\prime$ ($\beta_p$ és la fila $p$-èsima de $B^{-1}$).
+                \item Si $d_{r_\N} \geq \left[0\right]$, $\left(D\right)_e$ il·limitat. \textcolor{red}{\bf STOP!}
             \end{itemize}
         \item {\bf Càlcul de $\theta^*$ i selecció de la VNB entrant}:
             \begin{itemize}
                 \item Càlcul de $\theta_D^*$: 
-                    \[\theta_D^* = \min_\{i \in \N \,|\, d_{r_{N_j}} < 0\} \left\{-\frac{r_j}{d_{r_{N_j}}} \right\}.\]
-                \item Variable no bàsica entrant: $q$ tal que $\theta^* = -\frac{x_q}{d_{r_{N_q}}}$.
+                    \[\theta_D^* = \min_{\{i \in \N \,|\, d_{r_{\N_j}} < 0\}} \left\{-\frac{r_j}{d_{r_{\N_j}}} \right\}.\]
+                \item Variable no bàsica entrant: $q$ tal que $\theta^* = -\frac{x_q}{d_{r_{\N_q}}}$.
             \end{itemize}
         \item {\bf Actualitzacions i canvi de base}:
             \begin{itemize}
-                \item $r_N := r_N + \theta_D^* d_{r_N}$, \\
+                \item $r_\N := r_\N + \theta_D^* d_{r_\N}$, \\
                     $\lambda := \lambda - \theta_D^* \beta_p^\prime$, \\
                     $r_{B\left(p\right)} := \theta_D^*$, \\
                     $z := z - \theta^* x_{B\left(p\right)}$.
