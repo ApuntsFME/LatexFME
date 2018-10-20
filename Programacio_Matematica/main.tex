@@ -1,4 +1,4 @@
-\documentclass[12pt]{report}
+\documentclass[12pt]{article}
 
 \input{../preamble}
 \input{../environments_ca}
@@ -9,9 +9,8 @@
 
 \newcommand{\N}{\mathcal{N}}
 
-\declaretheorem[style=breakthm,name=M\`etode,sibling=lema]{met}
+\declaretheorem[style=normal,name=M\`etode,sibling=lema]{met}
 \declaretheorem[style=breakthm,name=Algorisme,sibling=lema]{alg}
-\declaretheorem[style=breakthm,name=Regla,sibling=lema]{rgl}
 
 \AtBeginDocument{\renewcommand{\chaptername}{Tema}}
 
@@ -20,15 +19,12 @@
 \input{title}
 
 \tableofcontents
-\thispagestyle{empty}
-\newpage
-\thispagestyle{empty}
 
-\include{tema_1}
-\include{tema_2}
-\include{tema_3}
-\include{tema_4}
-\include{tema_5}
+\input{tema_1}
+\input{tema_2}
+\input{tema_3}
+\input{tema_4}
+\input{tema_5}
 
 \vspace*{\fill}
 

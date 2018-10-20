@@ -1,9 +1,8 @@
-\chapter[Introducció a la prog. lineal \& símplex primal]%
-{Introducció a la programació lineal no entera i símplex primal}
+\section{Introducció a la programació lineal no entera i símplex primal}
 
 \newcommand{\x}[1][]{{\vec{x}_{#1}\,}'}
 
-\section{Solucions bàsiques factibles}
+%\subsection{Solucions bàsiques factibles}
 
 El fet que hi hagi solucions òptimes que siguin punts extrems no és de gran ajuda computacional per sí sol. Per tenir una caracterització computacionalment assequible cal el concepte de solució bàsica factible, que es defineix a continuació.
 
@@ -36,7 +35,7 @@ Aquesta definició no és gaire intuïtiva; a continuació es presenta una versi
 	Donat un poliedre (general) $P\subseteq\real^n$ associat a un problema de programació lineal, direm que $\x\in P$ és una solució bàsica si és la intersecció de $n$ restriccions linealment independents.
 \end{defi*}
 
-\section{Direccions bàsiques factibles}
+%\subsection{Direccions bàsiques factibles}
 \begin{defi}[Direcci\'o b\`asica factible]
     Una DBF sobre la SBF $x \in P_e$ associada a $q \in \N$ és $d =
     \begin{bmatrix}
@@ -110,7 +109,7 @@ Aquesta definició no és gaire intuïtiva; a continuació es presenta una versi
         \item $x$ SBF i no degenerada $\implies r \geq \left[0\right]$.
     \end{enumerate}
 \end{teo*}
-\begin{alg}[del símplex primal]\label{alg:asp}
+\begin{alg}[Algorisme del símplex primal]\label{alg:asp}
     \begin{enumerate}
         \item[]
         \item {\bf Inicialització}: Trobem una SBF ($\B, \N, x_B, z$).
@@ -162,10 +161,10 @@ Aquesta definició no és gaire intuïtiva; a continuació es presenta una versi
             \end{itemize}
     \end{itemize}
 \end{obs}
-\begin{rgl}[de Bland] \label{rgl:bland}
+\begin{prop}[Regla de Bland] \addcontentsline{toc}{subsection}{Regla de Bland} \label{prop:rgl_bland}
     Usem la regla de Bland per a no entrar en bucle al utilitzar el símplex per a resoldre un problema degenerat.
     \begin{enumerate}
         \item Seleccionem com VNB d'entrada la VNB d'índex menor que compleix $r_q < 0$.
         \item Si al seleccionar la variable de sortida hi ha empat, seleccionem la VB amb índex menor.
     \end{enumerate}
-\end{rgl}
+\end{prop}

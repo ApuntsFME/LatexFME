@@ -1,4 +1,4 @@
-\chapter{Programaci\'o no lineal sense restriccions}
+\section{Programaci\'o no lineal sense restriccions}
 
 \begin{teo*}[Condicions necess\`aries d'optimalitat]
     Sigui $f \colon \real^n \to \real$ un problema d'optimitzaci\'o no lineal $\min_{x\in\real^n} f\left( x \right)$. Si $x^*$ \'es un m\'inim local de $f$ i $f \in \C^2$ en un entorn de $x^*$, llavors:
@@ -13,15 +13,21 @@
 \begin{teo*}[Condicions d'optimalitat en problemes convexos]
     Si $f$ \'es convexa i diferenciable, llavors $\nabla f\left( x^* \right) = 0 \iff x^*$ \'es m\'inim global de $f$.
 \end{teo*}
-\begin{met}[del Gradient]
-    $x^{k+1} = x^k + \alpha^kd^k$, \quad $d^k = -\nabla f\left( x^k \right)$. \\
-    $\alpha^k$ ha de complir les condicions d'Armijo-Wolfe.
+\begin{met}[Mètode del Gradient] \addcontentsline{toc}{subsection}{Mètode del Gradient}
+    \begin{align*}
+        x^{k+1} &= x^k + \alpha^kd^k, \\
+        d^k &= -\nabla f\left( x^k \right).
+    \end{align*}
+    $\alpha^k$ ha de complir les condicions d'Armijo-Wolfe (\ref{prop:arm}).
 \end{met}
-\begin{met}[de Newton]
-    $x^{k+1} = x^k + \alpha^kd^k$, \quad $d^k = -\left( \nabla^2 f\left( x^k \right) \right)^{-1} \nabla f\left( x^k \right)$. \\
-    $\alpha^k$ ha de complir les condicions d'Armijo-Wolfe, normalment $\alpha^k = 1$.
+\begin{met}[Mètode de Newton] \addcontentsline{toc}{subsection}{Mètode de Newton}
+    \begin{align*}
+        x^{k+1} &= x^k + \alpha^kd^k, \\
+        d^k &= -\left( \nabla^2 f\left( x^k \right) \right)^{-1} \nabla f\left( x^k \right).
+    \end{align*}
+    $\alpha^k$ ha de complir les condicions d'Armijo-Wolfe (\ref{prop:arm}), normalment $\alpha^k = 1$.
 \end{met}
-\begin{prop}[Condicions d'Armijo-Wolfe]
+\begin{prop}[Condicions d'Armijo-Wolfe] \label{prop:arm}
     \begin{enumerate}[i)]
         \item[]
         \item Condici\'o de descens suficient (AW-1): \\

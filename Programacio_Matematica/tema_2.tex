@@ -1,9 +1,9 @@
-\chapter{Dualitat}
+\section{Dualitat}
 
-\section{Definició del problema dual}
+%\subsection{Definició del problema dual}
 
-\section{Propietats del dual}
-\begin{teo}[feble de dualitat]\label{teo:dualitat-feble}
+%\subsection{Propietats del dual}
+\begin{teo}[Teorema feble de dualitat]\label{teo:dualitat-feble}
     Per tota solució factible $\vb{x}$ d'un problema primal $\left(P\right)$ i tota solució factible $\vb{\lambda}$ del dual $\left(D\right)$ associat
     \[ \vb{\lambda}'\vb{b}\leq \vb{c}'\vb{x}\,. \]
     \begin{proof}
@@ -46,7 +46,7 @@
 	\end{proof}
 \end{col}
 
-\begin{teo}[fort de dualitat]\label{teo:dualitat-fort}
+\begin{teo}[Teorema fort de dualitat]\label{teo:dualitat-fort}
     Sigui $\left(P\right)$ un problema primal i $\left(D\right)$ el seu dual. Llavors $(D)$ té òptim si i només si $(P)$ té òptim. A més, si en tenen, el valor de la funció objectiu en l'òptim coincideix.
     \begin{proof}
     	Considerem la forma estàndard del problema primal $(P)$,
@@ -100,7 +100,7 @@
     Si $\left(P\right)_e$ és un problema factible i amb matriu de restriccions $A$ de rang complet, i té una SBF òptima $\vb{x}^\ast$ amb matriu bàsica $B$, llavors $\left(D\right)$ té solució factible òptima a $\vb{\lambda}' = c_\B'B^{-1}$.
 \end{col}
 
-\begin{teo}[de folga complementària]\label{teo:folga-complement}
+\begin{teo}[Teorema de folga complementària]\label{teo:folga-complement}
     Siguin $\vb{x}, \vb{\lambda}$ solucions factibles de $\left(P\right)$ i $\left(D\right)$, respectivament. Llavors $\vb{x}$ i $\vb{\lambda}$ són solucions òptimes si i només si
     \begin{alignat*}{2}{}
         u_i &\defeq \lambda_i \left(\vb{a_i}'\vb{x} - b_i\right) &= 0 &\quad \forall i \in \left\{1, \dots, m\right\} \\
@@ -130,8 +130,8 @@ Observeu també que l'adjectiu ``factible'' en la definició de SBFD es refereix
 Per últim, noteu que si una solució bàsica $\vb{x}$ de $(P)_e$ és factible dual (per tant és SBFD) i és alhora factible primal ($\vb{x} \in P_e \Leftrightarrow A\vb{x} = \vb{b}$), llavors és solució òptima de $(P)_e\,$, ja que és una solució factible amb $\vb{r}\ge \vb{0}$.
 
 
-\section{Símplex dual}
-\begin{alg}[del símplex dual]
+%\subsection{Símplex dual}
+\begin{alg}[Algorisme del símplex dual]
     \begin{enumerate}
         \item[]
         \item {\bf Inicialització}: Trobem una SBFD ($\B, \N, \vb{x_\B}, z$).
@@ -169,5 +169,5 @@ Per últim, noteu que si una solució bàsica $\vb{x}$ de $(P)_e$ és factible d
 \end{prop}
 
 \begin{prop}
-    Si $\left(P\right)_e$ no té cap SBFD degenerada, el símplex dual terminarà amb un nombre finit d'iteracions. Altrament, podem usar la regla de Bland (\ref{rgl:bland}) per a que convergeixi amb un nombre finit d'iteracions.
+    Si $\left(P\right)_e$ no té cap SBFD degenerada, el símplex dual terminarà amb un nombre finit d'iteracions. Altrament, podem usar la regla de Bland (\ref{prop:rgl_bland}) per a que convergeixi amb un nombre finit d'iteracions.
 \end{prop}
