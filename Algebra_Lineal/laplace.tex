@@ -7,125 +7,138 @@
 \newcommand{\ucarr}{\mathbin{\text{\rotatebox[origin=c]{270}{$\curvearrowleft$}}}}
 \newcommand{\dcarr}{\mathbin{\text{\rotatebox[origin=c]{270}{$\curvearrowright$}}}}
 
-\begin{defi*}[Determinant]
-	Sigui $M \in \mathcal{M}_n(\mathbb{R})$ una matriu $n\times n$. Anomenarem, si $n>1$, ``determinant de $M$'' (abreviat $\; \det M$) a l'expressió següent: \[\det M \defeq \sum_{j=1}^{n} m_{1,j}\cdot(-1)^{1+j}\det M_{1,j}  \,,\] on $M_{i,j}$ denota la submatriu que s'obté treient la fila $i$ i la columna $j$ de $M$. En el cas $n=1$, el determinant serà igual a l'únic coeficient de la matriu.
-\end{defi*}
+\begin{defi}[determinant]
+	Sigui $M \in \mathcal{M}_n(\mathbb{R})$ una matriu $n\times n$. Si $n>1$, anomenarem determinant de $M$ (abreviat $\det M$) a l'expressió següent:
+	\[
+		\det M \defeq \sum_{j=1}^{n} m_{1,j}\cdot(-1)^{1+j}\det M_{1,j}  \,,
+	\]
+	on $M_{i,j}$ denota la submatriu que s'obté treient la fila $i$ i la columna $j$ de $M$. En el cas $n=1$, el determinant serà igual a l'únic coeficient de la matriu.
+\end{defi}
 
-\begin{specialteo}[Teorema de Laplace]\label{teo:laplace}
+\begin{teo}[Teorema de Laplace]\label{teo:laplace}
 	L'expansió del determinant per la primera fila és equivalent a a l'expansió del determinant per qualsevol fila o columna.
-
-\vspace{5mm}
+	
+\end{teo}
 
 \begin{proof}
 	La demostració del teorema parteix de la demostració de cada un dels lemes \ref{lema:columna}, \ref{lema:intercanvi}, i \ref{lema:iesimafila}---que s'enuncien i es demostren a continuació del teorema.
 	
 	Un cop demostrats els lemes \ref{lema:columna}, \ref{lema:intercanvi}, i \ref{lema:iesimafila} la demostració del teorema complet és gairebé immediata. Ja s'ha demostrat que l'expansió per la $i$-èsima fila és equivalent a l'expansió per primera fila (lema \ref{lema:iesimafila}), i que aquesta és equivalent a l'expansió per primera columna (lema \ref{lema:columna}). Podem fer exactament el mateix raonament que hem fet per demostrar el lema \ref{lema:iesimafila}, però per columnes en lloc de files, per demostrar que l'expansió per primera columna és equivalent a l'expansió per la $j$-èsima columna. Per tant queda demostrat que expandir per la $i$-èsima fila és equivalent a expandir per la $j$-èsima columna.
-\end{proof}	
-
-
-\end{specialteo}
-
+\end{proof}
 
 \begin{lema}\label{lema:columna}
-	L'expansió del determinant per la primera fila és equivalent a l'expansió del determinant per la primera columna: \[\det M = \sum_{j=1}^{n} m_{1,j}\cdot(-1)^{1+j}\det M_{1,j} = \sum_{i=1}^{n} m_{i,1}\cdot(-1)^{i+1}\det M_{i,1} \]
-%
-	\begin{proof}
-		Sigui $A \in \mathcal{M}_n(\mathbb{R})$. Per $n = 2$ és cert:
-		\begin{equation*}
+	L'expansió del determinant per la primera fila és equivalent a l'expansió del determinant per la primera columna:
+	\[
+		\det M = \sum_{j=1}^{n} m_{1,j}\cdot(-1)^{1+j}\det M_{1,j} =
+		\sum_{i=1}^{n} m_{i,1}\cdot(-1)^{i+1}\det M_{i,1}
+	\]
+\end{lema}
+\begin{proof}
+	Sigui $A \in \mathcal{M}_n(\mathbb{R})$. Per $n = 2$ és cert:
+	\begin{equation*}
 		\begin{gathered}		
-		\det A = 
-		\sum_{j=1}^{2} a_{1j}\cdot (-1)^{1+j}\det A_{1j} = a_{11}\begin{vmatrix}a_{22}\end{vmatrix} - a_{12}\begin{vmatrix}a_{21}\end{vmatrix} =\\
-		%
-		=a_{11}a_{22} - a_{12}a_{21} =\\
-		%
-		=a_{11}\begin{vmatrix}a_{22}\end{vmatrix} - a_{21}\begin{vmatrix}a_{12}\end{vmatrix} = \sum_{i=1}^{2} a_{i1}\cdot (-1)^{i+1}\det A_{i1}\,.
+			\det A = \sum_{j=1}^{2} a_{1j}\cdot (-1)^{1+j}\det A_{1j} = a_{11}
+			\begin{vmatrix}
+				a_{22} 
+			\end{vmatrix} - a_{12}
+			\begin{vmatrix}
+				a_{21} 
+			\end{vmatrix} =\\
+			= a_{11}a_{22} - a_{12}a_{21} =\\
+			= a_{11}
+			\begin{vmatrix}
+				a_{22} 
+			\end{vmatrix} - a_{21}
+			\begin{vmatrix}
+				a_{12} 
+			\end{vmatrix} = \sum_{i=1}^{2} a_{i1}\cdot (-1)^{i+1}\det A_{i1}\,.
 		\end{gathered}
-		\end{equation*}
-		
-		Suposem que és cert per $n-1$, per un valor arbitrari de $n>2$ (hipòtesi d'inducció). El determinant d'$A\in\mathcal{M}_n(\mathbb{R})$ vindrà donat per
-		\begin{equation}\label{eq:det1}
+	\end{equation*}
+	
+	Suposem que és cert per $n-1$, per un valor arbitrari de $n>2$ (hipòtesi d'inducció). El determinant d'$A\in\mathcal{M}_n(\mathbb{R})$ vindrà donat per
+	\begin{equation}\label{eq:det1}
 		\det A = \sum_{j=1}^{n} a_{1,j}\cdot(-1)^{1+j}\det A_{1,j}  \,.
-		\end{equation} 
-		El primer terme d'aquesta expressió serà $a_{1,1}\cdot C_{1,1}$, on $C_{1,1} =(-1)^{1+1}\cdot\det A_{1,1} = \det A_{1,1}$. Aquest coincideix exactament amb el primer terme de l'expansió per primera columna. 
-		
-		Analitzem la resta de termes ($j>1$). Sigui $\tilde{A} \defeq A_{1,j}$ i siguin $\tilde{a}_{\ell,m}$ els seus elements. La matriu $\tilde{A}$ és d'ordre $n-1$; per tant, per hipòtesi d'inducció, el seu determinant es pot calcular expandint per la primera columna: 
-		\begin{equation}\label{eq:subdet}
+	\end{equation} 
+	El primer terme d'aquesta expressió serà $a_{1,1}\cdot C_{1,1}$, on $C_{1,1} =(-1)^{1+1}\cdot\det A_{1,1} = \det A_{1,1}$. Aquest coincideix exactament amb el primer terme de l'expansió per primera columna. 
+	
+	Analitzem la resta de termes ($j>1$). Sigui $\tilde{A} \defeq A_{1,j}$ i siguin $\tilde{a}_{\ell,m}$ els seus elements. La matriu $\tilde{A}$ és d'ordre $n-1$; per tant, per hipòtesi d'inducció, el seu determinant es pot calcular expandint per la primera columna: 
+	\begin{equation}\label{eq:subdet}
 		\det \tilde{A} = \sum_{\ell=1}^{n-1}\tilde{a}_{\ell,1}\cdot (-1)^{\ell+1}\det \tilde{A}_{\ell,1}\,. 
-		\end{equation} 
-		Com que aquesta matriu s'obté eliminant la primera fila i la $j$-èsima columna (on, recordi's, $j>1$), es té l'equivalència $\forall \ell \le n-1 : {\tilde{a}_{\ell,1} = a_{\ell+1,1}}\,$. De manera similar, $\tilde{A}_{\ell,1} = (A_{1,j})_{\ell,1}= A_{(1,\ell+1),(j,1)}$, on la notació $M_{(a,b),(\alpha,\beta)}$ denota la submatriu que s'obté eliminant les files $a$, $b$ i les columnes $\alpha$, $\beta$ de la matriu $M$. Visualitzant-ho:
-		\begin{equation*}
+	\end{equation} 
+	Com que aquesta matriu s'obté eliminant la primera fila i la $j$-èsima columna (on, recordi's, $j>1$), es té l'equivalència $\forall \ell \le n-1 : {\tilde{a}_{\ell,1} = a_{\ell+1,1}}\,$. De manera similar, $\tilde{A}_{\ell,1} = (A_{1,j})_{\ell,1}= A_{(1,\ell+1),(j,1)}$, on la notació $M_{(a,b),(\alpha,\beta)}$ denota la submatriu que s'obté eliminant les files $a$, $b$ i les columnes $\alpha$, $\beta$ de la matriu $M$. Visualitzant-ho:
+	\begin{equation*}
 		\begin{split}
-		A =&
-		\begin{pmatrix}
-		a_{1,1}&	a_{1,2}&	\cdots&		a_{1,n}\\
-		a_{2,1}&	a_{2,2}&	\cdots&		a_{2,n}\\
-		\vdots&		\vdots&		\ddots&		\vdots\\
-		a_{n,1}&	a_{n,2}&	\cdots&		a_{n,n}
-		\end{pmatrix}\\
-		%
-		A_{1,j} =&\
-		\begin{blockarray}{rcccccc}
-		\begin{block}{*{7}{>{\scriptstyle\color[gray]{0.6}}c<{}}}
-		1&	\cdots&	 j-1&	j&	\cdots&	n-1 &\\
-		\end{block}
-		\begin{block}{(cccccc)*{1}{>{\scriptstyle\color[gray]{0.6}}l<{}}}
-		\mathbf{a_{2,1}}&\cdots&a_{2,j-1}&a_{2,j+1}&\cdots&		a_{2,n}& 1\\
-		\vdots&	   \ddots&	\vdots&	\vdots&	\ddots&		\vdots& \vdots\\
-		\mathbf{a_{n,1}}&   \cdots&	a_{n,j-1}&	a_{n,j+1}&	\cdots&		a_{n,n}&	n-1\\
-		\end{block}
-		\end{blockarray}\\
-		%
-		\tilde{A}_{\ell,1} =&
-		\begin{pmatrix}
-		a_{2,2}&\cdots&a_{2,j-1}&a_{2,j+1}&\cdots&		a_{2,n}\\
-		\vdots&	\ddots&	   \vdots&	\vdots&	\ddots&	\vdots\\
-		a_{\ell,2}&\cdots&a_{\ell,j-1}&a_{\ell,j+1}&\cdots& a_{\ell,n}\\
-		a_{\ell+2,2}&\cdots&a_{\ell+2,j-1}&a_{\ell+2,j+1}&\cdots&	a_{\ell+2,n}\\
-		\vdots&	\ddots&	\vdots&	\vdots&	\ddots&		\vdots\\
-		a_{n,2}&   \cdots&	a_{n,j-1}&	a_{n,j+1}&\cdots&a_{n,n}\\
-		\end{pmatrix} = A_{(1,\ell+1),(j,1)}
-		\,.
+			A =&
+			\begin{pmatrix}
+				a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+				a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
+				\vdots  & \vdots  & \ddots & \vdots  \\
+				a_{n,1} & a_{n,2} & \cdots & a_{n,n} 
+			\end{pmatrix}\\
+			%
+			A_{1,j} =&\
+			\begin{blockarray}{rcccccc}
+				\begin{block}{*{7}{>{\scriptstyle\color[gray]{0.6}}c<{}}}
+					1&	\cdots & j-1& j& \cdots & n-1 & \\
+				\end{block}
+				\begin{block}{(cccccc)*{1}{>{\scriptstyle\color[gray]{0.6}}l<{}}}
+					\mathbf{a_{2,1}} & \cdots & a_{2,j-1} & a_{2,j+1} & \cdots & a_{2,n} & 1 \\
+					\vdots & \ddots & \vdots & \vdots &	\ddots & \vdots & \vdots \\
+					\mathbf{a_{n,1}}&   \cdots&	a_{n,j-1}&	a_{n,j+1}&	\cdots&		a_{n,n}&	n-1\\
+				\end{block}
+			\end{blockarray}\\
+			%
+			\tilde{A}_{\ell,1} =&
+			\begin{pmatrix}
+				a_{2,2} & \cdots & a_{2,j-1} & a_{2,j+1} & \cdots & a_{2,n} \\
+				\vdots & \ddots & \vdots & \vdots & \ddots & \vdots \\
+				a_{\ell,2} & \cdots & a_{\ell,j-1} & a_{\ell,j+1} & \cdots & a_{\ell,n} \\
+				a_{\ell+2,2} & \cdots & a_{\ell+2,j-1} & a_{\ell+2,j+1} & \cdots & a_{\ell+2,n} \\
+				\vdots & \ddots & \vdots & \vdots & \ddots & \vdots \\
+				a_{n,2}      & \cdots & a_{n,j-1}      & a_{n,j+1}      & \cdots & a_{n,n}      \\
+			\end{pmatrix} = A_{(1,\ell+1),(j,1)}
+			\,.
 		\end{split}
-		\end{equation*}
-		Per tant podem escriure \eqref{eq:subdet}, fent el canvi d'índex $k\defeq \ell+1$, com 
-		\begin{equation}\label{eq:jthsubdet}
+	\end{equation*}
+	Per tant podem escriure \eqref{eq:subdet}, fent el canvi d'índex $k\defeq \ell+1$, com 
+	\begin{equation}\label{eq:jthsubdet}
 		\det A_{1,j} = \sum_{k=2}^{n} a_{k,1}\cdot(-1)^{k}\det A_{(1,k),(j,1)}\,.
-		\end{equation}
-		
-		A continuació, separant el primer terme de \eqref{eq:det1}, i substituint $\det A_{1,j}$ per l'expressió \eqref{eq:jthsubdet} a la resta de termes, obtenim
-		\begin{equation}\label{eq:parrafada}
+	\end{equation}
+	
+	A continuació, separant el primer terme de \eqref{eq:det1}, i substituint $\det A_{1,j}$ per l'expressió \eqref{eq:jthsubdet} a la resta de termes, obtenim
+	\begin{equation}\label{eq:parrafada}
 		\begin{split}
-		\det A ={}& a_{1,1}\cdot A_{1,1} \\
-		&+\sum_{j=2}^{n} \left(a_{1,j} (-1)^{1+j}  \sum_{k=2}^{n} a_{k,1} (-1)^{k} \det A_{(1,k),(j,1)}\right)\,.
+			\det A ={}& a_{1,1}\cdot A_{1,1} \\
+			&+\sum_{j=2}^{n} \left(a_{1,j} (-1)^{1+j}  \sum_{k=2}^{n} a_{k,1} (-1)^{k} \det A_{(1,k),(j,1)}\right)\,.
 		\end{split}
-		\end{equation}
-		Ara manipulem algebraicament el sumatori  ($\sum_{j=2}^n [\cdots]$) per tal de ``girar'' els sumatoris:
-		\begin{multline}\label{eq:sumofjth}
+	\end{equation}
+	Ara manipulem algebraicament el sumatori  ($\sum_{j=2}^n [\cdots]$) per tal de ``girar'' els sumatoris:
+	\begin{multline}\label{eq:sumofjth}
 		\sum_{j=2}^{n} \left(a_{1,j} (-1)^{1+j}  \sum_{k=2}^{n} a_{k,1} (-1)^{k} \det A_{(1,k),(j,1)}\right)=\\
 		=\sum_{j=2}^{n} \left(  \sum_{k=2}^{n} a_{1,j}\cdot a_{k,1} (-1)^{1+j+k} \det A_{(1,k),(j,1)}\right)=\\
 		=\sum_{k=2}^{n} \left(  \sum_{j=2}^{n} a_{1,j}\cdot a_{k,1} (-1)^{1+j+k} \det A_{(1,k),(j,1)}\right)=\\
 		=\sum_{k=2}^{n} \left(a_{k,1} (-1)^{k+1}  \sum_{j=2}^{n} a_{1,j} (-1)^{j} \det A_{(1,k),(j,1)}\right)\,.
-		\end{multline}
-		
-		Ara, fent el mateix raonament que ens ha fet arribar a \eqref{eq:jthsubdet} però en direcció inversa, notem que el sumatori $\sum_{j=2}^{n}[\cdots]$ és l'expansió per primera fila del determinant de la matriu $A_{k,1}$. Per tant, l'expressió \eqref{eq:sumofjth} queda així:
-		\begin{equation}\label{eq:simplesumofjth}
+	\end{multline}
+	
+	Ara, fent el mateix raonament que ens ha fet arribar a \eqref{eq:jthsubdet} però en direcció inversa, notem que el sumatori $\sum_{j=2}^{n}[\cdots]$ és l'expansió per primera fila del determinant de la matriu $A_{k,1}$. Per tant, l'expressió \eqref{eq:sumofjth} queda així:
+	\begin{equation}\label{eq:simplesumofjth}
 		\sum_{k=2}^{n} a_{k,1} (-1)^{k+1} \cdot A_{k,1} \,.
-		\end{equation}
-		Finalment, tornant a substituir \eqref{eq:simplesumofjth} en l'equació \eqref{eq:parrafada}, obtenim
-		\begin{equation}
+	\end{equation}
+	Finalment, tornant a substituir \eqref{eq:simplesumofjth} en l'equació \eqref{eq:parrafada}, obtenim
+	\begin{equation}
 		\begin{split}
-		\det A = a_{1,1}\cdot A_{1,1}
-		+\sum_{k=2}^{n} a_{k,1}\cdot (-1)^{k+1} A_{k,1}\,.
+			\det A = a_{1,1}\cdot A_{1,1}
+			+\sum_{k=2}^{n} a_{k,1}\cdot (-1)^{k+1} A_{k,1}\,.
 		\end{split}
-		\end{equation}
-		Noteu que ara podem tornar a introduir el primer terme ($a_{1,1}\cdot A_{1,1}$, que és igual a $a_{1,1}\cdot(-1)^{1+1} A_{1,1}$) al sumatori:
-		\begin{equation}
+	\end{equation}
+	Noteu que ara podem tornar a introduir el primer terme ($a_{1,1}\cdot A_{1,1}$, que és igual a $a_{1,1}\cdot(-1)^{1+1} A_{1,1}$) al sumatori:
+	\begin{equation}
 		\begin{split}
-		\det A = \sum_{i=1}^{n} a_{i,1}\cdot (-1)^{i+1} A_{k,1}\,.
+			\det A = \sum_{i=1}^{n} a_{i,1}\cdot (-1)^{i+1} A_{k,1}\,.
 		\end{split}
-		\end{equation}
-		Aquesta darrera expressió és l'expansió per primera columna del determinant d'$A$.
-	\end{proof}
+	\end{equation}
+	Aquesta darrera expressió és l'expansió per primera columna del determinant d'$A$.
+\end{proof}
 \end{lema}
 
 
@@ -135,187 +148,187 @@
 	\begin{proof}
 		Per $n=2$, és cert: \[
 		\begin{vmatrix}
-		a & b \\
-		c & d
+			a & b \\
+			c & d 
 		\end{vmatrix} = ad - cb = -(cb - ad) = -
 		\begin{vmatrix}
-		c & d \\
-		a & b
+			c & d \\
+			a & b 
 		\end{vmatrix}\,. \]
 		Suposem que és cert per $n - 1$, per un valor arbitrari de $n > 2$ (hipòtesi d'inducció). Sigui $A$ una matriu $n\times n$ i $B$ la matriu obtinguda intercanviant les files $r$ i $r+1$ d'$A$. 
 		\[A =
-		\begin{pmatrix}
-		a_{1,1} &	\cdots &	a_{1,n} \\
-		\vdots &	\ddots &	\vdots \\
-		a_{r,1} &	\cdots &	a_{r,n} \\
-		a_{r+1,1} &	\cdots &	a_{r+1,n} \\
-		\vdots &	\ddots &	\vdots \\
-		a_{n,1} &	\cdots &	a_{n,n} \\
-		\end{pmatrix}\,, \quad
-		%
-		B =
-		\begin{pmatrix}
-		a_{1,1} &	\cdots &	a_{1,n} \\
-		\vdots &	\ddots &	\vdots \\
-		a_{r+1,1} &	\cdots &	a_{r+1,n} \\
-		a_{r,1} &	\cdots &	a_{r,n} \\
-		\vdots &	\ddots &	\vdots \\
-		a_{n,1} &	\cdots &	a_{n,n} \\
-		\end{pmatrix}\,.
+			\begin{pmatrix}
+				a_{1,1}   & \cdots & a_{1,n}   \\
+				\vdots    & \ddots & \vdots    \\
+				a_{r,1}   & \cdots & a_{r,n}   \\
+				a_{r+1,1} & \cdots & a_{r+1,n} \\
+				\vdots    & \ddots & \vdots    \\
+				a_{n,1}   & \cdots & a_{n,n}   \\
+			\end{pmatrix}\,, \quad
+			%
+			B =
+			\begin{pmatrix}
+				a_{1,1}   & \cdots & a_{1,n}   \\
+				\vdots    & \ddots & \vdots    \\
+				a_{r+1,1} & \cdots & a_{r+1,n} \\
+				a_{r,1}   & \cdots & a_{r,n}   \\
+				\vdots    & \ddots & \vdots    \\
+				a_{n,1}   & \cdots & a_{n,n}   \\
+			\end{pmatrix}\,.
 		\]
 		
 		A partir del lema \ref{lema:columna}, podem calcular el determinant de $B$ expandint per la primera columna: 
 		\begin{equation}\label{eq:det2}
-		\det B = \sum_{i=1}^{n} b_{i,1}\cdot(-1)^{i+1}\det B_{i,1}\,.
+			\det B = \sum_{i=1}^{n} b_{i,1}\cdot(-1)^{i+1}\det B_{i,1}\,.
 		\end{equation}
 		Per tots els índex $i$ tals que $i\ne r \land i\ne r+1$, els coeficients $b_{i,1}$ i $a_{i,1}$ són equivalents; d'altra banda, 
 		\begin{equation}\label{eq:submat}
-		\forall i \notin \{r,r+1\} :\quad B_{i,1} = (A_{i,1})^{f_r\rightleftarrows f_{r+1}}\,,
+			\forall i \notin \{r,r+1\} :\quad B_{i,1} = (A_{i,1})^{f_r\rightleftarrows f_{r+1}}\,,
 		\end{equation}
 		on el superíndex $f_r\rightleftarrows f_{r+1}$ denota que s'intercanvien de posició les files $r$ i $r+1$. Intuïtivament, això és el mateix que constatar que intercanviar primer les files (d'on s'obté la matriu $B$) i després obtenir la submatriu (ergo, $B_{i,1}$) és equivalent a obtenir en primer lloc la submatriu (ergo, $A_{i,1}$) i intercanviar les files després (d'on s'obté $(A_{i,1})^{f_r\rightleftarrows f_{r+1}}$).
 		
 		La submatriu $B_{i,1}$ és d'ordre $n-1$; llavors, utilitzant l'hipòtesi d'inducció en el fet \eqref{eq:submat}, es té que $\;\det B_{i,1} = - \det A_{i,1}\,$. Per tant, utilitzant aquestes equivalències en l'eq. \eqref{eq:det2},
 		\begin{equation}\label{eq:dev1}
-		\begin{split}
-		\det B =& 	-\left(\sum_{i\notin \{r, r+1\}} a_{i,1}\cdot(-1)^{i+1}\det A_{i,1}\right)\\
-		&	+ b_{r,1}\cdot(-1)^{r+1}\det B_{r,1}\\
-		&	+ b_{r+1,1}\cdot(-1)^{(r+1)+1}\det B_{r+1,1}\,
-		\end{split}
+			\begin{split}
+				\det B =& 	-\left(\sum_{i\notin \{r, r+1\}} a_{i,1}\cdot(-1)^{i+1}\det A_{i,1}\right)\\
+				&	+ b_{r,1}\cdot(-1)^{r+1}\det B_{r,1}\\
+				&	+ b_{r+1,1}\cdot(-1)^{(r+1)+1}\det B_{r+1,1}\,
+			\end{split}
 		\end{equation}
 		(s'han separat els termes $i=r$ i $i=r+1$ de la suma, ja que per aquests no valen les equivalències anteriors).
 		En el cas on $i = r$, es té que $b_{r,1} = a_{r+1,1}$---ja que $B$ s'ha obtingut intercanviant les files $r$ i $r+1$ en $A$. Per la mateixa raó, $B_{r,1} = A_{r+1, 1}\,$, ja eliminar la fila $r$ en $B$ és equivalent a eliminar la fila $r+1$ en $A$ (aquí ``equivalent'' vol dir que s'obté la mateixa submatriu):
 		%
 		\begin{alignat*}{2}
-		B_{\color[gray]{0.6}r,1} = &
-		\begin{pmatrix}
-		\color[gray]{0.6}
-		a_{1,1} &	a_{1,2} &	\cdots &	a_{1,n} \\
-		\color[gray]{0.6}
-		\vdots &	\vdots &	\ddots &	\vdots \\
-		\color[gray]{0.6}
-		a_{r-1,1} &	a_{r-1,2} &	\cdots &	a_{r-1,n} \\
-		\color[gray]{0.6}
-		a_{r+1,1} &	\color[gray]{0.6}a_{r+1,2} &\color[gray]{0.6}	\cdots &	\color[gray]{0.6}a_{r+1,n}  \\
-		\color[gray]{0.6}
-		a_{r,1} &	a_{r,1} &	\cdots &	a_{r,n} \\
-		\color[gray]{0.6}
-		a_{r+2,1} &	a_{r+2,2} &	\cdots &	a_{r+2,n} \\
-		\color[gray]{0.6}
-		\vdots &	\vdots &	\ddots &	\vdots \\
-		\color[gray]{0.6}
-		a_{n,1} &	a_{n,2} &	\cdots &	a_{n,n} \\
-		\end{pmatrix}
-		%
-		\\ \\
-		%
-		A_{\color[gray]{0.6}r+1,1} = &
-		\begin{pmatrix}
-		\color[gray]{0.6}
-		a_{1,1} &	a_{1,2} &	\cdots &	a_{1,n} \\
-		\color[gray]{0.6}
-		\vdots &	\vdots &	\ddots &	\vdots \\
-		\color[gray]{0.6}
-		a_{r-1,1} &	a_{r-1,2} &	\cdots &	a_{r-1,n} \\
-		\color[gray]{0.6}
-		a_{r,1} &	a_{r,1} &	\cdots &	a_{r,n} \\
-		%
-		\color[gray]{0.6}	a_{r+1,1} &	\color[gray]{0.6}a_{r+1,2} &\color[gray]{0.6}	\cdots &	\color[gray]{0.6}a_{r+1,n}  \\
-		%
-		\color[gray]{0.6}
-		a_{r+2,1} &	a_{r+2,2} &	\cdots &	a_{r+2,n} \\
-		\color[gray]{0.6}
-		\vdots &	\vdots &	\ddots &	\vdots \\
-		\color[gray]{0.6}
-		a_{n,1} &	a_{n,2} &	\cdots &	a_{n,n} \\
-		\end{pmatrix}\,.
+			B_{\color[gray]{0.6}r,1} = &
+			\begin{pmatrix}
+			\color[gray]{0.6}
+			a_{1,1}                     & a_{1,2}                    & \cdots                   & a_{1,n}                    \\
+			\color[gray]{0.6}
+			\vdots                      & \vdots                     & \ddots                   & \vdots                     \\
+			\color[gray]{0.6}
+			a_{r-1,1}                   & a_{r-1,2}                  & \cdots                   & a_{r-1,n}                  \\
+			\color[gray]{0.6}
+			a_{r+1,1}                   & \color[gray]{0.6}a_{r+1,2} & \color[gray]{0.6}	\cdots & \color[gray]{0.6}a_{r+1,n} \\
+			\color[gray]{0.6}
+			a_{r,1}                     & a_{r,1}                    & \cdots                   & a_{r,n}                    \\
+			\color[gray]{0.6}
+			a_{r+2,1}                   & a_{r+2,2}                  & \cdots                   & a_{r+2,n}                  \\
+			\color[gray]{0.6}
+			\vdots                      & \vdots                     & \ddots                   & \vdots                     \\
+			\color[gray]{0.6}
+			a_{n,1}                     & a_{n,2}                    & \cdots                   & a_{n,n}                    \\
+			\end{pmatrix}
+			%
+			\\ \\
+			%
+			A_{\color[gray]{0.6}r+1,1} = &
+			\begin{pmatrix}
+			\color[gray]{0.6}
+			a_{1,1}                     & a_{1,2}                    & \cdots                   & a_{1,n}                    \\
+			\color[gray]{0.6}
+			\vdots                      & \vdots                     & \ddots                   & \vdots                     \\
+			\color[gray]{0.6}
+			a_{r-1,1}                   & a_{r-1,2}                  & \cdots                   & a_{r-1,n}                  \\
+			\color[gray]{0.6}
+			a_{r,1}                     & a_{r,1}                    & \cdots                   & a_{r,n}                    \\
+			%
+			\color[gray]{0.6}	a_{r+1,1} & \color[gray]{0.6}a_{r+1,2} & \color[gray]{0.6}	\cdots & \color[gray]{0.6}a_{r+1,n} \\
+			%
+			\color[gray]{0.6}
+			a_{r+2,1}                   & a_{r+2,2}                  & \cdots                   & a_{r+2,n}                  \\
+			\color[gray]{0.6}
+			\vdots                      & \vdots                     & \ddots                   & \vdots                     \\
+			\color[gray]{0.6}
+			a_{n,1}                     & a_{n,2}                    & \cdots                   & a_{n,n}                    \\
+			\end{pmatrix}\,.
 		\end{alignat*}
 		De manera similar, $b_{r+1, 1} = a_{r, 1}\;$ i $\;B_{r+1,1} = A_{r,1}$.
 		
 		Per tant, els últims dos termes de l'expressió \eqref{eq:development} es poden reescriure com
 		\begin{equation*}\label{eq:penult}
-		\begin{gathered}
-		a_{r+1,1}\cdot(-1)^{r+1}\det A_{r+1,1}\\
-		a_{r,1}\cdot(-1)^{(r+1)+1}\det A_{r,1}\,.
-		\end{gathered}
+			\begin{gathered}
+				a_{r+1,1}\cdot(-1)^{r+1}\det A_{r+1,1}\\
+				a_{r,1}\cdot(-1)^{(r+1)+1}\det A_{r,1}\,.
+			\end{gathered}
 		\end{equation*}
 		Observem que ara en cada terme tot està ``en funció de'' $r$ i $r+1$, respectivament, exceptuant l'exponent del $-1$. Utilitzant la identitat $\forall a\in\mathbb{Z} : (-1)^a = -(-1)^{a\pm 1}$, podem tornar a reescriure com
 		\begin{equation*}\label{eq:last}
-		\begin{gathered}
-		-a_{r+1,1}\cdot(-1)^{(r+1)+1}\det A_{r+1,1}\\
-		-a_{r,1}\cdot(-1)^{r+1}\det A_{r,1}\,.
-		\end{gathered}
+			\begin{gathered}
+				-a_{r+1,1}\cdot(-1)^{(r+1)+1}\det A_{r+1,1}\\
+				-a_{r,1}\cdot(-1)^{r+1}\det A_{r,1}\,.
+			\end{gathered}
 		\end{equation*}
 		
 		Finalment, a partir d'això podem simplificar l'expressió \eqref{eq:dev1} reintroduint aquests termes al sumatori:
 		\begin{equation}\label{eq:development}
-		\begin{split}
-		\det B =& 	-\left(\sum_{i\notin \{r, r+1\}} a_{i,1}\cdot(-1)^{i+1}\det A_{i,1}\right)\\
-		&	-a_{r+1,1}\cdot(-1)^{(r+1)+1}\det A_{r+1,1}\\
-		&	-a_{r,1}\cdot(-1)^{r+1}\det A_{r,1} = \\
-		=&-\left(\sum_{i=1}^{n} a_{i,1}\cdot(-1)^{i+1}\det A_{i,1}\right)\,.
-		\end{split}
+			\begin{split}
+				\det B =& 	-\left(\sum_{i\notin \{r, r+1\}} a_{i,1}\cdot(-1)^{i+1}\det A_{i,1}\right)\\
+				&	-a_{r+1,1}\cdot(-1)^{(r+1)+1}\det A_{r+1,1}\\
+				&	-a_{r,1}\cdot(-1)^{r+1}\det A_{r,1} = \\
+				=&-\left(\sum_{i=1}^{n} a_{i,1}\cdot(-1)^{i+1}\det A_{i,1}\right)\,.
+			\end{split}
 		\end{equation}
 		L'expressió entre parèntesis és el determinant de la matriu $A$ (expansió per primera columna). Per tant, $\det B = -\det A$.
 	\end{proof}
-
-\begin{col} \label{col:intercanvi}
-	És conseqüència directa d'aquest últim lema (\ref{lema:intercanvi}) que el determinant de la matriu obtinguda intercanviant dues files $r$ i $s$ qualssevol (no necessàriament adjacents) d'una matriu $A$ és $\ -\det A$, ja que intercanviar la posició de dues files és equivalent a fer un nombre imparell d'intercanvis entre files adjacents.
 	
+	\begin{col} \label{col:intercanvi}
+		És conseqüència directa d'aquest últim lema (\ref{lema:intercanvi}) que el determinant de la matriu obtinguda intercanviant dues files $r$ i $s$ qualssevol (no necessàriament adjacents) d'una matriu $A$ és $\ -\det A$, ja que intercanviar la posició de dues files és equivalent a fer un nombre imparell d'intercanvis entre files adjacents.
+		
 		\begin{proof}
-		Primer cal fer $s-r$ (suposant que $s>r$) intercanvis per posar la fila $r$ a la posició de $s$. Ara la fila $s$ es troba a la posició $s-1$, per tant només cal fer $(s-1)-r = s-r-1$ intercanvis de files adjacents. Llavors el nombre total d'intercanvis és $(s-r)+(s-r-1) = 2(s-r) - 1$, que és imparell.
-		\[
-		\begin{blockarray}{cccc}
-		\begin{block}{(ccc)*{1}{>{\color{red}}l<{}}}
-		a_{1,1}&	\cdots&		a_{1,n}& 		\\
-		\vdots&		\ddots&		\vdots& 		\\
-		a_{r-1,1}&	\cdots&		a_{r-1,n}&    	\\
-		\rd a_{r,1}&\rd\cdots&	\rd a_{r,n}&    \dcarr \\
-		a_{r+1,1}&	\cdots&		a_{r+1,n}&    	\dcarr\\
-		\vdots&		\ddots&		\vdots& 		\vdots\\
-		a_{s-1,1}&	\cdots&		a_{s-1,n}&    	\dcarr \\
-		\gre a_{s,1}&\gre\cdots&	\gre a_{s,n}&    \\
-		a_{s+1,1}&	\cdots&		a_{s+1,n}&    	\\
-		\vdots&		\ddots&		\vdots& 		\\
-		a_{n,1}&	\cdots&		a_{n,n}& 		\\	
-		\end{block}
-		\end{blockarray}
-		%
-		\quad
-		%
-		\begin{blockarray}{cccc}
-		\begin{block}{(ccc)*{1}{>{\color{ForestGreen}}l<{}}}
-		a_{1,1}&	\cdots&		a_{1,n}& 		\\
-		\vdots&		\ddots&		\vdots& 		\\
-		a_{r-1,1}&	\cdots&		a_{r-1,n}&    	\\
-		a_{r+1,1}&	\cdots&		a_{r+1,n}&    	\ucarr\\
-		\vdots&		\ddots&		\vdots& 		\vdots\\
-		a_{s-1,1}&	\cdots&		a_{s-1,n}&    	\ucarr\\
-		\gre a_{s,1}&\gre\cdots&	\gre a_{s,n}&    \ucarr\\
-		\rd a_{r,1}&\rd\cdots&	\rd a_{r,n}&    \\
-		a_{s+1,1}&	\cdots&		a_{s+1,n}&    	\\
-		\vdots&		\ddots&		\vdots& 		\\
-		a_{n,1}&	\cdots&		a_{n,n}& 		\\	
-		\end{block}
-		\end{blockarray}
-		%
-		\quad
-		%	
-		\begin{pmatrix}
-		a_{1,1}&	\cdots&		a_{1,n}\\
-		\vdots&		\ddots&		\vdots\\
-		a_{r-1,1}&	\cdots&		a_{r-1,n}\\
-		\gre a_{s,1}&\gre\cdots&	\gre a_{s,n}\\
-		a_{r+1,1}&	\cdots&		a_{r+1,n}\\
-		\vdots&		\ddots&		\vdots\\
-		a_{s-1,1}&	\cdots&		a_{s-1,n}\\
-		\rd a_{r,1}&\rd\cdots&	\rd a_{r,n}\\
-		a_{s+1,1}&	\cdots&		a_{s+1,n}\\
-		\vdots&		\ddots&		\vdots\\
-		a_{n,1}&	\cdots&		a_{n,n}\\
-		\end{pmatrix}
-		\]
-	\end{proof}
-\end{col}
+			Primer cal fer $s-r$ (suposant que $s>r$) intercanvis per posar la fila $r$ a la posició de $s$. Ara la fila $s$ es troba a la posició $s-1$, per tant només cal fer $(s-1)-r = s-r-1$ intercanvis de files adjacents. Llavors el nombre total d'intercanvis és $(s-r)+(s-r-1) = 2(s-r) - 1$, que és imparell.
+			\[
+				\begin{blockarray}{cccc}
+					\begin{block}{(ccc)*{1}{>{\color{red}}l<{}}}
+						a_{1,1}&	\cdots&		a_{1,n}& 		\\
+						\vdots&		\ddots&		\vdots& 		\\
+						a_{r-1,1}&	\cdots&		a_{r-1,n}&    	\\
+						\rd a_{r,1}&\rd\cdots&	\rd a_{r,n}&    \dcarr \\
+						a_{r+1,1}&	\cdots&		a_{r+1,n}&    	\dcarr\\
+						\vdots&		\ddots&		\vdots& 		\vdots\\
+						a_{s-1,1}&	\cdots&		a_{s-1,n}&    	\dcarr \\
+						\gre a_{s,1}&\gre\cdots&	\gre a_{s,n}&    \\
+						a_{s+1,1}&	\cdots&		a_{s+1,n}&    	\\
+						\vdots&		\ddots&		\vdots& 		\\
+						a_{n,1}&	\cdots&		a_{n,n}& 		\\	
+					\end{block}
+				\end{blockarray}
+				%
+				\quad
+				%
+				\begin{blockarray}{cccc}
+					\begin{block}{(ccc)*{1}{>{\color{ForestGreen}}l<{}}}
+						a_{1,1}&	\cdots&		a_{1,n}& 		\\
+						\vdots&		\ddots&		\vdots& 		\\
+						a_{r-1,1}&	\cdots&		a_{r-1,n}&    	\\
+						a_{r+1,1}&	\cdots&		a_{r+1,n}&    	\ucarr\\
+						\vdots&		\ddots&		\vdots& 		\vdots\\
+						a_{s-1,1}&	\cdots&		a_{s-1,n}&    	\ucarr\\
+						\gre a_{s,1}&\gre\cdots&	\gre a_{s,n}&    \ucarr\\
+						\rd a_{r,1}&\rd\cdots&	\rd a_{r,n}&    \\
+						a_{s+1,1}&	\cdots&		a_{s+1,n}&    	\\
+						\vdots&		\ddots&		\vdots& 		\\
+						a_{n,1}&	\cdots&		a_{n,n}& 		\\	
+					\end{block}
+				\end{blockarray}
+				%
+				\quad
+				%	
+				\begin{pmatrix}
+					a_{1,1}      & \cdots     & a_{1,n}      \\
+					\vdots       & \ddots     & \vdots       \\
+					a_{r-1,1}    & \cdots     & a_{r-1,n}    \\
+					\gre a_{s,1} & \gre\cdots & \gre a_{s,n} \\
+					a_{r+1,1}    & \cdots     & a_{r+1,n}    \\
+					\vdots       & \ddots     & \vdots       \\
+					a_{s-1,1}    & \cdots     & a_{s-1,n}    \\
+					\rd a_{r,1}  & \rd\cdots  & \rd a_{r,n}  \\
+					a_{s+1,1}    & \cdots     & a_{s+1,n}    \\
+					\vdots       & \ddots     & \vdots       \\
+					a_{n,1}      & \cdots     & a_{n,n}      \\
+				\end{pmatrix}
+			\]
+		\end{proof}
+	\end{col}
 \end{lema}
 
 
@@ -323,59 +336,59 @@
 \begin{lema}\label{lema:iesimafila}
 	Sigui $M\in\mathcal{M}_n(\mathbb{R})$. L'expansió del determinant de $M$ per la primera fila és equivalent a l'expansió per la $i$-èsima fila:
 	\begin{multline*}
-	\forall i \in \{1,2,\ldots, n\}:\\
-	\det M = \sum_{j=1}^{n} m_{1,j}\cdot(-1)^{1+j}\det M_{1,j} = \sum_{j=1}^{n} m_{i,j}\cdot(-1)^{i+j}\det M_{i,j}\,.
+		\forall i \in \{1,2,\ldots, n\}:\\
+		\det M = \sum_{j=1}^{n} m_{1,j}\cdot(-1)^{1+j}\det M_{1,j} = \sum_{j=1}^{n} m_{i,j}\cdot(-1)^{i+j}\det M_{i,j}\,.
 	\end{multline*}
 	\begin{proof}
 		Sigui $A\in\mathcal{M}_n(\mathbb{R})$ i sigui $B$ la matriu obtinguda movent la fila $i$ d'$A$ a la primera fila mitjançant $i-1$ intercanvis consecutius de files adjacents:
 		\[
-		A =\
-		\begin{blockarray}{cccc}
-		\begin{block}{(ccc)*{1}{>{\color{blue}}l<{}}}
-		a_{1,1}&	\cdots&		a_{1,n}& 		\\
-		a_{2,1}&	\cdots&		a_{2,n}& 		\ucarr\\
-		\vdots&		\ddots&		\vdots& 		\vdots\\
-		a_{i-1,1}&	\cdots&		a_{i-1,n}&    	\ucarr \\
-		\bl a_{i,1}&\bl\cdots&	\bl a_{i,n}&    \ucarr \\
-		a_{i+1,1}&	\cdots&		a_{i+1,n}&    	\\
-		\vdots&		\ddots&		\vdots& 		\\
-		a_{n,1}&	\cdots&		a_{n,n}& 		\\	
-		\end{block}
-		\end{blockarray}
-		%
-		\qquad
-		%
-		B =
-		\begin{pmatrix}
-		\bl a_{i,1}&\bl\cdots&	\bl a_{i,n}\\
-		a_{1,1}&	\cdots&		a_{1,n}\\
-		a_{2,1}&	\cdots&		a_{2,n}\\
-		\vdots&		\ddots&		\vdots\\
-		a_{i-1,1}&	\cdots&		a_{i-1,n}\\
-		a_{i+1,1}&	\cdots&		a_{i+1,n}\\
-		\vdots&		\ddots&		\vdots\\
-		a_{n,1}&	\cdots&		a_{n,n}\\
-		\end{pmatrix}\,.
+			A =\
+			\begin{blockarray}{cccc}
+				\begin{block}{(ccc)*{1}{>{\color{blue}}l<{}}}
+					a_{1,1}&	\cdots&		a_{1,n}& 		\\
+					a_{2,1}&	\cdots&		a_{2,n}& 		\ucarr\\
+					\vdots&		\ddots&		\vdots& 		\vdots\\
+					a_{i-1,1}&	\cdots&		a_{i-1,n}&    	\ucarr \\
+					\bl a_{i,1}&\bl\cdots&	\bl a_{i,n}&    \ucarr \\
+					a_{i+1,1}&	\cdots&		a_{i+1,n}&    	\\
+					\vdots&		\ddots&		\vdots& 		\\
+					a_{n,1}&	\cdots&		a_{n,n}& 		\\	
+				\end{block}
+			\end{blockarray}
+			%
+			\qquad
+			%
+			B =
+			\begin{pmatrix}
+				\bl a_{i,1} & \bl\cdots & \bl a_{i,n} \\
+				a_{1,1}     & \cdots    & a_{1,n}     \\
+				a_{2,1}     & \cdots    & a_{2,n}     \\
+				\vdots      & \ddots    & \vdots      \\
+				a_{i-1,1}   & \cdots    & a_{i-1,n}   \\
+				a_{i+1,1}   & \cdots    & a_{i+1,n}   \\
+				\vdots      & \ddots    & \vdots      \\
+				a_{n,1}     & \cdots    & a_{n,n}     \\
+			\end{pmatrix}\,.
 		\]
 		Llavors, com a conseqüència directa del lema \ref{lema:intercanvi} i del seu corol·lari (\ref{col:intercanvi}), 
 		\begin{equation}\label{eq:detrel}
-		\det A = (-1)^{i-1}\det B\,.
+			\det A = (-1)^{i-1}\det B\,.
 		\end{equation}
 		
 		Desenvolupem $\det B$ segons la seva definició.
 		\begin{equation}\label{eq:det-iesima}
-		\det B = \sum_{j=1}^{n} b_{1,j}\cdot (-1)^{1+j}\det B_{1,j}\,.
+			\det B = \sum_{j=1}^{n} b_{1,j}\cdot (-1)^{1+j}\det B_{1,j}\,.
 		\end{equation}
 		Per construcció, $b_{1,j} = a_{i,j}$ per tot $j$. D'altra banda, la matriu $B_{1,j}$ és equivalent a la matriu $A_{i,j}$---ja que, novament per construcció, la primera fila de $B$ és la $i$-èsima fila d'$A$; vegi's el diagrama anterior per visualitzar-ho. Per tant, \eqref{eq:det-iesima} es pot reformular com
 		\begin{equation}\label{eq:det-iesima2}
-		\det B = \sum_{j=1}^{n} a_{i,j}\cdot (-1)^{1+j}\det A_{i,j}\,.
+			\det B = \sum_{j=1}^{n} a_{i,j}\cdot (-1)^{1+j}\det A_{i,j}\,.
 		\end{equation}
 		
 		Unint les equacions \eqref{eq:detrel} i \eqref{eq:det-iesima2}, obtenim
 		\begin{multline}
-		\det A = (-1)^{i-1}\sum_{j=1}^{n} a_{i,j}\cdot (-1)^{1+j}\det A_{i,j} =\\
-		=\sum_{j=1}^{n} (-1)^{i-1}\cdot a_{i,j}\cdot (-1)^{1+j}\det A_{i,j}=\\
-		=\sum_{j=1}^{n} a_{i,j}\cdot (-1)^{i+j}\det A_{i,j}\,.
+			\det A = (-1)^{i-1}\sum_{j=1}^{n} a_{i,j}\cdot (-1)^{1+j}\det A_{i,j} =\\
+			=\sum_{j=1}^{n} (-1)^{i-1}\cdot a_{i,j}\cdot (-1)^{1+j}\det A_{i,j}=\\
+			=\sum_{j=1}^{n} a_{i,j}\cdot (-1)^{i+j}\det A_{i,j}\,.
 		\end{multline}
 		Aquesta darrera expressió és l'expansió del determinant d'$A$ per la $i$-èsima fila.
 	\end{proof}
