@@ -111,6 +111,17 @@ Ara continuem amb la definició formal de problema dual.
 	\caption{Taula de transformació d'un problema primal al seu dual.}\label{table:dual}
 \end{table}
 
+
+\begin{prop}[Equivalència de duals]
+	Donat un problema de PL qualsevol $(P)$, són equivalents:
+	\begin{enumerate}[(i)]
+		\item El dual de $(P)$---que denotarem $(D)$
+		\item El dual de $(P_e)$---que denotarem $(D^e)$
+		\item La forma estàndard de $(D)$---que denotarem $(D_e)$
+		\item La forma estàndard de $(D^e)$---que denotarem $(D^e_e)$
+	\end{enumerate}
+\end{prop}
+
 \section{Propietats del dual}
 \begin{teo}[feble de dualitat]\label{teo:dualitat-feble}
     Per tota solució factible $\vb{x}$ d'un problema primal $\left(P\right)$ i tota solució factible $\vb{\lambda}$ del dual $\left(D\right)$ associat
@@ -161,7 +172,7 @@ Ara continuem amb la definició formal de problema dual.
     	Considerem la forma estàndard del problema primal $(P)$,
     	
     	\[
-    		(P)_e
+    		(P_e)
     		\begin{cases}
     		\begin{aligned}
 			   	\min 			&&& \vb{c}'\vb{x}\\
@@ -172,7 +183,7 @@ Ara continuem amb la definició formal de problema dual.
     	\]
     	on la matriu $A$ és d'ordre $m\times n$, i el dual corresponent (a $P_e$):
     	\[
-	    	(D_e)
+	    	(D^e)
 	    	\begin{cases}
 	    	\begin{aligned}
 	    	\max 			&&& \vb{\lambda}'\vb{b}\\
@@ -181,7 +192,7 @@ Ara continuem amb la definició formal de problema dual.
 	    	\end{cases}\ ,
     	\]
     	
-    	Primer demostrarem que si $(P)_e$ té òptim, $(D_e)$ també. Si $(P)_e$ té òptim, l'algorisme del símplex primal aplicat a $(P)_e$ terminarà amb una SBF òptima $\vb{x}^\ast$ de $(P)_e$, amb matriu bàsica $B$, tal que el vector de costos reduïts sigui no negatiu: \[\mathbf{r}' = c_\N '- c_\B' B^{-1} A_\N \ge 0\,.\] Sigui $\vb{\lambda}^\ast$ el vector definit per ${\vb{\lambda}^\ast}'\defeq c_\B'B^{-1}$. Demostrarem que $\vb{\lambda}^\ast$ és solució òptima de $(D_e)$.
+    	Primer demostrarem que si $(P_e)$ té òptim, $(D^e)$ també. Si $(P_e)$ té òptim, l'algorisme del símplex primal aplicat a $(P_e)$ terminarà amb una SBF òptima $\vb{x}^\ast$ de $(P_e)$, amb matriu bàsica $B$, tal que el vector de costos reduïts sigui no negatiu: \[\mathbf{r}' = c_\N '- c_\B' B^{-1} A_\N \ge 0\,.\] Sigui $\vb{\lambda}^\ast$ el vector definit per ${\vb{\lambda}^\ast}'\defeq c_\B'B^{-1}$. Demostrarem que $\vb{\lambda}^\ast$ és solució òptima de $(D^e)$.
     	
     	Primer hem de comprovar si és factible. Efectivament, 
     	\[
@@ -199,9 +210,9 @@ Ara continuem amb la definició formal de problema dual.
     		\end{bmatrix}
     		= \vb{c}'\,.
     	\]
-    	D'altra banda, \[{\vb{\lambda}^\ast}'\vb{b} = c_\B' B^{-1} \vb{b} = c_\B' {\vb{x}^\ast}_\B = \vb{c}'{\vb{x}^\ast}\,. \] Aplicant el corol·lari \ref{col:feb}, deduïm que $\vb{\lambda}^\ast$ és solució òptima de $(D_e)$. Queda demostrat que si $(P)_e$ té solució òptima existeix una solució òptima de $(D_e)$ (i pel corol·lari mencionat produeixen el mateix valor de la f.o.).
+    	D'altra banda, \[{\vb{\lambda}^\ast}'\vb{b} = c_\B' B^{-1} \vb{b} = c_\B' {\vb{x}^\ast}_\B = \vb{c}'{\vb{x}^\ast}\,. \] Aplicant el corol·lari \ref{col:feb}, deduïm que $\vb{\lambda}^\ast$ és solució òptima de $(D^e)$. Queda demostrat que si $(P_e)$ té solució òptima existeix una solució òptima de $(D^e)$ (i pel corol·lari mencionat produeixen el mateix valor de la f.o.).
     	
-    	Finalment, podem afirmar que aquest resultat és vàlid per els problemes que no estan en forma estàndard, ja que el problema $(P)$ i el seu estàndard són equivalents---sempre es pot passar d'una solució de l'un a una solució de l'altre, i el valor de la f.o. en l'òptim és el mateix---, i el dual de l'estàndard $(D_e)$ és equivalent al dual de $(P)$.
+    	Finalment, podem afirmar que aquest resultat és vàlid per els problemes que no estan en forma estàndard, ja que el problema $(P)$ i el seu estàndard són equivalents---sempre es pot passar d'una solució de l'un a una solució de l'altre, i el valor de la f.o. en l'òptim és el mateix---, i el dual de l'estàndard $(D^e)$ és equivalent al dual de $(P)$.
     \end{proof}
 \end{teo}
 
@@ -229,14 +240,14 @@ Ara continuem amb la definició formal de problema dual.
 Noteu que el teorema \ref{teo:folga-complement} s'anomena de ``folga complementària'' perquè les expressions \[(\vb{a_i}'\vb{x}-b_i) \quad \text{i}\quad (c_j-\vb{\lambda}'A_j) \] es poden interpretar com les ``folgues'' associades a les restriccions primals i duals \[A\vb{x} \lesseqgtr \vb{b} \quad \text{i}\quad \vb{\lambda}'A \lesseqgtr \vb{c}\,,\] respectivament; ``complementària'' perquè la ``folga'' d'un problema està associada amb una component del vector variable de l'altre problema---$(\vb{a_i}'\vb{x}-b_i)$ amb $\lambda_i$ i $(c_j-\vb{\lambda}'A_j)$ amb $x_j$.
 
 \begin{defi}[Solució bàsica factible dual]\label{defi:SBFD}
-    Sigui $\left(P\right)$ un problema de PL i sigui $(P)_e$ la seva forma estàndard. Llavors, direm que tota solució bàsica $\vb{x}$ de $\left(P\right)_e$ tal que $\mathbf{r} \geq \vb{0}$ és una solució bàsica factible dual (SBFD).
+    Sigui $\left(P\right)$ un problema de PL i sigui $(P_e)$ la seva forma estàndard. Llavors, direm que tota solució bàsica $\vb{x}$ de $\left(P\right)_e$ tal que $\mathbf{r} \geq \vb{0}$ és una solució bàsica factible dual (SBFD).
 \end{defi}
 
-Noteu que la definició \ref{defi:SBFD} deriva directament dels resultats que hem obtingut durant la demostració del teorema fort de dualitat (\ref{teo:dualitat-fort}): extrapolant l'argument que vam utilitzar, per tota solució bàsica $\vb{x}$---d'una forma estàndard $(P)_e$---amb matriu bàsica $B$ i un vector de costos reduïts no negatius, el vector $\vb{\lambda}' \defeq c_\B' B^{-1}$ és una solució factible del problema dual corresponent.
+Noteu que la definició \ref{defi:SBFD} deriva directament dels resultats que hem obtingut durant la demostració del teorema fort de dualitat (\ref{teo:dualitat-fort}): extrapolant l'argument que vam utilitzar, per tota solució bàsica $\vb{x}$---d'una forma estàndard $(P_e)$---amb matriu bàsica $B$ i un vector de costos reduïts no negatius, el vector $\vb{\lambda}' \defeq c_\B' B^{-1}$ és una solució factible del problema dual corresponent.
 
-Observeu també que l'adjectiu ``factible'' en la definició de SBFD es refereix a una solució bàsica de $(P)_e$, que \textbf{pot no ser factible} per a aquest (és a dir, que $\vb{x}\notin P_e$), que es \textit{correspon}, però, a una \textbf{solució factible del problema dual} $(D^e)$ corresponent: $\vb{\lambda} \defeq (c_\B' B^{-1})' \in D^e$. Potser ajuda pensar en ``Solució bàsica factible dual'' en dos blocs: ``Solució bàsica'' i ``factible dual''.
+Observeu també que l'adjectiu ``factible'' en la definició de SBFD es refereix a una solució bàsica de $(P_e)$, que \textbf{pot no ser factible} per a aquest (és a dir, que $\vb{x}\notin P_e$), que es \textit{correspon}, però, a una \textbf{solució factible del problema dual} $(D^e)$ corresponent: $\vb{\lambda} \defeq (c_\B' B^{-1})' \in D^e$. Potser ajuda pensar en ``Solució bàsica factible dual'' en dos blocs: ``Solució bàsica'' i ``factible dual''.
 
-Per últim, noteu que si una solució bàsica $\vb{x}$ de $(P)_e$ és factible dual (per tant és SBFD) i és alhora factible primal ($\vb{x} \in P_e \Leftrightarrow A\vb{x} = \vb{b}$), llavors és solució òptima de $(P)_e\,$, ja que és una solució factible amb $\vb{r}\ge \vb{0}$.
+Per últim, noteu que si una solució bàsica $\vb{x}$ de $(P_e)$ és factible dual (per tant és SBFD) i és alhora factible primal ($\vb{x} \in P_e \Leftrightarrow A\vb{x} = \vb{b}$), llavors és solució òptima de $(P_e)\,$, ja que és una solució factible amb $\vb{r}\ge \vb{0}$.
 
 
 \section{Símplex dual}
