@@ -562,14 +562,14 @@
         \item Veamos que se cumplen las tres propiedades de la definición \ref{defi:subgrupo}.
         \begin{enumerate}[i)]
             \item $1 \in H \implies f(1) = 1 \in f(H) \implies f(H) \neq \emptyset$.
-            \item Sean $a, b \in H$, entonces $ab \in H$ y $f(a) f(b) = f(ab) \in f(H)$.
-            \item Sea $a \in H$, entonces $a^{-1} \in H$ y $f(a)^{-1} = f\lp a\rp ^{-1} \in H$.
+            \item Sean $a, b \in H$. Entonces, $ab \in H$ y $f(a) f(b) = f(ab) \in f(H)$.
+            \item Sea $a \in H$. Entonces, $a^{-1} \in H$ y $f(a)^{-1} = f\lp a ^{-1}\rp \in H$.
         \end{enumerate}
         \item Veamos que se cumplen las tres propiedades de la definición \ref{defi:subgrupo}.
         \begin{enumerate}[i)]
             \item $1 \in K, f(1) = 1 \implies 1 \in f^{-1}(K) \neq \emptyset$.
-            \item Sean $a, b \in f^{-1}\lp K\rp$, entonces $\exists a', b' \in K \tq f\lp a\rp = a', \, f\lp b\rp = b'$ y tenemos que $ab = f^{-1}\lp f\lp ab\rp \rp = f^{-1}\lp f\lp a \rp f\lp b\rp\rp = f^{-1}\lp a'b'\rp \in f^{-1}\lp K\rp$, ya que $a'b' \in K$.
-            \item Sea $a \in f^{-1}\lp K\rp$, entonces $\exists a' \in K \tq f\lp a \rp = a'$, y tenemos que $a^{-1} = f^{-1}\lp f\lp a^{-1}\rp \rp = f^{-1}\lp f\lp a \rp ^{-1} \rp = f^{-1}\lp \lp a'\rp^{-1}\rp \in f^{-1}\lp K\rp$, ya que $\lp a'\rp^{-1} \in K$.
+            \item Sean $a, b \in f^{-1}\lp K\rp$. Entonces, $ f\lp a\rp, f\lp b\rp, f\lp a\rp f\lp b\rp \in K$ y tenemos que $ab \in f^{-1}\lp f\lp ab\rp \rp = f^{-1}\lp f\lp a \rp f\lp b\rp\rp \subseteq f^{-1}\lp K\rp$.
+            \item Sea $a \in f^{-1}\lp K\rp$. Entonces, $f\lp a\rp\in K, f\lp a\rp^{-1}=f\lp a^{-1}\rp \in K$, y tenemos que $a^{-1} \in f^{-1}\lp f\lp a^{-1}\rp \rp = f^{-1}\lp f\lp a \rp ^{-1} \rp \subseteq f^{-1}\lp K\rp$.
         \end{enumerate}
     \end{enumerate}
 \end{proof}
