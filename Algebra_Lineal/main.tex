@@ -1,10 +1,12 @@
-\documentclass[12pt]{report}
+\documentclass[12pt]{book}
 
 \input{../preamble}
 \input{../environments_ca}
 \usepackage{parskip,blkarray}
-\usepackage{changepage}
 \renewcommand{\matspace}[1]{\mathcal{M}_{#1}(\real)}
+\newcommand{\K}{\mathbb{K}}
+
+\AtBeginDocument{\renewcommand{\chaptername}{Tema}}
 
 \begin{document}
 
@@ -18,7 +20,6 @@
 	\input{propietats_determinant}
 
 
-\chapter{Espais vectorials}
-	\input{demos_teoremes}
+\input{espais_vectorials}
 
 \end{document}

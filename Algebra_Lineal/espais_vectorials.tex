@@ -1,0 +1,108 @@
+\chapter{Espais vectorials}
+\section{Definicions d'espais i subespais vectorials}
+\begin{defi}[Espai vectorial]
+	Un espai vectorial $V$ sobre un cos $\mathbb{K}$ (també anomenat un $\K$-espai vectorial) equipat d'un producte intern
+	\begin{equation*}
+	\begin{aligned}
+		(+)\colon\quad	&V\times V &&\rightarrow&& V\\
+						&(v,w) &&\mapsto&& v+w \,,
+	\end{aligned}
+	\end{equation*}
+	anomenat suma, i d'un producte extern
+	\begin{equation*}
+	\begin{aligned}
+		(\cdot)\colon\quad	&\mathbb{K}\times V &&\rightarrow&& V\\
+							&(\lambda,v) &&\mapsto&& \lambda\cdot v\,,
+	\end{aligned}
+	\end{equation*} 
+	anomenat multiplicació escalar, és un conjunt d'elements anomenats vectors que compleix les següents propietats:
+	\begin{enumerate}[i)]
+		\item \textit{Tancat per la suma.} $\forall v,w \in V\qcolon v+w\in V$
+		\item \textit{Tancat per la multiplicació escalar.} $\forall \lambda \in \mathbb{K}\ \forall v \in V\qcolon \lambda\cdot v\in V$
+	\end{enumerate}
+\end{defi}
+
+\begin{defi}
+	Sigui $E$ un $\K$-espai vectorial. Es diu que un subconjunt $V\subseteq E$ és un subespai vectorial d'$E$ si (i només si) $V$ també és un espai vectorial per sí mateix (és a dir, està tancat per la suma, per la multiplicació escalar, etc.).
+\end{defi}
+
+\begin{prop}
+	content...
+\end{prop}
+
+\section{Dependència lineal}
+
+\begin{defi}\label{defi:ld}
+	Es diu que els vectors d'un conjunt $ V = \{v_1, \ldots, v_n\}$ són linealment dependents (abreviat l.d.) si i només si \[\exists \lambda_1, \ldots, \lambda_n\qcolon \left(\exists i \colon \lambda_i \ne 0 \quad\land\quad \sum_{i=1}^{n} \lambda_i v_i = \vec{0}\right)\,. \] Si els vectors d'un conjunt no són l.d. es diu que són linealment independents (abreviat l.i.).
+	
+	\begin{col}\label{col:ld}
+		S'obté directament a partir de la definició \ref{defi:ld} que:
+		\begin{enumerate}[i)]
+			\item Qualsevol conjunt de vectors que contingui l'element neutre $\vec{0}$ és linealment dependent
+			\item Dos vectors són linealment dependents entre sí si i només si són proporcionals
+			\item Si els vectors $v_1, \ldots, v_k$ són linealment dependents, almenys dos d'aquests es poden expressar com a combinació lineal dels altres.
+			\item Si $v_1, \ldots, v_k$ són l.i. i generen un subespai vectorial $V$, i $u\notin V$, llavors $u, v_1, \ldots, v_k$ són l.i. entre sí.
+		\end{enumerate}
+	\end{col}
+\end{defi}
+
+\begin{prop}
+	El rang d'una matriu és equivalent al nombre de files linealment independents i al nombre de columnes linealment independents.
+	\begin{proof}
+		Primer demostrarem que el nombre de files l.i. correspon amb la definició que hem fet del rang d'una matriu. Sigui $A\in\matspace{m\times n}$ la matriu de la qual volem determinar el rang. Per arribar a la forma esglaonada (per files), realitzarem un seguit de transformacions elementals per files per tal d'obtenir coeficients nuls per sota de cada pivot.
+		
+		Sigui $\tilde{A}$ la forma esglaonada de la matriu $A$. Denotarem $\tilde{a}_i$ la $i$-èsima fila d'$\tilde{A}$. Sigui $k$ el nombre de files d'$\tilde{A}$ que tenen pivot. Siguin $i_1, i_2, \ldots, i_k$ els índexos d'aquestes files, i siguin $j_1, j_2, \ldots, j_k$ els índexos de la columna que correspon al pivot de les files $\tilde{a}_{i_1}, \tilde{a}_{i_2}, \ldots, \tilde{a}_{i_k}$ respectivament. Suposem que \[\exists\lambda_1,\ldots,\lambda_k\in\real\qcolon \lambda_1\tilde{a}_{i_1} + \lambda_2\tilde{a}_{i_2} + \cdots + \lambda_k\tilde{a}_{i_k} = \vec{0}\,.\] Per la definició de l'algorisme de Gauss, $\tilde{a}_{i_1}$ serà l'única fila amb un coeficient no nul a la posició $j_1$. Per tant, $\lambda_1 = 0$. A més, $\tilde{a}_{i_2}$ serà l'única fila a part d'$\tilde{a}_{i_1}$ amb un coeficient no nul a la posició $j_2$; com que $\lambda_1$ ja és $0$, $\lambda_2$ només pot ser 0. Seguint aquest raonament inductiu concloem que tots els coeficients han de ser nuls. Per tant, aplicant la definició \ref{defi:ld}, els vectors $\tilde{a}_{i_1}, \tilde{a}_{i_2}, \ldots, \tilde{a}_{i_k}$ són l.i.. És a dir, que el nombre total de files l.i. d'$A$ és com a mínim $k$.
+		
+		Finalment, el nombre de files l.i. no pot ser major que $k$, ja que les altres files d'$\tilde{A}$ no tenen pivot i per tant (per definició) són nul·les, cosa que implica (vegeu $\ref{col:ld}$) que són l.d. amb les altres.
+	\end{proof}
+\end{prop}
+
+
+\section{Generadors, base i dimensió}
+
+\begin{specialteo}[Teorema de Steinitz]\label{teo:steinitz}
+	Sigui $\E$ un $\K$-espai vectorial finitament generat; sigui $U = \{u_1,\dots, u_n\}$ un conjunt de generadors d'$\E$ i sigui $W = \{w_1,..., w_m\}$ un conjunt de vectors linealment independents d'$\E$. Aleshores:
+	\begin{enumerate}[i)]
+		\item $m \leq n$
+		\item Podem substituir $m$ vectors del conjunt $\{u_1, ..., u_n\}$ pels $m$ vectors de $\{w_1,..., w_m\}$ de manera que el conjunt segueixi sent generador d'$\E$.
+	\end{enumerate}	
+	\begin{proof} 
+		Per $m=0$ és trivial; d'una banda, és obvi que $0\le n$, i d'altra banda, si substituïm 0 vectors de $U$, el conjunt no canvia, i, per  hipòtesi, aquest és generador d'$\E$. Per demostrar el cas general, raonem per inducció: suposem que el teorema és cert per $m = k-1$, on $k$ pren un valor arbitrari. Examinem el cas on $m = k$ a continuació, verificant ambdues conclusions del teorema l'una després de l'altra:
+		
+		\begin{enumerate}[i)]
+			\item Per hipòtesi, els vectors $w_1, \ldots, w_k$ són linealment independents; per tant, % prove
+			$w_1, \ldots, w_{k-1}$ també ho seran. Llavors, per hipòtesi d'inducció, podem substituir $k-1$ vectors d'$U$ per $w_1, \ldots, w_{k-1}$, de manera que---reordenant el conjunt $U$, si cal---el nou conjunt ${U'\defeq \{w_1, \ldots, w_{k-1}, u_k, \ldots, u_n\}}$ generi $\E$.
+			
+			Com que (per hipòtesi) $w_k\in\E$ i el conjunt $U'$ genera $\E$, $w_k$ es pot expressar com a combinació lineal dels vectors d'$U'$: 
+			\begin{equation}\label{eq:lincomb}
+				\exists \lambda_1,\ldots, \lambda_n \in \K \qcolon w_k = \sum_{i=1}^{k-1} \lambda_i w_i + \sum_{i = k}^{n} \lambda_i u_i\,.
+			\end{equation}
+			Sigui $r \defeq \min \{k-1, n\}$. Des de \eqref{eq:lincomb} es pot deduir que $k-1 < n$: en cas contrari, el terme de la dreta desapareixeria i per tant $w_k$ seria una combinació lineal de $w_1, \ldots, w_r$ (només agafem $r$ vectors ja que com a màxim podem substituir $r$ vectors d'$U$): $w_k = \sum_{i=1}^{r} \lambda_iw_i$. Això entraria en contradicció amb la hipòtesi (els vectors $\{w_1, \ldots, w_k\}$ són l.i.); per tant $k-1 < n$.
+			
+			Finalment, essent $n$ i $k$ nombres naturals, $k-1 < n$ és equivalent a $k \le n$. Per tant, unint aquesta última conclusió amb el cas base $m=0$, queda demostrat per inducció que $\forall m \colon m \le n$.
+
+			\item Seguint el raonament anterior, a partir de \eqref{eq:lincomb} també podem deduir que \[\exists i\in\{k,\ldots,n\}\qcolon \lambda_i \ne 0\,,\] ja que sinó $w_k$ seria, altre cop, combinació lineal de $w_1, \ldots, w_{k-1}$, cosa que contradiu la hipòtesi.
+			
+			Sigui $j\in\{k, \ldots, n\}$ un índex que compleix $\lambda_j \ne 0$. Llavors,
+			\begin{gather*}
+				w_k = \sum_{i=1}^{k-1} \lambda_i w_i + \sum_{i \in \{k, \ldots, n\}\setminus \{j\}} \lambda_i u_i  \ \;+ \lambda_j u_j\quad\Leftrightarrow\\
+				\Leftrightarrow\quad w_k - \sum_{i=1}^{k-1} \lambda_i w_i - \sum_{i \in \{k, \ldots, n\}\setminus \{j\}} \lambda_i u_i = \lambda_j u_j\quad\Leftrightarrow\\
+				\Leftrightarrow u_j = \frac{1}{\lambda_j}\left(w_k - \sum_{i=1}^{k-1} \lambda_i w_i - \sum_{i \in \{k, \ldots, n\}\setminus \{j\}} \lambda_i u_i\right)\,;
+			\end{gather*}
+			per tant, $u_j$ és combinació lineal del conjunt format per la resta de vectors d'$U'$ més el vector $w_k$. A partir del lema \ref{prve}, tenim que l'espai generat per $U'$ és el mateix que l'espai generat per $\{w_1, \ldots, w_{k-1}, u_{k+1}, \ldots, u_{j-1}, w_k, u_{j+1} , \ldots, u_n\}$: és a dir, que podem substituir també el vector $w_k$ per un dels vectors $u_i$ de manera que el conjunt resultant segueixi generant $\E$. 
+			
+			Per tant, queda demostrat per inducció el teorema.
+		\end{enumerate}
+	\end{proof}
+	
+	\begin{col}
+		En un $\K$-espai vectorial $\E$ finitament generat, totes les bases són finites i tenen la mateixa cardinalitat (el mateix nombre de vectors).
+	\end{col}
+	
+	\begin{proof} Sigui $B_1$ base d'$\E$  de cardinalitat $n$ ($|B_1| = n$) i sigui $B_2$ base d'$\E$ de cardinalitat $m$ ($|B_2| = m$). D'una banda, per definició, els $n$ vectors de $B_1$ generen $\E$ i els $m$ vectors de $B_2$ són vectors linealment independents d'$\E$; per tant, pel \hyperref[teo:steinitz]{Teorema de Steinitz}, $n \le m$. D'altra banda, commutant el raonament, els $m$ vectors de $B_2$ generen $\E$ i els $n$ vectors de $B_1$ són vectors linealment independents d'$\E$; per tant, pel \hyperref[teo:steinitz]{Teorema de Steinitz}, $m \le n$.  Conseqüentment, $n=m$.
+	\end{proof}
+\end{specialteo}
+
+
+
+
