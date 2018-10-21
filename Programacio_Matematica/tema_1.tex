@@ -1,21 +1,19 @@
 \chapter[Introducció a la prog. lineal \& símplex primal]%
 {Introducció a la programació lineal no entera i símplex primal}
 
-\newcommand{\x}[1][]{{\vec{x}_{#1}\,}'}
-
 \section{Solucions bàsiques factibles}
 
 El fet que hi hagi solucions òptimes que siguin punts extrems no és de gran ajuda computacional per sí sol. Per tenir una caracterització computacionalment assequible cal el concepte de solució bàsica factible, que es defineix a continuació.
 
 \begin{defi}[Solució bàsica]
-	Donat un poliedre en forma estàndard $P_e$ associat a un problema de programació lineal, una solució bàsica és un vector $\vec{x}\in P_e$ del qual es pot fer la partició $\x = \left[\x[\B]\mid\x[\N]\right]$ tal que
+	Donat un poliedre en forma estàndard $P_e$ associat a un problema de programació lineal, una solució bàsica és un vector $\vb{x}\in P_e$ del qual es pot fer la partició $\vb{x} = \left[\vb{x}_\B\mid\vb{x}_\N\right]$ tal que
 	\begin{enumerate}[i)]
 		\item $\B,\N\subseteq\{1,\ldots,m \}$ són conjunts d'índexos (i són complementaris). $\B$ s'anomena el conjunt d'índexos de variables bàsiques o \textbf{base}, i $\N$ s'anomena el conjunt d'índexos de variables no bàsiques.
 		%
-		\item $\x[\B] \defeq 
+		\item $\vb{x}_\B \defeq 
 		\begin{bmatrix}x_{\B(1)} & x_{\B(2)} & \cdots & x_{\B(m)}\end{bmatrix}\,$
 		i
-		$\,\x[\N] \defeq 
+		$\,\vb{x}_\N \defeq 
 		\begin{bmatrix}x_{\N(1)} & x_{\N(2)} & \cdots & x_{\N(n-m)}\end{bmatrix}\,$, on $\B(i)$ i $\N(i)$ denoten, respectivament, l'$i$-èsim índex de $\B$ i $\N$.
 		%
 		\item La matriu bàsica es defineix com 
@@ -33,7 +31,7 @@ El fet que hi hagi solucions òptimes que siguin punts extrems no és de gran aj
 Aquesta definició no és gaire intuïtiva; a continuació es presenta una versió alternativa basada en el poliedre general.
 
 \begin{defi}[Solució bàsica (definició alternativa)]
-	Donat un poliedre (general) $P\subseteq\real^n$ associat a un problema de programació lineal, direm que $\x\in P$ és una solució bàsica si és la intersecció de $n$ restriccions linealment independents.
+	Donat un poliedre (general) $P\subseteq\real^n$ associat a un problema de programació lineal, direm que $\vb{x}\in P$ és una solució bàsica si és la intersecció de $n$ restriccions linealment independents.
 \end{defi}
 
 \section{Direccions bàsiques factibles}
