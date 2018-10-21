@@ -2,8 +2,75 @@
 
 \section{Definició del problema dual}
 
-\begin{defi}[Dual]
-	Donat un problema primal $(P)$, ell problema dual corresponent es defineix segons la taula \ref{table:dual}.
+La idea intuïtiva\footnote{L'explicació d'aquesta secció és una paràfrasi de \textit{Introduction to Linear Optimization}, Bertsimas \& Tsitsiklis, capítol 4, secció 1} darrere de l'anomenat ``problema dual'' és la següent. Suposem que $(P)$ és el següent problema lineal de minimització:
+\[
+	(P)
+	\begin{cases}
+	\begin{aligned}
+	\min 			&&& \vb{c}'\vb{x}\\
+	\text{s.a.}		&&& A\vb{x} = \vb{b}\\
+	&&& \vb{x}\ge0
+	\end{aligned}
+	\end{cases}\ .
+\]
+En comptes de considerar el problema com està, trobant una solució òptima $x^\ast$ que satisfaci estrictament les constriccions, podem pensar en una versió ``relaxada'' del problema, on minimitzem sense constriccions la mateixa funció objectiu, però sumant-li un cert terme que indica la ``quantitat'' amb la qual s'estan violant les constriccions. 
+
+Si, per cada [$j$-èsima] restricció, introduïm un paràmetre $\lambda_j\in\real$ que indiqui el ``preu que implica violar la restricció'', podem formular el mencionat problema ``relaxat'',
+\[
+	(\tilde{P})
+	\begin{cases}
+	\begin{aligned}
+	\min 			&&& \vb{c}'\vb{x} + \vb{\lambda}'(\vb{b}-A\vb{x})\\
+	\text{s.a.}		&&& \vb{x} \ge 0\\
+	\end{aligned}
+	\end{cases}\ ,
+\]
+on $\vb{\lambda}$ és el vector dels preus $\lambda_j$ (per tant és del mateix ordre que $\vb{b}$), i $\vb{b}-A\vb{x}$ es pot pensar com un vector que conté la quantitat amb què s'està violant cada constricció. Anomenem $z$ la funció objectiu de $(P)$ i $\tilde{z}(\vb{\lambda})$---en funció de $\vb{\lambda}$---la funció objectiu de $(\tilde{P})$. Noteu que si la constricció es satisfà estrictament, és a dir, $A\vb{x}=\vb{b}$, llavors $b-A\vb{x} = 0$, i per tant $z = \tilde{z}(\vb{\lambda})$.
+
+Podem intuir que el valor de $\tilde{z}(\vb{\lambda})$ sempre serà menor o igual que $z$, ja que el problema $(\tilde{P})$ és una versió més ``flexible'' de $(P)$---el conjunt de solucions factibles és molt més ampli---i per tant es podrà aconseguir un mínim més petit (o almenys igual) que a $(P)$; i, efectivament, per qualsevol $x^\ast$ solució factible de $(P)$,
+\[
+	\tilde{z}^\ast(\vb{\lambda}) \defeq \min\limits_{\vb{x\ge 0}}\{\vb{c}'\vb{x} + \vb{\lambda}'(\vb{b}-A\vb{x})\} \ \le\  \vb{c}'\vb{x^\ast} + \vb{\lambda}'(\vb{b}-A\vb{x^\ast}) = \vb{c}'\vb{x^\ast}\,.
+\]
+ja que $\quad\min A \le a\quad$ per qualsevol conjunt $A$ i element $a\in A$.
+
+Per tant, si trobem $\vb{\lambda}$ tal que $\tilde{z}^\ast(\vb{\lambda})$ sigui màxim trobarem la fita inferior del valor òptim de la f.o. de $(P)$ més ajustada (la més ``propera''). Podem expressar això com el problema de PL
+\begin{equation}\label{eq:dual}
+	(D)
+	\begin{cases}
+	\begin{aligned}
+		\max_{\vb{\lambda}}		&&& \tilde{z}^\ast(\vb{\lambda})\\
+		\text{s.a.}				&&& \text{\small\textit{(cap constricció)}}\\
+	\end{aligned}
+	\end{cases}\
+\end{equation}
+és una versió ``primitiva'' del que anomenem \textit{problema dual} de $(P)$. De fet, l'interès principal del dual és, com veurem més endavant al \hyperref[teo:dualitat-fort]{teorema fort de dualitat}, que el valor en l'òptim de $(D)$ coincideix amb el valor en l'òptim de $(P)$---és a dir, que la ``fita inferior més ajustada'' de l'òptim de $(P)$ coincideix exactament amb aquest.
+
+Segons la definició de $\tilde{z}^\ast(\vb{\lambda})$,
+%
+\begin{equation}\label{eq:dual-of}
+\begin{gathered}
+	\tilde{z}^\ast(\vb{\lambda})
+	= \min_{\vb{x}\ge 0} \{\vb{c}'\vb{x}+\vb{\lambda}'(\vb{b}-A\vb{x})\}
+	= \vb{\lambda}'\vb{b}+ \min_{\vb{x}\ge0}\{\vb{c}'\vb{x}-\vb{\lambda}'A\vb{x}\}=\\
+	=  \vb{\lambda}'\vb{b}+ \min_{\vb{x}\ge0}\{(\vb{c}'-\vb{\lambda}'A)\vb{x}\}\,.
+\end{gathered}
+\end{equation}
+%
+Noteu que si \[\vb{c}'-\vb{\lambda}'A \le \vb{0}\,,\] tenint en compte que $\vb{x}\ge\vb{0}$, llavors podem fer $(\vb{c}'-\vb{\lambda}'A)\vb{x}$ tant ``negatiu'' com vulguem, i per tant no és un cas que ens interessi pel problema $(D)$---que és un problema de maximització de $\tilde{z}^\ast(\vb{\lambda})$. En canvi, si \[\vb{c}'-\vb{\lambda}'A \ge \vb{0}\,,\] llavors $\min_{\vb{x}\ge0}\{(\vb{c}'-\vb{\lambda}'A)\vb{x}\}$ és 0. Per tant només hem de tenir en compte els casos en què $\vb{\lambda}'A \le \vb{c}'$.  Podem fer un raonament similar pels problemes on $\vb{x}\le 0$ o on $\vb{x}$ és lliure---vegeu la taula \ref{table:dual}. En síntesi, continuant a partir de \eqref{eq:dual-of}, el problema $(D)$ que hem enunciat a \eqref{eq:dual} es pot reduir al següent:
+\[
+	(D)
+	\begin{cases}
+	\begin{aligned}
+		\max_{\vb{\lambda}}		&&& \vb{\lambda}'\vb{b}\\
+		\text{s.a.}				&&& \vb{\lambda}'A \le \vb{c}'\\
+	\end{aligned}
+	\end{cases}\ .
+\]
+
+Ara continuem amb la definició formal de problema dual.
+
+\begin{defi}[Problema Dual]
+	Donat un problema primal $(P)$, el problema dual corresponent (denotat per $(D)$) es defineix segons la taula \ref{table:dual}.
 \end{defi}
 
 
@@ -161,9 +228,9 @@
 
 Noteu que el teorema \ref{teo:folga-complement} s'anomena de ``folga complementària'' perquè les expressions \[(\vb{a_i}'\vb{x}-b_i) \quad \text{i}\quad (c_j-\vb{\lambda}'A_j) \] es poden interpretar com les ``folgues'' associades a les restriccions primals i duals \[A\vb{x} \lesseqgtr \vb{b} \quad \text{i}\quad \vb{\lambda}'A \lesseqgtr \vb{c}\,,\] respectivament; ``complementària'' perquè la ``folga'' d'un problema està associada amb una component del vector variable de l'altre problema---$(\vb{a_i}'\vb{x}-b_i)$ amb $\lambda_i$ i $(c_j-\vb{\lambda}'A_j)$ amb $x_j$.
 
-\begin{defi*}[Solució bàsica factible dual]\label{defi:SBFD}
+\begin{defi}[Solució bàsica factible dual]\label{defi:SBFD}
     Sigui $\left(P\right)$ un problema de PL i sigui $(P)_e$ la seva forma estàndard. Llavors, direm que tota solució bàsica $\vb{x}$ de $\left(P\right)_e$ tal que $\mathbf{r} \geq \vb{0}$ és una solució bàsica factible dual (SBFD).
-\end{defi*}
+\end{defi}
 
 Noteu que la definició \ref{defi:SBFD} deriva directament dels resultats que hem obtingut durant la demostració del teorema fort de dualitat (\ref{teo:dualitat-fort}): extrapolant l'argument que vam utilitzar, per tota solució bàsica $\vb{x}$---d'una forma estàndard $(P)_e$---amb matriu bàsica $B$ i un vector de costos reduïts no negatius, el vector $\vb{\lambda}' \defeq c_\B' B^{-1}$ és una solució factible del problema dual corresponent.
 
