@@ -1,26 +1,26 @@
 \chapter{Variables aleatòries discretes}
 
-\section[Definició i objectes relacionats]
-    {Definició i objectes relacionats
-    \sectionmark{Definició i objectes relacionats}}
-    \sectionmark{Definició i objectes relacionats}
+\section{Definició i objectes relacionats}
 
 \begin{defi}[variable aleatòria!discreta]
-    Sigui $\lp \Omega, \Asuc, p\rp$ un e. prob. i $X\colon \Omega\to\real$ una variable aleatòria. Diem que $X$ és discreta si
+    Sigui $\lp \Omega, \Asuc, p\rp$ un espai de probabilitat i sigui $X\colon \Omega\to\real$ una variable aleatòria. Diem que $X$ és discreta si
     $\im(X)$ és numerable.
 \end{defi}
 
 \begin{obs}
-    En la pràctica $\im(X) = \lc x_1 < x_2 < \dots \rc$ és un conjunt numerable ordenat, en els casos que veurem $\im(X)\subseteq\z$.
+    En la pràctica, $\im(X) = \lc x_1 < x_2 < \dots \rc$ és un conjunt numerable ordenat. En els casos que veurem, $\im(X)\subseteq\z$.
     Escriurem $p_i = p(X=x_i)$.
 \end{obs}
 
 \begin{obs}
-    Sigui $A\subset\mathcal{B}$, aleshores $p_X(A) = p(x\in A) = \sum_{i\in A}{p_i}$.
+    Sigui $X$ una variable aleatòria discreta i sigui $A\in\mathcal{B}$. Aleshores, 
+    \[
+        p_X(A) = p(x\in A) = \sum_{x_i\in A\cap\im\lp X\rp}{p_i}.
+    \]
 \end{obs}
 
 \begin{obs}
-    Donat $\lc x_i \rc_{i \ge 1} \subset\real$ creixent i valors $\lc x_i \rc_{i \ge 1} \subset [0,1] \tq \sum{p_i}=1$, es pot definir
+    Donat $\lc x_i \rc_{i \ge 1} \subset\real$ creixent i valors $\lc p_i \rc_{i \ge 1} \subset [0,1] \tq \sum{p_i}=1$, es pot definir
     una variable discreta $X$ que pren valors a $\lc x_i \rc$ tal que $p(X=x_i) = p_i$ $\forall\,i$.
 \end{obs}
 
@@ -33,10 +33,10 @@
     \end{cases}.\]
 \end{obs}
 
-\begin{prop}[Operador esperança] Sigui $X$ v.a. discreta, aleshores
+\begin{prop}[Operador esperança] Sigui $X$ una variable aleatòria discreta. Aleshores,
     \begin{enumerate}[i)]
         \item $\esp[X] = \sum\limits_{i \ge 1}{x_i p_i}$,
-        \item $g\colon \real\to\real$ mesurable, $\esp[g(x)] = \sum\limits_{i \ge 1}{g(x_i) p_i}$.
+        \item Si $g\colon \real\to\real$ és una funció mesurable, $\esp[g(x)] = \sum\limits_{i \ge 1}{g(x_i) p_i}$.
     \end{enumerate}
 \end{prop}
 
@@ -44,19 +44,19 @@
     \begin{enumerate}[i)]
         \item[]
         \item Fent servir la definició d'esperança tenim que
-	  \[ \esp[X] = \int_{\real}{x\dif P_x} = \sum{x_i P_X(X=x_i) + \int_{\real\setminus\cup\{x_i\}}{x\mathbb{I}(x) \dif P_X}} = \sum_{i \ge 1}{x_i p_i} + 0\]
+	  \[ \esp[X] = \int_{\real}{x\dif P_X} = \sum{x_i P_X(X=x_i) + \int_{\real\setminus\cup\{x_i\}}{x\mathbb{I}(x) \dif P_X}} = \sum_{i \ge 1}{x_i p_i} + 0\]
             perquè $P_X(\real\setminus\cup\{x_i\}) = 0$.
         \item Directe a partir del cas anterior i del fet que $g$ és mesurable.
     \end{enumerate}
 \end{proof}
 
 \begin{obs}
-    Sigui $X$ una variable aleatòria, aleshores,
+    Sigui $X$ una variable aleatòria. Aleshores,
     \[\var[X] = \esp[X^2] - \esp[X]^2 = \sum_{i \ge 1}{x_i^2 p_i} - \left(\sum_{i \ge 1}{x_i p_i}\right)^2.\]
 \end{obs}
 
 \begin{prop}
-    $X, Y$ v.a. discretes, $\im(X) = \lc x_i \rc_{i \ge 1}$, $\im(Y) = \lc y_i \rc_{i \ge 1}$, $g\colon \real^2\to\real$. Aleshores
+    Siguin $X, Y$ variables aleatòries discretes, amb $\im(X) = \lc x_i \rc_{i \ge 1}$ i $\im(Y) = \lc y_i \rc_{i \ge 1}$, i sigui $g\colon \real^2\to\real$. Aleshores
     \[\esp[g(X,Y)] = \sum_{i,j \ge 1}{g(x_i,y_i) p(X=x_i, Y=y_i)}.\]
 \end{prop}
 \begin{proof}
@@ -65,7 +65,7 @@
 
 
 \begin{prop}
-    Siguin $X,Y$ v.a. discretes. Són independents si i només si, $\forall x \in\im(X)$ i $\forall y \in\im(Y)$,
+    Siguin $X,Y$ variables aleatòries discretes. Són independents si i només si $\forall x \in\im(X)$ i $\forall y \in\im(Y)$,
     \[P(X=x, Y=y) = P(X=x)P(Y=y)\]
 \end{prop}
 \begin{proof}
@@ -78,33 +78,40 @@
 \end{defi}
 
 \begin{obs}
-    Sigui $(X,Y)$ vector de variables aleatories. Aleshores és discret $\iff$ $X$ i $Y$ són discretes.
+    Sigui $(X,Y)$ vector de variables aleatories. Aleshores és discret si i només si $X$ i $Y$ són discretes.
 \end{obs}
 
 \begin{defi}
-    Sigui $(X,Y)$ vector de variables aleatories discret, $\forall(X,Y) \in \im((X,Y))$ definim
-    \[P_{(X,Y)}(x,y) = P(X=x)P(Y=y)\]
-    que si $X,Y$ són independents és $P(X=x,Y=y)$.
+    Sigui $(X,Y)$ vector de variables aleatories discret. Definim
+    \begin{align*}
+        P_{\lp X,Y\rp}\colon\real ^2&\to\real\\
+        \lp x, y\rp &\mapsto P_{\lp X,Y\rp}\lp x, y\rp \equiv P\lp X=x\rp P\lp Y=y\rp.
+    \end{align*}
+    Si $X,Y$ són independents, $P_{\lp X,Y\rp}\lp x, y\rp=P(X=x,Y=y)$.
 \end{defi}
 
 \begin{lema}
-    Si $X,Y$ són v.a. discretes independents, amb $\esp[|X|], \esp[|Y|] < +\infty$,
+    Si $X,Y$ són variables aleatòries discretes independents amb $\esp[|X|], \esp[|Y|] < +\infty$,
     \[\esp[XY] = \esp[X]\esp[Y].\]
 \end{lema}
-%TODO Acabar la demo porfa
+
 \begin{proof}
-    \[\begin{aligned}
-    \esp[xy] =& \int_\real x\dif P_{XY} \\
-    &= \sum_{u\in\im(X,Y)}{uP(XY=u)} \\
-    &= \sum_{x\in\im(X)\setminus\{0\}} \lp\sum_{\frac{u}{x}\in\im(Y)} uP\lp X=x,Y=\frac{u}{x} \rp\rp
-    \end{aligned}\]
+    \begin{align*}
+        \esp[XY] &= \sum_{a\in\im\lp X\rp\cup\im\lp Y\rp} aP\lp XY=a\rp=\\
+        &=\sum_{a\in\im\lp X\rp\cup\im\lp Y\rp} a\sum_{b\in\im\lp X\rp\setminus\lc 0\rc} P\lp X=b, Y=\frac{a}{b}\rp=\\
+        &=\sum_{a\in\im\lp X\rp\cup\im\lp Y\rp} a\sum_{b\in\im\lp X\rp\setminus\lc 0\rc} P\lp X=b\rp P\lp Y=\frac{a}{b}\rp=\\
+        &=\sum_{b\in\im\lp X\rp\setminus\lc 0\rc}\sum_{a\in\im\lp X\rp\cup\im\lp Y\rp} a P\lp Y=\frac{a}{b}\rp P\lp X=b\rp=\\
+        &=\sum_{b\in\im\lp X\rp\setminus\lc 0\rc} bP\lp X=b\rp\sum_{a\in\im\lp X\rp\cup\im\lp Y\rp} \frac{a}{b} P\lp Y=\frac{a}{b}\rp=\\
+        &=\sum_{b\in\im\lp X\rp\setminus\lc 0\rc} bP\lp X=b\rp\esp\lb Y\rb=\\
+        &=\esp\lb X\rb\esp\lb Y\rb.
+    \end{align*}
 \end{proof}
 
 
 \section{Funció generadora de probabilitat}
 D'aquí en endavant, prendrem $X$ variable aleatòria discreta amb $\im(X) \subseteq \n_{\geq 0}$.
 \begin{defi}[funció!generadora de probabilitat]
-    La funció generadora de probabilitat de $X$ \'es la sèrie formal de potències
+    Definim la funció generadora de probabilitat d'$X$ com la sèrie formal de potències
     \[G_X(z) = \sum_{n \geq 0} P(X = n) z^n.\]
     Podem pensar-la també com $\esp[z^X]$.
 \end{defi}
