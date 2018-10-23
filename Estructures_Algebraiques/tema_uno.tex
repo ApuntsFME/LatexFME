@@ -1876,31 +1876,31 @@ Veamos que, en general, este enunciado es falso.
 \end{proof}
 
 \begin{defi}[Sylow de un grupo]\idx{subgrupo!$p$-Sylow}
-    Sea $G$ un grupo finito con $\abs{G} = p^rm$ con $p$ primo, $r \geq 0$ y $p \nmid m$. Defiminos
+    Sea $G$ un grupo finito con $\abs{G} = p^rm$ con $p$ primo, $r \geq 0$ y $p \ndiv m$. Defiminos
     \[
-        \text{Syl}_p(G) \colon = \left\{ H \text{ sg. de } G \mid \abs{H} = p^r \right\}
+        \text{Syl}_p(G) \colon = \left\{H \mid H \text{ sg. de } G \text{ y } \abs{H} = p^r \right\}.
     \]
     Llamaremos $p$-Sylow de $G$ a cualquier $H \in \Syl_p(G)$ y notaremos como $n_p(G) = \# \text{Syl}_p(G)$
 \end{defi}
 
 \begin{obs}
-    Si $p \nmid \abs{G} \implies \left\{ 1 \right\}$ es $p$-syloso y $n_p(G) = 1$. Y si
+    Si $p \ndiv\, \abs{G}$, entonces $\left\{ 1 \right\}$ es $p$-Sylow de $G$ y $n_p(G) = 1$. Y si
     $p \vert \abs{G}$, por el PTS (\ref{teo:ptsyl}), $n_p(G) \geq 1$.
 \end{obs}
 
 \begin{defi}[acción!por conjugación de $G$ en los subgrupos]
-    Sea $G$ un grupo y sea $X = \left\{ H \mid H \text{ es sg. de } \right\}$. Definiremos la acción por
+    Sea $G$ un grupo y sea $X = \left\{ H \mid H \text{ es sg. de } G\right\}$. Definiremos la acción por
     conjugación como
     \[
         \begin{aligned}
             G \times X &\to X \\
-            (a, H) &\mapsto aHa^{-1}
+            (a, H) &\mapsto a\cdot H \equiv aHa^{-1}.
         \end{aligned}
     \]
 \end{defi}
 
 \begin{obs}
-    La aplicación está bien definida, ya que $aHa^{-1}$ es, effectivamente, subgrupo de $G$.
+    La aplicación está bien definida, ya que $aHa^{-1}$ es, efectivamente, subgrupo de $G$.
 \end{obs}
 
 \begin{obs}
@@ -1908,25 +1908,28 @@ Veamos que, en general, este enunciado es falso.
     \[
         b \cdot (a \cdot H) = b\left( aHa^{-1} \right)b^{-1} = (ba)H(ba)^{-1} = (ba) \cdot H
     \]
-    Y tambin $1 \cdot H = 1 H 1^{-1} = H$
+    y $1 \cdot H = 1 H 1^{-1} = H$.
 \end{obs}
 
 \begin{obs}
     Los puntos fijos son los $H$ subgrupos de $G$ tales que $aHa^{-1} = H$ $\forall a \in G$, es decir,
-    los puntos fijos los $H$ tales que $H \triangleleft G$. Además para todo $H$ subgrupo, la órbita de $H$
+    los subgrupos normales de $G$. Además, para todo $H$ subgrupo, la órbita de $H$
     se escribe como
     \[
-        G\cdot H = \left\{ aHa^{-1} \mid a \in G \right\} = \left\{ \text{conjugado de } H \right\}
+        G\cdot H = \left\{ aHa^{-1} \mid a \in G \right\},
     \]
+    y es el conjunto de conjugados de $H$ por un elemento de $G$
 \end{obs}
 
 \begin{defi}[normalizador de un subgrupo en un grupo]
-    Sea $G$ un grupo y $H \subseteq G$ un subgrupo. Definimos el normalizador de $H$ en $G$ como
+    Sea $G$ un grupo y $H \subseteq G$ un subgrupo de $G$. Definimos el normalizador de $H$ en $G$ como
     \[
-        N_G(H) = \left\{ a \in G \vert aHa^{-1} = H \right\}
+        N_G(H) = \left\{ a \in G \mid aHa^{-1} = H \right\}.
     \]
-    que es un grupo de $G$.
 \end{defi}
+\begin{obs}
+    El normalizador de un subgrupo es un grupo.
+\end{obs}
 
 \begin{obs}
     $N_G(H) = G_H$ (tomando la acción por conjugación de $G$ en $H$).
@@ -1938,7 +1941,7 @@ Veamos que, en general, este enunciado es falso.
     = \left[ G : N_G(H) \right]$.
 
     Una vez visto esto, $H \triangleleft G \iff$ todos los conjugados de $H$ son iguales $\iff \# G \cdot H = 1
-    \iff \left[ G : N_G(H) \right] = 1 \iff G = N _G(H)$
+    \iff \left[ G : N_G(H) \right] = 1 \iff G = N _G(H)$.
 \end{obs}
 
 \begin{obs}
@@ -1947,14 +1950,14 @@ Veamos que, en general, este enunciado es falso.
     \[
         \begin{aligned}
             G \times \Syl_p(G) &\to \Syl_p(G) \\
-            (a, H) &\mapsto aHa^{-1}
+            (a, H) &\mapsto aHa^{-1}.
         \end{aligned}
     \]
     Resta ver que $aHa^{-1}$ tambi\'{e}n es $p$-Sylow. Esto es cierto ya que
     \[
-        p^r = \abs{H} = \abs{aHa^{-1}} \implies \abs{aHa^{-1}} = p^r
+        p^r = \abs{H} = \abs{aHa^{-1}} \implies \abs{aHa^{-1}} = p^r,
     \]
-    y $aHa^{-1}$ es $p$-Sylow
+    y $aHa^{-1}$ es $p$-Sylow.
 \end{obs}
 
 \begin{obs}
@@ -1965,15 +1968,15 @@ Veamos que, en general, este enunciado es falso.
             x &\mapsto axa^{-1}
         \end{aligned}
     \]
-    es un morfismo de grupos. En efecto $f(xy) = axya^{-1} = axa^{-1}aya^{-1} = f(x)f(y)$.
+    es un morfismo de grupos. En efecto, $f(xy) = axya^{-1} = axa^{-1}aya^{-1} = f(x)f(y)$.
 \end{obs}
 
 \begin{teo}[Segundo teorema de Sylow]\label{teo:stsyl}
-    Sea $G$ un grupo finito con $\abs{G} = p^rm$ con $p$ primo y $p \nmid m$. Entonces
+    Sea $G$ un grupo finito con $\abs{G} = p^rm$ con $p$ primo y $\lp p, m\rp = 1$. Entonces,
     \begin{enumerate}[i)]
-        \item Sea $L$ un $p$-subgrupo de $G$. Entonces $\exists H$ $p$-Sylow de $G$ tal que $L \subseteq H$.
-        \item Sean $H$ y $P$ dos $p$-Sylow de $G$. Entonces $H$ y $P$ so conjugados.
-        \item $n_p(G) \equiv 1$ $(\mod p$ y $n_p(G) \vert m$.
+        \item Sea $L$ un $p$-subgrupo de $G$. Entonces, $\exists H$ $p$-Sylow de $G$ tal que $L \subseteq H$.
+        \item Sean $H$ y $P$ dos $p$-Sylow de $G$. Entonces, $H$ y $P$ son conjugados.
+        \item $n_p(G) \equiv 1 \mod p$ y $n_p(G) \vert m$.
     \end{enumerate}
 \end{teo}
 
