@@ -262,7 +262,7 @@ Per últim, noteu que si una solució bàsica $\vb{x}$ de $(P_e)$ és factible d
 
 Per desenvolupar l'algorisme del símplex dual, partirem de l'estructura general del símplex primal. Per poder emprar solucions bàsiques, hem de poder definir una forma estàndard del dual. Partirem amb la següent definició provisional.
 
-\begin{defi*}[Forma estàndard del dual (provisional)]
+\begin{defi*}[Forma estàndard del dual]\label{defi:std-dual}
 	Sigui $(P_e)$ un problema en forma estàndard i sigui $(D^e)$ el seu dual:
 	\[
 		(P_e)
@@ -379,6 +379,45 @@ on $\varnothing$ indica una submatriu nul·la, $\vb{\rho_\B}$ és un vector d'or
 	%
 	\vb{\rho_\B}\,.
 \end{equation}
+
+Ara bé, si restringim els vectors $\vb{\lambda}$ als que tenen la forma $\vb{\lambda}'=\vb{c_\B}'B^{-1}$ per una certa matriu bàsica (primal) $B$, llavors concloem el que s'enuncia a la proposició \ref{prop:equiv-rho-r}.
+
+\begin{prop}\label{prop:equiv-rho-r}
+	Donat un problema primal en forma estàndard $(P_e)$ i el seu dual $(D^e_{\tilde{e}})$ (segons la definició \ref{defi:std-dual}), si considerem només els vectors duals de la forma $\vb{\lambda}'=\vb{c_\B}'B^{-1}$ per una certa SBFD  $\vb{x}$ de $(P_e)$ amb matriu bàsica $B$, llavors $\vb{\rho} = \vb{r}$, on $\vb{r}$ és el vector de costos reduïts associat a $\vb{x}$, i per tant
+	\[
+		(D^e_{\tilde{e}})
+		\begin{cases}
+		\begin{aligned}
+			\min 			&&& -\vb{\lambda}'\vb{b}\\
+			\text{s.a.}		&&& A'\vb{\lambda} +  \vb{r} = \vb{c}\\
+			&&& \vb{\rho} \ge \vb{0}
+		\end{aligned}
+		\end{cases}\,, 
+		%
+		\quad \vb{y} =
+		\left[
+		\begin{array}{@{}c@{}}
+			\vb{\lambda}\\
+			\hline
+			\vb{r_\B}\\
+			\hline
+			\vb{r_\N}
+		\end{array}
+		\right]\,.
+	\]
+	
+	\begin{proof}
+		Sigui $\vb{x}$ una SBFD de $(P)$ amb matriu bàsica $B$, i sigui $\vb{\lambda}' = \vb{c_\B}'B^{-1}$. Per la \hyperref[defi:SBFD]{definició de SBFD}, el vector de costos reduïts $\vb{r}$ associat a $\vb{x}$ és no negatiu. A més,
+		\[
+			\vb{\lambda}'A = \vb{c_\B}'B^{-1}A
+		\] 
+		i per tant
+		\[
+			\vb{\lambda}'A + \vb{r}' = \vb{c_\B}'B^{-1}A + (\vb{c}' - \vb{c_\B}B^{-1}A) = \vb{c}'\,;
+		\]
+		és a dir, que les folgues $\vb{\rho}$ de la restricció $\vb{\lambda}'A +  \vb{\rho}' = \vb{c}'$ coincideixen amb $\vb{r}$.
+	\end{proof}
+\end{prop}
 
 \begin{alg}[del símplex dual]
     \begin{enumerate}
