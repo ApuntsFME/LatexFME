@@ -228,7 +228,7 @@
 \end{obs}
 
 \begin{obs}
-    $\left<S\right>$ es el menor subgrupo de de $G$ que contiene a $S$.
+    $\left<S\right>$ es el menor subgrupo de $G$ que contiene a $S$.
 \end{obs}
 
 \begin{proof}
@@ -236,7 +236,7 @@
     Si $S \neq \emptyset$, es trivial que $S \subset \left<S\right>$, veamos ahora que es un subgrupo de $G$.
     \begin{enumerate}[i)]
         \item $\exists a \in S \implies a \in \left<S\right> \implies \left<S\right> \neq \emptyset$,
-        \item Si $a_1\cdots a_r, b_1 \cdots b_s \in \left<S\right>$, entonces $a_1 \cdots a_r b_1 \cdots b_s \in \left<S\right>$,
+        \item Si $a_1\cdots a_r \in \left<S\right>$ i $b_1\cdots b_s \in \left<S\right>$, entonces $a_1 \cdots a_r b_1 \cdots b_s \in \left<S\right>$,
         \item Si $a_1 \cdots a_r \in \left<S\right>$, entonces $\left( a_1 \cdots a_r \right)^{-1} =
             a^{-1}_r \cdots a^{-1}_1 \in \left<S\right>$.
     \end{enumerate}
@@ -245,7 +245,7 @@
     \[
         \begin{rcases}
             a_1 \in S \subseteq L \text{ o } a^{-1}_1 \in S \implies \left( a^{-1}_1 \right)^{-1} \in L\\
-            \vdots \\
+            \vdots \quad \quad \vdots \quad \quad  \vdots \quad \; \vdots \;\;\; \quad \quad \vdots \quad \quad  \quad \quad \vdots \quad \quad \quad \;\vdots\\
             a_r \in S \subseteq L\text{ o } a^{-1}_r \in S \implies \left( a^{-1}_r \right)^{-1} \in L
         \end{rcases}
         \implies a_1 \cdots a_r \in L.
@@ -319,7 +319,7 @@
             \]
         \item $x^m = x^{m^\prime} \iff x^{m - m^\prime} = 1 \iff n \vert m - m^\prime \iff
             m \equiv m^\prime \pmod{n}$.
-        \item Sean $k = \ord\left( x^m \right)$ y $g = \mcd(n, m)$. Queremos ver que $k = n/g$.
+        \item Sean $k = \ord\left( x^m \right)$ y $g = \mcd(n, m)$. Queremos ver que $k = \frac{n}{g}$.
             \[
                 \left( x^m \right)^{\frac{n}{g}} = x^{\frac{mn}{g}} = \left( x^n \right)^{\frac{m}{g}} = 1
                 \implies k \left\vert \frac{n}{g} \right. .
@@ -329,7 +329,7 @@
                 1 = \left( x^m \right)^k = x^{mk} \implies n \vert mk \implies \left.\frac{n}{g} \right\vert \frac{m}{g} k
                 \substack{n/g \text{ y } m/g \\ \implies \\ \text{ primos entre si}} \left.\frac{n}{g} \right\vert k.
             \]
-            Y sumando los dos resultados, tenemos que $\frac{n}{g} = k$.
+            Por lo tanto, como tenemos dos números que se dividen el uno al otro, concluímos que son iguales, es decir que $k = \frac{n}{g}$. Con esto hemos acabado la demostración.
     \end{enumerate}
 \end{proof}
 
@@ -346,13 +346,14 @@
     Lo denotaremos como $G = C_n$ (grupo cíclico de orden $n$).
     Si $\ord(G) = \infty$, entonces
     \[
-        G = \setb{x^k \mid k \in \z}.
+        G = \setb{x^k \mid k \in \z},
     \]
+    aunque no trabajaremos con grupos infinitos este curso.
 \end{obs}
 
 \begin{example}
+    Como casos comunes de grupos cíclicos tenemos
     \begin{enumerate}[1.]
-        \item[]
         \item $\z = \left< 1 \right> = \left< -1 \right>$.
         \item $\faktor{\z}{n\z} = \left< \bar{k} \right>$ con $\mcd(n, k) = 1$.
     \end{enumerate}
@@ -400,7 +401,7 @@
                     \mcd(n, m) = \frac{n}{d} \iff \mcd\left( \frac{n}{d}d, \frac{n}{d}k \right) = \frac{n}{d}
                     \iff \mcd(d, k) = 1.
                 \]
-                Con esta última condición, tenemos que
+                Siendo $k=\frac{m}{\frac{n}{d}}$. Como $n>m$ tenemos que $d>k$ y por lo tanto tenemos que
                 \[
                     \varphi(d) = \card \setb{ k \in \z \mid \mcd(k, d) = 1 \text{ y } 1 \leq k \leq d}
                     = \card \setb{ x^m \mid \ord\left( x^m \right) = d}.
@@ -559,16 +560,16 @@
 \begin{proof}
     \begin{enumerate}[i)]
         \item[]
-        \item Veamos que se cumplen las tres propiedades de la definición \ref{defi:subgrupo}.
+        \item Veamos que se cumplen las tres propiedades de la definición \ref{defi:subgrupo} para $H$.
         \begin{enumerate}[i)]
             \item $1 \in H \implies f(1) = 1 \in f(H) \implies f(H) \neq \emptyset$.
             \item Sean $a, b \in H$. Entonces, $ab \in H$ y $f(a) f(b) = f(ab) \in f(H)$.
             \item Sea $a \in H$. Entonces, $a^{-1} \in H$ y $f(a)^{-1} = f\lp a ^{-1}\rp \in H$.
         \end{enumerate}
-        \item Veamos que se cumplen las tres propiedades de la definición \ref{defi:subgrupo}.
+        \item Veamos que se cumplen las tres propiedades de la definición \ref{defi:subgrupo} para $K$.
         \begin{enumerate}[i)]
             \item $1 \in K, f(1) = 1 \implies 1 \in f^{-1}(K) \neq \emptyset$.
-            \item Sean $a, b \in f^{-1}\lp K\rp$. Entonces, $ f\lp a\rp, f\lp b\rp, f\lp a\rp f\lp b\rp \in K$ y tenemos que $ab \in f^{-1}\lp f\lp ab\rp \rp = f^{-1}\lp f\lp a \rp f\lp b\rp\rp \subseteq f^{-1}\lp K\rp$.
+            \item Sean $a, b \in f^{-1}\lp K\rp$. Entonces, $ f\lp a\rp, f\lp b\rp$ y $ f\lp a\rp f\lp b\rp \in K$ y tenemos que $ab = f^{-1}\lp f\lp ab\rp \rp = f^{-1}\lp f\lp a \rp f\lp b\rp\rp \subseteq f^{-1}\lp K\rp$.
             \item Sea $a \in f^{-1}\lp K\rp$. Entonces, $f\lp a\rp\in K, f\lp a\rp^{-1}=f\lp a^{-1}\rp \in K$, y tenemos que $a^{-1} \in f^{-1}\lp f\lp a^{-1}\rp \rp = f^{-1}\lp f\lp a \rp ^{-1} \rp \subseteq f^{-1}\lp K\rp$.
         \end{enumerate}
     \end{enumerate}
@@ -662,11 +663,11 @@
 \begin{proof}
     Se tiene que
     \[
-        G = \bigsqcup \bar{a}H.
+        G = \bigsqcup aH.
     \]
     Por lo tanto,
     \[
-        \abs{G} = \abs{\bigsqcup \bar{a}H} = \sum \abs{\bar{a}H} = \sum^{\abs{\faktor{G}{H}}}_{k = 1} \abs{H} = \abs{H} \abs{\faktor{G}{H}}.
+        \abs{G} = \abs{\bigsqcup aH} = \sum \abs{aH} = \sum^{\abs{\faktor{G}{H}}}_{k = 1} \abs{H} = \abs{H} \abs{\faktor{G}{H}}.
     \]
 \end{proof}
 
