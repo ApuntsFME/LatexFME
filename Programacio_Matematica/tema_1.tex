@@ -24,7 +24,7 @@ En referència a la definició \ref{defi:semiespai}, es diu informalment que el 
 
 El fet que hi hagi solucions òptimes que siguin punts extrems no és de gran ajuda computacional per sí sol. Per tenir una caracterització computacionalment assequible cal el concepte de solució bàsica factible, que es defineix a continuació.
 
-\begin{defi}[Solució bàsica]
+\begin{defi}[Solució bàsica]\label{defi:SB}
 	Donat un poliedre en forma estàndard $P_e$ associat a un problema de programació lineal, una solució bàsica és un vector $\vb{x}\in P_e$ del qual es pot fer la partició $\vb{x} = \left[\vb{x}_\B\mid\vb{x}_\N\right]$ tal que
 	\begin{enumerate}[i)]
 		\item $\B,\N\subseteq\{1,\ldots,n \}$ són conjunts complementaris d'índexos i $|\B| = m$, on $m$ és el nombre de restriccions (el nombre de files de la matriu $A$). $\B$ s'anomena el conjunt d'índexos de variables bàsiques o \textbf{base}, i $\N$ s'anomena el conjunt d'índexos de variables no bàsiques.

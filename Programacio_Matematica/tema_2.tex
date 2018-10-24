@@ -293,7 +293,7 @@ Per desenvolupar l'algorisme del símplex dual, partirem de l'estructura general
 		\end{aligned}
 		\end{cases}\,,
 	\]
-	on $\vb{\rho} \in \real^n$ és un vector de variables de folga. Si definim la matriu $A^D$ i el vector de variables $\vb{y}$ així, 
+	on $\vb{\rho} \in \real^n$ és un vector de variables de folga. Si definim la matriu $A^D \in \matspace_{n\times(m+n)}(\real)$, el vector de variables $\vb{y}\in \real^{m+n}$ i el vector de ``costos'' del dual $\vb{g}\in\real^{m+n}$ com segueix, 
 	\[
 		A^D\defeq 
 		\left[\begin{array}{{@{}c|c@{}}}
@@ -304,19 +304,26 @@ Per desenvolupar l'algorisme del símplex dual, partirem de l'estructura general
 			\vb{\lambda}\\
 			\hline
 			\vb{\rho}
+		\end{array}\right]\,, \quad
+		%\def
+		\vb{g} \defeq
+		\left[\begin{array}{@{}c@{}}
+			\vb{-b}\\
+			\hline
+			\vb{0}
 		\end{array}\right]\,,
 	\]
 	podem reescriure $(D^e_{\tilde{e}})$ com segueix:
-	\[
+	\begin{equation}\label{eq:std-dual}
 		(D^e_{\tilde{e}})
 		\begin{cases}
 		\begin{aligned}
-			\min 			&&& -\vb{\lambda}'\vb{b}\\
+			\min 			&&& \vb{\lambda}'\vb{g}\\
 			\text{s.a.}		&&& A^D\vb{y} = \vb{c}\\
 			&&& \vb{\rho} \ge \vb{0}
 		\end{aligned}
 		\end{cases}\,.
-	\]
+	\end{equation}
 \end{defi*}
 
 Ara considerem una \hyperref[defi:SBFD]{SBFD} del problema $(P_e)$. Aquesta tindrà associada una base $\B$ de variables no bàsiques, i com s'ha vist durant el desenvolupament del símplex primal, podem fer una partició de paràmetres i variables segons si estan associades a un índex de $\B$ o no---per exemple, partim la matriu $A$ en $\left[B\vert A_\N\right]$. Podem aplicar aquesta partició al problema dual també. Donada una SBFD de $(P_e)$ amb base $\B$, les constriccions del problema dual en forma estàndard $(D^e_{\tilde{e}})$ contingudes a $A^D\vb{y} = \vb{c}$ es particionen així,
@@ -397,6 +404,7 @@ on $\varnothing$ indica una submatriu nul·la, $\vb{\rho_\B}$ és un vector d'or
 
 Ara bé, si restringim els vectors $\vb{\lambda}$ als que tenen la forma $\vb{\lambda}'=\vb{c_\B}'B^{-1}$ per una certa matriu bàsica (primal) $B$, llavors concloem el que s'enuncia a la proposició \ref{prop:equiv-rho-r}.
 
+
 \begin{prop}\label{prop:equiv-rho-r}
 	Donat un problema primal en forma estàndard $(P_e)$ i el seu dual $(D^e_{\tilde{e}})$ (segons la definició \ref{defi:std-dual}), si considerem només els vectors duals de la forma $\vb{\lambda}'=\vb{c_\B}'B^{-1}$ per una certa SBFD  $\vb{x}$ de $(P_e)$ amb matriu bàsica $B$, llavors $\vb{\rho} = \vb{r}$, on $\vb{r}$ és el vector de costos reduïts associat a $\vb{x}$, i per tant
 	\[
@@ -458,6 +466,19 @@ Ara, per poder utilitzar l'estructura del símplex primal en el desenvolupament 
 	La última igualtat ($\vb{r_\B}=\vb{0}$) es satisfà, per definició de $\vb{r}$, per qualsevol SB de $(P_e)$.
 \end{defi}
 
+
+Podem aplicar la mateixa partició al vector $\vb{g}$:
+\[
+\vb{g} = 
+\left[\begin{array}{@{}c@{}}
+\vb{-b}\\
+\hline
+\vb{0}\\
+\hline
+\vb{0}
+\end{array}\right]\,.
+\]
+
 \begin{prop}\label{prop:SD-SDBF}
 	Donada una SBFD $\vb{x}$ del problema primal $(P_e)$, la solució dual $\vb{y}$ associada a $\vb{x}$ és una SBF del poliedre $D^e_{\tilde{e}}$.
 	\begin{proof}
@@ -475,7 +496,7 @@ Ara, per poder utilitzar l'estructura del símplex primal en el desenvolupament 
 		\]
 		Analitzem la següent matriu:
 		\[
-			B^D \defeq \left[
+			B_D \defeq \left[
 			\begin{array}{@{}c|c@{}}
 				B'	  &	\varnothing	\\
 				\hline
@@ -483,13 +504,77 @@ Ara, per poder utilitzar l'estructura del símplex primal en el desenvolupament 
 			\end{array}
 			\right]\,.
 		\]
-		Les últimes $n-m$ files de $B^D$ són l.i. entre sí, ja que les darreres $n-m$ columnes d'aquestes formen la matriu $\Id_{n-m}$. D'altra banda, la matriu $B$ és no singular per definició, i per tant les $m$ primeres files de $B^D$ són l.i. entre sí. Finalment, les $m$ primeres files i les $n-m$ darreres són l.i. entre elles, ja que la submatriu formada per les primeres $m$ files i les darreres $n-m$ columnes és nul·la, mentre que la matriu formada per les $n-m$ darreres files i les $n-m$ darreres columnes és $\Id_{n-m}$.
+		Les últimes $n-m$ files de $B_D$ són l.i. entre sí, ja que les darreres $n-m$ columnes d'aquestes formen la matriu $\Id_{n-m}$. D'altra banda, la matriu $B$ és no singular per definició, i per tant les $m$ primeres files de $B_D$ són l.i. entre sí. Finalment, les $m$ primeres files i les $n-m$ darreres són l.i. entre elles, ja que la submatriu formada per les primeres $m$ files i les darreres $n-m$ columnes és nul·la, mentre que la matriu formada per les $n-m$ darreres files i les $n-m$ darreres columnes és $\Id_{n-m}$.
 		
-		Per tant, el nombre total de files l.i. de $B^D$ és $m+(n-m) = n$. És a dir, que el vector $\vb{y_\N}$ està subjecte a $n$ restriccions actives l.i. (ja que $B^D \vb{y_\N} = \vb{c}$). D'altra banda, $\vb{r_\B} = 0$, cosa que afegeix $m$ restriccions actives l.i. addicionals (un subconjunt de les restriccions $\vb{r}\ge\vb{0}$). Unint aquests dos fets, tenim que $\vb{y}$ està subjecte a $n+m$ restriccions actives l.i., i per tant $\vb{y}$ és una solució bàsica (i factible per construcció) del poliedre $D^e_{\tilde{e}}$.
+		Per tant, el nombre total de files l.i. de $B_D$ és $m+(n-m) = n$. És a dir, que el vector $\vb{y_\N}$ està subjecte a $n$ restriccions actives l.i. (ja que $B_D \vb{y_\N} = \vb{c}$). D'altra banda, $\vb{r_\B} = 0$, cosa que afegeix $m$ restriccions actives l.i. addicionals (un subconjunt de les restriccions $\vb{r}\ge\vb{0}$). Unint aquests dos fets, tenim que $\vb{y}$ està subjecte a $n+m$ restriccions actives l.i., i per tant $\vb{y}$ és una solució bàsica (i factible per construcció) del poliedre $D^e_{\tilde{e}}$.
 	\end{proof}
 \end{prop}
 
+Noteu que ara, havent utilitzat la definició alternativa de SB (\ref{defi:SB-alt}), hem de redefinir a part els conceptes de matriu bàsica, variables bàsiques i no bàsiques pel problema dual. Tot i així, les definicions que farem a continuació (\ref{defi:mbd} i \ref{defi:vd}) coincideixen idènticament amb les definicions que havíem fet a \ref{defi:SB}, i impliquen les mateixes propietats.
 
+\begin{defi*}[Matriu bàsica d'una SBF dual]\label{defi:mbd}
+	Donada una solució dual associada a una SBFD $\vb{x}$ del problema primal $(P_e)$ amb matriu bàsica $B$, definirem la ``matriu bàsica de $\vb{y}$'' com
+	\[
+		B_D \defeq \left[
+		\begin{array}{@{}c|c@{}}
+			B'	  &	\varnothing	\\
+			\hline
+			A_\N' & \Id_{n-m}
+		\end{array}
+		\right]\,.
+	\]
+\end{defi*}
+
+\begin{defi}[Variables bàsiques d'una SBF dual]\label{defi:vd}
+	Donada una solució dual associada a una SBFD $\vb{x}$ del problema primal $(P_e)$ amb matriu bàsica $B$, anomenarem ``variables bàsiques de $\vb{y}$'' a les variables contingudes en el vector
+	\[
+		\vb{y_\B} \defeq
+		\left[\begin{array}{@{}c@{}}
+			\vb{\lambda}\\
+			\hline
+			\vb{r_\N}
+		\end{array}\right]\,,
+	\]
+	i anomenarem ``variables no bàsiques de $\vb{y}$'' a les variables contingudes en el vector
+	\[
+		\vb{y_\N} \defeq \vb{r_\B} \doteq \vb{0}\,.
+	\]
+	També definirem $\B_D \subseteq \{1,\ldots, m+n\}$ com el conjunt d'índexos associats a una variable bàsica (de $\vb{y_\B}$) i l'anomenarem \textit{base dual}, i definirem $\N^D$ com el complementari de $\B_D$ en $\{1,\ldots,m+n\}$.
+\end{defi}
+
+\begin{prop}
+	La matriu bàsica d'una SBF dual és no singular.
+	\begin{proof}
+		Com hem vist a la demostració de la proposició \ref{prop:SD-SDBF}, la matriu $B_D$, que és d'ordre $n\times n$, té $n$ files l.i.; és conseqüència directa que $B_D$ és no singular.
+	\end{proof}
+\end{prop}
+
+Ara, per poder desenvolupar l'algorisme del símplex dual a partir del símplex primal, encara ens falta determinar els costos reduïts duals (que denotarem $\vb{r^D}$), les direccions bàsiques factibles, i la longitud de passa màxima pel problema dual.
+
+\begin{prop}
+	El vector de costos reduïts (duals) per una solució dual associada a una SBFD $\vb{x}$ amb base $\B$ coincideix amb $\vb{x_\B}$. Denotarem aquest vector per $\vb{r^D}$.
+	\begin{proof}
+		Pel que sabem del símplex primal, el vector de costos reduïts d'una SBF $\vb{x}$, amb base $\B$ i matriu bàsica $B$, d'un problema en forma estàndard
+		\[
+			(P_e)
+			\begin{cases}
+				\begin{aligned}
+				\min 			&&& \vb{c}'\vb{x}\\
+				\text{s.a.}		&&& A\vb{x} = \vb{b}\\
+				&&& \vb{x}\ge0
+			\end{aligned}
+			\end{cases}\
+		\]
+		està definit per
+		\[
+			\vb{r_\N}' \defeq \vb{c_\N}' - \vb{c_\B}B^{-1}A_\N\,.
+		\]
+		Si apliquem aquesta noció directament al problema dual definit a \eqref{eq:std-dual}, obtenim que
+		\begin{multline*}
+			\vb{r^D}' = \vb{g}' - \vb{g_\B}'B_D^{-1}A^D = \left[-\vb{b} \;|\; \vb{0} \;|\; \vb{0} \right]
+		\end{multline*}
+	\end{proof}
+\end{prop}
 
 \begin{alg}[del símplex dual]
     \begin{enumerate}
