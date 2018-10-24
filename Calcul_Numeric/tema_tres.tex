@@ -15,7 +15,7 @@
 \noindent Tipos de aproximación:
 \begin{itemize}
     \item Polinómica: $f\left( x \right)\approx p_n\left( x \right) \in \Pa^n,\, n$ fixat.
-    \item Trogonométrica: $f\left( x \right)\approx \sum\limits^n_{k=1} a_k \sin\left( nkl \right) + b_k \cos\left( nkl \right)$.
+    \item Trigonométrica: $f\left( x \right)\approx \sum\limits^n_{k=1} a_k \sin\left( nkl \right) + b_k \cos\left( nkl \right)$.
     \item Splines: Polinomios a trozos.
 \end{itemize}
 Criterios de aproximación:
@@ -155,7 +155,7 @@ Es decir, tenemos que imponer
 \end{proof}
 
 \begin{obs}[La paradoja de Runge]
-    Uno de los problemas que la aproximaci\'on funcional presenta es la ``paradoja de Runge''. Sea $f\left( x \right) = \frac{1}{1+25x^2}$, la interpolaci\'on con $n+1$ puntos equiespaciados empeora cuando $n$ crece. Si $n$ es muy grando (hay muchos datos), es necesario hacer un cambio de criterio (m\'inimos cuadrados) o cambiar de tipo (Splines).
+    Uno de los problemas que la aproximaci\'on funcional presenta es la ``paradoja de Runge''. Sea $f\left( x \right) = \frac{1}{1+25x^2}$, la interpolaci\'on con $n+1$ puntos equiespaciados empeora cuando $n$ crece. Si $n$ es muy grande (hay muchos datos), es necesario hacer un cambio de criterio (m\'inimos cuadrados) o cambiar de tipo (Splines).
 \end{obs}
 
 \section{Interpolaci\'on de Splines}
@@ -163,8 +163,8 @@ Es decir, tenemos que imponer
 \begin{prop}
     Dados unos puntos base $\left\{ x_i \right\}_{i=0}^n$, un grado $m$ y una continuidad $\C^q$, consideramos
     \begin{align*}
-        E_{S} &= \setb{S\left( x \right) \in \C^q\left( \left[ x_0, x_n \right] \right) \tq S_{|[ x_i, x_{i+1} ]_{i=0,\dots,n}} \in \Pa^m}, \\
-        S_i\left( x \right) &= S\left( x \right)_{|[ x_i, x_{i+1} ]}.
+        E_{S} &= \setb{S\left( x \right) \in \C^q\left( \left[ x_0, x_n \right] \right) \tq S\vert_{[ x_i, x_{i+1} ]_{0\leq i<n}} \in \Pa^m}, \\
+        S_i\left( x \right) &= S\left( x \right)\vert_{[ x_i, x_{i+1} ]}.
     \end{align*}
     Entonces $E_S$ es un espacio vectorial (tiene una base, etc.).
 \end{prop}
@@ -369,7 +369,7 @@ Para tener un SCD nos faltan dos datos adicionales:
 
 Cálculo del Spline:
 \begin{enumerate}[i)]
-    \item Planteamos y resolem el sistema lineal $\rightarrow \left\{ S_i \right\}_{i=0}^n$.
+    \item Planteamos y resolemos el sistema lineal $\rightarrow \left\{ S'_i \right\}_{i=0}^n$.
     \item Con la fórmula del Spline cúbico $\C^1$ calculamos $a_i, b_i, c_i, d_i$ en cada intervalo (con $f'_i=S'_i$).
 \end{enumerate}
 

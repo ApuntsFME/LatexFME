@@ -167,7 +167,7 @@ el punto flaco es que no es tan robusto como el de la bisección.
     Para estudiar la convergencia, en general, necesitamos estudiar $E^{k+1}$ en función de $E^k$.
     Para ello, podemos usar la siguiente fórmula:
     \[
-        E^{k+1} = \phi^\prime(\alpha)E^k + \frac{1}{2} \phi^{\prime \prime}(\alpha)\left( E^k \right)^2 - \cdots
+        E^{k+1} = \phi^\prime(\alpha)E^k + \frac{1}{2} \phi^{\prime \prime}(\alpha)\left( E^k \right)^2 + \dots
     \]
     o más generalmente
     \[
@@ -222,13 +222,13 @@ el punto flaco es que no es tan robusto como el de la bisección.
 \begin{proof}
     Se tiene que
     \[
-        \abs{E^{k+1}} \leq \abs{E^k} \left( \abs{\frac{\phi^{(p)}(\alpha)}{p!}} +
+        \abs{E^{k+1}} \leq \abs{E^k}^p \left( \abs{\frac{\phi^{(p)}(\alpha)}{p!}} +
         \underbrace{\abs{\frac{\phi^{(p+1)}(\alpha)}{(p+1)!}} \left( E^k \right) +
         \O\left( \left( E^k \right)^2 \right)}_{\leq \varepsilon} \right).
     \]
     Con $\abs{E^k}$ suficientemente pequeño
     \[
-        \abs{E^{k+1}} \leq \left( \abs{E^k} \right)^p
+        \abs{E^{k+1}} \leq \abs{E^k}^p
         \underbrace{\left( \frac{\phi^{(p)}(\alpha)}{p!} + \varepsilon  \right)}_{\lambda}.
     \]
 \end{proof}
@@ -284,12 +284,12 @@ tenemos
         Por lo tanto es lineal con factor asintótico de convergencia igual a $\frac{1}{2}$.
 
     \item El caso de multiplicidad $p$, es decir, $f(\alpha) = \cdots = f^{(p-1)}(\alpha) = 0$ y
-        $f^{(p)} \neq 0$. Para resolver este caso, aplicaremos $p-2$ veces la regla de L'Hôpital
+        $f^{(p)} \neq 0$. Para resolver este caso, aplicaremos $2p-2$ veces la regla de l'Hôpital
         \[
             \begin{aligned}
                 \lim_{x \to \alpha} \phi^\prime(x) &= \lim_{x \to \alpha} \frac{f(x)f^{\prime \prime}(x)}{f^\prime(x) f^\prime(x)}
-                \stackrel{\text{Leibniz}}{=} \lim_{x \to \alpha} \frac{\sum\limits^{p-2}_{k = 0} {p-2 \choose k}
-                f^{(2p-k)}(x)f^{(k)}}{\sum\limits^{p-2}_{k = 0} {p-2 \choose k }f^{(2p-1-k)}(x)f^{(k+1)}(x)} = \\
+                \substack{\text{Leibniz}\\=\\\text{RH}} \lim_{x \to \alpha} \frac{\sum\limits^{2p-2}_{k = 0} {2p-2 \choose k}
+                f^{(2p-k)}(x)f^{(k)}}{\sum\limits^{2p-2}_{k = 0} {2p-2 \choose k }f^{(2p-1-k)}(x)f^{(k+1)}(x)} = \\
                 &= \lim_{x \to \alpha} \frac{{2p-2 \choose p} \cancel{f^{(p)}(x)f^{(p)}(x)}}
                 {{2p-2 \choose p-1}\cancel{f^{(p)}(x)f^{(p)}(x)}} =
                 \frac{ {2p-2 \choose p} }{ {2p-2 \choose p-1} } = \frac{(p-1)!(p-1)!}{p!(p-2)!} = \\
@@ -318,10 +318,10 @@ tenemos
 
 \noindent Si la convergencia es de orden $p \geq 2$,
 \begin{align*}
-	\abs{E^k} &\approx \lambda \left( \abs{E^{k-1}} \right)^p \approx \lambda \left( \lambda \abs{E^{k-2}}^p \right)^p = \lambda^{1+p} \abs{E^{k-2}}^{p^2} \approx \lambda^{p+1} \left( \lambda\abs{E^{k-3}}^p \right)^{p^2} = \dots \\
-    &\approx \lambda^{1+p+\dots+p^{k-1}} \abs{E^0}^{p^k} \stackrel{\text{serie geométrica}}{=} \lambda^{\frac{p^k-1}{p-1}} \abs{E^0}^{p^k}, \\
-    \frac{\abs{E^k}}{\abs{\alpha}} &\approx \lambda^{\frac{p^k-1}{p-1}}\frac{\abs{E^0}^{p^k}}{\abs{\alpha}^{p^k}}\abs{\alpha}^{p^k-1}, \\
-    \abs{r^k} &\approx A^{p^k}\cdot B, \\
+	\abs{E^k} &\approx \lambda \abs{E^{k-1}}^p \approx \lambda \left( \lambda \abs{E^{k-2}}^p \right)^p = \lambda^{1+p} \abs{E^{k-2}}^{p^2} \approx \lambda^{p+1} \left( \lambda\abs{E^{k-3}}^p \right)^{p^2} = \dots \\
+    &\approx \lambda^{1+p+\dots+p^{k-1}} \abs{E^0}^{p^k} \stackrel{\text{serie geométrica}}{=} \lambda^{\frac{p^k-1}{p-1}} \abs{E^0}^{p^k}, \implies \\
+    \frac{\abs{E^k}}{\abs{\alpha}} &\approx \lambda^{\frac{p^k-1}{p-1}}\frac{\abs{E^0}^{p^k}}{\abs{\alpha}^{p^k}}\abs{\alpha}^{p^k-1}, \implies \\
+    \abs{r^k} &\approx A^{p^k}\cdot B, \implies \\
     \log \abs{r^k} &\approx \log B + p^k\log A, \,\text{donde }A = \lambda^{\frac{1}{p-1}}\abs{r^0}\abs{\alpha}, \, B = \lambda^{\frac{-1}{p-1}} \abs{\alpha}^{-1}.
 \end{align*}
 \begin{example}

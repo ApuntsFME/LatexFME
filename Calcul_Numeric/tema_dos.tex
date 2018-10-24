@@ -5,12 +5,15 @@
 \section{M\'etodo de Newton-Raphson}
 
 \noindent Dada una aproximaci\'on $\vec{x}^k \approx \vec{\alpha}$, consideramos l'aproximaci\'on lineal de $\vec{f}\left( \vec{x} \right)$ en $\vec{x}^k$
+\[
+    \vec{f}\left( \vec{x} \right) \approx \vec{f}\left( \vec{x}^k \right) + \frac{\partial \vec{f}}{\partial \vec{x}}\left( \vec{x}-\vec{x}^k \right) + \cancel{\O \left( \| \vec{x}-x^k\|^2 \right)}
+\]
+Como sabemos que $\vec{f} \left( \vec{\alpha} \right)$, entonces:
 \begin{align*}
-    \vec{f}\left( \vec{x} \right) &\approx \vec{f}\left( \vec{x}^k \right) + \frac{\partial \vec{f}}{\partial \vec{x}}\left( \vec{x}^{k+1}-\vec{x}^k \right) + \cancel{\O \left( \|x-x^k\|^2 \right)} = 0, \\
-    \vec{x}^{k+1} &= \vec{x}^k - \left[ \frac{\partial\vec{f}}{\partial\vec{x}}\left( x^k \right) \right]^{-1} \vec{f}\left( \vec{x}^k \right),\, \text{donde } J = \frac{\partial\vec{f}}{\partial \vec{x}} \text{ es la jacobiana.}
+    \vec{f}\left( \vec{\alpha} \right) &\approx \vec{f}\left( \vec{x}^k \right) + \frac{\partial \vec{f}}{\partial \vec{x}}\left( \vec{\alpha}-\vec{x}^k \right) = 0\\
+    \vec{\alpha} &\approx \vec{x}^{k+1} = \vec{x}^k - \left[ \frac{\partial\vec{f}}{\partial\vec{x}}\left( x^k \right) \right]^{-1} \vec{f}\left( \vec{x}^k \right),
 \end{align*}
-
-\noindent Se puede ver que tiene convergencia cuadr\'atica (de orden 2) si $\det\left( J(\alpha) \right) \neq 0$.
+donde $J = \frac{\partial\vec{f}}{\partial \vec{x}}$ es la jacobiana. Se puede ver que tiene convergencia cuadr\'atica (de orden 2) si $\det\left( J(\alpha) \right) \neq 0$.
 
 \begin{obs}
     No calcularemos $J^{-1}$ (porqu\'e es aproximadamente el coste de resolver $n$ sistemas lineales). Calculamos:
@@ -18,7 +21,7 @@
         \item $J\left( \vec{x}^k \right)\Delta \vec{x}^k = -\vec{f}\left( \vec{x}^k \right) \longrightarrow \Delta \vec{x}^k$,
         \item $\vec{x}^{k+1} = \vec{x}^k + \Delta\vec{x}^k$.
     \end{enumerate}
-    En Matlab: $x = x-(J\setminus f)$ resuelve el sistema.
+    En Matlab: \texttt{x = x-(J\textbackslash f)} resuelve el sistema.
 \end{obs}
 
 \noindent ¿Qu\'e hacemos si no podemos calcular $J = \frac{\partial \vec{f}}{\partial \vec{x}}$?
@@ -52,12 +55,12 @@
     \[
         S^k = \frac{f^k - f^{k-1}}{x^k - x^{k-1}}.
     \]
-    En $n$ dimensiones, la ecuaci\'on secante no determina de manera \'unica $S^k$. Se añaden otras condiciones que generan muchos m\'etodos $QN$.
+    En $n$ dimensiones, la ecuaci\'on secante no determina de manera \'unica $S^k$. Se añaden otras condiciones que generan muchos m\'etodos casi-Newton.
 \end{obs}
 
 \subsection{M\'etodo de Broyden}
 
-\noindent El m\'etodo de Broyden es un m\'etodo $QN$ que impone
+\noindent El m\'etodo de Broyden es un m\'etodo casi-Newton que impone
 \begin{enumerate}[i)]
     \item\label{item:broyden1} $S^k\Delta\vec{x}^k = \Delta f^k$ (ecuaci\'on secante),
     \item\label{item:broyden2} $\left( S^k - S^{k-1} \right)\vec{\omega} = \vec{0}, \, \forall \vec{\omega} \bot \Delta \vec{x}^k$.
