@@ -192,33 +192,41 @@ Ara continuem amb la definició formal de problema dual.
 	    	\end{cases}\ ,
     	\]
     	
-    	Primer demostrarem que si $(P_e)$ té òptim, $(D^e)$ també. Si $(P_e)$ té òptim, l'algorisme del símplex primal aplicat a $(P_e)$ terminarà amb una SBF òptima $\vb{x}^\ast$ de $(P_e)$, amb matriu bàsica $B$, tal que el vector de costos reduïts sigui no negatiu: \[\mathbf{r}' = c_\N '- c_\B' B^{-1} A_\N \ge 0\,.\] Sigui $\vb{\lambda}^\ast$ el vector definit per ${\vb{\lambda}^\ast}'\defeq c_\B'B^{-1}$. Demostrarem que $\vb{\lambda}^\ast$ és solució òptima de $(D^e)$.
+    	Primer demostrarem que si $(P_e)$ té òptim, $(D^e)$ també. Si $(P_e)$ té òptim, l'algorisme del símplex primal aplicat a $(P_e)$ terminarà amb una SBF òptima $\vb{x}^\ast$ de $(P_e)$, amb matriu bàsica $B$, tal que el vector de costos reduïts sigui no negatiu: \[\mathbf{r}' = \vb{c_\N} '- \vb{c_\B}' B^{-1} A_\N \ge 0\,.\] Sigui $\vb{\lambda}^\ast$ el vector definit per ${\vb{\lambda}^\ast}'\defeq \vb{c_\B}'B^{-1}$. Demostrarem que $\vb{\lambda}^\ast$ és solució òptima de $(D^e)$.
     	
     	Primer hem de comprovar si és factible. Efectivament, 
     	\[
     		{\vb{\lambda}^\ast}'A = 
-    		c_\B' B^{-1}
+    		\vb{c_\B}' B^{-1}
     		\begin{bmatrix}
 		   		B 	\vert 	A_\N
     		\end{bmatrix} =
     		\begin{bmatrix}
-    			c_\B' \Id & c_\B B^{-1} A_\N    			
+    			\vb{c_\B}' \Id & \vb{c_\B} B^{-1} A_\N    			
     		\end{bmatrix}
     		\le
     		\begin{bmatrix}
-	    		c_\B' 	&c_\N'
+	    		\vb{c_\B}' 	&\vb{c_\N}'
     		\end{bmatrix}
     		= \vb{c}'\,.
     	\]
-    	D'altra banda, \[{\vb{\lambda}^\ast}'\vb{b} = c_\B' B^{-1} \vb{b} = c_\B' {\vb{x}^\ast}_\B = \vb{c}'{\vb{x}^\ast}\,. \] Aplicant el corol·lari \ref{col:feb}, deduïm que $\vb{\lambda}^\ast$ és solució òptima de $(D^e)$. Queda demostrat que si $(P_e)$ té solució òptima existeix una solució òptima de $(D^e)$ (i pel corol·lari mencionat produeixen el mateix valor de la f.o.).
+    	D'altra banda, \[{\vb{\lambda}^\ast}'\vb{b} = \vb{c_\B}' B^{-1} \vb{b} = \vb{c_\B}' {\vb{x}^\ast}_\B = \vb{c}'{\vb{x}^\ast}\,. \] Aplicant el corol·lari \ref{col:feb}, deduïm que $\vb{\lambda}^\ast$ és solució òptima de $(D^e)$. Queda demostrat que si $(P_e)$ té solució òptima existeix una solució òptima de $(D^e)$ (i pel corol·lari mencionat produeixen el mateix valor de la f.o.).
     	
-    	Finalment, podem afirmar que aquest resultat és vàlid per els problemes que no estan en forma estàndard, ja que el problema $(P)$ i el seu estàndard són equivalents---sempre es pot passar d'una solució de l'un a una solució de l'altre, i el valor de la f.o. en l'òptim és el mateix---, i el dual de l'estàndard $(D^e)$ és equivalent al dual de $(P)$.
+    	Finalment, podem afirmar que aquest resultat és vàlid per els problemes que no estan en forma estàndard, ja que el problema $(P)$ i el seu estàndard són equivalents---sempre es pot passar d'una solució de l'un a una solució de l'altre, i el valor de la f.o. en l'òptim és el mateix---, i el dual de l'estàndard---$(D^e)$---és equivalent al dual de $(P)$.
     \end{proof}
 \end{teo}
 
 \begin{col}[Corol·lari del teorema fort de dualitat (\ref{teo:dualitat-fort})]
-    Si $\left(P\right)_e$ és un problema factible i amb matriu de restriccions $A$ de rang complet, i té una SBF òptima $\vb{x}^\ast$ amb matriu bàsica $B$, llavors $\left(D\right)$ té solució factible òptima a $\vb{\lambda}' = c_\B'B^{-1}$.
+    Si $\left(P\right)_e$ és un problema factible i amb matriu de restriccions $A$ de rang complet, i té una SBF òptima $\vb{x}^\ast$ amb matriu bàsica $B$, llavors $\left(D\right)$ té solució factible òptima a $\vb{\lambda}' = \vb{c_\B}'B^{-1}$.
 \end{col}
+
+Noteu que, donada una SBF òptima primal $\vb{x^\ast} = B^{-1}\vb{b}$, la implicació ``$\vb{\lambda^\ast}'= \vb{c_{\B}}'B^{-1} \implies \vb{\lambda^\ast} \text{ òptima dual}$'', que hem trobat durant la demostració del teorema \ref{teo:dualitat-fort}, és unidireccional: no tota solució òptima dual és de la forma $\vb{\lambda}' = \vb{c_{\B}}'B^{-1}$, on $B$ és la matriu bàsica de la SBF òptima primal. 
+
+D'altra banda, però, donada una SB primal qualsevol $\vb{x}$ amb $\vb{r} \ge \vb{0}$---és a dir, una \hyperref[defi:SBFD]{SBFD}---, sent $B$ la matriu bàsica de $\vb{x}$, llavors el vector $\vb{\lambda}$ definit per $\vb{\lambda}' \defeq \vb{c_\B}'B^{-1}$ és una solució factible del problema dual, ja que
+\[
+	\vb{r}'\ge \vb{0} \iff \vb{c}' - \vb{c_\N}'B^{-1}A \ge \vb{0} \iff \vb{c}' - \vb{\lambda}'A \ge \vb{0}  \iff \vb{\lambda}'A \le \vb{c}'\,.
+\]
+ Utilitzarem aquest fet durant el desenvolupament del símplex dual per ``aprofitar'' l'estructura del símplex primal; a més, pel que hem vist al teorema \ref{teo:dualitat-fort}, si en l'algorisme del símplex dual anem canviant de solució dual $\vb{\lambda}'$ que sigui de la forma $\vb{c_\B}' B^{-1}$, llavors, quan arribem a la solució òptima $\lambda^\ast$, haurem trobat la SBF òptima primal $\vb{x^\ast} = B^{-1}b$.
 
 \begin{teo}[de folga complementària]\label{teo:folga-complement}
     Siguin $\vb{x}, \vb{\lambda}$ solucions factibles de $\left(P\right)$ i $\left(D\right)$, respectivament. Llavors $\vb{x}$ i $\vb{\lambda}$ són solucions òptimes si i només si
@@ -231,7 +239,7 @@ Ara continuem amb la definició formal de problema dual.
     	\begin{equation*}
 	    	\sum_{i = 1}^{m} u_i + \sum_{j = 1}^{n} v_j = \vb{c}'\vb{x} - \vb{\lambda}'\vb{b}\,.
     	\end{equation*}
-    	Sabent que $u_i = 0$ per tot $i$ i $v_j = 0$ per tot $j$, tenim que \[\sum_{i = 1}^{m} u_i + \sum_{j = 1}^{n} v_j = 0 = \vb{c}'\vb{x} - \vb{\lambda}'\vb{b} \Leftrightarrow \vb{c}'\vb{x} = \vb{\lambda}'\vb{b}\,,  \] i pel corol·lari \ref{col:feb} del teorema feble, $\vb{x}$ i $\vb{\lambda}$ són solucions òptimes per al problema respectiu.
+    	Sabent que $u_i = 0$ per tot $i$ i $v_j = 0$ per tot $j$, tenim que \[\sum_{i = 1}^{m} u_i + \sum_{j = 1}^{n} v_j = 0 = \vb{c}'\vb{x} - \vb{\lambda}'\vb{b} \iff \vb{c}'\vb{x} = \vb{\lambda}'\vb{b}\,,  \] i pel corol·lari \ref{col:feb} del teorema feble, $\vb{x}$ i $\vb{\lambda}$ són solucions òptimes per al problema respectiu.
     	
     	Per demostrar la implicació recíproca, només cal notar que, com hem demostrat a la demostració del corol·lari \ref{col:feb}, $u_i$ i $v_j$ sempre són no negatius, i per tant l'única manera de que es compleixi \[\sum_{i=1}^{m} u_i + \sum_{j=1}^{n} v_j = 0 \] és que $u_i = 0$ per tot $i$ i $v_j = 0$ per tot $j$. Per tant només cal recórrer en sentit recíproc totes les implicacions de la demostració que acabem de fer.
     \end{proof}
@@ -243,14 +251,135 @@ Noteu que el teorema \ref{teo:folga-complement} s'anomena de ``folga complement�
     Sigui $\left(P\right)$ un problema de PL i sigui $(P_e)$ la seva forma estàndard. Llavors, direm que tota solució bàsica $\vb{x}$ de $\left(P\right)_e$ tal que $\mathbf{r} \geq \vb{0}$ és una solució bàsica factible dual (SBFD).
 \end{defi}
 
-Noteu que la definició \ref{defi:SBFD} deriva directament dels resultats que hem obtingut durant la demostració del teorema fort de dualitat (\ref{teo:dualitat-fort}): extrapolant l'argument que vam utilitzar, per tota solució bàsica $\vb{x}$---d'una forma estàndard $(P_e)$---amb matriu bàsica $B$ i un vector de costos reduïts no negatius, el vector $\vb{\lambda}' \defeq c_\B' B^{-1}$ és una solució factible del problema dual corresponent.
+Noteu que la definició \ref{defi:SBFD} deriva directament dels resultats que hem obtingut durant la demostració del teorema fort de dualitat (\ref{teo:dualitat-fort}): extrapolant l'argument que vam utilitzar, per tota solució bàsica $\vb{x}$---d'una forma estàndard $(P_e)$---amb matriu bàsica $B$ i un vector de costos reduïts no negatius, el vector $\vb{\lambda}' \defeq \vb{c_\B}' B^{-1}$ és una solució factible del problema dual corresponent.
 
-Observeu també que l'adjectiu ``factible'' en la definició de SBFD es refereix a una solució bàsica de $(P_e)$, que \textbf{pot no ser factible} per a aquest (és a dir, que $\vb{x}\notin P_e$), que es \textit{correspon}, però, a una \textbf{solució factible del problema dual} $(D^e)$ corresponent: $\vb{\lambda} \defeq (c_\B' B^{-1})' \in D^e$. Potser ajuda pensar en ``Solució bàsica factible dual'' en dos blocs: ``Solució bàsica'' i ``factible dual''.
+Observeu també que l'adjectiu ``factible'' en la definició de SBFD es refereix a una solució bàsica de $(P_e)$, que \textbf{pot no ser factible} per a aquest (és a dir, que $\vb{x}\notin P_e$), que es \textit{correspon}, però, a una \textbf{solució factible del problema dual} $(D^e)$ corresponent: $\vb{\lambda} \defeq (\vb{c_\B}' B^{-1})' \in D^e$. Potser ajuda pensar en ``Solució bàsica factible dual'' en dos blocs: ``Solució bàsica'' i ``factible dual''.
 
 Per últim, noteu que si una solució bàsica $\vb{x}$ de $(P_e)$ és factible dual (per tant és SBFD) i és alhora factible primal ($\vb{x} \in P_e \Leftrightarrow A\vb{x} = \vb{b}$), llavors és solució òptima de $(P_e)\,$, ja que és una solució factible amb $\vb{r}\ge \vb{0}$.
 
 
 \section{Símplex dual}
+
+Per desenvolupar l'algorisme del símplex dual, partirem de l'estructura general del símplex primal. Per poder emprar solucions bàsiques, hem de poder definir una forma estàndard del dual. Partirem amb la següent definició provisional.
+
+\begin{defi*}[Forma estàndard del dual (provisional)]
+	Sigui $(P_e)$ un problema en forma estàndard i sigui $(D^e)$ el seu dual:
+	\[
+		(P_e)
+		\begin{cases}
+		\begin{aligned}
+		\min 			&&& \vb{c}'\vb{x}\\
+		\text{s.a.}		&&& A\vb{x} = \vb{b}\\
+		&&& \vb{x}\ge0
+		\end{aligned}
+		\end{cases}\quad\rightsquigarrow\quad
+		%
+		(D^e)
+		\begin{cases}
+		\begin{aligned}
+		\max 			&&& \vb{\lambda}'\vb{b}\\
+		\text{s.a.}		&&& A'\vb{\lambda} \le \vb{c}
+		\end{aligned}
+		\end{cases}\,.
+	\]
+	Definirem la forma estàndard del dual (diferent de la forma estàndard habitual), i la notarem amb $(D^e_{\tilde{e}})$ així:
+	\[
+		{\color[gray]{0.6}(D^e)\rightsquigarrow\;}(D^e_{\tilde{e}})
+		\begin{cases}
+		\begin{aligned}
+		\min 			&&& -\vb{\lambda}'\vb{b}\\
+		\text{s.a.}		&&& A'\vb{\lambda} +  \vb{\rho} = \vb{c}\\
+						&&& \vb{\rho} \ge \vb{0}
+		\end{aligned}
+		\end{cases}\,,
+	\]
+	on $\vb{\rho} \in \real^n$ és un vector de variables de folga. Si definim la matriu $A^D$ i el vector de variables $\vb{y}$ així, 
+	\[
+		A^D\defeq 
+		\left[\begin{array}{{@{}c|c@{}}}
+			A' & \Id_n
+		\end{array}\right]\,, \quad
+		\vb{y} \defeq
+		\left[\begin{array}{@{}c@{}}
+			\vb{\lambda}\\
+			\hline
+			\vb{\rho}
+		\end{array}\right]\,,
+	\]
+	podem reescriure $(D^e_{\tilde{e}})$ com segueix:
+	\[
+		(D^e_{\tilde{e}})
+		\begin{cases}
+		\begin{aligned}
+			\min 			&&& -\vb{\lambda}'\vb{b}\\
+			\text{s.a.}		&&& A^D\vb{y} = \vb{c}\\
+			&&& \vb{\rho} \ge \vb{0}
+		\end{aligned}
+		\end{cases}\,.
+	\]
+\end{defi*}
+
+Ara considerem una \hyperref[defi:SBFD]{SBFD} del problema $(P_e)$. Aquesta tindrà associada una base $\B$ de variables no bàsiques, i com s'ha vist durant el desenvolupament del símplex primal, podem fer una partició de paràmetres i variables segons si estan associades a un índex de $\B$ o no---per exemple, partim la matriu $A$ en $\left[B\vert A_\N\right]$. Podem aplicar aquesta partició al problema dual també. Donada una SBFD de $(P_e)$ amb base $\B$, les constriccions del problema dual en forma estàndard $(D^e_{\tilde{e}})$ contingudes a $A^D\vb{y} = \vb{c}$ es particionen així,
+\begin{equation}\label{eq:partition}
+	A^D\vb{y} =
+	\left[\begin{array}{{@{}c|c@{}}}
+		A' & \Id_n
+	\end{array}\right]
+	\left[\begin{array}{{@{}c@{}}}
+		\vb{\lambda}\\
+		\hline
+		\vb{\rho}
+	\end{array}\right] 
+	=
+	\left[\begin{array}{{@{}c|cc@{}}}
+		B'		& \Id_m 		  &	\varnothing	\\
+		\hline
+		A_\N' 	& \varnothing & \Id_{n-m}
+	\end{array}\right]
+	\left[\begin{array}{{@{}c@{}}}
+		\vb{\lambda}\\
+		\hline
+		\vb{\rho}
+	\end{array}\right] 
+	=
+	\left[\begin{array}{{@{}c|c|c@{}}}
+		B'		& \Id_m 		  &	\varnothing	\\
+		\hline
+		A_\N' 	& \varnothing & \Id_{n-m}
+	\end{array}\right]
+	\left[\begin{array}{{@{}c@{}}}
+		\vb{\lambda}\\
+		\hline
+		\vb{\rho_\B}\\
+		\hline
+		\vb{\rho_\N}
+	\end{array}\right]\,,
+\end{equation}
+on $\varnothing$ indica una submatriu nul·la, $\vb{\rho_\B}$ és un vector d'ordre $m$ que conté totes les variables de $\vb{\rho}$ associades a índexos de la base $\B$, i $\vb{\rho_\N}$ conté la resta (variables de $\vb{\rho}$ associades a un índex de $\N$). Podem reescriure \eqref{eq:partition} com
+\begin{equation}
+	A^D\vb{y} = \left[\begin{array}{{@{}c|c@{}}}
+		B'	  &	\varnothing	\\
+		\hline
+		A_\N' & \Id_{n-m}
+	\end{array}\right]
+	%
+	\left[\begin{array}{{@{}c@{}}}
+			\vb{\lambda}\\
+			\hline
+			\vb{\rho_\N}
+		\end{array}\right]
+	%
+	+
+	%
+	\left[\begin{array}{{@{}c@{}}}
+		\Id_m\\
+		\hline
+		\varnothing
+	\end{array}\right]
+	%
+	\vb{\rho_\B}\,.
+\end{equation}
+
 \begin{alg}[del símplex dual]
     \begin{enumerate}
         \item[]
