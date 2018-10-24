@@ -364,7 +364,7 @@ Ara considerem una \hyperref[defi:SBFD]{SBFD} del problema $(P_e)$. Aquesta tind
 	\end{array}\right]\,,
 \end{multline}
 on $\varnothing$ indica una submatriu nul·la, $\vb{\rho_\B}$ és un vector d'ordre $m$ que conté totes les variables de $\vb{\rho}$ associades a índexos de la base $\B$, i $\vb{\rho_\N}$ conté la resta (variables de $\vb{\rho}$ associades a un índex de $\N$). Finalment, podem reescriure \eqref{eq:partition} com
-\begin{equation}
+\begin{equation}\label{eq:partition2}
 	A^D\vb{y} = \left[\begin{array}{{@{}c|c@{}}}
 		B'	  &	\varnothing	\\
 		\hline
@@ -394,10 +394,6 @@ on $\varnothing$ indica una submatriu nul·la, $\vb{\rho_\B}$ és un vector d'or
 	\vb{c_\N}
 	\end{array}\right]\,.
 \end{equation}
-
-\begin{defi}[Solució]
-	content...
-\end{defi}
 
 Ara bé, si restringim els vectors $\vb{\lambda}$ als que tenen la forma $\vb{\lambda}'=\vb{c_\B}'B^{-1}$ per una certa matriu bàsica (primal) $B$, llavors concloem el que s'enuncia a la proposició \ref{prop:equiv-rho-r}.
 
@@ -438,7 +434,9 @@ Ara bé, si restringim els vectors $\vb{\lambda}$ als que tenen la forma $\vb{\l
 	\end{proof}
 \end{prop}
 
-\begin{defi}[Solució dual associada a una SBFD]
+Ara, per poder utilitzar l'estructura del símplex primal en el desenvolupament del símplex dual, hem de trobar una manera de treballar amb solucions bàsiques factibles del poliedre $D^e_{\tilde{e}}$. Com veurem a la proposició \ref{prop:SD-SDBF}, les solucions duals definides a \ref{defi:SD} són SBF de $D^e_{\tilde{e}}$. 
+
+\begin{defi}[Solució dual associada a una SBFD]\label{defi:SD}
 	Donat un problema primal en forma estàndard $(P_e)$ i una \hyperref[defi:SBFD]{SBFD} $\vb{x}$ d'aquest, amb matriu bàsica $B$ i vector de costos reduïts $\vb{r}$, anomenarem ``solució dual associada a la SBFD $\vb{x}$'' al vector $\vb{y}$ tal que
 	\[
 		\vb{y} = 
@@ -459,6 +457,39 @@ Ara bé, si restringim els vectors $\vb{\lambda}$ als que tenen la forma $\vb{\l
 	\]
 	La última igualtat ($\vb{r_\B}=\vb{0}$) es satisfà, per definició de $\vb{r}$, per qualsevol SB de $(P_e)$.
 \end{defi}
+
+\begin{prop}\label{prop:SD-SDBF}
+	Donada una SBFD $\vb{x}$ del problema primal $(P_e)$, la solució dual $\vb{y}$ associada a $\vb{x}$ és una SBF del poliedre $D^e_{\tilde{e}}$.
+	\begin{proof}
+		Emprant la definició \ref{defi:SB-alt} de solució bàsica, una SB és tota solució factible amb un nombre de constriccions actives linealment independents igual al nombre de variables (la dimensió del poliedre). En el cas del poliedre $D^e_{\tilde{e}}$, aquest nombre és $m+n$ (ja que $\vb{y}' = \left[\vb{\lambda}'\vert \vb{r}'\right]\in \real^{m+n}$).
+		
+		A partir de l'equació \eqref{eq:partition2}, tenint en compte que $\vb{r_\B}=\vb{0}$, tenim que
+		\[
+			\left[\begin{array}{{@{}c|c@{}}}
+			B'	  &	\varnothing	\\
+			\hline
+			A_\N' & \Id_{n-m}
+			\end{array}\right]
+			%
+			\vb{y_\N} = \vb{c}\,.
+		\]
+		Analitzem la següent matriu:
+		\[
+			B^D \defeq \left[
+			\begin{array}{@{}c|c@{}}
+				B'	  &	\varnothing	\\
+				\hline
+				A_\N' & \Id_{n-m}
+			\end{array}
+			\right]\,.
+		\]
+		Les últimes $n-m$ files de $B^D$ són l.i. entre sí, ja que les darreres $n-m$ columnes d'aquestes formen la matriu $\Id_{n-m}$. D'altra banda, la matriu $B$ és no singular per definició, i per tant les $m$ primeres files de $B^D$ són l.i. entre sí. Finalment, les $m$ primeres files i les $n-m$ darreres són l.i. entre elles, ja que la submatriu formada per les primeres $m$ files i les darreres $n-m$ columnes és nul·la, mentre que la matriu formada per les $n-m$ darreres files i les $n-m$ darreres columnes és $\Id_{n-m}$.
+		
+		Per tant, el nombre total de files l.i. de $B^D$ és $m+(n-m) = n$. És a dir, que el vector $\vb{y_\N}$ està subjecte a $n$ restriccions actives l.i. (ja que $B^D \vb{y_\N} = \vb{c}$). D'altra banda, $\vb{r_\B} = 0$, cosa que afegeix $m$ restriccions actives l.i. addicionals (un subconjunt de les restriccions $\vb{r}\ge\vb{0}$). Unint aquests dos fets, tenim que $\vb{y}$ està subjecte a $n+m$ restriccions actives l.i., i per tant $\vb{y}$ és una solució bàsica (i factible per construcció) del poliedre $D^e_{\tilde{e}}$.
+	\end{proof}
+\end{prop}
+
+
 
 \begin{alg}[del símplex dual]
     \begin{enumerate}
