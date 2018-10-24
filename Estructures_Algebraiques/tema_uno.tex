@@ -1322,7 +1322,7 @@
     Sea $G$ un grupo finito y supongamos que no tiene serie de composición. De entre sus torres normales (el primer ejemplo nos muestra que hay, almenos, una) tomemos una que no pueda ser refinada, es decir, que para todo par de grupos consecutivos $G_i$ y $G_{i+1}$ de la torre, no exista un grupo $H$ (distinto de $G_i$ y $G_{i+1}$) con $G_i\trir H\trir G_{i+1}$. Sabemos que una tal torre normal existe porque, de no ser así, podríamos encontrar una torre normal con un número arbitrario de grupos de distinto cardinal, lo cual supondría una contradicción con la finitud de $G$. Entonces, la torre en cuestión tiene un par de grupos consecutivos $G_k$ y $G_{k+1}$ tales que $\faktor{G_k}{G_{k+1}}$ no es simple ya que, de lo contrario, seria una serie de composición. Sin embargo, el lema \ref{lema:maximal_normal} nos asegura que $G_{k+1}$ no es un elemento maximal del conjunto de grupos $\lc H\mid H\tril G_k, H\neq G_k, G_{k+1}\subseteq H\rc$. Por lo tanto, existe un grupo $H$ (distinto de $G_k$ y $G_{k+1}$) con $G_k\trir H\supseteq G_{k+1}$. Pero $G_k\trir G_{k+1}$, y necesariamente $H\trir G_{k+1}$. Esto contradice la suposición de que no existía un tal $H$ y concluimos que $G$ tiene serie de composición.
 \end{proof}
 
-\begin{teo}[Segundo teorema de isomorfía]\label{teo_dos_iso}
+\begin{teo}[Segundo teorema de isomorfía]\label{teo:dos_iso}
     Sea $G$ un grupo y sean $H,K$ subgrupos de $G$ con $H\tril G$. Entonces,
     \begin{enumerate}[i)]
         \item $\lp H\cap K\rp\tril K$,
@@ -1389,7 +1389,7 @@
         x \in G_1, a \in H_1 \subset G \stackrel{G_1 \triangleleft G}{\implies} axa^{-1} \in G_1.
     \]
     Además, claramente $axa^{-1} \in H_1$, de modo que $K_2 \triangleleft H_1$. Análogamente,
-    se demuestra que $K_2 \triangleleft G_1$. Por el segundo teorema del isomorfismo (\ref{teo_dos_iso}), tenemos que
+
     \[
         \faktor{G_1}{K_2} = \faktor{G_1}{H_1 \cap G_1} \cong \faktor{G_1H_1}{H_1} = \faktor{G}{H_1}.
     \]
@@ -1972,6 +1972,31 @@ Veamos que, en general, este enunciado es falso.
     es un morfismo de grupos. En efecto, $f(xy) = axya^{-1} = axa^{-1}aya^{-1} = f(x)f(y)$.
 \end{obs}
 
+\begin{lema}[Auxiliar para demostrar \ref{teo:stsyl}]\label{lema:stsyla}
+    Sea $G$ un grupo finito tal que $\abs{G} = p^rm$ con $p$ primo y $p \nmid m$. Sea $H$ un $p$-subgrupo y
+    $P \in \Syl_p(G)$. Entonces
+    \begin{enumerate}[i)]
+        \item Si $H \subseteq N_G(P) \implies H \subseteq P$.
+        \item Si $H \subseteq N_G(P)$ y $H \in \Syl_p(G) \implies H = P$.
+    \end{enumerate}
+\end{lema}
+
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item Tenemos $H, P \subseteq N_G(P)$ y $P \triangleleft N_G(P)$ y por lo tanto
+            \[
+                H, P \subseteq H \cdot P \subseteq N_G(P) \implies P \triangleleft H \cdot P
+            \].
+            Ahora, por $buscar proposición$, $H \cap P \triangleleft H$ y podemos aplicar el segundo teorema
+            de isomorfismo (\ref{teo:dos_iso}) y
+            \[
+                \faktor{H}{H \cap P} \cong \faktor{H \cdot P}{P} \implies \abs{HP} =
+                \abs{\faktor{H}{H \cap P}} \abs{P} = p^{r + \alpha}
+            \]
+            con $\alpha \geq 0$. Pero, como $P$ es $p$-Sylow: TODO
+    \end{enumerate}
+\end{proof}
+
 \begin{teo}[Segundo teorema de Sylow]\label{teo:stsyl}
     Sea $G$ un grupo finito con $\abs{G} = p^rm$ con $p$ primo y $\lp p, m\rp = 1$. Entonces,
     \begin{enumerate}[i)]
@@ -1981,3 +2006,88 @@ Veamos que, en general, este enunciado es falso.
     \end{enumerate}
 \end{teo}
 
+\begin{proof}
+    Consideramos la acción por conjugación de $G$ en $\Syl_p(G)$, es decir
+    \[
+        \begin{aligned}
+            G \times \Syl_p(G) &\to \Syl_p(G) \\
+            (a, P) &\mapsto aPa^{-1}
+        \end{aligned}
+    \]
+    Por el primer teorema de Sylow (\ref{teo:ptsyl}), podemos tomar $H \in \Syl_p(G)$ y lo fijamos.
+    La órbita de $H$ se escribe como
+    \[
+        G \cdot H = \left\{ aHa^{-1} \mid a \in G \right\} =\colon X
+    \]
+    y la denotaremos por $X$. Queremos ver ahora que $X = \Syl_p(G)$. Sabemos que $G_H =
+    \left\{ a \in G \mid aHa^{-1} = H \right\} = N_G(H) = \supseteq H$. Y sigue que
+    \[
+        \abs{X} = \abs{G \cdot H} = \left[ G : G_H \right] = \left[ G : N_G(H) \right] =
+        \frac{\left[ G : H \right]}{\left[ N_G(H) : H \right]} = 
+        \frac{\sfrac{\cancel{p^r}m}{\cancel{p^r}}}{\ast} = \frac{m}{\ast}
+    \]
+    De donde sigue que $\abs{X} \vert m$. Definimos ahora una nueva acción:
+    \[
+        \begin{aligned}
+            H \times X &\to X \\
+            (a, P) &\mapsto aPa^{-1}
+        \end{aligned}
+    \]
+    (que se trata unicamente de la restricción de la acción anterior). $H$ es un punto fijo de esta acción,
+    ya que $aHa^{-1} H \forall a \in H$. Además es el único punto fijo, ya que si $P \in X$ punto fijo
+    $\implies aPa^{-1} = P \forall a \in H \implies H \subseteq N_G(P) 
+    \stackrel{\ref{lema:stsyla}}{\implies} H = P$. Aplicamos ahora la fórmula de órbitas y obtenemos
+    \[
+        \abs{X} = \underbrace{\abs{ \left\{ H \right\} }}_{1} +
+        \sum^s_{i=1} \left[ H : H_{P_i} \right]
+    \]
+    Con $P_i$ representante de órbita no puntual. Y tenemos
+    \[
+        H_{P_i} = \left\{ a \in H \mid aP_ia^{-1} = P_i \right\} \subsetneq H \implies
+        \left[ H : H_{P_i} \right] = \frac{\abs{H}}{\abs{H_{P_i}}} = \frac{p^r}{p^t} = p^{r-t}
+    \]
+    Por tanto:
+    $\abs{X} = 1 + \sum \dot{p} = 1 + p \beta$ y $\abs{X} \equiv 1 (\mod p)$. Veamos ahora que
+    $X = \Syl_p(G)$. Suponemos que no lo es, es decir $\exists K \in \Syl_p(G) \setminus X$ y consideramos
+    la acción por conjugación de $K$ en $X$:
+    \[
+        \begin{aligned}
+            K \times X &\to X \\
+            (a, P) &\mapsto aPa^{-1}
+        \end{aligned}
+    \]
+    No tiene puntos fijos, ya que si $P$ fuera punto fijo $aPa^{-1} = P \forall a \in K \implies
+    K \subseteq N_G(P) \stackrel{\ref{lema:stsyla}}{\implies} K = P \in X$ Lo cual es una contradicción.
+    Así, la fórmula de órbitas (\ref{prop:forb}) nos dice que
+    \[
+        \abs{X} = \sum^H_{i = 1} \left[ K : K_{P_i} \right] = \sum p^{\alpha_i}
+    \]
+    Como $\abs{X} \equiv 1 (\mod p)$, $\exists \alpha_i = 0 \implies K_{P_i} = K \implies P_i$ es punto fijo.
+    Lo cual es una contradicción ya que no existen puntos fijos y por lo tanto, $X = \Syl_p(G)$.
+
+    En particular, 
+    \[
+        n_p(G) = \# \Syl_p(G) \vert m, \quad n_p(G) = \# \Syl_p(G) \cong 1 (\mod p).
+    \]
+    Y así demostramos \ref{item:stsyl-2} y \ref{item:stsyl-3}, ya que todo $P \in \Syl_p(G) \implies
+    P \in X \implies P$ y $H$ son conjugados.
+
+    Tenemos $\abs{L} = p^s$ con $1 \leq s \leq r$ (Si $s = 0 \implies L = \left\{ \Id \right\}$ y cualquier
+    $p$-Sylow nos vale). Consideramos ahora la acción por conjugación de $L$ en $\Syl_p(G)$
+    \[
+        \begin{aligned}
+            L \times \Syl_p(G) &\to \Syl_p(G) \\
+            (a, P) &\mapsto aPa^{-1}
+        \end{aligned}
+    \]
+    Y se tien que 
+    \[
+        \abs{L \cdot P} = \left[ L : L_P \right] = \frac{\abs{L}}{\abs{L_P}} = \frac{p^s}{p^{\beta_P}} =
+        p^{\alpha_P}
+    \]
+    Aplicando ahora la fórmula de órbita (\ref{prop:forb})
+    \[
+        \abs{\Syl_p(G)} = \sum \left[ L : L_P \right] \sum p^{\alpha_{P_i}} \implies
+        \exists \alpha_{P_i} = 0 \implies L = L_{P_i} = \left\{ a \in L \mid aP_ia^{-1} = P_i \right\}
+    \] Y otro TODO.
+\end{proof}
