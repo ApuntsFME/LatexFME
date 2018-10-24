@@ -6,11 +6,11 @@
 
 \noindent Dada una aproximaci\'on $\vec{x}^k \approx \vec{\alpha}$, consideramos l'aproximaci\'on lineal de $\vec{f}\left( \vec{x} \right)$ en $\vec{x}^k$
 \[
-    \vec{f}\left( \vec{x} \right) \approx \vec{f}\left( \vec{x}^k \right) + \frac{\partial \vec{f}}{\partial \vec{x}}\left( \vec{x}-\vec{x}^k \right) + \cancel{\O \left( \| \vec{x}-x^k\|^2 \right)}
+    \vec{f}\left( \vec{x} \right) \approx \vec{f}\left( \vec{x}^k \right) + \frac{\partial \vec{f}}{\partial \vec{x}}\left( \vec{x}-\vec{x}^k \right) + \cancel{\O \left( \| \vec{x}-x^k\|^2 \right)}.
 \]
 Como sabemos que $\vec{f} \left( \vec{\alpha} \right)$, entonces:
 \begin{align*}
-    \vec{f}\left( \vec{\alpha} \right) &\approx \vec{f}\left( \vec{x}^k \right) + \frac{\partial \vec{f}}{\partial \vec{x}}\left( \vec{\alpha}-\vec{x}^k \right) = 0\\
+    \vec{f}\left( \vec{\alpha} \right) &\approx \vec{f}\left( \vec{x}^k \right) + \frac{\partial \vec{f}}{\partial \vec{x}}\left( \vec{\alpha}-\vec{x}^k \right) = 0, \\
     \vec{\alpha} &\approx \vec{x}^{k+1} = \vec{x}^k - \left[ \frac{\partial\vec{f}}{\partial\vec{x}}\left( x^k \right) \right]^{-1} \vec{f}\left( \vec{x}^k \right),
 \end{align*}
 donde $J = \frac{\partial\vec{f}}{\partial \vec{x}}$ es la jacobiana. Se puede ver que tiene convergencia cuadr\'atica (de orden 2) si $\det\left( J(\alpha) \right) \neq 0$.

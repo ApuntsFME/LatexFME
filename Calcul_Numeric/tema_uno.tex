@@ -103,14 +103,12 @@ el punto flaco es que no es tan robusto como el de la bisección.
     Diremos que un método $x^{k+1} = \phi\left( x^k \right)$ es consistente si las raíces son
     los únicos puntos fijos, es decir,
     \[
-        f(\alpha) = 0 \iff \phi(\alpha) = \alpha.
+        \phi(x) = x \iff f(x) = 0.
     \]
 \end{defi}
 
 \begin{ej}
-    Un ejemplo es el método de Newton.
-
-    Si $\alpha$ es una raíz simple,
+    Un ejemplo es el método de Newton. Si $\alpha$ es una raíz simple,
     \[
         f(\alpha) = 0 \implies \phi(\alpha) = \alpha - \frac{f(\alpha)}{f^\prime(\alpha)} = \alpha.
     \]
@@ -157,7 +155,7 @@ el punto flaco es que no es tan robusto como el de la bisección.
 \begin{defi}[convergencia!superlineal]
     Diremos que un esquema tiene convergencia superlineal si
     \begin{gather*}
-        \abs{E^{k+a}} \leq \lambda_k \abs{E^k}, \; \lambda_k \to 0 \\
+        \abs{E^{k+1}} \leq \lambda_k \abs{E^k}, \; \lambda_k \to 0 \\
         \text{o bien} \\
         \abs{E^{k+1}} \leq \lambda \abs{E^k}^q, \; q \in (1, 2).
     \end{gather*}
@@ -234,7 +232,7 @@ el punto flaco es que no es tan robusto como el de la bisección.
 \end{proof}
 
 \begin{defi}[factor asintótico de convergencia]
-    Sea $\phi$ un método lineal, por lo tanto,
+    Sea $\phi$ un método lineal, es decir,
     \[
         \abs{E^{k+1}} \leq \lambda \abs{E^k}.
     \]
@@ -318,12 +316,13 @@ tenemos
 
 \noindent Si la convergencia es de orden $p \geq 2$,
 \begin{align*}
-	\abs{E^k} &\approx \lambda \abs{E^{k-1}}^p \approx \lambda \left( \lambda \abs{E^{k-2}}^p \right)^p = \lambda^{1+p} \abs{E^{k-2}}^{p^2} \approx \lambda^{p+1} \left( \lambda\abs{E^{k-3}}^p \right)^{p^2} = \dots \\
+	\abs{E^k} &\approx \lambda \abs{E^{k-1}}^p \approx \lambda \left( \lambda \abs{E^{k-2}}^p \right)^p = \lambda^{p+1} \abs{E^{k-2}}^{p^2} \approx \lambda^{p+1} \left( \lambda\abs{E^{k-3}}^p \right)^{p^2} = \dots \\
     &\approx \lambda^{1+p+\dots+p^{k-1}} \abs{E^0}^{p^k} \stackrel{\text{serie geométrica}}{=} \lambda^{\frac{p^k-1}{p-1}} \abs{E^0}^{p^k}, \implies \\
     \frac{\abs{E^k}}{\abs{\alpha}} &\approx \lambda^{\frac{p^k-1}{p-1}}\frac{\abs{E^0}^{p^k}}{\abs{\alpha}^{p^k}}\abs{\alpha}^{p^k-1}, \implies \\
     \abs{r^k} &\approx A^{p^k}\cdot B, \implies \\
-    \log \abs{r^k} &\approx \log B + p^k\log A, \,\text{donde }A = \lambda^{\frac{1}{p-1}}\abs{r^0}\abs{\alpha}, \, B = \lambda^{\frac{-1}{p-1}} \abs{\alpha}^{-1}.
+    \log \abs{r^k} &\approx \log B + p^k\log A,
 \end{align*}
+donde $A = \lambda^{\frac{1}{p-1}}\abs{r^0}\abs{\alpha}$, $B = \lambda^{\frac{-1}{p-1}} \abs{\alpha}^{-1}$.
 \begin{example}
     El error nos proporciona información sobre el tipo de convergencia.
     \begin{center}
