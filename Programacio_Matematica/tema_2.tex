@@ -320,7 +320,7 @@ Per desenvolupar l'algorisme del símplex dual, partirem de l'estructura general
 \end{defi*}
 
 Ara considerem una \hyperref[defi:SBFD]{SBFD} del problema $(P_e)$. Aquesta tindrà associada una base $\B$ de variables no bàsiques, i com s'ha vist durant el desenvolupament del símplex primal, podem fer una partició de paràmetres i variables segons si estan associades a un índex de $\B$ o no---per exemple, partim la matriu $A$ en $\left[B\vert A_\N\right]$. Podem aplicar aquesta partició al problema dual també. Donada una SBFD de $(P_e)$ amb base $\B$, les constriccions del problema dual en forma estàndard $(D^e_{\tilde{e}})$ contingudes a $A^D\vb{y} = \vb{c}$ es particionen així,
-\begin{equation}\label{eq:partition}
+\begin{multline}\label{eq:partition}
 	A^D\vb{y} =
 	\left[\begin{array}{{@{}c|c@{}}}
 		A' & \Id_n
@@ -341,6 +341,7 @@ Ara considerem una \hyperref[defi:SBFD]{SBFD} del problema $(P_e)$. Aquesta tind
 		\hline
 		\vb{\rho}
 	\end{array}\right] 
+	=\\
 	=
 	\left[\begin{array}{{@{}c|c|c@{}}}
 		B'		& \Id_m 		  &	\varnothing	\\
@@ -353,9 +354,16 @@ Ara considerem una \hyperref[defi:SBFD]{SBFD} del problema $(P_e)$. Aquesta tind
 		\vb{\rho_\B}\\
 		\hline
 		\vb{\rho_\N}
+	\end{array}\right]
+	\doteq \vb{c}
+	=
+	\left[\begin{array}{{@{}c@{}}}
+		\vb{c_\B}\\
+		\hline
+		\vb{c_\N}
 	\end{array}\right]\,,
-\end{equation}
-on $\varnothing$ indica una submatriu nul·la, $\vb{\rho_\B}$ és un vector d'ordre $m$ que conté totes les variables de $\vb{\rho}$ associades a índexos de la base $\B$, i $\vb{\rho_\N}$ conté la resta (variables de $\vb{\rho}$ associades a un índex de $\N$). Podem reescriure \eqref{eq:partition} com
+\end{multline}
+on $\varnothing$ indica una submatriu nul·la, $\vb{\rho_\B}$ és un vector d'ordre $m$ que conté totes les variables de $\vb{\rho}$ associades a índexos de la base $\B$, i $\vb{\rho_\N}$ conté la resta (variables de $\vb{\rho}$ associades a un índex de $\N$). Finalment, podem reescriure \eqref{eq:partition} com
 \begin{equation}
 	A^D\vb{y} = \left[\begin{array}{{@{}c|c@{}}}
 		B'	  &	\varnothing	\\
@@ -377,8 +385,19 @@ on $\varnothing$ indica una submatriu nul·la, $\vb{\rho_\B}$ és un vector d'or
 		\varnothing
 	\end{array}\right]
 	%
-	\vb{\rho_\B}\,.
+	\vb{\rho_\B}
+	%
+	=
+	\left[\begin{array}{{@{}c@{}}}
+	\vb{c_\B}\\
+	\hline
+	\vb{c_\N}
+	\end{array}\right]\,.
 \end{equation}
+
+\begin{defi}[Solució]
+	content...
+\end{defi}
 
 Ara bé, si restringim els vectors $\vb{\lambda}$ als que tenen la forma $\vb{\lambda}'=\vb{c_\B}'B^{-1}$ per una certa matriu bàsica (primal) $B$, llavors concloem el que s'enuncia a la proposició \ref{prop:equiv-rho-r}.
 
@@ -418,6 +437,28 @@ Ara bé, si restringim els vectors $\vb{\lambda}$ als que tenen la forma $\vb{\l
 		és a dir, que les folgues $\vb{\rho}$ de la restricció $\vb{\lambda}'A +  \vb{\rho}' = \vb{c}'$ coincideixen amb $\vb{r}$.
 	\end{proof}
 \end{prop}
+
+\begin{defi}[Solució dual associada a una SBFD]
+	Donat un problema primal en forma estàndard $(P_e)$ i una \hyperref[defi:SBFD]{SBFD} $\vb{x}$ d'aquest, amb matriu bàsica $B$ i vector de costos reduïts $\vb{r}$, anomenarem ``solució dual associada a la SBFD $\vb{x}$'' al vector $\vb{y}$ tal que
+	\[
+		\vb{y} = 
+		\left[\begin{array}{@{}c@{}}
+		\vb{y_\B}\\
+		\hline
+		\vb{y_\N}
+		\end{array}\right],\quad\text{on }
+		%
+		\vb{y_\B}=
+		\left[\begin{array}{@{}c@{}}
+			\vb{\lambda}\\
+			\hline
+			\vb{r_\N}
+		\end{array}\right],\ 
+		%
+		\vb{y_\N} = \vb{r_\B} \doteq \vb{0}\,.	
+	\]
+	La última igualtat ($\vb{r_\B}=\vb{0}$) es satisfà, per definició de $\vb{r}$, per qualsevol SB de $(P_e)$.
+\end{defi}
 
 \begin{alg}[del símplex dual]
     \begin{enumerate}
