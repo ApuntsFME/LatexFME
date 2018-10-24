@@ -238,6 +238,8 @@ ens permet trobar convolucions discretes de variables aleatòries.
 \section{Models de variables aleatòries discretes}
 
 En aquesta secció introduirem les variables aleatòries discretes més comunes que torbarem
+% En aquesta secció hi ha demostracions sense tots els apartats. Això és intencionat, les que queden
+% no s'han fet a classe perquè són trivials.
 
 \begin{obs}
     En general escriurem $X \sim Y$ si $X$ i $Y$ tenen la mateixa distribució de probabilitat.
@@ -260,13 +262,13 @@ Modela l'èxit o fracàs d'un experiment amb probabilitat $p$ d'èxit
 \begin{prop}
     Sigui $X$ una variable aleatòria que segueix una distribució de Bernoulli. Aleshores,
     \begin{enumerate}[i)]
-        \item $G_X(z) = (1-p)z^0 + pz^1 = (1-p) + p(z)$,
-        \item $\esp[X] = p$,
-        \item $\var[X] = p(1-p)$.
+        \item $G_X(z) = (1-p)z^0 + pz^1 = (1-p) + p(z)$
+        \item $\esp[X] = p$
+        \item $\var[X] = p(1-p)$
     \end{enumerate}
 \end{prop}
 
-\begin{proof} %TODO falten apartats per demostrar
+\begin{proof}
     \begin{enumerate}[i)]
         \item[]
         \item[iii)] $\esp[x^2-x]= \esp[x(x-1)] = 0 \implies \esp[x^2] = p \implies \var[x] = \esp[x^2] + \esp[x]^2
@@ -287,14 +289,14 @@ Modela el nombre d'èxits en fer $N$ experiments independents, on cadascun és $
 \begin{prop}
     Sigui $X$ una variable aleatòria que segueix una distribució binomial. Aleshores,
     \begin{enumerate}[i)]
-        \item $p(X=i) = \binom{N}{i}p^i(1-p)^{N-i}$,
-        \item $G_X(z) = \sum_{i=0}^{n} \binom{N}{i}p^i(1-p)^{N-i}z^i$,
-        \item $\esp[X] = N\esp[X_1] = Np$,
-        \item $\var[X] = N\var[X_1] = Np(1-p)$.
+        \item $p(X=i) = \binom{N}{i}p^i(1-p)^{N-i}$
+        \item $G_X(z) = \sum_{i=0}^{n} \binom{N}{i}p^i(1-p)^{N-i}z^i$
+        \item $\esp[X] = N\esp[X_1] = Np$
+        \item $\var[X] = N\var[X_1] = Np(1-p)$
     \end{enumerate}
 \end{prop}
 
-\begin{proof} %TODO falten apartats per demostrar
+\begin{proof}
     \begin{enumerate}[i)]
         \item[]
         \item[ii)] Per ser $X_i$ independents,
@@ -322,16 +324,16 @@ Modela el nombre d'èxits en fer $N$ experiments independents, on cadascun és $
     \[X \sim \operatorname{U}[1,n] \iff p(X=i)=\frac{1}{N} \text{ per } i = 1,\dots,N.\]
 \end{defi}
 
-\begin{prop}
+\begin{prop} %TODO esp i var les va deixar com a exercici, no sé que fer
     Sigui $X$ una variable aleatòria que segueix una distribució binomial. Aleshores,
     \begin{enumerate}[i)]
-     \item $G_X(z) =  \frac{1}{N}\frac{z(z^N-1)}{z-1}$,
-     \item $\esp[X]=$,
-     \item $\var[x]=$.
+     \item $G_X(z) =  \frac{1}{N}\frac{z(z^N-1)}{z-1}$
+     \item $\esp[X]=$
+     \item $\var[x]=$
     \end{enumerate}
 \end{prop}
 
-\begin{proof}%TODO falten demos
+\begin{proof}
   Directament de la definició de distribució uniforme tenim que
   \begin{enumerate}[i)]
    \item $G_X(z) = \sum_{n=1}^N \frac{1}{N}z^n = \frac{1}{N}(z+z^2+\cdots+z^N) = \frac{1}{N}\frac{z(z^N-1)}{z-1}$.
@@ -357,9 +359,9 @@ S'usa per modelar successos ``estranys'' (persones en una cua, emissió de part�
 \begin{prop}
     Sigui $X$ una variable aleatòria que segueix una distribució de Poisson. Aleshores,
     \begin{enumerate}[i)]
-        \item $G_X(z) = e^{\lambda(z-1)}$,
-        \item $\esp[X] = \lambda$,
-        \item $\var[X] = \lambda$.
+        \item $G_X(z) = e^{\lambda(z-1)}$
+        \item $\esp[X] = \lambda$
+        \item $\var[X] = \lambda$
     \end{enumerate}
 \end{prop}
 
@@ -394,9 +396,9 @@ La distribució geomètrica representa el nombre d'experiments necessaris abans 
 \begin{prop}
     Sigui $X$ una variable aleatòria que segueix una distribució geomètrica. Aleshores,
     \begin{enumerate}[i)]
-        \item $G_X(z) =  \frac{pz}{1-\lp 1-p\rp z}$,
-        \item $\esp[X] = \frac{1}{p}$,
-        \item $\var[X] = \frac{1-p}{p^2}$.
+        \item $G_X(z) =  \frac{pz}{1-\lp 1-p\rp z}$
+        \item $\esp[X] = \frac{1}{p}$
+        \item $\var[X] = \frac{1-p}{p^2}$
     \end{enumerate}
 \end{prop}
 \begin{proof}
@@ -408,52 +410,101 @@ La distribució geomètrica representa el nombre d'experiments necessaris abans 
 \end{proof}
 
 \subsection*{Distribució binomial negativa}
-Modela el nombre d'experiments necessaris per aconseguir un nombre d'èxits donat.
 
-\begin{defi}[distribució!binomial!negativa]
-  Sigui $X$ una variable aleatoria. Direm que $X$ segueix una distribució binomial negativa
+Modela el nombre d'experiments necessaris per aconseguir un nombre d'èxits $r$ donat.
+
+\begin{defi}[distribució!binomial negativa]
+    Sigui $X$ una variable aleatoria. Direm que $X$ segueix una distribució binomial negativa
     \[X \sim \operatorname{BinN}(r,p) \iff X = X_1 + \cdots + X_r,\]
     on $\lc X_i \rc_{i=1}^{r}$ són independents i $X_i \sim \operatorname{Geom}(p) \enspace\forall i$.
 \end{defi}
 
+\begin{obs}
+    Una distribució binomial negativa és equivalent a $r$ distribucions geomètriques seguides.
+\end{obs}
+
+
 \begin{prop}
-    Sigui $X$ una variable aleatòria que segueix una distribució binomial. Aleshores,
+    Sigui $X$ una variable aleatòria que segueix una distribució binomial negativa. Aleshores,
     \begin{enumerate}[i)]
-        \item $p(X=i) = \begin{cases}
-                         0 &\text{ si } i< r\\
-                         \binom{i-1}{r-1}p^{r}(1-p)^{k-r} & \text{ si }i\geq r,
+        \item $G_X(z) = \lp \frac{pz}{1-\lp 1-p\rp z}\rp^r$
+        \item $p(X=k) = \begin{cases}
+                         0 &\text{ si } k < r\\
+                         \binom{k-1}{r-1}p^{r}(1-p)^{k-r} & \text{ si }k\geq r
                         \end{cases}$
-        \item $G_X(z) = \lp \frac{pz}{1-\lp 1-p\rp z}\rp^r$,
-        \item $\esp[X] = N\esp[X_1] = \frac{r}{p}$,
-        \item $\var[X] = N\var[X_1] = r\frac{1-p}{p^2}$.
+        \item $\esp[X] = r\esp[X_1] = \frac{r}{p}$
+        \item $\var[X] = r\var[X_1] = r\frac{1-p}{p^2}$
     \end{enumerate}
 \end{prop}
 
-\begin{proof} %TODO falten tots els apartats per demostrar
+\begin{proof}
     \begin{enumerate}[i)]
+        \item[]
+        \item $G_X(z) = (G_{X_1}(z))^r = \lp \frac{pz}{1-\lp 1-p\rp z}\rp^r$
+        \item $p(X=i) = \binom{k-1}{r-1}p^{r-1}(1-p)^{k-1-(r-1)} = \binom{k-1}{r-1}p^{r}(1-p)^{k-r}$
+        %TODO Això últim no sé d'on ix i tinc massa son per pensar-ho
     \end{enumerate}
 \end{proof}
 
 \section{Distribucions condicionades i esperança condicionada}
 
 \begin{defi}[funció!de distribució!condicionada]\idx{funció!de probabilitat!condicionada}
-  Siguin $X$ i $Y$ variables aleatòries discretes i sigui $x\in\real$ tal que $p\lp X=x\rp >0$. Aleshores definim
-  \begin{enumerate}[1)]
-   \item $F_{Y\vert X} \lp y,x\rp=p\lp Y\geq y\mid X=x \rp$ com la funció de distribució condicionada de $Y$ amb $X=x$,
-   \item $P_{Y\vert X} \lp y,x\rp=p\lp Y = y\mid X=x \rp$ com la funció de probabilitat condicionada.
-  \end{enumerate} 
+Siguin $X$ i $Y$ variables aleatòries discretes i sigui $x\in\real$ tal que $p\lp X=x\rp >0$. Aleshores definim
+    \begin{enumerate}[1)]
+        \item $F_{Y\vert X} \lp y,x\rp=p\lp Y\geq y\mid X=x \rp$ com la funció de distribució condicionada de $Y$ amb $X=x$,
+        \item $P_{Y\vert X} \lp y,x\rp=p\lp Y = y\mid X=x \rp$ com la funció de probabilitat condicionada.
+    \end{enumerate} 
 \end{defi}
 
 \begin{obs}
  Una definició anàloga consisteix en prendre $A\in\Asuc$ enlloc de $X=x$ sempre que $p(A)>0$. Aleshores tenim
- \begin{enumerate}[1)]
-   \item $F_{Y\vert X} \lp y,x\rp=p\lp Y\geq y\mid A \rp$,
-   \item $P_{Y\vert X} \lp y,x\rp=p\lp Y = y\mid A \rp$.
-  \end{enumerate} 
+    \begin{enumerate}[1)]
+        \item $F_{Y\vert X} \lp y,x\rp=p\lp Y\geq y\mid A \rp$
+        \item $P_{Y\vert X} \lp y,x\rp=p\lp Y = y\mid A \rp$
+    \end{enumerate} 
 \end{obs}
 
 \begin{example}
- Siguin $\left\{Y_r\right\}_{r\geq 1}$ variables aleatòries independents tals que $Y_r \sim \operatorname{Be}(p)\; \forall i$. Sigui $X$ una 
- variable aleatòria tal que $X=i$ si $Y_1 = Y_2 = \cdots = Y_{i-1}=0$ i $Y_i=1$. Observem que $X\mid\{Y_1=1\}= X\vert_{Y_1=1}=1$, 
- $X\vert_{Y_1=0}=1+\operatorname{Geom}(p)$ i $X\vert_{Y_1=0,Y_2=0}=2+\operatorname{Geom}(p)$.
+    Siguin $\left\{Y_r\right\}_{r\geq 1}$ variables aleatòries independents tals que $Y_r \sim \operatorname{Be}(p)\; \forall i$. Sigui $X$ una 
+    variable aleatòria tal que $X=i$ si $Y_1 = Y_2 = \cdots = Y_{i-1}=0$ i $Y_i=1$. Observem que $X\mid\{Y_1=1\}= X\vert_{Y_1=1}=1$, 
+    $X\vert_{Y_1=0}=1+\operatorname{Geom}(p)$ i $X\vert_{Y_1=0,Y_2=0}=2+\operatorname{Geom}(p)$.
 \end{example}
+
+\begin{defi}[esperança!condicionada]
+    Siguin $X,Y$ v.a. discretes, i sigui $x$ tal que $P(X=x)>0$. L'esperança condicionada de $Y$ a $X=x$ és
+    \[\esp[Y \vert X=x] = \sum_{y \in \im(Y)} y \cdot P(Y=y \vert X=x) = \phi(x)\]
+    Observem que, per cada tria de $x\in\im(X), \phi(x) = \esp[Y \vert X=x]$ té un valor diferent.
+\end{defi}
+
+\begin{defi}[esperança!condicionada]
+    Siguin $X,Y$ v.a. discretes,
+    \[\esp[Y \vert X] = \phi(x) \text{ amb probabilitat } P(X=x)\],
+    sumant els valors de $X$ que fan igual $\phi(x)$,
+\end{defi}
+
+\begin{example}
+    \[\begin{rcases}
+    P(X=1) = \frac{1}{4}, \phi(1)=2\\
+    P(X=2) = \frac{1}{4}, \phi(2)=2
+    \end{rcases} \implies P(\esp[Y \vert X]=2)=\frac{1}{4}+\frac{1}{4}\]
+\end{example}
+
+\begin{obs}
+    $\phi(x) = \esp[Y \vert X=x]$ és una funció sobre $x$ amb valors reals, en canvi $\esp[Y \vert X]$ és una variable aleatòria.
+\end{obs}
+
+\begin{prop}
+    \[\esp[\esp[Y \vert X] = \esp[Y]\]
+\end{prop}
+
+\begin{proof}
+    \begin{align*}
+    \esp[\esp[Y \vert X] = & \sum_{x\in\im(X)} \phi(x)P(X=x) = \\
+    = & \sum_{x\in\im(X)} \sum_{y\in\im(Y)} y\phi(x)P(Y=y \vert X=x)P(X=x) = \\
+    = & \sum_{y\in\im(Y)} \sum_{x\in\im(X)} y\phi(x)P(Y=y \vert X=x)P(X=x) = \\
+    = & \sum_{y\in\im(Y)} y\sum_{x\in\im(X)} \phi(x)P(Y=y,X=x) = \\
+    = & \sum_{y\in\im(Y)} y P(Y=y) = \esp[Y]
+    \end{align*}
+\end{proof}
+
+
