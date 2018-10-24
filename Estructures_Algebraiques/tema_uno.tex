@@ -569,7 +569,7 @@
         \item Veamos que se cumplen las tres propiedades de la definición \ref{defi:subgrupo} para $K$.
         \begin{enumerate}[i)]
             \item $1 \in K, f(1) = 1 \implies 1 \in f^{-1}(K) \neq \emptyset$.
-            \item Sean $a, b \in f^{-1}\lp K\rp$. Entonces, $ f\lp a\rp, f\lp b\rp$ y $ f\lp a\rp f\lp b\rp \in K$ y tenemos que $ab = f^{-1}\lp f\lp ab\rp \rp = f^{-1}\lp f\lp a \rp f\lp b\rp\rp \subseteq f^{-1}\lp K\rp$.
+            \item Sean $a, b \in f^{-1}\lp K\rp$. Entonces, $ f\lp a\rp, f\lp b\rp$ y $ f\lp a\rp f\lp b\rp \in K$ y tenemos que $ab \in f^{-1}\lp f\lp ab\rp \rp = f^{-1}\lp f\lp a \rp f\lp b\rp\rp \subseteq f^{-1}\lp K\rp$.
             \item Sea $a \in f^{-1}\lp K\rp$. Entonces, $f\lp a\rp\in K, f\lp a\rp^{-1}=f\lp a^{-1}\rp \in K$, y tenemos que $a^{-1} \in f^{-1}\lp f\lp a^{-1}\rp \rp = f^{-1}\lp f\lp a \rp ^{-1} \rp \subseteq f^{-1}\lp K\rp$.
         \end{enumerate}
     \end{enumerate}
@@ -769,7 +769,7 @@
     
     \noindent Veamos que \ref{item:eq_norm_3}$\implies$\ref{item:eq_norm_5}. Sea $x=aba^{-1}\in aHa^{-1}$, de modo que $b\in H$. Por \ref{item:eq_norm_3}, sabemos que $ab=ca$, con $c\in H$; entonces, $x=aba^{-1}=caa^{-1}=c\in H$.
     
-    \noindent Veamos que \ref{item:eq_norm_5}$\implies$\ref{item:eq_norm_4}. Basta provar que $\abs{aHa^{-1}}=\abs{H}$. Tomemos $b, c\in H$ tales que $aba^{-1}=aca^{-1}$. Se tiene que $b=c$ y sigue que $\abs{aHa^{-1}}=\abs{H}$.
+    \noindent Veamos que \ref{item:eq_norm_5}$\implies$\ref{item:eq_norm_4}. Basta provar que $\abs{aHa^{-1}}=\abs{H}$. Tomemos $b, c\in H$ tales que $aba^{-1}=aca^{-1}$. Se tiene que $b=c$ lo que nos dice que la aplicación que va de $aHa^{-1}$ a $H$ es inyectiva y por lo tanto $\abs{aHa^{-1}}=\abs{H}$.
     
     \noindent Veamos, por último, que \ref{item:eq_norm_4}$\implies$\ref{item:eq_norm_2}. Sea $x=ab=aba^{-1}a\in aH$. Por \ref{item:eq_norm_4}, $aba^{-1}=c\in H$, de modo que $x=ca\in Ha$ y concluimos que $aH\subseteq Ha$. Análogamente, tenemos que $Ha\subseteq aH$.
 \end{proof}
@@ -785,7 +785,7 @@
             \]
             Como $\forall x \in H, \, xH = H = Hx$, $H$ es un grupo normal, ya que solo existen 2 clases.
         \item Tomamos $G = D_{2 \cdot 4} = \setb{\Id, r, r^2, r^3, s, rs, r^2s, r^3s}$ y
-            $H = \setb{ \Id, r, r^2, r^3}$.
+            $H = \setb{ \Id, r, r^2, r^3}$. %TODO
     \end{enumerate}
 \end{example}
 
