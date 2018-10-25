@@ -662,7 +662,7 @@ Com en el cas del problema primal, volem que la direcció $\vb{d^D}$ conservi la
 	B_D\vb{d^D_{\B^D}} + A^D_{\N^D}\vb{d^D_{\N^D}} = \vb{0}\,;
 \end{multline*}
 com abans, la definició que acabem de fer de $\vb{d^D_{\N^D}}$ implica que $A^D_{\N^D}\vb{d^D_{\N^D}} = \vb{A^D_{\N^D(p)}}$. Llavors tenim que
-\begin{equation}
+\begin{equation}\label{eq:DBF-dual}
 	B_D\vb{d^D_{\B^D}} + \vb{A^D_{\N^D(p)}} = \vb{0} \Leftrightarrow \vb{d^D_{\B^D}} = -B^{-1}_D \vb{A^D_{\N^D(p)}}\,. 
 \end{equation}
 
@@ -676,8 +676,96 @@ Recordant que $A^D_{\N^D} = \left[\Id_{m} \;|\; \varnothing \right]'$, la $p$-è
 	\end{array}
 	\right]\,,
 \]
-on $\vb{e_p}$ denota el vector unitari que té un 1 a la posició $p$ i zeros a la resta d'entrades.
+on $\vb{e_p}$ denota el vector unitari que té un 1 a la posició $p$ i zeros a la resta d'entrades. Per tant, seguint a partir de \eqref{eq:DBF-dual},
+\[
+	\vb{d^D_{\B^D}} = -B^{-1}_D
+	\left[
+	\begin{array}{@{}c@{}}
+		\vb{e_p}\\
+		\hline
+		\vb{0}
+	\end{array}
+	\right]
+	%
+	= 
+	%
+	- \left[
+	\begin{array}{@{}c|c@{}}
+		(B^{-1})'	  &	\varnothing	\\
+		\hline
+		-A_\N'(B^{-1})' & \Id_{n-m}
+	\end{array}
+	\right]
+	\left[
+	\begin{array}{@{}c@{}}
+		\vb{e_p}\\
+		\hline
+		\vb{0}
+		\end{array}
+	\right]
+	%
+	=
+	%
+	\left[
+	\begin{array}{@{}c@{}}
+		-(B^{-1})'\\
+		\hline
+		A_\N'(B^{-1})'
+	\end{array}
+	\right]
+	\vb{e_p}\,.
+\]
+Denotant amb $\vb{\beta_p}$ el vector fila de la p-èsima fila de $B^{-1}$, simplifiquem l'expressió anterior:
+\[
+	\vb{d^D_{\B^D}} =
+	\left[
+	\begin{array}{@{}c@{}}
+		-(B^{-1})'\vb{e_p}\\
+		\hline
+		A_\N'(B^{-1})'\vb{e_p}
+	\end{array}
+	\right]
+	%
+	=
+	%
+	\left[
+	\begin{array}{@{}c@{}}
+		-(\vb{e_p}'B^{-1})'\\
+		\hline
+		A_\N'(\vb{e_p}'B^{-1})'
+	\end{array}
+	\right]
+	%
+	=
+	%
+	\left[
+	\begin{array}{@{}c@{}}
+		-\vb{\beta_p}'\\
+		\hline
+		A_\N'\vb{\beta_p}'
+	\end{array}
+	\right]\,.
+\]
+Recordant la partició del vector 
+\[
+	\vb{y_{\B^D}} =
+	\left[
+	\begin{array}{@{}c@{}}
+		\vb{\lambda}\\
+		\hline
+		\vb{r_\N}
+	\end{array}
+	\right]\,,
+\]
+definim
+\[
+ \vb{d_\lambda} \defeq -\vb{\beta_p}'\,, \quad \vb{d_{r_\N}} \defeq (\vb{\beta_p} A_\N)'\,.
+\]
 
+\subsubsection{Longitud de pas dual}
+Les variables $\vb{\lambda}$ són lliures. Per tant, a l'hora de calcular la longitud de pas màxima de manera que es conservi la factibilitat dual, només caldrà tenir en compte les variables $\vb{r_\N}$.
+
+\subsection{ASD}
 \begin{alg}[del símplex dual]
     \begin{enumerate}
         \item[]
