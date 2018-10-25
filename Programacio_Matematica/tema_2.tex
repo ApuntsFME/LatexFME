@@ -575,7 +575,7 @@ Noteu que ara, havent utilitzat la definició alternativa de SB (\ref{defi:SB-al
 Ara, per poder desenvolupar l'algorisme del símplex dual a partir del símplex primal, encara ens falta determinar els costos reduïts duals (que denotarem $\vb{r^D}$), les direccions bàsiques factibles, i la longitud de passa màxima pel problema dual.
 
 \begin{prop}\label{prop:r-dual-x-primal}
-	El vector de costos reduïts (associats a VNB duals) per una solució dual associada a una SBFD $\vb{x}$ amb base $\B$ coincideix amb $\vb{x_\B}$.
+	El vector de costos reduïts (associats a VNB duals) per una solució dual associada a una SBFD $\vb{x}$ amb base $\B$ coincideix amb $\left[\vb{0} \;|\; \vb{x_\B}' \right]' \doteq \left[\vb{0} \;\vert\; \vb{x_\N}' \;\vert\; \vb{x_\B}' \right]'$.
 	\begin{proof}
 		Pel que sabem del símplex primal, el vector de costos reduïts d'una SBF $\vb{x}$, amb base $\B$ i matriu bàsica $B$, d'un problema en forma estàndard
 		\[
@@ -590,11 +590,11 @@ Ara, per poder desenvolupar l'algorisme del símplex dual a partir del símplex 
 		\]
 		està definit per
 		\[
-			\vb{r_\N}' \defeq \vb{c_\N}' - \vb{c_\B}B^{-1}A_\N\,.
+			\vb{r}' \defeq \vb{c}' - \vb{c_\B}'B^{-1}A\,.
 		\]
 		Si apliquem aquesta noció directament al problema dual definit a \eqref{eq:std-dual}, obtenim que
 		\begin{multline*}
-			\vb{r^D_{\N^D}}' = \vb{g_{\N^D}}' - \vb{g_{\B^D}}'B_D^{-1}A^D_{\N^D} = \vb{0}' - \left[-\vb{b} \;|\; 0\right]
+			\vb{r^D}' = \vb{g}' - \vb{g_{\B^D}}'B_D^{-1}A^D = \vb{0}' - \left[-\vb{b} \;|\; 0\right]
 			\left[
 			\begin{array}{@{}c|c@{}}
 				B'	  &	\varnothing	\\
@@ -763,14 +763,22 @@ definim
 \]
 
 \subsubsection{Longitud de pas dual}
-Les variables $\vb{\lambda}$ són lliures. Per tant, a l'hora de calcular la longitud de pas màxima de manera que es conservi la factibilitat dual, només caldrà tenir en compte les variables $\vb{r_\N}$.
+Les variables $\vb{\lambda}$ són lliures. Per tant, a l'hora de calcular la longitud de pas màxima de manera que es conservi la factibilitat dual, només caldrà tenir en compte les variables $\vb{r_\N}$. Aquestes estan subjectes a la restricció $\vb{r_\N} \ge \vb{0}$. Per tant, la màxima longitud de pas dual $\theta^\ast_D$ vindrà donada per
+\[
+	\theta_D^\ast = \min\limits_{\{j\in \N \mid d^D_j < 0 \}} \left\{\frac{-r_j}{d^D_j}\right\}\,.
+\]
 
 \subsection{ASD}
-\begin{alg}[del símplex dual]
+
+L'esquema general del símplex dual (que està resumit a \ref{alg:ASD}) és el següent. Comencem amb una SBFD inicial $\vb{x}$ i la seva solució dual associada $\vb{y}$---si no en tenim cap, com pel símplex primal, haurem de resoldre un problema de ``fase I''. 
+
+A cada iteració, primer durem a terme el test d'optimalitat per determinar si la SBFD actual és òptima. Si ho és, hem acabat. En cas contrari, seleccionarem una VNB dual entrant ${y_{\N^D(p)}}$ que tingui associat un cost reduït negatiu---és a dir, tal que $x_{\B(p)} < 0$. Tenint en compte que la variable $y_{\N^D(p)}$ passarà a ser una variable bàsica a la iteració següent 
+
+\begin{alg}[del símplex dual]\label{alg:ASD}
     \begin{enumerate}
         \item[]
         \item {\bf Inicialització}: Trobem una SBFD ($\B, \N, \vb{x_\B}, z$).
-        \item \label{simp_dual_pas2} {\bf Identificació de la SBF òptima i selecció VB sortint}:
+        \item \label{item:simp_dual_pas2} {\bf Identificació de la SBF òptima i selecció VB sortint}:
             \begin{itemize}
                 \item Si $\vb{x_\B} \geq \vb{0}$, llavors és la SBF òptima. \textcolor{red}{\bf STOP!}
             \end{itemize}
@@ -788,14 +796,14 @@ Les variables $\vb{\lambda}$ són lliures. Per tant, a l'hora de calcular la lon
             \end{itemize}
         \item {\bf Actualitzacions i canvi de base}:
             \begin{itemize}
-                \item $\vb{r}_\N := \vb{r}_\N + \theta_D^* \vb{d}_{\vb{r}_\N}$, \\
-                    $\vb{\lambda} := \vb{\lambda} - \theta_D^* \beta_p^\prime$, \\
-                    $\vb{r}_{B\left(p\right)} := \theta_D^*$, \\
-                    $z := z - \theta^* \vb{x_{B\left(p\right)}}$.
-                \item $\B := \B \setminus \left\{B\left(p\right)\right\} \cup \left\{q\right\}$, \\
-                    $\N := \N \setminus \left\{q\right\} \cup \left\{B\left(p\right)\right\}$.
+                \item $\vb{r}_\N \coloneqq \vb{r}_\N + \theta_D^* \vb{d}_{\vb{r}_\N}$, \\
+                    $\vb{\lambda} \coloneqq \vb{\lambda} - \theta_D^* \beta_p^\prime$, \\
+                    $\vb{r}_{B\left(p\right)} \coloneqq \theta_D^*$, \\
+                    $z \coloneqq z - \theta^* \vb{x_{B\left(p\right)}}$.
+                \item $\B \coloneqq \B \setminus \left\{B\left(p\right)\right\} \cup \left\{q\right\}$, \\
+                    $\N \coloneqq \N \setminus \left\{q\right\} \cup \left\{B\left(p\right)\right\}$.
             \end{itemize}
-        \item {\bf Anar} a \ref{simp_dual_pas2}.
+        \item {\bf Anar} a \ref{item:simp_dual_pas2}.
     \end{enumerate}
 \end{alg}
 
