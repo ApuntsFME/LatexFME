@@ -432,8 +432,8 @@ Queremos $\Phi_i\left( x \right)$ tal que sean cúbicas a trozos, $\C^2$, $S''_0
     \]
     Tenemos que $A$ es
     \begin{align*}
-        A &= \int_{x_0}^{x_n} S''\left( g''-S'' \right) \dif x = \sum_{i=0}^{n-1} \left( -\int_{x_i}^{x_{i+1}} S'''\left( g'-S' \right) \dif x + \left[ S''\left( g' - S' \right) \right]_{x_i}^{x_{i+1}} \right) = \\
-        &= \sum_{i=0}^{n-1} -S'''_i\cancel{\left[ g-S \right]_{x_i}^{x_{i+1}}} + \cancel{S''\left( g'-S' \right)_{x_0}^{x_n}}.
+        A &= \int_{x_0}^{x_n} S''\left( g''-S'' \right) \dif x = \\ &= \cancel{\left[ S''\left( g' - S' \right) \right]_{x_0}^{x_n}} - \int_{x_0}^{x_n} S'''\left( g'-S' \right) \dif x = \\
+        &= -\sum_{i=0}^{n-1} \int_{x_i}^{x_{i+1}} S'''\left( g'-S' \right) \dif x  = \\ &= -\sum_{i=0}^{n-1} S'''_i\cancel{\left[ g-S \right]_{x_i}^{x_{i+1}}} = 0.
     \end{align*}
     Por lo tanto $I\left( g \right) \geq I\left( S \right)$ y la igualdad se da solo si $g = S$.
 \end{proof}
