@@ -4,7 +4,7 @@
 \begin{itemize}
     \item $f\left( x \right)$ analíticamente o evaluable,
     \item $\left\{ f_i \right\}^n_{i=0}$ valor de $f$ en $n+1$ puntos $\left\{ x_i \right\}^n_{i=0}$,
-    \item $\left\{ f_i \right\}^n_{i=0},\left\{ f'_i \right\}^n_{i=0},\dots$,
+    \item $\left\{ f_i \right\}^n_{i=0},\left\{ f^{\prime}_i \right\}^n_{i=0},\dots$,
     \item Espai d'aproximació $V$ (espai vectorial).
 \end{itemize}
 
@@ -90,7 +90,7 @@ Criterios de aproximación:
         \]
 \end{enumerate}
 
-\noindent Así pues, intentaremos no trabajar con matrices de Vandermonde. Escogeremos una base $\left\{ L_j\left( x \right) \right\}^n_{j=0}$ (base de Lagranje) tal que, $\forall \left\{ f_i \right\}^n_{i=0}$,
+\noindent Así pues, intentaremos no trabajar con matrices de Vandermonde. Escogeremos una base $\left\{ L_j\left( x \right) \right\}^n_{j=0}$ (base de Lagrange) tal que, $\forall \left\{ f_i \right\}^n_{i=0}$,
 \[
     f_i = f\left( x_i \right) \approx p_n\left( x_i \right) = \sum^n_{j=0} f_jL_j\left( x_i \right).
 \]
@@ -110,7 +110,7 @@ Es decir, tenemos que imponer
 \end{defi}
 
 \begin{example} %TODO dibuixos
-    $f\left( x \right)\approx p_2\left( x \right) = f_0L_0\left( x \right) + f_1L_1\left( x \right) + f_2L_2\left( x \right)$
+    $f\left( x \right)\approx p_2\left( x \right) = f_0L_0\left( x \right) + f_1L_1\left( x \right) + f_2L_2\left( x \right)$, sabiendo que $x_0=0$, $x_1=0,5$ y $x_2=1$.
     \begin{align*}
         L_0\left( x \right) &= \frac{\left( x-0,5 \right)\left( x-1 \right)}{\left( 0-0,5 \right)\left( 0-1 \right)} = 2\left( x-0,5 \right)\left( x-1 \right),\\
         L_1\left( x \right) &= \frac{\left( x-0 \right)\left( x-1 \right)}{\left( 0,5-0 \right)\left( 0,5-1 \right)} = \left( -4 \right)x\left( x-1 \right),\\
@@ -143,7 +143,7 @@ Es decir, tenemos que imponer
             \left\{ x_i \right\}_{i=0}^n \text{ son }n\text{ ceros}.
         \end{cases}
     \]
-    Por tanto $g'\left( x \right)$ tiene almenos $n+1$ ceros (por el teorema de Rolle), $g''\left( x \right)$ tiene almenos $n$ ceros, \dots, $g^{\left( n+1 \right)} \left( x \right)$ tiene almenos $1$ cero. Llamemosle $\mu\left( \hat{x} \right) = \mu$,
+    Por tanto $g^{\prime}\left( x \right)$ tiene almenos $n+1$ ceros (por el teorema de Rolle), $g^{\prime\prime}\left( x \right)$ tiene almenos $n$ ceros, \dots, $g^{\left( n+1 \right)} \left( x \right)$ tiene almenos $1$ cero. Llamemosle $\mu\left( \hat{x} \right) = \mu$,
     \[
         g^{\left( n+1 \right)}\left( \mu \right) = f^{\left( n+1 \right)}\left( \mu \right) - k\left( \hat{x} \right)\left( n+1 \right)! = 0.
     \]
@@ -163,8 +163,8 @@ Es decir, tenemos que imponer
 \begin{prop}
     Dados unos puntos base $\left\{ x_i \right\}_{i=0}^n$, un grado $m$ y una continuidad $\C^q$, consideramos
     \begin{align*}
-        E_{S} &= \setb{S\left( x \right) \in \C^q\left( \left[ x_0, x_n \right] \right) \tq S\vert_{[ x_i, x_{i+1} ]_{0\leq i<n}} \in \Pa^m}, \\
-        S_i\left( x \right) &= S\left( x \right)\vert_{[ x_i, x_{i+1} ]}.
+        E_{S} &:= \setb{S\left( x \right) \in \C^q\left( \left[ x_0, x_n \right] \right) \tq S\vert_{[ x_i, x_{i+1} ]_{0\leq i<n}} \in \Pa^m}, \\
+        S_i\left( x \right) &:= S\left( x \right)\vert_{[ x_i, x_{i+1} ]}.
     \end{align*}
     Entonces $E_S$ es un espacio vectorial (tiene una base, etc.).
 \end{prop}
@@ -217,7 +217,7 @@ $S_i\left( x \right) = a_i\left( x-x_i \right)^2 + b_i \left( x-x_i \right) + c_
     \end{tabular}
 \end{center}
 
-Los $n+2$ parámetros quedan determinados por los $n+1$ valores de $f$ y $S'\left( x_0 \right) = f'_0$.
+Los $n+2$ parámetros quedan determinados por los $n+1$ valores de $f$ y $S^{\prime}\left( x_0 \right) = f^{\prime}_0$.
 
 \subsection{Splines cúbicos ($m=3$) $\C^1$}
 
@@ -231,12 +231,12 @@ $S_i\left( x \right) = a_i\left( x-x_i \right)^3 + b_i \left( x-x_i \right)^2 + 
     \end{tabular}
 \end{center}
 
-Para determinar un Spline necesitamos $2(n+1)$ datos: $\left\{ f_i \right\}_{i=0}^n$ y $\left\{ f'_i \right\}_{i=0}^n$.
+Para determinar un Spline necesitamos $2(n+1)$ datos: $\left\{ f_i \right\}_{i=0}^n$ y $\left\{ f^{\prime}_i \right\}_{i=0}^n$.
 
 \begin{obs}
     Si solo tenemos $\left\{ f_i \right\}_{i=0}^n$, podemos calcular aproximaciones
     \[
-        f'_i = \frac{f_{i+1}-f_{i-1}}{2h}\approx f'\left( x_i \right)
+        f^{\prime}_i = \frac{f_{i+1}-f_{i-1}}{2h}\approx f^{\prime}\left( x_i \right)
     \]
     si los puntos son equiespaciados. Si los puntos no son equiespaciados hay que deducir una forma diferente.
 
@@ -244,16 +244,14 @@ Para determinar un Spline necesitamos $2(n+1)$ datos: $\left\{ f_i \right\}_{i=0
     \begin{align*}
         f_i &= S_i\left( x_i \right) = d_i, \\
         f_{i+1} &= S_i\left( x_{i+1} \right) = a_i h_i^3 + b_ih_i^2 + c_ih_i + d_i, \\
-        f'_i &= S'_i\left( x_i \right) = c_i, \\
-        f'_{i+1} &= S'_i\left( x_{i+1} \right) = 3a_ih_i^2 + 2b_ih_i + c_i,
+        f^{\prime}_i &= S^{\prime}_i\left( x_i \right) = c_i, \\
+        f^{\prime}_{i+1} &= S^{\prime}_i\left( x_{i+1} \right) = 3a_ih_i^2 + 2b_ih_i + c_i,
     \end{align*}
-    con $h_i = x_{i+1} - x_i$.
-
-    Si aislamos, obtenemos
+    con $h_i = x_{i+1} - x_i$. Si aislamos, obtenemos
     \begin{align*}
-        a_i &= \frac{h_i\left( f'_i + f'_{i+1} \right) - 2t_i}{h_i^3}, \\
-        b_i &= \frac{3t_i - h_i\left( 2f'_i + f'_{i+1} \right)}{h_i^2}, \\
-        c_i &= f'_i, \\
+        a_i &= \frac{h_i\left( f^{\prime}_i + f^{\prime}_{i+1} \right) - 2t_i}{h_i^3}, \\
+        b_i &= \frac{3t_i - h_i\left( 2f^{\prime}_i + f^{\prime}_{i+1} \right)}{h_i^2}, \\
+        c_i &= f^{\prime}_i, \\
         d_i &= f_i,
     \end{align*}
     con $h_i = x_{i+1} - x_i$ y $t_i = f_{i+1} - f_i$.
@@ -261,26 +259,26 @@ Para determinar un Spline necesitamos $2(n+1)$ datos: $\left\{ f_i \right\}_{i=0
 
 La base que nos interesa para los Splines cúbicos $\C^1$ es la base 
 \[
-    \left\{ \Phi_i \right\}_{i=0}^n \cup \left\{ \tilde{\Phi}_i \right\}_{i=0}^n \tq S\left( x \right) = \sum_{i=0}^n f_i\Phi_i\left( x \right) + \sum_{i=0}^n f'_i\tilde{\Phi}_i\left( x \right).
+    \left\{ \Phi_i \right\}_{i=0}^n \cup \left\{ \tilde{\Phi}_i \right\}_{i=0}^n \tq S\left( x \right) = \sum_{i=0}^n f_i\Phi_i\left( x \right) + \sum_{i=0}^n f^{\prime}_i\tilde{\Phi}_i\left( x \right).
 \]
 
 Tenemos que
 \begin{gather*}
     \begin{rcases}
-        f_j = S\left( x_j \right) = \sum\limits_{i=0}^n f_i\Phi_i\left( x_j \right) + \sum\limits_{i=0}^n f'_i\tilde{\Phi}_i\left( x_j \right) \\
-        f'_j = S'\left( x_j \right) = \sum\limits_{i=0}^n f_i\Phi'_i\left( x_j \right) + \sum\limits_{i=0}^n f'_i\tilde{\Phi}'_i\left( x_j \right)
+        f_j = S\left( x_j \right) = \sum\limits_{i=0}^n f_i\Phi_i\left( x_j \right) + \sum\limits_{i=0}^n f^{\prime}_i\tilde{\Phi}_i\left( x_j \right) \\
+        f^{\prime}_j = S^{\prime}\left( x_j \right) = \sum\limits_{i=0}^n f_i\Phi^{\prime}_i\left( x_j \right) + \sum\limits_{i=0}^n f^{\prime}_i\tilde{\Phi}^{\prime}_i\left( x_j \right)
     \end{rcases}
     \implies \\
     \implies
     \begin{cases}
         \Phi_i \left( x_j \right) = \delta_{ij},\, \tilde{\Phi}_i\left( x_j \right) = 0\quad \forall i,j\\
-        \Phi_i '\left( x_j \right) = 0\quad \forall i,j,\, \tilde{\Phi}'_i\left( x_j \right) = \delta_{ij}.
+        \Phi_i ^{\prime}\left( x_j \right) = 0\quad \forall i,j,\, \tilde{\Phi}^{\prime}_i\left( x_j \right) = \delta_{ij}.
     \end{cases}
 \end{gather*}
 Por lo tanto, las funciones de la base deberán cumplir
 \begin{align*}
-    \Phi_i &= \left\{ f_i = 1, f_j=0\quad \forall j\neq i, f'_j = 0 \quad\forall j \right\}, \\
-    \tilde{\Phi}_i &= \left\{ f_i = 0\quad \forall i, f'_i = 1, f'_j = 0 \quad\forall j\neq i \right\}.
+    \Phi_i &= \left\{ f_i = 1, f_j=0\quad \forall j\neq i, f^{\prime}_j = 0 \quad\forall j \right\}, \\
+    \tilde{\Phi}_i &= \left\{ f_i = 0\quad \forall i, f^{\prime}_i = 1, f^{\prime}_j = 0 \quad\forall j\neq i \right\}.
 \end{align*}
 
 \begin{obs}
@@ -294,7 +292,7 @@ $S_i\left( x \right) = a_i\left( x-x_i \right)^3 + b_i\left( x-x_i \right)^2 + c
 \begin{center}
     \begin{tabular}{crcl}
         & $\#$coeficientes &=& $4n$\\
-        $-$ & $\#$condiciones &=& $3\left( n-1\right)$ (continuidad de $S$, $S'$ y $S''$ en $\left\{ x_i \right\}_{i=1}^{n-1}$)\\\hline
+        $-$ & $\#$condiciones &=& $3\left( n-1\right)$ (continuidad de $S$, $S^{\prime}$ y $S^{\prime\prime}$ en $\left\{ x_i \right\}_{i=1}^{n-1}$)\\\hline
         &$\dim\left( E_S \right)$ &=& $n+3$.
     \end{tabular}
 \end{center}
@@ -302,21 +300,21 @@ $S_i\left( x \right) = a_i\left( x-x_i \right)^3 + b_i\left( x-x_i \right)^2 + c
 Tenemos $n+1$ valores de la función, y hay que añadir $2$ condiciones adicionales. Estas pueden ser:
 
 \begin{itemize}
-    \item \emph{Spline natural} (el más ``suave'' posible): $f''_0 = 0$, $f''_n = 0$.
-    \item $S'\left( x_0 \right) = f'_0$, $S'\left( x_n \right) = f'_n$.
+    \item \emph{Spline natural} (el más ``suave'' posible): $f^{\prime\prime}_0 = 0$, $f^{\prime\prime}_n = 0$.
+    \item $S^{\prime}\left( x_0 \right) = f^{\prime}_0$, $S^{\prime}\left( x_n \right) = f^{\prime}_n$.
 \end{itemize}
 
-\emph{Formulación con derivadas}: expresamos el Spline en función de $\left\{ f_i \right\}_{i=0}^n$ (conocido) y de las derivadas $\left\{ S'_i \right\}_{i=0}^n$ (no conocido).
+\emph{Formulación con derivadas}: expresamos el Spline en función de $\left\{ f_i \right\}_{i=0}^n$ (conocido) y de las derivadas $\left\{ S^{\prime}_i \right\}_{i=0}^n$ (no conocido).
 \begin{align*}
-    a_i &= a_i\left( f_i, f_{i+1}, S'_i,S'_{i+1} \right) \\
-    b_i &= b_i\left( f_i, f_{i+1}, S'_i,S'_{i+1} \right) \\
-    c_i &= c_i\left( f_i, f_{i+1}, S'_i,S'_{i+1} \right) \\
-    d_i &= d_i\left( f_i, f_{i+1}, S'_i,S'_{i+1} \right) \\
+    a_i &= a_i\left( f_i, f_{i+1}, S^{\prime}_i,S^{\prime}_{i+1} \right) \\
+    b_i &= b_i\left( f_i, f_{i+1}, S^{\prime}_i,S^{\prime}_{i+1} \right) \\
+    c_i &= c_i\left( f_i, f_{i+1}, S^{\prime}_i,S^{\prime}_{i+1} \right) \\
+    d_i &= d_i\left( f_i, f_{i+1}, S^{\prime}_i,S^{\prime}_{i+1} \right) \\
 \end{align*}
 
-Con la formula del Spline cúbico $\C^1$ tenemos continuidad de $S(x)$ y de $S'(x)$. Escogeremos $\left\{ S'_i \right\}_{i=0}^n$ para tener continuidad de $S''(x)$:
+Con la formula del Spline cúbico $\C^1$ tenemos continuidad de $S(x)$ y de $S^{\prime}(x)$. Escogeremos $\left\{ S^{\prime}_i \right\}_{i=0}^n$ para tener continuidad de $S^{\prime\prime}(x)$:
 \[
-    S''_{i-1}\left( x_i, S'_{i-1}, S'_i \right) = S''_i\left( x_i, S'_i, S'_{i+1} \right),\quad i = 1, \dots, n-1
+    S^{\prime\prime}_{i-1}\left( x_i, S^{\prime}_{i-1}, S^{\prime}_i \right) = S^{\prime\prime}_i\left( x_i, S^{\prime}_i, S^{\prime}_{i+1} \right),\quad i = 1, \dots, n-1
 \]
 
 Es decir,
@@ -329,10 +327,10 @@ Es decir,
     & & & \lambda_{n-1} & 2 & \mu_{n-1} 
 \end{pmatrix}
 \begin{pmatrix}
-    S'_0 \\
+    S^{\prime}_0 \\
     \vdots \\
     \vdots \\
-    S'_n
+    S^{\prime}_n
 \end{pmatrix}
 =
 \begin{pmatrix}
@@ -349,35 +347,35 @@ Es decir,
 \end{cases}
 \]
 
-Para tener un SCD nos faltan dos datos adicionales:
+Para tener un sistema compatible determinado nos faltan dos datos adicionales:
 \begin{itemize}
     \item Podemos imponer
         \begin{align*}
-            S'\left( x_0 \right) &= f'_0 = S'_0, \\
-            S'\left( x_n \right) &= f'_n = S'_n.
+            S^{\prime}\left( x_0 \right) &= f^{\prime}_0 = S^{\prime}_0, \\
+            S^{\prime}\left( x_n \right) &= f^{\prime}_n = S^{\prime}_n.
         \end{align*}
-    \item También podemos imponer $S''\left( x_0 \right) = S''\left( x_n \right) = 0$ para obtener un Spline natural (curvatura inicial y final nula).
+    \item También podemos imponer $S^{\prime\prime}\left( x_0 \right) = S^{\prime\prime}\left( x_n \right) = 0$ para obtener un Spline natural (curvatura inicial y final nula).
         \begin{enumerate}[i)]
-            \item $0=S''\left( x_0 \right)=S''_0\left( x_0 \right)=6a_0\left( x_0-x_0 \right)+2b_0 = b_0(S'_0, S'_1) = 0$,
+            \item $0=S^{\prime\prime}\left( x_0 \right)=S^{\prime\prime}_0\left( x_0 \right)=6a_0\left( x_0-x_0 \right)+2b_0 = b_0(S^{\prime}_0, S^{\prime}_1) = 0$,
 
-                $3t_0-h_0\left( 2S'_0+S'_1 \right)=0$.
-            \item $0=S''_{n-1}\left( x_n \right) = a_{n-1} \underbrace{\left( x_n-x_{n-1} \right)}_{h_{n-1}} + b_{n-1}$.
+                $3t_0-h_0\left( 2S^{\prime}_0+S^{\prime}_1 \right)=0$.
+            \item $0=S^{\prime\prime}_{n-1}\left( x_n \right) = a_{n-1} \underbrace{\left( x_n-x_{n-1} \right)}_{h_{n-1}} + b_{n-1}$.
 
-                Nos queda una ecuación en función de $S'_{n-1}$ y $S'_n$. Añadimos $2$ ecuaciones y nos queda un sistema $\left( n+1 \right)\times \left( n+1 \right)$.
+                Nos queda una ecuación en función de $S^{\prime}_{n-1}$ y $S^{\prime}_n$. Añadimos $2$ ecuaciones y nos queda un sistema $\left( n+1 \right)\times \left( n+1 \right)$.
         \end{enumerate}
 \end{itemize}
 
 Cálculo del Spline:
 \begin{enumerate}[i)]
-    \item Planteamos y resolemos el sistema lineal $\rightarrow \left\{ S'_i \right\}_{i=0}^n$.
-    \item Con la fórmula del Spline cúbico $\C^1$ calculamos $a_i, b_i, c_i, d_i$ en cada intervalo (con $f'_i=S'_i$).
+    \item Planteamos y resolvemos el sistema lineal $\rightarrow \left\{ S^{\prime}_i \right\}_{i=0}^n$.
+    \item Con la fórmula del Spline cúbico $\C^1$ calculamos $a_i, b_i, c_i, d_i$ en cada intervalo (con $f^{\prime}_i=S^{\prime}_i$).
 \end{enumerate}
 
-Veamos cual es la base del Spline natural ($S''_0=S''_n=0$). Tenemos que $\dim\left( E_S \right)=n+1$,
+Veamos cual es la base del Spline natural ($S^{\prime\prime}_0=S^{\prime\prime}_n=0$). Tenemos que $\dim\left( E_S \right)=n+1$,
 \[
     S\left( x \right) = \sum_{i=0}^n f_i \Phi_i\left( x \right).
 \]
-Queremos $\Phi_i\left( x \right)$ tal que sean cúbicas a trozos, $\C^2$, $S''_0=S''_n=0$, $\Phi_i\left( x_j \right) = \delta_{ij}$. La base no será local pero tendrá amortiguamiento rápido. La podemos dibujar tomando
+Queremos $\Phi_i\left( x \right)$ tal que sean cúbicas a trozos, $\C^2$, $S^{\prime\prime}_0=S^{\prime\prime}_n=0$, $\Phi_i\left( x_j \right) = \delta_{ij}$. La base no será local pero tendrá amortiguamiento rápido. La podemos dibujar tomando
 \[
     \begin{cases}
         f_j = 0 & j\neq i, \\
@@ -386,7 +384,7 @@ Queremos $\Phi_i\left( x \right)$ tal que sean cúbicas a trozos, $\C^2$, $S''_0
 \]
 
 \begin{obs}[Formulación con curvaturas]
-    Fijamos $S''_0=S''_n=0$ y resolvemos el sistema
+    Fijamos $S^{\prime\prime}_0=S^{\prime\prime}_n=0$ y resolvemos el sistema
 
     \[
         \begin{pmatrix}
@@ -396,10 +394,10 @@ Queremos $\Phi_i\left( x \right)$ tal que sean cúbicas a trozos, $\C^2$, $S''_0
             & & & \lambda_{n-1} & 2 & \mu_{n-1} 
         \end{pmatrix}
         \begin{pmatrix}
-            S''_0 \\
+            S^{\prime\prime}_0 \\
             \vdots \\
             \vdots \\
-            S''_n
+            S^{\prime\prime}_n
         \end{pmatrix}
         =
         \begin{pmatrix}
@@ -420,7 +418,7 @@ Queremos $\Phi_i\left( x \right)$ tal que sean cúbicas a trozos, $\C^2$, $S''_0
 \begin{teo}[Teorema de la suavidad del Spline natural]
     De todas las funciones $\C^2$ que pasan por $\left( x_i, f_i \right)$, $i=0,\dots,n$, el Spline natural es la que minimiza la ``rugosidad'':
     \[
-        I\left( g \right) := \int_{x_0}^{x_n} \left[ g''\left( x \right) \right]^2 \dif x
+        I\left( g \right) := \int_{x_0}^{x_n} \left[ g^{\prime\prime}\left( x \right) \right]^2 \dif x
     \]
     El Spline es la interpolación más suave.
 \end{teo}
@@ -428,25 +426,24 @@ Queremos $\Phi_i\left( x \right)$ tal que sean cúbicas a trozos, $\C^2$, $S''_0
 \begin{proof}
     Sean $g$ una función $\C^2$ que pasa por los puntos $\left( x_i, f_i \right)$ y $S$ el Spline natural.
     \[
-        I\left( g \right) - I \left( S \right) = \int_{x_0}^{x_n} \left[ \left( g'' \right)^2 - \left( s'' \right)^2 \right] \dif x = \underbrace{\int_{x_0}^{x_n} \left( g''-S'' \right)^2 \dif x}_{>0,\,\, =0 \iff g=S} + \underbrace{2\int_{x_0}^{x_n} S''\left( g'' - S'' \right) \dif x}_{:= A}.
+        I\left( g \right) - I \left( S \right) = \int_{x_0}^{x_n} \left[ \left( g^{\prime\prime} \right)^2 - \left( s^{\prime\prime} \right)^2 \right] \dif x = \underbrace{\int_{x_0}^{x_n} \left( g^{\prime\prime}-S^{\prime\prime} \right)^2 \dif x}_{>0,\,\, =0 \iff g=S} + \underbrace{2\int_{x_0}^{x_n} S^{\prime\prime}\left( g^{\prime\prime} - S^{\prime\prime} \right) \dif x}_{:= A}.
     \]
     Tenemos que $A$ es
     \begin{align*}
-        A &= \int_{x_0}^{x_n} S''\left( g''-S'' \right) \dif x = \\ &= \cancel{\left[ S''\left( g' - S' \right) \right]_{x_0}^{x_n}} - \int_{x_0}^{x_n} S'''\left( g'-S' \right) \dif x = \\
-        &= -\sum_{i=0}^{n-1} \int_{x_i}^{x_{i+1}} S'''\left( g'-S' \right) \dif x  = \\ &= -\sum_{i=0}^{n-1} S'''_i\cancel{\left[ g-S \right]_{x_i}^{x_{i+1}}} = 0.
+        A &= \int_{x_0}^{x_n} S^{\prime\prime}\left( g^{\prime\prime}-S^{\prime\prime} \right) \dif x = \\ &= \cancel{\left[ S^{\prime\prime}\left( g^{\prime} - S^{\prime} \right) \right]_{x_0}^{x_n}} - \int_{x_0}^{x_n} S^{\prime\prime\prime}\left( g^{\prime}-S^{\prime} \right) \dif x = \\
+        &= -\sum_{i=0}^{n-1} \int_{x_i}^{x_{i+1}} S^{\prime\prime\prime}\left( g^{\prime}-S^{\prime} \right) \dif x  = \\ &= -\sum_{i=0}^{n-1} S^{\prime\prime\prime}_i\cancel{\left[ g-S \right]_{x_i}^{x_{i+1}}} = 0.
     \end{align*}
     Por lo tanto $I\left( g \right) \geq I\left( S \right)$ y la igualdad se da solo si $g = S$.
 \end{proof}
 
 \begin{obs}
-    Vemos que $I\left( g \right) \geq I\left( S \right) + \left[ S''\left( g'-S' \right) \right]_{x_0}^{x_n}$ para $S$ Spline $\C^2$ cúbico. Si los datos son $\left\{ f_i \right\}_{i=0}^n$ y $\left\{ S'_0, S'_n \right\}$, el Spline $\C^2$ cúbico es el más suave posible en estas condiciones.
+    Vemos que $I\left( g \right) \geq I\left( S \right) + \left[ S^{\prime\prime}\left( g^{\prime}-S^{\prime} \right) \right]_{x_0}^{x_n}$ para $S$ Spline $\C^2$ cúbico. Si los datos son $\left\{ f_i \right\}_{i=0}^n$ y $\left\{ S^{\prime}_0, S^{\prime}_n \right\}$, el Spline $\C^2$ cúbico es el más suave posible en estas condiciones.
 \end{obs}
 
 \section{Mínimos cuadrados}
 \begin{obs}
     Si tenemos muchos datos puede no ser necesario que la aproximación pase exactamente por los puntos, especialmente experimentales.
 \end{obs}
-
 Tenemos lo siguiente:
 \begin{itemize}
     \item Datos: $\left\{ f_i \right\}_{i=0}^n$ o bien $f(x)$.
@@ -457,3 +454,57 @@ Tenemos lo siguiente:
             \item Datos continuos: $\gen{u, v} = \int_a^b u\left( x \right) v\left( x \right) \dif x$, $\|u\|=\sqrt{\gen{u, u}} = \sqrt{\int_a^b\left( u\left( x \right) \right)^2 \dif x}$.
         \end{itemize}
 \end{itemize}
+El objetivo es encontrar $p = \arg\left\{ \min\limits_{q\in V} \|q-f\|^2 \right\}$. Para calcularlo, expresamos $p$ en función de los coeficientes i minimizamos
+\[
+    E\left( c_0, \dots, c_m \right) = \left\|f - p\left( c_0, \dots, c_m \right)\right\|^2\quad (m\leq n).
+\]
+Para encontrar un mínimo queremos $\frac{\partial E}{\partial c_i} = 0$, $i = 0,\dots, m$ que es un sistema no lineal.
+
+\subsection{Ecuaciones normales (caso lineal)}
+Tenemos
+\begin{itemize}
+    \item $V = \gen{\psi_i}_{i=0,\dots, m}$,
+    \item $p\left( x \right) = c_0\psi_0 + \dots + c_m\psi_m$,
+    \item $E = \gen{f-p, f-p}$.
+\end{itemize}
+Imponemos $0 = \frac{\partial E}{\partial c_i} = -2 \gen{f-p, \frac{\partial p}{\partial c_i}} = -2 \gen{f-p, \psi_i}$, para $i = 0, \dots, m$ y tenemos
+\[
+    \sum_j \gen{\psi_i, \psi_j}c_j = \gen{\psi_i, f},\, i = 0,\dots, m
+\]
+Que son ecuaciones normales y tenemos el sistema
+\[
+    \begin{pmatrix}
+        \gen{\psi_0, \psi_0} & \dots & \gen{\psi_0, \psi_m} \\
+        \vdots & & \vdots \\
+        \gen{\psi_m, \psi_0} & \dots & \gen{\psi_m, \psi_m}
+    \end{pmatrix}
+    \begin{pmatrix}
+        c_0 \\
+        \vdots \\
+        c_m
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        \gen{\psi_0, f} \\
+        \vdots \\
+        \gen{\psi_m, f}
+    \end{pmatrix},
+\]
+que es una matriz simétrica y definida positiva por ser una matriz de un producto escalar.
+
+\subsection{Aproximación per mínimos cuadrados con polinomios}
+Nuestro objetivo es encontrar $p_m \in \Pa^m$ tal que $p_m = \arg\left\{ \min\limits_q \left\{ \left\|f-q\right\|^2 \right\} \right\}$. Podemos considerar la base natural
+\[
+    p_m(x) = a_0 + a_1x + \dots + a_mx^m = \sum_{i=0}^m a_i \psi_i(x), \text{ donde }\psi_i(x) = x^i.
+\]
+Las ecuaciones normales son
+\[
+    \left[ \gen{\psi_i, \psi_j} \right]
+    \begin{bmatrix}
+        a_0 \\
+        \vdots \\
+        a_m
+    \end{bmatrix}
+    = \left[ \gen{\psi_i, f} \right]
+\]
+Pero $\left[ \gen{\psi_i, \psi_j} \right]$ está mal condicionada, especialmente si el intervalo es muy diferente de $(0, 1)$. Lo solucionando cogiendo una base de polinomios ortogonales con el producto escalar $\gen{\cdot, \cdot}$, y nos queda una matriz diagonal.
