@@ -260,7 +260,11 @@ Per últim, noteu que si una solució bàsica $\vb{x}$ de $(P_e)$ és factible d
 
 \section{Símplex dual}
 
-Per desenvolupar l'algorisme del símplex dual, partirem de l'estructura general del símplex primal. Per poder emprar solucions bàsiques, hem de poder definir una forma estàndard del dual. Partirem amb la següent definició provisional.
+Per desenvolupar l'algorisme del símplex dual, partirem de l'estructura general del símplex primal. 
+
+
+\subsection{Forma estàndard del problema dual}
+Per poder emprar solucions bàsiques, hem de poder definir una forma estàndard del dual. Partirem amb la següent definició provisional.
 
 \begin{defi*}[Forma estàndard del dual]\label{defi:std-dual}
 	Sigui $(P_e)$ un problema en forma estàndard i sigui $(D^e)$ el seu dual:
@@ -442,6 +446,7 @@ Ara bé, si restringim els vectors $\vb{\lambda}$ als que tenen la forma $\vb{\l
 	\end{proof}
 \end{prop}
 
+\subsection{SBF del poliedre dual}
 Ara, per poder utilitzar l'estructura del símplex primal en el desenvolupament del símplex dual, hem de trobar una manera de treballar amb solucions bàsiques factibles del poliedre $D^e_{\tilde{e}}$. Com veurem a la proposició \ref{prop:SD-SDBF}, les solucions duals definides a \ref{defi:SD} són SBF de $D^e_{\tilde{e}}$. 
 
 \begin{defi}[Solució dual associada a una SBFD]\label{defi:SD}
@@ -449,35 +454,36 @@ Ara, per poder utilitzar l'estructura del símplex primal en el desenvolupament 
 	\[
 		\vb{y} = 
 		\left[\begin{array}{@{}c@{}}
-		\vb{y_\B}\\
+		\vb{y_{\B^D}}\\
 		\hline
-		\vb{y_\N}
+		\vb{y_{\N^D}}
 		\end{array}\right],\quad\text{on }
 		%
-		\vb{y_\B}=
+		\vb{y_{\B^D}}=
 		\left[\begin{array}{@{}c@{}}
 			\vb{\lambda}\\
 			\hline
 			\vb{r_\N}
 		\end{array}\right],\ 
 		%
-		\vb{y_\N} = \vb{r_\B} \doteq \vb{0}\,.	
+		\vb{y_{\N^D}} = \vb{r_\B} \doteq \vb{0}\,.	
 	\]
 	La última igualtat ($\vb{r_\B}=\vb{0}$) es satisfà, per definició de $\vb{r}$, per qualsevol SB de $(P_e)$.
 \end{defi}
 
 
-Podem aplicar la mateixa partició al vector $\vb{g}$:
+Podem aplicar la mateixa partició al vector $\vb{g}$,
 \[
-\vb{g} = 
-\left[\begin{array}{@{}c@{}}
-\vb{-b}\\
-\hline
-\vb{0}\\
-\hline
-\vb{0}
-\end{array}\right]\,.
+	\vb{g_{\B^D}} = 
+	\left[\begin{array}{@{}c@{}}
+		\vb{-b}\\
+		\hline
+		\vb{0}\\
+	\end{array}\right], \quad
+	%
+	\vb{g_{\N^D}} = \vb{0}\,,
 \]
+on $\vb{g_{\B^D}}\in \real^{n}$, i $\vb{g_{\N^D}}\in \real^m$.
 
 \begin{prop}\label{prop:SD-SDBF}
 	Donada una SBFD $\vb{x}$ del problema primal $(P_e)$, la solució dual $\vb{y}$ associada a $\vb{x}$ és una SBF del poliedre $D^e_{\tilde{e}}$.
@@ -492,7 +498,7 @@ Podem aplicar la mateixa partició al vector $\vb{g}$:
 			A_\N' & \Id_{n-m}
 			\end{array}\right]
 			%
-			\vb{y_\N} = \vb{c}\,.
+			\vb{y_{\N^D}} = \vb{c}\,.
 		\]
 		Analitzem la següent matriu:
 		\[
@@ -506,14 +512,14 @@ Podem aplicar la mateixa partició al vector $\vb{g}$:
 		\]
 		Les últimes $n-m$ files de $B_D$ són l.i. entre sí, ja que les darreres $n-m$ columnes d'aquestes formen la matriu $\Id_{n-m}$. D'altra banda, la matriu $B$ és no singular per definició, i per tant les $m$ primeres files de $B_D$ són l.i. entre sí. Finalment, les $m$ primeres files i les $n-m$ darreres són l.i. entre elles, ja que la submatriu formada per les primeres $m$ files i les darreres $n-m$ columnes és nul·la, mentre que la matriu formada per les $n-m$ darreres files i les $n-m$ darreres columnes és $\Id_{n-m}$.
 		
-		Per tant, el nombre total de files l.i. de $B_D$ és $m+(n-m) = n$. És a dir, que el vector $\vb{y_\N}$ està subjecte a $n$ restriccions actives l.i. (ja que $B_D \vb{y_\N} = \vb{c}$). D'altra banda, $\vb{r_\B} = 0$, cosa que afegeix $m$ restriccions actives l.i. addicionals (un subconjunt de les restriccions $\vb{r}\ge\vb{0}$). Unint aquests dos fets, tenim que $\vb{y}$ està subjecte a $n+m$ restriccions actives l.i., i per tant $\vb{y}$ és una solució bàsica (i factible per construcció) del poliedre $D^e_{\tilde{e}}$.
+		Per tant, el nombre total de files l.i. de $B_D$ és $m+(n-m) = n$. És a dir, que el vector $\vb{y_{\N^D}}$ està subjecte a $n$ restriccions actives l.i. (ja que $B_D \vb{y_{\N^D}} = \vb{c}$). D'altra banda, $\vb{r_\B} = 0$, cosa que afegeix $m$ restriccions actives l.i. addicionals (un subconjunt de les restriccions $\vb{r}\ge\vb{0}$). Unint aquests dos fets, tenim que $\vb{y}$ està subjecte a $n+m$ restriccions actives l.i., i per tant $\vb{y}$ és una solució bàsica (i factible per construcció) del poliedre $D^e_{\tilde{e}}$.
 	\end{proof}
 \end{prop}
 
 Noteu que ara, havent utilitzat la definició alternativa de SB (\ref{defi:SB-alt}), hem de redefinir a part els conceptes de matriu bàsica, variables bàsiques i no bàsiques pel problema dual. Tot i així, les definicions que farem a continuació (\ref{defi:mbd} i \ref{defi:vd}) coincideixen idènticament amb les definicions que havíem fet a \ref{defi:SB}, i impliquen les mateixes propietats.
 
 \begin{defi*}[Matriu bàsica d'una SBF dual]\label{defi:mbd}
-	Donada una solució dual associada a una SBFD $\vb{x}$ del problema primal $(P_e)$ amb matriu bàsica $B$, definirem la ``matriu bàsica de $\vb{y}$'' com
+	Donada una solució dual $\vb{y}$ associada a una SBFD $\vb{x}$ del problema primal $(P_e)$ amb matriu bàsica $B$, definirem la ``matriu bàsica de $\vb{y}$'' com
 	\[
 		B_D \defeq \left[
 		\begin{array}{@{}c|c@{}}
@@ -521,14 +527,30 @@ Noteu que ara, havent utilitzat la definició alternativa de SB (\ref{defi:SB-al
 			\hline
 			A_\N' & \Id_{n-m}
 		\end{array}
-		\right]\,.
+		\right]
+		\in \matspace_{n\times n}(\real)  \,.
 	\]
 \end{defi*}
 
-\begin{defi}[Variables bàsiques d'una SBF dual]\label{defi:vd}
-	Donada una solució dual associada a una SBFD $\vb{x}$ del problema primal $(P_e)$ amb matriu bàsica $B$, anomenarem ``variables bàsiques de $\vb{y}$'' a les variables contingudes en el vector
+\begin{defi*}[Matriu no bàsica d'una SBF dual]
+	Donada una solució dual $\vb{y}$ associada a una SBFD $\vb{x}$ del problema primal $(P_e)$, definirem la ``matriu no bàsica de  $\vb{y}$'' com
 	\[
-		\vb{y_\B} \defeq
+		A^D_{\N^D} \defeq 
+		\left[
+		\begin{array}{@{}c@{}}
+			\Id_m \\
+			\hline
+			\varnothing
+		\end{array}
+		\right]
+		\in \matspace_{n\times m}(\real)\,.
+	\]
+\end{defi*}
+
+\begin{defi*}[Partició en variables bàsiques i no bàsiques d'una SBF dual]\label{defi:vd}
+	Donada una solució dual associada a una SBFD $\vb{x}$ del problema primal $(P_e)$ amb base $\B$, anomenarem ``variables bàsiques de $\vb{y}$'' a les variables contingudes en el vector
+	\[
+		\vb{y_{\B^D}} \defeq
 		\left[\begin{array}{@{}c@{}}
 			\vb{\lambda}\\
 			\hline
@@ -537,10 +559,10 @@ Noteu que ara, havent utilitzat la definició alternativa de SB (\ref{defi:SB-al
 	\]
 	i anomenarem ``variables no bàsiques de $\vb{y}$'' a les variables contingudes en el vector
 	\[
-		\vb{y_\N} \defeq \vb{r_\B} \doteq \vb{0}\,.
+		\vb{y_{\N^D}} \defeq \vb{r_\B} \doteq \vb{0}\,.
 	\]
-	També definirem $\B_D \subseteq \{1,\ldots, m+n\}$ com el conjunt d'índexos associats a una variable bàsica (de $\vb{y_\B}$) i l'anomenarem \textit{base dual}, i definirem $\N^D$ com el complementari de $\B_D$ en $\{1,\ldots,m+n\}$.
-\end{defi}
+	També definirem $\B^D \subseteq \{1,\ldots, m+n\}$ (tal que $|\B^D| = n$) com el conjunt d'índexos associats a una variable bàsica (de $\vb{y_{\B^D}}$) i l'anomenarem \textit{base dual}, i definirem $\N^D$ com el complementari de $\B^D$ en $\{1,\ldots,m+n\}$ (de manera que $|\N^D|=m$).
+\end{defi*}
 
 \begin{prop}
 	La matriu bàsica d'una SBF dual és no singular.
@@ -549,10 +571,11 @@ Noteu que ara, havent utilitzat la definició alternativa de SB (\ref{defi:SB-al
 	\end{proof}
 \end{prop}
 
+\subsection{Costos reduïts, DBF i longitud de pas màxima en el problema dual}
 Ara, per poder desenvolupar l'algorisme del símplex dual a partir del símplex primal, encara ens falta determinar els costos reduïts duals (que denotarem $\vb{r^D}$), les direccions bàsiques factibles, i la longitud de passa màxima pel problema dual.
 
-\begin{prop}
-	El vector de costos reduïts (duals) per una solució dual associada a una SBFD $\vb{x}$ amb base $\B$ coincideix amb $\vb{x_\B}$. Denotarem aquest vector per $\vb{r^D}$.
+\begin{prop}\label{prop:r-dual-x-primal}
+	El vector de costos reduïts (associats a VNB duals) per una solució dual associada a una SBFD $\vb{x}$ amb base $\B$ coincideix amb $\vb{x_\B}$.
 	\begin{proof}
 		Pel que sabem del símplex primal, el vector de costos reduïts d'una SBF $\vb{x}$, amb base $\B$ i matriu bàsica $B$, d'un problema en forma estàndard
 		\[
@@ -571,10 +594,89 @@ Ara, per poder desenvolupar l'algorisme del símplex dual a partir del símplex 
 		\]
 		Si apliquem aquesta noció directament al problema dual definit a \eqref{eq:std-dual}, obtenim que
 		\begin{multline*}
-			\vb{r^D}' = \vb{g}' - \vb{g_\B}'B_D^{-1}A^D = \left[-\vb{b} \;|\; \vb{0} \;|\; \vb{0} \right]
+			\vb{r^D_{\N^D}}' = \vb{g_{\N^D}}' - \vb{g_{\B^D}}'B_D^{-1}A^D_{\N^D} = \vb{0}' - \left[-\vb{b} \;|\; 0\right]
+			\left[
+			\begin{array}{@{}c|c@{}}
+				B'	  &	\varnothing	\\
+				\hline
+				A_\N' & \Id_{n-m}
+			\end{array}
+			\right]^{-1}
+			\left[\begin{array}{{@{}c@{}}}
+				\Id_m\\
+				\hline
+				\varnothing		
+			\end{array}\right] = \\
+			= - \left[-\vb{b} \;|\; 0\right]
+			\left[
+			\begin{array}{@{}c|c@{}}
+				(B^{-1})'	  &	\varnothing	\\
+				\hline
+				-A_\N'(B^{-1})' & \Id_{n-m}
+			\end{array}
+			\right]
+			\left[\begin{array}{{@{}c@{}}}
+				\Id_m\\
+				\hline
+				\varnothing		
+			\end{array}\right] = 
+			%
+			\left[\vb{b}'(B^{-1})' \;|\; \varnothing\right]
+			\left[\begin{array}{{@{}c@{}}}
+				\Id_m\\
+				\hline
+				\varnothing		
+			\end{array}\right] = \\
+			%
+			=\vb{b}'(B^{-1})' = (B^{-1}\vb{b})' = \vb{x_\B}'\,.
 		\end{multline*}
+		Com pel problema primal, tenim que $\vb{r^D_{\B^D}} = \vb{0}$.
 	\end{proof}
 \end{prop}
+
+De la proposició \ref{prop:r-dual-x-primal} deduïm, com era d'esperar a partir del teorema fort de dualitat, que la condició d'optimalitat pel problema dual ($\vb{r^D} \ge \vb{0}$) coincideix amb la factibilitat primal ($\vb{x} \ge \vb{0}$). D'altra banda, també veiem que l'algorisme del símplex primal seleccionarà a cada iteració, per tal de millorar el valor de la f.o., una variable no bàsica dual $y_{\N^D(p)} \doteq r_{\B(p)}$ tal que la variable primal $x_{\B(p)}$ sigui negativa: $r^D_{\N^D(p)}<0 \Leftrightarrow x_{\B(p)} < 0$.
+
+\subsubsection{DBF duals}
+Ara, per acabar de fonamentar les bases del símplex dual, cal determinar les direccions bàsiques factibles. Com abans, definim una DBF $\vb{d^D}$ sobre una SBF dual $\vb{y}$, associada a una VNB dual d'índex $\N^D(p)$, de manera que
+\[
+	{d^D_{\N^D(i)}} =
+	\begin{cases}
+		1 \quad \text{si } i = p\\
+		0 \quad \text{si } i \ne p
+	\end{cases}
+	\qquad \forall i \in \{1,\ldots,m\}\,.
+\]
+Com en el cas del problema primal, volem que la direcció $\vb{d^D}$ conservi la factibilitat dual. Llavors, emprant la formulació \eqref{eq:std-dual} del dual, i sent $\theta$ un escalar positiu,
+\begin{multline*}
+	A^D(\vb{y}+\theta\vb{d^D}) = \vb{c} \Rightarrow A^D\vb{d^D} = \vb{0} \Leftrightarrow \left[B_D \;\vert\; A^D_{\N^D} \right]
+	\left[
+	\begin{array}{@{}c@{}}
+		\vb{d^D_{\B^D}}\\
+		\hline
+		\vb{d^D_{\N^D}}
+	\end{array}
+	\right]
+	= \vb{0}\\
+	%
+	\Leftrightarrow
+	B_D\vb{d^D_{\B^D}} + A^D_{\N^D}\vb{d^D_{\N^D}} = \vb{0}\,;
+\end{multline*}
+com abans, la definició que acabem de fer de $\vb{d^D_{\N^D}}$ implica que $A^D_{\N^D}\vb{d^D_{\N^D}} = \vb{A^D_{\N^D(p)}}$. Llavors tenim que
+\begin{equation}
+	B_D\vb{d^D_{\B^D}} + \vb{A^D_{\N^D(p)}} = \vb{0} \Leftrightarrow \vb{d^D_{\B^D}} = -B^{-1}_D \vb{A^D_{\N^D(p)}}\,. 
+\end{equation}
+
+Recordant que $A^D_{\N^D} = \left[\Id_{m} \;|\; \varnothing \right]'$, la $p$-èsima columna d'$A^D_{\N^D}$ és
+\[
+	\left[
+	\begin{array}{@{}c@{}}
+		\vb{e_p}\\
+		\hline
+		\vb{0}
+	\end{array}
+	\right]\,,
+\]
+on $\vb{e_p}$ denota el vector unitari que té un 1 a la posició $p$ i zeros a la resta d'entrades.
 
 \begin{alg}[del símplex dual]
     \begin{enumerate}
