@@ -1,31 +1,43 @@
-\documentclass[12pt]{article}
+\documentclass[12pt]{report}
 
 \input{../preamble}
 \input{../environments_ca}
 
-\usepackage{changepage,makecell}
-\usepackage{amsfonts, amsbsy}
-\newcommand{\vb}[1]{\boldsymbol{#1}} %vector bold
+\usepackage{changepage, makecell, amsbsy}
+\usepackage[labelfont=bf]{caption}
 
+\newcommand{\vb}[1]{\boldsymbol{#1}} %vector bold
 \newcommand{\N}{\mathcal{N}}
 
-\declaretheorem[style=normal,name=M\`etode,sibling=lema]{met}
+\declaretheorem[style=breakthm,name=M\`etode,sibling=lema]{met}
 \declaretheorem[style=breakthm,name=Algorisme,sibling=lema]{alg}
+\declaretheorem[style=breakthm,name=Regla,sibling=lema]{rgl}
 
+\AtBeginDocument{\renewcommand{\chaptername}{Tema}}
+\AtBeginDocument{\renewcommand{\arraystretch}{1.3}}
+	
 \begin{document}
 
 \input{title}
 
 \tableofcontents
+\thispagestyle{empty}
+\newpage
+\thispagestyle{empty}
 
-\input{tema_1}
-\input{tema_2}
-\input{tema_3}
-\input{tema_4}
-\input{tema_5}
+\include{tema_1}
+\include{tema_2}
+\include{tema_3}
+\include{tema_4}
+\include{tema_5}
+
+\printindex
 
 \vspace*{\fill}
 
-\doclicenseThis
+%\clearpage
+%\phantom{ }
+%\vfill
+%\thispagestyle{empty}
 
 \end{document}
