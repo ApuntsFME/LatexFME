@@ -1143,7 +1143,8 @@ proposició \ref{prop:r-dual-x-primal}---el valor de $x_{\B(p)}$ passarà a ser
 VB sortint). D'altra banda i de manera similar, la VNB primal entrant vindrà
 determinada pel càlcul 
 de $\theta^\ast_D$, ja que la VB dual sortint serà $r_{\N(q)}$ tal que 
-\[\theta_D^\ast = \frac{-r_{\N(q)}}{d_{r_\N(q)}}\,,\] i llavors, altre cop per 
+\[\theta_D^\ast = \frac{-r_{\N(q)}}{d^D_{r_\N(q)}}\,,\] i llavors, altre cop 
+per 
 la proposició \ref{prop:r-dual-x-primal}, $x_{\N(q)}$ passarà a ser VB primal 
 (amb valor $\theta^\ast_D$).
 
@@ -1153,6 +1154,20 @@ corresponent serà
 \[
 	\theta^\ast = \frac{-x_{\B(p)}}{d_{\B(p)}}\,.
 \] 
+
+Per últim, el valor de la funció objectiu (primal, que és equivalent a la dual 
+\textit{sense forma estàndard}) variarà segons $\vb{\lambda}$. 
+Sigui $\vb{\lambda^1}$ el valor de $\vb{\lambda}$ en ls iteració actual, i 
+sigui $\vb{\lambda^2}$ el seu valor en la següent iteració; i siguin $z_1$ i 
+$z_2$ els valors de la f.o. en la iteració actual i següent, respectivament. 
+Tenim que
+\begin{multline*}
+	-z_2 = -\vb{b}'\vb{\lambda^2} = -\vb{b}'(\vb{\lambda^1} + 
+	\theta_D^*\vb{d^D_\lambda}) = -\vb{b}'(\vb{\lambda^1} - 
+	\theta_D^*\vb{\beta_p}') = -\vb{b}'\vb{\lambda^1} + 
+	\theta^*_D(\vb{\beta_p}\vb{b})' = \\
+	= -z_1 + x_{\B(p)} \Rightarrow z_2 = z_1 - \theta_D^* x_{\B(p)}\,.
+\end{multline*}
 
 \begin{alg}[del símplex dual]\label{alg:ASD}
 	\begin{enumerate}
@@ -1173,33 +1188,53 @@ corresponent serà
 		\begin{itemize}
 			\item $\vb{d^D_{r_\N}} = \left(\vb{\beta_p} A_\N\right)^\prime$
 			($\vb{\beta_p}$ és la fila $p$-èsima de $B^{-1}$).
-			\item Si $\vb{d^D_{r_\N}} \geq \vb{0}$, 
-			$\left(D^e_{\tilde{e}}\right)$
-			il·limitat $\Rightarrow$ $(P_e)$ infactible. \textcolor{red}{\bf 
-			STOP!}
 			\item $\left[ \vb{d^D_{\lambda}} = -\vb{\beta_p}' \right]$
 		\end{itemize}
+		Si $\vb{d^D_{r_\N}} \geq \vb{0}$, 
+		$\left(D^e_{\tilde{e}}\right)$
+		il·limitat $\Rightarrow$ $(P_e)$ infactible. \textcolor{red}{\bf 
+			STOP!}
 		%
-		\item {\bf Càlcul de $\theta^\ast_D$}:
-			\[\theta_D^* = \min_{\{j \in \N \,|\, d^D_j <
-				0\}} \left\{-\frac{r_j}{d^D_j} \right\}.\]
+		\item {\bf Càlcul de $\theta^\ast_D$ (i VNB primal entrant)}:
+		\begin{flalign*}
+			&\theta_D^* = \min_{\{j \in \N \,|\, d^D_j <	0\}} 
+			\left\{-\frac{r_j}{d^D_{r_j}} \right\}.&
+		\end{flalign*}
+		VNB primal entrant: $x_{\N(q)}$ tal que $\theta^\ast_D =
+		-\dfrac{x_{\N(q)}}{d^D_{r_{\N(q)}}}$.	
 		%
-		\item VNB primal entrant: $x_q$ tal que $\theta^\ast_D =
-			-\dfrac{x_q}{d_q}$.
+		\item {\bf Càlcul de DBF primal i $\theta^*$}:
+		\begin{flalign*}
+			&\vb{d_\B} = -B^{-1}\vb{A_{\N(q)}}&\\
+			&\theta^* = \frac{-x_{\B(p)}}{d_{\B(p)}}&
+		\end{flalign*}
 		%
 		\item {\bf Actualitzacions i canvi de base}:
-		\begin{itemize}
-			\item $\vb{r}_\N \coloneqq \vb{r}_\N + \theta_D^* 
-			\vb{d^D_{\vb{r}_\N}}$, \\
-			$\vb{\lambda} \coloneqq \vb{\lambda} - \theta_D^* 
-			\beta_p^\prime$, \\
-			$\vb{r}_{B\left(p\right)} \coloneqq \theta_D^*$, \\
-			$z \coloneqq z - \theta^* \vb{x_{B\left(p\right)}}$.
-			\item $\B \coloneqq \B \setminus \left\{B\left(p\right)\right\} 
-			\cup \left\{q\right\}$, \\
-			$\N \coloneqq \N \setminus \left\{q\right\} \cup 
-			\left\{B\left(p\right)\right\}$.
-		\end{itemize}
+		\begin{enumerate}
+			\item {\bf Actualització variables duals}
+			\begin{flalign*}
+				&\vb{r_\N} \coloneqq \vb{r}_\N + \theta_D^* 
+				\vb{d^D_{\vb{r}_\N}}& \\
+				&r_{B\left(p\right)} \coloneqq \theta_D^*& \\
+				&z \coloneqq z - \theta^* {x_{\B\left(p\right)}}&\\
+				[ &\vb{\lambda} \coloneqq \vb{\lambda} + \theta_D^* 
+				\vb{d^D_{\lambda}}]&
+			\end{flalign*}
+			%
+			\item {\bf Actualització variables primals} 
+			\begin{flalign*}
+				&\vb{x_\B} \coloneqq \vb{x_\B} + \theta^\ast\vb{d_\B} \\
+				&x_{\N(q)} = \theta^*\\
+			\end{flalign*}
+			%
+			\item {\bf Canvi de base} 
+			\begin{flalign*}
+				&\B \coloneqq \B \setminus \left\{\B\left(p\right)\right\} 
+				\cup \left\{\N(q)\right\}\,,& \\
+				&\N \coloneqq \N \setminus \left\{\N(q)\right\} \cup 
+				\left\{B\left(p\right)\right\}\,.&
+			\end{flalign*}
+		\end{enumerate}
 		\item {\bf Anar} a \ref{item:simp_dual_pas2}.
 	\end{enumerate}
 \end{alg}

@@ -20,6 +20,34 @@ En referència a la definició \ref{defi:semiespai}, es diu informalment que el 
 	Un poliedre $P$ és un subconjunt de $\real^n$ definit per una intersecció de semiespais: \[P = \{\vb{x}\in\real^n \mid \vb{a}_i'\vb{x} \le b_i \quad \forall i\in \{1,\ldots,m\} \}\,,\] on $n,m\in\n\,$, $\vb{a}_1,\ldots,\vb{a}_m \in \real^n$ i $b_1,\ldots,b_m\in\real$.
 \end{defi}
 
+
+\section{Problemes de PL}
+\begin{prop}
+	Un problema de PL és un problema de tipus
+	\[
+		\min\limits_{\vb{x}\in P} \{\vb{c}'\vb{x}\}\,,
+	\]
+	on $P$ és un poliedre. Denotarem el problema corresponent com $(P)$.
+\end{prop}
+
+\begin{defi}[Problema infactible]
+	Si un problema de PL té un poliedre buit ($P=\emptyset$), direm que és 
+	infactible.
+\end{defi}
+
+\begin{defi}
+	Sigui $(P)$ un problema de PL. Si
+	\[
+		\forall k\in\real \ \exists \vb{x}\in P \qcolon \vb{c}'\vb{x} \le k\,,
+	\]
+	direm que $(P)$ és il·limitat.
+\end{defi}
+
+\begin{defi}[Problema amb solució òptima]
+	Si un problema $(P)$ no és ni infactible ni il·limitat, direm que té 
+	solució òptima, o alternativament que té òptim.
+\end{defi}
+
 \section{Solucions bàsiques factibles}
 
 El fet que hi hagi solucions òptimes que siguin punts extrems no és de gran ajuda computacional per sí sol. Per tenir una caracterització computacionalment assequible cal el concepte de solució bàsica factible, que es defineix a continuació.
@@ -27,13 +55,19 @@ El fet que hi hagi solucions òptimes que siguin punts extrems no és de gran aj
 \begin{defi}[Solució bàsica]\label{defi:SB}
 	Donat un poliedre en forma estàndard $P_e$ associat a un problema de programació lineal, una solució bàsica és un vector $\vb{x}\in P_e$ del qual es pot fer la partició $\vb{x} = \left[\vb{x}_\B\mid\vb{x}_\N\right]$ tal que
 	\begin{enumerate}[i)]
-		\item $\B,\N\subseteq\{1,\ldots,n \}$ són conjunts complementaris d'índexos i $|\B| = m$, on $m$ és el nombre de restriccions (el nombre de files de la matriu $A$). $\B$ s'anomena el conjunt d'índexos de variables bàsiques o \textbf{base}, i $\N$ s'anomena el conjunt d'índexos de variables no bàsiques.
+		\item $\B,\N\subseteq\{1,\ldots,n \}$ són conjunts complementaris 
+		d'índexos i $|\B| = m$, on $m$ és el nombre de restriccions (el nombre 
+		de files de la matriu $A$). $\B$ s'anomena el conjunt d'índexos de 
+		variables bàsiques o \textbf{base}, i $\N$ s'anomena el conjunt 
+		d'índexos de variables no bàsiques.
 		%
 		\item $\vb{x}_\B \defeq 
 		\begin{bmatrix}x_{\B(1)} & x_{\B(2)} & \cdots & x_{\B(m)}\end{bmatrix}\,$
 		i
 		$\,\vb{x}_\N \defeq 
-		\begin{bmatrix}x_{\N(1)} & x_{\N(2)} & \cdots & x_{\N(n-m)}\end{bmatrix} = \vb{0}\,$, on $\B(i)$ i $\N(i)$ denoten, respectivament, l'$i$-èsim índex de $\B$ i $\N$.
+		\begin{bmatrix}x_{\N(1)} & x_{\N(2)} & \cdots & 
+		x_{\N(n-m)}\end{bmatrix} = \vb{0}\,$, on $\B(i)$ i $\N(i)$ denoten, 
+		respectivament, l'$i$-èsim índex de $\B$ i $\N$.
 		%
 		\item La matriu definida per
 		\[
@@ -51,7 +85,10 @@ El fet que hi hagi solucions òptimes que siguin punts extrems no és de gran aj
 Aquesta definició no és gaire intuïtiva; a continuació es presenta una versió alternativa basada en el poliedre general.
 
 \begin{defi}[Solució bàsica (definició alternativa)]\label{defi:SB-alt}
-	Donat un poliedre (general) $P\subseteq\real^n$ associat a un problema de programació lineal, direm que $\vb{x}\in P$ és una solució bàsica si és la intersecció de $n$ hiperplans (associats cadascun a una restricció) linealment independents.
+	Donat un poliedre (general) $P\subseteq\real^n$ associat a un problema de 
+	programació lineal, direm que $\vb{x}\in P$ és una solució bàsica si és la 
+	intersecció de $n$ hiperplans (associats cadascun a una restricció) 
+	linealment independents.
 \end{defi}
 
 \section{Direccions bàsiques factibles}
@@ -80,7 +117,9 @@ Aquesta definició no és gaire intuïtiva; a continuació es presenta una versi
         \item $\vb{y} = \vb{x} + \theta \vb{d} \geq 0$:
             \begin{gather*}
                 \vb{x}_{B\left(i\right)} + \theta d_{B\left(i\right)} \geq 0 \iff \theta \geq -\frac{\vb{x}_{B\left(i\right)}}{d_{B\left(i\right)}}, \\
-                \theta^* = \min_{\{i \in \left\{1, \dots, m \right\} \mid d_{B\left(i\right)} < 0\}} \left\{ - \frac{\vb{x}_{B\left(i\right)}}{d_{B\left(i\right)}} \right\}.
+                \theta^* = \min_{\{i \in \left\{1, \dots, m \right\} \mid 
+                d_{B\left(i\right)} < 0\}} \left\{ - 
+                \frac{\vb{x}_{B\left(i\right)}}{d_{B\left(i\right)}} \right\}.
             \end{gather*}
     \end{enumerate}
 \end{prop}
@@ -183,9 +222,11 @@ Aquesta definició no és gaire intuïtiva; a continuació es presenta una versi
     \end{itemize}
 \end{obs}
 \begin{rgl}[de Bland] \label{rgl:bland}
-    Usem la regla de Bland per a no entrar en bucle al utilitzar el símplex per a resoldre un problema degenerat.
+    Usem la regla de Bland per assegurar la terminació del símplex en resoldre 
+    un problema degenerat.
     \begin{enumerate}
-        \item Seleccionem com VNB d'entrada la VNB d'índex menor que compleix $r_q < 0$.
+        \item Seleccionem com VNB d'entrada la VNB d'índex menor 
+        (lexicogràficament) que compleix $r_q < 0$.
         \item Si al seleccionar la variable de sortida hi ha empat, seleccionem la VB amb índex menor.
     \end{enumerate}
 \end{rgl}
