@@ -202,7 +202,7 @@ ens permet trobar convolucions discretes de variables aleatòries.
 \begin{proof}
     \[
         G_X(z)G_Y(z) = \sum_{i \geq 0} P(X = i) z^i  \sum_{j \geq 0} P(X = j) z^j =
-         \sum_{i, j \geq 0} P(X = i)P(Y = j) z^{(i+j)}
+         \sum_{i, j \geq 0} P(X = i)P(Y = j) z^{(i+j)}.
     \]
     I, com $X$ i $Y$ són independents, podem unir el producte i obtenim
     \begin{align*} 
@@ -325,18 +325,27 @@ Modela el nombre d'èxits en fer $N$ experiments independents, on cadascun és $
 \end{defi}
 
 \begin{prop} %TODO esp i var les va deixar com a exercici, no sé que fer
-    Sigui $X$ una variable aleatòria que segueix una distribució binomial. Aleshores,
+    Sigui $X$ una variable aleatòria que segueix una distribució uniforme. Aleshores,
     \begin{enumerate}[i)]
      \item $G_X(z) =  \frac{1}{N}\frac{z(z^N-1)}{z-1}$
-     \item $\esp[X]=$
-     \item $\var[x]=$
+     \item $\esp[X]=\frac{N+1}{2}$
+     \item $\var[X]=\frac{N^2-1}{12}$
     \end{enumerate}
 \end{prop}
 
 \begin{proof}
-  Directament de la definició de distribució uniforme tenim que
-  \begin{enumerate}[i)]
-   \item $G_X(z) = \sum_{n=1}^N \frac{1}{N}z^n = \frac{1}{N}(z+z^2+\cdots+z^N) = \frac{1}{N}\frac{z(z^N-1)}{z-1}$.
+    Directament de la definició de distribució uniforme tenim que
+    \begin{enumerate}[i)]
+        \item $G_X(z) = \sum_{n=1}^N \frac{1}{N}z^n = \frac{1}{N}(z+z^2+\cdots+z^N) = \frac{1}{N}\frac{z(z^N-1)}{z-1}$.
+        \item $\esp[X]=\sum_{i=0}^N i\frac{1}{N}=\frac{1}{N}\frac{N\lp N+1\rp}{2}=\frac{N+1}{2}$.
+        \item
+        \begin{align*}
+            \var\lb X\rb &= \esp\lb X^2\rb - \esp\lb X\rb ^2 =\\
+            &= \lp\sum_{i=0}^N i^2\frac{1}{N}\rp-\lp\frac{N+1}{2}\rp ^2=\\
+            &=\frac{\lp N+1\rp \lp 2N+1\rp}{6}-\frac{\lp N+1\rp ^2}{4} =\\
+            &= \frac{4N^2+6N+2-\lp 3N^2+6N+3\rp}{12} =\\
+            &=\frac{N^2-1}{12}.
+        \end{align*}
   \end{enumerate}
 \end{proof}
 
@@ -371,7 +380,7 @@ S'usa per modelar successos ``estranys'' (persones en una cua, emissió de part�
         \item $G_X(z) = \sum\limits_{i=0}^\infty \frac{1}{i!}\lambda^i e^{-\lambda} z^i =
             e^{-\lambda} \sum\limits_{i=0}^\infty \frac{1}{i!}(\lambda z)^i = e^{-\lambda}e^{\lambda z} = e^{\lambda(z-1)}$.
         \item $\esp[X] = \lambda e^{\lambda(z-1)}|_{z=1} = \lambda$.
-        \item $\esp[X(X-1)] = \lambda^2 e^{\lambda(z-1)}|_{z=1} = \lambda^2 \implies \esp[x^2] = \lambda^2+\lambda$,  i per tant, 
+        \item $\esp[X(X-1)] = \lambda^2 e^{\lambda(z-1)}|_{z=1} = \lambda^2 \implies \esp[X^2] = \lambda^2+\lambda$,  i per tant, 
          $\var[X] = \esp[X^2] - \esp[X]^2 = \lambda^2 + \lambda - \lambda^2 = \lambda$.
     \end{enumerate}
 \end{proof}
@@ -393,6 +402,13 @@ La distribució geomètrica representa el nombre d'experiments necessaris abans 
     \[X \sim \operatorname{Geom}(p) \iff P(X=i) = \lp 1-p \rp ^{i-1}p,\;\forall i\geq1.\]
 \end{defi}
 
+\begin{obs}
+    La distribució està ben definida, atès que
+    \[
+        \sum_{i\geq 1} p\lp1-p\rp^{i-1} = p\sum_{i\geq 1}\lp1-p\rp^{i-1} = p\frac{1}{1-\lp 1-p\rp}=1.
+    \]
+\end{obs}
+
 \begin{prop}
     Sigui $X$ una variable aleatòria que segueix una distribució geomètrica. Aleshores,
     \begin{enumerate}[i)]
@@ -402,11 +418,19 @@ La distribució geomètrica representa el nombre d'experiments necessaris abans 
     \end{enumerate}
 \end{prop}
 \begin{proof}
-  Directament de les definicions tenim que
-  \begin{enumerate}[i)]
-   \item $G_X(z) = \sum_{i\geq 1}\lp 1-p \rp ^{i-1}p z^i = \frac{p}{1-p}\sum_{i\geq 1}\lp\lp 1-p \rp z\rp^{i} = 
-   \frac{p}{1-p}\cdot\frac{\lp 1-p \rp z}{1-\lp 1-p\rp z}= \frac{pz}{1-\lp 1-p\rp z}$.
-  \end{enumerate}
+    Directament de les definicions tenim que
+    \begin{enumerate}[i)]
+        \item $G_X(z) = \sum_{i\geq 1}\lp 1-p \rp ^{i-1}p z^i = \frac{p}{1-p}\sum_{i\geq 1}\lp\lp 1-p \rp z\rp^{i} = 
+        \frac{p}{1-p}\cdot\frac{\lp 1-p \rp z}{1-\lp 1-p\rp z}= \frac{pz}{1-\lp 1-p\rp z}$.
+        \item 
+            \begin{align*}
+                \esp\lb X\rb &= \lp \frac{\dif G_X\lp X\rp}{\dif z}\rp \lp 1\rp =\\
+                &=\lp\frac{p\lp 1-\lp 1-p\rp z\rp+p\lp 1-p\rp z}{\lp 1-\lp 1-p\rp z\rp ^2}\rp\lp 1\rp =\\
+                &=\frac{p^2+p-p^2}{p^2}=\\
+                &=\frac{1}{p}.
+            \end{align*}
+        \item Es pot fer igual que en la distribució anterior: calculant $\esp\lb X\lp X-1\rp\rb$ amb la segona derivada de $G_X\lp z\rp$ i utilitzant que $\var\lb X\rb = \esp\lb X^2\rb - \esp\lb X\rb ^2$, però les expressions són farragoses i no ho farem.
+    \end{enumerate}
 \end{proof}
 
 \subsection*{Distribució binomial negativa}
