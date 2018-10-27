@@ -511,7 +511,7 @@
     \begin{enumerate}[i)]
         \item[]
         \item Sea $x \in G_1$, $f \lp x \rp = f\lp x\cdot 1\rp = f\left(x \right)f\lp 1 \rp \implies f\lp 1 \rp = 1$.
-        \item Sea $x \in G_1$, $f \lp xx^{-1} \rp = f\lp 1\rp \stackrel{\ref{item:morf1}}{=} 1 = f\left(x \right)f\lp x^{-1} \rp \implies f\lp x^{-1} \rp = f\lp x \rp^{-1}$.
+        \item Sea $x \in G_1$, $f \lp xx^{-1} \rp = f\lp 1\rp \stackrel{\text{\ref{item:morf1}}}{=} 1 = f\left(x \right)f\lp x^{-1} \rp \implies f\lp x^{-1} \rp = f\lp x \rp^{-1}$.
     \end{enumerate}
 \end{proof}
 
@@ -1571,7 +1571,7 @@
     La otra inclusión resta como ejercicio.
 \end{proof}
 
-\begin{prop}
+\begin{prop} \label{prop:forb}
     Sea $G$ un grupo y $X$ un $G$-conjunto. Entonces, $\forall x \in X$, tenemos que
     \[
         \begin{aligned}
@@ -1582,14 +1582,14 @@
     es una aplicación bien definida y biyectiva.
     En particular,
     \begin{enumerate}[i)]
-        \item\label{prop_q_orb_ite_1} $\abs{Gx} =  \abs{\faktor{G}{G_x}} = \left[ G : G_x \right] = \frac{\abs{G}}{\abs{G_x}}$. Es decir,
+        \item \label{prop_q_orb_ite_1} $\abs{Gx} =  \abs{\faktor{G}{G_x}} = \left[ G : G_x \right] = \frac{\abs{G}}{\abs{G_x}}$. Es decir,
             $\label{Gx}\abs{G_x}\abs{Gx} = \abs{G}$.
-        \item\label{prop_q_orb_ite_2} Si $X$ es finito, entonces $X = \bigsqcup\limits^r_{i = 1} G x_i$ y, por consiguiente,
+        \item \label{prop_q_orb_ite_2} Si $X$ es finito, entonces $X = \bigsqcup\limits^r_{i = 1} G x_i$ y, por consiguiente,
             \[
                 \abs{X} = \sum^r_{i = 1} \abs{G x_i} = \sum^r_{i = 1} \left[ G : G_{x_i} \right],
             \]
             que es lo que conocemos como fórmula de órbitas.
-        \item %TODO(no sabem que hi hauria d'haver aqui)
+        %\item %TODO(no sabem que hi hauria d'haver aqui)
     \end{enumerate}
 \end{prop}
 
@@ -1928,7 +1928,7 @@ Veamos que, en general, este enunciado es falso.
     \[
         G\cdot H = \left\{ aHa^{-1} \mid a \in G \right\},
     \]
-    y es el conjunto de conjugados de $H$ por un elemento de $G$
+    y es el conjunto de conjugados de $H$ por un elemento de $G$.
 \end{obs}
 
 \begin{defi}[normalizador de un subgrupo en un grupo]
@@ -1981,7 +1981,7 @@ Veamos que, en general, este enunciado es falso.
     es un morfismo de grupos. En efecto, $f(xy) = axya^{-1} = axa^{-1}aya^{-1} = f(x)f(y)$.
 \end{obs}
 
-\begin{lema}[Auxiliar para demostrar \ref{teo:stsyl}]\label{lema:stsyla}
+\begin{lema}\label{lema:stsyla}
     Sea $G$ un grupo finito tal que $\abs{G} = p^rm$ con $p$ primo y $p \nmid m$. Sea $H$ un $p$-subgrupo y
     $P \in \Syl_p(G)$. Entonces
     \begin{enumerate}[i)]
@@ -1992,10 +1992,11 @@ Veamos que, en general, este enunciado es falso.
 
 \begin{proof}
     \begin{enumerate}[i)]
+        \item[]
         \item Tenemos $H, P \subseteq N_G(P)$ y $P \triangleleft N_G(P)$ y por lo tanto
             \[
-                H, P \subseteq H \cdot P \subseteq N_G(P) \implies P \triangleleft H \cdot P
-            \].
+                H, P \subseteq H \cdot P \subseteq N_G(P) \implies P \triangleleft H \cdot P.
+            \]
             Ahora, por $buscar proposición$, $H \cap P \triangleleft H$ y podemos aplicar el segundo teorema
             de isomorfismo (\ref{teo:dos_iso}) y
             \[
@@ -2009,9 +2010,9 @@ Veamos que, en general, este enunciado es falso.
 \begin{teo}[Segundo teorema de Sylow]\label{teo:stsyl}
     Sea $G$ un grupo finito con $\abs{G} = p^rm$ con $p$ primo y $\lp p, m\rp = 1$. Entonces,
     \begin{enumerate}[i)]
-        \item Sea $L$ un $p$-subgrupo de $G$. Entonces, $\exists H$ $p$-Sylow de $G$ tal que $L \subseteq H$.
-        \item Sean $H$ y $P$ dos $p$-Sylow de $G$. Entonces, $H$ y $P$ son conjugados.
-        \item $n_p(G) \equiv 1 \mod p$ y $n_p(G) \vert m$.
+        \item \label{item:stsyl-1} Sea $L$ un $p$-subgrupo de $G$. Entonces, $\exists H$ $p$-Sylow de $G$ tal que $L \subseteq H$.
+        \item \label{item:stsyl-2} Sean $H$ y $P$ dos $p$-Sylow de $G$. Entonces, $H$ y $P$ son conjugados.
+        \item \label{item:stsyl-3} $n_p(G) \equiv 1 \mod p$ y $n_p(G) \vert m$.
     \end{enumerate}
 \end{teo}
 
@@ -2045,7 +2046,7 @@ Veamos que, en general, este enunciado es falso.
     (que se trata unicamente de la restricción de la acción anterior). $H$ es un punto fijo de esta acción,
     ya que $aHa^{-1} H \forall a \in H$. Además es el único punto fijo, ya que si $P \in X$ punto fijo
     $\implies aPa^{-1} = P \forall a \in H \implies H \subseteq N_G(P) 
-    \stackrel{\ref{lema:stsyla}}{\implies} H = P$. Aplicamos ahora la fórmula de órbitas y obtenemos
+    \stackrel{\text{\ref{lema:stsyla}}}{\implies} H = P$. Aplicamos ahora la fórmula de órbitas y obtenemos
     \[
         \abs{X} = \underbrace{\abs{ \left\{ H \right\} }}_{1} +
         \sum^s_{i=1} \left[ H : H_{P_i} \right]
@@ -2056,7 +2057,7 @@ Veamos que, en general, este enunciado es falso.
         \left[ H : H_{P_i} \right] = \frac{\abs{H}}{\abs{H_{P_i}}} = \frac{p^r}{p^t} = p^{r-t}
     \]
     Por tanto:
-    $\abs{X} = 1 + \sum \dot{p} = 1 + p \beta$ y $\abs{X} \equiv 1 (\mod p)$. Veamos ahora que
+    $\abs{X} = 1 + \sum \dot{p} = 1 + p \beta$ y $\abs{X} \equiv 1 \mod p$. Veamos ahora que
     $X = \Syl_p(G)$. Suponemos que no lo es, es decir $\exists K \in \Syl_p(G) \setminus X$ y consideramos
     la acción por conjugación de $K$ en $X$:
     \[
@@ -2066,7 +2067,7 @@ Veamos que, en general, este enunciado es falso.
         \end{aligned}
     \]
     No tiene puntos fijos, ya que si $P$ fuera punto fijo $aPa^{-1} = P \forall a \in K \implies
-    K \subseteq N_G(P) \stackrel{\ref{lema:stsyla}}{\implies} K = P \in X$ Lo cual es una contradicción.
+    K \subseteq N_G(P) \stackrel{\text{\ref{lema:stsyla}}}{\implies} K = P \in X$, lo cual es una contradicción.
     Así, la fórmula de órbitas (\ref{prop:forb}) nos dice que
     \[
         \abs{X} = \sum^H_{i = 1} \left[ K : K_{P_i} \right] = \sum p^{\alpha_i}
@@ -2076,7 +2077,7 @@ Veamos que, en general, este enunciado es falso.
 
     En particular, 
     \[
-        n_p(G) = \# \Syl_p(G) \vert m, \quad n_p(G) = \# \Syl_p(G) \cong 1 (\mod p).
+        n_p(G) = \# \Syl_p(G) \vert m, \quad n_p(G) = \# \Syl_p(G) \cong 1 \mod p.
     \]
     Y así demostramos \ref{item:stsyl-2} y \ref{item:stsyl-3}, ya que todo $P \in \Syl_p(G) \implies
     P \in X \implies P$ y $H$ son conjugados.
