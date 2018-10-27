@@ -109,7 +109,7 @@ reduir al següent:
 
 Ara continuem amb la definició formal de problema dual.
 
-\begin{defi}[Problema Dual]
+\begin{defi}[problema!dual]
 	Donat un problema primal $(P)$, el problema dual corresponent (denotat per
 	$(D)$) es defineix segons la taula \ref{tab:dual}.
 \end{defi}
@@ -447,7 +447,7 @@ associades a les restriccions primals i duals \[A\vb{x} \lesseqgtr \vb{b} \quad
 component del vector variable de l'altre problema---$(\vb{a_i}'\vb{x}-b_i)$ amb
 $\lambda_i$ i $(c_j-\vb{\lambda}'A_j)$ amb $x_j$.
 
-\begin{defi}[Solució bàsica factible dual]\label{defi:SBFD}
+\begin{defi}[solució!bàsica!factible dual]\label{defi:SBFD}
 	Sigui $\left(P\right)$ un problema de PL i sigui $(P_e)$ la seva forma
 	estàndard. Llavors, direm que tota solució bàsica $\vb{x}$ de 
 	$\left(P\right)_e$
@@ -484,7 +484,7 @@ del símplex primal.
 Per poder emprar solucions bàsiques, hem de poder definir una forma estàndard 
 del dual. Partirem amb la següent definició provisional.
 
-\begin{defi*}[Forma estàndard del dual]\label{defi:std-dual}
+\begin{defi}[forma estàndard del dual]\label{defi:std-dual}
 	Sigui $(P_e)$ un problema en forma estàndard i sigui $(D^e)$ el seu dual:
 	\[
 	(P_e)
@@ -550,7 +550,7 @@ del dual. Partirem amb la següent definició provisional.
 	\end{aligned}
 	\end{cases}\,.
 	\end{equation}
-\end{defi*}
+\end{defi}
 
 Ara considerem una \hyperref[defi:SBFD]{SBFD} del problema $(P_e)$. Aquesta
 tindrà associada una base $\B$ de variables no bàsiques, i com s'ha vist durant
@@ -695,14 +695,14 @@ llavors concloem el que s'enuncia a la proposició \ref{prop:equiv-rho-r}.
 	\end{proof}
 \end{prop}
 
-\subsection{SBF del poliedre dual}
+\subsection{Solució bàsica factible del poliedre dual}
 Ara, per poder utilitzar l'estructura del símplex primal en el desenvolupament
 del símplex dual, hem de trobar una manera de treballar amb solucions bàsiques
 factibles del poliedre $D^e_{\tilde{e}}$. Com veurem a la proposició
 \ref{prop:SD-SDBF}, les solucions duals definides a \ref{defi:SD} són SBF de
 $D^e_{\tilde{e}}$. 
 
-\begin{defi}[Solució dual associada a una SBFD]\label{defi:SD}
+\begin{defi}[solució!dual associada a una SBFD]\label{defi:SD}
 	Donat un problema primal en forma estàndard $(P_e)$ i una
 	\hyperref[defi:SBFD]{SBFD} $\vb{x}$ d'aquest, amb matriu bàsica $B$ i 
 	vector de
@@ -803,7 +803,7 @@ que farem a continuació (\ref{defi:mbd} i \ref{defi:vd}) coincideixen
 idènticament amb les definicions que havíem fet a \ref{defi:SB}, i impliquen 
 les mateixes propietats.
 
-\begin{defi*}[Matriu bàsica d'una SBF dual]\label{defi:mbd}
+\begin{defi}[matriu!bàsica d'una SBF dual]\label{defi:mbd}
 	Donada una solució dual $\vb{y}$ associada a una SBFD $\vb{x}$ del problema 
 	primal $(P_e)$ amb matriu bàsica $B$, definirem la ``matriu bàsica de 
 	$\vb{y}$'' com
@@ -817,9 +817,9 @@ les mateixes propietats.
 	\right]
 	\in \matspace_{n\times n}(\real)  \,.
 	\]
-\end{defi*}
+\end{defi}
 
-\begin{defi*}[Matriu no bàsica d'una SBF dual]
+\begin{defi}[matriu!no bàsica d'una SBF dual]
 	Donada una solució dual $\vb{y}$ associada a una SBFD $\vb{x}$ del problema 
 	primal $(P_e)$, definirem la ``matriu no bàsica de  $\vb{y}$'' com
 	\[
@@ -833,10 +833,10 @@ les mateixes propietats.
 	\right]
 	\in \matspace_{n\times m}(\real)\,.
 	\]
-\end{defi*}
+\end{defi}
 
-\begin{defi*}[Partició en variables bàsiques i no bàsiques d'una SBF 
-	dual]\label{defi:vd}
+\begin{defi}[partició en variables!bàsiques d'una SBF dual]\idx{partició
+    en variables!no bàsiques d'una SBF dual}\label{defi:vd}
 	Donada una solució dual associada a una SBFD $\vb{x}$ del problema primal 
 	$(P_e)$ amb base $\B$, anomenarem ``variables bàsiques de $\vb{y}$'' a les 
 	variables contingudes en el vector
@@ -857,7 +857,7 @@ les mateixes propietats.
 	com el conjunt d'índexos associats a una variable bàsica (de 
 	$\vb{y_{\B^D}}$) i l'anomenarem \textit{base dual}, i definirem $\N^D$ com 
 	el complementari de $\B^D$ en $\{1,\ldots,m+n\}$ (de manera que $|\N^D|=m$).
-\end{defi*}
+\end{defi}
 
 \begin{prop}
 	La matriu bàsica d'una SBF dual és no singular.
@@ -868,7 +868,8 @@ les mateixes propietats.
 	\end{proof}
 \end{prop}
 
-\subsection{Costos reduïts, DBF i longitud de pas màxima en el problema dual}
+\subsection[Costos reduïts, DBF i longitud de pas màxima en el dual]%
+{Costos reduïts, direccions bàsiques fàctibles i longitud de pas màxima en el problema dual}
 Ara, per poder desenvolupar l'algorisme del símplex dual a partir del símplex 
 primal, encara ens falta determinar els costos reduïts duals (que denotarem 
 $\vb{r^D}$), les direccions bàsiques factibles, i la longitud de passa màxima 
@@ -1123,7 +1124,7 @@ $\theta^\ast_D$ vindrà donada per
 \left\{\frac{-r_j}{d^D_j}\right\}\,.
 \]
 
-\subsection{Algorisme del Símplex Dual}
+\subsection{Algorisme del símplex dual}
 
 L'esquema general de l'algorisme del símplex dual (que està resumit a 
 \ref{alg:ASD}) és el 
@@ -1179,7 +1180,7 @@ Tenim que
 	= -z_1 + x_{\B(p)} \Rightarrow z_2 = z_1 - \theta_D^* x_{\B(p)}\,.
 \end{multline*}
 
-\begin{alg}[del símplex dual]\label{alg:ASD}
+\begin{alg}[Algorisme del símplex dual]\label{alg:ASD}
 	\begin{enumerate}
 		\item[]
 		\item {\bf Inicialització}: Trobem una SBFD i opcionalment la solució 

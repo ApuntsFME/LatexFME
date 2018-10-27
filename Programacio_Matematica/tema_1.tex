@@ -1,12 +1,12 @@
-\chapter[Introducció a la prog. lineal \& símplex primal]%
+\chapter[Introducció a la programació lineal i símplex primal]%
 {Introducció a la programació lineal no entera i símplex primal}
 
 \section{Poliedres}
-\begin{defi}[Hiperplà]\label{defi:hiperpla}
+\begin{defi}[hiperplà]\label{defi:hiperpla}
 	Un hiperplà és un subconjunt de $\real^n$ definit com \[H = \{\vb{x}\in\real^n \mid \vb{a}'\vb{x}=b \}\,, \] on $\vb{a}\in\real^n$ i s'anomena el vector normal de l'hiperplà, i $b\in\real$.
 \end{defi}
 
-\begin{defi}[Semiespai]\label{defi:semiespai}
+\begin{defi}[semiespai]\label{defi:semiespai}
 	Donat un hiperplà $H = \{\vb{x}\in\real^n \mid \vb{a}'\vb{x}=b \}$, es defineixen dos semiespais: 
 	\begin{align*}
 		S_{\ge} &= \{\vb{x}\in\real^n \mid \vb{a}'\vb{x} \ge b \}\\
@@ -16,21 +16,21 @@
 
 En referència a la definició \ref{defi:semiespai}, es diu informalment que el semiespai $S_\ge$ és el conjunt de punts que estan ``per sobre'' de l'hiperplà, i $S_\le$, dels que estan ``per sota''.
 
-\begin{defi}[Poliedre]\label{defi:poliedre}
+\begin{defi}[poliedre]\label{defi:poliedre}
 	Un poliedre $P$ és un subconjunt de $\real^n$ definit per una intersecció de semiespais: \[P = \{\vb{x}\in\real^n \mid \vb{a}_i'\vb{x} \le b_i \quad \forall i\in \{1,\ldots,m\} \}\,,\] on $n,m\in\n\,$, $\vb{a}_1,\ldots,\vb{a}_m \in \real^n$ i $b_1,\ldots,b_m\in\real$.
 \end{defi}
 
 
-\section{Problemes de PL}
-\begin{prop}
-	Un problema de PL és un problema de tipus
+\section{Problemes de programació lineal}
+\begin{defi}[problema!de programació lineal]
+	Un problema de programació lineal és un problema de tipus
 	\[
 		\min\limits_{\vb{x}\in P} \{\vb{c}'\vb{x}\}\,,
 	\]
 	on $P$ és un poliedre. Denotarem el problema corresponent com $(P)$.
-\end{prop}
+\end{defi}
 
-\begin{defi}[Problema infactible]
+\begin{defi}[problema!infactible]
 	Si un problema de PL té un poliedre buit ($P=\emptyset$), direm que és 
 	infactible.
 \end{defi}
@@ -43,7 +43,7 @@ En referència a la definició \ref{defi:semiespai}, es diu informalment que el 
 	direm que $(P)$ és il·limitat.
 \end{defi}
 
-\begin{defi}[Problema amb solució òptima]
+\begin{defi}[problema!amb solució òptima]
 	Si un problema $(P)$ no és ni infactible ni il·limitat, direm que té 
 	solució òptima, o alternativament que té òptim.
 \end{defi}
@@ -52,7 +52,7 @@ En referència a la definició \ref{defi:semiespai}, es diu informalment que el 
 
 El fet que hi hagi solucions òptimes que siguin punts extrems no és de gran ajuda computacional per sí sol. Per tenir una caracterització computacionalment assequible cal el concepte de solució bàsica factible, que es defineix a continuació.
 
-\begin{defi}[Solució bàsica]\label{defi:SB}
+\begin{defi}[solució!bàsica]\label{defi:SB}
 	Donat un poliedre en forma estàndard $P_e$ associat a un problema de programació lineal, una solució bàsica és un vector $\vb{x}\in P_e$ del qual es pot fer la partició $\vb{x} = \left[\vb{x}_\B\mid\vb{x}_\N\right]$ tal que
 	\begin{enumerate}[i)]
 		\item $\B,\N\subseteq\{1,\ldots,n \}$ són conjunts complementaris 
@@ -84,7 +84,7 @@ El fet que hi hagi solucions òptimes que siguin punts extrems no és de gran aj
 
 Aquesta definició no és gaire intuïtiva; a continuació es presenta una versió alternativa basada en el poliedre general.
 
-\begin{defi}[Solució bàsica (definició alternativa)]\label{defi:SB-alt}
+\begin{defi}[solució!bàsica]\label{defi:SB-alt}
 	Donat un poliedre (general) $P\subseteq\real^n$ associat a un problema de 
 	programació lineal, direm que $\vb{x}\in P$ és una solució bàsica si és la 
 	intersecció de $n$ hiperplans (associats cadascun a una restricció) 
@@ -92,7 +92,7 @@ Aquesta definició no és gaire intuïtiva; a continuació es presenta una versi
 \end{defi}
 
 \section{Direccions bàsiques factibles}
-\begin{defi}[Direcci\'o b\`asica factible (DBF)]
+\begin{defi}[direcci\'o b\`asica factible]
     Una DBF sobre la SBF $\vb{x} \in P_e$ associada a $q \in \N$ és $\vb{d} =
     \begin{bmatrix}
         \vb{d}_{\B} \\
@@ -149,7 +149,7 @@ Aquesta definició no és gaire intuïtiva; a continuació es presenta una versi
     i la nova matriu bàsica és
     \[ \bar{B} = \left[A_{B\left(1\right)}, \dots, A_{B\left(p-1\right)}, A_q, A_{B\left(p+1\right)}, \dots, A_{B\left(m\right)} \right]. \]
 \end{prop}
-\begin{defi}[DBF de descens]
+\begin{defi}[direcci\'o b\`asica factible!de descens]
     \begin{itemize}
         \item[]
         \item $\vb{d}$ és una DBF de descens si $\forall \theta > 0, \vb{c}'\left(\vb{x} + \theta \vb{d}\right) < \vb{c}'\vb{x} \iff \vb{c}'\vb{d} < 0$.
@@ -168,8 +168,8 @@ Aquesta definició no és gaire intuïtiva; a continuació es presenta una versi
     \end{enumerate}
 \end{teo*}
 
-\section{Algorisme del Símplex Primal}
-\begin{alg}[del símplex primal]\label{alg:asp}
+\section{Algorisme del símplex primal}
+\begin{alg}[Algorisme del símplex primal]\label{alg:asp}
     \begin{enumerate}
         \item[]
         \item {\bf Inicialització}: Trobem una SBF ($\B, \N, \vb{x}_{\B}, z$).
@@ -221,7 +221,7 @@ Aquesta definició no és gaire intuïtiva; a continuació es presenta una versi
             \end{itemize}
     \end{itemize}
 \end{obs}
-\begin{rgl}[de Bland] \label{rgl:bland}
+\begin{prop}[Regla de Bland] \addcontentsline{toc}{subsection}{Regla de Bland}\label{rgl:bland}
     Usem la regla de Bland per assegurar la terminació del símplex en resoldre 
     un problema degenerat.
     \begin{enumerate}
@@ -229,4 +229,8 @@ Aquesta definició no és gaire intuïtiva; a continuació es presenta una versi
         (lexicogràficament) que compleix $r_q < 0$.
         \item Si al seleccionar la variable de sortida hi ha empat, seleccionem la VB amb índex menor.
     \end{enumerate}
+<<<<<<< Updated upstream
 \end{rgl}
+=======
+\end{prop}
+>>>>>>> Stashed changes

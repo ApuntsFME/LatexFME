@@ -11,19 +11,19 @@
 
 \declaretheorem[style=breakthm,name=M\`etode,sibling=lema]{met}
 \declaretheorem[style=breakthm,name=Algorisme,sibling=lema]{alg}
-\declaretheorem[style=breakthm,name=Regla,sibling=lema]{rgl}
 
 \AtBeginDocument{\renewcommand{\chaptername}{Tema}}
 \AtBeginDocument{\renewcommand{\arraystretch}{1.3}}
 	
 \begin{document}
 
+\frontmatter
+
 \input{title}
 
 \tableofcontents
-\thispagestyle{empty}
-\newpage
-\thispagestyle{empty}
+
+\mainmatter
 
 \include{tema_1}
 \include{tema_2}
@@ -32,12 +32,5 @@
 \include{tema_5}
 
 \printindex
-
-\vspace*{\fill}
-
-%\clearpage
-%\phantom{ }
-%\vfill
-%\thispagestyle{empty}
 
 \end{document}
