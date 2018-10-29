@@ -1,0 +1,96 @@
+\chapter{Variables aleatòries contínues}
+
+\section[Mesures de probabilitat absolutament contínues. Funció de densitat]
+    {Mesures de probabilitat absolutament contínues. Funció de densitat
+    \sectionmark{Mesures absolutament contínues}}
+    \sectionmark{Mesures absolutament contínues}
+
+Sigui $(\Omega,\Asuc,p)$ un espai de probabilitat i sigui $X$ una v.a. Aleshores $X$ indueix una probabilitat $P_X$ sobre $(\real,\B)$.
+Ara estudiarem v.a. $X$ on $P_X$ és ``compatible'' amb la mesura de Lebesgue $\lambda$.
+    
+\begin{defi}[mesura!absolutament contínua]
+    Sigui $\lp\Omega,\Asuc\rp$ un espai de mesurable i $\mu_1, \mu_2$ dues mesures sobre $\lp\Omega,\Asuc\rp$. Diem que $\mu_1$ és
+    absolutament contínua respecte a $\mu_2$ ($\mu_1 \ll \mu_2$) si
+    \[\forall A \in \Asuc, \quad \mu_2\]
+\end{defi}
+
+\begin{defi}[variable aleatòria!absolutament contínua]\index{variable aleatòria!contínua((tlab))}
+    Una v.a. $X$ és absolutament contínua (també anomenada contínua) si $P_X \ll \lambda$.
+\end{defi}
+
+\begin{obs}
+    Les variables aleatòries discretes no són contínues.
+    Sigui $X$ v.a. discreta amb $\im(X) = \lc a_i \rc_{i \ge 1}$, i $P(X=a_i)=p_i>0$.
+    Aleshores $P_X(\lc a_i \rc)=p_i$, però $\lambda(\lc a_i \rc) = 0$.
+\end{obs}
+
+\begin{teo}[Teorema de Radon-Nikodym]
+    Sigui $(\Omega,\Asuc)$ un espai mesurable i $\mu_1 \ll \mu_2$ dues mesures.
+    Aleshores existeix una funció $f_{\mu_1}\colon \Omega\to\real$ mesurable en $(\Omega,\Asuc)$ tal que
+    \[\forall A \in\Asuc,\quad \mu_1(A) = \int_A \dif\mu_1 = \int_A f_{\mu_1}\dif\mu_2\]
+    És a dir, $\dif\mu_1 = f_{\mu_1}\dif\mu_2$, o ``$\frac{\dif\mu_1}{\dif\mu_2} = f_{\mu_1}$'' (derivada de Radon-Nikodym).
+\end{teo}
+
+\begin{proof}
+    És una prova complicada i amb eines avançades que no farem.
+\end{proof}
+
+\begin{col}
+    En la nostra situació, $\mu_1 = P_X$ i $\mu_2 = \lambda$, per tant si $P_X \ll \mu$ tenim
+    \[\forall A \in\B,\quad P_X(A) = \int_A f_{X}\dif\lambda\] %= \int_\real f_{\mu_1} ?? \dif\lambda\]
+    %TODO si algú sap que ha de posar aquí dalt que ho posi, que l'home aquell té molt mala lletra
+\end{col}
+
+\begin{defi}[funció!de densitat de probabilitat]
+    A $f_X = f_{\mu_1}$ l'anomenarem funció de densitat de probabilitat de $X$.
+\end{defi}
+
+\begin{obs}
+    El teorema de Radon-Nikodym no afirma la unicitat de $f_{\mu_1}$, de fet si $f_{\mu_1}$ i $\overline{f_{\mu_1}}$ satisfan les
+    condicions, aleshores el teorema també afirma que $f_{\mu_1} = \overline{f_{\mu_1}}$ $\mu_2$-g.a.
+\end{obs}
+
+\begin{prop}[Propietats de la funció de densitat]
+    Sigui $X$ v.a. amb funció de densitat $f_X$,
+    \begin{enumerate}[i)]
+        \item $f_X \ge 0$ $\lambda$-gairebé arreu
+        \item $\int_\real f_X \dif\lambda = 1$
+        \item Si $f_X$ és integrable Riemann, $\forall A = (a,b)$ interval, $P_X(A) = \int_A f_X\dif\lambda = \int_a^b f_X(x)\dif x$.
+        \item $P(X=x) = P_X(\{x\}) = \int_{\{x\}} f_X \dif\lambda = 0, \quad\forall x\in\real$
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    \begin{enumerate}[i)]
+        \item{}
+        \item Sigui $A = \lc x\in\real \colon f_X(x)<0 \rc$, volem veure que té mesura (de Lebesgue) 0.
+            \[A = \bigcup_{n \ge 1} \lc x\in\real \colon f_X(x)<\frac{-1}{n} \rc\]
+            i $\lc A_n \rc_{n \ge 1}$ és creixent.
+            \[\lambda(A) = \lim_{n}A_n \implies 0 \le P_X(A_n) = \int_{A_n} f_X \dif\lambda = \frac{-1}{n}\lambda(A_n) \le 0 \implies \lambda(A_n)=0 \quad\forall n\]
+    \end{enumerate}
+    Les altres tres en són conseqüència.
+\end{proof}
+
+\begin{obs}
+    Tota funció $f$ que compleixi les tres primeres propietats defineix una v.a. $X$:
+    %TODO 
+    De fet quan es defineix informalment v.a. contínua se sol definir com una funció amb aquestes propietats.
+\end{obs}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
