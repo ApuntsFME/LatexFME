@@ -531,4 +531,32 @@ Siguin $X$ i $Y$ variables aleatòries discretes i sigui $x\in\real$ tal que $p\
     \end{align*}
 \end{proof}
 
+\begin{obs}
+    $X,Y$ independents. 
+    \[\forall x \in\im(X),\quad \esp[Y \vert X=x] = \sum_{y\in\im(Y)} yP(Y=y \vert X=x) = \sum_{y\in\im(Y)} yP(Y=y) = \esp[Y]\]
+    i per tant $\esp[Y \vert X] = \esp[Y]$ amb probabilitat 1.
+\end{obs}
 
+\begin{obs}
+    Per altra banda, si $Y=f(X)$ amb $f$ bijectiva,
+    \[\phi(x) = \esp[Y\vert X=x] = \sum_{y\in\im(Y)} yP(Y=y \vert X=x) = \sum_{z\in\im(X)} f(z)P(f(x)=f(z) \vert X=x) = f(x)\]
+    i per tant $\esp[Y \vert X] = f(X) = Y$.
+\end{obs}
+
+\begin{example}
+    $N \sim \operatorname{Po}(\lambda)$, $K \sim \operatorname{Bin}(N,p)$.
+    Per cada $n$,
+    \[\esp[K \vert N=n] = \sum_{i\in\im(K)} iP(K=i \vert N=n) = \sum_{i=0}^n iP(K=i \vert N=n) = \sum_{i=0}^n i\binom{n}{i}p^i(1-p)^{n-i}\]
+    que per la fórmula de l'esperança binomial és igual a $np = \phi(n)$.
+    Per tant, $\esp[K \vert N] = np$ amb probabilitat $P(N=n) = \frac{1}{n!}\lambda^me^{-\lambda}$.
+    Per calcular $\esp[N \vert K]$: si prenem $k\in\im(K)$,
+    \[\esp[N|K=k] = \sum_{i=0}^nP(N=i \vert K=k) = \frac{P(N=i \cap K=k)}{P(K=k)} = \frac{P(K=k \vert N=i)}{P(K=k)}P(N=i)\]
+\end{example}
+
+\begin{obs}
+    Com podem veure amb l'exemple anterior, $\esp[Y \vert X=x] = \phi(x)$, aleshores $\esp[Y \vert X] = \phi(X)$.
+\end{obs}
+
+%TODO Exemple nombre de tirades fins que surt 6 sabent que ha sortit parell en un dau equilibrat
+
+%\section{Aplicació: Arbres de Galton-Watson}
